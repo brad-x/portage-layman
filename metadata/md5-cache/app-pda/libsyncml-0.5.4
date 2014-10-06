@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=>=dev-libs/glib-2.12 >=dev-libs/libwbxml-0.11.0 dev-libs/libxml2 http? ( net-libs/libsoup:2.4 ) obex? ( net-wireless/bluez >=dev-libs/openobex-1.1[bluetooth] ) virtual/pkgconfig doc? ( app-doc/doxygen ) test? ( >=dev-libs/check-0.9.7 ) sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=Implementation of the SyncML protocol
+EAPI=5
+HOMEPAGE=http://libsyncml.opensync.org/
+IUSE=debug doc http +obex test
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=LGPL-2.1
+RDEPEND=>=dev-libs/glib-2.12 >=dev-libs/libwbxml-0.11.0 dev-libs/libxml2 http? ( net-libs/libsoup:2.4 ) obex? ( net-wireless/bluez >=dev-libs/openobex-1.1[bluetooth] )
+REQUIRED_USE=|| ( http obex )
+SLOT=0
+SRC_URI=mirror://sourceforge/libsyncml/libsyncml-0.5.4.tar.bz2
+_eclasses_=cmake-utils	da2974fcb060ec927e93a17c835afa67	eutils	32548a82e42dc26e3312581476d2f20c	flag-o-matic	75e24bac8423c515dd9c5717f08feb83	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0f1760274637a138b99bb649202ea402
+_md5_=045c42e371ecaacc305ca33cc2e9e7a0

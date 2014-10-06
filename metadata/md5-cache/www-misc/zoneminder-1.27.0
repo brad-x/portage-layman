@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst prepare setup test unpack
+DEPEND=dev-lang/perl:= dev-libs/libpcre dev-perl/DateManip dev-perl/DBD-mysql dev-perl/DBI dev-perl/libwww-perl sys-libs/zlib virtual/ffmpeg virtual/jpeg virtual/mysql virtual/perl-ExtUtils-MakeMaker virtual/perl-Getopt-Long virtual/perl-Sys-Syslog virtual/perl-Time-HiRes curl? ( net-misc/curl ) gcrypt? ( dev-libs/libgcrypt ) gnutls? ( net-libs/gnutls ) mmap? ( dev-perl/Sys-Mmap ) openssl? ( dev-libs/openssl ) vlc? ( media-video/vlc ) =www-servers/apache-2* virtual/httpd-php dev-lang/perl:=[-build(-)] sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=ZoneMinder allows you to capture, analyse, record and monitor any cameras attached to your system
+EAPI=5
+HOMEPAGE=http://www.zoneminder.com/
+IUSE=curl gcrypt gnutls +mmap +openssl vlc
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=dev-lang/perl:= dev-libs/libpcre dev-perl/DateManip dev-perl/DBD-mysql dev-perl/DBI dev-perl/libwww-perl sys-libs/zlib virtual/ffmpeg virtual/jpeg virtual/mysql virtual/perl-ExtUtils-MakeMaker virtual/perl-Getopt-Long virtual/perl-Sys-Syslog virtual/perl-Time-HiRes curl? ( net-misc/curl ) gcrypt? ( dev-libs/libgcrypt ) gnutls? ( net-libs/gnutls ) mmap? ( dev-perl/Sys-Mmap ) openssl? ( dev-libs/openssl ) vlc? ( media-video/vlc ) =www-servers/apache-2* virtual/httpd-php dev-lang/perl:=[-build(-)]
+REQUIRED_USE=|| ( openssl gnutls )
+SLOT=0
+SRC_URI=https://github.com/ZoneMinder/ZoneMinder/archive/v1.27.0.tar.gz -> zoneminder-1.27.0.tar.gz
+_eclasses_=base	87f7447ccfc06fd0729ff4684e11e0d6	cmake-utils	da2974fcb060ec927e93a17c835afa67	depend.apache	1a38534d3f755d1ab1d92ce120bd7dbd	depend.php	df169a364e191b840b695604097e3c21	eutils	32548a82e42dc26e3312581476d2f20c	flag-o-matic	75e24bac8423c515dd9c5717f08feb83	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	multiprocessing	d7f2985a2c76c365ee20269db5261414	perl-module	f889e8437ffc64d766053d029c422c4e	phpconfutils	e108303831029e5b8a9d24b991b1d62a	readme.gentoo	106edea5533517715013de909a333abd	toolchain-funcs	0f1760274637a138b99bb649202ea402	unpacker	f300a7ca9131b1024a79762e8edd3c52
+_md5_=943aefba11c5e9a40132bf9804b18c7d

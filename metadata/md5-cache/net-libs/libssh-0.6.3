@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=zlib? ( >=sys-libs/zlib-1.2 ) !gcrypt? ( >=dev-libs/openssl-0.9.8 ) gcrypt? ( >=dev-libs/libgcrypt-1.5:0 ) gssapi? ( virtual/krb5 ) doc? ( app-doc/doxygen ) test? ( dev-util/cmocka ) sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=Access a working SSH implementation by means of a library
+EAPI=5
+HOMEPAGE=http://www.libssh.org/
+IUSE=debug doc examples gcrypt gssapi pcap +sftp ssh1 server static-libs test zlib
+KEYWORDS=amd64 ~arm ~hppa ppc ppc64 ~s390 ~sparc x86 ~amd64-linux ~x86-linux
+LICENSE=LGPL-2.1
+RDEPEND=zlib? ( >=sys-libs/zlib-1.2 ) !gcrypt? ( >=dev-libs/openssl-0.9.8 ) gcrypt? ( >=dev-libs/libgcrypt-1.5:0 ) gssapi? ( virtual/krb5 )
+SLOT=0/4
+SRC_URI=https://red.libssh.org/attachments/download/87/libssh-0.6.3.tar.xz -> libssh-0.6.3.tar.xz
+_eclasses_=cmake-utils	da2974fcb060ec927e93a17c835afa67	eutils	32548a82e42dc26e3312581476d2f20c	flag-o-matic	75e24bac8423c515dd9c5717f08feb83	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0f1760274637a138b99bb649202ea402
+_md5_=f37c94404f996b033158d1e1f753f5cb
