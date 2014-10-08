@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16075 2014/10/06 19:37:22 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16078 2014/10/08 13:37:28 grknight Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,10 @@
 
 #--- END OF EXAMPLES ---
 
+# Brian Evans <grknight@gentoo.org> (8 Oct 2014)
+# Mask all versions of suhosin until upstream revival is sustained and tested
+dev-php/suhosin
+
 # Manuel Rüger <mrueg@gentoo.org> (6 Oct 2014)
 # Mask texlive-2014
 =dev-libs/kpathsea-6.2.0_p20140523
@@ -43,7 +47,7 @@ x11-misc/sddm
 
 # Brian Evans <grknight@gentoo.org> (2 Oct 2014)
 # Masked for removal in 30 days. (Bug #524310)
-# Broken on >=dev-lang/php-5.4. Replace with dev-php/xcache, 
+# Broken on >=dev-lang/php-5.4. Replace with dev-php/xcache,
 # dev-php/pecl-zendopcache, or dev-lang/php[opcache].
 # If you need pecl-apc's variable storage use dev-php/pecl-apcu.
 dev-php/eaccelerator
@@ -56,7 +60,6 @@ dev-php/adodb-ext
 dev-php/pecl-id3
 dev-php/pecl-mogilefs
 dev-php/pecl-sca_sdo
-dev-php/suhosin
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (30 Sep 2014)
 # Reverse dependencies need to be tested and fixed, bug #521406.
@@ -169,12 +172,6 @@ app-emulation/emul-linux-x86-compat
 # Masked for removal in 30 days (bug #522232).
 app-doc/djbdns-man
 
-# Bernard Cafarelli <voyageur@gentoo.org> (05 Sep 2014)
-# Does not connect anymore, does not work with current pidgin versions
-# Dead upstream
-# Masked for removal in 30 days, bug #355797
-x11-plugins/pidgin-facebookchat
-
 # Sergey Popov <pinkbyte@gentoo.org> (04 Sep 2014)
 # Security mask, wrt bugs #488212, #498164, #500260,
 # #507802 and #518718
@@ -191,11 +188,9 @@ x11-plugins/pidgin-facebookchat
 # You can still use your MSN account in net-im/skype
 # or switch to an open protocol instead
 # Masked for removal in 30 days
-# Added msn-pecan to the list (voyageur)
 net-im/kmess
 net-im/amsn
 x11-themes/amsn-skins
-x11-plugins/msn-pecan
 
 # Christian Faulhammer <fauli@gentoo.org> (02 Sep 2014)
 # website not working anymore and will stay like this,
