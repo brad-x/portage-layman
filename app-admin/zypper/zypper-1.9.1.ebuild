@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/zypper/zypper-1.9.1.ebuild,v 1.2 2013/07/31 16:32:05 miska Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/zypper/zypper-1.9.1.ebuild,v 1.3 2014/10/09 09:21:21 jlec Exp $
 
 EAPI=5
 
@@ -16,9 +16,10 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="
-	app-admin/augeas
+	>=app-admin/augeas-0.5.0
+	dev-libs/boost
 	dev-libs/libxml2
-	dev-libs/libzypp
+	>=dev-libs/libzypp-14.28.0
 	sys-libs/readline:0
 "
 DEPEND="${DEPEND}
