@@ -1,10 +1,63 @@
 # ChangeLog for profile directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9436 2014/10/10 09:07:39 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9452 2014/10/14 11:54:19 pacho Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  14 Oct 2014; Pacho Ramos <pacho@gentoo.org>
+  arch/ia64/package.use.stable.mask:
+  webkit-gtk:2 will be moved to testing on ia64 (#525194)
+
+  14 Oct 2014; Ulrich Müller <ulm@gentoo.org> package.mask:
+  Remove mask for app-emulation/emul-linux-x86-compat, package has been
+  removed.
+
+  13 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> updates/4Q-2014:
+  Follow upstream rename from dev-perl/Template-Latex to
+  dev-perl/Template-Plugin-Latex
+
+  13 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Mask dev-perl/Lucene for removal
+
+  13 Oct 2014; Davide Pesavento <pesa@gentoo.org> package.mask:
+  Add PyQt5 to Qt5 mask.
+
+  12 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Seems like Template::Latex is still needed, unmask it again (bump and pkgmove
+  to follow)
+
+  12 Oct 2014; Alexis Ballier <aballier@gentoo.org> package.mask:
+  mask newest mplayer for bug #525070 along with newest ffmpeg: it is needed
+  for latest ffmpeg but doesnt build with libav...
+
+  11 Oct 2014; Pacho Ramos <pacho@gentoo.org> arch/arm/package.use.stable.mask:
+  webkit-gtk will be moved to testing on arm (#524386)
+
+  11 Oct 2014; Aaron W. Swenson <titanofold@gentoo.org> package.mask:
+  Mask PostgreSQL beta package.
+
+  11 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Mask dev-perl/Template-Latex for removal
+
+  11 Oct 2014; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Mask Gnome 2 for removal (#508854)
+
+  11 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> +updates/4Q-2014:
+  IO::Socket::IP is part of core Perl since 5.20
+
+  11 Oct 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> package.mask:
+  Roll dev channel mask for chromium-40.
+
+  11 Oct 2014; Anthony G. Basile <blueness@gentoo.org> profiles.desc:
+  Update profiles.desc for the restructured mips profiles
+
+  11 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask dev-vcs/subversion revbump for new bash-completion.
+
+  11 Oct 2014; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Mask kde-misc/kcm_touchpad.
 
   10 Oct 2014; Hans de Graaff <graaff@gentoo.org> base/use.mask, package.mask:
   Remove jruby 1.6 mask now that the packages are removed.

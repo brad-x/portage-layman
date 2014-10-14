@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/dialog/dialog-1.2.20140219.ebuild,v 1.11 2014/07/31 19:26:35 tgall Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/dialog/dialog-1.2.20140219.ebuild,v 1.12 2014/10/11 07:09:31 jer Exp $
 
 EAPI=5
 inherit eutils multilib versionator
@@ -17,8 +17,7 @@ KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh sparc 
 IUSE="examples minimal nls static-libs unicode"
 
 RDEPEND="
-	>=sys-libs/ncurses-5.2-r5
-	unicode? ( sys-libs/ncurses[unicode] )
+	>=sys-libs/ncurses-5.2-r5[unicode?]
 "
 DEPEND="
 	${RDEPEND}

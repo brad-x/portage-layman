@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/rawdog/rawdog-2.19.ebuild,v 1.2 2014/04/24 03:02:16 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/rawdog/rawdog-2.19.ebuild,v 1.4 2014/10/11 20:21:25 jer Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 pypy )
@@ -13,8 +13,15 @@ SRC_URI="http://offog.org/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 hppa ~ia64 ~ppc ~s390 ~sparc ~x86"
 IUSE=""
 
 DEPEND="dev-python/feedparser[${PYTHON_USEDEP}]"
 RDEPEND=""
+# Test run fails under multi threading
+DISTUTILS_NO_PARALLEL_BUILD=1
+
+python_test() {
+	# pypy fails half way through; meh
+	./test-rawdog || die "Test run aborted"
+}

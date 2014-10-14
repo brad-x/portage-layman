@@ -499,7 +499,6 @@ app-emulation/emul-linux-x86-baselibs:development - Install pkgconfig files
 app-emulation/emul-linux-x86-baselibs:kerberos - Pull in virtual/krb5 if using USE=abi_x86_32. Disabling it is unsupported, use on your own responsibility. Irrelevant when using USE=-abi_x86_32.
 app-emulation/emul-linux-x86-baselibs:ldap - Pull in net-nds/openldap if using USE=abi_x86_32. Disabling it is unsupported, use on your own responsibility. Irrelevant when using USE=-abi_x86_32.
 app-emulation/emul-linux-x86-baselibs:pam - Pull in virtual/pam if using USE=abi_x86_32. Disabling it is unsupported, use on your own responsibility. Irrelevant when using USE=-abi_x86_32.
-app-emulation/emul-linux-x86-compat:development - Install pkgconfig files
 app-emulation/emul-linux-x86-cpplibs:development - Install pkgconfig files
 app-emulation/emul-linux-x86-db:development - Install pkgconfig files
 app-emulation/emul-linux-x86-gstplugins:development - Install pkgconfig files
@@ -1287,6 +1286,9 @@ dev-db/pgbouncer:udns - Use udns as the DNS backend. Supports IPv4 only.
 dev-db/pgpool2:memcached - Use memcached for query caching.
 dev-db/phpmyadmin:setup - Installs the phpMyAdmin setup utility. Users who don't use the utility should disable this USE flag for security reasons as the setup tool was the target of various exploits in the past.
 dev-db/postgis:gtk - Build shp2pgsql-gui a graphical interface to shp2pgsql
+dev-db/postgresql:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
+dev-db/postgresql:server - Disable to build and install the clients and libraries only.
+dev-db/postgresql:uuid - Enable server side UUID generation (via dev-libs/ossp-uuid).
 dev-db/postgresql-base:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
 dev-db/postgresql-server:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
 dev-db/postgresql-server:uuid - Enable server side UUID generation (via dev-libs/ossp-uuid)
@@ -1367,6 +1369,7 @@ dev-games/ogre:poco - when USE=threads, use poco for threading
 dev-games/ogre:tbb - when USE=threads, use tbb for threading
 dev-games/ogre:tools - build+install helper tools
 dev-games/ogre:zip - support zip archives
+dev-games/openscenegraph:asio - Enable support for dev-cpp/asio library
 dev-games/openscenegraph:fox - Build examples using x11-libs/fox library
 dev-games/openscenegraph:gdal - Enable support for sci-libs/gdal library
 dev-games/openscenegraph:openinventor - Build OpenInventor plugin
@@ -2048,20 +2051,42 @@ dev-php/smarty-docs:pdf - Install the documentation in PDF format
 dev-python/Kivy:camera - Install libraries needed to support camera
 dev-python/Kivy:garden - Install garden tool to manage user maintained widgets
 dev-python/PyFoam:extras - Enable optional dependencies
-dev-python/PyQt4:X - Build QtGui and QtTest modules
-dev-python/PyQt4:declarative - Build QtDeclarative module
-dev-python/PyQt4:designer - Build QtDesigner module
-dev-python/PyQt4:help - Build QtHelp module
+dev-python/PyQt4:X - Build bindings for the QtGui module
+dev-python/PyQt4:dbus - Build bindings for the QtDBus module
+dev-python/PyQt4:declarative - Build bindings for the QtDeclarative module
+dev-python/PyQt4:designer - Build bindings for the QtDesigner module and enable the designer plugin
+dev-python/PyQt4:help - Build bindings for the QtHelp module
 dev-python/PyQt4:kde - Select media-libs/phonon as Phonon variant (needed for KDE)
-dev-python/PyQt4:multimedia - Build QtMultimedia module
-dev-python/PyQt4:opengl - Build QtOpenGL module
-dev-python/PyQt4:phonon - Build phonon module
-dev-python/PyQt4:script - Build QtScript module
-dev-python/PyQt4:scripttools - Build QtScriptTools module
-dev-python/PyQt4:sql - Build QtSql module
-dev-python/PyQt4:svg - Build QtSvg module
-dev-python/PyQt4:webkit - Build QtWebKit module
-dev-python/PyQt4:xmlpatterns - Build QtXmlPatterns module
+dev-python/PyQt4:multimedia - Build bindings for the QtMultimedia module
+dev-python/PyQt4:opengl - Build bindings for the QtOpenGL module
+dev-python/PyQt4:phonon - Build bindings for the phonon module
+dev-python/PyQt4:script - Build bindings for the QtScript module
+dev-python/PyQt4:scripttools - Build bindings for the QtScriptTools module
+dev-python/PyQt4:sql - Build bindings for the QtSql module
+dev-python/PyQt4:svg - Build bindings for the QtSvg module
+dev-python/PyQt4:testlib - Build bindings for the QtTest module
+dev-python/PyQt4:webkit - Build bindings for the QtWebKit module
+dev-python/PyQt4:xmlpatterns - Build bindings for the QtXmlPatterns module
+dev-python/PyQt5:dbus - Build bindings for the QtDBus module
+dev-python/PyQt5:declarative - Build bindings for the QtQml/QtQuick modules and enable the qmlscene plugin
+dev-python/PyQt5:designer - Build bindings for the QtDesigner module and enable the designer plugin
+dev-python/PyQt5:gui - Build bindings for the QtGui module
+dev-python/PyQt5:help - Build bindings for the QtHelp module
+dev-python/PyQt5:multimedia - Build bindings for the QtMultimedia module
+dev-python/PyQt5:network - Build bindings for the QtNetwork module
+dev-python/PyQt5:opengl - Build bindings for the QtOpenGL module
+dev-python/PyQt5:positioning - Build bindings for the QtPositioning module
+dev-python/PyQt5:printsupport - Build bindings for the QtPrintSupport module
+dev-python/PyQt5:sensors - Build bindings for the QtSensors module
+dev-python/PyQt5:serialport - Build bindings for the QtSerialPort module
+dev-python/PyQt5:sql - Build bindings for the QtSql module
+dev-python/PyQt5:svg - Build bindings for the QtSvg module
+dev-python/PyQt5:testlib - Build bindings for the QtTest module
+dev-python/PyQt5:webkit - Build bindings for the QtWebKit module
+dev-python/PyQt5:websockets - Build bindings for the QtWebSockets module
+dev-python/PyQt5:widgets - Build bindings for the QtWidgets module
+dev-python/PyQt5:x11extras - Build bindings for the QtX11Extras module
+dev-python/PyQt5:xmlpatterns - Build bindings for the QtXmlPatterns module
 dev-python/PyQtMobility:contacts - Build bindings for the QtContacts module
 dev-python/PyQtMobility:feedback - Build bindings for the QtFeedback module
 dev-python/PyQtMobility:gallery - Build bindings for the QtGallery module
@@ -2129,6 +2154,7 @@ dev-python/paste:openid - enable OpenID support
 dev-python/pillow:webp - Enable support for webp image format.
 dev-python/psycopg:mxdatetime - Enable support for MX DateTime and use it instead of Python's built-in datetime module
 dev-python/py-amqp:extras - Install extra tools to generate initial Python mod from an AMQP XML file
+dev-python/pyhamcrest:numpy - Enable optional dependence on dev-python/numpy
 dev-python/pylons:genshi - Add optional genshi support
 dev-python/pylons:jinja - Add optional jinja support
 dev-python/pymongo:mod_wsgi - Disable the C extension to work with mod_wsgi.
@@ -2755,6 +2781,7 @@ games-rpg/sumwars:tools - Builds editor tools
 games-rpg/to-the-moon:bundled-libs - Use bundled libraries
 games-rpg/valyriatear:editor - Compile the Qt editor along with the game
 games-simulation/corsix-th:ffmpeg - Use ffmpeg for playing in-game cutscenes.
+games-simulation/corsix-th:mapeditor - Build the map editor (needs opengl enabled!).
 games-simulation/corsix-th:midi - Use SDL mixer and timidity for in-game music.
 games-simulation/corsix-th:opengl - Use OpenGL for rendering.
 games-simulation/corsix-th:sdl - Use SDL for rendering.
@@ -2775,6 +2802,7 @@ games-sports/speed-dreams:xrandr - Enable support for the X xrandr extension
 games-sports/xmoto:editor - Depend on inkscape, scripts to convert svg to level (svg2lvl)
 games-strategy/0ad:editor - Include Atlas scenario editor projects
 games-strategy/0ad:lobby - Enable the use of net-libs/gloox and the multiplayer lobby
+games-strategy/0ad:nvtt - Support for some uncompressed data formats via media-gfx/nvidia-texture-tools (might be needed for some mods)
 games-strategy/dark-oberon:fmod - Add sound support (fmod)
 games-strategy/defcon-demo:system-libs - Use system libraries instead of the ones included in the upstream distribution.
 games-strategy/freeciv:aimodules - Support for dynamically loadable AI modules (server-side)

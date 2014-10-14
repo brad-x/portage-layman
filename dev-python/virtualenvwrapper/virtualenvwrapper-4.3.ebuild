@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenvwrapper/virtualenvwrapper-4.3.ebuild,v 1.3 2014/07/05 13:44:19 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenvwrapper/virtualenvwrapper-4.3.ebuild,v 1.4 2014/10/12 09:05:15 idella4 Exp $
 
 EAPI=5
 
@@ -16,10 +16,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# testsuite doesn't work out of the box.  Demand of a virtualenv outstrips setup by the exlass
 RESTRICT=test
 
 RDEPEND="dev-python/virtualenv[${PYTHON_USEDEP}]
-	>=dev-python/stevedore-0.15-r1[${PYTHON_USEDEP}]
+	dev-python/stevedore[${PYTHON_USEDEP}]
 	dev-python/virtualenv-clone[${PYTHON_USEDEP}]"
 DEPEND="${DEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
