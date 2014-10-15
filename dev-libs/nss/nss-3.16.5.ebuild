@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/nss-3.16.5.ebuild,v 1.4 2014/10/06 19:01:54 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/nss-3.16.5.ebuild,v 1.5 2014/10/14 21:10:22 axs Exp $
 
 EAPI=5
 inherit eutils flag-o-matic multilib toolchain-funcs multilib-minimal
@@ -131,7 +131,10 @@ multilib_src_compile() {
 		n32) mybits="USE_N32=1";;
 		x32) mybits="USE_X32=1";;
 		s390x|*64) mybits="USE_64=1";;
-		default) mybits=$(nssbits);;
+		${DEFAULT_ABI})
+			einfo "Running compilation test to determine bit'ness"
+			mybits=$(nssbits)
+			;;
 	esac
 	# bitness of host may differ from target
 	if tc-is-cross-compiler; then

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/stomper/stomper-0.2.8.ebuild,v 1.1 2014/04/18 07:36:11 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/stomper/stomper-0.2.8.ebuild,v 1.2 2014/10/15 12:18:47 idella4 Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 pypy )
@@ -28,7 +28,7 @@ python_test() {
 	esetup.py test
 }
 
-	python_install_all() {
+python_install_all() {
 	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
