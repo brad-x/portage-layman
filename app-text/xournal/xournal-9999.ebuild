@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xournal/xournal-9999.ebuild,v 1.8 2014/08/10 18:38:21 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/xournal/xournal-9999.ebuild,v 1.9 2014/10/15 15:01:59 dilfridge Exp $
 
 EAPI=5
 
@@ -14,21 +14,16 @@ HOMEPAGE="http://xournal.sourceforge.net/"
 LICENSE="GPL-2"
 
 SLOT="0"
-IUSE="+pdf vanilla"
+IUSE="+pdf"
 
 if [[ "${PV}" != "9999" ]]; then
-	SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz !vanilla? ( http://dev.gentoo.org/~dilfridge/distfiles/${PN}-${PVR}-gentoo.patch.xz )"
+	SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 else
 	inherit git-2
 	SRC_URI=""
 	KEYWORDS=""
-	if use vanilla; then
-		EGIT_REPO_URI="git://xournal.git.sourceforge.net/gitroot/xournal/xournal"
-	else
-		EGIT_REPO_URI="git://gitorious.org/gentoo-stuff/xournal-gentoo.git"
-		EGIT_BRANCH="gentoo"
-	fi
+	EGIT_REPO_URI="git://xournal.git.sourceforge.net/gitroot/xournal/xournal"
 fi
 
 COMMONDEPEND="
@@ -50,19 +45,6 @@ RDEPEND="${COMMONDEPEND}
 DEPEND="${COMMONDEPEND}
 	virtual/pkgconfig
 "
-
-src_prepare() {
-	if ! use vanilla && [[ "${PV}" != "9999" ]]; then
-		epatch "${WORKDIR}"/${PN}-${PVR}-gentoo.patch
-	fi
-	if ! use vanilla; then
-		sed -e "s:n       http:n       Gentoo release ${PVR}\\\\n       http:" -i "${S}"/src/xo-interface.c
-	fi
-	epatch "${FILESDIR}/${PN}-0.4.7-am113.patch"
-	epatch "${FILESDIR}/${PN}-0.4.7-am113-2.patch"
-	epatch "${FILESDIR}/${PN}-0.4.7-ar.patch"
-	eautoreconf
-}
 
 src_install() {
 	emake DESTDIR="${D}" install

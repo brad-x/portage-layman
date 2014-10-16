@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sphinx/sphinx-1.2.2.ebuild,v 1.8 2014/10/09 08:17:10 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sphinx/sphinx-1.2.2.ebuild,v 1.9 2014/10/16 05:08:47 idella4 Exp $
 
 EAPI=5
 
@@ -24,8 +24,7 @@ IUSE="doc latex test"
 # Split the jinja dep to allow different slots to satisfy it
 RDEPEND="
 	>=dev-python/docutils-0.7[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.3[$(python_gen_usedep python3_2)]
-	>=dev-python/jinja-2.3[$(python_gen_usedep python{2_6,2_7,3_3,3_4} 'pypy*')]
+	>=dev-python/jinja-2.3[$(python_gen_usedep python{2_7,3_3,3_4} pypy)]
 	>=dev-python/pygments-1.2[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	latex? (
