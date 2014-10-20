@@ -1,10 +1,14 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.614 2014/10/11 05:03:35 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.617 2014/10/19 12:04:14 pacho Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
 #
+
+# Pacho Ramos <pacho@gentoo.org> (19 Oct 2014)
+# swfdec is masked for removal, bug #525834
+dev-libs/DirectFB swfdec
 
 # Tim Harder <radhermit@gentoo.org> (10 Oct 2014)
 # Masked since skype isn't stable
@@ -151,10 +155,6 @@ sys-infiniband/ofed ofed_drivers_ehca
 # Julian Ospald <hasufell@gentoo.org> (06 Apr 2014)
 # broken wrt #501582
 <net-misc/openvpn-9999 polarssl
-
-# Mike Gilbert <floppym@gentoo.org> (27 Mar 2014)
-# sys-libs/libseccomp is not keyworded on many archs.
-sys-apps/systemd seccomp
 
 # Ben de Groot <yngwin@gentoo.org> (21 Mar 2014)
 # harfbuzz multilib ebuild is still masked
@@ -365,10 +365,6 @@ www-client/chromium system-sqlite
 # cuda only works on x86 and amd64
 sci-libs/cholmod cuda
 sci-libs/flann cuda
-
-# Agostino Sarubbo <ago@gentoo.org< (21 Feb 2013)
-# Mask vpx because requires new libvpx and is not ready to go to stable
->=media-plugins/gst-plugins-meta-1.0 vpx
 
 # Julian Ospald <hasufell@gentoo.org> (20 Feb 2013)
 # Unsupported and experimental.

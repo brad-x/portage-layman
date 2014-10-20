@@ -1,6 +1,16 @@
 # ChangeLog for Gentoo base-profile
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.733 2014/10/11 05:03:35 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.736 2014/10/19 20:08:32 floppym Exp $
+
+  19 Oct 2014; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask apparmor.
+
+  19 Oct 2014; Mike Frysinger <vapier@gentoo.org> package.use.force:
+  Restrict bash USE=readline mask to SLOT=0.
+
+  18 Oct 2014; Mike Frysinger <vapier@gentoo.org> package.use.mask:
+  Drop systemd-specific seccomp mask since the USE flag itself is handled
+  properly #524148 by Christian Ruppert.
 
   11 Oct 2014; Tim Harder <radhermit@gentoo.org> package.use.mask,
   package.use.stable.mask:

@@ -406,6 +406,7 @@ app-doc/tldp-howto:text - Install plain-text docs
 app-editors/emacs:athena - Enable the MIT Athena widget set (x11-libs/libXaw)
 app-editors/emacs:games - Support shared score files for games
 app-editors/emacs:gconf - Use gnome-base/gconf to read the system font name
+app-editors/emacs:gfile - Use gfile (dev-libs/glib) for file notification
 app-editors/emacs:gsettings - Use gsettings (dev-libs/glib) to read the system font name
 app-editors/emacs:gtk3 - Link against version 3 of the GIMP Toolkit instead of version 2 (x11-libs/gtk+)
 app-editors/emacs:gzip-el - Compress bundled Emacs Lisp source
@@ -557,7 +558,6 @@ app-emulation/libvirt:xen - Support management of Xen virtualisation (app-emulat
 app-emulation/libvirt-glib:introspection - Use dev-libs/gobject-introspection for introspection
 app-emulation/libvirt-glib:vala - Enable bindings for dev-lang/vala
 app-emulation/lxc:seccomp - Use seccomp syscall filters using sys-libs/libseccomp
-app-emulation/lxc:vanilla - Avoid adding Gentoo Linux-specific modifications, which include the custom init script. This is present as a flag to avoid forcing dependencies over users that might not want have them around as they use LXC in contexts where the init script is not useful.
 app-emulation/open-vm-tools:doc - Generate API documentation
 app-emulation/open-vm-tools:fuse - Build vmblock-fuse in favor of FUSE based blocking mechanism for DnD
 app-emulation/open-vm-tools:pic - Force shared libraries to be built as PIC
@@ -4013,15 +4013,19 @@ media-sound/mpd:cdio - Use libcdio for ISO9660 parsing support
 media-sound/mpd:curl - Support for web stream listening
 media-sound/mpd:faad - Use external faad library for AAC decoding
 media-sound/mpd:fifo - Support writing audio to a FIFO
-media-sound/mpd:fluidsynth - Enables Fluidsynth MIDI software synthesis
+media-sound/mpd:fluidsynth - Enables Fluidsynth MIDI software synthesis (discouraged)
+media-sound/mpd:glib - Enable GLib usage
 media-sound/mpd:gme - Enables support for media-libs/game-music-emu for playing various video game music formats.
 media-sound/mpd:id3tag - Support for ID3 tags
 media-sound/mpd:inotify - Use the Linux kernel inotify subsystem to notice changes to mpd music library
 media-sound/mpd:lame - Support for MP3 streaming via Icecast2
 media-sound/mpd:lastfmradio - Support listening to last.fm radio stations
 media-sound/mpd:libmpdclient - Enable support for remote mpd databases
+media-sound/mpd:libsoxr - Enable the libsoxr resampler
+media-sound/mpd:mp4v2 - Enable the MP4v2 decoder
 media-sound/mpd:mpg123 - Enable support for mp3 decoding over media-sound/mpg123
 media-sound/mpd:network - Enables network streaming support
+media-sound/mpd:nfs - Enable support for the Network File System
 media-sound/mpd:opus - Enable Opus codec support
 media-sound/mpd:pipe - Support writing audio to a pipe
 media-sound/mpd:recorder - Enables output plugin for recording radio streams
@@ -6653,7 +6657,6 @@ sys-apps/pkgcore:doc - Build and install API docs.
 sys-apps/policycoreutils:audit - Enable support for sys-process/audit and use the audit_* functions (like audit_getuid instead of getuid())
 sys-apps/portage:epydoc - Build html API documentation with epydoc.
 sys-apps/portage:ipc - Use inter-process communication between portage and running ebuilds.
-sys-apps/portage:less - Pull in sys-apps/less as default pager for etc-update.
 sys-apps/portage:pypy - Use pypy as Python interpreter.
 sys-apps/portage:pypy2_0 - Use pypy-c2.0 as Python interpreter.
 sys-apps/portage:python2 - Use python2 as Python interpreter.
@@ -6671,8 +6674,9 @@ sys-apps/s390-tools:zfcpdump - build the kernel disk dumping utility
 sys-apps/shadow:audit - Enable support for sys-process/audit
 sys-apps/smartmontools:minimal - Do not install the monitoring daemon and associated scripts.
 sys-apps/superiotool:pci - Support for PCI-attached "Super I/Os" (e.g. in VIA VT82686A/B).
+sys-apps/systemd:apparmor - Enable AppArmor support
 sys-apps/systemd:audit - Enable support for sys-process/audit
-sys-apps/systemd:cryptsetup - Use libcryptsetup
+sys-apps/systemd:cryptsetup - Enable cryptsetup tools (includes unit generator for crypttab)
 sys-apps/systemd:elfutils - Enable coredump stacktraces in the journal
 sys-apps/systemd:firmware-loader - Enable user-space firmware loader (for kernels prior to 3.8)
 sys-apps/systemd:gcrypt - Enable sealing of journal files using gcrypt
@@ -6904,6 +6908,7 @@ sys-devel/gcc:objc - Build support for the Objective C code language
 sys-devel/gcc:objc++ - Build support for the Objective C++ language
 sys-devel/gcc:objc-gc - Build support for the Objective C code language Garbage Collector
 sys-devel/gcc:regression-test - Run the testsuite and install the results (requires FEATURES=test)
+sys-devel/gcc:sanitize - Build support various sanitizer functions (ASAN/TSAN/etc...)
 sys-devel/gcc-apple:multislot - Allow for SLOTs to include minor version (3.3.4 instead of just 3.3)
 sys-devel/gcc-apple:objc - Build support for the Objective C code language
 sys-devel/gcc-apple:objc++ - Build support for the Objective C++ language

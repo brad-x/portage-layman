@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea/icedtea-7.2.4.8.ebuild,v 1.1 2014/10/06 06:44:54 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea/icedtea-7.2.4.8.ebuild,v 1.2 2014/10/19 06:46:41 caster Exp $
 # Build written by Andrew John Hughes (gnu_andrew@member.fsf.org)
 
 # *********************************************************
@@ -9,7 +9,7 @@
 
 EAPI="5"
 
-inherit java-pkg-2 java-vm-2 pax-utils prefix versionator virtualx
+inherit check-reqs java-pkg-2 java-vm-2 multiprocessing pax-utils prefix versionator virtualx
 
 ICEDTEA_VER=$(get_version_component_range 2-)
 ICEDTEA_BRANCH=$(get_version_component_range 2-3)
@@ -160,7 +160,25 @@ PDEPEND="webstart? ( || (
 
 S="${WORKDIR}"/${ICEDTEA_PKG}
 
+icedtea_check_requirements() {
+	local CHECKREQS_DISK_BUILD
+
+	if use doc; then
+		CHECKREQS_DISK_BUILD="9000M"
+	else
+		CHECKREQS_DISK_BUILD="8500M"
+	fi
+
+	check-reqs_pkg_${EBUILD_PHASE}
+}
+
+pkg_pretend() {
+	icedtea_check_requirements
+}
+
 pkg_setup() {
+	icedtea_check_requirements
+
 	JAVA_PKG_WANT_BUILD_VM="
 		icedtea-7 icedtea-bin-7 icedtea7
 		icedtea-6 icedtea-bin-6 icedtea6 icedtea6-bin
@@ -185,7 +203,7 @@ java_prepare() {
 }
 
 src_configure() {
-	local config bootstrap use_zero zero_config
+	local bootstrap cacao_config config use_cacao use_zero zero_config
 	local vm=$(java-pkg_get-current-vm)
 
 	# Whether to bootstrap
@@ -199,52 +217,47 @@ src_configure() {
 		use jbootstrap || einfo "bootstrap is necessary when building with ${vm}, ignoring USE=\"-jbootstrap\""
 		bootstrap="enable"
 		local ecj_jar="$(readlink "${EPREFIX}"/usr/share/eclipse-ecj/ecj.jar)"
-		config="${config} --with-ecj-jar=${ecj_jar}"
+		config+=" --with-ecj-jar=${ecj_jar}"
 	fi
 
-	config="${config} --${bootstrap}-bootstrap"
+	config+=" --${bootstrap}-bootstrap"
 
 	# Use Zero if requested
 	if use zero; then
-		use_zero="yes";
+		use_zero="yes"
 	fi
 
 	# Use CACAO if requested
 	if use cacao; then
-		use_cacao="yes";
+		use_cacao="yes"
 	fi
 
 	# Always use HotSpot as the primary VM if available. #389521 #368669 #357633 ...
 	# Otherwise use CACAO
 	if ! has "${ARCH}" amd64 sparc x86 ; then
 		if has "${ARCH}" ppc ppc64 arm ; then
-			use_cacao="yes";
+			use_cacao="yes"
 		else
-			use_zero="yes";
+			use_zero="yes"
 		fi
 	fi
 
 	# Turn on CACAO if needed (non-HS archs) or requested
 	if test "x${use_cacao}" = "xyes"; then
-		cacao_config="--enable-cacao";
+		cacao_config="--enable-cacao"
 	fi
 
 	# Turn on Zero if needed (non-HS/CACAO archs) or requested
 	if test "x${use_zero}" = "xyes"; then
-		zero_config="--enable-zero";
+		zero_config="--enable-zero"
 	fi
 
-	# OpenJDK-specific parallelism support. Bug #389791, #337827
-	# Implementation modified from waf-utils.eclass
-	# Note that "-j" is converted to "-j1" as the system doesn't support --load-average
-	local procs=$(echo -j1 ${MAKEOPTS} | sed -r "s/.*(-j\s*|--jobs=)([0-9]+).*/\2/" )
-	config="${config} --with-parallel-jobs=${procs}";
-	einfo "Configuring using --with-parallel-jobs=${procs}"
+	config+=" --with-parallel-jobs=$(makeopts_jobs)"
 
 	if use javascript ; then
-		config="${config} --with-rhino=$(java-pkg_getjar rhino-1.6 js.jar)"
+		config+=" --with-rhino=$(java-pkg_getjar rhino-1.6 js.jar)"
 	else
-		config="${config} --without-rhino"
+		config+=" --without-rhino"
 	fi
 
 	unset JAVA_HOME JDK_HOME CLASSPATH JAVAC JAVACFLAGS
@@ -320,11 +333,11 @@ src_install() {
 
 	if use doc; then
 		# java-pkg_dohtml needed for package-list #302654
-		java-pkg_dohtml -r ../docs/* || die
+		java-pkg_dohtml -A dtd -r ../docs/* || die
 	fi
 
 	if use examples; then
-		dodir "${dest}/share";
+		dodir "${dest}/share"
 		cp -vRP demo sample "${ddest}/share/" || die
 	fi
 

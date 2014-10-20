@@ -1,17 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot-slave/buildbot-slave-9999.ebuild,v 1.1 2013/09/11 20:22:04 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot-slave/buildbot-slave-9999.ebuild,v 1.2 2014/10/18 15:19:20 hwoarang Exp $
 
 EAPI="5"
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
-DISTUTILS_SRC_TEST="trial buildslave"
-DISTUTILS_DISABLE_TEST_DEPENDENCY="1"
+PYTHON_COMPAT=( python2_7 )
 EGIT_REPO_URI="https://github.com/buildbot/buildbot.git"
 
 [[ ${PV} = 9999 ]] && inherit git-2
-inherit distutils readme.gentoo user
+inherit distutils-r1 readme.gentoo user
 
 DESCRIPTION="BuildBot Slave Daemon"
 HOMEPAGE="http://trac.buildbot.net/ http://code.google.com/p/buildbot/ http://pypi.python.org/pypi/buildbot-slave"
@@ -29,19 +25,16 @@ else
 fi
 IUSE="test"
 
-RDEPEND="dev-python/setuptools
-	dev-python/twisted-core
-	!!<dev-util/buildbot-0.8.1
-	!<dev-util/buildbot-0.8.3"
+RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/twisted-core[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
-	test? ( dev-python/mock )"
+	test? ( dev-python/mock[${PYTHON_USEDEP}] )"
 
 PYTHON_MODNAME="buildslave"
 
 S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
-	python_pkg_setup
 	enewuser buildbot
 
 	DOC_CONTENTS="The \"buildbot\" user and the \"buildslave\" init script has been added
@@ -55,12 +48,12 @@ pkg_setup() {
 
 src_compile() {
 	[[ ${PV} = 9999 ]] && cd slave/
-	distutils_src_compile
+	distutils-r1_src_compile
 }
 
 src_install() {
 	[[ ${PV} = 9999 ]] && cd slave/
-	distutils_src_install
+	distutils-r1_src_install
 
 	doman docs/buildslave.1
 
@@ -72,6 +65,5 @@ src_install() {
 
 pkg_postinst() {
 	[[ ${PV} = 9999 ]] && cd slave/
-	distutils_pkg_postinst
 	readme.gentoo_print_elog
 }
