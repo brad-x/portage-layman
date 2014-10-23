@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.3_p30.ebuild,v 1.1 2014/10/06 06:32:08 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.3_p30.ebuild,v 1.3 2014/10/20 05:14:35 vapier Exp $
 
 EAPI="4"
 
@@ -38,7 +38,7 @@ SRC_URI="mirror://gnu/bash/${MY_P}.tar.gz $(patches)"
 
 LICENSE="GPL-3"
 SLOT="0"
-#KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="afs bashlogger examples mem-scramble +net nls plugins +readline vanilla"
 
 DEPEND=">=sys-libs/ncurses-5.2-r2
@@ -204,7 +204,7 @@ src_install() {
 	fi
 
 	if use examples ; then
-		for d in examples/{functions,misc,scripts,scripts.noah,scripts.v2} ; do
+		for d in examples/{functions,misc,scripts,startup-files} ; do
 			exeinto /usr/share/doc/${PF}/${d}
 			insinto /usr/share/doc/${PF}/${d}
 			for f in ${d}/* ; do

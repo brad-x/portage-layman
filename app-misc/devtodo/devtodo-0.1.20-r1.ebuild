@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/devtodo/devtodo-0.1.20-r1.ebuild,v 1.11 2014/03/19 16:12:52 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/devtodo/devtodo-0.1.20-r1.ebuild,v 1.12 2014/10/22 07:27:04 jlec Exp $
 
 EAPI="5"
 
@@ -56,6 +56,8 @@ src_install() {
 
 	newbashcomp contrib/${PN}.bash-completion ${PN}
 	rm contrib/${PN}.bash-completion || die 'rm failed'
+
+	bashcomp_alias devtodo tda tdd tde tdr todo
 
 	dodoc -r contrib
 }

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/perl-5.18.2-r1.ebuild,v 1.10 2014/09/23 09:56:39 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/perl/perl-5.18.2-r1.ebuild,v 1.12 2014/10/21 21:23:09 dilfridge Exp $
 
 EAPI=5
 
