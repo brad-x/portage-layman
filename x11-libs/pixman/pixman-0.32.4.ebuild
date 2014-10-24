@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/pixman/pixman-0.32.4.ebuild,v 1.11 2013/12/26 20:17:27 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/pixman/pixman-0.32.4.ebuild,v 1.12 2014/10/22 17:15:49 chithanh Exp $
 
 EAPI=5
 XORG_MULTILIB=yes

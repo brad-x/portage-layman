@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/scientificpython/scientificpython-2.9.3.ebuild,v 1.1 2014/03/13 14:58:03 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/scientificpython/scientificpython-2.9.3.ebuild,v 1.2 2014/10/24 09:52:20 jlec Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc mpi test"
 
 RDEPEND="
-	dev-python/numpy[${PYTHON_USEDEP}]
+	<dev-python/numpy-1.9[${PYTHON_USEDEP}]
 	dev-python/pyro:3[${PYTHON_USEDEP}]
 	sci-libs/netcdf
 	mpi? ( virtual/mpi )"

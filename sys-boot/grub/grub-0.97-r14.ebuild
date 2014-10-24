@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-0.97-r14.ebuild,v 1.2 2014/10/20 17:29:22 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-0.97-r14.ebuild,v 1.4 2014/10/22 21:28:39 axs Exp $
 
 # XXX: we need to review menu.lst vs grub.conf handling.  We've been converting
 #      all systems to grub.conf (and symlinking menu.lst to grub.conf), but
@@ -44,6 +44,18 @@ RDEPEND="!static? ( ${LIB_DEPEND//\[static-libs(+)\]/} )"
 DEPEND="${RDEPEND}
 	static? ( ${LIB_DEPEND} )"
 
+pkg_pretend() {
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		# Bugs 526348 , 466536
+		if ! test-flags-CC -fuse-ld=bfd &>/dev/null &&
+			$(tc-getLD) --version | grep -q "GNU gold"; then
+			eerror "GRUB does not function correctly when built with the gold linker."
+			eerror "Please select the bfd linker with binutils-config."
+			die "GNU gold detected"
+		fi
+	fi
+}
+
 pkg_setup() {
 	case $(tc-arch) in
 	amd64) CONFIG_CHECK='~IA32_EMULATION' check_extra_config ;;
@@ -73,13 +85,7 @@ src_prepare() {
 		|| die
 
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}"/patch
-
 	rm -f "${S}"/aclocal.m4 # seems to keep bug 418287 away
-	# Force ld.bfd via configure.ac so as to not mess up the CFLAGS stuff in src_configure()
-	# Note: NOT adding this to the patchset because it's a hack that I don't like.
-	# bug 466536
-	epatch "${FILESDIR}"/${P}-force-ld.bfd.patch
-
 	eautoreconf
 }
 
@@ -103,6 +109,9 @@ src_configure() {
 	# STAGE2_CFLAGS is not allowed to be used on emake command-line, it overwrites
 	# -fno-stack-protector detected by configure, removed from netboot's emake.
 	use custom-cflags || unset CFLAGS
+
+	# Force ld.bfd if we can set it, bug 466536
+	append-ldflags $(test-flags-CC -fuse-ld=bfd)
 
 	export grub_cv_prog_objcopy_absolute=yes #79734
 	use static && append-ldflags -static

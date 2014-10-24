@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ardour-9999.ebuild,v 1.9 2014/10/11 13:02:51 nativemad Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ardour-9999.ebuild,v 1.10 2014/10/23 18:13:02 nativemad Exp $
 
 EAPI=4
 inherit eutils toolchain-funcs flag-o-matic waf-utils
@@ -68,6 +68,13 @@ DEPEND="${RDEPEND}
 		DEPEND="${DEPEND}"
 	fi
 
+pkg_pretend() {
+	MARCH=$(get-flag march)
+	if ! gcc -march=${MARCH} -Q --help=target | grep "msse" | grep "enabled" >/dev/null; then
+		die "Ardour fails to build with an march that is not sse capable!"
+	fi
+}
+
 src_unpack() {
 	if [ ${PV} = 9999 ]; then
 		git-2_src_unpack
@@ -78,7 +85,7 @@ src_unpack() {
 
 src_prepare(){
 	if ! [ ${PV} = 9999 ]; then
-		PVTEMP=`echo "${PV}" | sed "s/\./-/2"`
+		PVTEMP=$(echo "${PV}" | sed "s/\./-/2")
 		sed -e '/cmd = "git describe HEAD/,/utf-8/{s:cmd = \"git describe HEAD\":rev = \"'${PVTEMP}-gentoo'\":p;d}' -i "${S}"/wscript
 		sed -e 's/'os.getcwd\(\),\ \'.git'/'os.getcwd\(\),\ \'libs/'' -i "${S}"/wscript
 		sed -e 's/'os.path.exists\(\'.git'/'os.path.exists\(\'wscript/'' -i "${S}"/wscript
