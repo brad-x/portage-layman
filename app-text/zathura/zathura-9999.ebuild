@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/zathura/zathura-9999.ebuild,v 1.6 2014/07/13 16:25:58 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/zathura/zathura-9999.ebuild,v 1.7 2014/10/24 17:58:58 ssuominen Exp $
 
 EAPI=5
 
@@ -24,7 +24,7 @@ KEYWORDS=""
 fi
 IUSE="+magic sqlite test"
 
-RDEPEND=">=dev-libs/girara-0.2.2:3=
+RDEPEND=">=dev-libs/girara-0.2.3:3=
 	>=dev-libs/glib-2.28:2=
 	x11-libs/cairo:=
 	>=x11-libs/gtk+-3.2:3
@@ -36,7 +36,9 @@ DEPEND="${RDEPEND}
 	test? ( dev-libs/check )"
 
 pkg_setup() {
+	# TODO: Create ebuild for synctex and pass WITH_SYSTEM_SYNCTEX=1
 	myzathuraconf=(
+		WITH_SYSTEM_SYNCTEX=0
 		WITH_MAGIC=$(usex magic 1 0)
 		WITH_SQLITE=$(usex sqlite 1 0)
 		PREFIX="${EPREFIX}"/usr

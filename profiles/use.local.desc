@@ -362,6 +362,7 @@ app-crypt/johntheripper:mozilla - Support mozilla password cracking
 app-crypt/johntheripper:opencl - Enable opencl support for speeding up cracking on capable devices
 app-crypt/kstart:afs - Enables afs support which means you can acquire an afs token and set PAGs. It's recommended to set this USE if you need authenticated access to an AFS cell for your daemon/app.
 app-crypt/libsecret:vala - Enable bindings for dev-lang/vala
+app-crypt/libu2f-host:systemd - Use user ACLs rather than plugdev group to give user access to the HIDRAW device.
 app-crypt/mit-krb5:doc - Creates and installs the API and implementation documentation. This is only useful if you want to develop software which depends on kerberos.
 app-crypt/mit-krb5:keyutils - Enable for the keyring ccache using keyutils.
 app-crypt/mit-krb5:openldap - Enable support for ldap as a database backend.
@@ -3081,6 +3082,7 @@ kde-base/kwin:gles - Enable support for GLES.
 kde-base/libplasmaclock:kdepim - KDE PIM integration via kde-base/kdepimlibs
 kde-base/lokalize:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-base/marble:designer-plugin - Enable designer plugin
+kde-base/marble:phonon - Enable sound support via media-libs/phonon
 kde-base/marble:shapefile - Enable support for ESRI shapefiles
 kde-base/marble:zip - Enable support for reading and displaying .kmz files
 kde-base/nepomuk-core:epub - Adds support for reading EPUB ebook metadata
@@ -3134,6 +3136,7 @@ kde-base/smokeqt:qthelp - Compile bindings for QtHelp from dev-qt/qthelp.
 kde-base/smokeqt:qwt - Compile bindings for x11-libs/qwt.
 kde-base/smokeqt:webkit - Compile bindings for dev-qt/qtwebkit.
 kde-base/step:qalculate - Enable the libqalculate library for unit conversion
+kde-base/systemsettings:kscreen - Use kde-misc/kscreen for screen management
 kde-base/systemsettings:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-frameworks/kdesignerplugin:designer - Build KF5 widgets plugin for QtDesigner
 kde-frameworks/kdesignerplugin:webkit - Build kdewebkit plugin for QtDesigner
@@ -5028,6 +5031,7 @@ net-im/kadu:speech - Enables speech module
 net-im/kmess:konqueror - Enable integration with konqueror
 net-im/kmess:libnotify - Enable desktop notifications using the knotify library
 net-im/ktp-accounts-kcm:modemmanager - Enable support for mobile broadband devices
+net-im/ktp-common-internals:otr - Enable support for encrypted conversations using Off-The-Records messaging
 net-im/licq:aosd - Build the advanced on screen display plugin.
 net-im/mcabber:aspell - Adds support for app-text/aspell spell checker.
 net-im/mcabber:otr - Enable encrypted conversations using Off-The-Records messaging
@@ -5803,6 +5807,7 @@ net-misc/tinc:gui - Add GUI support, using dev-python/wxpython
 net-misc/tinc:openssl - Using dev-libs/openssl for cryptography-related functions
 net-misc/tinc:uml - Enable support for User Mode Linux Sockets
 net-misc/tinc:vde - Enable Virtual Distributed Ethernet (VDE) based networking
+net-misc/tlsdate:seccomp - Use seccomp syscall filters to improve security
 net-misc/tor:bufferevents - Use libevent's buffered IO implementation (unstable, buggy)
 net-misc/tor:ecc - Enable Elliptical Curve Cyptography
 net-misc/tor:nat-pmp - Enable NAT Port Mapping Protocol
@@ -5845,6 +5850,7 @@ net-nds/gosa-core:samba - Manage samba accounts with gosa.
 net-nds/ldapvi:gnutls - Use net-libs/gnutls instead of dev-libs/openssl
 net-nds/nsscache:nsscache - Depend on sys-auth/libnss-cache to handle flat files
 net-nds/nsscache:nssdb - Depend on sys-libs/libnss_db to handle dbm files.
+net-nds/openldap:bindist - Make the built binaries safe for redistribution: Disables use of Berkeley DB 6
 net-nds/openldap:experimental - Enable experimental backend options
 net-nds/openldap:minimal - Build libraries & userspace tools only. Does not install any server code.
 net-nds/openldap:odbc - Enable ODBC and SQL backend options
@@ -6508,10 +6514,6 @@ sci-physics/geant:vrml - Enable output of geant4 in vrml formats
 sci-physics/hepmc:cm - Build with cm instead of default mm for length units
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
 sci-physics/lammps:lammps-memalign - Enables the use of the posix_memalign() call instead of malloc() when large chunks or memory are allocated by LAMMPS
-sci-physics/lammps:lammps-package-dipole - point dipole particles
-sci-physics/lammps:lammps-package-meam - modified EAM potential
-sci-physics/lammps:lammps-package-reax - ReaxFF potential
-sci-physics/lammps:lammps-package-rigid - rigid bodies
 sci-physics/lammps:lammps-package-voronoi - Voronoi tesselations
 sci-physics/lammps:package-dipole - point dipole particles
 sci-physics/lammps:package-meam - modified EAM potential

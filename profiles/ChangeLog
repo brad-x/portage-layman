@@ -1,10 +1,66 @@
 # ChangeLog for profile directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9478 2014/10/23 15:09:41 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9495 2014/10/27 10:38:13 kensington Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  27 Oct 2014; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Unmask kde-frameworks/kf-env which was accidentally masked - it has no deps.
+
+  26 Oct 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.mask:
+  Move xinit mask to base/ in order to be able to properly unmask in systemd
+  target.
+
+  26 Oct 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  targets/systemd/package.mask:
+  Unmask x11-apps/xinit-1.3.4 in systemd profiles
+
+  26 Oct 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.mask:
+  Mask >=x11-apps/xinit-1.3.4 due to startx breakage, bugs #526762 and #526802.
+
+  26 Oct 2014; Mart Raudsepp <leio@gentoo.org> package.mask:
+  Unmask clutter-gst:1.0 as dependency of pinpoint (#526868)
+
+  25 Oct 2014; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Unmask pinpoint (#508854#c58 by Ferenc Erki)
+
+  25 Oct 2014; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Mask net-print/foomatic-filters-ppds
+
+  25 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Unleash new bash-completion on ~arch so that users do not get bored.
+
+  25 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask sys-kernel/genkernel-next for bashcomp update, and use >= atoms for all
+  packages.
+
+  25 Oct 2014; Tim Harder <radhermit@gentoo.org> package.mask:
+  Mask dev-util/cmockery for removal.
+
+  25 Oct 2014; Tim Harder <radhermit@gentoo.org> package.mask:
+  Mask dev-python/pry for removal.
+
+  24 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask new sys-apps/pacman for bashcomp collision.
+
+  24 Oct 2014; Ian Stakenvicius <axs@gentoo.org> package.mask:
+  Added =app-text/calibre-2* to the QT5 mask list
+
+  24 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Mask dev-perl/DateTime-Format-DateManip for removal
+
+  24 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Mask dev-perl/SVN-Mirror for removal
+
+  24 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask bashcomp update of app-misc/booh.
+
+  24 Oct 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask bashcomp update of app-i18n/pology.
 
   23 Oct 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   package.mask:

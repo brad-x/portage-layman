@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.138 2014/08/22 20:17:35 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.139 2014/10/26 22:31:52 williamh Exp $
 
 EAPI=5
 
@@ -291,12 +291,14 @@ pkg_postinst() {
 		ewarn "Or, you have the option of emerging openrc with the newnet"
 		ewarn "use flag and configuring /etc/conf.d/network and"
 		ewarn "/etc/conf.d/staticroute if you only use static interfaces."
+		ewarn
 	fi
 
 	if use newnet && [ ! -e "${EROOT}"etc/runlevels/boot/network ]; then
 		ewarn "Please add the network service to your boot runlevel"
 		ewarn "as soon as possible. Not doing so could leave you with a system"
 		ewarn "without networking."
+		ewarn
 	fi
 
 	ewarn "In this version of OpenRC, the loopback interface no longer"
@@ -308,12 +310,15 @@ pkg_postinst() {
 	ewarn "need net be dropped from the dependencies."
 	ewarn "The bug you file should block the following tracker:"
 	ewarn "https://bugs.gentoo.org/show_bug.cgi?id=439092"
+	ewarn
 
-	ewarn "This version of OpenRC doesn't enable nfs mounts automatically any"
-	ewarn "longer. In order to mount nfs file systems, you must use the"
-	ewarn "nfsmount service from the nfs-utils package."
-	ewarn "See bug https://bugs.gentoo.org/show_bug.cgi?id=427996 for"
-	ewarn "more information on this."
+	# Updated for 0.13.2.
+	ewarn "Bug https://bugs.gentoo.org/show_bug.cgi?id=427996 was not"
+	ewarn "fixed correctly in earlier versions of OpenRC."
+	ewarn "The correct fix is implemented in this version, but that"
+	ewarn "means netmount needs to be added to the default runlevel if"
+	ewarn "you are using nfs file systems."
+	ewarn
 
 	elog "You should now update all files in /etc, using etc-update"
 	elog "or equivalent before restarting any services or this host."

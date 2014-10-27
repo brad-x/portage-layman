@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16108 2014/10/23 15:09:04 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16124 2014/10/27 10:38:13 kensington Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,34 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Manuel Rüger <mrueg@gentoo.org> (25 Oct 2014)
+# Deprecated by upstream, Debian removed it in 2010.
+# Contents of this package moved to foomatic-db{,-engine,-ppds}
+# and cups-filters.
+# Masking for removal in 30 days.
+net-print/foomatic-filters-ppds
+
+# Tim Harder <radhermit@gentoo.org> (25 Oct 2014)
+# Deprecated project, development continues in dev-util/cmocka.
+# Masked for removal in 30 days.
+dev-util/cmockery
+
+# Tim Harder <radhermit@gentoo.org> (25 Oct 2014)
+# Upstream migrated to nose for testing instead of their own framework.
+# Masked for removal in 30 days.
+dev-python/pry
+
+# Andreas K. Huettel <dilfridge@gentoo.org> (24 Oct 2014)
+# Fails tests (bug 421797), no reverse deps in tree, VERY dead
+# upstream, last release 10 years ago. Masked for removal in 30 days.
+dev-perl/DateTime-Format-DateManip
+
+# Andreas K. Huettel <dilfridge@gentoo.org> (24 Oct 2014)
+# Fails tests (bug 277407), no reverse deps in tree, no releases
+# since many years, unlikely to work with uptodate subversion
+# Masked for removal in 30 days
+dev-perl/SVN-Mirror
 
 # Davide Pesavento <pesa@gentoo.org> (20 Oct 2014)
 # Does not build with any in-tree version of cmake since 20140713 (bug 506614).
@@ -180,8 +208,7 @@ gnome-extra/tasks
 <gnome-extra/zenity-3.8
 <media-gfx/eog-3.10
 media-gfx/shared-color-profiles
-app-office/pinpoint
-<media-libs/clutter-gst-2.0.10
+#<media-libs/clutter-gst-2.0.10
 net-libs/gupnp-vala
 <media-libs/gupnp-dlna-0.10.2
 media-libs/swfdec
@@ -437,7 +464,6 @@ kde-frameworks/kdewebkit
 kde-frameworks/kdnssd
 kde-frameworks/kdoctools
 kde-frameworks/kemoticons
-kde-frameworks/kf-env
 kde-frameworks/kglobalaccel
 kde-frameworks/kguiaddons
 kde-frameworks/khtml
@@ -474,6 +500,7 @@ kde-frameworks/solid
 kde-frameworks/sonnet
 kde-frameworks/threadweaver
 www-client/otter
+=app-text/calibre-2*
 
 # Sergey Popov <pinkbyte@gentoo.org> (04 Sep 2014)
 # Security mask, wrt bugs #488212, #498164, #500260,
@@ -510,19 +537,6 @@ app-admin/hwreport
 # If your application is broken due to this mask,
 # please file a separate bug report
 <net-dialup/ppp-2.4.7
-
-# Michał Górny <mgorny@gentoo.org> (27 Aug 2014)
-# Work-in-progress. Mask for some more testing and documentation,
-# a news item and till at least some of the blockers are fixed.
-# Bug #521146 for a tracker.
-#
-# Mask also all relevant packages and revbumps, to avoid premature
-# upgrade and rebuilds for users. In some cases, the upgrade would
-# require users to re-enable some of the completions, so it's better to
-# do that along with bash-completion upgrade.
->=app-shells/bash-completion-2.1-r90
->=app-shells/gentoo-bashcomp-20140911
-=dev-vcs/subversion-1.8.10-r1
 
 # Sergey Popov <pinkbyte@gentoo.org> (27 Aug 2014)
 # Does not work since late 2013, due to update servers shutdown
