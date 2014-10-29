@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-9999.ebuild,v 1.16 2014/05/02 10:30:31 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-9999.ebuild,v 1.18 2014/10/28 01:01:00 vapier Exp $
 
 EAPI="4"
 
@@ -49,11 +49,10 @@ src_unpack() {
 src_prepare() {
 	use vanilla && return 0
 
-	cd libltdl/m4
-	epatch "${FILESDIR}"/1.5.20/${PN}-1.5.20-use-linux-version-in-fbsd.patch #109105
-	cd ..
+	epatch "${FILESDIR}"/${PN}-2.4.3-use-linux-version-in-fbsd.patch #109105
+	pushd libltdl >/dev/null
 	AT_NOELIBTOOLIZE=yes eautoreconf
-	cd ..
+	popd >/dev/null
 	AT_NOELIBTOOLIZE=yes eautoreconf
 	epunt_cxx
 }
@@ -82,7 +81,7 @@ multilib_src_install_all() {
 
 	local x
 	for x in $(find "${D}" -name config.guess -o -name config.sub) ; do
-		ln -sf /usr/share/gnuconfig/${x##*/} "${x}"
+		ln -sf /usr/share/gnuconfig/${x##*/} "${x}" || die
 	done
 }
 

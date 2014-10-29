@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.321 2014/10/15 16:30:03 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.322 2014/10/29 04:59:18 ssuominen Exp $
 
 EAPI=5
 
@@ -189,10 +189,10 @@ multilib_src_configure() {
 		--disable-gnutls
 		--disable-libcurl
 		--disable-libidn
-		--disable-readahead
 		--disable-quotacheck
 		--disable-logind
 		--disable-polkit
+		--disable-terminal
 		--disable-myhostname
 		$(use_enable gudev)
 		$(multilib_is_native_abi || echo "--disable-manpages")

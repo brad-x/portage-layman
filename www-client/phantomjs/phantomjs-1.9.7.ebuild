@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/phantomjs/phantomjs-1.9.7.ebuild,v 1.2 2014/03/04 21:39:14 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/phantomjs/phantomjs-1.9.7.ebuild,v 1.3 2014/10/29 08:28:10 graaff Exp $
 
 EAPI=5
 
@@ -18,7 +18,9 @@ IUSE="examples"
 RDEPEND="dev-libs/icu:=
 	dev-libs/openssl
 	media-libs/fontconfig
-	media-libs/freetype"
+	media-libs/freetype
+	media-libs/gstreamer:0.10
+	media-libs/gst-plugins-base:0.10"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	virtual/pkgconfig"
