@@ -1,6 +1,30 @@
 # ChangeLog for sys-apps/kmod
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/ChangeLog,v 1.171 2014/10/03 06:32:51 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/ChangeLog,v 1.176 2014/10/30 09:20:41 ssuominen Exp $
+
+  30 Oct 2014; Samuli Suominen <ssuominen@gentoo.org> kmod-18-r1.ebuild:
+  Relax systemd blockers since the severity of impact is, at most, normal, not
+  major.
+
+  30 Oct 2014; Samuli Suominen <ssuominen@gentoo.org> kmod-18-r2.ebuild,
+  kmod-9999.ebuild:
+  Block OpenRC below 0.13 because of the "!c" directive that was introduced
+  by 686ee62a79e12ad73581ef4e151baad21b624935. Thanks to floppym for
+  information.
+
+  30 Oct 2014; Samuli Suominen <ssuominen@gentoo.org> kmod-18-r1.ebuild,
+  kmod-18-r2.ebuild, kmod-9999.ebuild:
+  Adjusting blockers again and dropping udev and eudev references because it's
+  the tmpfiles generator in systemd that's affected. Thanks to floppym for
+  information.
+
+*kmod-18-r2 (30 Oct 2014)
+
+  30 Oct 2014; Samuli Suominen <ssuominen@gentoo.org>
+  +files/kmod-18-static-nodes-indicate-that-creation-of-static-nodes-.patch,
+  +kmod-18-r2.ebuild, kmod-18-r1.ebuild, kmod-9999.ebuild:
+  Include upstream patch for udev-217 compability and adjust blockers
+  accordingly.
 
   03 Oct 2014; Raúl Porcel <armin76@gentoo.org> kmod-18-r1.ebuild:
   m68k/s390/sh stable

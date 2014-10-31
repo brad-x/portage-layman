@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-18-r1.ebuild,v 1.12 2014/10/03 06:32:51 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-18-r1.ebuild,v 1.15 2014/10/30 09:20:41 ssuominen Exp $
 
 EAPI=5
 
@@ -30,6 +30,7 @@ IUSE="debug doc lzma python static-libs +tools zlib"
 # See bug #408915.
 RESTRICT="test"
 
+# Block systemd above and including 217 for -static-nodes-indicate-that-creation-of-static-nodes-.patch
 RDEPEND="!sys-apps/module-init-tools
 	!sys-apps/modutils
 	!<sys-apps/openrc-0.12
