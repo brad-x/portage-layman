@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.10.ebuild,v 1.6 2014/10/29 15:03:26 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.10.ebuild,v 1.8 2014/10/30 20:48:35 polynomial-c Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~ppc ~ppc64 sparc x86 ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="alpha amd64 arm hppa ~ia64 ~ppc ~ppc64 sparc x86 ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="dbus debug doc eds gadu gnutls +gstreamer +gtk idn meanwhile mxit"
 IUSE+=" networkmanager nls perl silc tcl tk spell sasl ncurses"
 IUSE+=" groupwise prediction python +xscreensaver zephyr zeroconf" # mono"
@@ -139,7 +139,8 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.10.0-gold.patch" \
 		"${WORKDIR}/${PN}-eds-3.6.patch" \
-		"${FILESDIR}/${PN}-2.10.9-fix-gtkmedia.patch"
+		"${FILESDIR}/${PN}-2.10.9-fix-gtkmedia.patch" \
+		"${FILESDIR}/${PN}-2.10.10-eds-3.6-configure.ac.patch"
 	epatch_user
 
 	eautoreconf

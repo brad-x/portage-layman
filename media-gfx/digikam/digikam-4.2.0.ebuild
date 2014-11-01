@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/digikam-4.2.0.ebuild,v 1.1 2014/08/15 18:58:17 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/digikam-4.2.0.ebuild,v 1.3 2014/10/30 20:08:53 dilfridge Exp $
 
 EAPI=5
 
@@ -27,7 +27,7 @@ LICENSE="GPL-2
 	handbook? ( FDL-1.2 )"
 KEYWORDS="~amd64 ~x86"
 SLOT="4"
-IUSE="addressbook debug doc gphoto2 mysql nepomuk themedesigner +thumbnails video"
+IUSE="addressbook debug doc gphoto2 mysql nepomuk test themedesigner +thumbnails video"
 
 CDEPEND="
 	$(add_kdebase_dep kdebase-kioslaves)
@@ -37,7 +37,7 @@ CDEPEND="
 	kde-base/marble:4=[plasma]
 	media-libs/jasper
 	media-libs/lcms:2
-	media-libs/lensfun
+	<media-libs/lensfun-0.3.0
 	>=media-libs/libkface-3.3.0
 	media-libs/libkgeomap
 	media-libs/liblqr
@@ -72,6 +72,7 @@ DEPEND="${CDEPEND}
 	dev-libs/boost
 	sys-devel/gettext
 	doc? ( app-doc/doxygen )
+	test? ( media-libs/opencv )
 "
 
 S="${WORKDIR}/${MY_P}/core"

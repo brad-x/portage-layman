@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/flask-openid/flask-openid-1.2.3.ebuild,v 1.1 2014/10/26 05:18:03 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/flask-openid/flask-openid-1.2.3.ebuild,v 1.2 2014/10/31 04:03:43 idella4 Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -19,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
 
-RDEPEND=">=dev-python/flask-0.3[${PYTHON_USEDEP}]
+RDEPEND="
+	>=dev-python/flask-0.3[${PYTHON_USEDEP}]
 	>=dev-python/python-openid-2.0[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 DEPEND="${RDEPEND}
@@ -35,10 +36,11 @@ python_prepare_all() {
 }
 
 python_compile_all() {
-	use doc && emake -C docs html
+	use doc && esetup.py build_sphinx
 }
 
 python_install_all() {
 	use examples && local EXAMPLES=( example/. )
+	use doc && local HTML_DOCS=( docs/_build/html/. )
 	distutils-r1_python_install_all
 }
