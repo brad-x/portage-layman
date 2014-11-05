@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/dnsmasq-2.72.ebuild,v 1.2 2014/11/01 00:12:22 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/dnsmasq-2.72.ebuild,v 1.5 2014/11/04 09:27:34 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.thekelleys.org.uk/dnsmasq/${P}.tar.xz"
 
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="auth-dns conntrack dbus +dhcp dhcp-tools dnssec idn ipv6 lua nls script selinux static tftp"
 DM_LINGUAS="de es fi fr id it no pl pt_BR ro"
 for dm_lingua in ${DM_LINGUAS}; do
@@ -27,7 +27,7 @@ CDEPEND="dbus? ( sys-apps/dbus )
 		sys-devel/gettext
 		net-dns/libidn
 	)
-	selinux? ( sec-policy/selinux-dnsmasq )"
+"
 
 DEPEND="${CDEPEND}
 	app-arch/xz-utils
@@ -44,7 +44,9 @@ RDEPEND="${CDEPEND}
 		!static? (
 			dev-libs/nettle[gmp]
 		)
-	)"
+	)
+	selinux? ( sec-policy/selinux-dnsmasq )
+"
 
 REQUIRED_USE="dhcp-tools? ( dhcp )
 	lua? ( script )

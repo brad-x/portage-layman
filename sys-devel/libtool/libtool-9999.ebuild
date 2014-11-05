@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-9999.ebuild,v 1.18 2014/10/28 01:01:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-9999.ebuild,v 1.19 2014/11/03 05:32:23 vapier Exp $
 
 EAPI="4"
 
 LIBTOOLIZE="true" #225559
 WANT_LIBTOOL="none"
-inherit eutils autotools multilib unpacker multilib-minimal
+inherit eutils autotools multilib unpacker
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://git.savannah.gnu.org/${PN}.git
@@ -22,17 +22,12 @@ HOMEPAGE="http://www.gnu.org/software/libtool/"
 
 LICENSE="GPL-2"
 SLOT="2"
-IUSE="static-libs test vanilla"
+IUSE="vanilla"
 
 RDEPEND="sys-devel/gnuconfig
-	>=sys-devel/autoconf-2.65
-	>=sys-devel/automake-1.11.1
-	abi_x86_32? (
-		!<=app-emulation/emul-linux-x86-baselibs-20140406-r2
-		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
-	)"
+	>=sys-devel/autoconf-2.69
+	>=sys-devel/automake-1.13"
 DEPEND="${RDEPEND}
-	test? ( !<sys-devel/binutils-2.20 )
 	app-arch/xz-utils"
 [[ ${PV} == "9999" ]] && DEPEND+=" sys-apps/help2man"
 
@@ -57,38 +52,24 @@ src_prepare() {
 	epunt_cxx
 }
 
-multilib_src_configure() {
+src_configure() {
 	# the libtool script uses bash code in it and at configure time, tries
 	# to find a bash shell.  if /bin/sh is bash, it uses that.  this can
 	# cause problems for people who switch /bin/sh on the fly to other
 	# shells, so just force libtool to use /bin/bash all the time.
 	export CONFIG_SHELL=/bin/bash
-	ECONF_SOURCE="${S}" \
-	econf $(use_enable static-libs static)
+	ECONF_SOURCE=${S} econf --disable-ltdl-install
 }
 
-multilib_src_install_all() {
-	dodoc AUTHORS ChangeLog* NEWS README THANKS TODO doc/PLATFORMS
+src_test() {
+	emake check
+}
 
-	# While the libltdl.la file is not used directly, the m4 ltdl logic
-	# keys off of its existence when searching for ltdl support. #293921
-	#use static-libs || find "${D}" -name libltdl.la -delete
-
-	# Building libtool with --disable-static will cause the installed
-	# helper to not build static objects by default.  This is undesirable
-	# for crappy packages that utilize the system libtool, so undo that.
-	sed -i -e '1,/^build_old_libs=/{/^build_old_libs=/{s:=.*:=yes:}}' "${D}"/usr/bin/libtool || die
+src_install() {
+	default
 
 	local x
-	for x in $(find "${D}" -name config.guess -o -name config.sub) ; do
-		ln -sf /usr/share/gnuconfig/${x##*/} "${x}" || die
-	done
-}
-
-pkg_preinst() {
-	preserve_old_lib /usr/$(get_libdir)/libltdl.so.3
-}
-
-pkg_postinst() {
-	preserve_old_lib_notify /usr/$(get_libdir)/libltdl.so.3
+	while read -d $'\0' -r x ; do
+		ln -sf "${EPREFIX}"/usr/share/gnuconfig/${x##*/} "${x}" || die
+	done < <(find "${ED}" '(' -name config.guess -o -name config.sub ')' -print0)
 }

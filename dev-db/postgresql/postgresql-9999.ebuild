@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.2 2014/11/01 11:29:06 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.4 2014/11/04 01:01:12 titanofold Exp $
 
 EAPI="5"
 
@@ -24,7 +24,7 @@ DESCRIPTION="PostgreSQL RDBMS"
 HOMEPAGE="http://www.postgresql.org/"
 
 LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr zh_CN zh_TW"
-IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python +readline selinux server ssl tcl threads uuid xml zlib"
+IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python +readline selinux server ssl static-libs tcl threads uuid xml zlib"
 
 for lingua in ${LINGUAS}; do
 	IUSE+=" linguas_${lingua}"
@@ -40,7 +40,7 @@ wanted_languages() {
 	echo -n ${enable_langs}
 }
 
-RDEPEND="
+CDEPEND="
 >=app-admin/eselect-postgresql-1.2.0
 sys-apps/less
 virtual/libintl
@@ -50,7 +50,6 @@ pam? ( virtual/pam )
 perl? ( >=dev-lang/perl-5.8 )
 python? ( ${PYTHON_DEPS} )
 readline? ( sys-libs/readline )
-selinux? ( sec-policy/selinux-postgresql )
 ssl? ( >=dev-libs/openssl-0.9.6-r1 )
 tcl? ( >=dev-lang/tcl-8 )
 uuid? ( dev-libs/ossp-uuid )
@@ -58,10 +57,7 @@ xml? ( dev-libs/libxml2 dev-libs/libxslt )
 zlib? ( sys-libs/zlib )
 "
 
-DEPEND="${RDEPEND}
-!!dev-db/postgresql-docs:${SLOT}
-!!dev-db/postgresql-base:${SLOT}
-!!dev-db/postgresql-server:${SLOT}
+DEPEND="${CDEPEND}
 !!<sys-apps/sandbox-2.0
 >=dev-lang/perl-5.8
 app-text/docbook-dsssl-stylesheets
@@ -80,6 +76,13 @@ src_unpack() {
 	base_src_unpack
 	git-2_src_unpack
 }
+
+RDEPEND="${CDEPEND}
+!dev-db/postgresql-docs:${SLOT}
+!dev-db/postgresql-base:${SLOT}
+!dev-db/postgresql-server:${SLOT}
+selinux? ( sec-policy/selinux-postgresql )
+"
 
 pkg_setup() {
 	enewgroup postgres 70
@@ -184,6 +187,8 @@ src_install() {
 	echo "postgres_ebuilds=\"\${postgres_ebuilds} ${PF}\"" > \
 		"${ED}/etc/eselect/postgresql/slots/${SLOT}/base"
 
+	use static-libs || find "${ED}" -name '*.a' -delete
+
 	if use doc ; then
 		docinto html
 		dodoc doc/src/sgml/html/*
@@ -218,7 +223,7 @@ pkg_postinst() {
 	if use server ; then
 		elog
 		elog "Gentoo specific documentation:"
-		elog "http://www.gentoo.org/doc/en/postgres-howto.xml"
+		elog "https://wiki.gentoo.org/wiki/PostgreSQL"
 		elog
 		elog "Official documentation:"
 		elog "http://www.postgresql.org/docs/${SLOT}/static/index.html"
@@ -239,7 +244,7 @@ pkg_postinst() {
 pkg_prerm() {
 	if use server && [[ -z ${REPLACED_BY_VERSION} ]] ; then
 		ewarn "Have you dumped and/or migrated the ${SLOT} database cluster?"
-		ewarn "\thttp://www.gentoo.org/doc/en/postgres-howto.xml#doc_chap5"
+		ewarn "\thttps://wiki.gentoo.org/wiki/PostgreSQL#doc_chap5"
 
 		ebegin "Resuming removal in 10 seconds (Control-C to cancel)"
 		sleep 10

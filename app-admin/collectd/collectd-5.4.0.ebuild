@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/collectd/collectd-5.4.0.ebuild,v 1.5 2014/10/09 19:44:34 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/collectd/collectd-5.4.0.ebuild,v 1.7 2014/11/03 11:00:51 titanofold Exp $
 
 EAPI="5"
 
@@ -56,7 +56,6 @@ COMMON_DEPEND="
 	dev-libs/libgcrypt:0
 	sys-devel/libtool
 	perl?					( dev-lang/perl:=[ithreads] )
-	selinux?						( sec-policy/selinux-collectd )
 	collectd_plugins_apache?		( net-misc/curl )
 	collectd_plugins_ascent?		( net-misc/curl dev-libs/libxml2 )
 	collectd_plugins_bind?			( dev-libs/libxml2 )
@@ -82,7 +81,7 @@ COMMON_DEPEND="
 	collectd_plugins_oracle?		( dev-db/oracle-instantclient-basic )
 	collectd_plugins_perl?			( dev-lang/perl:=[ithreads] )
 	collectd_plugins_ping?			( net-libs/liboping )
-	collectd_plugins_postgresql?		( dev-db/postgresql-base )
+	collectd_plugins_postgresql?		( virtual/postgresql )
 	collectd_plugins_python?		( =dev-lang/python-2* )
 	collectd_plugins_routeros?		( net-libs/librouteros )
 	collectd_plugins_rrdcached?		( net-analyzer/rrdtool )
@@ -110,7 +109,8 @@ DEPEND="${COMMON_DEPEND}
 	)"
 
 RDEPEND="${COMMON_DEPEND}
-	collectd_plugins_syslog?		( virtual/logger )"
+	collectd_plugins_syslog?		( virtual/logger )
+	selinux?						( sec-policy/selinux-collectd )"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-4.10.2"-{libocci,nohal}.patch

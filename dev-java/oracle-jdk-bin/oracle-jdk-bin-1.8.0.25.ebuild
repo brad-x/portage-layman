@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jdk-bin/oracle-jdk-bin-1.8.0.25.ebuild,v 1.1 2014/10/21 12:35:39 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jdk-bin/oracle-jdk-bin-1.8.0.25.ebuild,v 1.3 2014/11/02 08:24:30 swift Exp $
 
 EAPI="5"
 
@@ -66,8 +66,7 @@ IUSE="+X alsa aqua derby doc examples +fontconfig jce nsplugin pax_kernel selinu
 RESTRICT="fetch strip"
 QA_PREBUILT="*"
 
-COMMON_DEP="
-	selinux? ( sec-policy/selinux-java )"
+COMMON_DEP=""
 RDEPEND="${COMMON_DEP}
 	X? ( !aqua? (
 		x11-libs/libX11:0
@@ -79,7 +78,8 @@ RDEPEND="${COMMON_DEP}
 	alsa? ( media-libs/alsa-lib:0 )
 	doc? ( dev-java/java-sdk-docs:${SLOT} )
 	fontconfig? ( media-libs/fontconfig:1.0 )
-	!prefix? ( sys-libs/glibc:* )"
+	!prefix? ( sys-libs/glibc:* )
+	selinux? ( sec-policy/selinux-java )"
 # A PaX header isn't created by scanelf, so depend on paxctl to avoid fallback
 # marking. See bug #427642.
 DEPEND="${COMMON_DEP}
@@ -110,6 +110,11 @@ check_tarballs_available() {
 		done
 		einfo "at '${uri}'"
 		einfo "and move them to '${DISTDIR}'"
+		einfo
+		einfo "If the above mentioned urls do not point to the correct version anymore,"
+		einfo "please download the files from Oracle's java download archive:"
+		einfo
+		einfo "   http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html#jdk-${MY_PV}-oth-JPR"
 		einfo
 	fi
 }

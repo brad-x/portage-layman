@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.174 2014/10/31 10:53:44 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.176 2014/11/04 09:48:43 aballier Exp $
 
 EAPI="5"
 
@@ -168,7 +168,7 @@ DEPEND="${RDEPEND}
 	mmx? ( >=dev-lang/yasm-1.2 )
 	rtmp? ( >=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}] )
 	schroedinger? ( >=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}] )
-	test? ( net-misc/wget )
+	test? ( net-misc/wget sys-devel/bc )
 	truetype? ( >=virtual/pkgconfig-0-r1[${MULTILIB_USEDEP}] )
 	v4l? ( sys-kernel/linux-headers )
 "
@@ -289,7 +289,7 @@ multilib_src_configure() {
 	# We need to do this so that features of that CPU will be better used
 	# If they contain an unknown CPU it will not hurt since ffmpeg's configure
 	# will just ignore it.
-	for i in $(get-flag march) $(get-flag mcpu) $(get-flag mtune) ; do
+	for i in $(get-flag mcpu) $(get-flag mtune) $(get-flag march) ; do
 		[[ ${i} = native ]] && i="host" # bug #273421
 		myconf+=( --cpu=${i} )
 		break

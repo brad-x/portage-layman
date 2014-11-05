@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/postfix-2.12_pre20141020.ebuild,v 1.2 2014/10/31 15:49:18 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/postfix-2.12_pre20141020.ebuild,v 1.4 2014/11/03 12:53:10 titanofold Exp $
 
 EAPI=5
 inherit eutils flag-o-matic multilib pam ssl-cert systemd toolchain-funcs user versionator
@@ -32,9 +32,8 @@ DEPEND=">=dev-libs/libpcre-3.4
 	lmdb? ( >=dev-db/lmdb-0.9.11 )
 	mysql? ( virtual/mysql )
 	pam? ( virtual/pam )
-	postgres? ( dev-db/postgresql-base )
+	postgres? ( virtual/postgresql )
 	sasl? (  >=dev-libs/cyrus-sasl-2 )
-	selinux? ( sec-policy/selinux-postfix )
 	sqlite? ( dev-db/sqlite:3 )
 	ssl? ( >=dev-libs/openssl-0.9.6g )"
 
@@ -54,7 +53,8 @@ RDEPEND="${DEPEND}
 	!mail-mta/opensmtpd
 	!<mail-mta/ssmtp-2.64-r2
 	!>=mail-mta/ssmtp-2.64-r2[mta]
-	!net-mail/fastforward"
+	!net-mail/fastforward
+	selinux? ( sec-policy/selinux-postfix )"
 
 # No vda support for postfix-2.12
 REQUIRED_USE="ldap-bind? ( ldap sasl )

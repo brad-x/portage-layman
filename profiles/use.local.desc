@@ -558,6 +558,7 @@ app-emulation/libvirt:uml - Support management of User Mode Linux virtualisation
 app-emulation/libvirt:vepa - Virtual Ethernet Port Aggregator (VEPA) / 802.1Qbg support. Relies on macvtap support.
 app-emulation/libvirt:virt-network - Enable virtual networking (NAT) support for guests. Includes all the dependencies for NATed network mode. Effectively any network setup that relies on libvirt to setup and configure network interfaces on your host. This can include bridged and routed networks ONLY if you are allowing libvirt to create and manage the underlying devices for you. In some cases this requires enabling the 'netcf' USE flag (currently unavailable).
 app-emulation/libvirt:virtualbox - Support management of VirtualBox virtualisation (one of app-emulation/virtualbox or app-emulation/virtualbox-ose)
+app-emulation/libvirt:wireshark-plugins - Build the net-analyzer/wireshark plugin for the Libvirt RPC protocol
 app-emulation/libvirt:xen - Support management of Xen virtualisation (app-emulation/xen)
 app-emulation/libvirt-glib:introspection - Use dev-libs/gobject-introspection for introspection
 app-emulation/libvirt-glib:vala - Enable bindings for dev-lang/vala
@@ -616,8 +617,6 @@ app-emulation/vice:memmap - Enable extra monitor features
 app-emulation/vice:xrandr - Enable support for the X xrandr extension
 app-emulation/virt-manager:policykit - Enables sys-auth/polkit authentication support, required when using app-emulation/libvirt with PolicyKit authentication
 app-emulation/virt-manager:sasl - Depend on the proper libraries needed to connect to SASL-enabled libvirtd instances (e.g. Kerberos-protected instances).
-app-emulation/virt-manager:spice - Support connecting to SPICE-enabled virtual machines.
-app-emulation/virt-manager:vnc - Support connecting to VNC-enabled virtual machines.
 app-emulation/virt-viewer:spice - Support connecting to SPICE-enabled virtual machines.
 app-emulation/virt-viewer:vnc - Support connecting to VNC-enabled virtual machines.
 app-emulation/virt-what:dmi - Use sys-apps/dmidecode to read firmware data
@@ -1563,11 +1562,14 @@ dev-java/icedtea:X - Make X buildtime-only depenency.
 dev-java/icedtea:alsa - Make alsa buildtime-only dependency.
 dev-java/icedtea:cacao - Build CACAO virtual machine on platforms supporting HotSpot. (experimental)
 dev-java/icedtea:cups - Make CUPS build-only dependency.
+dev-java/icedtea:infinality - Enable better font rendering using fontconfig.
 dev-java/icedtea:jamvm - Use the JamVM virtual machine rather than HotSpot.
 dev-java/icedtea:jbootstrap - If possible, recompile the final IcedTea executables with itself.
 dev-java/icedtea:nsplugin - Enable browser plugin (NPPlugin), requires also the webstart flag to be enabled.
 dev-java/icedtea:nss - Enable NSS security provider support.
 dev-java/icedtea:pax_kernel - For building when running a PaX enabled kernel.
+dev-java/icedtea:smartcard - Build the PCSC driver against pcsc-lite
+dev-java/icedtea:sunec - Build the SunEC provider against system NSS
 dev-java/icedtea:systemtap - Enable SystemTap probes in HotSpot.
 dev-java/icedtea:webstart - Enable Web Start support (via NetX).
 dev-java/icedtea:zero - Enable Zero assembler port (usually for non-HotSpot architectures)
@@ -1575,6 +1577,7 @@ dev-java/icedtea-bin:webstart - Provide javaws command through symlink to icedte
 dev-java/icedtea-web:icedtea7 - Build icedtea-7 support in addition to icedtea-6 support. Requires icedtea{-bin}-7
 dev-java/icedtea-web:javascript - Enable support for using proxy auto config (PAC) files.
 dev-java/icedtea-web:nsplugin - Enable the browser plugin (NPPlugin).
+dev-java/icedtea-web:tagsoup - Depend on dev-java/tagsoup which allows parsing malformed .jnlp files
 dev-java/itext:rtf - Build and provide libraries for rich text format
 dev-java/itext:rups - Build and provide GUI for Reading/Updating PDF Syntax
 dev-java/jcs:admin - Enable JCS Admin servlets
@@ -1806,7 +1809,6 @@ dev-libs/folks:tracker - Load contacts from app-misc/tracker index
 dev-libs/folks:utils - Build the folks-inspect utility
 dev-libs/folks:zeitgeist - Add support for Zeitgeist event tracking system
 dev-libs/gecode:gist - Enable Gist, the Gecode Interactive Search Tool
-dev-libs/geoip:city - Install the city based IP address database
 dev-libs/gf2x:bindist - Disable automatic fine-tuning to local processor features like pclmul or sse2.
 dev-libs/glib:mime - Pull in shared MIME database that many glib-based applications require at runtime to detect or open files. Warning: do not disable this flag unless installing on a headless server.
 dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util/systemtap
@@ -2040,13 +2042,6 @@ dev-php/ZendFramework:cli - Enables the CLI
 dev-php/ZendFramework:doc - Installs the documentation
 dev-php/ZendFramework:examples - Installs the examples
 dev-php/ZendFramework:minimal - Installs the minimal version without Dojo toolkit, tests and demos
-dev-php/eaccelerator:disassembler - Enable the eA disassembler
-dev-php/eaccelerator:doccommentinclusion - If you want eAccelerator to retain doc-comments in internal php structures.
-dev-php/eaccelerator:inode - Use inode-based caching
-dev-php/pecl-apc:lock_pthreadmutex - Enable pthread mutex locking
-dev-php/pecl-apc:lock_pthreadrw - Enable pthread read/write locking
-dev-php/pecl-apc:lock_semaphore - Enable semaphore locks instead of fcntl
-dev-php/pecl-apc:lock_spinlock - Enable spin locks (EXPERIMENTAL)
 dev-php/pecl-apcu:lock_pthreadmutex - Enable pthread mutex locking
 dev-php/pecl-apcu:lock_pthreadrw - Enable pthread read/write locking
 dev-php/pecl-apcu:lock_semaphore - Enable semaphore locks instead of fcntl
@@ -3880,6 +3875,7 @@ media-radio/xastir:geotiff - Install geotiff support. Allows using USGS DRG topo
 media-radio/xastir:graphicsmagick - Use graphicsmagick instead imagemagick for rendering
 media-sound/abcde:id3tag - Support ID3, ID3v2 tagging of audio files
 media-sound/abcde:normalize - Add support for normalizing audio file volume levels
+media-sound/abcde:opus - Support opus encoding using opusenc
 media-sound/abcde:replaygain - Support for Replay Gain metadata, for relative volume adjustment
 media-sound/abcm2ps:pango - Use the pango library to render fonts with non-latin characters
 media-sound/alsa-utils:libsamplerate - install utils that use libsamplerate (e.g. alsaloop)
@@ -5822,7 +5818,7 @@ net-misc/tlsdate:seccomp - Use seccomp syscall filters to improve security
 net-misc/tor:bufferevents - Use libevent's buffered IO implementation (unstable, buggy)
 net-misc/tor:ecc - Enable Elliptical Curve Cyptography
 net-misc/tor:nat-pmp - Enable NAT Port Mapping Protocol
-net-misc/tor:scrypt - Use libscript for the scrypt algorithm
+net-misc/tor:scrypt - Use app-crypt/libscrypt for the scrypt algorithm
 net-misc/tor:seccomp - Enable seccomp for system call filtering
 net-misc/tor:stats - Enable tracking of how much of each kind of resource we download
 net-misc/tor:tor-hardening - Compile tor with hardening on vanilla compilers/linkers
@@ -6573,9 +6569,7 @@ sec-policy/selinux-base:peer_perms - Enable the labeled networking peer permissi
 sec-policy/selinux-base:ubac - Enable User Based Access Control (UBAC) in the SELinux policy
 sec-policy/selinux-base:unconfined - Enable support for the unconfined SELinux module
 sec-policy/selinux-base-policy:unconfined - Enable support for the unconfined SELinux policy module
-sys-apps/accountsservice:introspection - Use dev-libs/gobject-introspection for introspection
 sys-apps/accountsservice:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
-sys-apps/accountsservice:vala - Enable bindings for dev-lang/vala
 sys-apps/acl:nfs - add support for NFS acls
 sys-apps/baselayout-prefix:prefix-chaining - install in a chained Prefix environment
 sys-apps/busybox:make-symlinks - Create all the appropriate symlinks in /bin and /sbin.
@@ -6655,6 +6649,7 @@ sys-apps/memtest86+:floppy - Install a script to create floppy disks containing 
 sys-apps/memtest86+:serial - Compile with serial console support
 sys-apps/moreutils:perl - Install scripts written in Perl
 sys-apps/net-tools:old-output - use old ifconfig output style (useful for when new output breaks scripts)
+sys-apps/openrc:audit - enable support for Linux audit subsystem
 sys-apps/openrc:netifrc - enable Gentoo's network stack (net.* scripts)
 sys-apps/openrc:newnet - enable the new network stack (experimental)
 sys-apps/openrc:tools - build optional tools
@@ -7230,6 +7225,7 @@ virtual/linux-sources:firmware - Install linux kernel firmware
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/mysql:embedded - Build embedded server (libmysqld)
 virtual/podofo-build:boost - Add support for boost
+virtual/postgresql:server - Disable to install PostgreSQL libraries and clients only
 www-apache/mod_extract_forwarded:mod_proxy - Enable support for Apache's internal proxy
 www-apache/mod_musicindex:archive - Add archive support
 www-apache/mod_musicindex:cache - Add File cache support

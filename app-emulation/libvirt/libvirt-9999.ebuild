@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.60 2014/10/31 12:15:03 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.63 2014/11/03 18:04:30 tamiko Exp $
 
 EAPI=5
 
@@ -32,8 +32,8 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 IUSE="audit avahi +caps firewalld fuse iscsi +libvirtd lvm lxc +macvtap nfs \
 	nls numa openvz parted pcap phyp policykit +qemu rbd sasl \
-	selinux +udev uml +vepa virtualbox virt-network xen elibc_glibc \
-	systemd"
+	selinux +udev uml +vepa virtualbox virt-network wireshark-plugins xen \
+	elibc_glibc systemd"
 REQUIRED_USE="libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
 	lxc? ( caps libvirtd )
 	openvz? ( libvirtd )
@@ -92,6 +92,7 @@ RDEPEND="sys-libs/readline
 	selinux? ( >=sys-libs/libselinux-2.0.85 )
 	systemd? ( sys-apps/systemd )
 	virtualbox? ( || ( app-emulation/virtualbox >=app-emulation/virtualbox-bin-2.2.0 ) )
+	wireshark-plugins? ( net-analyzer/wireshark:= )
 	xen? ( app-emulation/xen-tools app-emulation/xen )
 	udev? ( virtual/udev >=x11-libs/libpciaccess-0.10.9 )
 	virt-network? ( net-dns/dnsmasq[script]
@@ -221,6 +222,8 @@ src_prepare() {
 		) >.git-module-status
 	fi
 
+	epatch "${FILESDIR}"/libvirt-1.2.9-do_not_use_sysconf.patch
+
 	epatch_user
 
 	[[ -n ${AUTOTOOLIZE} ]] && eautoreconf
@@ -317,9 +320,11 @@ src_configure() {
 	# audit support
 	myconf="${myconf} $(use_with audit)"
 
+	# wireshark dissector
+	myconf="${myconf} $(use_with wireshark-plugins wireshark-dissector)"
+
 	## stuff we don't yet support
 	myconf="${myconf} --without-netcf"
-	myconf="${myconf} --without-wireshark-dissector"
 
 	# we use udev over hal
 	myconf="${myconf} --without-hal"
@@ -328,6 +333,7 @@ src_configure() {
 	myconf="${myconf} --without-sanlock"
 
 	# systemd unit files
+	myconf="${myconf} $(use_with systemd systemd-daemon)"
 	use systemd && myconf="${myconf} --with-init-script=systemd"
 
 	# this is a nasty trick to work around the problem in bug
@@ -375,16 +381,22 @@ src_install() {
 
 	find "${D}" -name '*.la' -delete || die
 
+	# Remove bogus, empty directories. They are either not used, or
+	# libvirtd is able to create them on demand
+	rm -rf "${D}"/etc/sysconf
+	rm -rf "${D}"/var/cache
+	rm -rf "${D}"/var/run
+	rm -rf "${D}"/var/log
+
 	use libvirtd || return 0
 	# From here, only libvirtd-related instructions, be warned!
+
+	use systemd && \
+		systemd_install_serviced "${FILESDIR}"/libvirtd.service.conf libvirtd
 
 	newinitd "${S}/libvirtd.init" libvirtd || die
 	newconfd "${FILESDIR}/libvirtd.confd-r4" libvirtd || die
 	newinitd "${FILESDIR}/virtlockd.init" virtlockd || die
-
-	keepdir /var/lib/libvirt/{boot,images,network}
-	use qemu && keepdir /var/{cache,lib,log}/libvirt/qemu
-	use lxc && keepdir /var/{cache,lib,log}/libvirt/lxc
 
 	readme.gentoo_create_doc
 }
@@ -409,20 +421,6 @@ pkg_preinst() {
 pkg_postinst() {
 	if [[ -e "${ROOT}"/etc/libvirt/qemu/networks/default.xml ]]; then
 		touch "${ROOT}"/etc/libvirt/qemu/networks/default.xml
-	fi
-
-	# support for dropped privileges
-	if use qemu; then
-		fperms 0750 "${EROOT}/var/lib/libvirt/qemu"
-		fperms 0750 "${EROOT}/var/cache/libvirt/qemu"
-	fi
-
-	if use caps && use qemu; then
-		fowners -R qemu:qemu "${EROOT}/var/lib/libvirt/qemu"
-		fowners -R qemu:qemu "${EROOT}/var/cache/libvirt/qemu"
-	elif use qemu; then
-		fowners -R root:root "${EROOT}/var/lib/libvirt/qemu"
-		fowners -R root:root "${EROOT}/var/cache/libvirt/qemu"
 	fi
 
 	if ! use policykit; then

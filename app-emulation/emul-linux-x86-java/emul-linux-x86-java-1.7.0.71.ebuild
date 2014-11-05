@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-java/emul-linux-x86-java-1.7.0.71.ebuild,v 1.1 2014/11/01 13:15:47 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-java/emul-linux-x86-java-1.7.0.71.ebuild,v 1.3 2014/11/01 17:00:53 ago Exp $
 
 EAPI="5"
 
@@ -20,7 +20,7 @@ SRC_URI="${X86_AT}"
 
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="1.7"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* amd64"
 IUSE="+X alsa nsplugin pax_kernel"
 
 RESTRICT="fetch strip"
@@ -57,6 +57,12 @@ pkg_nofetch() {
 	einfo "Please download '${X86_AT}' from:"
 	einfo "'${JRE_URI}'"
 	einfo "and move it to '${DISTDIR}'"
+	einfo
+	einfo "If the above mentioned urls do not point to the correct version anymore,"
+	einfo "please download the files from Oracle's java download archive:"
+	einfo
+	einfo "   http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jre-${MY_PV}-oth-JPR"
+	einfo
 }
 
 src_compile() {

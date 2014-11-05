@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/oracle-jre-bin-1.7.0.71.ebuild,v 1.1 2014/11/01 07:07:24 ercpe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/oracle-jre-bin/oracle-jre-bin-1.7.0.71.ebuild,v 1.4 2014/11/02 09:20:55 ago Exp $
 
 EAPI="5"
 
@@ -28,14 +28,13 @@ SRC_URI="
 
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="1.7"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="X alsa fontconfig jce nsplugin pax_kernel selinux"
 
 RESTRICT="fetch strip"
 QA_PREBUILT="*"
 
-COMMON_DEP="
-	selinux? ( sec-policy/selinux-java )"
+COMMON_DEP=""
 RDEPEND="${COMMON_DEP}
 	X? (
 		x11-libs/libXext
@@ -46,7 +45,8 @@ RDEPEND="${COMMON_DEP}
 	)
 	alsa? ( media-libs/alsa-lib )
 	fontconfig? ( media-libs/fontconfig )
-	!prefix? ( sys-libs/glibc )"
+	!prefix? ( sys-libs/glibc )
+	selinux? ( sec-policy/selinux-java )"
 # scanelf won't create a PaX header, so depend on paxctl to avoid fallback
 # marking. #427642
 DEPEND="${COMMON_DEP}

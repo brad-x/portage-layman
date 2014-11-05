@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/fleet/fleet-9999.ebuild,v 1.2 2014/08/28 15:28:18 alunduil Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/fleet/fleet-9999.ebuild,v 1.3 2014/11/01 20:35:53 alunduil Exp $
 
 EAPI=5
 
-inherit git-2 systemd
+inherit git-r3 systemd
 
 EGIT_REPO_URI="git://github.com/coreos/fleet.git"
 
@@ -15,18 +15,38 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="doc examples"
 
-DEPEND=">=dev-lang/go-1.2"
+DEPEND=">=dev-lang/go-1.3"
 RDEPEND=""
 
 src_compile() {
-	./build || die
+	./build || die 'Build failed'
+}
+
+src_test() {
+	# Tests fail due to Gentoo bug #500452
+	./test || die 'Tests failed'
 }
 
 src_install() {
 	dobin "${S}"/bin/fleetd
 	dobin "${S}"/bin/fleetctl
 
-	systemd_dounit "${FILESDIR}"/${PN}.service
+	systemd_dounit "${FILESDIR}"/fleetd.service
+
+	dodoc README.md
+	use doc && dodoc -r Documentation
+	use examples && dodoc -r examples
+
+	keepdir /etc/${PN}
+	insinto /etc/${PN}
+	newins "${PN}".conf.sample "${PN}".conf
+}
+
+pkg_postinst() {
+	ewarn "If you're upgrading from a version less than 0.8.0, please read the messages!"
+	elog "The fleet binary name changed to fleetd."
+	elog "If you're using systemd, update your configuration:"
+	elog "  systemctl disable fleet; systemctl enable fleetd"
 }

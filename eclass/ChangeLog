@@ -1,6 +1,19 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1397 2014/10/31 00:57:49 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1401 2014/11/04 08:04:00 jlec Exp $
+
+  04 Nov 2014; Justin Lecher <jlec@gentoo.org> toolchain.eclass:
+  Fix broken dependencies due to gcc multislotting, #528194, #528196
+
+  02 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-app.eclass:
+  Remove handling of EAPI=0,1,2 since that codepath cannot run anymore anyway
+
+  01 Nov 2014; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  eqmake4(): support new qmake install location (patch by mgorny).
+
+  01 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Drop EAPI=0,1,2,3 support in perl-module.eclass, this time for real. Further
+  cleanups will follow.
 
   31 Oct 2014; Davide Pesavento <pesa@gentoo.org> multibuild.eclass:
   Make sure BUILD_DIR exists before pushd'ing into it.

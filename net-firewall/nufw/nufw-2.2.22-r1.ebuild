@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/nufw/nufw-2.2.22-r1.ebuild,v 1.1 2014/07/18 14:06:38 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/nufw/nufw-2.2.22-r1.ebuild,v 1.3 2014/11/04 04:06:59 patrick Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.nufw.org/attachments/download/39/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE="debug ldap mysql pam pam_nuauth plaintext postgres prelude unicode nfqueue nfconntrack static syslog test"
 
 REQUIRED_USE="pam_nuauth? ( plaintext )"
@@ -30,7 +30,7 @@ DEPEND="
 	nfqueue? ( net-libs/libnfnetlink net-libs/libnetfilter_queue )
 	pam? ( sys-libs/pam )
 	pam_nuauth? ( sys-libs/pam )
-	postgres? ( dev-db/postgresql-server )
+	postgres? ( virtual/postgresql[server] )
 	prelude? ( dev-libs/libprelude )
 "
 RDEPEND=${DEPEND}

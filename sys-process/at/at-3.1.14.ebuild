@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/at/at-3.1.14.ebuild,v 1.8 2014/10/29 09:26:22 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-process/at/at-3.1.14.ebuild,v 1.10 2014/11/02 10:19:19 swift Exp $
 
 EAPI=5
 
@@ -12,15 +12,14 @@ SRC_URI="mirror://debian/pool/main/a/at/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="pam selinux"
 
 DEPEND="virtual/mta
 	>=sys-devel/autoconf-2.64
 	sys-devel/bison
 	>=sys-devel/flex-2.5.4a
-	pam? ( virtual/pam )
-	selinux? ( sec-policy/selinux-at )"
+	pam? ( virtual/pam )"
 RDEPEND="virtual/mta
 	virtual/logger
 	selinux? ( sec-policy/selinux-at )"
