@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-216.ebuild,v 1.10 2014/10/16 13:43:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-216.ebuild,v 1.12 2014/11/07 12:09:59 ssuominen Exp $
 
 EAPI=5
 

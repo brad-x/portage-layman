@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16137 2014/11/04 08:25:36 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16145 2014/11/07 13:19:12 yngwin Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,54 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Ben de Groot <yngwin@gentoo.org> (7 Nov 2014)
+# Unmaintained, no longer supported, and starting to throw compilation
+# errors (bug #513906, bug #528372). Masked for removal in 30 days.
+# Update to lxqt-base/* packages.
+razorqt-base/libqtxdg
+razorqt-base/razorqt-appswitcher
+razorqt-base/razorqt-autosuspend
+razorqt-base/razorqt-config
+razorqt-base/razorqt-data
+razorqt-base/razorqt-desktop
+razorqt-base/razorqt-kbshortcuts
+razorqt-base/razorqt-libs
+razorqt-base/razorqt-lightdm-greeter
+razorqt-base/razorqt-meta
+razorqt-base/razorqt-notifications
+razorqt-base/razorqt-openssh-askpass
+razorqt-base/razorqt-panel
+razorqt-base/razorqt-policykit
+razorqt-base/razorqt-power
+razorqt-base/razorqt-runner
+razorqt-base/razorqt-session
+
+# Manuel Rüger <mrueg@gentoo.org> (6 Nov 2014)
+# Unmaintained slot, move on to dev-ruby/prawn:1
+# Masked for removal in 30 days
+dev-ruby/prawn:0
+dev-ruby/prawn-security
+dev-ruby/prawn-layout
+dev-ruby/prawn-core
+
+# Manuel Rüger <mrueg@gentoo.org> (6 Nov 2014)
+# Use kde-base/oxygen-fonts instead
+# Masked for removal in 30 days
+media-fonts/oxygen-fonts
+
+# Ulrich Müller <ulm@gentoo.org> (5 Nov 2014)
+# Does not build with Emacs 24.4.
+# Last visible upstream activity in 2011.
+# Masked for removal in 30 days, bug #528374.
+app-emacs/csharp-mode
+
+# Samuli Suominen <ssuominen@gentoo.org> (05 Nov 2014)
+# ConsoleKit2 from github by Eric Koegel, auth of xfce4-power-manager
+# The ConsoleKit in freedesktop.org git won't be continued anymore,
+# making this the new official release
+# Masked for testing
+>=sys-auth/consolekit-0.9.2
 
 # Matthias Maier <tamiko@gentoo.org> (4 Nov 2014)
 # Masked for removal in 30 days. The package has multiple open bugs
@@ -116,11 +164,6 @@ dev-perl/DateTime-Format-DateManip
 # since many years, unlikely to work with uptodate subversion
 # Masked for removal in 30 days
 dev-perl/SVN-Mirror
-
-# Davide Pesavento <pesa@gentoo.org> (20 Oct 2014)
-# Does not build with any in-tree version of cmake since 20140713 (bug 506614).
-# Jabber plugin is broken (bug 464690). Masked for removal in 30 days.
-net-im/qutim
 
 # Rick Farina <zerochaos@gentoo.org> (19 Oct 2014)
 # Masked for removal on 19 Nov 2014, use sys-apps/hwids instead.
@@ -885,10 +928,6 @@ www-client/google-chrome:unstable
 # Monolithic dev-dotnet/{gnome,gtk}-sharp introduction mask, see bug #382491.
 >=dev-dotnet/gnome-sharp-2.24.2-r1
 >=dev-dotnet/gtk-sharp-2.12.21
-
-# Julian Ospald <hasufell@gentoo.org> (30 Dec 2013)
-# breaks every consumer
-=dev-games/ogre-1.9.0
 
 # Michał Górny <mgorny@gentoo.org> (15 Dec 2013)
 # Masked for testing due to almost complete redesign. It is now

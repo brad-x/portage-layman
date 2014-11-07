@@ -1,6 +1,25 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1401 2014/11/04 08:04:00 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1406 2014/11/07 16:17:46 axs Exp $
+
+  07 Nov 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  python-single-r1.eclass:
+  fixed whitespace
+
+  06 Nov 2014; Ian Stakenvicius <axs@gentoo.org> python-single-r1.eclass:
+  When only one supported python implementation can satisfy an ebuild, do
+  not provide python_single_target_* flags in IUSE -- effectively, rely
+  only on PYTHON_TARGETS rather than the value specified in PYTHON_SINGLE_TARGET.
+
+  05 Nov 2014; Ian Stakenvicius <axs@gentoo.org> mozconfig-v5.33.eclass:
+  Move IUSE=selinux to the eclass
+
+  05 Nov 2014; Michał Górny <mgorny@gentoo.org> python-r1.eclass,
+  python-utils-r1.eclass, tests/python-utils-r1.sh:
+  Add support for PyPy3.
+
+  05 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Remove unused function perl_set_eprefix
 
   04 Nov 2014; Justin Lecher <jlec@gentoo.org> toolchain.eclass:
   Fix broken dependencies due to gcc multislotting, #528194, #528196

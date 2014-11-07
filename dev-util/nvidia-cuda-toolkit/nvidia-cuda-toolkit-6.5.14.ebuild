@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/nvidia-cuda-toolkit-6.5.14.ebuild,v 1.2 2014/09/15 18:54:05 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/nvidia-cuda-toolkit-6.5.14.ebuild,v 1.4 2014/11/06 08:15:19 jlec Exp $
 
 EAPI=5
 
@@ -69,7 +69,7 @@ src_install() {
 		dohtml -r doc/html/*
 	fi
 
-	mv doc/man/man3/{,cuda-}deprecated.3 || die
+	[[ -d doc ]] &&	mv doc/man/man3/{,cuda-}deprecated.3 || die
 	doman doc/man/man*/*
 
 	use debugger || remove+=" bin/cuda-gdb extras/Debugger"
@@ -103,7 +103,7 @@ src_install() {
 	done
 
 	dodir ${cudadir}
-	mv * "${ED}"${cudadir}
+	mv * "${ED}"${cudadir} || die
 
 	cat > "${T}"/99cuda <<- EOF
 		PATH=${ecudadir}/bin$(use profiler && echo ":${ecudadir}/libnvvp")

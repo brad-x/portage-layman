@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/redland/redland-1.0.17.ebuild,v 1.2 2014/11/03 11:47:39 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/redland/redland-1.0.17.ebuild,v 1.4 2014/11/06 05:40:32 vapier Exp $
 
 EAPI=5
 inherit db-use libtool
@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos"
 IUSE="berkdb iodbc mysql odbc postgres sqlite static-libs"
 
-# NOTE: libtool is required for libltdl at runtime
-RDEPEND=">=sys-devel/libtool-2.2.6b
+RDEPEND="dev-libs/libltdl:0
 	mysql? ( virtual/mysql )
 	sqlite? ( =dev-db/sqlite-3* )
 	berkdb? ( sys-libs/db )
