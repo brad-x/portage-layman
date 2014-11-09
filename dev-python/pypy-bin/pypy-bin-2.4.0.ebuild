@@ -1,56 +1,46 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy-bin/pypy-bin-2.4.0.ebuild,v 1.5 2014/11/05 21:18:12 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy-bin/pypy-bin-2.4.0.ebuild,v 1.7 2014/11/09 08:33:11 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 pypy pypy2_0 )
-inherit eutils multilib pax-utils python-any-r1 vcs-snapshot versionator
+PYTHON_COMPAT=( python2_7 pypy )
+inherit eutils multilib pax-utils python-any-r1 versionator
 
-BINHOST="http://packages.gentooexperimental.org/pypy/"
-
-# x86 currently fails, so no pypy-bin yet
+BINHOST="http://dev.gentoo.org/~mgorny/dist/pypy-bin/${PV}"
 
 DESCRIPTION="A fast, compliant alternative implementation of the Python language (binary package)"
 HOMEPAGE="http://pypy.org/"
-SRC_URI="https://www.bitbucket.org/pypy/pypy/downloads/pypy-${PV}-src.tar.bz2
+SRC_URI="https://bitbucket.org/pypy/pypy/downloads/pypy-${PV}-src.tar.bz2
 	amd64? (
 		jit? ( shadowstack? (
 			${BINHOST}/${P}-amd64+bzip2+jit+ncurses+shadowstack.tar.xz
-				-> ${P}-r1-amd64+bzip2+jit+ncurses+shadowstack.tar.xz
 		) )
 		jit? ( !shadowstack? (
 			${BINHOST}/${P}-amd64+bzip2+jit+ncurses.tar.xz
-				-> ${P}-r1-amd64+bzip2+jit+ncurses.tar.xz
 		) )
 		!jit? ( !shadowstack? (
 			${BINHOST}/${P}-amd64+bzip2+ncurses.tar.xz
-				-> ${P}-r1-amd64+bzip2+ncurses.tar.xz
 		) )
+	)
+	x86? (
+		sse2? (
+			jit? ( shadowstack? (
+				${BINHOST}/${P}-x86+bzip2+jit+ncurses+shadowstack+sse2.tar.xz
+			) )
+			jit? ( !shadowstack? (
+				${BINHOST}/${P}-x86+bzip2+jit+ncurses+sse2.tar.xz
+			) )
+			!jit? ( !shadowstack? (
+				${BINHOST}/${P}-x86+bzip2+ncurses+sse2.tar.xz
+			) )
+		)
+		!sse2? (
+			!jit? ( !shadowstack? (
+				${BINHOST}/${P}-x86+bzip2+ncurses.tar.xz
+			) )
+		)
 	)"
-
-#	x86? (
-#		sse2? (
-#			jit? ( shadowstack? (
-#				${BINHOST}/${P}-x86+bzip2+jit+ncurses+shadowstack+sse2.tar.xz
-#					-> ${P}-r1-x86+bzip2+jit+ncurses+shadowstack+sse2.tar.xz
-#			) )
-#			jit? ( !shadowstack? (
-#				${BINHOST}/${P}-x86+bzip2+jit+ncurses+sse2.tar.xz
-#					-> ${P}-r1-x86+bzip2+jit+ncurses+sse2.tar.xz
-#			) )
-#			!jit? ( !shadowstack? (
-#				${BINHOST}/${P}-x86+bzip2+ncurses+sse2.tar.xz
-#					-> ${P}-r1-x86+bzip2+ncurses+sse2.tar.xz
-#			) )
-#		)
-#		!sse2? (
-#			!jit? ( !shadowstack? (
-#				${BINHOST}/${P}-x86+bzip2+ncurses.tar.xz
-#					-> ${P}-r1-x86+bzip2+ncurses.tar.xz
-#			) )
-#		)
-#	)"
 
 # Supported variants
 REQUIRED_USE="!jit? ( !shadowstack )
@@ -58,9 +48,7 @@ REQUIRED_USE="!jit? ( !shadowstack )
 
 LICENSE="MIT"
 SLOT="0/$(get_version_component_range 1-2 ${PV})"
-#KEYWORDS="~amd64"
-# Needs some more sanity checks before it gets unleashed on users
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="doc gdbm +jit shadowstack sqlite sse2 test tk"
 
 # yep, world would be easier if people started filling subslots...
@@ -92,8 +80,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/1.9-scripts-location.patch"
-	epatch "${FILESDIR}/1.9-distutils.unixccompiler.UnixCCompiler.runtime_library_dir_option.patch"
+	epatch "${FILESDIR}/1.9-scripts-location.patch" \
+		"${FILESDIR}/1.9-distutils.unixccompiler.UnixCCompiler.runtime_library_dir_option.patch"
 
 	pushd lib-python/2.7 > /dev/null || die
 	epatch "${FILESDIR}/2.3-21_all_distutils_c++.patch"
@@ -112,15 +100,20 @@ src_compile() {
 	use doc && emake -C pypy/doc/ html
 	#needed even without jit :( also needed in both compile and install phases
 	pax-mark m pypy-c
+
+	# ctypes config cache
+	# this one we need to do with python2 too...
+	./pypy-c lib_pypy/ctypes_config_cache/rebuild.py \
+		|| die "Failed to rebuild ctypes config cache"
 }
 
 # Doesn't work - pypy missing its own libs
-#src_test() {
-#	# (unset)
-#	local -x PYTHONDONTWRITEBYTECODE
-#
-#	./pypy-c ./pypy/test_all.py --pypy=./pypy-c lib-python || die
-#}
+src_test() {
+	# (unset)
+	local -x PYTHONDONTWRITEBYTECODE
+
+	./pypy-c ./pypy/test_all.py --pypy=./pypy-c lib-python || die
+}
 
 src_install() {
 	einfo "Installing PyPy ..."
@@ -129,7 +122,6 @@ src_install() {
 	fperms a+x ${INSDESTTREE}/pypy-c ${INSDESTTREE}/libpypy-c.so
 	pax-mark m "${ED%/}${INSDESTTREE}/pypy-c" "${ED%/}${INSDESTTREE}/libpypy-c.so"
 	dosym ../$(get_libdir)/pypy/pypy-c /usr/bin/pypy
-	dosym ../$(get_libdir)/pypy/libpypy-c.so /usr/$(get_libdir)/libpypy-c.so
 	dodoc README.rst
 
 	if ! use gdbm; then
@@ -162,9 +154,6 @@ src_install() {
 	# Generate Grammar and PatternGrammar pickles.
 	"${PYTHON}" -c "import lib2to3.pygram, lib2to3.patcomp; lib2to3.patcomp.PatternCompiler()" \
 		|| die "Generation of Grammar and PatternGrammar pickles failed"
-
-	# ctypes config cache
-	"${PYTHON}" -m ctypes_config_cache.rebuild || die "Failed to rebuild ctypes config cache"
 
 	# Generate cffi cache
 	# Please keep in sync with pypy/tool/release/package.py!
