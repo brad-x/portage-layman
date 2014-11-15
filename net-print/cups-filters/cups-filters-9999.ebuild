@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.49 2014/06/07 19:12:16 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.50 2014/11/10 23:03:06 dilfridge Exp $
 
 EAPI=5
 
@@ -84,7 +84,7 @@ src_install() {
 	if use perl; then
 		pushd "${S}/scripting/perl" > /dev/null
 		perl-module_src_install
-		fixlocalpod
+		perl_delete_localpod
 		popd > /dev/null
 	fi
 

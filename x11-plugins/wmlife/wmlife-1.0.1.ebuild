@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmlife/wmlife-1.0.1.ebuild,v 1.4 2014/09/19 13:22:43 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmlife/wmlife-1.0.1.ebuild,v 1.6 2014/11/13 16:18:01 voyageur Exp $
 
 EAPI=5
 inherit autotools eutils
@@ -15,14 +15,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
-	>=gnome-base/gnome-panel-2
-	>=gnome-base/libgnomeui-2
-	x11-libs/libX11
-	x11-libs/libXext
-	x11-libs/libSM
 	x11-libs/libICE
-	x11-libs/libXt"
-DEPEND="${RDEPEND}
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXext"
+EPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 DOCS="AUTHORS ChangeLog NEWS README"

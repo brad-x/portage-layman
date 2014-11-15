@@ -1,6 +1,6 @@
 # Copyright 2010-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/bitcoin-qt-0.9.2.1.ebuild,v 1.6 2014/08/29 00:52:25 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/bitcoin-qt-0.9.2.1.ebuild,v 1.7 2014/11/13 18:31:37 blueness Exp $
 
 EAPI=4
 
@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE="$IUSE dbus kde +qrcode test upnp"
 
 RDEPEND="
-	>=dev-libs/boost-1.53.0[threads(+)]
+	>=dev-libs/boost-1.41.0[threads(+)]
 	dev-libs/openssl:0[-bindist]
 	dev-libs/protobuf
 	qrcode? (
@@ -80,6 +80,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-ccache \
 		$(use_with dbus qtdbus)  \
 		$(use_with upnp miniupnpc) $(use_enable upnp upnp-default) \
 		$(use_with qrcode qrencode)  \

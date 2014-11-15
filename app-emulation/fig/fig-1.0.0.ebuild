@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/fig/fig-1.0.0.ebuild,v 1.1 2014/10/27 15:25:51 alunduil Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/fig/fig-1.0.0.ebuild,v 1.3 2014/11/11 01:00:18 alunduil Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )

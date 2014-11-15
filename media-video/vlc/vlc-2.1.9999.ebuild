@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.9999.ebuild,v 1.23 2014/09/10 22:06:30 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.9999.ebuild,v 1.25 2014/11/15 11:56:20 hwoarang Exp $
 
 EAPI="5"
 
@@ -141,7 +141,7 @@ RDEPEND="
 		udev? ( >=virtual/udev-142:0 )
 		upnp? ( net-libs/libupnp:0 )
 		v4l? ( media-libs/libv4l:0 )
-		vaapi? ( x11-libs/libva:0 virtual/ffmpeg[vaapi] )
+		vaapi? ( x11-libs/libva:0[X] virtual/ffmpeg[vaapi] )
 		vcdx? ( >=dev-libs/libcdio-0.78.2:0 >=media-video/vcdimager-0.7.22:0 )
 		vdpau? ( >=x11-libs/libvdpau-0.6:0 !<media-video/libav-10_beta1 )
 		vnc? ( >=net-libs/libvncserver-0.9.9:0 )
@@ -187,7 +187,7 @@ REQUIRED_USE="
 S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
-	if [[ "$(tc-getCC)" == *"gcc"* ]] ; then
+	if [[ "${MERGE_TYPE}" != "binary" && "$(tc-getCC)" == *"gcc"* ]] ; then
 		if [[ $(gcc-major-version) < 4 || ( $(gcc-major-version) == 4 && $(gcc-minor-version) < 5 ) ]] ; then
 			die "You need to have at least >=sys-devel/gcc-4.5 to build and/or have a working vlc, see bug #426754."
 		fi
@@ -242,7 +242,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.1.0-TomWij-bisected-PA-broken-underflow.patch
 
 	# Disable avcodec checks when avcodec is not used.
-	sed -i 's/^#if LIBAVCODEC_VERSION_CHECK(.*)$/#if 0/' modules/codec/avcodec/fourcc.c || die
+	if ! use avcodec; then
+		sed -i 's/^#if LIBAVCODEC_VERSION_CHECK(.*)$/#if 0/' modules/codec/avcodec/fourcc.c || die
+	fi
 
 	# Don't use --started-from-file when not using dbus.
 	if ! use dbus ; then

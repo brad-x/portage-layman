@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/rb_libtorrent/rb_libtorrent-0.16.17.ebuild,v 1.5 2014/10/10 18:06:43 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/rb_libtorrent/rb_libtorrent-0.16.17.ebuild,v 1.6 2014/11/15 08:33:02 hwoarang Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2:2.7"
@@ -20,7 +20,7 @@ SRC_URI="mirror://sourceforge/libtorrent/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
-IUSE="debug doc examples python ssl static-libs"
+IUSE="debug doc examples python ssl static-libs test"
 RESTRICT="test"
 
 DEPEND=">=dev-libs/boost-1.48[python?,threads(+)]

@@ -1,6 +1,6 @@
 # Copyright 2010-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/bitcoind-0.9.3.ebuild,v 1.2 2014/10/10 11:37:31 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoind/bitcoind-0.9.3.ebuild,v 1.3 2014/11/13 18:41:27 blueness Exp $
 
 EAPI=4
 
@@ -68,6 +68,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-ccache \
 		$(use_with upnp miniupnpc) $(use_enable upnp upnp-default) \
 		$(use_enable test tests)  \
 		$(use_enable wallet)  \
