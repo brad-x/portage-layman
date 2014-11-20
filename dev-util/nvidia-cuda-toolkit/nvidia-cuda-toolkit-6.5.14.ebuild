@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/nvidia-cuda-toolkit-6.5.14.ebuild,v 1.4 2014/11/06 08:15:19 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-toolkit/nvidia-cuda-toolkit-6.5.14.ebuild,v 1.6 2014/11/17 09:56:21 jlec Exp $
 
 EAPI=5
 
@@ -40,6 +40,13 @@ CHECKREQS_DISK_BUILD="1500M"
 pkg_setup() {
 	# We don't like to run cuda_pkg_setup as it depends on us
 	check-reqs_pkg_setup
+
+	if use x86; then
+		ewarn "Starting with version 6.5 NVIDIA dropped more and more"
+		ewarn "the support for 32bit linux."
+		ewarn "Be aware that bugfixes and new features may not be available."
+		ewarn "http://dev.gentoo.org/~jlec/distfiles/CUDA_Toolkit_Release_Notes.pdf"
+	fi
 }
 
 src_unpack() {
@@ -69,8 +76,10 @@ src_install() {
 		dohtml -r doc/html/*
 	fi
 
-	[[ -d doc ]] &&	mv doc/man/man3/{,cuda-}deprecated.3 || die
-	doman doc/man/man*/*
+	if use amd64; then
+		mv doc/man/man3/{,cuda-}deprecated.3 || die
+		doman doc/man/man*/*
+	fi
 
 	use debugger || remove+=" bin/cuda-gdb extras/Debugger"
 	( use profiler || use eclipse ) || remove+=" libnsight"

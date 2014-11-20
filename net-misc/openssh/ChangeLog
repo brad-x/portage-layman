@@ -1,6 +1,21 @@
 # ChangeLog for net-misc/openssh
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/ChangeLog,v 1.525 2014/09/28 18:18:48 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/ChangeLog,v 1.528 2014/11/16 18:00:09 vapier Exp $
+
+  16 Nov 2014; Mike Frysinger <vapier@gentoo.org> openssh-6.7_p1.ebuild:
+  Pull in lksctp-tools for USE=sctp #529436 by Michał Górny.
+
+*openssh-6.7_p1 (15 Nov 2014)
+
+  15 Nov 2014; Mike Frysinger <vapier@gentoo.org>
+  +files/openssh-6.7_p1-openssl-ignore-status.patch,
+  +files/openssh-6.7_p1-sshd-gssapi-multihomed.patch, +openssh-6.7_p1.ebuild,
+  metadata.xml:
+  Version bump #524662 by Lars Wendler.
+
+  15 Nov 2014; Mike Frysinger <vapier@gentoo.org> openssh-6.6.1_p1-r4.ebuild:
+  Add USE=pie to control building sshd as a PIE #504764 by David Kredba.  Reject
+  pie/static USE combos #507434 by Alexander Hof.
 
 *openssh-6.6.1_p1-r4 (28 Sep 2014)
 

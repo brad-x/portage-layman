@@ -1,21 +1,20 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.19 2014/08/06 00:49:04 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.20 2014/11/17 05:12:52 floppym Exp $
 
 EAPI="5"
 
 inherit cmake-utils vcs-snapshot
 
 if [[ ${PV} != 9999* ]]; then
-	COMMIT="780d451afad21a22d2af6bd030ee71311856f038"
+	COMMIT="7a6c6b7436c2fcb02a38bf89e0b3efcdb43f2ef5"
 	SRC_URI="https://github.com/FreeRDP/FreeRDP/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 else
-	inherit git-2
+	inherit git-r3
 	SRC_URI=""
 	EGIT_REPO_URI="git://github.com/FreeRDP/FreeRDP.git
 		https://github.com/FreeRDP/FreeRDP.git"
-	KEYWORDS=""
 fi
 
 DESCRIPTION="Free implementation of the Remote Desktop Protocol"

@@ -295,11 +295,15 @@ app-backup/bacula:bacula-clientonly - Disable DB support, and just build a clien
 app-backup/bacula:bacula-nodir - Disable building of director
 app-backup/bacula:bacula-nosd - Disable building of storage daemon
 app-backup/bacula:logwatch - Install support files for logwatch
+app-backup/bareos:cephfs - Enable cephfs storage backend
 app-backup/bareos:clientonly - Only install file-daemon (client)
 app-backup/bareos:director - Install director
 app-backup/bareos:fastlz - Enable support vor lz4, lz4hc and lzfast using dev-libs/bareos-fastlzlib
+app-backup/bareos:glusterfs - Enable glusterfs storage backend
+app-backup/bareos:lmdb - enable build of LMDB support for faster accurate backup
 app-backup/bareos:logwatch - Install support files for logwatch
 app-backup/bareos:ndmp - Enable support for NDMP (Network Data Management Protocol)
+app-backup/bareos:rados - Enable rados storage backend
 app-backup/bareos:scsi-crypto - Enable low level SCSI crypto support
 app-backup/bareos:sql-pooling - Enable SQL pooling support
 app-backup/bareos:storage-daemon - Install storage daemon (bareos-sd)
@@ -868,6 +872,7 @@ app-misc/lcdproc:lcd_devices_sdeclcd - Enable support for VLSYS M428 display
 app-misc/lcdproc:lcd_devices_vlsys_m428 - Enable support for VLSYS M428 display
 app-misc/lcdproc:nfs - Adds support for NFS file system
 app-misc/lcdproc:seamless-hbars - Try to avoid gaps in horizontal bars
+app-misc/linux-logo:nls - Add Native Language Support (using gettext - GNU locale utilities)
 app-misc/lirc:hardware-carrier - The transmitter device generates its clock signal in hardware
 app-misc/lirc:transmitter - Add transmitter support to some lirc-drivers (e.g. serial)
 app-misc/mc:edit - Compile and install the mcedit application
@@ -1286,6 +1291,8 @@ dev-db/pgadmin3:databasedesigner - Enable the Database Designer component
 dev-db/pgbouncer:libevent - Use libevent 2.0+ and evdns as the DNS backend
 dev-db/pgbouncer:udns - Use udns as the DNS backend. Supports IPv4 only.
 dev-db/pgpool2:memcached - Use memcached for query caching.
+dev-db/pgrouting:drivingdistance - Enable to calculate driving distance
+dev-db/pgrouting:html - Install HTML formatted documentation
 dev-db/phpmyadmin:setup - Installs the phpMyAdmin setup utility. Users who don't use the utility should disable this USE flag for security reasons as the setup tool was the target of various exploits in the past.
 dev-db/postgis:gtk - Build shp2pgsql-gui a graphical interface to shp2pgsql
 dev-db/postgresql:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
@@ -4533,7 +4540,8 @@ media-video/vlc:optimisememory - Enable optimisation for memory rather than perf
 media-video/vlc:opus - Support opus decoding via libopus.
 media-video/vlc:postproc - Enables image post-processing via libpostproc (part of FFmpeg).
 media-video/vlc:projectm - Enables the projectM visualization plugin.
-media-video/vlc:qt4 - Builds a x11-libs/qt based frontend, a graphical interface.
+media-video/vlc:qt4 - Builds a Qt4 based frontend, a graphical interface.
+media-video/vlc:qt5 - Builds a Qt5 based frontend, a graphical interface.
 media-video/vlc:rdp - Enables freerdp for RDP/Remote Desktop client support
 media-video/vlc:rtsp - Enables real audio and RTSP modules.
 media-video/vlc:run-as-root - Allows vlc to start for root. Don't enable this unless you have a very specific (e.g. embedded) need for it!
@@ -4660,12 +4668,13 @@ net-analyzer/nfdump:nfprofile - Build nfprofile used by NfSen
 net-analyzer/nfdump:nftrack - Build nfprofile used by PortTracker
 net-analyzer/nfdump:readpcap - Build nfcapd collector to read from pcap file instead ofnetwork data
 net-analyzer/nfdump:sflow - Build sflow collector sfcpad
-net-analyzer/nmap:lua - Include support for the Nmap Scripting Engine (NSE) through dev-lang/lua
+net-analyzer/nmap:lua - Include support for the Nmap Scripting Engine (NSE)
 net-analyzer/nmap:ncat - Install the ncat utility
 net-analyzer/nmap:ndiff - Install the ndiff utility
 net-analyzer/nmap:nmap-update - Install nmap-update, which uses dev-vcs/subversion to update nmap scripts in your home directory
 net-analyzer/nmap:nping - Install the nping utility
-net-analyzer/nmap:zenmap - Install the GTK+ based zenmap utility
+net-analyzer/nmap:system-lua - Use dev-lang/lua instead of the bundled liblua
+net-analyzer/nmap:zenmap - Install the GTK+ based nmap GUI, zenmap
 net-analyzer/nrpe:command-args - Build support for specifying the command-line arguments from the Nagios/Icinga master. Make sure you understand the implications of this flag as it can be a security risk.
 net-analyzer/nrpe:minimal - Only build the check plugins for Nagios/Icinga, and not the daemon.
 net-analyzer/nsca:crypt - Build support for crypted communication with nsca, through dev-libs/mcrypt. It's recommended not to disable this flag unless all the communication will be handled in an absolutely safe environment.
@@ -4854,6 +4863,11 @@ net-firewall/nufw:plaintext - Add support for authentication with plaintext file
 net-firewall/pftop:altq - Enable altq(4) support — alternate queuing of network packets.
 net-firewall/pglinux:cron - Install cron script
 net-firewall/pglinux:logrotate - Install logrotate.d file
+net-firewall/shorewall:init - Adds the capability to place the firewall in a safe state prior to bringing up the network interfaces
+net-firewall/shorewall:ipv4 - Installs everything needed to create a full IPv4 firewall
+net-firewall/shorewall:ipv6 - Adds the capability to create a full IPv6 firewall (requires net-firewall/shorewall[ipv4])
+net-firewall/shorewall:lite4 - Installs everything needed to just *run* an IPv4 compiled firewall script created with net-firewall/shorewall[ipv4]
+net-firewall/shorewall:lite6 - Installs everything needed to just *run* an IPv6 compiled firewall script created with net-firewall/shorewall[ipv6]
 net-firewall/ufw-frontends:kde - Use kdesu to gain root privileges (note: the flag has lower priority than "policykit")
 net-firewall/ufw-frontends:policykit - Use pkexec to gain root privileges
 net-fs/autofs:dmalloc - Enable debugging with the dmalloc library
@@ -5667,6 +5681,7 @@ net-misc/openssh:bindist - Disable EC/RC5 algorithms in OpenSSL for patent reaso
 net-misc/openssh:hpn - Enable high performance ssh
 net-misc/openssh:ldap - Add support for storing SSH public keys in LDAP
 net-misc/openssh:ldns - Use LDNS for DNSSEC/SSHFP validation.
+net-misc/openssh:sctp - Support for Stream Control Transmission Protocol
 net-misc/openswan:curl - Include curl support (used for fetching CRLs)
 net-misc/openswan:extra-algorithms - Include additional strong algorithms (Blowfish, Twofish, Serpent and SHA2)
 net-misc/openswan:ldap - Include LDAP support (used for fetching CRLs)
@@ -7548,6 +7563,7 @@ x11-misc/openbox-menu:icons - Enable support for icons in menus
 x11-misc/openbox-menu:svg - Support SVG icons
 x11-misc/rednotebook:libyaml - enable libyaml support
 x11-misc/rednotebook:spell - enable gtk-spell support
+x11-misc/redshift:appindicator - Enable usage of dev-libs/libappindicator to export menu options in to unity and KDE 5
 x11-misc/redshift:geoclue - Control dependency on app-misc/geoclue
 x11-misc/rodent:experimental - Build experimental plugins (obexfs, curlftpfs, ecryptfs, cifs and samba)
 x11-misc/rofi:i3 - Compile in support for the x11-wm/i3 window manager

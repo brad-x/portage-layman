@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/mapserver/mapserver-6.0.1-r1.ebuild,v 1.1 2014/10/27 14:45:48 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/mapserver/mapserver-6.0.1-r1.ebuild,v 1.3 2014/11/18 23:37:26 dilfridge Exp $
 
 EAPI=5
 
@@ -99,7 +99,7 @@ ext-source-r2_src_install() {
 
 pkg_setup() {
 	webapp_pkg_setup
-	use perl && perl-module_pkg_setup
+	use perl && perl_set_version
 	use python && python_pkg_setup
 	#use ruby && ruby-ng_pkg_setup
 }
@@ -199,7 +199,7 @@ src_install() {
 
 	use python && _enter_build_dir "${S}/mapscript/python" "distutils_src_install"
 	use perl && _enter_build_dir "${S}/mapscript/perl" "perl-module_src_install"
-	use perl && _enter_build_dir "${S}/mapscript/perl" "fixlocalpod"
+	use perl && _enter_build_dir "${S}/mapscript/perl" "perl_delete_localpod"
 	use php && ext-source-r2_src_install
 	#use ruby && _enter_build_dir "${S}/mapscript/ruby" "ruby-ng_src_install"
 

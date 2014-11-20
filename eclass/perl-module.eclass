@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/perl-module.eclass,v 1.150 2014/11/12 23:26:36 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/perl-module.eclass,v 1.153 2014/11/18 23:31:30 dilfridge Exp $
 
 # @ECLASS: perl-module.eclass
 # @MAINTAINER:
@@ -319,18 +319,22 @@ perl-module_src_install() {
 # @FUNCTION: perl-module_pkg_setup
 # @USAGE: perl-module_pkg_setup
 # @DESCRIPTION:
-# This function is to be called during the pkg_setup() phase.
+# This function was to be called during the pkg_setup() phase.
+# Deprecated, to be removed. Where it is called, place a call to perl_set_version instead.
 perl-module_pkg_setup() {
 	debug-print-function $FUNCNAME "$@"
+	eqawarn "perl-modules.eclass: perl-module_pkg_setup is deprecated and will be removed. Please use perl_set_version instead."
 	perl_set_version
 }
 
 # @FUNCTION: perl-module_pkg_preinst
 # @USAGE: perl-module_pkg_preinst
 # @DESCRIPTION:
-# This function is to be called during the pkg_preinst() phase.
+# This function was to be called during the pkg_preinst() phase.
+# Deprecated, to be removed. Where it is called, place a call to perl_set_version instead.
 perl-module_pkg_preinst() {
 	debug-print-function $FUNCNAME "$@"
+	eqawarn "perl-modules.eclass: perl-module_pkg_preinst is deprecated and will be removed. Please use perl_set_version instead."
 	perl_set_version
 }
 
@@ -394,7 +398,7 @@ perl_set_version() {
 # Please use the function above instead, perl_set_version().
 perlinfo() {
 	debug-print-function $FUNCNAME "$@"
-	eqawarn "perl-modules.eclass: perlinfo is deprecated and will be removed. Please use perl_set_version instead."
+	ewarn "perl-modules.eclass: perlinfo is deprecated and will be removed. Please use perl_set_version instead."
 	perl_set_version
 }
 
@@ -419,7 +423,7 @@ perl_delete_localpod() {
 # Please use the function above instead, perl_delete_localpod().
 fixlocalpod() {
 	debug-print-function $FUNCNAME "$@"
-	eqawarn "perl-modules.eclass: fixlocalpod is deprecated and will be removed. Please use perl_delete_localpod instead."
+	ewarn "perl-modules.eclass: fixlocalpod is deprecated and will be removed. Please use perl_delete_localpod instead."
 	perl_delete_localpod
 }
 

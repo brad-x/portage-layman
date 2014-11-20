@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/guake/guake-9999.ebuild,v 1.1 2014/09/13 08:23:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/guake/guake-9999.ebuild,v 1.2 2014/11/17 13:37:33 jer Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit autotools git-r3 gnome2 python-single-r1
 
 DESCRIPTION="Drop-down terminal for GTK+ desktops"
-HOMEPAGE="http://guake.org/"
+HOMEPAGE="https://github.com/Guake/guake"
 # override gnome.org.eclass SRC_URI
 SRC_URI=''
 EGIT_REPO_URI="https://github.com/Guake/guake.git"
@@ -45,9 +45,6 @@ src_unpack() {
 
 src_prepare() {
 	eautoreconf
-
-	# python_fix_shebang does not handle this?
-	sed -i -e '/^PYTHON=/s|python|'${EPYTHON}'|' src/guake-prefs || die
 
 	gnome2_src_prepare
 
