@@ -1,10 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/watchdog/watchdog-0.8.1.ebuild,v 1.2 2014/10/24 02:37:33 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/watchdog/watchdog-0.8.1.ebuild,v 1.3 2014/11/22 09:48:17 jlec Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+
 inherit distutils-r1
 
 DESCRIPTION="Python API and shell utilities to monitor file system events"
@@ -22,6 +23,5 @@ RDEPEND="${DEPEND}
 	dev-python/pathtools[${PYTHON_USEDEP}]"
 
 pkg_postinst() {
-	elog "optional dependencies:"
-	elog "  dev-python/argcomplete (bash completion)"
+	optfeature "Bash completion" dev-python/argcomplete
 }
