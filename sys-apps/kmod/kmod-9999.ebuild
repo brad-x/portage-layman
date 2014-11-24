@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.84 2014/10/30 09:13:27 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.85 2014/11/23 06:51:01 williamh Exp $
 
 EAPI=5
 
@@ -64,7 +64,6 @@ src_prepare() {
 		fi
 		eautoreconf
 	else
-		epatch "${FILESDIR}"/${PN}-15-dynamic-kmod.patch #493630
 		elibtoolize
 	fi
 
@@ -104,12 +103,6 @@ src_configure() {
 }
 
 src_compile() {
-	if [[ ${PV} != 9999* ]]; then
-		# Force -j1 because of -15-dynamic-kmod.patch, likely caused by lack of eautoreconf
-		# wrt #494806
-		local MAKEOPTS="${MAKEOPTS} -j1"
-	fi
-
 	emake -C "${BUILD_DIR}"
 
 	if use python; then

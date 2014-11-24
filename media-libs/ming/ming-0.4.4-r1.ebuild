@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/ming/ming-0.4.4-r1.ebuild,v 1.2 2014/11/16 20:48:53 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/ming/ming-0.4.4-r1.ebuild,v 1.4 2014/11/22 18:33:30 dilfridge Exp $
 
 EAPI=5
 
@@ -109,10 +109,9 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	use perl && perl-module_pkg_prerm
+	:
 }
 
 pkg_postrm() {
-	use perl && perl-module_pkg_postrm
 	use python && python_mod_cleanup ming.py mingc.py
 }
