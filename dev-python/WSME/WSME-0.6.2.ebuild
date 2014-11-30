@@ -1,9 +1,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/WSME/WSME-0.6.2.ebuild,v 1.2 2014/11/21 23:53:11 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/WSME/WSME-0.6.2.ebuild,v 1.4 2014/11/28 09:58:30 pacho Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1
 
@@ -18,6 +18,7 @@ IUSE=""
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/pbr-0.5.21[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]

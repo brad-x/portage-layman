@@ -1,6 +1,21 @@
 # ChangeLog for dev-util/appdata-tools
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/appdata-tools/ChangeLog,v 1.12 2014/10/23 19:45:13 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/appdata-tools/ChangeLog,v 1.15 2014/11/24 11:13:46 mgorny Exp $
+
+  24 Nov 2014; Michał Górny <mgorny@gentoo.org> appdata-tools-0.1.8-r1.ebuild:
+  [QA] Fix the metapackage to use RDEPEND instead of DEPEND. Otherwise,
+  appstream-glib can be uninstalled as soon as the metapackage is built.
+
+  23 Nov 2014; Gilles Dartiguelongue <eva@gentoo.org>
+  appdata-tools-0.1.8-r1.ebuild:
+  Empty SRC_URI for dummy package.
+
+*appdata-tools-0.1.8-r1 (23 Nov 2014)
+
+  23 Nov 2014; Gilles Dartiguelongue <eva@gentoo.org>
+  +appdata-tools-0.1.8-r1.ebuild:
+  Version bump. Fix dependency issues while apps are transitioning to
+  appstream.
 
   23 Oct 2014; Markus Meier <maekke@gentoo.org> appdata-tools-0.1.8.ebuild:
   add ~arm, bug #523924

@@ -256,6 +256,7 @@ app-admin/webalizer:xtended - Include the 404 extension
 app-admin/webapp-config:portage - Propagete python_targets dependencies to sys-apps/portage
 app-admin/yaala:storable - Support for persistence of Perl data structures.
 app-antivirus/clamav:clamdtop - A Top like tool which shows what clamd is currently scanning amongst other things
+app-antivirus/clamav:metadata-analysis-api - Enables collection of file property metadata using ClamAV API for analysis by ClamAV bytecode programs.
 app-arch/cabextract:extra-tools - Install experimental tools: wince_info and wince_rename for examining and processing Windows CE installation cabinet header files; cabinfo for examining the structure of a cab file.
 app-arch/cfv:bittorrent - Enable support for checking .torrent files
 app-arch/dpkg:dselect - Build the dselect package-management frontend
@@ -931,6 +932,7 @@ app-misc/tracker:playlist - Add support for playlists
 app-misc/tracker:thunderbird - Install email data miner plugin for mail-client/thunderbird and mail-client/thunderbird-bin
 app-misc/tracker:xps - Add support for XPS file format through app-text/libgxps.
 app-misc/unfoo:minimal - Do not install all support archive binaries
+app-misc/vifm:X - Add support for X11
 app-misc/vifm:compatibility - Compatibility with previous versions of vifm
 app-misc/vifm:developer - Enable features of interest to developers
 app-misc/vifm:extended-keys - Support for extended keys (arrows, home etc)
@@ -938,6 +940,7 @@ app-misc/vifm:gtk - Use gtk+ to determine mimetypes
 app-misc/vifm:magic - Use libmagic to determine mimetypes
 app-misc/vifm:vim - Install the vifm vim plugin and vim-compatible documentation
 app-misc/vifm:vim-plugin - Install the vifm vim plugin
+app-misc/vifm:vim-syntax - Pulls in related vim syntax scripts
 app-misc/worker:avfs - Enable support for sys-fs/avfs
 app-misc/worker:magic - Add magic file support from sys-apps/file to automatically detect file types
 app-misc/workrave:distribution - Enable networking. See http://www.workrave.org/features/
@@ -1109,6 +1112,19 @@ app-text/evince:xps - Enable XPS viewer using app-text/libgxps
 app-text/getxbook:ocr - Use app-text/tesseract for optical character recognition
 app-text/ghostscript-gpl:bindist - Disable dejavu support for binary distribution because of licensing issue
 app-text/glark:zip - Support for ZIP files using dev-ruby/rubyzip
+app-text/groonga:abort - Enable query abortion
+app-text/groonga:benchmark - Build benchmark programs
+app-text/groonga:dynamic-malloc-change - Allow dynamic memory allocation change for testing
+app-text/groonga:exact-alloc-count - Atomic counting for memory alloc count
+app-text/groonga:fmalloc - Make memory allocation failed in specified condition for debug
+app-text/groonga:futex - Use futex
+app-text/groonga:libevent - Enable dev-libs/libevent used for suggestion
+app-text/groonga:mecab - Use app-text/mecab for morphological analysis
+app-text/groonga:msgpack - Enable dev-libs/msgpack used for suggestion
+app-text/groonga:nfkc - Use nfkc based utf8 normalization
+app-text/groonga:sphinx - Enable document generation by app-misc/sphinx
+app-text/groonga:uyield - Build for detecting race conditions
+app-text/groonga:zeromq - Enable net-libs/zeromq used for suggestion
 app-text/gtkspell:vala - Enable bindings for dev-lang/vala
 app-text/hyperestraier:mecab - Enable app-text/mecab support for Estraier
 app-text/jmupdf:system-mupdf - Link against system version of app-text/mupdf
@@ -1317,19 +1333,6 @@ dev-db/unixODBC:minimal - Disable bundled drivers and extra libraries (most user
 dev-db/unixODBC:odbcmanual - Administrator, Internal Structure, Programmer and User documentation
 dev-embedded/avrdude:ftdi - Enable support for USB FTDI chips via dev-embedded/libftdi
 dev-embedded/libftdi:tools - build ftdi_eeprom helper tool
-dev-embedded/msp430-binutils:multislot - Allow for multiple versions of binutils to be emerged at once for same CTARGET
-dev-embedded/msp430-binutils:multitarget - Adds support to binutils for cross compiling (does not work with gas)
-dev-embedded/msp430-gcc:fixed-point - Enable fixed-point arithmetic support for MIPS targets in gcc (Warning: significantly increases compile time!)
-dev-embedded/msp430-gcc:go - Build the GCC Go language frontend.
-dev-embedded/msp430-gcc:graphite - Add support for the framework for loop optimizations based on a polyhedral intermediate representation
-dev-embedded/msp430-gcc:libssp - Build SSP support into a dedicated library rather than use the code in the C library (DO NOT ENABLE THIS IF YOU DON'T KNOW WHAT IT DOES)
-dev-embedded/msp430-gcc:mudflap - Add support for mudflap, a pointer use checking library
-dev-embedded/msp430-gcc:multislot - Allow for SLOTs to include minor version (3.3.4 instead of just 3.3)
-dev-embedded/msp430-gcc:objc - Build support for the Objective C code language
-dev-embedded/msp430-gcc:objc++ - Build support for the Objective C++ language
-dev-embedded/msp430-gcc:objc-gc - Build support for the Objective C code language Garbage Collector
-dev-embedded/msp430-gdb:multitarget - Support all known targets in one gdb binary
-dev-embedded/msp430-gdb:python - Enable support for the new internal scripting language, as well as extended pretty printers
 dev-embedded/openocd:blaster - Enable support for Altera USE-Blaster
 dev-embedded/openocd:cmsis-dap - Support for CMSIS-DAP compliant adapters
 dev-embedded/openocd:dummy - Build the dummy port driver
@@ -1818,6 +1821,7 @@ dev-libs/folks:telepathy - Load contacts from the Telepathy framework
 dev-libs/folks:tracker - Load contacts from app-misc/tracker index
 dev-libs/folks:utils - Build the folks-inspect utility
 dev-libs/folks:zeitgeist - Add support for Zeitgeist event tracking system
+dev-libs/fstrm:utils - Build fstrm utility programs
 dev-libs/gecode:gist - Enable Gist, the Gecode Interactive Search Tool
 dev-libs/gf2x:bindist - Disable automatic fine-tuning to local processor features like pclmul or sse2.
 dev-libs/glib:mime - Pull in shared MIME database that many glib-based applications require at runtime to detect or open files. Warning: do not disable this flag unless installing on a headless server.
@@ -1850,6 +1854,7 @@ dev-libs/libflatarray:cuda - Enables plugins for NVIDIA GPUs (e.g. CUDAAllocator
 dev-libs/libgdata:vala - Enable bindings for dev-lang/vala
 dev-libs/libgit2:ssh - Enable SSH transport support
 dev-libs/libgit2:trace - Enable tracing support
+dev-libs/libgit2-glib:ssh - Enable SSH transport support
 dev-libs/libgpg-error:common-lisp - Install common-lisp files
 dev-libs/libgusb:vala - Enable bindings for dev-lang/vala
 dev-libs/libgweather:glade - Installs catalog files for dev-util/glade
@@ -2021,7 +2026,6 @@ dev-ml/ocamlnet:cryptokit - Enables encryption support via dev-ml/cryptokit
 dev-ml/ocamlnet:httpd - Enables net-httpd web server component
 dev-ml/ocamlnet:zip - Enables netzip support to read/write gzip data using object channels
 dev-ml/pgocaml:batteries - Enable Batteries support instead of extlib
-dev-ml/tyxml:ocamlduce - Enables ocamlduce XML typechecking.
 dev-ml/utop:camlp4 - Enables camlp4 support.
 dev-perl/App-Nopaste:clipboard - copying of URLs with -x/--copy
 dev-perl/App-Nopaste:github - Github authentication
@@ -3292,11 +3296,6 @@ mail-filter/postfwd:tools - Install additional tools for testing postfwd
 mail-filter/postgrey:targrey - Enables the targrey patch
 mail-filter/qmail-scanner:spamassassin - Build faster mail-filter/spamassassin checks into qmail-scanner
 mail-filter/spamassassin:qmail - Build qmail functionality and docs
-mail-filter/spamassassin-fuzzyocr:amavis - Enable support for mail-filter/amavisd-new
-mail-filter/spamassassin-fuzzyocr:gocr - Enable support for the gocr OCR engine
-mail-filter/spamassassin-fuzzyocr:logrotate - Install support files for app-admin/logrotate
-mail-filter/spamassassin-fuzzyocr:ocrad - Enable support for the ocrad OCR engine
-mail-filter/spamassassin-fuzzyocr:tesseract - Enable support for the tesseract OCR engine
 mail-filter/spamdyke:tls - Enables TLS protocol for spamdyke
 mail-filter/zdkimfilter:debug - Log process and signal information. Also leave the child process running for gdb examination.
 mail-filter/zdkimfilter:mysql - MySQL client based statistics based storage.
@@ -3695,6 +3694,7 @@ media-libs/mesa:pic - disable optimized assembly code that is not PIC friendly
 media-libs/mesa:r600-llvm-compiler - Build the LLVM based r600 shader compiler.
 media-libs/mesa:shared-dricore - Enable sharing of common code for classic DRI drivers.
 media-libs/mesa:shared-glapi - Enable sharing of common code for the OpenGL API.
+media-libs/mesa:sysfs - Use sysfs for pci-id support on linux instead of libudev
 media-libs/mesa:vdpau - Enable the VDPAU acceleration interface for the Gallium3D Video Layer.
 media-libs/mesa:wayland - Enable support for dev-libs/wayland
 media-libs/mesa:xa - Enable the XA (X Acceleration) API for Gallium3D.
@@ -4444,19 +4444,23 @@ media-video/mplayer2:xanim - Enables support for xanim based codecs
 media-video/mplayer2:yuv4mpeg - Enables yuv4mpeg video output
 media-video/mpv:bluray - Enable playback of Blu-ray filesystems
 media-video/mpv:bs2b - Enable Bauer stereophonic-to-binaural headphone filter
-media-video/mpv:cdio - Use libcdio for CD support (instead of cdparanoia)
+media-video/mpv:cdio - Enable CDDA support via dev-libs/libcdio-paranoia
+media-video/mpv:cli - Build mpv CLI player
 media-video/mpv:doc-pdf - Build documentation in pdf format
 media-video/mpv:dvdnav - Enable support for DVD navigation using media-libs/libdvdnav
-media-video/mpv:enca - Enables support for charset discovery and conversion using app-i18n/enca
-media-video/mpv:libguess - Enables support for charset discovery and conversion using app-i18n/libguess
+media-video/mpv:egl - Enable EGL backend for X11 OpenGL video output (experimental)
+media-video/mpv:enca - Enable support for charset discovery and conversion using app-i18n/enca
+media-video/mpv:jpeg - Enable support for saving screenshots to JPEG format
+media-video/mpv:libguess - Enable support for charset discovery and conversion using app-i18n/libguess
 media-video/mpv:libmpv - Build mpv shared library
+media-video/mpv:lua - Enable Lua scripting, OSC (On Screen Controller) GUI and net-misc/youtube-dl hook-script
 media-video/mpv:luajit - Use dev-lang/luajit instead of dev-lang/lua
-media-video/mpv:mpg123 - Enable support for mp3 decoding over media-sound/mpg123 instead of relying on ffmpeg support.
+media-video/mpv:mpg123 - Enable support for mp3 decoding via media-sound/mpg123 instead of relying on ffmpeg support
 media-video/mpv:postproc - Enable image post-processing via libpostproc
 media-video/mpv:pvr - Enable Video4Linux2 MPEG PVR
 media-video/mpv:quvi - Enable support for streaming sites using media-libs/libquvi
 media-video/mpv:radio - Enable V4L2 radio interface and support
-media-video/mpv:sdl - Enable video and audio support via media-libs/libsdl2
+media-video/mpv:sdl - Enable media-libs/libsdl2 based video and audio outputs
 media-video/mpv:shm - Enable support for shm
 media-video/mpv:vaapi - Enable VAAPI (Video Acceleration API) for hardware decoding
 media-video/mpv:vf-dlopen - Install additional video filters for using with -vf dlopen
@@ -4848,6 +4852,7 @@ net-dns/pdns:tools - Build optional tools (dnsscan, dnsscope, etc..).
 net-dns/pdnsd:isdn - Linux-only: check status of ippp interfaces with ISDN-specific system calls.
 net-dns/pdnsd:urandom - Linux-only: use /dev/urandom (pseudo-random number generation) instead of the default use of random() PRNG.
 net-dns/resolvconf-symlink:symlink - Actually replace /etc/resolv.conf with a symlink. Without this flag, the ebuild is a no-op.
+net-dns/unbound:dnstap - Enable dnstap support
 net-dns/unbound:gost - Enable GOST support
 net-firewall/arno-iptables-firewall:plugins - Install optional plugins
 net-firewall/firewalld:gui - Builds and installs GUI configurator and GTK+ applet
@@ -5213,12 +5218,14 @@ net-irc/unrealircd:topicisnuhost - Enable displaying nick!user@host as topic set
 net-irc/unrealircd:usermod - Enable /set* and /chg* commands
 net-irc/weechat:alias - Enable plugin for alias control.
 net-irc/weechat:charset - Enable encoding conversions.
+net-irc/weechat:exec - Enable exec plugin.
 net-irc/weechat:fifo - Enable FIFO support (sh pipes).
 net-irc/weechat:irc - Enable IRC protocol support.
 net-irc/weechat:logger - Enable support for logging.
 net-irc/weechat:relay - Enable relay plugin (experimental)
 net-irc/weechat:rmodifier - Enable rmodifier plugin.
 net-irc/weechat:scripts - Build infrastructure for scripting.
+net-irc/weechat:trigger - Enable trigger plugin.
 net-irc/weechat:xfer - Enable xfer plugin support.
 net-irc/znc:daemon - Allow znc to run as a system-wide service. Installs an init script and creates a znc user:group.
 net-libs/aqbanking:chipcard - Enable support for DDV/RSA-chipcards
@@ -5256,7 +5263,6 @@ net-libs/ldns:ecdsa - Enable ECDSA support
 net-libs/ldns:gost - Enable GOST support
 net-libs/libbtbb:pcap - Add support for network packet capture via net-libs/libpcap
 net-libs/libbtbb:wireshark-plugins - Build the wireshark plugins for bluetooth baseband sniffing
-net-libs/libcrafter:pcap - Use net-libs/libpcap for packet capturing
 net-libs/libeXosip:srv - enable support for SRV records DNS queries
 net-libs/libesmtp:ntlm - Enable support for NTLM authentication
 net-libs/libetpan:liblockfile - Enable support for liblockfile library
@@ -5507,10 +5513,12 @@ net-misc/bfgminer:hashbuster2 - Enable support for mining with HashBuster micro 
 net-misc/bfgminer:hashfast - Enable support for mining with HashFast devices
 net-misc/bfgminer:icarus - Enable support for mining with Icarus-compatible devices (including Block Erupter Sapphire ASICs)
 net-misc/bfgminer:jingtian - Enable support for mining on JingTian boards via SPI/GPIO
+net-misc/bfgminer:keccak - Enable support for mining with Keccak miners
 net-misc/bfgminer:klondike - Enable support for mining with Klondike USB miners
 net-misc/bfgminer:libusb - Use libusb
 net-misc/bfgminer:littlefury - Enable support for mining with LittleFury USB sticks
 net-misc/bfgminer:metabank - Enable support for mining on Metabank host Raspberry Pi
+net-misc/bfgminer:minion - Enable support for mining on minion chips via SPI (BlackArrow Prospero)
 net-misc/bfgminer:modminer - Enable support for mining with ModMiner FPGAs
 net-misc/bfgminer:nanofury - Enable support for mining with NanoFury USB sticks
 net-misc/bfgminer:opencl - Enable support for mining with OpenCL-capable devices (GPUs)
@@ -5521,6 +5529,7 @@ net-misc/bfgminer:proxy_stratum - Enable proxy support for stratum protocol
 net-misc/bfgminer:rockminer - Enable support for mining with RockMiner devices
 net-misc/bfgminer:screen - Provide start-bfgminer.sh script to launch BFGMiner in app-misc/screen
 net-misc/bfgminer:scrypt - Enable support for scrypt mining algorithm
+net-misc/bfgminer:sha256d - Enable support for SHA256d mining algorithm
 net-misc/bfgminer:sse2_4way - Enable support for CPU SSE2 4way mining algorithm
 net-misc/bfgminer:sse4 - Enable support for CPU SSE4 mining algorithm
 net-misc/bfgminer:twinfury - Enable support for mining with Twinfury USB sticks
@@ -6255,6 +6264,7 @@ sci-electronics/pcb:toporouter - Build toporouter
 sci-electronics/pcb:xrender - Translucent PCB display for Motif/Lesstif GUI
 sci-electronics/pulseview:decode - Enable decoding of protocols while capturing
 sci-electronics/sigrok-cli:decode - Enable decoding of protocols while capturing
+sci-electronics/splat:hires - Builds additional high resolution application 'rfsplat-hd'.
 sci-geosciences/geocode-glib:introspection - Use dev-libs/gobject-introspection for introspection
 sci-geosciences/gmt:gdal - Enable sci-libs/gdal library support
 sci-geosciences/gmt:gmtfull - Full resolution bathymetry database
@@ -6339,7 +6349,6 @@ sci-libs/gdal:xls - Add the dev-libs/freexl library for xls import support
 sci-libs/grib_api:jasper - Use media-libs/jasper instead of media-libs/openjpeg for JPEG 2000 support
 sci-libs/gsl:cblas-external - Link gsl with external cblas provided by (virtual/cblas) instead of shipped internal version
 sci-libs/hdf5:fortran2003 - Enable new features that require Fortran 2003 (http://www.hdfgroup.org/HDF5/doc/fortran/NewFeatures_F2003.pdf)
-sci-libs/indilib:nova - Enable support for nova celestial mechanics calculations
 sci-libs/ipopt:hsl - hsl
 sci-libs/ipopt:mumps - Enable sci-libs/mumps support
 sci-libs/lemon:coin - Enable the coinor-clp and coinor-cbc graph algorithms
@@ -7418,7 +7427,6 @@ www-servers/nginx:luajit - Use dev-lang/luajit instead of dev-lang/lua for lua s
 www-servers/nginx:pcre-jit - Enable JIT for pcre
 www-servers/nginx:rtmp - NGINX-based Media Streaming Server
 www-servers/nginx:ssl - Enable HTTPS module for http. Enable SSL/TLS support for POP3/IMAP/SMTP for mail.
-www-servers/ocsigen:ocamlduce - Enables ocamlduce XML typechecking for generated web pages
 www-servers/pound:dynscaler - Enable dynamic rescaling of back-end priorities
 www-servers/pshs:magic - Enable automatic detection of Content-Type using libmagic (sys-apps/file)
 www-servers/pshs:netlink - Use libnetlink (sys-apps/iproute2) to get network interface addresses
@@ -7521,8 +7529,6 @@ x11-libs/libfm:udisks - Use libfm's udisks-based volume monitor implementation i
 x11-libs/libfm:vala - Support custom actions in menus
 x11-libs/libmatchbox:pango - Enable x11-libs/pango support
 x11-libs/libmatchbox:xsettings - Enable the use of xsettings for settings management
-x11-libs/libnotify:introspection - Use dev-libs/gobject-introspection for introspection
-x11-libs/libnotify:symlink - Create symlink from libnotify-notify-send to notify-send
 x11-libs/libqxt:berkdb - Build the QxtBerkeley module
 x11-libs/libqxt:sql - Build the QxtSql module
 x11-libs/libqxt:web - Build the QxtWeb module

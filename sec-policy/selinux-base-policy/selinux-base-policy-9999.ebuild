@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-9999.ebuild,v 1.16 2014/11/23 14:52:16 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-9999.ebuild,v 1.18 2014/11/29 11:18:41 perfinion Exp $
 EAPI="5"
 
 inherit eutils
@@ -108,7 +108,8 @@ src_prepare() {
 
 src_compile() {
 	for i in ${POLICY_TYPES}; do
-		emake NAME=$i -C "${S}"/${i} || die "${i} compile failed"
+	    # Parallel build is broken, see bug 530178
+		emake -j1 NAME=$i -C "${S}"/${i} || die "${i} compile failed"
 	done
 }
 
@@ -140,9 +141,9 @@ pkg_postinst() {
 	done
 
 	# Relabel depending packages
-	PKGSET="";
+	local PKGSET="";
 	if [ -x /usr/bin/qdepends ] ; then
-		PKGSET=$(/usr/bin/qdepends -Cq -Q ${CATEGORY}/${PN} | grep -v 'sec-policy/selinux-');
+		PKGSET=$(/usr/bin/qdepends -Cq -r -Q ${CATEGORY}/${PN} | grep -v 'sec-policy/selinux-');
 	elif [ -x /usr/bin/equery ] ; then
 		PKGSET=$(/usr/bin/equery -Cq depends ${CATEGORY}/${PN} | grep -v 'sec-policy/selinux-');
 	fi

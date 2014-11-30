@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/gitg-0.3.2.ebuild,v 1.3 2014/04/05 20:49:13 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/gitg-0.3.2.ebuild,v 1.4 2014/11/24 05:29:49 tetromino Exp $
 
 EAPI=5
 
@@ -29,6 +29,7 @@ RDEPEND="
 	>=dev-libs/gobject-introspection-0.10.1
 	dev-libs/libgit2[threads]
 	>=dev-libs/libgit2-glib-0.0.10
+	<dev-libs/libgit2-glib-0.0.16
 	>=dev-libs/libpeas-1.5.0[gtk]
 	>=gnome-base/gsettings-desktop-schemas-0.1.1
 	>=net-libs/webkit-gtk-2.2:3[introspection]

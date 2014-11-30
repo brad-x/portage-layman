@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16175 2014/11/21 20:38:29 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16191 2014/11/29 13:14:58 ryao Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,36 @@
 
 #--- END OF EXAMPLES ---
 
+# Richard Yao <ryao@gentoo.org> (29 Nov 2014)
+# Depends on media-libs/lcms:0, which has unspecified security vulnerabilities.
+# Masked until mscms.dll.so that links to media-libs/lcms:2 is backported from
+# a newer wine, bug #526806.
+<app-emulation/crossover-bin-12.5.0
+
+# Alexis Ballier <aballier@gentoo.org> (28 Nov 2014)
+# Pending rev. deps check and porting
+>=dev-lang/ocaml-4.02.1
+dev-ml/labltk
+>=dev-ml/findlib-1.5.5-r1
+dev-ml/camlp4
+
+# Aaron W. Swenson <titanofold@gentoo.org> (26 Nov 2014)
+# Masked for removal in 30 days. dev-perl/pgperl hasn't been updated
+# in 10 years. Use dev-perl/DBD-Pg or any modern module based on
+# DBD::Pg.
+dev-perl/pgperl
+
+# Patrick Lauer <patrick@gentoo.org> (24 Nov 2014)
+# Missing deps, uninstallable
+app-misc/email2trac
+www-apps/trac-downloads
+
+# Tim Harder <radhermit@gentoo.org> (24 Nov 2014)
+# Freecode is no longer being updated since 2014-06-18.
+# Masked for removal in 30 days
+dev-util/freshmeat-submit
+dev-util/freecode-submit
+
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (21 Nov 2014)
 # Dev channel releases are only for people who are developers or want more
 # experimental features and accept a more unstable release.
@@ -42,10 +72,6 @@
 # Markos Chandras <hwoarang@gentoo.org> (18 Nov 2014)
 # Mask latest development version for testing
 =x11-misc/lightdm-1.13*
-
-# Rémi Cardona <remi@gentoo.org> (15 Nov 2014)
-# Masked until decision is made about binary slot
-=x11-base/xorg-server-1.16.2
 
 # Eray Aslan <eras@gentoo.org> (11 Nov 2014)
 # Mask beta releases
@@ -98,16 +124,6 @@ media-fonts/oxygen-fonts
 # app-emulation/virt-manager[-gtk]
 app-emulation/virtinst
 
-# Tim Harder <radhermit@gentoo.org> (31 Oct 2014)
-# Deprecated, use >=sys-devel/crossdev-20141030 to build an msp430
-# toolchain using the standard binutils/gcc/newlib/gdb packages.
-# Masked for removal in 30 days.
-dev-embedded/msp430-binutils
-dev-embedded/msp430-gcc
-dev-embedded/msp430-gdb
-dev-embedded/msp430-libc
-dev-embedded/msp430mcu
-
 # Jauhien Piatlicki <jauhien@gentoo.org> (30 Oct 2014)
 # Mask LXQt-0.8.0 release for testing
 # and until Qt5 is unmasked (bug #525410).
@@ -138,12 +154,6 @@ dev-embedded/msp430mcu
 # masked for removal on 20141128
 games-engines/sarien
 
-# Andreas K. Huettel <dilfridge@gentoo.org> (27 Oct 2014)
-# Multiple QA issues (#344187, #319433, #317575, #174466)
-# no upstream releases for a long time.
-# Masked for removal in 30 days
-mail-filter/spamassassin-fuzzyocr
-
 # Mikle Kolyada <zlogene@gentoo.org> (27 Oct 2014)
 # Fails tests (bug #442480),
 # fails to build with multiple make jobs (bug #264666).
@@ -157,16 +167,6 @@ dev-perl/Mail-ClamAV
 # and cups-filters.
 # Masking for removal in 30 days.
 net-print/foomatic-filters-ppds
-
-# Tim Harder <radhermit@gentoo.org> (25 Oct 2014)
-# Deprecated project, development continues in dev-util/cmocka.
-# Masked for removal in 30 days.
-dev-util/cmockery
-
-# Tim Harder <radhermit@gentoo.org> (25 Oct 2014)
-# Upstream migrated to nose for testing instead of their own framework.
-# Masked for removal in 30 days.
-dev-python/pry
 
 # Andreas K. Huettel <dilfridge@gentoo.org> (24 Oct 2014)
 # Fails tests (bug 421797), no reverse deps in tree, VERY dead
@@ -233,9 +233,8 @@ dev-php/suhosin
 #
 # Developers: Please DO NOT REMOVE this mask, which was discussed and
 # agreed on #gentoo-dev by mgorny, patrick and others
-=media-video/mpv-0.4*
-=media-video/mpv-0.5*
 =media-video/mpv-0.6*
+=media-video/mpv-0.7*
 
 # Davide Pesavento <pesa@gentoo.org> (11 Sep 2014)
 # Mask Qt 5.3.x for wider testing to ensure that it does
@@ -445,10 +444,6 @@ sys-block/afacli
 # Development has halted (see <http://www.perihel.at/sec/mz/index.html>)
 # See net-analyzer/netsniff-ng for a replacement (bug #515210)
 net-analyzer/mausezahn
-
-# Alexandre Rostovtsev <tetromino@gentoo.org> (22 Jun 2014)
-# Breaks gitg-0.3.2 (most recent released version), bug #514468
->=dev-libs/libgit2-glib-0.0.14
 
 # Robin H. Johnson <robbat2@gentoo.org> (21 Jun 2014)
 # Needs work, but infra needs it for new VM boxes
@@ -839,11 +834,6 @@ net-wireless/madwifi-ng
 # As a result of which, the package is not fully working at the moment
 # but it can still be used to track userland regressions.
 =app-benchmarks/ltp-ltp-2014082
-
-# Alexis Ballier <aballier@gentoo.org> (1 Nov 2012)
-# Still requires ocaml-3, mask it until it is ported. If this does not happen in
-# the near future, we should consider removing it.
-dev-ml/ocamlduce
 
 # Pacho Ramos <pacho@gentoo.org> (25 Oct 2012)
 # obexd changed its API without any warning, it's recommended to ship

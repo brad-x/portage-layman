@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/matplotlib-9999.ebuild,v 1.3 2014/09/08 04:04:49 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/matplotlib-9999.ebuild,v 1.6 2014/11/28 10:50:34 pacho Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
+PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
 
 PYTHON_REQ_USE='tk?'
 
@@ -28,8 +28,6 @@ IUSE="cairo doc excel examples fltk gtk gtk3 latex pyside qt4 test tk wxwidgets"
 
 # #456704 -- a lot of py2-only deps
 PY2_USEDEP=$(python_gen_usedep 'python2*')
-PY32_USEDEP=$(python_gen_usedep python3_2)
-PY3_USEDEP=$(python_gen_usedep python{3_2,3_3})
 COMMON_DEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/python-dateutil:0[${PYTHON_USEDEP}]
@@ -81,7 +79,6 @@ RDEPEND="${COMMON_DEPEND}
 	qt4? ( dev-python/PyQt4[X,${PYTHON_USEDEP}] )"
 
 PY2_FLAGS="|| ( $(python_gen_useflags python2*) )"
-PY32_FLAGS="|| ( $(python_gen_useflags python3_2) )"
 REQUIRED_USE="
 	doc? ( ${PY2_FLAGS} )
 	excel? ( ${PY2_FLAGS} )

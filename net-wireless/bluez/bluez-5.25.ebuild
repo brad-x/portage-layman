@@ -1,9 +1,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/bluez-5.25.ebuild,v 1.2 2014/11/22 10:50:40 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/bluez-5.25.ebuild,v 1.5 2014/11/26 22:45:15 pacho Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
+PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
 
 inherit autotools eutils multilib python-any-r1 readme.gentoo systemd udev user multilib-minimal
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://kernel/linux/bluetooth/${P}.tar.xz"
 
 LICENSE="GPL-2+ LGPL-2.1+"
 SLOT="0/3"
-KEYWORDS="~amd64 ~arm hppa ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm hppa ~ppc ~ppc64 ~x86"
 IUSE="cups debug +obex +readline selinux systemd test +udev"
 REQUIRED_USE="test? ( ${PYTHON_REQUIRED_USE} )"
 
@@ -149,7 +149,8 @@ multilib_src_install() {
 		# Upstream don't install this, bug #524640
 		# http://permalink.gmane.org/gmane.linux.bluez.kernel/53115
 		# http://comments.gmane.org/gmane.linux.bluez.kernel/54564
-		dobin attrib/gatttool
+		# gatttool is only built with readline, bug #530776
+		use readline && dobin attrib/gatttool
 		dobin tools/hex2hcd
 
 		# Unittests are not that useful once installed
