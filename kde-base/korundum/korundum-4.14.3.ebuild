@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/korundum/korundum-4.14.3.ebuild,v 1.1 2014/11/16 12:21:26 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/korundum/korundum-4.14.3.ebuild,v 1.2 2014/12/02 13:06:44 mrueg Exp $
 
 EAPI=5
 
@@ -20,7 +20,7 @@ IUSE="akonadi debug kate nepomuk okular"
 HOMEPAGE="http://techbase.kde.org/Development/Languages/Ruby"
 
 DEPEND="
-	$(add_kdebase_dep qtruby)
+	$(add_kdebase_dep qtruby 'ruby_targets_ruby19')
 	$(add_kdebase_dep smokekde 'akonadi?,kate?,okular?,nepomuk?')
 	$(add_kdebase_dep smokeqt)
 "

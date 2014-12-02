@@ -1,18 +1,17 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycuda/pycuda-9999.ebuild,v 1.14 2013/11/23 09:32:46 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycuda/pycuda-9999.ebuild,v 1.15 2014/12/02 11:33:53 jlec Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
+PYTHON_COMPAT=( python2_7 python3_{3,4} )
 
-inherit cuda distutils-r1 git-2 multilib
+inherit cuda distutils-r1 git-r3 multilib
 
 DESCRIPTION="Python wrapper for NVIDIA CUDA"
 HOMEPAGE="http://mathema.tician.de/software/pycuda/ http://pypi.python.org/pypi/pycuda"
 SRC_URI=""
 EGIT_REPO_URI="http://git.tiker.net/trees/pycuda.git"
-EGIT_HAS_SUBMODULES="True"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -36,10 +35,6 @@ DEPEND="${RDEPEND}
 # We need write acccess /dev/nvidia0 and /dev/nvidiactl and the portage
 # user is (usually) not in the video group
 RESTRICT="userpriv"
-
-src_unpack() {
-	git-2_src_unpack
-}
 
 python_prepare_all() {
 	cuda_sanitize
@@ -73,6 +68,7 @@ python_configure() {
 		--no-use-shipped-boost \
 		"${myopts[@]}"
 }
+
 src_test() {
 	# we need write access to this to run the tests
 	addwrite /dev/nvidia0
