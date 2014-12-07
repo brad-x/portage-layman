@@ -1,6 +1,31 @@
 # ChangeLog for media-sound/pulseaudio
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/ChangeLog,v 1.358 2014/11/13 12:21:33 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/ChangeLog,v 1.364 2014/12/06 14:48:09 ulm Exp $
+
+  06 Dec 2014; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Fix typo.
+
+  06 Dec 2014; Pacho Ramos <pacho@gentoo.org> pulseaudio-5.0-r6.ebuild:
+  Add a reference for the future
+
+  05 Dec 2014; Ulrich Müller <ulm@gentoo.org> pulseaudio-5.0-r6.ebuild:
+  [QA] Fix PDEPEND, bug 519530 comment 15.
+
+  05 Dec 2014; Michał Górny <mgorny@gentoo.org> metadata.xml,
+  pulseaudio-5.0-r6.ebuild:
+  USE default-enabled USE=alsa-plugin to control installing the plugin, as
+  agreed between the maintainers and QA.
+
+  05 Dec 2014; Pacho Ramos <pacho@gentoo.org> pulseaudio-5.0-r6.ebuild:
+  Increase severity of the messages as people wanting to run pulseaudio[alsa]
+  will need alsa-plugins most time if they don't want to see the many alsa-only
+  apps to bypass pulseaudio
+
+*pulseaudio-5.0-r6 (04 Dec 2014)
+
+  04 Dec 2014; Michał Górny <mgorny@gentoo.org> +pulseaudio-5.0-r6.ebuild:
+  QA: Replace unnecessary, blocker-causing alsa-plugins[pulseaudio] dependency
+  with a safe postinst message.
 
   13 Nov 2014; Pacho Ramos <pacho@gentoo.org> -pulseaudio-2.1-r1.ebuild,
   -pulseaudio-4.0.ebuild:

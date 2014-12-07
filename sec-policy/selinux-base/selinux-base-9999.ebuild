@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base/selinux-base-9999.ebuild,v 1.12 2014/11/01 16:13:32 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base/selinux-base-9999.ebuild,v 1.16 2014/12/07 13:21:04 perfinion Exp $
 EAPI="5"
 
 inherit eutils
@@ -12,13 +12,9 @@ if [[ ${PV} == 9999* ]]; then
 
 	inherit git-2
 
-	if [[ $PV == 9999* ]] ; then
 	KEYWORDS=""
 else
-	KEYWORDS="~amd64 ~x86"
-fi
-else
-	SRC_URI="http://oss.tresys.com/files/refpolicy/refpolicy-${PV}.tar.bz2
+	SRC_URI="https://raw.githubusercontent.com/wiki/TresysTechnology/refpolicy/files/refpolicy-${PV}.tar.bz2
 			http://dev.gentoo.org/~swift/patches/selinux-base-policy/patchbundle-selinux-base-policy-${PVR}.tar.bz2"
 
 	KEYWORDS="~amd64 ~x86"
@@ -57,14 +53,6 @@ src_prepare() {
 
 	cd "${S}/refpolicy"
 	make bare
-	# Fix bug 257111 - Correct the initial sid for cron-started jobs in the
-	# system_r role
-	sed -i -e 's:system_crond_t:system_cronjob_t:g' \
-		"${S}/refpolicy/config/appconfig-standard/default_contexts"
-	sed -i -e 's|system_r:cronjob_t|system_r:system_cronjob_t|g' \
-		"${S}/refpolicy/config/appconfig-mls/default_contexts"
-	sed -i -e 's|system_r:cronjob_t|system_r:system_cronjob_t|g' \
-		"${S}/refpolicy/config/appconfig-mcs/default_contexts"
 
 	epatch_user
 }
@@ -133,7 +121,7 @@ src_compile() {
 
 	for i in ${POLICY_TYPES}; do
 		cd "${S}/${i}"
-		make base || die "${i} compile failed"
+		emake base || die "${i} compile failed"
 		if use doc; then
 			make html || die
 		fi

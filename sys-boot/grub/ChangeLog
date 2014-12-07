@@ -1,6 +1,53 @@
 # ChangeLog for sys-boot/grub
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.326 2014/10/22 21:28:39 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.335 2014/12/06 06:02:52 patrick Exp $
+
+  06 Dec 2014; Patrick Lauer <patrick@gentoo.org> grub-2.02_beta2-r5.ebuild:
+  Remove unneeded blank line
+
+  06 Dec 2014; Mike Gilbert <floppym@gentoo.org>
+  files/grub-2.02_beta2-bash-completions.patch:
+  Replace grub-completion patch with the version I sent upstream.
+
+  06 Dec 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r5.ebuild:
+  Fix bash completion symlinks.
+
+*grub-2.02_beta2-r5 (05 Dec 2014)
+
+  05 Dec 2014; Justin Lecher <jlec@gentoo.org> -grub-2.02_beta2-r4.ebuild,
+  +grub-2.02_beta2-r5.ebuild:
+  Fix name of bash-completion grub -> grub2
+
+  05 Dec 2014; Mike Gilbert <floppym@gentoo.org> -files/2.02_beta2/0001-Makefile
+  .util.def-Link-grub-ofpathname-with-zfs-libs.patch, -files/2.02_beta2/0002-gru
+  b-install-support-for-partitioned-partx-loop-devi.patch,
+  -files/2.02_beta2/0003-Fix-grub-probe-0-option.patch, -files/2.02_beta2/0004-F
+  ix-partmap-cryptodisk-and-abstraction-handling-in-g.patch,
+  -files/2.02_beta2/0005-Fix-typo-gettext_print-instead-of-gettext_printf.patch,
+  -files/2.02_beta2/0006-change-stop-condition-to-avoid-infinite-loops.patch,
+  -files/2.02_beta2/0007-Improve-LVM-logical_volumes-string-matching.patch,
+  -files/2.02_beta2/0008-Fix-an-infinite-loop-in-grub-mkconfig.patch,
+  -files/2.02_beta2/0009-Fix-incorrect-address-reference-in-btrfs.patch,
+  -grub-2.02_beta2-r2.ebuild, -grub-2.02_beta2.ebuild:
+  Remove obsolete ebuilds.
+
+*grub-2.02_beta2-r4 (04 Dec 2014)
+
+  04 Dec 2014; Justin Lecher <jlec@gentoo.org> +grub-2.02_beta2-r4.ebuild,
+  +files/grub-2.02_beta2-bash-completions.patch, metadata.xml:
+  Fix QA issues with bash-completions, #526138
+
+  03 Dec 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r3.ebuild:
+  Stable on x86, bug 522314. Thanks to Poly-C for testing.
+
+  03 Dec 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r3.ebuild:
+  Move stable keyword forward for minor change.
+
+*grub-2.02_beta2-r3 (03 Dec 2014)
+
+  03 Dec 2014; Mike Gilbert <floppym@gentoo.org> +grub-2.02_beta2-r3.ebuild:
+  Convert patchset to a tarball. Don't set gfxpayload by default if not booting
+  with efi, bug 528826.
 
   22 Oct 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
   -files/grub-0.97-force-ld.bfd.patch, grub-0.97-r14.ebuild:

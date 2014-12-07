@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dee/dee-1.0.14-r2.ebuild,v 1.8 2013/12/08 20:00:03 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dee/dee-1.0.14-r2.ebuild,v 1.9 2014/12/03 11:36:15 jlec Exp $
 
 EAPI=5
 
@@ -24,7 +24,10 @@ REQUIRED_USE="introspection? ( ${PYTHON_REQUIRED_USE} )"
 RDEPEND="
 	dev-libs/glib:2
 	dev-libs/icu:=
-	introspection? ( ${PYTHON_DEPS} )"
+	introspection? (
+		${PYTHON_DEPS}
+		dev-libs/gobject-introspection
+		)"
 DEPEND="${RDEPEND}
 	$(vala_depend)
 	doc? ( dev-util/gtk-doc )
