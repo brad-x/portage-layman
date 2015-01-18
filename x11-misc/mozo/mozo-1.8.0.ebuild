@@ -1,13 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/mozo/mozo-1.8.0.ebuild,v 1.4 2014/07/02 09:49:02 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/mozo/mozo-1.8.0.ebuild,v 1.6 2014/12/28 21:43:33 eva Exp $
 
 EAPI="5"
 
 GCONF_DEBUG="no"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="xml"
-SUPPORT_PYTHON_ABIS="1"
 
 inherit gnome2 python-r1 versionator
 
@@ -70,10 +69,4 @@ src_install() {
 	}
 
 	python_foreach_impl run_in_build_dir installing
-}
-
-run_in_build_dir() {
-	pushd "${BUILD_DIR}" > /dev/null || die
-	"$@"
-	popd > /dev/null
 }

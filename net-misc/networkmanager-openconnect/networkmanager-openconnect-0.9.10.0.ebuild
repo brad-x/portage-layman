@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager-openconnect/networkmanager-openconnect-0.9.10.0.ebuild,v 1.1 2014/09/22 19:28:47 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager-openconnect/networkmanager-openconnect-0.9.10.0.ebuild,v 1.4 2014/12/19 13:42:34 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.gnome.org/Projects/NetworkManager"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="gtk"
 
 RDEPEND="
@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	epatch_user
+	gnome2_src_prepare
+}
 
 src_configure() {
 	gnome2_src_configure \

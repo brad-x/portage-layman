@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/cyrus-sasl-2.1.26-r9.ebuild,v 1.6 2014/11/21 09:49:00 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/cyrus-sasl-2.1.26-r9.ebuild,v 1.8 2015/01/16 08:35:30 armin76 Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ SRC_URI="ftp://ftp.cyrusimap.org/cyrus-sasl/${P}.tar.gz"
 
 LICENSE="BSD-with-attribution"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ~ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="authdaemond berkdb gdbm kerberos ldapdb openldap mysql pam postgres sample sqlite
 srp ssl static-libs urandom"
 
@@ -26,7 +26,7 @@ DEPEND="net-mail/mailbase
 	openldap? ( >=net-nds/openldap-2.4.38-r1[${MULTILIB_USEDEP}] )
 	mysql? ( virtual/mysql )
 	pam? ( >=virtual/pam-0-r1[${MULTILIB_USEDEP}] )
-	postgres? ( virtual/postgresql )
+	postgres? ( dev-db/postgresql )
 	sqlite? ( >=dev-db/sqlite-3.8.2:3[${MULTILIB_USEDEP}] )
 	ssl? ( >=dev-libs/openssl-1.0.1h-r2[${MULTILIB_USEDEP}] )
 	java? ( >=virtual/jdk-1.4 )"

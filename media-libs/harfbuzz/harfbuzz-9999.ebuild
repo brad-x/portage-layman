@@ -1,11 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-9999.ebuild,v 1.30 2014/11/24 08:51:18 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-9999.ebuild,v 1.31 2014/12/27 20:47:26 dilfridge Exp $
 
 EAPI=5
 
 EGIT_REPO_URI="git://anongit.freedesktop.org/harfbuzz"
-[[ ${PV} == 9999 ]] && inherit git-2 autotools
+[[ ${PV} == 9999 ]] && inherit git-r3 autotools
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.144 2014/12/04 10:32:10 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.146 2014/12/26 11:42:21 kensington Exp $
 
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
@@ -346,7 +346,7 @@ if [[ ${KDEBASE} != "kde-base" && -n ${KDE_LINGUAS} ]]; then
 		# this can't be done on one line because if user doesn't use any localisation
 		# then he is probably not interested in kde-l10n at all.
 		kderdepend+="
-			linguas_${_lingua}? ( $(add_kdebase_dep kde-l10n "linguas_${_lingua}(+)") )
+		linguas_${_lingua}? ( || ( kde-apps/kde-l10n[linguas_${_lingua}(+)] $(add_kdebase_dep kde-l10n "linguas_${_lingua}(+)") ) )
 		"
 	done
 	unset _lingua
@@ -474,8 +474,8 @@ _calculate_src_uri() {
 			;;
 		kdevelop|kdevelop-php*|kdevplatform)
 			case ${KDEVELOP_VERSION} in
-				4.[123].[6-9]*) SRC_URI="mirror://kde/unstable/kdevelop/${KDEVELOP_VERSION}/src/${P}.tar.bz2" ;;
-				*) SRC_URI="mirror://kde/stable/kdevelop/${KDEVELOP_VERSION}/src/${P}.tar.bz2" ;;
+				4.[123].[6-9]*) SRC_URI="mirror://kde/unstable/kdevelop/${KDEVELOP_VERSION}/src/${P}.tar.xz" ;;
+				*) SRC_URI="mirror://kde/stable/kdevelop/${KDEVELOP_VERSION}/src/${P}.tar.xz" ;;
 			esac
 			;;
 	esac
@@ -577,7 +577,7 @@ _calculate_live_repo() {
 			fi
 
 			# default branching
-			[[ ${PV} != 4.9999* && ${KDEBASE} == kde-base ]] && \
+			[[ ${PV} != 4.9999* && ${PV} != 9999 && ${KDEBASE} == kde-base ]] && \
 				EGIT_BRANCH="KDE/$(get_kde_version)"
 
 			# default repo uri

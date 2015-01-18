@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9.0.18-r2.ebuild,v 1.7 2014/12/07 12:25:41 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9.0.18-r2.ebuild,v 1.11 2014/12/26 17:55:41 maekke Exp $
 
 EAPI="5"
 
@@ -13,7 +13,7 @@ WANT_AUTOMAKE="none"
 
 inherit autotools eutils flag-o-matic multilib pam prefix python-single-r1 systemd user versionator
 
-KEYWORDS="~alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
 
 SLOT="$(get_version_component_range 1-2)"
 
@@ -27,7 +27,7 @@ DESCRIPTION="PostgreSQL RDBMS"
 HOMEPAGE="http://www.postgresql.org/"
 
 LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr zh_CN zh_TW"
-IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python +readline selinux server ssl static-libs tcl threads uuid xml zlib"
+IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python +readline selinux +server ssl static-libs tcl threads uuid xml zlib"
 
 for lingua in ${LINGUAS}; do
 	IUSE+=" linguas_${lingua}"

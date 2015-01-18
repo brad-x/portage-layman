@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/ecb/ecb-2.41_pre20140215-r1.ebuild,v 1.1 2014/11/12 18:22:51 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/ecb/ecb-2.41_pre20140215-r1.ebuild,v 1.6 2014/12/29 13:53:21 blueness Exp $
 
 EAPI=5
 
@@ -13,10 +13,11 @@ SRC_URI="http://dev.gentoo.org/~ulm/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="java"
 
-DEPEND="java? ( app-emacs/jde )"
+DEPEND="!!<app-emacs/cedet-2.0
+	java? ( app-emacs/jde )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${PV%_*}"

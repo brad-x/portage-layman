@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/seamonkey-2.31-r1.ebuild,v 1.1 2014/12/06 08:06:25 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/seamonkey-2.31-r1.ebuild,v 1.4 2015/01/14 09:01:55 polynomial-c Exp $
 
 EAPI=5
 WANT_AUTOCONF="2.1"
@@ -40,11 +40,11 @@ HOMEPAGE="http://www.seamonkey-project.org"
 if [[ ${PV} == *_pre* ]] ; then
 	# pre-releases. No need for arch teams to change KEYWORDS here.
 
-	KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86"
+	KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 x86"
 else
 	# This is where arch teams should change the KEYWORDS.
 
-	KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86"
+	KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 x86"
 fi
 
 SLOT="0"
@@ -292,7 +292,7 @@ src_install() {
 
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" \
 	emake DESTDIR="${D}" install
-	cp "${FILESDIR}"/icon/${PN}.desktop "${T}" || die
+	cp "${FILESDIR}"/${PN}.desktop "${T}" || die
 
 	if use crypt ; then
 		local em_dir="${WORKDIR}/enigmail/build"

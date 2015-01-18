@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/qpdfview-0.4.12.ebuild,v 1.1 2014/11/02 04:26:52 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/qpdfview-0.4.12.ebuild,v 1.4 2014/12/30 19:51:06 maekke Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ SRC_URI="https://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 arm ~x86 ~amd64-linux ~x86-linux"
 IUSE="cups dbus djvu fitz +pdf postscript +qt4 qt5 sqlite +svg synctex"
 
 REQUIRED_USE="^^ ( qt4 qt5 )
@@ -29,8 +29,10 @@ RDEPEND="cups? ( net-print/cups )
 		pdf? ( app-text/poppler[qt4] )
 		sqlite? ( dev-qt/qtsql:4[sqlite] )
 		svg? ( dev-qt/qtsvg:4 ) )
-	qt5? ( dev-qt/qtcore:5
+	qt5? ( dev-qt/linguist-tools:5
+		dev-qt/qtcore:5
 		dev-qt/qtgui:5
+		dev-qt/qtprintsupport:5
 		dbus? ( dev-qt/qtdbus:5 )
 		pdf? ( >=app-text/poppler-0.26.4[qt5] )
 		sqlite? ( dev-qt/qtsql:5[sqlite] )

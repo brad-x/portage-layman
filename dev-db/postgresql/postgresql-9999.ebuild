@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.4 2014/11/04 01:01:12 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.6 2014/12/28 18:07:22 titanofold Exp $
 
 EAPI="5"
 
 PYTHON_COMPAT=( python{2_{6,7},3_{2,3,4}} )
-WANT_AUTOMAKE="none"
 
-inherit autotools eutils flag-o-matic multilib pam prefix python-single-r1 systemd user versionator base git-2
+inherit base eutils flag-o-matic git-2 linux-info multilib pam prefix \
+		python-single-r1 systemd user versionator
 
 KEYWORDS=""
 
@@ -16,15 +16,14 @@ SLOT="9.5"
 
 EGIT_REPO_URI="git://git.postgresql.org/git/postgresql.git"
 
-# Add initscript source
-SRC_URI="http://dev.gentoo.org/~floppym/dist/postgresql-initscript-2.7.tbz2"
-
 LICENSE="POSTGRESQL GPL-2"
 DESCRIPTION="PostgreSQL RDBMS"
 HOMEPAGE="http://www.postgresql.org/"
 
-LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr zh_CN zh_TW"
-IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python +readline selinux server ssl static-libs tcl threads uuid xml zlib"
+LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr
+		 zh_CN zh_TW"
+IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python
+	  +readline selinux +server ssl static-libs tcl threads uuid xml zlib"
 
 for lingua in ${LINGUAS}; do
 	IUSE+=" linguas_${lingua}"
@@ -85,6 +84,8 @@ selinux? ( sec-policy/selinux-postgresql )
 "
 
 pkg_setup() {
+	use server && CONFIG_CHECK="~SYSVIPC" linux-info_pkg_setup
+
 	enewgroup postgres 70
 	enewuser postgres 70 /bin/bash /var/lib/postgresql postgres
 
@@ -92,19 +93,12 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Eliminate autotools version check
-	sed '/m4_PACKAGE_VERSION/,+3d' -i configure.in || die
-
 	# Work around PPC{,64} compilation bug where bool is already defined
 	sed '/#ifndef __cplusplus/a #undef bool' -i src/include/c.h || die
 
 	# Set proper run directory
 	sed "s|\(PGSOCKET_DIR\s\+\)\"/tmp\"|\1\"${EPREFIX}/run/postgresql\"|" \
 		-i src/include/pg_config_manual.h || die
-
-	sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
-		-i "${WORKDIR}"/postgresql{.{init,confd,service},-check-db-dir} || \
-		die "SLOT/LIBDIR sed failed"
 
 	use server || epatch "${FILESDIR}/${PN}-${SLOT}-no-server.patch"
 
@@ -113,8 +107,6 @@ src_prepare() {
 			-i src/backend/libpq/auth.c || \
 			die 'PGSQL_PAM_SERVICE rename failed.'
 	fi
-
-	eautoconf
 }
 
 src_configure() {
@@ -198,14 +190,21 @@ src_install() {
 	fi
 
 	if use server; then
-		newconfd "${WORKDIR}/postgresql.confd" postgresql-${SLOT}
-		newinitd "${WORKDIR}/postgresql.init" postgresql-${SLOT}
+		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+			"${FILESDIR}/${PN}.confd" | newconfd - ${PN}-${SLOT}
 
-		systemd_newunit "${WORKDIR}"/postgresql.service postgresql-${SLOT}.service
-		systemd_newtmpfilesd "${WORKDIR}"/postgresql.tmpfilesd postgresql-${SLOT}.conf
-		newbin "${WORKDIR}"/postgresql-check-db-dir postgresql-${SLOT}-check-db-dir
+		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+			"${FILESDIR}/${PN}.init" | newinitd - ${PN}-${SLOT}
 
-		use pam && pamd_mimic system-auth postgresql-${SLOT} auth account session
+		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+			"${FILESDIR}/${PN}.service" | \
+			systemd_newunit - ${PN}-${SLOT}.service
+
+		systemd_newtmpfilesd "${FILESDIR}"/${PN}.tmpfilesd ${PN}-${SLOT}.conf
+
+		newbin "${FILESDIR}"/${PN}-check-db-dir ${PN}-${SLOT}-check-db-dir
+
+		use pam && pamd_mimic system-auth ${PN}-${SLOT} auth account session
 
 		if use prefix ; then
 			keepdir /run/postgresql
@@ -259,9 +258,11 @@ pkg_postrm() {
 pkg_config() {
 	use server || die "USE flag 'server' not enabled. Nothing to configure."
 
-	[[ -f "${EROOT%/}/etc/conf.d/postgresql-${SLOT}" ]] && source "${EROOT%/}/etc/conf.d/postgresql-${SLOT}"
+	[[ -f "${EROOT%/}/etc/conf.d/postgresql-${SLOT}" ]] \
+		&& source "${EROOT%/}/etc/conf.d/postgresql-${SLOT}"
 	[[ -z "${PGDATA}" ]] && PGDATA="${EROOT%/}/etc/postgresql-${SLOT}/"
-	[[ -z "${DATA_DIR}" ]] && DATA_DIR="${EROOT%/}/var/lib/postgresql/${SLOT}/data"
+	[[ -z "${DATA_DIR}" ]] \
+		&& DATA_DIR="${EROOT%/}/var/lib/postgresql/${SLOT}/data"
 
 	# environment.bz2 may not contain the same locale as the current system
 	# locale. Unset and source from the current system locale.
@@ -323,45 +324,6 @@ pkg_config() {
 		die "${DATA_DIR} is not empty."
 	fi
 
-	[ -z "${PG_MAX_CONNECTIONS}" ] && PG_MAX_CONNECTIONS="128"
-	einfo "Checking system parameters..."
-
-	if ! use kernel_linux ; then
-		einfo "Skipped."
-		einfo "  Tests not supported on this OS (yet)"
-	else
-		if [ -z ${SKIP_SYSTEM_TESTS} ] ; then
-			einfo "Checking whether your system supports at least ${PG_MAX_CONNECTIONS} connections..."
-
-			local SEMMSL=$(sysctl -n kernel.sem | cut -f1)
-			local SEMMNS=$(sysctl -n kernel.sem | cut -f2)
-			local SEMMNI=$(sysctl -n kernel.sem | cut -f4)
-			local SHMMAX=$(sysctl -n kernel.shmmax)
-
-			local SEMMSL_MIN=17
-			local SEMMNS_MIN=$(( ( ${PG_MAX_CONNECTIONS}/16 ) * 17 ))
-			local SEMMNI_MIN=$(( ( ${PG_MAX_CONNECTIONS}+15 ) / 16 ))
-			local SHMMAX_MIN=$(( 500000 + ( 30600 * ${PG_MAX_CONNECTIONS} ) ))
-
-			for p in SEMMSL SEMMNS SEMMNI SHMMAX ; do
-				if [ $(eval echo \$$p) -lt $(eval echo \$${p}_MIN) ] ; then
-					eerror "The value for ${p} $(eval echo \$$p) is below the recommended value $(eval echo \$${p}_MIN)"
-					eerror "You have now several options:"
-					eerror "    - Change the mentioned system parameter"
-					eerror "    - Lower the number of max.connections by setting PG_MAX_CONNECTIONS to a"
-					eerror "      value lower than ${PG_MAX_CONNECTIONS}"
-					eerror "    - Set SKIP_SYSTEM_TESTS in case you want to ignore this test completely"
-					eerror "More information can be found here:"
-					eerror "    http://www.postgresql.org/docs/${SLOT}/static/kernel-resources.html"
-					die "System test failed."
-				fi
-			done
-			einfo "Passed."
-		else
-			ewarn "SKIP_SYSTEM_TESTS set, so skipping."
-		fi
-	fi
-
 	einfo "Creating the data directory ..."
 	if [[ ${EUID} == 0 ]] ; then
 		mkdir -p "${DATA_DIR}"
@@ -377,7 +339,17 @@ pkg_config() {
 		"${EROOT%/}"/usr/$(get_libdir)/postgresql-${SLOT}/bin/initdb -U postgres -D "${DATA_DIR}" ${PG_INITDB_OPTS}
 	fi
 
-	mv "${DATA_DIR%/}"/*.conf "${PGDATA}"
+	if [[ "${DATA_DIR%/}" != "${PGDATA%/}" ]] ; then
+		mv "${DATA_DIR%/}"/{pg_{hba,ident},postgresql}.conf "${PGDATA}"
+		ln -s "${PGDATA%/}"/{pg_{hba,ident},postgresql}.conf "${DATA_DIR%/}"
+	fi
+
+	cat <<- EOF >> "${PGDATA%/}"/postgresql.conf
+		# This is here because of https://bugs.gentoo.org/show_bug.cgi?id=518522
+		# On the off-chance that you might need to work with UTF-8 encoded
+		# characters in PL/Perl
+		plperl.on_init = 'use utf8; use re; package utf8; require "utf8_heavy.pl";'
+	EOF
 
 	einfo "The autovacuum function, which was in contrib, has been moved to the main"
 	einfo "PostgreSQL functions starting with 8.1, and starting with 8.4 is now enabled"

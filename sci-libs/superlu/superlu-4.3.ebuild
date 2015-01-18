@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/superlu/superlu-4.3.ebuild,v 1.7 2012/12/12 20:31:31 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/superlu/superlu-4.3.ebuild,v 1.9 2015/01/09 13:40:39 ago Exp $
 
-EAPI=4
+EAPI=5
 
 AUTOTOOLS_AUTORECONF=true
 AUTOTOOLS_IN_SOURCE_BUILD=1
@@ -17,7 +17,7 @@ SRC_URI="${HOMEPAGE}/${PN}_${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc examples static-libs test"
 
 RDEPEND="

@@ -1,6 +1,47 @@
 # ChangeLog for x11-libs/cairo
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/ChangeLog,v 1.386 2014/11/29 23:37:46 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/ChangeLog,v 1.396 2015/01/09 11:39:45 jer Exp $
+
+  09 Jan 2015; Jeroen Roovers <jer@gentoo.org> cairo-1.12.16-r4.ebuild:
+  Stable for HPPA (bug #525300).
+
+  08 Jan 2015; Markus Meier <maekke@gentoo.org> cairo-1.12.16-r4.ebuild:
+  arm stable, bug #525300
+
+  24 Dec 2014; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Remove description of 'lto' flag.
+
+  23 Dec 2014; Michał Górny <mgorny@gentoo.org> cairo-1.12.16-r3.ebuild,
+  cairo-1.12.16-r4.ebuild:
+  Disable LTO unconditionally on 1.12.16* since it does not work properly (bug
+  #510782) and was removed in 1.12.18.
+
+  12 Dec 2014; Matt Turner <mattst88@gentoo.org> cairo-1.12.18.ebuild,
+  files/cairo-1.12.18-disable-test-suite.patch:
+  Disable the test suite better, bug 532338.
+
+  09 Dec 2014; Matt Turner <mattst88@gentoo.org> cairo-1.12.18.ebuild,
+  cairo-9999.ebuild:
+  Drop now unnecessary eautoreconf.
+
+  09 Dec 2014; Matt Turner <mattst88@gentoo.org> cairo-1.12.18.ebuild,
+  cairo-9999.ebuild:
+  Stop applying Interix patch. ChangeLog claims incorrectly that patch was
+  upstreamed. No documentation or bug references, and patch references libpng12.
+
+  09 Dec 2014; Matt Turner <mattst88@gentoo.org>
+  +files/cairo-1.12.18-disable-test-suite.patch, cairo-1.12.18.ebuild,
+  cairo-9999.ebuild:
+  Readd patch to avoid building the test suite. Was silently dropped in the
+  1.12.16 bump.
+
+*cairo-1.12.18 (08 Dec 2014)
+
+  08 Dec 2014; Matt Turner <mattst88@gentoo.org> +cairo-1.12.18.ebuild:
+  Version bump to 1.12.18.
+
+  08 Dec 2014; Matt Turner <mattst88@gentoo.org> cairo-9999.ebuild:
+  Reenable parallel make, and drop legacy-drivers USE.
 
 *cairo-1.12.16-r4 (29 Nov 2014)
 

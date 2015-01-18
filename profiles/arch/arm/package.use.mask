@@ -1,6 +1,21 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/arm/package.use.mask,v 1.229 2014/11/29 20:06:42 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/arm/package.use.mask,v 1.235 2015/01/06 09:44:58 aballier Exp $
+
+# Alexis Ballier <aballier@gentoo.org> (06 Jan 2015)
+# sci-libs/xkaapi does not build here on armv7
+sci-libs/vtk kaapi
+
+# Benda Xu <heroxbd@gentoo.org> (03 Jan 2015)
+# not tested
+app-i18n/anthy canna-2ch
+app-i18n/scim-anthy kasumi
+
+# Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2014)
+# New dependencies for wayland support in Gnome 3.14
+# See bug #533420.
+media-libs/clutter egl
+x11-wm/mutter kms
 
 # Markus Meier <maekke@gentoo.org> (29 Nov 2014)
 # Unkeyworded deps, bug #518742
@@ -18,10 +33,6 @@ www-client/netsurf pdf-writer
 # Markus Meier <maekke@gentoo.org> (14 Nov 2014)
 # Unkeyworded deps, bug #511532
 net-im/prosody libevent mysql postgres sqlite
-
-# Michael Palimaka <kensington@gentoo.org> (25 Oct 2014)
-# Unkeyworded deps, bug #525558
-kde-base/systemsettings kscreen
 
 # Alexis Ballier <aballier@gentoo.org> (24 Oct 2014)
 # sci-libs/hdf is not supported on arm
@@ -248,16 +259,7 @@ net-print/cups java
 =sys-devel/gettext-0.18.1.1-r3 java
 =sys-devel/gettext-0.18.2 java
 =sys-devel/gettext-0.18.3.2 java
-=sys-libs/db-1.85-r3 java
-=sys-libs/db-3.2.9_p2 java
-=sys-libs/db-4.2.52_p5-r1 java
-=sys-libs/db-4.3.29_p1-r1 java
-=sys-libs/db-4.5.20_p2 java
-=sys-libs/db-4.5.20_p2-r1 java
-=sys-libs/db-4.6.21_p4 java
-=sys-libs/db-4.7.25_p4 java
-=sys-libs/db-4.8.30 java
-=sys-libs/db-4.8.30-r1 java
+sys-libs/db java
 =www-client/seamonkey-2.0.14-r1 java
 
 # Alexandre Rostovtsev <tetromino@gentoo.org> (22 Jan 2013)

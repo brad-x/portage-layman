@@ -1,6 +1,202 @@
 # ChangeLog for eclass directory
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1454 2014/12/07 07:23:12 graaff Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1511 2015/01/14 22:50:01 mgorny Exp $
+
+  14 Jan 2015; Michał Górny <mgorny@gentoo.org> eutils.eclass:
+  prune_libtool_files: properly reset variables for following loop iterations.
+
+  13 Jan 2015; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
+  Deprecate python_export_best() verbosely.
+
+  13 Jan 2015; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Support restricting implementations for *_all() phases.
+
+  13 Jan 2015; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
+  Support restricting accepted implementation list for python_setup.
+
+  12 Jan 2015; Lars Wendler <polynomial-c@gentoo.org> autotools.eclass:
+  Attempt to fix bug #536428.
+
+  12 Jan 2015; Michael Haubenwallner <haubi@gentoo.org>
+  +ELT-patches/aixrtl/2.4.4-with-svr4:
+  set default to --with-aix-soname=svr4
+
+  12 Jan 2015; Lars Wendler <polynomial-c@gentoo.org> autotools.eclass:
+  Use "--force" when running eautoconf through eautoreconf (bug #527506).
+
+  11 Jan 2015; Maxim Koltsov <maksbotan@gentoo.org> leechcraft.eclass:
+  Add fallback https EGIT_REPO_URI
+
+  09 Jan 2015; Manuel Rüger <mrueg@gentoo.org> kde5-functions.eclass:
+  Sync kde5-functions.eclass with overlay.
+
+  08 Jan 2015; Lars Wendler <polynomial-c@gentoo.org> autotools.eclass:
+  Bump latest unstable automake version to 1.15.
+
+  05 Jan 2015; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
+  better readable description
+
+  05 Jan 2015; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
+  typo
+
+  04 Jan 2015; Michał Górny <mgorny@gentoo.org> python-single-r1.eclass:
+  Run pkg_setup() only in non-binary installs, as intended and documented a
+  long time ago :).
+
+  04 Jan 2015; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
+  documentation syntax fixed
+
+  04 Jan 2015; Tim Harder <radhermit@gentoo.org> -vim.eclass:
+  Remove unused eclass.
+
+  03 Jan 2015; Michał Górny <mgorny@gentoo.org> waf-utils.eclass:
+  Warn about unset EPYTHON.
+
+  02 Jan 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Make python.eclass commands/variables fatal once again since all in-tree
+  ebuilds seem to have been fixed.
+
+  02 Jan 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add progress overlay-specific commands and variables to the invalid
+  command/variable lists.
+
+  02 Jan 2015; Sergei Trofimovich <slyfox@gentoo.org> haskell-cabal.eclass:
+  Properly disable USE=hoogle.
+
+  01 Jan 2015; Sergei Trofimovich <slyfox@gentoo.org> ghc-package.eclass,
+  haskell-cabal.eclass:
+  Add support for ghc-7.10 registration. User visible changes: ghc-package
+  stopped exporting pkg_* phases and now they are reexported by haskell-cabal.
+  pkg_* phases do not install any additional files anymore.
+
+  01 Jan 2015; Sergei Trofimovich <slyfox@gentoo.org> darcs.eclass:
+  Fix patch count on first clone (by vikraman).
+
+  30 Dec 2014; William Hubbs <williamh@gentoo.org> eutils.eclass:
+  Allow 512x512 icons to be installed (this was approved by ssuominen).
+
+  28 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> gstreamer.eclass:
+  Add workaround for new orc break gstreamer ebuilds, bug #533664.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-single-r1.eclass:
+  Add python_gen_usedep, python_gen_useflags and python_gen_cond_dep to
+  python-single-r1.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
+  Spelling, pointed out by floppym.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Make the invalid function/variable checks non-fatal for now.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Do not check for PYTHON_TEST_VERBOSITY, it is intended for make.conf.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass,
+  python-r1.eclass:
+  Verbosely deprecate python_parallel_foreach_impl and
+  DISTUTILS_NO_PARALLEL_BUILD.
+
+  28 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass:
+  Add test recipe for rspec:3 slot.
+
+  28 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass,
+  ruby-ng.eclass:
+  Use rspec-2 wrapper for the rspec recipe. This enables us to add rspec 3.x to
+  the tree while still being able to run rspec 2 specs. The changes have been
+  made in a way that is backwards compatible with the current situation.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Update banned var docs.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add PYTHON_{CPPFLAGS,CFLAGS,CXXFLAGS,LDFLAGS,MODNAME} to the banned variable
+  list.
+
+  27 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-ng.eclass:
+  Add ruby22 RUBY_TARGET support.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add die-checks for python.eclass & distutils.eclass variables.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Add die-replacements for distutils.eclass functions, to help finding mistakes
+  in conversions.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add die-replacements for python.eclass functions, to help finding mistakes in
+  conversions.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> waf-utils.eclass:
+  Add new API warnings.
+
+  26 Dec 2014; Michael Palimaka <kensington@gentoo.org> kde4-base.eclass:
+  Sync with KDE overlay.
+
+  25 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> waf-utils.eclass:
+  Reflect reality of the status of waf-utils eclass maintenance as announced
+  months ago on gentoo-dev mailing list.
+
+  24 Dec 2014; Michael Weber <xmw@gentoo.org> netsurf.eclass:
+  remove base.eclass inherit
+
+  21 Dec 2014; Michał Górny <mgorny@gentoo.org> tests/python-utils-r1.sh:
+  Update tests for unsupported python3.2.
+
+  21 Dec 2014; Michał Górny <mgorny@gentoo.org> tests/tests-common.sh:
+  Use gentoo-functions for tests, bug #504378.
+
+  21 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> vala.eclass:
+  Add support for vala 0.26.
+
+  18 Dec 2014; Michael Palimaka <kensington@gentoo.org> cmake-utils.eclass:
+  Declare local CPPFLAGS to avoid multiple appends in cmake-multilib.
+
+  18 Dec 2014; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Fix breakage caused by recent multilib-build.eclass changes (bug 532510).
+  Patch by zorry, based on a previous patch by Greg Turner. Thanks also to
+  floppym and mgorny for the initial investigation and suggestions.
+
+  17 Dec 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Remove code paths that are not called anymore
+
+  17 Dec 2014; Manuel Rüger <mrueg@gentoo.org> kde5-functions.eclass:
+  Sync eclass with kde overlay.
+
+  16 Dec 2014; Pacho Ramos <pacho@gentoo.org> gnome2.eclass:
+  Deprecate USE_EINSTALL (#482082)
+
+  13 Dec 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Make perl-module_src_prep throw a real warning, not just eqawarn
+
+  13 Dec 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Move content of perl-module_src_prep into src_configure, add deprecation
+  warning to src_prep
+
+  13 Dec 2014; Michał Górny <mgorny@gentoo.org> multibuild.eclass:
+  Disable parallel run support.
+
+  13 Dec 2014; Michał Górny <mgorny@gentoo.org> multilib-build.eclass,
+  multilib-minimal.eclass:
+  Disable parallel run support.
+
+  12 Dec 2014; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Restrict tests for all release versions.
+
+  11 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Always restore initial directory after sub-phase run. Fixes bug #532168 and
+  possibly more.
+
+  11 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Restore using separate HOMEs for Python implementations, because of
+  .pydistutils.cfg. Bug #532236.
+
+  09 Dec 2014; Manuel Rüger <mrueg@gentoo.org> kde4-base.eclass:
+  Sync kde4-base.eclass with overlay.
+
+  07 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass,
+  python-r1.eclass:
+  Disable parallel run support to make things easier for developers and more
+  predictable for users.
 
   07 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass:
   Allow additional content to be injected in the ruby bin wrapper.

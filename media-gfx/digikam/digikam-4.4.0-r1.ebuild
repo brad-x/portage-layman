@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/digikam-4.4.0-r1.ebuild,v 1.1 2014/12/01 12:27:16 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/digikam-4.4.0-r1.ebuild,v 1.7 2014/12/21 14:59:44 dilfridge Exp $
 
 EAPI=5
 
@@ -25,20 +25,27 @@ SRC_URI="mirror://kde/stable/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2
 	handbook? ( FDL-1.2 )"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 SLOT="4"
 IUSE="addressbook debug doc gphoto2 mysql nepomuk semantic-desktop themedesigner +thumbnails video"
 
 CDEPEND="
-	$(add_kdebase_dep kdebase-kioslaves)
-	kde-base/libkdcraw:4=
-	kde-base/libkexiv2:4=
-	$(add_kdebase_dep libkipi)
-	kde-base/marble:4=[plasma]
+	|| (
+		(	kde-apps/kdebase-kioslaves:4
+			kde-apps/libkdcraw:4=
+			kde-apps/libkexiv2:4=
+			kde-apps/libkipi:4
+			kde-apps/marble:4=[plasma] )
+		( 	$(add_kdebase_dep kdebase-kioslaves)
+			kde-base/libkdcraw:4=
+			kde-base/libkexiv2:4=
+			$(add_kdebase_dep libkipi)
+			kde-base/marble:4=[plasma] )
+	)
 	media-libs/jasper
 	media-libs/lcms:2
 	media-libs/lensfun
-	>=media-libs/libkface-3.3.0
+	|| ( kde-apps/libkface:4 <=media-libs/libkface-4.4.0 )
 	media-libs/libkgeomap
 	media-libs/liblqr
 	>=media-libs/libpgf-6.12.27
@@ -62,10 +69,12 @@ CDEPEND="
 	)
 "
 RDEPEND="${CDEPEND}
-	$(add_kdebase_dep kreadconfig)
+	|| ( kde-apps/kreadconfig:4 $(add_kdebase_dep kreadconfig) )
 	media-plugins/kipi-plugins
 	video? (
 		|| (
+			kde-apps/ffmpegthumbs:4
+			kde-apps/mplayerthumbs:4
 			$(add_kdebase_dep mplayerthumbs)
 			$(add_kdebase_dep ffmpegthumbs)
 		)

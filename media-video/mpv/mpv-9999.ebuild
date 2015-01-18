@@ -1,12 +1,15 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.61 2014/12/05 18:33:22 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.64 2015/01/05 02:11:15 dlan Exp $
 
 EAPI=5
 
 EGIT_REPO_URI="https://github.com/mpv-player/mpv.git"
 
-inherit eutils waf-utils pax-utils fdo-mime gnome2-utils
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
+PYTHON_REQ_USE='threads(+)'
+
+inherit eutils python-any-r1 waf-utils pax-utils fdo-mime gnome2-utils
 [[ ${PV} == *9999* ]] && inherit git-r3
 
 WAF_V="1.8.4"
@@ -23,7 +26,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux"
 IUSE="+alsa bluray bs2b cdio +cli -doc-pdf dvb +dvd dvdnav egl +enca encode
 +iconv jack -joystick jpeg ladspa lcms +libass libcaca libguess libmpv lirc lua
-luajit +mpg123 -openal +opengl oss -portaudio pulseaudio pvr samba -sdl selinux
+luajit +mpg123 -openal +opengl oss pulseaudio pvr samba -sdl selinux
 v4l vaapi vdpau vf-dlopen wayland +X xinerama +xscreensaver +xv"
 
 REQUIRED_USE="
@@ -65,7 +68,7 @@ RDEPEND="
 		xscreensaver? ( x11-libs/libXScrnSaver )
 		xv? ( x11-libs/libXv )
 	)
-	alsa? ( media-libs/alsa-lib )
+	alsa? ( >=media-libs/alsa-lib-1.0.18 )
 	bluray? ( >=media-libs/libbluray-0.3.0 )
 	bs2b? ( media-libs/libbs2b )
 	cdio? (
@@ -95,7 +98,6 @@ RDEPEND="
 	)
 	mpg123? ( >=media-sound/mpg123-1.14.0 )
 	openal? ( >=media-libs/openal-1.13 )
-	portaudio? ( >=media-libs/portaudio-19_pre20111121 )
 	pulseaudio? ( media-sound/pulseaudio )
 	samba? ( net-fs/samba )
 	sdl? ( media-libs/libsdl2[threads] )
@@ -107,6 +109,7 @@ RDEPEND="
 	)
 "
 DEPEND="${RDEPEND}
+	${PYTHON_DEPS}
 	virtual/pkgconfig
 	>=dev-lang/perl-5.8
 	dev-python/docutils
@@ -131,6 +134,8 @@ pkg_setup() {
 	einfo "For additional format support you need to enable the support on your"
 	einfo "libavcodec/libavformat provider:"
 	einfo "    media-video/libav or media-video/ffmpeg"
+
+	python-any-r1_pkg_setup
 }
 
 src_unpack() {
@@ -193,7 +198,6 @@ src_configure() {
 		$(use_enable oss oss-audio)
 		--disable-rsound	# media-sound/rsound is in pro-audio overlay only
 		$(use_enable pulseaudio pulse)
-		$(use_enable portaudio)
 		$(use_enable jack)
 		$(use_enable openal)
 		$(use_enable alsa)

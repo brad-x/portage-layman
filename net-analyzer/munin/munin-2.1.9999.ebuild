@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/munin-2.1.9999.ebuild,v 1.5 2014/11/03 13:25:57 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/munin-2.1.9999.ebuild,v 1.7 2015/01/03 12:12:32 swift Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://munin-monitoring.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="irc java memcached minimal mysql postgres ssl test cgi ipv6 syslog ipmi http dhcpd doc apache"
+IUSE="irc java memcached minimal mysql postgres selinux ssl test cgi ipv6 syslog ipmi http dhcpd doc apache"
 REQUIRED_USE="cgi? ( !minimal ) apache? ( cgi )"
 
 # Upstream's listing of required modules is NOT correct!
@@ -29,7 +29,7 @@ DEPEND_COM="dev-lang/perl[berkdb]
 					 dev-perl/Cache-Cache
 					 dev-perl/DBD-mysql )
 			ssl? ( dev-perl/Net-SSLeay )
-			postgres? ( dev-perl/DBD-Pg virtual/postgresql )
+			postgres? ( dev-perl/DBD-Pg dev-db/postgresql )
 			memcached? ( dev-perl/Cache-Memcached )
 			cgi? ( dev-perl/FCGI )
 			apache? ( www-servers/apache[apache2_modules_cgi,apache2_modules_cgid,apache2_modules_rewrite] )
@@ -88,6 +88,7 @@ RDEPEND="${DEPEND_COM}
 			virtual/cron
 			media-fonts/dejavu
 		)
+		selinux? ( sec-policy/selinux-munin )
 		!<sys-apps/openrc-0.11.8"
 
 pkg_setup() {

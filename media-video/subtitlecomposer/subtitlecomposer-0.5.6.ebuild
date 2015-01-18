@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/subtitlecomposer/subtitlecomposer-0.5.6.ebuild,v 1.1 2014/03/16 12:22:38 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/subtitlecomposer/subtitlecomposer-0.5.6.ebuild,v 1.3 2015/01/09 13:48:48 ago Exp $
 
 EAPI=5
 
@@ -13,12 +13,12 @@ HOMEPAGE="https://github.com/maxrd2/subtitlecomposer"
 SRC_URI="https://github.com/maxrd2/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 SLOT="4"
 IUSE="debug gstreamer unicode xine"
 
 RDEPEND="
-	media-libs/phonon
+	media-libs/phonon[qt4]
 	gstreamer? ( media-libs/gstreamer:0.10 )
 	unicode? ( dev-libs/icu:= )
 	xine? ( media-libs/xine-lib )

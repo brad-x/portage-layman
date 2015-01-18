@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyzmq/pyzmq-14.3.1.ebuild,v 1.4 2014/10/26 14:17:29 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyzmq/pyzmq-14.3.1.ebuild,v 1.8 2014/12/30 16:58:13 floppym Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
@@ -21,17 +21,12 @@ RDEPEND=">=net-libs/zeromq-2.1.9
 	dev-python/py[${PYTHON_USEDEP}]
 	dev-python/cffi[${PYTHON_USEDEP}]
 	green? ( dev-python/gevent[${PY2_USEDEP}] )"
-DEPEND="test? ( ${RDEPEND}
-		dev-python/nose[${PYTHON_USEDEP}] )
+DEPEND="${RDEPEND}
+	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 
 python_configure_all() {
 	tc-export CC
-}
-
-python_prepare_all() {
-	sed -e s':intersphinx_mapping:#&:' -i docs/source/conf.py || die
-	distutils-r1_python_prepare_all
 }
 
 python_compile_all() {

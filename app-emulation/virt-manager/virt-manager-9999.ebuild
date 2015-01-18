@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virt-manager/virt-manager-9999.ebuild,v 1.23 2014/11/24 10:22:44 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virt-manager/virt-manager-9999.ebuild,v 1.26 2015/01/01 10:36:02 tamiko Exp $
 
 EAPI=5
 
@@ -39,7 +39,7 @@ RDEPEND="!app-emulation/virtinst
 		x11-libs/gtk+:3[introspection]
 		gnome-base/dconf
 		>=net-libs/gtk-vnc-0.3.8[gtk3,introspection]
-		net-misc/spice-gtk[gtk3,introspection,python,sasl?,${PYTHON_USEDEP}]
+		net-misc/spice-gtk[usbredir,gtk3,introspection,python,sasl?,${PYTHON_USEDEP}]
 		x11-libs/vte:2.90[introspection]
 		gnome-keyring? ( dev-python/gnome-keyring-python )
 		policykit? ( sys-auth/polkit[introspection] )
@@ -50,6 +50,12 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 DOCS=( README NEWS )
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-optional_avahi.patch
+
+	distutils-r1_src_prepare
+}
 
 distutils-r1_python_compile() {
 	local defgraphics=
@@ -81,4 +87,8 @@ pkg_preinst() {
 		rm -rf "${ED}/usr/share/applications/virt-manager.desktop"
 		rm -rf "${ED}/usr/bin/virt-manager"
 	fi
+}
+
+pkg_postinst() {
+	use gtk && gnome2_pkg_postinst
 }

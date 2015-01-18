@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gjs/gjs-1.40.1-r1.ebuild,v 1.1 2014/09/26 10:39:22 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gjs/gjs-1.40.1-r1.ebuild,v 1.10 2015/01/02 12:08:33 ago Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -13,11 +13,11 @@ HOMEPAGE="https://wiki.gnome.org/Projects/Gjs"
 LICENSE="MIT || ( MPL-1.1 LGPL-2+ GPL-2+ )"
 SLOT="0"
 IUSE="+cairo examples gtk test"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sparc x86"
 
 RDEPEND="
 	>=dev-libs/glib-2.36:2
-	>=dev-libs/gobject-introspection-1.39.3
+	>=dev-libs/gobject-introspection-1.40.0-r2
 
 	sys-libs/readline:0
 	dev-lang/spidermonkey:24

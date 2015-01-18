@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/glance-2014.2.9999.ebuild,v 1.4 2014/11/21 00:05:34 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/glance-2014.2.9999.ebuild,v 1.5 2014/12/09 01:20:13 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -122,6 +122,7 @@ RDEPEND="
 	>=dev-python/oslo-db-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-messaging-1.4.0[${PYTHON_USEDEP}]
+	!~dev-python/oslo-messaging-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/retrying-1.2.2[${PYTHON_USEDEP}]
 	!~dev-python/retrying-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/osprofiler-0.3.0[${PYTHON_USEDEP}]

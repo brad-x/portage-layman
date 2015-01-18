@@ -1,6 +1,86 @@
 # ChangeLog for app-emulation/libvirt
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.392 2014/11/20 11:56:40 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.411 2014/12/24 15:05:04 tamiko Exp $
+
+  24 Dec 2014; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.10-r2.ebuild:
+  drop vulnerable, bug #533286, CVE-2014-8135, CVE-2014-8136
+
+  24 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r3.ebuild:
+  Stable for x86, wrt bug #533286
+
+  24 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r3.ebuild:
+  Stable for amd64, wrt bug #533286
+
+*libvirt-1.2.10-r3 (23 Dec 2014)
+
+  23 Dec 2014; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.10-r3.ebuild,
+  -files/libvirt-1.2.9-cve-2014-7823.patch:
+  maintain upstream libvirt patches in own github repository; apply patches for
+  CVE-2014-8135, CVE-2014-8136
+
+*libvirt-1.2.11-r2 (18 Dec 2014)
+
+  18 Dec 2014; Matthias Maier <tamiko@gentoo.org> +files/libvirtd.init-r14,
+  +libvirt-1.2.11-r2.ebuild, -libvirt-1.2.11-r1.ebuild, files/libvirtd.init-r13,
+  libvirt-9999.ebuild:
+  fail prominently in case of config directories being a regular file, bug
+  #532892
+
+*libvirt-1.2.11-r1 (18 Dec 2014)
+
+  18 Dec 2014; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.11-r1.ebuild,
+  -libvirt-1.2.11.ebuild, libvirt-9999.ebuild, metadata.xml:
+  add support for glusterfs, bug #532632
+
+  16 Dec 2014; Matthias Maier <tamiko@gentoo.org> libvirt-9999.ebuild:
+  fix DEPEND
+
+  13 Dec 2014; Matthias Maier <tamiko@gentoo.org> libvirt-1.2.11.ebuild,
+  metadata.xml:
+  fix whitespace in metadata.xml, 2nd try
+
+  13 Dec 2014; Matthias Maier <tamiko@gentoo.org> libvirt-1.2.11.ebuild,
+  metadata.xml:
+  fix whitespace in metadata.xml
+
+  13 Dec 2014; Matthias Maier <tamiko@gentoo.org> libvirt-1.2.11.ebuild:
+  sign manifest
+
+*libvirt-1.2.11 (13 Dec 2014)
+
+  13 Dec 2014; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.11.ebuild:
+  version bump
+
+  12 Dec 2014; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.10-r1.ebuild:
+  drop vulnerable version, CVE-2014-8131, bug #532204
+
+  12 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r2.ebuild:
+  Stable for x86, wrt bug #532204
+
+  12 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r2.ebuild:
+  Stable for amd64, wrt bug #532204
+
+*libvirt-1.2.10-r2 (11 Dec 2014)
+
+  11 Dec 2014; Matthias Maier <tamiko@gentoo.org>
+  +files/libvirt-1.2.10-cve-2014-8131-part2.patch, +libvirt-1.2.10-r2.ebuild:
+  Apply followup patch as well, CVE-2014-8131, bug #532204
+
+  11 Dec 2014; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.9-r2.ebuild:
+  drop vulnerable version, CVE-2014-8131, bug #532204
+
+  11 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r1.ebuild:
+  Stable for x86, wrt bug #532204
+
+  11 Dec 2014; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r1.ebuild:
+  Stable for amd64, wrt bug #532204
+
+*libvirt-1.2.10-r1 (10 Dec 2014)
+
+  10 Dec 2014; Matthias Maier <tamiko@gentoo.org>
+  +files/libvirt-1.2.10-cve-2014-8131.patch, +libvirt-1.2.10-r1.ebuild,
+  -libvirt-1.2.10.ebuild, -libvirt-1.2.9.1-r1.ebuild:
+  fix for CVE-2014-8131, bug #532204, drop vulnerable unstable
 
   20 Nov 2014; Matthias Maier <tamiko@gentoo.org>
   +files/libvirt-1.2.9-fix-firewalld-configuration.patch,

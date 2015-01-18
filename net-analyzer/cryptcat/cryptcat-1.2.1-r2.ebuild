@@ -1,17 +1,17 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cryptcat/cryptcat-1.2.1-r2.ebuild,v 1.1 2014/07/10 22:14:41 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cryptcat/cryptcat-1.2.1-r2.ebuild,v 1.3 2015/01/09 13:49:08 ago Exp $
 
 EAPI=5
 inherit eutils toolchain-funcs
 
 DESCRIPTION="netcat clone extended with twofish encryption"
-HOMEPAGE="http://farm9.org/Cryptcat/"
+HOMEPAGE="http://cryptcat.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${PN}-unix-${PV}.tar"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 
 S=${WORKDIR}/unix
 

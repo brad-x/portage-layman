@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/hugin-2014.0.0-r1.ebuild,v 1.1 2014/10/12 17:57:08 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/hugin-2014.0.0-r1.ebuild,v 1.4 2015/01/02 18:36:29 maekke Exp $
 
 EAPI=5
 
 WX_GTK_VER="3.0"
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit base python-single-r1 wxwidgets versionator cmake-utils
 
@@ -27,7 +27,7 @@ CDEPEND="
 	>=dev-libs/boost-1.49.0-r1:=
 	dev-libs/zthread
 	>=media-gfx/enblend-4.0
-	media-gfx/exiv2
+	media-gfx/exiv2:=
 	media-libs/freeglut
 	media-libs/glew:=
 	media-libs/lensfun
@@ -51,7 +51,10 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
 
-PATCHES=( "${FILESDIR}"/${P}-lensfun-0.3.0.patch )
+PATCHES=(
+	"${FILESDIR}"/${P}-lensfun-0.3.0.patch
+	"${FILESDIR}"/${P}-ParseExp.patch
+)
 
 pkg_setup() {
 	DOCS="authors.txt README TODO"

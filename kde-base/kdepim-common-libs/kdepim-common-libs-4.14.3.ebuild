@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdepim-common-libs/kdepim-common-libs-4.14.3.ebuild,v 1.1 2014/11/16 12:21:28 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdepim-common-libs/kdepim-common-libs-4.14.3.ebuild,v 1.3 2014/12/26 10:40:41 kensington Exp $
 
 EAPI=5
 
@@ -9,13 +9,13 @@ KMNOMODULE="true"
 inherit kde4-meta
 
 DESCRIPTION="Common libraries for KDE PIM apps"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 DEPEND="
 	app-crypt/gpgme
 	>=app-office/akonadi-server-1.12.90
-	dev-libs/grantlee
+	dev-libs/grantlee:0
 	$(add_kdebase_dep baloo)
 	$(add_kdebase_dep kdepimlibs)
 "

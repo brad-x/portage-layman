@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.17 2014/10/26 17:51:35 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.23 2015/01/06 00:18:39 radhermit Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
@@ -13,11 +13,11 @@ if [[ ${PV} == 9999* ]] ; then
 	EHG_REPO_URI="https://vim.googlecode.com/hg/"
 	EHG_PROJECT="vim"
 else
-	VIM_ORG_PATCHES="vim-patches-${PV}.patch.bz2"
+	VIM_ORG_PATCH="vim-${PV}.patch.xz"
 	SRC_URI="ftp://ftp.vim.org/pub/vim/unix/vim-${VIM_VERSION}.tar.bz2
-		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCHES}
-		http://dev.gentoo.org/~radhermit/vim/vim-${VIM_VERSION}-gentoo-patches.tar.bz2"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCH}
+		http://dev.gentoo.org/~radhermit/vim/vim-${PV}-gentoo-patches.tar.bz2"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 fi
 
 DESCRIPTION="Vim, an improved vi-style text editor"
@@ -46,7 +46,7 @@ RDEPEND="
 		~app-editors/vim-core-${PV}
 		dev-util/ctags
 	)
-	perl? ( dev-lang/perl )
+	perl? ( dev-lang/perl:= )
 	python? ( ${PYTHON_DEPS} )
 	racket? ( dev-scheme/racket )
 	ruby? ( || ( dev-lang/ruby:2.1 dev-lang/ruby:2.0 dev-lang/ruby:1.9 ) )
@@ -55,9 +55,7 @@ RDEPEND="
 	X? ( x11-libs/libXt )
 "
 DEPEND="${RDEPEND}
-	>=app-admin/eselect-vi-1.1
 	sys-devel/autoconf
-	>=sys-libs/ncurses-5.2-r2
 	nls? ( sys-devel/gettext )
 "
 
@@ -77,9 +75,9 @@ pkg_setup() {
 
 src_prepare() {
 	if [[ ${PV} != 9999* ]] ; then
-		if [[ -f "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2} ]] ; then
+		if [[ -f "${WORKDIR}"/${VIM_ORG_PATCH%.xz} ]] ; then
 			# Apply any patches available from vim.org for this version
-			epatch "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2}
+			epatch "${WORKDIR}"/${VIM_ORG_PATCH%.xz}
 		fi
 
 		if [[ -d "${WORKDIR}"/patches/ ]]; then
@@ -151,7 +149,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf=()
 
 	# Fix bug 37354: Disallow -funroll-all-loops on amd64
 	# Bug 57859 suggests that we want to do this for all archs
@@ -178,47 +176,56 @@ src_configure() {
 	done
 
 	if use minimal ; then
-		myconf="--with-features=tiny \
-			--disable-nls \
-			--disable-multibyte \
-			--disable-acl \
-			--enable-gui=no \
-			--without-x \
-			--disable-darwin \
-			--disable-luainterp \
-			--disable-perlinterp \
-			--disable-pythoninterp \
-			--disable-mzschemeinterp \
-			--disable-rubyinterp \
-			--disable-selinux \
-			--disable-tclinterp \
-			--disable-gpm"
+		myconf=(
+			--with-features=tiny
+			--disable-nls
+			--disable-multibyte
+			--disable-acl
+			--enable-gui=no
+			--without-x
+			--disable-darwin
+			--disable-luainterp
+			--disable-perlinterp
+			--disable-pythoninterp
+			--disable-mzschemeinterp
+			--disable-rubyinterp
+			--disable-selinux
+			--disable-tclinterp
+			--disable-gpm
+		)
 	else
 		use debug && append-flags "-DDEBUG"
 
-		myconf="--with-features=huge --enable-multibyte"
-		myconf+=" $(use_enable acl)"
-		myconf+=" $(use_enable cscope)"
-		myconf+=" $(use_enable gpm)"
-		myconf+=" $(use_enable lua luainterp)"
-		myconf+=" $(use_with luajit)"
-		myconf+=" $(use_enable nls)"
-		myconf+=" $(use_enable perl perlinterp)"
-		myconf+=" $(use_enable racket mzschemeinterp)"
-		myconf+=" $(use_enable ruby rubyinterp)"
-		myconf+=" $(use_enable selinux)"
-		myconf+=" $(use_enable tcl tclinterp)"
+		myconf=(
+			--with-features=huge
+			--enable-multibyte
+			$(use_enable acl)
+			$(use_enable cscope)
+			$(use_enable gpm)
+			$(use_enable lua luainterp)
+			$(usex lua "--with-lua-prefix=${EPREFIX}/usr" "")
+			$(use_with luajit)
+			$(use_enable nls)
+			$(use_enable perl perlinterp)
+			$(use_enable racket mzschemeinterp)
+			$(use_enable ruby rubyinterp)
+			$(use_enable selinux)
+			$(use_enable tcl tclinterp)
+		)
 
 		if use python ; then
 			if [[ ${EPYTHON} == python3* ]] ; then
-				myconf+=" --enable-python3interp"
+				myconf+=( --enable-python3interp )
 				export vi_cv_path_python3="${PYTHON}"
 			else
-				myconf+=" --enable-pythoninterp"
+				myconf+=( --enable-pythoninterp )
 				export vi_cv_path_python="${PYTHON}"
 			fi
 		else
-			myconf+=" --disable-pythoninterp --disable-python3interp"
+			myconf+=(
+				--disable-pythoninterp
+				--disable-python3interp
+			)
 		fi
 
 		# --with-features=huge forces on cscope even if we --disable it. We need
@@ -230,18 +237,22 @@ src_configure() {
 
 		# don't test USE=X here ... see bug #19115
 		# but need to provide a way to link against X ... see bug #20093
-		myconf+=" --enable-gui=no --disable-darwin $(use_with X x)"
+		myconf+=(
+			--enable-gui=no
+			--disable-darwin
+			$(use_with X x)
+		)
 	fi
 
 	# Let Portage do the stripping. Some people like that.
 	export ac_cv_prog_STRIP="$(type -P true ) faking strip"
 
 	# Keep Gentoo Prefix env contained within the EPREFIX
-	use prefix && myconf+=" --without-local-dir"
+	use prefix && myconf+=( --without-local-dir )
 
 	econf \
 		--with-modified-by=Gentoo-${PVR} \
-		${myconf}
+		"${myconf[@]}"
 }
 
 src_compile() {
@@ -283,7 +294,6 @@ src_test() {
 # of these links are "owned" by the vim ebuild when it is installed,
 # but they might be good for gvim as well (see bug 45828)
 update_vim_symlinks() {
-	has "${EAPI:-0}" 0 1 2 && use !prefix && EROOT="${ROOT}"
 	local f syms
 	syms="vimdiff rvim rview"
 	einfo "Calling eselect vi update..."

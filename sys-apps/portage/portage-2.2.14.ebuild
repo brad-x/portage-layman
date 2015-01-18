@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.14.ebuild,v 1.3 2014/12/06 20:13:44 dolsen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.14.ebuild,v 1.9 2015/01/15 09:48:44 armin76 Exp $
 
 EAPI=5
 
@@ -18,7 +18,7 @@ DESCRIPTION="Portage is the package management and distribution system for Gento
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ~ppc ~ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 SLOT="0"
 IUSE="build doc epydoc +ipc linguas_ru selinux xattr"
 
@@ -32,7 +32,7 @@ DEPEND="!build? ( ${PYTHON_DEPS//bzip2(+)/ssl(+),bzip2(+)} )
 # quite slow, so it's not considered in the dependencies as an alternative to
 # to python-3.3 / pyxattr. Also, xattr support is only tested with Linux, so
 # for now, don't pull in xattr deps for other kernels.
-# For whirlpool hash, require python[ssl] or python-mhash (bug #425046).
+# For whirlpool hash, require python[ssl] (bug #425046).
 # For compgen, require bash[readline] (bug #445576).
 RDEPEND="
 	dev-lang/python-exec:2
@@ -230,6 +230,36 @@ pkg_preinst() {
 		USERSYNC_UPGRADE=false
 		REPOS_CONF_UPGRADE=false
 	fi
+}
+
+get_ownership() {
+	case ${USERLAND} in
+		BSD)
+			stat -f '%Su:%Sg' "${1}"
+			;;
+		*)
+			stat -c '%U:%G' "${1}"
+			;;
+	esac
+}
+
+new_config_protect() {
+	# Generate a ._cfg file even if the target file
+	# does not exist, ensuring that the user will
+	# notice the config change.
+	local basename=${1##*/}
+	local dirname=${1%/*}
+	local i=0
+	while true ; do
+		local filename=$(
+			echo -n "${dirname}/._cfg"
+			printf "%04d" ${i}
+			echo -n "_${basename}"
+		)
+		[[ -e ${filename} ]] || break
+		(( i++ ))
+	done
+	echo "${filename}"
 }
 
 pkg_postinst() {

@@ -1,6 +1,28 @@
 # ChangeLog for sci-visualization/paraview
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/paraview/ChangeLog,v 1.81 2014/11/25 22:57:15 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/paraview/ChangeLog,v 1.85 2014/12/31 12:36:59 tamiko Exp $
+
+  31 Dec 2014; Matthias Maier <tamiko@gentoo.org>
+  +files/paraview-4.2.0-vtk-freetype.patch, paraview-4.2.0.ebuild:
+  fix compilation with freetype-2.5.4, bug #533444
+
+*paraview-4.2.0 (21 Dec 2014)
+
+  21 Dec 2014; Matthias Maier <tamiko@gentoo.org>
+  +files/paraview-4.1.0-glxext-legacy.patch,
+  +files/paraview-4.1.0-no-fatal-warnings.patch,
+  +files/paraview-4.2.0-Protobuf.patch,
+  +files/paraview-4.2.0-removesqlite.patch, +paraview-4.2.0.ebuild,
+  -paraview-4.0.1.ebuild, paraview-4.1.0-r1.ebuild:
+  version bump; define GLX_GLXEXT_LEGACY in 4.0.1, bug #528654; do not use -Wl
+  ,--fatal-warnings, bug #526464
+
+  20 Dec 2014; Matthias Maier <tamiko@gentoo.org> metadata.xml:
+  take over maintainership
+
+  13 Dec 2014; Michał Górny <mgorny@gentoo.org> paraview-4.0.1-r1.ebuild,
+  paraview-4.0.1.ebuild, paraview-4.1.0-r1.ebuild:
+  Rename net-zope/zope-interface to dev-python/zope-interface.
 
   25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
   drop maintainership

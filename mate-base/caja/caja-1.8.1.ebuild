@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mate-base/caja/caja-1.8.1.ebuild,v 1.5 2014/07/07 23:45:03 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/mate-base/caja/caja-1.8.1.ebuild,v 1.8 2014/12/08 23:44:40 tamiko Exp $
 
 EAPI="5"
 
@@ -25,10 +25,7 @@ RDEPEND="dev-libs/atk:0
 	>=dev-libs/glib-2.28:2
 	>=dev-libs/libxml2-2.4.7:2
 	gnome-base/dconf:0
-	|| (
-		>=gnome-base/gvfs-1.10.1:0[gdu]
-		>=gnome-base/gvfs-1.10.1:0[udisks]
-	)
+	>=gnome-base/gvfs-1.10.1:0[udisks]
 	>=mate-base/mate-desktop-1.8:0
 	>=media-libs/libexif-0.5.12:0
 	>=x11-libs/gtk+-2.24:2[introspection?]

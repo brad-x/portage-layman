@@ -1,19 +1,20 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.8 2014/07/27 11:13:00 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.10 2015/01/11 06:03:13 floppym Exp $
 
 EAPI=5
 
-inherit eutils
+inherit eutils systemd
 
 DESCRIPTION="Gentoo Network Interface Management Scripts"
 HOMEPAGE="http://www.gentoo.org/proj/en/base/openrc/"
 
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/${PN}.git"
-	inherit git-2
+	#EGIT_REPO_URI="git://github.com/gentoo/netifrc" # Alternate
+	inherit git-r3
 else
-	SRC_URI="http://dev.gentoo.org/~williamh/dist/${P}.tar.bz2"
+	SRC_URI="http://dev.gentoo.org/~robbat2/dist/${P}.tar.bz2"
 	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 fi
 
@@ -23,8 +24,7 @@ IUSE=""
 
 DEPEND="kernel_linux? ( virtual/pkgconfig )
 	!<sys-fs/udev-172"
-RDEPEND=">=sys-apps/openrc-0.12
-	!<sys-apps/openrc-0.12"
+RDEPEND="sys-apps/gentoo-functions"
 
 src_prepare() {
 	if [[ ${PV} == "9999" ]] ; then
@@ -50,6 +50,13 @@ src_compile() {
 src_install() {
 	emake ${MAKE_ARGS} DESTDIR="${D}" install
 	dodoc README CREDITS FEATURE-REMOVAL-SCHEDULE STYLE TODO ChangeLog
+
+	# Install the service file
+	LIBEXECDIR=${EPREFIX}/lib/${PN}
+	UNIT_DIR="$(systemd_get_unitdir)"
+	sed "s:@LIBEXECDIR@:${LIBEXECDIR}:" "${S}/systemd/net_at.service.in" > "${T}/net_at.service" || die
+	systemd_newunit "${T}/net_at.service" 'net@.service'
+	dosym "${UNIT_DIR}/net@.service" "${UNIT_DIR}/net@lo.service"
 }
 
 pkg_postinst() {

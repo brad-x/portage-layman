@@ -1,6 +1,68 @@
 # ChangeLog for x11-libs/gtk+
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/ChangeLog,v 1.741 2014/11/26 04:59:19 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/ChangeLog,v 1.755 2015/01/05 14:16:28 pacho Exp $
+
+  05 Jan 2015; Pacho Ramos <pacho@gentoo.org>
+  -files/gtk+-3.3.18-fallback-theme.patch,
+  -files/gtk+-3.3.20-wayland-xkbcommon-headers.patch,
+  -files/gtk+-3.4.4-isnan.patch, -gtk+-2.24.24.ebuild, -gtk+-3.10.8.ebuild,
+  -gtk+-3.12.2-r1.ebuild, -gtk+-3.4.4.ebuild, metadata.xml:
+  Drop old
+
+  02 Jan 2015; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for alpha, wrt bug #529964
+
+*gtk+-3.12.2-r2 (02 Jan 2015)
+
+  02 Jan 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/gtk+-3.12.2-builtin-icon.patch, +gtk+-3.12.2-r2.ebuild,
+  gtk+-3.14.6.ebuild:
+  Include image data in the builtin icon cache (#518352 by Leho Kraav, Rafał
+  Mużyło and more), newer gdbus-codegen needed (#500216 by Vladimir Dolzhenko),
+  unset DISPLAY to make tests work in more environments (#527682 by Gangræna
+  Gorgeous, Mark Wright and Alexander Tsoy).
+
+  01 Jan 2015; Markus Meier <maekke@gentoo.org> gtk+-2.24.25.ebuild:
+  arm stable, bug #529964
+
+  01 Jan 2015; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for sparc, wrt bug #529964
+
+  31 Dec 2014; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for ia64, wrt bug #529964
+
+  30 Dec 2014; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for ppc64, wrt bug #529964
+
+  28 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> gtk+-3.14.6.ebuild:
+  Add adwaita-icon-theme to RDEPEND as intended by upstream, bug #533848.
+
+  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for ppc, wrt bug #529964
+
+*gtk+-2.24.25-r1 (27 Dec 2014)
+
+  27 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> +gtk+-2.24.25-r1.ebuild,
+  gtk+-3.14.6.ebuild:
+  Reduce diff between :2 and :3. A number of code path are similar and should
+  stay easily readable from a diff. Add ownership of immodules.cache in :2
+  ebuild and fix handling in :3 for multilib. Add epatch_user in :3. Fix sed
+  for aqua not looking at files in relevant libdir.
+
+  19 Dec 2014; Pacho Ramos <pacho@gentoo.org> gtk+-2.24.25.ebuild:
+  amd64 stable, bug 529964
+
+  18 Dec 2014; Pacho Ramos <pacho@gentoo.org> gtk+-2.24.25.ebuild:
+  x86 stable, bug 529964
+
+*gtk+-3.14.6 (14 Dec 2014)
+
+  14 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> +gtk+-3.14.6.ebuild,
+  +files/gtk+-non-bash-support.patch:
+  Version bump for Gnome 3.14.
+
+  12 Dec 2014; Jeroen Roovers <jer@gentoo.org> gtk+-2.24.25.ebuild:
+  Stable for HPPA (bug #529964).
 
   26 Nov 2014; Michał Górny <mgorny@gentoo.org> gtk+-3.12.2-r1.ebuild:
   Forward-port ${CHOST}-cups-config use, bug #530494.

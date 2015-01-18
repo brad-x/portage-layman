@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/liquid_feedback_core/liquid_feedback_core-2.2.6.ebuild,v 1.1 2014/11/28 07:55:26 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/liquid_feedback_core/liquid_feedback_core-2.2.6.ebuild,v 1.3 2014/12/30 11:06:24 tupone Exp $
 
 EAPI=5
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="virtual/postgresql"
+RDEPEND="dev-db/postgresql"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -31,8 +31,7 @@ src_compile() {
 		CC="$(tc-getCC)" \
 		CFLAGS="${CFLAGS}" \
 		CPPFLAGS="-I $(pg_config --includedir)" \
-		LDFLAGS="${LDFLAGS} -L $(pg_config --libdir)" \
-		LDLIBS="-lpq $(pg_config --libs)"
+		LDFLAGS="${LDFLAGS} -L $(pg_config --libdir)"
 }
 
 src_install() {

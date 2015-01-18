@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.4.7-r200.ebuild,v 1.2 2014/11/13 09:25:19 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.4.7-r200.ebuild,v 1.5 2014/12/22 21:30:49 jer Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -15,7 +15,7 @@ SRC_URI="http://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="2" # no usable subslot
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
 IUSE="aqua coverage debug +egl +geoloc gles2 +gstreamer +introspection +jit libsecret +opengl spell +webgl +X"
 # bugs 372493, 416331
 REQUIRED_USE="
@@ -294,14 +294,14 @@ src_install() {
 nvidia_check() {
 	if [[ ${MERGE_TYPE} != "binary" ]] &&
 	   use introspection &&
-	   has_version '>=x11-drivers/nvidia-drivers-304.123' &&
+	   has_version 'x11-drivers/nvidia-drivers' &&
 	   [[ $(eselect opengl show 2> /dev/null) = "nvidia" ]]
 	then
-		eerror "${PN} freezes while compiling if x11-drivers/nvidia-drivers-325.* is"
-		eerror "used as the system OpenGL library."
-		eerror "You can either update to >=nvidia-drivers-331.13, or temporarily select"
-		eerror "Mesa as the system OpenGL library:"
+		eerror "${PN} freezes while compiling if x11-drivers/nvidia-drivers is"
+		eerror "used as the system OpenGL library. We are very sorry about that."
+		eerror "You should temporarily select Mesa as the system OpenGL library:"
 		eerror " # eselect opengl set xorg-x11"
+		eerror " and then run emerge again."
 		eerror "See https://bugs.gentoo.org/463960 for more details."
 		eerror
 		return 1

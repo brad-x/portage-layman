@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libkgeomap/libkgeomap-4.4.0.ebuild,v 1.1 2014/10/27 22:31:42 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libkgeomap/libkgeomap-4.4.0.ebuild,v 1.4 2014/12/20 22:04:30 dilfridge Exp $
 
 EAPI=5
 
@@ -16,13 +16,15 @@ DESCRIPTION="Wrapper library for world map components as marble, openstreetmap a
 HOMEPAGE="http://www.digikam.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 SLOT=4
 
 DEPEND="
-	kde-base/libkexiv2:4=
-	kde-base/marble:4=[kde,plasma]
+	||  (
+		( kde-apps/libkexiv2:4= kde-apps/marble:4=[kde,plasma] )
+		( kde-base/libkexiv2:4= kde-base/marble:4=[kde,plasma] )
+	)
 "
 RDEPEND=${DEPEND}
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-4.14.3-r1.ebuild,v 1.1 2014/12/04 11:39:50 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-4.14.3-r1.ebuild,v 1.4 2014/12/31 12:37:06 kensington Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ EGIT_BRANCH="KDE/4.14"
 
 DESCRIPTION="KDE libraries needed by all KDE programs"
 
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 IUSE="3dnow acl alsa altivec +bzip2 +crypt debug doc fam jpeg2k kerberos lzma mmx
 nepomuk nls openexr +policykit spell sse sse2 ssl +udev +udisks +upower
@@ -33,7 +33,7 @@ COMMONDEPEND="
 	app-text/docbook-xml-dtd:4.2
 	app-text/docbook-xsl-stylesheets
 	>=dev-libs/libattica-0.4.2
-	>=dev-libs/libdbusmenu-qt-0.3.2
+	>=dev-libs/libdbusmenu-qt-0.3.2[qt4(+)]
 	dev-libs/libpcre[unicode]
 	dev-libs/libxml2
 	dev-libs/libxslt
@@ -117,7 +117,7 @@ PDEPEND="
 	handbook? (
 		|| (
 			$(add_kdebase_dep khelpcenter)
-			kde-base/khelpcenter:5[compat(+)]
+			kde-plasma/khelpcenter:5[compat(+)]
 		)
 	)
 	nepomuk? (

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/vte-0.36.3.ebuild,v 1.10 2014/10/11 12:36:24 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/vte-0.36.3.ebuild,v 1.11 2014/12/15 23:18:27 eva Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -13,9 +13,9 @@ HOMEPAGE="https://wiki.gnome.org/action/show/Apps/Terminal/VTE"
 LICENSE="LGPL-2+"
 SLOT="2.90"
 IUSE="debug glade +introspection"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 ~sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~x64-solaris ~x86-solaris"
 
-PDEPEND="~x11-libs/gnome-pty-helper-${PV}"
+PDEPEND=">=x11-libs/gnome-pty-helper-${PV}"
 RDEPEND="
 	>=dev-libs/glib-2.31.13:2
 	>=x11-libs/gtk+-3.1.9:3[introspection?]

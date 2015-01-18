@@ -1,11 +1,11 @@
 DEFINED_PHASES=compile configure install prepare test unpack
-DEPEND=dev-qt/qtcore:4 dev-qt/qtgui:4 sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) >=dev-vcs/git-1.8.2.1
-DESCRIPTION=Qt4 terminal emulator widget
+DEPEND=qt5? ( dev-qt/qtcore:5 dev-qt/qtgui:5 ) !qt5? ( dev-qt/designer:4 dev-qt/qtcore:4 dev-qt/qtgui:4 ) sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) >=dev-vcs/git-1.8.2.1
+DESCRIPTION=Qt terminal emulator widget
 EAPI=5
-HOMEPAGE=https://github.com/qterminal/
-IUSE=debug
-LICENSE=GPL-2
-RDEPEND=dev-qt/qtcore:4 dev-qt/qtgui:4
+HOMEPAGE=https://github.com/qterminal/qtermwidget
+IUSE=debug python qt5 python_targets_python2_7 python_targets_python3_3
+LICENSE=GPL-2+
+RDEPEND=qt5? ( dev-qt/qtcore:5 dev-qt/qtgui:5 ) !qt5? ( dev-qt/designer:4 dev-qt/qtcore:4 dev-qt/qtgui:4 )
 SLOT=0
-_eclasses_=cmake-utils	e2cc76ea65ae78da8e4696dad93f5d29	eutils	6faef4c127028ccbba3a11400d24ae34	flag-o-matic	eda1c0b5ba85b3eeb555a071d69eb819	git-r3	6ebae45064cb04482f3c702632dd9528	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0dfbfa13f57c6184f4728d12ac002aac
-_md5_=ba9c18d378d141b5e12ee41bc718e5d3
+_eclasses_=cmake-utils	0e29eadbd656185bce30d2449ab48035	eutils	998e5931fb95b10a6a11ec796ada2759	flag-o-matic	c263990f1b677b0f0be0a3299f179762	git-r3	6ebae45064cb04482f3c702632dd9528	multibuild	6d4858dc00f8bc51caf3f957f8430eb0	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	python-r1	236a8d81f730332749bd484d8b53ee91	python-utils-r1	7d5f4ad9ba85664d8c5f56041a70f4c3	toolchain-funcs	0dfbfa13f57c6184f4728d12ac002aac
+_md5_=28be969b4439031f5df244356155fa3a

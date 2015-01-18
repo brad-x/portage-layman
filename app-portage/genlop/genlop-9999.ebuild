@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/genlop/genlop-9999.ebuild,v 1.1 2013/01/07 19:28:30 fuzzyray Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/genlop/genlop-9999.ebuild,v 1.2 2014/12/14 00:23:10 dilfridge Exp $
 
-EAPI="5"
+EAPI=5
 
 inherit git-2 bash-completion-r1
 
@@ -22,7 +22,7 @@ DEPEND="dev-lang/perl
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin genlop || die "failed to install genlop (via dobin)"
+	dobin genlop
 	dodoc README Changelog
 	doman genlop.1
 	newbashcomp genlop.bash-completion genlop

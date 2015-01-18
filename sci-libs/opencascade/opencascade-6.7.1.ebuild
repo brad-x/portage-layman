@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.7.1.ebuild,v 1.1 2014/07/10 21:59:48 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.7.1.ebuild,v 1.3 2015/01/09 19:17:23 mgorny Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ DESCRIPTION="Software development platform for CAD/CAE, 3D surface/solid modelin
 HOMEPAGE="http://www.opencascade.org/"
 SRC_URI="http://files.opencascade.com/OCCT/OCC_${PV}_release/opencascade-${PV}.tgz"
 
-LICENSE="Open-CASCADE-LGPL-2.1-Exception-1.0 LGPL-2.1"
+LICENSE="|| ( Open-CASCADE-LGPL-2.1-Exception-1.0 LGPL-2.1 )"
 SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc examples freeimage gl2ps java qt4 +tbb"
@@ -47,6 +47,7 @@ src_prepare() {
 	java-pkg-opt-2_src_prepare
 
 	epatch \
+		"${FILESDIR}"/${PN}-6.7.1-deprecated-glx-api.patch \
 		"${FILESDIR}"/${PN}-6.7.0-fixed-DESTDIR.patch \
 		"${FILESDIR}"/${PN}-6.5.4-fixed-tbb-VERSION.patch
 

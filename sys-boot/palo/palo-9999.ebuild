@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/palo/palo-9999.ebuild,v 1.6 2014/01/23 14:43:42 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/palo/palo-9999.ebuild,v 1.7 2014/12/15 19:52:16 jer Exp $
 
 EAPI=5
 
@@ -13,13 +13,10 @@ EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/kernel/git/deller/palo.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}"/${PN}-9999-toolchain.patch
+	epatch "${FILESDIR}"/${PN}-1.95-toolchain.patch
 	sed -i lib/common.h -e '/^#define PALOVERSION/{s|".*"|"'${PV}'"|g}' || die
-	sed -i palo/Makefile -e '/^LDFLAGS=/d'  || die
 }
 
 src_compile() {

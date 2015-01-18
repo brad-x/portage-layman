@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/igbinary/igbinary-1.1.1-r2.ebuild,v 1.4 2013/06/25 13:00:50 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/igbinary/igbinary-1.1.1-r2.ebuild,v 1.6 2015/01/11 03:32:17 grknight Exp $
 
 EAPI="5"
 PHP_EXT_NAME="igbinary"

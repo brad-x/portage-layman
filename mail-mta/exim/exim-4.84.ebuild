@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/exim-4.84.ebuild,v 1.14 2014/11/03 12:52:00 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/exim-4.84.ebuild,v 1.16 2015/01/03 10:04:57 grobian Exp $
 
 EAPI="5"
 
@@ -32,7 +32,7 @@ COMMON_DEPEND=">=sys-apps/sed-4.0.5
 			  dev-libs/libtasn1 )
 	ldap? ( >=net-nds/openldap-2.0.7 )
 	mysql? ( virtual/mysql )
-	postgres? ( virtual/postgresql )
+	postgres? ( dev-db/postgresql )
 	sasl? ( >=dev-libs/cyrus-sasl-2.1.26-r2 )
 	redis? ( dev-libs/hiredis )
 	spf? ( >=mail-filter/libspf2-1.2.5-r1 )
@@ -159,11 +159,12 @@ src_configure() {
 	#
 	# lookup methods
 
-	# use the "native" interface to the DBM library, support passwd
-	# and directory lookups by default
+	# use the "native" interfaces to the DBM and CDB libraries, support
+	# passwd and directory lookups by default
 	cat >> Makefile <<- EOC
 		USE_DB=yes
 		DBMLIB=-ldb
+		LOOKUP_CDB=yes
 		LOOKUP_PASSWD=yes
 		LOOKUP_DSEARCH=yes
 	EOC

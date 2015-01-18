@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/mako/mako-0.7.3-r2.ebuild,v 1.11 2014/09/30 09:52:08 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/mako/mako-0.7.3-r2.ebuild,v 1.14 2014/12/12 05:43:54 idella4 Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit readme.gentoo versionator distutils-r1
 
@@ -23,7 +23,8 @@ RDEPEND="
 	>=dev-python/markupsafe-0.9.2[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	test? ( dev-python/nose[${PYTHON_USEDEP}] )"
+	test? ( dev-python/nose[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/mock[${PYTHON_USEDEP}]' python2_7) )"
 
 S="${WORKDIR}/${MY_P}"
 

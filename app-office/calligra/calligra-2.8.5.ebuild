@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/calligra/calligra-2.8.5.ebuild,v 1.2 2014/11/03 11:15:35 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/calligra/calligra-2.8.5.ebuild,v 1.5 2014/12/28 14:55:07 titanofold Exp $
 
 # note: files that need to be checked for dependencies etc:
 # CMakeLists.txt, kexi/CMakeLists.txt kexi/migration/CMakeLists.txt
@@ -37,7 +37,7 @@ LICENSE="GPL-2"
 SLOT="4"
 
 if [[ ${KDE_BUILD_TYPE} == release ]] ; then
-	KEYWORDS="~amd64 ~arm ~x86"
+	KEYWORDS="amd64 ~arm ~x86"
 fi
 
 IUSE="attica +crypt +eigen +exif fftw +fontconfig freetds +glew +glib +gsf gsl
@@ -74,9 +74,10 @@ RDEPEND="
 	!app-office/kspread
 	!app-office/kword
 	$(add_kdebase_dep kdelibs 'nepomuk?')
+	$(add_kdebase_dep knewstuff)
 	dev-lang/perl
 	dev-libs/boost
-	$(add_kdebase_dep knewstuff)
+	dev-qt/qtcore:4[exceptions]
 	media-libs/libpng
 	sys-libs/zlib
 	>=dev-qt/qtgui-4.8.1-r1:4
@@ -120,7 +121,7 @@ RDEPEND="
 		media-gfx/pstoedit
 	)
 	postgres? (
-		virtual/postgresql
+		dev-db/postgresql
 		dev-libs/libpqxx
 	)
 	spacenav? ( dev-libs/libspnav  )

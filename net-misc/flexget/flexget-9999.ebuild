@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/flexget/flexget-9999.ebuild,v 1.50 2014/09/27 16:10:31 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/flexget/flexget-9999.ebuild,v 1.54 2015/01/05 23:48:38 floppym Exp $
 
 EAPI=5
 
@@ -10,8 +10,7 @@ inherit distutils-r1 eutils
 
 if [[ ${PV} != 9999 ]]; then
 	MY_P="FlexGet-${PV}"
-	SRC_URI="http://download.flexget.com/${MY_P}.tar.gz
-		http://download.flexget.com/archive/${MY_P}.tar.gz"
+	SRC_URI="mirror://pypi/F/FlexGet/${MY_P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 else
 	inherit git-r3
@@ -34,7 +33,7 @@ DEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	>=dev-python/beautifulsoup-4.1:4[${PYTHON_USEDEP}]
 	<dev-python/beautifulsoup-4.4:4[${PYTHON_USEDEP}]
-	!=dev-python/beautifulsoup-4.2.0
+	!~dev-python/beautifulsoup-4.2.0
 	>=dev-python/html5lib-0.11[${PYTHON_USEDEP}]
 	dev-python/PyRSS2Gen[${PYTHON_USEDEP}]
 	dev-python/pynzb[${PYTHON_USEDEP}]
@@ -43,12 +42,14 @@ DEPEND="
 	dev-python/jinja[${PYTHON_USEDEP}]
 	>=dev-python/requests-1.0[${PYTHON_USEDEP}]
 	<dev-python/requests-2.99[${PYTHON_USEDEP}]
-	=dev-python/python-dateutil-2.1*[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
+	!~dev-python/python-dateutil-2.2
 	>=dev-python/jsonschema-2.0[${PYTHON_USEDEP}]
 	dev-python/python-tvrage[${PYTHON_USEDEP}]
 	dev-python/tmdb3[${PYTHON_USEDEP}]
 	dev-python/path-py[${PYTHON_USEDEP}]
 	>=dev-python/guessit-0.9.3[${PYTHON_USEDEP}]
+	dev-python/APScheduler[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
 	transmission? ( dev-python/transmissionrpc[${PYTHON_USEDEP}] )

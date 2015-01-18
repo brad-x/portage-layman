@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/fleet/fleet-9999.ebuild,v 1.3 2014/11/01 20:35:53 alunduil Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/fleet/fleet-9999.ebuild,v 1.4 2014/12/07 20:30:55 alunduil Exp $
 
 EAPI=5
 
@@ -24,8 +24,8 @@ src_compile() {
 	./build || die 'Build failed'
 }
 
+RESTRICT="test"  # Tests fail due to Gentoo bug #500452
 src_test() {
-	# Tests fail due to Gentoo bug #500452
 	./test || die 'Tests failed'
 }
 

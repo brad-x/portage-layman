@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/torque/torque-2.5.13.ebuild,v 1.1 2014/06/19 19:55:00 jsbronder Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/torque/torque-2.5.13.ebuild,v 1.10 2014/12/26 09:28:35 ago Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.adaptivecomputing.com/index.php?wpfb_dl=1643 -> ${P}.tar.gz"
 LICENSE="torque-2.5"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="cpusets +crypt doc drmaa kernel_linux munge server static-libs +syslog threads tk xml"
 
 # ed is used by makedepend-sh
@@ -101,7 +101,7 @@ src_configure() {
 		$(use_enable drmaa)
 		$(use_enable threads high-availability)
 		$(use_enable xml server-xml)
-		$(use_enable munge munge-auth)
+		$(use_enable munge munge-library)
 		--with-server-home=${PBS_SERVER_HOME}
 		--with-environ=/etc/pbs_environment
 		--with-default-server=${PBS_SERVER_NAME}

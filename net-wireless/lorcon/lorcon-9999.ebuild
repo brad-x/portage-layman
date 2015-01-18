@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/lorcon/lorcon-9999.ebuild,v 1.4 2014/04/17 21:21:19 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/lorcon/lorcon-9999.ebuild,v 1.5 2014/12/19 20:55:35 axs Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 DISTUTILS_OPTIONAL=1
 
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby21"
 RUBY_OPTIONAL=yes
 
 inherit distutils-r1 ruby-ng

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-4.2.9999.ebuild,v 1.28 2014/11/03 11:16:53 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-4.2.9999.ebuild,v 1.32 2014/12/29 20:05:21 dilfridge Exp $
 
 EAPI=5
 
@@ -104,7 +104,7 @@ COMMON_DEPEND="
 	app-text/liblangtag
 	=app-text/libmspub-0.0*
 	=app-text/libmwaw-0.2*
-	=app-text/libodfgen-0.0*
+	=app-text/libodfgen-0.0*	>=app-text/libodfgen-0.0.3
 	app-text/libwpd:0.9[tools]
 	app-text/libwpg:0.2
 	=app-text/libwps-0.2*
@@ -169,7 +169,7 @@ COMMON_DEPEND="
 		virtual/glu
 		virtual/opengl
 	)
-	postgres? ( >=virtual/postgresql-9.0[kerberos] )
+	postgres? ( >=dev-db/postgresql-9.0[kerberos] )
 	telepathy? (
 		dev-libs/glib:2
 		>=net-libs/telepathy-glib-0.18.0
@@ -241,6 +241,9 @@ PATCHES=(
 	# from libreoffice-4-3 branch
 	"${FILESDIR}/${PN}-4.2.6.3-jpeg9.patch"
 
+	# from libreoffice-4-4 branch
+	"${FILESDIR}/${PN}-4.2.8.2-boost-1.56.0.patch"
+
 	# staged for git master
 	"${FILESDIR}/${PN}-4.2.0.4-curl-config.patch"
 )
@@ -276,7 +279,7 @@ pkg_pretend() {
 
 	# Ensure pg version but we have to be sure the pg is installed (first
 	# install on clean system)
-	if use postgres && has_version virtual/postgresql; then
+	if use postgres && has_version dev-db/postgresql; then
 		 pgslot=$(postgresql-config show)
 		 if [[ ${pgslot//.} < 90 ]] ; then
 			eerror "PostgreSQL slot must be set to 9.0 or higher."
@@ -556,6 +559,7 @@ src_install() {
 	if use branding; then
 		insinto /usr/$(get_libdir)/${PN}/program
 		newins "${WORKDIR}/branding-sofficerc" sofficerc
+		dodir /etc/env.d
 		echo "CONFIG_PROTECT=/usr/$(get_libdir)/${PN}/program/sofficerc" > "${ED}"/etc/env.d/99${PN}
 	fi
 

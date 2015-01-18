@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/bwping/bwping-1.7-r1.ebuild,v 1.3 2014/02/22 08:06:11 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/bwping/bwping-1.7-r1.ebuild,v 1.5 2015/01/11 11:42:41 hwoarang Exp $
 
 EAPI=5
 
@@ -16,9 +16,9 @@ SLOT="0"
 KEYWORDS="amd64 ~sparc x86 ~x86-fbsd"
 IUSE="ipv6"
 
-PATCHES=(
-	 "${FILESDIR}/${P}-buildsystem-configurable-ipv6.patch" # bug 454256
-)
+#PATCHES=(
+#	 "${FILESDIR}/${P}-buildsystem-configurable-ipv6.patch" # bug 454256
+#)
 
 src_configure() {
 	local myeconfargs=(

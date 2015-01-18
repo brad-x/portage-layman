@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.6.4.1.ebuild,v 1.1 2014/11/08 07:39:30 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.6.4.1.ebuild,v 1.12 2015/01/08 11:28:14 ago Exp $
 
 EAPI=5
 
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc CHANGELOG.ja.rdoc README.rdoc README.ja.rdoc ROADMAP.md STANDARD_RESPONSES.md"
@@ -16,7 +16,7 @@ HOMEPAGE="http://nokogiri.org/"
 LICENSE="MIT"
 SRC_URI="https://github.com/sparklemotion/nokogiri/archive/v${PV}.tar.gz -> ${P}-git.tgz"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
 IUSE=""
 
@@ -43,6 +43,7 @@ all_ruby_prepare() {
 	sed -i \
 		-e '/tasks\/cross_compile/s:^:#:' \
 		-e '/:test.*prerequisites/s:^:#:' \
+		-e '/license/ s:^:#:' \
 		Rakefile || die
 	# Remove the cross compilation options since they interfere with
 	# native building.

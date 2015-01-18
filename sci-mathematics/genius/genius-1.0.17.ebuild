@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/genius/genius-1.0.17.ebuild,v 1.2 2014/04/05 17:44:25 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/genius/genius-1.0.17.ebuild,v 1.3 2014/12/26 09:13:20 jlec Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ inherit eutils gnome2
 DESCRIPTION="Genius Mathematics Tool and the GEL Language"
 HOMEPAGE="http://www.jirka.org/genius.html"
 SRC_URI="
-	http://ftp.gnome.org/pub/GNOME/sources/${PN}/1.0/${P}.tar.xz
+	mirror://gnome/sources/${PN}/1.0/${P}.tar.xz
 	doc? ( http://www.jirka.org/${PN}-reference.pdf )"
 
 LICENSE="GPL-3"

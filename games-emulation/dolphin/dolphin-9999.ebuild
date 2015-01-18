@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-9999.ebuild,v 1.14 2014/09/20 23:50:52 twitch153 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-9999.ebuild,v 1.18 2015/01/12 22:08:17 twitch153 Exp $
 
 EAPI=5
 
@@ -26,12 +26,13 @@ SLOT="0"
 IUSE="alsa ao bluetooth doc ffmpeg +lzo openal opengl openmp portaudio pulseaudio"
 
 RDEPEND=">=media-libs/glew-1.10
-	>=media-libs/libsdl-1.2[joystick]
-	<media-libs/libsfml-2.0
+	>=media-libs/libsfml-2.1
 	>=net-libs/miniupnpc-1.8
 	sys-libs/readline
 	x11-libs/libXext
 	x11-libs/libXrandr
+	media-libs/libsdl2[haptic,joystick]
+	net-libs/polarssl[havege]
 	alsa? ( media-libs/alsa-lib )
 	ao? ( media-libs/libao )
 	bluetooth? ( net-wireless/bluez )
@@ -69,7 +70,7 @@ src_prepare() {
 
 	# Remove automatic dependencies to prevent building without flags enabled.
 	if use !alsa; then
-		sed -i -e '^/include(FindALSA/d' CMakeLists.txt || die
+		sed -i -e '/^include(FindALSA/d' CMakeLists.txt || die
 	fi
 	if use !ao; then
 		sed -i -e '/^check_lib(AO/d' CMakeLists.txt || die

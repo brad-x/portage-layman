@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-3.5.0.ebuild,v 1.6 2014/11/26 16:13:33 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-3.5.0.ebuild,v 1.11 2015/01/01 20:53:32 maekke Exp $
 
 EAPI=5
 
@@ -19,7 +19,7 @@ SRC_URI="http://llvm.org/releases/${PV}/${P}.src.tar.xz
 
 LICENSE="UoI-NCSA"
 SLOT="0/3.5"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="amd64 arm ppc ~ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="clang debug doc gold libedit +libffi multitarget ncurses ocaml python
 	+static-analyzer test xml video_cards_radeon
 	kernel_Darwin kernel_FreeBSD"
@@ -75,7 +75,6 @@ S=${WORKDIR}/${P}.src
 CMAKE_MAKEFILE_GENERATOR=emake
 
 pkg_pretend() {
-		$(tc-is-static-only && echo --disable-shared) \
 	# in megs
 	# !clang !debug !multitarget -O2       400
 	# !clang !debug  multitarget -O2       550
@@ -203,6 +202,7 @@ multilib_src_configure() {
 		--enable-keep-symbols
 		--enable-shared
 		--with-optimize-option=
+		$(tc-is-static-only && echo --disable-shared)
 		$(use_enable !debug optimized)
 		$(use_enable debug assertions)
 		$(use_enable debug expensive-checks)

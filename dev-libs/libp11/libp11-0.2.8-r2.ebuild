@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libp11/libp11-0.2.8-r2.ebuild,v 1.1 2014/10/16 17:54:16 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libp11/libp11-0.2.8-r2.ebuild,v 1.2 2015/01/05 20:28:08 alonbl Exp $
 
 EAPI="4"
 inherit eutils autotools

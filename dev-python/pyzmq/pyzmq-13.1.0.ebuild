@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyzmq/pyzmq-13.1.0.ebuild,v 1.9 2014/02/16 20:12:15 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyzmq/pyzmq-13.1.0.ebuild,v 1.11 2014/12/08 10:08:48 idella4 Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )

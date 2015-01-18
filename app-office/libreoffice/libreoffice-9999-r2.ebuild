@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999-r2.ebuild,v 1.232 2014/11/18 10:02:05 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999-r2.ebuild,v 1.236 2014/12/29 20:05:21 dilfridge Exp $
 
 EAPI=5
 
@@ -27,7 +27,7 @@ BRANDING="${PN}-branding-gentoo-0.8.tar.xz"
 # PATCHSET="${P}-patchset-01.tar.xz"
 
 [[ ${PV} == *9999* ]] && SCM_ECLASS="git-2"
-inherit base autotools bash-completion-r1 check-reqs eutils java-pkg-opt-2 kde4-base pax-utils python-single-r1 multilib toolchain-funcs flag-o-matic nsplugins ${SCM_ECLASS}
+inherit base multiprocessing autotools bash-completion-r1 check-reqs eutils java-pkg-opt-2 kde4-base pax-utils python-single-r1 multilib toolchain-funcs flag-o-matic nsplugins ${SCM_ECLASS}
 unset SCM_ECLASS
 
 DESCRIPTION="LibreOffice, a full office productivity suite"
@@ -74,7 +74,7 @@ unset EXT_URI
 unset ADDONS_SRC
 
 IUSE="bluetooth +branding coinmp collada +cups dbus debug eds firebird gltf gnome gstreamer
-+gtk gtk3 jemalloc kde mysql odk opengl postgres telepathy test +vba vlc"
++gtk gtk3 jemalloc kde mysql odk opengl postgres telepathy test vlc"
 
 LO_EXTS="nlpsolver scripting-beanshell scripting-javascript wiki-publisher"
 # Unpackaged separate extensions:
@@ -93,6 +93,8 @@ SLOT="0"
 [[ ${PV} == *9999* ]] || \
 KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 
+# FIXME: collada? ( media-libs/opencollada )
+#        how to configure system-collada?
 COMMON_DEPEND="
 	${PYTHON_DEPS}
 	app-arch/zip
@@ -176,7 +178,7 @@ COMMON_DEPEND="
 		virtual/glu
 		virtual/opengl
 	)
-	postgres? ( >=virtual/postgresql-9.0[kerberos] )
+	postgres? ( >=dev-db/postgresql-9.0[kerberos] )
 	telepathy? (
 		dev-libs/glib:2
 		>=net-libs/telepathy-glib-0.18.0
@@ -278,7 +280,7 @@ pkg_pretend() {
 
 	# Ensure pg version but we have to be sure the pg is installed (first
 	# install on clean system)
-	if use postgres && has_version virtual/postgresql; then
+	if use postgres && has_version dev-db/postgresql; then
 		 pgslot=$(postgresql-config show)
 		 if [[ ${pgslot//.} < 90 ]] ; then
 			eerror "PostgreSQL slot must be set to 9.0 or higher."
@@ -378,10 +380,6 @@ src_configure() {
 	local internal_libs
 	local lo_ext
 	local ext_opts
-	local jbs=$(sed -ne 's/.*\(-j[[:space:]]*\|--jobs=\)\([[:digit:]]\+\).*/\2/;T;p' <<< "${MAKEOPTS}")
-
-	# recheck that there is some value in jobs
-	[[ -z ${jbs} ]] && jbs="1"
 
 	# sane: just sane.h header that is used for scan in writer, not
 	#       linked or anything else, worthless to depend on
@@ -443,6 +441,7 @@ src_configure() {
 	# --enable-extension-integration: enable any extension integration support
 	# --without-{fonts,myspell-dicts,ppsd}: prevent install of sys pkgs
 	# --disable-report-builder: too much java packages pulled in without pkgs
+	# FIXME: $(use_with collada system-opencollada)
 	econf \
 		--docdir="${EPREFIX}/usr/share/doc/${PF}/" \
 		--with-system-headers \
@@ -452,6 +451,7 @@ src_configure() {
 		--enable-cairo-canvas \
 		--enable-graphite \
 		--enable-largefile \
+		--enable-mergelibs \
 		--enable-neon \
 		--enable-python=system \
 		--enable-randr \
@@ -468,7 +468,6 @@ src_configure() {
 		--disable-report-builder \
 		--disable-kdeab \
 		--disable-kde \
-		--disable-mergelibs \
 		--disable-online-update \
 		--disable-systray \
 		--with-alloc=$(use jemalloc && echo "jemalloc" || echo "system") \
@@ -479,7 +478,7 @@ src_configure() {
 		--with-external-thes-dir="${EPREFIX}/usr/share/myspell" \
 		--with-external-tar="${DISTDIR}" \
 		--with-lang="" \
-		--with-parallelism=${jbs} \
+		--with-parallelism=$(makeopts_jobs) \
 		--with-system-ucpp \
 		--with-vendor="Gentoo Foundation" \
 		--with-x \
@@ -509,7 +508,6 @@ src_configure() {
 		$(use_enable opengl) \
 		$(use_enable postgres postgresql-sdbc) \
 		$(use_enable telepathy) \
-		$(use_enable vba) \
 		$(use_enable vlc) \
 		$(use_with coinmp system-coinmp) \
 		$(use_with gltf system-libgltf) \
@@ -565,6 +563,7 @@ src_install() {
 	if use branding; then
 		insinto /usr/$(get_libdir)/${PN}/program
 		newins "${WORKDIR}/branding-sofficerc" sofficerc
+		dodir /etc/env.d
 		echo "CONFIG_PROTECT=/usr/$(get_libdir)/${PN}/program/sofficerc" > "${ED}"/etc/env.d/99${PN}
 	fi
 

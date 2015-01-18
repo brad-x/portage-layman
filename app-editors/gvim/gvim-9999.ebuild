@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.20 2014/10/26 17:52:52 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.25 2015/01/06 00:19:52 radhermit Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
@@ -13,10 +13,10 @@ if [[ ${PV} == 9999* ]] ; then
 	EHG_REPO_URI="https://vim.googlecode.com/hg/"
 	EHG_PROJECT="vim"
 else
-	VIM_ORG_PATCHES="vim-patches-${PV}.patch.bz2"
+	VIM_ORG_PATCH="vim-${PV}.patch.xz"
 	SRC_URI="ftp://ftp.vim.org/pub/vim/unix/vim-${VIM_VERSION}.tar.bz2
-		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCHES}
-		http://dev.gentoo.org/~radhermit/vim/vim-${VIM_VERSION}-gentoo-patches.tar.bz2"
+		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCH}
+		http://dev.gentoo.org/~radhermit/vim/vim-${PV}-gentoo-patches.tar.bz2"
 	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 fi
 
@@ -58,7 +58,7 @@ RDEPEND="
 		!luajit? ( dev-lang/lua[deprecated] )
 	)
 	nls? ( virtual/libintl )
-	perl? ( dev-lang/perl )
+	perl? ( dev-lang/perl:= )
 	python? ( ${PYTHON_DEPS} )
 	racket? ( dev-scheme/racket )
 	ruby? ( || ( dev-lang/ruby:2.1 dev-lang/ruby:2.0 dev-lang/ruby:1.9 ) )
@@ -67,7 +67,6 @@ RDEPEND="
 	tcl? ( dev-lang/tcl )
 "
 DEPEND="${RDEPEND}
-	>=app-admin/eselect-vi-1.1
 	dev-util/ctags
 	sys-devel/autoconf
 	virtual/pkgconfig
@@ -90,9 +89,9 @@ pkg_setup() {
 
 src_prepare() {
 	if [[ ${PV} != 9999* ]] ; then
-		if [[ -f "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2} ]] ; then
+		if [[ -f "${WORKDIR}"/${VIM_ORG_PATCH%.xz} ]] ; then
 			# Apply any patches available from vim.org for this version
-			epatch "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2}
+			epatch "${WORKDIR}"/${VIM_ORG_PATCH%.xz}
 		fi
 
 		if [[ -d "${WORKDIR}"/patches/ ]]; then
@@ -151,7 +150,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf=()
 
 	# Fix bug 37354: Disallow -funroll-all-loops on amd64
 	# Bug 57859 suggests that we want to do this for all archs
@@ -179,30 +178,37 @@ src_configure() {
 
 	use debug && append-flags "-DDEBUG"
 
-	myconf="--with-features=huge --disable-gpm --enable-multibyte"
-	myconf+=" $(use_enable acl)"
-	myconf+=" $(use_enable cscope)"
-	myconf+=" $(use_enable lua luainterp)"
-	myconf+=" $(use_with luajit)"
-	myconf+=" $(use_enable netbeans)"
-	myconf+=" $(use_enable nls)"
-	myconf+=" $(use_enable perl perlinterp)"
-	myconf+=" $(use_enable racket mzschemeinterp)"
-	myconf+=" $(use_enable ruby rubyinterp)"
-	myconf+=" $(use_enable selinux)"
-	myconf+=" $(use_enable session xsmp)"
-	myconf+=" $(use_enable tcl tclinterp)"
+	myconf=(
+		--with-features=huge
+		--disable-gpm
+		--enable-multibyte
+		$(use_enable acl)
+		$(use_enable cscope)
+		$(use_enable lua luainterp)
+		$(use_with luajit)
+		$(use_enable netbeans)
+		$(use_enable nls)
+		$(use_enable perl perlinterp)
+		$(use_enable racket mzschemeinterp)
+		$(use_enable ruby rubyinterp)
+		$(use_enable selinux)
+		$(use_enable session xsmp)
+		$(use_enable tcl tclinterp)
+	)
 
 	if use python ; then
 		if [[ ${EPYTHON} == python3* ]] ; then
-			myconf+=" --enable-python3interp"
+			myconf+=( --enable-python3interp )
 			export vi_cv_path_python3="${PYTHON}"
 		else
-			myconf+=" --enable-pythoninterp"
+			myconf+=( --enable-pythoninterp )
 			export vi_cv_path_python="${PYTHON}"
 		fi
 	else
-		myconf+=" --disable-pythoninterp --disable-python3interp"
+		myconf+=(
+			--disable-pythoninterp
+			--disable-python3interp
+		)
 	fi
 
 	# --with-features=huge forces on cscope even if we --disable it. We need
@@ -222,25 +228,28 @@ src_configure() {
 	echo ; echo
 	if use aqua ; then
 		einfo "Building gvim with the Carbon GUI"
-		myconf+=" --enable-darwin --enable-gui=carbon"
+		myconf+=(
+			--enable-darwin
+			--enable-gui=carbon
+		)
 	elif use gtk ; then
-		myconf+=" --enable-gtk2-check"
+		myconf+=( --enable-gtk2-check )
 		if use gnome ; then
 			einfo "Building gvim with the Gnome 2 GUI"
-			myconf+=" --enable-gui=gnome2"
+			myconf+=( --enable-gui=gnome2 )
 		else
 			einfo "Building gvim with the gtk+-2 GUI"
-			myconf+=" --enable-gui=gtk2"
+			myconf+=( --enable-gui=gtk2 )
 		fi
 	elif use motif ; then
 		einfo "Building gvim with the MOTIF GUI"
-		myconf+=" --enable-gui=motif"
+		myconf+=( --enable-gui=motif )
 	elif use neXt ; then
 		einfo "Building gvim with the neXtaw GUI"
-		myconf+=" --enable-gui=nextaw"
+		myconf+=( --enable-gui=nextaw )
 	else
 		einfo "Building gvim with the Athena GUI"
-		myconf+=" --enable-gui=athena"
+		myconf+=( --enable-gui=athena )
 	fi
 	echo ; echo
 
@@ -248,7 +257,7 @@ src_configure() {
 	export ac_cv_prog_STRIP="$(type -P true ) faking strip"
 
 	# Keep Gentoo Prefix env contained within the EPREFIX
-	use prefix && myconf+=" --without-local-dir"
+	use prefix && myconf+=( --without-local-dir )
 
 	if [[ ${CHOST} == *-interix* ]]; then
 		# avoid finding of this function, to avoid having to patch either
@@ -259,8 +268,9 @@ src_configure() {
 
 	econf \
 		--with-modified-by=Gentoo-${PVR} \
-		--with-vim-name=gvim --with-x \
-		${myconf}
+		--with-vim-name=gvim \
+		--with-x \
+		"${myconf[@]}"
 }
 
 src_compile() {
@@ -306,7 +316,6 @@ src_test() {
 # of these links are "owned" by the vim ebuild when it is installed,
 # but they might be good for gvim as well (see bug 45828)
 update_vim_symlinks() {
-	has "${EAPI:-0}" 0 1 2 && use !prefix && EROOT="${ROOT}"
 	local f syms
 	syms="vimdiff rvim rview"
 	einfo "Calling eselect vi update..."

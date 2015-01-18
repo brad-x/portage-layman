@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/tuxpuck/tuxpuck-0.8.2-r1.ebuild,v 1.8 2011/09/14 15:46:53 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/tuxpuck/tuxpuck-0.8.2-r1.ebuild,v 1.10 2015/01/07 14:01:27 tupone Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games
 
 DESCRIPTION="Hover hockey"
@@ -35,18 +35,18 @@ src_prepare() {
 		data/Makefile \
 		|| die "sed failed"
 	epatch "${FILESDIR}"/${P}-ldflags.patch \
-		"${FILESDIR}"/${P}-png15.patch
+		"${FILESDIR}"/${P}-png15.patch \
+		"${FILESDIR}"/${P}-parallel.patch
 }
 
 src_compile() {
-	emake -C utils || die
-	# Note that the Makefiles for tuxpuck are buggy so -j1 is used.
-	emake -j1 -C data || die
-	emake || die
+	emake -C utils
+	emake -C data
+	emake
 }
 
 src_install() {
-	dogamesbin tuxpuck || die "dogamesbin failed"
+	dogamesbin tuxpuck
 	doman man/tuxpuck.6
 	dodoc *.txt
 	doicon data/icons/${PN}.ico

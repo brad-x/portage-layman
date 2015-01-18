@@ -1,6 +1,68 @@
 # ChangeLog for sys-apps/systemd
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.323 2014/12/07 12:30:33 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.337 2015/01/08 20:44:11 maekke Exp $
+
+  08 Jan 2015; Markus Meier <maekke@gentoo.org> systemd-216-r2.ebuild:
+  arm stable, bug #525112
+
+  01 Jan 2015; Mike Gilbert <floppym@gentoo.org> +files/216-lz4-build.patch,
+  systemd-216-r2.ebuild:
+  Fix build failure with USE='lz4 -lzma', bug 534228 by rich0.
+
+  01 Jan 2015; Mike Gilbert <floppym@gentoo.org> systemd-215-r3.ebuild,
+  systemd-216-r2.ebuild, systemd-217-r4.ebuild, systemd-218-r1.ebuild,
+  systemd-9999.ebuild:
+  Add check for CONFIG_DEVPTS_MULTIPLE_INSTANCES, bug 534196 by Elias Probst.
+
+  31 Dec 2014; Agostino Sarubbo <ago@gentoo.org> systemd-216-r2.ebuild:
+  Stable for x86, wrt bug #525112
+
+  31 Dec 2014; Agostino Sarubbo <ago@gentoo.org> systemd-216-r2.ebuild:
+  Stable for amd64, wrt bug #525112
+
+  30 Dec 2014; Pacho Ramos <pacho@gentoo.org> -systemd-216-r1.ebuild,
+  -systemd-217-r3.ebuild, -systemd-218.ebuild:
+  Drop old
+
+  26 Dec 2014; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Apply previous change to live ebuild.
+
+  26 Dec 2014; Michał Górny <mgorny@gentoo.org> systemd-218-r1.ebuild:
+  Work-around unnecessary non-native libmount/util-linux dep, bug #533602.
+
+  20 Dec 2014; Michał Górny <mgorny@gentoo.org> systemd-216-r2.ebuild,
+  systemd-217-r4.ebuild, systemd-218-r1.ebuild, systemd-9999.ebuild:
+  Fix sysv-utils symlink install, bug #533090.
+
+  19 Dec 2014; Pacho Ramos <pacho@gentoo.org> systemd-216-r2.ebuild,
+  systemd-217-r4.ebuild, systemd-218-r1.ebuild, systemd-9999.ebuild:
+  Fix the sys-apps/systemd-sysv-utils block, thanks to floppym for noticing
+
+*systemd-218-r1 (19 Dec 2014)
+*systemd-217-r4 (19 Dec 2014)
+*systemd-216-r2 (19 Dec 2014)
+
+  19 Dec 2014; Pacho Ramos <pacho@gentoo.org> +systemd-216-r2.ebuild,
+  +systemd-217-r4.ebuild, +systemd-218-r1.ebuild, metadata.xml,
+  systemd-9999.ebuild:
+  Add a USE flag to replace sys-apps/systemd-sysv-utils (#528006)
+
+  19 Dec 2014; Pacho Ramos <pacho@gentoo.org>
+  -files/212-0001-sd-rtnl-fix-off-by-one.patch,
+  -files/212-0002-fsck-Search-for-fsck.type-in-PATH.patch,
+  -systemd-212-r5.ebuild, -systemd-217-r1.ebuild, -systemd-217-r2.ebuild:
+  Drop old
+
+  14 Dec 2014; Mike Gilbert <floppym@gentoo.org> metadata.xml,
+  systemd-218.ebuild, systemd-9999.ebuild:
+  Optionally depend on libxkbcommon for keymap validation in logind, bug 532530.
+  Restore systemd-consoled.service.in missing from the tarball.
+
+*systemd-218 (14 Dec 2014)
+
+  14 Dec 2014; Mike Gilbert <floppym@gentoo.org> +systemd-218.ebuild,
+  systemd-9999.ebuild:
+  Version bump.
 
   07 Dec 2014; Agostino Sarubbo <ago@gentoo.org> systemd-215-r3.ebuild:
   Stable for ppc64/ia64/sparc, wrt bug #517120

@@ -1,9 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/gentoo-rsync-mirror/gentoo-rsync-mirror-1.0-r5.ebuild,v 1.5 2009/10/11 23:28:51 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/gentoo-rsync-mirror/gentoo-rsync-mirror-1.0-r5.ebuild,v 1.7 2015/01/05 03:13:09 dlan Exp $
+
+EAPI=5
 
 DESCRIPTION="Ebuild for setting up a Gentoo rsync mirror"
-HOMEPAGE="http://www.gentoo.org/doc/en/rsync.xml"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Infrastructure/Rsync"
 SRC_URI=""
 
 LICENSE="GPL-2"
@@ -11,10 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~alpha ~ppc ~sparc ~x86 ~hppa ~ppc64"
 IUSE=""
 
+S="${WORKDIR}"
+
 src_install() {
-	dodir /opt/gentoo-rsync
-	cp "${FILESDIR}"/rsync-gentoo-portage.sh "${D}"/opt/gentoo-rsync
-	cp "${FILESDIR}"/rsynclogparse-extended.pl "${D}"/opt/gentoo-rsync
+	exeinto /opt/gentoo-rsync
+	doexe "${FILESDIR}"/rsync-gentoo-portage.sh
+	doexe "${FILESDIR}"/rsynclogparse-extended.pl
 	insinto etc/rsync
 	doins "${FILESDIR}"/rsyncd.conf
 	doins "${FILESDIR}"/rsyncd.motd
@@ -46,5 +50,5 @@ pkg_postinst() {
 	elog "gentoo.org official rotations more than once a day.  Doing so puts"
 	elog "you at risk of having your IP address banned from the rotations."
 	elog
-	elog "For more information visit: http://www.gentoo.org/doc/en/rsync.xml"
+	elog "For more information visit: https://wiki.gentoo.org/wiki/Project:Infrastructure/Rsync"
 }

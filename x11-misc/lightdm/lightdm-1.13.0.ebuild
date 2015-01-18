@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/lightdm-1.13.0.ebuild,v 1.1 2014/11/18 18:46:36 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/lightdm/lightdm-1.13.0.ebuild,v 1.3 2015/01/11 11:54:54 hwoarang Exp $
 
 EAPI=5
 inherit autotools eutils pam readme.gentoo systemd versionator
@@ -110,7 +110,10 @@ src_install() {
 	prune_libtool_files --all
 	rm -rf "${ED}"/etc/init
 
-	pamd_mimic system-local-login ${PN} auth account session #372229
+	# Remove existing pam file. We will build a new one. Bug #524792
+	rm -rf "${ED}"/etc/pam.d/${PN}{,-greeter}
+	pamd_mimic system-local-login ${PN} auth account password session #372229
+	pamd_mimic system-local-login ${PN}-greeter auth account password session #372229
 	dopamd "${FILESDIR}"/${PN}-autologin #390863, #423163
 
 	readme.gentoo_create_doc
