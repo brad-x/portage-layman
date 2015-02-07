@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16288 2015/01/15 16:39:27 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16332 2015/02/05 11:47:25 blueness Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,124 @@
 
 #--- END OF EXAMPLES ---
 
+# Anthony G. Basile <blueness@gentoo.org> (05 Feb 2015)
+# Depends on >=dev-libs/isl-0.14:0/14 currently masked.
+>=dev-libs/cloog-0.18.3
+
+# Michael Sterrett <mr_bones_@gentoo.org> (04 Feb 2015)
+# No upstream anymore; nothing in the tree uses it.
+# masked for removal on 20150306
+media-libs/sdl-flic
+
+# Bernard Cafarelli <voyageur@gentoo.org> (03 Feb 2015)
+# Masked for removal in 30 days
+# Requires GTK+2 audacious (<=3.2) with audclient (<=3.4)
+# Bugs #411077 and #538464
+x11-plugins/wmauda
+
+# Eray Aslan <eras@gentoo.org> (03 Feb 2015)
+# Mask experimental software
+=mail-mta/postfix-3.1*
+
+# Brian Evans <grknight@gentoo.org> (02 Feb 2015)
+# Last rites bug 538584
+# >=dev-lang/php-5.4 no longer includes the extension needed
+# In preparation of dev-lang/php:5.3 removal, Removal in 30 days
+dev-php/PEAR-MDB2_Driver_sqlite
+
+# Eray Aslan <eras@gentoo.org> (31 Jan 2015)
+# Mask experimental software
+=mail-mta/postfix-3.0*
+
+# Sergei Trofimovich <slyfox@gentoo.org> (29 Jan 2015)
+# Mask live ebuild
+=dev-util/radare2-9999
+
+# Anthony G. Basile <blueness@gentoo.org> (28 Jan 2015)
+# Its broken and we're waiting for fixes from upstream, bug #536196
+=net-misc/tor-0.2.6.2_alpha-r1
+
+# Mike Gilbert <floppym@gentoo.org> (26 Jan 2015)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+>=www-client/chromium-42
+
+# Julian Ospald <hasufell@gentoo.org> (22 Jan 2015)
+# Masked for removal in 30 days, wrt #537260.
+games-rpg/morrowind-data
+
+# Mikle Kolyada <zlogene@gentoo.org> (22 Jan 2015)
+# Unclear license (bug 253443).
+# No one uses it anymore. You can
+# use dev-perl/Geo-IP instead.
+dev-perl/IP-Country
+
+# Hans de Graaff <graaff@gentoo.org> (19 Jan 2015)
+# virtual/ruby-rdoc is a no-op in that it always pulls in
+# dev-ruby/rdoc, and nothing in the tree depends on it anymore. This
+# also fixes part of bug 421497.
+# Removal in 30 days.
+virtual/ruby-rdoc
+
+# Manuel Rüger <mrueg@gentoo.org> (18 Jan 2015)
+# Ruby 1.9 only packages, do not build with later rubies
+# Removal in 30 days.
+dev-ruby/flickr
+dev-ruby/gemcutter
+dev-ruby/ruby_parser:0
+dev-ruby/drydock
+dev-ruby/net-dns
+
+# Manuel Rüger <mrueg@gentoo.org> (17 Jan 2015)
+# Unmaintained. Old eclasses, EAPIs and various bugs.
+# See bug #533642
+# Removal in 30 days.
+rox-base/mime-editor
+rox-base/oroborox
+rox-base/pager
+rox-base/rox
+rox-base/rox-autostart
+rox-base/rox-clib
+rox-base/rox-launch
+rox-base/rox-lib
+rox-base/rox-session
+rox-base/systemtrayn
+rox-base/tasklist
+rox-base/tasktray
+rox-base/thumbs
+rox-base/traylib
+rox-base/volume
+rox-base/xdg-menu
+rox-base/zeroinstall-injector
+rox-extra/archive
+rox-extra/clock
+rox-extra/contacts
+rox-extra/diff
+rox-extra/edit
+rox-extra/fetch
+rox-extra/find
+rox-extra/gnome-thumbnailer
+rox-extra/lithium
+rox-extra/magickthumbnail
+rox-extra/memo
+rox-extra/mp3ogg2wav
+rox-extra/musicbox
+rox-extra/picky
+rox-extra/resolution
+rox-extra/reticker
+rox-extra/ripper
+rox-extra/rox-tail
+rox-extra/rox-wifi
+rox-extra/rox-xplanet
+rox-extra/roxcd
+rox-extra/roxdao
+rox-extra/roxget
+rox-extra/roxiso
+rox-extra/songer
+rox-extra/videothumbnail
+rox-extra/wallpaper
+rox-extra/weather
+
 # Michael Sterrett <mr_bones_@gentoo.org> (14 Jan 2015)
 # No upstream anymore, segfaults on amd64
 # masked for removal on 20150213
@@ -48,11 +166,12 @@ net-dialup/gtk-imonc
 =x11-base/xorg-server-1.10*
 =x11-base/xorg-server-1.11*
 =x11-base/xorg-server-1.13*
+=x11-base/xorg-server-1.14*
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (10 Jan 2015)
 # requires obsolete and vulnerable xorg-server, bug #532086
 # removal in 30 days
-<net-misc/tigervnc-1.3.1
+<=net-misc/tigervnc-1.3.1
 x11-drivers/psb-firmware
 x11-drivers/xf86-input-citron
 x11-drivers/xf86-video-cyrix
@@ -79,73 +198,11 @@ x11-libs/xpsb-glx
 dev-db/pgtune
 
 # Tony Vroon <chainsaw@gentoo.org> (5 Jan 2015)
-# Asterisk 13 is an LTS release but has not seen 
-# sufficient releases to be considered ready for 
-# production usage. You are welcome to have a go 
+# Asterisk 13 is an LTS release but has not seen
+# sufficient releases to be considered ready for
+# production usage. You are welcome to have a go
 # but please be careful.
 =net-misc/asterisk-13*
-
-# Michael Sterrett <mr_bones_@gentoo.org> (03 Jan 2015)
-# Uses net-libs/adns which is on the chopping block. (bug #513320)
-# masked for removal on 20150203
-games-server/tetrix
-
-# Hanno Boeck <hanno@gentoo.org> (03 Jan 2015)
-# dead upstream, masked for removal
-app-emulation/wine-doors
-
-# Hanno Boeck <hanno@gentoo.org> (03 Jan 2015)
-# Was a dependency of taxbird which has been replaced by
-# geierlein. As this requires yearly changes it's unlikely
-# it has any use for anyone. Masked for removal.
-dev-libs/libgeier
-
-# Michael Sterrett <mr_bones_@gentoo.org> (03 Jan 2015)
-# GGZ is dead (bug #404349)
-# masked for removal on 20150203
-dev-games/ggz-client-libs
-dev-games/libggz
-games-board/ggz-gtk-client
-games-board/ggz-gtk-games
-games-board/ggz-sdl-games
-games-board/ggz-txt-client
-
-# Michael Sterrett <mr_bones_@gentoo.org> (02 Jan 2015)
-# No upstream; no longer maintained; segfaults.
-# Use games-board/teg instead.
-# masked for removal on 20150202
-games-board/xfrisk
-
-# Michael Sterrett <mr_bones_@gentoo.org> (01 Jan 2015)
-# Crazy amount of patches and no upstream anymore.
-# Use games-mud/tintin instead.
-# masked for removal on 20150201
-games-mud/mcl
-
-# Andreas K. Huettel <dilfridge@gentoo.org> (30 Dec 2014)
-# media-libs/lcms:0 is unmaintained and has unspecified severe security
-# issues, bug 526642. Its reverse dependencies will be removed in 30days.
-www-client/netsurf
-media-gfx/photoprint
-media-gfx/rawstudio
-sci-libs/libecwj2
-
-# Andreas K. Huettel <dilfridge@gentoo.org> (30 Dec 2014)
-# Upstream dead since 2005, does not build, bug 515780
-# Masked for removal in 30 days
-app-office/imposter
-
-# Ulrich Müller <ulm@gentoo.org> (29 Dec 2014)
-# Does not compile with Emacs 24.4 or later.
-# Use the CEDET included with Emacs instead.
-# Masked for removal in 30 days, bug 529298.
-app-emacs/cedet
-
-# Ian Delaney <idella4@gentoo.org> (29 Dec 2014)
-# Initial maintainer left, added as a support to kombu however
-# appears to have never been used. Has no revdeps.
-# Removal in 30 days.
-dev-python/cl
 
 # Aaron W. Swenson <titanofold@gentoo.org> (28 Dec 2014)
 # Split ebuilds are no longer maintained. Migrate to the unified
@@ -157,83 +214,10 @@ dev-db/postgresql-docs
 dev-db/postgresql-base
 dev-db/postgresql-server
 
-# Mike Gilbert <floppym@gentoo.org> (25 Dec 2014)
-# Deprecated PIL imports, bug 471552.
-# Removal in 30 days.
-sci-physics/camfr
-
-# Michael Orlitzky <mjo@gentoo.org> (24 Dec 2014)
-# Masked for removal in 30 days (bug #531954). All current versions of
-# nagios block it, and it has unresolved LICENSE issues (bug #320241).
-net-analyzer/nagios-imagepack
-
 # Sergey Popov <pinkbyte@gentoo.org> (24 Dec 2014)
 # Mask new version of Boost - it's known to cause breakages
 ~dev-util/boost-build-1.57.0
 ~dev-libs/boost-1.57.0
-
-# Ian Delaney <idella4@gentoo.org> (24 Dec 2014)
-# Have little evidence of usage and have no upstream development / support
-# for years. They do not support python 3. testoob is a testing framework
-# which are more than adequately stocked under dev-python. orm was broken
-# prior to conversion and was not highlighted as a qa violation by repoman.
-# For removal in 30 days.
-dev-python/testoob
-dev-python/orm
-
-# Markos Chandras <hwoarang@gentoo.org> (23 Dec 2014)
-# Homepage returns 404 which probably suggests upstream has vanished.
-# Superseded by app-text/dos2unix. Bug #533222
-app-misc/fixdos
-
-# Matthias Maier <tamiko@gentoo.org> (20 Dec 2014)
-# Remove obsolete mate 1.6* packages. These are superseded by various mate
-# 1.8* packages
-# Mask for removal in 30 days
-app-arch/mate-file-archiver
-app-editors/mate-text-editor
-app-text/mate-document-viewer
-app-text/mate-doc-utils
-mate-base/libmatekeyring
-mate-base/mate-file-manager
-mate-base/mate-keyring
-mate-extra/mate-character-map
-mate-extra/mate-file-manager-image-converter
-mate-extra/mate-file-manager-open-terminal
-mate-extra/mate-file-manager-sendto
-mate-extra/mate-file-manager-share
-media-gfx/mate-image-viewer
-net-wireless/mate-bluetooth
-x11-libs/libmatewnck
-x11-misc/mate-menu-editor
-x11-wm/mate-window-manager
-
-# Manuel Rüger <mrueg@gentoo.org> (20 Dec 2014)
-# Mask further ruby-1.9 only packages.
-# Removal in 30 days
-dev-ruby/awesome_nested_set
-dev-ruby/directory_watcher
-dev-ruby/gem_plugin
-dev-ruby/mysql-ruby
-dev-ruby/refe
-dev-ruby/tmail
-dev-ruby/twitter:4
-
-# Tim Harder <radhermit@gentoo.org> (14 Dec 2014)
-# Mask pre-releases
-=media-gfx/inkscape-0.91_pre*
-
-# Tim Harder <radhermit@gentoo.org> (14 Dec 2014)
-# Deprecated plugins, use app-vim/vcscommand instead.
-# Removal in 30 days.
-app-vim/cvscommand
-app-vim/svncommand
-
-# Michał Górny <mgorny@gentoo.org> (12 Dec 2014)
-# No longer used by any package in the tree, and unlikely to be ever
-# needed again for its main use is updating package code. Bug #532394.
-# Removal in 30 days.
-net-zope/zope-fixers
 
 # Jeroen Roovers <jer@gentoo.org> (12 Dec 2014)
 # The 96 and 173 branches are no longer supported and remain vulnerable to
@@ -245,11 +229,6 @@ net-zope/zope-fixers
 # Security mask, wrt bug #529728
 <app-antivirus/clamav-0.98.5
 
-# Matt Turner <mattst88@gentoo.org> (08 Dec 2014)
-# Various bugs (466506, 490798, 493532, 498928, 498936), no maintainer,
-# hasn't built in a year. Removal in a month.
-sys-apps/kmscon
-
 # Ian Stakenvicius <axs@gentoo.org> (03 Dec 2014)
 # masked for testing
 media-libs/openh264
@@ -258,98 +237,6 @@ media-libs/openh264
 # Not supported by upstream anymore
 # Revdeps broken, #531392
 net-analyzer/openvas-administrator
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Multiple pending bugs, #380435, #460508, #481150,
-# #481310, #481312, #530856. Removal in a month (#380435)
-app-office/teapot
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Multiple problems and security issues (#425634).
-# Removal in a month.
-net-irc/bitchx
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Upstream dead for a long time, use sys-power/cpupower
-# instead. Removal in a month.
-sys-power/cpufrequtils
-x11-plugins/gkrellm-cpufreq
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Dead since 2004, fails to build (#488028). Relying
-# on deprecated gnome2 libs, you can use volti, volwheel,
-# volumeicon and other mixers in the tree. Removal in a month.
-media-sound/gnome-alsamixer
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Fails to build, use sys-devel/autoconf-archive instead.
-# Removal in a month (#514062)
-sys-devel/ac-archive
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Fails to install (#514276), removal in a month.
-net-misc/emirror
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Dead for ages and with pending unresolved bugs.
-# Removal in a month (#514918).
-net-wireless/wimax
-net-wireless/wimax-tools
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Unmaintained, fails to build (#515922).
-# Removal in a month.
-rox-extra/clock
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Unmaintained and hardmasked for ages (#518890).
-# Removal in a month.
-app-arch/rpm5
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Dead and unmaintained for ages, you should use polkit
-# directly (#520966). Removal in a month.
-app-admin/gksu-polkit
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Dead for ages, too outdated (#521726). Removal in a month.
-sys-apps/uhinv
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Completely broken currently, hard to update and fix (#522732).
-# Removal in a month.
-net-libs/pjsip
-net-voip/sflphone
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Not buildable, broken and dead for ages (#523250).
-# Removal in a month.
-net-im/ekg
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Not maintained by anybody, use sys-kernel/linux-firmware
-# instead as it's maintained and updated (#523784).
-# Removal in a month.
-sys-firmware/iwl2030-ucode
-sys-firmware/iwl5000-ucode
-sys-firmware/iwl2000-ucode
-sys-firmware/iwl5150-ucode
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# Relies on old gnome-bluetooth and upstream is not going
-# to fix it anytime soon (#528916). Removal in a month.
-net-wireless/cinnamon-bluetooth
-
-# Pacho Ramos <pacho@gentoo.org> (01 Dec 2014)
-# No updates since 2009, doesn't build (#531110).
-# Removal in a month.
-net-wireless/ussp-push
-
-# Alexis Ballier <aballier@gentoo.org> (01 Dec 2014)
-# Does not build with any recent ocaml compiler.
-# Unmaintained upstream.
-# Removal after 01 Jan 2015
-dev-ml/obrowser
 
 # Richard Yao <ryao@gentoo.org> (29 Nov 2014)
 # Depends on media-libs/lcms:0, which has unspecified security vulnerabilities.
@@ -361,18 +248,9 @@ dev-ml/obrowser
 # Missing deps, uninstallable
 www-apps/trac-downloads
 
-# Pawel Hajdan jr <phajdan.jr@gentoo.org> (21 Nov 2014)
-# Dev channel releases are only for people who are developers or want more
-# experimental features and accept a more unstable release.
->=www-client/chromium-41
-
 # Markos Chandras <hwoarang@gentoo.org> (18 Nov 2014)
 # Mask latest development version for testing
 =x11-misc/lightdm-1.13*
-
-# Eray Aslan <eras@gentoo.org> (11 Nov 2014)
-# Mask beta releases
-=net-proxy/squid-3.5*
 
 # Samuli Suominen <ssuominen@gentoo.org> (05 Nov 2014)
 # ConsoleKit2 from github by Eric Koegel, auth of xfce4-power-manager
@@ -381,40 +259,11 @@ www-apps/trac-downloads
 # Masked for testing
 >=sys-auth/consolekit-0.9.2
 
-# Jauhien Piatlicki <jauhien@gentoo.org> (30 Oct 2014)
-# Mask LXQt-0.8.0 release for testing
-# and until Qt5 is unmasked (bug #525410).
-=app-admin/lxqt-admin-0.8.0*
-=dev-libs/libqtxdg-1.0.0*
-=lxqt-base/liblxqt-0.8.0*
-=lxqt-base/liblxqt-mount-0.8.0*
-=lxqt-base/libsysstat-0.2.0*
-=lxqt-base/lxqt-about-0.8.0*
-=lxqt-base/lxqt-common-0.8.0*
-=lxqt-base/lxqt-config-0.8.0*
-=lxqt-base/lxqt-globalkeys-0.8.0*
-=lxqt-base/lxqt-meta-0.8.0*
-=lxqt-base/lxqt-notificationd-0.8.0*
-=lxqt-base/lxqt-panel-0.8.0*
-=lxqt-base/lxqt-policykit-0.8.0*
-=lxqt-base/lxqt-powermanagement-0.8.0*
-=lxqt-base/lxqt-qtplugin-0.8.0*
-=lxqt-base/lxqt-runner-0.8.0*
-=lxqt-base/lxqt-session-0.8.0*
-=media-gfx/lximage-qt-0.3.0*
-=net-misc/lxqt-openssh-askpass-0.8.0*
-=x11-misc/obconf-qt-0.1.0_p20141029
-=x11-misc/pcmanfm-qt-0.8.0*
-
 # Markos Chandras <18 Oct 2014>
 # Not quite ready yet. Reverse deps seem to be broken
 # at the moment. Masked until most of them are fixed
 # upstream.
 =net-libs/rb_libtorrent-1*
-
-# Jauhien Piatlicki <jauhien@gentoo.org> (18 Oct 2014)
-# Mask until Qt-5 is unmasked in the tree
->=x11-misc/sddm-0.10.0
 
 # Mike Pagano <mpagano@gentoo.org> (16 Oct 2014)
 # A regression in kernels 3.17.0 lead to file system corruption
@@ -424,10 +273,6 @@ www-apps/trac-downloads
 =sys-kernel/vanilla-sources-3.17.0
 =sys-kernel/gentoo-sources-3.17.0
 =sys-kernel/aufs-sources-3.17.0
-
-# Brian Evans <grknight@gentoo.org> (8 Oct 2014)
-# Mask all versions of suhosin until upstream revival is sustained and tested
-dev-php/suhosin
 
 # Jauhien Piatlicki <jauhien@gentoo.org> (5 Oct 2014)
 # Masked because of bug 524390: privilege escalation
@@ -453,165 +298,10 @@ dev-php/suhosin
 # Requires masked libav-10
 # If you use media-video/ffmpeg, it's absolutely safe to unmask this package.
 # Sorry for the inconvenience!
-#
-# Developers: Please DO NOT REMOVE this mask, which was discussed and
-# agreed on #gentoo-dev by mgorny, patrick and others
-=media-video/mpv-0.6*
-=media-video/mpv-0.7*
-
-# Davide Pesavento <pesa@gentoo.org> (11 Sep 2014)
-# Mask Qt 5.3.x for wider testing to ensure that it does
-# not break or conflict with other packages (bug #454132)
-=dev-qt/assistant-5.3.2*
-=dev-qt/designer-5.3.2*
-=dev-qt/linguist-5.3.2*
-=dev-qt/linguist-tools-5.3.2*
-=dev-qt/pixeltool-5.3.2*
-=dev-qt/qdbus-5.3.2*
-=dev-qt/qdbusviewer-5.3.2*
-=dev-qt/qdoc-5.3.2*
-=dev-qt/qtconcurrent-5.3.2*
-=dev-qt/qtcore-5.3.2*
-=dev-qt/qtdbus-5.3.2*
-=dev-qt/qtdeclarative-5.3.2*
-=dev-qt/qtdiag-5.3.2*
-=dev-qt/qtgraphicaleffects-5.3.2*
-=dev-qt/qtgui-5.3.2*
-=dev-qt/qthelp-5.3.2*
-=dev-qt/qtimageformats-5.3.2*
-=dev-qt/qtmultimedia-5.3.2*
-=dev-qt/qtnetwork-5.3.2*
-=dev-qt/qtopengl-5.3.2*
-=dev-qt/qtpaths-5.3.2*
-=dev-qt/qtpositioning-5.3.2*
-=dev-qt/qtprintsupport-5.3.2*
-=dev-qt/qtquick1-5.3.2*
-=dev-qt/qtquickcontrols-5.3.2*
-=dev-qt/qtscript-5.3.2*
-=dev-qt/qtsensors-5.3.2*
-=dev-qt/qtserialport-5.3.2*
-=dev-qt/qtsql-5.3.2*
-=dev-qt/qtsvg-5.3.2*
-=dev-qt/qttest-5.3.2*
-=dev-qt/qttranslations-5.3.2*
-=dev-qt/qtwebkit-5.3.2*
-=dev-qt/qtwebsockets-5.3.2*
-=dev-qt/qtwidgets-5.3.2*
-=dev-qt/qtx11extras-5.3.2*
-=dev-qt/qtxml-5.3.2*
-=dev-qt/qtxmlpatterns-5.3.2*
-=dev-qt/assistant-5.4.0*
-=dev-qt/designer-5.4.0*
-=dev-qt/linguist-5.4.0*
-=dev-qt/linguist-tools-5.4.0*
-=dev-qt/pixeltool-5.4.0*
-=dev-qt/qdbus-5.4.0*
-=dev-qt/qdbusviewer-5.4.0*
-=dev-qt/qdoc-5.4.0*
-=dev-qt/qtconcurrent-5.4.0*
-=dev-qt/qtcore-5.4.0*
-=dev-qt/qtdbus-5.4.0*
-=dev-qt/qtdeclarative-5.4.0*
-=dev-qt/qtdiag-5.4.0*
-=dev-qt/qtgraphicaleffects-5.4.0*
-=dev-qt/qtgui-5.4.0*
-=dev-qt/qthelp-5.4.0*
-=dev-qt/qtimageformats-5.4.0*
-=dev-qt/qtmultimedia-5.4.0*
-=dev-qt/qtnetwork-5.4.0*
-=dev-qt/qtopengl-5.4.0*
-=dev-qt/qtpaths-5.4.0*
-=dev-qt/qtpositioning-5.4.0*
-=dev-qt/qtprintsupport-5.4.0*
-=dev-qt/qtquick1-5.4.0*
-=dev-qt/qtquickcontrols-5.4.0*
-=dev-qt/qtscript-5.4.0*
-=dev-qt/qtsensors-5.4.0*
-=dev-qt/qtserialport-5.4.0*
-=dev-qt/qtsql-5.4.0*
-=dev-qt/qtsvg-5.4.0*
-=dev-qt/qttest-5.4.0*
-=dev-qt/qttranslations-5.4.0*
-=dev-qt/qtwayland-5.4.0*
-=dev-qt/qtwebkit-5.4.0*
-=dev-qt/qtwebsockets-5.4.0*
-=dev-qt/qtwidgets-5.4.0*
-=dev-qt/qtx11extras-5.4.0*
-=dev-qt/qtxml-5.4.0*
-=dev-qt/qtxmlpatterns-5.4.0*
-dev-python/PyQt5
-kde-frameworks/attica
-kde-frameworks/frameworkintegration
-kde-frameworks/kactivities
-kde-frameworks/kapidox
-kde-frameworks/karchive
-kde-frameworks/kauth
-kde-frameworks/kbookmarks
-kde-frameworks/kcmutils
-kde-frameworks/kcodecs
-kde-frameworks/kcompletion
-kde-frameworks/kconfig
-kde-frameworks/kconfigwidgets
-kde-frameworks/kcoreaddons
-kde-frameworks/kcrash
-kde-frameworks/kdbusaddons
-kde-frameworks/kdeclarative
-kde-frameworks/kded
-kde-frameworks/kdelibs4support
-kde-frameworks/kdesignerplugin
-kde-frameworks/kdesu
-kde-frameworks/kdewebkit
-kde-frameworks/kdnssd
-kde-frameworks/kdoctools
-kde-frameworks/kemoticons
-kde-frameworks/kglobalaccel
-kde-frameworks/kguiaddons
-kde-frameworks/khtml
-kde-frameworks/ki18n
-kde-frameworks/kiconthemes
-kde-frameworks/kidletime
-kde-frameworks/kimageformats
-kde-frameworks/kinit
-kde-frameworks/kio
-kde-frameworks/kitemmodels
-kde-frameworks/kitemviews
-kde-frameworks/kjobwidgets
-kde-frameworks/kjs
-kde-frameworks/kjsembed
-kde-frameworks/kmediaplayer
-kde-frameworks/knewstuff
-kde-frameworks/knotifications
-kde-frameworks/knotifyconfig
-kde-frameworks/kpackage
-kde-frameworks/kparts
-kde-frameworks/kplotting
-kde-frameworks/kpty
-kde-frameworks/kross
-kde-frameworks/krunner
-kde-frameworks/kservice
-kde-frameworks/ktexteditor
-kde-frameworks/ktextwidgets
-kde-frameworks/kunitconversion
-kde-frameworks/kwallet
-kde-frameworks/kwidgetsaddons
-kde-frameworks/kwindowsystem
-kde-frameworks/kxmlgui
-kde-frameworks/networkmanager-qt
-kde-frameworks/plasma
-kde-frameworks/solid
-kde-frameworks/sonnet
-kde-frameworks/threadweaver
->=kde-misc/about-distro-2.0.0
-www-client/otter
-=app-text/calibre-2*
-app-i18n/fcitx-qt5
-dev-libs/grantlee:5
->=media-gfx/photoqt-1.1
-media-gfx/phototonic
->=media-sound/drumstick-1.0.0
->=media-sound/kmetronome-1.0.0
->=media-sound/teamspeak-client-bin-3.0.16
-x11-misc/kaqaz
+=app-text/unpaper-6.1-r1
+=media-tv/xbmc-13.2-r1
+=net-misc/mediatomb-0.12.2_pre20150118-r1
+>=media-video/handbrake-0.10.0
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (03 Sep 2014)
 # Temporary mask until it is verified to work
@@ -820,8 +510,12 @@ sys-fs/rdiff-backup-fs
 # Luca Barbato <lu_zero@gentoo.org> (30 Mar 2014)
 # Current stable for upstream, pending a tinderbox run.
 # Note: mask restored because of #509294, #519258.
+#
+# When unmasking, please also remove reverse dependency mask
+# and package.use.mask entries in base/package.use.mask.
 =media-video/libav-10*
 =media-video/libav-11*
+>=media-plugins/gst-plugins-libav-1.4
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (26 Mar 2014)
 # Affected by multiple vulnerabilities, #445916, #471098 and #472280
@@ -877,10 +571,6 @@ lxde-base/lxpolkit
 www-client/google-chrome:beta
 www-client/google-chrome:stable
 www-client/google-chrome:unstable
-
-# Eray Aslan <eras@gentoo.org> (18 Jan 2014)
-# Mask experimental software
-=mail-mta/postfix-2.12*
 
 # Alexis Ballier <aballier@gentoo.org> (18 Jan 2014)
 # Rev. deps fail to build

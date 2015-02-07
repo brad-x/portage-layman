@@ -1,6 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/glib-2.42.1.ebuild,v 1.1 2014/12/14 22:37:29 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/glib-2.42.1.ebuild,v 1.4 2015/01/22 11:39:13 pacho Exp $
+
+# Until bug #537330 glib is a reverse dependency of pkgconfig and, then
+# adding new dependencies end up making stage3 to grow. Every addition needs
+# then to be think very closely.
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -22,7 +26,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="LGPL-2+"
 SLOT="2"
-IUSE="fam kernel_linux +mime selinux static-libs systemtap test utils xattr"
+IUSE="dbus fam kernel_linux +mime selinux static-libs systemtap test utils xattr"
 REQUIRED_USE="
 	utils? ( ${PYTHON_REQUIRED_USE} )
 	test? ( ${PYTHON_REQUIRED_USE} )
@@ -68,9 +72,11 @@ DEPEND="${RDEPEND}
 # different g-i and glib major versions
 
 PDEPEND="!<gnome-base/gvfs-1.6.4-r990
+	dbus? ( gnome-base/dconf )
 	mime? ( x11-misc/shared-mime-info )
 "
 # shared-mime-info needed for gio/xdgmime, bug #409481
+# dconf is needed to be able to save settings, bug #498436
 # Earlier versions of gvfs do not work with glib
 
 pkg_setup() {
@@ -88,11 +94,6 @@ pkg_setup() {
 src_prepare() {
 	# Prevent build failure in stage3 where pkgconfig is not available, bug #481056
 	mv -f "${WORKDIR}"/pkg-config-*/pkg.m4 "${S}"/m4macros/ || die
-
-	# Fix gmodule issues on fbsd; bug #184301, upstream bug #107626
-	# Upstream doesn't even know if this is needed, looks like openBSD
-	# people is not needing it
-	#epatch "${FILESDIR}"/${PN}-2.12.12-fbsd.patch
 
 	if use test; then
 		# Do not try to remove files on live filesystem, upstream bug #619274

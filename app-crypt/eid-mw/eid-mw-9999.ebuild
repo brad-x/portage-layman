@@ -1,18 +1,19 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/eid-mw/eid-mw-9999.ebuild,v 1.2 2014/08/10 02:26:59 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/eid-mw/eid-mw-9999.ebuild,v 1.3 2015/01/24 18:17:08 swift Exp $
 
 EAPI=5
 
 inherit eutils versionator mozextension multilib
 
 if [[ ${PV} == "9999" ]] ; then
-	ESVN_REPO_URI="http://eid-mw.googlecode.com/svn/trunk/"
-	inherit subversion autotools
+	EGIT_REPO_URI="git://github.com/Fedict/${PN}.git
+		https://github.com/Fedict/${PN}.git"
+	inherit git-2 autotools
 	SRC_URI=""
 else
 	MY_P="${PN}-${PV/_p/-}"
-	SRC_URI="http://eid.belgium.be/en/binaries/${MY_P}.tar_tcm406-250016.gz -> ${MY_P}.tar.gz"
+	SRC_URI="http://eid.belgium.be/en/binaries/${MY_P}.tar_tcm406-258906.gz -> ${MY_P}.tar.gz"
 	KEYWORDS="~x86 ~amd64"
 	S="${WORKDIR}/eid-mw-$(get_version_component_range 1-3)"
 fi
@@ -37,10 +38,6 @@ DEPEND="${RDEPEND}
 if [[ ${PV} == "9999" ]]; then
 	src_prepare() {
 		eautoreconf
-	}
-else
-	src_prepare() {
-		epatch "${FILESDIR}"/fix-nodialog-bug.patch
 	}
 fi
 

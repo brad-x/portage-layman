@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.64 2015/01/05 02:11:15 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.65 2015/02/01 22:34:52 mgorny Exp $
 
 EAPI=5
 
@@ -25,8 +25,8 @@ SLOT="0"
 [[ ${PV} == *9999* ]] || \
 KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux"
 IUSE="+alsa bluray bs2b cdio +cli -doc-pdf dvb +dvd dvdnav egl +enca encode
-+iconv jack -joystick jpeg ladspa lcms +libass libcaca libguess libmpv lirc lua
-luajit +mpg123 -openal +opengl oss pulseaudio pvr samba -sdl selinux
++iconv jack -joystick jpeg ladspa lcms +libass libav libcaca libguess libmpv
+lirc lua luajit +mpg123 -openal +opengl oss pulseaudio pvr samba -sdl selinux
 v4l vaapi vdpau vf-dlopen wayland +X xinerama +xscreensaver +xv"
 
 REQUIRED_USE="
@@ -48,10 +48,8 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	|| (
-		>=media-video/libav-10:=[encode?,threads,vaapi?,vdpau?]
-		>=media-video/ffmpeg-2.1.4:0=[encode?,threads,vaapi?,vdpau?]
-	)
+	libav? ( >=media-video/libav-10:0=[encode?,threads,vaapi?,vdpau?] )
+	!libav? ( >=media-video/ffmpeg-2.1.4:0=[encode?,threads,vaapi?,vdpau?] )
 	sys-libs/zlib
 	X? (
 		x11-libs/libX11

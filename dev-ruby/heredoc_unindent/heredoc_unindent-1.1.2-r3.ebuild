@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/heredoc_unindent/heredoc_unindent-1.1.2-r3.ebuild,v 1.6 2014/12/22 13:53:39 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/heredoc_unindent/heredoc_unindent-1.1.2-r3.ebuild,v 1.9 2015/02/05 10:16:36 ago Exp $
 
 EAPI=5
 
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20"
 
 inherit ruby-fakegem
 
@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/adrianomitre/heredoc_unindent"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="doc test"
 
 ruby_add_bdepend "test? ( >=dev-ruby/hoe-2.8.0 dev-ruby/test-unit:2 )

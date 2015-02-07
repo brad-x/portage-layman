@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/dirac/dirac-1.0.2-r1.ebuild,v 1.9 2015/01/02 12:19:10 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/dirac/dirac-1.0.2-r1.ebuild,v 1.11 2015/01/29 19:15:56 mgorny Exp $
 
 EAPI=5
 inherit autotools eutils multilib-minimal
@@ -11,8 +11,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="MPL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-IUSE="debug doc mmx static-libs"
+KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+IUSE="debug doc cpu_flags_x86_mmx static-libs"
 
 RDEPEND=""
 DEPEND="
@@ -33,7 +33,7 @@ src_prepare() {
 multilib_src_configure() {
 	ECONF_SOURCE="${S}" econf \
 		$(use_enable static-libs static) \
-		$(use_enable mmx) \
+		$(use_enable cpu_flags_x86_mmx mmx) \
 		$(use_enable debug) \
 		$(multilib_is_native_abi && echo $(use_enable doc))
 	if ! multilib_is_native_abi ; then

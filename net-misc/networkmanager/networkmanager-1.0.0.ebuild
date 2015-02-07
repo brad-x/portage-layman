@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-1.0.0.ebuild,v 1.1 2015/01/10 14:51:52 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-1.0.0.ebuild,v 1.5 2015/01/27 18:54:20 blueness Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -25,7 +25,7 @@ IUSE="bluetooth connection-sharing consolekit +dhclient dhcpcd gnutls +introspec
 kernel_linux +nss +modemmanager ncurses +ppp resolvconf selinux systemd teamd test \
 vala +wext +wifi zeroconf" # wimax
 
-KEYWORDS="~alpha ~amd64 ~arm ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
 
 REQUIRED_USE="
 	modemmanager? ( ppp )
@@ -72,6 +72,7 @@ RDEPEND="${COMMON_DEPEND}
 	wifi? ( >=net-wireless/wpa_supplicant-0.7.3-r3[dbus] )
 "
 DEPEND="${COMMON_DEPEND}
+	dev-util/gdbus-codegen
 	dev-util/gtk-doc-am
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17
@@ -124,6 +125,9 @@ src_prepare() {
 
 	# Fix lto configure switch, upstream bug #742575 (from 1.0 branch)
 	epatch "${FILESDIR}"/${PN}-1.0.0-lto-switch.patch
+
+	# Fix build with /bin/sh != bash, see bug #536540, upstream bug #743480
+	epatch "${FILESDIR}/${PN}-1.0.0-remove-bashisms.patch"
 
 	# Force use of /run, avoid eautoreconf, upstream bug #737139
 	sed -e 's:$localstatedir/run/:/run/:' -i configure || die

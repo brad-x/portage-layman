@@ -1,6 +1,69 @@
 # ChangeLog for sys-devel/binutils-apple
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-apple/ChangeLog,v 1.35 2013/11/12 19:24:02 grobian Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-apple/ChangeLog,v 1.42 2015/02/04 17:39:58 grobian Exp $
+
+  04 Feb 2015; Fabian Groffen <grobian@gentoo.org> binutils-apple-4.2-r1.ebuild,
+  binutils-apple-4.2.ebuild, binutils-apple-4.3-r1.ebuild,
+  binutils-apple-4.3.ebuild, binutils-apple-5.1.ebuild:
+  Guard Darwin version checks for Darwin CHOSTs only
+
+  04 Feb 2015; Fabian Groffen <grobian@gentoo.org>
+  +files/ld64-241.9-lto-noremarks.patch, binutils-apple-6.1.ebuild:
+  Add patch to silence when LTO is in use by Michael Weiser, bug #538604
+
+  04 Feb 2015; Patrick Lauer <patrick@gentoo.org> binutils-apple-4.2-r1.ebuild,
+  binutils-apple-4.3-r1.ebuild:
+  Move test deps to DEPEND again
+
+*binutils-apple-4.2-r1 (03 Feb 2015)
+*binutils-apple-4.3-r1 (03 Feb 2015)
+
+  03 Feb 2015; Fabian Groffen <grobian@gentoo.org>
+  +binutils-apple-4.2-r1.ebuild, +binutils-apple-4.3-r1.ebuild,
+  +files/binutils-apple-4.2-globals-extern.patch, +files/ld64-127.2-Makefile,
+  +files/ld64-127.2-extraneous-headers.patch,
+  +files/ld64-127.2-thread_state.patch, +files/ld64-128.2-1010.patch,
+  +files/ld64-128.2-Makefile-2, -files/cctools-839-lto.patch:
+  Add fixed older versions for PPC and comparisons by Michael Weiser, bug
+  #538384
+
+  31 Jan 2015; Patrick Lauer <patrick@gentoo.org> binutils-apple-3.1.2.ebuild,
+  binutils-apple-3.2.6.ebuild, binutils-apple-3.2.ebuild,
+  binutils-apple-4.2.ebuild, binutils-apple-4.3.ebuild,
+  binutils-apple-5.1.ebuild, binutils-apple-6.1.ebuild, metadata.xml:
+  Move test deps to DEPEND, fix quoting, make repoman happy
+
+  27 Jan 2015; Fabian Groffen <grobian@gentoo.org> files/ld64-236.3-nolto.patch:
+  Small fix for nolto patch to exit properly on -v, by Michael Weiser
+
+*binutils-apple-6.1 (27 Jan 2015)
+*binutils-apple-5.1 (27 Jan 2015)
+
+  27 Jan 2015; Fabian Groffen <grobian@gentoo.org> +binutils-apple-5.1.ebuild,
+  +binutils-apple-6.1.ebuild, +files/binutils-apple-4.5-as.patch,
+  +files/binutils-apple-5.1-as-dir.patch,
+  +files/binutils-apple-5.1-constant-types.patch,
+  +files/binutils-apple-5.1-extraneous-includes.patch,
+  +files/binutils-apple-5.1-nolto.patch,
+  +files/binutils-apple-5.1-otool-stdc.patch,
+  +files/binutils-apple-5.1-ranlib.patch,
+  +files/binutils-apple-5.1-strnlen.patch, +files/cctools-839-intel-retf.patch,
+  +files/cctools-839-lto.patch, +files/ld64-136-Makefile,
+  +files/ld64-136-compile_stubs.h, +files/ld64-236.3-Makefile,
+  +files/ld64-236.3-arm64-fixup.patch, +files/ld64-236.3-constant-types.patch,
+  +files/ld64-236.3-crashreporter.patch, +files/ld64-236.3-gcc.patch,
+  +files/ld64-236.3-missing-cputypes.patch, +files/ld64-236.3-noarm.patch,
+  +files/ld64-236.3-nolto.patch, +files/ld64-236.3-noppc.patch,
+  +files/ld64-236.3-nosnapshots.patch, +files/ld64-241.9-arm64-cputype.patch,
+  +files/ld64-241.9-atomic-volatile.patch, +files/ld64-241.9-cc_md5.patch,
+  +files/ld64-241.9-extraneous-includes.patch, +files/ld64-241.9-gcc.patch,
+  +files/ld64-241.9-get-comm-align.patch, +files/ld64-241.9-noarm.patch,
+  +files/ld64-241.9-nosnapshots.patch, +files/ld64-241.9-register-names.patch,
+  files/binutils-apple-3.1.1-libtool-ranlib.patch,
+  files/binutils-apple-3.1.1-no-headers.patch,
+  files/binutils-apple-4.0-no-oss-dir.patch,
+  files/ld64-123.2-debug-backtrace.patch:
+  Version bumps thanks to the hard work by Michael Weisner in bug #473068
 
   12 Nov 2013; Fabian Groffen <grobian@gentoo.org>
   +files/ld64-128.2-stdlib.patch, binutils-apple-4.3.ebuild:

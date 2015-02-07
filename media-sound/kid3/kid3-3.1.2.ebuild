@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/kid3/kid3-3.1.2.ebuild,v 1.2 2014/12/31 13:17:39 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/kid3/kid3-3.1.2.ebuild,v 1.5 2015/02/03 17:54:09 kensington Exp $
 
 EAPI=5
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="4"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="acoustid flac kde mp3 mp4 +phonon +taglib vorbis"
 
 REQUIRED_USE="flac? ( vorbis )"
@@ -40,7 +40,7 @@ RDEPEND="
 		media-libs/phonon[qt4]
 		dev-qt/qtphonon:4
 	) )
-	taglib? ( media-libs/taglib )
+	taglib? ( >=media-libs/taglib-1.9.1 )
 	vorbis? (
 		media-libs/libogg
 		media-libs/libvorbis

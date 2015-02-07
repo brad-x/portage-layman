@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-data/kdebase-data-4.14.3.ebuild,v 1.3 2014/12/11 13:05:56 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebase-data/kdebase-data-4.14.3.ebuild,v 1.4 2015/01/29 19:50:30 johu Exp $
 
 EAPI=5
 

@@ -1,6 +1,30 @@
 # ChangeLog for media-video/vlc
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.923 2014/12/18 13:41:39 kensington Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.928 2015/02/02 06:03:37 mgorny Exp $
+
+  02 Feb 2015; Michał Górny <mgorny@gentoo.org> vlc-2.1.5-r1.ebuild:
+  Re-add missing dep on libva, reported by Arfrever.
+
+*vlc-2.1.5-r1 (01 Feb 2015)
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> +vlc-2.1.5-r1.ebuild,
+  vlc-2.1.9999.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  Introduce USE=libav to control the preferred implementation. Fixes subslot &
+  implementation switch rebuilds as well.
+
+  30 Jan 2015; Michał Górny <mgorny@gentoo.org> vlc-2.1.2.ebuild,
+  vlc-2.1.4.ebuild, vlc-2.1.5.ebuild, vlc-2.1.9999.ebuild, vlc-2.2.9999.ebuild,
+  vlc-9999.ebuild:
+  Convert to CPU_FLAGS_X86.
+
+  26 Jan 2015; Yixun Lan <dlan@gentoo.org> vlc-2.1.2.ebuild, vlc-2.1.4.ebuild,
+  vlc-2.1.5.ebuild, vlc-2.1.9999.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+   Unquoted Variable warning
+
+  26 Jan 2015; Yixun Lan <dlan@gentoo.org> vlc-2.1.2.ebuild, vlc-2.1.4.ebuild,
+  vlc-2.1.5.ebuild, vlc-2.1.9999.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  Fix possible lack of _FORTIFY_SOURCE definition, bug 523144. proxy for
+  maintainer
 
   18 Dec 2014; Michael Palimaka <kensington@gentoo.org> vlc-2.1.9999.ebuild:
   Don't try to reference USE flag that doesn't exist, again.

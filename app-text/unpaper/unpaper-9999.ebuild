@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/unpaper/unpaper-9999.ebuild,v 1.6 2014/10/26 23:07:48 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/unpaper/unpaper-9999.ebuild,v 1.7 2015/02/01 22:44:15 mgorny Exp $
 
 EAPI=5
 
@@ -20,9 +20,11 @@ HOMEPAGE="https://www.flameeyes.eu/projects/unpaper"
 LICENSE="GPL-2"
 
 SLOT="0"
-IUSE="test"
+IUSE="libav test"
 
-RDEPEND="|| ( >=media-video/libav-10[encode] >=media-video/ffmpeg-2[encode] )"
+RDEPEND="
+	libav? ( >=media-video/libav-10:0=[encode] )
+	!libav? ( >=media-video/ffmpeg-2:0=[encode] )"
 DEPEND="dev-libs/libxslt
 	app-text/docbook-xsl-ns-stylesheets
 	virtual/pkgconfig

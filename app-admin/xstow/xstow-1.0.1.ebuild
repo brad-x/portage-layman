@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/xstow/xstow-1.0.1.ebuild,v 1.2 2014/06/27 08:39:09 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/xstow/xstow-1.0.1.ebuild,v 1.4 2015/02/05 10:28:40 jer Exp $
 
 EAPI=5
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="replacement for GNU stow with extensions"
 HOMEPAGE="http://xstow.sourceforge.net/"
@@ -18,13 +18,17 @@ IUSE="ncurses"
 DEPEND="ncurses? ( sys-libs/ncurses )"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ncurses.patch
+	eautoreconf
+}
+
 src_configure() {
 	econf $(use_with ncurses curses)
 }
 
 src_install() {
-	emake DESTDIR="${D}" docdir="/usr/share/doc/${PF}/html" \
-		install || die "emake install failed."
+	emake DESTDIR="${D}" docdir="/usr/share/doc/${PF}/html" install
 	dodoc AUTHORS ChangeLog NEWS README TODO
 
 	# create new STOWDIR

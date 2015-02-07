@@ -1,6 +1,38 @@
 # ChangeLog for sys-apps/systemd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.337 2015/01/08 20:44:11 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.345 2015/02/02 21:23:09 floppym Exp $
+
+  02 Feb 2015; Mike Gilbert <floppym@gentoo.org> systemd-218-r2.ebuild,
+  systemd-9999.ebuild:
+  Die if we fail to remove links in /etc.
+
+  02 Feb 2015; Mike Gilbert <floppym@gentoo.org> systemd-218-r2.ebuild,
+  systemd-9999.ebuild:
+  timesyncd gets pulled in by sysinit.target by default, disable this.
+
+  31 Jan 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Update use flag descriptions, bug 537380 by Elias Probst.
+
+  20 Jan 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Add list of tools provided by sysv-utils.
+
+  18 Jan 2015; Mike Gilbert <floppym@gentoo.org> systemd-216-r3.ebuild:
+  Move stable keywords forward.
+
+*systemd-216-r3 (18 Jan 2015)
+
+  18 Jan 2015; Mike Gilbert <floppym@gentoo.org>
+  +files/216-tmpfiles-setup-dev.patch, +systemd-216-r3.ebuild:
+  Backport patch for compatibility with >=sys-apps/kmod-18-r2.
+
+  18 Jan 2015; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Describe USE=curl, bug #536934. Thanks to Elias Probst for the description.
+
+*systemd-218-r2 (17 Jan 2015)
+
+  17 Jan 2015; Mike Gilbert <floppym@gentoo.org>
+  +files/218-Dont-enable-audit-by-default.patch, +systemd-218-r2.ebuild:
+  Don't enable audit by default, bug 536870.
 
   08 Jan 2015; Markus Meier <maekke@gentoo.org> systemd-216-r2.ebuild:
   arm stable, bug #525112

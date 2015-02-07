@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-apple/binutils-apple-4.3.ebuild,v 1.4 2013/11/12 19:24:02 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-apple/binutils-apple-4.3.ebuild,v 1.6 2015/02/04 17:39:58 grobian Exp $
 
 EAPI="3"
 
@@ -29,9 +29,9 @@ KEYWORDS="~x64-macos ~x86-macos"
 IUSE="lto test"
 
 RDEPEND="sys-devel/binutils-config
-	lto? ( sys-devel/llvm )
-	test? ( >=dev-lang/perl-5.8.8 )"
+	lto? ( sys-devel/llvm )"
 DEPEND="${RDEPEND}
+	test? ( >=dev-lang/perl-5.8.8 )
 	>=sys-devel/gcc-apple-4.2.1"
 
 export CTARGET=${CTARGET:-${CHOST}}
@@ -77,7 +77,7 @@ src_prepare() {
 	ln -s ../../${LIBUNWIND}/src libunwind || die
 	cp ../../${LIBUNWIND}/include/*.h include/ || die
 	# mimic OS X Lion-style Availability.h macros
-	if [[ ${CHOST#*-darwin} -le 10 ]] ; then
+	if [[ ${CHOST} == *darwin* && ${CHOST#*-darwin} -le 10 ]] ; then
 		{
 			echo "#define __OSX_AVAILABLE_STARTING(x,y)  "
 			echo "#define __OSX_AVAILABLE_BUT_DEPRECATED(a,b,c,d)  "
@@ -179,7 +179,7 @@ src_configure() {
 		LTO=0
 	fi
 	append-cppflags -DNDEBUG
-	append-cppflags -I${WORKDIR}/libunwind/include
+	append-cppflags -I"${WORKDIR}"/libunwind/include
 }
 
 compile_libunwind() {

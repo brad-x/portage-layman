@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.164 2014/08/12 04:47:55 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.167 2015/02/01 22:59:56 mgorny Exp $
 
 EAPI="5"
 
@@ -45,7 +45,7 @@ HOMEPAGE="http://xbmc.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="airplay alsa altivec avahi bluetooth bluray caps cec css debug +fishbmc gles goom java joystick midi mysql nfs +opengl profile +projectm pulseaudio pvr +rsxs rtmp +samba +sdl sse sse2 sftp test udisks upnp upower +usb vaapi vdpau webserver +X +xrandr"
+IUSE="airplay alsa altivec avahi bluetooth bluray caps cec css debug +fishbmc gles goom java joystick libav midi mysql nfs +opengl profile +projectm pulseaudio pvr +rsxs rtmp +samba +sdl cpu_flags_x86_sse cpu_flags_x86_sse2 sftp test udisks upnp upower +usb vaapi vdpau webserver +X +xrandr"
 REQUIRED_USE="
 	pvr? ( mysql )
 	rsxs? ( X )
@@ -100,7 +100,9 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	media-libs/tiff
 	pulseaudio? ( media-sound/pulseaudio )
 	media-sound/wavpack
-	|| ( >=media-video/ffmpeg-1.2.1:0=[encode] ( media-libs/libpostproc >=media-video/libav-10_alpha:=[encode] ) )
+	!libav? ( >=media-video/ffmpeg-1.2.1:0=[encode] )
+	libav? ( media-libs/libpostproc:0=
+		>=media-video/libav-10_alpha:0=[encode] )
 	rtmp? ( media-video/rtmpdump )
 	avahi? ( net-dns/avahi )
 	nfs? ( net-fs/libnfs )
@@ -126,7 +128,8 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	vaapi? ( x11-libs/libva[opengl] )
 	vdpau? (
 		|| ( x11-libs/libvdpau >=x11-drivers/nvidia-drivers-180.51 )
-		|| ( >=media-video/ffmpeg-1.2.1:0=[vdpau] >=media-video/libav-10_alpha:=[vdpau] )
+		!libav? ( >=media-video/ffmpeg-1.2.1:0=[vdpau] )
+		libav? ( >=media-video/libav-10_alpha:0=[vdpau] )
 	)
 	X? (
 		x11-apps/xdpyinfo
@@ -142,6 +145,7 @@ DEPEND="${COMMON_DEPEND}
 	app-arch/xz-utils
 	dev-lang/swig
 	dev-util/gperf
+	sys-apps/lsb-release
 	X? ( x11-proto/xineramaproto )
 	dev-util/cmake
 	x86? ( dev-lang/nasm )
@@ -154,7 +158,7 @@ DEPEND="${COMMON_DEPEND}
 pkg_setup() {
 	python-single-r1_pkg_setup
 
-	if has_version 'media-video/libav' ; then
+	if use libav ; then
 		ewarn "Building ${PN} against media-video/libav is not supported upstream."
 		ewarn "It requires building a (small) wrapper library with some code"
 		ewarn "from media-video/ffmpeg."
@@ -191,15 +195,6 @@ src_prepare() {
 	# stuff handles this just fine already #408395
 	export ac_cv_lib_avcodec_ff_vdpau_vc1_decode_picture=yes
 
-	local squish #290564
-	use altivec && squish="-DSQUISH_USE_ALTIVEC=1 -maltivec"
-	use sse && squish="-DSQUISH_USE_SSE=1 -msse"
-	use sse2 && squish="-DSQUISH_USE_SSE=2 -msse2"
-	sed -i \
-		-e '/^CXXFLAGS/{s:-D[^=]*=.::;s:-m[[:alnum:]]*::}' \
-		-e "1iCXXFLAGS += ${squish}" \
-		lib/libsquish/Makefile.in || die
-
 	# Fix XBMC's final version string showing as "exported"
 	# instead of the SVN revision number.
 	export HAVE_GIT=no GIT_REV=${EGIT_VERSION:-exported}
@@ -230,7 +225,7 @@ src_configure() {
 		--disable-ccache \
 		--disable-optimizations \
 		--enable-external-libraries \
-		$(has_version 'media-video/libav' && echo "--enable-libav-compat") \
+		$(usex libav "--enable-libav-compat" "") \
 		$(use_enable airplay) \
 		$(use_enable avahi) \
 		$(use_enable bluray libbluray) \
@@ -302,9 +297,9 @@ src_install() {
 		/usr/share/xbmc/addons/skin.confluence/fonts/Roboto-Bold.ttf
 
 	python_domodule tools/EventClients/lib/python/xbmcclient.py
-	python_newscript "tools/EventClients/Clients/XBMC Send/xbmc-send.py" xbmc-send
+	python_newscript "tools/EventClients/Clients/Kodi Send/kodi-send.py" kodi-send
 }
 
 pkg_postinst() {
-	elog "Visit http://wiki.xbmc.org/?title=XBMC_Online_Manual"
+	elog "Visit http://kodi.wiki/?title=XBMC_Online_Manual"
 }

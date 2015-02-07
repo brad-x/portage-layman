@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/singularity/singularity-0.30c-r1.ebuild,v 1.3 2013/09/05 19:44:45 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/singularity/singularity-0.30c-r1.ebuild,v 1.5 2015/02/06 13:44:09 ago Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_6 python2_7 )
+PYTHON_COMPAT=( python2_7 )
 inherit eutils python-single-r1 games
 
 MUSIC=endgame-${PN}-music-006
@@ -14,7 +14,7 @@ SRC_URI="http://endgame-singularity.googlecode.com/files/${P}-src.tar.gz
 
 LICENSE="GPL-2 CC-BY-SA-2.5"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="+music"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -37,11 +37,11 @@ src_prepare() {
 
 src_install() {
 	insinto "${GAMES_DATADIR}/${PN}"
-	doins -r code data ${PN}.py || die "doins failed"
+	doins -r code data ${PN}.py || die
 	python_optimize "${ED%/}/${GAMES_DATADIR}"/${PN}
 
 	if use music ; then
-		doins -r ../${MUSIC}/music || die "doins failed"
+		doins -r ../${MUSIC}/music || die
 	fi
 	games_make_wrapper ${PN} "${EPYTHON} ${PN}.py" "${GAMES_DATADIR}/${PN}"
 	dodoc README.txt TODO Changelog AUTHORS

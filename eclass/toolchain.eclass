@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.647 2014/11/15 08:45:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain.eclass,v 1.649 2015/02/05 23:28:17 blueness Exp $
 
 # Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 
@@ -1611,8 +1611,12 @@ toolchain_src_install() {
 		fi
 	done
 
-	# Remove generated headers, as they can cause things to break
-	# (ncurses, openssl, etc).
+	# We remove the generated fixincludes, as they can cause things to break
+	# (ncurses, openssl, etc).  We do not prevent them from being built, as
+	# in the following commit which we revert:
+	# http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/eclass/toolchain.eclass?r1=1.647&r2=1.648
+	# This is because bsd userland needs fixedincludes to build gcc, while
+	# linux does not.  Both can dispose of them afterwards.
 	while read x ; do
 		grep -q 'It has been auto-edited by fixincludes from' "${x}" \
 			&& rm -f "${x}"

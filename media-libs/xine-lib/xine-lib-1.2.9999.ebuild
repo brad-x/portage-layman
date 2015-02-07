@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.9999.ebuild,v 1.28 2014/07/10 13:39:31 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.9999.ebuild,v 1.29 2015/02/01 22:53:32 mgorny Exp $
 
 EAPI=5
 
@@ -25,14 +25,17 @@ HOMEPAGE="http://xine.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="1"
-IUSE="a52 aac aalib +alsa altivec bluray +css directfb dts dvb dxr3 fbcon flac fusion gtk imagemagick ipv6 jack jpeg libcaca mad +mmap mng modplug musepack opengl oss pulseaudio samba sdl speex theora truetype v4l vaapi vcd vdpau vdr vidix +vis vorbis vpx wavpack +X +xcb xinerama +xv xvmc ${NLS_IUSE}"
+IUSE="a52 aac aalib +alsa altivec bluray +css directfb dts dvb dxr3 fbcon flac fusion gtk imagemagick ipv6 jack jpeg libav libcaca mad +mmap mng modplug musepack opengl oss pulseaudio samba sdl speex theora truetype v4l vaapi vcd vdpau vdr vidix +vis vorbis vpx wavpack +X +xcb xinerama +xv xvmc ${NLS_IUSE}"
 
 RDEPEND="${NLS_RDEPEND}
 	dev-libs/libxdg-basedir
 	media-libs/libdvdnav
 	sys-libs/zlib
-	|| ( media-video/ffmpeg:0 media-libs/libpostproc <media-video/libav-0.8.2-r1 )
-	virtual/ffmpeg
+	!libav? ( media-video/ffmpeg:0= )
+	libav? (
+		media-libs/libpostproc:0=
+		media-video/libav:0=
+	)
 	virtual/libiconv
 	a52? ( media-libs/a52dec )
 	aac? ( media-libs/faad2 )
@@ -142,7 +145,7 @@ src_configure() {
 	local myconf=()
 	[[ ${PV} == *9999* ]] || myconf=( $(use_enable nls) )
 
-	if has_version '>=media-video/ffmpeg-2.2:0'; then
+	if ! use libav && has_version '>=media-video/ffmpeg-2.2:0'; then
 		myconf+=( --enable-avformat ) #507474
 	fi
 

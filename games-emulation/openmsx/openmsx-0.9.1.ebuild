@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/openmsx/openmsx-0.9.1.ebuild,v 1.5 2014/05/15 16:39:09 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/openmsx/openmsx-0.9.1.ebuild,v 1.7 2015/01/18 11:32:28 tupone Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games
 
 DESCRIPTION="MSX emulator that aims for perfection"
@@ -22,6 +22,7 @@ DEPEND="dev-lang/tcl
 	media-libs/sdl-image[png]
 	media-libs/sdl-ttf
 	virtual/opengl"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i \
@@ -33,13 +34,13 @@ src_prepare() {
 		|| die
 	sed -i -e '/SYMLINK/s:true:false:' build/custom.mk || die
 	sed -i -e 's/GPL.txt//' doc/node.mk || die
+	epatch "${FILESDIR}"/${P}-verbose.patch
 }
 
 src_compile() {
 	emake \
 		CXXFLAGS="${CXXFLAGS}" \
-		INSTALL_SHARE_DIR="${GAMES_DATADIR}"/${PN} \
-		|| die
+		INSTALL_SHARE_DIR="${GAMES_DATADIR}"/${PN}
 }
 
 src_install() {
@@ -47,9 +48,8 @@ src_install() {
 		INSTALL_BINARY_DIR="${D}${GAMES_BINDIR}" \
 		INSTALL_SHARE_DIR="${D}${GAMES_DATADIR}"/${PN} \
 		INSTALL_DOC_DIR="${D}"/usr/share/doc/${PF} \
-		install || die "emake install failed"
+		install
 	dodoc README
-	prepalldocs
 	prepgamesdirs
 }
 

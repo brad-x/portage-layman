@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kdeconnect/kdeconnect-0.7.3.ebuild,v 1.2 2014/10/15 19:37:50 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kdeconnect/kdeconnect-0.7.3.ebuild,v 1.4 2015/02/02 14:44:04 kensington Exp $
 
 EAPI=5
 
@@ -27,14 +27,13 @@ SLOT="4"
 IUSE="debug"
 
 DEPEND="
-	app-crypt/qca:2
+	app-crypt/qca:2[qt4(+)]
 	dev-libs/qjson
 	x11-libs/libfakekey
 "
 RDEPEND="${DEPEND}
 	$(add_kdebase_dep plasma-workspace)
-	app-crypt/qca-ossl:2
-	net-dns/avahi
+	|| ( app-crypt/qca-ossl:2 app-crypt/qca:2[openssl] )
 "
 
 [[ ${KDE_BUILD_TYPE} != live ]] && S=${WORKDIR}/${MY_P}

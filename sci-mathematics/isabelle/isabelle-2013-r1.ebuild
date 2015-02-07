@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/isabelle/isabelle-2013-r1.ebuild,v 1.1 2014/01/07 13:36:33 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/isabelle/isabelle-2013-r1.ebuild,v 1.2 2015/01/25 13:08:28 gienah Exp $
 
 EAPI="5"
 
@@ -37,10 +37,10 @@ IUSE="doc graphbrowsing ledit readline proofgeneral"
 #bash 2.x/3.x, Poly/ML 5.x, Perl 5.x,
 #for document preparation: complete LaTeX
 DEPEND=">=app-shells/bash-3.0
-	dev-java/ant-core
-	>=dev-java/jcommon-1.0.18
-	>=dev-java/jfreechart-1.0.14
-	>=dev-java/itext-2.1.5
+	dev-java/ant-core:0
+	>=dev-java/jcommon-1.0.18:1.0
+	>=dev-java/jfreechart-1.0.14:1.0
+	>=dev-java/itext-2.1.5:0
 	dev-java/xml-xmlbeans:1
 	>=dev-lang/ghc-7.6.3
 	>=dev-lang/polyml-5.5.0:=[-portable]
@@ -51,7 +51,7 @@ DEPEND=">=app-shells/bash-3.0
 		virtual/latex-base
 		dev-tex/rail
 	)
-	>=dev-lang/scala-2.10.2
+	>=dev-lang/scala-2.10.2 <dev-lang/scala-2.11.1
 	ledit? (
 		app-misc/ledit
 	)

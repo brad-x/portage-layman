@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/nmap-9999.ebuild,v 1.1 2015/01/05 07:42:36 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/nmap-9999.ebuild,v 1.2 2015/01/26 12:08:35 jer Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS=""
 
 IUSE="ipv6 +lua system-lua ncat ndiff nls nmap-update nping ssl zenmap"
-NMAP_LINGUAS=( de es fr hr hu id it ja pl pt_BR pt_PT ro ru sk zh )
+NMAP_LINGUAS=( de fr hr it ja pl pt_BR ru zh )
 IUSE+=" ${NMAP_LINGUAS[@]/#/linguas_}"
 
 REQUIRED_USE="
@@ -71,17 +71,17 @@ src_prepare() {
 
 	if use nls; then
 		local lingua=''
-		for lingua in ${NMAP_LINGUAS}; do
+		for lingua in ${NMAP_LINGUAS[@]}; do
 			if ! use linguas_${lingua}; then
-				rm -rf zenmap/share/zenmap/locale/${lingua}
-				rm -f zenmap/share/zenmap/locale/${lingua}.po
+				rm -r zenmap/share/zenmap/locale/${lingua} || die
+				rm zenmap/share/zenmap/locale/${lingua}.po || die
 			fi
 		done
 	else
 		# configure/make ignores --disable-nls
-		for lingua in ${NMAP_LINGUAS}; do
-			rm -rf zenmap/share/zenmap/locale/${lingua}
-			rm -f zenmap/share/zenmap/locale/${lingua}.po
+		for lingua in ${NMAP_LINGUAS[@]}; do
+			rm -r zenmap/share/zenmap/locale/${lingua} || die
+			rm zenmap/share/zenmap/locale/${lingua}.po || die
 		done
 	fi
 

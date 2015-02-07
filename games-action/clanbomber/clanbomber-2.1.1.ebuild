@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/clanbomber/clanbomber-2.1.1.ebuild,v 1.8 2014/12/31 12:37:22 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/clanbomber/clanbomber-2.1.1.ebuild,v 1.10 2015/02/06 13:44:04 ago Exp $
 
-EAPI=4
-inherit autotools eutils flag-o-matic games
+EAPI=5
+inherit autotools eutils games
 
 DESCRIPTION="Bomberman-like multiplayer game"
 HOMEPAGE="http://savannah.nongnu.org/projects/clanbomber/"
@@ -11,7 +11,7 @@ SRC_URI="http://download.savannah.gnu.org/releases/${PN}/${P}.tar.lzma"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 RDEPEND="media-libs/libsdl[sound,joystick,video]
@@ -27,14 +27,6 @@ DEPEND="${RDEPEND}
 DOCS=( AUTHORS ChangeLog ChangeLog.hg IDEAS NEWS QUOTES README TODO )
 
 src_prepare() {
-	local boost_ver=$(best_version ">dev-libs/boost-1.49")
-
-	boost_ver=${boost_ver/*boost-/}
-	boost_ver=${boost_ver%.*}
-	boost_ver=${boost_ver/./_}
-
-	export BOOST_INCLUDEDIR="/usr/include/boost-${boost_ver}"
-	export BOOST_LIBRARYDIR="/usr/$(get_libdir)/boost-${boost_ver}"
 	sed -i -e 's/menuentry//' src/Makefile.am || die
 	epatch \
 		"${FILESDIR}"/${P}-automake112.patch \

@@ -1,6 +1,18 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/arm/package.use.mask,v 1.235 2015/01/06 09:44:58 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/arm/package.use.mask,v 1.242 2015/02/07 10:41:19 hwoarang Exp $
+
+# Markos Chandras <hwoarang@gentoo.org> (07 Feb 2015)
+# app-admin/cgmanager misses ARM keyword. Bug #539208
+app-emulation/lxc cgmanager
+
+# Markus Meier <maekke@gentoo.org> (17 Jan 2015)
+# Unkeyworded deps, bug #536226
+net-misc/strongswan strongswan_plugins_unbound
+
+# Markus Meier <maekke@gentoo.org> (17 Jan 2015)
+# Unkeyworded deps, bug #533404
+net-im/gajim jingle gnome kde
 
 # Alexis Ballier <aballier@gentoo.org> (06 Jan 2015)
 # sci-libs/xkaapi does not build here on armv7
@@ -255,16 +267,13 @@ media-libs/libjpeg-turbo java
 net-dns/libidn java
 net-misc/tigervnc java
 net-print/cups java
-=sys-devel/gettext-0.18.1.1-r1 java
-=sys-devel/gettext-0.18.1.1-r3 java
-=sys-devel/gettext-0.18.2 java
-=sys-devel/gettext-0.18.3.2 java
+sys-devel/gettext java
 sys-libs/db java
 =www-client/seamonkey-2.0.14-r1 java
 
 # Alexandre Rostovtsev <tetromino@gentoo.org> (22 Jan 2013)
 # remove mask if/when media-gfx/argyllcms is keywored here.
-x11-misc/colord extra-print-profiles
+x11-misc/colord argyllcms extra-print-profiles
 
 # Alexandre Rostovtsev <tetromino@gentoo.org> (31 Dec 2012)
 # requires app-office/unoconv, which requires virtual/ooo, which is not
@@ -342,13 +351,6 @@ dev-libs/gobject-introspection -doctool
 # Michael Sterrett <mr_bones_@gentoo.org> (04 Mar 2012)
 # arm is missing keywords for >=dev-libs/json-glib-0.12
 app-admin/syslog-ng json
-
-# Alexandre Rostovtsev <tetromino@gentoo.org> (09 Jan 2012)
-# jsc JIT compilation is supported only on amd64/arm/x86 and their prefixes, so
-# it's masked in base profile and unmasked here (bug #396313).
-net-libs/webkit-gtk -jit
-www-client/epiphany -jit
-www-client/midori -jit
 
 # Anthony G. Basile <blueness@gentoo.org> (Dec 21, 2011)
 # Mask the vde flag on tinc because net-misc/vde is not
@@ -439,7 +441,7 @@ dev-libs/boost mpi
 
 # missing keywords
 media-sound/sox ladspa
-media-plugins/gst-plugins-meta aac dts dv lame libvisual taglib vcd wavpack dvd
+media-plugins/gst-plugins-meta aac dts dv lame libvisual modplug taglib vcd wavpack dvd
 
 # projectm not keyworded, bug #314969
 media-video/vlc projectm chromaprint opencv

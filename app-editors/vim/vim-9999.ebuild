@@ -1,12 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.23 2015/01/06 00:18:39 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.25 2015/02/07 02:19:56 radhermit Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 PYTHON_REQ_USE=threads
-inherit eutils vim-doc flag-o-matic fdo-mime versionator bash-completion-r1 python-single-r1
+inherit eutils vim-doc flag-o-matic fdo-mime versionator bash-completion-r1 python-r1
 
 if [[ ${PV} == 9999* ]] ; then
 	inherit mercurial
@@ -27,8 +27,12 @@ SLOT="0"
 LICENSE="vim"
 IUSE="X acl cscope debug gpm lua luajit minimal nls perl python racket ruby selinux tcl vim-pager"
 REQUIRED_USE="
-	python? ( ${PYTHON_REQUIRED_USE} )
 	luajit? ( lua )
+	python? (
+		|| ( $(python_gen_useflags '*') )
+		?? ( $(python_gen_useflags 'python2*') )
+		?? ( $(python_gen_useflags 'python3*') )
+	)
 "
 
 RDEPEND="
@@ -49,7 +53,7 @@ RDEPEND="
 	perl? ( dev-lang/perl:= )
 	python? ( ${PYTHON_DEPS} )
 	racket? ( dev-scheme/racket )
-	ruby? ( || ( dev-lang/ruby:2.1 dev-lang/ruby:2.0 dev-lang/ruby:1.9 ) )
+	ruby? ( || ( dev-lang/ruby:2.2 dev-lang/ruby:2.1 dev-lang/ruby:2.0 ) )
 	selinux? ( sys-libs/libselinux )
 	tcl? ( dev-lang/tcl )
 	X? ( x11-libs/libXt )
@@ -69,8 +73,6 @@ pkg_setup() {
 	# Gnome sandbox silliness. bug #114475.
 	mkdir -p "${T}"/home
 	export HOME="${T}"/home
-
-	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
@@ -214,13 +216,17 @@ src_configure() {
 		)
 
 		if use python ; then
-			if [[ ${EPYTHON} == python3* ]] ; then
-				myconf+=( --enable-python3interp )
-				export vi_cv_path_python3="${PYTHON}"
-			else
-				myconf+=( --enable-pythoninterp )
-				export vi_cv_path_python="${PYTHON}"
-			fi
+			py_add_interp() {
+				local v
+
+				[[ ${EPYTHON} == python3* ]] && v=3
+				myconf+=(
+					--enable-python${v}interp
+					vi_cv_path_python${v}="${PYTHON}"
+				)
+			}
+
+			python_foreach_impl py_add_interp
 		else
 			myconf+=(
 				--disable-pythoninterp

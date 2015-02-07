@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/lxc-1.0.7.ebuild,v 1.1 2014/12/21 10:18:14 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/lxc-1.0.7.ebuild,v 1.3 2015/02/05 18:49:27 hwoarang Exp $
 
 EAPI="5"
 
@@ -104,10 +104,12 @@ src_configure() {
 		--docdir=/usr/share/doc/${PF} \
 		--with-config-path=/etc/lxc	\
 		--with-rootfs-path=/usr/lib/lxc/rootfs \
+		--with-distro=gentoo \
 		$(use_enable doc) \
 		--disable-apparmor \
 		$(use_enable examples) \
 		$(use_enable lua) \
+		$(use_enable seccomp) \
 		--disable-python
 }
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/mksh-9999.ebuild,v 1.5 2013/04/07 06:05:24 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/mksh-9999.ebuild,v 1.6 2015/01/18 01:44:25 patrick Exp $
 
 EAPI=4
 
@@ -47,4 +47,11 @@ src_install() {
 
 src_test() {
 	./test.sh || die
+}
+
+pkg_postinst() {
+	ebegin "Updating /etc/shells"
+	( grep -v "^/bin/mksh$" "${ROOT}"etc/shells; echo "/bin/mksh" ) > "${T}"/shells
+	mv -f "${T}"/shells "${ROOT}"etc/shells
+	eend $?
 }

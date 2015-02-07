@@ -1,6 +1,87 @@
 # ChangeLog for net-fs/nfs-utils
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.261 2014/12/24 18:09:21 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.275 2015/02/05 04:32:41 williamh Exp $
+
+*nfs-utils-1.3.1-r5 (05 Feb 2015)
+*nfs-utils-1.3.2-r6 (05 Feb 2015)
+
+  05 Feb 2015; William Hubbs <williamh@gentoo.org> +nfs-utils-1.3.1-r5.ebuild,
+  +nfs-utils-1.3.2-r6.ebuild, files/nfsclient.confd, files/nfsclient.initd:
+  Fix the dependencies in nfsclient. There is no good way to detect whether the
+  file systems are nfs3 or nfs4, so explain to the users what they need to turn
+  on or off in the configuration file. Also remove the before netmount line;
+  netmount should use nfsclient.
+
+  03 Feb 2015; William Hubbs <williamh@gentoo.org> -nfs-utils-1.3.1-r1.ebuild,
+  -nfs-utils-1.3.1-r3.ebuild, -nfs-utils-1.3.2-r2.ebuild,
+  -nfs-utils-1.3.2-r4.ebuild:
+  remove broken revisions
+
+*nfs-utils-1.3.2-r5 (03 Feb 2015)
+*nfs-utils-1.3.1-r4 (03 Feb 2015)
+
+  03 Feb 2015; William Hubbs <williamh@gentoo.org> +nfs-utils-1.3.1-r4.ebuild,
+  +nfs-utils-1.3.2-r5.ebuild, files/nfsclient.initd:
+  drop the provide nfsmount from nfsclient since there is now a migration
+  script.
+
+*nfs-utils-1.3.2-r4 (03 Feb 2015)
+*nfs-utils-1.3.1-r3 (03 Feb 2015)
+
+  03 Feb 2015; Sergey Popov <pinkbyte@gentoo.org> -nfs-utils-1.3.1-r2.ebuild,
+  +nfs-utils-1.3.1-r3.ebuild, -nfs-utils-1.3.2-r3.ebuild,
+  +nfs-utils-1.3.2-r4.ebuild:
+  QA: fix typo in installing compatibility netmount init script, revbump, wrt
+  bug #538616. Drop broken revisions
+
+*nfs-utils-1.3.2-r3 (02 Feb 2015)
+*nfs-utils-1.3.1-r2 (02 Feb 2015)
+
+  02 Feb 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nfsmount.initd-1.3.1, +nfs-utils-1.3.1-r2.ebuild,
+  +nfs-utils-1.3.2-r3.ebuild:
+  Avoid breaking anybody with nfsmount in their runlevels; but they should
+  really read the news item and update their systems; migration hand-holding
+  script will be removed not sooner than August 1st; reviewed by radhermit,
+  williamh, zero_chaos.
+
+*nfs-utils-1.3.2-r2 (02 Feb 2015)
+
+  02 Feb 2015; Tim Harder <radhermit@gentoo.org> -nfs-utils-1.3.2-r1.ebuild,
+  +nfs-utils-1.3.2-r2.ebuild, +files/nfs-utils-1.3.2-background-statd.patch,
+  files/rpc.statd.initd:
+  Use upstream fix for backgrounding statd so it works for systemd as well.
+
+*nfs-utils-1.3.2-r1 (31 Jan 2015)
+
+  31 Jan 2015; Tim Harder <radhermit@gentoo.org> -nfs-utils-1.3.2.ebuild,
+  +nfs-utils-1.3.2-r1.ebuild, files/rpc.statd.initd:
+  Force rpc.statd into the background.
+
+  31 Jan 2015; Jeroen Roovers <jer@gentoo.org> nfs-utils-1.3.2.ebuild:
+  Fix dev-libs/libevent dependency (bug #446374).
+
+*nfs-utils-1.3.2 (31 Jan 2015)
+
+  31 Jan 2015; Tim Harder <radhermit@gentoo.org> +nfs-utils-1.3.2.ebuild:
+  Version bump.
+
+  19 Jan 2015; Anthony G. Basile <blueness@gentoo.org>
+  nfs-utils-1.3.1-r1.ebuild:
+  Stable on arm.  Bug #530418.
+
+  19 Jan 2015; Anthony G. Basile <blueness@gentoo.org>
+  nfs-utils-1.3.1-r1.ebuild:
+  Stable on ppc, ppc64 and x86.  Bug #530418.
+
+  17 Jan 2015; Patrick Lauer <patrick@gentoo.org> nfs-utils-1.3.1-r1.ebuild:
+  Fix libevent depend to avoid compile failures #536812
+
+  17 Jan 2015; Mikle Kolyada <zlogene@gentoo.org> nfs-utils-1.3.1-r1.ebuild:
+  amd64 stable wrt bug #530418
+
+  16 Jan 2015; Jeroen Roovers <jer@gentoo.org> nfs-utils-1.3.1-r1.ebuild:
+  Stable for HPPA (bug #530418).
 
   24 Dec 2014; Tim Harder <radhermit@gentoo.org> files/nfsclient.initd:
   Localize opts variable as well for nfsclient script.

@@ -1,10 +1,275 @@
 # ChangeLog for profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9685 2015/01/16 11:40:19 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9763 2015/02/07 11:51:07 yngwin Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  07 Feb 2015; Ben de Groot <yngwin@gentoo.org> base/package.use.mask:
+  p.use.mask armv7 on games-board/stockfish
+
+  07 Feb 2015; Markos Chandras <hwoarang@gentoo.org> license_groups:
+  Drop the GPL-2.1 from the license_groups. It has been removed from the tree
+
+  07 Feb 2015; Markos Chandras <hwoarang@gentoo.org> license_groups:
+  Add the GPL-2.1 license to the MISC-FREE and FSF-APPROVED-OTHER groups
+
+  07 Feb 2015; Michał Górny <mgorny@gentoo.org> categories:
+  Remove empty net-zope/ category.
+
+  06 Feb 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/amd64/no-emul-linux-x86/package.use.stable.mask,
+  arch/amd64/package.use.stable.mask:
+  Update emul masks
+
+  05 Feb 2015; Anthony G. Basile <blueness@gentoo.org> package.mask:
+  Mask >=dev-libs/cloog-0.18.3 which depends on >=dev-libs/isl-0.14:0/14, also
+  masked.
+
+  04 Feb 2015; Jeroen Roovers <jer@gentoo.org> license_groups:
+  Add Vivaldi license to EULA group.
+
+  04 Feb 2015; Ben de Groot <yngwin@gentoo.org> base/package.use.mask,
+  package.mask:
+  Unmask mpv-0.7.3 and smplayer-14.9.0.6690 after masking libav useflag on
+  newer mpv.
+
+  03 Feb 2015; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Prepare for gst-libav bump
+
+  03 Feb 2015; Michał Górny <mgorny@gentoo.org> base/package.use.mask,
+  package.mask:
+  Unmask USE=libav revbumps. Replace libav-10 p.u.masks with plain p.mask of
+  version bumps to get less insane results.
+
+  03 Feb 2015; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Cleanup obsolete entries
+
+  03 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> package.mask:
+  Last rites for x11-plugins/wmauda
+
+  03 Feb 2015; Eray Aslan <eras@gentoo.org> package.mask:
+  Mask mail-mta/postfix-3.1*
+
+  02 Feb 2015; Brian Evans <grknight@gentoo.org> base/package.use.mask,
+  package.mask:
+  Mask dev-php/PEAR-MDB2_Driver_sqlite for removal and sqlite USE on
+  dev-php/PHPonTrax Bug 538584
+
+  02 Feb 2015; Michael Weber <xmw@gentoo.org> package.mask:
+  Adjust mask of netsurf to affected versions
+
+  02 Feb 2015; Michał Górny <mgorny@gentoo.org> package.mask:
+  Temporarily mask bumps of ffmpeg rev-deps for improvements.
+
+  02 Feb 2015; Alexis Ballier <aballier@gentoo.org> package.mask:
+  remove obrowser mask (removed from tree)
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> base/package.use.mask:
+  Mask net-misc/mediatomb[libav] since it requires masked libav.
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask >=media-video/handbrake-0.10 since it requires libav or ffmpeg versions
+  that are both masked.
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> base/package.use.mask:
+  Mask media-tv/xbmc[libav] since USE=vdpau requires masked libav. Sad we can't
+  mask the combination of the two...
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> base/package.use.mask,
+  package.mask:
+  Mask app-text/unpaper[libav] since it requires masked libav version.
+
+  01 Feb 2015; Tim Harder <radhermit@gentoo.org> package.mask:
+  Remove old inkscape pre-release mask.
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> use.desc:
+  Describe USE=libav.
+
+  01 Feb 2015; Michał Górny <mgorny@gentoo.org> use.desc:
+  Remove global flags for x86 CPU instruction sets since they are no longer
+  used in the repo.
+
+  01 Feb 2015; Michael Palimaka <kensington@gentoo.org>
+  +targets/desktop/plasma/eapi, +targets/desktop/plasma/make.defaults,
+  +targets/desktop/plasma/package.use, +targets/desktop/plasma/parent,
+  +targets/desktop/plasma/use.force:
+  Add initial profile for KDE Plasma 5.
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> base/use.stable.mask:
+  Keep qt5 in use.stable.mask until Qt5 goes stable
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Unmask lxqt-0.8.0 now that Qt5 is unmasked
+
+  01 Feb 2015; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Umask Qt 5 consumers now that Qt 5 is unmasked.
+
+  01 Feb 2015; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Remove old mask for versions no longer in the tree.
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> arch/alpha/ChangeLog,
+  arch/alpha/package.mask, arch/alpha/use.mask, arch/arm/ChangeLog,
+  arch/arm/package.mask, arch/arm/use.mask, arch/hppa/ChangeLog,
+  +arch/hppa/package.mask, arch/hppa/use.mask, arch/ia64/ChangeLog,
+  arch/ia64/package.mask, arch/ia64/use.mask, arch/mips/ChangeLog,
+  arch/mips/package.mask, arch/mips/use.mask, arch/powerpc/ChangeLog,
+  arch/powerpc/package.mask, arch/powerpc/use.mask:
+  Add Qt5 mask to relevant arches until keyworded
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> base/package.use.mask:
+  Unmask qt5 useflag on mkvtoolnix
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Unmask qt5 version of sddm
+
+  01 Feb 2015; Ben de Groot <yngwin@gentoo.org> base/use.mask, package.mask:
+  Unmask Qt5
+
+  31 Jan 2015; Eray Aslan <eras@gentoo.org> package.mask:
+  Remove mask entry for mail-mta/postfix-2.12 - no longer in the tree
+
+  31 Jan 2015; Eray Aslan <eras@gentoo.org> package.mask:
+  Mask mail-mta/postfix-3.0 experimental release
+
+  31 Jan 2015; Ben de Groot <yngwin@gentoo.org> desc/linguas.desc, package.mask:
+  Add media-video/smplayer-14.9.0.6690 to mpv-0.6/libav-10 mask. Add sq_AL
+  locale.
+
+  30 Jan 2015; Tim Harder <radhermit@gentoo.org> package.mask:
+  Remove old app-vim/cvscommand and app-vim/svncommand masks.
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead mirrors from nongnu mirror list, wrt bug #494856
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead HTTP artfiles.org mirror from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead mirrors.igsobe.com from nongnu mirror list
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead mirror.its.uidaho.edu from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop some of the obsolete mirrors on ftp.tpnet.pl
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead ftp.sh.cvut.cz from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead ftp.isy.liu.se from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead ftp.esat.net from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead ftp.duth.gr from all mirror lists
+
+  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> thirdpartymirrors:
+  Drop dead ftp.chg.ru from all mirror lists
+
+  29 Jan 2015; Michał Górny <mgorny@gentoo.org> desc/cpu_flags_x86.desc:
+  Fix USE=mmxext description. Thanks to Doug Freed for figuring out what it
+  actually is.
+
+  29 Jan 2015; Sergei Trofimovich <slyfox@gentoo.org> package.mask:
+  Mask live dev-util/radare2 ebuild.
+
+  29 Jan 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Unmask >=app-crypt/qca-2.1.
+
+  28 Jan 2015; Ulrich Müller <ulm@gentoo.org> package.mask:
+  Remove mask for app-emacs/cedet, package removed from tree.
+
+  28 Jan 2015; Michał Górny <mgorny@gentoo.org> uclibc/x86/use.mask:
+  Unmask CPU_FLAGS_X86 in uclibc profiles.
+
+  28 Jan 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Remove mask on kde-misc/kio-ftps, bug #537746 fixed.
+
+  28 Jan 2015; Anthony G. Basile <blueness@gentoo.org> package.mask:
+  p.mask =net-misc/tor-0.2.6.2_alpha-r1, bug #536196.
+
+  28 Jan 2015; Michał Górny <mgorny@gentoo.org> desc/cpu_flags_x86.desc:
+  Remove the warning since the news item has been committed.
+
+  28 Jan 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Mask >=app-crypt/qca-2.1.
+
+  26 Jan 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Mask kde-misc/kio-ftps for removal.
+
+  26 Jan 2015; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Mask >=www-client/chromium-42.
+
+  25 Jan 2015; Jeroen Roovers <jer@gentoo.org> thirdpartymirrors:
+  Drop berlios.de mirrors (bug #494678).
+
+  25 Jan 2015; Justin Lecher <jlec@gentoo.org> license_groups:
+  Drop Mendeley-EULA and add Mendeley-terms to EULA group, #536686
+
+  25 Jan 2015; Pacho Ramos <pacho@gentoo.org> arch/alpha/package.use.mask,
+  arch/arm/package.use.mask, arch/ia64/package.use.mask,
+  arch/powerpc/package.use.mask, arch/sparc/package.use.mask:
+  Update use.mask due to pending argyllcms keywords
+
+  25 Jan 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.mask:
+  Update mask after xorg-server and tigervnc stabilization, bug #532086.
+
+  25 Jan 2015; Pacho Ramos <pacho@gentoo.org>
+  +arch/arm/armv7a/package.use.mask, arch/arm/package.use.mask:
+  Unmask webkit-gtk[jit] only on arm7 profiles (#523400)
+
+  24 Jan 2015; Michał Górny <mgorny@gentoo.org> desc/cpu_flags_x86.desc:
+  Add XOP as used by media-video/ffmpeg.
+
+  23 Jan 2015; Michał Górny <mgorny@gentoo.org> use.desc:
+  Update USE=ffmpeg to mention libav as well since that is how it works.
+
+  23 Jan 2015; Michał Górny <mgorny@gentoo.org> +desc/cpu_flags_x86.desc:
+  Initially commit CPU_FLAGS_X86 for better testing of the script.
+
+  22 Jan 2015; Julian Ospald <hasufell@gentoo.org> package.mask:
+  mask games-rpg/morrowind-data for removal wrt #537260
+
+  22 Jan 2015; Mikle Kolyada <zlogene@gentoo.org> package.mask:
+  Mask dev-perl/IP-Country for removal.
+
+  21 Jan 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Remove outdated masks.
+
+  19 Jan 2015; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Mask obsolete and unused virtual/ruby-rdoc for removal.
+
+  19 Jan 2015; Alexis Ballier <aballier@gentoo.org> profiles.desc:
+  downgrade amd64-fbsd profiles to dev state; there are too many keywording
+  bugs and nobody really processing them...
+
+  19 Jan 2015; Brian Evans <grknight@gentoo.org> package.mask:
+  Remove dev-php/suhosin from mask
+
+  19 Jan 2015; Hans de Graaff <graaff@gentoo.org> updates/1Q-2015:
+  Move tilt 2.x into a separate slot.
+
+  18 Jan 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Mask Ruby 1.9 only packages.
+
+  18 Jan 2015; Pacho Ramos <pacho@gentoo.org> arch/amd64-fbsd/package.use.mask,
+  arch/arm/package.use.mask, arch/ia64/package.use.mask,
+  arch/sparc/package.use.mask, arch/x86/package.use.mask:
+  use.mask due to missing keywords
+
+  18 Jan 2015; Eray Aslan <eras@gentoo.org> package.mask:
+  net-proxy/squid-3.5* is no longer beta. Removing the mask
+
+  18 Jan 2015; Davide Pesavento <pesa@gentoo.org> package.mask:
+  Mask qt-creator versions that depend on Qt5.
+
+  17 Jan 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Mask rox-extra/* and rox-base/* See bug #533642.
 
   16 Jan 2015; Pacho Ramos <pacho@gentoo.org>
   default/linux/uclibc/package.mask:

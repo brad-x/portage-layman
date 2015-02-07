@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.15 2014/12/07 23:54:31 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.18 2015/02/07 02:38:12 radhermit Exp $
 
 EAPI=5
 
-inherit cmake-utils toolchain-funcs gnome2-utils fdo-mime git-r3 pax-utils eutils
+inherit cmake-utils flag-o-matic toolchain-funcs gnome2-utils fdo-mime git-r3 pax-utils eutils
 
 EGIT_REPO_URI="git://github.com/darktable-org/darktable.git"
 
@@ -15,9 +15,12 @@ LICENSE="GPL-3 CC-BY-3.0"
 SLOT="0"
 LANGS=" cs da de el es fr it ja nl pl pt_BR pt_PT ru sq sv uk"
 # TODO add lua once dev-lang/lua-5.2 is unmasked
-IUSE="colord doc flickr geo gphoto2 graphicsmagick jpeg2k kde libsecret
+IUSE="colord cpu_flags_x86_sse3 doc flickr geo gphoto2 graphicsmagick jpeg2k kde libsecret
 nls opencl openmp openexr pax_kernel +rawspeed +slideshow +squish web-services webp
 ${LANGS// / linguas_}"
+
+# sse3 support is required to build darktable
+REQUIRED_USE="cpu_flags_x86_sse3"
 
 CDEPEND="
 	dev-db/sqlite:3
@@ -58,6 +61,7 @@ RDEPEND="${CDEPEND}
 	x11-themes/gtk-engines:2
 	kde? ( kde-base/kwalletd )"
 DEPEND="${CDEPEND}
+	dev-util/intltool
 	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
@@ -68,6 +72,8 @@ pkg_pretend() {
 }
 
 src_prepare() {
+	use cpu_flags_x86_sse3 && append-flags -msse3
+
 	sed -e "s:\(/share/doc/\)darktable:\1${PF}:" \
 		-e "s:LICENSE::" \
 		-i doc/CMakeLists.txt || die

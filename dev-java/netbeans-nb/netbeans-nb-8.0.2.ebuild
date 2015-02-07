@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/netbeans-nb/netbeans-nb-8.0.2.ebuild,v 1.1 2014/12/07 17:58:17 fordfrog Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/netbeans-nb/netbeans-nb-8.0.2.ebuild,v 1.3 2015/02/04 22:05:33 fordfrog Exp $
 
 EAPI="4"
 inherit eutils java-pkg-2 java-ant-2
@@ -20,7 +20,7 @@ S="${WORKDIR}"
 CDEPEND="~dev-java/netbeans-platform-${PV}
 	~dev-java/netbeans-harness-${PV}
 	~dev-java/netbeans-ide-${PV}"
-DEPEND=">=virtual/jdk-1.7
+DEPEND="virtual/jdk:1.7
 	app-arch/unzip
 	${CDEPEND}
 	dev-java/javahelp:0"
@@ -143,6 +143,6 @@ pkg_postinst() {
 		einfo "id_dsa_gentoo"
 		einfo "If on NetBeans startup key will not be handled by keychain yet, you will be asked"
 		einfo "for key password (only this time and never again). You can find more information"
-		einfo "about keychain at http://www.gentoo.org/doc/en/keychain-guide.xml"
+		einfo "about keychain at https://wiki.gentoo.org/wiki/Keychain"
 	fi
 }

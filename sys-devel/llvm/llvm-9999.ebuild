@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.96 2014/12/31 10:37:36 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.102 2015/02/04 10:55:25 mgorny Exp $
 
 EAPI=5
 
@@ -47,7 +47,7 @@ DEPEND="${COMMON_DEPEND}
 	|| ( >=sys-devel/gcc-3.0 >=sys-devel/gcc-apple-4.2.1
 		( >=sys-freebsd/freebsd-lib-9.1-r10 sys-libs/libcxx )
 	)
-	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
+	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-5.1 )
 	clang? ( xml? ( virtual/pkgconfig ) )
 	libffi? ( virtual/pkgconfig )
 	!!<dev-python/configparser-3.3.0.2
@@ -146,12 +146,14 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-3.2-nodoctargz.patch
 	epatch "${FILESDIR}"/${PN}-3.5-gcc-4.9.patch
 	epatch "${FILESDIR}"/${PN}-3.6-gentoo-install.patch
+	# Make ocaml warnings non-fatal, bug #537308
+	sed -e "/RUN/s/-warn-error A//" -i test/Bindings/OCaml/*ml  || die
 
 	if use clang; then
 		# Automatically select active system GCC's libraries, bugs #406163 and #417913
 		epatch "${FILESDIR}"/clang-3.5-gentoo-runtime-gcc-detection-v3.patch
 
-		epatch "${FILESDIR}"/clang-3.5-gentoo-install.patch
+		epatch "${FILESDIR}"/clang-3.6-gentoo-install.patch
 	fi
 
 	if use prefix && use clang; then
@@ -413,11 +415,12 @@ multilib_src_install() {
 
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
-	local lib= f= odylib= libpv=${PV}
+	local lib= f= odylib= ndylib= libpv=${PV}
 	if [[ ${CHOST} == *-darwin* ]] ; then
 		eval $(grep PACKAGE_VERSION= configure)
 		[[ -n ${PACKAGE_VERSION} ]] && libpv=${PACKAGE_VERSION}
-		for lib in lib{EnhancedDisassembly,LLVM-${libpv},LTO,profile_rt,clang}.dylib LLVMHello.dylib ; do
+		libpvminor=${libpv%.[0-9]*}
+		for lib in lib{EnhancedDisassembly,LLVM-${libpv},LTO,profile_rt,clang}.dylib LLVMHello.dylib clang/${libpv}/lib/darwin/libclang_rt.asan_{osx,iossim}_dynamic.dylib; do
 			# libEnhancedDisassembly is Darwin10 only, so non-fatal
 			# + omit clang libs if not enabled
 			[[ -f ${ED}/usr/lib/${lib} ]] || continue
@@ -428,21 +431,35 @@ multilib_src_install() {
 				"${ED}"/usr/lib/${lib}
 			eend $?
 		done
-		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/lib{LTO,clang}.dylib ; do
+		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/lib*.dylib "${ED}"/usr/lib/clang/${libpv}/lib/darwin/*.dylib ; do
 			# omit clang libs if not enabled
-			[[ -f ${ED}/usr/lib/${lib} ]] || continue
+			[[ -f "${f}" ]] || continue
 
-			odylib=$(scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | grep libLLVM-${libpv}.dylib)
-			ebegin "fixing install_name reference to ${odylib} of ${f##*/}"
-			install_name_tool \
-				-change "${odylib}" \
-					"${EPREFIX}"/usr/lib/libLLVM-${libpv}.dylib \
-				-change "@rpath/libclang.dylib" \
-					"${EPREFIX}"/usr/lib/libclang.dylib \
-				-change "${S}"/Release/lib/libclang.dylib \
-					"${EPREFIX}"/usr/lib/libclang.dylib \
-				"${f}"
-			eend $?
+			scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | \
+			while read odylib ; do
+				ndylib=
+				case ${odylib} in
+					*/libclang.dylib)
+						ndylib="${EPREFIX}"/usr/lib/libclang.dylib
+						;;
+					*/libLLVM-${libpv}.dylib)
+						ndylib="${EPREFIX}"/usr/lib/libLLVM-${libpv}.dylib
+						;;
+					*/libLLVM-${libpvminor}.dylib)
+						ndylib="${EPREFIX}"/usr/lib/libLLVM-${libpvminor}.dylib
+						;;
+					*/libLTO.dylib)
+						ndylib="${EPREFIX}"/usr/lib/libLTO.dylib
+						;;
+				esac
+				if [[ -n ${ndylib} ]] ; then
+					ebegin "fixing install_name reference to ${odylib} of ${f##*/}"
+					install_name_tool \
+						-change "${odylib}" "${ndylib}" \
+						"${f}"
+					eend $?
+				fi
+			done
 		done
 	fi
 }

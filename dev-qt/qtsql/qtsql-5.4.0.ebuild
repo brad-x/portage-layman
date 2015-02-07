@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtsql/qtsql-5.4.0.ebuild,v 1.2 2014/12/28 15:44:26 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtsql/qtsql-5.4.0.ebuild,v 1.4 2015/02/03 11:03:31 jer Exp $
 
 EAPI=5
 
@@ -11,9 +11,9 @@ inherit multilib qt5-build
 DESCRIPTION="SQL abstraction library for the Qt5 tooolkit"
 
 if [[ ${QT5_BUILD_TYPE} == live ]]; then
-	KEYWORDS=""
+	KEYWORDS="~hppa"
 else
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64 ~arm ~hppa ~x86"
 fi
 
 IUSE="freetds mysql oci8 odbc postgres +sqlite"

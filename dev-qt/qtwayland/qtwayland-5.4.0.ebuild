@@ -1,18 +1,17 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtwayland/qtwayland-5.4.0.ebuild,v 1.1 2014/12/13 13:53:44 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtwayland/qtwayland-5.4.0.ebuild,v 1.4 2015/02/03 12:04:48 jer Exp $
 
 EAPI=5
 
 inherit qt5-build
 
 DESCRIPTION="Wayland platform plugin for Qt"
-HOMEPAGE="http://qt-project.org/wiki/QtWayland"
 
 if [[ ${QT5_BUILD_TYPE} == live ]]; then
-	KEYWORDS=""
+	KEYWORDS="~hppa"
 else
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64 ~arm ~hppa ~x86"
 fi
 
 IUSE="egl qml wayland-compositor xcomposite"

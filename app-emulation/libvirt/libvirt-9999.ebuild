@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.71 2014/12/18 21:05:55 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.72 2015/01/27 10:42:52 tamiko Exp $
 
 EAPI=5
 
@@ -9,6 +9,8 @@ AUTOTOOLIZE=yes
 MY_P="${P/_rc/-rc}"
 
 inherit eutils user autotools linux-info systemd readme.gentoo
+
+BACKPORTS=""
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
@@ -23,6 +25,9 @@ else
 	else
 		SRC_URI="http://libvirt.org/sources/${MY_P}.tar.gz"
 	fi
+	SRC_URI+=" ${BACKPORTS:+
+		http://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz
+		http://dev.gentoo.org/~tamiko/distfiles/${P}-${BACKPORTS}.tar.xz}"
 	KEYWORDS="~amd64 ~x86"
 	SLOT="0/${PV}"
 fi
@@ -222,6 +227,10 @@ src_prepare() {
 	fi
 
 	epatch "${FILESDIR}"/${PN}-1.2.9-do_not_use_sysconf.patch
+
+	[[ -n ${BACKPORTS} ]] && \
+		EPATCH_FORCE=yes EPATCH_SUFFIX="patch" \
+			EPATCH_SOURCE="${WORKDIR}/patches" epatch
 
 	epatch_user
 

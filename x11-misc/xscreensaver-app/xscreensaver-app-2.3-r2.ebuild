@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver-app/xscreensaver-app-2.3-r2.ebuild,v 1.2 2014/08/10 20:05:12 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver-app/xscreensaver-app-2.3-r2.ebuild,v 1.4 2015/02/06 13:42:09 ago Exp $
 
 EAPI=5
 inherit autotools eutils toolchain-funcs
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/project/xscreensaverapp/${MY_PN}/${PV}/${MY_PN}-${
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 CDEPEND="
@@ -25,6 +25,7 @@ CDEPEND="
 DEPEND="
 	${CDEPEND}
 	x11-proto/xproto
+	virtual/pkgconfig
 "
 RDEPEND="
 	${CDEPEND}

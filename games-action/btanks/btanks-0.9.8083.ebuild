@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/btanks/btanks-0.9.8083.ebuild,v 1.7 2014/12/31 11:36:52 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/btanks/btanks-0.9.8083.ebuild,v 1.9 2015/02/06 13:43:39 ago Exp $
 
-EAPI=4
+EAPI=5
 inherit eutils scons-utils games
 
 DESCRIPTION="Fast 2D tank arcade game with multiplayer and split-screen modes"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/btanks/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/lua-5.1

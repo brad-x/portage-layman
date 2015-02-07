@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.9999.ebuild,v 1.5 2014/12/15 05:50:48 dlan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.9999.ebuild,v 1.9 2015/02/01 23:27:53 mgorny Exp $
 
 EAPI="5"
 
@@ -44,13 +44,13 @@ IUSE="a52 aalib alsa altivec atmo +audioqueue avahi +avcodec
 	+avformat bidi bluray cdda cddb chromaprint dbus dc1394 debug
 	directfb directx dts dvb +dvbpsi dvd dxva2 elibc_glibc +encode faad fdk
 	fluidsynth +ffmpeg flac fontconfig +gcrypt gme gnome gnutls
-	growl httpd ieee1394 jack jpeg kate kde libass libcaca libnotify
+	growl httpd ieee1394 jack jpeg kate kde libass libav libcaca libnotify
 	libsamplerate libtiger linsys libtar lirc live lua
 	macosx-dialog-provider macosx-eyetv macosx-quartztext macosx-qtkit
-	matroska media-library mmx modplug mp3 mpeg
+	matroska media-library cpu_flags_x86_mmx modplug mp3 mpeg
 	mtp musepack ncurses neon ogg omxil opencv opengl optimisememory opus
 	png +postproc projectm pulseaudio +qt4 qt5 rdp rtsp run-as-root samba
-	schroedinger sdl sdl-image sftp shout sid skins speex sse svg +swscale
+	schroedinger sdl sdl-image sftp shout sid skins speex cpu_flags_x86_sse svg +swscale
 	taglib theora tremor truetype twolame udev upnp vaapi v4l vcdx vdpau
 	vlm vnc vorbis vpx wma-fixed +X x264 x265 +xcb xml xv zvbi"
 
@@ -64,8 +64,14 @@ RDEPEND="
 		aalib? ( media-libs/aalib:0 )
 		alsa? ( >=media-libs/alsa-lib-1.0.24:0 )
 		avahi? ( >=net-dns/avahi-0.6:0[dbus] )
-		avcodec? ( virtual/ffmpeg:0 )
-		avformat? ( virtual/ffmpeg:0 )
+		avcodec? (
+			!libav? ( media-video/ffmpeg:0= )
+			libav? ( media-video/libav:0= )
+		)
+		avformat? (
+			!libav? ( media-video/ffmpeg:0= )
+			libav? ( media-video/libav:0= )
+		)
 		bidi? ( >=dev-libs/fribidi-0.10.4:0 )
 		bluray? ( >=media-libs/libbluray-0.3:0 )
 		cddb? ( >=media-libs/libcddb-1.2:0 )
@@ -112,7 +118,10 @@ RDEPEND="
 		opengl? ( virtual/opengl:0 >=x11-libs/libX11-1.3.99.901:0 )
 		opus? ( >=media-libs/opus-1.0.3:0 )
 		png? ( media-libs/libpng:0= sys-libs/zlib:0 )
-		postproc? ( || ( >=media-video/ffmpeg-1.2:0 media-libs/libpostproc:0 ) )
+		postproc? (
+			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			libav? ( media-libs/libpostproc:0= )
+		)
 		projectm? ( media-libs/libprojectm:0 media-fonts/dejavu:0 )
 		pulseaudio? ( >=media-sound/pulseaudio-1:0 )
 		qt4? ( >=dev-qt/qtgui-4.6:4 >=dev-qt/qtcore-4.6:4 )
@@ -128,7 +137,10 @@ RDEPEND="
 		skins? ( x11-libs/libXext:0 x11-libs/libXpm:0 x11-libs/libXinerama:0 )
 		speex? ( media-libs/speex:0 )
 		svg? ( >=gnome-base/librsvg-2.9:2 >=x11-libs/cairo-1.13.1:0 )
-		swscale? ( virtual/ffmpeg:0 )
+		swscale? (
+			!libav? ( media-video/ffmpeg:0= )
+			libav? ( media-video/libav:0= )
+		)
 		taglib? ( >=media-libs/taglib-1.9:0 sys-libs/zlib:0 )
 		theora? ( >=media-libs/libtheora-1.0_beta3:0 )
 		tremor? ( media-libs/tremor:0 )
@@ -138,7 +150,11 @@ RDEPEND="
 		udev? ( >=virtual/udev-142:0 )
 		upnp? ( net-libs/libupnp:0 )
 		v4l? ( media-libs/libv4l:0 )
-		vaapi? ( x11-libs/libva:0[X,drm] virtual/ffmpeg[vaapi] )
+		vaapi? (
+			x11-libs/libva:0[X,drm]
+			!libav? ( media-video/ffmpeg:0=[vaapi] )
+			libav? ( media-video/libav:0=[vaapi] )
+		)
 		vcdx? ( >=dev-libs/libcdio-0.78.2:0 >=media-video/vcdimager-0.7.22:0 )"
 
 # Temporarily block non-live FFMPEG versions as they break vdpau, 9999 works;
@@ -146,10 +162,8 @@ RDEPEND="
 RDEPEND="${RDEPEND}
 		vdpau? (
 			>=x11-libs/libvdpau-0.6:0
-			|| (
-				>=media-video/ffmpeg-1.2:0=
-				>=media-video/libav-10:0=
-			)
+			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			libav? ( >=media-video/libav-10:0= )
 		)
 		vnc? ( >=net-libs/libvncserver-0.9.9:0 )
 		vorbis? ( >=media-libs/libvorbis-1.1:0 )
@@ -222,9 +236,6 @@ src_prepare() {
 	if [[ "$(tc-getCC)" == *"gcc"* ]] ; then
 		sed -i 's/ifndef __FAST_MATH__/if 0/g' configure.ac || die
 	fi
-
-	# _FORTIFY_SOURCE is set to 2 by default on Gentoo, remove redefine warnings.
-	sed -i '/_FORTIFY_SOURCE.*, 2,/d' configure.ac || die
 
 	# Bootstrap when we are on a git checkout.
 	if [[ "${PV%9999}" != "${PV}" ]] ; then
@@ -354,7 +365,7 @@ src_configure() {
 		$(use_enable macosx-qtkit) \
 		$(use_enable macosx-quartztext) \
 		$(use_enable matroska mkv) \
-		$(use_enable mmx) \
+		$(use_enable cpu_flags_x86_mmx mmx) \
 		$(use_enable modplug mod) \
 		$(use_enable mp3 mad) \
 		$(use_enable mpeg libmpeg2) \
@@ -386,7 +397,7 @@ src_configure() {
 		$(use_enable shout) \
 		$(use_enable skins skins2) \
 		$(use_enable speex) \
-		$(use_enable sse) \
+		$(use_enable cpu_flags_x86_sse sse) \
 		$(use_enable svg) \
 		$(use_enable svg svgdec) \
 		$(use_enable swscale) \
@@ -439,6 +450,11 @@ src_configure() {
 		--disable-wasapi
 
 		# ^ We don't have these disabled libraries in the Portage tree yet.
+
+	# _FORTIFY_SOURCE is set to 2 in config.h, which is also the default value on Gentoo.
+	# Other values of _FORTIFY_SOURCE may break the build (bug 523144), so definition should not be removed from config.h.
+	# To prevent redefinition warnings, we undefine _FORTIFY_SOURCE at the very start of config.h file
+	sed -i '1i#undef _FORTIFY_SOURCE' "${S}"/config.h || die
 }
 
 src_test() {

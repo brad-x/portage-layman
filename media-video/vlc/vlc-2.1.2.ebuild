@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.2.ebuild,v 1.18 2014/12/18 13:36:50 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.2.ebuild,v 1.21 2015/01/30 05:25:45 mgorny Exp $
 
 EAPI="5"
 
@@ -47,10 +47,10 @@ IUSE="a52 aalib alsa altivec atmo +audioqueue avahi +avcodec
 	growl httpd ieee1394 ios-vout jack kate kde libass libcaca libnotify
 	libsamplerate libtiger linsys libtar lirc live lua +macosx
 	+macosx-audio +macosx-dialog-provider +macosx-eyetv +macosx-quartztext
-	+macosx-qtkit +macosx-vout matroska media-library mmx modplug mp3 mpeg
+	+macosx-qtkit +macosx-vout matroska media-library cpu_flags_x86_mmx modplug mp3 mpeg
 	mtp musepack ncurses neon ogg omxil opencv opengl optimisememory opus
 	png +postproc projectm pulseaudio +qt4 rdp rtsp run-as-root samba
-	schroedinger sdl sdl-image sftp shout sid skins speex sse svg +swscale
+	schroedinger sdl sdl-image sftp shout sid skins speex cpu_flags_x86_sse svg +swscale
 	taglib theora tremor truetype twolame udev upnp vaapi v4l vcdx vdpau
 	vlm vorbis wma-fixed +X x264 +xcb xml xv zvbi"
 
@@ -211,9 +211,6 @@ src_prepare() {
 		sed -i 's/ifndef __FAST_MATH__/if 0/g' configure.ac || die
 	fi
 
-	# _FORTIFY_SOURCE is set to 2 by default on Gentoo, remove redefine warnings.
-	sed -i '/_FORTIFY_SOURCE.*, 2,/d' configure.ac || die
-
 	# Bootstrap when we are on a git checkout.
 	if [[ "${PV%9999}" != "${PV}" ]] ; then
 		./bootstrap
@@ -342,7 +339,7 @@ src_configure() {
 		$(use_enable macosx-quartztext) \
 		$(use_enable macosx-vout) \
 		$(use_enable matroska mkv) \
-		$(use_enable mmx) \
+		$(use_enable cpu_flags_x86_mmx mmx) \
 		$(use_enable modplug mod) \
 		$(use_enable mp3 mad) \
 		$(use_enable mpeg libmpeg2) \
@@ -373,7 +370,7 @@ src_configure() {
 		$(use_enable shout) \
 		$(use_enable skins skins2) \
 		$(use_enable speex) \
-		$(use_enable sse) \
+		$(use_enable cpu_flags_x86_sse sse) \
 		$(use_enable svg) \
 		$(use_enable swscale) \
 		$(use_enable taglib) \
@@ -409,6 +406,11 @@ src_configure() {
 		--disable-vsxu
 
 		# ^ We don't have these disables libraries in the Portage tree yet.
+
+	# _FORTIFY_SOURCE is set to 2 in config.h, which is also the default value on Gentoo.
+	# Other values of _FORTIFY_SOURCE may break the build (bug 523144), so definition should not be removed from config.h.
+	# To prevent redefinition warnings, we undefine _FORTIFY_SOURCE at the very start of config.h file
+	sed -i '1i#undef _FORTIFY_SOURCE' "${S}"/config.h || die
 }
 
 src_test() {
