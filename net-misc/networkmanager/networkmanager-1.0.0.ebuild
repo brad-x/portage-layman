@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-1.0.0.ebuild,v 1.5 2015/01/27 18:54:20 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-1.0.0.ebuild,v 1.12 2015/03/15 13:32:08 pacho Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -25,7 +25,7 @@ IUSE="bluetooth connection-sharing consolekit +dhclient dhcpcd gnutls +introspec
 kernel_linux +nss +modemmanager ncurses +ppp resolvconf selinux systemd teamd test \
 vala +wext +wifi zeroconf" # wimax
 
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 arm ~arm64 ppc ppc64 ~sparc x86"
 
 REQUIRED_USE="
 	modemmanager? ( ppp )
@@ -210,6 +210,7 @@ src_install() {
 
 	# /var/run/NetworkManager is used by some distros, but not by Gentoo
 	rmdir -v "${ED}/var/run/NetworkManager" || die "rmdir failed"
+	rmdir -v "${ED}/var/run" || die "rmdir failed"
 
 	# Need to keep the /etc/NetworkManager/dispatched.d for dispatcher scripts
 	keepdir /etc/NetworkManager/dispatcher.d

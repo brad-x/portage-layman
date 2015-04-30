@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-5.0-r4.ebuild,v 1.2 2014/11/06 21:32:53 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-5.0-r4.ebuild,v 1.5 2015/03/17 14:19:01 tetromino Exp $
 
 EAPI="5"
 inherit autotools bash-completion-r1 eutils flag-o-matic linux-info readme.gentoo systemd user versionator udev multilib-minimal
@@ -23,7 +23,8 @@ gtk ipv6 jack libsamplerate lirc neon +orc oss qt4 realtime ssl systemd
 system-wide tcpd test +udev +webrtc-aec +X xen"
 
 # See "*** BLUEZ support not found (requires D-Bus)" in configure.ac
-REQUIRED_USE="bluetooth? ( dbus )"
+REQUIRED_USE="bluetooth? ( dbus )
+	udev? ( || ( alsa oss ) )"
 
 # libpcre needed in some cases, bug #472228
 RDEPEND="
@@ -60,8 +61,8 @@ RDEPEND="
 	udev? ( >=virtual/udev-143[hwdb(+)] )
 	realtime? ( sys-auth/rtkit )
 	equalizer? ( sci-libs/fftw:3.0 )
-	orc? ( >=dev-lang/orc-0.4.9 )
-	ssl? ( dev-libs/openssl )
+	orc? ( >=dev-lang/orc-0.4.15 )
+	ssl? ( dev-libs/openssl:0 )
 	>=media-libs/speex-1.2_rc1
 	gdbm? ( sys-libs/gdbm )
 	webrtc-aec? ( media-libs/webrtc-audio-processing )
@@ -329,14 +330,15 @@ multilib_src_install_all() {
 
 pkg_postinst() {
 	if use system-wide; then
-		elog "PulseAudio in Gentoo can use a system-wide pulseaudio daemon."
-		elog "This support is enabled by starting the pulseaudio init.d ."
-		elog "To be able to access that you need to be in the group pulse-access."
-		elog "If you choose to use this feature, please make sure that you"
-		elog "really want to run PulseAudio this way:"
-		elog "   http://pulseaudio.org/wiki/WhatIsWrongWithSystemMode"
-		elog "For more information about system-wide support, please refer to:"
-		elog "	 http://pulseaudio.org/wiki/SystemWideInstance"
+		elog "You have enabled the 'system-wide' USE flag for pulseaudio."
+		elog "This mode should only be used on headless servers, embedded systems,"
+		elog "or thin clients. It will usually require manual configuration, and is"
+		elog "incompatible with many expected pulseaudio features."
+		elog "On normal desktop systems, system-wide mode is STRONGLY DISCOURAGED."
+		elog "For more information, see"
+		elog "    http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/"
+		elog "    http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/"
+		elog "    https://wiki.gentoo.org/wiki/PulseAudio#Headless_server"
 		if use gnome ; then
 			elog
 			elog "By enabling gnome USE flag, you enabled gconf support. Please note"

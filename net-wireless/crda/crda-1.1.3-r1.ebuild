@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/crda/crda-1.1.3-r1.ebuild,v 1.8 2015/01/02 12:21:24 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/crda/crda-1.1.3-r1.ebuild,v 1.14 2015/04/14 13:15:00 ago Exp $
 
-EAPI=4
+EAPI=5
 
-PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 inherit eutils toolchain-funcs python-any-r1 udev
 
 DESCRIPTION="Central Regulatory Domain Agent for wireless networks"
@@ -13,16 +13,20 @@ SRC_URI="http://linuxwireless.org/download/crda/${P}.tar.bz2"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 arm ~arm64 ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND="dev-libs/openssl:0
 	dev-libs/libnl:3
 	net-wireless/wireless-regdb"
 DEPEND="${RDEPEND}
-	dev-python/m2crypto
-	=dev-lang/python-2*
+	${PYTHON_DEPS}
+	$(python_gen_any_dep 'dev-python/m2crypto[${PYTHON_USEDEP}]')
 	virtual/pkgconfig"
+
+python_check_deps() {
+	has_version --host-root "dev-python/m2crypto[${PYTHON_USEDEP}]"
+}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-missing-include.patch

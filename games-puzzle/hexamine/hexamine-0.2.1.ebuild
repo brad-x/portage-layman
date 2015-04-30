@@ -1,7 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/hexamine/hexamine-0.2.1.ebuild,v 1.3 2010/01/24 23:11:02 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/hexamine/hexamine-0.2.1.ebuild,v 1.5 2015/03/24 17:25:01 ago Exp $
 
+EAPI=5
 inherit games
 
 DESCRIPTION="Hexagonal Minesweeper"
@@ -10,29 +11,25 @@ SRC_URI="mirror://sourceforge/hexamine/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
-RDEPEND="media-libs/libsdl
-	dev-python/pygame"
+RDEPEND="dev-python/pygame"
 
 S=${WORKDIR}/${PN}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	# Modify game data directory
 	sed -i \
 		-e "s:\`dirname \$0\`:${GAMES_DATADIR}/${PN}:" \
 		-e "s:\./hexamine:exec python &:" \
-		hexamine || die "sed failed"
+		hexamine || die
 }
 
 src_install() {
-	dogamesbin hexamine || die "dogamesbin failed"
+	dogamesbin hexamine
 	insinto "${GAMES_DATADIR}/${PN}"
-	doins -r hexamine.* skins || die "doins failed"
+	doins -r hexamine.* skins
 	dodoc ABOUT README
 	prepgamesdirs
 }

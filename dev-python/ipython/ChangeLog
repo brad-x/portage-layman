@@ -1,6 +1,60 @@
 # ChangeLog for dev-python/ipython
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.157 2015/01/31 07:05:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.169 2015/04/07 14:15:19 jlec Exp $
+
+*ipython-3.1.0 (04 Apr 2015)
+
+  04 Apr 2015; Justin Lecher <jlec@gentoo.org> +ipython-3.1.0.ebuild:
+  Version Bump
+
+  20 Mar 2015; Patrick Lauer <patrick@gentoo.org> ipython-3.0.0.ebuild:
+  Add missing test dep
+
+  19 Mar 2015; Justin Lecher <jlec@gentoo.org> ipython-3.0.0.ebuild:
+  Require all features for test run, bug #543752
+
+*ipython-2.4.1 (13 Mar 2015)
+
+  13 Mar 2015; Justin Lecher <jlec@gentoo.org> +ipython-2.4.1.ebuild,
+  -files/62ipython-gentoo.el, -files/ipython-0.12-globalpath.patch,
+  -files/ipython-0.13-umlaut.patch, -files/ipython-0.9.1-globalpath.patch,
+  -files/ipython-1.0.0-setuptools.patch, -ipython-0.10.2.ebuild,
+  -ipython-1.0.0.ebuild, -ipython-1.2.1.ebuild, -ipython-2.4.0.ebuild,
+  ipython-2.2.0.ebuild, ipython-3.0.0.ebuild:
+  Version Bump, bug #539578; fix SLOT operators loosen USE constraints for
+  USE=doc, bug #542426; don't build API docs for iypthon-3 due to missing
+  buildtime deps, bug #541832; drop old fixes CVE-2014-3429 bug #517222 and
+  obsolets bug #486880, bug #489372, bug #489384, bug #428170, bug #407823, bug
+  #407715, bug #490166, bug #456960, bug #483580, bug #530324, bug #536386 and
+  bug #481726
+
+  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipython-2.2.0.ebuild:
+  x86 stable, bug 540290
+
+  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipython-2.2.0.ebuild:
+  ppc stable, bug 540290
+
+  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipython-2.2.0.ebuild:
+  ppc64 stable, bug 540290
+
+  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipython-2.2.0.ebuild:
+  amd64 stable, bug 540290
+
+*ipython-3.0.0 (28 Feb 2015)
+
+  28 Feb 2015; Justin Lecher <jlec@gentoo.org> +ipython-3.0.0.ebuild,
+  -ipython-0.12-r1.ebuild, -ipython-0.13.2.ebuild, -ipython-1.1.0-r1.ebuild,
+  -ipython-1.1.0-r2.ebuild, -ipython-1.1.0.ebuild, -ipython-1.2.0.ebuild,
+  -ipython-2.1.0.ebuild, -ipython-2.3.0.ebuild, -ipython-2.3.1.ebuild:
+  Version Bump; drop old
+
+  08 Feb 2015; Kacper Kowalik <xarthisius@gentoo.org> ipython-2.4.0.ebuild:
+  Simplify check if pandoc is installed. Thanks to Arfrever for a suggestion
+
+*ipython-2.4.0 (08 Feb 2015)
+
+  08 Feb 2015; Kacper Kowalik <xarthisius@gentoo.org> +ipython-2.4.0.ebuild:
+  Version bump, allow to use node.js for nbconvert instead of app-text/pandoc
 
   31 Jan 2015; Mike Frysinger <vapier@gentoo.org> ipython-2.3.1.ebuild:
   Add mips love.
@@ -100,7 +154,7 @@
 
   21 Feb 2014; Justin Lecher <jlec@gentoo.org> +ipython-1.2.0.ebuild,
   metadata.xml:
-  Version BUmp, tests fail with py3.3
+  Version Bump, tests fail with py3.3
   https://github.com/ipython/ipython/issues/5182
 
   16 Feb 2014; Mike Frysinger <vapier@gentoo.org> ipython-1.0.0.ebuild:

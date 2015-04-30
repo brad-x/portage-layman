@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.2.ebuild,v 1.21 2015/01/30 05:25:45 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.2.ebuild,v 1.24 2015/04/19 04:59:23 yngwin Exp $
 
 EAPI="5"
 
@@ -35,7 +35,7 @@ LICENSE="LGPL-2.1 GPL-2"
 SLOT="0/5-7" # vlc - vlccore
 
 if [ "${PV%9999}" = "${PV}" ] ; then
-	KEYWORDS="alpha amd64 ~arm ppc ppc64 -sparc x86 ~amd64-fbsd ~x86-fbsd"
+	KEYWORDS="alpha"
 else
 	KEYWORDS=""
 fi
@@ -229,6 +229,9 @@ src_prepare() {
 	# Fix up broken audio; first is a fixed reversed bisected commit, latter two are backported.
 	epatch "${FILESDIR}"/${PN}-2.1.0-TomWij-bisected-PA-broken-underflow.patch
 
+	# Fix bug #541654
+	epatch "${FILESDIR}"/${PN}-2.1-mem_undefined_functions.patch
+
 	# Disable avcodec checks when avcodec is not used.
 	if ! use avcodec; then
 		sed -i 's/^#if LIBAVCODEC_VERSION_CHECK(.*)$/#if 0/' modules/codec/avcodec/fourcc.c || die
@@ -238,6 +241,8 @@ src_prepare() {
 	if ! use dbus ; then
 		sed -i 's/ --started-from-file//' share/vlc.desktop.in || die
 	fi
+
+	epatch_user
 
 	eautoreconf
 

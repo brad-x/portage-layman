@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/enable/enable-4.4.1.ebuild,v 1.1 2014/11/14 13:43:09 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/enable/enable-4.4.1.ebuild,v 1.5 2015/04/18 12:57:55 swegener Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -9,11 +9,11 @@ inherit distutils-r1 virtualx flag-o-matic
 
 DESCRIPTION="Enthought Tool Suite: Drawing and interaction packages"
 HOMEPAGE="http://code.enthought.com/projects/enable/ http://pypi.python.org/pypi/enable"
-SRC_URI="https://github.com/enthought/${PN}/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/enthought/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="doc examples test"
 DISTUTILS_IN_SOURCE_BUILD=1
 
@@ -26,7 +26,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	x11-libs/libX11"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	dev-lang/swig
+	dev-lang/swig:0
 	dev-python/cython[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (

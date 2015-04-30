@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-3.6.2.3.ebuild,v 1.1 2015/02/04 00:41:19 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-3.6.2.3.ebuild,v 1.3 2015/04/25 16:27:57 floppym Exp $
 
 EAPI=5
 [[ ${PV} == *9999 ]] && SCM="git-2"
@@ -10,7 +10,7 @@ EGIT_MASTER=master
 inherit perl-module user versionator ${SCM}
 
 DESCRIPTION="Highly flexible server for git directory version tracker, Gentoo fork"
-HOMEPAGE="http://git.overlays.gentoo.org/gitweb/?p=proj/gitolite-gentoo.git;a=summary"
+HOMEPAGE="http://cgit.gentoo.org/proj/gitolite-gentoo.git"
 if [[ ${PV} != *9999 ]]; then
 	SRC_URI="mirror://gentoo/${P}.tar.bz2"
 	KEYWORDS="~amd64 ~x86"
@@ -30,7 +30,7 @@ DEPEND="dev-lang/perl
 RDEPEND="${DEPEND}
 	!dev-vcs/gitolite-gentoo
 	vim-syntax? ( app-vim/gitolite-syntax )
-	dev-perl/Net-SSH-AuthorizedKeysFile
+	>=dev-perl/Net-SSH-AuthorizedKeysFile-0.17
 	dev-perl/JSON"
 
 pkg_setup() {

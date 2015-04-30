@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pandas/pandas-9999.ebuild,v 1.7 2014/12/21 18:29:37 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pandas/pandas-9999.ebuild,v 1.10 2015/04/15 06:34:24 jlec Exp $
 
 EAPI=5
 
@@ -9,14 +9,14 @@ PYTHON_COMPAT=( python2_7 python3_{3,4} )
 inherit distutils-r1 eutils flag-o-matic git-r3 virtualx
 
 DESCRIPTION="Powerful data structures for data analysis and statistics"
-HOMEPAGE="http://pandas.sourceforge.net/"
+HOMEPAGE="http://pandas.pydata.org/"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/pydata/pandas.git"
 
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS=""
-IUSE="doc examples excel html test R"
+IUSE="doc excel html test R"
 
 EXTRA_DEPEND="
 	>=dev-python/google-api-python-client-1.2.0[$(python_gen_usedep python2_7 pypy)]
@@ -52,6 +52,7 @@ DEPEND="${CDEPEND}
 		)
 	test? (
 		${EXTRA_DEPEND}
+		dev-python/beautifulsoup:4[${PYTHON_USEDEP}]
 		dev-python/nose[${PYTHON_USEDEP}]
 		x11-misc/xclip
 		x11-misc/xsel
@@ -117,7 +118,6 @@ python_install_all() {
 		einfo "statsmodels next and re-emerge pandas with USE doc"
 	fi
 
-	use examples && local EXAMPLES=( examples/. )
 	distutils-r1_python_install_all
 }
 

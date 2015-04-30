@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/johntheripper-1.7.9-r6.ebuild,v 1.14 2015/01/28 19:13:24 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/johntheripper-1.7.9-r6.ebuild,v 1.16 2015/02/24 09:14:38 mgorny Exp $
 
 EAPI="4"
 
@@ -27,7 +27,8 @@ REQUIRED_USE="openmp? ( !minimal )
 	cuda? ( !minimal )
 	opencl? ( !minimal )"
 
-RDEPEND="!minimal? ( >=dev-libs/openssl-0.9.7:0 )
+RDEPEND="sys-libs/zlib
+	!minimal? ( >=dev-libs/openssl-0.9.7:0 )
 	mpi? ( virtual/mpi )
 	cuda? ( x11-drivers/nvidia-drivers dev-util/nvidia-cuda-toolkit )
 	opencl? ( virtual/opencl )"

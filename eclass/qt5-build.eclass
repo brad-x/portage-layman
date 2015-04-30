@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/qt5-build.eclass,v 1.13 2015/01/18 01:49:43 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/qt5-build.eclass,v 1.16 2015/04/19 18:22:15 kensington Exp $
 
 # @ECLASS: qt5-build.eclass
 # @MAINTAINER:
@@ -22,12 +22,8 @@ inherit eutils flag-o-matic multilib toolchain-funcs virtualx
 QT5_MINOR_VERSION=${PV#*.}
 QT5_MINOR_VERSION=${QT5_MINOR_VERSION%%.*}
 
-HOMEPAGE="https://www.qt.io/ https://qt-project.org/"
-if [[ ${QT5_MINOR_VERSION} -ge 4 ]]; then
-	LICENSE="|| ( LGPL-2.1 LGPL-3 )"
-else
-	LICENSE="|| ( LGPL-2.1 GPL-3 )"
-fi
+HOMEPAGE="https://www.qt.io/"
+LICENSE="|| ( LGPL-2.1 LGPL-3 )"
 SLOT="5"
 
 # @ECLASS-VARIABLE: QT5_MODULE
@@ -64,8 +60,9 @@ case ${PV} in
 esac
 
 EGIT_REPO_URI=(
-	"git://gitorious.org/qt/${QT5_MODULE}.git"
-	"https://git.gitorious.org/qt/${QT5_MODULE}.git"
+	"git://code.qt.io/qt/${QT5_MODULE}.git"
+	"https://code.qt.io/git/qt/${QT5_MODULE}.git"
+	"https://github.com/qtproject/${QT5_MODULE}.git"
 )
 [[ ${QT5_BUILD_TYPE} == live ]] && inherit git-r3
 
@@ -472,7 +469,7 @@ qt5_symlink_tools_to_build_dir() {
 # Runs ./configure for modules belonging to qtbase.
 qt5_base_configure() {
 	# setup toolchain variables used by configure
-	tc-export CC CXX RANLIB STRIP
+	tc-export AR CC CXX OBJDUMP RANLIB STRIP
 	export LD="$(tc-getCXX)"
 
 	# configure arguments
@@ -537,6 +534,7 @@ qt5_base_configure() {
 		-no-libpng -no-libjpeg
 		-no-freetype -no-harfbuzz
 		-no-openssl
+		$([[ ${QT5_MINOR_VERSION} -ge 5 ]] && echo -no-libproxy)
 		-no-xinput2 -no-xcb-xlib
 
 		# always enable glib event loop support
@@ -545,8 +543,8 @@ qt5_base_configure() {
 		# disable everything to prevent automagic deps (part 2)
 		-no-pulseaudio -no-alsa
 
-		# disable gtkstyle because it adds qt4 include paths to the compiler
-		# command line if x11-libs/cairo is built with USE=qt4 (bug 433826)
+		# override in qtgui and qtwidgets where x11-libs/cairo[qt4] is blocked
+		# to avoid adding qt4 include paths (bug 433826)
 		-no-gtkstyle
 
 		# exclude examples and tests from default build

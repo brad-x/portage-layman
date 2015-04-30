@@ -1,6 +1,39 @@
 # ChangeLog for dev-java/scala-bin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/scala-bin/ChangeLog,v 1.16 2015/02/02 10:22:05 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/scala-bin/ChangeLog,v 1.24 2015/03/25 15:51:03 monsieurp Exp $
+
+  25 Mar 2015; Patrice Clement <monsieurp@gentoo.org> -scala-bin-1.2.0.1.ebuild:
+  Remove old (scala-1.2) after scala-2.11.4 has been stabled.
+
+  25 Mar 2015; Agostino Sarubbo <ago@gentoo.org> scala-bin-2.11.4.ebuild:
+  Stable for x86, wrt bug #544302
+
+  24 Mar 2015; Agostino Sarubbo <ago@gentoo.org> scala-bin-2.11.4.ebuild:
+  Stable for amd64, wrt bug #544302
+
+  24 Mar 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  scala-bin-2.11.5.ebuild, scala-bin-2.11.6.ebuild:
+  Enhance ebuild layout and helper function usage
+
+*scala-bin-2.11.6 (24 Mar 2015)
+
+  24 Mar 2015; Patrice Clement <monsieurp@gentoo.org> +scala-bin-2.11.6.ebuild:
+  Version bump. Fix bug 544298.
+
+  21 Mar 2015; Justin Lecher <jlec@gentoo.org> scala-bin-2.11.4.ebuild,
+  scala-bin-2.11.5.ebuild:
+  use dobin instead of exeinto /usr/bin/ && doexe; add missing die; make ebuild
+  layout better readable
+
+  04 Mar 2015; Patrice Clement <monsieurp@gentoo.org> scala-bin-2.11.4.ebuild,
+  scala-bin-2.11.5.ebuild:
+  Inherit java-pkg-2 instead of java-utils-2 (wrong eclass!). Fix bug 542086.
+
+*scala-bin-2.11.5 (19 Feb 2015)
+
+  19 Feb 2015; Patrice Clement <monsieurp@gentoo.org> +scala-bin-2.11.5.ebuild,
+  scala-bin-2.11.4.ebuild:
+  Bump to version 2.11.5. Fix bug #540704.
 
   02 Feb 2015; Patrice Clement <monsieurp@gentoo.org> scala-bin-2.11.4.ebuild:
   Add forgotten `doc' USE flag to IUSE flags. Fix bug 538480.

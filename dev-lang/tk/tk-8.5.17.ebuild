@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/tk-8.5.17.ebuild,v 1.1 2014/12/20 09:03:03 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/tk-8.5.17.ebuild,v 1.11 2015/04/14 10:54:13 ago Exp $
 
 EAPI=5
 
@@ -13,8 +13,8 @@ HOMEPAGE="http://www.tcl.tk/"
 SRC_URI="mirror://sourceforge/tcl/${MY_P}-src.tar.gz"
 
 LICENSE="tcltk"
-SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+SLOT="0/8.5"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="debug threads truetype aqua xscreensaver"
 
 RDEPEND="
@@ -26,7 +26,7 @@ RDEPEND="
 		truetype? ( x11-libs/libXft )
 		xscreensaver? ( x11-libs/libXScrnSaver )
 	)
-	~dev-lang/tcl-${PV}"
+	~dev-lang/tcl-${PV}:0="
 DEPEND="${RDEPEND}
 	!aqua? ( x11-proto/xproto )"
 

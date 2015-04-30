@@ -1,6 +1,94 @@
 # ChangeLog for sys-apps/systemd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.345 2015/02/02 21:23:09 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.366 2015/04/27 12:35:00 ago Exp $
+
+  27 Apr 2015; Agostino Sarubbo <ago@gentoo.org> systemd-216-r3.ebuild:
+  Stable for sparc, wrt bug #525112
+
+  26 Apr 2015; Mike Gilbert <floppym@gentoo.org> systemd-219_p112.ebuild:
+  Fix SRC_URI.
+
+*systemd-219_p112 (26 Apr 2015)
+
+  26 Apr 2015; Mike Gilbert <floppym@gentoo.org> +systemd-219_p112.ebuild:
+  Add a snapshot from the v219-stable branch upstream.
+
+  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> systemd-218-r3.ebuild:
+  amd64/ppc/ppc64/x86 stable, bug #536902
+
+  18 Apr 2015; Mike Gilbert <floppym@gentoo.org> -systemd-219-r1.ebuild,
+  systemd-216-r3.ebuild, systemd-216-r4.ebuild, systemd-218-r3.ebuild,
+  systemd-219-r2.ebuild, systemd-9999.ebuild:
+  Adjust glibc blocker, bug 546194.
+
+  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> systemd-216-r3.ebuild:
+  Stable for ia64, wrt bug #525112
+
+  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> systemd-216-r3.ebuild:
+  Stable for alpha, wrt bug #525112
+
+  13 Apr 2015; Michał Górny <mgorny@gentoo.org> systemd-9999.ebuild:
+  Bump gnu-efi dep and remove Gentoo-specific paths.
+
+  11 Apr 2015; Michał Górny <mgorny@gentoo.org> metadata.xml,
+  systemd-9999.ebuild:
+  Add USE=gnuefi for newly-added EFI boot manager & stub loader.
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> systemd-215-r3.ebuild,
+  systemd-216-r3.ebuild, systemd-216-r4.ebuild, systemd-218-r3.ebuild,
+  systemd-219-r1.ebuild, systemd-219-r2.ebuild, systemd-9999.ebuild:
+  Drop old Python implementations
+
+  15 Mar 2015; Pacho Ramos <pacho@gentoo.org> systemd-216-r3.ebuild:
+  ppc64 stable, bug #525112
+
+*systemd-219-r2 (11 Mar 2015)
+
+  11 Mar 2015; Mike Gilbert <floppym@gentoo.org> +systemd-219-r2.ebuild:
+  Grab missing systemd.conf.m4 from git to fix optional ACL support, bug 542644
+  by poncho.
+
+  02 Mar 2015; Agostino Sarubbo <ago@gentoo.org> systemd-216-r3.ebuild:
+  Stable for ppc, wrt bug #525112
+
+  28 Feb 2015; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  seccomp USE flag is now global, removing from metadata
+
+*systemd-219-r1 (27 Feb 2015)
+
+  27 Feb 2015; Mike Gilbert <floppym@gentoo.org> +systemd-219-r1.ebuild,
+  -systemd-219.ebuild:
+  Re-add the audit patch.
+
+  20 Feb 2015; Mike Gilbert <floppym@gentoo.org> systemd-219.ebuild,
+  systemd-9999.ebuild:
+  Depend on media-fonts/unifont[utils] when USE=terminal. Bug 540652 by Marcel
+  Unbehaun and Reuben Martin.
+
+*systemd-219 (19 Feb 2015)
+
+  19 Feb 2015; Mike Gilbert <floppym@gentoo.org> +systemd-219.ebuild:
+  Version bump.
+
+  17 Feb 2015; Pacho Ramos <pacho@gentoo.org> systemd-218-r3.ebuild,
+  systemd-9999.ebuild:
+  Enable by default lz4 compression for journald as it performs far better.
+
+  17 Feb 2015; Pacho Ramos <pacho@gentoo.org> -systemd-216-r2.ebuild,
+  -systemd-217-r4.ebuild, -systemd-218-r1.ebuild, -systemd-218-r2.ebuild:
+  Drop old
+
+  17 Feb 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml,
+  systemd-9999.ebuild:
+  Updates for v219.
+
+*systemd-216-r4 (08 Feb 2015)
+*systemd-218-r3 (08 Feb 2015)
+
+  08 Feb 2015; Mike Gilbert <floppym@gentoo.org> +systemd-216-r4.ebuild,
+  +systemd-218-r3.ebuild, systemd-9999.ebuild:
+  Make sure we build all the nss libs on non-native abis. Bug 538966 by Hristo
+  Venev.
 
   02 Feb 2015; Mike Gilbert <floppym@gentoo.org> systemd-218-r2.ebuild,
   systemd-9999.ebuild:

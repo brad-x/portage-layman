@@ -1,16 +1,16 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.10 2015/01/11 06:03:13 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.13 2015/04/25 16:28:24 floppym Exp $
 
 EAPI=5
 
-inherit eutils systemd
+inherit eutils systemd udev
 
 DESCRIPTION="Gentoo Network Interface Management Scripts"
 HOMEPAGE="http://www.gentoo.org/proj/en/base/openrc/"
 
 if [[ ${PV} == "9999" ]]; then
-	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/${PN}.git"
+	EGIT_REPO_URI="git://anongit.gentoo.org/proj/${PN}.git"
 	#EGIT_REPO_URI="git://github.com/gentoo/netifrc" # Alternate
 	inherit git-r3
 else
@@ -40,6 +40,7 @@ src_prepare() {
 
 src_compile() {
 	MAKE_ARGS="${MAKE_ARGS}
+		UDEVDIR=${EPREFIX}$(get_udevdir)
 		LIBEXECDIR=${EPREFIX}/lib/${PN} PF=${PF}"
 
 	use prefix && MAKE_ARGS="${MAKE_ARGS} MKPREFIX=yes PREFIX=${EPREFIX}"
@@ -56,7 +57,7 @@ src_install() {
 	UNIT_DIR="$(systemd_get_unitdir)"
 	sed "s:@LIBEXECDIR@:${LIBEXECDIR}:" "${S}/systemd/net_at.service.in" > "${T}/net_at.service" || die
 	systemd_newunit "${T}/net_at.service" 'net@.service'
-	dosym "${UNIT_DIR}/net@.service" "${UNIT_DIR}/net@lo.service"
+	dosym "${UNIT_DIR#${EPREFIX}}/net@.service" "${UNIT_DIR#${EPREFIX}}/net@lo.service"
 }
 
 pkg_postinst() {

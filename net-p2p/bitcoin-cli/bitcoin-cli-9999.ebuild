@@ -1,52 +1,25 @@
-# Copyright 2010-2014 Gentoo Foundation
+# Copyright 2010-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-cli/bitcoin-cli-9999.ebuild,v 1.2 2014/11/21 23:31:20 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-cli/bitcoin-cli-9999.ebuild,v 1.4 2015/03/03 23:59:21 blueness Exp $
 
-EAPI=4
+EAPI=5
 
-inherit autotools eutils git-2
-
-MyPV="${PV/_/}"
-MyPN="bitcoin"
-MyP="${MyPN}-${MyPV}"
+BITCOINCORE_NO_SYSLIBS=1
+BITCOINCORE_IUSE=""
+inherit bitcoincore
 
 DESCRIPTION="Command-line JSON-RPC client specifically designed for talking to Bitcoin Core Daemon"
-HOMEPAGE="http://bitcoin.org/"
-SRC_URI="
-"
-EGIT_PROJECT='bitcoin'
-EGIT_REPO_URI="git://github.com/bitcoin/bitcoin.git https://github.com/bitcoin/bitcoin.git"
-
-LICENSE="MIT ISC"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
-
-RDEPEND="
-	>=dev-libs/boost-1.52.0[threads(+)]
-	dev-libs/openssl:0[-bindist]
-"
-DEPEND="${RDEPEND}"
 
 src_prepare() {
+	bitcoincore_prepare
 	sed -i 's/bitcoin-tx//' src/Makefile.am
-	eautoreconf
+	bitcoincore_autoreconf
 }
 
 src_configure() {
-	econf \
-		--disable-ccache \
-		--without-miniupnpc  \
-		--disable-tests  \
-		--disable-wallet  \
-		--without-daemon  \
-		--without-libs \
-		--without-gui
-}
-
-src_install() {
-	emake DESTDIR="${D}" install
-
-	dodoc doc/README.md doc/release-notes.md
-	dodoc doc/assets-attribution.md doc/tor.md
+	bitcoincore_conf \
+		--with-utils
 }

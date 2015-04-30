@@ -1,9 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-tcpwrap/ruby-tcpwrap-0.6-r2.ebuild,v 1.3 2014/10/11 05:36:24 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-tcpwrap/ruby-tcpwrap-0.6-r2.ebuild,v 1.7 2015/04/26 16:19:20 pacho Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21"
+
+# ruby22 -> Does not compile
+USE_RUBY="ruby19 ruby20"
 
 inherit ruby-ng
 
@@ -13,7 +15,7 @@ SRC_URI="http://shugo.net/archive/ruby-tcpwrap/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~mips ~ppc ~x86"
+KEYWORDS="amd64 ~hppa ~mips ~ppc x86"
 IUSE=""
 
 DEPEND+=" net-libs/libident

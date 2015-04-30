@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/icnc/icnc-1.0.100.ebuild,v 1.1 2014/12/08 19:03:02 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/icnc/icnc-1.0.100.ebuild,v 1.3 2015/03/06 22:05:30 ottxor Exp $
 
 EAPI=5
 
@@ -32,6 +32,7 @@ RDEPEND="
 	"
 DEPEND="
 	${RDEPEND}
+	doc? ( app-doc/doxygen )
 	test? ( ${PYTHON_DEPS} )
 	"
 
@@ -39,6 +40,7 @@ src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use mpi BUILD_LIBS_FOR_MPI)
 		-DLIB=$(get_libdir)
+		$(cmake-utils_use_find_package doc Doxygen)
 	)
 	cmake-utils_src_configure
 	if use test ; then
@@ -64,8 +66,7 @@ src_install() {
 		insinto /usr/share/doc/${P}/html
 		doins -r "${ED}"/usr/doc/api/*
 	fi
-	rm -r "${ED}"/usr/doc/api || die
-	rmdir "${ED}"/usr/doc || die
+	rm -fr "${ED}"/usr/doc
 	if use examples ; then
 		insinto /usr/share/${PN}/examples
 		doins -r "${ED}"/usr/samples/*

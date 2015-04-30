@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tix/tix-8.4.3-r1.ebuild,v 1.8 2014/08/09 10:47:46 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tix/tix-8.4.3-r1.ebuild,v 1.10 2015/04/04 08:08:45 jer Exp $
 
 EAPI=5
 
@@ -14,12 +14,12 @@ SRC_URI="mirror://sourceforge/tix/${MY_P}-src.tar.gz"
 IUSE=""
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
 
 RESTRICT="test"
 
 DEPEND="
-	dev-lang/tk
+	dev-lang/tk:0=
 	x11-libs/libX11
 	x11-libs/libXau
 	x11-libs/libXdmcp"

@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/rtl-sdr/rtl-sdr-9999.ebuild,v 1.8 2014/12/23 18:17:11 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/rtl-sdr/rtl-sdr-9999.ebuild,v 1.9 2015/03/21 20:15:48 zerochaos Exp $
 
 EAPI=5
 
-inherit autotools
+inherit cmake-utils multilib
 
 DESCRIPTION="turns your Realtek RTL2832 based DVB dongle into a SDR receiver"
 HOMEPAGE="http://sdr.osmocom.org/trac/wiki/rtl-sdr"
@@ -23,10 +23,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-RDEPEND="virtual/libusb:1"
-DEPEND="${RDEPEND}"
-
-DOCS=( ${PN}.rules )
+DEPEND="virtual/libusb:1"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	if [[ ${PV} == 9999* ]]; then
@@ -36,21 +34,17 @@ src_unpack() {
 	fi
 }
 
-src_prepare() {
-	sed -i "s:pkgdocdir:docdir:g" Makefile.am || die
-	eautoreconf
-}
-
 src_configure() {
-	econf --docdir="/usr/share/doc/${PF}"
+	#the udev rules are 666, we don't want that
+	mycmakeargs=(
+		-DINSTALL_UDEV_RULES=OFF
+		-DDETACH_KERNEL_DRIVER=ON
+		-DLIB_INSTALL_DIR=/usr/$(get_libdir)
+	)
+	cmake-utils_src_configure
 }
 
 pkg_postinst() {
-	local rulesfiles=( "${EPREFIX}"/etc/udev/rules.d/*${PN}.rules )
-	if [[ ! -f ${rulesfiles} ]]; then
-		elog "By default, only users in the usb group can capture."
-		elog "Just run 'gpasswd -a <USER> usb', then have <USER> re-login."
-		elog "Or the device can be WORLD readable and writable by installing ${PN}.rules"
-		elog "from the documentation directory to ${EPREFIX}/etc/udev/rules.d/"
-	fi
+	elog "Only users in the usb group can capture."
+	elog "Just run 'gpasswd -a <USER> usb', then have <USER> re-login."
 }

@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python3-openid/python3-openid-3.0.4_p1.ebuild,v 1.1 2014/08/30 14:06:40 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python3-openid/python3-openid-3.0.4_p1.ebuild,v 1.3 2015/04/08 08:05:24 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{3_3,3_4} )
 
 inherit vcs-snapshot distutils-r1
 
@@ -15,7 +15,7 @@ SRC_URI="https://github.com/necaris/${PN}/archive/47a15d30b962a4316473ae9909b340
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="examples test"
 
 DEPEND=""

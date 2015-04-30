@@ -1,6 +1,61 @@
 # ChangeLog for sys-apps/ucspi-ssl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ucspi-ssl/ChangeLog,v 1.28 2014/08/10 20:25:24 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ucspi-ssl/ChangeLog,v 1.43 2015/04/26 16:59:06 pacho Exp $
+
+  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> ucspi-ssl-0.94-r1.ebuild:
+  ppc stable wrt bug #516868
+
+  21 Apr 2015; Jeroen Roovers <jer@gentoo.org> ucspi-ssl-0.94-r1.ebuild:
+  Stable for PPC64 (bug #516868).
+
+  20 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ucspi-ssl-0.94-r1.ebuild:
+  Stable for alpha/amd64/ia64/x86 wrt bug #516868
+
+  20 Apr 2015; Jeroen Roovers <jer@gentoo.org> ucspi-ssl-0.94-r1.ebuild:
+  Stable for HPPA (bug #516868).
+
+  20 Apr 2015; Jeroen Roovers <jer@gentoo.org> ucspi-ssl-0.94-r1.ebuild,
+  -files/ucspi-ssl-0.94-verbose.patch:
+  sed/echo must die(). Drop ineffective sed script. Add dev-lang/perl
+  dependency (bug #547156).
+
+  20 Apr 2015; Ian Delaney <idella4@gentoo.org> ucspi-ssl-0.94-r1.ebuild:
+  drop use of patch, add sed stmnt from patch supplied by maintainer in
+  attachment of Bug #516868 wrt bug #545682
+
+*ucspi-ssl-0.94-r1 (19 Apr 2015)
+
+  19 Apr 2015; Ian Delaney <idella4@gentoo.org> +ucspi-ssl-0.94-r1.ebuild,
+  +files/ucspi-ssl-0.94-verbose.patch:
+  revbump; patch to fix deficit in qmail eclass wrt Bugs #516868 #546992
+
+  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ucspi-ssl-0.94.ebuild:
+  Stable for ia64, wrt bug #516868
+
+  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ucspi-ssl-0.94.ebuild:
+  Stable for alpha, wrt bug #516868
+
+  09 Apr 2015; Denis Dupeyron <calchan@gentoo.org> Manifest:
+  Fix bad Manifest.
+
+  09 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ucspi-ssl-0.94.ebuild:
+  Stable for x86, wrt bug #516868
+
+  09 Apr 2015; Jeroen Roovers <jer@gentoo.org> ucspi-ssl-0.94.ebuild:
+  Drop trailing '.' from DESCRIPTION.
+
+  03 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ucspi-ssl-0.94.ebuild:
+  Stable for amd64, wrt bug #516868
+
+  03 Apr 2015; Ian Delaney <idella4@gentoo.org> metadata.xml,
+  ucspi-ssl-0.94.ebuild:
+  set Alex Efros as proxy maintainer in metadata.xml, fix slot issue for dep
+  dev-libs/openssl
+
+*ucspi-ssl-0.94 (03 Apr 2015)
+
+  03 Apr 2015; Ian Delaney <idella4@gentoo.org> +ucspi-ssl-0.94.ebuild:
+  bump; ebuild preapred by Alex Efros in Bug #516868
 
   10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> ucspi-ssl-0.70-r1.ebuild:
   QA: drop trailing '.' from DESCRIPTION

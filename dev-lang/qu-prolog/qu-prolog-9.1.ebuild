@@ -1,14 +1,14 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/qu-prolog/qu-prolog-9.1.ebuild,v 1.7 2013/04/12 22:44:57 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/qu-prolog/qu-prolog-9.1.ebuild,v 1.8 2015/03/21 15:29:49 jlec Exp $
 
 EAPI=2
 
-inherit eutils qt4-r2
+inherit eutils multilib qmake-utils
 
 MY_P=qp${PV}
 
-DESCRIPTION="Qu-Prolog is an extended Prolog supporting quantifiers, object-variables and substitutions"
+DESCRIPTION="Extended Prolog supporting quantifiers, object-variables and substitutions"
 HOMEPAGE="http://www.itee.uq.edu.au/~pjr/HomePages/QuPrologHome.html"
 SRC_URI="http://www.itee.uq.edu.au/~pjr/HomePages/QPFiles/${MY_P}.tar.gz"
 
@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="debug doc examples pedro qt4 readline threads"
 
-RDEPEND="!dev-util/mpatch
+RDEPEND="
+	!dev-util/mpatch
 	!dev-util/rej
 	qt4? ( dev-qt/qtgui:4 )
 	pedro? ( net-misc/pedro )
@@ -29,10 +30,11 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}"/${MY_P}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-portage.patch
-	epatch "${FILESDIR}"/${P}-cflags.patch
-	epatch "${FILESDIR}"/${P}-cerr-ptr.patch
-	epatch "${FILESDIR}"/${P}-gcc.patch
+	epatch \
+		"${FILESDIR}"/${P}-portage.patch \
+		"${FILESDIR}"/${P}-cflags.patch \
+		"${FILESDIR}"/${P}-cerr-ptr.patch \
+		"${FILESDIR}"/${P}-gcc.patch
 }
 
 src_configure() {
@@ -42,7 +44,7 @@ src_configure() {
 		$(use_enable threads multiple-threads)
 
 	if use qt4; then
-		cd "${S}"/src/xqp
+		cd "${S}"/src/xqp || die
 		eqmake4 xqp.pro
 	fi
 }
@@ -51,7 +53,7 @@ src_compile() {
 	emake || die "emake failed"
 
 	if use qt4; then
-		cd "${S}"/src/xqp
+		cd "${S}"/src/xqp || die
 		emake || die "emake xqp failed"
 	fi
 }
@@ -60,13 +62,12 @@ src_install() {
 	sed -i -e "s|${S}|/usr/$(get_libdir)/qu-prolog|g" \
 		bin/qc bin/qc1.qup bin/qecat bin/qg bin/qp || die
 
-	exeinto /usr/bin
-	doexe bin/qa bin/qdeal bin/qem bin/ql || die
-	doexe bin/qc bin/qc1.qup bin/qecat bin/qg bin/qp bin/qppp || die
-	doexe bin/kq || die
+	dobin bin/qa bin/qdeal bin/qem bin/ql || die
+	dobin bin/qc bin/qc1.qup bin/qecat bin/qg bin/qp bin/qppp || die
+	dobin bin/kq || die
 
 	if use qt4; then
-		doexe src/xqp/xqp || die
+		dobin src/xqp/xqp || die
 	fi
 
 	insinto /usr/$(get_libdir)/${PN}/bin

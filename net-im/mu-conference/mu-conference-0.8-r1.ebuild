@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/mu-conference/mu-conference-0.8-r1.ebuild,v 1.3 2014/08/05 18:34:10 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/mu-conference/mu-conference-0.8-r1.ebuild,v 1.4 2015/03/21 19:12:17 jlec Exp $
 
 EAPI=5
 
@@ -15,8 +15,9 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 SLOT="0"
 IUSE="mysql"
 
-RDEPEND="dev-libs/expat
-	>=dev-libs/glib-2
+RDEPEND="
+	dev-libs/expat
+	>=dev-libs/glib-2:2
 	net-dns/libidn
 	net-im/jabberd2
 	mysql? ( virtual/mysql )"
@@ -45,8 +46,7 @@ src_prepare() {
 }
 
 src_install() {
-	exeinto /usr/bin
-	doexe src/mu-conference
+	dobin src/mu-conference
 	fowners jabber:jabber /usr/bin/mu-conference
 	fperms 750 /usr/bin/mu-conference
 
@@ -79,10 +79,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog
+	echo
 	elog "For jabberd-2 connection:"
 	elog "1. Make sure that the ip and port in /etc/jabber/mu-conference.xml"
 	elog "   match the address of your jabberd router."
 	elog "2. Set a common secret in mu-conference.xml and router.xml"
-	elog
+	echo
 }

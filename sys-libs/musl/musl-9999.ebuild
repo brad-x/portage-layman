@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/musl-9999.ebuild,v 1.12 2014/11/18 18:26:22 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/musl-9999.ebuild,v 1.19 2015/04/18 11:24:34 blueness Exp $
 
 EAPI=5
 
@@ -13,8 +13,8 @@ fi
 export CBUILD=${CBUILD:-${CHOST}}
 export CTARGET=${CTARGET:-${CHOST}}
 if [[ ${CTARGET} == ${CHOST} ]] ; then
-	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
-		export CTARGET=${CATEGORY/cross-}
+	if [[ ${CATEGORY} == cross-* ]] ; then
+		export CTARGET=${CATEGORY#cross-}
 	fi
 fi
 
@@ -26,13 +26,11 @@ if [[ ${PV} != "9999" ]] ; then
 	KEYWORDS="-* ~amd64 ~arm ~mips ~ppc ~x86"
 fi
 
-LICENSE="MIT"
+LICENSE="MIT LGPL-2 GPL-2"
 SLOT="0"
 IUSE="crosscompile_opts_headers-only"
 
-if [[ ${CATEGORY} != cross-* ]] ; then
-	RDEPEND+=" sys-apps/getent"
-fi
+RDEPEND="!sys-apps/getent"
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -57,9 +55,12 @@ src_configure() {
 	tc-getCC ${CTARGET}
 	just_headers && export CC=true
 
+	local sysroot
+	is_crosscompile && sysroot=/usr/${CTARGET}
 	./configure \
-		--target="${CTARGET}" \
-		--prefix="/usr" \
+		--target=${CTARGET} \
+		--prefix=${sysroot}/usr \
+		--syslibdir=${sysroot}/lib \
 		--disable-gcc-wrapper
 }
 
@@ -71,18 +72,24 @@ src_compile() {
 }
 
 src_install() {
-	local sysroot=${D}
-	is_crosscompile && sysroot+="/usr/${CTARGET}"
-
 	local target="install"
 	just_headers && target="install-headers"
-	emake DESTDIR="${sysroot}" ${target} || die
+	emake DESTDIR="${D}" ${target} || die
+	just_headers && return 0
 
-	# Make sure we install the sys-include symlink so that when
-	# we build a 2nd stage cross-compiler, gcc finds the target
-	# system headers correctly.  See gcc/doc/gccinstall.info
-	if is_crosscompile ; then
-		dosym usr/include /usr/${CTARGET}/sys-include
+	# musl provides ldd via a sym link to its ld.so
+	local sysroot
+	is_crosscompile && sysroot=/usr/${CTARGET}
+	local ldso=$(basename "${D}"${sysroot}/lib/ld-musl-*)
+	dosym ${sysroot}/lib/${ldso} ${sysroot}/usr/bin/ldd
+
+	if [[ ${CATEGORY} != cross-* ]] ; then
+		into /usr
+		dobin "${FILESDIR}"/getent
+		into /
+		dosbin "${FILESDIR}"/ldconfig
+		echo 'LDPATH="include ld.so.conf.d/*.conf"' > "${T}"/00musl
+		doenvd "${T}"/00musl || die
 	fi
 }
 
@@ -91,8 +98,6 @@ pkg_postinst() {
 
 	[ "${ROOT}" != "/" ] && return 0
 
-	# TODO: musl doesn't use ldconfig, instead here we can
-	# create sym links to libraries outside of /lib and /usr/lib
 	ldconfig
 	# reload init ...
 	/sbin/telinit U 2>/dev/null

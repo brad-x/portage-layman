@@ -1,6 +1,31 @@
 # ChangeLog for app-crypt/qca
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/ChangeLog,v 1.101 2015/02/02 16:39:28 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/ChangeLog,v 1.107 2015/04/02 14:06:37 kensington Exp $
+
+  02 Apr 2015; Michael Palimaka <kensington@gentoo.org>
+  +files/qca-2.1.0.3-qt55.patch, qca-2.1.0.3.ebuild:
+  Backport patch from upstream to solve build failure with Qt 5.5 wrt bug
+  #543622.
+
+  04 Mar 2015; Michael Palimaka <kensington@gentoo.org> qca-2.0.3-r1.ebuild:
+  Pull in OpenSSL plugin by default.
+
+  02 Mar 2015; Yixun Lan <dlan@gentoo.org> qca-2.1.0.3.ebuild:
+  add arm64 support, tested on A53 board
+
+  21 Feb 2015; Michał Górny <mgorny@gentoo.org> -qca-2.0.3.ebuild,
+  qca-2.0.3-r1.ebuild:
+  Transfer stable keywords. Remove old.
+
+  21 Feb 2015; Jeroen Roovers <jer@gentoo.org> qca-2.0.3-r1.ebuild:
+  Drop HPPA.
+
+*qca-2.0.3-r1 (21 Feb 2015)
+
+  21 Feb 2015; Michał Górny <mgorny@gentoo.org> +qca-2.0.3-r1.ebuild:
+  Add USE flags for plugins that were integrated in the newer qca version. The
+  USE flags pull the plugins implicitly making it easier to create useful deps
+  on qca with plugins. Patch prepared by Roman Kuzmitsky (damex).
 
   02 Feb 2015; Jeroen Roovers <jer@gentoo.org> qca-2.1.0.3.ebuild:
   Marked ~hppa (bug #538550).

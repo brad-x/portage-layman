@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mozart/mozart-1.4.0-r2.ebuild,v 1.6 2012/08/22 10:42:47 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mozart/mozart-1.4.0-r2.ebuild,v 1.7 2015/03/25 12:27:23 jlec Exp $
 
 EAPI="2"
 
@@ -9,25 +9,30 @@ inherit elisp-common eutils
 PATCHSET_VER="5"
 MY_P="mozart-${PV}.20080704"
 
-DESCRIPTION="Mozart is an advanced development platform for intelligent, distributed applications"
+DESCRIPTION="Advanced development platform for intelligent, distributed applications"
 HOMEPAGE="http://www.mozart-oz.org/"
-SRC_URI="http://www.mozart-oz.org/download/mozart-ftp/store/1.4.0-2008-07-02-tar/mozart-1.4.0.20080704-src.tar.gz
+SRC_URI="
+	http://www.mozart-oz.org/download/mozart-ftp/store/1.4.0-2008-07-02-tar/mozart-1.4.0.20080704-src.tar.gz
 	mirror://gentoo/${P}-gentoo-patchset-${PATCHSET_VER}.tar.gz
 	doc? ( http://www.mozart-oz.org/download/mozart-ftp/store/1.4.0-2008-07-02-tar/mozart-1.4.0.20080704-doc.tar.gz )"
-LICENSE="Mozart"
 
 SLOT="0"
+LICENSE="Mozart"
 KEYWORDS="-amd64 ppc -ppc64 x86"
 IUSE="doc emacs examples gdbm static tcl threads tk"
 
-RDEPEND="dev-lang/perl
+RDEPEND="
+	dev-lang/perl
 	dev-libs/gmp
 	sys-libs/zlib
 	emacs? ( virtual/emacs )
 	gdbm? ( sys-libs/gdbm  )
-	tcl? ( tk? (
-			dev-lang/tk
-			dev-lang/tcl ) )"
+	tcl? (
+		tk? (
+			dev-lang/tk:0
+			dev-lang/tcl:0
+		)
+	)"
 DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"

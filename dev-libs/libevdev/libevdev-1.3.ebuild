@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libevdev/libevdev-1.3.ebuild,v 1.2 2015/01/25 16:45:42 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libevdev/libevdev-1.3.ebuild,v 1.13 2015/04/08 17:51:55 mgorny Exp $
 
 EAPI=5
 XORG_MULTILIB=yes
-PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit python-any-r1 xorg-2
 
@@ -19,7 +19,7 @@ else
 fi
 
 RESTRICT="test" # Tests need to run as root.
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 ~sh sparc x86"
 IUSE=""
 
 DEPEND="${PYTHON_DEPS}"

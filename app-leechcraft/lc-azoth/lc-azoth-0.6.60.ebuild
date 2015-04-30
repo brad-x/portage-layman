@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-leechcraft/lc-azoth/lc-azoth-0.6.60.ebuild,v 1.4 2015/01/28 22:29:09 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-leechcraft/lc-azoth/lc-azoth-0.6.60.ebuild,v 1.6 2015/03/02 19:08:06 maksbotan Exp $
 
 EAPI="5"
 
@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="debug doc astrality +acetamide +adiumstyles +autoidler +autopaste +birthdaynotifier
 		+chathistory +crypt +depester +embedmedia +herbicide +hili +isterique
-		+juick +keeso +lastseen	+metacontacts media +msn +murm +latex +nativeemoticons
+		+juick +keeso +lastseen	+metacontacts media +murm +latex +nativeemoticons
 		+otroid +p100q +spell shx +standardstyles +vader +woodpecker +xmpp +xtazy"
 
 COMMON_DEPEND="~app-leechcraft/lc-core-${PV}
@@ -22,7 +22,6 @@ COMMON_DEPEND="~app-leechcraft/lc-core-${PV}
 		astrality? ( net-libs/telepathy-qt )
 		otroid? ( net-libs/libotr )
 		media? ( dev-qt/qtmultimedia:4 )
-		msn? ( net-libs/libmsn )
 		spell? ( app-text/hunspell )
 		woodpecker? ( dev-libs/kqoauth )
 		xmpp? (
@@ -41,12 +40,7 @@ RDEPEND="${COMMON_DEPEND}
 		net-im/telepathy-mission-control
 		net-voip/telepathy-haze
 	)
-	crypt? (
-		|| (
-			app-crypt/qca-gnupg:2
-			app-crypt/qca:2[gpg]
-		)
-	)
+	crypt? ( app-crypt/qca:2[gpg] )
 	latex? (
 		|| (
 			media-gfx/imagemagick
@@ -79,7 +73,6 @@ src_configure() {
 		$(cmake-utils_use_enable metacontacts AZOTH_METACONTACTS)
 		$(cmake-utils_use_enable media MEDIACALLS)
 		$(cmake-utils_use_enable latex AZOTH_MODNOK)
-		$(cmake-utils_use_enable msn AZOTH_ZHEET)
 		$(cmake-utils_use_enable murm AZOTH_MURM)
 		$(cmake-utils_use_enable nativeemoticons AZOTH_NATIVEEMOTICONS)
 		$(cmake-utils_use_enable otroid AZOTH_OTROID)

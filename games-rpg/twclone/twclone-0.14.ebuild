@@ -1,7 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/twclone/twclone-0.14.ebuild,v 1.5 2006/11/24 16:00:15 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/twclone/twclone-0.14.ebuild,v 1.7 2015/03/24 17:25:31 ago Exp $
 
+EAPI=5
 inherit games
 
 MY_P="${PN}-source-${PV}"
@@ -11,14 +12,14 @@ SRC_URI="mirror://sourceforge/twclone/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog PROTOCOL README TODO
+	DOCS="AUTHORS ChangeLog PROTOCOL README TODO" \
+		default
 	cd "${D}/${GAMES_BINDIR}"
 	for f in * ; do
 		mv {,${PN}-}${f}

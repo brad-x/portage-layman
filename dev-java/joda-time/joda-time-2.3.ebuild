@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/joda-time/joda-time-2.3.ebuild,v 1.2 2014/08/10 20:19:22 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/joda-time/joda-time-2.3.ebuild,v 1.3 2015/03/23 09:34:04 monsieurp Exp $
 
 EAPI="5"
 JAVA_PKG_IUSE="doc examples source test"

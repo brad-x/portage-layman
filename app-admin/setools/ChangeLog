@@ -1,6 +1,34 @@
 # ChangeLog for app-admin/setools
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/ChangeLog,v 1.93 2014/08/05 10:06:33 swift Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/setools/ChangeLog,v 1.100 2015/04/18 22:02:57 perfinion Exp $
+
+  18 Apr 2015; Jason Zaman <perfinion@gentoo.org> setools-3.3.8-r7.ebuild:
+  Cleanup deps
+
+  16 Mar 2015; Mike Frysinger <vapier@gentoo.org> setools-3.3.8-r5.ebuild,
+  setools-3.3.8-r7.ebuild:
+  Use new toolchain helpers for selecting the bfd linker #467136 by Amadeusz
+  Sławiński. Clean up quoting/redundant die/semicolons too.
+
+  03 Mar 2015; Sven Vermeulen <swift@gentoo.org> setools-3.3.8-r7.ebuild:
+  Fix bug #542032 - SWIG version check does not work
+
+  02 Mar 2015; Sven Vermeulen <swift@gentoo.org> -setools-3.3.8-r6.ebuild:
+  Drop r6 (build failure with swig, fixed in r7)
+
+  18 Feb 2015; Jason Zaman <perfinion@gentoo.org> setools-3.3.8-r7.ebuild:
+  re-add keywords to -r7
+
+*setools-3.3.8-r7 (17 Feb 2015)
+
+  17 Feb 2015; Jason Zaman <perfinion@gentoo.org> +setools-3.3.8-r7.ebuild:
+  revbump with swig patches, dropping keywords for testing
+
+*setools-3.3.8-r6 (12 Feb 2015)
+
+  12 Feb 2015; Jason Zaman <perfinion@gentoo.org>
+  +files/setools3-userspace-2.4-compatibility.patch, +setools-3.3.8-r6.ebuild:
+  fix compile error with 2.4 userland, bug 539462
 
   05 Aug 2014; Sven Vermeulen <swift@gentoo.org> -setools-3.3.8-r2.ebuild,
   -setools-3.3.8-r4.ebuild:

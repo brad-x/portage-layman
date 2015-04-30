@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hpricot/hpricot-0.8.6-r3.ebuild,v 1.2 2014/08/05 16:00:48 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hpricot/hpricot-0.8.6-r3.ebuild,v 1.4 2015/04/07 18:57:22 graaff Exp $
 
 EAPI=5
 
-USE_RUBY="ruby19 ruby20 ruby21 jruby"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG README.md"
@@ -22,15 +22,11 @@ IUSE=""
 ruby_add_bdepend "dev-ruby/rake
 	dev-ruby/rake-compiler"
 
-# dev-ruby/fast_xs does not cover JRuby so still bundle it here for now
-USE_RUBY="${USE_RUBY/jruby/}" \
-	ruby_add_rdepend "dev-ruby/fast_xs"
+ruby_add_rdepend "dev-ruby/fast_xs"
 
 # Probably needs the same jdk as JRuby but I'm not sure how to express
 # that just yet.
-DEPEND+="
-	dev-util/ragel
-	ruby_targets_jruby? ( >=virtual/jdk-1.5 )"
+DEPEND+=" dev-util/ragel"
 
 all_ruby_prepare() {
 	sed -i -e '/[Bb]undler/ s:^:#:' Rakefile || die
@@ -38,32 +34,23 @@ all_ruby_prepare() {
 	# Fix encoding assumption of environment for Ruby 1.9.
 	# https://github.com/hpricot/hpricot/issues/52
 	# sed -i -e '1 iEncoding.default_external=Encoding::UTF_8 if RUBY_VERSION =~ /1.9/' test/load_files.rb || die
+
+	# Avoid unneeded dependency on git.
+	sed -i -e '/^REV/ s/.*/REV = "6"/' Rakefile || die
 }
 
 each_ruby_prepare() {
-	# dev-ruby/fast_xs does not cover JRuby so still bundle it here for now
-	[[ ${RUBY} == */jruby ]] && return
-
 	pushd .. &>/dev/null
 	epatch "${FILESDIR}"/${P}-fast_xs.patch
 	popd .. &>/dev/null
 }
 
 each_ruby_configure() {
-	# dev-ruby/fast_xs does not cover JRuby so still bundle it here for now
-	[[ ${RUBY} == */jruby ]] && return
-
 	${RUBY} -Cext/hpricot_scan extconf.rb || die "hpricot_scan/extconf.rb failed"
 }
 
 each_ruby_compile() {
 	local modname=$(get_modname)
-
-	# dev-ruby/fast_xs does not cover JRuby so still bundle it here for now
-	if [[ ${RUBY} == */jruby ]]; then
-		${RUBY} -S rake compile_java || die "rake compile_java failed"
-		return
-	fi
 
 	emake V=1 -Cext/hpricot_scan CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}" || die "make hpricot_scan failed"
 	cp ext/hpricot_scan/hpricot_scan${modname} lib/ || die

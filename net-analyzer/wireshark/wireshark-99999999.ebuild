@@ -1,9 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-99999999.ebuild,v 1.8 2015/01/28 23:04:20 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-99999999.ebuild,v 1.12 2015/04/20 04:41:52 jer Exp $
 
 EAPI=5
-inherit autotools eutils fcaps git-r3 multilib qt4-r2 user
+inherit autotools eutils fcaps git-r3 multilib qmake-utils qt4-r2 user
 
 DESCRIPTION="A network protocol analyzer formerly known as ethereal"
 HOMEPAGE="http://www.wireshark.org/"
@@ -98,9 +98,8 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.6.13-ldflags.patch \
 		"${FILESDIR}"/${PN}-1.11.0-oldlibs.patch \
 		"${FILESDIR}"/${PN}-1.11.3-gtk-deprecated-warnings.patch \
-		"${FILESDIR}"/${PN}-1.99.0.1975-gcc_option.patch \
 		"${FILESDIR}"/${PN}-1.99.0.1975-sse4_2.patch \
-		"${FILESDIR}"/${PN}-1.99.0-qt5.patch
+		"${FILESDIR}"/${PN}-99999999-pkgconfig.patch
 
 	epatch_user
 
@@ -137,6 +136,14 @@ src_configure() {
 	use doc || export ac_cv_prog_HAVE_DOXYGEN=false
 	use doc-pdf || export ac_cv_prog_HAVE_FOP=false
 
+	if use qt4; then
+		myconf+=" --with-qt=4"
+	elif use qt5; then
+		myconf+=" --with-qt=5"
+	else
+		myconf+=" --with-qt=no"
+	fi
+
 	# dumpcap requires libcap
 	# --disable-profile-build bugs #215806, #292991, #479602
 	econf \
@@ -151,10 +158,10 @@ src_configure() {
 		$(use_with pcap dumpcap-group wireshark) \
 		$(use_with pcap) \
 		$(use_with portaudio) \
-		$(use_with qt4) \
-		$(use_with qt5) \
-		$(usex qt5 MOC=/usr/$(get_libdir)/qt5/bin/moc '') \
-		$(usex qt5 UIC=/usr/$(get_libdir)/qt5/bin/uic '') \
+		$(usex qt4 MOC=$(qt4_get_bindir)/moc '') \
+		$(usex qt4 UIC=$(qt4_get_bindir)/uic '') \
+		$(usex qt5 MOC=$(qt5_get_bindir)/moc '') \
+		$(usex qt5 UIC=$(qt5_get_bindir)/uic '') \
 		$(use_with sbc) \
 		$(use_with smi libsmi) \
 		$(use_with ssl gnutls) \

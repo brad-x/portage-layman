@@ -1,14 +1,14 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/fuse-python/fuse-python-0.2.1-r1.ebuild,v 1.1 2014/04/11 22:28:44 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/fuse-python/fuse-python-0.2.1-r1.ebuild,v 1.4 2015/04/19 09:37:40 pacho Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} pypy )
+PYTHON_COMPAT=( python2_7 pypy )
 
 inherit distutils-r1
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 DESCRIPTION="Python FUSE bindings"
 HOMEPAGE="http://fuse.sourceforge.net/wiki/index.php/FusePython"
 

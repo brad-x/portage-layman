@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/polipo/polipo-9999.ebuild,v 1.3 2015/01/09 00:13:32 bircoph Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/polipo/polipo-9999.ebuild,v 1.4 2015/03/30 11:25:00 bircoph Exp $
 
 EAPI="5"
 
@@ -14,12 +14,13 @@ else
 	KEYWORDS="~amd64 ~x86"
 fi
 
-inherit ${_GIT} toolchain-funcs user
+inherit ${_GIT} toolchain-funcs user systemd
 
 DESCRIPTION="A caching web proxy"
 HOMEPAGE="http://www.pps.jussieu.fr/~jch/software/polipo/"
 LICENSE="MIT GPL-2"
 SLOT="0"
+IUSE="systemd"
 
 DEPEND="sys-apps/texinfo"
 RDEPEND=""
@@ -39,18 +40,23 @@ src_install() {
 
 	newinitd "${FILESDIR}/${PN}.initd-2" ${PN}
 	insinto /etc/${PN} ; doins "${FILESDIR}/config"
-	exeinto /etc/cron.weekly ; newexe "${FILESDIR}/${PN}.crond-2" ${PN}
+	systemd_newunit "${FILESDIR}/${PN}_at.service" "${PN}@.service"
+	if ! use systemd; then
+		exeinto /etc/cron.weekly ; newexe "${FILESDIR}/${PN}.crond-2" ${PN}
+	fi
 
 	dodoc CHANGES README
 	dohtml html/*
 }
 
 pkg_postinst() {
-	einfo "Do not forget to read the manual."
-	einfo "Change the config file in /etc/${PN} to suit your needs."
-	einfo ""
-	einfo "Polipo OpenRC init scripts can now be multiplexed:"
-	einfo "1. create /etc/${PN}/config.foo"
-	einfo "2. symlink /etc/init.d/{${PN}.foo -> ${PN}}"
-	einfo "3. make sure all instances use unique ip:port pair and cachedir, if any"
+	elog "Do not forget to read the manual."
+	elog "Change the config file in /etc/${PN} to suit your needs."
+	elog ""
+	elog "Polipo init scripts can now be multiplexed:"
+	elog "1. create /etc/${PN}/config.foo"
+	elog "2. symlink /etc/init.d/{${PN}.foo -> ${PN}}"
+	elog "  a. if you are using OpenRC, symlink /etc/init.d/{${PN}.foo -> ${PN}}"
+	elog "  b. if you are using systemd, execute \"systemctl enable polipo@config.foo\""
+	elog "3. make sure all instances use unique ip:port pair and cachedir, if any"
 }

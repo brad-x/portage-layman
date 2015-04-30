@@ -1,9 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/ntfs3g-2014.2.15.ebuild,v 1.5 2015/02/01 21:05:36 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/ntfs3g-2014.2.15.ebuild,v 1.11 2015/03/16 21:16:56 vapier Exp $
 
 EAPI=5
-inherit eutils linux-info udev
+inherit eutils linux-info udev toolchain-funcs
 
 MY_PN=${PN/3g/-3g}
 MY_P=${MY_PN}_ntfsprogs-${PV}
@@ -14,7 +14,7 @@ SRC_URI="http://tuxera.com/opensource/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm ppc ppc64 sparc x86 ~amd64-linux ~arm-linux ~x86-linux"
 IUSE="acl debug +external-fuse ntfsdecrypt +ntfsprogs static-libs suid xattr"
 
 RDEPEND="!<sys-apps/util-linux-2.20.1-r2
@@ -84,7 +84,7 @@ src_install() {
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		# Bug 450024
-		if $(tc-getLD) --version | grep -q "GNU gold"; then
+		if tc-ld-is-gold; then
 			eerror "ntfs-3g does not function correctly when built with the gold linker."
 			eerror "Please select the bfd linker with binutils-config."
 			die "GNU gold detected"

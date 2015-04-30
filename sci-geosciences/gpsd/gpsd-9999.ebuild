@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-9999.ebuild,v 1.18 2014/10/30 21:20:36 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-9999.ebuild,v 1.21 2015/04/08 18:49:14 mgorny Exp $
 
 EAPI="5"
 
 DISTUTILS_OPTIONAL=1
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 SCONS_MIN_VERSION="1.2.1"
 
 inherit eutils udev user multilib distutils-r1 scons-utils toolchain-funcs
@@ -27,8 +27,8 @@ SLOT="0"
 GPSD_PROTOCOLS=(
 	aivdm ashtech earthmate evermore fury fv18 garmin garmintxt
 	geostar gpsclock itrax mtk3301 navcom nmea0183 nmea2000 ntrip
-	oceanserver oncore rtcm104v2 rtcm104v3 sirf superstar2 tnt
-	tripmate tsip ublox
+	oceanserver oncore passthrough rtcm104v2 rtcm104v3 sirf superstar2
+	tnt tripmate tsip ublox
 )
 IUSE_GPSD_PROTOCOLS=${GPSD_PROTOCOLS[@]/#/gpsd_protocols_}
 IUSE="${IUSE_GPSD_PROTOCOLS} bluetooth cxx debug dbus ipv6 latency_timing ncurses ntp python qt4 +shm +sockets static test udev usb X"
@@ -71,7 +71,6 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-3.8-ldflags.patch
 	epatch "${FILESDIR}"/${PN}-3.11-rpath.patch
-	epatch "${FILESDIR}"/${PN}-3.11-hotplug-config.patch #511584
 
 	# Avoid useless -L paths to the install dir
 	sed -i \
@@ -85,7 +84,7 @@ python_prepare_all() {
 	python_export_best
 	# Extract python info out of SConstruct so we can use saner distribute
 	pyvar() { sed -n "/^ *$1 *=/s:.*= *::p" SConstruct ; }
-	local pybins=$(pyvar python_progs)
+	local pybins=$(pyvar python_progs | tail -1)
 	local pysrcs=$(sed -n '/^ *python_extensions = {/,/}/{s:^ *::;s:os[.]sep:"/":g;p}' SConstruct)
 	local packet=$("${PYTHON}" -c "${pysrcs}; print(python_extensions['gps/packet'])")
 	local client=$("${PYTHON}" -c "${pysrcs}; print(python_extensions['gps/clienthelpers'])")
@@ -96,7 +95,7 @@ python_prepare_all() {
 		-e "s|@SCRIPTS@|${pybins}|" \
 		-e "s|@GPS_PACKET_SOURCES@|${packet}|" \
 		-e "s|@GPS_CLIENT_SOURCES@|${client}|" \
-		-e "s|@SCRIPTS@|$(pyvar python_progs)|" \
+		-e "s|@SCRIPTS@|${pybins}|" \
 		"${FILESDIR}"/${PN}-3.3-setup.py > setup.py || die
 	distutils-r1_python_prepare_all
 }
@@ -109,7 +108,7 @@ src_configure() {
 		chrpath=False
 		gpsd_user=gpsd
 		gpsd_group=uucp
-		strip=False
+		nostrip=True
 		python=False
 		manbuild=False
 		shared=$(usex !static True False)

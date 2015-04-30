@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/tpg/tpg-3.2.2-r1.ebuild,v 1.2 2014/11/25 12:57:51 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/tpg/tpg-3.2.2-r1.ebuild,v 1.7 2015/04/14 12:51:37 ago Exp $
 
 EAPI=5
 # py2.6 doesn't pass tests
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit distutils-r1
 
@@ -16,7 +16,7 @@ SRC_URI="http://christophe.delord.free.fr/tpg/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="amd64 ia64 ppc x86"
 IUSE="doc examples"
 DOCS=( ChangeLog README THANKS doc/tpg.pdf )
 

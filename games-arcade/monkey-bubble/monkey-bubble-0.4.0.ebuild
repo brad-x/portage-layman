@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/monkey-bubble/monkey-bubble-0.4.0.ebuild,v 1.13 2015/02/06 22:44:25 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/monkey-bubble/monkey-bubble-0.4.0.ebuild,v 1.15 2015/03/24 17:26:48 ago Exp $
 
 EAPI=5
 inherit autotools eutils gnome2
@@ -11,7 +11,7 @@ SRC_URI="http://home.gna.org/monkeybubble/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
@@ -23,7 +23,7 @@ RDEPEND="x11-libs/gtk+:2
 	media-libs/gstreamer:0.10
 	>=dev-libs/libxml2-2.6.7"
 DEPEND="${RDEPEND}
-	app-text/scrollkeeper
+	app-text/rarian
 	app-text/gnome-doc-utils
 	dev-util/intltool"
 
@@ -35,6 +35,10 @@ src_prepare() {
 		"${FILESDIR}"/${P}-glib-single-include.patch
 	# bug 260895
 	sed -i -e 's/ -Werror//' $(find . -name Makefile.am) || die
+	sed -i \
+		-e '/^Icon/s/.png//' \
+		-e '/^Categories/s/Application;//' \
+		monkey-bubble.desktop.in || die
 	AT_NOELIBTOOLIZE=yes eautoreconf
 	gnome2_src_prepare
 }

@@ -1,6 +1,247 @@
 # ChangeLog for sys-kernel/gentoo-sources
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1493 2015/02/07 02:02:36 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1538 2015/04/21 19:10:43 pacho Exp $
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> gentoo-sources-3.18.11.ebuild:
+  ppc stable wrt bug #540866
+
+*gentoo-sources-3.19.5 (20 Apr 2015)
+
+  20 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.5.ebuild:
+  Linux patch 3.19.5
+
+*gentoo-sources-3.14.39 (20 Apr 2015)
+
+  20 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.39.ebuild:
+  Linux patch 3.14.39
+
+*gentoo-sources-3.10.75 (20 Apr 2015)
+
+  20 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.75.ebuild:
+  Linux patch 3.10.75
+
+*gentoo-sources-3.10.74 (14 Apr 2015)
+
+  14 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.74.ebuild:
+  Linux patch 3.10.74. Add check to saved_root_name for supported filesystem
+  path naming.
+
+*gentoo-sources-3.14.38 (14 Apr 2015)
+
+  14 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.38.ebuild:
+  Linux patch 3.14.38. Add check to saved_root_name for supported filesystem
+  path naming.
+
+*gentoo-sources-3.19.4 (14 Apr 2015)
+
+  14 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.4.ebuild:
+  Linux patch 3.19.4. Add check to saved_root_name for supported filesystem
+  path naming.
+
+*gentoo-sources-4.0.0 (13 Apr 2015)
+
+  13 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-4.0.0.ebuild:
+  Linux patch 4.0.0. Add patch to support namespace user.pax.* on tmpfs, bug
+  #470644. Patch to enable link security restrictions by default. Patch to
+  disable Windows 8 compatibility for some Lenovo ThinkPads. Patch to ensure
+  that /dev/root doesn't appear in /proc/mounts when bootint without an
+  initramfs. Path to not not lock when UMH is waiting on current thread spawned
+  by linuxrc. (bug #481344) fbcondecor bootsplash patch. Add Gentoo Linux
+  support config settings and defaults. Kernel patch that enables gcc < v4.9
+  optimizations for additional CPUs. Kernel patch enables gcc >= v4.9
+  optimizations for additional CPUs. Update the distro kernel patch to add an
+  option to the Gentoo menu that enables CGROUPS for cgroup, IPC_NS for
+  ipc-sandbox, and NET_NS for network-sandbox. Update gcc >= 4.9 optimization
+  patch. See bug #544028.
+
+*gentoo-sources-3.12.40 (11 Apr 2015)
+
+  11 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.12.40.ebuild:
+  Linux patch 3.12.40
+
+  06 Apr 2015; Mike Pagano <mpagano@gentoo.org> -gentoo-sources-3.4.105.ebuild,
+  -gentoo-sources-3.10.72.ebuild, gentoo-sources-3.10.73.ebuild,
+  -gentoo-sources-3.12.38.ebuild, gentoo-sources-3.12.39.ebuild,
+  -gentoo-sources-3.14.36.ebuild, gentoo-sources-3.14.37.ebuild,
+  -gentoo-sources-3.17.8-r1.ebuild, gentoo-sources-3.18.11.ebuild,
+  -gentoo-sources-3.19.0.ebuild, -gentoo-sources-3.19.1.ebuild,
+  -gentoo-sources-3.19.2.ebuild:
+  Auto stable kernel versions. Remove old, unsupported versions.
+
+*gentoo-sources-3.18.11 (05 Apr 2015)
+
+  05 Apr 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.18.11.ebuild:
+  Linux patch 3.18.11. Add check to saved_root_name for supported filesystem
+  path naming.
+
+*gentoo-sources-3.12.39 (28 Mar 2015)
+
+  28 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.12.39.ebuild:
+  Linux patch 3.12.39. Add check to saved_root_name for supported filesystem
+  path naming.
+
+*gentoo-sources-3.19.3 (26 Mar 2015)
+
+  26 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.3.ebuild:
+  Linux patch 3.19.3. Update gcc >= 4.9 optimization patch. See bug #544028.
+
+*gentoo-sources-3.14.37 (26 Mar 2015)
+
+  26 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.37.ebuild:
+  Linux patch 3.14.37
+
+*gentoo-sources-3.10.73 (26 Mar 2015)
+
+  26 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.73.ebuild:
+  Linux patch 3.10.73
+
+*gentoo-sources-3.18.10 (25 Mar 2015)
+
+  25 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.18.10.ebuild:
+  Linux patch 3.18.10. Update to the gcc >= 4.9 optimization patch.
+
+  21 Mar 2015; Michael Pagano <mpagano@gentoo.org>
+  -gentoo-sources-3.10.69.ebuild, -gentoo-sources-3.10.70.ebuild,
+  -gentoo-sources-3.10.71.ebuild, gentoo-sources-3.10.72.ebuild:
+  Auto stablize 3.10.72, remove old, unsupported versions.
+
+  21 Mar 2015; Michael Pagano <mpagano@gentoo.org>
+  -gentoo-sources-3.14.33.ebuild, -gentoo-sources-3.14.34.ebuild,
+  -gentoo-sources-3.14.35.ebuild, gentoo-sources-3.14.36.ebuild:
+  Auto stablize 3.14.36, remove old, unsupported versions.
+
+  21 Mar 2015; Michael Pagano <mpagano@gentoo.org>
+  -gentoo-sources-3.18.7.ebuild, -gentoo-sources-3.18.8.ebuild,
+  gentoo-sources-3.18.9.ebuild:
+  Auto stablize 3.18.9, remove old, unsupported versions.
+
+*gentoo-sources-3.10.72 (19 Mar 2015)
+
+  19 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.72.ebuild:
+  Linux patch 3.10.72
+
+*gentoo-sources-3.14.36 (19 Mar 2015)
+
+  19 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.36.ebuild:
+  Linux patch 3.14.36
+
+*gentoo-sources-3.19.2 (19 Mar 2015)
+
+  19 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.2.ebuild:
+  Linux patch 3.19.2. Patch to add an option to the Gentoo menu that enables
+  CGROUPS for cgroup, IPC_NS for ipc-sandbox, and NET_NS for network-sandbox.
+
+*gentoo-sources-3.10.71 (07 Mar 2015)
+
+  07 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.71.ebuild:
+  Linux patch 3.10.71
+
+*gentoo-sources-3.14.35 (07 Mar 2015)
+
+  07 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.35.ebuild:
+   Linux patch 3.14.35. Enable link security restrictions by default.
+
+*gentoo-sources-3.18.9 (07 Mar 2015)
+
+  07 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.18.9.ebuild:
+  Linux patch 3.18.9
+
+*gentoo-sources-3.19.1 (07 Mar 2015)
+
+  07 Mar 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.1.ebuild:
+  Linux patch 3.19.1. Enable link security restrictions by default. BFQ v7r7
+  patches for 3.19. Bootsplash ported by Marco. Add optimization patch for gcc
+  verison = 4.9.
+
+*gentoo-sources-3.10.70 (27 Feb 2015)
+
+  27 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.70.ebuild:
+  Linux patch 3.10.70. Enable link security restrictions by default.
+
+  27 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.34.ebuild:
+  Linux patch 3.14.34. Enable link security restrictions by default.
+
+*gentoo-sources-3.14.34 (27 Feb 2015)
+
+  27 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.34.ebuild:
+  Linux patch 3.14.34. Enable link security restrictions by default.
+
+*gentoo-sources-3.18.8 (27 Feb 2015)
+
+  27 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.18.8.ebuild:
+  Linux patch 3.18.8. Enable link security restrictions by default. Kernel
+  patch enables gcc >= v4.9 optimizations for additional CPUs.
+
+  26 Feb 2015; Jeroen Roovers <jer@gentoo.org> gentoo-sources-3.18.7.ebuild:
+  Stable for HPPA (bug #540866).
+
+  24 Feb 2015; Mike Pagano <mpagano@gentoo.org> -gentoo-sources-3.12.35.ebuild,
+  -gentoo-sources-3.12.37.ebuild, gentoo-sources-3.12.38.ebuild:
+  Auto stabilize 3.12.38. Remove old, unsupported versions.
+
+  24 Feb 2015; Mike Pagano <mpagano@gentoo.org> -gentoo-sources-3.10.67.ebuild,
+  -gentoo-sources-3.10.68.ebuild, -gentoo-sources-3.14.31.ebuild,
+  -gentoo-sources-3.14.32.ebuild, -gentoo-sources-3.18.5.ebuild,
+  -gentoo-sources-3.18.6.ebuild:
+  Cleanup old, unsupported versions.
+
+  24 Feb 2015; Agostino Sarubbo <ago@gentoo.org> gentoo-sources-3.18.7.ebuild:
+  Stable for alpha, wrt bug #540866
+
+  23 Feb 2015; Agostino Sarubbo <ago@gentoo.org>
+  gentoo-sources-3.17.8-r1.ebuild:
+  Stable for ppc64, wrt bug #532934
+
+  21 Feb 2015; Mikle Kolyada <zlogene@gentoo.org> gentoo-sources-3.18.7.ebuild:
+  x86 stable wrt bug #540866
+
+  21 Feb 2015; Mikle Kolyada <zlogene@gentoo.org> gentoo-sources-3.18.7.ebuild:
+  amd64 stable wrt bug #540866
+
+  21 Feb 2015; Mike Pagano <mpagano@gentoo.org> gentoo-sources-3.14.33.ebuild:
+  Auto stabilize 3.14 branch.
+
+  21 Feb 2015; Mike Pagano <mpagano@gentoo.org> gentoo-sources-3.10.69.ebuild:
+  Auto stabilization of the 3.10 branch.
+
+*gentoo-sources-3.12.38 (21 Feb 2015)
+
+  21 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.12.38.ebuild:
+  Linux patch 3.12.38
+
+  11 Feb 2015; Mike Pagano <mpagano@gentoo.org> gentoo-sources-3.10.69.ebuild:
+  Fix genpatches version for 3.10.69
+
+*gentoo-sources-3.10.69 (11 Feb 2015)
+
+  11 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.10.69.ebuild:
+  Linux patch 3.10.69
+
+*gentoo-sources-3.14.33 (11 Feb 2015)
+
+  11 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.14.33.ebuild:
+  Linux patch 3.14.33
+
+*gentoo-sources-3.18.7 (11 Feb 2015)
+
+  11 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.18.7.ebuild:
+  Linux patch 3.18.7
+
+*gentoo-sources-3.12.37 (09 Feb 2015)
+
+  09 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.12.37.ebuild:
+  Linux patches 3.12.36 and 3.12.37. Add DEVPTS_MULTIPLE_INSTANCES when
+  GENTOO_LINUX_INIT_SYSTEMD is selected. See bug #534216.
+
+*gentoo-sources-3.19.0 (09 Feb 2015)
+
+  09 Feb 2015; Mike Pagano <mpagano@gentoo.org> +gentoo-sources-3.19.0.ebuild:
+  Patch to support for namespace user.pax.* on tmpfs. Patch to disable Windows
+  8 compatibility for some Lenovo ThinkPads. Patch to ensure that /dev/root
+  doesn't appear in /proc/mounts when bootint without an initramfs. Patch: Do
+  not lock when UMH is waiting on current thread spawned by linuxrc. (bug
+  #481344). Add Gentoo Linux support config settings and defaults. Kernel patch
+  enables gcc optimizations for additional CPUs.
 
 *gentoo-sources-3.10.68 (07 Feb 2015)
 

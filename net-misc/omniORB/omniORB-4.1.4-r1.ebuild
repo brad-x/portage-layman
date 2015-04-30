@@ -1,24 +1,24 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/omniORB/omniORB-4.1.4-r1.ebuild,v 1.7 2012/02/05 01:53:54 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/omniORB/omniORB-4.1.4-r1.ebuild,v 1.8 2015/04/08 09:25:31 jlec Exp $
 
 EAPI="3"
 
 # 2.5 is problematic due to bug #261330
-PYTHON_DEPEND="2:2.6"
+PYTHON_DEPEND="2:2.7"
 
 inherit python eutils multilib
 
 DESCRIPTION="A robust, high-performance CORBA 2 ORB"
-SRC_URI="mirror://sourceforge/omniorb/${P}.tar.gz"
 HOMEPAGE="http://omniorb.sourceforge.net/"
+SRC_URI="mirror://sourceforge/omniorb/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE="doc ssl"
 
-RDEPEND="ssl? ( >=dev-libs/openssl-0.9.6b )"
+RDEPEND="ssl? ( >=dev-libs/openssl-0.9.6b:0 )"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
@@ -48,12 +48,12 @@ src_configure() {
 }
 
 src_compile() {
-	cd build
+	cd build || die
 	emake OPTCFLAGS="${CFLAGS}" OPTCXXFLAGS="${CXXFLAGS}" || die "emake failed"
 }
 
 src_install() {
-	cd build
+	cd build || die
 	emake DESTDIR="${D}" install || die "emake install failed"
 	# this looks redundant
 	rm "${D}/usr/bin/omniidlrun.py" || die

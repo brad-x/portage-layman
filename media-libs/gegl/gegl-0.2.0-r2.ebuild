@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/gegl-0.2.0-r2.ebuild,v 1.14 2015/01/29 17:33:00 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/gegl-0.2.0-r2.ebuild,v 1.16 2015/04/02 18:49:57 mr_bones_ Exp $
 
 EAPI=5
 
@@ -19,7 +19,7 @@ LICENSE="|| ( GPL-3 LGPL-3 )"
 SLOT="0"
 KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86 ~amd64-fbsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 
-IUSE="cairo debug ffmpeg jpeg jpeg2k lensfun cpu_flags_x86_mmx openexr png raw sdl cpu_flags_x86_sse svg umfpack" # +introspection vala
+IUSE="cairo debug ffmpeg jpeg jpeg2k lensfun libav cpu_flags_x86_mmx openexr png raw sdl cpu_flags_x86_sse svg umfpack" # +introspection vala
 
 RDEPEND="
 	>=media-libs/babl-0.1.10
@@ -28,7 +28,10 @@ RDEPEND="
 	x11-libs/pango
 	sys-libs/zlib
 	cairo? ( x11-libs/cairo )
-	ffmpeg? ( virtual/ffmpeg )
+	ffmpeg? (
+		libav? ( media-video/libav:0= )
+		!libav? ( media-video/ffmpeg:0= )
+	)
 	jpeg? ( virtual/jpeg )
 	jpeg2k? ( >=media-libs/jasper-1.900.1 )
 	openexr? ( media-libs/openexr )
@@ -94,7 +97,7 @@ src_configure() {
 	#  - Parameter --with-exiv2 compiles a noinst-app only, no use
 	#
 	#  - Parameter --disable-workshop disables any use of Lua, effectivly
-	# 
+	#
 	#  - v4l support does not work with our media-libs/libv4l-0.8.9,
 	#    upstream bug at https://bugzilla.gnome.org/show_bug.cgi?id=654675
 	#

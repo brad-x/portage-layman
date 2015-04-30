@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/hivex/hivex-1.3.11.ebuild,v 1.4 2015/01/09 08:34:00 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/hivex/hivex-1.3.11.ebuild,v 1.7 2015/03/26 20:28:10 zerochaos Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ RUBY_OPTIONAL=yes
 
 PYTHON_COMPAT=(python2_7 python3_{3,4})
 
-inherit base autotools  autotools-utils eutils perl-app ruby-ng python-single-r1
+inherit autotools-utils eutils perl-app ruby-ng python-single-r1
 
 DESCRIPTION="Library for reading and writing Windows Registry 'hive' binary files"
 HOMEPAGE="http://libguestfs.org"
@@ -42,9 +42,10 @@ DEPEND="${RDEPEND}
 			dev-perl/Test-Pod-Coverage )
 		  )
 	"
-
-ruby_add_bdepend "ruby? ( dev-ruby/rake )"
-ruby_add_bdepend "ruby? ( dev-ruby/rdoc )"
+ruby_add_bdepend "ruby? ( dev-ruby/rake
+			virtual/rubygems
+			dev-ruby/rdoc )"
+ruby_add_rdepend "ruby? ( virtual/rubygems )"
 
 REQUIRED_USE="python? ( ${PYTHON_REQ_USE} )"
 
@@ -58,7 +59,7 @@ pkg_setup() {
 		python-single-r1_pkg_setup
 	fi
 	if use perl; then
-		perl-module_pkg_setup
+		perl_set_version
 	fi
 }
 
@@ -67,7 +68,7 @@ src_unpack() {
 }
 
 src_prepare() {
-	base_src_prepare
+	epatch_user
 }
 
 src_configure() {

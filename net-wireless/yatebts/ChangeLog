@@ -1,6 +1,34 @@
 # ChangeLog for net-wireless/yatebts
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/yatebts/ChangeLog,v 1.4 2015/01/28 23:02:21 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/yatebts/ChangeLog,v 1.10 2015/02/16 16:44:06 zerochaos Exp $
+
+  16 Feb 2015; Rick Farina <zerochaos@gentoo.org> yatebts-9999.ebuild:
+  add hostname patch to live ebuild since upstream won't be able to make the
+  change quickly
+
+  13 Feb 2015; Rick Farina <zerochaos@gentoo.org> -yatebts-4.0.0.ebuild,
+  yatebts-4.0.0-r1.ebuild, yatebts-9999.ebuild:
+  add subslot dep on yate without bump since it's not critical
+
+  13 Feb 2015; Rick Farina <zerochaos@gentoo.org> yatebts-9999.ebuild:
+  9999 needs yate 9999 as well
+
+*yatebts-4.0.0-r1 (11 Feb 2015)
+
+  11 Feb 2015; Rick Farina <zerochaos@gentoo.org>
+  +files/yatebts-bladeRF-transceiver_revert_init_order.patch,
+  +files/yatebts-sgsnggsn-inetutils-hostname-fix.diff, +yatebts-4.0.0-r1.ebuild:
+  bumping for some patches taken from suse thanks to roox, this seems to make
+  yate much happier
+
+  11 Feb 2015; Rick Farina <zerochaos@gentoo.org> yatebts-4.0.0.ebuild,
+  yatebts-9999.ebuild:
+  marking bladerf support as default as it is the only hardware upstream
+  officially supports
+
+  10 Feb 2015; Rick Farina <zerochaos@gentoo.org> yatebts-4.0.0.ebuild,
+  yatebts-9999.ebuild:
+  add missing dep on bladerf per depcheck
 
   28 Jan 2015; Michał Górny <mgorny@gentoo.org> yatebts-4.0.0.ebuild,
   yatebts-9999.ebuild:

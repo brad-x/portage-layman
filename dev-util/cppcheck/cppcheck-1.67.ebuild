@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/cppcheck-1.67.ebuild,v 1.1 2014/12/28 08:47:36 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/cppcheck-1.67.ebuild,v 1.5 2015/04/08 17:54:02 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit distutils-r1 eutils flag-o-matic qt4-r2 toolchain-funcs
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="htmlreport pcre qt4"
 
 RDEPEND="htmlreport? ( ${PYTHON_DEPS} )
@@ -74,14 +74,16 @@ src_test() {
 	mv -v cli/cppcheckexecutor.o{,.final}
 	#trigger recompile with CFGDIR inside ${S}
 	emake check CFGDIR="${S}/cfg"
-	# restore 
+	# restore
 	mv -v ${PN}{.final,}
 	mv -v lib/library.o{.final,}
 	mv -v cli/cppcheckexecutor.o{.final,}
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
+	# it's not autotools-based, so "${ED}" here, not "${D}", bug 531760
+	emake install DESTDIR="${ED}"
+
 	insinto "/usr/share/${PN}/cfg"
 	doins cfg/*.cfg
 	if use qt4 ; then

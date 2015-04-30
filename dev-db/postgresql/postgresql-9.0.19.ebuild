@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9.0.19.ebuild,v 1.4 2015/02/06 19:26:20 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9.0.19.ebuild,v 1.13 2015/04/08 18:45:26 mgorny Exp $
 
 EAPI="5"
 
@@ -8,12 +8,12 @@ EAPI="5"
 # longer applies cleanly.
 RESTRICT="test"
 
-PYTHON_COMPAT=( python{2_{6,7},3_{2,3,4}} )
+PYTHON_COMPAT=( python{2_7,3_{3,4}} )
 
 inherit eutils flag-o-matic linux-info multilib pam prefix python-single-r1 \
 		systemd user versionator
 
-KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~ppc-macos ~x86-solaris"
 
 SLOT="$(get_version_component_range 1-2)"
 
@@ -43,7 +43,7 @@ wanted_languages() {
 }
 
 CDEPEND="
->=app-admin/eselect-postgresql-1.2.0
+>=app-eselect/eselect-postgresql-1.2.0
 sys-apps/less
 virtual/libintl
 kerberos? ( virtual/krb5 )
@@ -51,9 +51,9 @@ ldap? ( net-nds/openldap )
 pam? ( virtual/pam )
 perl? ( >=dev-lang/perl-5.8 )
 python? ( ${PYTHON_DEPS} )
-readline? ( sys-libs/readline )
-ssl? ( >=dev-libs/openssl-0.9.6-r1 )
-tcl? ( >=dev-lang/tcl-8 )
+readline? ( sys-libs/readline:0= )
+ssl? ( >=dev-libs/openssl-0.9.6-r1:0= )
+tcl? ( >=dev-lang/tcl-8:0= )
 uuid? ( dev-libs/ossp-uuid )
 xml? ( dev-libs/libxml2 dev-libs/libxslt )
 zlib? ( sys-libs/zlib )

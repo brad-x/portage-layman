@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygame/pygame-1.9.2_pre20120101-r2.ebuild,v 1.11 2014/11/24 15:03:26 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygame/pygame-1.9.2_pre20120101-r2.ebuild,v 1.14 2015/04/08 08:05:12 mgorny Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 DISTUTILS_IN_SOURCE_BUILD=1
 inherit flag-o-matic distutils-r1 virtualx
 
@@ -17,7 +17,7 @@ fi
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ppc ~sparc x86 ~x86-fbsd"
 IUSE="doc examples X"
 
 DEPEND="dev-python/numpy[${PYTHON_USEDEP}]
@@ -32,6 +32,11 @@ RDEPEND="${DEPEND}"
 if [[ "${PV}" != *_pre* ]]; then
 	S="${WORKDIR}/${P}release"
 fi
+
+PATCHES=(
+	# Workaround bug #516434
+	"${FILESDIR}"/${P}-import-bdist.patch
+)
 
 DOCS=( WHATSNEW )
 

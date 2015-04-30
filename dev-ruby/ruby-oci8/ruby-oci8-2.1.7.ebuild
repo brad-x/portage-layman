@@ -1,9 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-oci8/ruby-oci8-2.1.7.ebuild,v 1.1 2015/01/17 10:24:43 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-oci8/ruby-oci8-2.1.7.ebuild,v 1.4 2015/03/02 18:33:44 graaff Exp $
 
-EAPI="5"
-USE_RUBY="ruby19 ruby20 ruby21"
+EAPI=5
+USE_RUBY="ruby19 ruby20"
 
 inherit multilib ruby-fakegem
 
@@ -14,11 +14,11 @@ HOMEPAGE="https://rubygems.org/gems/ruby-oci8/"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND="dev-db/oracle-instantclient-basic"
-DEPEND="${RDEPEND}"
+RDEPEND+=" dev-db/oracle-instantclient-basic"
+DEPEND+=" dev-db/oracle-instantclient-basic"
 
 EXT_DIR="ext/oci8"
 

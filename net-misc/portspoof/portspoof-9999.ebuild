@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/portspoof/portspoof-9999.ebuild,v 1.2 2014/03/26 14:22:35 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/portspoof/portspoof-9999.ebuild,v 1.3 2015/03/10 15:14:04 zerochaos Exp $
 
 EAPI=5
 
@@ -26,4 +26,12 @@ src_prepare() {
 	if [[ ${PV} == "9999" ]] ; then
 		eautoreconf
 	fi
+	sed -i \
+	's#/usr/local/bin/portspoof -D -c /usr/local/etc/portspoof.conf -s /usr/local/etc/portspoof_signatures#/usr/bin/portspoof -D -c /etc/portspoof.conf -s /etc/portspoof_signatures#'\
+	 system_files/init.d/portspoof.sh
+}
+
+src_install() {
+	default_src_install
+	newsbin system_files/init.d/portspoof.sh portspoof-runner
 }

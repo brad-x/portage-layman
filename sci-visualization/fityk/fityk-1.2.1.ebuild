@@ -1,12 +1,12 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/fityk/fityk-1.2.1.ebuild,v 1.3 2014/11/28 21:37:36 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/fityk/fityk-1.2.1.ebuild,v 1.5 2015/04/12 16:25:37 jlec Exp $
 
 EAPI=5
 
 WX_GTK_VER="2.9"
 GITHUB_USER="wojdyr"
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit autotools-utils fdo-mime python-r1 wxwidgets
 
@@ -23,10 +23,10 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 CDEPEND="
 	>=sci-libs/xylib-1
-	>=dev-lang/lua-5.1
+	>=dev-lang/lua-5.1:0
 	nlopt? ( sci-libs/nlopt )
 	python? ( ${PYTHON_DEPS} )
-	readline? ( sys-libs/readline )
+	readline? ( sys-libs/readline:0= )
 	wxwidgets? ( >=x11-libs/wxGTK-2.9.2:2.9 )"
 DEPEND="${CDEPEND}
 	dev-libs/boost

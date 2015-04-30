@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.49.2.ebuild,v 1.11 2014/11/26 09:37:54 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.49.2.ebuild,v 1.13 2015/04/25 16:41:25 floppym Exp $
 
 # genkernel-9999        -> latest Git branch "master"
 # genkernel-VERSION     -> normal genkernel release
@@ -33,17 +33,17 @@ COMMON_URI="${DM_HOME}/dmraid-${VERSION_DMRAID}.tar.bz2
 
 if [[ ${PV} == 9999* ]]
 then
-	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/${PN}.git
-		http://git.overlays.gentoo.org/gitroot/proj/${PN}.git"
+	EGIT_REPO_URI="git://anongit.gentoo.org/proj/${PN}.git
+		http://anongit.gentoo.org/git/proj/${PN}.git"
 	inherit git-2 bash-completion-r1 eutils
 	S="${WORKDIR}/${PN}"
 	SRC_URI="${COMMON_URI}"
-	KEYWORDS="alpha arm hppa ia64 s390 sh sparc"
+	KEYWORDS="alpha arm hppa ia64 ppc s390 sh sparc"
 else
 	inherit bash-completion-r1 eutils
 	SRC_URI="mirror://gentoo/${P}.tar.bz2
 		${COMMON_URI}"
-	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ~ppc64 s390 sh sparc x86"
+	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc64 s390 sh sparc x86"
 fi
 
 DESCRIPTION="Gentoo automatic kernel building scripts"

@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/galaxyhack/galaxyhack-1.74.ebuild,v 1.6 2014/08/10 21:20:51 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/galaxyhack/galaxyhack-1.74.ebuild,v 1.8 2015/03/11 17:31:40 mr_bones_ Exp $
 
-EAPI=4
+EAPI=5
 inherit eutils flag-o-matic games
 
 DESCRIPTION="Multiplayer AI script based strategy game"
@@ -15,10 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/libsdl
+DEPEND="media-libs/libsdl[video]
 	media-libs/sdl-image
 	media-libs/sdl-mixer
 	>=dev-libs/boost-1.34"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}/src
 
@@ -31,11 +32,9 @@ src_prepare() {
 		"${FILESDIR}"/${P}-boost-1.50.patch \
 		"${FILESDIR}"/${P}-gentoo.patch
 	sed -i "s:@GAMES_DATADIR@:${GAMES_DATADIR}:" \
-		Main.cpp \
-		|| die "sed Main.cpp failed"
+		Main.cpp || die
 	sed -i "/Base data path/s:pwd:${GAMES_DATADIR}/${PN}:" \
-		../settings.dat \
-		|| die "sed settings.dat failed"
+		../settings.dat || die
 }
 
 src_install() {

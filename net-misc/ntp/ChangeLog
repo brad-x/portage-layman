@@ -1,6 +1,37 @@
 # ChangeLog for net-misc/ntp
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.230 2014/12/24 07:25:24 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.236 2015/04/08 21:13:16 vapier Exp $
+
+*ntp-4.2.8_p2 (08 Apr 2015)
+
+  08 Apr 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/ntp-4.2.8-ipc-caps.patch, +ntp-4.2.8_p2.ebuild,
+  files/man-pages/genmans.sh:
+  Version bump #545836 by Agostino Sarubbo.  Disable IPv6 lines in default
+  restrict.conf when USE=-ipv6 #524726 by Toralf Förster.  Increase default
+  rlimit to 256MiB #533232 by Dennis Lichtenthäler.  Add patch from upstream for
+  crashes in ntpd #533966 by Wouter Smeltekop.
+
+  08 Apr 2015; Mike Frysinger <vapier@gentoo.org> ntp-4.2.8-r3.ebuild:
+  Delete broken info_trimble.c that ships with the source #545546 by Conrad
+  Kostecki.
+
+*ntp-4.2.8-r3 (04 Apr 2015)
+
+  04 Apr 2015; Mike Frysinger <vapier@gentoo.org> +ntp-4.2.8-r3.ebuild:
+  Drop old postinst messages #440438 by poletti.marco.  Control readline dep via
+  USE flag #545120 by nzqr.
+
+  04 Apr 2015; Mike Frysinger <vapier@gentoo.org> ntp-4.2.8-r2.ebuild:
+  Fix up file timestamps to keep autotools from re-running #538270 by Jeroen
+  Roovers.
+
+  04 Apr 2015; Mike Frysinger <vapier@gentoo.org> ntp-4.2.8-r2.ebuild:
+  Make sure every build uses the same filesystem layout when installed #539092
+  by Oleg Silishhev.
+
+  26 Feb 2015; Mike Gilbert <floppym@gentoo.org> ntp-4.2.8-r2.ebuild:
+  Add threads use flag, bug 533548.
 
   24 Dec 2014; Jeroen Roovers <jer@gentoo.org> ntp-4.2.8-r1.ebuild:
   Stable for HPPA (bug #533076).

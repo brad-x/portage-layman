@@ -1,6 +1,49 @@
 # ChangeLog for net-wireless/gnuradio
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/ChangeLog,v 1.61 2015/01/21 12:32:44 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/ChangeLog,v 1.70 2015/04/08 10:29:05 chithanh Exp $
+
+  08 Apr 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnuradio-9999.ebuild:
+  require fec for dtv, bug #545674.
+
+  08 Apr 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnuradio-3.7.6.1-r2.ebuild:
+  require fec for dtv, bug #545674.
+
+  01 Apr 2015; Rick Farina <zerochaos@gentoo.org> gnuradio-3.7.6.1-r2.ebuild,
+  gnuradio-9999.ebuild:
+  add epatch_user
+
+  16 Mar 2015; Rick Farina <zerochaos@gentoo.org> gnuradio-9999.ebuild:
+  fixing download location in 9999 ebuild so it renames safely
+
+  21 Feb 2015; Rick Farina <zerochaos@gentoo.org> gnuradio-3.7.6.1-r2.ebuild,
+  gnuradio-9999.ebuild:
+  cppunit only needed for testing
+
+*gnuradio-3.7.6.1-r2 (21 Feb 2015)
+
+  21 Feb 2015; Rick Farina <zerochaos@gentoo.org> +gnuradio-3.7.6.1-r2.ebuild,
+  -gnuradio-3.7.6.1-r1.ebuild, gnuradio-9999.ebuild, metadata.xml:
+  remove ctrlport use flag as upstream has, bug #529498.  additional minor dep
+  cleanup per depcheck
+
+*gnuradio-3.7.6.1-r1 (21 Feb 2015)
+
+  21 Feb 2015; Rick Farina <zerochaos@gentoo.org>
+  +files/gnuradio-3.7.6.1-qwt-with-qt5-support.patch,
+  +gnuradio-3.7.6.1-r1.ebuild, -gnuradio-3.7.6.1.ebuild, gnuradio-9999.ebuild:
+  proper full fix for bug #540658, backporting patch accepted by upstream
+
+  20 Feb 2015; Rick Farina <zerochaos@gentoo.org> gnuradio-3.7.6.1.ebuild,
+  gnuradio-9999.ebuild:
+  workaround for bug #540658, adjust dep for non-broken version of qwt:6
+
+*gnuradio-3.7.6.1 (17 Feb 2015)
+
+  17 Feb 2015; Rick Farina <zerochaos@gentoo.org> +gnuradio-3.7.6.1.ebuild,
+  -gnuradio-3.7.5.2.ebuild, -gnuradio-3.7.6.ebuild:
+  version bump, drop old
 
   21 Jan 2015; Pacho Ramos <pacho@gentoo.org> gnuradio-3.7.6.ebuild,
   gnuradio-9999.ebuild:

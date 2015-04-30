@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2014.2.9999.ebuild,v 1.4 2015/01/13 04:16:16 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2014.2.9999.ebuild,v 1.6 2015/03/24 04:20:13 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -15,7 +15,7 @@ EGIT_BRANCH="stable/juno"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="+compute +kvm +network +novncproxy sqlite mysql postgres xen"
+IUSE="+compute +kvm +network +novncproxy openvswitch sqlite mysql postgres xen"
 REQUIRED_USE="|| ( mysql postgres sqlite )
 			  compute? ( || ( kvm xen ) )"
 
@@ -26,47 +26,25 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 
 RDEPEND="
 	sqlite? (
-		|| (
-			(
-				>=dev-python/sqlalchemy-0.8.4[sqlite,${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.8.99[sqlite,${PYTHON_USEDEP}]
-			)
-			(
-				>=dev-python/sqlalchemy-0.9.7[sqlite,${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.9.99[sqlite,${PYTHON_USEDEP}]
-			)
-		)
+		>=dev-python/sqlalchemy-0.9.7[sqlite,${PYTHON_USEDEP}]
+		<=dev-python/sqlalchemy-0.9.99[sqlite,${PYTHON_USEDEP}]
 	)
 	mysql? (
 		dev-python/mysql-python
-		|| (
-			(
-				>=dev-python/sqlalchemy-0.8.4[${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.8.99[${PYTHON_USEDEP}]
-			)
-			(
-				>=dev-python/sqlalchemy-0.9.7[${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
-			)
-		)
+		>=dev-python/sqlalchemy-0.9.7[${PYTHON_USEDEP}]
+		<=dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
 	)
 	postgres? (
 		dev-python/psycopg:2
-		|| (
-			(
-				>=dev-python/sqlalchemy-0.8.4[${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.8.99[${PYTHON_USEDEP}]
-			)
-			(
-				>=dev-python/sqlalchemy-0.9.7[${PYTHON_USEDEP}]
-				<=dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
-			)
-		)
+		>=dev-python/sqlalchemy-0.9.7[${PYTHON_USEDEP}]
+		<=dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
 	)
 	>=dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
 	>=dev-python/boto-2.32.1[${PYTHON_USEDEP}]
+	<dev-python/boto-2.35.0[${PYTHON_USEDEP}]
 	>=dev-python/decorator-3.4.0[${PYTHON_USEDEP}]
 	>=dev-python/eventlet-0.15.1[${PYTHON_USEDEP}]
+	<dev-python/eventlet-0.16.0[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
 	>=dev-python/keystonemiddleware-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/kombu-2.5.0[${PYTHON_USEDEP}]
@@ -77,8 +55,7 @@ RDEPEND="
 	>=dev-python/greenlet-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/pastedeploy-1.5.0-r1[${PYTHON_USEDEP}]
 	dev-python/paste[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-migrate-0.9.1[${PYTHON_USEDEP}]
-	!~dev-python/sqlalchemy-migrate-0.9.2[${PYTHON_USEDEP}]
+	~dev-python/sqlalchemy-migrate-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	>=dev-python/suds-0.4[${PYTHON_USEDEP}]
 	>=dev-python/paramiko-1.13.0[${PYTHON_USEDEP}]
@@ -99,19 +76,22 @@ RDEPEND="
 	<dev-python/websockify-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-config-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-db-1.0.0[${PYTHON_USEDEP}]
+	<dev-python/oslo-db-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-rootwrap-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/pycadf-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-messaging-1.4.0[${PYTHON_USEDEP}]
 	!~dev-python/oslo-messaging-1.5.0[${PYTHON_USEDEP}]
+	<dev-python/oslo-messaging-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/lockfile-0.8[${PYTHON_USEDEP}]
 	>=dev-python/simplejson-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/rfc3986-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-vmware-0.6.0[${PYTHON_USEDEP}]
+	<dev-python/oslo-vmware-0.9.0[${PYTHON_USEDEP}]
 	dev-python/libvirt-python[${PYTHON_USEDEP}]
 	novncproxy? ( www-apps/novnc )
 	sys-apps/iproute2
-	net-misc/openvswitch
+	openvswitch? ( net-misc/openvswitch )
 	net-misc/rabbitmq-server
 	sys-fs/sysfsutils
 	sys-fs/multipath-tools
@@ -125,9 +105,9 @@ PATCHES=(
 
 pkg_setup() {
 	linux-info_pkg_setup
-	CONFIG_CHECK_MODULES="NBD VHOST_NET IP6TABLE_FILTER IP6_TABLES IPT_REJECT \
-	IPTABLE_MANGLE IPT_MASQUERADE IPTABLE_NAT IPTABLE_FILTER IP_TABLES \
-	NF_CONNTRACK_IPV4 NF_DEFRAG_IPV4 NF_NAT_IPV4 NF_NAT NF_CONNTRACK X_TABLES \
+	CONFIG_CHECK_MODULES="BLK_DEV_NBD VHOST_NET IP6_NF_FILTER IP6_NF_IPTABLES IP_NF_TARGET_REJECT \
+	IP_NF_MANGLE IP_NF_TARGET_MASQUERADE NF_NAT_IPV4 IP_NF_FILTER IP_NF_IPTABLES \
+	NF_CONNTRACK_IPV4 NF_DEFRAG_IPV4 NF_NAT_IPV4 NF_NAT NF_CONNTRACK NETFILTER_XTABLES \
 	ISCSI_TCP SCSI_DH DM_MULTIPATH DM_SNAPSHOT"
 	if linux_config_exists; then
 		for module in ${CONFIG_CHECK_MODULES}; do

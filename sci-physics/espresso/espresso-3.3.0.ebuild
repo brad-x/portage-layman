@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/espresso/espresso-3.3.0.ebuild,v 1.1 2014/08/11 21:33:08 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/espresso/espresso-3.3.0.ebuild,v 1.4 2015/03/20 15:18:41 jlec Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit autotools-utils python-single-r1 savedconfig
 
 DESCRIPTION="Extensible Simulation Package for Research on Soft matter"
-HOMEPAGE="http://www.espressomd.org"
+HOMEPAGE="http://espressomd.org"
 
 if [[ ${PV} = 9999 ]]; then
 	EGIT_REPO_URI="git://git.savannah.nongnu.org/espressomd.git"
@@ -38,21 +38,22 @@ RDEPEND="
 		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 	)
-	dev-lang/tcl
+	dev-lang/tcl:0=
 	cuda? ( >=dev-util/nvidia-cuda-toolkit-4.2.9-r1 )
 	fftw? ( sci-libs/fftw:3.0 )
 	mpi? ( virtual/mpi )
 	packages? ( dev-tcltk/tcllib )
-	tk? ( >=dev-lang/tk-8.4.18-r1 )
+	tk? ( >=dev-lang/tk-8.4.18-r1:0= )
 	X? ( x11-libs/libX11 )"
 
 DEPEND="${RDEPEND}
 	doc? (
-		|| ( <app-doc/doxygen-1.7.6.1[-nodot] >=app-doc/doxygen-1.7.6.1[dot] )
+		app-doc/doxygen[dot]
 		dev-texlive/texlive-latexextra
 		virtual/latex-base )"
 
 DOCS=( AUTHORS NEWS README ChangeLog )
+PATCHES=( "${FILESDIR}/${P}-cython-0.22.patch" )
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup

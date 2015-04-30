@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-shell/gnome-shell-3.14.3.ebuild,v 1.2 2015/01/11 11:50:40 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-shell/gnome-shell-3.14.3.ebuild,v 1.8 2015/04/19 02:19:48 tetromino Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -16,7 +16,7 @@ LICENSE="GPL-2+ LGPL-2+"
 SLOT="0"
 IUSE="+bluetooth +i18n +networkmanager -openrc-force"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
 
 # libXfixes-5.0 needed for pointer barriers
 # FIXME:
@@ -44,6 +44,7 @@ COMMON_DEPEND="
 	>=x11-libs/libXfixes-5.0
 	x11-libs/libXtst
 	>=x11-wm/mutter-3.14.3[introspection]
+	<x11-wm/mutter-3.15
 	>=x11-libs/startup-notification-0.11
 
 	${PYTHON_DEPS}
@@ -64,6 +65,7 @@ COMMON_DEPEND="
 	bluetooth? ( >=net-wireless/gnome-bluetooth-3.9[introspection] )
 	networkmanager? (
 		app-crypt/libsecret
+		>=gnome-extra/nm-applet-0.9.8
 		>=net-misc/networkmanager-0.9.8[introspection] )
 "
 # Runtime-only deps are probably incomplete and approximate.
@@ -89,7 +91,6 @@ RDEPEND="${COMMON_DEPEND}
 
 	>=gnome-base/gnome-session-2.91.91
 	>=gnome-base/gnome-settings-daemon-3.8.3
-	>=gnome-base/gnome-control-center-3.8.3[bluetooth(+)?]
 
 	!openrc-force? ( >=sys-apps/systemd-31 )
 
@@ -103,8 +104,10 @@ RDEPEND="${COMMON_DEPEND}
 		net-misc/mobile-broadband-provider-info
 		sys-libs/timezone-data )
 "
-# avoid circular dependency
-PDEPEND=">=gnome-base/gdm-3.5[introspection]
+# avoid circular dependency, see bug #546134
+PDEPEND="
+	>=gnome-base/gdm-3.5[introspection]
+	>=gnome-base/gnome-control-center-3.8.3[bluetooth(+)?]
 "
 DEPEND="${COMMON_DEPEND}
 	dev-libs/libxslt

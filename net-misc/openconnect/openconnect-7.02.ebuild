@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openconnect/openconnect-7.02.ebuild,v 1.2 2015/01/06 02:35:10 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openconnect/openconnect-7.02.ebuild,v 1.5 2015/04/08 18:04:50 mgorny Exp $
 
 EAPI="5"
 
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="xml"
 
 inherit eutils linux-info python-any-r1
@@ -17,7 +17,7 @@ SRC_URI="ftp://ftp.infradead.org/pub/${PN}/${P}.tar.gz
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0/5"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 arm ~arm64 ~ppc64 ~x86"
 IUSE="doc +gnutls gssapi java libproxy nls static-libs"
 ILINGUAS="ar cs de el en_GB en_US es eu fi fr gl id lt nl pa pl pt pt_BR sk sl tg ug uk zh_CN zh_TW"
 for lang in $ILINGUAS; do

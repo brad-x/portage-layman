@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/gdal-1.11.1-r1.ebuild,v 1.8 2015/01/12 23:49:19 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/gdal-1.11.1-r1.ebuild,v 1.10 2015/04/08 18:32:59 mgorny Exp $
 
 EAPI=5
 
 WANT_AUTOCONF="2.5"
 
 GENTOO_DEPEND_ON_PERL="no"
-PYTHON_COMPAT=( python2_{5..7} python3_{1..4} )
+PYTHON_COMPAT=( python2_7 python3_{3,4} )
 DISTUTILS_OPTIONAL=1
 
 inherit autotools eutils libtool perl-module distutils-r1 python-r1 toolchain-funcs java-pkg-opt-2
@@ -26,7 +26,7 @@ RDEPEND="
 	dev-libs/json-c
 	dev-libs/libpcre
 	dev-libs/libxml2
-	media-libs/tiff
+	media-libs/tiff:0=
 	sci-libs/libgeotiff
 	sys-libs/zlib[minizip(+)]
 	armadillo? ( sci-libs/armadillo[lapack] )
@@ -36,8 +36,8 @@ RDEPEND="
 	gif? ( media-libs/giflib )
 	gml? ( >=dev-libs/xerces-c-3 )
 	hdf5? ( >=sci-libs/hdf5-1.6.4[szip] )
-	java? ( >=virtual/jre-1.6 )
-	jpeg? ( virtual/jpeg )
+	java? ( >=virtual/jre-1.6:* )
+	jpeg? ( virtual/jpeg:0= )
 	jpeg2k? ( media-libs/jasper )
 	mysql? ( virtual/mysql )
 	netcdf? ( sci-libs/netcdf )
@@ -46,8 +46,8 @@ RDEPEND="
 	opencl? ( virtual/opencl )
 	pdf? ( >=app-text/poppler-0.24.3:= )
 	perl? ( dev-lang/perl:= )
-	png? ( media-libs/libpng )
-	postgres? ( >=dev-db/postgresql-8.4 )
+	png? ( media-libs/libpng:0= )
+	postgres? ( >=dev-db/postgresql-8.4:* )
 	python? (
 		${PYTHON_DEPS}
 		dev-python/setuptools[${PYTHON_USEDEP}]

@@ -1,6 +1,113 @@
 # ChangeLog for media-video/vlc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.928 2015/02/02 06:03:37 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/ChangeLog,v 1.953 2015/04/24 05:48:12 idella4 Exp $
+
+  24 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.1.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  update ffmpeg to version 2.2 to behind pertinent use flags wrt bug #541678,
+  confirmed by proxy maintainer
+
+  22 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.9999.ebuild,
+  vlc-9999.ebuild:
+  add update of subslot to these ebuilds
+
+  21 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.1.ebuild:
+  update subslot to 5-8 in versioned ebuilds -2.2*, noted by floppym, fixes bug
+  #547232 by him, discussed with proxy maintainer
+
+  20 Apr 2015; Mike Gilbert <floppym@gentoo.org> vlc-2.2.1.ebuild,
+  vlc-9999.ebuild:
+  Drop glx flag here as well.
+
+  20 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.9999.ebuild:
+  drop 'use_enable opengl glx' due to option --enable-glx made defunct, adresses
+  Bug #539840
+
+*vlc-2.2.1 (19 Apr 2015)
+
+  19 Apr 2015; Ben de Groot <yngwin@gentoo.org>
+  +files/vlc-2.2.0-rdp-1.2.0.patch, +files/vlc-2.2.0-xcb_vdpau.patch,
+  +vlc-2.2.1.ebuild:
+  version bump (ebuild and patches provided by proxied maintainer in bug
+  #546880)
+
+  19 Apr 2015; Ben de Groot <yngwin@gentoo.org> vlc-2.1.2.ebuild:
+  Drop all keywords except alpha on 2.1.2 (bug #530254)
+
+  18 Apr 2015; Ian Delaney <idella4@gentoo.org> +files/vlc-2.2.0-fix-xcb.patch,
+  vlc-2.2.0.ebuild:
+  add patch to fix issue with xcb, fixes bug #541928, thx to maintainer for
+  patch lodged upstream
+
+  18 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.2.9999.ebuild,
+  vlc-9999.ebuild:
+  reset version border of media-libs/libdvbpsi, fixes Bug #541632, confirmed by
+  new maintainer
+
+  18 Apr 2015; Ian Delaney <idella4@gentoo.org> vlc-2.1.9999.ebuild,
+  vlc-2.2.0.ebuild, vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  set IUSE libsamplerate to +, fixes bug #522182, issue discussed with new
+  (proxy) maintainer
+
+  18 Apr 2015; Ian Delaney <idella4@gentoo.org> -vlc-2.1.4.ebuild,
+  -vlc-2.1.5.ebuild:
+  remove old, hold back on 2.1.2 for now
+
+  17 Apr 2015; Ian Delaney <idella4@gentoo.org> metadata.xml, vlc-2.2.0.ebuild:
+  substitute proxy maintainer, P. Stankowski gave notice of withdrawal, new
+  maintainer set in metadata
+
+  05 Mar 2015; Luca Barbato <lu_zero@gentoo.org> vlc-2.2.0.ebuild:
+  Drop the postproc constrain over specific user request
+
+  03 Mar 2015; Luca Barbato <lu_zero@gentoo.org> vlc-2.2.0.ebuild:
+  Make postproc fully optional
+
+  02 Mar 2015; Luca Barbato <lu_zero@gentoo.org> vlc-2.2.0.ebuild:
+  Fix bug #541924 and provide saner defaults
+
+  01 Mar 2015; Agostino Sarubbo <ago@gentoo.org> vlc-2.1.5-r1.ebuild:
+  Stable for ppc64, wrt bug #534532
+
+  01 Mar 2015; Agostino Sarubbo <ago@gentoo.org> vlc-2.1.5-r1.ebuild:
+  Stable for ppc, wrt bug #534532
+
+  28 Feb 2015; Agostino Sarubbo <ago@gentoo.org> vlc-2.1.5-r1.ebuild:
+  Stable for x86, wrt bug #534532
+
+  28 Feb 2015; Agostino Sarubbo <ago@gentoo.org> vlc-2.1.5-r1.ebuild:
+  Stable for amd64, wrt bug #534532
+
+  28 Feb 2015; Manuel Rüger <mrueg@gentoo.org> vlc-2.2.0.ebuild,
+  vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  Fix dependency on media-libs/libdvdnav.
+
+*vlc-2.2.0 (28 Feb 2015)
+
+  28 Feb 2015; Luca Barbato <lu_zero@gentoo.org> +vlc-2.2.0.ebuild:
+  New upstream version
+
+  28 Feb 2015; Agostino Sarubbo <ago@gentoo.org>
+  +files/vlc-2.1-mem_undefined_functions.patch, vlc-2.1.2.ebuild,
+  vlc-2.1.5-r1.ebuild:
+  Fix bug #541654
+
+  16 Feb 2015; Yixun Lan <dlan@gentoo.org> vlc-2.1.9999.ebuild:
+  foward libavcodec patch to 2.1.9999, disable bogus version check
+
+  16 Feb 2015; Yixun Lan <dlan@gentoo.org> vlc-2.1.5-r1.ebuild,
+  vlc-2.1.9999.ebuild:
+  revert commit, remove <media-videp/ffmpeg-2.5, since it already handled
+
+  15 Feb 2015; Yixun Lan <dlan@gentoo.org> vlc-2.1.2.ebuild, vlc-2.1.4.ebuild,
+  vlc-2.1.5.ebuild, vlc-2.1.5-r1.ebuild, vlc-2.1.9999.ebuild,
+  vlc-2.2.9999.ebuild, vlc-9999.ebuild:
+  add epatch_user, fix deps, proxy for maintainer
+  1) corrected dependency on ffmpeg: avcodec interface from ffmpeg-2.5 is not
+  supported by vlc-2.1. Fixes bug 539856 reported by b1254633. 2) fix missng
+  on libva while enable USE=vaapi
 
   02 Feb 2015; Michał Górny <mgorny@gentoo.org> vlc-2.1.5-r1.ebuild:
   Re-add missing dep on libva, reported by Arfrever.

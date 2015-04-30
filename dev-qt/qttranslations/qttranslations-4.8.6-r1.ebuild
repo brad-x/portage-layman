@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qttranslations/qttranslations-4.8.6-r1.ebuild,v 1.1 2014/11/15 02:38:42 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qttranslations/qttranslations-4.8.6-r1.ebuild,v 1.3 2015/04/07 23:15:12 pesa Exp $
 
 EAPI=5
 
@@ -19,12 +19,26 @@ IUSE=""
 DEPEND="
 	~dev-qt/qtcore-${PV}
 "
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 QT4_TARGET_DIRECTORIES="translations"
 
 multilib_src_configure() {
-	qt4_prepare_env
-	qt4_symlink_tools_to_build_dir
-	qt4_foreach_target_subdir qt4_qmake
+	if multilib_is_native_abi; then
+		qt4_prepare_env
+		qt4_symlink_tools_to_build_dir
+		qt4_foreach_target_subdir qt4_qmake
+	fi
+}
+
+multilib_src_compile() {
+	multilib_is_native_abi && qt4_multilib_src_compile
+}
+
+multilib_src_test() {
+	:
+}
+
+multilib_src_install() {
+	multilib_is_native_abi && qt4_multilib_src_install
 }

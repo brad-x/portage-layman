@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.5-r1.ebuild,v 1.2 2015/02/02 06:03:37 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.1.5-r1.ebuild,v 1.9 2015/03/01 09:31:47 ago Exp $
 
 EAPI="5"
 
@@ -35,7 +35,7 @@ LICENSE="LGPL-2.1 GPL-2"
 SLOT="0/5-7" # vlc - vlccore
 
 if [ "${PV%9999}" = "${PV}" ] ; then
-	KEYWORDS="~amd64 ~arm ~ppc -sparc ~x86 ~x86-fbsd"
+	KEYWORDS="amd64 ~arm ppc ppc64 -sparc x86 ~x86-fbsd"
 else
 	KEYWORDS=""
 fi
@@ -246,6 +246,9 @@ src_prepare() {
 	# Fix up broken audio when skipping using a fixed reversed bisected commit.
 	epatch "${FILESDIR}"/${PN}-2.1.0-TomWij-bisected-PA-broken-underflow.patch
 
+	# Fix bug #541654
+	epatch "${FILESDIR}"/${PN}-2.1-mem_undefined_functions.patch
+
 	# Disable avcodec checks when avcodec is not used.
 	if ! use avcodec; then
 		sed -i 's/^#if LIBAVCODEC_VERSION_CHECK(.*)$/#if 0/' modules/codec/avcodec/fourcc.c || die
@@ -258,6 +261,8 @@ src_prepare() {
 
 	# Disable a bogus check
 	sed -i "s:libavcodec < 56:libavcodec < 57:g" configure.ac || die
+
+	epatch_user
 
 	eautoreconf
 

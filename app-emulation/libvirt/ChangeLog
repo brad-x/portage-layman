@@ -1,6 +1,51 @@
 # ChangeLog for app-emulation/libvirt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.414 2015/01/28 13:33:43 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.422 2015/04/19 11:07:53 tamiko Exp $
+
+*libvirt-1.2.14-r2 (19 Apr 2015)
+*libvirt-1.2.13-r2 (19 Apr 2015)
+
+  19 Apr 2015; Matthias Maier <tamiko@gentoo.org> +files/libvirtd.tmpfiles.conf,
+  +libvirt-1.2.13-r2.ebuild, +libvirt-1.2.14-r2.ebuild,
+  -libvirt-1.2.13-r1.ebuild, -libvirt-1.2.14-r1.ebuild, libvirt-9999.ebuild:
+  Manually create /run/libvirt/lxc on libvirtd startup (see
+  https://bugzilla.suse.com/show_bug.cgi?id=926153)
+
+*libvirt-1.2.13-r1 (17 Apr 2015)
+*libvirt-1.2.14-r1 (17 Apr 2015)
+*libvirt-1.2.12-r1 (17 Apr 2015)
+*libvirt-1.2.11-r4 (17 Apr 2015)
+*libvirt-1.2.10-r5 (17 Apr 2015)
+
+  17 Apr 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.10-r5.ebuild,
+  +libvirt-1.2.11-r4.ebuild, +libvirt-1.2.12-r1.ebuild,
+  +libvirt-1.2.13-r1.ebuild, +libvirt-1.2.14-r1.ebuild,
+  -libvirt-1.2.11-r3.ebuild, -libvirt-1.2.13.ebuild, -libvirt-1.2.14.ebuild,
+  libvirt-9999.ebuild:
+  Fix install location for libvirtd.service.d/00gentoo file; bug #545828, bug
+  #546168
+
+*libvirt-1.2.14 (05 Apr 2015)
+
+  05 Apr 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.14.ebuild:
+  version bump
+
+  13 Mar 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.12.ebuild:
+  Stable for x86, wrt bug #543044
+
+  13 Mar 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.12.ebuild:
+  Stable for amd64, wrt bug #543044
+
+*libvirt-1.2.13 (13 Mar 2015)
+
+  13 Mar 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.13.ebuild:
+  version bump, bug #542902
+
+  15 Feb 2015; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.10-r3.ebuild:
+  drop vulnerable, wrt bug #537956
+
+  15 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r4.ebuild:
+  Stable for x86, wrt bug #537956
 
   28 Jan 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.10-r4.ebuild:
   Stable for amd64, wrt bug #537956

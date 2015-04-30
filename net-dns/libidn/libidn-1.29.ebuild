@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/libidn/libidn-1.29.ebuild,v 1.11 2014/11/10 19:28:32 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/libidn/libidn-1.29.ebuild,v 1.13 2015/03/10 21:18:35 vapier Exp $
 
 EAPI=5
 inherit elisp-common java-pkg-opt-2 mono-env multilib-minimal
@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/libidn/${P}.tar.gz"
 
 LICENSE="GPL-2 GPL-3 LGPL-3 java? ( Apache-2.0 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc emacs java mono nls static-libs"
 
 DOCS=( AUTHORS ChangeLog FAQ NEWS README THANKS TODO )
@@ -66,6 +66,11 @@ multilib_src_compile() {
 	if multilib_is_native_abi && use emacs; then
 		elisp-compile "${S}"/src/*.el || die
 	fi
+}
+
+multilib_src_test() {
+	# only run libidn specific tests and not gnulib tests (bug #539356)
+	emake -C tests check
 }
 
 multilib_src_install() {

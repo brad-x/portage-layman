@@ -1,6 +1,90 @@
 # ChangeLog for dev-python/django
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django/ChangeLog,v 1.150 2015/02/06 03:41:28 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/django/ChangeLog,v 1.169 2015/04/20 20:36:15 jlec Exp $
+
+  20 Apr 2015; Justin Lecher <jlec@gentoo.org> django-1.7.7.ebuild,
+  django-1.8.ebuild, django-9999.ebuild:
+  Fix typo, thanks Ewoud Kohl van Wijngaarden spotting this, bug #547102
+
+  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> django-1.7.7.ebuild:
+  Stable for x86, wrt bug #545400
+
+  08 Apr 2015; Agostino Sarubbo <ago@gentoo.org> django-1.7.7.ebuild:
+  Stable for amd64, wrt bug #545400
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> django-1.5.10.ebuild:
+  Drop old Python implementations
+
+  02 Apr 2015; Justin Lecher <jlec@gentoo.org> django-1.8.ebuild:
+  Add django-formtools to optfeatures
+
+*django-1.8 (02 Apr 2015)
+
+  02 Apr 2015; Justin Lecher <jlec@gentoo.org> +django-1.8.ebuild,
+  django-9999.ebuild:
+  Version Bump
+
+  24 Mar 2015; Justin Lecher <jlec@gentoo.org> -django-1.4.19.ebuild,
+  -django-1.6.10.ebuild:
+  Clean up after sec stabilization, bug #543754
+
+  24 Mar 2015; Agostino Sarubbo <ago@gentoo.org> django-1.4.20.ebuild,
+  django-1.6.11.ebuild:
+  Stable for amd64, wrt bug #543754
+
+  19 Mar 2015; Andreas Schuerch <nativemad@gentoo.org> django-1.4.20.ebuild,
+  django-1.6.11.ebuild:
+  x86 stable, see bug 543754
+
+*django-1.4.20 (19 Mar 2015)
+*django-1.6.11 (19 Mar 2015)
+*django-1.7.7 (19 Mar 2015)
+
+  19 Mar 2015; Justin Lecher <jlec@gentoo.org> +django-1.4.20.ebuild,
+  +django-1.6.11.ebuild, +django-1.7.7.ebuild, -django-1.7.6.ebuild:
+  Version Bump, fixes CVE-2015-231{6,7} bug #543754
+
+*django-1.7.6 (09 Mar 2015)
+
+  09 Mar 2015; Justin Lecher <jlec@gentoo.org> +django-1.7.6.ebuild,
+  +files/django-1.7.6-bashcomp.patch, -django-1.7.5.ebuild,
+  -files/django-1.7.5-bashcomp.patch:
+  Version Bump to fix CVE-2015-2241
+
+  01 Mar 2015; Justin Lecher <jlec@gentoo.org> django-1.6.10.ebuild:
+  Readd python support
+
+  01 Mar 2015; Agostino Sarubbo <ago@gentoo.org> django-1.4.19.ebuild,
+  django-1.6.10.ebuild:
+  Stable for x86, wrt bug #536586
+
+  01 Mar 2015; Agostino Sarubbo <ago@gentoo.org> django-1.4.19.ebuild,
+  django-1.6.10.ebuild:
+  Stable for amd64, wrt bug #536586
+
+  28 Feb 2015; Justin Lecher <jlec@gentoo.org> django-1.4.19.ebuild:
+  Fix typo, #541704
+
+  28 Feb 2015; Justin Lecher <jlec@gentoo.org> django-1.6.10.ebuild:
+  Fix typo, #541704
+
+*django-1.4.19 (28 Feb 2015)
+*django-1.6.10 (28 Feb 2015)
+
+  28 Feb 2015; Justin Lecher <jlec@gentoo.org> +django-1.4.19.ebuild,
+  +django-1.6.10.ebuild, +files/django-1.4.19-bashcomp.patch,
+  +files/django-1.4.19-test.patch, +files/django-1.6.10-bashcomp.patch,
+  +files/django-1.6.10-test.patch, -django-1.7.4.ebuild, -django-1.7.ebuild,
+  django-1.7.5.ebuild, django-9999.ebuild:
+  Version Bump and drop old for CVE-2015-{0219,0220,0221,0222}, #536586; add
+  correct dependencies for tests, Use optfeature instead of harddepened on
+  imaging, #473228
+
+*django-1.7.5 (28 Feb 2015)
+
+  28 Feb 2015; Justin Lecher <jlec@gentoo.org> +django-1.7.5.ebuild,
+  +files/django-1.7.5-bashcomp.patch, metadata.xml:
+  Version Bump; fix bashcompletions, #526272
 
 *django-1.7.4 (06 Feb 2015)
 

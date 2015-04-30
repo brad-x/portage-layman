@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jext/jext-5.0.ebuild,v 1.2 2009/06/12 16:03:06 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jext/jext-5.0.ebuild,v 1.3 2015/04/05 20:43:35 monsieurp Exp $
 
 EAPI=2
 

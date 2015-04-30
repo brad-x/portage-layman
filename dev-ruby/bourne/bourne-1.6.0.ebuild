@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bourne/bourne-1.6.0.ebuild,v 1.2 2014/12/31 11:35:44 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bourne/bourne-1.6.0.ebuild,v 1.4 2015/04/10 16:37:32 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.md"
@@ -19,7 +19,7 @@ HOMEPAGE="http://github.com/thoughtbot/bourne"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/mocha-1.1:1.0"

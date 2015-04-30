@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/plasma-mediacenter/plasma-mediacenter-1.3.0.ebuild,v 1.2 2014/07/17 14:54:40 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/plasma-mediacenter/plasma-mediacenter-1.3.0.ebuild,v 1.4 2015/03/27 16:29:44 ago Exp $
 
 EAPI=5
 
@@ -18,7 +18,7 @@ fi
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="debug nepomuk semantic-desktop"
 
 REQUIRED_USE="?? ( nepomuk semantic-desktop )"
@@ -27,6 +27,7 @@ REQUIRED_USE="?? ( nepomuk semantic-desktop )"
 RESTRICT="test"
 
 RDEPEND="
+	$(add_kdebase_dep plasma-workspace)
 	dev-qt/qt-mobility[multimedia,qml]
 	media-libs/taglib
 	nepomuk? ( $(add_kdebase_dep nepomuk-core) )

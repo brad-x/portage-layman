@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/emacs-vcs-25.0.9999-r1.ebuild,v 1.3 2014/12/29 11:28:11 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/emacs-vcs-25.0.9999-r1.ebuild,v 1.7 2015/03/31 17:25:58 ulm Exp $
 
 EAPI=5
 
@@ -33,8 +33,8 @@ IUSE="acl alsa aqua athena dbus games gconf gfile gif gnutls gpm gsettings gtk +
 REQUIRED_USE="?? ( aqua X )"
 
 RDEPEND="sys-libs/ncurses
-	>=app-admin/eselect-emacs-1.16
-	>=app-emacs/emacs-common-gentoo-1.4-r1[games?,X?]
+	>=app-eselect/eselect-emacs-1.16
+	>=app-emacs/emacs-common-gentoo-1.5[games?,X?]
 	net-libs/liblockfile
 	acl? ( virtual/acl )
 	alsa? ( media-libs/alsa-lib )
@@ -57,7 +57,7 @@ RDEPEND="sys-libs/ncurses
 		jpeg? ( virtual/jpeg:0= )
 		png? ( >=media-libs/libpng-1.4:0= )
 		svg? ( >=gnome-base/librsvg-2.0 )
-		tiff? ( media-libs/tiff )
+		tiff? ( media-libs/tiff:0 )
 		xpm? ( x11-libs/libXpm )
 		imagemagick? ( >=media-gfx/imagemagick-6.6.2 )
 		xft? (
@@ -207,7 +207,7 @@ src_configure() {
 		--infodir="${EPREFIX}"/usr/share/info/${EMACS_SUFFIX} \
 		--localstatedir="${EPREFIX}"/var \
 		--enable-locallisppath="${EPREFIX}/etc/emacs:${EPREFIX}${SITELISP}" \
-		--with-gameuser="${GAMES_USER_DED:-games}" \
+		--with-gameuser=":gamestat" \
 		--without-compress-install \
 		--with-file-notification=$(usev gfile || usev inotify || echo no) \
 		$(use_enable acl) \

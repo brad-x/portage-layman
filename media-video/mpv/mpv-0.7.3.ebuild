@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-0.7.3.ebuild,v 1.2 2015/02/04 13:33:19 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-0.7.3.ebuild,v 1.5 2015/03/28 01:53:34 yngwin Exp $
 
 EAPI=5
 EGIT_REPO_URI="https://github.com/mpv-player/mpv.git"
@@ -21,11 +21,11 @@ SRC_URI+=" https://github.com/mpv-player/mpv/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-2"
 SLOT="0"
 [[ ${PV} == *9999* ]] || \
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux"
-IUSE="+alsa bluray bs2b cdio +cli -doc-pdf dvb +dvd dvdnav egl +enca encode
-+iconv jack -joystick jpeg ladspa lcms +libass libav libcaca libguess libmpv
-lirc lua luajit +mpg123 -openal +opengl oss -portaudio postproc pulseaudio pvr
-samba -sdl selinux v4l vaapi vdpau vf-dlopen wayland +X xinerama +xscreensaver
+KEYWORDS="~amd64 ~arm ~hppa ~x86 ~amd64-linux"
+IUSE="+alsa bluray bs2b cdio +cli doc-pdf dvb +dvd dvdnav egl +enca encode
++iconv jack joystick jpeg ladspa lcms +libass libav libcaca libguess libmpv
+lirc lua luajit mpg123 openal +opengl oss portaudio postproc pulseaudio pvr
+samba sdl selinux v4l vaapi vdpau vf-dlopen wayland +X xinerama +xscreensaver
 +xv"
 
 REQUIRED_USE="
@@ -90,7 +90,7 @@ RDEPEND="
 	libguess? ( >=app-i18n/libguess-1.0 )
 	lirc? ( app-misc/lirc )
 	lua? (
-		!luajit? ( >=dev-lang/lua-5.1 )
+		!luajit? ( >=dev-lang/lua-5.1:= )
 		luajit? ( dev-lang/luajit:2 )
 	)
 	mpg123? ( >=media-sound/mpg123-1.14.0 )

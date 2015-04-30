@@ -1,12 +1,12 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/concentration/concentration-1.2-r1.ebuild,v 1.5 2014/05/15 16:50:04 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/concentration/concentration-1.2-r1.ebuild,v 1.8 2015/03/28 05:06:51 mr_bones_ Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games
 
 DESCRIPTION="The classic memory game with some new life"
-HOMEPAGE="http://www.happypenguin.org/show?Concentration"
+HOMEPAGE="https://packages.gentoo.org/package/games-puzzle/concentration"
 SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -16,15 +16,17 @@ IUSE=""
 
 DEPEND="media-libs/libsdl[sound,video]
 	media-libs/sdl-mixer[vorbis]
-	media-libs/sdl-image[png]
+	media-libs/sdl-image[jpeg,png]
 	media-libs/sdl-ttf"
+RDEPEND=${DEPEND}
 
-PATCHES=( "${FILESDIR}"/${P}-gentoo.patch )
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gentoo.patch
+}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	newicon pics/set1/19.png ${PN}.png
 	make_desktop_entry ${PN} Concentration
-	dodoc AUTHORS ChangeLog
 	prepgamesdirs
 }

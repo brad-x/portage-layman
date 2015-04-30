@@ -1,6 +1,25 @@
 # ChangeLog for dev-libs/leveldb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/leveldb/ChangeLog,v 1.25 2015/01/13 11:42:13 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/leveldb/ChangeLog,v 1.28 2015/03/06 09:12:42 vapier Exp $
+
+*leveldb-1.18-r1 (06 Mar 2015)
+
+  06 Mar 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/leveldb-1.18-configure.patch, +leveldb-1.18-r1.ebuild:
+  Fix USE=-snappy handling #541186 by Johan Bergström. Move memenv.h header to
+  leveldb/helpers/ to match Debian.
+
+*leveldb-1.18 (21 Feb 2015)
+
+  21 Feb 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/leveldb-1.18-mips.patch, +leveldb-1.18.ebuild:
+  Version bump. Move libmemenv.a behind USE=static-libs. Add arm64/mips support.
+
+  21 Feb 2015; Mike Frysinger <vapier@gentoo.org> leveldb-1.10.0-r1.ebuild,
+  leveldb-1.11.0-r1.ebuild, leveldb-1.12.0-r1.ebuild, leveldb-1.13.0-r1.ebuild,
+  leveldb-1.14.0.ebuild, leveldb-1.15.0-r1.ebuild, leveldb-1.15.0.ebuild,
+  leveldb-1.17.ebuild, leveldb-1.9.0-r5.ebuild, leveldb-1.9.0-r6.ebuild:
+  Update HOMEPAGE to github.
 
   13 Jan 2015; Anthony G. Basile <blueness@gentoo.org> leveldb-1.9.0-r6.ebuild:
   Stable on amd64, arm and x86, bug #536228

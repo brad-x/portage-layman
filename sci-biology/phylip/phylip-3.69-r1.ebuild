@@ -1,19 +1,19 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/phylip/phylip-3.69-r1.ebuild,v 1.1 2013/02/17 11:28:00 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/phylip/phylip-3.69-r1.ebuild,v 1.5 2015/04/21 19:08:18 pacho Exp $
 
 EAPI=5
 
 inherit toolchain-funcs
 
-DESCRIPTION="PHYLIP - The PHYLogeny Inference Package"
+DESCRIPTION=" The PHYLogeny Inference Package"
 HOMEPAGE="http://evolution.genetics.washington.edu/phylip.html"
 SRC_URI="http://evolution.gs.washington.edu/${PN}/download/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="freedist"
 IUSE=""
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 
 RDEPEND="x11-libs/libXaw"
 DEPEND="${RDEPEND}
@@ -28,7 +28,7 @@ src_prepare() {
 		-e "s/DC        = cc/DC        = $(tc-getCC)/" \
 		-e "/ -o /s:\(\$(CC)\):\1 ${LDFLAGS}:g" \
 		-i Makefile || die "Patching Makefile failed."
-	mkdir ../fonts
+	mkdir ../fonts || die
 }
 
 src_compile() {
@@ -36,7 +36,7 @@ src_compile() {
 }
 
 src_install() {
-	cd "${WORKDIR}/${P}"
+	cd "${WORKDIR}/${P}" || die
 
 	mv exe/font* fonts || die "Font move failed."
 	mv exe/factor exe/factor-${PN} || die "Renaming factor failed."

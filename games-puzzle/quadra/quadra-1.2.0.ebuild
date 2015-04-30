@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/quadra/quadra-1.2.0.ebuild,v 1.4 2012/07/27 07:54:37 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/quadra/quadra-1.2.0.ebuild,v 1.6 2015/03/24 17:25:36 ago Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games
 
 DESCRIPTION="A tetris clone with multiplayer support"
@@ -11,13 +11,15 @@ SRC_URI="http://quadra.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
-RDEPEND="x11-libs/libXpm
+RDEPEND="x11-libs/libX11
+	x11-libs/libXpm
 	x11-libs/libXxf86vm
 	x11-libs/libXext
-	media-libs/libpng"
+	media-libs/libpng:0
+	sys-libs/zlib"
 DEPEND="${RDEPEND}
 	sys-devel/bc
 	x11-proto/xextproto"
@@ -25,14 +27,14 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -i \
 		-e "/^libgamesdir:=/s:/games:/${PN}:" \
-		-e "/^datagamesdir:=/s:/games:/${PN}:" config/config.mk.in \
-			|| die "sed config/config.mk.in failed"
+		-e "/^datagamesdir:=/s:/games:/${PN}:" \
+		config/config.mk.in || die
 }
 
 src_install() {
-	dogamesbin ${PN} || die "dogamesbin failed"
+	dogamesbin ${PN}
 	insinto "${GAMES_DATADIR}"/${PN}
-	doins ${PN}.res || die "doins failed"
+	doins ${PN}.res
 	doicon images/${PN}.xpm
 	make_desktop_entry ${PN} Quadra
 

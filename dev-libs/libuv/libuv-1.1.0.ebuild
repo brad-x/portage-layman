@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libuv/libuv-1.1.0.ebuild,v 1.1 2014/12/30 15:23:33 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libuv/libuv-1.1.0.ebuild,v 1.3 2015/03/05 05:28:48 patrick Exp $
 
 EAPI=5
 

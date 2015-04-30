@@ -1,6 +1,27 @@
 # ChangeLog for sys-firmware/seabios
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-firmware/seabios/ChangeLog,v 1.36 2014/11/08 18:25:36 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-firmware/seabios/ChangeLog,v 1.40 2015/04/08 18:25:12 mgorny Exp $
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> seabios-1.7.5-r1.ebuild,
+  seabios-1.7.5.ebuild:
+  Drop old Python implementations
+
+  16 Mar 2015; Mike Frysinger <vapier@gentoo.org> seabios-1.7.5-r1.ebuild,
+  seabios-1.7.5.ebuild:
+  Use new toolchain helpers for selecting the bfd linker #438058 by Alexandre
+  Rostovtsev.
+
+*seabios-1.7.5-r1 (15 Feb 2015)
+
+  15 Feb 2015; Mike Frysinger <vapier@gentoo.org> +files/seavgabios/README,
+  +files/seavgabios/config.vga-cirrus, +files/seavgabios/config.vga-isavga,
+  +files/seavgabios/config.vga-qxl, +files/seavgabios/config.vga-stdvga,
+  +files/seavgabios/config.vga-vmware, +seabios-1.7.5-r1.ebuild, metadata.xml:
+  Add USE=seavgabios support #523134 by Brad Laue.
+
+  15 Feb 2015; Mike Frysinger <vapier@gentoo.org> seabios-1.7.5.ebuild:
+  Avoid downloading files that are not used (e.g. no source tarball for
+  USE=binary).
 
   08 Nov 2014; Agostino Sarubbo <ago@gentoo.org> -seabios-1.6.3.ebuild,
   -seabios-1.7.0.ebuild, -seabios-1.7.1.ebuild, -seabios-1.7.2.1.ebuild,

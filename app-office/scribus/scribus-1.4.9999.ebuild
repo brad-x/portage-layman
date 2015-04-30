@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.4.9999.ebuild,v 1.10 2015/01/28 08:51:40 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.4.9999.ebuild,v 1.11 2015/04/12 14:51:58 jlec Exp $
 
 EAPI=5
 
@@ -42,7 +42,7 @@ COMMON_DEPEND="
 	media-libs/tiff:0
 	net-print/cups
 	sys-libs/zlib[minizip]
-	virtual/jpeg
+	virtual/jpeg:0=
 	cairo? ( x11-libs/cairo[X,svg] )
 	!cairo? ( media-libs/libart_lgpl )
 	hunspell? ( app-text/hunspell )

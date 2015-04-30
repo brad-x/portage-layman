@@ -1,6 +1,23 @@
 # ChangeLog for sci-geosciences/merkaartor
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/merkaartor/ChangeLog,v 1.29 2013/10/23 19:17:27 hanno Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/merkaartor/ChangeLog,v 1.33 2015/04/07 14:40:20 jlec Exp $
+
+  01 Apr 2015; Justin Lecher <jlec@gentoo.org>
+  -files/merkaartor-9999-system-libs.patch, merkaartor-9999.ebuild:
+  Drop patch as it was merged by upstream
+
+*merkaartor-0.18.1-r1 (31 Mar 2015)
+
+  31 Mar 2015; Justin Lecher <jlec@gentoo.org>
+  +files/merkaartor-0.18.1-system-libs.patch,
+  +files/merkaartor-9999-system-libs.patch, +merkaartor-0.18.1-r1.ebuild,
+  merkaartor-0.17.2.ebuild, merkaartor-0.18.1.ebuild, merkaartor-9999.ebuild,
+  metadata.xml:
+  Use system libs instead of bundled ones, bug #487512; thanks Nikoli for the
+  patch; update live ebuild to new repo location, bug #544862
+
+  28 Feb 2015; Agostino Sarubbo <ago@gentoo.org> merkaartor-9999.ebuild:
+  Move KEYWORDS to another line to avoid bug #399061
 
   23 Oct 2013; Hanno Boeck <hanno@gentoo.org> metadata.xml:
   remove myself as maintainer, now maintained by sci-geosciences herd
@@ -16,7 +33,7 @@
 
   23 Jan 2013; Justin Lecher <jlec@gentoo.org> +merkaartor-0.18.1.ebuild,
   metadata.xml:
-  Version BUmp, #429788; fixes compilation with gcc-4.7, #422549
+  Version Bump, #429788; fixes compilation with gcc-4.7, #422549
 
   16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> merkaartor-0.17.2.ebuild:
   workaround for bug 399061

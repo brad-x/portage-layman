@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-304.125.ebuild,v 1.3 2014/12/12 09:45:25 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-304.125.ebuild,v 1.7 2015/03/31 18:12:46 ulm Exp $
 
 EAPI=5
 inherit eutils flag-o-matic linux-info linux-mod multilib nvidia-driver \
@@ -28,10 +28,10 @@ IUSE="acpi multilib kernel_FreeBSD kernel_linux pax_kernel +tools +X"
 RESTRICT="bindist mirror strip"
 EMULTILIB_PKG="true"
 
-COMMON="app-admin/eselect-opencl
+COMMON="app-eselect/eselect-opencl
 	kernel_linux? ( >=sys-libs/glibc-2.6.1 )
 	X? (
-		>=app-admin/eselect-opengl-1.0.9
+		>=app-eselect/eselect-opengl-1.0.9
 	)"
 DEPEND="${COMMON}
 	kernel_linux? (
@@ -42,7 +42,7 @@ RDEPEND="${COMMON}
 	acpi? ( sys-power/acpid )
 	tools? (
 		dev-libs/atk
-		dev-libs/glib
+		dev-libs/glib:2
 		x11-libs/gdk-pixbuf
 		x11-libs/gtk+:2
 		x11-libs/libX11
@@ -51,7 +51,7 @@ RDEPEND="${COMMON}
 		x11-libs/pangox-compat
 	)
 	X? (
-		<x11-base/xorg-server-1.16.99:=
+		<x11-base/xorg-server-1.17.99:=
 		x11-libs/libXvMC
 		multilib? (
 			|| (
@@ -331,8 +331,7 @@ src_install() {
 		doexe ${NV_OBJ}/nvidia-settings
 	fi
 
-	exeinto /usr/bin/
-	doexe ${NV_OBJ}/nvidia-bug-report.sh
+	dobin ${NV_OBJ}/nvidia-bug-report.sh
 
 	# Desktop entries for nvidia-settings
 	if use tools ; then

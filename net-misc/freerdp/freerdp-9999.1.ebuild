@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.24 2015/01/29 21:48:34 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.25 2015/03/27 22:39:52 floppym Exp $
 
 EAPI="5"
 
 inherit cmake-utils vcs-snapshot
 
 if [[ ${PV} != 9999* ]]; then
-	COMMIT="7a6c6b7436c2fcb02a38bf89e0b3efcdb43f2ef5"
+	COMMIT="aa2181dcf2dd98693767ba738c5b2ad8c3d742d4"
 	SRC_URI="https://github.com/FreeRDP/FreeRDP/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 else
@@ -26,8 +26,8 @@ IUSE="alsa +client cups debug doc ffmpeg gstreamer jpeg
 	pulseaudio server smartcard cpu_flags_x86_sse2 test usb wayland X xinerama xv"
 
 RDEPEND="
-	dev-libs/openssl
-	sys-libs/zlib
+	dev-libs/openssl:0
+	sys-libs/zlib:0
 	alsa? ( media-libs/alsa-lib )
 	cups? ( net-print/cups )
 	client? (
@@ -52,7 +52,7 @@ RDEPEND="
 		media-libs/gst-plugins-base:1.0
 		x11-libs/libXrandr
 	)
-	jpeg? ( virtual/jpeg )
+	jpeg? ( virtual/jpeg:0 )
 	pulseaudio? ( media-sound/pulseaudio )
 	server? (
 		X? (

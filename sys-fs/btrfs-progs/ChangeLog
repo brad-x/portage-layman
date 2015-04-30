@@ -1,6 +1,38 @@
 # ChangeLog for sys-fs/btrfs-progs
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/btrfs-progs/ChangeLog,v 1.95 2015/01/29 18:55:52 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/btrfs-progs/ChangeLog,v 1.103 2015/04/19 14:59:53 floppym Exp $
+
+  19 Apr 2015; Mike Gilbert <floppym@gentoo.org> btrfs-progs-3.19.1.ebuild,
+  btrfs-progs-9999.ebuild:
+  Disable backtrace on non-glibc systems.
+
+*btrfs-progs-3.19.1 (26 Mar 2015)
+
+  26 Mar 2015; Mike Gilbert <floppym@gentoo.org> +btrfs-progs-3.19.1.ebuild,
+  btrfs-progs-9999.ebuild:
+  Version bump, bug 544602. Install bash completion file, bug 544414.
+
+  25 Mar 2015; Mike Gilbert <floppym@gentoo.org> btrfs-progs-9999.ebuild:
+  Add note about --enable-convert being broken.
+
+  25 Mar 2015; Mike Gilbert <floppym@gentoo.org> btrfs-progs-3.19.ebuild,
+  btrfs-progs-9999.ebuild, metadata.xml:
+  Make btrfs-convert optional. Move binaries back to /sbin.
+
+*btrfs-progs-3.19 (25 Mar 2015)
+
+  25 Mar 2015; Mike Gilbert <floppym@gentoo.org> +btrfs-progs-3.19.ebuild,
+  btrfs-progs-9999.ebuild:
+  Version bump, bug 544392.
+
+  03 Mar 2015; Yixun Lan <dlan@gentoo.org> btrfs-progs-3.18.2.ebuild:
+  add arm64 support, tested on A53 board
+
+  14 Feb 2015; Mike Gilbert <floppym@gentoo.org> btrfs-progs-9999.ebuild:
+  Move custom autogen logic to the ebuild and call eautoreconf.
+
+  09 Feb 2015; Sergei Trofimovich <slyfox@gentoo.org> btrfs-progs-9999.ebuild:
+  Run upstream ./autogen.sh (bug #539434 by Helmut Jarausch).
 
 *btrfs-progs-3.18.2 (29 Jan 2015)
 

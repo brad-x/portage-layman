@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.1.29-r1.ebuild,v 1.1 2014/08/04 03:34:08 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.1.29-r1.ebuild,v 1.3 2015/03/20 14:41:50 jlec Exp $
 
 EAPI=5
-inherit eutils db flag-o-matic java-pkg-opt-2 autotools multilib
+inherit eutils db flag-o-matic java-pkg-opt-2 autotools multilib toolchain-funcs
 
 #Number of official patches
 #PATCHNO=`echo ${PV}|sed -e "s,\(.*_p\)\([0-9]*\),\2,"`
@@ -34,11 +34,11 @@ IUSE="doc java cxx tcl test"
 REQUIRED_USE="test? ( tcl )"
 
 # the entire testsuite needs the TCL functionality
-DEPEND="tcl? ( >=dev-lang/tcl-8.4 )
-	test? ( >=dev-lang/tcl-8.4 )
+DEPEND="tcl? ( >=dev-lang/tcl-8.4:0 )
+	test? ( >=dev-lang/tcl-8.4:0 )
 	java? ( >=virtual/jdk-1.5 )
 	>=sys-devel/binutils-2.16.1"
-RDEPEND="tcl? ( dev-lang/tcl )
+RDEPEND="tcl? ( dev-lang/tcl:0 )
 	java? ( >=virtual/jre-1.5 )"
 
 src_prepare() {
@@ -96,6 +96,8 @@ src_prepare() {
 
 src_configure() {
 	local myconf=''
+
+	tc-ld-disable-gold #470634
 
 	# compilation with -O0 fails on amd64, see bug #171231
 	if use amd64; then

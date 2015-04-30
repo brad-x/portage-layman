@@ -1,12 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/gnuradio-9999.ebuild,v 1.28 2015/01/21 12:32:44 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/gnuradio-9999.ebuild,v 1.35 2015/04/08 10:29:05 chithanh Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
 CMAKE_BUILD_TYPE="None"
-inherit cmake-utils fdo-mime gnome2-utils python-single-r1
+inherit cmake-utils fdo-mime gnome2-utils python-single-r1 eutils
 
 DESCRIPTION="Toolkit that provides signal processing blocks to implement software radios"
 HOMEPAGE="http://gnuradio.org/"
@@ -18,11 +18,11 @@ if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
 	KEYWORDS=""
 else
-	SRC_URI="http://gnuradio.org/releases/${PN}/${P}.tar.gz"
+	SRC_URI="http://s3-dist.gnuradio.org/${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~x86"
 fi
 
-IUSE="+audio +alsa atsc +analog +digital channels +ctrlport doc dtv examples fcd fec +filter grc jack log noaa oss pager performance-counters portaudio +qt4 sdl test trellis uhd vocoder +utils wavelet wxwidgets zeromq"
+IUSE="+audio +alsa atsc +analog +digital channels doc dtv examples fcd fec +filter grc jack log noaa oss pager performance-counters portaudio +qt4 sdl test trellis uhd vocoder +utils wavelet wxwidgets zeromq"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 		audio? ( || ( alsa oss jack portaudio ) )
@@ -32,6 +32,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}
 		portaudio? ( audio )
 		analog? ( filter )
 		digital? ( filter analog )
+		dtv? ( fec )
 		pager? ( filter analog )
 		qt4? ( filter )
 		uhd? ( filter analog )
@@ -47,12 +48,10 @@ RDEPEND="${PYTHON_DEPS}
 	dev-libs/boost:0=[${PYTHON_USEDEP}]
 	!<=dev-libs/boost-1.52.0-r6:0/1.52
 	dev-python/numpy[${PYTHON_USEDEP}]
-	>=dev-util/cppunit-1.9.14
 	sci-libs/fftw:3.0=
 	alsa? (
 		media-libs/alsa-lib[${PYTHON_USEDEP}]
 	)
-	ctrlport? ( dev-libs/Ice[python,${PYTHON_USEDEP}] )
 	fcd? ( virtual/libusb:1 )
 	filter? ( sci-libs/scipy )
 	grc? (
@@ -86,8 +85,7 @@ RDEPEND="${PYTHON_DEPS}
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/wxpython:2.8[${PYTHON_USEDEP}]
 	)
-	zeromq? ( >=net-libs/zeromq-2.1.11
-		net-libs/cppzmq )
+	zeromq? ( >=net-libs/zeromq-2.1.11 )
 	"
 
 DEPEND="${RDEPEND}
@@ -98,12 +96,10 @@ DEPEND="${RDEPEND}
 		>=app-doc/doxygen-1.5.7.1
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
-	grc? (
-		x11-misc/xdg-utils
-	)
-	oss? (
-		virtual/os-headers
-	)
+	grc? ( x11-misc/xdg-utils )
+	oss? ( virtual/os-headers )
+	test? ( >=dev-util/cppunit-1.9.14 )
+	zeromq? ( net-libs/cppzmq )
 "
 
 src_prepare() {
@@ -111,8 +107,7 @@ src_prepare() {
 
 	# Useless UI element would require qt3support, bug #365019
 	sed -i '/qPixmapFromMimeSource/d' "${S}"/gr-qtgui/lib/spectrumdisplayform.ui || die
-	#epatch "${FILESDIR}"/${PN}-3.6.1-automagic-audio.patch
-	#epatch "${FILESDIR}/${P}-build-type-nonfatal.patch"
+	epatch_user
 }
 
 src_configure() {
@@ -132,7 +127,6 @@ src_configure() {
 		$(cmake-utils_use_enable analog GR_ANALOG) \
 		$(cmake-utils_use_enable atsc GR_ATSC) \
 		$(cmake-utils_use_enable channels GR_CHANNELS) \
-		$(cmake-utils_use_enable ctrlport GR_CTRLPORT) \
 		$(cmake-utils_use_enable digital GR_DIGITAL) \
 		$(cmake-utils_use_enable doc DOXYGEN) \
 		$(cmake-utils_use_enable doc SPHINX) \

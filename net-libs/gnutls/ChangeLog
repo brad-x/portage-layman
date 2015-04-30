@@ -1,6 +1,40 @@
 # ChangeLog for net-libs/gnutls
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/ChangeLog,v 1.526 2015/02/06 18:52:35 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/ChangeLog,v 1.534 2015/04/27 12:32:21 ago Exp $
+
+  27 Apr 2015; Agostino Sarubbo <ago@gentoo.org> gnutls-3.3.10-r2.ebuild:
+  Stable for sparc, wrt bug #492522
+
+  10 Apr 2015; Alon Bar-Lev <alonbl@gentoo.org> gnutls-3.3.14.ebuild,
+  gnutls-3.4.0.ebuild, metadata.xml:
+  Add openssl USE to enable/disable the openssl compatibility library
+
+  10 Apr 2015; Patrick Lauer <patrick@gentoo.org> gnutls-3.3.10-r2.ebuild,
+  gnutls-3.3.12.ebuild, gnutls-3.3.14.ebuild:
+  Tighten dependencies for nettle #546100
+
+*gnutls-3.4.0 (10 Apr 2015)
+
+  10 Apr 2015; Alon Bar-Lev <alonbl@gentoo.org> +files/gnutls-3.4.0-build.patch,
+  +gnutls-3.4.0.ebuild, metadata.xml:
+  Version bump, removed most of complexity of multilib as tools are optional,
+  multilib is probably broken, we fix it fast once issue reported. removed
+  unknown undocumented complexity so we can document and fix, add subslot
+
+  03 Apr 2015; Mike Frysinger <vapier@gentoo.org> gnutls-2.12.23-r6.ebuild:
+  Fix cross-compiling by not searching the host paths directly.  The toolchain
+  already has the right paths built into it for finding these libs.
+
+*gnutls-3.3.14 (01 Apr 2015)
+
+  01 Apr 2015; Alon Bar-Lev <alonbl@gentoo.org> +gnutls-3.3.14.ebuild:
+  Version bump, bug#545208
+
+  10 Mar 2015; Mike Frysinger <vapier@gentoo.org> gnutls-3.3.10-r2.ebuild:
+  Mark arm64/ia64/m68k/s390/sh stable #492522.
+
+  25 Feb 2015; Pacho Ramos <pacho@gentoo.org> gnutls-3.3.10-r2.ebuild:
+  ppc/ppc64 stable, bug #492522
 
   06 Feb 2015; Pacho Ramos <pacho@gentoo.org> gnutls-3.3.10-r2.ebuild:
   amd64/x86 stable, bug #492522

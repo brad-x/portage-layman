@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/cogl/cogl-1.18.2-r1.ebuild,v 1.1 2014/12/23 22:25:58 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/cogl/cogl-1.18.2-r1.ebuild,v 1.4 2015/03/31 17:56:31 ulm Exp $
 
 EAPI="5"
 CLUTTER_LA_PUNT="yes"
@@ -16,7 +16,7 @@ SLOT="1.0/20" # subslot = .so version
 # doc and profile disable for now due bugs #484750 and #483332
 IUSE="examples gles2 gstreamer +introspection +kms +opengl +pango test wayland" # doc profile
 REQUIRED_USE="wayland? ( gles2 )"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 COMMON_DEPEND="
 	>=dev-libs/glib-2.32:2
@@ -51,7 +51,7 @@ DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
 	test? (
-		app-admin/eselect-opengl
+		app-eselect/eselect-opengl
 		media-libs/mesa[classic] )
 "
 
@@ -68,8 +68,8 @@ src_prepare() {
 		# For some reason the configure switch will not completely disable
 		# tests being built
 		sed -e "s/^\(SUBDIRS =.*\)test-fixtures\(.*\)$/\1\2/" \
-    		-e "s/^\(SUBDIRS +=.*\)tests\(.*\)$/\1\2/" \
-    		-e "s/^\(.*am__append.* \)tests\(.*\)$/\1\2/" \
+			-e "s/^\(SUBDIRS +=.*\)tests\(.*\)$/\1\2/" \
+			-e "s/^\(.*am__append.* \)tests\(.*\)$/\1\2/" \
 			-i Makefile.am Makefile.in || die
 	fi
 

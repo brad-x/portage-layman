@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-9999.ebuild,v 1.8 2014/09/07 18:55:10 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-9999.ebuild,v 1.9 2015/03/21 09:42:37 mgorny Exp $
 
-EAPI="4"
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} pypy2_0 )
+EAPI="5"
+PYTHON_COMPAT=( python{2_7,3_3,3_4} pypy )
 DISTUTILS_OPTIONAL=1
 
 inherit eutils distutils-r1 libtool toolchain-funcs multilib-minimal
@@ -25,7 +25,9 @@ SLOT="0"
 IUSE="python static-libs zlib"
 
 DEPEND="python? ( ${PYTHON_DEPS} )
-	zlib? ( sys-libs/zlib )"
+	zlib? ( >=sys-libs/zlib-1.2.8-r1[${MULTILIB_USEDEP}] )
+	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20131008-r21
+		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
 RDEPEND="${DEPEND}
 	python? ( !dev-python/python-magic )"
 

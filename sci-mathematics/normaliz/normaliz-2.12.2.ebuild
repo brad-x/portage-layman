@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/normaliz/normaliz-2.12.2.ebuild,v 1.1 2015/01/29 10:02:44 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/normaliz/normaliz-2.12.2.ebuild,v 1.4 2015/03/25 14:12:05 ago Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SRC_URI="http://www.mathematik.uni-osnabrueck.de/${PN}/Normaliz${PV}/Normaliz${P
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc extras openmp"
 
 RDEPEND="dev-libs/gmp[cxx]"
@@ -28,6 +28,7 @@ S=${WORKDIR}/${MYP}
 
 src_prepare () {
 	epatch "${FILESDIR}/${PN}-2.12.1-respect-flags.patch"
+	epatch "${FILESDIR}/${PN}-2.12.2-gcc49.patch"
 
 	# Respect users AR tool (Bug 474532)
 	sed -e "s:ar -cr:$(tc-getAR) -cr:" -i source/libnormaliz/Makefile || die

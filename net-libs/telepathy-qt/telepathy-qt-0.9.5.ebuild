@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-qt/telepathy-qt-0.9.5.ebuild,v 1.2 2015/01/30 22:24:22 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-qt/telepathy-qt-0.9.5.ebuild,v 1.6 2015/03/25 14:05:04 ago Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
-inherit base python-any-r1 cmake-utils virtualx multibuild
+inherit python-any-r1 cmake-utils virtualx multibuild
 
 DESCRIPTION="Qt4 bindings for the Telepathy D-Bus protocol"
 HOMEPAGE="http://telepathy.freedesktop.org/"
@@ -13,7 +13,7 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm x86"
 IUSE="debug farstream +qt4 qt5 test"
 
 RDEPEND="
@@ -48,8 +48,6 @@ DEPEND="${RDEPEND}
 
 DOCS=( AUTHORS ChangeLog HACKING NEWS README )
 
-RESTRICT="test"
-
 pkg_setup() {
 	python-any-r1_pkg_setup
 	MULTIBUILD_VARIANTS=( $(usev qt4) $(usev qt5) )
@@ -83,7 +81,7 @@ src_compile() {
 src_test() {
 	mytest() {
 		pushd "${BUILD_DIR}" > /dev/null
-		Xemake test || die "tests failed"
+		VIRTUALX_COMMAND="ctest -E '(CallChannel)'" virtualmake || die "tests failed"
 		popd > /dev/null
 	}
 

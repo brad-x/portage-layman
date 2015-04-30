@@ -1,12 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.14.ebuild,v 1.9 2015/01/15 09:48:44 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.14.ebuild,v 1.12 2015/04/25 18:32:08 zmedico Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=(
 	pypy
-	python3_2 python3_3 python3_4
+	python3_3 python3_4
 	python2_7
 )
 # Note: substituted below
@@ -15,10 +15,10 @@ PYTHON_REQ_USE='bzip2(+)'
 inherit distutils-r1 multilib
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
-HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Portage"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ~ppc ~ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ~ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 SLOT="0"
 IUSE="build doc epydoc +ipc linguas_ru selinux xattr"
 
@@ -49,7 +49,7 @@ RDEPEND="
 	xattr? ( kernel_linux? (
 		>=sys-apps/install-xattr-0.3
 		$(python_gen_cond_dep 'dev-python/pyxattr[${PYTHON_USEDEP}]' \
-			python{2_7,3_2} pypy)
+			python2_7 pypy)
 	) )
 	!<app-admin/logrotate-3.8.0"
 PDEPEND="

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.28 2015/02/07 02:25:09 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.30 2015/03/31 17:30:28 ulm Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
@@ -37,7 +37,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	~app-editors/vim-core-${PV}
-	>=app-admin/eselect-vi-1.1
+	>=app-eselect/eselect-vi-1.1
 	>=sys-libs/ncurses-5.2-r2
 	x11-libs/libXext
 	x11-libs/libXt
@@ -58,8 +58,8 @@ RDEPEND="
 	)
 	cscope? ( dev-util/cscope )
 	lua? (
-		luajit? ( dev-lang/luajit )
-		!luajit? ( dev-lang/lua[deprecated] )
+		luajit? ( dev-lang/luajit:2= )
+		!luajit? ( dev-lang/lua:0[deprecated] )
 	)
 	nls? ( virtual/libintl )
 	perl? ( dev-lang/perl:= )
@@ -68,7 +68,7 @@ RDEPEND="
 	ruby? ( || ( dev-lang/ruby:2.2 dev-lang/ruby:2.1 dev-lang/ruby:2.0 ) )
 	selinux? ( sys-libs/libselinux )
 	session? ( x11-libs/libSM )
-	tcl? ( dev-lang/tcl )
+	tcl? ( dev-lang/tcl:0= )
 "
 DEPEND="${RDEPEND}
 	dev-util/ctags

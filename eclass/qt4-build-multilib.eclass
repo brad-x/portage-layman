@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/qt4-build-multilib.eclass,v 1.4 2015/01/18 01:49:43 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/qt4-build-multilib.eclass,v 1.10 2015/04/22 20:23:47 pesa Exp $
 
 # @ECLASS: qt4-build-multilib.eclass
 # @MAINTAINER:
@@ -19,7 +19,7 @@ esac
 
 inherit eutils flag-o-matic multilib multilib-minimal toolchain-funcs
 
-HOMEPAGE="https://www.qt.io/ https://qt-project.org/"
+HOMEPAGE="https://www.qt.io/"
 LICENSE="|| ( LGPL-2.1 GPL-3 )"
 SLOT="4"
 
@@ -27,8 +27,9 @@ case ${PV} in
 	4.?.9999)
 		QT4_BUILD_TYPE="live"
 		EGIT_REPO_URI=(
-			"git://gitorious.org/qt/qt.git"
-			"https://git.gitorious.org/qt/qt.git"
+			"git://code.qt.io/qt/qt.git"
+			"https://code.qt.io/git/qt/qt.git"
+			"https://github.com/qtproject/qt.git"
 		)
 		EGIT_BRANCH=${PV%.9999}
 		inherit git-r3
@@ -167,15 +168,23 @@ qt4-build-multilib_src_prepare() {
 		fi
 	fi
 
+	if [[ ${PN} == qtcore ]]; then
+		# Bug 373061
+		# qmake bus errors with -O2 or -O3 but -O1 works
+		if [[ ${CHOST} == *86*-apple-darwin* ]]; then
+			replace-flags -O[23] -O1
+		fi
+
+		# Bug 503500
+		# undefined reference with -Os and --as-needed
+		if use x86 || use_if_iuse abi_x86_32; then
+			replace-flags -Os -O2
+		fi
+	fi
+
 	# Bug 261632
 	if use ppc64; then
 		append-flags -mminimal-toc
-	fi
-
-	# Bug 373061
-	# qmake bus errors with -O2 or -O3 but -O1 works
-	if [[ ${CHOST} == *86*-apple-darwin* ]]; then
-		replace-flags -O[23] -O1
 	fi
 
 	# Bug 417105
@@ -189,7 +198,7 @@ qt4-build-multilib_src_prepare() {
 		configure || die "sed SYSTEM_VARIABLES failed"
 
 	# Reset QMAKE_*FLAGS_{RELEASE,DEBUG} variables,
-	# or they will override user's flags (.qmake.cache)
+	# or they will override the user's flags (via .qmake.cache)
 	sed -i -e '/^SYSTEM_VARIABLES=/ i \
 		QMakeVar set QMAKE_CFLAGS_RELEASE\
 		QMakeVar set QMAKE_CFLAGS_DEBUG\
@@ -206,8 +215,12 @@ qt4-build-multilib_src_prepare() {
 			'QMAKE_CFLAGS+=${CFLAGS}' 'QMAKE_CXXFLAGS+=${CXXFLAGS}' 'QMAKE_LFLAGS+=${LDFLAGS}'&:" \
 		|| die "sed config.tests failed"
 
-	# Bug 172219
-	sed -e 's:/X11R6/:/:' -i mkspecs/$(qt4_get_mkspec)/qmake.conf || die
+	# Delete references to the obsolete /usr/X11R6 directory
+	# On prefix, this also prevents looking at non-prefix stuff
+	sed -i -re '/^QMAKE_(LIB|INC)DIR(_X11|_OPENGL|)\s+/ s/=.*/=/' \
+		mkspecs/common/linux.conf \
+		mkspecs/$(qt4_get_mkspec)/qmake.conf \
+		|| die "sed QMAKE_(LIB|INC)DIR failed"
 
 	if [[ ${CHOST} == *-darwin* ]]; then
 		# Set FLAGS and remove -arch, since our gcc-apple is multilib crippled (by design)
@@ -245,22 +258,10 @@ qt4-build-multilib_src_prepare() {
 		fi
 	fi
 
-	# this is needed for all systems with a separate -liconv, except
-	# Darwin, for which the sources already cater for -liconv
-	if use !elibc_glibc && [[ ${CHOST} != *-darwin* ]]; then
-		sed -e 's|mac:\(LIBS += -liconv\)|\1|g' \
-			-i config.tests/unix/iconv/iconv.pro \
-			|| die "sed iconv.pro failed"
+	if [[ ${CHOST} == *-solaris* ]]; then
+		sed -i -e '/^QMAKE_LFLAGS_THREAD/a QMAKE_LFLAGS_DYNAMIC_LIST = -Wl,--dynamic-list,' \
+			mkspecs/$(qt4_get_mkspec)/qmake.conf || die
 	fi
-
-	# we need some patches for Solaris
-	sed -i -e '/^QMAKE_LFLAGS_THREAD/a\QMAKE_LFLAGS_DYNAMIC_LIST = -Wl,--dynamic-list,' \
-		mkspecs/$(qt4_get_mkspec)/qmake.conf || die
-	# use GCC over SunStudio
-	sed -i -e '/PLATFORM=solaris-cc/s/cc/g++/' configure || die
-	# do not flirt with non-Prefix stuff, we're quite possessive
-	sed -i -e '/^QMAKE_\(LIB\|INC\)DIR\(_X11\|_OPENGL\|\)\t/s/=.*$/=/' \
-		mkspecs/$(qt4_get_mkspec)/qmake.conf || die
 
 	# apply patches
 	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
@@ -291,7 +292,7 @@ qt4_multilib_src_configure() {
 		x86-macos)		  arch=x86 ;;
 		x86*)			  arch=i386 ;;
 		alpha|arm|ia64|mips|s390) arch=$(tc-arch) ;;
-		hppa|sh)		  arch=generic ;;
+		arm64|hppa|sh)		  arch=generic ;;
 		*) die "qt4-build-multilib.eclass: unsupported tc-arch '$(tc-arch)'" ;;
 	esac
 

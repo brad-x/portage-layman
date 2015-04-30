@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.25 2015/02/07 02:19:56 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.27 2015/03/31 17:37:10 ulm Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
@@ -36,15 +36,15 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	>=app-admin/eselect-vi-1.1
+	>=app-eselect/eselect-vi-1.1
 	>=sys-libs/ncurses-5.2-r2
 	nls? ( virtual/libintl )
 	acl? ( kernel_linux? ( sys-apps/acl ) )
 	cscope? ( dev-util/cscope )
 	gpm? ( >=sys-libs/gpm-1.19.3 )
 	lua? (
-		luajit? ( dev-lang/luajit )
-		!luajit? ( dev-lang/lua[deprecated] )
+		luajit? ( dev-lang/luajit:2= )
+		!luajit? ( dev-lang/lua:0[deprecated] )
 	)
 	!minimal? (
 		~app-editors/vim-core-${PV}
@@ -55,7 +55,7 @@ RDEPEND="
 	racket? ( dev-scheme/racket )
 	ruby? ( || ( dev-lang/ruby:2.2 dev-lang/ruby:2.1 dev-lang/ruby:2.0 ) )
 	selinux? ( sys-libs/libselinux )
-	tcl? ( dev-lang/tcl )
+	tcl? ( dev-lang/tcl:0= )
 	X? ( x11-libs/libXt )
 "
 DEPEND="${RDEPEND}

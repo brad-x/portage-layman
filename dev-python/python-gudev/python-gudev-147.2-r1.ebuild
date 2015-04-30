@@ -1,14 +1,14 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-gudev/python-gudev-147.2-r1.ebuild,v 1.2 2014/07/24 17:23:28 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-gudev/python-gudev-147.2-r1.ebuild,v 1.4 2015/04/08 08:05:05 mgorny Exp $
 
 EAPI=5
 
 AUTOTOOLS_AUTORECONF=1
 AUTOTOOLS_PRUNE_LIBTOOL_FILES=modules
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
-inherit autotools-utils python-r1 vcs-snapshot
+inherit autotools-utils python-r1 vcs-snapshot eutils
 
 DESCRIPTION="Python binding to the GUDev udev helper library"
 HOMEPAGE="http://github.com/nzjrs/python-gudev"
@@ -23,6 +23,11 @@ RDEPEND="dev-python/pygobject:2[${PYTHON_USEDEP}]
 	virtual/libgudev:=
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/automake.patch
+	python_foreach_impl autotools-utils_src_prepare
+}
 
 src_configure() {
 	python_foreach_impl autotools-utils_src_configure

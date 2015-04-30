@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/Macaulay2/Macaulay2-1.7_pre.ebuild,v 1.1 2014/07/04 11:08:51 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/Macaulay2/Macaulay2-1.7_pre.ebuild,v 1.5 2015/04/21 17:40:45 pacho Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit autotools elisp-common eutils flag-o-matic python-single-r1 toolchain-funcs
 
@@ -22,7 +22,7 @@ SRC_URI="
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="debug emacs +optimization"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -33,7 +33,7 @@ DEPEND="${PYTHON_DEPS}
 
 RDEPEND="${PYTHON_DEPS}
 	sys-libs/gdbm
-	dev-libs/ntl
+	<dev-libs/ntl-7
 	sci-mathematics/pari[gmp]
 	>=sys-libs/readline-6.1
 	dev-libs/libxml2:2

@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.6 2014/12/28 18:07:22 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.11 2015/04/08 18:45:26 mgorny Exp $
 
 EAPI="5"
 
-PYTHON_COMPAT=( python{2_{6,7},3_{2,3,4}} )
+PYTHON_COMPAT=( python{2_7,3_{3,4}} )
 
 inherit base eutils flag-o-matic git-2 linux-info multilib pam prefix \
 		python-single-r1 systemd user versionator
@@ -22,7 +22,7 @@ HOMEPAGE="http://www.postgresql.org/"
 
 LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr
 		 zh_CN zh_TW"
-IUSE="doc kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python
+IUSE="kerberos kernel_linux ldap nls pam perl -pg_legacytimestamp python
 	  +readline selinux +server ssl static-libs tcl threads uuid xml zlib"
 
 for lingua in ${LINGUAS}; do
@@ -40,7 +40,7 @@ wanted_languages() {
 }
 
 CDEPEND="
->=app-admin/eselect-postgresql-1.2.0
+>=app-eselect/eselect-postgresql-1.2.0
 sys-apps/less
 virtual/libintl
 kerberos? ( virtual/krb5 )
@@ -48,9 +48,9 @@ ldap? ( net-nds/openldap )
 pam? ( virtual/pam )
 perl? ( >=dev-lang/perl-5.8 )
 python? ( ${PYTHON_DEPS} )
-readline? ( sys-libs/readline )
-ssl? ( >=dev-libs/openssl-0.9.6-r1 )
-tcl? ( >=dev-lang/tcl-8 )
+readline? ( sys-libs/readline:0= )
+ssl? ( >=dev-libs/openssl-0.9.6-r1:0= )
+tcl? ( >=dev-lang/tcl-8:0= )
 uuid? ( dev-libs/ossp-uuid )
 xml? ( dev-libs/libxml2 dev-libs/libxslt )
 zlib? ( sys-libs/zlib )
@@ -107,6 +107,8 @@ src_prepare() {
 			-i src/backend/libpq/auth.c || \
 			die 'PGSQL_PAM_SERVICE rename failed.'
 	fi
+
+	epatch_user
 }
 
 src_configure() {
@@ -124,7 +126,7 @@ src_configure() {
 	econf \
 		--prefix="${PO}/usr/$(get_libdir)/postgresql-${SLOT}" \
 		--datadir="${PO}/usr/share/postgresql-${SLOT}" \
-		--docdir="${PO}/usr/share/doc/postgresql-${SLOT}" \
+		--docdir="${PO}/usr/share/doc/${PF}" \
 		--includedir="${PO}/usr/include/postgresql-${SLOT}" \
 		--mandir="${PO}/usr/share/postgresql-${SLOT}/man" \
 		--sysconfdir="${PO}/etc/postgresql-${SLOT}" \
@@ -152,7 +154,7 @@ src_compile() {
 
 	# If use doc, generate all documentation, otherwise just the
 	# man pages
-	use doc && emake -C doc || emake -C doc man
+	#use doc && emake -C doc || emake -C doc man
 }
 
 src_install() {
@@ -162,15 +164,15 @@ src_install() {
 	dodoc README HISTORY doc/{TODO,bug.template}
 
 	# We use ${SLOT} instead of doman for postgresql.eselect
-	insinto /usr/share/postgresql-${SLOT}/man/
-	doins -r doc/src/sgml/man{1,3,7}
-	if ! use server; then
-		# Remove man pages for non-existent binaries
-		for m in {initdb,pg_{controldata,ctl,resetxlog},post{gres,master}}; do
-			rm "${ED}/usr/share/postgresql-${SLOT}/man/man1/${m}.1"
-		done
-	fi
-	docompress /usr/share/postgresql-${SLOT}/man/man{1,3,7}
+	#insinto /usr/share/postgresql-${SLOT}/man/
+	#doins -r doc/src/sgml/man{1,3,7}
+	#if ! use server; then
+	#	# Remove man pages for non-existent binaries
+	#	for m in {initdb,pg_{controldata,ctl,resetxlog},post{gres,master}}; do
+	#		rm "${ED}/usr/share/postgresql-${SLOT}/man/man1/${m}.1"
+	#	done
+	#fi
+	#docompress /usr/share/postgresql-${SLOT}/man/man{1,3,7}
 
 	insinto /etc/postgresql-${SLOT}
 	newins src/bin/psql/psqlrc.sample psqlrc
@@ -181,13 +183,13 @@ src_install() {
 
 	use static-libs || find "${ED}" -name '*.a' -delete
 
-	if use doc ; then
-		docinto html
-		dodoc doc/src/sgml/html/*
+	#if use doc ; then
+	#	docinto html
+	#	dodoc doc/src/sgml/html/*
 
-		docinto sgml
-		dodoc doc/src/sgml/*.{sgml,dsl}
-	fi
+	#	docinto sgml
+	#	dodoc doc/src/sgml/*.{sgml,dsl}
+	#fi
 
 	if use server; then
 		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
@@ -243,7 +245,7 @@ pkg_postinst() {
 pkg_prerm() {
 	if use server && [[ -z ${REPLACED_BY_VERSION} ]] ; then
 		ewarn "Have you dumped and/or migrated the ${SLOT} database cluster?"
-		ewarn "\thttps://wiki.gentoo.org/wiki/PostgreSQL#doc_chap5"
+		ewarn "\thttps://wiki.gentoo.org/wiki/PostgreSQL/QuickStart#Migrating_PostgreSQL"
 
 		ebegin "Resuming removal in 10 seconds (Control-C to cancel)"
 		sleep 10

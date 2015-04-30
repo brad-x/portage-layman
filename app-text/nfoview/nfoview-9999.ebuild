@@ -1,14 +1,12 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/nfoview/nfoview-9999.ebuild,v 1.12 2013/04/21 03:22:48 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/nfoview/nfoview-9999.ebuild,v 1.13 2015/03/26 23:38:57 vapier Exp $
 
-EAPI=3
+EAPI="5"
 
-PYTHON_DEPEND="3:3.2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.*"
+PYTHON_COMPAT=( python{3_3,3_4} )
 
-inherit distutils fdo-mime gnome2-utils
+inherit distutils-r1 fdo-mime gnome2-utils
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://github.com/otsaloma/nfoview.git
 		http://github.com/otsaloma/nfoview.git"
@@ -38,11 +36,9 @@ pkg_preinst() {
 pkg_postinst() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
-	distutils_pkg_postinst
 }
 
 pkg_postrm() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
-	distutils_pkg_postrm
 }

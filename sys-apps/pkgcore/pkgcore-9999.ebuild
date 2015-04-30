@@ -1,30 +1,32 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/pkgcore-9999.ebuild,v 1.20 2014/12/15 02:06:05 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/pkgcore-9999.ebuild,v 1.24 2015/04/02 02:34:16 radhermit Exp $
 
-EAPI=4
+EAPI=5
 PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1
 
 if [[ ${PV} == *9999 ]] ; then
-	EGIT_REPO_URI="git://github.com/pkgcore/pkgcore.git"
+	EGIT_REPO_URI="https://github.com/pkgcore/pkgcore.git"
 	inherit git-r3
 else
 	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-	SRC_URI="http://pkgcore.googlecode.com/files/${P}.tar.bz2"
+	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 fi
 
 DESCRIPTION="pkgcore package manager"
-HOMEPAGE="http://pkgcore.googlecode.com/"
+HOMEPAGE="https://github.com/pkgcore/pkgcore"
 
-LICENSE="GPL-2"
+LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
-IUSE="doc"
+IUSE="doc test"
 
 RDEPEND="=dev-python/snakeoil-9999[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
+	dev-python/pyparsing[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
-	dev-python/pyparsing[${PYTHON_USEDEP}]"
+	test? ( $(python_gen_cond_dep 'dev-python/mock[${PYTHON_USEDEP}]' python2_7) )
+"
 
 pkg_setup() {
 	# disable snakeoil 2to3 caching...
@@ -38,11 +40,15 @@ pkg_setup() {
 }
 
 python_compile_all() {
-	esetup.py build_man $(use doc && echo 'build_docs')
+	esetup.py $(use doc && echo 'build_docs')
+
+	if [[ ${PV} == *9999 ]]; then
+		esetup.py build_man
+		ln -s "${BUILD_DIR}/sphinx/man" man || die
+	fi
 
 	# symlinks generated manpages into source root
 	# dead symlinks are tolerated
-	ln -s "${BUILD_DIR}/sphinx/man" man || die
 	ln -s "${BUILD_DIR}/sphinx/html" html || die
 }
 

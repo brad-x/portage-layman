@@ -1,6 +1,54 @@
 # ChangeLog for app-emulation/wine
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.526 2015/01/01 21:01:23 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.534 2015/04/19 03:45:33 tetromino Exp $
+
+*wine-1.7.41 (19 Apr 2015)
+
+  19 Apr 2015; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.7.41.ebuild,
+  wine-9999.ebuild:
+  Version bump from NP-Hardass, see https://www.winehq.org/announce/1.7.41 for
+  the announcement.
+
+  18 Apr 2015; Alexandre Rostovtsev <tetromino@gentoo.org> -wine-1.2.3.ebuild,
+  -wine-1.3.28.ebuild, -wine-1.4.1.ebuild, -files/wine-1.1.15-winegcc.patch,
+  -files/wine-1.2.3-msxml3-libxml2-headers.patch,
+  -files/wine-1.5.23-winebuild-CCAS.patch, metadata.xml:
+  Drop old ebuilds incompatible with new multilib (bug #543336).
+
+*wine-1.7.40 (10 Apr 2015)
+
+  10 Apr 2015; Ian Delaney <idella4@gentoo.org> +wine-1.7.40.ebuild:
+  bump; builds and installs, run tested by proxy maintainer, committing in
+  absence of tetromino
+
+*wine-1.7.39 (22 Mar 2015)
+
+  22 Mar 2015; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.7.39.ebuild,
+  wine-9999.ebuild, +files/wine-1.7.39-gstreamer-v5-staging-post.patch,
+  +files/wine-1.7.39-gstreamer-v5-staging-pre.patch:
+  Version bump from NP-Hardass overlay, see
+  https://www.winehq.org/announce/1.7.39 for the announcement.
+
+  08 Mar 2015; Alexandre Rostovtsev <tetromino@gentoo.org>
+  files/wine-1.7.38-gstreamer-v5-staging-post.patch:
+  Another fix to gst post-patch from NP-Hardass.
+
+  08 Mar 2015; Alexandre Rostovtsev <tetromino@gentoo.org>
+  files/wine-1.7.38-gstreamer-v5-staging-post.patch:
+  Fix gst post-patch, thanks to Sebastian Lackner and NP-Hardass. No revbump
+  (affects only USE="gstreamer staging").
+
+*wine-1.7.38 (08 Mar 2015)
+
+  08 Mar 2015; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.7.28.ebuild,
+  wine-1.7.29.ebuild, wine-1.7.33.ebuild, +wine-1.7.38.ebuild,
+  wine-9999.ebuild, -files/wine-1.7.28-gstreamer-v4.patch,
+  +files/wine-1.7.38-gstreamer-v5-staging-post.patch,
+  +files/wine-1.7.38-gstreamer-v5-staging-pre.patch, metadata.xml:
+  Belated version bump (bug #536380), see
+  https://www.winehq.org/announce/1.7.38 for the announcement. Sync changes
+  from NP-Hardass's overlay and add him as proxy maintainer. Move big gstreamer
+  patches out of filesdir and into compressed downloads.
 
 *wine-1.7.33 (01 Jan 2015)
 

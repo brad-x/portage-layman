@@ -1,6 +1,46 @@
 # ChangeLog for net-p2p/bitcoin-qt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/ChangeLog,v 1.93 2015/01/28 18:46:36 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-qt/ChangeLog,v 1.103 2015/03/29 10:21:13 johu Exp $
+
+  29 Mar 2015; Johannes Huber <johu@gentoo.org> bitcoin-qt-0.9.4.ebuild:
+  EAPI 5, needed for kde4*eclass EAPI 4 removal.
+
+  14 Mar 2015; Anthony G. Basile <blueness@gentoo.org>
+  bitcoin-qt-0.10.0-r1.ebuild:
+  Update BITCOINCORE_LJR_DATE.  Keyword ~arm64 ~amd64-linux ~x86-linux
+
+  11 Mar 2015; Mike Frysinger <vapier@gentoo.org> bitcoin-qt-0.10.0-r1.ebuild:
+  Build with new memenv.h location.
+
+*bitcoin-qt-0.10.0-r1 (04 Mar 2015)
+
+  04 Mar 2015; Anthony G. Basile <blueness@gentoo.org>
+  +bitcoin-qt-0.10.0-r1.ebuild, -bitcoin-qt-0.10.0.ebuild,
+  bitcoin-qt-9999.ebuild:
+  Dependency on leveldb and libsecp256k1 is now handled by the eclass.
+
+  01 Mar 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  bitcoin-qt-0.10.0.ebuild:
+  Comrel: Default-disable more add-on patches
+
+  27 Feb 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  bitcoin-qt-0.10.0.ebuild:
+  ComRel: Disable add-on patches
+
+  24 Feb 2015; Patrick Lauer <patrick@gentoo.org> bitcoin-qt-0.10.0.ebuild,
+  bitcoin-qt-9999.ebuild:
+  Add missing libsecp256k1 dep
+
+  24 Feb 2015; Patrick Lauer <patrick@gentoo.org> bitcoin-qt-0.10.0.ebuild:
+  Disable censoring by default
+
+*bitcoin-qt-0.9.4 (23 Feb 2015)
+*bitcoin-qt-0.10.0 (23 Feb 2015)
+
+  23 Feb 2015; Anthony G. Basile <blueness@gentoo.org>
+  +bitcoin-qt-0.10.0.ebuild, +bitcoin-qt-0.9.4.ebuild, bitcoin-qt-9999.ebuild,
+  metadata.xml:
+  Version bumps using bitcoincore.eclass
 
   28 Jan 2015; Anthony G. Basile <blueness@gentoo.org>
   bitcoin-qt-0.8.6-r1.ebuild, bitcoin-qt-0.9.3-r1.ebuild,

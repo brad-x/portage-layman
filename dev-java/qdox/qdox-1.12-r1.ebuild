@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/qdox/qdox-1.12-r1.ebuild,v 1.7 2013/10/20 16:32:44 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/qdox/qdox-1.12-r1.ebuild,v 1.9 2015/02/23 12:21:28 monsieurp Exp $
 
 EAPI="5"
 

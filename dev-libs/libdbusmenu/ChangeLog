@@ -1,6 +1,31 @@
 # ChangeLog for dev-libs/libdbusmenu
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdbusmenu/ChangeLog,v 1.32 2014/08/20 11:25:43 armin76 Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdbusmenu/ChangeLog,v 1.36 2015/04/19 16:30:45 mgorny Exp $
+
+*libdbusmenu-12.10.2-r2 (19 Apr 2015)
+
+  19 Apr 2015; Michał Górny <mgorny@gentoo.org>
+  +files/libdbusmenu-12.10.2-gtk2-signal-fix.patch,
+  +libdbusmenu-12.10.2-r2.ebuild, metadata.xml:
+  Enable optional GTK+2 support. Enable multilib support. Remove gtk-doc install
+  hacks, just install into the proper gtk-doc location. Based on the work done
+  by Karol Herbst on https://github.com/gentoo/gentoo-portage-rsync-
+  mirror/pull/65. Part of bug #462764.
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> libdbusmenu-12.10.2-r1.ebuild:
+  Drop old Python implementations
+
+*libdbusmenu-12.10.2-r1 (05 Apr 2015)
+*libdbusmenu-0.6.2-r1 (05 Apr 2015)
+
+  05 Apr 2015; Michał Górny <mgorny@gentoo.org> +libdbusmenu-0.6.2-r1.ebuild,
+  +libdbusmenu-12.10.2-r1.ebuild, -libdbusmenu-0.6.2.ebuild,
+  -libdbusmenu-12.10.2.ebuild, metadata.xml:
+  Move dev-libs/libdbusmenu to slot 0, and replace USE=gtk with USE=gtk3 per the
+  QA decision.
+
+  05 Apr 2015; Michał Górny <mgorny@gentoo.org> libdbusmenu-12.10.2.ebuild:
+  Pass -j1 to emake rather than overriding MAKEOPTS, patch by karolherbst.
 
   20 Aug 2014; Raúl Porcel <armin76@gentoo.org> libdbusmenu-12.10.2.ebuild:
   Add ~sparc wrt #468984

@@ -1,15 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/vtk-6.1.0-r1.ebuild,v 1.2 2015/01/06 09:45:16 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/vtk-6.1.0-r1.ebuild,v 1.10 2015/04/08 18:49:15 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 CMAKE_MAKEFILE_GENERATOR=ninja
 WEBAPP_OPTIONAL=yes
 WEBAPP_MANUAL_SLOT=yes
 
-inherit eutils flag-o-matic java-pkg-opt-2 python-single-r1 qt4-r2 versionator toolchain-funcs cmake-utils virtualx webapp
+inherit eutils flag-o-matic java-pkg-opt-2 python-single-r1 qmake-utils versionator toolchain-funcs cmake-utils virtualx webapp
 
 # Short package version
 SPV="$(get_version_component_range 1-2)"
@@ -26,7 +26,7 @@ SRC_URI="
 	"
 
 LICENSE="BSD LGPL-2"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
 SLOT="0"
 IUSE="
 	all-modules aqua boost cg doc examples imaging ffmpeg gdal java json kaapi mpi
@@ -50,15 +50,15 @@ RDEPEND="
 	dev-libs/jsoncpp
 	dev-libs/libxml2:2
 	>=media-libs/freetype-2.5.4
-	media-libs/libpng
+	media-libs/libpng:0
 	media-libs/mesa
 	media-libs/libtheora
-	media-libs/tiff
+	media-libs/tiff:0
 	sci-libs/exodusii
 	sci-libs/hdf5:=
 	sci-libs/netcdf-cxx:3
 	sys-libs/zlib
-	virtual/jpeg
+	virtual/jpeg:0
 	virtual/opengl
 	>=x11-libs/gl2ps-1.3.8
 	x11-libs/libX11
@@ -73,7 +73,7 @@ RDEPEND="
 	)
 	ffmpeg? ( virtual/ffmpeg )
 	gdal? ( sci-libs/gdal )
-	java? ( >=virtual/jre-1.5 )
+	java? ( >=virtual/jre-1.5:* )
 	kaapi? ( <sci-libs/xkaapi-3 )
 	mpi? (
 		virtual/mpi[cxx,romio]
@@ -81,7 +81,7 @@ RDEPEND="
 	mysql? ( virtual/mysql )
 	odbc? ( dev-db/unixODBC )
 	offscreen? ( media-libs/mesa[osmesa] )
-	postgres? ( dev-db/postgresql )
+	postgres? ( dev-db/postgresql:= )
 	python? (
 		${PYTHON_DEPS}
 		dev-python/sip[${PYTHON_USEDEP}]
@@ -97,8 +97,8 @@ RDEPEND="
 		python? ( dev-python/PyQt4[${PYTHON_USEDEP}] )
 		)
 	tbb? ( dev-cpp/tbb )
-	tcl? ( dev-lang/tcl )
-	tk? ( dev-lang/tk )
+	tcl? ( dev-lang/tcl:0= )
+	tk? ( dev-lang/tk:0= )
 	video_cards_nvidia? ( media-video/nvidia-settings )
 	web? (
 		${WEBAPP_DEPEND}
@@ -123,6 +123,7 @@ PATCHES=(
 	"${FILESDIR}"/${P}-netcdf.patch
 	"${FILESDIR}"/${P}-web.patch
 	"${FILESDIR}"/${P}-glext.patch
+	"${FILESDIR}"/${P}-memset.patch
 	)
 
 RESTRICT=test
@@ -304,10 +305,10 @@ src_configure() {
 			-DVTK_INSTALL_QT_DIR=/$(get_libdir)/qt4/plugins/designer
 			-DDESIRED_QT_VERSION=4
 			-DVTK_QT_VERSION=4
-			-DQT_MOC_EXECUTABLE="${EPREFIX}/usr/bin/moc"
-			-DQT_UIC_EXECUTABLE="${EPREFIX}/usr/bin/uic"
+			-DQT_MOC_EXECUTABLE="$(qt4_get_bindir)/moc"
+			-DQT_UIC_EXECUTABLE="$(qt4_get_bindir)/uic"
 			-DQT_INCLUDE_DIR="${EPREFIX}/usr/include/qt4"
-			-DQT_QMAKE_EXECUTABLE="${EPREFIX}/usr/bin/qmake"
+			-DQT_QMAKE_EXECUTABLE="$(qt4_get_bindir)/qmake"
 		)
 	fi
 
@@ -315,8 +316,8 @@ src_configure() {
 		mycmakeargs+=(
 #			-DR_LIBRARY_BLAS=$($(tc-getPKG_CONFIG) --libs blas)
 #			-DR_LIBRARY_LAPACK=$($(tc-getPKG_CONFIG) --libs lapack)
-			-DR_LIBRARY_BLAS=/usr/lib64/R/lib/libR.so
-			-DR_LIBRARY_LAPACK=/usr/lib64/R/lib/libR.so
+			-DR_LIBRARY_BLAS=/usr/$(get_libdir)/R/lib/libR.so
+			-DR_LIBRARY_LAPACK=/usr/$(get_libdir)/R/lib/libR.so
 		)
 	fi
 

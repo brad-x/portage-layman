@@ -1,8 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/gegl-9999.ebuild,v 1.8 2015/01/29 17:33:00 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gegl/gegl-9999.ebuild,v 1.10 2015/04/02 18:49:57 mr_bones_ Exp $
 
-EAPI=4
+EAPI=5
 
 VALA_MIN_API_VERSION=0.14
 VALA_USE_DEPEND=vapigen
@@ -17,7 +17,7 @@ LICENSE="|| ( GPL-3 LGPL-3 )"
 SLOT="0"
 KEYWORDS=""
 
-IUSE="cairo debug ffmpeg introspection jpeg jpeg2k lensfun cpu_flags_x86_mmx openexr png raw sdl cpu_flags_x86_sse svg umfpack vala"
+IUSE="cairo debug ffmpeg introspection jpeg jpeg2k lensfun libav cpu_flags_x86_mmx openexr png raw sdl cpu_flags_x86_sse svg umfpack vala"
 
 RDEPEND=">=media-libs/babl-0.1.10[introspection?]
 	>=dev-libs/glib-2.28:2
@@ -25,7 +25,10 @@ RDEPEND=">=media-libs/babl-0.1.10[introspection?]
 	x11-libs/pango
 	sys-libs/zlib
 	cairo? ( x11-libs/cairo )
-	ffmpeg? ( virtual/ffmpeg )
+	ffmpeg? (
+		libav? ( media-video/libav:0= )
+		!libav? ( media-video/ffmpeg:0= )
+	)
 	jpeg? ( virtual/jpeg )
 	jpeg2k? ( >=media-libs/jasper-1.900.1 )
 	openexr? ( media-libs/openexr )
@@ -74,7 +77,7 @@ src_configure() {
 	#  - Parameter --with-exiv2 compiles a noinst-app only, no use
 	#
 	#  - Parameter --disable-workshop disables any use of Lua, effectivly
-	# 
+	#
 	#  - v4l support does not work with our media-libs/libv4l-0.8.9,
 	#    upstream bug https://bugzilla.gnome.org/show_bug.cgi?id=654675
 	#

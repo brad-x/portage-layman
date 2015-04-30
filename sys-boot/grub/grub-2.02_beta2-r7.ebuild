@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-2.02_beta2-r7.ebuild,v 1.5 2015/02/05 22:53:10 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-2.02_beta2-r7.ebuild,v 1.11 2015/04/08 20:32:47 mgorny Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ AUTOTOOLS_AUTORECONF=1
 GRUB_AUTOGEN=1
 
 if [[ -n ${GRUB_AUTOGEN} ]]; then
-	PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+	PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 	inherit python-any-r1
 fi
 
@@ -104,7 +104,10 @@ DEPEND="${RDEPEND}
 		dev-libs/libisoburn
 		app-emulation/qemu
 	)
-	themes? ( app-arch/unzip )
+	themes? (
+		app-arch/unzip
+		media-libs/freetype:2
+	)
 "
 RDEPEND+="
 	kernel_linux? (
@@ -137,18 +140,6 @@ QA_WX_LOAD="
 QA_PRESTRIPPED="
 	usr/lib.*/grub/.*/kernel.img
 "
-
-pkg_pretend() {
-	if [[ ${MERGE_TYPE} != binary ]]; then
-		# Bug 439082
-		if ! test-flags-CC -fuse-ld=bfd > /dev/null &&
-			$(tc-getLD) --version | grep -q "GNU gold"; then
-			eerror "GRUB does not function correctly when built with the gold linker."
-			eerror "Please select the bfd linker with binutils-config."
-			die "GNU gold detected"
-		fi
-	fi
-}
 
 src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
@@ -253,7 +244,9 @@ src_configure() {
 
 	use static && HOST_LDFLAGS+=" -static"
 
-	export TARGET_LDFLAGS+=" $(test-flags-CC -fuse-ld=bfd)"
+	tc-ld-disable-gold #439082 #466536 #526348
+	export TARGET_LDFLAGS+=" ${LDFLAGS}"
+	unset LDFLAGS
 
 	tc-export CC NM OBJCOPY STRIP
 	export TARGET_CC=${TARGET_CC:-${CC}}
@@ -324,11 +317,10 @@ pkg_postinst() {
 	fi
 
 	if [[ -z ${REPLACING_VERSIONS} ]]; then
-		if ! has_version sys-boot/os-prober; then
-			elog "Install sys-boot/os-prober to enable detection of other operating systems using grub2-mkconfig."
-		fi
-		if ! has_version dev-libs/libisoburn; then
-			elog "Install dev-libs/libisoburn to enable creation of rescue media using grub2-mkrescue."
-		fi
+		elog
+		elog "You may consider installing the following optional packages:"
+		optfeature "Detect other operating systems (grub-mkconfig)" sys-boot/os-prober
+		optfeature "Create rescue media (grub-mkrescue)" dev-libs/libisoburn
+		optfeature "Enable RAID device detection" sys-fs/mdadm
 	fi
 }

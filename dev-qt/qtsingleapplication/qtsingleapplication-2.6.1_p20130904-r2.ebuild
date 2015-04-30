@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtsingleapplication/qtsingleapplication-2.6.1_p20130904-r2.ebuild,v 1.1 2015/01/02 18:17:33 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtsingleapplication/qtsingleapplication-2.6.1_p20130904-r2.ebuild,v 1.5 2015/03/02 09:04:22 ago Exp $
 
 EAPI=5
 
@@ -14,13 +14,13 @@ SRC_URI="http://dev.gentoo.org/~pesa/distfiles/${MY_P}.tar.xz"
 
 LICENSE="|| ( LGPL-2.1 GPL-3 )"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc +qt4 qt5 X"
 
 REQUIRED_USE="|| ( qt4 qt5 )"
 
 DEPEND="
-	qt4? ( 
+	qt4? (
 		dev-qt/qtcore:4
 		X? ( dev-qt/qtgui:4 )
 	)
@@ -39,13 +39,7 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${MY_P}/${PN}
 
 pkg_setup() {
-	MULTIBUILD_VARIANTS=()
-	if use qt4 ; then
-		MULTIBUILD_VARIANTS+=( qt4 )
-	fi
-	if use qt5 ; then
-		MULTIBUILD_VARIANTS+=( qt5 )
-	fi
+	MULTIBUILD_VARIANTS=( $(usev qt4) $(usev qt5) )
 }
 
 src_prepare() {
@@ -66,10 +60,10 @@ src_prepare() {
 
 src_configure() {
 	myconfigure() {
-		if [[ ${MULTIBUILD_VARIANT} = qt4 ]] ; then
+		if [[ ${MULTIBUILD_VARIANT} == qt4 ]]; then
 			eqmake4
 		fi
-		if [[ ${MULTIBUILD_VARIANT} = qt5 ]] ; then
+		if [[ ${MULTIBUILD_VARIANT} == qt5 ]]; then
 			eqmake5
 		fi
 	}
@@ -86,22 +80,22 @@ src_install() {
 	use doc && dodoc -r doc/html
 
 	myinstall() {
-		if [[ ${MULTIBUILD_VARIANT} = qt4 ]] ; then
-			insinto /usr/include/qt4/QtSolutions/
+		if [[ ${MULTIBUILD_VARIANT} == qt4 ]]; then
+			insinto /usr/include/qt4/QtSolutions
 			doins src/qtsinglecoreapplication.h
 			use X && doins src/{QtSingleApplication,${PN}.h}
 
-			insinto /usr/share/qt4/mkspecs/features/
+			insinto /usr/share/qt4/mkspecs/features
 			doins "${FILESDIR}"/${PN}.prf
 			dosym ${PN}.prf /usr/share/qt4/mkspecs/features/qtsinglecoreapplication.prf
 		fi
 
-		if [[ ${MULTIBUILD_VARIANT} = qt5 ]] ; then
-			insinto /usr/include/qt5/QtSolutions/
+		if [[ ${MULTIBUILD_VARIANT} == qt5 ]]; then
+			insinto /usr/include/qt5/QtSolutions
 			doins src/qtsinglecoreapplication.h
 			use X && doins src/{QtSingleApplication,${PN}.h}
 
-			insinto /usr/$(get_libdir)/qt5/mkspecs/features/
+			insinto /usr/$(get_libdir)/qt5/mkspecs/features
 			newins "${FILESDIR}"/${PN}5.prf ${PN}.prf
 			dosym ${PN}.prf /usr/$(get_libdir)/qt5/mkspecs/features/qtsinglecoreapplication.prf
 		fi

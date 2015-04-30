@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/tachyon/tachyon-0.98.9-r2.ebuild,v 1.4 2012/12/06 15:56:25 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/tachyon/tachyon-0.98.9-r2.ebuild,v 1.5 2015/03/06 08:01:42 jlec Exp $
 
 EAPI="4"
 
@@ -16,12 +16,12 @@ KEYWORDS="~amd64 ~ppc ~x86 ~x64-macos ~x86-macos"
 IUSE="doc examples jpeg mpi +opengl png threads"
 
 CDEPEND="
-	jpeg? ( virtual/jpeg )
+	jpeg? ( virtual/jpeg:0 )
 	mpi? ( virtual/mpi )
 	opengl? (
 		virtual/glu
 		virtual/opengl )
-	png? ( media-libs/libpng )"
+	png? ( media-libs/libpng:0 )"
 DEPEND="${CDEPEND}
 	virtual/pkgconfig"
 RDEPEND="${CDEPEND}"

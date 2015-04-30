@@ -1,6 +1,38 @@
 # ChangeLog for sys-auth/nss-pam-ldapd
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/nss-pam-ldapd/ChangeLog,v 1.16 2014/06/15 03:51:13 prometheanfire Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/nss-pam-ldapd/ChangeLog,v 1.21 2015/04/07 01:04:53 chutzpah Exp $
+
+*nss-pam-ldapd-0.9.5-r1 (07 Apr 2015)
+
+  07 Apr 2015; Patrick McLean <chutzpah@gentoo.org> +files/nslcd-tmpfiles.conf,
+  +files/nslcd.service, +nss-pam-ldapd-0.9.5-r1.ebuild,
+  -nss-pam-ldapd-0.9.4-r1.ebuild, -nss-pam-ldapd-0.9.4-r2.ebuild,
+  -nss-pam-ldapd-0.9.4.ebuild, -nss-pam-ldapd-0.9.5.ebuild, metadata.xml:
+  Revision bump, add systemd service files (bug #545780). Remove old.
+
+*nss-pam-ldapd-0.9.5 (30 Mar 2015)
+
+  30 Mar 2015; Patrick McLean <chutzpah@gentoo.org> +nss-pam-ldapd-0.9.5.ebuild:
+  Version bump.
+
+  11 Mar 2015; Patrick McLean <chutzpah@gentoo.org>
+  nss-pam-ldapd-0.9.4-r2.ebuild:
+  Split dependencies into COMMON_DEP so RDEPEND won't have test deps.
+
+*nss-pam-ldapd-0.9.4-r2 (11 Mar 2015)
+
+  11 Mar 2015; Patrick McLean <chutzpah@gentoo.org>
+  +files/nss-pam-ldapd-0.9.4-disable-py3-only-linters.patch,
+  +nss-pam-ldapd-0.9.4-r2.ebuild, metadata.xml:
+  Revision bump, add "utils" USE flag to control installation of userspace
+  utilities written in python. Use python-r1 eclass to install python code
+  rather than the automake-based internal code.
+
+*nss-pam-ldapd-0.9.4-r1 (09 Mar 2015)
+
+  09 Mar 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +nss-pam-ldapd-0.9.4-r1.ebuild:
+  adding multilib support from bug 542374
 
 *nss-pam-ldapd-0.9.4 (15 Jun 2014)
 

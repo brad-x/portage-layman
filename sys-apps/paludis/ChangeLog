@@ -1,6 +1,40 @@
 # ChangeLog for sys-apps/paludis
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.248 2014/10/09 10:29:11 jdhore Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.254 2015/04/08 18:27:32 mgorny Exp $
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> paludis-1.4.2-r1.ebuild,
+  paludis-2.0.0.ebuild, paludis-2.2.0.ebuild:
+  Drop old Python implementations
+
+*paludis-2.4.0 (04 Apr 2015)
+
+  04 Apr 2015; Michał Górny <mgorny@gentoo.org> +paludis-2.4.0.ebuild:
+  Version bump. Switch to ruby:2.0 which is the newer version in profile
+  defaults, until we are provided with better tools to handle Ruby.
+
+  31 Mar 2015; Ulrich Müller <ulm@gentoo.org> paludis-1.2.0.ebuild,
+  paludis-1.4.0.ebuild, paludis-1.4.2-r1.ebuild, paludis-2.0.0.ebuild,
+  paludis-2.2.0.ebuild, paludis-2.2.0-r2.ebuild:
+  Update dependency after package move of eselect modules to app-eselect.
+
+*paludis-2.2.0-r2 (29 Mar 2015)
+
+  29 Mar 2015; Michał Górny <mgorny@gentoo.org>
+  +files/paludis-2.2.0-check-IUSE_EFFECTIVE-in-EAPI-5.patch,
+  +files/paludis-2.2.0-filter-EBUILD_PHASE_FUNC.patch,
+  +files/paludis-2.2.0-filter-IUSE_EFFECTIVE.patch,
+  +files/paludis-2.2.0-fix-MERGE_TYPE.patch,
+  +files/paludis-2.2.0-fix-PWD-handling.patch, +paludis-2.2.0-r2.ebuild,
+  -paludis-2.2.0-r1.ebuild:
+  Backport some EAPI support bugfixes.
+
+  21 Mar 2015; Michał Górny <mgorny@gentoo.org> paludis-2.2.0-r1.ebuild:
+  Add -k to emake check, to get as many tests done as possible on failure.
+
+*paludis-2.2.0-r1 (21 Mar 2015)
+
+  21 Mar 2015; Michał Górny <mgorny@gentoo.org> +paludis-2.2.0-r1.ebuild:
+  EAPI bump, bug #543174.
 
 *paludis-2.2.0 (09 Oct 2014)
 

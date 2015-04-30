@@ -1,8 +1,17 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/package.use.mask,v 1.153 2015/02/02 15:41:21 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/package.use.mask,v 1.158 2015/04/26 07:40:31 jer Exp $
 
 # DON'T TOUCH THIS FILE. Instead, file a bug and assign it to <hppa@gentoo.org>.
+
+# Jeroen Roovers <jer@gentoo.org> (26 Apr 2015)
+# Contact us if you want or have an HPPA cluster with dev-db/mariadb
+# (bug #544378)
+dev-db/mariadb garbd
+
+# Mike Frysinger <vapier@gentoo.org> (16 Mar 2015)
+# Needs sci-physics/bullet tested #499974
+dev-libs/efl physics
 
 # Jeroen Roovers <jer@gentoo.org> (2 Feb 2015)
 # dev-python/gevent requires dev-python/greenlet which has not been ported to
@@ -12,10 +21,6 @@ dev-python/pyzor gevent
 # Jeroen Roovers <jer@gentoo.org> (29 Nov 2014)
 # Needs dev-libs/protobuf{-c} which has not been ported to HPPA (bug #531068)
 net-dns/unbound dnstap
-
-# Jeroen Roovers <jer@gentoo.org> (22 Oct 2014)
-# needs www-servers/tornado
-dev-python/urllib3 test
 
 # Jeroen Roovers <jer@gentoo.org> (19 Oct 2014)
 # requires dev-python/restkit which requires

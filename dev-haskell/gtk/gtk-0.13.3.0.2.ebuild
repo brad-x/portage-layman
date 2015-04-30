@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/gtk/gtk-0.13.3.0.2.ebuild,v 1.1 2014/12/13 13:58:56 gienah Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/gtk/gtk-0.13.3.0.2.ebuild,v 1.2 2015/03/11 09:31:42 gienah Exp $
 
 EAPI=5
 
@@ -23,7 +23,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="LGPL-2.1"
 SLOT="${GTK_MAJ_VER}/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="examples +fmode-binary +gio"
 
 RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[profile?]

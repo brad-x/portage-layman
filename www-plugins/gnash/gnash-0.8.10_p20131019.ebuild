@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/gnash-0.8.10_p20131019.ebuild,v 1.2 2013/12/04 11:24:48 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/gnash-0.8.10_p20131019.ebuild,v 1.4 2015/04/08 18:30:35 mgorny Exp $
 
 EAPI=5
 CMAKE_REQUIRED="never"
 KDE_REQUIRED="optional"
 AT_M4DIR="cygnal"
 # won't build with python-3, bug #392969
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit autotools eutils kde4-base multilib nsplugins python-any-r1 flag-o-matic
 
@@ -26,7 +26,7 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 ppc ~ppc64 ~sparc x86"
 IUSE="X +agg cairo cygnal dbus directfb doc dump egl fbcon +ffmpeg gconf gnome gstreamer gtk harden jemalloc kde lirc mysql +nls nsplugin opengl openvg python sdl +sdl-sound ssh ssl test vaapi"
 REQUIRED_USE="dump? ( agg ffmpeg )
 	fbcon? ( agg )

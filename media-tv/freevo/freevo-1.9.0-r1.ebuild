@@ -1,12 +1,13 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/freevo/freevo-1.9.0-r1.ebuild,v 1.4 2014/12/12 23:23:14 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/freevo/freevo-1.9.0-r1.ebuild,v 1.6 2015/03/21 18:45:40 jlec Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_6 python2_7 )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="xml"
 DISTUTILS_SINGLE_IMPL=1
+
 inherit eutils distutils-r1
 
 DESCRIPTION="Digital video jukebox (PVR, DVR)"
@@ -18,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="directfb cdparanoia doc dvd encode fbcon flac gphoto2 jpeg lame lirc matrox mixer nls tv vorbis xine X"
 
-RDEPEND="dev-python/beautifulsoup:python-2[${PYTHON_USEDEP}]
+RDEPEND="
+	dev-python/beautifulsoup:python-2[${PYTHON_USEDEP}]
 	virtual/python-imaging[${PYTHON_USEDEP}]
 	dev-python/pygame[${PYTHON_USEDEP}]
 	>=dev-python/twisted-core-2.5[${PYTHON_USEDEP}]
@@ -101,11 +103,10 @@ src_install() {
 		doins "${FILESDIR}/freevo.desktop"
 	fi
 
-	exeinto /usr/bin
-	newexe "${FILESDIR}"/${PN}-1.8.2.boot freevoboot
+	newbin "${FILESDIR}"/${PN}-1.8.2.boot freevoboot
 	newconfd "${FILESDIR}/freevo.conf" freevo
 
-	rm -rf "${D}/usr/share/doc"
+	rm -rf "${D}/usr/share/doc" || die
 
 	dodoc ChangeLog FAQ RELEASE_NOTES README TODO \
 		Docs/{CREDITS,NOTES,*.txt,plugins/*.txt}
@@ -115,7 +116,7 @@ src_install() {
 	use nls || rm -rf "${D}"/usr/share/locale
 
 	# Create a default freevo setup
-	cd "${S}/src"
+	cd "${S}/src" || die
 	if [ "${PROFILE_ARCH}" == "xbox" ]; then
 		myconf="${myconf} --geometry=640x480 --display=x11"
 	elif use matrox && use directfb; then

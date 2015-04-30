@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/libsecret/libsecret-0.18.ebuild,v 1.9 2014/10/11 11:30:42 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/libsecret/libsecret-0.18.ebuild,v 1.11 2015/04/08 07:30:34 mgorny Exp $
 
 EAPI="5"
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 VALA_MIN_API_VERSION=0.18
 VALA_USE_DEPEND=vapigen
 
@@ -16,7 +16,7 @@ LICENSE="LGPL-2.1+ Apache-2.0" # Apache-2.0 license is used for tests only
 SLOT="0"
 IUSE="+crypt debug +introspection test vala"
 REQUIRED_USE="vala? ( introspection )"
-KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sparc x86 ~amd64-fbsd"
+KEYWORDS="alpha amd64 arm ~arm64 ia64 ~mips ppc ppc64 sparc x86 ~amd64-fbsd"
 
 COMMON_DEPEND="
 	>=dev-libs/glib-2.38:2

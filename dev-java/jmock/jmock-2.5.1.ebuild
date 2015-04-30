@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jmock/jmock-2.5.1.ebuild,v 1.2 2014/08/10 20:18:36 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jmock/jmock-2.5.1.ebuild,v 1.5 2015/04/14 18:54:51 monsieurp Exp $
 
 EAPI=5
 
@@ -17,8 +17,8 @@ SLOT="2"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-CDEPEND="dev-java/hamcrest-core:0
-	dev-java/hamcrest-library:0"
+CDEPEND="dev-java/hamcrest-core:1.3
+	dev-java/hamcrest-library:1.3"
 
 RDEPEND="virtual/jre:1.6
 	${CDEPEND}"
@@ -27,7 +27,7 @@ DEPEND="virtual/jdk:1.6
 	${CDEPEND}
 	app-arch/unzip"
 
-JAVA_GENTOO_CLASSPATH="hamcrest-core,hamcrest-library"
+JAVA_GENTOO_CLASSPATH="hamcrest-core-1.3,hamcrest-library-1.3"
 
 S="${WORKDIR}/${P}"
 

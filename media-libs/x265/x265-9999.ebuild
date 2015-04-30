@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/x265/x265-9999.ebuild,v 1.11 2014/11/09 09:12:10 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/x265/x265-9999.ebuild,v 1.13 2015/03/17 15:24:52 aballier Exp $
 
 EAPI=5
 
@@ -19,7 +19,7 @@ HOMEPAGE="http://x265.org/"
 
 LICENSE="GPL-2"
 # subslot = libx265 soname
-SLOT="0/35"
+SLOT="0/48"
 IUSE="+10bit test"
 
 ASM_DEPEND=">=dev-lang/yasm-1.2.0"
@@ -56,10 +56,12 @@ src_configure() {
 }
 
 multilib_src_test() {
-	cd "${BUILD_DIR}/test" || die
-	for i in PoolTest TestBench ; do
-		./${i} || die
-	done
+	if has ${MULTILIB_ABI_FLAG} abi_x86_32 abi_x86_64 ; then
+		cd "${BUILD_DIR}/test" || die
+		for i in TestBench ; do
+			./${i} || die
+		done
+	fi
 }
 
 src_test() {

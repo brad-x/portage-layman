@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/charm/charm-1.9.1.ebuild,v 1.5 2010/11/14 15:03:36 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/charm/charm-1.9.1.ebuild,v 1.6 2015/03/02 10:31:23 bman Exp $
 
-EAPI="3"
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+EAPI="5"
 
-inherit distutils
+PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL="1"
+
+inherit distutils-r1
 
 DESCRIPTION="A text based livejournal client"
 HOMEPAGE="http://ljcharm.sourceforge.net/"
@@ -18,25 +18,21 @@ SLOT="0"
 KEYWORDS="~amd64 sparc x86"
 IUSE=""
 
-DEPEND="dev-python/feedparser"
-RDEPEND="${RDEPEND}"
+DEPEND="dev-python/feedparser[$PYTHON_USEDEP]"
 
-DOCS="CHANGES.charm sample.charmrc README.charm"
-PYTHON_MODNAME="ljcharm.py"
+DOCS=( CHANGES.charm sample.charmrc README.charm )
+HTML_DOCS=( charm.html )
 
-src_prepare() {
-	distutils_src_prepare
+pkg_setup() {
+	python-single-r1_pkg_setup
+}
+
+python_prepare_all() {
+	distutils-r1_python_prepare_all
 	sed -e 's/("share\/doc\/charm", .*),/\\/' -i setup.py || die "sed failed"
 }
 
-src_install() {
-	distutils_src_install
-	dohtml charm.html || die "dohtml failed"
-}
-
 pkg_postinst() {
-	distutils_pkg_postinst
-
 	elog "You need to create a ~/.charmrc before running charm."
 	elog "Read 'man charmrc' for more information."
 }

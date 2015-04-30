@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.63.2.ebuild,v 1.1 2015/01/26 17:00:30 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.63.2.ebuild,v 1.10 2015/04/14 12:50:03 ago Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} pypy )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} pypy )
 
 inherit distutils-r1 eutils
 
@@ -14,19 +14,15 @@ SRC_URI="ftp://ftp.logilab.org/pub/common/${P}.tar.gz mirror://pypi/${PN:0:1}/${
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="alpha amd64 ~arm ia64 ppc ppc64 ~s390 ~sparc x86 ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="test doc"
 
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
-# Tests using dev-python/psycopg are skipped when dev-python/psycopg isn't installed.
 # egenix-mx-base tests are optional and supports python2 only.
 DEPEND="${RDEPEND}
-	test? (
-		$(python_gen_cond_dep 'dev-python/egenix-mx-base[${PYTHON_USEDEP}]' python2_7)
-		dev-python/pytz[${PYTHON_USEDEP}]
-		!dev-python/psycopg[-mxdatetime]
-	)
+	test? (	$(python_gen_cond_dep 'dev-python/egenix-mx-base[${PYTHON_USEDEP}]' python2_7)
+		dev-python/pytz[${PYTHON_USEDEP}] )
 	doc? ( $(python_gen_cond_dep 'dev-python/epydoc[${PYTHON_USEDEP}]' python2_7) )"
 
 PATCHES=(
@@ -62,25 +58,6 @@ python_test() {
 
 	# Make sure that the tests use correct modules.
 	pushd "${TEST_DIR}"/lib > /dev/null || die
-
-	if python_is_python3; then
-	# http://www.logilab.org/ticket/241813, 241807
-	# The suite can be made to pass under py3.4 by disabling the class MxDateTC in unittest_date.py
-	# These are covered by issue 241813.  Any and all methods to disable them temporarily
-	# (assuming they will ever be fixed) are simply cumbersome in the extreme, thus impractical.
-	# The failures are specific to py3.4's unittest's parameters in _addSkip and not the package itself.
-		if [[ "${EPYTHON}" == "python3.4" ]]; then
-			sed -e 's:test_any:_&:' \
-				-i $(find . -name unittest_compat.py) || die
-			sed -e 's:test_add_days_worked:_&:' \
-				-i $(find . -name unittest_date.py) || die
-		fi
-	# Still one related failure under py3.4
-	# Returns a clean run under py3.3, though leaving fails exposed in this bump of 0.62.1
-	# https://www.logilab.org/ticket/269904
-	# Also unittest_date.py known to fail related to absence of installed egenix-mx-base
-	#	rm $(find . -name unittest_umessage.py) || die
-	fi
 	"${TEST_DIR}"/scripts/pytest || die "Tests fail with ${EPYTHON}"
 	popd > /dev/null || die
 }

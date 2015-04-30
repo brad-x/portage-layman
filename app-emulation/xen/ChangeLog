@@ -1,6 +1,88 @@
 # ChangeLog for app-emulation/xen
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/ChangeLog,v 1.187 2015/01/24 05:05:19 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/ChangeLog,v 1.200 2015/04/08 07:30:32 mgorny Exp $
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> xen-4.2.5-r8.ebuild:
+  Remove old Python implementations
+
+  03 Apr 2015; Yixun Lan <dlan@gentoo.org> -xen-4.2.5-r6.ebuild,
+  -xen-4.2.5-r7.ebuild, -xen-4.4.2.ebuild, -xen-4.5.0-r4.ebuild:
+  drop old after new stabilization
+
+  03 Apr 2015; Agostino Sarubbo <ago@gentoo.org> xen-4.2.5-r8.ebuild:
+  Stable for x86, wrt bug #545144
+
+  03 Apr 2015; Agostino Sarubbo <ago@gentoo.org> xen-4.2.5-r8.ebuild,
+  xen-4.4.2-r1.ebuild:
+  Stable for amd64, wrt bug #545144
+
+  03 Apr 2015; Agostino Sarubbo <ago@gentoo.org> -xen-4.4.1-r8.ebuild,
+  -xen-4.4.1-r9.ebuild:
+  Remove old
+
+*xen-4.5.0-r5 (03 Apr 2015)
+*xen-4.4.2-r1 (03 Apr 2015)
+*xen-4.2.5-r8 (03 Apr 2015)
+
+  03 Apr 2015; <dlan@gentoo.org> +xen-4.2.5-r8.ebuild, +xen-4.4.2-r1.ebuild,
+  +xen-4.5.0-r5.ebuild:
+  security bump, bug 545144, fix XSA-125,126,127
+
+*xen-4.4.2 (28 Mar 2015)
+
+  28 Mar 2015; Yixun Lan <dlan@gentoo.org> xen-4.2.5-r7.ebuild,
+  -xen-4.3.3-r8.ebuild, +xen-4.4.2.ebuild, xen-4.5.0-r4.ebuild:
+  drop 4.3.x, bump 4.4.2, prepare security patch setting
+
+*xen-4.5.0-r4 (14 Mar 2015)
+*xen-4.4.1-r9 (14 Mar 2015)
+*xen-4.3.3-r8 (14 Mar 2015)
+*xen-4.2.5-r7 (14 Mar 2015)
+
+  14 Mar 2015; Yixun Lan <dlan@gentoo.org> -xen-4.2.5-r3.ebuild,
+  +xen-4.2.5-r7.ebuild, -xen-4.3.3-r3.ebuild, -xen-4.3.3-r7.ebuild,
+  +xen-4.3.3-r8.ebuild, +xen-4.4.1-r9.ebuild, -xen-4.5.0-r3.ebuild,
+  +xen-4.5.0-r4.ebuild:
+  security bump, fix XSA-119, 98
+
+  13 Mar 2015; Agostino Sarubbo <ago@gentoo.org> xen-4.2.5-r6.ebuild,
+  xen-4.4.1-r8.ebuild:
+  Stable for amd64, wrt bug #542266
+
+  13 Mar 2015; Agostino Sarubbo <ago@gentoo.org> xen-4.2.5-r6.ebuild:
+  Stable for x86, wrt bug #542266
+
+*xen-4.5.0-r3 (12 Mar 2015)
+*xen-4.4.1-r8 (12 Mar 2015)
+*xen-4.3.3-r7 (12 Mar 2015)
+*xen-4.2.5-r6 (12 Mar 2015)
+
+  12 Mar 2015; Yixun Lan <dlan@gentoo.org> -xen-4.2.5-r4.ebuild,
+  -xen-4.2.5-r5.ebuild, +xen-4.2.5-r6.ebuild, -xen-4.3.3-r5.ebuild,
+  -xen-4.3.3-r6.ebuild, +xen-4.3.3-r7.ebuild, -xen-4.4.1-r6.ebuild,
+  -xen-4.4.1-r7.ebuild, +xen-4.4.1-r8.ebuild, -xen-4.5.0-r2.ebuild,
+  +xen-4.5.0-r3.ebuild:
+  security bump, fix bug 542263, XSA-123
+
+*xen-4.5.0-r2 (10 Mar 2015)
+*xen-4.4.1-r7 (10 Mar 2015)
+*xen-4.3.3-r6 (10 Mar 2015)
+*xen-4.2.5-r5 (10 Mar 2015)
+
+  10 Mar 2015; Yixun Lan <dlan@gentoo.org> +xen-4.2.5-r5.ebuild,
+  +xen-4.3.3-r6.ebuild, +xen-4.4.1-r7.ebuild, -xen-4.5.0-r1.ebuild,
+  +xen-4.5.0-r2.ebuild:
+  security bump, bug 542266, XSA-121,122
+
+*xen-4.5.0-r1 (15 Feb 2015)
+*xen-4.4.1-r6 (15 Feb 2015)
+*xen-4.3.3-r5 (15 Feb 2015)
+
+  15 Feb 2015; Yixun Lan <dlan@gentoo.org> xen-4.2.5-r3.ebuild,
+  xen-4.2.5-r4.ebuild, xen-4.3.3-r3.ebuild, -xen-4.3.3-r4.ebuild,
+  +xen-4.3.3-r5.ebuild, -xen-4.4.1-r4.ebuild, -xen-4.4.1-r5.ebuild,
+  +xen-4.4.1-r6.ebuild, -xen-4.5.0.ebuild, +xen-4.5.0-r1.ebuild:
+  fix security bug 538316 (arm only); fix docs bug 534466
 
   24 Jan 2015; Ian Delaney <idella4@gentoo.org> +files/xen-4.5-efi.patch,
   xen-4.5.0.ebuild:

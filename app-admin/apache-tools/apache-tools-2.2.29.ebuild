@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/apache-tools/apache-tools-2.2.29.ebuild,v 1.4 2015/02/06 11:35:04 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/apache-tools/apache-tools-2.2.29.ebuild,v 1.11 2015/03/16 21:58:00 polynomial-c Exp $
 
 EAPI="4"
 inherit flag-o-matic eutils
@@ -11,13 +11,15 @@ SRC_URI="mirror://apache/httpd/httpd-${PV}.tar.bz2"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="ssl"
 RESTRICT="test"
 
 RDEPEND="=dev-libs/apr-1*
 	=dev-libs/apr-util-1*
+	dev-libs/expat
 	dev-libs/libpcre
+	kernel_linux? ( sys-apps/util-linux )
 	ssl? ( dev-libs/openssl )
 	!<www-servers/apache-2.2.4"
 

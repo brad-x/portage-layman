@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-engines/renpy/renpy-6.14.1-r1.ebuild,v 1.8 2014/07/06 12:53:35 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-engines/renpy/renpy-6.14.1-r1.ebuild,v 1.10 2015/04/08 18:10:15 mgorny Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_6 python2_7 )
+PYTHON_COMPAT=( python2_7 )
 DISTUTILS_IN_SOURCE_BUILD=1
 inherit eutils python-r1 versionator gnome2-utils games distutils-r1
 
@@ -19,7 +19,7 @@ IUSE="development doc examples"
 REQUIRED_USE="examples? ( development )"
 
 RDEPEND="
-	>=app-admin/eselect-renpy-0.1
+	>=app-eselect/eselect-renpy-0.1
 	dev-libs/fribidi
 	dev-python/pygame[X,${PYTHON_USEDEP}]
 	>=dev-lang/python-exec-0.3[${PYTHON_USEDEP}]

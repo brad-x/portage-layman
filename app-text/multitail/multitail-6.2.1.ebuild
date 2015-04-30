@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/multitail/multitail-6.2.1.ebuild,v 1.7 2014/10/29 09:36:53 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/multitail/multitail-6.2.1.ebuild,v 1.8 2015/02/10 08:19:01 jlec Exp $
 
 EAPI=5
 
@@ -23,8 +23,6 @@ RESTRICT="test" # bug #492270
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-6.0-as-needed.patch
 
-	use x86-interix && epatch "${FILESDIR}"/${PN}-5.2.6-interix.patch
-
 	sed \
 		-e '/gcc/d' \
 		-e '/scan-build/d' \
@@ -37,7 +35,7 @@ src_prepare() {
 	use debug && append-flags "-D_DEBUG"
 }
 
-src_configure() {
+src_compile() {
 	emake UTF8_SUPPORT=$(usex unicode)
 }
 

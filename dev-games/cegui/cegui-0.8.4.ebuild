@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/cegui-0.8.4.ebuild,v 1.1 2014/09/07 07:15:31 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/cegui-0.8.4.ebuild,v 1.4 2015/03/25 13:49:09 ago Exp $
 
 EAPI=5
 
 # TODO: multiple ABI?
-PYTHON_COMPAT=( python2_6 python2_7 )
+PYTHON_COMPAT=( python2_7 )
 inherit eutils flag-o-matic cmake-utils python-single-r1
 
 DESCRIPTION="Crazy Eddie's GUI System"
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/crayzedsgui/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 -ppc ~x86"
+KEYWORDS="amd64 -ppc x86"
 IUSE="bidi debug devil doc freeimage expat irrlicht lua ogre opengl pcre python static-libs tinyxml truetype xerces-c +xml zip"
 REQUIRED_USE="|| ( expat tinyxml xerces-c xml )
 	${PYTHON_REQUIRED_USE}" # bug 362223

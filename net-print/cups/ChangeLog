@@ -1,6 +1,60 @@
 # ChangeLog for net-print/cups
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/ChangeLog,v 1.658 2015/02/01 13:52:23 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/ChangeLog,v 1.671 2015/04/26 17:11:08 pacho Exp $
+
+  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> cups-2.0.2-r1.ebuild:
+  ppc stable wrt bug #545740
+
+  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.2-r1.ebuild:
+  Stable for x86, wrt bug #545740
+
+  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #545740
+
+  18 Apr 2015; Jeroen Roovers <jer@gentoo.org> cups-2.0.2-r1.ebuild:
+  Stable for HPPA (bug #545740).
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> cups-1.7.5-r2.ebuild,
+  cups-1.7.5.ebuild, cups-1.7.9999.ebuild, cups-2.0.0-r2.ebuild,
+  cups-2.0.1-r1.ebuild, cups-2.0.2-r1.ebuild, cups-2.0.2.ebuild,
+  cups-9999.ebuild:
+  Drop old Python implementations
+
+  28 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
+  Stable for ia64, wrt bug #533692
+
+  27 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
+  Stable for sparc, wrt bug #533692
+
+  24 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
+  Stable for alpha, wrt bug #533692
+
+  23 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
+  Stable for ppc64, wrt bug #533692
+
+  21 Feb 2015; Sergei Trofimovich <slyfox@gentoo.org> cups-2.0.2-r1.ebuild,
+  files/cups-2.0.1-xinetd-installation-fix.patch:
+  Restored dropped 'xinetd-installation-fix' patch. Fixes bug #539696 by tman
+  and PhobosK.
+
+  21 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
+  Stable for ppc, wrt bug #533692
+
+*cups-2.0.2-r1 (13 Feb 2015)
+
+  13 Feb 2015; Pacho Ramos <pacho@gentoo.org> +cups-2.0.2-r1.ebuild,
+  +files/cups-2.0.2-rename-systemd-service-files.patch,
+  +files/cups-2.0.2-systemd-socket.patch:
+  Fix cups starting (socket and ports handling) on systemd with Fedora approach
+  (that also improves the way errors in cups are reported when occur) as
+  currently starting is not working properly leading to the printers being not
+  accessible for other machines in the network.
+
+*cups-2.0.2 (10 Feb 2015)
+
+  10 Feb 2015; Andreas K. Huettel <dilfridge@gentoo.org> +cups-2.0.2.ebuild,
+  cups-9999.ebuild:
+  Version bump
 
   01 Feb 2015; Agostino Sarubbo <ago@gentoo.org> cups-2.0.1-r1.ebuild:
   Stable for x86, wrt bug #533692

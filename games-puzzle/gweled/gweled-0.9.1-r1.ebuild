@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gweled/gweled-0.9.1-r1.ebuild,v 1.1 2014/06/04 06:39:34 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gweled/gweled-0.9.1-r1.ebuild,v 1.5 2015/02/21 17:42:04 tupone Exp $
 
-EAPI=2
+EAPI=5
 inherit flag-o-matic autotools games
 
 DESCRIPTION="Bejeweled clone game"
@@ -11,7 +11,7 @@ SRC_URI="http://launchpad.net/gweled/trunk/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
@@ -29,16 +29,11 @@ src_configure() {
 	filter-flags -fomit-frame-pointer
 	append-ldflags -Wl,--export-dynamic
 	egamesconf \
-		--disable-dependency-tracking \
 		--disable-setgid
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	# FIXME: /var/lib is hard-coded.  Need to patch this.
-	touch "${D}/var/games/gweled/gweled.timed.scores"
-	fperms 664 /var/lib/games/gweled.timed.scores
+	default
 	gamesowners -R "${D}/var/games/gweled"
-	dodoc AUTHORS NEWS
 	prepgamesdirs
 }

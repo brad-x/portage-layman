@@ -1,6 +1,62 @@
 # ChangeLog for Gentoo/AMD64 profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/ChangeLog,v 1.303 2015/01/30 21:48:00 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/ChangeLog,v 1.318 2015/04/27 08:09:28 graaff Exp $
+
+  27 Apr 2015; Hans de Graaff <graaff@gentoo.org> use.mask:
+  Mask rbx RUBY_TARGET now that dev-lang/rubinius-1.x is masked.
+
+  19 Apr 2015; Chris Reffett <creffett@gentoo.org> no-multilib/package.mask:
+  Mask multilib package games-roguelike/dwarf-fortress on no-multilib profile
+
+  16 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> package.use.stable.mask:
+  Mask libav USE flag for >=media-video/mpv/mpv-0.7.3 (bug #525148)
+
+  11 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> package.use.stable.mask:
+  Stable mask x265 dependency for ffmpeg (bug #538798)
+
+  29 Mar 2015; Mike Frysinger <vapier@gentoo.org> use.mask:
+  Unmask USE=cilk.
+
+  28 Mar 2015; Michał Górny <mgorny@gentoo.org> -no-emul-linux-x86/eapi,
+  -no-emul-linux-x86/package.mask, -no-emul-linux-x86/package.use.mask,
+  -no-emul-linux-x86/package.use.stable.mask, -no-emul-linux-x86/parent,
+  package.use.mask, package.use.stable.mask:
+  emul-linux-x86 last rites. Unmask abi_x86_32 on stable amd64. Mask gcj[awt]
+  and gcj-jdk[X] since the maintainers failed to accept patches. Remove
+  no-emul-linux-x86 subprofiles that are now redundant.
+
+  21 Mar 2015; Michał Górny <mgorny@gentoo.org> make.defaults:
+  Enable mmxext by default since it is implied by sse, and required for ffmpeg.
+
+  14 Mar 2015; Michał Górny <mgorny@gentoo.org>
+  no-emul-linux-x86/package.mask:
+  Update masked package list in no-emul-linux-x86 profile.
+
+  01 Mar 2015; Michał Górny <mgorny@gentoo.org> package.use.mask:
+  Mask telepathy-connection-managers[steam] on unsupported arches.
+
+  21 Feb 2015; Michał Górny <mgorny@gentoo.org> package.use.stable.mask:
+  Stable-mask non-stable qca plugin flags for old qca version.
+
+  21 Feb 2015; Michał Górny <mgorny@gentoo.org>
+  no-emul-linux-x86/package.use.stable.mask:
+  Sync missing stable-unmask of multilib xcb-util-*.
+
+  19 Feb 2015; Michał Górny <mgorny@gentoo.org>
+  no-emul-linux-x86/package.use.stable.mask, package.use.stable.mask:
+  Add abi_x86_32 stable masks for SDL2 packages.
+
+  18 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.use.stable.mask:
+  Mask multilib for x11-libs/xcb-util*
+
+  13 Feb 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  package.use.stable.mask:
+  Mask multilib features of librevenge until zlib goes multilib
+
+  11 Feb 2015; Michał Górny <mgorny@gentoo.org>
+  no-emul-linux-x86/package.use.stable.mask, package.use.stable.mask:
+  Mask abi_x86_32 on media-video/rtmpdump.
 
   30 Jan 2015; Michał Górny <mgorny@gentoo.org> make.defaults:
   Hide CPU_FLAGS_X86 everywhere but on amd64 & x86.

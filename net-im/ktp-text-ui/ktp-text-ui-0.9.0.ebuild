@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ktp-text-ui/ktp-text-ui-0.9.0.ebuild,v 1.1 2014/10/26 16:37:44 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ktp-text-ui/ktp-text-ui-0.9.0.ebuild,v 1.3 2015/04/11 16:12:42 kensington Exp $
 
 EAPI=5
 
@@ -23,8 +23,9 @@ SLOT="4"
 IUSE="debug semantic-desktop"
 
 DEPEND="
+	dev-libs/qjson[qt4(+)]
 	>=net-libs/telepathy-qt-0.9.5[qt4]
-	>=net-libs/telepathy-logger-qt-0.8
+	>=net-libs/telepathy-logger-qt-0.8:0
 	semantic-desktop? (
 		$(add_kdebase_dep kdepimlibs)
 		>=net-libs/libkpeople-0.3.0:=

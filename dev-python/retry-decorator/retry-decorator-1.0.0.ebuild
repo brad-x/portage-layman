@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/retry-decorator/retry-decorator-1.0.0.ebuild,v 1.3 2014/11/25 11:17:01 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/retry-decorator/retry-decorator-1.0.0.ebuild,v 1.6 2015/04/08 08:05:22 mgorny Exp $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit distutils-r1 vcs-snapshot
 
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/pnpnpn/retry-decorator/archive/v${PV}.tar.gz -> ${P}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm x86"
 IUSE=""
 
 RDEPEND="${PYTHON_DEPS}"

@@ -1,6 +1,138 @@
 # ChangeLog for x11-base/xorg-server
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/ChangeLog,v 1.818 2015/01/25 15:22:08 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/ChangeLog,v 1.844 2015/03/31 18:08:58 ulm Exp $
+
+  31 Mar 2015; Ulrich Müller <ulm@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild,
+  xorg-server-1.16.4-r1.ebuild, xorg-server-1.16.4-r2.ebuild,
+  xorg-server-1.17.1.ebuild, xorg-server-1.17.1-r1.ebuild:
+  Update dependency after package move of eselect modules to app-eselect.
+
+  17 Mar 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-server-1.15.2-r2.ebuild:
+  Apply libXfont dependency changes to 1.15 too
+
+  17 Mar 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-server-1.12.4-r4.ebuild, xorg-server-1.17.1-r1.ebuild:
+  Update dependencies to explicitly state compatibility with libXfont versions.
+  Restore arm64 keyword that was apparently dropped due to mistake.
+
+  17 Mar 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xorg-server-1.12.4-r3.ebuild, -xorg-server-1.15.2-r1.ebuild,
+  -xorg-server-1.16.3-r1.ebuild, -xorg-server-1.16.3.ebuild,
+  -xorg-server-1.17.0.ebuild:
+  Remove vulnerable versions, security bug #539692.
+
+  14 Mar 2015; Markus Meier <maekke@gentoo.org> xorg-server-1.16.4.ebuild:
+  arm stable, bug #530652
+
+  14 Mar 2015; Markus Meier <maekke@gentoo.org> xorg-server-1.15.2-r2.ebuild:
+  arm stable, bug #530652
+
+  14 Mar 2015; Markus Meier <maekke@gentoo.org> xorg-server-1.12.4-r4.ebuild:
+  arm stable, bug #530652
+
+  06 Mar 2015; Jeroen Roovers <jer@gentoo.org> xorg-server-1.15.2-r2.ebuild,
+  xorg-server-1.16.4.ebuild:
+  Stable for HPPA (bug #530652).
+
+  03 Mar 2015; Yixun Lan <dlan@gentoo.org> xorg-server-1.17.1.ebuild:
+  add arm64 support, tested on A53 board
+
+*xorg-server-1.16.4-r2 (28 Feb 2015)
+
+  28 Feb 2015; Michał Górny <mgorny@gentoo.org> +xorg-server-1.16.4-r2.ebuild:
+  Backport the eselect-opengl/Files section fix to 1.16* branch.
+
+*xorg-server-1.17.1-r1 (27 Feb 2015)
+
+  27 Feb 2015; Michał Górny <mgorny@gentoo.org>
+  +files/xorg-server-1.17-support-multiple-Files-sections.patch,
+  +xorg-server-1.17.1-r1.ebuild:
+  Add support for multiple "Files" sections as needed for eselect-opengl, bug
+  #541232.
+
+  24 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for alpha, wrt bug #530652
+
+  23 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for sparc, wrt bug #530652
+
+  22 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for ia64, wrt bug #530652
+
+  22 Feb 2015; Matt Turner <mattst88@gentoo.org> xorg-server-1.17.1.ebuild:
+  Require at least libdrm 2.4.46 for modesetting.
+
+  22 Feb 2015; Matt Turner <mattst88@gentoo.org> xorg-server-1.17.1.ebuild:
+  Add proper dependencies for IUSE=xephyr, bug 528230.
+
+  21 Feb 2015; Matt Turner <mattst88@gentoo.org> xorg-server-1.17.0.ebuild,
+  xorg-server-1.17.1.ebuild:
+  Increase xinit dependency, bug 536756.
+
+  21 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for ppc64, wrt bug #530652
+
+  20 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for ppc, wrt bug #530652
+
+  19 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-server-1.16.4-r1.ebuild, xorg-server-1.16.4.ebuild:
+  Remove reference to non-existent upgrade guide, bug #540584.
+
+  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for x86, wrt bug #530652
+
+  18 Feb 2015; Agostino Sarubbo <ago@gentoo.org> xorg-server-1.12.4-r4.ebuild,
+  xorg-server-1.15.2-r2.ebuild, xorg-server-1.16.4.ebuild:
+  Stable for amd64, wrt bug #530652
+
+*xorg-server-1.15.2-r2 (11 Feb 2015)
+*xorg-server-1.16.4-r1 (11 Feb 2015)
+*xorg-server-1.17.1 (11 Feb 2015)
+*xorg-server-1.16.4 (11 Feb 2015)
+*xorg-server-1.12.4-r4 (11 Feb 2015)
+
+  11 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xorg-server-1.17-cve-2015-0255-0.patch,
+  +files/xorg-server-1.17-cve-2015-0255-1.patch, +xorg-server-1.12.4-r4.ebuild,
+  +xorg-server-1.15.2-r2.ebuild, +xorg-server-1.16.4-r1.ebuild,
+  +xorg-server-1.16.4.ebuild, +xorg-server-1.17.1.ebuild:
+  Add patches/new versions for security bug #539692.
+
+  10 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -files/xdm.initd-10, -files/xorg-cve-2011-4028+4029.patch,
+  -files/xorg-server-1.11-disable-tests-without-ddx.patch,
+  -files/xorg-server-1.11-dix-pointerrootwin-send-focusin.patch,
+  -files/xorg-server-1.11-dix-send-focus-events.patch,
+  -files/xorg-server-1.11-log-format-fix.patch,
+  -files/xorg-server-1.13-ia64-asm.patch,
+  -files/xorg-server-1.9-cve-2013-1940.patch,
+  -files/xorg-server-1.9-cve-2013-4396.patch,
+  -files/xorg-server-1.9-nouveau-default.patch,
+  -files/xorg-server-glapi_c.patch, -xorg-server-1.10.6-r3.ebuild,
+  -xorg-server-1.11.4-r3.ebuild, -xorg-server-1.13.4-r1.ebuild,
+  -xorg-server-1.14.5.ebuild, -xorg-server-1.14.7.ebuild,
+  -xorg-server-1.9.5-r3.ebuild:
+  Drop obsolete and vulnerable versions, bug #532086.
+
+  09 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-server-1.17.0.ebuild:
+  Remove reference to non-existent upgrade guide.
+
+*xorg-server-1.17.0 (08 Feb 2015)
+
+  08 Feb 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xorg-server-1.17-ia64-fix_inx_outx.patch, +xorg-server-1.17.0.ebuild,
+  metadata.xml:
+  Version bump, bug #539168.
 
   25 Jan 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   -xorg-server-1.12.4-r2.ebuild, -xorg-server-1.15.0.ebuild,

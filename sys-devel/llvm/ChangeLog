@@ -1,6 +1,61 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.226 2015/02/04 10:55:25 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.238 2015/04/16 11:55:18 voyageur Exp $
+
+  16 Apr 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.3-r3.ebuild,
+  llvm-3.4.2.ebuild, llvm-3.5.0.ebuild, llvm-3.5.1.ebuild, llvm-3.5.2.ebuild,
+  llvm-3.6.0.ebuild, llvm-9999.ebuild:
+  Update debug CFLAGS check, bug #545630
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> llvm-3.2.ebuild,
+  llvm-3.3-r3.ebuild:
+  Drop old Python implementations
+
+*llvm-3.5.2 (03 Apr 2015)
+
+  03 Apr 2015; Bernard Cafarelli <voyageur@gentoo.org> +llvm-3.5.2.ebuild:
+  3.5 bugfix release bump
+
+  02 Apr 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild,
+  +files/llvm-3.7-nodoctargz.patch:
+  Fix live ebuild patch, though it requires a rewrite for cmake build system,
+  bug #543536
+
+  19 Mar 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.1-r2.ebuild,
+  +files/llvm-3.1-docs-pod-markup-fixes.patch,
+  +files/llvm-3.6.0-ocaml-ctypes-0.4.0.patch:
+  Fix compilation with newer perl versions, bug #541132
+
+  03 Mar 2015; Yixun Lan <dlan@gentoo.org> llvm-3.5.1.ebuild:
+  add arm64 support, tested on A53 board
+
+*llvm-3.6.0 (27 Feb 2015)
+
+  27 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> -llvm-3.6.0_rc4.ebuild,
+  +llvm-3.6.0.ebuild:
+  Bump to final version
+
+*llvm-3.6.0_rc4 (23 Feb 2015)
+
+  23 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> -llvm-3.6.0_rc3.ebuild,
+  +llvm-3.6.0_rc4.ebuild:
+  RC bump
+
+  21 Feb 2015; Agostino Sarubbo <ago@gentoo.org> llvm-3.5.0.ebuild:
+  Stable for ppc64, wrt bug #530882
+
+  18 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.6.0_rc3.ebuild:
+  Remove forgotten patch line
+
+  18 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.6.0_rc3.ebuild,
+  metadata.xml:
+  go bindings do not integrate with autoconf build system, disable for now
+
+*llvm-3.6.0_rc3 (18 Feb 2015)
+
+  18 Feb 2015; Bernard Cafarelli <voyageur@gentoo.org> +llvm-3.6.0_rc3.ebuild,
+  metadata.xml:
+  Add 3.6.0 release candidate for testing, still need to fix go bindings
 
   04 Feb 2015; Michał Górny <mgorny@gentoo.org>
   +files/clang-3.6-gentoo-install.patch, llvm-9999.ebuild:

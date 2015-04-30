@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/muscle/muscle-3.8.31.ebuild,v 1.1 2010/06/24 19:03:18 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/muscle/muscle-3.8.31.ebuild,v 1.5 2015/04/21 18:54:50 pacho Exp $
 
-EAPI="3"
+EAPI=5
 
 inherit eutils toolchain-funcs
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.drive5.com/muscle/downloads${PV}/${MY_P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND="!sci-libs/libmuscle"
@@ -28,6 +28,6 @@ src_prepare() {
 }
 
 src_install() {
-	dobin "${PN}" || die
-	dodoc *.txt || die
+	dobin "${PN}"
+	dodoc *.txt
 }

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/nvi/nvi-1.81.6-r4.ebuild,v 1.8 2014/01/26 12:20:13 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/nvi/nvi-1.81.6-r4.ebuild,v 1.10 2015/03/31 17:32:04 ulm Exp $
 
 EAPI=4
 
@@ -32,13 +32,13 @@ IUSE="perl tcl unicode"
 CDEPEND="|| ( ${DBDEPENDS} )
 	>=sys-libs/ncurses-5.6-r2
 	perl? ( dev-lang/perl )
-	tcl? ( !unicode? ( >=dev-lang/tcl-8.5 ) )"
+	tcl? ( !unicode? ( >=dev-lang/tcl-8.5:0 ) )"
 
 DEPEND="${CDEPEND}
 		virtual/pkgconfig"
 
 RDEPEND="${CDEPEND}
-	app-admin/eselect-vi"
+	app-eselect/eselect-vi"
 
 REQUIRED_USE="tcl? ( !unicode )"
 

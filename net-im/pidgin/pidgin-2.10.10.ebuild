@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.10.ebuild,v 1.12 2014/11/16 20:50:16 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.10.ebuild,v 1.15 2015/04/08 18:03:12 mgorny Exp $
 
 EAPI=5
 
 GENTOO_DEPEND_ON_PERL=no
-PYTHON_COMPAT=( python2_7 python3_2 python3_3 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 inherit autotools flag-o-matic eutils toolchain-funcs multilib perl-app gnome2 python-single-r1
 
 DESCRIPTION="GTK Instant Messenger client"
@@ -49,15 +49,15 @@ RDEPEND="
 	dbus? ( >=dev-libs/dbus-glib-0.71
 		>=sys-apps/dbus-0.90
 		dev-python/dbus-python )
-	perl? ( >=dev-lang/perl-5.16 )
+	perl? ( >=dev-lang/perl-5.16:= )
 	gadu? ( || ( >=net-libs/libgadu-1.11.0[ssl,gnutls]
 		>=net-libs/libgadu-1.11.0[-ssl] ) )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( >=dev-libs/nss-3.15.4 )
 	meanwhile? ( net-libs/meanwhile )
 	silc? ( >=net-im/silc-toolkit-1.0.1 )
-	tcl? ( dev-lang/tcl )
-	tk? ( dev-lang/tk )
+	tcl? ( dev-lang/tcl:0= )
+	tk? ( dev-lang/tk:0= )
 	sasl? ( dev-libs/cyrus-sasl:2 )
 	networkmanager? ( net-misc/networkmanager )
 	idn? ( net-dns/libidn )

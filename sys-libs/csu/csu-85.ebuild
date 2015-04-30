@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/csu/csu-85.ebuild,v 1.1 2015/02/03 21:04:09 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/csu/csu-85.ebuild,v 1.3 2015/03/01 09:15:22 grobian Exp $
 
 EAPI=5
 
-inherit eutils
+inherit toolchain-funcs eutils
 
 DESCRIPTION="Darwin Csu (crt1.o) - Mac OS X 10.10 version"
 HOMEPAGE="http://www.opensource.apple.com/"
@@ -25,19 +25,17 @@ src_prepare() {
 		-e '/^CC = /d' \
 		Makefile || die
 
-	if [[ ${CHOST##*-darwin} -le 8 ]] ; then
-		# Availability.h missing
-		epatch "${FILESDIR}"/${P}-darwin8.patch
+	# only require Availability.h for arm, bugs #538602, #539964
+	epatch "${FILESDIR}"/${P}-arm-availability.patch
 
-		if [[ ${CHOST} == powerpc* ]] ; then
-			# *must not* be compiled with -Os on PPC because that
-			# will optimize out
-			# _pointer_to__darwin_gcc3_preregister_frame_info which
-			# causes linker errors for large programs because the
-			# jump to ___darwin_gcc3_preregister_frame_info gets to
-			# be more than 16MB away
-			sed -i -e "s, -Os , -O ,g" Makefile || die
-		fi
+	if [[ ${CHOST} == powerpc* ]] ; then
+		# *must not* be compiled with -Os on PPC because that
+		# will optimize out
+		# _pointer_to__darwin_gcc3_preregister_frame_info which
+		# causes linker errors for large programs because the
+		# jump to ___darwin_gcc3_preregister_frame_info gets to
+		# be more than 16MB away
+		sed -i -e "s, -Os , -O ,g" Makefile || die
 	fi
 }
 

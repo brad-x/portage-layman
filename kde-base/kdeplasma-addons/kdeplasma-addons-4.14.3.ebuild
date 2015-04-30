@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdeplasma-addons/kdeplasma-addons-4.14.3.ebuild,v 1.3 2015/01/28 23:25:42 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdeplasma-addons/kdeplasma-addons-4.14.3.ebuild,v 1.7 2015/02/22 18:41:23 mgorny Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ inherit kde4-base
 
 DESCRIPTION="Extra Plasma applets and engines"
 LICENSE="GPL-2 LGPL-2"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="attica debug desktopglobe exif fcitx ibus json +kdepim nepomuk oauth
 qalculate qwt scim"
 
@@ -38,7 +38,7 @@ DEPEND="${COMMON_DEPEND}
 	dev-cpp/eigen:2
 "
 RDEPEND="${COMMON_DEPEND}
-	|| ( app-crypt/qca-ossl:2 app-crypt/qca:2[openssl] )
+	app-crypt/qca:2[openssl]
 "
 
 src_configure() {

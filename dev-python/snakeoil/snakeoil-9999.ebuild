@@ -1,27 +1,24 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/snakeoil/snakeoil-9999.ebuild,v 1.15 2014/10/18 17:29:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/snakeoil/snakeoil-9999.ebuild,v 1.19 2015/04/01 23:54:34 radhermit Exp $
 
-EAPI=4
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+EAPI=5
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 inherit distutils-r1
 
 if [[ ${PV} == *9999 ]] ; then
-	EGIT_REPO_URI="git://github.com/pkgcore/snakeoil.git"
+	EGIT_REPO_URI="https://github.com/pkgcore/snakeoil.git"
 	inherit git-r3
 else
 	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-	SRC_URI="http://snakeoil.googlecode.com/files/${P}.tar.bz2"
+	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 fi
 
 DESCRIPTION="Miscellaneous python utility code"
-HOMEPAGE="http://snakeoil.googlecode.com/"
+HOMEPAGE="http://github.com/pkgcore/snakeoil"
 
 LICENSE="BSD"
 SLOT="0"
-
-DEPEND="!<sys-apps/pkgcore-0.4.7.8"
-RDEPEND=${DEPEND}
 
 python_configure_all() {
 	# disable snakeoil 2to3 caching

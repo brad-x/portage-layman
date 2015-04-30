@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/spice-gtk/spice-gtk-0.25-r1.ebuild,v 1.4 2014/10/11 15:54:20 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/spice-gtk/spice-gtk-0.25-r1.ebuild,v 1.8 2015/04/08 18:04:50 mgorny Exp $
 
 EAPI=5
 GCONF_DEBUG="no"
@@ -8,7 +8,7 @@ WANT_AUTOMAKE="1.12"
 VALA_MIN_API_VERSION="0.14"
 VALA_USE_DEPEND="vapigen"
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit autotools eutils python-single-r1 vala
 
@@ -18,7 +18,7 @@ HOMEPAGE="http://spice-space.org http://gitorious.org/spice-gtk"
 LICENSE="LGPL-2.1"
 SLOT="0"
 SRC_URI="http://spice-space.org/download/gtk/${P}.tar.bz2"
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64"
+KEYWORDS="~alpha amd64 arm ~ppc ~ppc64 ~x86"
 IUSE="dbus doc gstreamer gtk3 +introspection policykit pulseaudio
 python sasl smartcard static-libs usbredir vala webdav"
 

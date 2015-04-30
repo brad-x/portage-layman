@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libnatspec/libnatspec-0.2.6.ebuild,v 1.18 2014/01/19 10:09:39 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libnatspec/libnatspec-0.2.6.ebuild,v 1.19 2015/03/25 12:50:07 jlec Exp $
 
 EAPI="2"
 
@@ -19,12 +19,12 @@ RDEPEND="python? ( >=dev-lang/python-2.3 )
 	dev-libs/popt"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
-	python? ( dev-lang/tcl )"
+	python? ( dev-lang/tcl:0 )"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-iconv.patch
 	# regenerate to fix imcompatible readlink usage
-	rm -f "${S}"/ltmain.sh "${S}"/libtool
+	rm -f "${S}"/ltmain.sh "${S}"/libtool || die
 	eautoreconf
 }
 

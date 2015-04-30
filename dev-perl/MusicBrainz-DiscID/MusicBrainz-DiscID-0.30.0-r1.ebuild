@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/MusicBrainz-DiscID/MusicBrainz-DiscID-0.30.0-r1.ebuild,v 1.1 2014/08/23 22:01:44 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/MusicBrainz-DiscID/MusicBrainz-DiscID-0.30.0-r1.ebuild,v 1.3 2015/03/25 13:49:59 monsieurp Exp $
 
 EAPI=5
 
@@ -27,10 +27,18 @@ DEPEND="${RDEPEND}
 "
 
 SRC_TEST="do"
-EPATCH_SUFFIX=patch
-PATCHES=(
-	"${WORKDIR}"/${MY_PN:-${PN}}-patch
-)
+PERL_RM_FILES=( t/05pod.t )
+
+src_prepare() {
+	# Quick n dirty fix but does the job.
+	ebegin 'Patching lib/MusicBrainz/DiscID.pm'
+	# There's a dangling non-ASCII character that causes perldoc to fail on
+	# parsing the .pm and hence, fail tests. We should file a bug upstream.
+	perl -i'' -npe "s/don.. specify/don't specify/g;" lib/MusicBrainz/DiscID.pm
+	eend $?
+
+	perl-module_src_prepare
+}
 
 src_install() {
 	perl-module_src_install

@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bareos/bareos-12.4.5-r1.ebuild,v 1.4 2014/12/28 14:43:07 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bareos/bareos-12.4.5-r1.ebuild,v 1.8 2015/04/08 07:30:31 mgorny Exp $
 
 EAPI="5"
 
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="threads"
 
 inherit eutils multilib python-single-r1 qt4-r2 user
@@ -23,9 +23,9 @@ IUSE="acl clientonly +director examples ipv6 logwatch mysql ndmp postgres python
 
 DEPEND="
 	!app-backup/bacula
-	dev-libs/gmp
+	dev-libs/gmp:0
 	!clientonly? (
-		postgres? ( dev-db/postgresql[threads] )
+		postgres? ( dev-db/postgresql:*[threads] )
 		mysql? ( virtual/mysql )
 		sqlite3? ( dev-db/sqlite:3 )
 		director? ( virtual/mta )
@@ -36,20 +36,20 @@ DEPEND="
 	)
 	logwatch? ( sys-apps/logwatch )
 	tcpd? ( sys-apps/tcp-wrappers )
-	readline? ( sys-libs/readline )
+	readline? ( sys-libs/readline:0 )
 	static? (
 		acl? ( virtual/acl[static-libs] )
 		sys-libs/zlib[static-libs]
 		dev-libs/lzo[static-libs]
 		sys-libs/ncurses[static-libs]
-		ssl? ( dev-libs/openssl[static-libs] )
+		ssl? ( dev-libs/openssl:0[static-libs] )
 	)
 	!static? (
 		acl? ( virtual/acl )
 		sys-libs/zlib
 		dev-libs/lzo
 		sys-libs/ncurses
-		ssl? ( dev-libs/openssl )
+		ssl? ( dev-libs/openssl:0 )
 	)
 	python? ( ${PYTHON_DEPS} )
 	"

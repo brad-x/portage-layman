@@ -1,6 +1,36 @@
 # ChangeLog for media-gfx/graphviz
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/graphviz/ChangeLog,v 1.281 2014/11/29 14:57:59 dilfridge Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/graphviz/ChangeLog,v 1.287 2015/04/08 17:58:13 mgorny Exp $
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> graphviz-2.28.0.ebuild,
+  graphviz-2.34.0.ebuild, graphviz-2.36.0-r1.ebuild, graphviz-2.36.0.ebuild,
+  graphviz-2.38.0.ebuild:
+  Drop old Python implementations
+
+  25 Mar 2015; Justin Lecher <jlec@gentoo.org> graphviz-2.26.3-r3.ebuild,
+  graphviz-2.26.3-r4.ebuild, graphviz-2.28.0.ebuild, graphviz-2.34.0.ebuild,
+  graphviz-2.36.0-r1.ebuild, graphviz-2.36.0.ebuild, graphviz-2.38.0.ebuild:
+  Fix tcl/tk slotting
+
+*graphviz-2.38.0 (07 Mar 2015)
+
+  07 Mar 2015; Sergei Trofimovich <slyfox@gentoo.org> +graphviz-2.38.0.ebuild:
+  Version bump.
+
+*graphviz-2.36.0-r1 (07 Mar 2015)
+
+  07 Mar 2015; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/graphviz-2.38-fix-backslashes.patch, +graphviz-2.36.0-r1.ebuild:
+  Backport backslash fix from upstream. Thanks to Ulya Trofimovich.
+
+  15 Feb 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/graphviz-2.26.3-libtool-configure.patch, graphviz-2.26.3-r4.ebuild:
+  Backport libtool logic from newer versions to fix building with newer
+  autotools #539032 by Jeff.
+
+  15 Feb 2015; Mike Frysinger <vapier@gentoo.org> graphviz-2.26.3-r3.ebuild,
+  graphviz-2.26.3-r4.ebuild:
+  Drop install-sh FreeBSD hack in stable ebuilds #537850 by Cyril Hrubis.
 
   29 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org>
   graphviz-2.26.3-r4.ebuild:

@@ -1,16 +1,17 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/winetricks/winetricks-99999999.ebuild,v 1.11 2013/07/09 12:41:56 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/winetricks/winetricks-99999999.ebuild,v 1.15 2015/04/19 00:00:03 tetromino Exp $
 
 EAPI=5
 
 inherit gnome2-utils eutils
 
 if [[ ${PV} == "99999999" ]] ; then
-	ESVN_REPO_URI="http://winetricks.googlecode.com/svn/trunk"
-	inherit subversion
+	EGIT_REPO_URI="git://github.com/Winetricks/${PN}.git"
+	inherit git-r3
+	SRC_URI=""
 else
-	SRC_URI="http://winetricks.org/download/releases/${P}.tar.gz"
+	SRC_URI="https://github.com/Winetricks/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 wtg=winetricks-gentoo-2012.11.24
@@ -19,7 +20,7 @@ SRC_URI="${SRC_URI}
 	kde? ( http://dev.gentoo.org/~tetromino/distfiles/wine/${wtg}.tar.bz2 )"
 
 DESCRIPTION="Easy way to install DLLs needed to work around problems in Wine"
-HOMEPAGE="http://code.google.com/p/winetricks/ http://wiki.winehq.org/winetricks"
+HOMEPAGE="http://winetricks.org http://wiki.winehq.org/winetricks"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
@@ -33,7 +34,7 @@ RDEPEND="app-arch/cabextract
 	net-misc/wget
 	x11-misc/xdg-utils
 	gtk? ( gnome-extra/zenity )
-	kde? ( kde-base/kdialog )
+	kde? ( || ( kde-base/kdialog kde-apps/kdialog ) )
 	rar? ( app-arch/unrar )"
 
 # Uses non-standard "Wine" category, which is provided by app-emulation/wine; #451552
@@ -42,11 +43,9 @@ QA_DESKTOP_FILE="usr/share/applications/winetricks.desktop"
 # Tests require network access and run wine, which is unreliable from a portage environment
 RESTRICT="test"
 
-S="${WORKDIR}"
-
 src_unpack() {
 	if [[ ${PV} == "99999999" ]] ; then
-		subversion_src_unpack
+		git-r3_src_unpack
 		if use gtk || use kde; then
 			unpack ${wtg}.tar.bz2
 		fi
@@ -58,7 +57,7 @@ src_unpack() {
 src_install() {
 	default
 	if use gtk || use kde; then
-		cd ${wtg} || die
+		cd "${WORKDIR}/${wtg}" || die
 		domenu winetricks.desktop
 		insinto /usr/share/icons/hicolor/scalable/apps
 		doins wine-winetricks.svg

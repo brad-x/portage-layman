@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/ansible/ansible-9999.ebuild,v 1.23 2014/12/02 08:23:05 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/ansible/ansible-9999.ebuild,v 1.24 2015/03/28 10:50:44 jlec Exp $
 
 EAPI=5
 
@@ -19,31 +19,35 @@ SLOT="0"
 KEYWORDS=""
 IUSE="test"
 
+RDEPEND="
+	dev-python/httplib2[${PYTHON_USEDEP}]
+	dev-python/jinja[${PYTHON_USEDEP}]
+	dev-python/keyczar[${PYTHON_USEDEP}]
+	>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	net-misc/sshpass
+	virtual/ssh
+"
 DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
+		${RDEPEND}
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/nose[${PYTHON_USEDEP}]
 		dev-python/passlib[${PYTHON_USEDEP}]
 		dev-vcs/git
 	)"
-RDEPEND="
-	dev-python/jinja[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-	net-misc/sshpass
-	virtual/ssh
-"
 
 python_test() {
-	make tests || die "tests failed"
+	nosetests -d -w test/units -v --with-coverage --cover-package=ansible --cover-branches || die
 }
 
 python_install_all() {
+	EXAMPLES=( examples )
 	distutils-r1_python_install_all
 
 	doman docs/man/man1/*.1
-
-	insinto /usr/share/${PN}
-	doins -r examples
 
 	newenvd "${FILESDIR}"/${PN}.env 95ansible
 }
@@ -51,4 +55,8 @@ python_install_all() {
 src_install() {
 	distutils-r1_src_install
 	readme.gentoo_create_doc
+}
+
+pkg_postinst() {
+	optfeatures "Alternative ssh transport" dev-python/paramiko
 }

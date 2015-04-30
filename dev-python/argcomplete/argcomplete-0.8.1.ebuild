@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/argcomplete/argcomplete-0.8.1.ebuild,v 1.1 2014/12/01 13:52:14 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/argcomplete/argcomplete-0.8.1.ebuild,v 1.4 2015/03/08 23:39:26 pacho Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="Apache-2.0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~x64-macos"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x64-macos"
 IUSE=""
 
 RDEPEND=""
@@ -35,7 +35,7 @@ python_install_all() {
 	sed \
 		-e "/complete /d" \
 		-i argcomplete/bash_completion.d/python-argcomplete.sh || die
-	insinto $(get_bashhelpersdir)
+	insinto "$(_bash-completion-r1_get_bashhelpersdir)"
 	doins argcomplete/bash_completion.d/python-argcomplete.sh
 	distutils-r1_python_install_all
 }

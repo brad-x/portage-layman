@@ -1,6 +1,20 @@
 # ChangeLog for sys-libs/ncurses
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ChangeLog,v 1.231 2014/11/06 19:30:09 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ChangeLog,v 1.234 2015/04/06 20:11:01 vapier Exp $
+
+  06 Apr 2015; Mike Frysinger <vapier@gentoo.org> ncurses-5.9-r4.ebuild:
+  Force usage of bash when running the configure script #545532 by Nick Bowler.
+
+  31 Mar 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/ncurses-5.9-gcc-5.patch, ncurses-5.9-r4.ebuild:
+  Add fix from upstream for building w/gcc-5 #545114#2 by David Kredba.
+
+*ncurses-5.9-r4 (31 Mar 2015)
+
+  31 Mar 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/ncurses-5.9-no-I-usr-include.patch, +ncurses-5.9-r4.ebuild:
+  Fix the inverted leak flag #329537#5 by Arthur Taylor.  Fix from upstream for
+  building with -I/usr/include/ncursesw #522586 by Joakim Tjernlund.
 
   06 Nov 2014; Manuel Rüger <mrueg@gentoo.org> -files/ncurses-5.6-build.patch,
   -files/ncurses-5.6-gfbsd.patch, -files/ncurses-5.7-emacs.patch,

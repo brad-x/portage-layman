@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/tslib/tslib-1.0-r3.ebuild,v 1.7 2014/10/27 15:59:39 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/tslib/tslib-1.0-r3.ebuild,v 1.9 2015/03/31 20:23:27 mr_bones_ Exp $
 
 EAPI="5"
 
@@ -8,13 +8,13 @@ inherit eutils toolchain-funcs autotools multilib-minimal
 
 PATCH_VER="5"
 DESCRIPTION="Touchscreen Access Library"
-HOMEPAGE="http://tslib.berlios.de/"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2
+HOMEPAGE="https://github.com/kergoth/tslib"
+SRC_URI="http://dev.gentoo.org/~mgorny/dist/${P}.tar.bz2
 	mirror://gentoo/${P}-patches-${PATCH_VER}.tar.bz2"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86"
+KEYWORDS="alpha amd64 arm hppa ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh sparc x86"
 IUSE=""
 #extras arctic2 collie corgi h3600 linear-h2200 mk712 ucb1x00"
 

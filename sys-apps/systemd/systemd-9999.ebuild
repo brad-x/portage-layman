@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.156 2015/02/02 21:23:09 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.164 2015/04/18 23:54:18 floppym Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ inherit git-r3
 #endif
 
 AUTOTOOLS_PRUNE_LIBTOOL_FILES=all
-PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 inherit autotools-utils bash-completion-r1 linux-info multilib \
 	multilib-minimal pam python-single-r1 systemd toolchain-funcs udev \
 	user
@@ -25,14 +25,16 @@ SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="acl apparmor audit cryptsetup curl doc elfutils gcrypt gudev http
-	idn introspection kdbus +kmod lz4 lzma pam policykit python qrcode +seccomp
-	selinux ssl sysv-utils terminal test vanilla xkb"
+IUSE="acl apparmor audit cryptsetup curl doc elfutils gcrypt gnuefi gudev http
+	idn importd introspection kdbus +kmod +lz4 lzma nat pam policykit python
+	qrcode +seccomp selinux ssl sysv-utils terminal test vanilla xkb"
+REQUIRED_USE="importd? ( curl gcrypt lzma )"
 
 MINKV="3.8"
 
 COMMON_DEPEND=">=sys-apps/util-linux-2.25:0=
 	sys-libs/libcap:0=
+	!<sys-libs/glibc-2.16
 	acl? ( sys-apps/acl:0= )
 	apparmor? ( sys-libs/libapparmor:0= )
 	audit? ( >=sys-process/audit-2:0= )
@@ -46,10 +48,15 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.25:0=
 		ssl? ( >=net-libs/gnutls-3.1.4:0= )
 	)
 	idn? ( net-dns/libidn:0= )
+	importd? (
+		app-arch/bzip2:0=
+		sys-libs/zlib:0=
+	)
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1:0= )
 	kmod? ( >=sys-apps/kmod-15:0= )
 	lz4? ( >=app-arch/lz4-0_p119:0=[${MULTILIB_USEDEP}] )
 	lzma? ( >=app-arch/xz-utils-5.0.5-r1:0=[${MULTILIB_USEDEP}] )
+	nat? ( net-firewall/iptables:0= )
 	pam? ( virtual/pam:= )
 	python? ( ${PYTHON_DEPS} )
 	qrcode? ( media-gfx/qrencode:0= )
@@ -69,7 +76,6 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.25:0=
 RDEPEND="${COMMON_DEPEND}
 	>=sys-apps/baselayout-2.2
 	!sys-auth/nss-myhostname
-	!<sys-libs/glibc-2.14
 	!sys-fs/eudev
 	!sys-fs/udev"
 
@@ -92,7 +98,9 @@ DEPEND="${COMMON_DEPEND}
 	ia64? ( >=sys-kernel/linux-headers-3.9 )
 	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1.18 )
+	gnuefi? ( >=sys-boot/gnu-efi-3.0.2 )
 	python? ( dev-python/lxml[${PYTHON_USEDEP}] )
+	terminal? ( media-fonts/unifont[utils(+)] )
 	test? ( >=sys-apps/dbus-1.6.8-r1:0 )"
 
 #if LIVE
@@ -174,14 +182,6 @@ src_configure() {
 	multilib-minimal_src_configure
 }
 
-multilib_native_enable() {
-	if multilib_is_native_abi; then
-		echo "--enable-${1}"
-	else
-		echo "--disable-${1}"
-	fi
-}
-
 multilib_src_configure() {
 	local myeconfargs=(
 		# disable -flto since it is an optimization flag
@@ -217,15 +217,20 @@ multilib_src_configure() {
 		$(multilib_native_use_enable doc gtk-doc)
 		$(multilib_native_use_enable elfutils)
 		$(use_enable gcrypt)
+		$(multilib_native_use_enable gnuefi)
 		$(use_enable gudev)
 		$(multilib_native_use_enable http microhttpd)
 		$(usex http $(multilib_native_use_enable ssl gnutls) --disable-gnutls)
 		$(multilib_native_use_enable idn libidn)
+		$(multilib_native_use_enable importd)
+		$(multilib_native_use_enable importd bzip2)
+		$(multilib_native_use_enable importd zlib)
 		$(multilib_native_use_enable introspection)
 		$(use_enable kdbus)
 		$(multilib_native_use_enable kmod)
 		$(use_enable lz4)
 		$(use_enable lzma xz)
+		$(multilib_native_use_enable nat libiptc)
 		$(multilib_native_use_enable pam)
 		$(multilib_native_use_enable policykit polkit)
 		$(multilib_native_use_with python)
@@ -238,28 +243,6 @@ multilib_src_configure() {
 		$(multilib_native_use_enable test dbus)
 		$(multilib_native_use_enable xkb xkbcommon)
 
-		# Disable optional binaries for non-native abis
-		$(multilib_native_enable backlight)
-		$(multilib_native_enable binfmt)
-		$(multilib_native_enable bootchart)
-		$(multilib_native_enable coredump)
-		$(multilib_native_enable firstboot)
-		$(multilib_native_enable hibernate)
-		$(multilib_native_enable hostnamed)
-		$(multilib_native_enable localed)
-		$(multilib_native_enable logind)
-		$(multilib_native_enable machined)
-		$(multilib_native_enable networkd)
-		$(multilib_native_enable quotacheck)
-		$(multilib_native_enable randomseed)
-		$(multilib_native_enable resolved)
-		$(multilib_native_enable rfkill)
-		$(multilib_native_enable sysusers)
-		$(multilib_native_enable timedated)
-		$(multilib_native_enable timesyncd)
-		$(multilib_native_enable tmpfiles)
-		$(multilib_native_enable vconsole)
-
 		# not supported (avoid automagic deps in the future)
 		--disable-chkconfig
 
@@ -267,11 +250,13 @@ multilib_src_configure() {
 		QUOTAON=/usr/sbin/quotaon
 		QUOTACHECK=/usr/sbin/quotacheck
 
+		# TODO: we may need to restrict this to gcc
+		EFI_CC="$(tc-getCC)"
+
 		# dbus paths
 		--with-dbuspolicydir="${EPREFIX}/etc/dbus-1/system.d"
 		--with-dbussessionservicedir="${EPREFIX}/usr/share/dbus-1/services"
 		--with-dbussystemservicedir="${EPREFIX}/usr/share/dbus-1/system-services"
-		--with-dbusinterfacedir="${EPREFIX}/usr/share/dbus-1/interfaces"
 
 		--with-ntp-servers="0.gentoo.pool.ntp.org 1.gentoo.pool.ntp.org 2.gentoo.pool.ntp.org 3.gentoo.pool.ntp.org"
 	)

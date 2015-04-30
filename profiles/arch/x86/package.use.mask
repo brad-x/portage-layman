@@ -1,8 +1,20 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/x86/package.use.mask,v 1.147 2015/01/31 11:30:51 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/x86/package.use.mask,v 1.151 2015/03/15 01:55:12 yngwin Exp $
 
 # This file requires >=portage-2.1.1
+
+# Ben de Groot <yngwin@gentoo.org> (15 Mar 2015)
+# media-libs/libbdplus is keyworded on x86, so unmask the useflag
+media-libs/libbluray -bdplus
+
+# Michał Górny <mgorny@gentoo.org> (01 Mar 2015)
+# pidgin-opensteamworks is only available for amd64, ppc32 and x86
+net-im/telepathy-connection-managers -steam
+
+# Andrey Grozin <grozin@gentoo.org> (23 Feb 2015)
+# Does not compile with this flag
+=dev-lisp/ecls-15.2.21 cpu_flags_x86_sse
 
 # Jeroen Roovers <jer@gentoo.org> (31 Jan 2015)
 # >x11-drivers/nvidia-drivers-346 on x86 has no UVM support (bug #534156)
@@ -11,12 +23,6 @@
 # Pacho Ramos <pacho@gentoo.org> (18 Jan 2015)
 # Missing keywords
 media-plugins/gst-plugins-meta vaapi
-
-# Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2014)
-# New dependencies for wayland support in Gnome 3.14
-# See bug #533420.
-media-libs/clutter egl
-x11-wm/mutter kms
 
 # Tim Harder <radhermit@gentoo.org> (11 Oct 2014)
 # Unmask skype support for unstable keywords

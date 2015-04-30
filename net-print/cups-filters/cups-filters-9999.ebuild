@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.52 2014/12/13 20:58:12 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.54 2015/03/04 17:41:31 dilfridge Exp $
 
 EAPI=5
 
@@ -39,7 +39,7 @@ RDEPEND="
 	jpeg? ( virtual/jpeg:0 )
 	perl? ( dev-lang/perl:= )
 	png? ( media-libs/libpng:0= )
-	tiff? ( media-libs/tiff )
+	tiff? ( media-libs/tiff:0 )
 	zeroconf? ( net-dns/avahi[dbus] )
 "
 DEPEND="${RDEPEND}"
@@ -103,6 +103,7 @@ src_install() {
 
 	if ! use foomatic ; then
 		# this needs an upstream solution / configure switch
+		rm -v "${ED}/usr/bin/foomatic-rip" || die
 		rm -v "${ED}/usr/libexec/cups/filter/foomatic-rip" || die
 		rm -v "${ED}/usr/share/man/man1/foomatic-rip.1" || die
 	fi

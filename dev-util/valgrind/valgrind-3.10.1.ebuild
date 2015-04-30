@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/valgrind-3.10.1.ebuild,v 1.1 2014/11/26 18:43:34 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/valgrind-3.10.1.ebuild,v 1.7 2015/03/25 13:40:39 ago Exp $
 
 EAPI="4"
 inherit autotools eutils flag-o-matic toolchain-funcs multilib pax-utils
@@ -11,7 +11,7 @@ SRC_URI="http://www.valgrind.org/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS="-* amd64 arm ppc ppc64 x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
 IUSE="mpi"
 
 DEPEND="mpi? ( virtual/mpi )"
@@ -39,6 +39,12 @@ src_prepare() {
 
 	# glibc 2.19 fix
 	epatch "${FILESDIR}"/${PN}-3.9.0-glibc-2.19.patch
+
+	# valgrind works fine on linux-4, bug #543648
+	epatch "${FILESDIR}"/${PN}-3.10.1-linux-4.patch
+
+	# Allow users to test their own patches
+	epatch_user
 
 	# Regenerate autotools files
 	eautoreconf

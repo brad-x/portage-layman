@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/cairomm/cairomm-1.10.0.ebuild,v 1.9 2013/09/29 11:05:31 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/cairomm/cairomm-1.10.0.ebuild,v 1.10 2015/03/06 05:03:55 tetromino Exp $
 
 EAPI=5
 GCONF_DEBUG="no"
@@ -11,7 +11,7 @@ DESCRIPTION="C++ bindings for the Cairo vector graphics library"
 HOMEPAGE="http://cairographics.org/cairomm"
 SRC_URI="http://cairographics.org/releases/${P}.tar.gz"
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2+"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc +svg"

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/puppet-3.7.4.ebuild,v 1.1 2015/01/29 05:23:07 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/puppet-3.7.4.ebuild,v 1.3 2015/04/16 17:54:50 prometheanfire Exp $
 
 EAPI="5"
 
@@ -12,7 +12,7 @@ inherit elisp-common xemacs-elisp-common eutils user ruby-fakegem versionator
 
 DESCRIPTION="A system automation and configuration management software"
 HOMEPAGE="http://puppetlabs.com/"
-SRC_URI="http://www.puppetlabs.com/downloads/puppet/${P}.tar.gz"
+SRC_URI="http://downloads.puppetlabs.com/puppet/${P}.tar.gz"
 
 LICENSE="Apache-2.0 GPL-2"
 SLOT="0"
@@ -31,6 +31,8 @@ ruby_add_rdepend "
 	shadow? ( dev-ruby/ruby-shadow )
 	sqlite3? ( dev-ruby/sqlite3 )
 	virtual/ruby-ssl"
+
+ruby_add_bdepend "test? ( dev-ruby/mocha:0.10 )"
 
 DEPEND="${DEPEND}
 	ruby_targets_ruby19? ( dev-lang/ruby:1.9[yaml] )

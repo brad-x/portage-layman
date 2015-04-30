@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/e2fsprogs/e2fsprogs-1.42.12.ebuild,v 1.2 2015/02/06 20:14:45 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/e2fsprogs/e2fsprogs-1.42.12.ebuild,v 1.10 2015/04/04 22:29:07 vapier Exp $
 
 EAPI=4
 
@@ -18,7 +18,7 @@ SRC_URI="mirror://sourceforge/e2fsprogs/${PN}-${UP_PV}.tar.gz
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 -x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~m68k-mint"
+KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 -x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~m68k-mint"
 IUSE="nls static-libs elibc_FreeBSD"
 
 RDEPEND="~sys-libs/${PN}-libs-${PV}
@@ -91,14 +91,6 @@ src_compile() {
 	if use elibc_FreeBSD ; then
 		cp "${FILESDIR}"/fsck_ext2fs.c .
 		emake V=1 fsck_ext2fs
-	fi
-}
-
-pkg_preinst() {
-	if [[ -r ${EROOT}/etc/mtab ]] ; then
-		if [[ $(<"${EROOT}"/etc/mtab) == "${PN} crap for src_test" ]] ; then
-			rm -f "${EROOT}"/etc/mtab
-		fi
 	fi
 }
 

@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/gruff/gruff-0.5.1-r1.ebuild,v 1.1 2014/10/11 00:35:55 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/gruff/gruff-0.5.1-r1.ebuild,v 1.3 2015/04/18 06:19:05 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC=""
 
@@ -33,10 +33,10 @@ RUBY_PATCHES=(
 )
 
 # imagemagick is an indirect dependency through rmagick. However, for
-# gruff to work properly imagemagick needs to be compiled with
-# truetype support and this cannot be expressed in the rmagick
-# dependency. Test also require imagemagick to have jpeg support.
-DEPEND="${DEPEND} test? ( media-gfx/imagemagick[jpeg,truetype] )"
+# gruff to work properly imagemagick needs to be compiled with truetype
+# support and this cannot be expressed in the rmagick dependency. Tests
+# also require imagemagick to have jpeg and png support.
+DEPEND="${DEPEND} test? ( media-gfx/imagemagick[jpeg,png,truetype] )"
 RDEPEND="${RDEPEND} media-gfx/imagemagick[truetype]"
 
 ruby_add_bdepend "test? ( dev-ruby/test-unit )"

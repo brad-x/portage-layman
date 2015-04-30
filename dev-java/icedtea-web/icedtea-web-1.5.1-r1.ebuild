@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-web/icedtea-web-1.5.1-r1.ebuild,v 1.2 2014/11/02 11:07:03 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icedtea-web/icedtea-web-1.5.1-r1.ebuild,v 1.4 2015/04/26 08:10:16 pacho Exp $
 # Build written by Andrew John Hughes (ahughes@redhat.com)
 
 EAPI="5"
@@ -13,7 +13,7 @@ SRC_URI="http://icedtea.classpath.org/download/source/${P}.tar.gz"
 
 LICENSE="GPL-2 GPL-2-with-linking-exception LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 IUSE="doc +icedtea7 javascript +nsplugin tagsoup test"
 
@@ -25,7 +25,7 @@ COMMON_DEP="
 		dev-java/icedtea:7 dev-java/icedtea-bin:7
 		dev-java/icedtea:6 dev-java/icedtea-bin:6
 	) )
-	app-admin/eselect-java
+	app-eselect/eselect-java
 	tagsoup? ( dev-java/tagsoup )
 	nsplugin? (
 		>=dev-libs/glib-2.16

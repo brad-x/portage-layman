@@ -1,21 +1,21 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/cabextract/cabextract-1.4.ebuild,v 1.11 2012/05/09 16:50:03 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/cabextract/cabextract-1.4.ebuild,v 1.13 2015/03/29 11:22:52 yngwin Exp $
 
-EAPI="4"
+EAPI=4
 
 inherit toolchain-funcs
 
-DESCRIPTION="Extracts files from Microsoft .cab files"
+DESCRIPTION="Extracts files from Microsoft cabinet archive files"
 HOMEPAGE="http://www.cabextract.org.uk/"
 SRC_URI="http://www.cabextract.org.uk/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
-IUSE="extra-tools"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+IUSE="extras"
 
-RDEPEND="extra-tools? ( dev-lang/perl )"
+RDEPEND="extras? ( dev-lang/perl )"
 
 # the code attempts to set up a fnmatch replacement, but then fails to code
 # it properly leading to undefined references to rpl_fnmatch().  This may be
@@ -30,7 +30,7 @@ src_install() {
 	emake DESTDIR="${D}" install
 	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO doc/magic
 	dohtml doc/wince_cab_format.html
-	if use extra-tools; then
+	if use extras; then
 		dobin src/{wince_info,wince_rename,cabinfo}
 	fi
 }

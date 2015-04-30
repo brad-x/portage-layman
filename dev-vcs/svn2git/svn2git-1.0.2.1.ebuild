@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/svn2git/svn2git-1.0.2.1.ebuild,v 1.4 2014/08/10 21:23:56 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/svn2git/svn2git-1.0.2.1.ebuild,v 1.6 2015/03/30 19:18:14 sping Exp $
 
 EAPI="2"
 
@@ -10,12 +10,12 @@ inherit eutils qt4-r2
 MY_PV="1.0.2-1-gebac099"
 
 DESCRIPTION="Tool for one-time conversion from svn to git"
-HOMEPAGE="http://gitorious.org/svn2git/svn2git"
+HOMEPAGE="https://github.com/svn-all-fast-export/svn2git"
 if [ "$PV" == "9999" ]; then
-	EGIT_REPO_URI="git://gitorious.org/svn2git/svn2git.git"
+	EGIT_REPO_URI="https://github.com/svn-all-fast-export/svn2git.git"
 	KEYWORDS=""
 else
-	SRC_URI="http://gitorious.org/${PN}/${PN}/archive-tarball/${MY_PV} -> ${P}.tar.gz"
+	SRC_URI="https://www.hartwork.org/public/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 

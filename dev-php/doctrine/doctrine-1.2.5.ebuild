@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/doctrine/doctrine-1.2.5.ebuild,v 1.1 2014/10/30 04:27:21 grknight Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/doctrine/doctrine-1.2.5.ebuild,v 1.2 2015/02/18 02:11:25 grknight Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/php-5.2.3[cli,pdo]"
+DEPEND=">=dev-lang/php-5.2.3:*[cli,pdo]"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffdiaporama/ffdiaporama-2.1.ebuild,v 1.3 2014/06/13 03:04:07 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffdiaporama/ffdiaporama-2.1.ebuild,v 1.6 2015/02/25 11:04:16 pacho Exp $
 
 EAPI=5
 
@@ -22,8 +22,8 @@ LICENSE="GPL-2
 	openclipart? ( CC0-1.0 )
 	texturemate? ( CC-BY-3.0 )"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="openclipart texturemate"
+KEYWORDS="amd64 x86"
+IUSE="libav openclipart texturemate"
 
 RDEPEND="
 	dev-qt/qtcore:4
@@ -34,11 +34,12 @@ RDEPEND="
 	media-gfx/exiv2
 	media-libs/libsdl[sound]
 	media-libs/taglib
-	!<media-video/ffmpeg-1.2:0
-	virtual/ffmpeg[encode]"
+	!libav? ( >media-video/ffmpeg-1.2:0=[encode] )
+	libav? ( >=media-video/libav-9:0=[encode] )"
 DEPEND="${RDEPEND}"
 
 DOCS=( authors.txt )
+PATCHES=( "${FILESDIR}"/${P}-ffmpeg-2.4.patch )
 
 S="${WORKDIR}/ffDiaporama"
 

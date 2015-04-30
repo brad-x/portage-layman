@@ -1,12 +1,12 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/linux-gpib/linux-gpib-3.2.21.ebuild,v 1.1 2014/12/17 16:58:05 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/linux-gpib/linux-gpib-3.2.21.ebuild,v 1.4 2015/04/08 18:49:16 mgorny Exp $
 
 EAPI=5
 
 PERL_EXPORT_PHASE_FUNCTIONS=no
 GENTOO_DEPEND_ON_PERL=no
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit eutils linux-mod autotools perl-module python-single-r1 toolchain-funcs udev user
 
@@ -17,14 +17,14 @@ SRC_URI="mirror://sourceforge/linux-gpib/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm ~x86"
 IUSE="isa pcmcia static debug guile perl php python tcl doc firmware"
 
 COMMONDEPEND="
-	tcl? ( dev-lang/tcl )
-	guile? ( dev-scheme/guile )
+	tcl? ( dev-lang/tcl:0= )
+	guile? ( dev-scheme/guile:12 )
 	perl? ( dev-lang/perl:= )
-	php? ( dev-lang/php )
+	php? ( dev-lang/php:= )
 	python? ( ${PYTHON_DEPS} )
 	firmware? ( sys-apps/fxload )"
 RDEPEND="${COMMONDEPEND}"

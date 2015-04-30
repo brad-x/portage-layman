@@ -1,6 +1,21 @@
 # ChangeLog for net-libs/zeromq
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/zeromq/ChangeLog,v 1.62 2014/08/26 10:06:22 kumba Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/zeromq/ChangeLog,v 1.66 2015/04/07 14:31:02 jlec Exp $
+
+  07 Apr 2015; Justin Lecher <jlec@gentoo.org> zeromq-2.2.0.ebuild:
+  Block net-libs/cppzmq due to file collision, bug #545226
+
+*zeromq-4.0.5 (11 Feb 2015)
+
+  11 Feb 2015; Justin Lecher <jlec@gentoo.org> +zeromq-4.0.5.ebuild,
+  -zeromq-3.2.4-r1.ebuild, -zeromq-4.0.1-r1.ebuild, -zeromq-4.0.1.ebuild,
+  -zeromq-4.0.4-r1.ebuild, metadata.xml:
+  Version Bump, #539440; drop old, fixes two security problems, #523850; Add
+  SLOT operators, #511526; improve USE description, #507948
+
+  09 Feb 2015; Anthony G. Basile <blueness@gentoo.org> zeromq-4.0.1-r1.ebuild,
+  zeromq-4.0.4-r1.ebuild:
+  Keyword ~ppc ~ppc64, bug #489452.
 
   26 Aug 2014; Joshua Kinard <kumba@gentoo.org> zeromq-4.0.4-r1.ebuild:
   Added ~mips to KEYWORDS, per Bug #489452.
@@ -41,7 +56,7 @@
 
   24 Dec 2013; Justin Lecher <jlec@gentoo.org> zeromq-4.0.1.ebuild,
   zeromq-4.0.1-r1.ebuild, +zeromq-4.0.3.ebuild:
-  Version BUmp; restrict test to serial execution, #489844
+  Version Bump; restrict test to serial execution, #489844
 
   07 Dec 2013; Markus Meier <maekke@gentoo.org> zeromq-4.0.1-r1.ebuild:
   add ~arm, bug #489452

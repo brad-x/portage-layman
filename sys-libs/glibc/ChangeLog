@@ -1,6 +1,70 @@
 # ChangeLog for sys-libs/glibc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/ChangeLog,v 1.1035 2015/01/05 13:39:18 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/glibc/ChangeLog,v 1.1050 2015/04/27 03:44:16 vapier Exp $
+
+  27 Apr 2015; Mike Frysinger <vapier@gentoo.org> glibc-2.20-r2.ebuild,
+  glibc-2.21.ebuild:
+  Reject gcc-4.8.[0-3] and gcc-4.9.0 due to miscompilation bugs #547420 by Marc
+  Burkhardt.
+
+  24 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
+  sparc stable wrt bug #544034
+
+  23 Apr 2015; Jeroen Roovers <jer@gentoo.org> glibc-2.20-r2.ebuild:
+  Stable for PPC64 (bug #544034).
+
+  22 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
+  arm stable wrt bug #544034
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> glibc-2.20-r2.ebuild:
+  ppc stable wrt bug #544034
+
+  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> glibc-2.20-r2.ebuild:
+  x86 stable wrt bug #544034
+
+  22 Mar 2015; Mikle Kolyada <zlogene@gentoo.org> glibc-2.20-r2.ebuild:
+  amd64 stable wrt bug #544034
+
+  17 Mar 2015; Mike Frysinger <vapier@gentoo.org>
+  files/eblits/src_configure.eblit:
+  Use new tc-ld-disable-gold helper.
+
+  14 Mar 2015; Mike Frysinger <vapier@gentoo.org>
+  -files/2.10/glibc-2.10-hardened-ssp-compat.patch,
+  -files/2.11/glibc-2.11-hardened-pie.patch,
+  -files/2.3.3/glibc-2.3.3-localedef-fix-trampoline.patch,
+  -files/2.5/glibc-2.5-gentoo-stack_chk_fail.c,
+  -files/2.5/glibc-2.5-hardened-configure-picdefault.patch,
+  -files/2.5/glibc-2.5-hardened-inittls-nosysenter.patch,
+  -files/2.5/glibc-2.5-hardened-pie.patch,
+  -files/2.6/glibc-2.6-hardened-inittls-nosysenter.patch,
+  -files/2.7/glibc-2.7-hardened-inittls-nosysenter.patch,
+  -glibc-2.10.1-r1.ebuild, -glibc-2.11.3.ebuild, -glibc-2.12.1-r3.ebuild,
+  -glibc-2.12.2.ebuild, -glibc-2.13-r2.ebuild, -glibc-2.14.1-r2.ebuild,
+  -glibc-2.14.ebuild, -glibc-2.15-r1.ebuild, -glibc-2.15-r2.ebuild,
+  -glibc-2.9_p20081201-r3.ebuild:
+  Move old ebuilds to toolchain overlay.
+
+*glibc-2.20-r2 (17 Feb 2015)
+
+  17 Feb 2015; Mike Frysinger <vapier@gentoo.org> +glibc-2.20-r2.ebuild:
+  Pull in various fixes from upstream (mostly security).
+
+  15 Feb 2015; Mike Frysinger <vapier@gentoo.org> glibc-2.21.ebuild:
+  Add fix from upstream for memcpy on x86 systems #539820 by Matt Turner.
+
+  09 Feb 2015; Mike Frysinger <vapier@gentoo.org>
+  files/eblits/src_configure.eblit:
+  Drop unused ports variable #532760#2 by Arfrever Frehtes Taifersar Arahesis.
+
+*glibc-2.21 (09 Feb 2015)
+
+  09 Feb 2015; Mike Frysinger <vapier@gentoo.org> +glibc-2.21.ebuild:
+  Version bump.
+
+  09 Feb 2015; Mike Frysinger <vapier@gentoo.org>
+  files/eblits/src_configure.eblit:
+  Disable -Werror when building.
 
   05 Jan 2015; Anthony G. Basile <blueness@gentoo.org> glibc-9999.ebuild:
   Depend on sys-apps/gentoo-functions, bug #504116#c1

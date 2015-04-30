@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-2.02_beta2-r6.ebuild,v 1.3 2015/01/04 03:16:03 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-2.02_beta2-r6.ebuild,v 1.7 2015/04/08 20:32:47 mgorny Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ AUTOTOOLS_AUTORECONF=1
 GRUB_AUTOGEN=1
 
 if [[ -n ${GRUB_AUTOGEN} ]]; then
-	PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+	PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 	inherit python-any-r1
 fi
 
@@ -134,18 +134,6 @@ QA_PRESTRIPPED="
 	usr/lib.*/grub/.*/kernel.img
 "
 
-pkg_pretend() {
-	if [[ ${MERGE_TYPE} != binary ]]; then
-		# Bug 439082
-		if ! test-flags-CC -fuse-ld=bfd > /dev/null &&
-			$(tc-getLD) --version | grep -q "GNU gold"; then
-			eerror "GRUB does not function correctly when built with the gold linker."
-			eerror "Please select the bfd linker with binutils-config."
-			die "GNU gold detected"
-		fi
-	fi
-}
-
 src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
 		git-r3_src_unpack
@@ -248,7 +236,9 @@ src_configure() {
 
 	use static && HOST_LDFLAGS+=" -static"
 
-	export TARGET_LDFLAGS+=" $(test-flags-CC -fuse-ld=bfd)"
+	tc-ld-disable-gold #439082 #466536 #526348
+	export TARGET_LDFLAGS+=" ${LDFLAGS}"
+	unset LDFLAGS
 
 	tc-export CC NM OBJCOPY STRIP
 	export TARGET_CC=${TARGET_CC:-${CC}}

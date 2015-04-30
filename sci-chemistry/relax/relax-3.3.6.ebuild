@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/relax/relax-3.3.6.ebuild,v 1.1 2015/02/07 07:56:16 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/relax/relax-3.3.6.ebuild,v 1.2 2015/03/15 09:15:32 jlec Exp $
 
 EAPI=5
 
@@ -17,7 +17,7 @@ SRC_URI="http://download.gna.org/relax/${P}.src.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE=""
+IUSE="test"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -37,7 +37,11 @@ RDEPEND="
 	sci-visualization/opendx
 	x11-libs/wxGTK:${WX_GTK_VER}[X]"
 DEPEND="${RDEPEND}
-	media-gfx/pngcrush"
+	media-gfx/pngcrush
+	test? (
+		${RDEPEND}
+	)
+	"
 
 pkg_setup() {
 	python-single-r1_pkg_setup

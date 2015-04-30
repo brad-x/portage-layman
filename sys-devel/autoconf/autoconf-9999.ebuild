@@ -1,10 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/autoconf-9999.ebuild,v 1.16 2014/12/03 05:52:22 heroxbd Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/autoconf-9999.ebuild,v 1.17 2015/03/19 23:49:17 vapier Exp $
 
-EAPI="4"
-
-inherit eutils
+EAPI="5"
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://git.savannah.gnu.org/${PN}.git
@@ -33,27 +31,18 @@ RDEPEND="${DEPEND}
 [[ ${PV} == "9999" ]] && DEPEND+=" >=sys-apps/texinfo-4.3"
 PDEPEND="emacs? ( app-emacs/autoconf-mode )"
 
-src_prepare() {
-	if [[ ${PV} == "9999" ]] ; then
-		autoreconf -f -i || die
-	fi
-	find -name Makefile.in -exec sed -i '/^pkgdatadir/s:$:-@VERSION@:' {} +
-}
+if [[ -z ${__EBLITS__} && -n ${FILESDIR} ]] ; then
+	source "${FILESDIR}"/eblits/main.eblit || die
+fi
+src_prepare()   { eblit-run src_prepare   ; }
+src_configure() { eblit-run src_configure ; }
+src_install()   { eblit-run src_install   ; }
 
-src_configure() {
-	# Disable Emacs in the build system since it is in a separate package.
-	export EMACS=no
-	econf --program-suffix="-${PV}" || die
-	# econf updates config.{sub,guess} which forces the manpages
-	# to be regenerated which we dont want to do #146621
-	touch man/*.1
-}
+eblit-src_prepare-pre() {
+	# Avoid the "dirty" suffix in the git version by generating it
+	# before we run later stages which might modify source files.
+	local ver=$(./build-aux/git-version-gen .tarball-version)
+	echo "${ver}" > .tarball-version
 
-src_install() {
-	default
-
-	local f
-	for f in "${ED}"/usr/share/info/*.info* ; do
-		mv "${f}" "${f/.info/-${SLOT}.info}" || die
-	done
+	autoreconf -f -i || die
 }

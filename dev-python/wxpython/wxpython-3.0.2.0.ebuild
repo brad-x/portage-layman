@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/wxpython-3.0.2.0.ebuild,v 1.1 2014/12/31 17:38:10 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/wxpython/wxpython-3.0.2.0.ebuild,v 1.3 2015/04/08 08:05:07 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 WX_GTK_VER="3.0"
 
 inherit alternatives distutils-r1 eutils fdo-mime flag-o-matic wxwidgets
@@ -140,7 +140,7 @@ pkg_postinst() {
 	elog "Gentoo uses the Multi-version method for SLOT'ing."
 	elog "Developers, see this site for instructions on using"
 	elog "it with your apps:"
-	elog "http://wiki.wxpython.org/index.cgi/MultiVersionInstalls"
+	elog "http://wiki.wxpython.org/MultiVersionInstalls"
 	if use examples; then
 		echo
 		elog "The demo.py app which contains demo modules with"

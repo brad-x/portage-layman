@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pandoc/pandoc-1.12.1.ebuild,v 1.1 2013/11/14 10:03:19 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/pandoc/pandoc-1.12.1.ebuild,v 1.3 2015/02/18 21:20:05 slyfox Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="embed_data_files +http-conduit"
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
@@ -45,6 +45,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/zip-archive-0.1.3.3:=[profile?] <dev-haskell/zip-archive-0.2:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
+	embed_data_files? ( dev-haskell/hsb2hs )
 	http-conduit? ( >=dev-haskell/http-conduit-1.9:=[profile?] <dev-haskell/http-conduit-1.10:=[profile?]
 			>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
 "

@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/tkdvd/tkdvd-4.0.7.ebuild,v 1.4 2012/09/05 08:36:57 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/tkdvd/tkdvd-4.0.7.ebuild,v 1.5 2015/03/19 13:34:34 jlec Exp $
 
 inherit eutils
 
@@ -13,10 +13,11 @@ SLOT="0"
 KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
-RDEPEND="virtual/cdrtools
-	 app-cdr/dvd+rw-tools
-	 dev-lang/tcl
-	 dev-lang/tk"
+RDEPEND="
+	virtual/cdrtools
+	app-cdr/dvd+rw-tools
+	dev-lang/tcl
+	dev-lang/tk"
 
 S=${WORKDIR}/tkdvd
 

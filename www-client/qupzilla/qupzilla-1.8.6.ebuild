@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/qupzilla/qupzilla-1.8.6.ebuild,v 1.1 2015/01/31 16:07:20 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/qupzilla/qupzilla-1.8.6.ebuild,v 1.5 2015/03/29 13:02:16 yngwin Exp $
 
 EAPI=5
 MY_PN="QupZilla"
@@ -18,21 +18,23 @@ SRC_URI="https://github.com/${MY_PN}/${PN}/releases/download/v${PV}/${MY_P}.tar.
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm x86"
 IUSE="dbus debug gnome-keyring kde nonblockdialogs +qt4 qt5"
-REQUIRED_USE="^^ ( qt4 qt5 )"
+REQUIRED_USE="^^ ( qt4 qt5 )
+	kde? ( qt4 )"
 
 RDEPEND="dev-libs/openssl:0
+	x11-libs/libX11
 	gnome-keyring? ( gnome-base/gnome-keyring )
-	kde? ( kde-base/kwalletd:4 )
+	kde? ( kde-base/kdelibs:4
+		kde-base/kwalletd:4 )
 	qt4? ( >=dev-qt/qtcore-4.8:4
 		>=dev-qt/qtgui-4.8:4
 		>=dev-qt/qtscript-4.8:4
 		>=dev-qt/qtsql-4.8:4[sqlite]
 		>=dev-qt/qtwebkit-4.8:4
 		dbus? ( >=dev-qt/qtdbus-4.8:4 ) )
-	qt5? ( dev-qt/linguist-tools:5
-		dev-qt/qtcore:5
+	qt5? ( dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtconcurrent:5
 		dev-qt/qtprintsupport:5
@@ -41,7 +43,8 @@ RDEPEND="dev-libs/openssl:0
 		dev-qt/qtwebkit:5
 		dbus? ( dev-qt/qtdbus:5 ) )"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	qt5? ( dev-qt/linguist-tools:5 )"
 
 DOCS=( AUTHORS CHANGELOG FAQ README.md )
 S=${WORKDIR}/${MY_P}
@@ -52,6 +55,8 @@ src_prepare() {
 		sed -i -e "/${1}.ts/d" translations/translations.pri || die
 		rm translations/${1}.ts || die
 	}
+
+	epatch_user
 
 	# remove outdated prebuilt localizations
 	rm -rf bin/locale || die

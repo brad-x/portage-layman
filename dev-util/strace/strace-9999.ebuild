@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/strace-9999.ebuild,v 1.8 2014/08/16 05:22:46 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/strace-9999.ebuild,v 1.9 2015/03/06 17:44:25 vapier Exp $
 
 EAPI="4"
 
@@ -11,7 +11,7 @@ if [[ ${PV} == "9999" ]] ; then
 	inherit git-2 autotools
 else
 	SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux"
 fi
 
 DESCRIPTION="A useful diagnostic, instructional, and debugging tool"
@@ -19,12 +19,12 @@ HOMEPAGE="http://sourceforge.net/projects/strace/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="aio +perl static"
+IUSE="aio perl static"
 
 # strace only uses the header from libaio to decode structs
 DEPEND="aio? ( >=dev-libs/libaio-0.3.106 )
 	sys-kernel/linux-headers"
-RDEPEND=""
+RDEPEND="perl? ( dev-lang/perl )"
 
 src_prepare() {
 	if epatch_user || [[ ! -e configure ]] ; then

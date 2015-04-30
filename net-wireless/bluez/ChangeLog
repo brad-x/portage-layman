@@ -1,6 +1,36 @@
 # ChangeLog for net-wireless/bluez
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/ChangeLog,v 1.233 2014/12/28 19:46:03 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/ChangeLog,v 1.239 2015/04/08 18:20:55 mgorny Exp $
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> bluez-4.101-r9.ebuild,
+  bluez-5.25.ebuild, bluez-5.28.ebuild, bluez-5.30.ebuild:
+  Drop old Python implementations
+
+*bluez-5.30 (04 Apr 2015)
+
+  04 Apr 2015; Pacho Ramos <pacho@gentoo.org> +bluez-5.30.ebuild,
+  -bluez-5.29.ebuild, files/bluez-udevadm-path.patch:
+  Version bump (this will also fix bug #544446 by Leonid Kopylov and others),
+  fix udev rules (#544600 by Uros), drop old version with this problems.
+
+*bluez-5.29 (22 Mar 2015)
+
+  22 Mar 2015; Pacho Ramos <pacho@gentoo.org> +bluez-5.29.ebuild,
+  +files/bluez-udevadm-path.patch, -bluez-5.27.ebuild:
+  Version bump, try both udevadm paths (#539844 by Rick Harris), drop old.
+
+  03 Mar 2015; Michał Górny <mgorny@gentoo.org> bluez-5.28.ebuild:
+  Remove broken REQUIRED_USE and correct deps for python-any-r1.
+
+*bluez-5.28 (11 Feb 2015)
+
+  11 Feb 2015; Pacho Ramos <pacho@gentoo.org> +bluez-5.28.ebuild:
+  Version bump, mcaptest is no longer installed per upstream decission http://gi
+  t.kernel.org/cgit/bluetooth/bluez.git/commit/?id=2aec81f1fadf66773a8bf75632b81
+  7207469d8df
+
+  11 Feb 2015; Mike Frysinger <vapier@gentoo.org> bluez-5.27.ebuild:
+  Add mips love.
 
 *bluez-5.27 (28 Dec 2014)
 

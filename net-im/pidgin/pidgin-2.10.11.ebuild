@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.11.ebuild,v 1.1 2014/11/25 17:07:38 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/pidgin/pidgin-2.10.11.ebuild,v 1.3 2015/03/25 16:16:35 jlec Exp $
 
 EAPI=5
 
@@ -49,15 +49,15 @@ RDEPEND="
 	dbus? ( >=dev-libs/dbus-glib-0.71
 		>=sys-apps/dbus-0.90
 		dev-python/dbus-python )
-	perl? ( >=dev-lang/perl-5.16 )
+	perl? ( >=dev-lang/perl-5.16:= )
 	gadu? ( || ( >=net-libs/libgadu-1.11.0[ssl,gnutls]
 		>=net-libs/libgadu-1.11.0[-ssl] ) )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( >=dev-libs/nss-3.15.4 )
 	meanwhile? ( net-libs/meanwhile )
 	silc? ( >=net-im/silc-toolkit-1.0.1 )
-	tcl? ( dev-lang/tcl )
-	tk? ( dev-lang/tk )
+	tcl? ( dev-lang/tcl:0= )
+	tk? ( dev-lang/tk:0= )
 	sasl? ( dev-libs/cyrus-sasl:2 )
 	networkmanager? ( net-misc/networkmanager )
 	idn? ( net-dns/libidn )

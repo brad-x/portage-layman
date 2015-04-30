@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/csound/csound-6.02.ebuild,v 1.1 2014/02/05 11:22:17 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/csound/csound-6.02.ebuild,v 1.3 2015/04/08 17:59:42 mgorny Exp $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit eutils multilib java-pkg-opt-2 cmake-utils toolchain-funcs versionator python-single-r1
 
@@ -40,14 +40,14 @@ RDEPEND="
 	)
 	fluidsynth? ( media-sound/fluidsynth )
 	fltk? ( x11-libs/fltk:1[threads?] )
-	image? ( media-libs/libpng )
+	image? ( media-libs/libpng:0= )
 	jack? ( media-sound/jack-audio-connection-kit )
 	java? ( >=virtual/jdk-1.5 )
 	keyboard? ( x11-libs/fltk:1[threads?] )
 	linear? ( sci-mathematics/gmm )
 	lua? (
 		luajit? ( dev-lang/luajit:2 )
-		!luajit? ( dev-lang/lua )
+		!luajit? ( dev-lang/lua:0 )
 	)
 	osc? ( media-libs/liblo )
 	portaudio? ( media-libs/portaudio )
@@ -56,8 +56,8 @@ RDEPEND="
 	python? ( ${PYTHON_DEPS} )
 	stk? ( media-libs/stk )
 	tcl? (
-		>=dev-lang/tcl-8.5
-		>=dev-lang/tk-8.5
+		>=dev-lang/tcl-8.5:0=
+		>=dev-lang/tk-8.5:0=
 	)
 	utils? ( !media-sound/snd )
 "

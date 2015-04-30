@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/i3/i3-9999.ebuild,v 1.5 2014/06/25 08:41:42 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/i3/i3-9999.ebuild,v 1.9 2015/03/26 14:14:23 xarthisius Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ inherit eutils toolchain-funcs git-2
 DESCRIPTION="An improved dynamic tiling window manager"
 HOMEPAGE="http://i3wm.org/"
 SRC_URI=""
-EGIT_REPO_URI="git://code.i3wm.org/i3"
+EGIT_REPO_URI="git://github.com/i3/i3"
 EGIT_BRANCH="next"
 
 LICENSE="BSD"
@@ -21,8 +21,8 @@ CDEPEND="dev-lang/perl
 	dev-libs/libev
 	dev-libs/libpcre
 	>=dev-libs/yajl-2.0.3
-	x11-libs/libxcb
-	x11-libs/libX11
+	x11-libs/libxcb[xkb]
+	x11-libs/libxkbcommon[X]
 	x11-libs/startup-notification
 	x11-libs/xcb-util
 	x11-libs/xcb-util-cursor

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/hamcrest-library/hamcrest-library-1.3-r1.ebuild,v 1.2 2014/08/10 20:14:16 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/hamcrest-library/hamcrest-library-1.3-r1.ebuild,v 1.5 2015/04/13 09:07:14 monsieurp Exp $
 
 EAPI="5"
 
@@ -18,18 +18,18 @@ SRC_URI="http://${MY_PN}.googlecode.com/files/${MY_P}.tgz"
 
 LICENSE="BSD-2"
 SLOT="${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 CDEPEND="
 	dev-java/hamcrest-generator:${SLOT}
 	dev-java/hamcrest-core:${SLOT}
 	dev-java/qdox:1.12
 "
-DEPEND=">=virtual/jdk-1.5
+DEPEND=">=virtual/jdk-1.6
 	userland_GNU? ( sys-apps/findutils )
 	${CDEPEND}"
 
-RDEPEND=">=virtual/jre-1.5
+RDEPEND=">=virtual/jre-1.6
 	${CDEPEND}"
 
 JAVA_ANT_REWRITE_CLASSPATH="true"

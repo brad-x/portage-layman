@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/cdrtools-3.01_alpha24.ebuild,v 1.4 2014/09/21 06:54:52 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdrtools/cdrtools-3.01_alpha24.ebuild,v 1.7 2015/02/25 22:00:37 vapier Exp $
 
 EAPI=5
 
@@ -15,9 +15,10 @@ SRC_URI="mirror://sourceforge/${PN}/$([[ -z ${PV/*_alpha*} ]] && echo 'alpha')/$
 LICENSE="GPL-2 LGPL-2.1 CDDL-Schily"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-IUSE="acl nls unicode"
+IUSE="acl caps nls unicode"
 
 RDEPEND="acl? ( virtual/acl )
+	caps? ( sys-libs/libcap )
 	nls? ( virtual/libintl )
 	!app-cdr/cdrkit"
 DEPEND="${RDEPEND}
@@ -89,7 +90,7 @@ src_prepare() {
 	sed -i \
 		-e "s|^\(DEFLINKMODE=\).*|\1\tdynamic|" \
 		-e "s|^\(LINUX_INCL_PATH=\).*|\1|" \
-		-e "s|^\(LDPATH=\).*|\1\t\t-L/usr/lib|" \
+		-e "s|^\(LDPATH=\).*|\1|" \
 		-e "s|^\(RUNPATH=\).*|\1|" \
 		-e "s|^\(INS_BASE=\).*|\1\t${ED}/usr|" \
 		-e "s|^\(INS_RBASE=\).*|\1\t${ED}|" \
@@ -217,7 +218,7 @@ src_compile() {
 		fi
 	fi
 
-	if ! use filecaps; then
+	if ! use caps; then
 		CFLAGS="${CFLAGS} -DNO_LINUX_CAPS"
 	fi
 

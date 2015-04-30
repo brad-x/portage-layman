@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/neutron-2014.2.9999.ebuild,v 1.7 2015/02/01 05:54:46 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/neutron-2014.2.9999.ebuild,v 1.13 2015/04/13 03:27:20 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -18,29 +18,32 @@ KEYWORDS=""
 IUSE="dhcp doc l3 metadata openvswitch linuxbridge server test sqlite mysql postgres"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
-#the cliff dep is as below because it depends on pyparsing, which only has 2.7 OR 3.2, not both
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		>=dev-python/pbr-0.8[${PYTHON_USEDEP}]
-		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
-		test? (
-			>=dev-python/hacking-0.9.2[${PYTHON_USEDEP}]
-			<dev-python/hacking-0.10[${PYTHON_USEDEP}]
-			>=dev-python/cliff-1.7.0[${PYTHON_USEDEP}]
-			>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-			>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
-			>=dev-python/mock-1.0[${PYTHON_USEDEP}]
-			>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
-			dev-python/ordereddict[${PYTHON_USEDEP}]
-			>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
-			>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
-			!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
-			<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
-			>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
-			>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
-			>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
-			!~dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
-			>=dev-python/webtest-2.0[${PYTHON_USEDEP}]
-		)"
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/pbr-0.8[${PYTHON_USEDEP}]
+	<dev-python/pbr-1.0[${PYTHON_USEDEP}]
+	app-admin/sudo
+	test? (
+		${RDEPEND}
+		>=dev-python/hacking-0.9.2[${PYTHON_USEDEP}]
+		<dev-python/hacking-0.10[${PYTHON_USEDEP}]
+		>=dev-python/cliff-1.7.0[${PYTHON_USEDEP}]
+		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
+		dev-python/ordereddict[${PYTHON_USEDEP}]
+		>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
+		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
+		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
+		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
+		>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
+		!~dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
+		>=dev-python/webtest-2.0[${PYTHON_USEDEP}]
+		dev-python/configobj[${PYTHON_USEDEP}]
+	)"
 
 RDEPEND="
 	dev-python/paste[${PYTHON_USEDEP}]
@@ -53,7 +56,7 @@ RDEPEND="
 	<dev-python/eventlet-0.16.0[${PYTHON_USEDEP}]
 	>=dev-python/greenlet-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/httplib2-0.7.5[${PYTHON_USEDEP}]
-	>=dev-python/requests-1.2.1[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.1.0[${PYTHON_USEDEP}]
 	!~dev-python/requests-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
 	dev-python/jsonrpclib[${PYTHON_USEDEP}]
@@ -89,21 +92,24 @@ RDEPEND="
 	<dev-python/oslo-messaging-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/oslo-rootwrap-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/python-novaclient-2.18.0[${PYTHON_USEDEP}]
-	app-admin/sudo
 	dev-python/pyudev[${PYTHON_USEDEP}]
 	sys-apps/iproute2
+	net-misc/bridge-utils
 	net-firewall/ipset
 	openvswitch? ( net-misc/openvswitch )
 	dhcp? ( net-dns/dnsmasq[dhcp-tools] )"
 
 PATCHES=(
+	"${FILESDIR}/0001-Fixes-bug-in-interface-handling-of-ip_lib.py.patch"
+	"${FILESDIR}/0002-moving-vxlan-module-check-to-sanity-checks-and-makin.patch"
+	"${FILESDIR}/0003-fixes-error-logging-to-use-the-right-exception-paren.patch"
 )
 
 pkg_setup() {
 	linux-info_pkg_setup
-	CONFIG_CHECK_MODULES="8021Q IP6TABLE_FILTER IP6_TABLES IPT_REJECT \
-	IPTABLE_MANGLE IPT_MASQUERADE IPTABLE_NAT NF_CONNTRACK_IPV4 NF_DEFRAG_IPV4 \
-	NF_NAT_IPV4 NF_NAT NF_CONNTRACK IPTABLE_FILTER IP_TABLES X_TABLES"
+	CONFIG_CHECK_MODULES="VLAN_8021Q IP6_NF_FILTER IP6_NF_IPTABLES IP_NF_TARGET_REJECT \
+	IP_NF_MANGLE IP_NF_TARGET_MASQUERADE NF_NAT_IPV4 NF_CONNTRACK_IPV4 NF_DEFRAG_IPV4 \
+	NF_NAT_IPV4 NF_NAT NF_CONNTRACK IP_NF_FILTER IP_NF_IPTABLES NETFILTER_XTABLES"
 	if linux_config_exists; then
 		for module in ${CONFIG_CHECK_MODULES}; do
 			linux_chkconfig_present ${module} || ewarn "${module} needs to be enabled in kernel"
@@ -195,7 +201,7 @@ python_install() {
 	insopts -m 0440 -o root -g root
 	newins "${FILESDIR}/neutron.sudoersd" neutron
 
-	#remove superfluous stuff 
+	#remove superfluous stuff
 	rm -R "${D}/usr/etc/"
 }
 

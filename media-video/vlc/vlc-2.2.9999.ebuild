@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.9999.ebuild,v 1.9 2015/02/01 23:27:53 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.9999.ebuild,v 1.16 2015/04/24 05:48:12 idella4 Exp $
 
 EAPI="5"
 
@@ -32,7 +32,7 @@ else
 fi
 
 LICENSE="LGPL-2.1 GPL-2"
-SLOT="0/5-7" # vlc - vlccore
+SLOT="0/5-8" # vlc - vlccore
 
 if [ "${PV%9999}" = "${PV}" ] ; then
 	KEYWORDS="~amd64 ~arm ~ppc -sparc ~x86 ~x86-fbsd"
@@ -45,7 +45,7 @@ IUSE="a52 aalib alsa altivec atmo +audioqueue avahi +avcodec
 	directfb directx dts dvb +dvbpsi dvd dxva2 elibc_glibc +encode faad fdk
 	fluidsynth +ffmpeg flac fontconfig +gcrypt gme gnome gnutls
 	growl httpd ieee1394 jack jpeg kate kde libass libav libcaca libnotify
-	libsamplerate libtiger linsys libtar lirc live lua
+	+libsamplerate libtiger linsys libtar lirc live lua
 	macosx-dialog-provider macosx-eyetv macosx-quartztext macosx-qtkit
 	matroska media-library cpu_flags_x86_mmx modplug mp3 mpeg
 	mtp musepack ncurses neon ogg omxil opencv opengl optimisememory opus
@@ -80,8 +80,8 @@ RDEPEND="
 		dc1394? ( >=sys-libs/libraw1394-2.0.1:0 >=media-libs/libdc1394-2.1:2 )
 		directfb? ( dev-libs/DirectFB:0 sys-libs/zlib:0 )
 		dts? ( >=media-libs/libdca-0.0.5:0 )
-		dvbpsi? ( >=media-libs/libdvbpsi-0.2.1:0 )
-		dvd? ( >=media-libs/libdvdread-4.9:0 >=media-libs/libdvdnav-4.2.1:0 )
+		dvbpsi? ( >=media-libs/libdvbpsi-1.0.0:0 )
+		dvd? ( >=media-libs/libdvdread-4.9:0 >=media-libs/libdvdnav-4.9:0 )
 		elibc_glibc? ( >=sys-libs/glibc-2.8:2.2 )
 		faad? ( >=media-libs/faad2-2.6.1:0 )
 		fdk? ( media-libs/fdk-aac:0 )
@@ -119,7 +119,7 @@ RDEPEND="
 		opus? ( >=media-libs/opus-1.0.3:0 )
 		png? ( media-libs/libpng:0= sys-libs/zlib:0 )
 		postproc? (
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( media-libs/libpostproc:0= )
 		)
 		projectm? ( media-libs/libprojectm:0 media-fonts/dejavu:0 )
@@ -162,7 +162,7 @@ RDEPEND="
 RDEPEND="${RDEPEND}
 		vdpau? (
 			>=x11-libs/libvdpau-0.6:0
-			!libav? ( >=media-video/ffmpeg-1.2:0= )
+			!libav? ( >=media-video/ffmpeg-2.2:0= )
 			libav? ( >=media-video/libav-10:0= )
 		)
 		vnc? ( >=net-libs/libvncserver-0.9.9:0 )
@@ -261,6 +261,8 @@ src_prepare() {
 	if ! use dbus ; then
 		sed -i 's/ --started-from-file//' share/vlc.desktop.in || die
 	fi
+
+	epatch_user
 
 	eautoreconf
 
@@ -377,7 +379,7 @@ src_configure() {
 		$(use_enable omxil) \
 		$(use_enable omxil omxil-vout) \
 		$(use_enable opencv) \
-		$(use_enable opengl glx) $(use_enable opengl glspectrum) \
+		$(use_enable opengl glspectrum) \
 		$(use_enable opus) \
 		$(use_enable optimisememory optimize-memory) \
 		$(use_enable png) \

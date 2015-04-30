@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/tornado/tornado-3.2.ebuild,v 1.5 2014/08/13 18:24:16 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/tornado/tornado-3.2.ebuild,v 1.7 2015/04/08 18:30:55 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_2,3_3} pypy pypy2_0 )
+PYTHON_COMPAT=( python{2_7,3_3} pypy )
 
 inherit distutils-r1
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="curl test"
 
 RDEPEND="curl? ( dev-python/pycurl[$(python_gen_usedep 'python2*')] )"

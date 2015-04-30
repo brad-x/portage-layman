@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-firmware/seabios/seabios-1.7.5.ebuild,v 1.3 2014/09/13 17:07:07 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-firmware/seabios/seabios-1.7.5.ebuild,v 1.6 2015/04/08 18:25:12 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit eutils toolchain-funcs python-any-r1
 
@@ -20,11 +20,9 @@ if [[ ${PV} = *9999* || ! -z "${EGIT_COMMIT}" ]]; then
 	inherit git-2
 else
 	KEYWORDS="amd64 ~ppc ~ppc64 x86 ~amd64-fbsd ~x86-fbsd"
-	SRC_URI="http://code.coreboot.org/p/seabios/downloads/get/${P}.tar.gz
-	http://code.coreboot.org/p/seabios/downloads/get/bios.bin-${PV}.gz
-	http://dev.gentoo.org/~cardoe/distfiles/${P}.tar.gz
-	http://dev.gentoo.org/~cardoe/distfiles/bios.bin-${PV}.gz
-	${BACKPORTS:+http://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz}"
+	SRC_URI="!binary? ( http://code.coreboot.org/p/seabios/downloads/get/${P}.tar.gz )
+		binary? ( http://code.coreboot.org/p/seabios/downloads/get/bios.bin-${PV}.gz )
+		${BACKPORTS:+http://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz}"
 fi
 
 DESCRIPTION="Open Source implementation of a 16-bit x86 BIOS"
@@ -55,43 +53,47 @@ pkg_pretend() {
 		ewarn "own SeaBIOS. Virtual machines subtly fail based on changes"
 		ewarn "in SeaBIOS."
 	fi
-
-	local myld=$(tc-getLD)
-
-	${myld} -v | grep -q "GNU gold" && \
-	ewarn "gold linker unable to handle 16-bit code using ld.bfd.  bug #438058"
 }
 
 pkg_setup() {
 	use binary || python-any-r1_pkg_setup
 }
 
+src_unpack() {
+	default
+
+	# This simplifies the logic between binary & source builds.
+	mkdir -p "${S}"
+}
+
 src_prepare() {
+	use binary && return
+
 	if [[ -z "${EGIT_COMMIT}" ]]; then
 		sed -e "s/VERSION=.*/VERSION=${PV}/" \
-			-i "${S}/Makefile"
+			-i Makefile || die
 	else
 		sed -e "s/VERSION=.*/VERSION=${PV}_pre${EGIT_COMMIT}/" \
-			-i "${S}/Makefile"
+			-i Makefile || die
 	fi
 
 	epatch_user
 }
 
 src_configure() {
-	:
+	use binary || tc-ld-disable-gold #438058
 }
 
 src_compile() {
 	if ! use binary ; then
 		LANG=C emake \
-			CC=$(tc-getCC) \
-			LD="$(tc-getLD).bfd" \
-			AR=$(tc-getAR) \
-			OBJCOPY=$(tc-getOBJCOPY) \
-			RANLIB=$(tc-getRANLIB) \
-			OBJDUMP=$(tc-getPROG OBJDUMP objdump) \
-			HOST_CC=$(tc-getBUILD_CC) \
+			CC="$(tc-getCC)" \
+			LD="$(tc-getLD)" \
+			AR="$(tc-getAR)" \
+			OBJCOPY="$(tc-getOBJCOPY)" \
+			RANLIB="$(tc-getRANLIB)" \
+			OBJDUMP="$(tc-getOBJDUMP)" \
+			HOST_CC="$(tc-getBUILD_CC)" \
 			out/bios.bin
 	fi
 }

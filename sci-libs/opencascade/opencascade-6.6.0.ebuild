@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.6.0.ebuild,v 1.1 2013/06/24 19:16:11 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.6.0.ebuild,v 1.4 2015/03/31 20:17:21 ulm Exp $
 
 EAPI=5
 
@@ -15,9 +15,9 @@ SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc examples freeimage gl2ps java qt4 +tbb"
 
-DEPEND="app-admin/eselect-opencascade
-	dev-lang/tcl
-	dev-lang/tk
+DEPEND="app-eselect/eselect-opencascade
+	dev-lang/tcl:0=
+	dev-lang/tk:0=
 	dev-tcltk/itcl
 	dev-tcltk/itk
 	dev-tcltk/tix
@@ -27,7 +27,7 @@ DEPEND="app-admin/eselect-opencascade
 	x11-libs/libXmu
 	freeimage? ( media-libs/freeimage )
 	gl2ps? ( x11-libs/gl2ps )
-	java? ( >=virtual/jdk-0 )
+	java? ( virtual/jdk:= )
 	tbb? ( dev-cpp/tbb )"
 RDEPEND="${DEPEND}"
 

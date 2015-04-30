@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/make.defaults,v 1.122 2015/02/01 20:02:47 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/make.defaults,v 1.125 2015/04/18 23:35:44 vapier Exp $
 #
 # System-wide defaults for the Portage system
 # See portage(5) manpage
@@ -9,7 +9,7 @@
 IUSE_IMPLICIT="prefix prefix-guest"
 USE_EXPAND_UNPREFIXED="ARCH"
 USE_EXPAND_IMPLICIT="ARCH ELIBC KERNEL USERLAND"
-USE_EXPAND_VALUES_ARCH="alpha amd64 amd64-fbsd amd64-linux arm arm-linux arm64 hppa hppa-hpux ia64 ia64-hpux ia64-linux m68k m68k-mint mips ppc ppc64 ppc64-linux ppc-aix ppc-macos ppc-openbsd s390 sh sparc sparc64-freebsd sparc64-solaris sparc-fbsd sparc-solaris x64-freebsd x64-macos x64-openbsd x64-solaris x86 x86-cygwin x86-fbsd x86-freebsd x86-interix x86-linux x86-macos x86-netbsd x86-openbsd x86-solaris x86-winnt"
+USE_EXPAND_VALUES_ARCH="alpha amd64 amd64-fbsd amd64-linux arm arm-linux arm64 hppa hppa-hpux ia64 ia64-hpux ia64-linux m68k m68k-mint mips nios2 ppc ppc64 ppc64-linux ppc-aix ppc-macos ppc-openbsd s390 sh sparc sparc64-freebsd sparc64-solaris sparc-fbsd sparc-solaris x64-freebsd x64-macos x64-openbsd x64-solaris x86 x86-cygwin x86-fbsd x86-freebsd x86-interix x86-linux x86-macos x86-netbsd x86-openbsd x86-solaris x86-winnt"
 USE_EXPAND_VALUES_ELIBC="AIX Cygwin Darwin DragonFly FreeBSD glibc HPUX Interix mintlib musl NetBSD OpenBSD SunOS uclibc Winnt"
 USE_EXPAND_VALUES_KERNEL="AIX Cygwin Darwin FreeBSD freemint HPUX Interix linux NetBSD OpenBSD SunOS Winnt"
 USE_EXPAND_VALUES_USERLAND="BSD GNU"
@@ -132,14 +132,10 @@ PYTHON_SINGLE_TARGET="python2_7"
 # 1) do not uninstall kernel modules and therefore allow replacing them,
 # 2) allow replacing unowned compiled Python modules (python-r1 migration),
 # 3) allow replacing unowned dropin.cache files (twisted-r1 migration).
+# 4) protect /var/{run,lock} symlinks for bug 519620
 COLLISION_IGNORE="/lib/modules/* *.py[co] *\$py.class */dropin.cache"
-UNINSTALL_IGNORE="/lib/modules/*"
+UNINSTALL_IGNORE="/lib/modules/* /var/run /var/lock"
 
 # Andreas K. Hüttel <dilfridge@gentoo.org> (23 Aug 2013)
 # Make emerge messages default to English as per Council decision
 LC_MESSAGES=C
-
-# Michał Górny <mgorny@gentoo.org> (01 Feb 2015)
-# Move the current Gentoo preference (libav over ffmpeg)
-# from virtual/ffmpeg into USE flags.
-USE="${USE} libav"

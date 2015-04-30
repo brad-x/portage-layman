@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/opencv/opencv-2.4.9.ebuild,v 1.8 2014/11/25 08:43:41 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/opencv/opencv-2.4.9.ebuild,v 1.12 2015/04/12 20:49:19 dilfridge Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit base toolchain-funcs cmake-utils python-single-r1 java-pkg-opt-2 java-ant-2
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/opencvlibrary/opencv-unix/${PV}/${P}.zip"
 LICENSE="BSD"
 SLOT="0/2.4"
 KEYWORDS="amd64 ~arm ppc x86 ~amd64-linux"
-IUSE="cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k opencl openexr opengl openmp pch png +python qt4 testprograms threads tiff v4l vtk xine"
+IUSE="cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k libav opencl openexr opengl openmp pch png +python qt4 testprograms threads tiff v4l vtk xine"
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
@@ -30,7 +30,10 @@ RDEPEND="
 	app-arch/bzip2
 	sys-libs/zlib
 	cuda? ( >=dev-util/nvidia-cuda-toolkit-5.5 )
-	ffmpeg? ( virtual/ffmpeg )
+	ffmpeg? (
+		libav? ( media-video/libav:0= )
+		!libav? ( media-video/ffmpeg:0= )
+	)
 	gstreamer? (
 		media-libs/gstreamer:0.10
 		media-libs/gst-plugins-base:0.10
@@ -40,8 +43,8 @@ RDEPEND="
 		x11-libs/gtk+:2
 		opengl? ( x11-libs/gtkglext )
 	)
-	java? ( >=virtual/jre-1.6 )
-	jpeg? ( virtual/jpeg )
+	java? ( >=virtual/jre-1.6:* )
+	jpeg? ( virtual/jpeg:0 )
 	jpeg2k? ( media-libs/jasper )
 	ieee1394? (
 		media-libs/libdc1394
@@ -59,7 +62,7 @@ RDEPEND="
 		opengl? ( dev-qt/qtopengl:4 )
 	)
 	threads? ( dev-cpp/tbb )
-	tiff? ( media-libs/tiff )
+	tiff? ( media-libs/tiff:0 )
 	v4l? ( >=media-libs/libv4l-0.8.3 )
 	vtk? ( sci-libs/vtk[rendering] )
 	xine? ( media-libs/xine-lib )
@@ -77,6 +80,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.4.8-javamagic.patch"
 	"${FILESDIR}/${PN}-2.4.9-cuda.patch"
 	"${FILESDIR}/${PN}-2.4.9-libav10.patch"
+	"${FILESDIR}/${PN}-2.4.9-cuda-pkg-config.patch"
 )
 
 pkg_setup() {

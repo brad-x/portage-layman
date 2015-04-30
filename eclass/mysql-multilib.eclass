@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-multilib.eclass,v 1.12 2015/01/28 13:48:58 grknight Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-multilib.eclass,v 1.18 2015/03/17 19:39:43 grknight Exp $
 
 # @ECLASS: mysql-multilib.eclass
 # @MAINTAINER:
@@ -39,7 +39,7 @@ case "${EAPI:-0}" in
 	*) die "Unsupported EAPI: ${EAPI}" ;;
 esac
 
-EXPORT_FUNCTIONS pkg_setup src_unpack src_prepare src_configure src_compile src_install pkg_preinst pkg_postinst pkg_config
+EXPORT_FUNCTIONS pkg_pretend pkg_setup src_unpack src_prepare src_configure src_compile src_install pkg_preinst pkg_postinst pkg_config
 
 #
 # VARIABLES:
@@ -66,7 +66,8 @@ MYSQL_PV_MAJOR="$(get_version_component_range 1-2 ${PV})"
 # Cluster is a special case...
 if [[ "${PN}" == "mysql-cluster" ]]; then
 	case $PV in
-		7.2*|7.3*) MYSQL_PV_MAJOR=5.5 ;;
+		7.2*) MYSQL_PV_MAJOR=5.5 ;;
+		7.3*) MYSQL_PV_MAJOR=5.6 ;;
 	esac
 fi
 
@@ -205,6 +206,7 @@ IUSE="+community cluster debug embedded extraengine jemalloc latin1 minimal
 
 if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]] ; then
 	IUSE="bindist ${IUSE}"
+	RESTRICT="${RESTRICT} !bindist? ( bindist )"
 fi
 
 ### End readline/libedit
@@ -212,8 +214,7 @@ fi
 if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]]; then
 	IUSE="${IUSE} oqgraph pam sphinx tokudb"
 	# 5.5.33 and 10.0.5 add TokuDB. Authors strongly recommend jemalloc or perfomance suffers
-	mysql_version_is_at_least "10.0.5" && IUSE="${IUSE} odbc xml" && \
-		REQUIRED_USE="odbc? ( extraengine !minimal ) xml? ( extraengine !minimal )"
+	mysql_version_is_at_least "10.0.5" && IUSE="${IUSE} odbc xml"
 	REQUIRED_USE="${REQUIRED_USE} minimal? ( !oqgraph !sphinx ) tokudb? ( jemalloc )"
 
 	# MariaDB 10.1 introduces InnoDB/XtraDB compression with external libraries
@@ -239,7 +240,7 @@ fi
 
 REQUIRED_USE="
 	${REQUIRED_USE} tcmalloc? ( !jemalloc ) jemalloc? ( !tcmalloc )
-	 minimal? ( !cluster !extraengine !embedded ) static? ( !ssl )"
+	 minimal? ( !extraengine !embedded ) static? ( !ssl )"
 
 #
 # DEPENDENCIES:
@@ -254,6 +255,7 @@ DEPEND="
 		sys-process/procps:0=
 		dev-libs/libaio:0=
 	)
+	sys-libs/ncurses
 	>=sys-apps/sed-4
 	>=sys-apps/texinfo-4.7-r1
 	>=sys-libs/zlib-1.2.3:0=[${MULTILIB_USEDEP},static-libs?]
@@ -289,7 +291,9 @@ fi
 ### End readline/libedit
 
 if [[ ${PN} == "mysql" || ${PN} == "percona-server" ]] ; then
-	mysql_version_is_at_least "5.7.5" && DEPEND="${DEPEND} >=dev-libs/boost-1.56.0:0="
+	if mysql_version_is_at_least "5.7.6" ; then DEPEND="${DEPEND} >=dev-libs/boost-1.57.0:0=" ; else
+		mysql_version_is_at_least "5.7.5" && DEPEND="${DEPEND} >=dev-libs/boost-1.56.0:0="
+	fi
 fi
 
 if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]] ; then
@@ -300,8 +304,10 @@ if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]] ; then
 		perl? ( !dev-db/mytop )"
 	if mysql_version_is_at_least "10.0.5" ; then
 		DEPEND="${DEPEND}
-			odbc? ( dev-db/unixODBC:0= )
-			xml? ( dev-libs/libxml2:2= )
+			extraengine? (
+				odbc? ( dev-db/unixODBC:0= )
+				xml? ( dev-libs/libxml2:2= )
+			)
 			"
 	fi
 	mysql_version_is_at_least "10.0.7" && DEPEND="${DEPEND} oqgraph? ( dev-libs/judy:0= )"
@@ -370,15 +376,17 @@ if [[ -n "${WSREP_REVISION}" ]] ; then
 fi
 
 if [[ ${PN} == "mysql-cluster" ]] ; then
-       mysql_version_is_at_least "7.2.9" && RDEPEND="${RDEPEND} java? ( >=virtual/jre-1.6 )" && \
-               DEPEND="${DEPEND} java? ( >=virtual/jdk-1.6 )"
+	mysql_version_is_at_least "7.2.9" && RDEPEND="${RDEPEND} java? ( >=virtual/jre-1.6 )" && \
+		DEPEND="${DEPEND} java? ( >=virtual/jdk-1.6 )"
 fi
 
 # compile-time-only
+# ncurses only needs multilib for compile time due to a binary that will be not installed
 DEPEND="${DEPEND}
 	virtual/yacc
 	static? ( sys-libs/ncurses[static-libs] )
 	>=dev-util/cmake-2.8.9
+	sys-libs/ncurses[${MULTILIB_USEDEP}]
 "
 
 # For other stuff to bring us in
@@ -388,6 +396,9 @@ PDEPEND="perl? ( >=dev-perl/DBD-mysql-2.9004 )
 
 # my_config.h includes ABI specific data
 MULTILIB_WRAPPED_HEADERS=( /usr/include/mysql/my_config.h /usr/include/mysql/private/embedded_priv.h )
+
+[[ ${PN} == "mysql-cluster" ]] && \
+	MULTILIB_WRAPPED_HEADERS+=( /usr/include/mysql/storage/ndb/ndb_types.h )
 
 [[ ${PN} == "mariadb" ]] && mysql_version_is_at_least "10.1.1" && \
 	MULTILIB_WRAPPED_HEADERS+=( /usr/include/mysql/mysql_version.h )
@@ -410,6 +421,20 @@ mysql-multilib_disable_test() {
 # EBUILD FUNCTIONS
 #
 
+# @FUNCTION: mysql-multilib_pkg_pretend
+# @DESCRIPTION:
+# Perform some basic tests and tasks during pkg_pretend phase:
+mysql-multilib_pkg_pretend() {
+	if [[ ${MERGE_TYPE} != binary ]] ; then
+		if use_if_iuse tokudb && [[ $(gcc-major-version) -lt 4 || \
+			$(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 7 ]] ; then
+			eerror "${PN} with tokudb needs to be built with gcc-4.7 or later."
+			eerror "Please use gcc-config to switch to gcc-4.7 or later version."
+			die
+		fi
+	fi
+}
+
 # @FUNCTION: mysql-multilib_pkg_setup
 # @DESCRIPTION:
 # Perform some basic tests and tasks during pkg_setup phase:
@@ -431,22 +456,14 @@ mysql-multilib_pkg_setup() {
 	enewuser mysql 60 -1 /dev/null mysql || die "problem adding 'mysql' user"
 
 	if use cluster && [[ "${PN}" != "mysql-cluster" ]]; then
-		ewarn "Upstream has noted that the NDB cluster support in the 5.0 and"
-		ewarn "5.1 series should NOT be put into production. In the near"
-		ewarn "future, it will be disabled from building."
+		ewarn "The NDB cluster support is no longer built."
+		ewarn "Please use dev-db/mysql-cluster for NDB."
+		ewarn "In the near future, the USE flag will be removed."
 	fi
 
 	if [[ ${PN} == "mysql-cluster" ]] ; then
 		mysql_version_is_at_least "7.2.9" && java-pkg-opt-2_pkg_setup
 	fi
-
-	if use_if_iuse tokudb && [[ "${MERGE_TYPE}" != "binary" && $(gcc-major-version) -lt 4 || \
-		$(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 7 ]] ; then
-		eerror "${PN} with tokudb needs to be built with gcc-4.7 or later."
-		eerror "Please use gcc-config to switch to gcc-4.7 or later version."
-		die
-	fi
-
 }
 
 # @FUNCTION: mysql-multilib_src_unpack
@@ -479,6 +496,29 @@ mysql-multilib_src_prepare() {
 # @DESCRIPTION:
 # Configure mysql to build the code for Gentoo respecting the use flags.
 mysql-multilib_src_configure() {
+	# Bug #114895, bug #110149
+	filter-flags "-O" "-O[01]"
+
+	CXXFLAGS="${CXXFLAGS} -fno-strict-aliasing"
+	CXXFLAGS="${CXXFLAGS} -felide-constructors"
+	# Causes linkage failures.  Upstream bug #59607 removes it
+	if ! mysql_version_is_at_least "5.6" ; then
+		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates"
+	fi
+	# As of 5.7, exceptions are used!
+	if ! mysql_version_is_at_least "5.7" ; then
+		CXXFLAGS="${CXXFLAGS} -fno-exceptions -fno-rtti"
+	fi
+	export CXXFLAGS
+
+	# bug #283926, with GCC4.4, this is required to get correct behavior.
+	append-flags -fno-strict-aliasing
+
+	# bug 508724 mariadb cannot use ld.gold
+	if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]] ; then
+		tc-ld-disable-gold
+	fi
+
 	multilib-minimal_src_configure
 }
 
@@ -548,7 +588,7 @@ multilib_src_configure() {
 		)
 
 		mysql_version_is_at_least "10.0.9" && mycmakeargs+=( -DWITH_PCRE=system )
-        fi
+	fi
 
 	configure_cmake_locale
 
@@ -558,23 +598,10 @@ multilib_src_configure() {
 		configure_cmake_minimal
 	fi
 
-	# Bug #114895, bug #110149
-	filter-flags "-O" "-O[01]"
-
-	CXXFLAGS="${CXXFLAGS} -fno-strict-aliasing"
-	CXXFLAGS="${CXXFLAGS} -felide-constructors"
-	# Causes linkage failures.  Upstream bug #59607 removes it
-	if ! mysql_version_is_at_least "5.6" ; then
-		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates"
-	fi
-	# As of 5.7, exceptions are used!
-	if ! mysql_version_is_at_least "5.7" ; then
-		CXXFLAGS="${CXXFLAGS} -fno-exceptions -fno-rtti"
-	fi
-	export CXXFLAGS
-
-	# bug #283926, with GCC4.4, this is required to get correct behavior.
-	append-flags -fno-strict-aliasing
+	# Always build NDB with mysql-cluster for libndbclient
+	[[ ${PN} == "mysql-cluster" ]] && mycmakeargs+=(
+		-DWITH_NDBCLUSTER=1 -DWITH_PARTITION_STORAGE_ENGINE=1
+		-DWITHOUT_PARTITION_STORAGE_ENGINE=0 )
 
 	cmake-utils_src_configure
 }

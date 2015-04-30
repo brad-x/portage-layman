@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/rblcheck/rblcheck-1.5-r1.ebuild,v 1.6 2014/08/10 21:17:07 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/rblcheck/rblcheck-1.5-r1.ebuild,v 1.7 2015/03/21 16:47:32 jlec Exp $
 
 EAPI=2
 
@@ -15,8 +15,6 @@ LICENSE="GPL-2"
 KEYWORDS="alpha ~amd64 hppa ~mips ppc sparc x86"
 IUSE=""
 
-DEPEND=""
-
 src_prepare() {
 	epatch "${FILESDIR}/${P}-configure.patch"
 }
@@ -26,8 +24,7 @@ src_compile() {
 }
 
 src_install () {
-	exeinto /usr/bin
-	doexe rbl rblcheck
+	dobin rbl rblcheck
 
 	dodoc README docs/rblcheck.ps docs/rblcheck.rtf
 }

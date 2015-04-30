@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/anjuta/anjuta-3.14.1.ebuild,v 1.1 2015/01/26 14:15:08 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/anjuta/anjuta-3.14.1.ebuild,v 1.4 2015/04/08 17:54:02 mgorny Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 # libanjuta-language-vala.so links to a specific slot of libvala; we want to
 # avoid automagic behavior.
 VALA_MIN_API_VERSION="0.26"
@@ -18,7 +18,7 @@ HOMEPAGE="https://wiki.gnome.org/Apps/Anjuta"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ppc ~sparc x86 ~x86-fbsd"
 
 IUSE="debug devhelp glade +introspection packagekit subversion terminal test vala"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"

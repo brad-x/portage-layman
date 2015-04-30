@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/imaging/imaging-1.1.7-r5.ebuild,v 1.2 2014/12/30 18:23:18 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/imaging/imaging-1.1.7-r5.ebuild,v 1.11 2015/04/14 12:49:54 ago Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE='tk?'
 
 inherit distutils-r1
@@ -16,7 +16,7 @@ SRC_URI="http://www.effbot.org/downloads/${MY_P}.tar.gz"
 
 LICENSE="HPND"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x86-solaris"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x86-solaris"
 IUSE="doc examples jpeg scanner test tiff tk truetype zlib"
 
 RDEPEND="
@@ -42,6 +42,7 @@ python_prepare_all() {
 		"${FILESDIR}/${P}-missing-math.patch"
 		"${FILESDIR}/${P}-ft-header-include.patch"
 		"${FILESDIR}/${P}-dont-run-multiple-viewers.patch"
+		"${FILESDIR}/${P}-no-host-paths.patch"
 	)
 
 	# Add shebangs.

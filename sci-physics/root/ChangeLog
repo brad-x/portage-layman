@@ -1,6 +1,58 @@
 # ChangeLog for sci-physics/root
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/ChangeLog,v 1.135 2014/12/28 16:55:15 titanofold Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/ChangeLog,v 1.145 2015/04/15 08:48:36 bircoph Exp $
+
+  15 Apr 2015; Andrew Savchenko <bircoph@gentoo.org> root-6.02.05-r2.ebuild:
+  Set ROOTSYS during make install, since a different value (e.g. from
+  older installed version) may broke make install.
+
+  12 Apr 2015; Andrew Savchenko <bircoph@gentoo.org> -root-5.34.28.ebuild:
+  Remove old.
+
+*root-5.34.28-r1 (12 Apr 2015)
+
+  12 Apr 2015; Andrew Savchenko <bircoph@gentoo.org> +root-5.34.28-r1.ebuild:
+  Add new USE flags, remove minimal USE flag, as it is useless now.
+  Fix conditional dependencies.
+
+  12 Apr 2015; Andrew Savchenko <bircoph@gentoo.org> root-6.02.05-r2.ebuild:
+  Depend on shadow conditionally.
+
+*root-6.02.05-r2 (12 Apr 2015)
+
+  12 Apr 2015; Andrew Savchenko <bircoph@gentoo.org> +root-6.02.05-r2.ebuild,
+  +files/root-6.00.01-dotfont.patch, +files/root-6.00.01-geocad.patch,
+  +files/root-6.00.01-llvm.patch, +files/root-6.00.01-nobyte-compile.patch,
+  +files/root-6.00.01-prop-flags.patch, +files/root-6.02.05-dictpch.patch,
+  +files/root-6.02.05-xrootd4.patch, metadata.xml:
+  Version bump from science overlay. Add new USE flags, remove
+  minimal USE flag.
+
+*root-5.34.28 (25 Mar 2015)
+
+  25 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> +root-5.34.28.ebuild:
+  Version bump.
+
+  25 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> root-5.34.26.ebuild:
+  Declare loop iterator as local.
+
+  17 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> root-5.34.26.ebuild,
+  +files/root-5.34.26-ldflags.patch:
+  Upstream is not interested in ldflags patch:
+  https://sft.its.cern.ch/jira/browse/ROOT-7106
+  so reverting to much simpler solution.
+
+  02 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> -root-5.34.18.ebuild,
+  -root-5.34.18-r1.ebuild, -files/root-5.32.00-prop-flags.patch,
+  -files/root-5.34.13-pythia8.patch:
+  Remove old and broken vensions.
+
+*root-5.34.26 (02 Mar 2015)
+
+  02 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> +root-5.34.26.ebuild,
+  files/root-5.32.00-chklib64.patch, metadata.xml:
+  Version bump (from science overlay). Rework compilers handling,
+  *flags handling. Add support for http, C++14. Fix html headers.
 
   28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> root-5.32.03-r2.ebuild,
   root-5.34.18.ebuild, root-5.34.18-r1.ebuild:

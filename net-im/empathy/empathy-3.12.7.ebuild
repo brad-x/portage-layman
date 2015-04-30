@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/empathy-3.12.7.ebuild,v 1.5 2014/12/19 13:41:04 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/empathy/empathy-3.12.7.ebuild,v 1.7 2015/04/08 18:03:12 mgorny Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
-PYTHON_COMPAT=( python2_{6,7} python3_{2,3,4} )
+PYTHON_COMPAT=( python2_7 python3_{3,4} )
 
 inherit gnome2 autotools python-any-r1 virtualx
 
@@ -43,7 +43,7 @@ COMMON_DEPEND="
 	media-libs/clutter-gst:2.0
 	>=media-libs/cogl-1.14:1.0=
 
-	net-libs/farstream:0.2
+	net-libs/farstream:0.2=
 	>=net-libs/telepathy-farstream-0.6.0:=
 	>=net-libs/telepathy-glib-0.23.2
 	>=net-im/telepathy-logger-0.8.0:=

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/rstudio/rstudio-0.98.490-r1.ebuild,v 1.3 2014/12/06 12:32:01 gienah Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/rstudio/rstudio-0.98.490-r1.ebuild,v 1.5 2015/04/18 15:55:11 pacho Exp $
 
 EAPI=5
 
@@ -23,17 +23,17 @@ SRC_URI="https://github.com/rstudio/rstudio/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 QTVER=4.8
 QTSLOT=4
 RDEPEND=">=dev-lang/R-2.11.1
-	>=dev-libs/boost-1.50
+	>=dev-libs/boost-1.50:=
 	dev-libs/mathjax
-	dev-libs/openssl
+	dev-libs/openssl:0
 	sys-libs/zlib
-	>=virtual/jre-1.5
+	>=virtual/jre-1.5:=
 	x11-libs/pango
 	>=dev-qt/qtcore-${QTVER}:${QTSLOT}
 	>=dev-qt/qtdbus-${QTVER}:${QTSLOT}

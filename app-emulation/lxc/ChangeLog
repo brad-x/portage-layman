@@ -1,6 +1,100 @@
 # ChangeLog for app-emulation/lxc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/ChangeLog,v 1.57 2015/02/05 18:49:27 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/ChangeLog,v 1.76 2015/04/23 16:31:44 hwoarang Exp $
+
+*lxc-1.1.2 (23 Apr 2015)
+
+  23 Apr 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.2.ebuild,
+  files/lxc.initd.3:
+  Version bump. Bug #546232. Fix lxc path in the openrc init script. Bug #547266
+
+  14 Apr 2015; Yixun Lan <dlan@gentoo.org> lxc-1.1.1-r1.ebuild:
+  add arm64 support, tested on cortex-a53 board
+
+  08 Apr 2015; Michał Górny <mgorny@gentoo.org> lxc-1.0.6-r1.ebuild,
+  lxc-1.0.7.ebuild, lxc-1.1.0-r6.ebuild, lxc-1.1.1-r1.ebuild:
+  Remove old Python implementations
+
+*lxc-1.1.0-r6 (21 Mar 2015)
+*lxc-1.1.1-r1 (21 Mar 2015)
+
+  21 Mar 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.0-r6.ebuild,
+  +lxc-1.1.1-r1.ebuild, -lxc-1.1.0-r5.ebuild, -lxc-1.1.1.ebuild,
+  files/lxc_at.service.2:
+  Revbump to fix systemd file paths. Bug #543970
+
+  20 Mar 2015; Markos Chandras <hwoarang@gentoo.org> -files/lxc.initd.2:
+  Remove unused file
+
+  20 Mar 2015; Markos Chandras <hwoarang@gentoo.org> -lxc-1.1.0-r2.ebuild,
+  -lxc-1.1.0-r3.ebuild, -lxc-1.1.0-r4.ebuild, lxc-1.1.0-r5.ebuild,
+  lxc-1.1.1.ebuild:
+  Drop obsolete RESOURCE_COUNTERS check. Bug #540980
+
+  LKML: https://lkml.org/lkml/2014/10/13/498
+  Commit: 5b1efc027c0b51ca3e76f4e00c83358f8349f543
+
+*lxc-1.1.1 (17 Mar 2015)
+
+  17 Mar 2015; Markos Chandras <hwoarang@gentoo.org>
+  +files/lxc-1.1.1-shm-tmpfs.patch, +lxc-1.1.1.ebuild:
+  Version bump. Bug #543570
+
+*lxc-1.1.0-r5 (14 Mar 2015)
+
+  14 Mar 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.0-r5.ebuild:
+  Move tools from sbin to bin so we can start supporting unprivileged containers
+
+  13 Mar 2015; Yixun Lan <dlan@gentoo.org> lxc-1.1.0-r4.ebuild:
+  add ~arm keyword, test on cortex-a9 board
+
+  12 Mar 2015; Markos Chandras <hwoarang@gentoo.org> lxc-1.1.0-r4.ebuild:
+  Hide python specific code behind USE=python
+
+*lxc-1.1.0-r4 (11 Mar 2015)
+
+  11 Mar 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.0-r4.ebuild:
+  Respect USE=python so additional tools can be built. Bug #541932
+
+  02 Mar 2015; Yixun Lan <dlan@gentoo.org> lxc-1.0.7.ebuild:
+  add arm64 support, tested on A53 board
+
+  28 Feb 2015; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  seccomp USE flag is now global, removing from metadata
+
+  23 Feb 2015; Markos Chandras <hwoarang@gentoo.org> lxc-1.0.6-r1.ebuild,
+  lxc-1.0.7.ebuild, lxc-1.1.0-r2.ebuild, lxc-1.1.0-r3.ebuild:
+  Silence repoman warnings
+
+*lxc-1.1.0-r3 (23 Feb 2015)
+
+  23 Feb 2015; Markos Chandras <hwoarang@gentoo.org>
+  +files/lxc-1.1.0-fix-gentoo-template.patch, +lxc-1.1.0-r3.ebuild:
+  Switch default lxcpath to /var/lib/lxc. /etc/lxc was far too strange. Add
+  patch to fix gentoo template stage3 detection code
+
+*lxc-1.1.0-r2 (17 Feb 2015)
+
+  17 Feb 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.0-r2.ebuild,
+  -lxc-1.1.0-r1.ebuild, -lxc-1.1.0.ebuild:
+  Revbump to use correct systemd file. Bug #540076. Drop old
+
+*lxc-1.1.0-r1 (15 Feb 2015)
+
+  15 Feb 2015; Markos Chandras <hwoarang@gentoo.org> +files/lxc_at.service.2,
+  +lxc-1.1.0-r1.ebuild:
+  Since 1.1.0, guests are started in daemon mode so adapt the systemd service
+  file. Also add missing Delegate=yes to facilitate systemd containers. Bug
+  #540076 by Joachim Herb
+
+  08 Feb 2015; Markos Chandras <hwoarang@gentoo.org> lxc-1.1.0.ebuild:
+  Add another kernel config check for CHECKPOINT_RESTORE
+
+*lxc-1.1.0 (08 Feb 2015)
+
+  08 Feb 2015; Markos Chandras <hwoarang@gentoo.org> +lxc-1.1.0.ebuild,
+  metadata.xml:
+  Version bump. Bug #538698
 
   05 Feb 2015; Markos Chandras <hwoarang@gentoo.org> lxc-1.0.6-r1.ebuild,
   lxc-1.0.7.ebuild:

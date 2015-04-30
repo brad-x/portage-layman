@@ -1,12 +1,12 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/zeitgeist-datasources/zeitgeist-datasources-0.8.1.ebuild,v 1.7 2013/12/08 20:00:35 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/zeitgeist-datasources/zeitgeist-datasources-0.8.1.ebuild,v 1.9 2015/04/08 17:56:31 mgorny Exp $
 
 EAPI=5
 
 AUTOTOOLS_AUTORECONF=true
 VALA_MIN_API_VERSION=0.14
-PYTHON_COMPAT=( python{2_6,2_7}  )
+PYTHON_COMPAT=( python2_7  )
 
 inherit autotools-utils eutils mono-env multilib python-single-r1 versionator vala
 
@@ -20,8 +20,8 @@ SRC_URI="http://launchpad.net/zeitgeist-datasources/${DIR_PV}/${DIR_PV2}/+downlo
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~amd64-linux ~x86-linux"
 LICENSE="GPL-3"
-PLUGINS_IUSE="bzr chromium emacs firefox geany mono telepathy thunderbird tomboy vim xchat"
-PLUGINS="bzr chrome emacs firefox geany monodevelop telepathy thunderbird tomboy vim xchat"
+PLUGINS_IUSE="bzr chromium emacs firefox geany mono telepathy thunderbird tomboy vim"
+PLUGINS="bzr chrome emacs firefox geany monodevelop telepathy thunderbird tomboy vim"
 IUSE="${PLUGINS_IUSE} static-libs"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -47,7 +47,6 @@ RDEPEND="
 		dev-python/dbus-python[${PYTHON_USEDEP}]
 		)
 	vim? ( app-editors/vim[python] )
-	xchat? ( net-irc/xchat-gnome )
 "
 DEPEND="${RDEPEND}
 	$(vala_depend)"
@@ -81,9 +80,6 @@ src_prepare() {
 	sed \
 		-e 's:vim72:vimfiles:' \
 		-i vim/Makefile.* || die
-	sed \
-		-e "s:/xchat/:/xchat-gnome/:g" \
-		-i xchat/Makefile.* || die
 
 	vala_src_prepare
 	autotools-utils_src_prepare

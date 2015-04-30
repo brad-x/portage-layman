@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-173.14.39.ebuild,v 1.7 2014/11/29 13:44:55 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-173.14.39.ebuild,v 1.9 2015/03/31 18:12:46 ulm Exp $
 
 EAPI=5
 
@@ -25,7 +25,7 @@ RESTRICT="bindist mirror strip"
 EMULTILIB_PKG="true"
 
 COMMON="
-	>=app-admin/eselect-opengl-1.0.9
+	>=app-eselect/eselect-opengl-1.0.9
 	kernel_linux? ( >=sys-libs/glibc-2.6.1 )
 "
 DEPEND="
@@ -47,7 +47,7 @@ RDEPEND="
 	)
 	tools? (
 		dev-libs/atk
-		dev-libs/glib
+		dev-libs/glib:2
 		x11-libs/gdk-pixbuf
 		x11-libs/gtk+:2
 		x11-libs/libX11

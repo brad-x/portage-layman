@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/plymouth/plymouth-9999.ebuild,v 1.1 2014/07/06 18:16:51 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/plymouth/plymouth-9999.ebuild,v 1.3 2015/03/26 21:53:14 dlan Exp $
 
 EAPI=5
 
@@ -27,10 +27,10 @@ KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="debug gdm +gtk +libkms +pango static-libs"
 
 CDEPEND="
-	>=media-libs/libpng-1.2.16
+	>=media-libs/libpng-1.2.16:=
 	gtk? (
 		dev-libs/glib:2
-		>=x11-libs/gtk+-2.12:2
+		>=x11-libs/gtk+-3.14:3
 		x11-libs/cairo )
 	libkms? ( x11-libs/libdrm[libkms] )
 	pango? ( >=x11-libs/pango-1.21 )
@@ -59,6 +59,7 @@ src_configure() {
 		--localstatedir=/var
 		--without-rhgb-compat-link
 		--enable-systemd-integration
+		"$(systemd_with_unitdir)"
 		$(use_enable debug tracing)
 		$(use_enable gtk gtk)
 		$(use_enable libkms drm)

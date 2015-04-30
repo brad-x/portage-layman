@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kopete/kopete-4.14.3.ebuild,v 1.3 2015/01/28 23:45:22 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kopete/kopete-4.14.3.ebuild,v 1.7 2015/02/22 18:41:23 mgorny Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ inherit kde4-base
 
 DESCRIPTION="KDE multi-protocol IM client"
 HOMEPAGE="http://kopete.kde.org http://www.kde.org/applications/internet/kopete"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug ssl v4l"
 
 # tests hang, last checked for 4.2.96
@@ -100,7 +100,7 @@ RDEPEND="${COMMONDEPEND}
 		virtual/latex-base
 	)
 	sms? ( app-mobilephone/smssend )
-	ssl? ( || ( app-crypt/qca-ossl:2 app-crypt/qca:2[openssl] ) )
+	ssl? ( app-crypt/qca:2[openssl] )
 	winpopup? ( net-fs/samba )
 "
 #	telepathy? ( net-libs/decibel )"
@@ -149,9 +149,9 @@ pkg_postinst() {
 
 	if ! use ssl; then
 		if use xmpp ; then # || use irc; then
-			if ! has_version app-crypt/qca-ossl ; then
+			if ! has_version "app-crypt/qca:2[openssl]" ; then
 				elog "In order to use ssl in xmpp you'll need to"
-				elog "install app-crypt/qca-ossl package."
+				elog "install app-crypt/qca package with USE=openssl."
 			fi
 		fi
 	fi

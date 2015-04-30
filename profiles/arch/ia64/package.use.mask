@@ -1,15 +1,32 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/package.use.mask,v 1.159 2015/01/25 15:42:06 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/package.use.mask,v 1.165 2015/03/17 01:39:24 vapier Exp $
+
+# Mike Frysinger <vapier@gentoo.org> (16 Mar 2015)
+# Needs sci-physics/bullet & media-libs/libsdl2 tested #499974
+dev-libs/efl physics sdl
+
+# Michał Górny <mgorny@gentoo.org> (08 Mar 2015)
+# Dependency not keyworded on this arch, bug #542570.
+xfce-base/xfce4-settings libinput
+
+# Alexis Ballier <aballier@gentoo.org> (11 Feb 2015)
+# Missing ffmpeg deps, bug #510340
+media-video/ffmpeg x265 gme ssh
+
+# Patrick Lauer <patrick@gentoo.org> (10 Feb 2015)
+# Missing keywords for media-libs/x265
+media-video/libav x265
 
 # Pacho Ramos <pacho@gentoo.org> (10 Jan 2014)
 # Missing keywords
-net-misc/networkmanager teamd  
+net-misc/networkmanager teamd
 
 # Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2014)
 # New dependencies for wayland support in Gnome 3.14
 # See bug #533420.
 media-libs/clutter egl
+x11-wm/mutter kms
 
 # Mark Wright <gienah@gentoo.org> (14-23 Dec 2014)
 # test dependencies need keywording
@@ -73,7 +90,7 @@ dev-util/dbus-test-runner test
 
 # Pacho Ramos <pacho@gentoo.org> (19 Jan 2014)  
 # Missing keywords, bug #478254
-gnome-base/gnome classic
+gnome-base/gnome classic extras
 
 # Pacho Ramos <pacho@gentoo.org> (11 Jan 2014)
 sys-kernel/dracut -dracut_modules_systemd

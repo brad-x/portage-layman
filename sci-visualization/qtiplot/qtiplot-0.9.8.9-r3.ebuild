@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/qtiplot/qtiplot-0.9.8.9-r3.ebuild,v 1.1 2015/01/08 08:41:53 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/qtiplot/qtiplot-0.9.8.9-r3.ebuild,v 1.3 2015/04/08 18:23:57 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit eutils qt4-r2 fdo-mime python-single-r1 toolchain-funcs
 
@@ -37,7 +37,7 @@ CDEPEND="
 	dev-qt/qtgui:4
 	dev-qt/qtopengl:4
 	dev-qt/qt3support:4
-	|| ( >=dev-qt/qthelp-4.7.0:4[compat] <dev-qt/qthelp-4.7.0:4 )
+	dev-qt/qthelp:4[compat]
 	dev-qt/qtsvg:4
 	>=x11-libs/gl2ps-1.3.5[png]
 	>=dev-cpp/muParser-1.32
@@ -77,6 +77,8 @@ PATCHES=(
 	"${FILESDIR}"/${P}-sip-4.15.patch
 	"${FILESDIR}"/${P}-PyQt4-4.11.3.patch
 	)
+
+RESTRICT="!bindist? ( bindist )"
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup

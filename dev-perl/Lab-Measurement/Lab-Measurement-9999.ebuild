@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lab-Measurement/Lab-Measurement-9999.ebuild,v 1.15 2014/07/25 21:42:58 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lab-Measurement/Lab-Measurement-9999.ebuild,v 1.17 2015/04/07 23:33:43 dilfridge Exp $
 
 EAPI=5
 
@@ -13,16 +13,12 @@ else
 	EGIT_REPO_URI="https://github.com/lab-measurement/lab-measurement.git"
 	EGIT_BRANCH="master"
 	EGIT_SOURCEDIR=${S}
-	KEYWORDS=""
 	S=${WORKDIR}/${P}/Measurement
-	inherit perl-module git-2
+	inherit perl-module git-r3
 fi
 
 DESCRIPTION="Measurement control and automation with Perl"
 HOMEPAGE="http://www.labmeasurement.de/"
-
-# this is perl's license, whatever it means
-LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 IUSE="debug +xpression"
@@ -33,6 +29,7 @@ RDEPEND="
 	dev-perl/Exception-Class
 	dev-perl/Hook-LexWrap
 	dev-perl/List-MoreUtils
+	dev-perl/Term-ANSIScreen
 	dev-perl/TermReadKey
 	dev-perl/TeX-Encode
 	dev-perl/XML-Generator

@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/freecad/freecad-0.13.1830-r1.ebuild,v 1.3 2014/07/28 15:40:47 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/freecad/freecad-0.13.1830-r1.ebuild,v 1.5 2015/04/08 17:58:14 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit cmake-utils eutils fortran-2 multilib python-single-r1
 
@@ -115,8 +115,8 @@ src_configure() {
 
 	# TODO to remove embedded dependencies:
 	#
-	#	-DFREECAD_USE_EXTERNAL_ZIPIOS="ON" -- this option needs zipios++ but it's not yet in portage so the embedded zipios++ 
-	#                (under src/zipios++) will be used 
+	#	-DFREECAD_USE_EXTERNAL_ZIPIOS="ON" -- this option needs zipios++ but it's not yet in portage so the embedded zipios++
+	#                (under src/zipios++) will be used
 	#	salomesmesh is in 3rdparty but upstream's find_package function is not complete yet to compile against external version
 	#                (external salomesmesh is available in "science" overlay)
 

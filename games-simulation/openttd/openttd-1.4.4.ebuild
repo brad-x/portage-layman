@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/openttd/openttd-1.4.4.ebuild,v 1.2 2015/01/28 21:59:13 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/openttd/openttd-1.4.4.ebuild,v 1.6 2015/02/25 15:52:24 ago Exp $
 
 EAPI=5
 inherit eutils gnome2-utils games
@@ -11,11 +11,11 @@ SRC_URI="http://binaries.openttd.org/releases/${PV}/${P}-source.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="aplaymidi debug dedicated iconv icu lzo +openmedia +png cpu_flags_x86_sse +timidity +truetype zlib"
 RESTRICT="test" # needs a graphics set in order to test
 
-DEPEND="!dedicated? (
+RDEPEND="!dedicated? (
 		media-libs/libsdl[sound,X,video]
 		icu? ( dev-libs/icu:= )
 		truetype? (
@@ -26,9 +26,10 @@ DEPEND="!dedicated? (
 	)
 	lzo? ( dev-libs/lzo:2 )
 	iconv? ( virtual/libiconv )
-	png? ( media-libs/libpng )
+	png? ( media-libs/libpng:0 )
 	zlib? ( sys-libs/zlib )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 PDEPEND="
 	!dedicated? (
 		openmedia? (

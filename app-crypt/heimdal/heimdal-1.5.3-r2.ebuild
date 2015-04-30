@@ -1,9 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/heimdal/heimdal-1.5.3-r2.ebuild,v 1.15 2014/11/27 13:15:58 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/heimdal/heimdal-1.5.3-r2.ebuild,v 1.17 2015/04/08 07:30:33 mgorny Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 VIRTUALX_REQUIRED="manual"
 
 inherit autotools db-use eutils multilib multilib-minimal python-any-r1 toolchain-funcs virtualx flag-o-matic
@@ -15,7 +15,7 @@ SRC_URI="http://www.h5l.org/dist/src/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd"
 IUSE="afs +berkdb caps hdb-ldap ipv6 otp +pkinit selinux ssl static-libs threads test X"
 
 CDEPEND="ssl? ( >=dev-libs/openssl-1.0.1h-r2[${MULTILIB_USEDEP}] )
