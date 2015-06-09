@@ -1,13 +1,13 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/aircrack-ng-9999.ebuild,v 1.11 2014/08/03 23:13:27 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/aircrack-ng-9999.ebuild,v 1.13 2015/05/04 04:24:59 zerochaos Exp $
 
 EAPI="5"
 
 PYTHON_COMPAT=( python2_7 )
 DISTUTILS_OPTIONAL=1
 
-inherit toolchain-funcs versionator distutils-r1 flag-o-matic
+inherit toolchain-funcs distutils-r1 flag-o-matic
 
 DESCRIPTION="WLAN tools for breaking 802.11 WEP/WPA keys"
 HOMEPAGE="http://www.aircrack-ng.org"
@@ -18,23 +18,30 @@ if [[ ${PV} == "9999" ]] ; then
 	KEYWORDS=""
 	S="${WORKDIR}/${PN}"
 else
-	MY_P=${P/\_/-}
-	MY_PV="$(replace_version_separator 2 '-')"
-	SRC_URI="http://download.aircrack-ng.org/${PN}-${MY_PV}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~ppc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
-	S="${WORKDIR}/${MY_P}"
+	#inherit versionator
+	#MY_P=${P/\_/-}
+	#MY_PV="$(replace_version_separator 2 '-')"
+	#SRC_URI="http://download.aircrack-ng.org/${PN}-${MY_PV}.tar.gz"
+	#KEYWORDS="~amd64 ~arm ~ppc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+	#S="${WORKDIR}/${MY_P}"
+	MY_PV=${PV/_/-}
+	SRC_URI="http://download.${PN}.org/${PN}-${MY_PV}.tar.gz"
+	KEYWORDS="amd64 arm ppc x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+	S="${WORKDIR}/${PN}-${MY_PV}"
 fi
 
 LICENSE="GPL-2"
 SLOT="0"
 
-IUSE="+airdrop-ng +airgraph-ng kernel_linux kernel_FreeBSD +netlink +pcre +sqlite +unstable"
+IUSE="+airdrop-ng +airgraph-ng kernel_linux kernel_FreeBSD +netlink +pcre +sqlite +experimental"
 
-DEPEND="dev-libs/openssl
+DEPEND="net-libs/libpcap
+	dev-libs/openssl:0=
 	netlink? ( dev-libs/libnl:3 )
 	pcre? ( dev-libs/libpcre )
 	airdrop-ng? ( ${PYTHON_DEPS} )
 	airgraph-ng? ( ${PYTHON_DEPS} )
+	experimental? ( sys-libs/zlib )
 	sqlite? ( >=dev-db/sqlite-3.4 )"
 RDEPEND="${DEPEND}
 	kernel_linux? (
@@ -66,7 +73,7 @@ src_compile() {
 	libnl=$(usex netlink true false) \
 	pcre=$(usex pcre true false) \
 	sqlite=$(usex sqlite true false) \
-	unstable=$(usex unstable true false) \
+	experimental=$(usex experimental true false) \
 	${liveflags}
 
 	if use airgraph-ng; then
@@ -88,7 +95,7 @@ src_test() {
 		libnl=$(usex netlink true false) \
 		pcre=$(usex pcre true false) \
 		sqlite=$(usex sqlite true false) \
-		unstable=$(usex unstable true false) \
+		experimental=$(usex experimental true false) \
 		${liveflags}
 }
 
@@ -102,7 +109,7 @@ src_install() {
 		libnl=$(usex netlink true false) \
 		pcre=$(usex pcre true false) \
 		sqlite=$(usex sqlite true false) \
-		unstable=$(usex unstable true false) \
+		experimental=$(usex experimental true false) \
 		${liveflags} \
 		install
 

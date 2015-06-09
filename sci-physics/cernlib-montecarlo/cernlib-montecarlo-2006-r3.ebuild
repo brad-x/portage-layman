@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib-montecarlo/cernlib-montecarlo-2006-r3.ebuild,v 1.6 2013/09/23 12:26:59 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib-montecarlo/cernlib-montecarlo-2006-r3.ebuild,v 1.8 2015/05/28 10:29:36 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ DEB_PR=1
 DEB_P=${DEB_PN}_${DEB_PV}
 
 DESCRIPTION="Monte-carlo library and tools for the cernlib"
-HOMEPAGE="http://wwwasd.web.cern.ch/wwwasd/cernlib"
+HOMEPAGE="https://cernlib.web.cern.ch/cernlib/"
 SRC_URI="
 	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}.orig.tar.gz
 	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}-${DEB_PR}.debian.tar.gz"
@@ -20,7 +20,7 @@ SRC_URI="
 SLOT="0"
 LICENSE="GPL-2 LGPL-2 BSD"
 IUSE="+herwig"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
 
 RDEPEND="
 	x11-libs/motif:0

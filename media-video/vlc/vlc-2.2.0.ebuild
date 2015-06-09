@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.0.ebuild,v 1.10 2015/04/24 05:48:12 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-2.2.0.ebuild,v 1.14 2015/05/18 05:17:03 idella4 Exp $
 
 EAPI="5"
 
@@ -261,6 +261,9 @@ src_prepare() {
 	# Bug #541928
 	epatch "${FILESDIR}"/${P}-fix-xcb.patch
 
+	# Bug #541678
+	epatch "${FILESDIR}"/qt4-select.patch
+
 	# Don't use --started-from-file when not using dbus.
 	if ! use dbus ; then
 		sed -i 's/ --started-from-file//' share/vlc.desktop.in || die
@@ -303,8 +306,12 @@ src_configure() {
 	fi
 
 	local qt_flag=""
-	if use qt4 || use qt5 ; then
-		qt_flag="--enable-qt"
+	if use qt4 ; then
+		qt_flag="--enable-qt=4"
+	elif use qt5 ; then
+		qt_flag="--enable-qt=5"
+	else
+		qt_flag="--disable-qt"
 	fi
 
 	econf \

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.18 2015/02/07 02:38:12 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.21 2015/06/04 19:03:59 kensington Exp $
 
 EAPI=5
 
@@ -13,7 +13,8 @@ HOMEPAGE="http://www.darktable.org/"
 
 LICENSE="GPL-3 CC-BY-3.0"
 SLOT="0"
-LANGS=" cs da de el es fr it ja nl pl pt_BR pt_PT ru sq sv uk"
+#KEYWORDS="~amd64 ~x86"
+LANGS=" ca cs da de el es fr it ja nl pl pt_BR pt_PT ru sq sv uk"
 # TODO add lua once dev-lang/lua-5.2 is unmasked
 IUSE="colord cpu_flags_x86_sse3 doc flickr geo gphoto2 graphicsmagick jpeg2k kde libsecret
 nls opencl openmp openexr pax_kernel +rawspeed +slideshow +squish web-services webp
@@ -33,7 +34,7 @@ CDEPEND="
 	media-libs/libpng:0=
 	media-libs/tiff:0
 	net-misc/curl
-	virtual/jpeg
+	virtual/jpeg:0
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
 	x11-libs/gtk+:2
@@ -59,7 +60,7 @@ CDEPEND="
 	webp? ( media-libs/libwebp:0= )"
 RDEPEND="${CDEPEND}
 	x11-themes/gtk-engines:2
-	kde? ( kde-base/kwalletd )"
+	kde? ( kde-apps/kwalletd:4 )"
 DEPEND="${CDEPEND}
 	dev-util/intltool
 	virtual/pkgconfig
@@ -75,6 +76,7 @@ src_prepare() {
 	use cpu_flags_x86_sse3 && append-flags -msse3
 
 	sed -e "s:\(/share/doc/\)darktable:\1${PF}:" \
+		-e "s:\(\${SHARE_INSTALL}/doc/\)darktable:\1${PF}:" \
 		-e "s:LICENSE::" \
 		-i doc/CMakeLists.txt || die
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/oyranos/oyranos-0.9.5.ebuild,v 1.1 2014/07/30 22:59:45 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/oyranos/oyranos-0.9.5.ebuild,v 1.3 2015/05/27 20:31:04 tamiko Exp $
 
 EAPI=5
 
@@ -9,8 +9,8 @@ inherit eutils flag-o-matic cmake-utils cmake-multilib
 DESCRIPTION="colour management system allowing to share various settings across applications and services"
 HOMEPAGE="http://www.oyranos.org/"
 if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="git://www.${PN}.org/git/${PN}"
-	inherit git-2
+	EGIT_REPO_URI="https://github.com/${PN}-cms/${PN}.git"
+	inherit git-r3
 	KEYWORDS=""
 else
 	SRC_URI="mirror://sourceforge/oyranos/Oyranos/Oyranos%200.9/${P}.tar.bz2"
@@ -30,10 +30,7 @@ RDEPEND="
 	>=dev-libs/yajl-2.0.4-r1[${MULTILIB_USEDEP}]
 	media-libs/icc-profiles-basiccolor-printing2009
 	media-libs/icc-profiles-openicc
-	|| (
-		>=media-libs/lcms-2.5:2[${MULTILIB_USEDEP}]
-		>=media-libs/lcms-1.19-r1:0[${MULTILIB_USEDEP}]
-	)
+	>=media-libs/lcms-2.5:2[${MULTILIB_USEDEP}]
 	>=media-libs/libpng-1.6.10:0[${MULTILIB_USEDEP}]
 	>=media-libs/libXcm-0.5.3[${MULTILIB_USEDEP}]
 	cairo? ( >=x11-libs/cairo-1.12.14-r4[${MULTILIB_USEDEP}] )

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/libetonyek/libetonyek-9999.ebuild,v 1.4 2014/09/13 08:57:12 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/libetonyek/libetonyek-9999.ebuild,v 1.5 2015/05/22 20:44:57 dilfridge Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
 LICENSE="|| ( GPL-2+ LGPL-2.1 MPL-1.1 )"
 SLOT="0"
 [[ ${PV} == 9999 ]] || \
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="doc static-libs test"
 
 RDEPEND="
@@ -27,6 +27,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-libs/boost-1.46
 	dev-util/gperf
+	media-libs/glm
 	sys-devel/libtool
 	virtual/pkgconfig
 	doc? ( app-doc/doxygen )

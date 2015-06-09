@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.96 2015/04/04 19:59:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.100 2015/05/16 04:40:40 vapier Exp $
 
 EAPI=5
 
@@ -16,7 +16,6 @@ if [[ ${PV} = *9999* ]]; then
 	EGIT_REPO_URI="git://git.qemu.org/qemu.git"
 	inherit git-2
 	SRC_URI=""
-	KEYWORDS=""
 else
 	SRC_URI="http://wiki.qemu-project.org/download/${P}.tar.bz2
 	${BACKPORTS:+
@@ -33,7 +32,7 @@ IUSE="accessibility +aio alsa bluetooth +caps +curl debug +fdt glusterfs \
 gtk gtk2 infiniband iscsi +jpeg \
 kernel_linux kernel_FreeBSD lzo ncurses nfs nls numa opengl +pin-upstream-blobs
 +png pulseaudio python \
-rbd sasl +seccomp sdl selinux smartcard snappy spice ssh static static-softmmu \
+rbd sasl +seccomp sdl sdl2 selinux smartcard snappy spice ssh static static-softmmu
 static-user systemtap tci test +threads tls usb usbredir +uuid vde +vhost-net \
 virtfs +vnc xattr xen xfs"
 
@@ -56,6 +55,7 @@ REQUIRED_USE="|| ( ${use_softmmu_targets} ${use_user_targets} )
 	qemu_softmmu_targets_microblaze? ( fdt )
 	qemu_softmmu_targets_ppc? ( fdt )
 	qemu_softmmu_targets_ppc64? ( fdt )
+	sdl2? ( sdl )
 	static? ( static-softmmu static-user )
 	static-softmmu? ( !alsa !pulseaudio !bluetooth !opengl !gtk !gtk2 )
 	virtfs? ( xattr )"
@@ -84,7 +84,10 @@ SOFTMMU_LIB_DEPEND="${COMMON_LIB_DEPEND}
 	png? ( media-libs/libpng:0=[static-libs(+)] )
 	rbd? ( sys-cluster/ceph[static-libs(+)] )
 	sasl? ( dev-libs/cyrus-sasl[static-libs(+)] )
-	sdl? ( >=media-libs/libsdl-1.2.11[static-libs(+)] )
+	sdl? (
+		!sdl2? ( >=media-libs/libsdl-1.2.11[static-libs(+)] )
+		sdl2? ( media-libs/libsdl2[static-libs(+)] )
+	)
 	seccomp? ( >=sys-libs/libseccomp-2.1.0[static-libs(+)] )
 	snappy? ( app-arch/snappy[static-libs(+)] )
 	spice? ( >=app-emulation/spice-0.12.0[static-libs(+)] )
@@ -121,10 +124,16 @@ CDEPEND="
 		x11-libs/vte:2.90
 	)
 	iscsi? ( net-libs/libiscsi )
-	opengl? ( virtual/opengl )
+	opengl? (
+		virtual/opengl
+		media-libs/mesa[gles2]
+	)
 	pulseaudio? ( media-sound/pulseaudio )
 	python? ( ${PYTHON_DEPS} )
-	sdl? ( media-libs/libsdl[X] )
+	sdl? (
+		!sdl2? ( media-libs/libsdl[X] )
+		sdl2? ( media-libs/libsdl2[X] )
+	)
 	smartcard? ( dev-libs/nss !app-emulation/libcacard )
 	spice? ( >=app-emulation/spice-protocol-0.12.3 )
 	systemtap? ( dev-util/systemtap )
@@ -246,7 +255,6 @@ pkg_pretend() {
 
 pkg_setup() {
 	enewgroup kvm 78
-	python_setup
 }
 
 src_prepare() {
@@ -379,6 +387,7 @@ qemu_src_configure() {
 			--audio-drv-list="${audio_opts}"
 		)
 		use gtk && conf_opts+=( --with-gtkabi=$(usex gtk2 2.0 3.0) )
+		use sdl && conf_opts+=( --with-sdlabi=$(usex sdl2 2.0 1.2) )
 		;;
 	esac
 
@@ -407,7 +416,7 @@ qemu_src_configure() {
 src_configure() {
 	local target
 
-	python_export_best
+	python_setup
 
 	softmmu_targets= softmmu_bins=()
 	user_targets= user_bins=()
@@ -560,21 +569,6 @@ src_install() {
 pkg_postinst() {
 	if qemu_support_kvm; then
 		readme.gentoo_print_elog
-		ewarn "Migration from qemu-kvm instances and loading qemu-kvm created"
-		ewarn "save states has been removed starting with the 1.6.2 release"
-		ewarn
-		ewarn "It is recommended that you migrate any VMs that may be running"
-		ewarn "on qemu-kvm to a host with a newer qemu and regenerate"
-		ewarn "any saved states with a newer qemu."
-		ewarn
-		ewarn "qemu-kvm was the primary qemu provider in Gentoo through 1.2.x"
-
-		if use x86 || use amd64; then
-			ewarn
-			ewarn "The /usr/bin/kvm and /usr/bin/qemu-kvm wrappers are no longer"
-			ewarn "installed.  In order to use kvm acceleration, pass the flag"
-			ewarn "-enable-kvm when running your system target."
-		fi
 	fi
 
 	if [[ -n ${softmmu_targets} ]] && use kernel_linux; then
@@ -593,7 +587,7 @@ pkg_info() {
 	echo "  $(best_version app-emulation/spice-protocol)"
 	echo "  $(best_version sys-firmware/ipxe)"
 	echo "  $(best_version sys-firmware/seabios)"
-	if has_version sys-firmware/seabios[binary]; then
+	if has_version 'sys-firmware/seabios[binary]'; then
 		echo "    USE=binary"
 	else
 		echo "    USE=''"

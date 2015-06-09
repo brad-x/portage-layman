@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/csync2/csync2-1.34-r2.ebuild,v 1.5 2014/08/10 20:20:29 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/csync2/csync2-1.34-r2.ebuild,v 1.6 2015/05/12 16:41:49 ultrabug Exp $
 
-EAPI=2
+EAPI=5
 
 inherit autotools eutils
 
@@ -39,18 +39,18 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 
 	if use xinetd ; then
 		insinto /etc/xinetd.d
-		newins "${FILESDIR}"/${PN}.xinetd ${PN} || die
+		newins "${FILESDIR}"/${PN}.xinetd ${PN}
 	fi
 
 	keepdir /var/lib/csync2
 
-	newinitd "${FILESDIR}"/${PN}.initd ${PN} || die
+	newinitd "${FILESDIR}"/${PN}.initd ${PN}
 
-	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO csync2_locheck.sh || die
+	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO csync2_locheck.sh
 }
 
 pkg_postinst() {

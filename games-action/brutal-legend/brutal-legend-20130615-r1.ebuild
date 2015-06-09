@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/brutal-legend/brutal-legend-20130615-r1.ebuild,v 1.3 2015/02/10 10:13:14 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/brutal-legend/brutal-legend-20130615-r1.ebuild,v 1.5 2015/06/01 22:34:27 mr_bones_ Exp $
 
 # TODO: unbundle libsdl-2
 
@@ -9,7 +9,7 @@ EAPI=5
 inherit eutils unpacker gnome2-utils games
 
 TIMESTAMP=${PV:0:4}-${PV:4:2}-${PV:6:2}
-DESCRIPTION="Crush skulls, ravage the road in the Deuce, and unleash the power of Heavy Metal to reign down fire from the sky."
+DESCRIPTION="Unleash the power of Heavy Metal to reign down fire from the sky"
 HOMEPAGE="https://www.ea.com/de/brutal-legend"
 SRC_URI="BrutalLegend-Linux-${TIMESTAMP}-setup.bin"
 
@@ -25,23 +25,14 @@ QA_PREBUILT="${MYGAMEDIR#/}/lib/*
 
 RDEPEND="
 	amd64? (
-		|| (
-			(
-				>=sys-libs/zlib-1.2.8-r1[abi_x86_32(-)]
-				>=virtual/glu-9.0-r1[abi_x86_32(-)]
-				>=virtual/opengl-7.0-r1[abi_x86_32(-)]
-				>=x11-libs/libX11-1.6.2[abi_x86_32(-)]
-				>=x11-libs/libXau-1.0.7-r1[abi_x86_32(-)]
-				>=x11-libs/libXdmcp-1.1.1-r1[abi_x86_32(-)]
-				>=x11-libs/libXext-1.3.2[abi_x86_32(-)]
-				>=x11-libs/libxcb-1.9.1[abi_x86_32(-)]
-			)
-			(
-				app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
-				app-emulation/emul-linux-x86-opengl[-abi_x86_32(-)]
-				app-emulation/emul-linux-x86-xlibs[-abi_x86_32(-)]
-			)
-		)
+		>=sys-libs/zlib-1.2.8-r1[abi_x86_32(-)]
+		>=virtual/glu-9.0-r1[abi_x86_32(-)]
+		>=virtual/opengl-7.0-r1[abi_x86_32(-)]
+		>=x11-libs/libX11-1.6.2[abi_x86_32(-)]
+		>=x11-libs/libXau-1.0.7-r1[abi_x86_32(-)]
+		>=x11-libs/libXdmcp-1.1.1-r1[abi_x86_32(-)]
+		>=x11-libs/libXext-1.3.2[abi_x86_32(-)]
+		>=x11-libs/libxcb-1.9.1[abi_x86_32(-)]
 	)
 	x86? (
 		sys-libs/zlib

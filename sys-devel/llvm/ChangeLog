@@ -1,6 +1,34 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.238 2015/04/16 11:55:18 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.244 2015/06/05 14:48:25 voyageur Exp $
+
+  05 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.6.1.ebuild,
+  llvm-9999.ebuild:
+  Add large file support flags, thanks zmedico in bug #550708
+
+  31 May 2015; Fabian Groffen <grobian@gentoo.org> llvm-3.4.2.ebuild,
+  llvm-3.5.2.ebuild, llvm-3.6.1.ebuild, llvm-9999.ebuild:
+  Fix dependencies for Darwin: only 3.4 can be compiled with gcc-apple-4.2.1,
+  later versions need Clang.  We can compile 3.4 without libcxx, later versions
+  need it on Darwin, so require it.
+
+  31 May 2015; Fabian Groffen <grobian@gentoo.org> llvm-3.4.2.ebuild,
+  llvm-3.5.2.ebuild, llvm-3.6.1.ebuild, llvm-9999.ebuild:
+  Allow LLVM to compile itself.  This is useful for Darwin, where LLVM is going
+  to be the only compiler available by default.
+
+  29 May 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild:
+  Revert accidental commit on live ebuild, should fix #550608 and #550682
+
+*llvm-3.6.1 (27 May 2015)
+
+  27 May 2015; Bernard Cafarelli <voyageur@gentoo.org> +llvm-3.6.1.ebuild,
+  llvm-9999.ebuild:
+  Version bump, mostly MIPS and R600 bug fixes
+
+  04 May 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild:
+  Fix vim files installation, thanks Tobias Jakobi. Note this does not fix
+  USE=clang build, which still needs the cmake rewrite
 
   16 Apr 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.3-r3.ebuild,
   llvm-3.4.2.ebuild, llvm-3.5.0.ebuild, llvm-3.5.1.ebuild, llvm-3.5.2.ebuild,

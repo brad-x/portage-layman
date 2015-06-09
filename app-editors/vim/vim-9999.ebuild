@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.27 2015/03/31 17:37:10 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/vim-9999.ebuild,v 1.28 2015/05/03 07:03:35 radhermit Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
@@ -125,7 +125,7 @@ src_prepare() {
 			sed -e 's/\x1B\[[[:digit:]]\+m//g' | col -b | \\
 					vim \\
 						-c 'let no_plugin_maps = 1' \\
-						-c 'set nolist nomod ft=man' \\
+						-c 'set nolist nomod ft=man ts=8' \\
 						-c 'let g:showmarks_enable=0' \\
 						-c 'runtime! macros/less.vim' -
 			END

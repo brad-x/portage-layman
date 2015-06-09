@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/allegro/allegro-4.4.2-r1.ebuild,v 1.9 2014/02/02 11:49:29 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/allegro/allegro-4.4.2-r1.ebuild,v 1.11 2015/06/04 17:49:34 mr_bones_ Exp $
 
 EAPI=5
 CMAKE_IN_SOURCE_BUILD=1
@@ -17,7 +17,7 @@ IUSE="alsa fbcon jack jpeg opengl oss png svga test vga vorbis X"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	jack? ( media-sound/jack-audio-connection-kit )
-	jpeg? ( virtual/jpeg )
+	jpeg? ( virtual/jpeg:0 )
 	png? ( media-libs/libpng:0= )
 	svga? ( media-libs/svgalib )
 	vorbis? ( media-libs/libvorbis )
@@ -94,7 +94,7 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
-	nonfatal dohtml docs/html/*.html
+	dohtml docs/html/*.html
 
 	#176020 (init_dialog.3), #409305 (key.3)
 	pushd docs/man >/dev/null

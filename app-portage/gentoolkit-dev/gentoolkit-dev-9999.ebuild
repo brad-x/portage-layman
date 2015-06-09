@@ -1,25 +1,29 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit-dev/gentoolkit-dev-9999.ebuild,v 1.16 2015/04/25 16:25:44 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/gentoolkit-dev/gentoolkit-dev-9999.ebuild,v 1.17 2015/05/22 16:39:00 floppym Exp $
 
 EAPI="5"
 
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
-
 PYTHON_REQ_USE="xml"
 
-inherit git-r3 python-r1
+inherit python-r1
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="git://anongit.gentoo.org/proj/gentoolkit.git
+		http://anongit.gentoo.org/git/proj/gentoolkit.git"
+	EGIT_BRANCH="gentoolkit-dev"
+else
+	SRC_URI="http://dev.gentoo.org/~floppym/dist/${P}.tar.gz"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+fi
 
 DESCRIPTION="Collection of developer scripts for Gentoo"
-HOMEPAGE="http://www.gentoo.org/proj/en/portage/tools/index.xml"
-SRC_URI=""
-EGIT_REPO_URI="git://anongit.gentoo.org/proj/gentoolkit.git
-	http://anongit.gentoo.org/git/proj/gentoolkit.git"
-EGIT_BRANCH="gentoolkit-dev"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Portage-Tools"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
 IUSE="test"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -36,8 +40,7 @@ RDEPEND="${PYTHON_DEPS}
 src_test() {
 	# echangelog test is not able to run as root
 	# the EUID check may not work for everybody
-	if [[ ${EUID} -ne 0 ]];
-	then
+	if [[ ${EUID} -ne 0 ]]; then
 		python_foreach_impl emake test
 	else
 		ewarn "test skipped, please re-run as non-root if you wish to test ${PN}"

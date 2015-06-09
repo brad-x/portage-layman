@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.38 2014/06/17 04:57:34 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.41 2015/06/01 04:21:16 vapier Exp $
 
 EAPI="5"
 
@@ -26,7 +26,7 @@ SLOT="0"
 IUSE="cmsis-dap dummy ftdi parport +usb verbose-io"
 RESTRICT="strip" # includes non-native binaries
 
-RDEPEND=">=dev-lang/jimtcl-0.75
+RDEPEND=">=dev-lang/jimtcl-0.76
 	cmsis-dap? ( dev-libs/hidapi )
 	usb? (
 		virtual/libusb:0
@@ -36,6 +36,7 @@ RDEPEND=">=dev-lang/jimtcl-0.75
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
+[[ ${PV} == "9999" ]] && DEPEND+=" >=sys-apps/texinfo-5" #549946
 
 src_prepare() {
 	epatch_user
@@ -100,7 +101,7 @@ src_configure() {
 
 	if use ftdi; then
 		myconf+=(
-			--enable-usb_blaster_libftd
+			--enable-usb_blaster_libftdi
 			--enable-openjtag_ftdi
 			--enable-presto_libftdi
 		)
@@ -123,6 +124,6 @@ src_configure() {
 
 src_install() {
 	default
-	env -uRESTRICT prepstrip "${ED}"/usr/bin "${ED}"/usr/$(get_libdir)
+	env -uRESTRICT prepstrip "${ED}"/usr/bin
 	udev_dorules ${D}/usr/share/${PN}/contrib/*.rules
 }

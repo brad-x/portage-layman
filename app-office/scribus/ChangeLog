@@ -1,6 +1,55 @@
 # ChangeLog for app-office/scribus
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/ChangeLog,v 1.203 2015/04/18 15:55:39 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/ChangeLog,v 1.212 2015/06/08 06:46:33 jlec Exp $
+
+  08 Jun 2015; Justin Lecher <jlec@gentoo.org> files/scribus-1.5.0-fpic.patch:
+  Handle fPIC for hppa, bug #551452
+
+  01 Jun 2015; Justin Lecher <jlec@gentoo.org>
+  +files/scribus-1.5.0-QObject.patch, scribus-1.5.0-r1.ebuild:
+  Add patch for missing includes, bug #550162
+
+*scribus-1.5.0-r1 (29 May 2015)
+
+  29 May 2015; Justin Lecher <jlec@gentoo.org> +scribus-1.5.0-r1.ebuild,
+  files/scribus-1.5.0-fpic.patch, scribus-9999.ebuild:
+  Enhance fPIC patch and fix configure options with USE=osg, bug #550130
+
+  29 May 2015; Justin Lecher <jlec@gentoo.org> scribus-1.4.5-r1.ebuild:
+  Always install en localisation, bug #549876
+
+*scribus-1.5.0 (21 May 2015)
+
+  21 May 2015; Justin Lecher <jlec@gentoo.org>
+  +files/scribus-1.5.0-docdir.patch, +files/scribus-1.5.0-fpic.patch,
+  +scribus-1.5.0.ebuild, -scribus-1.4.9999.ebuild, metadata.xml,
+  scribus-9999.ebuild:
+  Version Bump
+
+  20 May 2015; Jeroen Roovers <jer@gentoo.org>
+  -files/scribus-1.3.5.1-system-hyphen.patch,
+  -files/scribus-1.3.6-podofo-0.8.0.patch, -files/scribus-1.3.9-cups-1.5.patch,
+  -files/scribus-1.4.0-export.patch, -files/scribus-1.4.0_rc5-docs.patch,
+  -files/scribus-1.4.2-cups.patch, -files/scribus-1.4.2-imaging.patch,
+  metadata.xml:
+  linguas_* descriptions belong in profiles/desc/linguas.desc. Drop unused
+  patches.
+
+  19 May 2015; Justin Lecher <jlec@gentoo.org> -scribus-1.4.3.ebuild,
+  scribus-1.4.5-r1.ebuild:
+  Drop old; obsoletes bug #490542
+
+  19 May 2015; Jeroen Roovers <jer@gentoo.org> scribus-1.4.4-r1.ebuild:
+  Stable for PPC64 (bug #519890).
+
+*scribus-1.4.5-r1 (18 May 2015)
+
+  18 May 2015; Justin Lecher <jlec@gentoo.org>
+  +files/scribus-1.4.4-ppc64-fpic.patch, +scribus-1.4.5-r1.ebuild,
+  files/scribus-1.5.0-docs.patch, scribus-1.4.4-r1.ebuild,
+  scribus-1.4.9999.ebuild, scribus-9999.ebuild:
+  Build all 64bit arch with fPIC, bug #549746; Update live doc patch, bug
+  #548160; use LINGUAS for all localizable files in this app, bug #538238
 
   18 Apr 2015; Pacho Ramos <pacho@gentoo.org> scribus-1.4.4-r1.ebuild:
   x86 stable wrt bug #519890

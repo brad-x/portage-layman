@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/x265/x265-9999.ebuild,v 1.13 2015/03/17 15:24:52 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/x265/x265-9999.ebuild,v 1.15 2015/05/22 12:20:07 aballier Exp $
 
 EAPI=5
 
@@ -10,8 +10,10 @@ if [[ ${PV} = 9999* ]]; then
 	inherit mercurial
 	EHG_REPO_URI="http://bitbucket.org/multicoreware/x265"
 else
-	SRC_URI="https://bitbucket.org/multicoreware/x265/get/${PV}.tar.bz2 -> ${P}.tar.bz2"
-	KEYWORDS="~amd64 ~arm ~x86"
+	SRC_URI="
+		https://bitbucket.org/multicoreware/x265/downloads/${PN}_${PV}.tar.gz
+		http://ftp.videolan.org/pub/videolan/x265/${PN}_${PV}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~hppa ~ppc64 ~x86"
 fi
 
 DESCRIPTION="Library for encoding video streams into the H.265/HEVC format"
@@ -19,7 +21,7 @@ HOMEPAGE="http://x265.org/"
 
 LICENSE="GPL-2"
 # subslot = libx265 soname
-SLOT="0/48"
+SLOT="0/59"
 IUSE="+10bit test"
 
 ASM_DEPEND=">=dev-lang/yasm-1.2.0"
@@ -35,7 +37,7 @@ src_unpack() {
 		export S=${WORKDIR}/${P}/source
 	else
 		unpack ${A}
-		export S=$(echo "${WORKDIR}"/*${PN}*/source)
+		export S="${WORKDIR}/${PN}_${PV}/source"
 	fi
 }
 
@@ -48,6 +50,12 @@ multilib_src_configure() {
 		-DHIGH_BIT_DEPTH=$(usex 10bit "ON" "OFF")
 		-DLIB_INSTALL_DIR="$(get_libdir)"
 	)
+
+	if [ "${ABI}" = x86 ] ; then
+		use 10bit && ewarn "Disabling 10bit support on x86 as it does not build (or requires to disable assembly optimizations)"
+		mycmakeargs+=( -DHIGH_BIT_DEPTH=OFF )
+	fi
+
 	cmake-utils_src_configure
 }
 

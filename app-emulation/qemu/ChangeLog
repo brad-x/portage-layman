@@ -1,6 +1,48 @@
 # ChangeLog for app-emulation/qemu
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/ChangeLog,v 1.322 2015/04/12 00:29:22 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/ChangeLog,v 1.330 2015/05/16 04:40:40 vapier Exp $
+
+  16 May 2015; Mike Frysinger <vapier@gentoo.org> qemu-9999.ebuild:
+  Require mesa[gles2] for USE=opengl to match upstream #549558 by Michal
+  Privoznik.
+
+  14 May 2015; Agostino Sarubbo <ago@gentoo.org>
+  -files/qemu-2.1.1-readlink-self.patch,
+  -files/qemu-2.1.2-vnc-sanitize-bits.patch, -qemu-2.1.2-r2.ebuild,
+  -qemu-2.1.3-r1.ebuild, -qemu-2.1.3.ebuild, -qemu-2.2.0.ebuild,
+  -qemu-2.2.1-r1.ebuild, -qemu-2.2.1.ebuild, -qemu-2.3.0.ebuild,
+  qemu-2.2.1-r2.ebuild:
+  Stable for amd64/x86 - remove old.
+
+  14 May 2015; Mike Frysinger <vapier@gentoo.org> qemu-9999.ebuild:
+  Drop kvm warning as it has been ~1 year now since the changes landed.
+
+  13 May 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  qemu-9999.ebuild:
+  Add USE=sdl2 to prefer libsdl2 over libsdl #547306 by Nikoli.
+
+  13 May 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/qemu-2.3.0-CVE-2015-3456.patch, qemu-2.1.3-r1.ebuild,
+  qemu-2.2.1-r2.ebuild, qemu-2.3.0-r1.ebuild:
+  Move patch to $FILESDIR as it is small and matches what we do everywhere else.
+
+*qemu-2.2.1-r2 (13 May 2015)
+*qemu-2.3.0-r1 (13 May 2015)
+*qemu-2.1.3-r1 (13 May 2015)
+
+  13 May 2015; Robin H. Johnson <robbat2@gentoo.org> +qemu-2.1.3-r1.ebuild,
+  +qemu-2.2.1-r2.ebuild, +qemu-2.3.0-r1.ebuild:
+  Security bugfix for CVE-2015-3456 / VENOM.
+
+  05 May 2015; Mike Frysinger <vapier@gentoo.org> -files/qemu-9999-cflags.patch,
+  -files/qemu-9999-virtfs-proxy-helper-accept.patch, -files/qemu-kvm-1.4:
+  Drop files no longer referenced by ebuilds.
+
+*qemu-2.3.0 (28 Apr 2015)
+
+  28 Apr 2015; Mike Frysinger <vapier@gentoo.org> +qemu-2.3.0.ebuild,
+  qemu-9999.ebuild:
+  Version bump.
 
 *qemu-2.2.1-r1 (12 Apr 2015)
 

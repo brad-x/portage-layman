@@ -1,6 +1,38 @@
 # ChangeLog for app-text/poppler
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/ChangeLog,v 1.455 2015/04/21 18:43:50 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/poppler/ChangeLog,v 1.462 2015/06/01 19:54:32 grobian Exp $
+
+  01 Jun 2015; Fabian Groffen <grobian@gentoo.org> poppler-0.33.0-r1.ebuild:
+  Fix compilation with Clang
+
+  29 May 2015; Andreas K. Hüttel <dilfridge@gentoo.org>
+  poppler-0.33.0-r1.ebuild, poppler-9999.ebuild:
+  Add slot operator for openjpeg
+
+  25 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  poppler-0.33.0-r1.ebuild, poppler-9999.ebuild:
+  Using openjpeg instead of the internal jpeg2k decoder is recommended by
+  upstream, so enable it by default
+
+*poppler-0.33.0-r1 (24 May 2015)
+
+  24 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  +poppler-0.33.0-r1.ebuild, poppler-9999.ebuild,
+  +files/poppler-0.33.0-openjpeg2.patch:
+  Use libopenjpeg:2 and workaround broken slotting
+
+*poppler-0.33.0 (18 May 2015)
+
+  18 May 2015; Andreas K. Hüttel <dilfridge@gentoo.org> +poppler-0.33.0.ebuild,
+  poppler-9999.ebuild:
+  Minor updates to live ebuild; version bump
+
+  18 May 2015; Andreas K. Hüttel <dilfridge@gentoo.org> -poppler-0.24.5.ebuild,
+  -poppler-0.26.5.ebuild:
+  Remove old
+
+  29 Apr 2015; Agostino Sarubbo <ago@gentoo.org> poppler-0.32.0.ebuild:
+  Stable for sparc, wrt bug #542220
 
   21 Apr 2015; Pacho Ramos <pacho@gentoo.org> poppler-0.32.0.ebuild:
   ppc stable wrt bug #542220

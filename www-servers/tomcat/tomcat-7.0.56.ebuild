@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/tomcat-7.0.56.ebuild,v 1.7 2014/11/29 13:35:40 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/tomcat/tomcat-7.0.56.ebuild,v 1.9 2015/06/03 16:31:07 monsieurp Exp $
 
 EAPI=5
 

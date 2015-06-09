@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-6.0.ebuild,v 1.8 2015/03/19 08:13:50 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-6.0.ebuild,v 1.10 2015/05/07 18:53:47 pacho Exp $
 
 EAPI=5
 inherit autotools bash-completion-r1 eutils flag-o-matic gnome2-utils linux-info readme.gentoo systemd user versionator udev multilib-minimal
@@ -17,7 +17,7 @@ LICENSE="!gdbm? ( LGPL-2.1 ) gdbm? ( GPL-2 )"
 
 SLOT="0"
 #KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux"
-KEYWORDS="~amd64 ~arm ~hppa ~sh ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~hppa ~ppc64 ~sh ~x86 ~amd64-linux ~x86-linux"
 
 # +alsa-plugin as discussed in bug #519530
 IUSE="+alsa +alsa-plugin +asyncns bluetooth +caps dbus doc equalizer +gdbm +glib
@@ -98,7 +98,7 @@ DEPEND="${RDEPEND}
 "
 # This is a PDEPEND to avoid a circular dep
 PDEPEND="alsa? ( alsa-plugin? (
-	>=media-plugins/alsa-plugins-1.0.27-r1[pulseaudio]
+	>=media-plugins/alsa-plugins-1.0.27-r1[pulseaudio,${MULTILIB_USEDEP}]
 ) )"
 
 # alsa-utils dep is for the alsasound init.d script (see bug #155707)

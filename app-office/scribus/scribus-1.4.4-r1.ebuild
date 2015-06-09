@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.4.4-r1.ebuild,v 1.6 2015/04/18 15:55:39 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/scribus/scribus-1.4.4-r1.ebuild,v 1.8 2015/05/19 04:54:51 jer Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PV}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 hppa ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 hppa ppc ppc64 ~sparc x86"
 IUSE="cairo debug examples hunspell +minimal +pdf scripts templates tk"
 
 # a=$(ls resources/translations/po/scribus.*ts | sed -e 's:\.: :g' | awk '{print $2}'); echo ${a}
@@ -56,6 +56,7 @@ DEPEND="${COMMON_DEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.4.2-docs.patch
 	"${FILESDIR}"/${PN}-1.4.0-minizip.patch
+	"${FILESDIR}"/${P}-ppc64-fpic.patch
 	)
 
 src_prepare() {

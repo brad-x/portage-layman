@@ -1,6 +1,22 @@
 # ChangeLog for media-libs/openjpeg
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/openjpeg/ChangeLog,v 1.117 2014/11/01 17:46:51 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/openjpeg/ChangeLog,v 1.119 2015/05/05 02:40:05 vapier Exp $
+
+  05 May 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/openjpeg-2.0.0-build.patch:
+  Restore patch still used by the 2.0.0 ebuild #548586 by Toralf Förster.
+
+*openjpeg-2.0.0-r1 (01 May 2015)
+*openjpeg-2.1.0-r1 (01 May 2015)
+*openjpeg-1.5.2-r1 (01 May 2015)
+
+  01 May 2015; James Le Cuirot <chewi@gentoo.org> +openjpeg-1.5.2-r1.ebuild,
+  +openjpeg-2.0.0-r1.ebuild, +openjpeg-2.1.0-r1.ebuild,
+  -files/openjpeg-2.0.0-build.patch:
+  Forwardport some fixes from 1.5.2. Make doxygen docs actually install for
+  1.5.2. Install doxygen docs in right directory for later versions. Convert
+  2.1.0 to multilib. Unfortunately 2.0.0 has ABI header conflicts. Closes bug
+  #548076.
 
   01 Nov 2014; Agostino Sarubbo <ago@gentoo.org> openjpeg-2.1.0.ebuild:
   Stable for ppc, wrt bug #527182

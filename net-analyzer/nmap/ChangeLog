@@ -1,6 +1,53 @@
 # ChangeLog for net-analyzer/nmap
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/ChangeLog,v 1.334 2015/01/26 12:08:35 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/ChangeLog,v 1.345 2015/05/15 04:36:08 jer Exp $
+
+  15 May 2015; Jeroen Roovers <jer@gentoo.org> nmap-9999.ebuild:
+  Unset one variable (bug #549470).
+
+  14 May 2015; Jeroen Roovers <jer@gentoo.org> nmap-6.47-r3.ebuild,
+  nmap-9999.ebuild, +files/nmap-6.47-ncat-lua.patch:
+  Fix a parallel make issue where ncat is being built when liblua has not yet
+  been built.
+
+  14 May 2015; Jeroen Roovers <jer@gentoo.org> nmap-6.47-r3.ebuild,
+  nmap-9999.ebuild:
+  Revert fcaps changes.
+
+  13 May 2015; Jeroen Roovers <jer@gentoo.org> nmap-6.47-r3.ebuild,
+  nmap-9999.ebuild:
+  Formatting. Do not say it twice. Remove more version based messaging.
+
+*nmap-6.47-r3 (13 May 2015)
+
+  13 May 2015; Jeroen Roovers <jer@gentoo.org> +nmap-6.47-r3.ebuild,
+  nmap-9999.ebuild, -files/nmap-9999-no-FORTIFY_SOURCE.patch,
+  +files/nmap-no-FORTIFY_SOURCE.patch:
+  Remove version based condition around einfo. Simplify filecaps message (and
+  make it shell implementation independent). Rename patch (9999 is not a
+  version).
+
+  13 May 2015; Jeroen Roovers <jer@gentoo.org> nmap-6.47-r1.ebuild,
+  nmap-6.47-r2.ebuild, nmap-9999.ebuild:
+  Fix DESCRIPTION.
+
+  12 May 2015; Patrick Lauer <patrick@gentoo.org> nmap-9999.ebuild:
+  Whitespace
+
+  12 May 2015; Rick Farina <zerochaos@gentoo.org> nmap-9999.ebuild:
+  use readme.gentoo with some minor custom to support 9999 better
+
+  12 May 2015; Rick Farina <zerochaos@gentoo.org> nmap-9999.ebuild:
+  improve postinst message for fcaps
+
+  12 May 2015; Rick Farina <zerochaos@gentoo.org> nmap-9999.ebuild:
+  add fcaps, bug #492794
+
+  12 May 2015; Rick Farina <zerochaos@gentoo.org>
+  +files/nmap-9999-no-FORTIFY_SOURCE.patch, metadata.xml, nmap-6.47-r1.ebuild,
+  nmap-6.47-r2.ebuild, nmap-9999.ebuild:
+  fix build for 9999, rename lua->nse (9999 only for now) bug #529688, fix
+  ambiguous openssl slot dep
 
 *nmap-6.47-r2 (26 Jan 2015)
 

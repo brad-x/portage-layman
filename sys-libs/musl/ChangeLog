@@ -1,6 +1,47 @@
 # ChangeLog for sys-libs/musl
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/ChangeLog,v 1.53 2015/04/18 11:24:34 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/ChangeLog,v 1.63 2015/06/07 13:32:57 blueness Exp $
+
+  07 Jun 2015; Anthony G. Basile <blueness@gentoo.org> -musl-1.1.9.ebuild:
+  Remove buggy version.
+
+  07 Jun 2015; Anthony G. Basile <blueness@gentoo.org> musl-1.1.10-r1.ebuild:
+  Stable on amd64/arm/x86.
+
+*musl-1.1.10-r1 (06 Jun 2015)
+
+  06 Jun 2015; Anthony G. Basile <blueness@gentoo.org>
+  +files/musl-1.1.10-uselocale-0-fix.diff, +musl-1.1.10-r1.ebuild,
+  -musl-1.1.10.ebuild:
+  Add patch to fix uselocale regresson.
+
+*musl-1.1.10 (05 Jun 2015)
+
+  05 Jun 2015; Anthony G. Basile <blueness@gentoo.org> +musl-1.1.10.ebuild:
+  Version bump
+
+  17 May 2015; Anthony G. Basile <blueness@gentoo.org> musl-1.1.9.ebuild:
+  Drop ~ppc since its broken like mips.
+
+  14 May 2015; Anthony G. Basile <blueness@gentoo.org> -musl-1.1.7.ebuild,
+  -musl-1.1.8.ebuild:
+  Drop older stable versions that depended on sys-apps/getent.
+
+  14 May 2015; Anthony G. Basile <blueness@gentoo.org> musl-1.1.9.ebuild:
+  Drop ~mips since its broken.
+
+  13 May 2015; Ulrich Müller <ulm@gentoo.org> musl-1.1.9.ebuild,
+  musl-9999.ebuild:
+  [QA] Fixup whitespace.
+
+*musl-1.1.9 (13 May 2015)
+
+  13 May 2015; Anthony G. Basile <blueness@gentoo.org> +files/ldconfig.in,
+  +musl-1.1.9.ebuild, musl-9999.ebuild:
+  Version bump.  Addresses bug #544128.
+
+  13 May 2015; Anthony G. Basile <blueness@gentoo.org> musl-1.1.8-r2.ebuild:
+  Stable for amd64, arm, ppc and x86.
 
 *musl-1.1.8-r2 (18 Apr 2015)
 

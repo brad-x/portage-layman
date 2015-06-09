@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-9999.ebuild,v 1.24 2015/04/26 19:36:46 twitch153 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/dolphin/dolphin-9999.ebuild,v 1.27 2015/06/06 04:39:21 twitch153 Exp $
 
 EAPI=5
 
@@ -49,13 +49,14 @@ DEPEND="${RDEPEND}
 	media-gfx/nvidia-cg-toolkit
 	media-libs/freetype
 	media-libs/libsoundtouch
-	>=sys-devel/gcc-4.6.0
-	x11-libs/wxGTK:${WX_GTK_VER}[webkit]
+	>net-libs/enet-1.3.7
+	>=sys-devel/gcc-4.9.0
+	x11-libs/wxGTK:${WX_GTK_VER}
 	"
 
 pkg_pretend() {
 
-	local ver=4.6.0
+	local ver=4.9.0
 	local msg="${PN} needs at least GCC ${ver} set to compile."
 
 	if [[ ${MERGE_TYPE} != binary ]]; then
@@ -93,20 +94,17 @@ src_prepare() {
 	# - SOIL: The sources are not public.
 	# - Bochs-disasm: Don't know what it is.
 	# - GL: A custom gl.h file is used.
-	# - enet: Not fully supported yet.
 	# - gtest: Their build set up solely relies on the build in gtest.
 	# - xxhash: Not on the tree.
 	mv Externals/SOIL . || die
 	mv Externals/Bochs_disasm . || die
 	mv Externals/GL . || die
-	mv Externals/enet . || die
 	mv Externals/gtest . || die
 	mv Externals/xxhash . || die
 	rm -r Externals/* || die "Failed to delete Externals dir."
 	mv Bochs_disasm Externals || die
 	mv SOIL Externals || die
 	mv GL Externals || die
-	mv enet Externals || die
 	mv gtest Externals || die
 	mv xxhash Externals || die
 }

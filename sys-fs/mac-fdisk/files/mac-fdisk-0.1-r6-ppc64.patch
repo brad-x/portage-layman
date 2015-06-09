@@ -1,6 +1,5 @@
-diff -Nur mac-fdisk-0.1.orig/bitfield.c mac-fdisk-0.1/bitfield.c
---- mac-fdisk-0.1.orig/bitfield.c	1997-01-10 07:30:51.000000000 +0900
-+++ mac-fdisk-0.1/bitfield.c	2006-09-02 22:22:06.301788000 +0900
+--- a/bitfield.c
++++ b/bitfield.c
 @@ -67,13 +67,12 @@
  //
  // Routines
@@ -35,9 +34,8 @@ diff -Nur mac-fdisk-0.1.orig/bitfield.c mac-fdisk-0.1/bitfield.c
  
      // compute shift & mask
      // return the correct number of bits (shifted to low end)
-diff -Nur mac-fdisk-0.1.orig/bitfield.h mac-fdisk-0.1/bitfield.h
---- mac-fdisk-0.1.orig/bitfield.h	1996-12-18 09:44:16.000000000 +0900
-+++ mac-fdisk-0.1/bitfield.h	2006-09-02 22:22:06.301788000 +0900
+--- a/bitfield.h
++++ b/bitfield.h
 @@ -63,5 +63,5 @@
  //
  // Forward declarations
@@ -46,9 +44,8 @@ diff -Nur mac-fdisk-0.1.orig/bitfield.h mac-fdisk-0.1/bitfield.h
 -unsigned long bitfield_get(unsigned long bf, int base, int length);
 +unsigned int bitfield_set(unsigned int *bf, int base, int length, unsigned int value);
 +unsigned int bitfield_get(unsigned int bf, int base, int length);
-diff -Nur mac-fdisk-0.1.orig/dpme.h mac-fdisk-0.1/dpme.h
---- mac-fdisk-0.1.orig/dpme.h	2006-09-02 22:18:56.014216000 +0900
-+++ mac-fdisk-0.1/dpme.h	2006-09-02 22:22:06.305788000 +0900
+--- a/dpme.h
++++ b/dpme.h
 @@ -61,7 +61,7 @@
  //
  typedef	unsigned char	u8;
@@ -73,9 +70,8 @@ diff -Nur mac-fdisk-0.1.orig/dpme.h mac-fdisk-0.1/dpme.h
      u32     dpme_checksum           ;
      char    dpme_process_id[16]     ;
      u32     dpme_boot_args[32]      ;
-diff -Nur mac-fdisk-0.1.orig/dump.c mac-fdisk-0.1/dump.c
---- mac-fdisk-0.1.orig/dump.c	2006-09-02 22:18:56.138216000 +0900
-+++ mac-fdisk-0.1/dump.c	2006-09-02 22:22:06.305788000 +0900
+--- a/dump.c
++++ b/dump.c
 @@ -61,16 +61,16 @@
  // Global Constants
  //
@@ -185,9 +181,8 @@ diff -Nur mac-fdisk-0.1.orig/dump.c mac-fdisk-0.1/dump.c
  
  	bp = (BZB *) (p->dpme_bzb);
  	j = -1;
-diff -Nur mac-fdisk-0.1.orig/errors.c mac-fdisk-0.1/errors.c
---- mac-fdisk-0.1.orig/errors.c	2006-09-02 22:18:56.138216000 +0900
-+++ mac-fdisk-0.1/errors.c	2006-09-02 22:22:06.305788000 +0900
+--- a/errors.c
++++ b/errors.c
 @@ -30,6 +30,7 @@
  #include <string.h>
  #include <stdarg.h>
@@ -214,9 +209,8 @@ diff -Nur mac-fdisk-0.1.orig/errors.c mac-fdisk-0.1/errors.c
  	fprintf(stderr, "  (%s)\n", strerror(value));
      } else {
  	fprintf(stderr, "\n");
-diff -Nur mac-fdisk-0.1.orig/fdisk.c mac-fdisk-0.1/fdisk.c
---- mac-fdisk-0.1.orig/fdisk.c	2006-09-02 22:18:56.142216000 +0900
-+++ mac-fdisk-0.1/fdisk.c	2006-09-02 22:22:06.305788000 +0900
+--- a/fdisk.c
++++ b/fdisk.c
 @@ -71,12 +71,65 @@
  
  #include <sys/ioctl.h>
@@ -294,9 +288,8 @@ diff -Nur mac-fdisk-0.1.orig/fdisk.c mac-fdisk-0.1/fdisk.c
  {
  	if (argc > 3)
  		fatal(usage);
-diff -Nur mac-fdisk-0.1.orig/fdisklabel.c mac-fdisk-0.1/fdisklabel.c
---- mac-fdisk-0.1.orig/fdisklabel.c	2006-09-02 22:18:56.142216000 +0900
-+++ mac-fdisk-0.1/fdisklabel.c	2006-09-02 22:22:06.309788000 +0900
+--- a/fdisklabel.c
++++ b/fdisklabel.c
 @@ -35,6 +35,7 @@
     SUCH DAMAGE.
  */
@@ -410,9 +403,8 @@ diff -Nur mac-fdisk-0.1.orig/fdisklabel.c mac-fdisk-0.1/fdisklabel.c
  #endif
        if (pp->p_size % lp->d_secpercyl)
  	putc('*', f);
-diff -Nur mac-fdisk-0.1.orig/io.c mac-fdisk-0.1/io.c
---- mac-fdisk-0.1.orig/io.c	2006-09-02 22:18:56.142216000 +0900
-+++ mac-fdisk-0.1/io.c	2006-09-02 22:22:06.309788000 +0900
+--- a/io.c
++++ b/io.c
 @@ -33,8 +33,10 @@
  #else
  #ifdef __GLIBC__
@@ -433,9 +425,8 @@ diff -Nur mac-fdisk-0.1.orig/io.c mac-fdisk-0.1/io.c
  	return 0;
      }
  #ifndef __linux__
-diff -Nur mac-fdisk-0.1.orig/partition_map.c mac-fdisk-0.1/partition_map.c
---- mac-fdisk-0.1.orig/partition_map.c	2006-09-02 22:18:56.142216000 +0900
-+++ mac-fdisk-0.1/partition_map.c	2006-09-02 22:22:06.309788000 +0900
+--- a/partition_map.c
++++ b/partition_map.c
 @@ -105,7 +105,6 @@
      int fd;
      partition_map_header * map;
@@ -470,9 +461,8 @@ diff -Nur mac-fdisk-0.1.orig/partition_map.c mac-fdisk-0.1/partition_map.c
      map->media_size = number;
  
  #ifdef __linux__
-diff -Nur mac-fdisk-0.1.orig/pdisk.c mac-fdisk-0.1/pdisk.c
---- mac-fdisk-0.1.orig/pdisk.c	2006-09-02 22:18:56.142216000 +0900
-+++ mac-fdisk-0.1/pdisk.c	2006-09-02 22:22:06.309788000 +0900
+--- a/pdisk.c
++++ b/pdisk.c
 @@ -437,7 +437,6 @@
  {
      long base;

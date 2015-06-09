@@ -1,12 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/markups/markups-0.2.4-r1.ebuild,v 1.4 2014/12/28 12:12:30 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/markups/markups-0.2.4-r1.ebuild,v 1.5 2015/05/27 07:58:08 jlec Exp $
 
 EAPI="5"
 
 PYTHON_COMPAT=( python2_7 python{3_3,3_4} pypy )
-
-DISTUTILS_NO_PARALLEL_BUILD="true"
 
 inherit distutils-r1
 

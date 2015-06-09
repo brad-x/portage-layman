@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/paw/paw-2.14.04-r4.ebuild,v 1.2 2013/06/04 18:53:18 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/paw/paw-2.14.04-r4.ebuild,v 1.5 2015/06/01 05:12:45 jer Exp $
 
 EAPI=5
 
@@ -12,14 +12,14 @@ DEB_PR=8
 DEB_P=${DEB_PN}_${DEB_PV}
 
 DESCRIPTION="CERN's Physics Analysis Workstation data analysis program"
-HOMEPAGE="http://wwwasd.web.cern.ch/wwwasd/paw/index.html"
+HOMEPAGE="https://paw.web.cern.ch/paw/"
 SRC_URI="
 	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}.orig.tar.gz
 	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}-${DEB_PR}.debian.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2 LGPL-2 BSD"
-KEYWORDS="~amd64 ~hppa ~sparc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 hppa ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="

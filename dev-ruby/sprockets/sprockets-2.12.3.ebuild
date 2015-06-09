@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sprockets/sprockets-2.12.3.ebuild,v 1.1 2014/10/31 07:08:13 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sprockets/sprockets-2.12.3.ebuild,v 1.2 2015/05/14 08:17:39 graaff Exp $
 
 EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21"
@@ -35,6 +35,7 @@ ruby_add_bdepend "test? (
 		=dev-ruby/coffee-script-2*
 		=dev-ruby/execjs-2*
 		=dev-ruby/sass-3* >=dev-ruby/sass-3.1
+		dev-ruby/uglifier
 	)"
 
 all_ruby_prepare() {

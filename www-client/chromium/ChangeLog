@@ -1,6 +1,114 @@
 # ChangeLog for www-client/chromium
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/ChangeLog,v 1.1229 2015/04/23 05:12:36 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/ChangeLog,v 1.1251 2015/06/04 19:06:10 kensington Exp $
+
+  04 Jun 2015; Michael Palimaka <kensington@gentoo.org>
+  chromium-43.0.2357.65.ebuild, chromium-43.0.2357.73.ebuild,
+  chromium-44.0.2403.18.ebuild, chromium-44.0.2403.4.ebuild,
+  chromium-45.0.2414.0.ebuild:
+  Move various kde-base packages to kde-apps.
+
+*chromium-45.0.2414.0 (01 Jun 2015)
+
+  01 Jun 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  +chromium-45.0.2414.0.ebuild:
+  Dev channel bump. Use bundled libvpx (http://crbug.com/494939).
+
+*chromium-44.0.2403.18 (01 Jun 2015)
+
+  01 Jun 2015; Mike Gilbert <floppym@gentoo.org> +chromium-44.0.2403.18.ebuild,
+  -chromium-44.0.2398.0.ebuild:
+  Beta channel bump.
+
+*chromium-43.0.2357.73 (23 May 2015)
+
+  23 May 2015; Mike Gilbert <floppym@gentoo.org> +chromium-43.0.2357.73.ebuild:
+  Beta channel bump.
+
+  20 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  chromium-43.0.2357.65.ebuild, chromium-44.0.2403.4.ebuild:
+  Enable USE="proprietary-codecs" by default, bug #547800 by miflab.
+
+*chromium-44.0.2403.4 (20 May 2015)
+
+  20 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  -chromium-44.0.2391.0.ebuild, +chromium-44.0.2403.4.ebuild, metadata.xml:
+  Dev channel bump. Remove old.
+
+  20 May 2015; Agostino Sarubbo <ago@gentoo.org> -chromium-42.0.2311.135.ebuild,
+  -chromium-43.0.2357.52.ebuild:
+  Remove old
+
+  20 May 2015; Agostino Sarubbo <ago@gentoo.org> chromium-43.0.2357.65.ebuild:
+  Stable for x86, wrt bug #549944
+
+  20 May 2015; Agostino Sarubbo <ago@gentoo.org> chromium-43.0.2357.65.ebuild:
+  Stable for amd64, wrt bug #549944
+
+*chromium-43.0.2357.65 (17 May 2015)
+
+  17 May 2015; Mike Gilbert <floppym@gentoo.org> +chromium-43.0.2357.65.ebuild,
+  -chromium-43.0.2357.45.ebuild, chromium-43.0.2357.52.ebuild,
+  chromium-44.0.2398.0.ebuild:
+  Beta channel bump. Unpin dev-python/ply.
+
+  14 May 2015; Mike Gilbert <floppym@gentoo.org> chromium-43.0.2357.52.ebuild,
+  chromium-44.0.2398.0.ebuild:
+  Pin dev-python/ply-3.4 until bug 549328 is resolved.
+
+*chromium-44.0.2398.0 (13 May 2015)
+
+  13 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  -chromium-44.0.2383.0.ebuild, +chromium-44.0.2398.0.ebuild:
+  Dev channel bump. Remove old.
+
+*chromium-43.0.2357.52 (08 May 2015)
+
+  08 May 2015; Mike Gilbert <floppym@gentoo.org> +chromium-43.0.2357.52.ebuild,
+  -chromium-43.0.2357.18.ebuild:
+  Beta channel bump.
+
+  07 May 2015; Mike Gilbert <floppym@gentoo.org> chromium-44.0.2391.0.ebuild:
+  Use bundled libsecret headers to avoid buildtime dependency on libsecret. The
+  library is optionally dlopen-ed at runtime. Bug 538224.
+
+  07 May 2015; Agostino Sarubbo <ago@gentoo.org> -chromium-42.0.2311.90.ebuild:
+  Remove old
+
+  07 May 2015; Agostino Sarubbo <ago@gentoo.org> chromium-42.0.2311.135.ebuild:
+  Stable for x86, wrt bug #548108
+
+  07 May 2015; Agostino Sarubbo <ago@gentoo.org> chromium-42.0.2311.135.ebuild:
+  Stable for amd64, wrt bug #548108
+
+  06 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  chromium-42.0.2311.135.ebuild, chromium-43.0.2357.45.ebuild,
+  chromium-44.0.2391.0.ebuild:
+  Depend on >=app-crypt/libsecret-0.18, bug #548194 by Andrew John Hughes.
+
+*chromium-44.0.2391.0 (06 May 2015)
+
+  06 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  -chromium-44.0.2376.0.ebuild, +chromium-44.0.2391.0.ebuild:
+  Dev channel bump. Use bundled icu. Remove broken widevine support (bug
+  #547630 by Austin M. Matherne). Remove old.
+
+*chromium-43.0.2357.45 (06 May 2015)
+
+  06 May 2015; Mike Gilbert <floppym@gentoo.org> +chromium-43.0.2357.45.ebuild,
+  -chromium-43.0.2357.2.ebuild:
+  Bump.
+
+*chromium-42.0.2311.135 (01 May 2015)
+
+  01 May 2015; Mike Gilbert <floppym@gentoo.org> +chromium-42.0.2311.135.ebuild:
+  Stable channel bump.
+
+*chromium-44.0.2383.0 (01 May 2015)
+
+  01 May 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  -chromium-44.0.2369.0.ebuild, +chromium-44.0.2383.0.ebuild:
+  Dev channel bump. Remove old.
 
   23 Apr 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   chromium-44.0.2376.0.ebuild:

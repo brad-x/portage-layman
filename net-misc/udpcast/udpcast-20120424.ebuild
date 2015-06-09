@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/udpcast/udpcast-20120424.ebuild,v 1.5 2014/07/18 21:39:32 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/udpcast/udpcast-20120424.ebuild,v 1.6 2015/05/24 06:16:58 jer Exp $
 
 EAPI=5
 inherit eutils
@@ -16,11 +16,9 @@ KEYWORDS="amd64 x86"
 DEPEND="dev-lang/perl"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fd_set.patch
-	sed -i Makefile.in \
-		-e '/^LDFLAGS +=-s/d' \
-		-e '/^CFLAGS/s: -O6::g' \
-		|| die
+	epatch \
+		"${FILESDIR}"/${P}-fd_set.patch \
+		"${FILESDIR}"/${P}-gentoo.patch
 }
 
 src_install() {

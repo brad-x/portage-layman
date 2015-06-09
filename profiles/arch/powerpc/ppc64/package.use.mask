@@ -1,6 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ppc64/package.use.mask,v 1.64 2015/04/26 16:36:29 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ppc64/package.use.mask,v 1.68 2015/06/04 18:47:17 kensington Exp $
+
+# James Le Cuirot <chewi@gentoo.org> (21 May 2015)
+# Mask rdeps of icedtea-web to deal with bug #549134. I had hoped to
+# apply the ppc64 keyword today but it segfaulted upon testing.
+dev-java/icedtea nsplugin webstart
 
 # Jeroen Roovers <jer@gentoo.org> (26 Apr 2015)
 # Needs the entire LXDE to be useful (bug #520296)
@@ -40,7 +45,7 @@ gnome-extra/sushi office
 net-misc/networkmanager wimax
 
 # Kacper Kowalik <xarthisius@gentoo.org> (09 Mar 2012)
-# Mask media-video/ffmpeg[vpx] and media-video/mplayer[vpx] 
+# Mask media-video/ffmpeg[vpx] and media-video/mplayer[vpx]
 # on ppc64 as there is no stable version yet
 media-video/ffmpeg vpx
 
@@ -58,7 +63,7 @@ sys-auth/polkit kde
 
 # Alexey Shvetsov <alexxy@gentoo.org> (26 Jan 2011)
 # Mask gps for marble
-kde-base/marble	gps
+kde-apps/marble	gps
 
 # Pacho Ramos <pacho@gentoo.org> (08 Jul 2010)
 # Needs app-mobilephone/obex-data-server keyworded, bug 305913

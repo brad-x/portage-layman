@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jss/jss-4.3-r1.ebuild,v 1.1 2013/06/05 09:30:15 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jss/jss-4.3-r1.ebuild,v 1.4 2015/05/23 21:40:39 monsieurp Exp $
 
 EAPI="5"
 
@@ -45,12 +45,19 @@ java_prepare() {
 	epatch "${FILESDIR}"/${P}-secitem.patch
 }
 
+# See bug 539100.
+pkg_setup() {
+	linux-info_pkg_setup
+	java-pkg-2_pkg_setup
+}
+
 src_compile() {
 	export JAVA_GENTOO_OPTS="-source $(java-pkg_get-source) -target $(java-pkg_get-target)"
 
 	use amd64 && export USE_64=1
 
 	cd "${S}/security/coreconf" || die
+
 	# Hotfix for kernel 3.x #379283
 	get_running_version || die "Failed to determine kernel version"
 	if [[ ${KV_MAJOR} -ge 3 ]]; then

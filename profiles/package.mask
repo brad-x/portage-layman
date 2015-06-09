@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16506 2015/04/27 08:07:10 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16583 2015/06/08 07:33:00 grobian Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -22,13 +22,206 @@
 #
 ## Example:
 ##
-## # Dev E. Loper <developer@gentoo.org> (25 Jul 2014)
+## # Dev E. Loper <developer@gentoo.org> (23 May 2015)
 ## # Masked for removal in 30 days.  Doesn't work
 ## # with new libfoo. Upstream dead, gtk-1, smells
 ## # funny. (bug #987654)
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Fabian Groffen <grobian@gentoo.org> (08 Jun 2015)
+# Release candidates for 4.86, feel free to test
+=mail-mta/exim-4.86_rc1
+
+# Andreas K. Huettel <dilfridge@gentoo.org> (04 Jun 2015)
+# Perl 5.22 version bump in progress. Mask until everything is finishehd.
+=dev-lang/perl-5.22*
+=virtual/perl-Archive-Tar-2.40.0
+=virtual/perl-Attribute-Handlers-0.970.0
+=virtual/perl-B-Debug-1.230.0
+=virtual/perl-CPAN-2.110.0
+=virtual/perl-CPAN-Meta-2.150.1
+=virtual/perl-CPAN-Meta-Requirements-2.132.0
+=virtual/perl-Carp-1.360.0
+=virtual/perl-Compress-Raw-Bzip2-2.68.0
+=virtual/perl-Compress-Raw-Zlib-2.68.0
+=virtual/perl-DB_File-1.835.0
+=virtual/perl-Data-Dumper-2.158.0
+=virtual/perl-Devel-PPPort-3.310.0
+=virtual/perl-Digest-MD5-2.540.0
+=virtual/perl-Digest-SHA-5.950.0
+=virtual/perl-Exporter-5.720.0
+=virtual/perl-ExtUtils-CBuilder-0.280.221
+=virtual/perl-ExtUtils-Command-1.200.0
+=virtual/perl-ExtUtils-Install-2.40.0
+=virtual/perl-ExtUtils-MakeMaker-7.40.100_rc
+=virtual/perl-ExtUtils-ParseXS-3.280.0
+=virtual/perl-File-Spec-3.560.0
+=virtual/perl-Filter-Simple-0.920.0
+=virtual/perl-Getopt-Long-2.450.0
+=virtual/perl-HTTP-Tiny-0.54.0
+=virtual/perl-IO-1.350.0
+=virtual/perl-IO-Compress-2.68.0
+=virtual/perl-IO-Socket-IP-0.370.0
+=virtual/perl-JSON-PP-2.273.0
+=virtual/perl-Locale-Maketext-1.260.0
+=virtual/perl-MIME-Base64-3.150.0
+=virtual/perl-Math-BigInt-1.999.700
+=virtual/perl-Math-BigRat-0.260.800
+=virtual/perl-Module-Load-Conditional-0.640.0
+
+# Michał Górny <mgorny@gentoo.org> (04 Jun 2015)
+# New version of PyPy. Masked for testing and binary package build.
+~dev-python/pypy-2.6.0
+~dev-python/pypy-bin-2.6.0
+~virtual/pypy-2.6.0
+
+# Andreas K. Huettel <dilfridge@gentoo.org> (04 Jun 2015)
+# Mask Perl 5.20.1 for removal.
+=dev-lang/perl-5.20.1-r4
+=virtual/perl-Storable-2.490.0
+=virtual/perl-Module-CoreList-5.20.1
+=virtual/perl-File-Spec-3.480.0
+=virtual/perl-CPAN-2.0.5
+
+# Pawel Hajdan, Jr. <phajdan.jr@gentoo.org> (01 Jun 2015)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+>=www-client/chromium-45
+
+# Johannes Huber <johu@gentoo.org> (31 May 2015)
+# KDE Plasma 5.3.1. Masked for testing.
+# General guide: https://wiki.gentoo.org/wiki/KDE
+# Upgrade guide: https://wiki.gentoo.org/wiki/KDE/Plasma_5_upgrade
+~kde-plasma/baloo-5.9.1
+~kde-plasma/bluedevil-5.3.1
+~kde-plasma/bluez-qt-5.3.1
+~kde-plasma/breeze-5.3.1
+~kde-plasma/kde-cli-tools-5.3.1
+~kde-plasma/kde-gtk-config-5.3.1
+~kde-plasma/kdecoration-5.3.1
+~kde-plasma/kdeplasma-addons-5.3.1
+~kde-plasma/kfilemetadata-5.9.1
+~kde-plasma/khelpcenter-5.3.1
+~kde-plasma/khotkeys-5.3.1
+~kde-plasma/kinfocenter-5.3.1
+~kde-plasma/kio-extras-5.3.1
+~kde-plasma/kmenuedit-5.3.1
+~kde-plasma/kscreen-5.3.1
+~kde-plasma/ksshaskpass-5.3.1
+~kde-plasma/ksysguard-5.3.1
+~kde-plasma/kwayland-5.3.1
+~kde-plasma/kwin-5.3.1
+~kde-plasma/kwrited-5.3.1
+~kde-plasma/libkscreen-5.3.1
+~kde-plasma/libksysguard-5.3.1
+~kde-plasma/milou-5.3.1
+~kde-plasma/oxygen-5.3.1
+~kde-plasma/plasma-desktop-5.3.1
+~kde-plasma/plasma-mediacenter-5.3.1
+~kde-plasma/plasma-meta-5.3.1
+~kde-plasma/plasma-nm-5.3.1
+~kde-plasma/plasma-sdk-5.3.1
+~kde-plasma/plasma-workspace-5.3.1
+~kde-plasma/plasma-workspace-wallpapers-5.3.1
+~kde-plasma/polkit-kde-agent-5.3.1
+~kde-plasma/powerdevil-5.3.1
+~kde-plasma/sddm-kcm-5.3.1
+~kde-plasma/systemsettings-5.3.1
+
+# Matthias Maier <tamiko@gentoo.org> (27 May 2015)
+# on behalf of Andreas K. Huettel <dilfridge@gentoo.org>
+# media-libs/lcms:0 has serious security issues and is unmaintained,
+# see bug 526642. Please uninstall it and/or upgrade to media-libs/lcms:2
+# # (Please keep this mask and message in place for a month.)
+media-libs/lcms:0
+
+# Hans de Graaff <graaff@gentoo.org> (25 May 2015)
+# With the wwwold services going offline gorg no longer plays a role
+# in Gentoo's web environment. The wwwold services went offline due to
+# issues with gorg and instead of trying to fix them it was decided to
+# move the offline date forward. Consequently gorg will now also be
+# masked for removal in 30 days.
+www-servers/gorg
+
+# Patrice Clement <monsieurp@gentoo.org> (25 May 2015)
+# Upstream dead. Project no longer supported by the ASF 
+# who moved it into the Attic in 2010.
+# See #550326. Masked for removal in 30 days.
+dev-java/excalibur-logger
+
+# Pacho Ramos <pacho@gentoo.org> (23 May 2015)
+# Unmaintained for ages and no longer useful, also multiple
+# opened and unresolved bugs for them (#535844). Removal in a month.
+gpe-base/gpe-calculator
+gpe-base/gpe-contacts
+gpe-base/gpe-dm
+gpe-base/gpe-gallery
+gpe-base/gpe-icons
+gpe-base/gpe-login
+gpe-base/gpe
+gpe-base/libcontactsdb
+gpe-base/libdisplaymigration
+gpe-base/libeventdb
+gpe-base/libgpelaunch
+gpe-base/libgpepimc
+gpe-base/libgpevtype
+gpe-base/libgpewidget
+gpe-base/libgtkstylus
+gpe-base/libhandoff
+gpe-base/libmimedir
+gpe-base/libschedule
+gpe-base/libtododb
+gpe-utils/gpe-clock
+gpe-utils/gpe-edit
+gpe-utils/gpe-filemanager
+gpe-utils/gpe-ownerinfo
+gpe-utils/gpe-plucker
+gpe-utils/gpe-taskmanager
+gpe-utils/gpe-what
+games-puzzle/gpe-lights
+games-misc/gpe-julia
+
+# Anthony G. Basile <blueness@gentoo.org> (14 May 2015)
+# No longer required by any packages in the tree.
+# Masked for removal in 30 days.
+sys-apps/getent
+
+# Patrice Clement <monsieurp@gentoo.org) (13 May 2015)
+# Unused package, homepage dead, no revdeps. 
+# Fails to compile with recent JVMs, see bug #549090.
+# Last release dates back to 2010.
+# Masked for removal in 30 days.
+dev-java/xt
+
+# Ian Delaney <idella4@gentoo.org> (13 May 2015)
+# package unused, no revdeps, obsolete.
+# masked for removal in 30 days
+dev-python/gevent-zeromq
+
+# Mike Gilbert <floppym@gentoo.org> (06 May 2015)
+# Obsolete development snapshots.
+>=app-emulation/open-vm-tools-2013
+>=app-emulation/open-vm-tools-kmod-2013
+
+# Brian Evans <grknight@gentoo.org> (30 Apr 2015)
+# It is unclear if dev-php/smarty-2* is affected by
+# security bug 526542.  Masked for removal in 30 days
+# Please update your code to the latest version
+<dev-php/smarty-2.6.29
+=dev-php/PEAR-PhpDocumentor-1.4.4
+
+# Ryan Hill <rhill@gentoo.org> (28 Apr 2015)
+# Moving to /lib/gentoo/functions.sh broke the eclass
+# by changing output it relies on. See bug #504118,
+# 547586, and 547962.
+>=sys-devel/gcc-config-1.8-r1
+
+# Sebastian Pipping <sping@gentoo.org> (28 Apr 2015)
+# Get rid of vulnerable releases.
+# Masked for removal in 30 days.
+<www-apps/wordpress-4.2.1
 
 # Hans de Graaff <graaff@gentoo.org> (27 Apr 2015)
 # This version of rubinius is old and only very few
@@ -38,193 +231,18 @@
 # versions ready. Masked for removal in 30 days.
 =dev-lang/rubinius-1*
 
-# Hans de Graaff <graaff@gentoo.org> (27 Apr 2015)
-# rubyforge.org has not been available for almost a year, making the
-# rubyforge package obsolete. echoe is a leaf package that still
-# depends on it. Masked for removal in 30 days.
-dev-ruby/echoe
-dev-ruby/rubyforge
-
-# Hans de Graaff <graaff@gentoo.org> (26 Apr 2015)
-# Ruby packages that only work with ruby19. Masked for removal in 30
-# days.
-#
-# Only compatible with ruby19.
-app-misc/booh
-# Only compatible with ruby19. New versions bring in many new
-# dependencies and this would require a dedicated maintainer.
-dev-ruby/adhearsion
-dev-ruby/adhearsion-loquacious
-# Newer versions depend on beta versions of unreleased and
-# unmaintained software. No upstream release in two years.
-dev-ruby/em-http-request
-# Old slot, nothing in the tree depends on it.
-dev-ruby/haml:0
-# Only compatible with ruby19.
-dev-ruby/ipaddress
-
-# Sergey Popov <pinkbyte@gentoo.org> (24 Apr 2015)
-# Dead upstream, nothing in tree uses it
-# Masked for removal in 30 days
-net-libs/libcapsinetwork
-
-# Michael Sterrett <mr_bones_@gentoo.org> (21 Apr 2015)
-# Upstream has discontinued the project; doesn't build on modern systems.
-# Bug #510262
-# masked for removal on 20150521
-games-util/searchtool
-
-# Michael Sterrett <mr_bones_@gentoo.org> (21 Apr 2015)
-# Upstream is dead; doesn't build on modern systems.
-# masked for removal on 20150521
-games-strategy/freecnc
-
-# Hans de Graaff <graaff@gentoo.org> (19 Apr 2015)
-# Pure-ruby implementation of dev-ruby/json for uses where a compiled
-# version is not possible. This implementation is not needed on Gentoo
-# and slower than the compiled version, so all packages should depend
-# on dev-ruby/json instead. Nothing depends on this package.
-# Removal in 30 days.
-dev-ruby/json_pure
-
-# James Le Cuirot <chewi@gentoo.org> (18 Apr 2015)
-# Old, unmaintained, not used by anything, and superseded by
-# plexus-classworlds. There is a newer version in java-overlay that
-# can't go yet but will go eventually. Removal in 30 days.
-dev-java/classworlds
-
-# Pawel Hajdan, Jr. <phajdan.jr@gentoo.org> (17 Apr 2015)
-# Dev channel releases are only for people who are developers or want more
-# experimental features and accept a more unstable release.
->=www-client/chromium-44
-
-# James Le Cuirot <chewi@gentoo.org> (14 Apr 2015)
-# Not updated beyond Java 6, no longer supported upstream, full of
-# holes, and probably doesn't work. This is the last VM currently
-# available to FreeBSD until we try icedtea but BSD team are cool with
-# this. Removal in 30 days.
-dev-java/diablo-jdk
-dev-java/diablo-jre-bin
-
-# Patrice Clement <monsieurp@gentoo.org> (14 Apr 2014)
-# Upstream seems to be dead. No updates since 12 March 2007.
-# Masked for removal in 30 days. See bug 546506.
-dev-java/openjms
-
-# Andreas K. Huettel <dilfridge@gentoo.org> (11 Apr 2015)
-# media-libs/lcms:0 has serious security issues, is unmaintained
-# and will be removed soon, see bug 526642
-# Here we remove its last unconditional/unported reverse dependencies,
-# media-libs/sk1libs media-gfx/uniconvw sci-libs/libecwj2
-# (removal in 30 days).
-media-gfx/uniconvw
-media-libs/sk1libs
-sci-libs/libecwj2
-
 # Patrick Lauer <patrick@gentoo.org> (10 Apr 2015)
 # Breaks pretty much all consumers, like samba
 # Mask until it's more usable
 >=net-libs/gnutls-3.4.0
 
-# Michael Sterrett <mr_bones_@gentoo.org> (08 Apr 2015)
-# Upstream went away; GPL but no source.
-# masked for removal on 20150508
-games-arcade/mtp-target-bin
-
-# Andreas K. Huettel <dilfridge@gentoo.org) (07 Apr 2015)
-# EAPI=1, last upstream release 2007, last significant
-# ebuild commit 2007. Masked for removal in 30 days.
-# Bug 540796 and bug 540812
-app-laptop/gtkpbbuttons
-app-laptop/gkrellm-pmu
-
-# Aaron Bauman <bman@gentoo.org> (6 Apr 2015)
-# Superseded by net-misc/gns3-gui and net-misc/gns3-server.
-# Removal in 30 days.
-net-misc/gns3
-
-# Maciej Mrozowski <reavertm@gentoo.org> (06 Apr 2015)
-# Does not link against latest ncurses and no interest to fix it.
-# Superseded by LVM2 and all clusters should be migrated by now.
-# Removal in 30 days.
-sys-fs/evms
-
-# James Le Cuirot <chewi@gentoo.org> (05 Apr 2015)
-# A 32-on-64 Java VM is no longer considered necessary and a multilib
-# icedtea-bin would be preferred anyway. sun-j2me-bin depends on this
-# but it has been superseded by Oracle's JME and I doubt we'll ever
-# need that either. Removal in 30 days.
-app-emulation/emul-linux-x86-java
-dev-java/sun-j2me-bin
-
 # Christoph Junghans <ottxor@gentoo.org> (3 Apr 2015)
 # Dead upstream. Fails to build (bug #543644).
 >=sys-devel/dragonegg-3.6
 
-# Mikle Kolyada <zlogene@gentoo.org> (2 Apr 2015)
-# Dead upstream. Fails tests (byg #442770).
-# Doesn't build with never perl versions.
-# Masked for removal in 30 days.
-dev-perl/Apache-AuthTicket
-
-# Matthew Thode <prometheanfire@gentoo.org> (2 Apr 2015)
-# removing firmware package I accidently added
-# people should move to linux-firmware
-# Masked for removal in 30 days
-sys-firmware/iwl7265-ucode
-
-# Andreas K. Huettel <dilfridge@gentoo.org> (2 Apr 2015)
-# Ancient, dead upstream. File collisions (bug 535700)
-# and build failures (bug 277670). Masked for removal in
-# 30 days.
-dev-perl/Eidetic
-app-admin/rackview
-
-# Michael Sterrett <mr_bones_@gentoo.org> (30 Mar 2015)
-# Not used by anything in the tree and no upstream anymore.
-# masked for removal on 20150429
-dev-games/libgrapple
-
-# Michael Sterrett <mr_bones_@gentoo.org> (30 Mar 2015)
-# Masked since 2011 because of fmod:0 dep.  Things haven't
-# improved so...
-# masked for removal on 20150429
-games-simulation/stoned-bin
-games-sports/racer-bin
-games-strategy/savage-bin
-games-puzzle/drod-bin
-
-# Michael Sterrett <mr_bones_@gentoo.org> (30 Mar 2015)
-# Last release in 2004; doesn't work with newer tcl
-# masked for removal on 20150429
-games-strategy/xconq
-
-# Michael Sterrett <mr_bones_@gentoo.org> (30 Mar 2015)
-# Last release in 2001; doesn't build on modern systems.
-# masked for removal on 20150429
-games-emulation/tuxnes
-
-# Michael Sterrett <mr_bones_@gentoo.org> (30 Mar 2015)
-# Unfetchable.
-# masked for removal on 20150429
-games-action/descent1-maps
-games-fps/doom3-phantasm
-games-fps/enemy-territory-fortress
-games-fps/quake1-ctf
-games-fps/quake3-brainworks
-games-fps/ut2004-da2
-games-fps/ut2004-damnation
-games-rpg/rain-slick
-games-server/bf1942-desertcombat
-games-strategy/dominions2-demo
-
-# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (30 Mar 2015)
-# Does not build against glibc-2.20 or modern X servers, bug #544904.
-# Removal in 30 days.
-<x11-drivers/xf86-input-synaptics-1.7
-
 # Andreas K. Huettel <dilfridge@gentoo.org> (29 Mar 2015)
 # Mask Perl 5.18 for removal. Please upgrade to Perl 5.20
+# Will be removed with the Perl 5.22 version bump.
 =dev-lang/perl-5.18.2-r2
 =virtual/perl-Archive-Tar-1.900.0-r2
 =virtual/perl-Attribute-Handlers-0.940.0-r1
@@ -295,16 +313,11 @@ games-strategy/dominions2-demo
 =virtual/perl-threads-1.860.0-r4
 =virtual/perl-version-0.990.200-r1
 
-# Ben de Groot <yngwin@gentoo.org> (29 Mar 2015)
-# Merged with qtcurve-qt4 into x11-themes/qtcurve (with gtk useflag)
-# Removal in 30 days. See also bug #544406.
-x11-themes/gtk-engines-qtcurve
-
 # Michał Górny <mgorny@gentoo.org> (28 Mar 2015)
 # on behalf of gx86-multilib project <multilib@gentoo.org>
-# Mask emul-linux-x86 packages along with unported old versions
-# of reverse dependencies for removal in 60 days, bug #544876.
-# Please use multilib ebuilds with abi_x86_32 instead.
+# Removed lastrited emul-linux-x86. The mask is kept post-removal
+# per Arfrever's request so that the PM warns about masked packages
+# being installed.
 app-emulation/emul-linux-x86-baselibs
 app-emulation/emul-linux-x86-cpplibs
 app-emulation/emul-linux-x86-db
@@ -319,23 +332,6 @@ app-emulation/emul-linux-x86-sdl
 app-emulation/emul-linux-x86-soundlibs
 app-emulation/emul-linux-x86-xlibs
 app-emulation/emul-linux-x86-jna
-<x11-drivers/ati-drivers-14
-
-# James Le Cuirot <chewi@gentoo.org> (28 Mar 2015)
-# Formerly required by NetBeans. Upstream has been dead for
-# years. Removal in 30 days.
-dev-java/jna-posix
-
-# Ian Delaney <idella4@gentoo.org> (28 Mar 2015)
-# old package with no active maintainers
-# No evidence of support or use.
-# Masked for removal in 30 days.
-sci-geosciences/LatLongUTMconversion
-
-# Ian Delaney <idella4@gentoo.org> (24 Mar 2015)
-# the cffi requires setting ':=' which isn't reliable in a virtual
-# Masked while a solution is found
-virtual/python-cffi
 
 # Brian Evans <grknight@gentoo.org> (22 Mar 2015)
 # PHP 5.3.x is vulnerable to several security bugs and has
@@ -375,12 +371,6 @@ virtual/httpd-php:5.3
 # Anthony G. Basile <blueness@gentoo.org> (28 Jan 2015)
 # Its broken and we're waiting for fixes from upstream, bug #536196
 =net-misc/tor-0.2.6.2_alpha-r1
-
-# Mikle Kolyada <zlogene@gentoo.org> (22 Jan 2015)
-# Unclear license (bug 253443).
-# No one uses it anymore. You can
-# use dev-perl/Geo-IP instead.
-dev-perl/IP-Country
 
 # Anthony G. Basile <blueness@gentoo.org> (9 Jan 2015)
 # p.mask the -9999 version
@@ -439,7 +429,7 @@ www-apps/trac-downloads
 
 # Markos Chandras <hwoarang@gentoo.org> (18 Nov 2014)
 # Mask latest development version for testing
-=x11-misc/lightdm-1.14*
+=x11-misc/lightdm-1.15*
 
 # Samuli Suominen <ssuominen@gentoo.org> (05 Nov 2014)
 # ConsoleKit2 from github by Eric Koegel, auth of xfce4-power-manager
@@ -519,23 +509,6 @@ sys-block/afacli
 # Needs work, but infra needs it for new VM boxes
 app-emulation/openstack-guest-agents-unix
 app-emulation/xe-guest-utilities
-
-# Mike Gilbert <floppym@gentoo.org> (10 Jun 2014)
-# Masked due to pending dev-python/imaging removal, bug 471488.
-media-sound/decibel-audio-player
-=net-im/pymsn-t-0.11.3-r3
-
-# Tom Wijsman <TomWij@gentoo.org> (8 Jun 2014)
-# Mask VLC ebuilds that are affected with security bug CVE-2013-6934:
-#
-#     A vulnerability has been discovered in VLC Media Player, which can be
-#     exploited by malicious people to compromise a user's system.
-#
-# Some ebuilds also have other buffer and integer overflow security bugs like
-# CVE-2013-1954, CVE-2013-3245, CVE-2013-4388 and CVE-2013-6283.
-#
-# Users should consider to upgrade VLC Media Player to at least version 2.1.2.
-<media-video/vlc-2.1.2
 
 # Tom Wijsman <TomWij@gentoo.org> (6 Jun 2014)
 # Mask gentoo-sources ebuilds that are affected with security bug CVE-2014-3153.
@@ -679,10 +652,6 @@ games-emulation/mupen64plus-ui-console
 games-emulation/mupen64plus-video-glide64mk2
 games-emulation/mupen64plus-video-rice
 games-emulation/m64py
-
-# Tiziano Müller <dev-zero@gentoo.org> (24 Oct 2013)
-# Mask mainline version branch
-=www-servers/nginx-1.5*
 
 # Justin Lecher <jlec@gentoo.org> (14 Oct 2013)
 # Seems to break all deps - API change?
@@ -854,9 +823,6 @@ kde-misc/kgtk
 # Samuli Suominen <ssuominen@gentoo.org> (30 Oct 2011)
 # Masked for security bug #294253, use only at your own risk!
 =media-libs/fmod-3*
-games-simulation/stoned-bin
-games-sports/racer-bin
-games-strategy/savage-bin
 
 # Peter Volkov <pva@gentoo.org> (23 Jul 2011)
 # Mask release candidates

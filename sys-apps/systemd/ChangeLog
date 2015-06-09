@@ -1,6 +1,48 @@
 # ChangeLog for sys-apps/systemd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.366 2015/04/27 12:35:00 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.375 2015/05/30 18:08:36 floppym Exp $
+
+  30 May 2015; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Depend on >=sys-apps/util-linux-2.26, bug 550832 by Elias Probst.
+
+  30 May 2015; Mike Gilbert <floppym@gentoo.org> systemd-216-r3.ebuild,
+  systemd-218-r3.ebuild, systemd-219_p112.ebuild, systemd-220-r2.ebuild,
+  systemd-9999.ebuild:
+  Remove obsolete postinst messages.
+
+  30 May 2015; Pacho Ramos <pacho@gentoo.org> systemd-216-r3.ebuild,
+  systemd-218-r3.ebuild, systemd-219_p112.ebuild, systemd-220-r2.ebuild,
+  systemd-9999.ebuild:
+  Drop systemd-ui references as it's dead and will be removed soon
+
+  30 May 2015; Pacho Ramos <pacho@gentoo.org> -systemd-215-r3.ebuild,
+  -systemd-216-r4.ebuild, -systemd-219-r2.ebuild, -systemd-220-r1.ebuild,
+  -systemd-220.ebuild:
+  Drop old
+
+  29 May 2015; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Convert to a more traditional live ebuild.
+
+  28 May 2015; Mike Gilbert <floppym@gentoo.org> systemd-220-r2.ebuild:
+  Add manpage deps due to autoreconf, bug 550704.
+
+*systemd-220-r2 (28 May 2015)
+
+  28 May 2015; Mike Gilbert <floppym@gentoo.org> +systemd-220-r2.ebuild,
+  systemd-220-r1.ebuild, systemd-9999.ebuild:
+  More backports.
+
+*systemd-220-r1 (26 May 2015)
+
+  26 May 2015; Mike Gilbert <floppym@gentoo.org> +systemd-220-r1.ebuild:
+  Backport a regression fix for udev inotify handling, bug 550358. Thanks to
+  Matthias Dahl and poncho.
+
+*systemd-220 (24 May 2015)
+
+  24 May 2015; Mike Gilbert <floppym@gentoo.org> +systemd-220.ebuild,
+  systemd-9999.ebuild:
+  Version bump.
 
   27 Apr 2015; Agostino Sarubbo <ago@gentoo.org> systemd-216-r3.ebuild:
   Stable for sparc, wrt bug #525112

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/youtube-dl-2015.04.03.ebuild,v 1.6 2015/04/26 06:42:59 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/youtube-dl-2015.04.03.ebuild,v 1.8 2015/05/02 09:14:51 jer Exp $
 
 EAPI=5
 
@@ -50,6 +50,8 @@ src_prepare() {
 			$( printf 'youtube_dl/extractor/%s.py ' ${mxxx[@]} ) \
 			test/test_age_restriction.py || die
 	fi
+
+	epatch_user
 }
 
 src_compile() {

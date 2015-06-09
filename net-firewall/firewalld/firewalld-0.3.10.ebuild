@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/firewalld/firewalld-0.3.10.ebuild,v 1.2 2015/04/13 06:32:01 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/firewalld/firewalld-0.3.10.ebuild,v 1.5 2015/05/27 11:15:52 ago Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
@@ -15,7 +15,7 @@ SRC_URI="https://fedorahosted.org/released/firewalld/${P}.tar.bz2
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="gui"
 
 RDEPEND="${PYTHON_DEPS}
@@ -56,6 +56,7 @@ src_install() {
 	emake -C config DESTDIR="${D}" install
 	emake -C po DESTDIR="${D}" install
 	emake -C shell-completion DESTDIR="${D}" install
+	emake -C doc DESTDIR="${D}" install
 
 	install_python() {
 		emake -C src DESTDIR="${D}" pythondir="$(python_get_sitedir)" install
@@ -67,8 +68,6 @@ src_install() {
 	python_replicate_script "${D}/usr/sbin/firewalld"
 
 	# Get rid of junk
-	rm -f "${D}/etc/rc.d/init.d/firewalld"
-	rm -f "${D}/etc/sysconfig/firewalld"
 	rm -rf "${D}/etc/rc.d/"
 	rm -rf "${D}/etc/sysconfig/"
 

@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.11 2015/04/08 18:45:26 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql/postgresql-9999.ebuild,v 1.12 2015/05/22 14:06:33 titanofold Exp $
 
 EAPI="5"
 
-PYTHON_COMPAT=( python{2_7,3_{3,4}} )
+PYTHON_COMPAT=( python{2_{6,7},3_{2,3,4}} )
 
 inherit base eutils flag-o-matic git-2 linux-info multilib pam prefix \
 		python-single-r1 systemd user versionator
@@ -83,8 +83,17 @@ RDEPEND="${CDEPEND}
 selinux? ( sec-policy/selinux-postgresql )
 "
 
+pkg_pretend() {
+	ewarn "You are using a live ebuild that uses the current source code as it is"
+	ewarn "available from PostgreSQL's Git repository at emerge time. Given such,"
+	ewarn "the GNU Makefiles may be altered by upstream without notice and the"
+	ewarn "documentation for this live version is not readily available"
+	ewarn "online. Ergo, the ebuild maintainers will not support building a"
+	ewarn "client-only and/or document-free version."
+}
+
 pkg_setup() {
-	use server && CONFIG_CHECK="~SYSVIPC" linux-info_pkg_setup
+	CONFIG_CHECK="~SYSVIPC" linux-info_pkg_setup
 
 	enewgroup postgres 70
 	enewuser postgres 70 /bin/bash /var/lib/postgresql postgres
@@ -99,8 +108,6 @@ src_prepare() {
 	# Set proper run directory
 	sed "s|\(PGSOCKET_DIR\s\+\)\"/tmp\"|\1\"${EPREFIX}/run/postgresql\"|" \
 		-i src/include/pg_config_manual.h || die
-
-	use server || epatch "${FILESDIR}/${PN}-${SLOT}-no-server.patch"
 
 	if use pam ; then
 		sed -e "s/\(#define PGSQL_PAM_SERVICE \"postgresql\)/\1-${SLOT}/" \
@@ -149,30 +156,13 @@ src_configure() {
 }
 
 src_compile() {
-	emake
-	emake -C contrib
-
-	# If use doc, generate all documentation, otherwise just the
-	# man pages
-	#use doc && emake -C doc || emake -C doc man
+	emake world
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	emake DESTDIR="${D}" install -C contrib
+	emake DESTDIR="${D}" install-world
 
 	dodoc README HISTORY doc/{TODO,bug.template}
-
-	# We use ${SLOT} instead of doman for postgresql.eselect
-	#insinto /usr/share/postgresql-${SLOT}/man/
-	#doins -r doc/src/sgml/man{1,3,7}
-	#if ! use server; then
-	#	# Remove man pages for non-existent binaries
-	#	for m in {initdb,pg_{controldata,ctl,resetxlog},post{gres,master}}; do
-	#		rm "${ED}/usr/share/postgresql-${SLOT}/man/man1/${m}.1"
-	#	done
-	#fi
-	#docompress /usr/share/postgresql-${SLOT}/man/man{1,3,7}
 
 	insinto /etc/postgresql-${SLOT}
 	newins src/bin/psql/psqlrc.sample psqlrc
@@ -183,35 +173,25 @@ src_install() {
 
 	use static-libs || find "${ED}" -name '*.a' -delete
 
-	#if use doc ; then
-	#	docinto html
-	#	dodoc doc/src/sgml/html/*
+	sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+		"${FILESDIR}/${PN}.confd" | newconfd - ${PN}-${SLOT}
 
-	#	docinto sgml
-	#	dodoc doc/src/sgml/*.{sgml,dsl}
-	#fi
+	sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+		"${FILESDIR}/${PN}.init" | newinitd - ${PN}-${SLOT}
 
-	if use server; then
-		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
-			"${FILESDIR}/${PN}.confd" | newconfd - ${PN}-${SLOT}
+	sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
+		"${FILESDIR}/${PN}.service" | \
+		systemd_newunit - ${PN}-${SLOT}.service
 
-		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
-			"${FILESDIR}/${PN}.init" | newinitd - ${PN}-${SLOT}
+	systemd_newtmpfilesd "${FILESDIR}"/${PN}.tmpfilesd ${PN}-${SLOT}.conf
 
-		sed -e "s|@SLOT@|${SLOT}|g" -e "s|@LIBDIR@|$(get_libdir)|g" \
-			"${FILESDIR}/${PN}.service" | \
-			systemd_newunit - ${PN}-${SLOT}.service
+	newbin "${FILESDIR}"/${PN}-check-db-dir ${PN}-${SLOT}-check-db-dir
 
-		systemd_newtmpfilesd "${FILESDIR}"/${PN}.tmpfilesd ${PN}-${SLOT}.conf
+	use pam && pamd_mimic system-auth ${PN}-${SLOT} auth account session
 
-		newbin "${FILESDIR}"/${PN}-check-db-dir ${PN}-${SLOT}-check-db-dir
-
-		use pam && pamd_mimic system-auth ${PN}-${SLOT} auth account session
-
-		if use prefix ; then
-			keepdir /run/postgresql
-			fperms 0775 /run/postgresql
-		fi
+	if use prefix ; then
+		keepdir /run/postgresql
+		fperms 0775 /run/postgresql
 	fi
 }
 
@@ -221,29 +201,27 @@ pkg_postinst() {
 	elog "If you need a global psqlrc-file, you can place it in:"
 	elog "    ${EROOT%/}/etc/postgresql-${SLOT}/"
 
-	if use server ; then
-		elog
-		elog "Gentoo specific documentation:"
-		elog "https://wiki.gentoo.org/wiki/PostgreSQL"
-		elog
-		elog "Official documentation:"
-		elog "http://www.postgresql.org/docs/${SLOT}/static/index.html"
-		elog
-		elog "The default location of the Unix-domain socket is:"
-		elog "    ${EROOT%/}/run/postgresql/"
-		elog
-		elog "Before initializing the database, you may want to edit PG_INITDB_OPTS"
-		elog "so that it contains your preferred locale in:"
-		elog "    ${EROOT%/}/etc/conf.d/postgresql-${SLOT}"
-		elog
-		elog "Then, execute the following command to setup the initial database"
-		elog "environment:"
-		elog "    emerge --config =${CATEGORY}/${PF}"
-	fi
+	elog
+	elog "Gentoo specific documentation:"
+	elog "https://wiki.gentoo.org/wiki/PostgreSQL"
+	elog
+	elog "Official documentation:"
+	elog "${EROOT%/}/usr/share/doc/${PF}/html"
+	elog
+	elog "The default location of the Unix-domain socket is:"
+	elog "    ${EROOT%/}/run/postgresql/"
+	elog
+	elog "Before initializing the database, you may want to edit PG_INITDB_OPTS"
+	elog "so that it contains your preferred locale, and other options, in:"
+	elog "    ${EROOT%/}/etc/conf.d/postgresql-${SLOT}"
+	elog
+	elog "Then, execute the following command to setup the initial database"
+	elog "environment:"
+	elog "    emerge --config =${CATEGORY}/${PF}"
 }
 
 pkg_prerm() {
-	if use server && [[ -z ${REPLACED_BY_VERSION} ]] ; then
+	if [[ -z ${REPLACED_BY_VERSION} ]] ; then
 		ewarn "Have you dumped and/or migrated the ${SLOT} database cluster?"
 		ewarn "\thttps://wiki.gentoo.org/wiki/PostgreSQL/QuickStart#Migrating_PostgreSQL"
 
@@ -258,8 +236,6 @@ pkg_postrm() {
 }
 
 pkg_config() {
-	use server || die "USE flag 'server' not enabled. Nothing to configure."
-
 	[[ -f "${EROOT%/}/etc/conf.d/postgresql-${SLOT}" ]] \
 		&& source "${EROOT%/}/etc/conf.d/postgresql-${SLOT}"
 	[[ -z "${PGDATA}" ]] && PGDATA="${EROOT%/}/etc/postgresql-${SLOT}/"
@@ -380,17 +356,15 @@ pkg_config() {
 src_test() {
 	einfo ">>> Test phase [check]: ${CATEGORY}/${PF}"
 
-	if use server && [[ ${UID} -ne 0 ]] ; then
+	if [[ ${UID} -ne 0 ]] ; then
 		emake check
 
 		einfo "If you think other tests besides the regression tests are necessary, please"
 		einfo "submit a bug including a patch for this ebuild to enable them."
 	else
-		use server || \
-			ewarn 'Tests cannot be run without the "server" use flag enabled.'
 		[[ ${UID} -eq 0 ]] || \
-			ewarn 'Tests cannot be run as root. Enable "userpriv" in FEATURES.'
+			ewarn "Tests cannot be run as root. Enable 'userpriv' in FEATURES."
 
-		ewarn 'Skipping.'
+		ewarn "Skipping."
 	fi
 }

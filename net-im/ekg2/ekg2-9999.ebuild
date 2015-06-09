@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ekg2/ekg2-9999.ebuild,v 1.10 2015/04/08 18:03:12 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/ekg2/ekg2-9999.ebuild,v 1.12 2015/05/21 14:38:52 mgorny Exp $
 
 EAPI=5
 
@@ -23,10 +23,10 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gadu gpm gpg gtk minimal ncurses nls nntp openssl
-	perl python readline rss spell sqlite sqlite2 ssl xmpp unicode zlib"
+	perl python readline rss spell sqlite ssl xmpp unicode zlib"
 
 RDEPEND="dev-libs/glib:2=
-	gadu? ( net-libs/libgadu:0= )
+	gadu? ( <net-libs/libgadu-1.12:0= )
 	gpg? ( app-crypt/gpgme:1= )
 	gtk? ( x11-libs/gtk+:2= )
 	nls? ( virtual/libintl:0= )
@@ -42,9 +42,7 @@ RDEPEND="dev-libs/glib:2=
 	ncurses? ( sys-libs/ncurses:5=[unicode=]
 		gpm? ( sys-libs/gpm:0= )
 		spell? ( app-text/aspell:0= ) )
-	sqlite? (
-		!sqlite2? ( dev-db/sqlite:3= )
-		sqlite2? ( dev-db/sqlite:0= ) )"
+	sqlite? ( dev-db/sqlite:3= )"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext"
@@ -93,8 +91,7 @@ src_configure() {
 		$(use_enable !minimal sms)
 
 		# sqlite switch
-		$(use_with !sqlite2 sqlite3)
-		$(use_with sqlite2 sqlite)
+		--with-sqlite3
 
 		# optional deps
 		$(use_with gpm)

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/util-linux-2.25.2-r2.ebuild,v 1.13 2015/04/23 05:13:56 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/util-linux-2.25.2-r2.ebuild,v 1.15 2015/05/30 11:43:00 vapier Exp $
 
 EAPI="4"
 
@@ -63,6 +63,7 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-runuser-bash-completion.patch #522288
+	epatch "${FILESDIR}"/${PN}-2.25-parallel-setarch.patch #511812
 	if [[ ${PV} == 9999 ]] ; then
 		po/update-potfiles
 		eautoreconf
@@ -85,6 +86,10 @@ lfs_fallocate_test() {
 
 multilib_src_configure() {
 	lfs_fallocate_test
+	# The scanf test in a run-time test which fails while cross-compiling.
+	# Blindly assume a POSIX setup since we require libmount, and libmount
+	# itself fails when the scanf test fails. #531856
+	tc-is-cross-compiler && export scanf_cv_alloc_modifier=ms
 	export ac_cv_header_security_pam_misc_h=$(multilib_native_usex pam) #485486
 	# We manually set --libdir to the default since on prefix, econf will set it to
 	# a value which the configure script does not recognize.  This makes it set the

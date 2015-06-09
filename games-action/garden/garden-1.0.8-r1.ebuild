@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/garden/garden-1.0.8-r1.ebuild,v 1.5 2014/04/13 16:27:07 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/garden/garden-1.0.8-r1.ebuild,v 1.6 2015/05/04 21:32:13 mr_bones_ Exp $
 
 EAPI=5
 inherit eutils gnome2-utils autotools games
@@ -20,15 +20,16 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/${P}-underlink.patch \
+		"${FILESDIR}"/${P}-dash.patch \
 		"${FILESDIR}"/${P}-drop-AS_INIT.patch #475248
 	eautoreconf
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	DOCS="AUTHORS ChangeLog NEWS README" \
+		default
 	doicon -s scalable resources/garden.svg
 	make_desktop_entry garden "Garden of coloured lights"
-	dodoc AUTHORS ChangeLog NEWS README
 	prepgamesdirs
 }
 

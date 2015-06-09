@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/aqualung/aqualung-1.0_rc1.ebuild,v 1.2 2015/04/26 16:06:19 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/aqualung/aqualung-1.0_rc1.ebuild,v 1.4 2015/05/15 12:10:43 billie Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/aqualung/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 x86"
+KEYWORDS="amd64 x86"
 IUSE="alsa cdda cddb debug flac ffmpeg ifp jack ladspa lame libsamplerate lua
 	mac modplug mp3 musepack oss podcast pulseaudio sndfile speex systray
 	vorbis wavpack"
@@ -42,7 +42,7 @@ RDEPEND="sys-libs/zlib
 	ifp? ( media-libs/libifp )
 	cdda? ( dev-libs/libcdio-paranoia )
 	cddb? ( media-libs/libcddb )
-	lua? ( dev-lang/lua )"
+	lua? ( dev-lang/lua:0= )"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext

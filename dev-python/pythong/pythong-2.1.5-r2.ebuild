@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/pythong-2.1.5-r2.ebuild,v 1.1 2015/03/21 15:59:31 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/pythong-2.1.5-r2.ebuild,v 1.3 2015/05/27 03:11:09 patrick Exp $
 
 EAPI=5
 
@@ -21,13 +21,13 @@ SRC_URI="
 	doc? ( http://marmota.act.uji.es/MTP/pdf/python.pdf )"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ia64 ~x86"
+KEYWORDS="~amd64 ~ia64 x86"
 SLOT="0"
 IUSE="doc"
 
 RDEPEND="
 	>=dev-lang/tk-8.3.4:0=
-	>=dev-python/pmw-1.2:0"
+	virtual/pmw[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}"

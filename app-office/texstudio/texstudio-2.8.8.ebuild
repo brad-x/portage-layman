@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texstudio/texstudio-2.8.8.ebuild,v 1.5 2015/03/02 09:04:12 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/texstudio/texstudio-2.8.8.ebuild,v 1.8 2015/05/27 11:20:45 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}/TeXstudio%20${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
 IUSE="video"
 
 COMMON_DEPEND="
@@ -25,7 +25,7 @@ COMMON_DEPEND="
 	>=dev-qt/qtgui-4.8.5:4
 	>=dev-qt/qtcore-4.6.1:4
 	>=dev-qt/qtscript-4.6.1:4
-	dev-qt/qtsingleapplication[qt4]
+	dev-qt/qtsingleapplication[qt4(+)]
 	>=dev-qt/qtsvg-4.6.1:4
 	>=dev-qt/qttest-4.6.1:4
 	video? ( media-libs/phonon[qt4] )"
@@ -80,5 +80,9 @@ src_install() {
 }
 
 pkg_postinst() {
+	fdo-mime_desktop_database_update
+}
+
+pkg_postrm() {
 	fdo-mime_desktop_database_update
 }

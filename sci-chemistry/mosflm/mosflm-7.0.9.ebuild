@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/mosflm-7.0.9.ebuild,v 1.3 2013/05/05 13:15:00 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/mosflm-7.0.9.ebuild,v 1.8 2015/05/15 10:58:32 pacho Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils fortran-2 toolchain-funcs versionator
 
@@ -15,15 +15,15 @@ SRC_URI="${HOMEPAGE}ver${MY_PV}/build-it-yourself/${MY_P}.tgz"
 
 SLOT="0"
 LICENSE="ccp4"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
 	app-shells/tcsh
-	virtual/jpeg
 	sci-libs/cbflib
 	sci-libs/ccp4-libs
 	sys-libs/ncurses
+	virtual/jpeg:0=
 	x11-libs/libxdl_view"
 DEPEND="${RDEPEND}"
 
@@ -39,7 +39,7 @@ src_prepare() {
 		-e '/jinclude.h/d' \
 		-i mosflm/mosflm_jpeg.c || die
 
-	cp DATETIME.C mosflm/datetime.c
+	cp DATETIME.C mosflm/datetime.c || die
 
 	epatch \
 		"${FILESDIR}"/${PV}-parallel.patch \

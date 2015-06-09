@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.104 2015/04/16 11:55:18 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.110 2015/06/05 14:48:25 voyageur Exp $
 
 EAPI=5
 
@@ -44,10 +44,11 @@ DEPEND="${COMMON_DEPEND}
 	>=sys-devel/make-3.81
 	>=sys-devel/flex-2.5.4
 	>=sys-devel/bison-1.875d
-	|| ( >=sys-devel/gcc-3.0 >=sys-devel/gcc-apple-4.2.1
+	|| ( >=sys-devel/gcc-3.0 >=sys-devel/llvm-3.5
 		( >=sys-freebsd/freebsd-lib-9.1-r10 sys-libs/libcxx )
 	)
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-5.1 )
+	kernel_Darwin? ( sys-libs/libcxx )
 	clang? ( xml? ( virtual/pkgconfig ) )
 	libffi? ( virtual/pkgconfig )
 	!!<dev-python/configparser-3.3.0.2
@@ -234,6 +235,8 @@ multilib_src_configure() {
 		append-cppflags "$(pkg-config --cflags libffi)"
 	fi
 
+	# Enable large file support, bug #550708
+	append-lfs-flags
 	# llvm prefers clang over gcc, so we may need to force that
 	tc-export CC CXX
 
@@ -465,11 +468,15 @@ multilib_src_install() {
 }
 
 multilib_src_install_all() {
-	insinto /usr/share/vim/vimfiles/syntax
-	doins utils/vim/*.vim
+	pushd utils/vim >/dev/null || die
+	for dir in */; do
+		insinto /usr/share/vim/vimfiles/${dir}
+		doins ${dir}/*.vim
+	done
+	popd >/dev/null || die
 
 	if use clang; then
-		cd tools/clang || die
+		pushd tools/clang >/dev/null || die
 
 		if use static-analyzer ; then
 			dobin tools/scan-build/ccc-analyzer
@@ -507,5 +514,6 @@ multilib_src_install_all() {
 			python_doscript "${S}"/projects/compiler-rt/lib/asan/scripts/asan_symbolize.py
 		}
 		python_foreach_impl python_inst
+		popd >/dev/null || die
 	fi
 }

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/Fiona/Fiona-9999.ebuild,v 1.5 2015/04/03 12:41:25 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/Fiona/Fiona-9999.ebuild,v 1.7 2015/06/04 11:05:28 jlec Exp $
 
 EAPI="5"
 
@@ -19,15 +19,17 @@ KEYWORDS=""
 IUSE="test"
 
 RDEPEND="
-	dev-python/click[${PYTHON_USEDEP}]
-	>=sci-libs/gdal-1.8[${PYTHON_USEDEP}]"
+	>=sci-libs/gdal-1.8
+	dev-python/click[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	test? (
 		dev-python/nose[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
-		)"
+	)"
+
+PATCHES=( "${FILESDIR}"/scriptname.patch )
 
 python_test() {
 	esetup.py test

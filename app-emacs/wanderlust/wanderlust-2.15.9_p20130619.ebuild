@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/wanderlust-2.15.9_p20130619.ebuild,v 1.7 2015/03/02 09:31:28 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/wanderlust-2.15.9_p20130619.ebuild,v 1.8 2015/06/05 14:18:56 ulm Exp $
 
 EAPI=5
 
@@ -43,7 +43,7 @@ src_install() {
 		PIXMAPDIR="${ED}${SITEETC}/wl/icons" \
 		install
 
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}" wl || die
+	elisp-site-file-install "${FILESDIR}/${SITEFILE}" wl
 
 	insinto "${SITEETC}/wl/samples/en"
 	doins samples/en/*

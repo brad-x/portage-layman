@@ -1,6 +1,28 @@
 # ChangeLog for sys-fs/udev-init-scripts
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev-init-scripts/ChangeLog,v 1.116 2015/04/25 16:40:29 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev-init-scripts/ChangeLog,v 1.121 2015/06/01 16:47:35 williamh Exp $
+
+  01 Jun 2015; William Hubbs <williamh@gentoo.org>
+  udev-init-scripts-9999.ebuild:
+  Only add a  service to the sysinit runlevel if it is not already there and log
+  when a service is added
+
+  01 Jun 2015; William Hubbs <williamh@gentoo.org>
+  udev-init-scripts-9999.ebuild:
+  Always add udev and udev-trigger to the sysinit runlevel
+
+  29 Apr 2015; William Hubbs <williamh@gentoo.org>
+  udev-init-scripts-9999.ebuild:
+  bump sys-fs/udev blocker to !<sys-fs/udev-217 for #547916
+
+  29 Apr 2015; William Hubbs <williamh@gentoo.org>
+  udev-init-scripts-9999.ebuild:
+  Drop buildtime dependencies and upgrade the blocker to !<openrc-0.14 due to
+  the fix in start-stop-daemon for closing stdin when --background is used.
+
+  29 Apr 2015; William Hubbs <williamh@gentoo.org>
+  udev-init-scripts-9999.ebuild:
+  Stop adding our services to the sysinit runlevel automatically for bug #534704
 
   25 Apr 2015; Mike Gilbert <floppym@gentoo.org> udev-init-scripts-27.ebuild,
   udev-init-scripts-9999.ebuild:

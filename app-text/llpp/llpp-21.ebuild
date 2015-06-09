@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/llpp/llpp-21.ebuild,v 1.5 2015/04/17 14:51:10 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/llpp/llpp-21.ebuild,v 1.6 2015/06/05 13:29:03 xmw Exp $
 
 EAPI=5
 
@@ -57,7 +57,6 @@ src_compile() {
 		local cclib=""
 		local slib=""
 		local spath=( ${EROOT}usr/$(get_libdir) $($(tc-getPKG_CONFIG) --libs-only-L --static mupdf x11 ${egl} | sed 's:-L::g') )
-		ewarn ${spath}
 		for slib in $($(tc-getPKG_CONFIG) --libs-only-l --static mupdf x11 ${egl} fontconfig) -ljpeg -ljbig2dec ; do
 			case ${slib} in
 				-lm|-ldl|-lpthread)

@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/orage/orage-4.10.0.ebuild,v 1.7 2014/04/16 07:49:51 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/orage/orage-4.10.0.ebuild,v 1.8 2015/05/26 20:25:32 perfinion Exp $
 
 EAPI=5
 inherit multilib xfconf
@@ -17,8 +17,8 @@ IUSE="berkdb dbus debug libnotify +xfce_plugins_clock"
 RDEPEND=">=dev-libs/libical-0.48:=
 	dev-libs/popt:=
 	>=x11-libs/gtk+-2.10:2
-	berkdb? ( >=sys-libs/db-4 )
-	dbus? ( >=dev-libs/dbus-glib-0.100 )
+	berkdb? ( >=sys-libs/db-4:= )
+	dbus? ( >=dev-libs/dbus-glib-0.100:= )
 	libnotify? ( >=x11-libs/libnotify-0.7:= )
 	xfce_plugins_clock? ( >=xfce-base/xfce4-panel-4.10 )"
 DEPEND="${RDEPEND}

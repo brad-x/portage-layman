@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_python/mod_python-3.5.0.ebuild,v 1.6 2015/04/19 07:03:01 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_python/mod_python-3.5.0.ebuild,v 1.8 2015/06/02 05:18:18 jmorgan Exp $
 
 EAPI=5
 
@@ -13,13 +13,13 @@ HOMEPAGE="http://modpython.org/"
 SRC_URI="http://dist.modpython.org/dist/${P}.tgz"
 
 LICENSE="Apache-2.0"
-KEYWORDS="alpha amd64 ia64 ~mips ppc ~sparc x86"
+KEYWORDS="alpha amd64 ia64 ~mips ppc sparc x86"
 IUSE="doc test"
 SLOT="0"
 
 APACHE2_MOD_CONF="16_${PN}"
 APACHE2_MOD_DEFINE="PYTHON"
-need_apache2_2
+need_apache2
 
 RDEPEND="${RDEPEND}"
 DEPEND="${DEPEND}

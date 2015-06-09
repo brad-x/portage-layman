@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/musl-9999.ebuild,v 1.19 2015/04/18 11:24:34 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/musl/musl-9999.ebuild,v 1.21 2015/05/13 17:37:06 ulm Exp $
 
 EAPI=5
 
@@ -38,6 +38,17 @@ is_crosscompile() {
 
 just_headers() {
 	use crosscompile_opts_headers-only && is_crosscompile
+}
+
+musl_endian() {
+	# XXX: this wont work for bi-endian, but we dont have any
+	touch "${T}"/endian.s
+	$(tc-getAS ${CTARGET}) "${T}"/endian.s -o "${T}"/endian.o
+	case $(file "${T}"/endian.o) in
+		*" MSB "*) echo "";;
+		*" LSB "*) echo "el";;
+		*)         echo "nfc";; # We shouldn't be here
+	esac
 }
 
 pkg_setup() {
@@ -84,10 +95,21 @@ src_install() {
 	dosym ${sysroot}/lib/${ldso} ${sysroot}/usr/bin/ldd
 
 	if [[ ${CATEGORY} != cross-* ]] ; then
+		local target=$(tc-arch) arch
+		local endian=$(musl_endian)
+		case ${target} in
+			amd64) arch="x86_64";;
+			arm)   arch="armhf";; # We only have hardfloat right now
+			mips)  arch="mips${endian}";;
+			ppc)   arch="powerpc";;
+			x86)   arch="i386";;
+		esac
+		cp "${FILESDIR}"/ldconfig.in "${T}"
+		sed -e "s|@@ARCH@@|${arch}|" "${T}"/ldconfig.in > "${T}"/ldconfig
+		into /
+		dosbin "${T}"/ldconfig
 		into /usr
 		dobin "${FILESDIR}"/getent
-		into /
-		dosbin "${FILESDIR}"/ldconfig
 		echo 'LDPATH="include ld.so.conf.d/*.conf"' > "${T}"/00musl
 		doenvd "${T}"/00musl || die
 	fi

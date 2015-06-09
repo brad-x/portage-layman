@@ -1,6 +1,31 @@
 # ChangeLog for www-apache/mod_perl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_perl/ChangeLog,v 1.118 2014/11/27 23:45:31 dilfridge Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_perl/ChangeLog,v 1.123 2015/05/29 04:32:21 vapier Exp $
+
+  29 May 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/2.0.3/75_mod_perl.2.2.conf, -files/2.0.3/75_mod_perl.conf.2.2:
+  Rename the old mod_perl.conf to match the ebuild #550638 by Vieri.
+
+*mod_perl-2.0.8-r2 (24 May 2015)
+
+  24 May 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/mod_perl-2.0.4-inline.patch, +mod_perl-2.0.8-r2.ebuild:
+  Use inline patch from Fedora to fix build w/gcc-5 #550244.
+
+  24 May 2015; Mike Frysinger <vapier@gentoo.org> mod_perl-2.0.8.ebuild,
+  files/2.0.3/75_mod_perl.conf, +files/2.0.3/75_mod_perl.conf.2.2:
+  Convert mod_perl.conf to apache-2.4 #550246.
+
+  12 May 2015; Pacho Ramos <pacho@gentoo.org> mod_perl-2.0.8-r1.ebuild:
+  Needs apache 2.4 now
+
+*mod_perl-2.0.8-r1 (08 May 2015)
+
+  08 May 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/use-client_ip-client_add-instead-of-remote_ip-remote.patch,
+  +files/use-log.level-instead-of-loglevel.patch, +mod_perl-2.0.8-r1.ebuild,
+  -mod_perl-2.0.7-r1.ebuild:
+  Support apache 2.4 (#410453)
 
   27 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org>
   mod_perl-2.0.7-r1.ebuild, mod_perl-2.0.8.ebuild:

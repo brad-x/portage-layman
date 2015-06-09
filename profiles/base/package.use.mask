@@ -1,9 +1,31 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.669 2015/04/19 20:04:58 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.684 2015/06/04 18:47:33 kensington Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
+
+# Johannes Huber <johu@gentoo.org> (31 Nay 2015)
+# No released version available
+kde-plasma/plasma-workspace prison
+
+# Matthias Maier <tamiko@gentoo.org> (27 May 2015)
+# mask lcms use flag for old dcraw versions that depends on lcms:0
+=media-gfx/dcraw-9.10 lcms
+
+# Mike Gilbert <floppym@gentoo.org> (16 May 2015)
+# dev-lang/python[berkdb] fails with recent multilib sys-libs/db (bug 519584).
+dev-lang/python berkdb
+net-nds/nsscache nssdb
+www-apps/venus test
+
+# Jason Zaman <perfinion@gentoo.org> (08 May 2015)
+# java wrappers fail to build (bug #548858)
+=app-admin/setools-3.3.8-r7 java
+
+# Matthias Maier <tamiko@gentoo.org> (03 May 2015)
+# mask use flag until #546126 is resolved
+>=app-emulation/libvirt-1.2.14 wireshark-plugins
 
 # James Le Cuirot <chewi@gentoo.org> (05 Apr 2015)
 # dev-java/sun-j2me-bin is going away.
@@ -57,10 +79,6 @@ x11-libs/cairo openvg
 # Cluster code is still under development, only base functionality
 # is implemented. Masking for testing and evaluation.
 app-admin/clsync cluster mhash
-
-# Jauhien Piatlicki <jauhien@gentoo.org> (10 Feb 2015)
-# Mask until sys-devel/llvm-3.6 is in the tree
-dev-lang/rust system-llvm
 
 # Ben de Groot <yngwin@gentoo.org> (07 Feb 2015)
 # Mask for all arches, can be unmasked on arm once keyworded there
@@ -233,7 +251,7 @@ sys-infiniband/ofed ofed_drivers_ehca
 # Andreas K. Huettel <dilfridge@gentoo.org> (12 Apr 2014)
 # Upstream regularly forgets to update the bindings after changes in API,
 # leading to build failures. This is becoming more and more painful...
->=kde-base/marble-4.12.49.9999 python
+>=kde-apps/marble-4.12.49.9999 python
 
 # Lars Wendler <polynomial-c@gentoo.org> (12 Apr 2014)
 # Required ffmpeg version still is masked (#507474)
@@ -314,12 +332,6 @@ games-action/minetest luajit
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (13 Oct 2013)
 # Masked for security bug #472280, CVE 2013-1872
 <=media-libs/mesa-9.0.3 video_cards_intel video_cards_i965
-
-# Tom Wijsman <TomWij@gentoo.org> (15 Sep 2013)
-# Mask JCE functionality of diablo-jdk because it depends on masked sun-jce-bin,
-# this needs to be revisited to either be dropped from the Portage tree or to
-# use the new way of doing JCE as part of a revision or version bump.
-dev-java/diablo-jdk jce
 
 # Tom Wijsman <TomWij@gentoo.org> (7 Sep 2013)
 # Dependency (www-servers/mongrel) currently only
@@ -512,6 +524,10 @@ sys-auth/pam_mktemp prevent-removal
 # Ben de Groot <yngwin@gentoo.org> (30 Jul 2012)
 # fontconfig-infinality dependency not yet keyworded on most arches
 media-libs/freetype infinality
+
+# James Le Cuirot <chewi@gentoo.org> (20 May 2015)
+# Mask this in conjunction with the above.
+dev-java/icedtea infinality
 
 # Ralph Sennhauser <sera@gentoo.org> (18 Jul 2012)
 # Requires masked eclipse-sdk.

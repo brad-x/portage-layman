@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/zsnes/zsnes-1.51-r4.ebuild,v 1.9 2015/01/24 07:11:54 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/zsnes/zsnes-1.51-r4.ebuild,v 1.12 2015/06/08 05:02:13 mr_bones_ Exp $
 
 EAPI=5
 inherit eutils autotools flag-o-matic toolchain-funcs multilib pax-utils games
@@ -15,24 +15,15 @@ KEYWORDS="-* amd64 x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux"
 IUSE="ao custom-cflags +debug opengl pax_kernel png"
 
 RDEPEND="
-	|| (
-		(
-			media-libs/libsdl[sound,video,abi_x86_32(-)]
-			>=sys-libs/zlib-1.2.3-r1[abi_x86_32(-)]
-			ao? ( media-libs/libao[abi_x86_32(-)] )
-			debug? ( sys-libs/ncurses[abi_x86_32(-)] )
-			opengl? ( virtual/opengl[abi_x86_32(-)] )
-			png? ( media-libs/libpng[abi_x86_32(-)] )
-		)
-		amd64? (
-			app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
-			ao? ( app-emulation/emul-linux-x86-soundlibs[-abi_x86_32(-)] )
-			opengl? ( app-emulation/emul-linux-x86-opengl[-abi_x86_32(-)] )
-			>=app-emulation/emul-linux-x86-sdl-10.1[-abi_x86_32(-)]
-		)
-	)"
+	media-libs/libsdl[sound,video,abi_x86_32(-)]
+	>=sys-libs/zlib-1.2.3-r1[abi_x86_32(-)]
+	ao? ( media-libs/libao[abi_x86_32(-)] )
+	debug? ( sys-libs/ncurses[abi_x86_32(-)] )
+	opengl? ( virtual/opengl[abi_x86_32(-)] )
+	png? ( media-libs/libpng:0[abi_x86_32(-)] )"
 DEPEND="${RDEPEND}
 	dev-lang/nasm
+	debug? ( virtual/pkgconfig )
 	amd64? ( >=sys-apps/portage-2.1 )"
 
 S=${WORKDIR}/${PN}_${PV//./_}/src
@@ -72,7 +63,12 @@ src_prepare() {
 		-e '/^CFLAGS=.*local/s:-pipe.*:-Wall -I.":' \
 		-e '/^LDFLAGS=.*local/d' \
 		-e '/\w*CFLAGS=.*fomit/s:-O3.*$STRIP::' \
+		-e '/lncurses/s:-lncurses:`pkg-config ncurses --libs`:' \
 		configure.in || die
+	sed -i \
+		-e 's/configure.in/configure.ac/' \
+		Makefile.in || die
+	mv configure.in configure.ac || die
 	eautoreconf
 }
 

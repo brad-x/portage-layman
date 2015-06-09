@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gdl/gdl-0.9.4.ebuild,v 1.3 2015/04/08 08:22:09 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gdl/gdl-0.9.4.ebuild,v 1.4 2015/05/07 15:33:32 jlec Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit cmake-utils eutils python-r1 wxwidgets toolchain-funcs virtualx
 
-DESCRIPTION="Interactive Data Language compatible incremental compiler"
+DESCRIPTION="GNU Data Language"
 HOMEPAGE="http://gnudatalanguage.sourceforge.net/"
 SRC_URI="mirror://sourceforge/gnudatalanguage/${P}.tar.gz"
 
@@ -21,7 +21,7 @@ IUSE="+eigen fftw grib gshhs hdf hdf5 imagemagick netcdf openmp
 
 RDEPEND="
 	sci-libs/gsl:0=
-	sci-libs/plplot:0=
+	sci-libs/plplot:0=[-dynamic]
 	sys-libs/ncurses:5=
 	sys-libs/readline:0=
 	sys-libs/zlib:0=
@@ -31,13 +31,19 @@ RDEPEND="
 	gshhs? ( sci-geosciences/gshhs-data sci-geosciences/gshhs:0= )
 	hdf? ( sci-libs/hdf:0= )
 	hdf5? ( sci-libs/hdf5:0= )
-	imagemagick? ( || (
+	imagemagick? (
+		|| (
 			media-gfx/graphicsmagick[cxx]
-			media-gfx/imagemagick[cxx] ) )
+			media-gfx/imagemagick[cxx]
+			)
+	)
 	netcdf? ( sci-libs/netcdf )
 	proj? ( sci-libs/proj )
 	postscript? ( dev-libs/pslib )
-	python? ( dev-python/numpy[${PYTHON_USEDEP}] )
+	python? (
+		${PYTHON_DEPS}
+		dev-python/numpy[${PYTHON_USEDEP}]
+	)
 	udunits? ( sci-libs/udunits )
 	wxwidgets? ( x11-libs/wxGTK:2.8[X,-odbc] )"
 
@@ -49,14 +55,16 @@ DEPEND="${RDEPEND}
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 PATCHES=(
-		"${FILESDIR}"/0.9.2-antlr.patch
-		"${FILESDIR}"/0.9.2-include.patch
-		"${FILESDIR}"/0.9.2-proj4.patch
-		"${FILESDIR}"/0.9.2-semaphore.patch
-		"${FILESDIR}"/0.9.3-plwidth.patch
-		"${FILESDIR}"/0.9.4-gsl.patch
-		"${FILESDIR}"/0.9.4-python.patch
-		"${FILESDIR}"/0.9.4-reorder.patch
+	"${FILESDIR}"/0.9.2-antlr.patch
+	"${FILESDIR}"/0.9.2-include.patch
+	"${FILESDIR}"/0.9.2-proj4.patch
+	"${FILESDIR}"/0.9.2-semaphore.patch
+	"${FILESDIR}"/0.9.3-plwidth.patch
+	"${FILESDIR}"/0.9.4-gsl.patch
+	"${FILESDIR}"/0.9.4-python.patch
+	"${FILESDIR}"/0.9.4-reorder.patch
+	"${FILESDIR}"/0.9.4-plplot.patch
+	"${FILESDIR}"/0.9.4-python2.patch
 )
 
 pkg_setup() {
@@ -117,7 +125,7 @@ src_configure() {
 			mycmakeargs+=( -DGRAPHICSMAGICK=OFF -DMAGICK=ON )
 		fi
 	else
-		mycmakeargs+=( "-DGRAPHICSMAGICK=OFF -DMAGICK=OFF" )
+		mycmakeargs+=( -DGRAPHICSMAGICK=OFF -DMAGICK=OFF )
 	fi
 	configuration() {
 		mycmakeargs+=( $@ )
@@ -141,9 +149,8 @@ src_install() {
 	cmake-utils_src_install
 	if use python; then
 		installation() {
-			python_export PYTHON_SITEDIR
-			exeinto "${PYTHON_SITEDIR#${EPREFIX}}"
-			newexe src/libgdl.so GDL.so
+			mv src/libgdl.so GDL.so || die
+			python_domodule GDL.so
 		}
 		python_foreach_impl run_in_build_dir installation
 		dodoc PYTHON.txt

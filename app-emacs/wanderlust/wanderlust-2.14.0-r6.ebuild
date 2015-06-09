@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/wanderlust-2.14.0-r6.ebuild,v 1.9 2014/08/02 17:36:05 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/wanderlust/wanderlust-2.14.0-r6.ebuild,v 1.11 2015/06/05 14:18:56 ulm Exp $
 
-EAPI=3
+EAPI=5
 
-inherit elisp eutils
+inherit elisp
 
 MY_P="wl-${PV/_/}"
 DESCRIPTION="Yet Another Message Interface on Emacsen"
@@ -22,8 +22,7 @@ DEPEND=">=app-emacs/apel-10.6
 	virtual/emacs-flim
 	app-emacs/semi
 	bbdb? ( app-emacs/bbdb )"
-RDEPEND="!app-emacs/wanderlust-cvs
-	${DEPEND}"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 ELISP_PATCHES="${P}-20050405.patch
@@ -39,17 +38,17 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
-	emake info || die "emake info failed"
+	emake
+	emake info
 }
 
 src_install() {
 	emake \
 		LISPDIR="${ED}${SITELISP}" \
 		PIXMAPDIR="${ED}${SITEETC}/wl/icons" \
-		install || die "emake install failed"
+		install
 
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}" wl || die
+	elisp-site-file-install "${FILESDIR}/${SITEFILE}" wl
 
 	insinto "${SITEETC}/wl/samples/en"
 	doins samples/en/*

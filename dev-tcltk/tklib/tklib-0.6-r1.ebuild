@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tklib/tklib-0.6-r1.ebuild,v 1.1 2013/06/09 10:26:39 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tklib/tklib-0.6-r1.ebuild,v 1.2 2015/05/06 06:55:44 jlec Exp $
 
 EAPI=5
 
@@ -18,7 +18,7 @@ LICENSE="BSD"
 IUSE="doc"
 
 RDEPEND="
-	dev-lang/tk
+	dev-lang/tk:0
 	dev-tcltk/tcllib"
 DEPEND="${RDEPEND}"
 
@@ -32,5 +32,6 @@ src_install() {
 	dosym ${PN}${PV} /usr/$(get_libdir)/${PN}
 
 	mv "${ED}"/usr/share/man/mann/datefield{,-${PN}}.n || die
+	mv "${ED}"/usr/share/man/mann/menubar{,-${PN}}.n || die
 	mv "${ED}"/usr/bin/dia{,-${PN}} || die
 }

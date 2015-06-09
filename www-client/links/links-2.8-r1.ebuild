@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/links/links-2.8-r1.ebuild,v 1.10 2014/01/12 13:16:09 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/links/links-2.8-r1.ebuild,v 1.11 2015/06/04 14:39:54 monsieurp Exp $
 
 EAPI=5
 inherit autotools eutils fdo-mime
@@ -118,7 +118,7 @@ src_install() {
 			"${d}"/*.desktop
 	fi
 
-	nonfatal dohtml doc/links_cal/*
+	dohtml doc/links_cal/*
 	use suid && fperms 4755 /usr/bin/links
 }
 

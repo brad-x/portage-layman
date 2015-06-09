@@ -1,6 +1,43 @@
 # ChangeLog for dev-qt/qthelp
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qthelp/ChangeLog,v 1.37 2015/03/08 14:01:23 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qthelp/ChangeLog,v 1.46 2015/05/30 10:54:40 maekke Exp $
+
+  30 May 2015; Markus Meier <maekke@gentoo.org> qthelp-4.8.6-r3.ebuild:
+  arm stable, bug #530238
+
+*qthelp-4.8.7 (26 May 2015)
+
+  26 May 2015; Davide Pesavento <pesa@gentoo.org> +qthelp-4.8.7.ebuild:
+  Version bump.
+
+  16 May 2015; Pacho Ramos <pacho@gentoo.org> qthelp-4.8.6-r3.ebuild:
+  ppc stable wrt bug #530238
+
+  16 May 2015; Jeroen Roovers <jer@gentoo.org> qthelp-5.4.1.ebuild:
+  Mark ~ppc64 too.
+
+  16 May 2015; Jeroen Roovers <jer@gentoo.org> qthelp-4.8.6-r3.ebuild:
+  Stable for PPC64 (bug #530238).
+
+  15 May 2015; Mikle Kolyada <zlogene@gentoo.org> qthelp-4.8.6-r3.ebuild:
+  x86 stable wrt bug #530238
+
+  11 May 2015; Mikle Kolyada <zlogene@gentoo.org> qthelp-4.8.6-r3.ebuild:
+  amd64 stable wrt bug #530238
+
+  07 May 2015; Davide Pesavento <pesa@gentoo.org> qthelp-4.8.5-r2.ebuild,
+  qthelp-4.8.6-r3.ebuild:
+  Remove executable bit from compat headers. Update SRC_URI of compat source
+  package.
+
+*qthelp-4.8.6-r3 (06 May 2015)
+
+  06 May 2015; Davide Pesavento <pesa@gentoo.org>
+  +files/qthelp-4.8.6-compat-install.patch,
+  +files/qthelp-4.8.6-compat-syncqt.patch, +qthelp-4.8.6-r3.ebuild,
+  -files/qthelp-4.8.6-fix-compat.patch, -qthelp-4.8.6-r2.ebuild:
+  Properly fix building with USE=compat by teaching syncqt how to generate
+  QtAssistant forwarding headers. Finally solves bug 529398.
 
   08 Mar 2015; Davide Pesavento <pesa@gentoo.org> qthelp-5.4.1.ebuild:
   Remove all keywords from "live" branch.

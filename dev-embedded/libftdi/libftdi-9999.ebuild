@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/libftdi/libftdi-9999.ebuild,v 1.9 2015/04/18 03:06:18 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/libftdi/libftdi-9999.ebuild,v 1.10 2015/05/13 10:46:17 vapier Exp $
 
 EAPI="4"
 
-inherit cmake-utils eutils
+inherit cmake-utils
 
 MY_P="${PN}1-${PV}"
 if [[ ${PV} == 9999* ]] ; then
@@ -25,15 +25,14 @@ IUSE="cxx doc examples python static-libs tools"
 RDEPEND="virtual/libusb:1
 	cxx? ( dev-libs/boost )
 	python? ( dev-lang/python )
-	tools? ( dev-libs/confuse )"
+	tools? (
+		!<dev-embedded/ftdi_eeprom-1.0
+		dev-libs/confuse
+	)"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
 S=${WORKDIR}/${MY_P}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.0-staticlibs.patch
-}
 
 src_configure() {
 	mycmakeargs=(
@@ -53,6 +52,9 @@ src_install() {
 	dodoc AUTHORS ChangeLog README TODO
 
 	if use doc ; then
+		# Clean up crap man pages. #356369
+		rm -vf "${CMAKE_BUILD_DIR}"/doc/man/man3/_* || die
+
 		doman "${CMAKE_BUILD_DIR}"/doc/man/man3/*
 		dohtml "${CMAKE_BUILD_DIR}"/doc/html/*
 	fi

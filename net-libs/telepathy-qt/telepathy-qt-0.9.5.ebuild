@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-qt/telepathy-qt-0.9.5.ebuild,v 1.6 2015/03/25 14:05:04 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-qt/telepathy-qt-0.9.5.ebuild,v 1.8 2015/05/14 16:17:13 pesa Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 inherit python-any-r1 cmake-utils virtualx multibuild
 
-DESCRIPTION="Qt4 bindings for the Telepathy D-Bus protocol"
+DESCRIPTION="Qt bindings for the Telepathy D-Bus protocol"
 HOMEPAGE="http://telepathy.freedesktop.org/"
 SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
@@ -15,6 +15,8 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ~arm x86"
 IUSE="debug farstream +qt4 qt5 test"
+
+REQUIRED_USE="|| ( qt4 qt5 )"
 
 RDEPEND="
 	farstream? (
@@ -39,7 +41,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? (
 		dev-libs/dbus-glib
-		dev-libs/glib
+		dev-libs/glib:2
 		dev-python/dbus-python
 		qt4? ( dev-qt/qttest:4 )
 		qt5? ( dev-qt/qttest:5 )
