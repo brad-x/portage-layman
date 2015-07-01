@@ -1,10 +1,258 @@
 # ChangeLog for profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10077 2015/06/08 07:33:00 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10154 2015/07/01 13:00:24 kensington Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  01 Jul 2015; Michael Palimaka <kensington@gentoo.org>
+  targets/desktop/plasma/package.use:
+  Avoid kde-apps/kdesu and kde-plasma/kde-cli-tools blockers wrt bug #553504.
+
+  01 Jul 2015; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Mask kernel versions that are not actually the version they claim to be
+  #553670
+
+  28 Jun 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Extend Exim 4.86 RC mask
+
+  26 Jun 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Mask app-portage/kportagetray for removal
+
+  25 Jun 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Remove KDE Plasma 5.3.1 mask for wider testing.
+
+  25 Jun 2015; Mike Gilbert <floppym@gentoo.org> desc/grub_platforms.desc:
+  Add uboot platform.
+
+  24 Jun 2015; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Mask old splitted system-config-printer versions for removal
+
+  22 Jun 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Extend Exim 4.86 RC mask
+
+  22 Jun 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/mockmaker.
+
+  21 Jun 2015; Ulrich Müller <ulm@gentoo.org> license_groups:
+  Move wxWinLL-3.1 from OSI-APPROVED to MISC-FREE; it was erroneously added to
+  the former group in revision 1.63. Delete wxWinLL-3 from MISC-FREE, as it is
+  already listed in OSI-APPROVED.
+
+  21 Jun 2015; Pacho Ramos <pacho@gentoo.org> arch/sparc/package.use.mask:
+  Drop unneeded use.mask
+
+  20 Jun 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
+  Mask app-eselect/eselect-ecj.
+
+  20 Jun 2015; James Le Cuirot <chewi@gentoo.org> use.desc:
+  Remove unused java6 flag.
+
+  20 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add a dummy Test-use-ok to the Perl 5.22 package mask
+
+  20 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add a dummy Test-Tester to the Perl 5.22 package mask
+
+  20 Jun 2015; Ulrich Müller <ulm@gentoo.org> license_groups:
+  Remove unused sun-bcla-java-vm license from EULA group.
+
+  19 Jun 2015; <grknight@gentoo.org> package.mask:
+  The Cyphertite backup service is closing as of August 18th, 2015.
+  app-backup/cyphertite masked for removal in 30 days. Bug 552578
+
+  19 Jun 2015; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Mask virtual/libgudev-230 and related providers for bug 552036.
+
+  18 Jun 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Update KDE Plasma 5.3.1 mask.
+
+  18 Jun 2015; NP-Hardass <NP-Hardass@gentoo.org> package.mask:
+  Remove mask for =net-misc/teamviewer-10.0.36281 as it is no longer in the
+  tree
+
+  16 Jun 2015; Jauhien Piatlicki <jauhien@gentoo.org> package.mask:
+  Masked dev-util/ext4_utils and dev-util/libsparse for removal
+
+  15 Jun 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Extend Exim 4.86 RC mask
+
+  14 Jun 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Masked dev-java/aspecktwerkz for removal.
+
+  14 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Mask obsolete Perl virtuals for removal
+
+  14 Jun 2015; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Mask broken udev-init-scripts #551724
+
+  13 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> package.mask:
+  Fix perl-mask date
+
+  13 Jun 2015; Pacho Ramos <pacho@gentoo.org> arch/ia64/package.use.mask,
+  arch/sparc/package.use.mask:
+  package.use.mask net-misc/spice-gtk webdav (#513108)
+
+  13 Jun 2015; Pacho Ramos <pacho@gentoo.org> arch/ia64/package.use.mask,
+  arch/sparc/package.use.mask:
+  package.use.mask net-misc/spice-gtk smartcard (#513108)
+
+  13 Jun 2015; Ole Markus With <olemarkus@gentoo.org> package.mask:
+  Add =virtual/httpd-php to package.mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> updates/2Q-2015:
+  Move perl-core/Module-Pluggable to dev-perl
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> updates/2Q-2015:
+  Move perl-core/Module-Build to dev-perl
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> updates/2Q-2015:
+  Move perl-core/CGI to dev-perl
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Unicode::Collate to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  (Semi-)Lastrite unused perl-core packages
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Remove obsolete Perl 5.18 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Remove obsolete Perl 5.20.1 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add threads::shared to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add threads to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add parent to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add libnet to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add if to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add bignum to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add autodie to Perl 5.22 mask
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add XSLoader to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Time::Piece to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Text::ParseWords to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Text::Balanced to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Test::Simple to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Test::Harness to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Term::ReadLine to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Term::ANSIColor to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Storable to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Socket to Perl 5.22 mask
+
+  12 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Scalar::List::Utils to Perl 5.22 mask
+
+  12 Jun 2015; Ole Markus With <olemarkus@gentoo.org> package.mask:
+  Mask pre release versions of PHP 7
+
+  12 Jun 2015; William Hubbs <williamh@gentoo.org> package.mask:
+  udev-220-r2 builds again, so unmask it, thanks to poly-c for pointing out the
+  missing patch.
+
+  12 Jun 2015; William Hubbs <williamh@gentoo.org> package.mask:
+  Mask udev-220-r2 temporarily while waiting for response about missing patch
+  on bug #551808
+
+  11 Jun 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/alpha/package.use.stable.mask:
+  update stable masks
+
+  10 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Safe to Perl 5.22 mask
+
+  10 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Pod::Simple to Perl 5.22 mask
+
+  10 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Pod::Parser to Perl 5.22 mask
+
+  10 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Pod::Escapes to Perl 5.22 mask
+
+  10 Jun 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/powerpc/package.use.stable.mask:
+  Update package.use.stable.mask
+
+  10 Jun 2015; Michael Haubenwallner <haubi@gentoo.org> arch.list,
+  profiles.desc:
+  add arch x64-cygwin; add profiles.desc prefix/windows/cygwin/2.0/x86,x64
+
+  10 Jun 2015; Mike Gilbert <floppym@gentoo.org> targets/desktop/package.use:
+  Enable dev-libs/libgudev[introspection]
+
+  10 Jun 2015; Mike Gilbert <floppym@gentoo.org>
+  targets/systemd/package.use.mask:
+  Mask dev-libs/libgudev[static-libs]
+
+  10 Jun 2015; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Drop Gnome 3.16 mask.
+
+  09 Jun 2015; Gilles Dartiguelongue <eva@gentoo.org> base/package.use.force,
+  base/package.use.mask:
+  Add package.use tweaks for net-libs/webkit-gtk-2.8.
+
+  09 Jun 2015; Alexandre Rostovtsev <tetromino@gentoo.org> package.mask:
+  Fix cogl mask, thanks to Gilles for noticing
+
+  09 Jun 2015; Hans de Graaff <graaff@gentoo.org> updates/2Q-2015:
+  Move dev-ruby/temple versions into the correct slot.
+
+  09 Jun 2015; Alexandre Rostovtsev <tetromino@gentoo.org> package.mask:
+  Fix gnome-3.16 overmasking, thanks to floppym for noticing
+
+  08 Jun 2015; Gilles Dartiguelongue <eva@gentoo.org> updates/2Q-2015:
+  Slot moves for phodav.
+
+  08 Jun 2015; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add mask for Gnome 3.16.
+
+  08 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Perl::OSType to Perl 5.22 mask
+
+  08 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add Module::Metadata to Perl 5.22 mask
+
+  08 Jun 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/powerpc/package.use.stable.mask:
+  Update package.use.stable.mask to try to move more gnome-mm stuff to testing
+  in less common arches
+
+  08 Jun 2015; Aaron W. Swenson <titanofold@gentoo.org> updates/2Q-2015:
+  Move dev-db/pygresql to dev-python/pygresql as it is a Python specifc driver.
 
   08 Jun 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
   Mask upcoming Exim 4.86 RC1

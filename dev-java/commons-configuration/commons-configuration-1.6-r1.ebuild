@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-configuration/commons-configuration-1.6-r1.ebuild,v 1.1 2015/05/24 19:32:56 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-configuration/commons-configuration-1.6-r1.ebuild,v 1.2 2015/06/20 22:14:04 monsieurp Exp $
 
 EAPI=1
 
@@ -66,6 +66,6 @@ RESTRICT="test"
 src_install() {
 	java-pkg_newjar target/${P}.jar
 	dodoc RELEASE-NOTES.txt || die
-	use doc && java-pkg_dojavadoc dist/docs/api
+	use doc && java-pkg_dohtml -r dist/docs/api
 	use source && java-pkg_dosrc src/java/*
 }

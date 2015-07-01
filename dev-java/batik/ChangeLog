@@ -1,6 +1,50 @@
 # ChangeLog for dev-java/batik
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/batik/ChangeLog,v 1.73 2015/06/07 23:38:39 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/batik/ChangeLog,v 1.85 2015/06/28 14:58:49 monsieurp Exp $
+
+  28 Jun 2015; Patrice Clement <monsieurp@gentoo.org> batik-1.8-r1.ebuild:
+  Stable for ppc+ppc64 with ALLARCHES.
+
+  28 Jun 2015; Patrice Clement <monsieurp@gentoo.org> batik-1.8-r1.ebuild:
+  Keyword for ppc+ppc64. Signed off by James Le Cuirot <chewi@gentoo.org>.
+
+  27 Jun 2015; Patrice Clement <monsieurp@gentoo.org> -batik-1.7-r3.ebuild,
+  -batik-1.8.ebuild, batik-1.8-r1.ebuild:
+  Remove vulnerable version. Fix security bug 543858.
+
+*batik-1.8-r1 (27 Jun 2015)
+
+  27 Jun 2015; Patrice Clement <monsieurp@gentoo.org> +batik-1.8-r1.ebuild:
+  xmlgraphics-common dependency bump from :1.5 to :2.
+
+  22 Jun 2015; Patrice Clement <monsieurp@gentoo.org> batik-1.7-r3.ebuild,
+  batik-1.8.ebuild:
+  Rework jars installation logic. Symlinking to lib/lib isn't necessary in this
+  version so let's do away with it. Fix bug 552830.
+
+*batik-1.7-r3 (22 Jun 2015)
+
+  22 Jun 2015; Patrice Clement <monsieurp@gentoo.org> +batik-1.7-r3.ebuild:
+  Revert previous commit until batik:1.7 rdeps are switched to 1.8 SLOT.
+
+  22 Jun 2015; Patrice Clement <monsieurp@gentoo.org> -batik-1.7-r3.ebuild:
+  Remove vulnerable version. Fix security bug 551952.
+
+  22 Jun 2015; Agostino Sarubbo <ago@gentoo.org> batik-1.8.ebuild:
+  Stable for ppc64, wrt bug #543858
+
+  22 Jun 2015; Agostino Sarubbo <ago@gentoo.org> batik-1.8.ebuild:
+  Stable for ppc, wrt bug #543858
+
+  17 Jun 2015; Agostino Sarubbo <ago@gentoo.org> batik-1.8.ebuild:
+  Stable for x86, wrt bug #543858
+
+  16 Jun 2015; Agostino Sarubbo <ago@gentoo.org> batik-1.8.ebuild:
+  Stable for amd64, wrt bug #543858
+
+  13 Jun 2015; Patrice Clement <monsieurp@gentoo.org> batik-1.8.ebuild:
+  Add some missing imports to avoid a compiling issue courtesy of Martin von
+  Gagern <Martin.vGagern@gmx.net>. Fix bug 551952.
 
 *batik-1.8 (07 Jun 2015)
 

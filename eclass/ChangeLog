@@ -1,6 +1,199 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1644 2015/06/08 12:27:32 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1696 2015/07/01 11:28:23 mrueg Exp $
+
+  01 Jul 2015; Manuel Rüger <mrueg@gentoo.org> kde4-base.eclass:
+  Sync with overlay. Add SRC_URIs for newer KDE SC, KDE Workspace releases and
+  KDEPIM 4.4 no-akonadi branches.
+
+  29 Jun 2015; Manuel Rüger <mrueg@gentoo.org> ruby-ng.eclass:
+  Quote RUBY_S and sub_S as the directory could contain spaces.
+
+  29 Jun 2015; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  Introduce qt{4,5}_get_plugindir(). Rephrase some eclass doc.
+
+  28 Jun 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  The -source flag was added in 1.3 or 1.4 (not sure) and we have special code
+  to handle this but no one in their right mind would build with 1.2 or 1.3
+  now. Removing this code allows the ecj-gcj ebuild to call java-pkg_javac-args
+  without a proper VM present.
+
+  28 Jun 2015; Johannes Huber <johu@gentoo.org> kde5.eclass:
+  Loop optimization as suggested by Michal Górny <mgorny@gentoo.org> on -dev
+  ml.
+
+  27 Jun 2015; Johannes Huber <johu@gentoo.org> kde5-functions.eclass,
+  kde5.eclass:
+  Sync kde5*eclass with kde overlay. Handle more whitespace variations by
+  Michael Palimaka <kensington@gentoo.org>. Fixes translation handling by
+  Michael Palimaka <kensington@gentoo.org> and Andreas Sturmlechner
+  <andreas.sturmlechner@gmail.com>, bug #552664. Raises deps on KDE Frameworks
+  and KDE Plasma Manuel Rüger <mrueg@gentoo.org>.
+
+  27 Jun 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Fix conditional bug for UNIPATCH_DROP
+
+  27 Jun 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Fix for kdbus. Thanks to Arfrever.
+
+  27 Jun 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Add the kdbus use flag and eclass variable to the kernel-2.eclass for
+  optional kdbus inclusion.
+
+  27 Jun 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Reverting kdbus changes in eclass. Caused invalid iuse for other ebuilds.
+
+  26 Jun 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Add the option to include the kdbus patchset into gentoo-sources. Default is
+  not to include it.
+
+  26 Jun 2015; Michał Górny <mgorny@gentoo.org> multilib-build.eclass:
+  Remove emul-linux-x86 hack, since emul-linux-x86 is no more.
+
+  24 Jun 2015; William Hubbs <williamh@gentoo.org> golang-build.eclass:
+  typo fix, use double brackets
+
+  24 Jun 2015; William Hubbs <williamh@gentoo.org> +golang-build.eclass:
+  Add an eclass for building Go software
+
+  24 Jun 2015; <grknight@gentoo.org> depend.php.eclass:
+  depend.php.eclass is deprecated and is set to be removed 30 days after bug
+  552836 is resolved
+
+  24 Jun 2015; <grknight@gentoo.org> php-lib-r1.eclass:
+  Remove depend.php and dodoc-php in favor of just dodoc
+
+  24 Jun 2015; Justin Lecher <jlec@gentoo.org> waf-utils.eclass:
+  Drop base.eclass usage
+
+  23 Jun 2015; William Hubbs <williamh@gentoo.org> golang-vcs.eclass:
+  The GOPATH environment variable is now passed directly to the
+  commands that need it.
+  The correct directory of source files is copied to the correct
+  location under ${S}.
+
+  22 Jun 2015; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  Introduce qt{4,5}_get_libdir().
+
+  22 Jun 2015; Manuel Rüger <mrueg@gentoo.org> git-r3.eclass:
+  Fix typo.
+
+  19 Jun 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  Allow EANT_GENTOO_CLASSPATH_EXTRA to work when EANT_GENTOO_CLASSPATH is
+  unset.
+
+  18 Jun 2015; William Hubbs <williamh@gentoo.org> golang-vcs.eclass:
+  Add the EGO_SRC variable for repositories that contain multiple Go
+  packages.
+  Change references from ${S} to ${WORKDIR}/${P} to match other eclasses.
+  Copy the appropriate sources to${WORKDIR}/${P}.
+
+  18 Jun 2015; <grknight@gentoo.org> depend.php.eclass:
+  Remove phpconfutils calls in preparation for its deprecation
+
+  17 Jun 2015; <grknight@gentoo.org> depend.php.eclass:
+  Add require_php_cli to the list of deprecated functions to be removed
+
+  17 Jun 2015; <grknight@gentoo.org> php-common-r1.eclass,
+  php-ext-base-r1.eclass, php-ezc.eclass:
+  Mark 3 eclasses as deprecated for removal on 2015-07-17 wrt bug 551910
+
+  17 Jun 2015; <grknight@gentoo.org> depend.php.eclass
+  Deprecate unused functions in depend.php.eclass
+
+  17 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Update from qt overlay: allow configuring debug/release on a per-package
+  basis; add instruction set support (similarly to qt4-build-multilib); use
+  usex().
+
+  17 Jun 2015; James Le Cuirot <chewi@gentoo.org> java-pkg-2.eclass:
+  Remove eclass dependency on python[xml] and replace with some ugly grep that
+  should suffice. Closes #552332.
+
+  16 Jun 2015; William Hubbs <williamh@gentoo.org> +golang-vcs.eclass:
+  Add golang-vcs.eclass to retrieve go packages from vcs repositories
+  for live ebuilds of software written in the Go programming language.
+
+  16 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Minor changes to reduce diff with qt5-build.eclass
+
+  16 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Drop QT4_VERBOSE_BUILD variable (always true now).
+
+  16 Jun 2015; Davide Pesavento <pesa@gentoo.org> qmake-utils.eclass:
+  Use use_if_iuse().
+
+  15 Jun 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  Add java-pkg_addres function for adding resource files to an existing jar.
+
+  15 Jun 2015; Justin Lecher <jlec@gentoo.org> intel-sdp.eclass:
+  Don't install uninstall informations, bug 551638; make use of path_exists()
+
+  15 Jun 2015; Michael Palimaka <kensington@gentoo.org> kde4-base.eclass:
+  Fix SRC_URI for 4.14.3
+
+  13 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Export MAKEFLAGS and OBJDUMP.
+
+  13 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  sh is "supported", don't fallback to generic. Also, don't die when tc-arch is
+  unknown, the configure script can handle this internally.
+
+  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Allow dev-perl/Module-Build in QA check for Module::Build
+
+  13 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Workaround gcc-4.8 ICE in qtdeclarative (bug 551560).
+
+  13 Jun 2015; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-python-common.eclass:
+  Punt obsolete, unused eclass; it had a fixed set of users all of which
+  have migrated to gnome-python-common-r1 (bug #551914, thanks to Michał
+  Górny).
+
+  13 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Simplify move of .pc files.
+
+  13 Jun 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  mozconfig-v4.31.eclass:
+  last rited mozconfig-v4.31
+
+  12 Jun 2015; <grknight@gentoo.org> -mysql.eclass, -mysql-autotools.eclass:
+  Drop old, unused eclasses; Moved to mysql overlay; bug 551908
+
+  12 Jun 2015; Mike Gilbert <floppym@gentoo.org> -zproduct.eclass:
+  Remove obsolete/broken eclass, bug 551918.
+
+  12 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Don't die when trying to rmdir non-existent directory (bug 551676).
+
+  11 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Use usex().
+
+  10 Jun 2015; <grknight@gentoo.org> mysql-multilib.eclass:
+  Resolve cirucular dependency for bug 551686; Make USE=cluster die early for
+  all except dev-db/mysql-cluster; Documentation update for variables, remove 2
+  unused and add WSREP_REVISION; Clarify mariadb bindist USE
+
+  09 Jun 2015; Michael Weber <xmw@gentoo.org> netsurf.eclass:
+  Update for buildsystem-1.3
+
+  09 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Rename some internal functions for consistency.
+
+  09 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass,
+  qt5-build.eclass:
+  More accurate LICENSE.
+
+  09 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Delete redundant echo.
+
+  09 Jun 2015; Davide Pesavento <pesa@gentoo.org> qt4-build-multilib.eclass:
+  Remove two seds that are no longer needed on current Qt versions.
+
+  09 Jun 2015; Gilles Dartiguelongue <eva@gentoo.org> gnome2.eclass,
+  vala.eclass:
+  Add support for newer vala slot.
 
   08 Jun 2015; Manuel Rüger <mrueg@gentoo.org> kde5-functions.eclass:
   Sync with kde overlay. Raise minimal Plasma version and minimal KDE

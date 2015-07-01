@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cmake/cmake-3.2.3.ebuild,v 1.1 2015/06/04 12:51:16 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cmake/cmake-3.2.3.ebuild,v 1.3 2015/06/22 21:15:01 johu Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.cmake.org/files/v$(get_version_component_range 1-2)/${P}.tar
 
 LICENSE="CMake"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~m68k ~mips ~s390 ~sh ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~s390 ~sh ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc emacs system-jsoncpp ncurses qt4 qt5"
 
 RDEPEND="
@@ -58,6 +58,9 @@ PATCHES=(
 	# respect python eclasses
 	"${FILESDIR}"/${PN}-2.8.10.2-FindPythonLibs.patch
 	"${FILESDIR}"/${PN}-3.1.0-FindPythonInterp.patch
+
+	# upstream backports
+	"${FILESDIR}"/${PN}-3.2.3-musl-missing-include.patch
 )
 
 cmake_src_bootstrap() {

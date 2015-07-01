@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-3.0.ebuild,v 1.2 2015/05/20 16:47:04 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-3.0.ebuild,v 1.4 2015/06/21 11:30:32 blueness Exp $
 
 EAPI="5"
 
@@ -14,7 +14,7 @@ if [[ ${PV} = 9999* ]]; then
 	inherit git-2
 else
 	SRC_URI="http://dev.gentoo.org/~blueness/${PN}/${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
+	KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86"
 fi
 
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
@@ -55,7 +55,8 @@ RDEPEND="${COMMON_DEPEND}
 	!<sys-fs/lvm2-2.02.103
 	!<sec-policy/selinux-base-2.20120725-r10
 	!sys-fs/udev
-	!sys-apps/systemd"
+	!sys-apps/systemd
+	gudev? ( !dev-libs/libgudev )"
 
 PDEPEND=">=sys-fs/udev-init-scripts-26
 	hwdb? ( >=sys-apps/hwids-20140304[udev] )"

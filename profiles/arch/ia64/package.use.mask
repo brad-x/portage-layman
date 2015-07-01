@@ -1,6 +1,23 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/package.use.mask,v 1.167 2015/05/24 04:32:45 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/package.use.mask,v 1.172 2015/06/13 16:03:46 pacho Exp $
+
+# Pacho Ramos <pacho@gentoo.org> (13 Jun 2015)
+# Missing keywords, bug #513108
+net-misc/spice-gtk smartcard webdav
+
+# James Le Cuirot <chewi@gentoo.org> (11 Jun 2015)
+# Temporarily mask rdeps of rhino, which has EAPI 1, until I have a
+# chance to drop Java support on ia64 entirely.
+dev-java/icedtea javascript
+
+# Gilles Dartiguelongue <eva@gentoo.org> (09 Jun 2015)
+# net-fs/libnfs lacks ia64 keyword, bug #551576
+gnome-base/gvfs nfs
+
+# Gilles Dartiguelongue <eva@gentoo.org> (09 Jun 2015)
+# dev-lang/luajit and dev-lua/lgi and lack ia64 keyword, bug #551540
+dev-libs/libpeas lua jit
 
 # James Le Cuirot <chewi@gentoo.org> (20 May 2015)
 # Temporarily mask rdeps of icedtea-web to deal with bug #549134 until

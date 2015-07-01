@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/windowmaker/windowmaker-0.95.6.ebuild,v 1.5 2015/05/27 20:24:52 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/windowmaker/windowmaker-0.95.6.ebuild,v 1.6 2015/06/10 15:25:30 voyageur Exp $
 
 EAPI=5
 inherit autotools eutils
@@ -23,7 +23,7 @@ DEPEND="media-libs/fontconfig
 	x11-libs/libXv
 	gif? ( >=media-libs/giflib-4.1.0-r3 )
 	imagemagick? ( media-gfx/imagemagick )
-	jpeg? ( virtual/jpeg )
+	jpeg? ( virtual/jpeg:0= )
 	png? ( media-libs/libpng:0= )
 	tiff? ( media-libs/tiff:0 )
 	webp? ( media-libs/libwebp )

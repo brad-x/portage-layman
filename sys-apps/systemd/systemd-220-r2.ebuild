@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-220-r2.ebuild,v 1.4 2015/05/30 13:58:45 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-220-r2.ebuild,v 1.8 2015/07/01 00:17:54 floppym Exp $
 
 EAPI=5
 
@@ -72,7 +72,8 @@ RDEPEND="${COMMON_DEPEND}
 	>=sys-apps/baselayout-2.2
 	!sys-auth/nss-myhostname
 	!sys-fs/eudev
-	!sys-fs/udev"
+	!sys-fs/udev
+	gudev? ( !dev-libs/libgudev )"
 
 # sys-apps/dbus: the daemon only (+ build-time lib dep for tests)
 PDEPEND=">=sys-apps/dbus-1.6.8-r1:0[systemd]
@@ -158,7 +159,13 @@ src_prepare() {
 	# http://lists.freedesktop.org/archives/systemd-devel/2015-May/032149.html
 	rm src/journal/audit_type-to-name.h src/udev/keyboard-keys-from-name.gperf || die
 
+	cp "${FILESDIR}"/compile-unifont.py tools/compile-unifont.py || die
+	chmod +x tools/compile-unifont.py || die
+
 	EPATCH_FORCE=yes EPATCH_SUFFIX=patch epatch
+
+	[[ -e src/libsystemd-terminal/unifont-glyph-array.bin ]] || die
+	touch src/libsystemd-terminal/unifont-glyph-array.bin || die
 
 	autotools-utils_src_prepare
 }

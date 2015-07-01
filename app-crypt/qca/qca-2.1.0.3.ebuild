@@ -1,11 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/qca-2.1.0.3.ebuild,v 1.7 2015/04/02 14:06:37 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/qca-2.1.0.3.ebuild,v 1.12 2015/06/30 21:48:14 pesa Exp $
 
 EAPI=5
 
+inherit cmake-utils multibuild qmake-utils
+
 MY_PN="${PN}-qt5"
-inherit multilib cmake-utils multibuild
 
 DESCRIPTION="Qt Cryptographic Architecture (QCA)"
 HOMEPAGE="http://delta.affinix.com/qca/"
@@ -13,7 +14,7 @@ SRC_URI="mirror://kde/stable/${MY_PN}/${PV}/src/${MY_PN}-${PV}.tar.xz"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
+KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
 
 IUSE="botan debug doc examples gcrypt gpg logger nss +openssl pkcs11 +qt4 qt5 sasl softstore test"
 REQUIRED_USE="|| ( qt4 qt5 )"
@@ -49,9 +50,9 @@ DEPEND="${RDEPEND}
 	)
 "
 
-DOCS=( README TODO )
-
 S=${WORKDIR}/${MY_PN}-${PV}
+
+DOCS=( README TODO )
 
 PATCHES=(
 	"${FILESDIR}/${PN}-disable-pgp-test.patch"
@@ -59,7 +60,7 @@ PATCHES=(
 )
 
 qca_plugin_use() {
-	echo "-DWITH_${2:-$1}_PLUGIN=$(use $1 && echo yes || echo no)"
+	echo -DWITH_${2:-$1}_PLUGIN=$(usex "$1")
 }
 
 pkg_setup() {
@@ -69,6 +70,8 @@ pkg_setup() {
 src_configure() {
 	myconfigure() {
 		local mycmakeargs=(
+			-DQCA_FEATURE_INSTALL_DIR="${EPREFIX}$(${MULTIBUILD_VARIANT}_get_mkspecsdir)/features"
+			-DQCA_PLUGINS_INSTALL_DIR="${EPREFIX}$(${MULTIBUILD_VARIANT}_get_plugindir)"
 			$(qca_plugin_use botan)
 			$(qca_plugin_use gcrypt)
 			$(qca_plugin_use gpg gnupg)
@@ -81,19 +84,8 @@ src_configure() {
 			$(cmake-utils_use_build test TESTS)
 		)
 
-		if [[ ${MULTIBUILD_VARIANT} = qt4 ]]; then
-			mycmakeargs+=(
-				-DQT4_BUILD=ON
-				-DQCA_PLUGINS_INSTALL_DIR="${EPREFIX}/usr/$(get_libdir)/qt4/plugins"
-				-DQCA_FEATURE_INSTALL_DIR="${EPREFIX}/usr/share/qt4/mkspecs/features"
-			)
-		fi
-
-		if [[ ${MULTIBUILD_VARIANT} = qt5 ]]; then
-			mycmakeargs+=(
-				-DQCA_PLUGINS_INSTALL_DIR="${EPREFIX}/usr/$(get_libdir)/qt5/plugins"
-				-DQCA_FEATURE_INSTALL_DIR="${EPREFIX}/usr/$(get_libdir)/qt5/mkspecs/features"
-			)
+		if [[ ${MULTIBUILD_VARIANT} == qt4 ]]; then
+			mycmakeargs+=(-DQT4_BUILD=ON)
 		fi
 
 		cmake-utils_src_configure
@@ -106,24 +98,26 @@ src_compile() {
 	multibuild_foreach_variant cmake-utils_src_compile
 }
 
+src_test() {
+	mytest() {
+		local -x QCA_PLUGIN_PATH="${BUILD_DIR}/lib/qca"
+		cmake-utils_src_test
+	}
+
+	multibuild_foreach_variant mytest
+}
+
 src_install() {
 	multibuild_foreach_variant cmake-utils_src_install
 
 	if use doc; then
-		pushd "${BUILD_DIR}" >/dev/null
+		pushd "${BUILD_DIR}" >/dev/null || die
 		doxygen Doxyfile.in || die
-		dohtml apidocs/html/*
-		popd >/dev/null
+		dodoc -r apidocs/html
+		popd >/dev/null || die
 	fi
 
 	if use examples; then
-		insinto /usr/share/doc/${PF}
-		doins -r "${S}"/examples
+		dodoc -r "${S}"/examples
 	fi
-
-	cmake-utils_src_install
-}
-
-src_test() {
-	multibuild_foreach_variant cmake-utils_src_test
 }

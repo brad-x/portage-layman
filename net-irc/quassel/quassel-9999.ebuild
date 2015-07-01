@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.83 2015/06/04 19:05:10 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.85 2015/06/25 18:21:51 johu Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://git.quassel-irc.org/quassel"
 
 DESCRIPTION="Qt/KDE IRC client supporting a remote daemon for 24/7 connectivity"
 HOMEPAGE="http://quassel-irc.org/"
-[[ "${PV}" == "9999" ]] || SRC_URI="http://quassel-irc.org/pub/${P/_/-}.tar.bz2"
+[[ "${PV}" == "9999" ]] || SRC_URI="http://quassel-irc.org/pub/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 KEYWORDS=""
@@ -97,14 +97,14 @@ DEPEND="${RDEPEND}
 
 DOCS=( AUTHORS ChangeLog README )
 
-S="${WORKDIR}/${P/_/-}"
+PATCHES=( "${FILESDIR}/${PN}-0.12.2-qt55.patch" )
 
 REQUIRED_USE="
 	|| ( X server monolithic )
 	ayatana? ( || ( X monolithic ) )
 	crypt? ( || ( server monolithic ) )
 	dbus? ( || ( X monolithic ) )
-	kde? ( || ( X monolithic ) )
+	kde? ( || ( X monolithic ) phonon )
 	phonon? ( || ( X monolithic ) )
 	postgres? ( || ( server monolithic ) )
 	qt5? ( !ayatana )
@@ -140,6 +140,11 @@ src_configure() {
 		$(cmake-utils_use_want X QTCLIENT)
 		"-DEMBED_DATA=OFF"
 	)
+
+	# Something broke upstream detection since Qt 5.5
+	if use ssl ; then
+		mycmakeargs+=("-DHAVE_SSL=TRUE")
+	fi
 
 	cmake-utils_src_configure
 }

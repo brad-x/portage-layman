@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Mason/HTML-Mason-1.540.0.ebuild,v 1.3 2015/01/06 10:42:09 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Mason/HTML-Mason-1.540.0.ebuild,v 1.5 2015/06/13 22:50:35 dilfridge Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="modperl test"
 
-RDEPEND="!modperl? ( virtual/perl-CGI )
+RDEPEND="!modperl? ( dev-perl/CGI )
 	modperl? (
 		www-apache/libapreq2
 		>=www-apache/mod_perl-2
@@ -30,7 +30,7 @@ RDEPEND="!modperl? ( virtual/perl-CGI )
 	dev-perl/Log-Any"
 
 DEPEND="${RDEPEND}
-	virtual/perl-Module-Build
+	dev-perl/Module-Build
 	test? ( dev-perl/Test-Deep )"
 
 want_apache2 modperl

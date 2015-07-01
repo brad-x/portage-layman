@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/oauth2client/oauth2client-1.4.11.ebuild,v 1.1 2015/05/20 10:47:23 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/oauth2client/oauth2client-1.4.11.ebuild,v 1.3 2015/06/26 11:37:35 jlec Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 python3_{3,4} pypy pypy3 )
+PYTHON_COMPAT=( python2_7 python3_{3,4} pypy)
 
 inherit distutils-r1
 
@@ -19,9 +19,9 @@ IUSE="test"
 
 RDEPEND="
 	>=dev-python/httplib2-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]
-	>=dev-python/pyasn1-modules-0.0.5[${PYTHON_USEDEP}]
-	>=dev-python/rsa-3.1.4[${PYTHON_USEDEP}]
+	~dev-python/pyasn1-0.1.7[${PYTHON_USEDEP}]
+	~dev-python/pyasn1-modules-0.0.5[${PYTHON_USEDEP}]
+	~dev-python/rsa-3.1.4[${PYTHON_USEDEP}]
 	>=dev-python/six-1.6.1[${PYTHON_USEDEP}]
 	!<=dev-python/google-api-python-client-1.1[${PYTHON_USEDEP}]
 "

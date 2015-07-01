@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mdds/mdds-9999.ebuild,v 1.1 2015/04/05 19:44:01 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/mdds/mdds-9999.ebuild,v 1.2 2015/06/21 15:23:46 dilfridge Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ EGIT_REPO_URI="https://gitlab.com/mdds/mdds.git"
 inherit eutils toolchain-funcs ${GITECLASS}
 
 DESCRIPTION="A collection of multi-dimensional data structure and indexing algorithm"
-HOMEPAGE="http://code.google.com/p/multidimalgorithm/"
+HOMEPAGE="https://gitlab.com/mdds/mdds"
 [[ ${PV} == 9999 ]] || SRC_URI="http://kohei.us/files/${PN}/src/${P/-/_}.tar.bz2"
 
 LICENSE="MIT"

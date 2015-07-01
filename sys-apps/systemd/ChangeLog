@@ -1,6 +1,30 @@
 # ChangeLog for sys-apps/systemd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.375 2015/05/30 18:08:36 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/ChangeLog,v 1.381 2015/07/01 00:17:54 floppym Exp $
+
+  01 Jul 2015; Mike Gilbert <floppym@gentoo.org> systemd-220-r2.ebuild:
+  Backport unifont build workaround.
+
+*systemd-221 (27 Jun 2015)
+
+  27 Jun 2015; Mike Gilbert <floppym@gentoo.org> +systemd-221.ebuild,
+  systemd-9999.ebuild:
+  Bump. Require python at build time for the live ebuild. Resolve build issue
+  without python enabled, bug 552790.
+
+  21 Jun 2015; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Enable kdbus by default.
+
+  14 Jun 2015; Mike Gilbert <floppym@gentoo.org> +files/compile-unifont.py,
+  systemd-220-r2.ebuild, systemd-9999.ebuild:
+  Add missing compile-unifont.py. Update EGIT_REPO_URI to point at github.
+
+  10 Jun 2015; Mike Gilbert <floppym@gentoo.org> systemd-216-r3.ebuild,
+  systemd-218-r3.ebuild, systemd-219_p112.ebuild, systemd-220-r2.ebuild:
+  Add blocker on dev-libs/libgudev.
+
+  10 Jun 2015; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Drop references to gudev, gtk-doc, and gobject-introspection.
 
   30 May 2015; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
   Depend on >=sys-apps/util-linux-2.26, bug 550832 by Elias Probst.

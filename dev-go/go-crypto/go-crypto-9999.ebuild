@@ -1,27 +1,61 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-go/go-crypto/go-crypto-9999.ebuild,v 1.4 2015/05/24 08:37:29 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-go/go-crypto/go-crypto-9999.ebuild,v 1.7 2015/06/29 03:30:29 williamh Exp $
 
 EAPI=5
-inherit git-r3
+EGO_PN=golang.org/x/crypto/...
+EGO_SRC=golang.org/x/crypto
 
-KEYWORDS=""
+if [[ ${PV} = *9999* ]]; then
+	inherit golang-vcs
+else
+	KEYWORDS="~amd64"
+	EGIT_COMMIT="1e856cbfdf9bc25eefca75f83f25d55e35ae72e0"
+	SRC_URI="https://github.com/golang/crypto/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+fi
+inherit golang-build
+
 DESCRIPTION="Go supplementary cryptography libraries"
-GO_PN=golang.org/x/${PN##*-}
-HOMEPAGE="https://godoc.org/${GO_PN}"
-EGIT_REPO_URI="https://go.googlesource.com/${PN##*-}"
+HOMEPAGE="https://godoc.org/golang.org/x/crypto"
 LICENSE="BSD"
 SLOT="0"
 IUSE=""
-DEPEND=">=dev-lang/go-1.4"
+DEPEND=""
 RDEPEND=""
-S="${WORKDIR}/src/${GO_PN}"
-EGIT_CHECKOUT_DIR="${S}"
-STRIP_MASK="*.a"
+
+if [[ ${PV} != *9999* ]]; then
+src_unpack() {
+	local f
+
+	for f in ${A}
+	do
+		case "${f}" in
+			*.tar|*.tar.gz|*.tar.bz2|*.tar.xz)
+				local destdir=${WORKDIR}/${P}/src/${EGO_SRC}
+
+				debug-print "${FUNCNAME}: unpacking ${f} to ${destdir}"
+
+				# XXX: check whether the directory structure inside is
+				# fine? i.e. if the tarball has actually a parent dir.
+				mkdir -p "${destdir}" || die
+				tar -C "${destdir}" -x --strip-components 1 \
+					-f "${DISTDIR}/${f}" || die
+				;;
+			*)
+				debug-print "${FUNCNAME}: falling back to unpack for ${f}"
+
+				# fall back to the default method
+				unpack "${f}"
+				;;
+		esac
+	done
+}
+fi
 
 src_prepare() {
 	# disable broken tests
-	sed -e 's:TestAgentForward(:_\0:' -i ssh/test/agent_unix_test.go || die
+	sed -e 's:TestAgentForward(:_\0:' \
+		-i src/${EGO_SRC}/ssh/test/agent_unix_test.go || die
 	sed -e 's:TestRunCommandSuccess(:_\0:' \
 		-e 's:TestRunCommandStdin(:_\0:' \
 		-e 's:TestRunCommandStdinError(:_\0:' \
@@ -29,25 +63,5 @@ src_prepare() {
 		-e 's:TestFuncLargeRead(:_\0:' \
 		-e 's:TestKeyChange(:_\0:' \
 		-e 's:TestValidTerminalMode(:_\0:' \
-		-i ssh/test/session_test.go || die
-}
-
-src_compile() {
-	# Create a writable GOROOT in order to avoid sandbox violations.
-	GOROOT="${WORKDIR}/goroot"
-	cp -sR "${EPREFIX}"/usr/lib/go "${GOROOT}" || die
-	rm -rf "${GOROOT}/src/${GO_PN%/*}" \
-		"${GOROOT}/pkg/linux_${ARCH}/${GO_PN%/*}" || die
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} go install -v -x -work ${GO_PN}/... || die
-}
-
-src_test() {
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} \
-		go test -x -v ${GO_PN}/... || die $?
-}
-
-src_install() {
-	insinto /usr/lib/go
-	find "${WORKDIR}"/{pkg,src} -name '.git*' -exec rm -rf {} \; 2>/dev/null
-	doins -r "${WORKDIR}"/{pkg,src}
+		-i src/${EGO_SRC}/ssh/test/session_test.go || die
 }

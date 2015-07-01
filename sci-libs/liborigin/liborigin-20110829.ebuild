@@ -1,10 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/liborigin/liborigin-20110829.ebuild,v 1.3 2013/03/02 23:23:00 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/liborigin/liborigin-20110829.ebuild,v 1.5 2015/06/26 12:14:36 ago Exp $
 
-EAPI=4
+EAPI=5
 
-inherit eutils qt4-r2
+inherit eutils multilib qt4-r2
 
 DESCRIPTION="Library for reading OriginLab OPJ project files"
 HOMEPAGE="http://soft.proindependent.com/liborigin2/"
@@ -12,17 +12,16 @@ SRC_URI="http://dev.gentoo.org/~dilfridge/distfiles/${PN}2-${PV}.zip"
 
 LICENSE="GPL-3"
 SLOT="2"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc"
 
-RDEPEND="dev-libs/boost"
+RDEPEND="
+	dev-libs/boost
+	dev-qt/qtgui:4"
 DEPEND="${RDEPEND}
 	app-arch/unzip
-	dev-qt/qtgui:4
 	dev-cpp/tree
 	doc? ( app-doc/doxygen )"
-
-DOCS="readme FORMAT"
 
 S="${WORKDIR}"/${PN}${SLOT}
 
@@ -43,12 +42,13 @@ src_prepare() {
 src_compile() {
 	qt4-r2_src_compile
 	if use doc; then
-		cd doc
-		doxygen Doxyfile || die "doc generation failed"
+		cd doc && \
+			doxygen Doxyfile || die "doc generation failed"
 	fi
 }
 
 src_install() {
+	local DOCS="readme FORMAT"
+	use doc && local HTML_DOCS=( doc/html/. )
 	qt4-r2_src_install
-	use doc && dohtml -r doc/html/*
 }

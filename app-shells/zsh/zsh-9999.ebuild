@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/zsh-9999.ebuild,v 1.4 2015/01/04 01:34:42 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/zsh-9999.ebuild,v 1.5 2015/06/21 05:07:22 radhermit Exp $
 
 EAPI=5
 
@@ -67,23 +67,24 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
+	local myconf=()
 
 	if use static ; then
-		myconf+=" --disable-dynamic"
+		myconf+=( --disable-dynamic )
 		append-ldflags -static
 	fi
 	if use debug ; then
-		myconf+=" \
-			--enable-zsh-debug \
-			--enable-zsh-mem-debug \
-			--enable-zsh-mem-warning \
-			--enable-zsh-secure-free \
-			--enable-zsh-hash-debug"
+		myconf+=(
+			--enable-zsh-debug
+			--enable-zsh-mem-debug
+			--enable-zsh-mem-warning
+			--enable-zsh-secure-free
+			--enable-zsh-hash-debug
+		)
 	fi
 
 	if [[ ${CHOST} == *-darwin* ]]; then
-		myconf+=" --enable-libs=-liconv"
+		myconf+=( --enable-libs=-liconv )
 		append-ldflags -Wl,-x
 	fi
 
@@ -101,7 +102,7 @@ src_configure() {
 		$(use_enable caps cap) \
 		$(use_enable unicode multibyte) \
 		$(use_enable gdbm ) \
-		${myconf}
+		"${myconf[@]}"
 
 	if use static ; then
 		# compile all modules statically, see Bug #27392
@@ -144,14 +145,25 @@ src_install() {
 	insinto /usr/share/zsh/${PV%_*}/functions/Prompts
 	newins "${FILESDIR}"/prompt_gentoo_setup-1 prompt_gentoo_setup
 
-	# install miscellaneous scripts; bug #54520
 	local i
+
+	# install miscellaneous scripts (bug #54520)
 	sed -e "s:/usr/local/bin/perl:${EPREFIX}/usr/bin/perl:g" \
 		-e "s:/usr/local/bin/zsh:${EPREFIX}/bin/zsh:g" \
-		-i "${S}"/{Util,Misc}/* || die
+		-i {Util,Misc}/* || die
 	for i in Util Misc ; do
 		insinto /usr/share/zsh/${PV%_*}/${i}
 		doins ${i}/*
+	done
+
+	# install header files (bug #538684)
+	insinto /usr/include/zsh
+	doins config.h Src/*.epro
+	for i in Src/{zsh.mdh,*.h} ; do
+		sed -e 's@\.\./config\.h@config.h@' \
+			-e 's@#\(\s*\)include "\([^"]\+\)"@#\1include <zsh/\2>@' \
+			-i "${i}"
+		doins "${i}"
 	done
 
 	dodoc ChangeLog* META-FAQ NEWS README config.modules

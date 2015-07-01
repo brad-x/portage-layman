@@ -1,6 +1,43 @@
 # ChangeLog for dev-python/ipython
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.172 2015/06/02 08:01:03 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.182 2015/06/29 12:37:34 jlec Exp $
+
+  29 Jun 2015; Justin Lecher <jlec@gentoo.org> ipython-3.2.0.ebuild:
+  Fix sandbox violation
+
+  28 Jun 2015; Justin Lecher <jlec@gentoo.org> ipython-3.2.0.ebuild:
+  Prevent double PREFIX on PREFIX, bug #553344
+
+  28 Jun 2015; Justin Lecher <jlec@gentoo.org> -ipython-2.2.0.ebuild:
+  Drop vulnerable version, bug #552816
+
+  27 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> ipython-2.2.0-r1.ebuild:
+  arm stable wrt bug #552816
+
+  27 Jun 2015; Jeroen Roovers <jer@gentoo.org> ipython-2.2.0-r1.ebuild:
+  Stable for PPC64 (bug #552816).
+
+  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> ipython-2.2.0-r1.ebuild:
+  Stable for x86, wrt bug #552816
+
+  24 Jun 2015; Agostino Sarubbo <ago@gentoo.org> ipython-2.2.0-r1.ebuild:
+  Stable for ppc, wrt bug #552816
+
+  23 Jun 2015; Agostino Sarubbo <ago@gentoo.org> ipython-2.2.0-r1.ebuild:
+  Stable for amd64, wrt bug #552816
+
+*ipython-3.2.0 (22 Jun 2015)
+*ipython-2.2.0-r1 (22 Jun 2015)
+
+  22 Jun 2015; Justin Lecher <jlec@gentoo.org>
+  +files/ipython-2.2.0-login-backport.patch, +ipython-2.2.0-r1.ebuild,
+  +ipython-3.2.0.ebuild, -ipython-2.4.1.ebuild, -ipython-3.0.0.ebuild,
+  -ipython-3.1.0.ebuild:
+  Backport vulnerability fix, bug #552816; drop vulnerable versions; create
+  mathjax symlink USE dependent, bug #481726
+
+  21 Jun 2015; Markus Meier <maekke@gentoo.org> ipython-3.1.0.ebuild:
+  add ~arm, bug #541628
 
   02 Jun 2015; Justin Lecher <jlec@gentoo.org> ipython-3.1.0.ebuild:
   Fix Version of pyzmq in deps; thanks Marius Brehler for the work

@@ -1,9 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.684 2015/06/04 18:47:33 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.691 2015/06/27 17:47:05 tetromino Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
+
+# Gilles Dartiguelongue <eva@gentoo.org> (25 May 2015)
+# webkit fails to build with USE=wayland, bug #549228
+# https://bugs.webkit.org/show_bug.cgi?id=142879
+# https://bugs.webkit.org/show_bug.cgi?id=136831
+>=net-libs/webkit-gtk-2.8 wayland
 
 # Johannes Huber <johu@gentoo.org> (31 Nay 2015)
 # No released version available
@@ -34,11 +40,6 @@ dev-java/proguard j2me
 # Christoph Junghans <ottxor@gentoo.org> (03 Apr 2015)
 # >=~sys-devel/dragonegg-3.6 is broken (bug #543644)
 sys-devel/byfl dragonegg
-
-# Michał Górny <mgorny@gentoo.org> (02 Apr 2015)
-# DirectFB support was removed from libsdl, mask the relevant flag
-# due to unsolvable deps, bug #545246.
-media-tv/freevo directfb
 
 # Lars Wendler <polynomial-c@gentoo.org> (19 Mar 2015)
 # >=games-strategy/freeciv-2.5.0 requires >=dev-lang/lua-5.2
@@ -153,7 +154,7 @@ net-libs/ortp zrtp
 dev-libs/libattica qt5
 
 # Johannes Huber <johu@gentoo.org> (12 Sep 2014)
-# Masked until all dependencies are packaged.
+# Segmentation fault, needs further investigation.
 media-sound/tomahawk qt5
 
 # Michał Górny <mgorny@gentoo.org> (06 Sep 2014)
@@ -269,12 +270,6 @@ sys-infiniband/ofed ofed_drivers_ehca
 =dev-vcs/subversion-1.7* ruby
 media-sound/podcatcher bittorrent
 
-# Michał Górny <mgorny@gentoo.org> (27 Feb 2014)
-# Very experimental with unstable kernel- and userspace API.
-# Lacks proper policy support that makes it very unsecure.
-# Suitable only for testing.
-sys-apps/systemd kdbus
-
 # Mike Frysinger <vapier@gentoo.org> (03 Feb 2014)
 # Upstream says to not use this for now.
 dev-libs/elfutils threads
@@ -296,10 +291,6 @@ dev-libs/boost context
 # (see upstream bug https://github.com/fatbob313/umurmur/issues/24)
 # and affected versions are removed from the tree.
 <media-sound/umurmur-0.2.14 polarssl
-
-# Gilles Dartiguelongue <eva@gentoo.org> (25 Dec 2013)
-# gjs: tests fail and support for it was purely and simply removed in master/1.9
->=dev-libs/libpeas-1.9 gjs
 
 # Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2013)
 # Gstreamer support fails to build due to libtool shortcomings when using
@@ -396,10 +387,6 @@ dev-libs/weston gles2 rpi
 # moment there is not much point in enabling this.
 sys-libs/libcxxrt libunwind
 
-# Michael Weber <xmw@gentoo.org>  (19 Jun 2013)
-# Not fit for production
-=www-client/netsurf-3.0* fbcon pdf-writer gstreamer
-
 # Sergey Popov <pinkbyte@gentoo.org> (08 Jun 2013)
 # mask because requires unstable depends not ready for the stabilization
 app-leechcraft/leechcraft-meta unstable
@@ -455,7 +442,9 @@ sci-libs/flann cuda
 
 # Julian Ospald <hasufell@gentoo.org> (20 Feb 2013)
 # Unsupported and experimental.
-net-misc/teamviewer system-wine
+# NP-Hardass <NP-Hardass@gentoo.org> (18 Jun 2015)
+# Change to <10
+<net-misc/teamviewer-10 system-wine
 
 # Alexis Ballier <aballier@gentoo.org> (15 Feb 2013)
 # Needs a huge patch to build against recent releases of FFmpeg/libav.
@@ -504,11 +493,6 @@ dev-ml/tyxml ocamlduce
 www-servers/ocsigen ocamlduce
 dev-ml/eliom ocamlduce
 
-# GNOME <gnome@gentoo.org> (02 Oct 2012)
-# Mask USE="udisks" and use USE="gdu" as the default for <gnome-base/gvfs-1.14;
-# older gvfs releases have problems with recent stable udisks:2 (bug #463792)
-<gnome-base/gvfs-1.14 udisks
-
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (28 Sep 2012)
 # Causes problems with old NVidia drivers, bug #413637.
 <www-client/chromium-32.0.1700.19 tcmalloc
@@ -533,10 +517,6 @@ dev-java/icedtea infinality
 # Requires masked eclipse-sdk.
 dev-lang/icc eclipse
 dev-lang/idb eclipse
-
-# Michael Weber<xmw@gentoo.org>  (18 Jun 2012)
-# Not fit for production
-=www-client/netsurf-2.9 pdf-writer javascript gstreamer
 
 # Diego Elio Pettenò <flameeyes@gentoo.org> (16 Jul 2012)
 # Stop glibc/uclibc from using iconv in blender
@@ -581,11 +561,6 @@ app-arch/libzpaq jit
 # Arun Raghavan <ford_prefect@gentoo.org> (24 May 2012)
 # Mask xen USE flag by default, unmask on x86/amd64 where it is supported.
 media-sound/pulseaudio webrtc-aec xen
-
-# Alexandre Rostovtsev <tetromino@gentoo.org> (27 Mar 2012)
-# Requires libxkbcommon from the x11 overlay
-<dev-cpp/gtkmm-3.7 wayland
-<x11-libs/gtk+-3.7 egl wayland
 
 # Samuli Suominen <ssuominen@gentoo.org> (20 Mar 2012)
 # This is for udev-acl. Unmasked in default/linux/package.use.mask.
@@ -640,10 +615,6 @@ www-client/links suid
 # fixes it bug #385683
 dev-lang/path64 debugger
 
-# Alexandre Rostovtsev <tetromino@gentoo.org> (31 Oct 2011)
-# Let's not suddenly enable clutter on stable evolution versions
-<mail-client/evolution-3 clutter
-
 # Samuli Suominen <ssuominen@gentoo.org> (16 Oct 2011)
 # Mask libbluray support here, and enable it per arch instead
 gnome-base/gvfs bluray
@@ -657,13 +628,6 @@ gnome-base/gvfs bluray
 # Systemtap is not keyworded on anything except amd64/x86
 # Temporarily mask instead of dropping keywords, bug 384647
 dev-libs/glib systemtap
-
-# Nirbheek Chauhan <nirbheek@gentoo.org> (16 Aug 2011)
-# Mask introspection on ebuilds that went stable before it was unmasked.
-# As these ebuilds are cleaned from the tree, the masks can be removed.
-<app-crypt/seahorse-2.32.0-r1 introspection
-<media-libs/babl-0.1.4-r1 introspection
-<www-client/epiphany-3 introspection
 
 # Robin H. Johnson <robbat2@gentoo.org> (10 Jul 2011)
 # PPS should work on all arches, but only keyworded on amd64/x86
@@ -693,9 +657,7 @@ net-dns/pdnsd isdn urandom
 
 # Tomáš Chvátal <scarabeus@gentoo.org> (8 Sep 2010)
 # drm don't even build here so mask everywhere expect live.
-# openvg require openvg-1.1 implemenatation so mask until there is some
 <x11-libs/cairo-9999 drm
-<x11-libs/cairo-1.12 openvg
 
 # Alex Legler <a3li@gentoo.org> (1 Sep 2010)
 # This feature is marked as experimental by upstream.
@@ -736,12 +698,6 @@ sci-chemistry/gamess mpi
 # Mounir Lamouri <volkmar@gentoo.org> (07 Nov 2009)
 # Mask cuda for k3d. Works only on amd64/x86. Bug 267264
 media-gfx/k3d cuda
-
-# Gilles Dartiguelongue <eva@gentoo.org> (01 Nov 2009)
-# Broken on so many setups it is just insane.
-# 0.7 is API/ABI incompatible but is the way to go.
-# Masking to lower maintainance headache, bug #291501.
-media-video/totem tracker
 
 # Tomáš Chvátal <scarabeus@gentoo.org> (27 Oct 2009)
 # Broken on so many setups it is just insane.

@@ -1,6 +1,53 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.244 2015/06/05 14:48:25 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.255 2015/06/29 11:58:05 voyageur Exp $
+
+  29 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.5.2.ebuild,
+  +files/llvm-3.5.2-gcc-5.1.patch:
+  Fix compilation with gcc 5.1, bug #550716 (3.6 and later include the fix)
+
+  18 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-2.8-r2.ebuild,
+  llvm-2.9-r2.ebuild, metadata.xml:
+  Remove last llvm-gcc references, this was removed years ago
+
+  15 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild:
+  lldb fixes thanks to mgorny's review
+
+  15 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild,
+  metadata.xml:
+  Add initial support for lldb debugger, bug #464354. Also enable USE=doc by
+  default for live ebuild, useful if you want the man pages
+
+  14 Jun 2015; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.6-fbsd-gcc49.patch, llvm-3.6.1.ebuild:
+  Apply upstream patch for FreeBSD gcc-4.9 build, bug #548444.
+  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/140 by nigoro.
+
+  13 Jun 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Clean multilib_src_install_all() up.
+
+  13 Jun 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Simplify doc CMake code
+
+  13 Jun 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Rename R600 -> AMDGPU following upstream. Reported by darkbasic.
+
+  11 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-9999.ebuild:
+  Documentation build can be made optional again, add back pax markings
+
+  09 Jun 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Enable EH & RTTI for better compatibility
+
+  09 Jun 2015; Michał Górny <mgorny@gentoo.org>
+  +files/cmake/0002-cmake-Support-overriding-Sphinx-HTML-doc-install-dir.patch,
+  +files/cmake/0003-cmake-Add-an-ordering-dep-between-HTML-man-Sphinx-ta.patch,
+  +files/cmake/0004-cmake-Do-not-install-libgtest.patch, +files/cmake/clang-0001
+  -Install-clang-runtime-into-usr-lib-without-suffix.patch,
+  +files/cmake/clang-0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch, +fil
+  es/cmake/compiler-rt-0001-cmake-Install-compiler-rt-into-usr-lib-without-suffi
+  .patch, llvm-9999.ebuild:
+  Switch the live ebuild to CMake, and few more improvements. Covered by bug
+  #456322.
 
   05 Jun 2015; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.6.1.ebuild,
   llvm-9999.ebuild:

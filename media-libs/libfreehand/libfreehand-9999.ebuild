@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libfreehand/libfreehand-9999.ebuild,v 1.3 2014/09/14 09:04:00 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libfreehand/libfreehand-9999.ebuild,v 1.4 2015/06/21 15:18:45 dilfridge Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
 LICENSE="MPL-2.0"
 SLOT="0"
 [[ ${PV} == 9999 ]] || \
-KEYWORDS="~amd64 ~arm ~ppc ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="doc static-libs"
 
 RDEPEND="
@@ -23,7 +23,9 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}
+	dev-libs/icu:=
 	dev-util/gperf
+	media-libs/lcms
 	sys-devel/libtool
 	virtual/pkgconfig
 	doc? ( app-doc/doxygen )

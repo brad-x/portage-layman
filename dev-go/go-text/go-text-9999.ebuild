@@ -1,46 +1,77 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-go/go-text/go-text-9999.ebuild,v 1.4 2015/05/24 08:19:30 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-go/go-text/go-text-9999.ebuild,v 1.7 2015/06/26 22:54:48 williamh Exp $
 
 EAPI=5
-inherit git-r3
 
-KEYWORDS=""
+EGO_PN=golang.org/x/text/...
+EGO_SRC=golang.org/x/text
+
+if [[ ${PV} = *9999* ]]; then
+	inherit golang-vcs
+else
+	KEYWORDS="~amd64"
+	EGIT_COMMIT="df923bbb63f8ea3a26bb743e2a497abd0ab585f7"
+	SRC_URI="https://github.com/golang/text/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+fi
+inherit golang-build
+
 DESCRIPTION="Go text processing support"
-GO_PN=golang.org/x/${PN##*-}
-HOMEPAGE="https://godoc.org/${GO_PN}"
-EGIT_REPO_URI="https://go.googlesource.com/${PN##*-}"
+HOMEPAGE="https://godoc.org/golang.org/x/text"
 LICENSE="BSD"
 SLOT="0"
 IUSE=""
-DEPEND=">=dev-lang/go-1.4"
+DEPEND=""
 RDEPEND=""
-S="${WORKDIR}/src/${GO_PN}"
-EGIT_CHECKOUT_DIR="${S}"
-STRIP_MASK="*.a"
 
-src_compile() {
-	# Create a writable GOROOT in order to avoid sandbox violations.
-	GOROOT="${WORKDIR}/goroot"
-	cp -sR "${EPREFIX}"/usr/lib/go "${GOROOT}" || die
-	rm -rf "${GOROOT}/src/${GO_PN}" \
-		"${GOROOT}/pkg/linux_${ARCH}/${GO_PN}" || die
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} go install -v -x -work ${GO_PN}/... || die
+if [[ ${PV} != *9999* ]]; then
+src_unpack() {
+	local f
+
+	for f in ${A}
+	do
+		case "${f}" in
+			*.tar|*.tar.gz|*.tar.bz2|*.tar.xz)
+				local destdir=${WORKDIR}/${P}/src/${EGO_SRC}
+
+				debug-print "${FUNCNAME}: unpacking ${f} to ${destdir}"
+
+				# XXX: check whether the directory structure inside is
+				# fine? i.e. if the tarball has actually a parent dir.
+				mkdir -p "${destdir}" || die
+				tar -C "${destdir}" -x --strip-components 1 \
+					-f "${DISTDIR}/${f}" || die
+				;;
+			*)
+				debug-print "${FUNCNAME}: falling back to unpack for ${f}"
+
+				# fall back to the default method
+				unpack "${f}"
+				;;
+		esac
+	done
 }
+fi
 
 src_test() {
-	# Create go symlink for TestLinking in display/dict_test.go
-	mkdir -p "${GOROOT}/bin"
-	ln -s /usr/bin/go  "${GOROOT}/bin/go" || die
+	# Create a writable GOROOT in order to avoid sandbox violations.
+	cp -sR "$(go env GOROOT)" "${T}/goroot" || die
+	if [ -d "${T}/goroot/src/${EGO_SRC}" ]; then
+		rm -rf "${T}/goroot/src/${EGO_SRC}" || die
+	fi
+	if [ -d "${T}/goroot/pkg/$(go env GOOS)_$(go env GOARCH)/${EGO_SRC}" ]; then
+		rm -rf "${T}/goroot/pkg/$(go env GOOS)_$(go env GOARCH)/${EGO_SRC}" ||
+			die
+	fi
 
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} \
-		go test -x -v ${GO_PN}/... || die $?
+	# Create go symlink for TestLinking in display/dict_test.go
+	mkdir -p "${T}/goroot/bin"
+	ln -s /usr/bin/go  "${T}/goroot/bin/go" || die
+
+	GOROOT="${T}/goroot" golang-build_src_test
 }
 
 src_install() {
-	exeinto /usr/lib/go/bin
-	doexe "${WORKDIR}"/bin/*
-	insinto /usr/lib/go
-	find "${WORKDIR}"/{pkg,src} -name '.git*' -exec rm -rf {} \; 2>/dev/null
-	doins -r "${WORKDIR}"/{pkg,src}
+	golang-build_src_install
+	dobin bin/*
 }

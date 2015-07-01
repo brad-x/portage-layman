@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdepim-runtime/kdepim-runtime-4.14.8.ebuild,v 1.1 2015/05/15 16:30:23 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdepim-runtime/kdepim-runtime-4.14.8.ebuild,v 1.4 2015/06/13 08:34:12 zlogene Exp $
 
 EAPI=5
 
@@ -9,7 +9,7 @@ EGIT_BRANCH="KDE/4.14"
 inherit kde4-base
 
 DESCRIPTION="KDE PIM runtime plugin collection"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug facebook google kolab"
 
 RESTRICT="test"
@@ -23,7 +23,7 @@ DEPEND="
 	$(add_kdebase_dep kdepimlibs)
 	x11-misc/shared-mime-info
 	facebook? ( net-libs/libkfbapi )
-	google? ( >=net-libs/libkgapi-2.0 )
+	google? ( >=net-libs/libkgapi-2.0:4 )
 	kolab? ( >=net-libs/libkolab-0.5 )
 "
 RDEPEND="${DEPEND}

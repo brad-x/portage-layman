@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webapp-config/webapp-config-9999.ebuild,v 1.12 2015/04/25 16:08:03 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webapp-config/webapp-config-9999.ebuild,v 1.14 2015/06/22 19:24:29 twitch153 Exp $
 
 EAPI="5"
 
@@ -11,7 +11,7 @@ inherit distutils-r1
 if [[ ${PV} = 9999* ]]
 then
 	EGIT_REPO_URI="git://anongit.gentoo.org/proj/${PN}.git"
-	inherit git-2
+	inherit git-r3
 	KEYWORDS=""
 else
 	SRC_URI="http://dev.gentoo.org/~blueness/${PN}/${P}.tar.bz2"
@@ -58,7 +58,7 @@ python_install_all() {
 }
 
 python_test() {
-	PYTHONPATH="." "${PYTHON}" WebappConfig/tests/dtest.py \
+	PYTHONPATH="." "${PYTHON}" WebappConfig/tests/external.py \
 		|| die "Testing failed with ${EPYTHON}"
 }
 

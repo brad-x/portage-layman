@@ -6,7 +6,7 @@
 #
 # Licensed under the GNU General Public License, v2
 #
-# $Header: /var/cvsroot/gentoo-x86/eclass/java-utils-2.eclass,v 1.162 2015/05/24 22:44:37 chewi Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/java-utils-2.eclass,v 1.165 2015/06/28 13:33:48 chewi Exp $
 
 # @ECLASS: java-utils-2.eclass
 # @MAINTAINER:
@@ -215,6 +215,37 @@ java-pkg_doexamples() {
 
 	# Let's make a symlink to the directory we have everything else under
 	dosym "${dest}" "${JAVA_PKG_SHAREPATH}/examples" || die
+}
+
+# @FUNCTION: java-pkg_addres
+# @USAGE: <jar> <dir> [<find arguments> ...]
+# @DESCRIPTION:
+# Adds resource files to an existing jar.
+# It is important that the directory given is actually the root of the
+# corresponding resource tree. The target directory as well as
+# sources.lst, MANIFEST.MF, *.class, *.jar, and *.java files are
+# automatically excluded. Symlinks are always followed. Additional
+# arguments are passed through to find.
+#
+# @CODE
+#	java-pkg_addres ${PN}.jar resources ! -name "*.html"
+# @CODE
+#
+# @param $1 - jar file
+# @param $2 - resource tree directory
+# @param $* - arguments to pass to find
+java-pkg_addres() {
+	debug-print-function ${FUNCNAME} $*
+
+	[[ ${#} -lt 2 ]] && die "at least two arguments needed"
+
+	local jar=$(realpath "$1" || die "realpath $1 failed")
+	local dir="$2"
+	shift 2
+
+	pushd "${dir}" > /dev/null || die "pushd ${dir} failed"
+	find -L -type f ! -path "./target/*" ! -path "./sources.lst" ! -name "MANIFEST.MF" ! -regex ".*\.\(class\|jar\|java\)" "${@}" -print0 | xargs -0 jar uf "${jar}" || die "jar failed"
+	popd > /dev/null || die "popd failed"
 }
 
 # @FUNCTION: java-pkg_dojar
@@ -1561,11 +1592,7 @@ java-pkg_javac-args() {
 		echo "Could not find valid -source/-target values for javac"
 		return 1
 	else
-		if java-pkg_is-vm-version-ge "1.4"; then
-			echo "${source_str} ${target_str}"
-		else
-			echo "${target_str}"
-		fi
+		echo "${source_str} ${target_str}"
 	fi
 }
 
@@ -1903,17 +1930,15 @@ eant() {
 	local cp
 
 	for atom in ${gcp}; do
-		cp="${cp}:$(java-pkg_getjars ${getjarsarg} ${atom})"
+		cp+=":$(java-pkg_getjars ${getjarsarg} ${atom})"
 	done
 
-	[[ -n "${EANT_NEEDS_TOOLS}" ]] && cp="${cp}:$(java-config --tools)"
+	[[ ${EANT_NEEDS_TOOLS} ]] && cp+=":$(java-config --tools)"
+	[[ ${EANT_GENTOO_CLASSPATH_EXTRA} ]] && cp+=":${EANT_GENTOO_CLASSPATH_EXTRA}"
 
-	if [[ ${cp} ]]; then
+	if [[ ${cp#:} ]]; then
 		# It seems ant does not like single quotes around ${cp}
-		cp=${cp#:}
-		[[ ${EANT_GENTOO_CLASSPATH_EXTRA} ]] && \
-			cp="${cp}:${EANT_GENTOO_CLASSPATH_EXTRA}"
-		antflags="${antflags} -Dgentoo.classpath=\"${cp}\""
+		antflags="${antflags} -Dgentoo.classpath=\"${cp#:}\""
 	fi
 
 	[[ -n ${JAVA_PKG_DEBUG} ]] && echo ant ${antflags} "${@}"
@@ -2161,14 +2186,11 @@ java-pkg_init-compiler_() {
 				continue
 			fi
 
-			# -source was introduced in 1.3, so only check 1.3 and on
-			if version_is_at_least "${desired_soure}" "1.3"; then
-				# Verify that the compiler supports source
-				local supported_source=$(source ${compiler_env} 1>/dev/null 2>&1; echo ${SUPPORTED_SOURCE})
-				if ! has ${desired_source} ${supported_source}; then
-					ewarn "${compiler} does not support -source ${desired_source}, skipping"
-					continue
-				fi
+			# Verify that the compiler supports source
+			local supported_source=$(source ${compiler_env} 1>/dev/null 2>&1; echo ${SUPPORTED_SOURCE})
+			if ! has ${desired_source} ${supported_source}; then
+				ewarn "${compiler} does not support -source ${desired_source}, skipping"
+				continue
 			fi
 
 			# if you get here, then the compiler should be good to go

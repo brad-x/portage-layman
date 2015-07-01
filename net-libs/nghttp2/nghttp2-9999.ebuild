@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/nghttp2/nghttp2-9999.ebuild,v 1.1 2015/05/24 13:55:00 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/nghttp2/nghttp2-9999.ebuild,v 1.2 2015/06/17 17:45:20 vapier Exp $
 
 # TODO: Add python support.
 
@@ -13,8 +13,7 @@ if [[ ${PV} == 9999 ]] ; then
 	inherit git-2
 else
 	SRC_URI="https://github.com/tatsuhiro-t/nghttp2/releases/download/v${PV}/${P}.tar.gz"
-	# Disabled until new curl & mod_h2 releases are made for the new API.
-	#KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 fi
 
 DESCRIPTION="HTTP/2 C Library"

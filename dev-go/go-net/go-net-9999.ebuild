@@ -1,49 +1,62 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-go/go-net/go-net-9999.ebuild,v 1.3 2015/05/24 08:52:41 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-go/go-net/go-net-9999.ebuild,v 1.6 2015/06/29 03:48:53 williamh Exp $
 
 EAPI=5
-inherit git-r3
+EGO_PN=golang.org/x/net/...
+EGO_SRC=golang.org/x/net
 
-KEYWORDS=""
+if [[ ${PV} = *9999* ]]; then
+	inherit golang-vcs
+else
+	KEYWORDS="~amd64"
+	EGIT_COMMIT="dfe268fd2bb5c793f4c083803609fce9806c6f80"
+	SRC_URI="https://github.com/golang/net/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+fi
+inherit golang-build
+
 DESCRIPTION="Go supplementary network libraries"
-GO_PN=golang.org/x/${PN##*-}
-HOMEPAGE="https://godoc.org/${GO_PN}"
-EGIT_REPO_URI="https://go.googlesource.com/${PN##*-}"
+HOMEPAGE="https://godoc.org/golang.org/x/net"
 LICENSE="BSD"
 SLOT="0"
 IUSE=""
-DEPEND=">=dev-lang/go-1.4
-	dev-go/go-text"
+DEPEND="dev-go/go-text"
 RDEPEND=""
-S="${WORKDIR}/src/${GO_PN}"
-EGIT_CHECKOUT_DIR="${S}"
-STRIP_MASK="*.a"
+
+if [[ ${PV} != *9999* ]]; then
+src_unpack() {
+	local f
+
+	for f in ${A}
+	do
+		case "${f}" in
+			*.tar|*.tar.gz|*.tar.bz2|*.tar.xz)
+				local destdir=${WORKDIR}/${P}/src/${EGO_SRC}
+
+				debug-print "${FUNCNAME}: unpacking ${f} to ${destdir}"
+
+				# XXX: check whether the directory structure inside is
+				# fine? i.e. if the tarball has actually a parent dir.
+				mkdir -p "${destdir}" || die
+				tar -C "${destdir}" -x --strip-components 1 \
+					-f "${DISTDIR}/${f}" || die
+				;;
+			*)
+				debug-print "${FUNCNAME}: falling back to unpack for ${f}"
+
+				# fall back to the default method
+				unpack "${f}"
+				;;
+		esac
+	done
+}
+fi
 
 src_prepare() {
 	# disable broken tests
-	sed -e 's:TestReadProppatch(:_\0:' -i webdav/xml_test.go || die
+	sed -e 's:TestReadProppatch(:_\0:' \
+		-i src/${EGO_SRC}/webdav/xml_test.go || die
 	sed -e 's:TestPingGoogle(:_\0:' \
 		-e 's:TestNonPrivilegedPing(:_\0:' \
-		-i icmp/ping_test.go || die
-}
-
-src_compile() {
-	# Create a writable GOROOT in order to avoid sandbox violations.
-	GOROOT="${WORKDIR}/goroot"
-	cp -sR "${EPREFIX}"/usr/lib/go "${GOROOT}" || die
-	rm -rf "${GOROOT}/src/${GO_PN}" \
-		"${GOROOT}/pkg/linux_${ARCH}/${GO_PN}" || die
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} go install -v -x -work ${GO_PN}/... || die
-}
-
-src_test() {
-	GOROOT="${GOROOT}" GOPATH=${WORKDIR} \
-		go test -x -v ${GO_PN}/... || die $?
-}
-
-src_install() {
-	insinto /usr/lib/go
-	find "${WORKDIR}"/{pkg,src} -name '.git*' -exec rm -rf {} \; 2>/dev/null
-	doins -r "${WORKDIR}"/{pkg,src}
+		-i src/${EGO_SRC}/icmp/ping_test.go || die
 }

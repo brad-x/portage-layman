@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molsketch/molsketch-0.2.0-r1.ebuild,v 1.7 2014/09/17 11:58:04 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molsketch/molsketch-0.2.0-r1.ebuild,v 1.8 2015/06/29 07:24:58 jlec Exp $
 
-EAPI=3
+EAPI=5
 
 inherit cmake-utils multilib
 
@@ -18,13 +18,11 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 DEPEND="
-	=sci-chemistry/openbabel-2.2*
+	>=sci-chemistry/openbabel-2.2
 	dev-qt/qtcore:4
 	dev-qt/qtgui:4
 	dev-qt/qttest:4
-	|| (
-		>=dev-qt/qthelp-4.7.0:4[compat]
-		<dev-qt/qthelp-4.7.0:4 )"
+	>=dev-qt/qthelp-4.7.0:4[compat]"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
