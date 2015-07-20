@@ -1,10 +1,133 @@
 # ChangeLog for profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10154 2015/07/01 13:00:24 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10193 2015/07/19 09:30:06 chewi Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  19 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
+  app-eselect/eselect-ecj has been removed.
+
+  18 Jul 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Extend Exim 4.86 RC mask
+
+  17 Jul 2015; Thomas Beierlein <tomjbe@gentoo.org> package.mask:
+  Dropped old mask. Got enough time for testing
+
+  16 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org> package.mask:
+  remove old spidermonkey-1.8.7 mask as ebuild removed, mask thunderbird-24 as
+  its not supported.
+
+  15 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/exolab{core,tools} for removal.
+
+  15 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/burlap and dev-java/caucho-services for removal.
+
+  13 Jul 2015; Pacho Ramos <pacho@gentoo.org> use.desc:
+  sqlite3 USE is not used anymore (#363805)
+
+  13 Jul 2015; Sergey Popov <pinkbyte@gentoo.org> package.mask:
+  Mask upcoming Boost 1.58
+
+  13 Jul 2015; Michał Górny <mgorny@gentoo.org> desc/nginx_modules_http.desc:
+  Describe nginx_modules_http_memc. Part of version bump,
+  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/156 by
+  jbergstroem.
+
+  12 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Remove obsolete lcsm:0 mask
+
+  12 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Remove obsolete perl-core masks
+
+  12 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Remove obsolete mask for removed Perl virtuals CGI, Module-Build, and
+  Module-Pluggable
+
+  12 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Unmask Perl 5.22
+
+  12 Jul 2015; Jason Zaman <perfinion@gentoo.org> license_groups:
+  Add MicroChip-SDCC license to BINARY-REDISTRIBUTABLE
+
+  11 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> updates/3Q-2015:
+  dev-perl/locale-maketext-lexicon just became dev-perl/Locale-Maketext-Lexicon
+
+  10 Jul 2015; William Hubbs <williamh@gentoo.org> package.mask:
+  unmask udev-222 for bug #554408
+
+  10 Jul 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org> package.mask:
+  Mask dev-lang/nacl-toolchain-newlib for removal, bug #543576 by vapier.
+
+  10 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/mckoi for removal.
+
+  10 Jul 2015; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Mask not-building udev release #554408
+
+  10 Jul 2015; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Unmask systemd/udev 222 mask and virtual/libgudev-230.
+
+  09 Jul 2015; William Hubbs <williamh@gentoo.org> package.mask:
+  update udev mask for bug #552036
+
+  09 Jul 2015; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Mask sys-apps/systemd-222.
+
+  07 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-util/fujaba for removal.
+
+  06 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask app-arch/dczip for removal.
+
+  06 Jul 2015; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Fix category in mask.
+
+  05 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask net-p2p/frostwire for removal.
+
+  05 Jul 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Add bouncy-castle-java to jruby mask.
+
+  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Mask old slot of dev-ruby/dotenv for removal, fixing bug 553402.
+
+  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Remove mask for removed www-servers/gorg.
+
+  04 Jul 2015; Anthony G. Basile <blueness@gentoo.org> package.mask:
+  Remove mask on sys-apps/getent since its off the tree.
+
+  04 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Unmask virtual/perl-Unicode-Collate since we now have a corresponding
+  perl-core package
+
+  04 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> +updates/3Q-2015:
+  Fix capitalization of dev-perl/inline-files
+
+  04 Jul 2015; Michael Orlitzky <mjo@gentoo.org> package.mask:
+  Mask sci-biology/flower for removal in 30 days.
+
+  02 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Clean up two old entries.
+
+  02 Jul 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Remove gpe-{base,utils} mask.
+
+  02 Jul 2015; Manuel Rüger <mrueg@gentoo.org> categories:
+  Remove gpe-{base,utils} from categories.
+
+  02 Jul 2015; Manuel Rüger <mrueg@gentoo.org> package.mask:
+  Cleanup mask for dev-lang/rubinius-1*.
+
+  01 Jul 2015; Mike Pagano <mpagano@gentoo.org> package.mask:
+  Remove incorrect mask
+
+  01 Jul 2015; Johannes Huber <johu@gentoo.org>
+  targets/desktop/kde/package.use, targets/desktop/plasma/package.use:
+  Add designer USE flag to media-libs/phonon, bug #550952.
 
   01 Jul 2015; Michael Palimaka <kensington@gentoo.org>
   targets/desktop/plasma/package.use:

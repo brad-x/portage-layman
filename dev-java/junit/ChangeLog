@@ -1,6 +1,26 @@
 # ChangeLog for dev-java/junit
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/junit/ChangeLog,v 1.84 2013/10/20 16:32:37 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/junit/ChangeLog,v 1.88 2015/07/12 12:19:16 monsieurp Exp $
+
+  12 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
+  files/junit-4.12-build.xml, junit-4.12.ebuild:
+  Remove 'test' target dependency from 'package' target so that jar file gets
+  created even with tests off. Fix bug 554584.
+
+  11 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
+  files/junit-4.12-build.xml:
+  Remove additionalparam flags from javadoc target for the javadoc to compile
+  smoothly with Java 7. Fix bug 554486.
+
+  11 Jul 2015; James Le Cuirot <chewi@gentoo.org> junit-3.8.2-r1.ebuild,
+  -junit-4.6.ebuild, -junit-4.8.2-r1.ebuild:
+  Drop java on ia64 and also drop old versions.
+
+*junit-4.12 (10 Jul 2015)
+
+  10 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
+  +files/junit-4.12-build.xml, +junit-4.12.ebuild:
+  Version bump. Fix bug 535878.
 
   20 Oct 2013; Agostino Sarubbo <ago@gentoo.org> junit-4.11.ebuild:
   Stable for ppc64, wrt bug #476958

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/vault/vault-9999.ebuild,v 1.3 2015/06/09 07:09:29 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/vault/vault-9999.ebuild,v 1.4 2015/07/08 19:15:20 williamh Exp $
 
 EAPI=5
 
@@ -15,8 +15,8 @@ LICENSE="MPL-2.0"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=dev-lang/go-1.4
-	dev-go/go-oauth2"
+DEPEND=">=dev-lang/go-1.4:=
+	dev-go/go-oauth2:="
 RDEPEND=""
 
 SRC_URI=""

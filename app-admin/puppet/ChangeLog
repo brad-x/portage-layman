@@ -1,6 +1,51 @@
 # ChangeLog for app-admin/puppet
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/ChangeLog,v 1.222 2015/06/18 20:39:33 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/ChangeLog,v 1.232 2015/07/19 08:49:09 jer Exp $
+
+  19 Jul 2015; Jeroen Roovers <jer@gentoo.org> puppet-4.2.0-r1.ebuild:
+  Mark ~hppa (bug #553952).
+
+*puppet-4.2.0-r1 (18 Jul 2015)
+
+  18 Jul 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +puppet-4.2.0-r1.ebuild, -puppet-4.2.0.ebuild, metadata.xml:
+  removing puppetdb support, use puppet-agent instead for that
+
+  16 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> metadata.xml,
+  puppet-4.2.0.ebuild:
+  quick add of puppetdb support
+
+  16 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> puppet-4.2.0.ebuild:
+  fixing patching and making symlink
+
+*puppet-4.2.0 (11 Jul 2015)
+
+  11 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +puppet-4.2.0.ebuild:
+  bump for the new facter and release
+
+  11 Jul 2015; Hans de Graaff <graaff@gentoo.org> -puppet-3.7.3.ebuild,
+  -puppet-3.7.4.ebuild, -puppet-3.7.4-r1.ebuild, -puppet-3.8.1.ebuild:
+  Remove ebuilds with USE=sqlite3 for bug 548644.
+
+*puppet-3.8.1-r1 (11 Jul 2015)
+*puppet-3.7.4-r2 (11 Jul 2015)
+
+  11 Jul 2015; Hans de Graaff <graaff@gentoo.org> +puppet-3.7.4-r2.ebuild,
+  +puppet-3.8.1-r1.ebuild:
+  Change sqlite3 USE flag to sqlite for bug 548644.
+
+*puppet-3.7.3-r1 (11 Jul 2015)
+
+  11 Jul 2015; Hans de Graaff <graaff@gentoo.org> +puppet-3.7.3-r1.ebuild:
+  Change sqlite3 USE flag to sqlite for bug 548644.
+
+  11 Jul 2015; Hans de Graaff <graaff@gentoo.org> -puppet-3.4.1.ebuild:
+  Cleanup ruby19-only version.
+
+*puppet-3.8.1 (07 Jul 2015)
+
+  07 Jul 2015; Hans de Graaff <graaff@gentoo.org> +puppet-3.8.1.ebuild:
+  Version bump.
 
   18 Jun 2015; Matthew Thode <prometheanfire@gentoo.org> files/puppet.init-4.x,
   files/puppetmaster.init-4.x:

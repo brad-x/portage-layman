@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/root-5.34.26.ebuild,v 1.4 2015/05/01 15:30:02 bircoph Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/root/root-5.34.26.ebuild,v 1.7 2015/07/18 13:43:07 bircoph Exp $
 
 EAPI=5
 
@@ -19,7 +19,6 @@ inherit elisp-common eutils fdo-mime fortran-2 multilib python-single-r1 \
 
 DESCRIPTION="C++ data analysis framework and interpreter from CERN"
 HOMEPAGE="http://root.cern.ch/"
-DOC_URI="ftp://root.cern.ch/${PN}/doc"
 
 SLOT="0/$(get_version_component_range 1-3 ${PV})"
 LICENSE="LGPL-2.1 freedist MSttfEULA LGPL-3 libpng UoI-NCSA"
@@ -120,7 +119,7 @@ S="${WORKDIR}/${PN}"
 DOC_DIR="/usr/share/doc/${P}"
 
 die_compiler() {
-	eerror "You are using a $(tc-getCXX) without C++$1 capabilities"
+	eerror "You are using a $(tc-getCXX)-$5 without C++$1 capabilities"
 	die "Need one of the following C++$1 capable compilers:\n"\
 		"    >=sys-devel/gcc[cxx]-$2\n"\
 		"    >=sys-devel/clang-$3\n"\
@@ -133,21 +132,24 @@ die_compiler() {
 # $3 - clang++
 # $4 - icc/icpc
 check_compiler() {
+	local ver
 	case "$(tc-getCXX)" in
 		*clang++*)
-			version_is_at_least "$3" "$(has_version sys-devel/clang)" || die_compiler "$1" "$2" "$3" "$4"
+			ver="$(best_version sys-devel/clang | sed 's:sys-devel/clang-::')"
 		;;
 		*g++*)
-			version_is_at_least "$2" "$(gcc-version)" || die_compiler "$1" "$2" "$3" "$4"
+			ver="$(gcc-version)"
 		;;
 		*icc*|*icpc*)
-			version_is_at_least "$4" "$(has_version dev-lang/icc)" || die_compiler "$1" "$2" "$3" "$4"
+			ver="$(best_version dev-lang/icc | sed 's:dev-lang/icc-::')"
 		;;
 		*)
 			ewarn "You are using an unsupported compiler."
 			ewarn "Please report any issues upstream."
+			return 0
 		;;
 	esac
+	version_is_at_least "$3" "${ver}" || die_compiler "$1" "$2" "$3" "$4" "${ver}"
 }
 
 pkg_setup() {
@@ -324,7 +326,6 @@ src_configure() {
 			$(use_enable opengl)
 			$(use_enable oracle)
 			$(use_enable postgres pgsql)
-			$(usex postgres "--with-pgsql-incdir=$(pg_config --includedir)" "")
 			$(use_enable prefix rpath)
 			$(use_enable pythia6)
 			$(use_enable pythia8)
@@ -341,6 +342,10 @@ src_configure() {
 			${EXTRA_ECONF}
 		)
 	fi
+
+	# usex can't be used here, because pg_config may be not
+	# installed with USE="-postgres"
+	use postgres && myconf+=( --with-pgsql-incdir=$(pg_config --includedir) )
 
 	./configure ${myconf[@]} || die "configure failed"
 }

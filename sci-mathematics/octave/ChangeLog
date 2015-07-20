@@ -1,6 +1,39 @@
 # ChangeLog for sci-mathematics/octave
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/ChangeLog,v 1.174 2015/01/07 11:33:22 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/ChangeLog,v 1.178 2015/07/10 01:12:45 gienah Exp $
+
+  10 Jul 2015; Mark Wright <gienah@gentoo.org> octave-4.0.0.ebuild:
+  Thanks to PL Hayes for pointing out in bug 554290 that it needs a fix for to
+  work for USE=jit, llvm >= 3.5 installed, autoconf-archive not installed.
+
+  09 Jul 2015; Mark Wright <gienah@gentoo.org>
+  +files/octave-4.0.0-llvm-3.5-gnulib-hg.patch, octave-4.0.0.ebuild:
+  Fix Bug 554290 - sci-mathematics/octave-4.0.0 fails to build - syntax error
+  near unexpected token -std=c++11, AX_CHECK_COMPILE_FLAG(-std=c++11,' - thanks
+  to Nikolaos Chatzidakis for reporting, PL Hayes, Francisco Vazquez for
+  helping. Correct --without-64 to --disable-64. Apply octave-4.0.0-llvm-3.5
+  -gnulib-hg.patch from http://savannah.gnu.org/bugs/?41061 to fix compile error
+  with some configurations (gcc 4.8.3 in a mostly stable chroot with llvm 3.5.0,
+  USE=jit)
+
+*octave-4.0.0 (07 Jul 2015)
+
+  07 Jul 2015; Mark Wright <gienah@gentoo.org>
+  +files/octave-4.0.0-imagemagick-configure.patch,
+  +files/octave-4.0.0-imagemagick.patch, +files/octave-4.0.0-llvm-3.5.patch,
+  +octave-4.0.0.ebuild, metadata.xml, octave-3.6.4-r1.ebuild,
+  octave-3.6.4.ebuild, octave-3.8.1-r1.ebuild, octave-3.8.1.ebuild,
+  octave-3.8.2.ebuild:
+  Bump octave to 4.0.0, fixes Bug 550858 - sci-mathematics/octave-4.0 version
+  bump, thanks to Bohdan Trach for reporting. octave 4.0.0 allows llvm 3.5,
+  fixing Bug 531672 - sci-mathematics/octave-3.8.2 USE=jit depends on <sys-
+  devel/llvm-3.5, thanks to Juergen Rose for reporting and eroen for an upstream
+  bug reference. Fix Bug 539886 - sci-mathematics/octave-3.8.2 should depend on
+  x11-libs/fltk[opengl,xft], thanks to Andreas Fink for reporting and the fix.
+
+  05 Jul 2015; Michał Górny <mgorny@gentoo.org> octave-3.8.1-r1.ebuild,
+  octave-3.8.2.ebuild:
+  Remove slot operators from || () block where they are broken.
 
   07 Jan 2015; Jeroen Roovers <jer@gentoo.org> octave-3.8.1-r1.ebuild,
   octave-3.8.2.ebuild:

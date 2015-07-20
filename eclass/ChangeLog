@@ -1,6 +1,99 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1696 2015/07/01 11:28:23 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1722 2015/07/19 15:46:03 mpagano Exp $
+
+  19 Jul 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
+  Change kernel upgrade http link and remove reference to deblob in elog
+  message. See bug #553484
+
+  19 Jul 2015; Johannes Huber <johu@gentoo.org> kde4-base.eclass:
+  Cleanup SRC_URIs.
+
+  18 Jul 2015; Mike Gilbert <floppym@gentoo.org> distutils-r1.eclass:
+  Add entire python directory to SANDBOX_PREDICT, bug 554252.
+
+  17 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  mozconfig-v6.38.eclass, mozconfig-v6.39.eclass:
+  Updated gstreamer dependencies to current stable and dropped gst-plugins-mad
+  since gst-plugins-libav now officially provides mp3 decoding
+
+  17 Jul 2015; Brian Evans <grknight@gentoo.org> depend.php.eclass:
+  Remove deprecated functions from depend.php.eclass as announced 30 days ago
+
+  17 Jul 2015; Brian Evans <grknight@gentoo.org> -php-common-r1.eclass,
+  -php-ext-base-r1.eclass, -php-ezc.eclass:
+  Drop old, unused eclasses wrt bug 551910
+
+  17 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  mozconfig-v6.38.eclass, mozconfig-v6.39.eclass:
+  Added gst-plugins-mad:1.0 dependency for USE=gstreamer to ensure mp3
+  streaming support
+
+  16 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org> mozlinguas.eclass:
+  minor update within mozlinguas.eclass
+
+  16 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org> mozlinguas.eclass:
+  Fixed the mozlinguas.eclass upgrade, recommitting.
+
+  16 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  mozconfig-v6.38.eclass, mozconfig-v6.39.eclass, mozcoreconf-v3.eclass,
+  mozextension.eclass, mozlinguas.eclass:
+  Update mozilla support eclasses
+
+  16 Jul 2015; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Forbid also installing "examples" package, bug #555038.
+
+  16 Jul 2015; Lars Wendler <polynomial-c@gentoo.org> apache-2.eclass:
+  Added slot dependency for openssl. Raised minimum required EAPI version to 5.
+
+  15 Jul 2015; Andreas K. Huettel <dilfridge@gentoo.org> kde4-meta.eclass:
+  Fix unpacking of noakonadi branch
+
+  14 Jul 2015; Anthony G. Basile <blueness@gentoo.org> bitcoincore.eclass:
+  Update for bitcoind 0.11.0.
+
+  13 Jul 2015; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Initial support for Qt 5.5
+
+  09 Jul 2015; Michał Górny <mgorny@gentoo.org> git-r3.eclass:
+  Do not attempt to use submodules for which the checkout path does not exist
+  (has been removed), bug #551100.
+
+  09 Jul 2015; Michał Górny <mgorny@gentoo.org> gnome2.eclass:
+  Remove meaningless nonfatal from elibtoolize call, bug #551154.
+
+  09 Jul 2015; Hans de Graaff <graaff@gentoo.org> ruby-single.eclass:
+  Update documentation.
+
+  08 Jul 2015; Bernard Cafarelli <voyageur@gentoo.org> webapp.eclass:
+  Fix elog in webapp_serverowned and ebeep in newer EAPIs
+
+  07 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  -mozconfig-v4.31.eclass, -mozconfig-v5.33.eclass, +mozconfig-v6.38.eclass,
+  +mozconfig-v6.39.eclass:
+  removed old mozconfig eclasses, added new
+
+  06 Jul 2015; William Hubbs <williamh@gentoo.org> golang-build.eclass:
+  Add back the subslot operator in the dependency on Go. We need this so that
+  we have the Go version the package was built with recorded.
+
+  06 Jul 2015; Michael Palimaka <kensington@gentoo.org> kde5.eclass:
+  Add missing USE dependency default wrt bug #554056.
+
+  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass:
+  Document that some variables must be set before inheriting the eclass.
+
+  04 Jul 2015; Mike Gilbert <floppym@gentoo.org> distutils-r1.eclass,
+  python-any-r1.eclass, python-r1.eclass, python-single-r1.eclass,
+  python-utils-r1.eclass:
+  Replace links to python-r1 dev guide with links to the wiki.
+
+  04 Jul 2015; Manuel Rüger <mrueg@gentoo.org> python-r1.eclass:
+  Update URI.
+
+  03 Jul 2015; William Hubbs <williamh@gentoo.org> golang-build.eclass:
+  drop the slot dependency; it was pointed out to me that they do not trigger
+  rebuilds in DEPEND
 
   01 Jul 2015; Manuel Rüger <mrueg@gentoo.org> kde4-base.eclass:
   Sync with overlay. Add SRC_URIs for newer KDE SC, KDE Workspace releases and

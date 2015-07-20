@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/webapp.eclass,v 1.73 2015/05/12 15:15:31 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/webapp.eclass,v 1.75 2015/07/08 09:33:47 voyageur Exp $
 
 # @ECLASS: webapp.eclass
 # @MAINTAINER:
@@ -502,12 +502,12 @@ webapp_pkg_postinst() {
 				elog "${PN}-${PVR} is not installed - using install mode"
 			fi
 
-			my_cmd="${WEBAPP_CONFIG} ${my_mode} -h localhost -u root -d ${INSTALL_DIR} ${PN} ${PVR}"
+			my_cmd="${WEBAPP_CONFIG} -h localhost -u root -d ${INSTALL_DIR} ${my_mode} ${PN} ${PVR}"
 			elog "Running ${my_cmd}"
 			${my_cmd}
 
 			echo
-			local cleaner="${WEBAPP_CLEANER} -p -C /${PN}"
+			local cleaner="${WEBAPP_CLEANER} -p -C ${CATEGORY}/${PN}"
 			einfo "Running ${cleaner}"
 			${cleaner}
 		else
@@ -518,7 +518,7 @@ webapp_pkg_postinst() {
 			elog
 			elog "To install ${PN}-${PVR} into a virtual host, run the following command:"
 			elog
-			elog "    webapp-config -I -h <host> -d ${PN} ${PN} ${PVR}"
+			elog "    webapp-config -h <host> -d ${PN} -I ${PN} ${PVR}"
 			elog
 			elog "For more details, see the webapp-config(8) man page"
 		fi
@@ -530,7 +530,7 @@ webapp_pkg_postinst() {
 		elog
 		elog "To install ${PN}-${PVR} into a virtual host, run the following command:"
 		elog
-		elog "    webapp-config -I -h <host> -d ${PN} ${PN} ${PVR}"
+		elog "    webapp-config -h <host> -d ${PN} -I ${PN} ${PVR}"
 		elog
 		elog "For more details, see the webapp-config(8) man page"
 	fi
@@ -554,7 +554,7 @@ webapp_pkg_prerm() {
 			if [[ -f "${x}"/.webapp ]]; then
 				. "${x}"/.webapp
 				if [[ -n "${WEB_HOSTNAME}" && -n "${WEB_INSTALLDIR}" ]]; then
-					${WEBAPP_CONFIG} -C -h ${WEB_HOSTNAME} -d ${WEB_INSTALLDIR} ${PN} ${PVR}
+					${WEBAPP_CONFIG} -h ${WEB_HOSTNAME} -d ${WEB_INSTALLDIR} -C ${PN} ${PVR}
 				fi
 			else
 				ewarn "Cannot find file ${x}/.webapp"

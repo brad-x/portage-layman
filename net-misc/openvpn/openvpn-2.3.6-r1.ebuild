@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openvpn/openvpn-2.3.6-r1.ebuild,v 1.1 2015/02/08 16:22:58 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openvpn/openvpn-2.3.6-r1.ebuild,v 1.3 2015/07/12 19:33:49 djc Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://openvpn.net/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~arm-linux ~x86-linux"
-IUSE="examples down-root iproute2 pam passwordsave pkcs11 +plugins +polarssl selinux +ssl systemd +lzo static userland_BSD"
+IUSE="examples down-root iproute2 pam passwordsave pkcs11 +plugins polarssl selinux +ssl systemd +lzo static userland_BSD"
 
 REQUIRED_USE="static? ( !plugins !pkcs11 )
 			polarssl? ( ssl )
@@ -44,8 +44,6 @@ src_prepare() {
 src_configure() {
 	use static && LDFLAGS="${LDFLAGS} -Xcompiler -static"
 	local myconf
-	echo "DROPPY"
-	use polarssl && echo "FLOZZY"
 	use polarssl && myconf="--with-crypto-library=polarssl"
 	econf \
 		${myconf} \

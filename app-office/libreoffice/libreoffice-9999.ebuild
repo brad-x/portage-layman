@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999.ebuild,v 1.36 2015/06/21 15:44:21 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999.ebuild,v 1.37 2015/07/12 20:54:02 dilfridge Exp $
 
 EAPI=5
 
@@ -99,7 +99,7 @@ COMMON_DEPEND="
 	>=app-text/hunspell-1.3.2-r3
 	app-text/mythes
 	>=app-text/libabw-0.1.0
-	>=app-text/libexttextcat-3.2
+	>=app-text/libexttextcat-3.4.4
 	>=app-text/libebook-0.1.1
 	>=app-text/libetonyek-0.1.2
 	app-text/liblangtag

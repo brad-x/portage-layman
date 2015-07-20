@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/gdal-1.11.1-r3.ebuild,v 1.6 2015/04/26 17:19:23 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/gdal-1.11.1-r3.ebuild,v 1.7 2015/07/08 05:36:17 patrick Exp $
 
 EAPI=5
 
@@ -59,7 +59,7 @@ RDEPEND="
 	xls? ( dev-libs/freexl )
 "
 
-SWIG_DEP=">=dev-lang/swig-2.0.2"
+SWIG_DEP=">=dev-lang/swig-2.0.2 <=dev-lang/swig-3.0.4"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
 	java? ( >=virtual/jdk-1.6 )

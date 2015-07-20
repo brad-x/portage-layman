@@ -1,8 +1,12 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/package.use.mask,v 1.160 2015/05/24 04:35:58 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/package.use.mask,v 1.162 2015/07/16 17:20:12 jer Exp $
 
 # DON'T TOUCH THIS FILE. Instead, file a bug and assign it to <hppa@gentoo.org>.
+
+# Jeroen Roovers <jer@gentoo.org> (3 Jul 2015) 
+# net-libs/nghttp2 fails to compile (bug #552898)
+net-misc/curl http2
 
 # Jeroen Roovers <jer@gentoo.org> (17 May 2015)
 # Mask USE=rados for net-analyzer/rrdtool since sys-cluster/ceph is not
@@ -22,10 +26,6 @@ dev-libs/efl physics
 # dev-python/gevent requires dev-python/greenlet which has not been ported to
 # HPPA (bug #538510)
 dev-python/pyzor gevent
-
-# Jeroen Roovers <jer@gentoo.org> (29 Nov 2014)
-# Needs dev-libs/protobuf{-c} which has not been ported to HPPA (bug #531068)
-net-dns/unbound dnstap
 
 # Jeroen Roovers <jer@gentoo.org> (19 Oct 2014)
 # requires dev-python/restkit which requires

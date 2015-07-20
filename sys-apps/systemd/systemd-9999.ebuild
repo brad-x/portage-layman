@@ -1,23 +1,25 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.174 2015/06/27 18:00:47 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.182 2015/07/17 16:29:46 floppym Exp $
 
 EAPI=5
 
+AUTOTOOLS_AUTORECONF=yes
 AUTOTOOLS_PRUNE_LIBTOOL_FILES=all
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 if [[ ${PV} == 9999 ]]; then
-	AUTOTOOLS_AUTORECONF=yes
 	EGIT_REPO_URI="https://github.com/systemd/systemd.git"
 	inherit git-r3
 else
-	SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
+	SRC_URI="https://github.com/systemd/systemd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~ia64 ~x86"
 fi
+UNIFONT=unifont-8.0.01
+SRC_URI+=" terminal? ( http://unifoundry.com/pub/${UNIFONT}/font-builds/${UNIFONT}.hex.gz )"
 
 inherit autotools-utils bash-completion-r1 linux-info multilib \
-	multilib-minimal pam python-single-r1 systemd toolchain-funcs udev \
+	multilib-minimal pam python-any-r1 systemd toolchain-funcs udev \
 	user
 
 DESCRIPTION="System and service manager for Linux"
@@ -26,16 +28,15 @@ HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 IUSE="acl apparmor audit cryptsetup curl elfutils gcrypt gnuefi http
-	idn importd +kdbus +kmod +lz4 lzma nat pam policykit python
+	idn importd +kdbus +kmod +lz4 lzma nat pam policykit
 	qrcode +seccomp selinux ssl sysv-utils terminal test vanilla xkb"
 
-REQUIRED_USE="importd? ( curl gcrypt lzma )
-	python? ( ${PYTHON_REQUIRED_USE} )"
+REQUIRED_USE="importd? ( curl gcrypt lzma )"
 
 MINKV="3.8"
 
-COMMON_DEPEND=">=sys-apps/util-linux-2.26:0=
-	sys-libs/libcap:0=
+COMMON_DEPEND=">=sys-apps/util-linux-2.26:0=[${MULTILIB_USEDEP}]
+	sys-libs/libcap:0=[${MULTILIB_USEDEP}]
 	!<sys-libs/glibc-2.16
 	acl? ( sys-apps/acl:0= )
 	apparmor? ( sys-libs/libapparmor:0= )
@@ -58,7 +59,6 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.26:0=
 	lzma? ( >=app-arch/xz-utils-5.0.5-r1:0=[${MULTILIB_USEDEP}] )
 	nat? ( net-firewall/iptables:0= )
 	pam? ( virtual/pam:= )
-	python? ( ${PYTHON_DEPS} )
 	qrcode? ( media-gfx/qrencode:0= )
 	seccomp? ( sys-libs/libseccomp:0= )
 	selinux? ( sys-libs/libselinux:0= )
@@ -81,7 +81,7 @@ RDEPEND="${COMMON_DEPEND}
 
 # sys-apps/dbus: the daemon only (+ build-time lib dep for tests)
 PDEPEND=">=sys-apps/dbus-1.6.8-r1:0[systemd]
-	>=sys-apps/hwids-20130717-r1[udev]
+	>=sys-apps/hwids-20150417[udev]
 	>=sys-fs/udev-init-scripts-25
 	policykit? ( sys-auth/polkit )
 	!vanilla? ( sys-apps/gentoo-systemd-integration )"
@@ -98,8 +98,7 @@ DEPEND="${COMMON_DEPEND}
 	ia64? ( >=sys-kernel/linux-headers-3.9 )
 	virtual/pkgconfig
 	gnuefi? ( >=sys-boot/gnu-efi-3.0.2 )
-	python? ( dev-python/lxml[${PYTHON_USEDEP}] )
-	terminal? ( media-fonts/unifont[utils(+)] )
+	terminal? ( ${PYTHON_DEPS} )
 	test? ( >=sys-apps/dbus-1.6.8-r1:0 )"
 
 if [[ -n ${AUTOTOOLS_AUTORECONF} ]]; then
@@ -111,10 +110,7 @@ if [[ -n ${AUTOTOOLS_AUTORECONF} ]]; then
 		>=dev-libs/libgcrypt-1.4.5:0"
 fi
 
-if [[ ${PV} == 9999 ]]; then
-	DEPEND+=" ${PYTHON_DEPS}"
-	REQUIRED_USE+=" ${PYTHON_REQUIRED_USE}"
-fi
+PATCHES=( "${FILESDIR}/218-Dont-enable-audit-by-default.patch" )
 
 pkg_pretend() {
 	local CONFIG_CHECK="~AUTOFS4_FS ~BLK_DEV_BSG ~CGROUPS
@@ -158,15 +154,14 @@ pkg_setup() {
 	:
 }
 
+src_unpack() {
+	default
+	[[ ${PV} != 9999 ]] || git-r3_src_unpack
+}
+
 src_prepare() {
 	# Bug 463376
 	sed -i -e 's/GROUP="dialout"/GROUP="uucp"/' rules/*.rules || die
-
-	if [[ ${PV} != 9999 ]]; then
-		# Update the timestamp on this to avoid rebuilding it.
-		[[ -e src/libsystemd-terminal/unifont-glyph-array.bin ]] || die "File missing from tarball"
-		touch src/libsystemd-terminal/unifont-glyph-array.bin || die
-	fi
 
 	autotools-utils_src_prepare
 }
@@ -177,7 +172,7 @@ src_configure() {
 	# Fix systems broken by bug #509454.
 	[[ ${MY_UDEVDIR} ]] || MY_UDEVDIR=/lib/udev
 
-	if [[ ${PV} == 9999 ]] || use python; then
+	if use terminal; then
 		python_setup
 	fi
 
@@ -189,6 +184,9 @@ multilib_src_configure() {
 		# disable -flto since it is an optimization flag
 		# and makes distcc less effective
 		cc_cv_CFLAGS__flto=no
+
+		# Workaround for gcc-4.7, bug 554454.
+		cc_cv_CFLAGS__Werror_shadow=no
 
 		# Workaround for bug 516346
 		--enable-dependency-tracking
@@ -209,6 +207,9 @@ multilib_src_configure() {
 		# no deps
 		--enable-efi
 		--enable-ima
+		# Moved to dev-python/python-systemd
+		--disable-python-devel
+		--without-python
 
 		# Optional components/dependencies
 		$(multilib_native_use_enable acl)
@@ -232,12 +233,11 @@ multilib_src_configure() {
 		$(multilib_native_use_enable nat libiptc)
 		$(multilib_native_use_enable pam)
 		$(multilib_native_use_enable policykit polkit)
-		$(multilib_native_use_with python)
-		$(multilib_native_use_enable python python-devel)
 		$(multilib_native_use_enable qrcode qrencode)
 		$(multilib_native_use_enable seccomp)
 		$(multilib_native_use_enable selinux)
 		$(multilib_native_use_enable terminal)
+		$(multilib_native_use_with terminal unifont "${WORKDIR}/${UNIFONT}.hex")
 		$(multilib_native_use_enable test tests)
 		$(multilib_native_use_enable test dbus)
 		$(multilib_native_use_enable xkb xkbcommon)
@@ -256,15 +256,6 @@ multilib_src_configure() {
 
 		--with-ntp-servers="0.gentoo.pool.ntp.org 1.gentoo.pool.ntp.org 2.gentoo.pool.ntp.org 3.gentoo.pool.ntp.org"
 	)
-
-	if ! multilib_is_native_abi; then
-		myeconfargs+=(
-			MOUNT_{CFLAGS,LIBS}=' '
-
-			ac_cv_search_cap_init=
-			ac_cv_header_sys_capability_h=yes
-		)
-	fi
 
 	# Work around bug 463846.
 	tc-export CC

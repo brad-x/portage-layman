@@ -1,6 +1,26 @@
 # ChangeLog for dev-java/fop
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/fop/ChangeLog,v 1.82 2015/06/29 12:33:34 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/fop/ChangeLog,v 1.86 2015/07/19 08:33:32 monsieurp Exp $
+
+  19 Jul 2015; Patrice Clement <monsieurp@gentoo.org> fop-2.0-r1.ebuild:
+  Stable for amd64. Stable for ppc+ppc64+x86 with ALLARCHES. Fix bug 555326.
+
+*fop-2.0-r1 (17 Jul 2015)
+
+  17 Jul 2015; Patrice Clement <monsieurp@gentoo.org> +fop-2.0-r1.ebuild:
+  Set SLOT back to 0. Create launcher using PN instead of PN-SLOT. Fix bug
+  555144.
+
+  11 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/fop-2.0-build.xml.patch, fop-2.0.ebuild:
+  Mend compiling process by dropping previous patch and adding back
+  eventResourceGenerator task definition so that event-model.xml files are
+  correctly generated. Add required jars into lib directory using java-pkg_jar-
+  from. Fix bug 554386.
+
+  05 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
+  +files/fop-2.0-build.xml.patch, fop-2.0.ebuild, metadata.xml:
+  Add patch to remove unneeded (and broken) Ant task. Fix bug 553982.
 
   29 Jun 2015; Patrice Clement <monsieurp@gentoo.org> fop-2.0.ebuild:
   Set JAVA_ANT_ENCODING to ISO-8859-1. Fix bug 553494.

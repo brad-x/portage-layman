@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/audacity-2.0.5.ebuild,v 1.2 2015/06/30 05:00:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/audacity-2.0.5.ebuild,v 1.5 2015/07/11 19:08:40 zlogene Exp $
 
 EAPI=5
 
@@ -10,12 +10,12 @@ MY_PV=$(replace_version_separator 3 -)
 MY_P="${PN}-src-${MY_PV}"
 MY_T="${PN}-minsrc-${MY_PV}"
 DESCRIPTION="Free crossplatform audio editor"
-HOMEPAGE="http://audacity.sourceforge.net/"
-SRC_URI="http://audacity.googlecode.com/files/${MY_T}.tar.xz"
+HOMEPAGE="http://web.audacityteam.org/"
+SRC_URI="mirror://gentoo/${MY_T}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~mips ~ppc ppc64 ~x86"
+KEYWORDS="amd64 ~mips ~ppc ppc64 x86"
 IUSE="alsa ffmpeg flac id3tag jack ladspa libsamplerate +libsoxr midi mp3 sbsms soundtouch twolame vamp vorbis"
 RESTRICT="test"
 
