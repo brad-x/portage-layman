@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/cinder/cinder-2015.1.9999.ebuild,v 1.5 2015/06/17 21:16:47 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/cinder/cinder-2015.1.9999.ebuild,v 1.6 2015/07/29 23:38:30 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -15,7 +15,7 @@ EGIT_BRANCH="stable/kilo"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="+api +scheduler +volume iscsi lvm +memcached mysql postgres sqlite test"
+IUSE="+api +scheduler +volume iscsi lvm mysql +memcached postgres sqlite test"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 #sudo is a build dep because I want the sudoers.d directory to exist, lazy.
@@ -29,7 +29,9 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 			<dev-python/hacking-0.11[${PYTHON_USEDEP}]
 			>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 			>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+			<dev-python/fixtures-1.3.0[${PYTHON_USEDEP}]
 			>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+			<dev-python/mock-1.1.0[${PYTHON_USEDEP}]
 			>=dev-python/mox-0.5.3[${PYTHON_USEDEP}]
 			dev-python/mysql-python[${PYTHON_USEDEP}]
 			dev-python/psycopg[${PYTHON_USEDEP}]
@@ -45,6 +47,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 			>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
 			<dev-python/oslo-sphinx-2.6.0[${PYTHON_USEDEP}]
 			>=dev-python/tempest-lib-0.4.0[${PYTHON_USEDEP}]
+			<dev-python/tempest-lib-0.5.0[${PYTHON_USEDEP}]
 		)"
 
 RDEPEND="
@@ -131,7 +134,9 @@ RDEPEND="
 	memcached? ( net-misc/memcached )
 	sys-fs/sysfsutils"
 
-PATCHES=( )
+PATCHES=(
+
+)
 
 pkg_setup() {
 	linux-info_pkg_setup

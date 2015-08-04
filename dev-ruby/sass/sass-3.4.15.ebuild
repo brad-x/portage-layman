@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sass/sass-3.4.15.ebuild,v 1.1 2015/06/23 05:10:57 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sass/sass-3.4.15.ebuild,v 1.4 2015/08/03 13:47:49 ago Exp $
 
 EAPI=5
 
-USE_RUBY="ruby19 ruby20 ruby21 ruby22"
+USE_RUBY="ruby19 ruby20"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_DOCDIR="doc"
@@ -18,7 +18,7 @@ DESCRIPTION="An extension of CSS3, adding nested rules, variables, mixins, selec
 HOMEPAGE="http://sass-lang.com/"
 LICENSE="MIT"
 
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86"
 SLOT="$(get_version_component_range 1-2)"
 IUSE=""
 

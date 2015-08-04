@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/portletapi/portletapi-2.0.ebuild,v 1.1 2015/07/13 17:26:10 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/portletapi/portletapi-2.0.ebuild,v 1.3 2015/07/27 11:31:58 monsieurp Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Portlet API 2.0 developed by the Java Community Process JSR-286"
 HOMEPAGE="https://jcp.org/en/jsr/detail?id=286"
-SRC_URI="http://mirrors.ibiblio.org/maven2/javax/portlet/${PN}/${PV}/${MY_P}-sources.jar"
+SRC_URI="http://mirrors.ibiblio.org/maven2/javax/portlet/${MY_PN}/${PV}/${MY_P}-sources.jar"
 
 LICENSE="Apache-2.0"
 SLOT="2.0"
@@ -27,8 +27,6 @@ DEPEND=">=virtual/jdk-1.6
 	app-arch/unzip
 	${CDEPEND}"
 
-JAVA_PKG_WANT_SOURCE="1.7"
-JAVA_PKG_WANT_TARGET="1.7"
 JAVA_SRC_DIR="src"
 
 JAVA_ENCODING="ISO-8859-1"

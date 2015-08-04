@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2015.1.9999.ebuild,v 1.13 2015/06/17 21:10:37 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2015.1.9999.ebuild,v 1.15 2015/07/30 05:40:53 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 eutils git-2 linux-info multilib udev user
+inherit distutils-r1 eutils git-2 linux-info multilib user
 
 DESCRIPTION="A cloud computing fabric controller (main part of an IaaS system) written in Python"
 HOMEPAGE="https://launchpad.net/nova"
@@ -15,15 +15,50 @@ EGIT_BRANCH="stable/kilo"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="+compute compute-only +kvm +memcached +novncproxy openvswitch +rabbitmq sqlite mysql postgres xen iscsi"
+IUSE="+compute compute-only iscsi +kvm +memcached mysql +novncproxy openvswitch postgres +rabbitmq sqlite test xen"
 REQUIRED_USE="!compute-only? ( || ( mysql postgres sqlite ) )
 						compute-only? ( compute !rabbitmq !memcached !mysql !postgres !sqlite )
 						compute? ( ^^ ( kvm xen ) )"
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		>=dev-python/pbr-0.8[${PYTHON_USEDEP}]
-		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
-		app-admin/sudo"
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/pbr-0.8[${PYTHON_USEDEP}]
+	<dev-python/pbr-1.0[${PYTHON_USEDEP}]
+	app-admin/sudo
+	test? (
+		${RDEPEND}
+		>=dev-python/hacking-0.10.0[${PYTHON_USEDEP}]
+		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
+		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		<dev-python/fixtures-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		<dev-python/mock-1.1.0[${PYTHON_USEDEP}]
+		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
+		dev-python/mysql-python[${PYTHON_USEDEP}]
+		dev-python/psycopg[${PYTHON_USEDEP}]
+		>=dev-python/python-barbicanclient-3.0.1[${PYTHON_USEDEP}]
+		<dev-python/python-barbicanclient-3.1.0[${PYTHON_USEDEP}]
+		>=dev-python/python-ironicclient-0.4.1[${PYTHON_USEDEP}]
+		<dev-python/python-ironicclient-0.6.0[${PYTHON_USEDEP}]
+		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
+		>=dev-python/requests-mock-0.6.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
+		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
+		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
+		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
+		<dev-python/oslo-sphinx-2.6.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
+		<dev-python/oslotest-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
+		>=dev-python/testtools-0.9.36[${PYTHON_USEDEP}]
+		!~dev-python/testtools-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/tempest-lib-0.4.0[${PYTHON_USEDEP}]
+		<dev-python/tempest-lib-0.5.0[${PYTHON_USEDEP}]
+		>=dev-python/suds-0.4[${PYTHON_USEDEP}]
+		>=dev-python/oslo-vmware-0.11.1[${PYTHON_USEDEP}]
+		<dev-python/oslo-vmware-0.12.0[${PYTHON_USEDEP}]
+	)"
 
 # barbicanclient is in here for doc generation
 RDEPEND="
@@ -110,7 +145,8 @@ RDEPEND="
 	sys-apps/iproute2
 	openvswitch? ( net-misc/openvswitch )
 	rabbitmq? ( net-misc/rabbitmq-server )
-	memcached? ( net-misc/memcached )
+	memcached? ( net-misc/memcached
+		dev-python/python-memcached )
 	sys-fs/sysfsutils
 	sys-fs/multipath-tools
 	net-misc/bridge-utils
@@ -150,6 +186,13 @@ python_prepare() {
 python_compile() {
 	distutils-r1_python_compile
 	./tools/config/generate_sample.sh -b ./ -p nova -o etc/nova || die
+}
+
+python_test() {
+	# turn multiprocessing off, testr will use it --parallel
+	local DISTUTILS_NO_PARALLEL_BUILD=1
+	testr init
+	testr run --parallel || die "failed testsuite under python2.7"
 }
 
 python_install() {

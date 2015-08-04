@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/python-utils-r1.eclass,v 1.83 2015/07/04 15:26:17 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/python-utils-r1.eclass,v 1.88 2015/07/27 16:35:19 mgorny Exp $
 
 # @ECLASS: python-utils-r1
 # @MAINTAINER:
@@ -840,29 +840,45 @@ python_wrapper_setup() {
 		mkdir -p "${workdir}"/{bin,pkgconfig} || die
 
 		# Clean up, in case we were supposed to do a cheap update.
-		rm -f "${workdir}"/bin/python{,2,3,-config}
-		rm -f "${workdir}"/bin/2to3
-		rm -f "${workdir}"/pkgconfig/python{,2,3}.pc
+		rm -f "${workdir}"/bin/python{,2,3,-config} || die
+		rm -f "${workdir}"/bin/2to3 || die
+		rm -f "${workdir}"/pkgconfig/python{,2,3}.pc || die
 
 		local EPYTHON PYTHON
 		python_export "${impl}" EPYTHON PYTHON
 
-		local pyver
+		local pyver pyother
 		if python_is_python3; then
 			pyver=3
+			pyother=2
 		else
 			pyver=2
+			pyother=3
 		fi
 
 		# Python interpreter
-		ln -s "${PYTHON}" "${workdir}"/bin/python || die
-		ln -s python "${workdir}"/bin/python${pyver} || die
+		# note: we don't use symlinks because python likes to do some
+		# symlink reading magic that breaks stuff
+		# https://bugs.gentoo.org/show_bug.cgi?id=555752
+		cat > "${workdir}/bin/python" <<-_EOF_
+			#!/bin/sh
+			exec "${PYTHON}" "\${@}"
+		_EOF_
+		cp "${workdir}/bin/python" "${workdir}/bin/python${pyver}" || die
+		chmod +x "${workdir}/bin/python" "${workdir}/bin/python${pyver}" || die
 
-		local nonsupp=()
+		local nonsupp=( "python${pyother}" "python${pyother}-config" )
 
 		# CPython-specific
 		if [[ ${EPYTHON} == python* ]]; then
-			ln -s "${PYTHON}-config" "${workdir}"/bin/python-config || die
+			cat > "${workdir}/bin/python-config" <<-_EOF_
+				#!/bin/sh
+				exec "${PYTHON}-config" "\${@}"
+			_EOF_
+			cp "${workdir}/bin/python-config" \
+				"${workdir}/bin/python${pyver}-config" || die
+			chmod +x "${workdir}/bin/python-config" \
+				"${workdir}/bin/python${pyver}-config" || die
 
 			# Python 2.6+.
 			ln -s "${PYTHON/python/2to3-}" "${workdir}"/bin/2to3 || die
@@ -872,7 +888,7 @@ python_wrapper_setup() {
 				"${workdir}"/pkgconfig/python.pc || die
 			ln -s python.pc "${workdir}"/pkgconfig/python${pyver}.pc || die
 		else
-			nonsupp+=( 2to3 python-config )
+			nonsupp+=( 2to3 python-config "python${pyver}-config" )
 		fi
 
 		local x
@@ -880,7 +896,7 @@ python_wrapper_setup() {
 			cat >"${workdir}"/bin/${x} <<__EOF__
 #!/bin/sh
 echo "${x} is not supported by ${EPYTHON}" >&2
-exit 1
+exit 127
 __EOF__
 			chmod +x "${workdir}"/bin/${x} || die
 		done

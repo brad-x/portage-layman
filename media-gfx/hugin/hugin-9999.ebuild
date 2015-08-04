@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/hugin-9999.ebuild,v 1.6 2014/12/20 16:36:16 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/hugin-9999.ebuild,v 1.7 2015/07/28 16:31:52 maekke Exp $
 
 EAPI=5
 
@@ -19,32 +19,35 @@ LICENSE="GPL-2 SIFT"
 SLOT="0"
 KEYWORDS=""
 
-LANGS=" cs da de en_GB es eu fi fr hu it ja nl pl pt_BR ro ru sk sv zh_CN zh_TW"
+LANGS=" ca@valencia ca_ES cs_CZ da de en_GB es eu fi fr hu it ja nl pl pt_BR ro ru sk sv zh_CN zh_TW"
 IUSE="debug lapack python sift $(echo ${LANGS//\ /\ linguas_})"
 
 CDEPEND="
 	!!dev-util/cocom
-	app-arch/zip
-	dev-cpp/tclap
+	dev-db/sqlite:3
 	>=dev-libs/boost-1.49.0-r1:=
 	dev-libs/zthread
 	>=media-gfx/enblend-4.0
 	media-gfx/exiv2:=
 	media-libs/freeglut
 	media-libs/glew:=
-	media-libs/lensfun
 	>=media-libs/libpano13-2.9.19_beta1:0=
 	media-libs/libpng:0=
 	media-libs/openexr:=
-	media-libs/tiff
+	media-libs/tiff:0
+	>=media-libs/vigra-1.9.0[openexr]
+	sci-libs/fftw:=
 	sys-libs/zlib
-	virtual/jpeg
+	virtual/opengl
+	virtual/jpeg:0
+	virtual/opengl
 	x11-libs/wxGTK:3.0=[X,opengl]
-	lapack? ( virtual/lapack )
+	lapack? ( virtual/blas virtual/lapack )
 	sift? ( media-gfx/autopano-sift-C )"
 RDEPEND="${CDEPEND}
 	media-libs/exiftool"
 DEPEND="${CDEPEND}
+	dev-cpp/tclap
 	sys-devel/gettext
 	virtual/pkgconfig
 	python? ( ${PYTHON_DEPS} >=dev-lang/swig-2.0.4 )"
@@ -77,8 +80,7 @@ src_install() {
 
 	for lang in ${LANGS} ; do
 		case ${lang} in
-			ca) dir=ca_ES;;
-			cs) dir=cs_CZ;;
+			ca@valencia) dir=ca_ES@valencia;;
 			*) dir=${lang};;
 		esac
 		use linguas_${lang} || rm -r "${D}"/usr/share/locale/${dir}

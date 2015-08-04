@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.79 2015/07/02 12:47:14 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-9999.ebuild,v 1.83 2015/07/31 03:24:07 tamiko Exp $
 
 EAPI=5
 
@@ -36,8 +36,9 @@ S="${WORKDIR}/${P%_rc*}"
 DESCRIPTION="C toolkit to manipulate virtual machines"
 HOMEPAGE="http://www.libvirt.org/"
 LICENSE="LGPL-2.1"
-IUSE="audit avahi +caps firewalld fuse glusterfs iscsi +libvirtd lvm lxc \
-	+macvtap nfs nls numa openvz parted pcap phyp policykit +qemu rbd sasl \
+# TODO: Reenable IUSE wireshark-plugins
+IUSE="apparmor audit avahi +caps firewalld fuse glusterfs iscsi +libvirtd lvm \
+	lxc +macvtap nfs nls numa openvz parted pcap phyp policykit +qemu rbd sasl \
 	selinux +udev uml +vepa virtualbox virt-network wireshark-plugins xen \
 	elibc_glibc systemd"
 REQUIRED_USE="libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
@@ -59,6 +60,8 @@ REQUIRED_USE="libvirtd? ( || ( lxc openvz qemu uml virtualbox xen ) )
 RDEPEND="sys-libs/readline:=
 	sys-libs/ncurses
 	>=net-misc/curl-7.18.0
+	net-firewall/ebtables
+	>=net-firewall/iptables-1.4.10[ipv6]
 	dev-libs/libgcrypt:0
 	>=dev-libs/libxml2-2.7.6
 	dev-libs/libnl:3
@@ -69,6 +72,7 @@ RDEPEND="sys-libs/readline:=
 	sys-devel/gettext
 	>=net-analyzer/netcat6-1.0-r2
 	app-misc/scrub
+	apparmor? ( sys-libs/libapparmor )
 	audit? ( sys-process/audit )
 	avahi? ( >=net-dns/avahi-0.6[dbus] )
 	caps? ( sys-libs/libcap-ng )
@@ -103,9 +107,7 @@ RDEPEND="sys-libs/readline:=
 	xen? ( app-emulation/xen-tools app-emulation/xen )
 	udev? ( virtual/udev >=x11-libs/libpciaccess-0.10.9 )
 	virt-network? ( net-dns/dnsmasq[script]
-		>=net-firewall/iptables-1.4.10[ipv6]
 		net-misc/radvd
-		net-firewall/ebtables
 		sys-apps/iproute2[-minimal]
 		firewalld? ( net-firewall/firewalld )
 	)
@@ -118,15 +120,44 @@ DEPEND="${RDEPEND}
 	dev-perl/XML-XPath
 	dev-libs/libxslt"
 
-DOC_CONTENTS="For the basic networking support (bridged and routed networks)
-you don't need any extra software. For more complex network modes
-including but not limited to NATed network, you can enable the
-'virt-network' USE flag.\n\n
-If you are using dnsmasq on your system, you will have
-to configure /etc/dnsmasq.conf to enable the following settings:\n\n
-	bind-interfaces\n
-	interface or except-interface\n\n
-Otherwise you might have issues with your existing DNS server."
+# gentoo.readme stuff:
+DISABLE_AUTOFORMATTING=true
+DOC_CONTENTS="For the basic networking support (bridged and routed networks) you don't
+need any extra software. For more complex network modes including but not
+limited to NATed network, you can enable the 'virt-network' USE flag.
+
+If you are using dnsmasq on your system, you will have to configure
+/etc/dnsmasq.conf to enable the following settings:
+	bind-interfaces
+	interface or except-interface
+Otherwise you might have issues with your existing DNS server.
+
+For openrc users:
+
+	Please use /etc/conf.d/libvirtd to control the '--listen' parameter for
+	libvirtd.
+
+	The default configuration will suspend and resume running kvm guests
+	with 'managedsave'. This behavior can be changed under
+	/etc/conf.d/libvirtd
+
+For systemd users:
+
+	Please use /etc/systemd/system/libvirtd.service.d/00gentoo.conf
+	to control the '--listen' parameter for libvirtd.
+
+	The configuration for the 'libvirt-guests.service' is found under
+	/etc/libvirt/libvirt-guests.conf"
+
+! use policykit && DOC_CONTENTS+="
+
+To allow normal users to connect to libvirtd you must change the unix sock
+group and/or perms in /etc/libvirt/libvirtd.conf"
+
+use caps && use qemu && DOC_CONTENTS+="
+
+libvirt will now start qemu/kvm VMs with non-root privileges. Ensure any
+resources your VMs use are accessible by qemu:qemu"
 
 LXC_CONFIG_CHECK="
 	~CGROUPS
@@ -227,7 +258,8 @@ src_prepare() {
 
 	epatch \
 		"${FILESDIR}"/${PN}-1.2.9-do_not_use_sysconf.patch \
-		"${FILESDIR}"/${PN}-1.2.16-fix_paths_in_libvirt-guests_sh.patch
+		"${FILESDIR}"/${PN}-1.2.16-fix_paths_in_libvirt-guests_sh.patch \
+		"${FILESDIR}"/${P}-fix_paths_for_apparmor.patch
 
 	[[ -n ${BACKPORTS} ]] && \
 		EPATCH_FORCE=yes EPATCH_SUFFIX="patch" \
@@ -286,6 +318,8 @@ src_configure() {
 	myconf+=" --with-vmware"
 
 	## additional host drivers
+	myconf+=" $(use_with apparmor)"
+	myconf+=" $(use_with apparmor apparmor-profiles)"
 	myconf+=" $(use_with virt-network network)"
 	myconf+=" --with-storage-fs"
 	myconf+=" $(use_with lvm storage-lvm)"
@@ -393,7 +427,7 @@ src_install() {
 
 	# Remove bogus, empty directories. They are either not used, or
 	# libvirtd is able to create them on demand
-	rm -rf "${D}"/etc/sysconf
+	rm -rf "${D}"/etc/sysconfig
 	rm -rf "${D}"/var/cache
 	rm -rf "${D}"/var/run
 	rm -rf "${D}"/var/log
@@ -435,31 +469,12 @@ pkg_postinst() {
 		touch "${ROOT}"/etc/libvirt/qemu/networks/default.xml
 	fi
 
-	if ! use policykit; then
-		elog "To allow normal users to connect to libvirtd you must change the"
-		elog "unix sock group and/or perms in /etc/libvirt/libvirtd.conf"
-	fi
-
 	use libvirtd || return 0
 	# From here, only libvirtd-related instructions, be warned!
 
+	if [[ -n ${REPLACING_VERSIONS} ]] && ! version_is_at_least 1.2.17-r2 ${REPLACING_VERSIONS} ]]; then
+		FORCE_PRINT_ELOG=true
+	fi
+
 	readme.gentoo_print_elog
-
-	if use caps && use qemu; then
-		elog "libvirt will now start qemu/kvm VMs with non-root privileges."
-		elog "Ensure any resources your VMs use are accessible by qemu:qemu"
-	fi
-
-	if [[ -n "${REPLACING_VERSIONS}" ]]; then
-		elog ""
-		elog "The systemd service-file configuration under /etc/sysconfig has"
-		elog "been removed. Please use"
-		elog "    /etc/systemd/system/libvirtd.service.d/00gentoo.conf"
-		elog "to control the '--listen' parameter for libvirtd. The configuration"
-		elog "for the libvirt-guests.service is now found under"
-		elog "    /etc/libvirt/libvirt-guests.conf"
-		elog "The openrc configuration has not been changed. Thus no action is"
-		elog "required for the openrc service manager."
-		elog ""
-	fi
 }

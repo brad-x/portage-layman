@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pythonmagick/pythonmagick-0.9.11.ebuild,v 1.1 2014/10/18 02:39:10 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pythonmagick/pythonmagick-0.9.11.ebuild,v 1.4 2015/07/28 14:23:22 jlec Exp $
 
 EAPI="5"
 AUTOTOOLS_AUTORECONF=1
@@ -26,6 +26,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="${PYTHON_DEPS}
 	>=dev-libs/boost-1.48[python,${PYTHON_USEDEP}]
 	>=media-gfx/imagemagick-6.4
+	<media-gfx/imagemagick-6.9.1
 "
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -34,8 +35,8 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-0.9.10-Makefile.am.patch"
-	"${FILESDIR}/${PN}-0.9.10-ax_boost_python.patch"
+	"${FILESDIR}"/${PN}-0.9.10-Makefile.am.patch
+	"${FILESDIR}"/${PN}-0.9.10-ax_boost_python.patch
 )
 
 src_configure() {

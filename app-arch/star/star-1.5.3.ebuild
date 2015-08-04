@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/star/star-1.5.3.ebuild,v 1.1 2015/05/05 08:37:46 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/star/star-1.5.3.ebuild,v 1.7 2015/08/02 18:53:37 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/s-tar/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1 CDDL-Schily"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="alpha amd64 hppa ~ia64 ~mips ~ppc ppc64 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="acl xattr"
 
 DEPEND="
@@ -51,8 +51,6 @@ src_prepare() {
 		ln -s i586-linux-gcc.rul ${t}-linux-gcc.rul || die
 	done
 	popd > /dev/null
-
-	epatch "${FILESDIR}"/${PN}-1.5.1-changewarnSegv.patch
 }
 
 src_configure() { :; } #avoid ./configure run
@@ -64,8 +62,7 @@ src_compile() {
 		CPPOPTX="${CPPFLAGS}" \
 		COPTGPROF= \
 		COPTOPT= \
-		LDOPTX="${LDFLAGS}" \
-		LINKMODE=dynamic
+		LDOPTX="${LDFLAGS}"
 }
 
 src_install() {

@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/avalon-logkit/avalon-logkit-2.1-r6.ebuild,v 1.1 2012/09/29 11:04:43 sera Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/avalon-logkit/avalon-logkit-2.1-r6.ebuild,v 1.2 2015/08/01 20:05:43 monsieurp Exp $
 
 EAPI=4
 
@@ -21,12 +21,14 @@ COMMON_DEP="
 	dev-java/log4j:0
 	java-virtuals/jms:0
 	java-virtuals/javamail:0
-	java-virtuals/servlet-api:2.5"
+	java-virtuals/servlet-api:3.0"
 RDEPEND="${COMMON_DEP}
 	>=virtual/jre-1.4"
 DEPEND="${COMMON_DEP}
 	>=virtual/jdk-1.4
-	test? ( dev-java/ant-junit )"
+	test? (
+		dev-java/ant-junit:0
+	)"
 
 java_prepare() {
 	# Doesn't like 1.6 / 1.7 changes to JDBC

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.331 2015/07/10 23:17:45 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.334 2015/08/02 17:47:09 williamh Exp $
 
 EAPI=5
 
@@ -25,7 +25,7 @@ HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
 
 LICENSE="LGPL-2.1 MIT GPL-2"
 SLOT="0"
-IUSE="acl doc +kmod selinux static-libs"
+IUSE="acl +kmod selinux static-libs"
 
 RESTRICT="test"
 
@@ -43,6 +43,7 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.24
 # Force new make >= -r4 to skip some parallel build issues
 DEPEND="${COMMON_DEPEND}
 	dev-util/gperf
+	>=dev-util/intltool-0.50
 	>=sys-apps/coreutils-8.16
 	sys-libs/libcap
 	virtual/os-headers
@@ -103,7 +104,7 @@ pkg_setup() {
 src_prepare() {
 	if ! [[ ${PV} = 9999* ]]; then
 		# secure_getenv() disable for non-glibc systems wrt bug #443030
-		if ! [[ $(grep -r secure_getenv * | wc -l) -eq 28 ]]; then
+		if ! [[ $(grep -r secure_getenv * | wc -l) -eq 25 ]]; then
 			eerror "The line count for secure_getenv() failed, see bug #443030"
 			die
 		fi
@@ -160,8 +161,6 @@ multilib_src_configure() {
 		--docdir=/usr/share/doc/${PF}
 		$(multilib_native_use_enable static-libs static)
 		--disable-nls
-		$(multilib_native_use_enable doc gtk-doc)
-		--disable-python-devel
 		--disable-dbus
 		$(multilib_native_use_enable kmod)
 		--disable-xkbcommon
@@ -176,17 +175,16 @@ multilib_src_configure() {
 		--disable-libcryptsetup
 		--disable-qrencode
 		--disable-microhttpd
+		--disable-gnuefi
 		--disable-gnutls
 		--disable-libcurl
 		--disable-libidn
 		--disable-quotacheck
 		--disable-logind
 		--disable-polkit
-		--disable-terminal
 		--disable-myhostname
 		$(multilib_is_native_abi || echo "--disable-manpages")
 		--enable-split-usr
-		--with-html-dir=/usr/share/doc/${PF}/html
 		--without-python
 		--with-bashcompletiondir="$(get_bashcompdir)"
 		--with-rootprefix=
@@ -198,9 +196,6 @@ multilib_src_configure() {
 			MOUNT_{CFLAGS,LIBS}=' '
 		)
 	fi
-
-	# Use pregenerated copies when possible wrt #480924
-	[[ ${PV} = 9999* ]] || econf_args+=( --disable-manpages )
 
 	ECONF_SOURCE=${S} econf "${econf_args[@]}"
 }
@@ -229,25 +224,18 @@ multilib_src_compile() {
 			collect
 			scsi_id
 			v4l_id
-			accelerometer
 			mtd_probe
 		)
 		emake "${helper_targets[@]}"
 
-		if [[ ${PV} = 9999* ]]; then
-			local man_targets=(
-				man/udev.conf.5
-				man/systemd.link.5
-				man/udev.7
-				man/systemd-udevd.service.8
-				man/udevadm.8
-			)
-			emake "${man_targets[@]}"
-		fi
-
-		if use doc; then
-			emake -C docs/libudev
-		fi
+		local man_targets=(
+			man/udev.conf.5
+			man/systemd.link.5
+			man/udev.7
+			man/systemd-udevd.service.8
+			man/udevadm.8
+		)
+		emake "${man_targets[@]}"
 	else
 		local lib_targets=( libudev.la )
 		emake "${lib_targets[@]}"
@@ -267,10 +255,8 @@ multilib_src_install() {
 			install-udevlibexecPROGRAMS
 			install-dist_udevconfDATA
 			install-dist_udevrulesDATA
-			install-girDATA
 			install-pkgconfiglibDATA
 			install-pkgconfigdataDATA
-			install-typelibsDATA
 			install-dist_docDATA
 			libudev-install-hook
 			install-directories-hook
@@ -292,16 +278,7 @@ multilib_src_install() {
 			dist_network_DATA="network/99-default.link"
 		)
 		emake -j1 DESTDIR="${D}" "${targets[@]}"
-
-		if use doc; then
-			emake -C docs/libudev DESTDIR="${D}" install
-		fi
-
-		if [[ ${PV} = 9999* ]]; then
-			doman man/{udev.conf.5,systemd.link.5,udev.7,systemd-udevd.service.8,udevadm.8}
-		else
-			doman "${S}"/man/{udev.conf.5,systemd.link.5,udev.7,systemd-udevd.service.8,udevadm.8}
-		fi
+		doman man/{udev.conf.5,systemd.link.5,udev.7,systemd-udevd.service.8,udevadm.8}
 	else
 		local lib_LTLIBRARIES="libudev.la" \
 			pkgconfiglib_DATA="src/libudev/libudev.pc" \
@@ -337,24 +314,6 @@ multilib_src_install_all() {
 	# maintainer note: by not letting the upstream build-sys create the .so
 	# link, you also avoid a parallel make problem
 	mv "${D}"/usr/share/man/man8/systemd-udevd{.service,}.8
-
-	if ! [[ ${PV} = 9999* ]]; then
-		insinto /usr/share/doc/${PF}/html/libudev
-		doins "${S}"/docs/libudev/html/*
-	fi
-}
-
-pkg_preinst() {
-	local htmldir
-	for htmldir in libudev; do
-		if [[ -d ${ROOT%/}/usr/share/gtk-doc/html/${htmldir} ]]; then
-			rm -rf "${ROOT%/}"/usr/share/gtk-doc/html/${htmldir}
-		fi
-		if [[ -d ${D}/usr/share/doc/${PF}/html/${htmldir} ]]; then
-			dosym ../../doc/${PF}/html/${htmldir} \
-				/usr/share/gtk-doc/html/${htmldir}
-		fi
-	done
 }
 
 pkg_postinst() {

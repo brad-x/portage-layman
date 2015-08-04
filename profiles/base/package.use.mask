@@ -1,9 +1,14 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.693 2015/07/05 09:32:17 mrueg Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.696 2015/07/29 12:22:32 chewi Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
+
+# James Le Cuirot <chewi@gentoo.org> (29 Jul 2015)
+# JavaFX and the browser plugin are not included on some platforms.
+dev-java/oracle-jdk-bin javafx nsplugin
+dev-java/oracle-jre-bin javafx nsplugin
 
 # Manuel Rüger <mrueg@gentoo.org> (05 Jul 2015)
 # app-text/migemo is masked because it fails for ruby20
@@ -363,11 +368,6 @@ media-libs/libsdl2 custom-cflags
 app-editors/vim luajit racket
 app-editors/gvim luajit racket
 
-# Alexis Ballier <aballier@gentoo.org> (11 Aug 2013)
-# Multilib migrated version for binary compatibility.
-# Those useflags have deps that are not migrated yet.
-=media-video/ffmpeg-0.10* frei0r
-
 # Kacper Kowalik <xarthisius@gentoo.org> (09 Aug 2013)
 # Doesn't work on most profiles. Easier to mask here and
 # unmask in particular profiles
@@ -459,7 +459,7 @@ sci-libs/flann cuda
 # Alexis Ballier <aballier@gentoo.org> (15 Feb 2013)
 # Needs a huge patch to build against recent releases of FFmpeg/libav.
 # Mask it until upstream fixes it. Bug #417869
-media-sound/audacity ffmpeg
+<media-sound/audacity-2.1.0 ffmpeg
 
 # Alexandre Rostovtsev <tetromino@gentoo.org> (30 Dec 2012)
 # sys-apps/biosdevname is keyworded only for amd64/x86
@@ -739,8 +739,6 @@ dev-python/kaa-base tls
 # Java is not supported in most of the arches enchant is keyworded
 app-text/enchant zemberek
 
-dev-java/sun-jdk nsplugin
-dev-java/sun-jre-bin nsplugin
 dev-java/ibm-jdk-bin nsplugin
 dev-java/ibm-jre-bin nsplugin
 

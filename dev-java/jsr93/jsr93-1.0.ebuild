@@ -1,13 +1,13 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jsr93/jsr93-1.0.ebuild,v 1.1 2007/05/01 19:44:48 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jsr93/jsr93-1.0.ebuild,v 1.2 2015/07/27 12:10:51 monsieurp Exp $
 
 JAVA_PKG_IUSE="source"
 
 inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Java API for XML Registries (JAXR) - API"
-HOMEPAGE="http://java.sun.com/xml/downloads/jaxr.html"
+HOMEPAGE="http://download.oracle.com/otndocs/jcp/jaxr-1.0-fr-oth-JSpec/"
 SRC_URI="jaxr-1_0-fr-spec.zip"
 
 LICENSE="sun-jsr93"

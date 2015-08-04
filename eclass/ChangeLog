@@ -1,6 +1,85 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1722 2015/07/19 15:46:03 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1743 2015/08/03 14:03:00 kensington Exp $
+
+  03 Aug 2015; Michael Palimaka <kensington@gentoo.org> kde5.eclass:
+  Do not compress handbooks.
+
+  02 Aug 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  Allow java-pkg_get-javac to be called alone. Fixes bug #172594. Thanks to
+  sping for the patch. Also simplify die logic around java-pkg_javac-args. die
+  handling has improved since this was written.
+
+  31 Jul 2015; Patrice Clement <monsieurp@gentoo.org> java-utils-2.eclass:
+  Document JAVA_RM_FILES variable. Also, fix documentation and correct typos in
+  java-pkg_rm_files.
+
+  30 Jul 2015; James Le Cuirot <chewi@gentoo.org> java-utils-2.eclass:
+  Fix JAVA_RM_FILES by simplifying java-utils-2_src_prepare on the basis that
+  we won't be committing EAPI 0|1 ebuilds any more.
+
+  30 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Revert bad mycmakeargs changes and introduce 3 eclass variables to have extra
+  defines in the ebuild
+
+  30 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Reset variables between ABIs
+
+  30 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Add blocker below virtual/mysql-5.6-r4 for new split ebuilds
+
+  29 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Fix pkg_config function error with non-existant USE flags
+
+  28 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Fix configuring non-native abi which leads to build failure wrt bug 556162
+
+  28 Jul 2015; Brian Evans <grknight@gentoo.org> mysql-cmake.eclass,
+  mysql-multilib.eclass:
+  Add support for the split client/server options to the mysql eclasses
+
+  27 Jul 2015; William Hubbs <williamh@gentoo.org> +golang-base.eclass,
+  golang-build.eclass, golang-vcs.eclass:
+  Add golang-base.eclass for the basic golang functions and set up the
+  other go eclasses to use it.
+
+
+  27 Jul 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  python_wrapper_setup(): make banned helpers exit with 127.
+
+  27 Jul 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Ban calling pythonN and pythonN-config when the other version of Python is
+  selected (i.e. ban python2 when python3 is used).
+
+  27 Jul 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  python_wrapper_setup(): wrap pythonN-config as well as suggested by PEP and
+  required by some applications, bug #555594.
+
+  27 Jul 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  python_wrapper_setup(): replace symlinks with shell wrappers to avoid
+  triggering Python 3.4+ magical prefix support.
+
+  27 Jul 2015; Mike Gilbert <floppym@gentoo.org> python-r1.eclass:
+  Drop the USE_PYTHON warning.
+
+  25 Jul 2015; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add missing ||die to "rm -f" calls, i.e. in case we do not have permission to
+  remove the files.
+
+  23 Jul 2015; William Hubbs <williamh@gentoo.org> golang-build.eclass:
+  Add functions to retrieve Go library paths and install Go packages.
+
+  22 Jul 2015; Michael Palimaka <kensington@gentoo.org> kde4-meta.eclass:
+  Fix oldpim unpack by Andreas Sturmlechner <andreas.sturmlechner@gmail.com>
+  wrt bug #555566.
+
+  22 Jul 2015; Patrice Clement <monsieurp@gentoo.org> java-utils-2.eclass:
+  Introduce java-pkg_rm_files as a helper function along with JAVA_RM_FILES
+  array to readily get rid of useless files.
+
+  20 Jul 2015; Sergei Trofimovich <slyfox@gentoo.org> haskell-cabal.eclass:
+  Workaround upstream cabal tests hangup bug #537500 by Michael Orlitzky; use
+  ghc's haddock for doc generation.
 
   19 Jul 2015; Mike Pagano <mpagano@gentoo.org> kernel-2.eclass:
   Change kernel upgrade http link and remove reference to deblob in elog

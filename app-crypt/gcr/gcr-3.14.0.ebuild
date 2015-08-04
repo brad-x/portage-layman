@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gcr/gcr-3.14.0.ebuild,v 1.12 2015/07/17 15:32:05 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gcr/gcr-3.14.0.ebuild,v 1.15 2015/07/30 13:21:15 ago Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -16,7 +16,7 @@ LICENSE="GPL-2+ LGPL-2+"
 SLOT="0/1" # subslot = suffix of libgcr-3
 IUSE="debug gtk +introspection vala"
 REQUIRED_USE="vala? ( introspection )"
-KEYWORDS="~alpha amd64 arm ~arm64 ia64 ~mips ppc ppc64 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~sparc-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm ~arm64 ia64 ~mips ppc ppc64 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~sparc-solaris ~x86-solaris"
 
 COMMON_DEPEND="
 	>=app-crypt/gnupg-2
@@ -25,7 +25,7 @@ COMMON_DEPEND="
 	>=dev-libs/libgcrypt-1.2.2:0=
 	>=dev-libs/libtasn1-1:=
 	>=sys-apps/dbus-1
-	gtk? ( >=x11-libs/gtk+-3:3[X,introspection?] )
+	gtk? ( >=x11-libs/gtk+-3.12:3[X,introspection?] )
 	introspection? ( >=dev-libs/gobject-introspection-1.34 )
 "
 RDEPEND="${COMMON_DEPEND}

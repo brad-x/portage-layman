@@ -1,10 +1,110 @@
 # ChangeLog for profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10193 2015/07/19 09:30:06 chewi Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10221 2015/08/02 22:13:13 monsieurp Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  02 Aug 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask www-servers/skunkweb for removal.
+
+  02 Aug 2015; Sergei Trofimovich <slyfox@gentoo.org> package.mask:
+  Mask dev-haskell/deepseq for removal.
+
+  02 Aug 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/sparc/package.use.stable.mask:
+  Update masks
+
+  01 Aug 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/antenna for removal.
+
+  30 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
+  Mask dev-java/jjtraveler for removal.
+
+  30 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
+  dev-java/cocoon is holding back the removal of Java 6 and upstream is on life
+  support. Removal in 30 days. See bug #423761.
+
+  29 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
+  dev-java/soap is fixable but it and its related packages are all dead
+  upstream. Removal in 30 days. See bug #556250.
+
+  28 Jul 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org> package.mask:
+  Roll dev channel mask for chromium-46.
+
+  28 Jul 2015; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Add django-oauth-plus to django mask
+
+  28 Jul 2015; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Add south to django mask
+
+  27 Jul 2015; Justin Lecher <jlec@gentoo.org> package.mask:
+  Mask unsupport and vulnerable django version
+
+  27 Jul 2015; Sergey Popov <pinkbyte@gentoo.org> package.mask:
+  Unmask Boost 1.57
+
+  27 Jul 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Drop Exim RC masks.
+
+  26 Jul 2015; Michał Górny <mgorny@gentoo.org>
+  targets/desktop/kde/package.use, targets/desktop/plasma/package.use:
+  Fix plasma5 vs kde4 conflicts.
+  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/183 by a17r.
+
+  26 Jul 2015; Ryan Hill <rhill@gentoo.org> desc/linguas.desc:
+  Add a few locales from poedit.
+
+  26 Jul 2015; Johannes Huber <johu@gentoo.org> package.mask:
+  Remove obsolete mask for app-portage/kportagetray. 
+
+  26 Jul 2015; Pacho Ramos <pacho@gentoo.org> base/package.use:
+  Set here proper defaults for python-single-r1 consumers in profiles instead
+  of in ebuilds (#555930 by mgorny)
+
+  25 Jul 2015; Sebastian Pipping <sping@gentoo.org> package.mask:
+  Remove www-apps/wordpress removal mask, ebuilds removed
+
+  25 Jul 2015; Michał Górny <mgorny@gentoo.org> updates/3Q-2015:
+  Slotmove for dev-util/kdevelop-qmake.
+  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/170 by a17r.
+
+  25 Jul 2015; Michał Górny <mgorny@gentoo.org> updates/3Q-2015:
+  Add slotmove for dev-util/kdevelop-pg-qt.
+  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/169 by a17r.
+
+  23 Jul 2015; Pacho Ramos <pacho@gentoo.org>
+  arch/powerpc/ppc32/package.use.stable.mask:
+  Update package.use.stable.mask
+
+  23 Jul 2015; Johannes Huber <johu@gentoo.org> base/package.mask,
+  features/selinux/package.mask, targets/systemd/package.mask:
+  Mask app-admin/calamares for non systemd profiles.
+
+  23 Jul 2015; Davide Pesavento <pesa@gentoo.org> package.mask:
+  Mask new version of qtwebkit:4 from 2.3 upstream branch.
+
+  21 Jul 2015; Ian Delaney <idella4@gentoo.org> package.mask:
+  Mask roccat-tools-3.5.0-r1 until deps satisfy
+
+  21 Jul 2015; Ian Delaney <idella4@gentoo.org> package.mask:
+  Remove entry of dev-python/gevent-zeromq matching removal from portage
+
+  20 Jul 2015; Jauhien Piatlicki <jauhien@gentoo.org> package.mask:
+  Remove dev-util/ext4_utils and dev-util/libsparse mask, as they were removed
+  from the tree
+
+  20 Jul 2015; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Mask media-sound/audacity-2.1.1 WIP (bug #524242)
+
+  20 Jul 2015; Ben de Groot <yngwin@gentoo.org>
+  arch/powerpc/ppc32/package.use.mask, arch/powerpc/ppc64/package.use.mask,
+  base/package.use.mask:
+  Adjust media-sound/audacity package.use.masks for upcoming version bump
+
+  19 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
+  Remove dev-java/itext:5 mask as bug #475552 now looks good.
 
   19 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
   app-eselect/eselect-ecj has been removed.

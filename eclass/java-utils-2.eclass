@@ -6,7 +6,7 @@
 #
 # Licensed under the GNU General Public License, v2
 #
-# $Header: /var/cvsroot/gentoo-x86/eclass/java-utils-2.eclass,v 1.165 2015/06/28 13:33:48 chewi Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/java-utils-2.eclass,v 1.169 2015/08/02 23:12:16 chewi Exp $
 
 # @ECLASS: java-utils-2.eclass
 # @MAINTAINER:
@@ -124,6 +124,20 @@ JAVA_PKG_ALLOW_VM_CHANGE=${JAVA_PKG_ALLOW_VM_CHANGE:="yes"}
 # emerge bar to be compatible with 1.3
 # @CODE
 #	JAVA_PKG_WANT_TARGET=1.3 emerge bar
+# @CODE
+
+# @ECLASS-VARIABLE: JAVA_RM_FILES
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# An array containing a list of files to remove. If defined, this array will be
+# automatically handed over to java-pkg_rm_files for processing during the
+# src_prepare phase.
+#
+# @CODE
+#	JAVA_RM_FILES=(
+#		path/to/File1.java
+#		DELETEME.txt
+#	)
 # @CODE
 
 # @VARIABLE: JAVA_PKG_COMPILER_DIR
@@ -246,6 +260,42 @@ java-pkg_addres() {
 	pushd "${dir}" > /dev/null || die "pushd ${dir} failed"
 	find -L -type f ! -path "./target/*" ! -path "./sources.lst" ! -name "MANIFEST.MF" ! -regex ".*\.\(class\|jar\|java\)" "${@}" -print0 | xargs -0 jar uf "${jar}" || die "jar failed"
 	popd > /dev/null || die "popd failed"
+}
+
+# @FUNCTION: java-pkg_rm_files
+# @USAGE: java-pkg_rm_files File1.java File2.java ...
+# @DESCRIPTION:
+# Remove unneeded files in ${S}.
+#
+# Every now and then, you'll run into situations whereby a file needs removing,
+# be it a unit test or a regular java class.
+#
+# You can use this function by either:
+# - calling it yourself in java_prepare() and feeding java-pkg_rm_files with
+# the list of files you wish to remove.
+# - defining an array in the ebuild named JAVA_RM_FILES with the list of files
+# you wish to remove.
+#
+# Both way work and it is left to the developer's preferences. If the
+# JAVA_RM_FILES array is defined, it will be automatically handed over to
+# java-pkg_rm_files during the src_prepare phase.
+#
+# See java-utils-2_src_prepare.
+#
+# @CODE
+#	java-pkg_rm_files File1.java File2.java
+# @CODE
+#
+# @param $* - list of files to remove.
+java-pkg_rm_files() {
+	debug-print-function ${FUNCNAME} $*
+	local IFS="\n"
+	for filename in "$@"; do
+		[[ ! -f "${filename}" ]] && die "${filename} is not a regular file. Aborting."
+		einfo "Removing unneeded file ${filename}"
+		rm -f "${S}/${filename}" || die "cannot remove ${filename}"
+		eend $?
+	done
 }
 
 # @FUNCTION: java-pkg_dojar
@@ -1533,7 +1583,7 @@ java-pkg_get-target() {
 java-pkg_get-javac() {
 	debug-print-function ${FUNCNAME} $*
 
-
+	java-pkg_init-compiler_
 	local compiler="${GENTOO_COMPILER}"
 
 	local compiler_executable
@@ -1552,18 +1602,15 @@ java-pkg_get-javac() {
 			export JAVAC=${old_javac}
 
 			if [[ -z ${compiler_executable} ]]; then
-				echo "JAVAC is empty or undefined in ${compiler_env}"
-				return 1
+				die "JAVAC is empty or undefined in ${compiler_env}"
 			fi
 
 			# check that it's executable
 			if [[ ! -x ${compiler_executable} ]]; then
-				echo "${compiler_executable} doesn't exist, or isn't executable"
-				return 1
+				die "${compiler_executable} doesn't exist, or isn't executable"
 			fi
 		else
-			echo "Could not find environment file for ${compiler}"
-			return 1
+			die "Could not find environment file for ${compiler}"
 		fi
 	fi
 	echo ${compiler_executable}
@@ -1588,9 +1635,7 @@ java-pkg_javac-args() {
 	debug-print "want target: ${want_target}"
 
 	if [[ -z "${want_source}" || -z "${want_target}" ]]; then
-		debug-print "could not find valid -source/-target values for javac"
-		echo "Could not find valid -source/-target values for javac"
-		return 1
+		die "Could not find valid -source/-target values for javac"
 	else
 		echo "${source_str} ${target_str}"
 	fi
@@ -1779,18 +1824,21 @@ ejunit4() {
 # src_prepare Searches for bundled jars
 # Don't call directly, but via java-pkg-2_src_prepare!
 java-utils-2_src_prepare() {
-	[[ ${EBUILD_PHASE} == prepare ]] &&
-		java-pkg_func-exists java_prepare && java_prepare
+	java-pkg_func-exists java_prepare && java_prepare
 
-	# Remember that eant will call this unless called via Portage
-	if [[ ! -e "${T}/java-utils-2_src_prepare-run" ]] && is-java-strict; then
+	# Check for files in JAVA_RM_FILES array.
+	if [[ ${JAVA_RM_FILES[@]} ]]; then
+		debug-print "$FUNCNAME: removing unneeded files"
+		java-pkg_rm_files "${JAVA_RM_FILES[@]}"
+	fi
+
+	if is-java-strict; then
 		echo "Searching for bundled jars:"
 		java-pkg_find-normal-jars || echo "None found."
 		echo "Searching for bundled classes (no output if none found):"
 		find "${WORKDIR}" -name "*.class"
 		echo "Search done."
 	fi
-	touch "${T}/java-utils-2_src_prepare-run"
 }
 
 # @FUNCTION: java-utils-2_pkg_preinst
@@ -1833,7 +1881,6 @@ eant() {
 
 	if [[ ${EBUILD_PHASE} = compile ]]; then
 		java-ant-2_src_configure
-		java-utils-2_src_prepare
 	fi
 
 	if ! has java-ant-2 ${INHERITED}; then
@@ -1954,21 +2001,11 @@ eant() {
 ejavac() {
 	debug-print-function ${FUNCNAME} $*
 
-	java-pkg_init-compiler_
-
 	local compiler_executable
 	compiler_executable=$(java-pkg_get-javac)
-	if [[ ${?} != 0 ]]; then
-		eerror "There was a problem determining compiler: ${compiler_executable}"
-		die "get-javac failed"
-	fi
 
 	local javac_args
 	javac_args="$(java-pkg_javac-args)"
-	if [[ ${?} != 0 ]]; then
-		eerror "There was a problem determining JAVACFLAGS: ${javac_args}"
-		die "java-pkg_javac-args failed"
-	fi
 
 	[[ -n ${JAVA_PKG_DEBUG} ]] && echo ${compiler_executable} ${javac_args} "${@}"
 	${compiler_executable} ${javac_args} "${@}" || die "ejavac failed"
@@ -2574,10 +2611,6 @@ java-pkg_switch-vm() {
 		export JAVA=$(java-config --java)
 		export JAVAC=$(java-config --javac)
 		JAVACFLAGS="$(java-pkg_javac-args)"
-		if [[ ${?} != 0 ]]; then
-			eerror "There was a problem determining JAVACFLAGS: ${JAVACFLAGS}"
-			die "java-pkg_javac-args failed"
-		fi
 		[[ -n ${JAVACFLAGS_EXTRA} ]] && JAVACFLAGS="${JAVACFLAGS_EXTRA} ${JAVACFLAGS}"
 		export JAVACFLAGS
 

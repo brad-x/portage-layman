@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/neutron-2015.1.9999.ebuild,v 1.6 2015/05/17 23:25:00 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/neutron/neutron-2015.1.9999.ebuild,v 1.7 2015/07/29 23:45:24 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -33,7 +33,9 @@ DEPEND="
 		<dev-python/cliff-1.11.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		<dev-python/fixtures-1.3.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		<dev-python/mock-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/requests-mock-0.6.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
@@ -49,6 +51,7 @@ DEPEND="
 		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
 		<dev-python/oslotest-1.6.0[${PYTHON_USEDEP}]
 		>=dev-python/tempest-lib-0.4.0[${PYTHON_USEDEP}]
+		<dev-python/tempest-lib-0.5.0[${PYTHON_USEDEP}]
 	)"
 
 RDEPEND="
@@ -68,7 +71,7 @@ RDEPEND="
 	<dev-python/keystonemiddleware-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	>=dev-python/python-neutronclient-2.3.11[${PYTHON_USEDEP}]
-	<dev-python/python-neutronclient-3.5.0[${PYTHON_USEDEP}]
+	<dev-python/python-neutronclient-2.5.0[${PYTHON_USEDEP}]
 	>=dev-python/retrying-1.2.3[${PYTHON_USEDEP}]
 	!~dev-python/retrying-1.3.0[${PYTHON_USEDEP}]
 	compute-only? (
@@ -90,7 +93,7 @@ RDEPEND="
 		<=dev-python/sqlalchemy-0.9.99[${PYTHON_USEDEP}]
 	)
 	>=dev-python/webob-1.2.3[${PYTHON_USEDEP}]
-	>=dev-python/python-keystoneclient-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/python-keystoneclient-1.2.0[${PYTHON_USEDEP}]
 	<dev-python/python-keystoneclient-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/alembic-0.7.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
@@ -130,6 +133,7 @@ RDEPEND="
 	dhcp? ( net-dns/dnsmasq[dhcp-tools] )"
 
 PATCHES=(
+
 )
 
 pkg_setup() {

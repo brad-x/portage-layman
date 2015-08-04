@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/tweepy/tweepy-2.3.ebuild,v 1.1 2014/12/09 07:30:42 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/tweepy/tweepy-2.3.ebuild,v 1.2 2015/07/28 15:00:17 jlec Exp $
 
 EAPI=5
 
@@ -23,7 +23,9 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 
 python_prepare_all() {
 	# Required to avoid file collisions at install
-	sed -e "s:find_packages():find_packages(exclude=['tests','tests.*']):" -i setup.py || die
+	sed \
+		-e "/find_packages/s:]:,'tests.*','examples']:g" \
+		-i setup.py || die
 	distutils-r1_python_prepare_all
 }
 

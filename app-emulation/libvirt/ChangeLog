@@ -1,6 +1,41 @@
 # ChangeLog for app-emulation/libvirt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.436 2015/07/02 12:47:14 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/ChangeLog,v 1.441 2015/07/31 03:24:07 tamiko Exp $
+
+*libvirt-1.2.17-r4 (31 Jul 2015)
+
+  31 Jul 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.17-r4.ebuild,
+  -files/libvirtd.confd-r6, -files/libvirtd.init-r16, -libvirt-1.2.17-r3.ebuild,
+  libvirt-9999.ebuild:
+  on behalf of cardoe; revert all changes made to the openrc runscripts; as per
+  discussions on bug #555736 and on bug #551854
+
+*libvirt-1.2.17-r3 (29 Jul 2015)
+
+  29 Jul 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.17-r3.ebuild,
+  -libvirt-1.2.17-r2.ebuild, files/libvirt-1.2.17-fix_paths_for_apparmor.patch:
+  fix apparmor configuration, many thanks to aporilel, bug #544628
+
+*libvirt-1.2.17-r2 (28 Jul 2015)
+
+  28 Jul 2015; Matthias Maier <tamiko@gentoo.org>
+  +files/libvirt-1.2.17-fix_paths_for_apparmor.patch, +files/libvirtd.confd-r6,
+  +files/libvirtd.init-r16, +libvirt-1.2.17-r2.ebuild, -files/libvirtd.confd-r5,
+  -files/libvirtd.init-r15, -libvirt-1.2.17-r1.ebuild, libvirt-9999.ebuild:
+  Change default behavior for kvm guest in openrc runscript, bug #555736; fix
+  apparmor configuration, bug #554628; ebuild maintenance
+
+  25 Jul 2015; Matthias Maier <tamiko@gentoo.org> libvirt-1.2.17-r1.ebuild,
+  libvirt-9999.ebuild:
+  cosmetic changes in README.gentoo
+
+*libvirt-1.2.17-r1 (25 Jul 2015)
+
+  25 Jul 2015; Matthias Maier <tamiko@gentoo.org> +libvirt-1.2.17-r1.ebuild,
+  -libvirt-1.2.16-r2.ebuild, -libvirt-1.2.17.ebuild, libvirt-9999.ebuild,
+  metadata.xml:
+  drop old; use readme.gentoo for all elog messages; fix dependencies wrt
+  ebtables and iptables, bug #553120; add apparmor use flag, bug #554628
 
   02 Jul 2015; Matthias Maier <tamiko@gentoo.org> libvirt-1.2.15-r1.ebuild,
   libvirt-1.2.16-r2.ebuild, libvirt-1.2.17.ebuild, libvirt-9999.ebuild:

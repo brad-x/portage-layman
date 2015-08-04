@@ -1,8 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.6.6.ebuild,v 1.4 2015/06/26 09:23:38 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.6.6.ebuild,v 1.6 2015/07/31 03:21:24 tetromino Exp $
 
 EAPI="5"
+CMAKE_MAKEFILE_GENERATOR="ninja"
 GCONF_DEBUG="no"
 PYTHON_COMPAT=( python2_7 )
 
@@ -114,13 +115,13 @@ pkg_pretend() {
 		check-reqs_pkg_pretend
 	fi
 
-	if ! test-flag-CXX -std=c++11; then
+	if [[ ${MERGE_TYPE} != "binary" ]] && ! test-flag-CXX -std=c++11; then
 		die "You need at least GCC 4.7.x or Clang >= 3.3 for C++11-specific compiler flags"
 	fi
 }
 
 pkg_setup() {
-	if [[ ${MERGE_TYPE} != "binary" ]] ; then
+	if [[ ${MERGE_TYPE} != "binary" ]] && is-flagq "-g*" && ! is-flagq "-g*0" ; then
 		check-reqs_pkg_setup
 	fi
 
