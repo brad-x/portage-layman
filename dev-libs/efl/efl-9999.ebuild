@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/efl/efl-9999.ebuild,v 1.2 2015/03/17 17:34:56 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/efl/efl-9999.ebuild,v 1.4 2015/08/06 04:22:05 vapier Exp $
 
 EAPI="5"
 
@@ -55,7 +55,7 @@ RDEPEND="
 	)
 	harfbuzz? ( media-libs/harfbuzz )
 	ibus? ( app-i18n/ibus )
-	jpeg2k? ( media-libs/openjpeg )
+	jpeg2k? ( media-libs/openjpeg:0 )
 	!oldlua? ( >=dev-lang/luajit-2.0.0 )
 	oldlua? ( dev-lang/lua )
 	physics? ( >=sci-physics/bullet-2.80 )
@@ -160,7 +160,7 @@ S=${WORKDIR}/${MY_P}
 
 src_configure() {
 	if use ssl && use gnutls ; then
-		einfo "You enabled both USEssl and USE=gnutls, but only one can be used;"
+		einfo "You enabled both USE=ssl and USE=gnutls, but only one can be used;"
 		einfo "gnutls has been selected for you."
 	fi
 	if use opengl && use gles ; then
@@ -222,7 +222,6 @@ src_configure() {
 		$(use_enable xine)
 		$(use_enable xpm image-loader-xpm)
 		--enable-cserve
-		--enable-gui
 		--enable-image-loader-generic
 		--enable-image-loader-jpeg
 
@@ -239,18 +238,6 @@ src_configure() {
 	)
 
 	enlightenment_src_configure
-}
-
-src_compile() {
-	ewarn "If the following compile phase fails with a message including"
-	ewarn "lib/edje/.libs/libedje.so: undefined reference to 'eet_mmap'"
-	ewarn "then most likely the @preserved-rebuild feature of portage"
-	ewarn "preserved the 1.7 libraries, which cause the build failure."
-	ewarn "As a workaround, either remove those libs manually or"
-	ewarn "uninstall all packages still using those old libs with"
-	ewarn "emerge -aC @preserved-rebuild"
-
-	enlightenment_src_compile
 }
 
 src_install() {

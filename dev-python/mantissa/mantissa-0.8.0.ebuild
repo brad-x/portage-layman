@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/mantissa/mantissa-0.8.0.ebuild,v 1.2 2015/07/20 04:30:36 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/mantissa/mantissa-0.8.0.ebuild,v 1.3 2015/08/07 06:36:53 idella4 Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -39,7 +39,6 @@ python_test() {
 	einfo "A folder with required modules are absent form the source"
 	einfo "All are expected to be fixed in a next release consequent to the bug"
 	einfo "filed upstream, now expected very soon"; einfo ""
-	die "dud"
 	trial xmantissa || die "tests failed with ${EPYTHON}"
 }
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.103 2015/07/25 19:30:13 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.106 2015/08/05 06:47:50 vapier Exp $
 
 EAPI=5
 
@@ -46,10 +46,9 @@ use_softmmu_targets=$(printf ' qemu_softmmu_targets_%s' ${IUSE_SOFTMMU_TARGETS})
 use_user_targets=$(printf ' qemu_user_targets_%s' ${IUSE_USER_TARGETS})
 IUSE+=" ${use_softmmu_targets} ${use_user_targets}"
 
-# Require at least one softmmu or user target.
+# Allow no targets to be built so that people can get a tools-only build.
 # Block USE flag configurations known to not work.
-REQUIRED_USE="|| ( ${use_softmmu_targets} ${use_user_targets} )
-	${PYTHON_REQUIRED_USE}
+REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	gtk2? ( gtk )
 	qemu_softmmu_targets_arm? ( fdt )
 	qemu_softmmu_targets_microblaze? ( fdt )
@@ -294,8 +293,10 @@ qemu_src_configure() {
 	debug-print-function ${FUNCNAME} "$@"
 
 	local buildtype=$1
-	local builddir=$2
+	local builddir="${S}/${buildtype}-build"
 	local static_flag="static-${buildtype}"
+
+	mkdir "${builddir}"
 
 	# audio options
 	local audio_opts="oss"
@@ -378,7 +379,6 @@ qemu_src_configure() {
 		conf_opts+=(
 			--enable-linux-user
 			--disable-system
-			--target-list="${user_targets}"
 			--disable-blobs
 			--disable-tools
 		)
@@ -387,14 +387,24 @@ qemu_src_configure() {
 		conf_opts+=(
 			--disable-linux-user
 			--enable-system
-			--target-list="${softmmu_targets}"
 			--with-system-pixman
 			--audio-drv-list="${audio_opts}"
 		)
 		use gtk && conf_opts+=( --with-gtkabi=$(usex gtk2 2.0 3.0) )
 		use sdl && conf_opts+=( --with-sdlabi=$(usex sdl2 2.0 1.2) )
 		;;
+	tools)
+		conf_opts+=(
+			--disable-linux-user
+			--disable-system
+			--disable-blobs
+		)
+		static_flag="static"
+		;;
 	esac
+
+	local targets="${buildtype}_targets"
+	[[ -n ${targets} ]] && conf_opts+=( --target-list="${!targets}" )
 
 	# Add support for SystemTAP
 	use systemtap && conf_opts+=( --enable-trace-backend=dtrace )
@@ -408,7 +418,7 @@ qemu_src_configure() {
 		gcc-specs-pie && conf_opts+=( --enable-pie )
 	fi
 
-	einfo "../configure ${conf_opts[*]}"
+	echo "../configure ${conf_opts[*]}"
 	cd "${builddir}"
 	../configure "${conf_opts[@]}" || die "configure failed"
 
@@ -440,21 +450,12 @@ src_configure() {
 		fi
 	done
 
-	[[ -n ${softmmu_targets} ]] && \
-		einfo "Building the following softmmu targets: ${softmmu_targets}"
+	softmmu_targets=${softmmu_targets#,}
+	user_targets=${user_targets#,}
 
-	[[ -n ${user_targets} ]] && \
-		einfo "Building the following user targets: ${user_targets}"
-
-	if [[ -n ${softmmu_targets} ]]; then
-		mkdir "${S}/softmmu-build"
-		qemu_src_configure "softmmu" "${S}/softmmu-build"
-	fi
-
-	if [[ -n ${user_targets} ]]; then
-		mkdir "${S}/user-build"
-		qemu_src_configure "user" "${S}/user-build"
-	fi
+	[[ -n ${softmmu_targets} ]] && qemu_src_configure "softmmu"
+	[[ -n ${user_targets}    ]] && qemu_src_configure "user"
+	[[ -z ${softmmu_targets}${user_targets} ]] && qemu_src_configure "tools"
 }
 
 src_compile() {
@@ -465,6 +466,11 @@ src_compile() {
 
 	if [[ -n ${softmmu_targets} ]]; then
 		cd "${S}/softmmu-build"
+		default
+	fi
+
+	if [[ -z ${softmmu_targets}${user_targets} ]]; then
+		cd "${S}/tools-build"
 		default
 	fi
 }
@@ -512,6 +518,11 @@ src_install() {
 		fi
 	fi
 
+	if [[ -z ${softmmu_targets}${user_targets} ]]; then
+		cd "${S}/tools-build"
+		emake DESTDIR="${ED}" install
+	fi
+
 	# Disable mprotect on the qemu binaries as they use JITs to be fast #459348
 	pushd "${ED}"/usr/bin >/dev/null
 	pax-mark m "${softmmu_bins[@]}" "${user_bins[@]}"
@@ -529,14 +540,14 @@ src_install() {
 	newdoc pc-bios/README README.pc-bios
 	dodoc docs/qmp/*.txt
 
-	# Remove SeaBIOS since we're using the SeaBIOS packaged one
-	rm "${ED}/usr/share/qemu/bios.bin"
-	if use qemu_softmmu_targets_x86_64 || use qemu_softmmu_targets_i386; then
-		dosym ../seabios/bios.bin /usr/share/qemu/bios.bin
-	fi
-
-	# Remove vgabios since we're using the vgabios packaged one
 	if [[ -n ${softmmu_targets} ]]; then
+		# Remove SeaBIOS since we're using the SeaBIOS packaged one
+		rm "${ED}/usr/share/qemu/bios.bin"
+		if use qemu_softmmu_targets_x86_64 || use qemu_softmmu_targets_i386; then
+			dosym ../seabios/bios.bin /usr/share/qemu/bios.bin
+		fi
+
+		# Remove vgabios since we're using the vgabios packaged one
 		rm "${ED}/usr/share/qemu/vgabios.bin"
 		rm "${ED}/usr/share/qemu/vgabios-cirrus.bin"
 		rm "${ED}/usr/share/qemu/vgabios-qxl.bin"

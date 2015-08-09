@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/paludis-2.4.0.ebuild,v 1.1 2015/04/04 17:54:43 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/paludis-2.4.0.ebuild,v 1.2 2015/08/07 11:19:59 mgorny Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 )
 # matching profile defaults for now
 RUBY_VER=2.0
 
-inherit autotools bash-completion-r1 eutils python-single-r1 user
+inherit bash-completion-r1 eutils python-single-r1 user
 
 DESCRIPTION="paludis, the other package mangler"
 HOMEPAGE="http://paludis.exherbo.org/"

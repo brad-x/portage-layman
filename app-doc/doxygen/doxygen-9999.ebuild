@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/doxygen-9999.ebuild,v 1.1 2015/05/28 07:08:17 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/doxygen-9999.ebuild,v 1.2 2015/08/05 21:56:49 tamiko Exp $
 
 EAPI=4
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
-inherit eutils fdo-mime flag-o-matic python-any-r1 qt4-r2 toolchain-funcs
-
+inherit cmake-utils eutils fdo-mime flag-o-matic python-any-r1 qt4-r2
 if [[ ${PV} = *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="git://github.com/doxygen/doxygen.git"
@@ -23,7 +22,7 @@ HOMEPAGE="http://www.doxygen.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="clang debug doc dot doxysearch qt4 latex sqlite"
+IUSE="clang debug doc dot doxysearch qt4 sqlite"
 
 #missing SerbianCyrilic, JapaneseEn, KoreanEn, Chinesetraditional
 
@@ -38,12 +37,12 @@ RDEPEND="app-text/ghostscript-gpl
 	media-libs/libpng
 	virtual/libiconv
 	clang? ( sys-devel/clang )
+	doc? ( app-text/texlive[extra] )
 	dot? (
 		media-gfx/graphviz
 		media-libs/freetype
 	)
 	doxysearch? ( =dev-libs/xapian-1.2* )
-	latex? ( app-text/texlive[extra] )
 	qt4? ( dev-qt/qtgui:4 )
 	sqlite? ( dev-db/sqlite:3 )
 	"
@@ -83,29 +82,14 @@ get_langs() {
 		fi
 	done
 	f_langs="${my_linguas[@]}"
-	echo ${f_langs// /,}
+	echo ${f_langs// /;}
 }
 
 pkg_setup() {
-	tc-export CC CXX
 	use doc && python-any-r1_pkg_setup
 }
 
 src_prepare() {
-	# use CFLAGS, CXXFLAGS, LDFLAGS
-	export ECFLAGS="${CFLAGS}" ECXXFLAGS="${CXXFLAGS}" ELDFLAGS="${LDFLAGS}"
-
-	sed -i.orig -e 's:^\(TMAKE_CFLAGS_RELEASE\t*\)= .*$:\1= $(ECFLAGS):' \
-		-e 's:^\(TMAKE_CXXFLAGS_RELEASE\t*\)= .*$:\1= $(ECXXFLAGS):' \
-		-e 's:^\(TMAKE_LFLAGS_RELEASE\s*\)=.*$:\1= $(ELDFLAGS):' \
-		-e "s:^\(TMAKE_CXX\s*\)=.*$:\1= $(tc-getCXX):" \
-		-e "s:^\(TMAKE_LINK\s*\)=.*$:\1= $(tc-getCXX):" \
-		-e "s:^\(TMAKE_LINK_SHLIB\s*\)=.*$:\1= $(tc-getCXX):" \
-		-e "s:^\(TMAKE_CC\s*\)=.*$:\1= $(tc-getCC):" \
-		-e "s:^\(TMAKE_AR\s*\)=.*$:\1= $(tc-getAR) cqs:" \
-		tmake/lib/{{linux,gnu,freebsd,netbsd,openbsd,solaris}-g++,macosx-c++,linux-64}/tmake.conf \
-		|| die
-
 	# Ensure we link to -liconv
 	if use elibc_FreeBSD && has_version dev-libs/libiconv || use elibc_uclibc; then
 		for pro in */*.pro.in */*/*.pro.in; do
@@ -117,15 +101,13 @@ src_prepare() {
 	sed -i -e '/addJob("ps"/ s/"ps"/"eps"/g' src/dot.cpp || die
 
 	# prefix search tools patch, plus OSX fixes
-	epatch "${FILESDIR}"/${PN}-1.8.1-prefix-misc-alt.patch
 	epatch "${FILESDIR}"/${PN}-1.8.9.1-empty-line-sigsegv.patch #454348
+
+	epatch "${FILESDIR}"/${P}-link_with_pthread.patch
 
 	# fix pdf doc
 	sed -i.orig -e "s:g_kowal:g kowal:" \
 		doc/maintainers.txt || die
-
-	sed -e "s/\$(DATE)/$(LC_ALL="C" LANG="C" date)/g" \
-		-i Makefile.in || die #428280
 
 	if is-flagq "-O3" ; then
 		echo
@@ -139,78 +121,37 @@ src_prepare() {
 }
 
 src_configure() {
-	# set ./configure options (prefix, Qt based wizard, docdir)
+	local mycmakeargs=(
+	    -DBUILD_SHARED_LIBS=YES
+		-DDOC_INSTALL_DIR="share/doc/${P}"
+		-DLANG_CODES="$(get_langs)"
+		$(cmake-utils_use clang use_libclang)
+		$(cmake-utils_use doc build_doc)
+		$(cmake-utils_use doxysearch build_search)
+		$(cmake-utils_use qt4 build_wizard)
+		$(cmake-utils_use sqlite use_sqlite3)
+		)
 
-	local my_conf="--shared --enable-langs $(get_langs)"
-
-	if use debug ; then
-		my_conf="${my_conf} --debug"
-	else
-		my_conf="${my_conf} --release "
-	fi
-
-	use clang && my_conf="${my_conf} --with-libclang"
-
-	use doxysearch  && my_conf="${my_conf} --with-doxysearch"
-
-	use qt4 && my_conf="${my_conf} --with-doxywizard"
-
-	use sqlite && my_conf="${my_conf} --with-sqlite3"
-
-	# On non GNU userland (e.g. BSD), configure script picks up make and bails
-	# out because it is not GNU make, so we force the right value.
-	use userland_GNU || my_conf="${my_conf} --make ${MAKE} --install install"
-
-	export LINK="${QMAKE_LINK}"
-	export LINK_SHLIB="${QMAKE_CXX}"
-
-	./configure --prefix "${EPREFIX}/usr" ${my_conf} \
-			|| die
-
-	if use qt4 ; then
-		pushd addon/doxywizard &> /dev/null
-		eqmake4 doxywizard.pro -o Makefile.doxywizard
-		popd &> /dev/null
-	fi
+	cmake-utils_src_configure
 }
 
 src_compile() {
+	cmake-utils_src_compile
 
-	emake CFLAGS+="${ECFLAGS}" CXXFLAGS+="${ECXXFLAGS}" \
-		LFLAGS+="${ELDFLAGS}" all
-
-	# generate html and pdf (if tetex in use) documents.
-	# errors here are not considered fatal, hence the ewarn message
-	# TeX's font caching in /var/cache/fonts causes sandbox warnings,
-	# so we allow it.
+	# generate html and pdf documents. errors here are not considered
+	# fatal, hence the ewarn message TeX's font caching in /var/cache/fonts
+	# causes sandbox warnings, so we allow it.
 	if use doc; then
 		if ! use dot; then
 			sed -i -e "s/HAVE_DOT               = YES/HAVE_DOT    = NO/" \
 				{Doxyfile,doc/Doxyfile} \
 				|| ewarn "disabling dot failed"
 		fi
-		if use latex; then
-			addwrite /var/cache/fonts
-			addwrite /var/cache/fontconfig
-			addwrite /usr/share/texmf/fonts/pk
-			addwrite /usr/share/texmf/ls-R
-			make pdf || ewarn '"make pdf docs" failed.'
-		else
-			cp doc/Doxyfile doc/Doxyfile.orig
-			cp doc/Makefile doc/Makefile.orig
-			sed -i.orig -e "s/GENERATE_LATEX    = YES/GENERATE_LATEX    = NO/" \
-				doc/Doxyfile
-			sed -i.orig -e "s/@epstopdf/# @epstopdf/" \
-				-e "s/@cp Makefile.latex/# @cp Makefile.latex/" \
-				-e "s/@sed/# @sed/" doc/Makefile
-			make docs || ewarn '"make docs" failed.'
-		fi
+		cd "${BUILD_DIR}" && emake docs
 	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" MAN1DIR=share/man/man1 install
-
 	if use qt4; then
 		doicon "${DISTDIR}/doxywizard.png"
 		make_desktop_entry doxywizard "DoxyWizard ${PV}" \
@@ -220,22 +161,16 @@ src_install() {
 
 	dodoc LANGUAGE.HOWTO README.md
 
-	# pdf and html manuals
-	if use doc; then
-		dohtml -r html/*
-		use latex && dodoc latex/doxygen_manual.pdf
-	fi
+	cmake-utils_src_install
 }
 
 pkg_postinst() {
 	fdo-mime_desktop_database_update
 
 	elog
-	elog "The USE flags qt4, doc, and latex will enable doxywizard, or"
-	elog "the html and pdf documentation, respectively.  For examples"
-	elog "and other goodies, see the source tarball.  For some example"
-	elog "output, run doxygen on the doxygen source using the Doxyfile"
-	elog "provided in the top-level source dir."
+	elog "For examples and other goodies, see the source tarball. For some"
+	elog "example output, run doxygen on the doxygen source using the"
+	elog "Doxyfile provided in the top-level source dir."
 	elog
 	elog "Disabling the dot USE flag will remove the GraphViz dependency,"
 	elog "along with Doxygen's ability to generate diagrams in the docs."

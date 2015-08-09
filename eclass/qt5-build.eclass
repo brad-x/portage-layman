@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/qt5-build.eclass,v 1.21 2015/07/13 00:51:16 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/qt5-build.eclass,v 1.23 2015/08/07 02:05:19 pesa Exp $
 
 # @ECLASS: qt5-build.eclass
 # @MAINTAINER:
@@ -195,6 +195,14 @@ qt5-build_src_prepare() {
 		find config.tests/unix -name '*.test' -type f \
 			-execdir sed -i -e '/bin\/qmake/ s/-nocache //' '{}' + \
 			|| die "sed failed (config.tests)"
+
+		# Don't add -O3 to CXXFLAGS (bug 549140)
+		sed -i -e '/CONFIG\s*+=/ s/optimize_full//' \
+			src/{corelib/corelib,gui/gui}.pro || die "sed failed (optimize_full)"
+
+		# Don't force sse2 on x86 (bug 552942)
+		sed -i -e 's/^sse2:/false:&/' \
+			mkspecs/features/qt_module.prf || die "sed failed (sse2)"
 	fi
 
 	# apply patches
@@ -225,8 +233,10 @@ qt5-build_src_compile() {
 # @DESCRIPTION:
 # Runs tests in the target directories.
 qt5-build_src_test() {
-	# '-after SUBDIRS-=...' disables broken cmake tests (bug 474004)
-	qt5_foreach_target_subdir qt5_qmake -after SUBDIRS-=cmake SUBDIRS-=installed_cmake
+	# disable broken cmake tests (bug 474004)
+	local myqmakeargs=("${myqmakeargs[@]}" -after SUBDIRS-=cmake SUBDIRS-=installed_cmake)
+
+	qt5_foreach_target_subdir qt5_qmake
 	qt5_foreach_target_subdir emake
 
 	# create a custom testrunner script that correctly sets
@@ -661,6 +671,7 @@ qt5_qmake() {
 	fi
 
 	"${qmakepath}"/qmake \
+		"${projectdir}" \
 		CONFIG+=$(usex debug debug release) \
 		CONFIG-=$(usex debug release debug) \
 		QMAKE_AR="$(tc-getAR) cqs" \
@@ -682,8 +693,7 @@ qt5_qmake() {
 		QMAKE_LFLAGS="${LDFLAGS}" \
 		QMAKE_LFLAGS_RELEASE= \
 		QMAKE_LFLAGS_DEBUG= \
-		"${projectdir}" \
-		"$@" \
+		"${myqmakeargs[@]}" \
 		|| die "qmake failed (${projectdir#${S}/})"
 }
 

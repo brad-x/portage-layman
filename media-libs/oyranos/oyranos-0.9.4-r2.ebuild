@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/oyranos/oyranos-0.9.4-r2.ebuild,v 1.3 2015/05/27 20:31:04 tamiko Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/oyranos/oyranos-0.9.4-r2.ebuild,v 1.5 2015/08/06 20:54:05 xmw Exp $
 
 EAPI=5
 
@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="X cairo cups doc exif fltk qt4 raw test"
 
-RDEPEND="=app-admin/elektra-0.7*:0[${MULTILIB_USEDEP}]
-	>=app-admin/elektra-0.7.1-r5:0[${MULTILIB_USEDEP}]
+RDEPEND="=app-admin/elektra-0.7*:0=[${MULTILIB_USEDEP}]
+	>=app-admin/elektra-0.7.1-r5:0=[${MULTILIB_USEDEP}]
 	>=dev-libs/libxml2-2.9.1-r4[${MULTILIB_USEDEP}]
 	>=dev-libs/yajl-2.0.4-r1[${MULTILIB_USEDEP}]
 	media-libs/icc-profiles-basiccolor-printing2009
@@ -26,7 +26,7 @@ RDEPEND="=app-admin/elektra-0.7*:0[${MULTILIB_USEDEP}]
 	>=media-libs/libXcm-0.5.2-r1[${MULTILIB_USEDEP}]
 	cairo? ( >=x11-libs/cairo-1.12.14-r4[${MULTILIB_USEDEP}] )
 	cups? ( >=net-print/cups-1.7.1-r1[${MULTILIB_USEDEP}] )
-	exif? ( >=media-gfx/exiv2-0.23-r2[${MULTILIB_USEDEP}] )
+	exif? ( >=media-gfx/exiv2-0.23-r2:=[${MULTILIB_USEDEP}] )
 	fltk? ( x11-libs/fltk:1 )
 	qt4? ( dev-qt/qtcore:4 dev-qt/qtgui:4 )
 	raw? ( >=media-libs/libraw-0.15.4[${MULTILIB_USEDEP}] )

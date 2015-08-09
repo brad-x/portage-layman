@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16696 2015/08/02 22:13:13 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16707 2015/08/08 17:58:28 sping Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,25 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Sebastioan Pipping <sping@gentoo.org> (8 Aug 2015)
+# Upcoming, too young to go into testing unmasked
+dev-libs/iniparser:4
+
+# Matthew Thode <prometheanfire@gentoo.org> (04 Aug 2015)
+# removing old and never working horizon Bug #556710
+www-apps/horizon
+
+# Mikle Kolyada <zlogene@hemtoo.org> (04 Aug 2015)
+# Unmaintained since 2010. No longer available
+# on CPAN and nothing in the tree depends on it.
+# See bug #556640 for more info. Removal in 30 days.
+dev-perl/gtk2-fu
+
+# Mike Gilbert <floppym@gentoo.org> (03 Aug 2015)
+# Unmaintained upstream. Fails to build. Removal in 30 days.
+# Bugs: 478174, 546192, 556200.
+sys-apps/systemd-ui
 
 # Patrice Clement <monsieurp@gentoo.org> (3 Aug 2015)
 # Broken and no releases in 10 years (!).
@@ -139,20 +158,6 @@ app-arch/dczip
 # Removal in 30 days. See bug #552452.
 net-p2p/frostwire
 
-# Manuel Rüger <mrueg@gentoo.org> (5 Jul 2015)
-# Mask for various issues (missing ruby20 support, test failures)
-# Removal in 30 days
-app-text/deplate
-app-text/migemo
-dev-util/travis-yaml
-
-# Hans de Graaff <graaff@gentoo.org> (5 Jul 2015)
-# Mask for removal in 30 days. This is an old slot with a supporting
-# package only needed for this slot. Use dev-ruby/dotenv:2 instead.
-# This also fixes bug #553402 (file collision between slots).
-dev-ruby/dotenv:0
-dev-ruby/dotenv-deployment
-
 # Michael Orlitzky <mjo@gentoo.org> (3 Jul 2015)
 # Mask for removal in 30 days. Superseded by dev-haskell/biosff;
 # use that instead. Bug #553636.
@@ -161,15 +166,6 @@ sci-biology/flower
 # Patrick Lauer <patrick@gentoo.org> (1 Jul 2015)
 # Wrong version #553670
 =sys-kernel/gentoo-sources-4.1.1
-
-# Pacho Ramos <pacho@gentoo.org> (24 Jun 2015)
-# Replaced by app-admin/system-config-printer, to migrate
-# simply run:
-# emerge -C system-config-printer-common system-config-printer-gnome
-# emerge -1 system-config-printer
-# Removal in a month (#553128).
-app-admin/system-config-printer-common
-app-admin/system-config-printer-gnome
 
 # Patrice Clement <monsieurp@gentoo.org> (22 Jun 2015)
 # No update from upstream since 2002. This package might cause problems with
@@ -263,8 +259,6 @@ virtual/httpd-php:5.3
 # #554864
 =dev-python/django-1.5*
 =dev-python/django-1.6*
-dev-python/south
-dev-python/django-oauth-plus
 
 # Michał Górny <mgorny@gentoo.org> (11 Feb 2015)
 # Potentially destructive to @world, bug #539746.
@@ -669,10 +663,6 @@ app-text/cuneiform
 # 2.5.* has known security and other issues due to an affected
 # bundled ffmpeg, see bugs #446468 and #444262.
 <media-video/avidemux-2.6.2
-
-# Doug Goldstein <cardoe@gentoo.org> (22 Jan 2013)
-# Masked for development
-=sys-block/open-iscsi-2.0.873
 
 # Sven Wegener <swegener@gentoo.org> (21 Dec 2012)
 # temporary mask for socket location change
