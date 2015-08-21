@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/consul/consul-0.5.2-r1.ebuild,v 1.1 2015/07/08 17:18:10 williamh Exp $
+# $Id$
 
 EAPI=5
 
-inherit systemd user
+inherit golang-base systemd user
 
 KEYWORDS="~amd64"
 DESCRIPTION="A tool for service discovery, monitoring and configuration"
@@ -13,6 +13,7 @@ GO_PN="github.com/hashicorp/consul"
 LICENSE="MPL-2.0"
 SLOT="0"
 IUSE="test web"
+RESTRICT="test"
 
 DEPEND=">=dev-lang/go-1.4:=
 	dev-go/go-crypto:=
@@ -89,7 +90,7 @@ src_unpack() {
 	unpack_go_packages
 	# Create a writable GOROOT in order to avoid sandbox violations
 	# or other interference from installed instances.
-	export GOPATH="${WORKDIR}" GOROOT="${WORKDIR}/goroot"
+	export GOPATH="${WORKDIR}:$(get_golibdir_gopath)" GOROOT="${WORKDIR}/goroot"
 	cp -sR "${EPREFIX}"/usr/lib/go "${GOROOT}" || die
 	while read -r path; do
 		rm -rf "${GOROOT}/src/${path#${WORKDIR}/src}" \

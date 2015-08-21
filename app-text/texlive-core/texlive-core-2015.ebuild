@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/texlive-core/texlive-core-2015.ebuild,v 1.4 2015/07/30 15:50:29 aballier Exp $
+# $Id$
 
 EAPI=5
 
@@ -156,6 +156,10 @@ src_prepare() {
 	cd "${B}"
 	#EPATCH_MULTI_MSG="Applying patches from upstream bugfix branch..." EPATCH_SUFFIX="patch" epatch "${WORKDIR}/gentoo_branch2011_patches"
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/patches"
+
+	sed -i \
+		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,${EPREFIX}/usr/include\"," \
+		texk/web2c/configure || die
 
 	elibtoolize
 }

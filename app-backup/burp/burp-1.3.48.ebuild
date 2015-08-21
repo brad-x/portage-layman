@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/burp/burp-1.3.48.ebuild,v 1.3 2015/04/09 16:19:20 aidecoe Exp $
+# $Id$
 
 EAPI=5
 
@@ -8,14 +8,16 @@ inherit autotools eutils user
 
 DESCRIPTION="Network backup and restore client and server for Unix and Windows"
 HOMEPAGE="http://burp.grke.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
+	http://burp.grke.org/downloads/${P}/${P}.tar.bz2"
 
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="acl afs ipv6 nls ssl tcpd xattr"
+IUSE="acl afs ipv6 nls tcpd xattr"
 
 DEPEND="
+	dev-libs/openssl:0
 	dev-libs/uthash
 	sys-libs/libcap
 	net-libs/librsync
@@ -24,7 +26,6 @@ DEPEND="
 	acl? ( sys-apps/acl )
 	afs? ( net-fs/openafs )
 	nls? ( sys-devel/gettext )
-	ssl? ( dev-libs/openssl:0 )
 	tcpd? ( sys-apps/tcp-wrappers )
 	xattr? ( sys-apps/attr )
 	"
@@ -36,6 +37,7 @@ DOCS=( CONTRIBUTORS DONATIONS UPGRADING )
 PATCHES=(
 	"${FILESDIR}/${PV}-bedup-conf-path.patch"
 	"${FILESDIR}/${PV}-tinfo.patch"
+	"${FILESDIR}/${PV}-0001-Set-default_md-sha256-in-CA.cnf.patch"
 	)
 S="${WORKDIR}/burp"
 
@@ -46,6 +48,8 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${PATCHES[@]}"
+	# see bug #426262
+	mv configure.in configure.ac || die
 	eautoreconf
 }
 
@@ -54,7 +58,6 @@ src_configure() {
 		--sbindir=/usr/sbin
 		--sysconfdir=/etc/burp
 		--enable-largefile
-		$(use_with ssl openssl)
 		$(use_enable acl)
 		$(use_enable afs)
 		$(use_enable ipv6)
@@ -85,7 +88,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	if use ssl && [ ! -e /etc/burp/CA/index.txt ]; then
+	if [[ ! -e /etc/burp/CA/index.txt ]]; then
 		elog "At first run burp server will generate DH parameters and SSL"
 		elog "certificates.  You should adjust configuration before."
 		elog "Server configuration is located at"

@@ -1,9 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyside-tools/pyside-tools-0.2.15-r1.ebuild,v 1.3 2015/05/10 13:23:45 pesa Exp $
+# $Id$
 
 EAPI=5
 CMAKE_IN_SOURCE_BUILD="1"
+CMAKE_MAKEFILE_GENERATOR="emake" # bug 558248
 PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 VIRTUALX_COMMAND="cmake-utils_src_test"
 

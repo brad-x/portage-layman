@@ -1,9 +1,35 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.697 2015/08/04 13:38:19 jlec Exp $
+# $Id$
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
+
+# James Le Cuirot <chewi@gentoo.org> (18 Aug 2015)
+# gcc[awt] is only used by gcj-jdk[awt] and that isn't needed by
+# anything in the tree. The toolchain folks aren't keen to support it
+# and it should probably only be used if you really know what you're
+# doing *and* your name is gnu_andrew. ;) See bug #531900.
+sys-devel/gcc awt
+dev-java/gcj-jdk awt
+
+# Johannes Huber <johu@gentoo.org> (18 Aug 2015)
+# No consumer for Qt5 build, qt4/qt5 switch causes conflicts.
+# Qt5 only version will come back with kde-apps/akonadi.
+app-office/akonadi-server qt5
+
+# Heather Cynede <cynede@gentoo.org> (13 Aug 2015)
+# mono currently fails with doc most likely because of xattr
+# Gentoo bug: 554484
+>=dev-lang/mono-3.12.1 doc
+
+# Michael Palimaka <kensington@gentoo.org> (12 Aug 2015)
+# Requires unreleased dependency
+kde-frameworks/kwallet gpg
+
+# Ben de Groot <yngwin@gentoo.org> (12 Aug 2015)
+# Seems to link correctly, but fails to run. Bug #557354.
+=media-sound/qsampler-0.3.1 libgig
 
 # Justin Lecher <jlec@gentoo.org> (04 Aug 2015)
 # USE mask unsupported python implementations in django

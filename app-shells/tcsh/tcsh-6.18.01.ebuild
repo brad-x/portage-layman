@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/tcsh/tcsh-6.18.01.ebuild,v 1.13 2013/05/20 17:44:48 ago Exp $
+# $Id$
 
 EAPI="3"
 
@@ -66,8 +66,7 @@ src_configure() {
 	econf \
 		--prefix="${EPREFIX:-/}" \
 		--datarootdir='${prefix}/usr/share' \
-		$(use_enable nls) \
-		|| die
+		$(use_enable nls)
 }
 
 src_install() {

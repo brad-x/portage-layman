@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnssec-tools/dnssec-tools-1.14.ebuild,v 1.1 2012/10/15 05:33:06 xmw Exp $
+# $Id$
 
 EAPI=4
 
@@ -21,6 +21,7 @@ RDEPEND="dev-lang/perl
 	dev-perl/GraphViz
 	dev-perl/MailTools
 	dev-perl/Net-DNS
+	dev-perl/Net-DNS-SEC
 	dev-perl/XML-Simple"
 DEPEND="${RDEPEND}"
 

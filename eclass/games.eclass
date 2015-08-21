@@ -1,8 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/games.eclass,v 1.160 2015/02/20 10:22:42 ulm Exp $
+# $Id$
 
-# @ECLASS: games
+# @ECLASS: games.eclass
 # @MAINTAINER:
 # Games team <games@gentoo.org>
 # @BLURB: Standardizing the install of games.

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-control-center/gnome-control-center-3.16.2.ebuild,v 1.2 2015/06/29 03:36:10 tetromino Exp $
+# $Id$
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -115,6 +115,8 @@ DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
 
 	gnome-base/gnome-common
+
+	<sys-libs/timezone-data-2015f
 "
 # Needed for autoreconf
 #	gnome-base/gnome-common

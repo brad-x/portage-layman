@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/mydns/mydns-1.2.8.31.ebuild,v 1.9 2014/12/28 16:18:27 titanofold Exp $
+# $Id$
 
 EAPI=5
 
@@ -29,6 +29,7 @@ REQUIRED_USE="^^ ( mysql postgres )"
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.2.8.27-m4.patch"
 	eautoreconf
+	epatch "${FILESDIR}/${P}-texinfo.patch"
 }
 
 src_configure() {

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/netsurf/netsurf-3.3-r1.ebuild,v 1.2 2015/08/04 13:00:08 xmw Exp $
+# $Id$
 
 EAPI=5
 
@@ -57,7 +57,8 @@ DEPEND="${RDEPEND}
 
 PATCHES=( "${FILESDIR}"/${P}-CFLAGS.patch
 	"${FILESDIR}"/${PN}-3.0-framebuffer-pkgconfig.patch
-	"${FILESDIR}"/${PN}-3.2-conditionally-include-image-headers.patch )
+	"${FILESDIR}"/${PN}-3.2-conditionally-include-image-headers.patch
+	"${FILESDIR}"/${P}-pdf-writer.patch )
 DOCS=( fb.modes README Docs/USING-Framebuffer
 	Docs/ideas/{cache,css-engine,render-library}.txt )
 
@@ -65,6 +66,9 @@ src_prepare() {
 	rm -rf amiga atari beos cocoa monkey riscos windows  || die
 
 	mv "${WORKDIR}"/netsurf-fb.modes-example fb.modes
+
+	sed -e 's:-DG_DISABLE_DEPRECATED::' \
+		-i gtk/Makefile.target || die
 
 	netsurf_src_prepare
 }
@@ -119,22 +123,30 @@ src_install() {
 		netsurf_src_install
 		elog "framebuffer binary has been installed as netsurf-fb"
 		pushd "${ED}"usr/bin >/dev/null || die
-		for f in netsurf{,.*} ; do
+		eshopts_push -s nullglob
+		# bug 552562
+		local binaries=(netsurf{,.*})
+		eshopts_pop
+		for f in "${binaries[@]}" ; do
 			mv -v $f ${f/netsurf/netsurf-fb} || die
 			make_desktop_entry "${EROOT}"usr/bin/${f/netsurf/netsurf-fb} NetSurf-framebuffer${f/netsurf} netsurf "Network;WebBrowser"
 		done
 		popd >/dev/null || die
 		elog "In order to setup the framebuffer console, netsurf needs an /etc/fb.modes"
 		elog "You can use an example from /usr/share/doc/${PF}/fb.modes.* (bug 427092)."
-		elog "Please make /etc/input/mice readable to the account using netsurf-fb."
-		elog "Either use chmod a+r /etc/input/mice (security!!!) or use an group."
+		elog "Please make /dev/input/mice readable to the account using netsurf-fb."
+		elog "Either use chmod a+r /dev/input/mice (security!!!) or use an group."
 	fi
 	if use gtk ; then
 		netsurf_makeconf=( "${netsurf_makeconf[@]/TARGET=*/TARGET=gtk}" )
 		netsurf_src_install
 		elog "netsurf gtk version has been installed as netsurf-gtk"
 		pushd "${ED}"usr/bin >/dev/null || die
-		for f in netsurf{,.*} ; do
+		eshopts_push -s nullglob
+		# bug 552562
+		local binaries=(netsurf{,.*})
+		eshopts_pop
+		for f in "${binaries[@]}" ; do
 			mv -v $f ${f/netsurf/netsurf-gtk} || die
 			make_desktop_entry "${EROOT}"usr/bin/${f/netsurf/netsurf-gtk} NetSurf-gtk${f/netsurf} netsurf "Network;WebBrowser"
 		done

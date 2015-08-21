@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.86 2015/07/30 15:40:56 johu Exp $
+# $Id$
 
 EAPI=5
 
@@ -136,7 +136,8 @@ src_configure() {
 		$(cmake-utils_use_want server CORE)
 		$(cmake-utils_use_with webkit)
 		$(cmake-utils_use_want X QTCLIENT)
-		"-DEMBED_DATA=OFF"
+		-DEMBED_DATA=OFF
+		-DCMAKE_SKIP_RPATH=ON
 	)
 
 	# Something broke upstream detection since Qt 5.5

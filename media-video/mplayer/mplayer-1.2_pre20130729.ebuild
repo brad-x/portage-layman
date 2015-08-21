@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/mplayer-1.2_pre20130729.ebuild,v 1.20 2015/05/05 08:21:41 jer Exp $
+# $Id$
 
 EAPI=5
 
@@ -57,7 +57,7 @@ X_RDEPS="
 # Rar: althrought -gpl version is nice, it cant do most functions normal rars can
 #	nemesi? ( net-libs/libnemesi )
 RDEPEND+="
-	sys-libs/ncurses
+	sys-libs/ncurses:5=
 	app-arch/bzip2
 	sys-libs/zlib
 	|| ( >=media-video/ffmpeg-1.2.1:0 >=media-video/libav-9.8 )

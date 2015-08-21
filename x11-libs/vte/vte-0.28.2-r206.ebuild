@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/vte/vte-0.28.2-r206.ebuild,v 1.14 2015/04/08 17:28:02 mgorny Exp $
+# $Id$
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -21,7 +21,7 @@ RDEPEND=">=dev-libs/glib-2.26:2
 	>=x11-libs/gtk+-2.20:2[introspection?]
 	>=x11-libs/pango-1.22.0
 
-	sys-libs/ncurses
+	sys-libs/ncurses:5=
 	x11-libs/libX11
 	x11-libs/libXft
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/gruff/gruff-0.6.0.ebuild,v 1.1 2015/05/31 05:40:28 graaff Exp $
+# $Id$
 
 EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21 ruby22"
@@ -30,7 +30,7 @@ RUBY_PATCHES=(
 # gruff to work properly imagemagick needs to be compiled with truetype
 # support and this cannot be expressed in the rmagick dependency. Tests
 # also require imagemagick to have jpeg and png support.
-DEPEND="${DEPEND} test? ( media-gfx/imagemagick[jpeg,png,truetype] )"
+DEPEND="${DEPEND} test? ( media-gfx/imagemagick[jpeg,png,truetype,webp] )"
 RDEPEND="${RDEPEND} media-gfx/imagemagick[truetype]"
 
 ruby_add_rdepend ">=dev-ruby/rmagick-2.13.4"

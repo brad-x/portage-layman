@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy-bin/pypy-bin-2.4.0.ebuild,v 1.9 2015/07/17 14:57:57 floppym Exp $
+# $Id$
 
 EAPI=5
 
@@ -58,7 +58,7 @@ RDEPEND="
 	dev-libs/libffi:0
 	dev-libs/openssl:0[-bindist]
 	sys-libs/glibc:2.2
-	sys-libs/ncurses:5
+	sys-libs/ncurses:5/5
 	sys-libs/zlib:0
 	gdbm? ( sys-libs/gdbm:0= )
 	sqlite? ( dev-db/sqlite:3= )

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/bfilter/bfilter-1.1.4-r1.ebuild,v 1.7 2014/01/08 06:23:50 vapier Exp $
+# $Id$
 
 EAPI=4
 
@@ -16,7 +16,7 @@ KEYWORDS="amd64 x86"
 IUSE="X debug"
 
 RDEPEND="sys-libs/zlib
-	dev-libs/ace
+	<dev-libs/ace-5.8.3
 	dev-libs/libsigc++:2
 	X? ( dev-cpp/gtkmm:2.4 x11-libs/libX11 )
 	dev-libs/boost"

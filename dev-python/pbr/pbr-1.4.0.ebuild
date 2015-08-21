@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pbr/pbr-1.4.0.ebuild,v 1.2 2015/08/08 09:11:16 patrick Exp $
+# $Id$
 
 EAPI=5
 
@@ -14,8 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-#KEYWORDS="~amd64 ~hppa ~amd64-linux ~x86-linux"
-KEYWORDS=""
+#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 DEPEND="
@@ -58,6 +57,8 @@ python_prepare_all() {
 
 	distutils-r1_python_prepare_all
 }
+
+PATCHES=( "${FILESDIR}/${PN}-${PV}_no-git.patch" )
 
 python_test() {
 	# Note; Tests, that have been removed, pass once package is emerged.

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/ldns/ldns-1.6.17.ebuild,v 1.9 2015/05/08 05:05:41 jer Exp $
+# $Id$
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -40,6 +40,10 @@ MULTILIB_CHOST_TOOLS=(
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}_perl522.patch"
 }
 
 multilib_src_configure() {

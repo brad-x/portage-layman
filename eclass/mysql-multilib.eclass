@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-multilib.eclass,v 1.27 2015/07/30 20:34:57 grknight Exp $
+# $Id$
 
 # @ECLASS: mysql-multilib.eclass
 # @MAINTAINER:
@@ -291,13 +291,13 @@ if [[ ${HAS_TOOLS_PATCH} ]] ; then
 			ssl? ( >=dev-libs/openssl-1.0.0:0=[static-libs?] )
 			>=sys-libs/zlib-1.2.3:0=[static-libs?]
 		)
-		tools? ( sys-libs/ncurses ) embedded? ( sys-libs/ncurses )
+		tools? ( sys-libs/ncurses:= ) embedded? ( sys-libs/ncurses:= )
 	"
 else
 	DEPEND+="
 		ssl? ( >=dev-libs/openssl-1.0.0:0=[${MULTILIB_USEDEP},static-libs?] )
 		>=sys-libs/zlib-1.2.3:0=[${MULTILIB_USEDEP},static-libs?]
-		sys-libs/ncurses[${MULTILIB_USEDEP}]
+		sys-libs/ncurses:=[${MULTILIB_USEDEP}]
 	"
 fi
 

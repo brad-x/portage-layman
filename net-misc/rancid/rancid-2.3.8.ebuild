@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rancid/rancid-2.3.8.ebuild,v 1.6 2015/03/25 16:50:52 jlec Exp $
+# $Id$
 
 EAPI=5
 
@@ -8,7 +8,7 @@ inherit autotools eutils readme.gentoo user
 
 DESCRIPTION="Really Awesome New Cisco confIg Differ"
 HOMEPAGE="http://www.shrubbery.net/rancid/"
-SRC_URI="ftp://ftp.shrubbery.net/pub/${PN}/${P}.tar.gz"
+SRC_URI="http://http.debian.net/debian/pool/main/${PN:0:1}/${PN}/${PN}_${PV}.orig.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-4"
 
 SLOT="0"

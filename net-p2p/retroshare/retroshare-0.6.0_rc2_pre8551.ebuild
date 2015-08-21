@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/retroshare/retroshare-0.6.0_rc2_pre8551.ebuild,v 1.1 2015/06/28 17:24:32 pinkbyte Exp $
+# $Id$
 
 EAPI=5
 
 inherit eutils gnome2-utils multilib qmake-utils
 
 MY_PV="${PV/_rc/.RC}"
-MY_PV="${MY_PV/_pre/~}"
+MY_PV="${MY_PV/_pre/$'\x7e'}" # bug #557276
 
 DESCRIPTION="P2P private sharing application"
 HOMEPAGE="http://retroshare.sourceforge.net"

@@ -1,8 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/texinfo/texinfo-6.0.ebuild,v 1.1 2015/06/30 08:03:56 polynomial-c Exp $
+# $Id$
 
-EAPI="4"
+EAPI="5"
 
 inherit flag-o-matic
 
@@ -15,8 +15,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="nls static"
 
-RDEPEND="!=app-text/tetex-2*
-	>=sys-libs/ncurses-5.2-r2
+RDEPEND="
+	!=app-text/tetex-2*
+	>=sys-libs/ncurses-5.2-r2:5=
 	dev-lang/perl
 	dev-perl/libintl-perl
 	dev-perl/Unicode-EastAsianWidth

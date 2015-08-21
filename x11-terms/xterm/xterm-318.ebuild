@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/xterm-318.ebuild,v 1.1 2015/07/04 10:03:06 mrueg Exp $
+# $Id$
 
 EAPI=5
 
@@ -17,7 +17,7 @@ IUSE="+openpty toolbar truetype unicode Xaw3d"
 
 COMMON_DEPEND="kernel_linux? ( sys-libs/libutempter )
 	kernel_FreeBSD? ( || ( >=sys-freebsd/freebsd-lib-9.0 sys-libs/libutempter ) )
-	>=sys-libs/ncurses-5.7-r7
+	>=sys-libs/ncurses-5.7-r7:5=
 	x11-apps/xmessage
 	x11-libs/libX11
 	x11-libs/libXaw

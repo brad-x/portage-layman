@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/g-sorcery/g-sorcery-9999.ebuild,v 1.3 2015/04/24 21:57:49 jauhien Exp $
+# $Id$
 
 EAPI=5
 
@@ -16,9 +16,10 @@ EGIT_REPO_URI="git://git.gentoo.org/proj/g-sorcery.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="bson"
+IUSE="bson git"
 
 DEPEND="bson? ( dev-python/pymongo[$(python_gen_usedep 'python*')] )
+	git? ( dev-vcs/git )
 	sys-apps/portage[$(python_gen_usedep 'python*')]"
 RDEPEND="${DEPEND}"
 PDEPEND=">=app-portage/layman-2.2.0[g-sorcery(-),$(python_gen_usedep 'python*')]"

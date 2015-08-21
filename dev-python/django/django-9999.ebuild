@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django/django-9999.ebuild,v 1.26 2015/04/20 20:36:15 jlec Exp $
+# $Id$
 
 EAPI=5
 
@@ -76,7 +76,7 @@ src_install() {
 	echo
 	elog "Other features can be enhanced by"
 	optfeature "GEO Django" sci-libs/gdal[geos]
-	optfeature "Memcached support" dev-python/python-memcached
+	optfeature "Memcached support" dev-python/pylibmc dev-python/python-memcached
 	optfeature "ImageField Support" virtual/python-imaging
 	optfeature "Password encryption" dev-python/bcrypt
 	optfeature "Extended templating support" dev-python/jinja

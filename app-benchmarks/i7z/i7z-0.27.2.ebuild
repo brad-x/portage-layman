@@ -1,23 +1,23 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/i7z/i7z-0.27.2.ebuild,v 1.6 2015/07/28 07:54:07 jlec Exp $
+# $Id$
 
 EAPI=5
 
 inherit eutils flag-o-matic qmake-utils toolchain-funcs
 
 DESCRIPTION="A better i7 (and now i3, i5) reporting tool for Linux"
-HOMEPAGE="http://code.google.com/p/i7z/"
+HOMEPAGE="https://github.com/ajaiantilal/i7z"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 
-LICENSE="GPL-2"
 SLOT="0"
+LICENSE="GPL-2"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="X"
 
 RDEPEND="
-	sys-libs/ncurses
-	X? ( dev-qt/qtgui:4 )"
+	sys-libs/ncurses:5=
+	X? ( dev-qt/qtgui:4= )"
 DEPEND="${RDEPEND}"
 
 src_prepare() {

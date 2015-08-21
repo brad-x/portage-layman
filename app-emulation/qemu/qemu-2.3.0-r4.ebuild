@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-2.3.0-r4.ebuild,v 1.3 2015/07/28 15:04:54 ago Exp $
+# $Id$
 
 EAPI=5
 
@@ -77,7 +77,7 @@ SOFTMMU_LIB_DEPEND="${COMMON_LIB_DEPEND}
 	infiniband? ( sys-infiniband/librdmacm:=[static-libs(+)] )
 	jpeg? ( virtual/jpeg:=[static-libs(+)] )
 	lzo? ( dev-libs/lzo:2[static-libs(+)] )
-	ncurses? ( sys-libs/ncurses[static-libs(+)] )
+	ncurses? ( sys-libs/ncurses:5=[static-libs(+)] )
 	nfs? ( >=net-fs/libnfs-1.9.3[static-libs(+)] )
 	numa? ( sys-process/numactl[static-libs(+)] )
 	png? ( media-libs/libpng:0=[static-libs(+)] )
@@ -89,7 +89,7 @@ SOFTMMU_LIB_DEPEND="${COMMON_LIB_DEPEND}
 	spice? ( >=app-emulation/spice-0.12.0[static-libs(+)] )
 	ssh? ( >=net-libs/libssh2-1.2.8[static-libs(+)] )
 	tls? ( net-libs/gnutls[static-libs(+)] )
-	usb? ( >=dev-libs/libusb-1.0.18[static-libs(+)] )
+	usb? ( >=virtual/libusb-1-r1[static-libs(+)] )
 	uuid? ( >=sys-apps/util-linux-2.16.0[static-libs(+)] )
 	vde? ( net-misc/vde[static-libs(+)] )
 	xfs? ( sys-fs/xfsprogs[static-libs(+)] )"

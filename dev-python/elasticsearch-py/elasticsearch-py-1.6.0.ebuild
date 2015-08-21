@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/elasticsearch-py/elasticsearch-py-1.6.0.ebuild,v 1.1 2015/07/22 03:59:20 idella4 Exp $
+# $Id$
 
 EAPI=5
 
@@ -21,7 +21,9 @@ RDEPEND=">=dev-python/urllib3-1.8[${PYTHON_USEDEP}]
 	<dev-python/urllib3-2.0[${PYTHON_USEDEP}]"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	doc? (
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}] )
 	test? ( ${RDEPEND}
 		>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]
 		<dev-python/requests-3.0.0[${PYTHON_USEDEP}]

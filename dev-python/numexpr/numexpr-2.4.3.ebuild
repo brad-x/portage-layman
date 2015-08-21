@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/numexpr/numexpr-2.4.3.ebuild,v 1.1 2015/05/18 10:21:05 idella4 Exp $
+# $Id$
 
 EAPI=5
 
@@ -22,6 +22,8 @@ RDEPEND="
 	mkl? ( sci-libs/mkl )"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
+
+PATCHES=( "${FILESDIR}"/${P}-testfix.patch )
 
 python_prepare_all() {
 	# TODO: mkl can be used but it fails for me
@@ -46,8 +48,6 @@ python_compile() {
 }
 
 python_test() {
-	# https://github.com/pydata/numexpr/issues/177
-	# there are 2 known test failures under py3 only
 	pushd "${BUILD_DIR}"/lib > /dev/null
 	"${PYTHON}" -c "import numexpr; numexpr.test()" || die
 	pushd > /dev/null

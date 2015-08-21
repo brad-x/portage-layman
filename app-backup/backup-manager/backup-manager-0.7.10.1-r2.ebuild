@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/backup-manager-0.7.10.1-r2.ebuild,v 1.2 2014/08/10 01:54:00 patrick Exp $
+# $Id$
 
 EAPI=5
 
@@ -8,7 +8,7 @@ inherit eutils
 
 MY_P=Backup-Manager-${PV}
 DESCRIPTION="Backup Manager is a command line backup tool for GNU/Linux"
-HOMEPAGE="http://www.backup-manager.org/"
+HOMEPAGE="https://github.com/sukria/Backup-Manager"
 SRC_URI="http://www.backup-manager.org/download/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/efivar/efivar-0.21.ebuild,v 1.2 2015/07/19 22:15:13 floppym Exp $
+# $Id$
 
 EAPI=5
 
@@ -12,7 +12,7 @@ SRC_URI="https://github.com/rhinstaller/${PN}/releases/download/${PV}/${P}.tar.b
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~x86"
+KEYWORDS="amd64 ~ia64 x86"
 
 RDEPEND="dev-libs/popt"
 DEPEND="${RDEPEND}"

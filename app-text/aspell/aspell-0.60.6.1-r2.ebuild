@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/aspell/aspell-0.60.6.1-r2.ebuild,v 1.1 2015/07/18 09:53:13 pacho Exp $
+# $Id$
 
 EAPI=5
 
@@ -34,7 +34,7 @@ done
 unset dep
 
 COMMON_DEPEND="
-	>=sys-libs/ncurses-5.2
+	>=sys-libs/ncurses-5.2:5=
 	nls? ( virtual/libintl )
 "
 DEPEND="${COMMON_DEPEND}
@@ -57,7 +57,8 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}/${PN}-0.60.5-nls.patch" \
 		"${FILESDIR}/${PN}-0.60.5-solaris.patch" \
-		"${FILESDIR}/${PN}-0.60.6-darwin-bundles.patch"
+		"${FILESDIR}/${PN}-0.60.6-darwin-bundles.patch" \
+		"${FILESDIR}/${PN}-0.60.6.1-clang.patch"
 
 	rm m4/lt* m4/libtool.m4
 	eautoreconf

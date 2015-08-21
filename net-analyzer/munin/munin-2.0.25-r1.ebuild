@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/munin-2.0.25-r1.ebuild,v 1.6 2015/08/06 07:07:55 jlec Exp $
+# $Id$
 
 EAPI=5
 
@@ -48,7 +48,10 @@ DEPEND_COM="
 	asterisk? ( dev-perl/Net-Telnet )
 	cgi? (
 		dev-perl/FCGI
-		dev-perl/CGI-Fast
+		|| (
+			( dev-perl/CGI-Fast >=dev-lang/perl-5.22 )
+			<dev-lang/perl-5.22
+			)
 		)
 	dhcpd? (
 		>=net-misc/dhcp-3[server]

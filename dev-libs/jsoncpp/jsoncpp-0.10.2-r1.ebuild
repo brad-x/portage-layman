@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/jsoncpp/jsoncpp-0.10.2-r1.ebuild,v 1.8 2015/08/02 09:18:11 pacho Exp $
+# $Id$
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -29,6 +29,7 @@ RDEPEND=""
 PATCHES=(
 	# fix broken path subst in .pc file
 	"${FILESDIR}"/jsoncpp-1.6.2-fix-pkgconfig.patch
+	"${FILESDIR}/${P}-arm.patch"
 )
 
 pkg_setup() {

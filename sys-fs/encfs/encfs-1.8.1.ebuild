@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/encfs/encfs-1.8.1.ebuild,v 1.3 2015/08/06 11:47:54 ago Exp $
+# $Id$
 
 EAPI="5"
 inherit autotools eutils multilib
@@ -14,10 +14,10 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~sparc ~x86"
 IUSE="xattr nls"
 
-RDEPEND=">=dev-libs/boost-1.34
-	>=sys-fs/fuse-2.5
-	>=dev-libs/openssl-0.9.7
+RDEPEND="dev-libs/boost:=
+	dev-libs/openssl:=
 	>=dev-libs/rlog-1.3
+	>=sys-fs/fuse-2.5
 	sys-libs/zlib"
 # Your libc probably provides xattrs, but to be safe
 # we'll dep on sys-apps/attr.  This should be fixed

@@ -1,23 +1,22 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/ufed/ufed-9999.ebuild,v 1.5 2015/04/25 16:25:44 floppym Exp $
+# $Id$
 
-EAPI=4
+EAPI=5
 
-inherit eutils multilib git-2 autotools
-
-EGIT_REPO_URI="git://anongit.gentoo.org/proj/ufed.git"
+inherit eutils multilib git-r3 autotools
 
 DESCRIPTION="Gentoo Linux USE flags editor"
 HOMEPAGE="http://www.gentoo.org/"
 SRC_URI=""
+EGIT_REPO_URI="git://anongit.gentoo.org/proj/ufed.git"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-COMMON_DEPEND="sys-libs/ncurses"
+COMMON_DEPEND="sys-libs/ncurses:5="
 RDEPEND="${COMMON_DEPEND}
 	dev-lang/perl"
 DEPEND="${COMMON_DEPEND}

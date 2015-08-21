@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ncdu/ncdu-1.11.ebuild,v 1.6 2015/06/28 22:52:54 blueness Exp $
+# $Id$
 
 EAPI=5
 
@@ -14,7 +14,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux ~x64-macos"
 
-RDEPEND="sys-libs/ncurses[unicode]"
+RDEPEND="sys-libs/ncurses:5=[unicode]"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 

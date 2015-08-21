@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/unkrig-nullanalysis/unkrig-nullanalysis-0_pre1644.ebuild,v 1.1 2013/10/11 16:18:07 ercpe Exp $
+# $Id$
 
 EAPI="5"
 
@@ -14,7 +14,7 @@ SRC_URI="http://dev.gentoo.org/~ercpe/distfiles/${CATEGORY}/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND=">=virtual/jre-1.6"

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/mira-4.0.2.ebuild,v 1.4 2015/08/02 18:53:02 ago Exp $
+# $Id$
 
 EAPI=5
 
@@ -25,7 +25,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="doc"
 
 CDEPEND="
-	dev-libs/boost
+	dev-libs/boost[threads]
 	dev-util/google-perftools"
 DEPEND="${CDEPEND}
 	app-editors/vim-core

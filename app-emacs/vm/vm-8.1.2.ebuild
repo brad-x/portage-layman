@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/vm/vm-8.1.2.ebuild,v 1.6 2013/04/04 21:17:46 ulm Exp $
+# $Id$
 
 EAPI=4
 
@@ -30,6 +30,7 @@ src_prepare() {
 		elog "Excluding vm-pcrisis.el since the \"bbdb\" USE flag is not set."
 		epatch "${FILESDIR}/${PN}-8.0-no-pcrisis.patch"
 	fi
+	epatch "${FILESDIR}/${P}-texinfo-5.patch"
 }
 
 src_configure() {

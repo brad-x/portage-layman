@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/mono-3.12.1.ebuild,v 1.1 2015/07/10 07:22:59 patrick Exp $
+# $Id$
 
 EAPI="5"
 AUTOTOOLS_PRUNE_LIBTOOL_FILES="all"
@@ -35,7 +35,7 @@ DEPEND="${COMMONDEPEND}
 pkg_pretend() {
 	# If CONFIG_SYSVIPC is not set in your kernel .config, mono will hang while compiling.
 	# See http://bugs.gentoo.org/261869 for more info."
-	CONFIG_CHECK="~SYSVIPC"
+	CONFIG_CHECK="SYSVIPC"
 	use kernel_linux && check_extra_config
 }
 
@@ -114,4 +114,14 @@ src_compile() {
 src_test() {
 	cd mcs/tests || die
 	emake check
+}
+
+src_install() {
+	autotools-utils_src_install
+
+	# Remove files not respecting LDFLAGS and that we are not supposed to provide, see Fedora
+	# mono.spec and http://www.mail-archive.com/mono-devel-list@lists.ximian.com/msg24870.html
+	# for reference.
+	rm -f "${ED}"/usr/lib/mono/{2.0,4.5}/mscorlib.dll.so || die
+	rm -f "${ED}"/usr/lib/mono/{2.0,4.5}/mcs.exe.so || die
 }

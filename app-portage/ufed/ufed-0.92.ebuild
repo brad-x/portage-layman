@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/ufed/ufed-0.92.ebuild,v 1.1 2015/03/02 23:16:42 fuzzyray Exp $
+# $Id$
 
 EAPI=5
 
-inherit base eutils multilib autotools
+inherit eutils multilib autotools
 
 DESCRIPTION="Gentoo Linux USE flags editor"
 HOMEPAGE="http://www.gentoo.org/"
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
-COMMON_DEPEND="sys-libs/ncurses"
+COMMON_DEPEND="sys-libs/ncurses:5="
 RDEPEND="${COMMON_DEPEND}
 	dev-lang/perl"
 DEPEND="${COMMON_DEPEND}
@@ -28,7 +28,7 @@ DEPEND="${COMMON_DEPEND}
 PATCHES=()
 
 src_prepare() {
-	base_src_prepare
+	# epatch "${PATCHES[@]}"
 	# Change the version number to reflect the ebuild version
 	sed -i "s:,\[git\],:,\[${PVR}\],:" configure.ac
 	eautoreconf

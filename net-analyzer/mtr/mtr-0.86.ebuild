@@ -1,8 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/mtr-0.86.ebuild,v 1.12 2015/03/25 20:53:17 zerochaos Exp $
+# $Id$
 
 EAPI=5
+
 inherit eutils fcaps flag-o-matic
 
 DESCRIPTION="My TraceRoute, an Excellent network diagnostic tool"
@@ -15,7 +16,7 @@ KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~x86-fbs
 IUSE="gtk ipv6"
 
 RDEPEND="
-	sys-libs/ncurses
+	sys-libs/ncurses:5=
 	gtk? (
 		dev-libs/glib:2
 		x11-libs/gtk+:2

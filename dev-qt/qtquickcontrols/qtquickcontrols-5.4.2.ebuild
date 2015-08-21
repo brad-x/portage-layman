@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qtquickcontrols/qtquickcontrols-5.4.2.ebuild,v 1.1 2015/06/17 15:22:29 pesa Exp $
+# $Id$
 
 EAPI=5
 inherit qt5-build
@@ -11,7 +11,7 @@ if [[ ${QT5_BUILD_TYPE} == release ]]; then
 	KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~x86"
 fi
 
-IUSE="widgets"
+IUSE="+widgets"
 
 DEPEND="
 	>=dev-qt/qtcore-${PV}:5

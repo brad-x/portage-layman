@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/opencv/opencv-3.0.0.ebuild,v 1.6 2015/08/06 09:21:03 amynka Exp $
+# $Id$
 
 EAPI=5
 PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
@@ -12,12 +12,13 @@ HOMEPAGE="http://opencv.org"
 
 SRC_URI="
 	mirror://sourceforge/opencvlibrary/opencv-unix/${PV}/${P}.zip
-	https://github.com/Itseez/${PN}/archive/${PV}.zip -> ${P}.zip"
+	https://github.com/Itseez/${PN}/archive/${PV}.zip -> ${P}.zip
+	contrib? ( https://github.com/Itseez/opencv_contrib/archive/172fdb315280325a617fbb9db5ec5631acd8180e.zip -> ${PN}_contrib.zip )" # commit from 6.8.2015
 
 LICENSE="BSD"
 SLOT="0/3.0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux"
-IUSE="cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k libav opencl openexr opengl openmp pch png +python qt4 qt5 testprograms threads tiff v4l vtk xine"
+IUSE="contrib cuda doc +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k libav opencl openexr opengl openmp pch png +python qt4 qt5 testprograms threads tiff v4l vtk xine"
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 	qt4? ( !qt5 )
@@ -40,8 +41,8 @@ RDEPEND="
 		!libav? ( media-video/ffmpeg:0= )
 	)
 	gstreamer? (
-		media-libs/gstreamer:0.10
-		media-libs/gst-plugins-base:0.10
+		media-libs/gstreamer:1.0
+		media-libs/gst-plugins-base:1.0
 	)
 	gtk? (
 		dev-libs/glib:2
@@ -171,6 +172,10 @@ src_configure() {
 		mycmakeargs+=( "-DWITH_QT=5" )
 	else
 		mycmakeargs+=( "-DWITH_QT=OFF" )
+	fi
+
+	if use contrib; then
+		mycmakeargs+=( "-DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-master/modules" )
 	fi
 
 	if use cuda; then

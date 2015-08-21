@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pytest-runner/pytest-runner-2.5.1.ebuild,v 1.2 2015/07/11 06:33:22 maekke Exp $
+# $Id$
 
 EAPI=5
 
@@ -18,6 +18,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND="
+	app-arch/unzip
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/setuptools_scm[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/pytest[${PYTHON_USEDEP}]"

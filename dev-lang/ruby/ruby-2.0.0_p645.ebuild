@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-2.0.0_p645.ebuild,v 1.12 2015/05/27 13:05:51 ago Exp $
+# $Id$
 
 EAPI=5
 
@@ -41,7 +41,7 @@ RDEPEND="
 	gdbm? ( sys-libs/gdbm )
 	ssl? ( dev-libs/openssl:0 )
 	socks5? ( >=net-proxy/dante-1.1.13 )
-	ncurses? ( sys-libs/ncurses )
+	ncurses? ( sys-libs/ncurses:5= )
 	readline?  ( sys-libs/readline:0 )
 	dev-libs/libyaml
 	virtual/libffi

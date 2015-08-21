@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/consul-template/consul-template-9999.ebuild,v 1.2 2015/07/08 17:40:33 williamh Exp $
+# $Id$
 
 EAPI=5
 
-inherit git-r3 systemd user
+inherit git-r3 golang-base systemd user
 
 KEYWORDS=""
 DESCRIPTION="Generic template rendering and notifications with Consul"
@@ -32,7 +32,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	export GOPATH=${WORKDIR}
+	export GOPATH=${WORKDIR}:$(get_golibdir_gopath)
 	git-r3_src_unpack
 	go get -d -v ./... $(go list -f '{{range .TestImports}}{{.}} {{end}}' ./...) || die
 }

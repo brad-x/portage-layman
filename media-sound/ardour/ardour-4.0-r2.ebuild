@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ardour-4.0-r2.ebuild,v 1.2 2015/05/03 12:32:14 nativemad Exp $
+# $Id$
 
 EAPI=5
 
@@ -87,7 +87,7 @@ src_prepare(){
 		epatch "${FILESDIR}"/${PN}-4.0-revision-naming.patch
 		touch "${S}/libs/ardour/revision.cc"
 	fi
-	$(use lv2 || epatch "${FILESDIR}"/${PN}-4.0-lv2.patch)
+	use lv2 || epatch "${FILESDIR}"/${PN}-4.0-lv2.patch
 	epatch "${FILESDIR}"/${PN}-3.5.403-sse.patch
 	sed -e 's/'FLAGS\'\,\ compiler_flags'/'FLAGS\'\,\ program_flags'/g' -i "${S}"/wscript
 	sed -e 's/'compiler_flags.append\ \(\'-DPROGRAM_'/'program_flags.append\ \(\'-DPROGRAM_'/g' -i "${S}"/wscript

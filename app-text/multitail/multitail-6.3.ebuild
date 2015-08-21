@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/multitail/multitail-6.3.ebuild,v 1.1 2015/02/10 08:19:01 jlec Exp $
+# $Id$
 
 EAPI=5
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 ~x86-interix ~amd64-linux ~x86-lin
 IUSE="debug examples unicode"
 
 RDEPEND="
-	sys-libs/ncurses[unicode?]
+	sys-libs/ncurses:5=[unicode?]
 	"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.8.1.ebuild,v 1.1 2015/08/01 11:58:49 slyfox Exp $
+# $Id$
 
 EAPI=5
 
@@ -30,3 +30,7 @@ RDEPEND=">=dev-haskell/lvmlib-1.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.1.0
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.8.1-ghc-7.10.patch
+}

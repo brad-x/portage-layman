@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/jeweler/jeweler-2.0.1-r1.ebuild,v 1.7 2015/06/07 07:09:46 graaff Exp $
+# $Id$
 
 EAPI=5
 USE_RUBY="ruby19 ruby20"
@@ -26,7 +26,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos 
 IUSE=""
 
 ruby_add_bdepend "doc? ( dev-ruby/yard )
-	test? ( dev-ruby/shoulda dev-ruby/rr dev-ruby/test_construct dev-ruby/test-unit:0 )"
+	test? ( dev-ruby/shoulda dev-ruby/rr dev-ruby/test_construct dev-ruby/test-unit:0 >=dev-ruby/hoe-1.5.1 )"
 
 ruby_add_rdepend "
 	dev-ruby/rake

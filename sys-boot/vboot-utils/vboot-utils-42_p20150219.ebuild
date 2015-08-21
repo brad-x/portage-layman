@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/vboot-utils/vboot-utils-42_p20150219.ebuild,v 1.2 2015/03/23 17:17:36 vapier Exp $
+# $Id$
 
 EAPI=5
 
@@ -20,13 +20,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~mips ~x86"
 IUSE="minimal static"
 
-RDEPEND="dev-libs/openssl:0=
-	sys-apps/util-linux:=
+LIB_DEPEND="dev-libs/openssl:0=[static-libs(+)]
+	sys-apps/util-linux:=[static-libs(+)]"
+RDEPEND="!static? ( ${LIB_DEPEND//\[static-libs(+)]} )
 	!minimal? (
 		app-arch/xz-utils:=
 		dev-libs/libyaml:=
 	)"
 DEPEND="${RDEPEND}
+	static? ( ${LIB_DEPEND} )
 	app-crypt/trousers"
 
 S=${WORKDIR}

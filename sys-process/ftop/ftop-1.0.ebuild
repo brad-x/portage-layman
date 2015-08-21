@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/ftop/ftop-1.0.ebuild,v 1.4 2014/12/07 08:57:53 jlec Exp $
+# $Id$
 
-EAPI="5"
+EAPI=5
 
 AUTOTOOLS_AUTORECONF=frob
 inherit autotools-utils
@@ -13,9 +13,9 @@ SRC_URI="https://${PN}.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~x86"
+KEYWORDS="amd64 ~hppa ~x86"
 
-DEPEND="sys-libs/ncurses"
+DEPEND="sys-libs/ncurses:5="
 RDEPEND="${DEPEND}"
 
 PATCHES=(

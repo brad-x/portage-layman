@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/mini-qmail/mini-qmail-1.06.ebuild,v 1.11 2013/02/28 17:50:48 zx2c4 Exp $
+# $Id$
 
 GENQMAIL_PV=20080406
 
@@ -8,9 +8,9 @@ inherit eutils qmail
 
 DESCRIPTION="a small null client that forwards mail via QMQP to a full qmail server"
 HOMEPAGE="
-	http://netqmail.org
+	http://netqmail.org/
 	http://cr.yp.to/qmail/mini.html
-	http://qmail.org
+	http://qmail.org/
 "
 SRC_URI="mirror://qmail/netqmail-${PV}.tar.gz
 	http://dev.gentoo.org/~hollow/distfiles/${GENQMAIL_F}"

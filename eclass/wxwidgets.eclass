@@ -1,11 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/wxwidgets.eclass,v 1.39 2014/04/21 21:55:31 ottxor Exp $
+# $Id$
 
-# @ECLASS:			wxwidgets.eclass
+# @ECLASS: wxwidgets.eclass
 # @MAINTAINER:
-#  wxwidgets@gentoo.org
-# @BLURB:			Manages build configuration for wxGTK-using packages.
+# wxwidgets@gentoo.org
+# @BLURB: Manages build configuration for wxGTK-using packages.
 # @DESCRIPTION:
 #  This eclass gives ebuilds the ability to build against a specific wxGTK
 #  SLOT and profile without interfering with the system configuration.  Any

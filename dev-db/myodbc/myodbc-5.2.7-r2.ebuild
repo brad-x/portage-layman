@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/myodbc/myodbc-5.2.7-r2.ebuild,v 1.1 2015/08/06 18:25:37 grknight Exp $
+# $Id$
 
 EAPI=5
 inherit cmake-multilib eutils flag-o-matic versionator
@@ -44,8 +44,9 @@ src_prepare() {
 
 	# Patch document path so it doesn't install files to /usr
 	epatch "${FILESDIR}/cmake-doc-path.patch" \
-		"${FILESDIR}/${PVR}-cxxlinkage.patch" \
-		"${FILESDIR}/${PV}-mariadb-dynamic-array.patch"
+		"${FILESDIR}/${PV}-r1-cxxlinkage.patch" \
+		"${FILESDIR}/${PV}-mariadb-dynamic-array.patch" \
+		"${FILESDIR}/${PV}-my_malloc.patch"
 }
 
 multilib_src_configure() {

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/beaker/beaker-1.7.0-r1.ebuild,v 1.1 2015/03/19 15:47:36 idella4 Exp $
+# $Id$
 
 EAPI=5
 
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/bbangert/${PN}/archive/v1.7.0dev.tar.gz -> ${P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~ppc64 ~s390 ~sh ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~s390 ~sh ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
 IUSE="test"
 
 # webtest-based tests are skipped when webtest is not installed
@@ -27,7 +27,12 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	)"
 RDEPEND=""
 
+# Py2.7 fais some tests without this
+DISTUTILS_IN_SOURCE_BUILD=1
+
 S="${WORKDIR}/${P}dev"
+
+PATCHES=( "${FILESDIR}"/${P}-cookie-testfix.patch )
 
 python_prepare_all() {
 	# Workaround for http://bugs.python.org/issue11276.
@@ -38,10 +43,9 @@ python_prepare_all() {
 }
 
 python_test() {
+	# https://github.com/bbangert/beaker/issues/86; bug #557026
 	cp -r -l tests "${BUILD_DIR}"/ || die
-	pushd  "${BUILD_DIR}"/tests > /dev/null
-	nosetests || die "Tests fail with ${EPYTHON}"
-	popd > /dev/null
+	nosetests -w "${BUILD_DIR}"/tests || die "Tests fail with ${EPYTHON}"
 }
 
 pkg_postinst() {

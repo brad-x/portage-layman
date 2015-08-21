@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/rtorrent/rtorrent-0.9.4-r1.ebuild,v 1.4 2015/07/19 15:56:14 heroxbd Exp $
+# $Id$
 
 EAPI=5
 
@@ -18,7 +18,7 @@ IUSE="daemon debug ipv6 selinux test xmlrpc"
 COMMON_DEPEND="~net-libs/libtorrent-0.13.${PV##*.}
 	>=dev-libs/libsigc++-2.2.2:2
 	>=net-misc/curl-7.19.1
-	sys-libs/ncurses
+	sys-libs/ncurses:5=
 	xmlrpc? ( dev-libs/xmlrpc-c )"
 RDEPEND="${COMMON_DEPEND}
 	daemon? ( app-misc/screen )

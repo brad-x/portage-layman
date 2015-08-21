@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.158 2015/07/19 10:46:47 johu Exp $
+# $Id$
 
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
@@ -446,6 +446,9 @@ _calculate_src_uri() {
 				4.11.21)
 					# Part of 15.04.3 actually, sigh. Not stable for next release!
 					SRC_URI="mirror://kde/stable/applications/15.04.3/src/${_kmname_pv}.tar.xz" ;;
+				4.11.22)
+					# Part of 15.08.0 actually, sigh. Not stable for next release!
+					SRC_URI="mirror://kde/stable/applications/15.08.0/src/${_kmname_pv}.tar.xz" ;;
 				4.14.3)
 					# Last SC release
 					SRC_URI="mirror://kde/stable/${PV}/src/${_kmname_pv}.tar.xz" ;;
@@ -455,6 +458,9 @@ _calculate_src_uri() {
 				4.14.10)
 					# Part of 15.04.3 actually, sigh. Not stable for next release!
 					SRC_URI="mirror://kde/stable/applications/15.04.3/src/${_kmname_pv}.tar.xz" ;;
+				4.14.11)
+					# Part of 15.08.0 actually, sigh. Not stable for next release!
+					SRC_URI="mirror://kde/stable/applications/15.08.0/src/${_kmname_pv}.tar.xz" ;;
 				??.?.[6-9]? | ??.??.[4-9]?)
 					# Unstable KDE Applications releases
 					SRC_URI="mirror://kde/unstable/applications/${PV}/src/${_kmname}-${PV}.tar.xz" ;;
@@ -489,6 +495,11 @@ _calculate_live_repo() {
 				*)
 					# branch
 					branch_prefix="branches/KDE/$(get_kde_version)"
+
+					if [[ ${PV} == ??.??.49.9999 && ${CATEGORY} = kde-apps ]]; then
+						branch_prefix="branches/Applications/$(get_kde_version)"
+					fi
+
 					# @ECLASS-VARIABLE: ESVN_PROJECT_SUFFIX
 					# @DESCRIPTION
 					# Suffix appended to ESVN_PROJECT depending on fetched branch.
@@ -894,12 +905,10 @@ kde4-base_pkg_postinst() {
 		fi
 		# for all 3rd party soft tell user that he SHOULD install kdebase-startkde or kdebase-runtime-meta
 		if [[ ${KDEBASE} != kde-base ]] && \
-				! has_version 'kde-apps/kdebase-runtime-meta' && \
-				! has_version 'kde-base/kdebase-startkde'; then
+				! has_version 'kde-apps/kdebase-runtime-meta'; then
 			if [[ ${KDE_REQUIRED} == always ]] || ( [[ ${KDE_REQUIRED} == optional ]] && use kde ); then
 				echo
-				ewarn "WARNING! Your system configuration contains neither \"kde-base/kdebase-runtime-meta\""
-				ewarn "nor \"kde-base/kdebase-startkde\". You need one of above."
+				ewarn "WARNING! Your system configuration does not contain \"kde-apps/kdebase-runtime-meta\"."
 				ewarn "With this setting you are unsupported by KDE team."
 				ewarn "All missing features you report for misc packages will be probably ignored or closed as INVALID."
 			fi

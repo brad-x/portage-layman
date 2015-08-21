@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-plasma/plasma-desktop/plasma-desktop-5.3.2.ebuild,v 1.2 2015/08/01 17:15:28 johu Exp $
+# $Id$
 
 EAPI=5
 
@@ -13,7 +13,7 @@ KEYWORDS="~amd64"
 IUSE="+fontconfig gtk2 gtk3 legacy-systray pulseaudio +qt4 touchpad usb"
 
 COMMON_DEPEND="
-	$(add_plasma_dep baloo)
+	|| ( $(add_plasma_dep baloo) $(add_frameworks_dep baloo) )
 	$(add_plasma_dep kwin)
 	$(add_plasma_dep plasma-workspace)
 	$(add_frameworks_dep attica)

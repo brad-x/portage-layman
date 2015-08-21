@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-apps/kdebase-runtime-meta/kdebase-runtime-meta-4.14.3.ebuild,v 1.3 2015/07/26 21:34:23 mgorny Exp $
+# $Id$
 
 EAPI=5
 inherit kde4-meta-pkg
 
 DESCRIPTION="Merge this to pull in all kdebase-runtime-derived packages"
 KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
-IUSE="crash-reporter +handbook minimal nepomuk"
+IUSE="crash-reporter +handbook minimal"
 
 RDEPEND="
 	$(add_kdeapps_dep kcmshell)
@@ -45,7 +45,6 @@ RDEPEND="
 		kde-plasma/khelpcenter:5[compat(+)]
 	) )
 	minimal? ( $(add_kdeapps_dep solid-runtime '-bluetooth') )
-	nepomuk? ( $(add_kdeapps_dep nepomuk) )
 	!minimal? (
 		$(add_kdeapps_dep attica)
 		$(add_kdeapps_dep kcontrol)

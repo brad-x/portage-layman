@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/krename/krename-4.0.9-r3.ebuild,v 1.4 2015/03/21 17:43:48 kensington Exp $
+# $Id$
 
 EAPI=5
 
@@ -17,7 +17,7 @@ KEYWORDS="amd64 x86"
 IUSE="debug exif pdf taglib truetype"
 
 RDEPEND="
-	exif? ( >=media-gfx/exiv2-0.13 )
+	exif? ( >=media-gfx/exiv2-0.13:= )
 	pdf? ( >=app-text/podofo-0.8 )
 	taglib? ( >=media-libs/taglib-1.5 )
 	truetype? ( media-libs/freetype:2 )

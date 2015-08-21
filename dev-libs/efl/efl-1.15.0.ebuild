@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/efl/efl-1.15.0.ebuild,v 1.3 2015/08/07 16:08:59 vapier Exp $
+# $Id$
 
 EAPI="5"
 
@@ -73,7 +73,7 @@ RDEPEND="
 	tslib? ( x11-libs/tslib )
 	valgrind? ( dev-util/valgrind )
 	wayland? (
-		>=dev-libs/wayland-1.3.0
+		>=dev-libs/wayland-1.8.0
 		>=x11-libs/libxkbcommon-0.3.1
 		media-libs/mesa[gles2,wayland]
 	)

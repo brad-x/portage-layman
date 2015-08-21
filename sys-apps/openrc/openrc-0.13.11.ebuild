@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-0.13.11.ebuild,v 1.8 2015/02/26 18:59:35 williamh Exp $
+# $Id$
 
 EAPI=5
 
@@ -24,7 +24,7 @@ IUSE="debug elibc_glibc ncurses pam newnet prefix +netifrc selinux static-libs
 
 COMMON_DEPEND="kernel_FreeBSD? ( || ( >=sys-freebsd/freebsd-ubin-9.0_rc sys-process/fuser-bsd ) )
 	elibc_glibc? ( >=sys-libs/glibc-2.5 )
-	ncurses? ( sys-libs/ncurses )
+	ncurses? ( sys-libs/ncurses:5= )
 	pam? (
 		sys-auth/pambase
 		virtual/pam

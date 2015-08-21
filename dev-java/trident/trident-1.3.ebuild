@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/trident/trident-1.3.ebuild,v 1.2 2015/04/02 18:20:20 mr_bones_ Exp $
+# $Id$
 
 EAPI=5
 
@@ -14,18 +14,18 @@ SRC_URI="https://kenai.com/projects/trident/downloads/download/version%20${PV}%2
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RESTRICT="test"
 
-COMMON_DEPEND="dev-java/swt:3.7"
+CDEPEND="dev-java/swt:3.7"
 
 DEPEND=">=virtual/jdk-1.6
 	app-arch/unzip
-	${COMMON_DEPEND}"
+	${CDEPEND}"
 RDEPEND=">=virtual/jre-1.6
-	${COMMON_DEPEND}"
+	${CDEPEND}"
 
 S="${WORKDIR}"
 

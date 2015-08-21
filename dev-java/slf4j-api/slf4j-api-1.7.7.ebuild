@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/slf4j-api/slf4j-api-1.7.7.ebuild,v 1.5 2015/06/16 09:05:34 monsieurp Exp $
+# $Id$
 
 EAPI=5
 JAVA_PKG_IUSE="doc source"
@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="amd64 ppc ppc64 x86"
 IUSE="test"
 
-RDEPEND=">=virtual/jre-1.5"
-DEPEND=">=virtual/jdk-1.5
+RDEPEND=">=virtual/jre-1.6"
+DEPEND=">=virtual/jdk-1.6
 	app-arch/unzip
 	test? (
 		dev-java/junit:4
@@ -32,7 +32,7 @@ EANT_TEST_ANT_TASKS="ant-junit"
 EANT_EXTRA_ARGS="-Dmaven.build.finalName=${PN}"
 
 java_prepare() {
-	cp "${FILESDIR}"/1.7.6-build.xml build.xml || die
+	cp "${FILESDIR}"/"${PV}"-build.xml build.xml || die
 	find "${WORKDIR}" -iname '*.jar' -delete || die
 }
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-apps/lokalize/lokalize-4.14.3.ebuild,v 1.1 2015/06/04 18:44:46 kensington Exp $
+# $Id$
 
 EAPI=5
 
@@ -12,7 +12,7 @@ DESCRIPTION="KDE4 translation tool"
 HOMEPAGE="http://www.kde.org/applications/development/lokalize
 http://l10n.kde.org/tools"
 KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
-IUSE="debug nepomuk"
+IUSE="debug"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -20,7 +20,6 @@ DEPEND="
 	${PYTHON_DEPS}
 	>=app-text/hunspell-1.2.8
 	>=dev-qt/qtsql-4.5.0:4[sqlite]
-	nepomuk? ( >=dev-libs/soprano-2.9.0 )
 "
 RDEPEND="${DEPEND}
 	$(add_kdeapps_dep kdesdk-strigi-analyzer)

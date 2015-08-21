@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/janino/janino-2.7.0.ebuild,v 1.2 2015/04/02 18:11:41 mr_bones_ Exp $
+# $Id$
 
 EAPI="5"
 
@@ -14,7 +14,7 @@ SRC_URI="http://janino.net/download/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 IUSE=""
 

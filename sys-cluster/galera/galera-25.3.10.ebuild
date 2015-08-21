@@ -1,15 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/galera/galera-25.3.10.ebuild,v 1.2 2015/04/07 20:58:24 grknight Exp $
+# $Id$
 
 EAPI=5
 
-inherit scons-utils multilib toolchain-funcs eutils user flag-o-matic
+MY_P="${PN}-3-${PV}"
 
-MY_PV="release_${PV}"
+inherit scons-utils multilib toolchain-funcs eutils user flag-o-matic
 DESCRIPTION="Synchronous multi-master replication engine that provides its service through wsrep API"
-HOMEPAGE="http://www.galeracluster.com/"
-SRC_URI="https://github.com/codership/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="http://www.galeracluster.com"
+SRC_URI="http://releases.galeracluster.com/source/galera-3-${PV}.tar.gz"
 LICENSE="GPL-2 BSD"
 
 SLOT="0"
@@ -28,15 +28,9 @@ DEPEND="${DEPEND}
 	>=dev-cpp/asio-1.4.8[ssl?]
 	"
 #Run time only
-RDEPEND="${CDEPEND}
-	garbd? ( || (
-		net-analyzer/netcat
-		net-analyzer/netcat6
-		net-analyzer/gnu-netcat
-		net-analyzer/openbsd-netcat
-	) )"
+RDEPEND="${CDEPEND}"
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+S="${WORKDIR}/${MY_P}"
 
 pkg_preinst() {
 	if use garbd ; then
@@ -49,7 +43,7 @@ src_prepare() {
 	# Remove bundled dev-cpp/asio
 	rm -r "${S}/asio" || die
 
-	# Respect {C,LD}FLAGS and remove machine specific CFLAGS
+	# Respect {C,LD}FLAGS.
 	epatch "${FILESDIR}/respect-flags.patch" \
 		"${FILESDIR}/galera-strip-machine-cflags.patch"
 

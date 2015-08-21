@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/blueman/blueman-9999.ebuild,v 1.12 2015/08/08 16:16:09 mgorny Exp $
+# $Id$
 
 EAPI="5"
 
@@ -75,8 +75,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}/${PN}-9999-set-codeset-for-gettext-to-UTF-8-always.patch"
 	[[ ${PV} == 9999 ]] && eautoreconf
 }
 

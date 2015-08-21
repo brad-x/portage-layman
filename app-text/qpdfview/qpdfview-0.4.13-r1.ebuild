@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/qpdfview-0.4.13-r1.ebuild,v 1.4 2015/05/27 13:37:38 zlogene Exp $
+# $Id$
 
 EAPI=5
 
@@ -21,7 +21,7 @@ REQUIRED_USE="^^ ( qt4 qt5 )
 
 RDEPEND="cups? ( net-print/cups )
 	djvu? ( app-text/djvu )
-	fitz? ( app-text/mupdf:0/1.4 )
+	fitz? ( <app-text/mupdf-1.7:= )
 	postscript? ( app-text/libspectre )
 	qt4? ( dev-qt/qtcore:4[iconv]
 		dev-qt/qtgui:4
