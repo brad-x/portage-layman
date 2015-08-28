@@ -21,7 +21,7 @@ else
 fi
 
 DESCRIPTION="Various useful Linux utilities"
-HOMEPAGE="http://www.kernel.org/pub/linux/utils/util-linux/"
+HOMEPAGE="https://www.kernel.org/pub/linux/utils/util-linux/"
 
 LICENSE="GPL-2 LGPL-2.1 BSD-4 MIT public-domain"
 SLOT="0"
@@ -36,7 +36,7 @@ RDEPEND="!sys-process/schedutils
 	!<app-shells/bash-completion-1.3-r2
 	caps? ( sys-libs/libcap-ng )
 	cramfs? ( sys-libs/zlib )
-	ncurses? ( >=sys-libs/ncurses-5.2-r2:5= )
+	ncurses? ( >=sys-libs/ncurses-5.2-r2:0= )
 	pam? ( sys-libs/pam )
 	python? ( ${PYTHON_DEPS} )
 	selinux? ( >=sys-libs/libselinux-2.2.2-r4[${MULTILIB_USEDEP}] )

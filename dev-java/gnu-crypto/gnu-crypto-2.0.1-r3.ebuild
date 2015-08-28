@@ -9,12 +9,12 @@ JAVA_PKG_IUSE="doc source test"
 inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="GNU Crypto cryptographic primitives for Java"
-HOMEPAGE="http://www.gnu.org/software/gnu-crypto/"
+HOMEPAGE="https://www.gnu.org/software/gnu-crypto/"
 SRC_URI="ftp://ftp.gnupg.org/GnuPG/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE=""
 
 DEPEND=">=virtual/jdk-1.6"

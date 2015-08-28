@@ -8,9 +8,9 @@ WANT_AUTOMAKE="none"
 inherit autotools elisp-common eutils flag-o-matic multilib readme.gentoo
 
 DESCRIPTION="The extensible, customizable, self-documenting real-time display editor"
-HOMEPAGE="http://www.gnu.org/software/emacs/"
+HOMEPAGE="https://www.gnu.org/software/emacs/"
 SRC_URI="mirror://gnu/emacs/${P}.tar.bz2
-	http://dev.gentoo.org/~ulm/emacs/${P}-patches-17.tar.xz"
+	https://dev.gentoo.org/~ulm/emacs/${P}-patches-17.tar.xz"
 
 LICENSE="GPL-3+ FDL-1.3+ BSD HPND MIT W3C unicode PSF-2"
 SLOT="23"

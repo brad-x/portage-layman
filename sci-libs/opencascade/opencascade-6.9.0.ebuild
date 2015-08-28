@@ -28,13 +28,13 @@ DEPEND="app-eselect/eselect-opencascade
 	x11-libs/libXmu
 	freeimage? ( media-libs/freeimage )
 	gl2ps? ( x11-libs/gl2ps )
-	java? ( virtual/jdk:= )
+	java? ( >=virtual/jdk-0:= )
 	tbb? ( dev-cpp/tbb )
 	vtk? ( =sci-libs/${MY_VTK}* )"
 RDEPEND="${DEPEND}"
 
-# http://bugs.gentoo.org/show_bug.cgi?id=352435
-# http://www.gentoo.org/foundation/en/minutes/2011/20110220_trustees.meeting_log.txt
+# https://bugs.gentoo.org/show_bug.cgi?id=352435
+# https://www.gentoo.org/foundation/en/minutes/2011/20110220_trustees.meeting_log.txt
 RESTRICT="bindist mirror"
 
 CHECKREQS_MEMORY="256M"

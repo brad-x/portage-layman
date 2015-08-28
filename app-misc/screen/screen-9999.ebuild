@@ -13,7 +13,7 @@ WANT_AUTOCONF="2.5"
 inherit eutils flag-o-matic toolchain-funcs pam autotools user git-2
 
 DESCRIPTION="Full-screen window manager that multiplexes physical terminals between several processes"
-HOMEPAGE="http://www.gnu.org/software/screen/"
+HOMEPAGE="https://www.gnu.org/software/screen/"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,7 +21,7 @@ KEYWORDS=""
 IUSE="debug nethack pam selinux multiuser"
 
 CDEPEND="
-	>=sys-libs/ncurses-5.2:5=
+	>=sys-libs/ncurses-5.2:0=
 	pam? ( virtual/pam )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-screen )"

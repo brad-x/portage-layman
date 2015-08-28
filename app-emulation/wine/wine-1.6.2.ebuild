@@ -34,8 +34,8 @@ SRC_URI="${SRC_URI}
 		abi_x86_64? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
 	)
 	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )
-	pulseaudio? ( http://dev.gentoo.org/~tetromino/distfiles/${PN}/${PULSE_PATCHES}.tar.bz2 )
-	http://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
+	pulseaudio? ( https://dev.gentoo.org/~tetromino/distfiles/${PN}/${PULSE_PATCHES}.tar.bz2 )
+	https://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -172,6 +172,15 @@ usr/share/applications/wine-winecfg.desktop"
 
 wine_build_environment_check() {
 	[[ ${MERGE_TYPE} = "binary" ]] && return 0
+
+	# bug #549768
+	if use abi_x86_64 && [[ $(gcc-major-version) = 5 ]]; then
+		eerror "64-bit wine cannot be built with gcc-5.1 or 5.2 due to compiler bugs;"
+		eerror "you may use gcc-config to select an older compiler version."
+		eerror "See https://bugs.gentoo.org/549768"
+		eerror
+		return 1
+	fi
 
 	if use abi_x86_64 && [[ $(( $(gcc-major-version) * 100 + $(gcc-minor-version) )) -lt 404 ]]; then
 		eerror "You need gcc-4.4+ to build 64-bit wine"

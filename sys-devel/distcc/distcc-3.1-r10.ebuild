@@ -10,7 +10,7 @@ inherit eutils fdo-mime flag-o-matic multilib python-single-r1 systemd toolchain
 
 DESCRIPTION="Distribute compilation of C code across several machines on a network"
 HOMEPAGE="http://distcc.org/"
-SRC_URI="http://distcc.googlecode.com/files/${P}.tar.bz2"
+SRC_URI="https://distcc.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -147,7 +147,7 @@ pkg_postinst() {
 	fi
 	elog
 	elog "Tips on using distcc with Gentoo can be found at"
-	elog "http://www.gentoo.org/doc/en/distcc.xml"
+	elog "https://www.gentoo.org/doc/en/distcc.xml"
 	elog
 	elog "How to use pump mode with Gentoo:"
 	elog "# distcc-config --set-hosts \"foo,cpp,lzo bar,cpp,lzo baz,cpp,lzo\""

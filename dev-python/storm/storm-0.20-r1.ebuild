@@ -11,8 +11,8 @@ PYTHON_REQ_USE="sqlite?"
 inherit distutils-r1
 
 DESCRIPTION="An object-relational mapper for Python developed at Canonical"
-HOMEPAGE="https://storm.canonical.com/ http://pypi.python.org/pypi/storm"
-SRC_URI="http://launchpad.net/storm/trunk/${PV}/+download/${P}.tar.bz2"
+HOMEPAGE="https://storm.canonical.com/ https://pypi.python.org/pypi/storm"
+SRC_URI="https://launchpad.net/storm/trunk/${PV}/+download/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

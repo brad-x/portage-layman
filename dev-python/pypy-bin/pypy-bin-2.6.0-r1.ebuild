@@ -7,13 +7,13 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 pypy )
 inherit eutils multilib pax-utils python-any-r1 versionator
 
-BINHOST="http://dev.gentoo.org/~mgorny/dist/pypy-bin/${PV}"
+BINHOST="https://dev.gentoo.org/~mgorny/dist/pypy-bin/${PV}"
 CPY_PATCHSET_VERSION="2.7.10-0"
 
 DESCRIPTION="A fast, compliant alternative implementation of the Python language (binary package)"
 HOMEPAGE="http://pypy.org/"
 SRC_URI="https://bitbucket.org/pypy/pypy/downloads/pypy-${PV}-src.tar.bz2
-	http://dev.gentoo.org/~floppym/python/python-gentoo-patches-${CPY_PATCHSET_VERSION}.tar.xz
+	https://dev.gentoo.org/~floppym/python/python-gentoo-patches-${CPY_PATCHSET_VERSION}.tar.xz
 	amd64? (
 		jit? ( shadowstack? (
 			${BINHOST}/${P}-amd64+bzip2+jit+ncurses+shadowstack.tar.xz
@@ -60,7 +60,7 @@ RDEPEND="
 	dev-libs/libffi:0
 	dev-libs/openssl:0[-bindist]
 	sys-libs/glibc:2.2
-	sys-libs/ncurses:5/5
+	=sys-libs/ncurses-5*:0
 	sys-libs/zlib:0
 	gdbm? ( sys-libs/gdbm:0= )
 	sqlite? ( dev-db/sqlite:3= )
@@ -78,7 +78,9 @@ PDEPEND="app-admin/python-updater"
 S=${WORKDIR}/pypy-${PV}-src
 
 pkg_setup() {
-	use doc && python-any-r1_pkg_setup
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		use doc && python-any-r1_pkg_setup
+	fi
 }
 
 src_prepare() {

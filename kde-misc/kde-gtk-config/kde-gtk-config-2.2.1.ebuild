@@ -9,7 +9,7 @@ km lt mr nb nds nl pl pt pt_BR ro ru sk sl sv uk zh_CN zh_TW"
 inherit kde4-base
 
 DESCRIPTION="KDE systemsettings kcm to set GTK application look&feel"
-HOMEPAGE="http://projects.kde.org/kde-gtk-config"
+HOMEPAGE="https://projects.kde.org/kde-gtk-config"
 SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.xz"
 
 LICENSE="GPL-3"
@@ -31,6 +31,8 @@ RDEPEND="
 	!kde-misc/kcm_gtk
 	$(add_kdeapps_dep kcmshell)
 "
+
+PATCHES=( "${FILESDIR}/${P}-kdelibs-4.14.11.patch" )
 
 pkg_postinst() {
 	kde4-base_pkg_postinst

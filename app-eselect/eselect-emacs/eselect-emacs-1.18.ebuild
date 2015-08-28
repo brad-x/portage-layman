@@ -5,8 +5,8 @@
 EAPI=5
 
 DESCRIPTION="Manage multiple Emacs versions on one system"
-HOMEPAGE="http://wiki.gentoo.org/wiki/Project:Emacs"
-SRC_URI="http://dev.gentoo.org/~ulm/emacs/${P}.tar.xz"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Emacs"
+SRC_URI="https://dev.gentoo.org/~ulm/emacs/${P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0"

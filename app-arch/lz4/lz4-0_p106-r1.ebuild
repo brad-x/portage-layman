@@ -10,10 +10,10 @@ CMAKE_USE_DIR="${S}/cmake"
 
 if [ ${PV} == "9999" ] ; then
 	inherit subversion
-	ESVN_REPO_URI="http://lz4.googlecode.com/svn/trunk/"
+	ESVN_REPO_URI="https://lz4.googlecode.com/svn/trunk/"
 	ESVN_PROJECT="lz4-read-only"
 else
-	SRC_URI="http://dev.gentoo.org/~ryao/dist/${P}.tar.xz"
+	SRC_URI="https://dev.gentoo.org/~ryao/dist/${P}.tar.xz"
 	KEYWORDS="~alpha amd64 arm ~arm64 hppa ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~amd64-linux ~x86-linux"
 fi
 

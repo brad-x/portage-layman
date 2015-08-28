@@ -6,8 +6,8 @@ EAPI=5
 inherit elisp-common eutils flag-o-matic
 
 DESCRIPTION="GNU Common Lisp"
-HOMEPAGE="http://www.gnu.org/software/gcl/gcl.html"
-SRC_URI="mirror://gnu/${PN}/${P}.tar.gz http://dev.gentoo.org/~grozin/${P}-fedora.tar.bz2"
+HOMEPAGE="https://www.gnu.org/software/gcl/gcl.html"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz https://dev.gentoo.org/~grozin/${P}-fedora.tar.bz2"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"

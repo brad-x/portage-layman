@@ -9,7 +9,7 @@ KDE_TEST="false"
 inherit kde5
 
 DESCRIPTION="Plasma mixer gui"
-HOMEPAGE="http://www.kde.org/applications/multimedia/kmix/"
+HOMEPAGE="https://www.kde.org/applications/multimedia/kmix/"
 KEYWORDS="~amd64 ~x86"
 IUSE="alsa pulseaudio"
 
@@ -39,7 +39,10 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${PN}-15.04.2-alsa-optional.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-15.04.2-alsa-optional.patch"
+	 "${FILESDIR}/${PN}-15.08.0-deps.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(

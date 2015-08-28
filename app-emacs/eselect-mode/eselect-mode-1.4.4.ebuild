@@ -8,8 +8,8 @@ inherit elisp
 
 MY_P="eselect-${PV}"
 DESCRIPTION="Emacs major mode for editing eselect files"
-HOMEPAGE="http://wiki.gentoo.org/wiki/Project:Eselect"
-SRC_URI="http://dev.gentoo.org/~ulm/eselect/${MY_P}.tar.xz"
+HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Eselect"
+SRC_URI="https://dev.gentoo.org/~ulm/eselect/${MY_P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0"

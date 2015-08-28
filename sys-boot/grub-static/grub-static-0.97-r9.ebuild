@@ -13,7 +13,7 @@ PATCHVER="1.9" # Not used, just for tracking with main grub
 
 DESCRIPTION="GNU GRUB Legacy boot loader (static build)"
 
-HOMEPAGE="http://www.gnu.org/software/grub/"
+HOMEPAGE="https://www.gnu.org/software/grub/"
 SRC_URI="mirror://gentoo/${PF}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
@@ -92,7 +92,7 @@ setup_boot_dir() {
 		ewarn "cause problems such as an unbootable system."
 		ewarn "This means you must use either grub-install or perform"
 		ewarn "root/setup manually! For more help, see the handbook:"
-		ewarn "http://www.gentoo.org/doc/en/handbook/handbook-${ARCH}.xml?part=1&chap=10#grub-install-auto"
+		ewarn "https://www.gentoo.org/doc/en/handbook/handbook-${ARCH}.xml?part=1&chap=10#grub-install-auto"
 		ebeep
 	fi
 

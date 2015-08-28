@@ -8,8 +8,8 @@ PYTHON_COMPAT=( python2_7 )
 inherit python-single-r1
 
 DESCRIPTION="Command-line tool to paste to paste.kde.org"
-HOMEPAGE="http://projects.kde.org/projects/playground/utils/kpaste"
-SRC_URI="http://dev.gentoo.org/~kensington/distfiles/${P}.tar.bz2"
+HOMEPAGE="https://projects.kde.org/projects/playground/utils/kpaste"
+SRC_URI="https://dev.gentoo.org/~kensington/distfiles/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"

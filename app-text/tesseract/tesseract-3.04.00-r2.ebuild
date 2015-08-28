@@ -13,7 +13,7 @@ DESCRIPTION="An OCR Engine, orginally developed at HP, now open source."
 HOMEPAGE="https://github.com/tesseract-ocr"
 SRC_URI="https://github.com/${MY_PN}/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 	${URI_PREFIX}eng.traineddata -> eng.traineddata-${PV}
-	doc? ( http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.02-doc-html.tar.gz )
+	doc? ( https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.02-doc-html.tar.gz )
 	linguas_ar? ( ${URI_PREFIX}ara.traineddata -> ara.traineddata-${PV} )
 	linguas_bg? ( ${URI_PREFIX}bul.traineddata -> bul.traineddata-${PV} )
 	linguas_ca? ( ${URI_PREFIX}cat.traineddata -> cat.traineddata-${PV} )
@@ -59,7 +59,7 @@ SRC_URI="https://github.com/${MY_PN}/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc examples jpeg opencl osd png +scrollview static-libs tiff training -webp linguas_ar linguas_bg linguas_ca linguas_chr linguas_cs linguas_de linguas_da linguas_el linguas_es linguas_fi linguas_fr linguas_he linguas_hi linguas_hu linguas_id linguas_it linguas_jp linguas_ko linguas_lt linguas_lv linguas_nl linguas_no linguas_pl linguas_pt linguas_ro linguas_ru linguas_sk linguas_sl linguas_sr linguas_sv linguas_th linguas_tl linguas_tr linguas_uk linguas_vi linguas_zh_CN linguas_zh_TW"
 

@@ -14,8 +14,8 @@ else
 	SRC_URI="https://github.com/systemd/systemd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	if [[ -n "${patchset}" ]]; then
 				SRC_URI="${SRC_URI}
-					http://dev.gentoo.org/~ssuominen/${P}-patches-${patchset}.tar.xz
-					http://dev.gentoo.org/~williamh/dist/${P}-patches-${patchset}.tar.xz"
+					https://dev.gentoo.org/~ssuominen/${P}-patches-${patchset}.tar.xz
+					https://dev.gentoo.org/~williamh/dist/${P}-patches-${patchset}.tar.xz"
 			fi
 	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 fi
@@ -333,7 +333,7 @@ pkg_postinst() {
 		if [[ ${path} == /dev && ${fstype} != devtmpfs ]]; then
 			ewarn "You need to edit your /dev line in ${fstab} to have devtmpfs"
 			ewarn "filesystem. Otherwise udev won't be able to boot."
-			ewarn "See, http://bugs.gentoo.org/453186"
+			ewarn "See, https://bugs.gentoo.org/453186"
 		fi
 	done < "${fstab}"
 
@@ -391,8 +391,8 @@ pkg_postinst() {
 	elog
 	elog "For more information on udev on Gentoo, upgrading, writing udev rules, and"
 	elog "fixing known issues visit:"
-	elog "http://wiki.gentoo.org/wiki/Udev"
-	elog "http://wiki.gentoo.org/wiki/Udev/upgrade"
+	elog "https://wiki.gentoo.org/wiki/Udev"
+	elog "https://wiki.gentoo.org/wiki/Udev/upgrade"
 
 	# If user has disabled 80-net-name-slot.rules using a empty file or a symlink to /dev/null,
 	# do the same for 80-net-setup-link.rules to keep the old behavior
@@ -420,8 +420,8 @@ pkg_postinst() {
 	fi
 
 	# http://cgit.freedesktop.org/systemd/systemd/commit/rules/50-udev-default.rules?id=3dff3e00e044e2d53c76fa842b9a4759d4a50e69
-	# http://bugs.gentoo.org/246847
-	# http://bugs.gentoo.org/514174
+	# https://bugs.gentoo.org/246847
+	# https://bugs.gentoo.org/514174
 	enewgroup input
 
 	# Update hwdb database in case the format is changed by udev version.

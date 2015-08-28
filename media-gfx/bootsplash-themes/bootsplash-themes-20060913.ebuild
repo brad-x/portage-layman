@@ -3,7 +3,7 @@
 # $Id$
 
 DESCRIPTION="A collection of Bootsplash themes"
-HOMEPAGE="http://dev.gentoo.org/~spock/repos/bootsplash/"
+HOMEPAGE="https://dev.gentoo.org/~spock/repos/bootsplash/"
 THEME_URI="mirror://gentoo"
 
 SRC_URI="${THEME_URI}/Theme-73labAllstar.tar.bz2
@@ -283,7 +283,7 @@ pkg_postinst() {
 		elog "If you happen to find a theme that you like, but which doesn't work"
 		elog "after it has been automatically converted to the new format, please"
 		elog "fix it manually and submit for inclusion into a generic splashutils"
-		elog "theme package by posting it on bugzilla (http://bugs.gentoo.org/)"
+		elog "theme package by posting it on bugzilla (https://bugs.gentoo.org/)"
 		elog "or sending it directly to the maintainer of this package."
 	else
 		elog "When testing the themes, please make sure you're running in a 16bpp"

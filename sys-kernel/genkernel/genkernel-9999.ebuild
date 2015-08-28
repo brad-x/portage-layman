@@ -17,7 +17,7 @@ VERSION_UNIONFS_FUSE='0.24'
 VERSION_GPG='1.4.11'
 
 RH_HOME="ftp://sources.redhat.com/pub"
-DM_HOME="http://people.redhat.com/~heinzm/sw/dmraid/src"
+DM_HOME="https://people.redhat.com/~heinzm/sw/dmraid/src"
 BB_HOME="http://www.busybox.net/downloads"
 
 COMMON_URI="${DM_HOME}/dmraid-${VERSION_DMRAID}.tar.bz2
@@ -34,7 +34,7 @@ COMMON_URI="${DM_HOME}/dmraid-${VERSION_DMRAID}.tar.bz2
 if [[ ${PV} == 9999* ]]
 then
 	EGIT_REPO_URI="git://anongit.gentoo.org/proj/${PN}.git
-		http://anongit.gentoo.org/git/proj/${PN}.git"
+		https://anongit.gentoo.org/git/proj/${PN}.git"
 	inherit git-2 bash-completion-r1 eutils
 	S="${WORKDIR}/${PN}"
 	SRC_URI="${COMMON_URI}"
@@ -47,7 +47,7 @@ else
 fi
 
 DESCRIPTION="Gentoo automatic kernel building scripts"
-HOMEPAGE="http://www.gentoo.org"
+HOMEPAGE="https://www.gentoo.org"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -149,7 +149,7 @@ pkg_postinst() {
 	elog 'Documentation is available in the genkernel manual page'
 	elog 'as well as the following URL:'
 	echo
-	elog 'http://www.gentoo.org/doc/en/genkernel.xml'
+	elog 'https://www.gentoo.org/doc/en/genkernel.xml'
 	echo
 	ewarn "This package is known to not work with reiser4.  If you are running"
 	ewarn "reiser4 and have a problem, do not file a bug.  We know it does not"

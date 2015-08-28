@@ -1,14 +1,14 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=5
 PYTHON_DEPEND="python? 2"
 
-inherit eutils flag-o-matic python toolchain-funcs
+inherit autotools eutils flag-o-matic python toolchain-funcs
 
 DESCRIPTION="A useful collection of mail servers, clients, and filters"
-HOMEPAGE="http://www.gnu.org/software/mailutils/mailutils.html"
+HOMEPAGE="https://www.gnu.org/software/mailutils/mailutils.html"
 #SRC_URI="mirror://gnu/mailutils/${P}.tar.xz"
 SRC_URI="mirror://gnu-alpha/mailutils/${P}.tar.xz"
 
@@ -23,20 +23,20 @@ RDEPEND="!mail-client/nmh
 	!mail-filter/libsieve
 	!mail-client/mailx
 	!mail-client/nail
-	sys-libs/ncurses
-	sys-libs/readline
+	sys-libs/ncurses:*
+	sys-libs/readline:*
 	|| ( dev-libs/libltdl:0 <sys-devel/libtool-2.4.3-r2:2 )
 	virtual/mta
-	berkdb? ( sys-libs/db )
+	berkdb? ( sys-libs/db:* )
 	bidi? ( dev-libs/fribidi )
 	gdbm? ( sys-libs/gdbm )
-	guile? ( dev-scheme/guile )
+	guile? ( dev-scheme/guile:* )
 	kerberos? ( virtual/krb5 )
 	ldap? ( net-nds/openldap )
 	mysql? ( virtual/mysql )
 	nls? ( sys-devel/gettext )
 	pam? ( virtual/pam )
-	postgres? ( dev-db/postgresql )
+	postgres? ( dev-db/postgresql:* )
 	sasl? ( virtual/gsasl )
 	ssl? ( net-libs/gnutls )
 	tcpd? ( sys-apps/tcp-wrappers )
@@ -57,6 +57,11 @@ src_prepare() {
 	echo "#!/bin/sh" > build-aux/py-compile
 	epatch "${FILESDIR}/${P}-array_bounds.patch"
 	epatch "${FILESDIR}/${P}-readline-6.3.patch" #503954
+	if use mysql; then
+		sed -i -e /^INCLUDES/"s:$:$(mysql_config --include):" \
+			sql/Makefile.am || die
+		eautoreconf
+	fi
 }
 
 src_configure() {

@@ -10,13 +10,15 @@ PYTHON_COMPAT=( python2_7 )
 inherit autotools-utils python-any-r1
 
 DESCRIPTION="Open source implementation of the Pragmatic General Multicast specification"
-HOMEPAGE="http://code.google.com/p/openpgm"
-SRC_URI="http://openpgm.googlecode.com/files/libpgm-${PV}~dfsg.tar.gz"
+HOMEPAGE="https://code.google.com/p/openpgm"
+SRC_URI="https://openpgm.googlecode.com/files/libpgm-${PV}~dfsg.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm hppa ppc ppc64 x86 ~x86-fbsd"
 IUSE="static-libs"
+
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="${PYTHON_DEPS}"
 

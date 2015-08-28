@@ -22,7 +22,7 @@ inherit eutils mount-boot toolchain-funcs linux-info flag-o-matic autotools pax-
 
 PATCHVER="1.14" # Should match the revision ideally
 DESCRIPTION="GNU GRUB Legacy boot loader"
-HOMEPAGE="http://www.gnu.org/software/grub/"
+HOMEPAGE="https://www.gnu.org/software/grub/"
 SRC_URI="mirror://gentoo/${P}.tar.gz
 	mirror://gnu-alpha/${PN}/${P}.tar.gz
 	mirror://gentoo/splash.xpm.gz
@@ -214,7 +214,7 @@ setup_boot_dir() {
 		ewarn "root/setup manually."
 		ewarn
 		ewarn "For more help, see the handbook:"
-		ewarn "http://www.gentoo.org/doc/en/handbook/handbook-${ARCH}.xml?part=1&chap=10#grub-install-auto"
+		ewarn "https://www.gentoo.org/doc/en/handbook/handbook-${ARCH}.xml?part=1&chap=10#grub-install-auto"
 		echo
 	fi
 

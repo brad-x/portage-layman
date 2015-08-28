@@ -10,8 +10,8 @@ PYTHON_COMPAT=( python2_7 )
 inherit gnome2 python-single-r1
 
 DESCRIPTION="Project manager for Gnome"
-HOMEPAGE="http://live.gnome.org/Planner/"
-SRC_URI="http://dev.gentoo.org/~eva/distfiles/${PN}/${P}.tar.xz"
+HOMEPAGE="https://live.gnome.org/Planner/"
+SRC_URI="https://dev.gentoo.org/~eva/distfiles/${PN}/${P}.tar.xz"
 
 SLOT="0"
 LICENSE="GPL-2"

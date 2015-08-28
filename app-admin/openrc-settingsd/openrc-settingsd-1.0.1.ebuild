@@ -5,8 +5,8 @@
 EAPI=5
 
 DESCRIPTION="System settings D-Bus service for OpenRC"
-HOMEPAGE="http://gnome.gentoo.org/openrc-settingsd.xml"
-SRC_URI="http://dev.gentoo.org/~tetromino/distfiles/${PN}/${P}.tar.xz"
+HOMEPAGE="https://gnome.gentoo.org/openrc-settingsd.xml"
+SRC_URI="https://dev.gentoo.org/~tetromino/distfiles/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0"

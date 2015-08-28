@@ -38,7 +38,7 @@ inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-v6
 DESCRIPTION="Firefox Web Browser"
 HOMEPAGE="http://www.mozilla.com/firefox"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ppc ppc64 x86 ~amd64-linux ~x86-linux"
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
@@ -47,9 +47,9 @@ RESTRICT="!bindist? ( bindist )"
 
 # More URIs appended below...
 SRC_URI="${SRC_URI}
-	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.xz
-	http://dev.gentoo.org/~axs/mozilla/patchsets/${PATCH}.tar.xz
-	http://dev.gentoo.org/~polynomial-c/mozilla/patchsets/${PATCH}.tar.xz"
+	https://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.xz
+	https://dev.gentoo.org/~axs/mozilla/patchsets/${PATCH}.tar.xz
+	https://dev.gentoo.org/~polynomial-c/mozilla/patchsets/${PATCH}.tar.xz"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
@@ -71,7 +71,7 @@ DEPEND="${RDEPEND}
 if [[ ${PV} =~ alpha ]]; then
 	CHANGESET="8a3042764de7"
 	SRC_URI="${SRC_URI}
-		http://dev.gentoo.org/~nirbheek/mozilla/firefox/firefox-${MOZ_PV}_${CHANGESET}.source.tar.bz2"
+		https://dev.gentoo.org/~nirbheek/mozilla/firefox/firefox-${MOZ_PV}_${CHANGESET}.source.tar.bz2"
 	S="${WORKDIR}/mozilla-aurora-${CHANGESET}"
 elif [[ ${PV} =~ beta ]]; then
 	S="${WORKDIR}/mozilla-release"
@@ -140,6 +140,7 @@ src_prepare() {
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}/firefox"
+	epatch "${FILESDIR}"/${PN}-38-dont-hardcode-libc-soname.patch
 
 	# Allow user to apply any additional patches without modifing ebuild
 	epatch_user

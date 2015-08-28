@@ -10,7 +10,7 @@ inherit distutils-r1
 
 DESCRIPTION="A drop in replacement for xpyb, an XCB python binding"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
-HOMEPAGE="http://github.com/tych0/xcffib"
+HOMEPAGE="https://github.com/tych0/xcffib"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,7 +20,8 @@ IUSE="test"
 COMMON_DEPEND="x11-libs/libxcb"
 
 RDEPEND="
-	>=dev-python/cffi-0.1.1:=[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/cffi-1.1:=[${PYTHON_USEDEP}]' 'python*')
+	$(python_gen_cond_dep '>=virtual/pypy-2.6.0' pypy )
 	dev-python/six[${PYTHON_USEDEP}]
 	${COMMON_DEPEND}"
 DEPEND="

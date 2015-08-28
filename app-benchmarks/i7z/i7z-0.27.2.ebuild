@@ -8,7 +8,7 @@ inherit eutils flag-o-matic qmake-utils toolchain-funcs
 
 DESCRIPTION="A better i7 (and now i3, i5) reporting tool for Linux"
 HOMEPAGE="https://github.com/ajaiantilal/i7z"
-SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
+SRC_URI="https://${PN}.googlecode.com/files/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -16,7 +16,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="X"
 
 RDEPEND="
-	sys-libs/ncurses:5=
+	sys-libs/ncurses:0=
 	X? ( dev-qt/qtgui:4= )"
 DEPEND="${RDEPEND}"
 

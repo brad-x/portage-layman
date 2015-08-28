@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1
 
 DESCRIPTION="Mutagen is an audio metadata tag reader and writer implemented in pure Python"
-HOMEPAGE="http://code.google.com/p/mutagen http://pypi.python.org/pypi/mutagen"
+HOMEPAGE="https://code.google.com/p/mutagen https://pypi.python.org/pypi/mutagen"
 SRC_URI="https://bitbucket.org/lazka/${PN}/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -29,7 +29,7 @@ python_compile_all() {
 src_test() {
 	# tests/test_flac.py uses temp files with a constant path.
 	# If we had multiple python implementations, we would hit a race.
-	DISTUTILS_NO_PARALLEL_BUILD=1 distutils-r1_src_test
+	distutils-r1_src_test
 }
 
 python_test() {

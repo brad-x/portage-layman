@@ -10,7 +10,7 @@ detect_version
 detect_arch
 
 KEYWORDS=""
-HOMEPAGE="http://dev.gentoo.org/~mpagano/genpatches"
+HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches"
 IUSE="deblob experimental"
 
 DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
@@ -18,7 +18,7 @@ SRC_URI="https://www.kernel.org/pub/linux/kernel/v3.x/linux-${KV_MAJOR}.${KV_MIN
 ESVN_REPO_URI="svn://anonsvn.gentoo.org/linux-patches/genpatches-2.6/trunk/${KV_MAJOR}.${KV_MINOR}"
 EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git
 	https://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git
-	http://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git"
+	https://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git"
 
 S="${WORKDIR}/linux-${KV_MAJOR}.${KV_MINOR}.9999"
 

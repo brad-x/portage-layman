@@ -12,7 +12,7 @@ DESCRIPTION="Enhanced version of the Berkeley C shell (csh)"
 HOMEPAGE="http://www.tcsh.org/"
 SRC_URI="
 	ftp://ftp.astron.com/pub/tcsh/${P}.tar.gz
-	http://www.gentoo.org/~grobian/distfiles/tcsh-gentoo-patches-r${CONFVER}.tar.bz2"
+	https://www.gentoo.org/~grobian/distfiles/tcsh-gentoo-patches-r${CONFVER}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -22,7 +22,7 @@ RESTRICT="test"
 
 # we need gettext because we run autoconf (AM_ICONV)
 RDEPEND="
-	>=sys-libs/ncurses-5.1:5=
+	>=sys-libs/ncurses-5.1:0=
 	virtual/libiconv"
 DEPEND="${RDEPEND}
 	sys-devel/gettext

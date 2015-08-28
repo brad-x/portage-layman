@@ -9,7 +9,7 @@ MY_PN=ConsoleKit2
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Framework for defining and tracking users, login sessions and seats"
-HOMEPAGE="http://github.com/ConsoleKit2/ConsoleKit2 http://www.freedesktop.org/wiki/Software/ConsoleKit"
+HOMEPAGE="https://github.com/ConsoleKit2/ConsoleKit2 http://www.freedesktop.org/wiki/Software/ConsoleKit"
 SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_0.4.6-4.debian.tar.gz" # for logrotate file"
 EGIT_REPO_URI="https://github.com/${MY_PN}/${MY_PN}.git"
 
@@ -44,7 +44,7 @@ QA_MULTILIB_PATHS="usr/lib/ConsoleKit/.*"
 
 pkg_setup() {
 	if use kernel_linux; then
-		# This is from http://bugs.gentoo.org/376939
+		# This is from https://bugs.gentoo.org/376939
 		use acl && CONFIG_CHECK="~TMPFS_POSIX_ACL"
 		# This is required to get login-session-id string with pam_ck_connector.so
 		use pam && CONFIG_CHECK+=" ~AUDITSYSCALL"

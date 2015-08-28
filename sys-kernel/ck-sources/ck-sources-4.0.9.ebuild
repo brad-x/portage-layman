@@ -7,7 +7,7 @@ ETYPE="sources"
 KEYWORDS="~amd64 ~x86"
 IUSE="bfsonly"
 
-HOMEPAGE="http://dev.gentoo.org/~mpagano/genpatches/
+HOMEPAGE="https://dev.gentoo.org/~mpagano/genpatches/
 	http://users.on.net/~ckolivas/kernel/"
 
 K_WANT_GENPATCHES="base extras experimental"
@@ -101,6 +101,6 @@ pkg_postinst() {
 	kernel-2_pkg_postinst
 
 	elog
-	elog "For more info on this patchset, see: http://forums.gentoo.org/viewtopic-t-941030-start-0.html"
+	elog "For more info on this patchset, see: https://forums.gentoo.org/viewtopic-t-941030-start-0.html"
 	elog
 }

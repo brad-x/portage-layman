@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 	mirror://bitbucket/${PN}/${PN}/downloads/${P}.tar.gz
 	ftp://ftp.mutt.org/mutt/devel/${P}.tar.gz
 	mirror://gentoo/${P}-gentoo-patches${PATCHSET_REV}.tar.bz2
-	http://dev.gentoo.org/~grobian/distfiles/${P}-gentoo-patches${PATCHSET_REV}.tar.bz2"
+	https://dev.gentoo.org/~grobian/distfiles/${P}-gentoo-patches${PATCHSET_REV}.tar.bz2"
 IUSE="berkdb crypt debug doc gdbm gnutls gpg idn imap kerberos mbox nls nntp pop qdbm sasl selinux sidebar slang smime smtp ssl tokyocabinet"
 SLOT="0"
 LICENSE="GPL-2"
@@ -71,8 +71,8 @@ src_prepare() {
 	# If you ever take over or need to modify patches here, just check
 	# out the gentoo branch(es) of Gentoo's Mutt Mercurial clone, and
 	# the patchqueue as it'll save you a lot of work.
-	# http://prefix.gentooexperimental.org:8000/mutt/
-	# http://prefix.gentooexperimental.org:8000/mutt-patches/
+	# http://hg.code.sf.net/p/gentoomutt/code/
+	# http://hg.code.sf.net/p/gentoomuttpatches/code/
 	for rev in $(eval echo {0..${PR#r}}) ; do
 		local revpatch="${PATCHDIR}"/mutt-gentoo-${PV}-r${rev}.patch
 		[[ -e ${revpatch} ]] && \

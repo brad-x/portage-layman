@@ -40,7 +40,7 @@ SLOT="0/7"  # subslot matches SONAME major
 #KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux"
 IUSE="static-libs utils"
 
-RDEPEND=">=sys-libs/ncurses-5.9-r3:5=[${MULTILIB_USEDEP}]
+RDEPEND=">=sys-libs/ncurses-5.9-r3:0=[${MULTILIB_USEDEP}]
 	abi_x86_32? (
 		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
 		!<=app-emulation/emul-linux-x86-baselibs-20131008-r7
@@ -79,7 +79,7 @@ src_prepare() {
 src_configure() {
 	# fix implicit decls with widechar funcs
 	append-cppflags -D_GNU_SOURCE
-	# http://lists.gnu.org/archive/html/bug-readline/2010-07/msg00013.html
+	# https://lists.gnu.org/archive/html/bug-readline/2010-07/msg00013.html
 	append-cppflags -Dxrealloc=_rl_realloc -Dxmalloc=_rl_malloc -Dxfree=_rl_free
 
 	# Make sure configure picks a better ar than `ar`. #484866

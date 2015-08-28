@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_EXTRADOC="History.md README.md"
 
@@ -14,7 +14,7 @@ RUBY_FAKEGEM_TASK_TEST=""
 inherit virtualx ruby-fakegem
 
 DESCRIPTION="Capybara aims to simplify the process of integration testing Rack applications"
-HOMEPAGE="http://github.com/jnicklas/capybara"
+HOMEPAGE="https://github.com/jnicklas/capybara"
 LICENSE="MIT"
 
 KEYWORDS="~amd64 ~x86"
@@ -26,9 +26,9 @@ DEPEND="${DEPEND} test? ( www-client/firefox )"
 ruby_add_bdepend "test? ( dev-ruby/rspec:2 dev-ruby/launchy >=dev-ruby/selenium-webdriver-2.0 )"
 
 ruby_add_rdepend "
-	>=dev-ruby/mime-types-1.16
+	>=dev-ruby/mime-types-1.16:*
 	>=dev-ruby/nokogiri-1.3.3
-	>=dev-ruby/rack-1.0.0
+	>=dev-ruby/rack-1.0.0:*
 	>=dev-ruby/rack-test-0.5.4
 	>=dev-ruby/xpath-2.0.0:2"
 

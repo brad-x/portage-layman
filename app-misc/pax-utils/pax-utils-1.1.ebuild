@@ -9,18 +9,20 @@ inherit eutils toolchain-funcs unpacker
 DESCRIPTION="ELF related utils for ELF 32/64 binaries that can check files for security relevant properties"
 HOMEPAGE="https://wiki.gentoo.org/index.php?title=Project:Hardened/PaX_Utilities"
 SRC_URI="mirror://gentoo/pax-utils-${PV}.tar.xz
-	http://dev.gentoo.org/~solar/pax/pax-utils-${PV}.tar.xz
-	http://dev.gentoo.org/~vapier/dist/pax-utils-${PV}.tar.xz"
+	https://dev.gentoo.org/~solar/pax/pax-utils-${PV}.tar.xz
+	https://dev.gentoo.org/~vapier/dist/pax-utils-${PV}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="caps python seccomp"
 
-RDEPEND="caps? ( sys-libs/libcap )
+RDEPEND="caps? ( >=sys-libs/libcap-2.24 )
 	python? ( dev-python/pyelftools )
 	seccomp? ( sys-libs/libseccomp )"
 DEPEND="${RDEPEND}
+	caps? ( virtual/pkgconfig )
+	seccomp? ( virtual/pkgconfig )
 	app-arch/xz-utils"
 
 _emake() {

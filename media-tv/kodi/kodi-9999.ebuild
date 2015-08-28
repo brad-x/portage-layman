@@ -9,9 +9,9 @@ EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite"
 
-inherit eutils python-single-r1 multiprocessing autotools
+inherit eutils linux-info python-single-r1 multiprocessing autotools
 
-CODENAME="Helix"
+CODENAME="Isengard"
 case ${PV} in
 9999)
 	EGIT_REPO_URI="git://github.com/xbmc/xbmc.git"
@@ -21,7 +21,8 @@ case ${PV} in
 	MY_PV=${PV/_p/_r}
 	MY_P="${PN}-${MY_PV}"
 	SRC_URI="http://mirrors.kodi.tv/releases/source/${MY_PV}-${CODENAME}.tar.gz -> ${P}.tar.gz
-		http://mirrors.kodi.tv/releases/source/${MY_P}-generated-addons.tar.xz"
+		https://github.com/xbmc/xbmc/archive/${PV}-${CODENAME}.tar.gz -> ${P}.tar.gz
+		!java? ( http://mirrors.kodi.tv/releases/source/${MY_P}-generated-addons.tar.xz )"
 	KEYWORDS="~amd64 ~x86"
 
 	S=${WORKDIR}/xbmc-${PV}-${CODENAME}
@@ -50,7 +51,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	dev-libs/expat
 	dev-libs/fribidi
 	dev-libs/libcdio[-minimal]
-	cec? ( >=dev-libs/libcec-2.2 )
+	cec? ( >=dev-libs/libcec-3.0 )
 	dev-libs/libpcre[cxx]
 	dev-libs/libxml2
 	dev-libs/libxslt
@@ -107,7 +108,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	)
 	vaapi? ( x11-libs/libva[opengl] )
 	vdpau? (
-		|| ( x11-libs/libvdpau >=x11-drivers/nvidia-drivers-180.51 )
+		|| ( >=x11-libs/libvdpau-1.1 >=x11-drivers/nvidia-drivers-180.51 )
 		media-video/ffmpeg[vdpau]
 	)
 	X? (
@@ -134,7 +135,14 @@ DEPEND="${COMMON_DEPEND}
 # generated addons package.  #488118
 [[ ${PV} == "9999" ]] && DEPEND+=" virtual/jre"
 
+CONFIG_CHECK="~IP_MULTICAST"
+ERROR_IP_MULTICAST="
+In some cases Kodi needs to access multicast addresses.
+Please consider enabling IP_MULTICAST under Networking options.
+"
+
 pkg_setup() {
+	check_extra_config
 	python-single-r1_pkg_setup
 }
 
@@ -143,13 +151,16 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-no-arm-flags.patch #400617
-	epatch "${FILESDIR}"/${P}-texturepacker.patch
+	epatch "${FILESDIR}"/${PN}-9999-no-arm-flags.patch #400617
+	epatch "${FILESDIR}"/${PN}-9999-texturepacker.patch
 
 	# some dirs ship generated autotools, some dont
 	multijob_init
-	local d
-	for d in $(printf 'f:\n\t@echo $(BOOTSTRAP_TARGETS)\ninclude bootstrap.mk\n' | emake -f - f) ; do
+	local d dirs=(
+		tools/depends/native/TexturePacker/src/configure
+		$(printf 'f:\n\t@echo $(BOOTSTRAP_TARGETS)\ninclude bootstrap.mk\n' | emake -f - f)
+	)
+	for d in "${dirs[@]}" ; do
 		[[ -e ${d} ]] && continue
 		pushd ${d/%configure/.} >/dev/null || die
 		AT_NOELIBTOOLIZE="yes" AT_TOPLEVEL_EAUTORECONF="yes" \

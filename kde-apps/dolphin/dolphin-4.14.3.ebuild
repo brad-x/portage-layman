@@ -9,7 +9,7 @@ KMNAME="kde-baseapps"
 inherit kde4-meta
 
 DESCRIPTION="A KDE filemanager focusing on usability"
-HOMEPAGE="http://dolphin.kde.org http://www.kde.org/applications/system/dolphin"
+HOMEPAGE="https://dolphin.kde.org https://www.kde.org/applications/system/dolphin"
 KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug semantic-desktop thumbnail"
 
@@ -20,7 +20,7 @@ DEPEND="
 	x11-libs/libXrender
 	semantic-desktop? (
 		$(add_kdebase_dep baloo)
-		$(add_kdebase_dep baloo-widgets)
+		$(add_kdeapps_dep baloo-widgets)
 		$(add_kdebase_dep kfilemetadata)
 	)
 "

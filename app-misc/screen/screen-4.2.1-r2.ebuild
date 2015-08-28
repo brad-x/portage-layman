@@ -7,7 +7,7 @@ EAPI=5
 inherit autotools eutils flag-o-matic pam toolchain-funcs user
 
 DESCRIPTION="Full-screen window manager that multiplexes physical terminals between several processes"
-HOMEPAGE="http://www.gnu.org/software/screen/"
+HOMEPAGE="https://www.gnu.org/software/screen/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -16,7 +16,7 @@ KEYWORDS=" ~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~
 IUSE="debug nethack pam selinux multiuser"
 
 CDEPEND="
-	>=sys-libs/ncurses-5.2:5=
+	>=sys-libs/ncurses-5.2:0=
 	pam? ( virtual/pam )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-screen )"

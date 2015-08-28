@@ -15,10 +15,10 @@ HOMEPAGE="https://launchpad.net/libdbusmenu-qt/"
 if [[ ${PV} == 9999* ]] ; then
 	KEYWORDS=""
 else
-	#SRC_URI="http://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.bz2"
+	#SRC_URI="https://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.bz2"
 	# upstream has no permissions to use some kde written code so repack git
 	# repo every time
-	SRC_URI="http://dev.gentoo.org/~creffett/${P}.tar.xz"
+	SRC_URI="https://dev.gentoo.org/~creffett/${P}.tar.xz"
 	KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 fi
 

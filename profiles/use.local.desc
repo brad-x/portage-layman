@@ -1946,6 +1946,7 @@ dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util
 dev-libs/glib:utils - Install gtester-report utility to generate test report files for your software.
 dev-libs/gmp:pgo - after building gmp, run some tests against to produce faster libraries -- this option will double the compile time
 dev-libs/gobject-introspection:doctool - Install g-ir-doc-tool for generating documentation from introspected data
+dev-libs/hidapi:fox - Build a x11-libs/fox GUI
 dev-libs/intel-common:compiler - Install the libraries needed for the icc and ifort compilers
 dev-libs/jemalloc:stats - Enable statistics calculation/reporting
 dev-libs/keybinder:introspection - Use dev-libs/gobject-introspection for introspection
@@ -1999,12 +2000,12 @@ dev-libs/libnl:python - Install experimental dev-lang/python bindings
 dev-libs/libnl:utils - Install command line interface utils
 dev-libs/libowfat:diet - Compile against dev-libs/dietlibc
 dev-libs/libp11:doc - Generate and install API documentation for the package.
-dev-libs/libpcre:bzip2 - Add support for pcregrep command to search within bzip2-compressed files, through sys-libs/zlib.
-dev-libs/libpcre:pcre16 - Build 16 bit PCRE library.
-dev-libs/libpcre:pcre32 - Build 32 bit PCRE library.
+dev-libs/libpcre:bzip2 - Add support for pcregrep command to search within bzip2-compressed files (via app-arch/bzip2).
+dev-libs/libpcre:pcre16 - Build PCRE library for 16 bit characters (e.g. UTF-16).
+dev-libs/libpcre:pcre32 - Build PCRE library for 32 bit characters (e.g. UTF-32).
 dev-libs/libpcre:readline - Add support for command line editing to pcretest, through sys-libs/readline.
 dev-libs/libpcre:recursion-limit - Limit match recursion to 8192; if disabled, the default limit is used, which is the same as the match limit.
-dev-libs/libpcre:zlib - Add support for pcregrep command to search within gzip-compressed files, through app-arch/gzip.
+dev-libs/libpcre:zlib - Add support for pcregrep command to search within gzip-compressed files (via sys-libs/zlib).
 dev-libs/libpeas:glade - Install the glade catalog
 dev-libs/libpeas:python - Build support for loading dev-lang/python plugins
 dev-libs/librra:recurrence - Enable recurrence support (EXPERIMENTAL)
@@ -2187,6 +2188,7 @@ dev-php/pecl-mysqlnd_qc:sqlite - Use dev-db/sqlite as a storage handler
 dev-php/pecl-redis:igbinary - Enables igbinary serialisation support
 dev-php/smarty-docs:html - Install the documentation in HTML format
 dev-php/smarty-docs:pdf - Install the documentation in PDF format
+dev-python/CacheControl:redis - Allows using redis as a cache store
 dev-python/Kivy:camera - Install libraries needed to support camera
 dev-python/Kivy:garden - Install garden tool to manage user maintained widgets
 dev-python/PyFoam:extras - Enable optional dependencies
@@ -3160,6 +3162,7 @@ kde-apps/dolphin-plugins:bazaar - Enable support for the bazaar VCS
 kde-apps/dolphin-plugins:mercurial - Enable support for the mercurial VCS
 kde-apps/gwenview:kipi - Support for the KDE Image Plugin Interface.
 kde-apps/kaccessible:speechd - Enable support for the speech-dispatcher speech synthesizer
+kde-apps/kaccounts-integration:kdepim - KDE PIM integration via kde-apps/kdepimlibs
 kde-apps/kalzium:editor - Enable the embedded molecule editor/viewer
 kde-apps/kalzium:solver - Enable the equation solver
 kde-apps/kdeadmin-meta:cron - Installs KDE application for virtual/cron configuration
@@ -3177,6 +3180,8 @@ kde-apps/kget:gpg - Enable signature verification by QGpgME via kde-base/kdepiml
 kde-apps/kget:mms - Enable MMS (Microsoft Media Server) plugin through media-libs/libmms
 kde-apps/kget:webkit - Enable KdeWebkit browser plugin using kde-misc/kwebkitpart
 kde-apps/kig:scripting - Support Python scripting
+kde-apps/kio-extras:phonon - Enable file audio preview plugin using media-libs/phonon
+kde-apps/kio-extras:sftp - Enable SFTP protocol support using net-libs/libssh
 kde-apps/kmix:canberra - Enable sound event support using media-libs/libcanberra
 kde-apps/konqueror:bookmarks - Add dependency on bookmark package.
 kde-apps/kopete:addbookmarks - Automatically add incoming urls to bookmarks.
@@ -3315,17 +3320,15 @@ kde-misc/plasma-nm:openconnect - Build support for the OpenConnect VPN client
 kde-misc/tellico:addressbook - Add support for kdepim addressbook (kabc)
 kde-plasma/kdeplasma-addons:ibus - Use ibus input method via app-i18n/ibus
 kde-plasma/kdeplasma-addons:scim - Enable applets that use app-i18n/scim
-kde-plasma/kfilemetadata:epub - Adds support for reading EPUB ebook metadata
 kde-plasma/kinfocenter:egl - Retrieve information about OpenGL via EGL
 kde-plasma/kinfocenter:gles - Show OpenGL ES information in kinfocenter
 kde-plasma/kinfocenter:nfs - Show information about NFS mounts, shares and log entries
 kde-plasma/kinfocenter:pci - Show advanced PCI information
 kde-plasma/kinfocenter:samba - Show information about Samba mounts, shares and log entries
-kde-plasma/kio-extras:phonon - Enable file audio preview plugin using media-libs/phonon
-kde-plasma/kio-extras:sftp - Enable SFTP protocol support using net-libs/libssh
 kde-plasma/kmenuedit:hotkeys - Enable support for hotkey editing
 kde-plasma/kwin:gles2 - Use OpenGL ES 2 instead of full GL
 kde-plasma/libksysguard:processui - Enables the Interface to view process libs.
+kde-plasma/plasma-desktop:evdev - Enable configuration module for desktop input devices.
 kde-plasma/plasma-desktop:gtk2 - Add support for gtk+2-based applications using legacy xembed systray icons via libappindicator.
 kde-plasma/plasma-desktop:gtk3 - Add support for gtk+3-based applications using legacy xembed systray icons via libappindicator.
 kde-plasma/plasma-desktop:legacy-systray - Add support for applications using legacy xembed systray icons.
@@ -4529,6 +4532,7 @@ media-video/ffmpeg:gme - Enables support for media-libs/game-music-emu for playi
 media-video/ffmpeg:gpl - Build GPL code. Should be enabled unless you require LGPL binaries.
 media-video/ffmpeg:hardcoded-tables - Use pre-calculated tables rather than calculating them on the fly.
 media-video/ffmpeg:iec61883 - Support for FireWire DV/HDV input device using media-libs/libiec61883.
+media-video/ffmpeg:librtmp - Enables Real Time Messaging Protocol using librtmp (media-video/rtmpdump) in addition to FFmpeg's native implementation.
 media-video/ffmpeg:libsoxr - Enables audio resampling through media-libs/soxr.
 media-video/ffmpeg:libv4l - Uses media-libs/libv4l for video4linux instead of direct calls. Adds support for more devices via the userspace library.
 media-video/ffmpeg:mipsdspr1 - Enables MIPS DSP ASE R1 optimizations.
@@ -4540,7 +4544,6 @@ media-video/ffmpeg:opus - Adds (decoding) support for the Opus codec via media-l
 media-video/ffmpeg:pic - Force shared libraries to be built as PIC (this is slower)
 media-video/ffmpeg:postproc - Build and install libpostproc.
 media-video/ffmpeg:quvi - Adds support for playing media from Internet services using the quvi project.
-media-video/ffmpeg:rtmp - Enable Real Time Messaging Protocol using librtmp
 media-video/ffmpeg:schroedinger - Enable Dirac video support (an advanced royalty-free video compression format) via libschroedinger (high-speed implementation in C of the Dirac codec).
 media-video/ffmpeg:snappy - Enable app-arch/snappy support. Required for e.g. Vidvox Hap encoder.
 media-video/ffmpeg:ssh - Enable SSH/sftp support via net-libs/libssh.
@@ -6547,6 +6550,7 @@ sci-geosciences/viking:magic - Use libmagic to determine mimetypes
 sci-geosciences/viking:mapnik - Enable a layer based on sci-geosciences/mapnik
 sci-geosciences/viking:sqlite - Enable MBTiles support based on dev-db/sqlite
 sci-geosciences/xtide:gps - Use sci-geosciences/gpsd
+sci-libs/ViSP:coin - Enables Coin3D support.
 sci-libs/ViSP:demos - Installs demo programs.
 sci-libs/ViSP:dmtx - Enables barcode data matrix support.
 sci-libs/ViSP:ogre - Enables dev-games/ogre support.
@@ -6799,6 +6803,8 @@ sci-physics/geant:raytracerx - Enable raytracing for physics events
 sci-physics/geant:vrml - Enable output of geant4 in vrml formats
 sci-physics/hepmc:cm - Build with cm instead of default mm for length units
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
+sci-physics/herwig++:c++11 - Build Herwig++ using the C++11 standard. Experimental feature, not for production use.
+sci-physics/herwig++:fastjet - Adds support for sci-physics/fastjet
 sci-physics/hoomd-blue:cuda - Enable cuda non-bonded kernels
 sci-physics/lammps:lammps-memalign - Enables the use of the posix_memalign() call instead of malloc() when large chunks or memory are allocated by LAMMPS. Aliengnment is on 16 byte boundaries.
 sci-physics/lhapdf:octave - Add bindings for sci-mathematics/octave
@@ -6823,6 +6829,11 @@ sci-physics/root:reflex - Build the reflection database for the C++ interpreter
 sci-physics/root:shadow - Enable shadow authentication in rootd and proofd
 sci-physics/root:table - Build libTable contrib library
 sci-physics/root:xrootd - Build the interface for net-libs/xrootd
+sci-physics/thepeg:c++11 - Build ThePEG using the C++11 standard. Experimental feature, not for production use.
+sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
+sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
+sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
+sci-physics/thepeg:rivet - Adds support for sci-physics/rivet
 sci-physics/yoda:c++11 - Build using the C++11 standard
 sci-physics/yoda:root - Adds support for sci-physics/root
 sci-visualization/fityk:nlopt - Enable optimization with sci-libs/nlopt
@@ -6981,7 +6992,6 @@ sys-apps/systemd:audit - Enable support for sys-process/audit
 sys-apps/systemd:cryptsetup - Enable cryptsetup tools (includes unit generator for crypttab)
 sys-apps/systemd:curl - Enable support for uploading journals; required to build systemd-import/systemd-pull
 sys-apps/systemd:elfutils - Enable coredump stacktraces in the journal
-sys-apps/systemd:firmware-loader - Enable user-space firmware loader (for kernels prior to 3.8)
 sys-apps/systemd:gcrypt - Enable sealing of journal files using gcrypt; required to build systemd-import/systemd-pull
 sys-apps/systemd:gnuefi - Enable EFI boot manager and stub loader (built using sys-boot/gnu-efi)
 sys-apps/systemd:gudev - enable libudev gobject interface
@@ -7091,6 +7101,13 @@ sys-boot/lilo:pxeserial - Avoid character echo on PXE serial console
 sys-boot/plymouth:gdm - Enables smooth transition to GDM
 sys-boot/plymouth:libkms - Provides abstraction to the DRM drivers (intel, nouveau and vmwgfx at this moment)
 sys-boot/plymouth:pango - Adds support for printing text on splash screen and text prompts, e.g. for password
+sys-boot/refind:btrfs - Builds the EFI binary btrfs filesystem driver
+sys-boot/refind:ext2 - Builds the EFI binary ext2 filesystem driver
+sys-boot/refind:ext4 - Builds the EFI binary ext4 filesystem driver
+sys-boot/refind:hfs - Builds the EFI binary hfs filesystem driver
+sys-boot/refind:iso9660 - Builds the EFI binary iso9660 filesystem driver
+sys-boot/refind:ntfs - Builds the EFI binary ntfs filesystem driver
+sys-boot/refind:reiserfs - Builds the EFI binary reiserfs filesystem driver
 sys-cluster/ceph:babeltrace - Add support for LTTng babeltrace
 sys-cluster/ceph:cryptopp - Use dev-libs/crypto++ for cryptography
 sys-cluster/ceph:fuse - Build fuse client
@@ -7773,6 +7790,7 @@ www-servers/tomcat:websockets - Builds websockets api and implementation (requir
 www-servers/uwsgi:embedded - Embed plugins instead of building them as real plugins. When disabling this USE flag make sure you specify all used plugins in your uWSGI configuration. Note: Language plugins will always be built as real plugins.
 www-servers/uwsgi:jemalloc - Use dev-libs/jemalloc instead of libc's malloc
 www-servers/uwsgi:json - Support json as a configuration file format.
+www-servers/uwsgi:pypy - Build the pypy plugin to run your code using virtual/pypy.
 www-servers/uwsgi:python_asyncio - Use the EXPERIMENTAL asyncio (tulip) for python3.4 async request dispatching and as LoopEngine (see http://uwsgi-docs.readthedocs.org/en/latest/asyncio.html).
 www-servers/uwsgi:python_gevent - Use dev-python/gevent for async request dispatching and as LoopEngine (see http://projects.unbit.it/uwsgi/wiki/Gevent).
 www-servers/uwsgi:routing - Enable routing support
@@ -7824,14 +7842,11 @@ x11-drivers/xf86-video-nouveau:glamor - Enable Glamor OpenGL 2D acceleration
 x11-drivers/xf86-video-openchrome:viaregtool - Install registers dumper tool
 x11-drivers/xf86-video-qxl:xspice - Build the xspice driver
 x11-libs/agg:gpc - Enable gpc polygon clipper library
-x11-libs/cairo:drm - Use Linux DRM for backend acceleration
-x11-libs/cairo:gallium - Use Mesa's Gallium backend for acceleration
 x11-libs/cairo:gles2 - Use OpenGL ES 2 backend for acceleration.
 x11-libs/cairo:glib - Compile with GLib Object System support
 x11-libs/cairo:opengl - Use Mesa backend for acceleration
-x11-libs/cairo:openvg - Use OpenVG for backend acceleration
 x11-libs/cairo:valgrind - Built-in support to mark memory regions
-x11-libs/cairo:xlib-xcb - Use XCB renderer backend for acceleration over xlib
+x11-libs/cairo:xlib-xcb - Use XCB renderer backend for acceleration over xlib. Enabling this may solve or introduce display corruption problems.
 x11-libs/fltk:games - Builds and installs some extra games
 x11-libs/glamor:gles - Build glamor based on gles2
 x11-libs/gtk+:broadway - Enable the GDK Broadway backend.

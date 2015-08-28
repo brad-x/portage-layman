@@ -37,17 +37,17 @@ inherit flag-o-matic toolchain-funcs mozconfig-v6.38 makeedit multilib autotools
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha amd64 ~arm ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist crypt hardened ldap lightning +minimal mozdom selinux"
 RESTRICT="!bindist? ( bindist )"
 
-PATCH_URIS=( http://dev.gentoo.org/~{anarchy,axs,polynomial-c}/mozilla/patchsets/{${PATCH},${PATCHFF}}.tar.xz )
+PATCH_URIS=( https://dev.gentoo.org/~{anarchy,axs,polynomial-c}/mozilla/patchsets/{${PATCH},${PATCHFF}}.tar.xz )
 SRC_URI="${SRC_URI}
 	${MOZ_HTTP_URI}/${MOZ_PV}/source/${MOZ_P}.source.tar.bz2
 	${MOZ_HTTP_URI/${PN}/calendar/lightning}/${MOZ_LIGHTNING_VER}/linux/lightning.xpi -> lightning-${MOZ_LIGHTNING_VER}.xpi
-	lightning? ( http://dev.gentoo.org/~axs/distfiles/gdata-provider-${MOZ_LIGHTNING_GDATA_VER}.tar.xz )
+	lightning? ( https://dev.gentoo.org/~axs/distfiles/gdata-provider-${MOZ_LIGHTNING_GDATA_VER}.tar.xz )
 	crypt? ( http://www.enigmail.net/download/source/enigmail-${EMVER}.tar.gz )
 	${PATCH_URIS[@]}"
 

@@ -12,7 +12,7 @@ inherit distutils eutils fdo-mime python
 MY_PN=${PN/e/E}
 
 DESCRIPTION="Multi-platform text editor supporting over 50 programming languages"
-HOMEPAGE="http://editra.org http://pypi.python.org/pypi/Editra"
+HOMEPAGE="http://editra.org https://pypi.python.org/pypi/Editra"
 SRC_URI="http://editra.org/uploads/src/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="wxWinLL-3.1"
@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}"/${MY_PN}-${PV}
 
 src_compile() {
-	distutils_src_compile --no-clean # http://code.google.com/p/editra/issues/detail?id=481
+	distutils_src_compile --no-clean # https://code.google.com/p/editra/issues/detail?id=481
 }
 
 src_install() {

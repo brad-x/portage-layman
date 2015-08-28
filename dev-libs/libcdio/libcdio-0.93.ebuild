@@ -6,7 +6,7 @@ EAPI=5
 inherit eutils libtool multilib-minimal
 
 DESCRIPTION="A library to encapsulate CD-ROM reading and control"
-HOMEPAGE="http://www.gnu.org/software/libcdio/"
+HOMEPAGE="https://www.gnu.org/software/libcdio/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -16,7 +16,7 @@ IUSE="cddb +cxx minimal static-libs test"
 
 RDEPEND="
 	!minimal? (
-		>=sys-libs/ncurses-5.7-r7:5=
+		>=sys-libs/ncurses-5.7-r7:0=
 		cddb? ( >=media-libs/libcddb-1.3.2 )
 	)
 	>=virtual/libiconv-0-r1[${MULTILIB_USEDEP}]

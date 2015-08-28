@@ -11,12 +11,12 @@ PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 inherit autotools-utils flag-o-matic python-r1
 
 DESCRIPTION="POSIX 1003.1e capabilities"
-HOMEPAGE="http://people.redhat.com/sgrubb/libcap-ng/"
-SRC_URI="http://people.redhat.com/sgrubb/${PN}/${P}.tar.gz"
+HOMEPAGE="https://people.redhat.com/sgrubb/libcap-ng/"
+SRC_URI="https://people.redhat.com/sgrubb/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm ~arm64 hppa ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~arm-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ~ppc ppc64 ~s390 ~sh ~sparc x86 ~arm-linux ~x86-linux"
 IUSE="python static-libs"
 
 RDEPEND="python? ( ${PYTHON_DEPS} )"

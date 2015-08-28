@@ -12,12 +12,12 @@ MY_PN="Pympler"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Memory profiling for Python applications"
-HOMEPAGE="http://code.google.com/p/pympler/ https://pypi.python.org/pypi/Pympler https://github.com/pympler/pympler"
+HOMEPAGE="https://code.google.com/p/pympler/ https://pypi.python.org/pypi/Pympler https://github.com/pympler/pympler"
 SRC_URI="mirror://pypi/P/${MY_PN}/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="Apache-2.0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 
 RDEPEND="dev-python/bottle[${PYTHON_USEDEP}]"

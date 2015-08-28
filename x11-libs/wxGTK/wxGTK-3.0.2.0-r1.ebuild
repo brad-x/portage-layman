@@ -14,7 +14,7 @@ HOMEPAGE="http://wxwidgets.org/"
 SRC_URI="mirror://sourceforge/wxpython/wxPython-src-${PV}.tar.bz2
 	doc? ( mirror://sourceforge/wxpython/wxPython-docs-${PV}.tar.bz2 )"
 
-KEYWORDS="alpha amd64 arm hppa ~ia64 ~mips ~ppc ~ppc64 ~sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="alpha amd64 arm hppa ~ia64 ~mips ~ppc ppc64 ~sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="+X aqua doc debug gstreamer libnotify opengl sdl tiff webkit"
 
 SLOT="3.0"
@@ -94,7 +94,7 @@ src_configure() {
 	# wxDEBUG_LEVEL=2 enables assertions that have expensive runtime costs.
 	# apps can disable these features by building w/ -NDEBUG or wxDEBUG_LEVEL_0.
 	# http://docs.wxwidgets.org/3.0/overview_debugging.html
-	# http://groups.google.com/group/wx-dev/browse_thread/thread/c3c7e78d63d7777f/05dee25410052d9c
+	# https://groups.google.com/group/wx-dev/browse_thread/thread/c3c7e78d63d7777f/05dee25410052d9c
 	use debug \
 		&& myconf="${myconf} --enable-debug=max"
 

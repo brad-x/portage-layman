@@ -19,11 +19,11 @@ elif [[ ${PV} == *_pre* ]]; then
 	# development snapshot
 	HG_REVISION=
 	MY_P=${PN}-${PV%_pre*}-snapshot-${HG_REVISION}
-	SRC_URI="http://dev.gentoo.org/~pesa/distfiles/${MY_P}.tar.gz"
+	SRC_URI="https://dev.gentoo.org/~pesa/distfiles/${MY_P}.tar.gz"
 	S=${WORKDIR}/${MY_P}
 else
 	# official release
-	SRC_URI="http://www.riverbankcomputing.com/static/Downloads/sip4/${P}.tar.gz"
+	SRC_URI="mirror://sourceforge/pyqt/${P}.tar.gz"
 fi
 
 # Sub-slot based on SIP_API_MAJOR_NR from siplib/sip.h.in

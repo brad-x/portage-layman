@@ -7,7 +7,7 @@ EAPI=5
 inherit eutils multilib git-r3 autotools
 
 DESCRIPTION="Gentoo Linux USE flags editor"
-HOMEPAGE="http://www.gentoo.org/"
+HOMEPAGE="https://www.gentoo.org/"
 SRC_URI=""
 EGIT_REPO_URI="git://anongit.gentoo.org/proj/ufed.git"
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-COMMON_DEPEND="sys-libs/ncurses:5="
+COMMON_DEPEND="sys-libs/ncurses:0="
 RDEPEND="${COMMON_DEPEND}
 	dev-lang/perl"
 DEPEND="${COMMON_DEPEND}

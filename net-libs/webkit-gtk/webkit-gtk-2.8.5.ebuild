@@ -64,7 +64,8 @@ RDEPEND="
 		>=media-libs/gst-plugins-base-1.2:1.0 )
 	introspection? ( >=dev-libs/gobject-introspection-1.32.0 )
 	libsecret? ( app-crypt/libsecret )
-	opengl? ( virtual/opengl )
+	opengl? ( virtual/opengl
+		x11-libs/cairo[opengl] )
 	spell? ( >=app-text/enchant-0.22:= )
 	wayland? ( >=x11-libs/gtk+-3.14:3[wayland] )
 	webgl? (
@@ -140,6 +141,9 @@ src_prepare() {
 	# https://bugs.webkit.org/show_bug.cgi?id=129542
 	epatch "${FILESDIR}"/${PN}-2.8.1-ia64-malloc.patch
 
+	# https://bugs.webkit.org/show_bug.cgi?id=148379
+	epatch "${FILESDIR}"/${PN}-2.8.5-webkit2gtkinjectedbundle-j1.patch
+
 	gnome2_src_prepare
 }
 
@@ -198,6 +202,7 @@ src_configure() {
 		$(cmake-utils_use_enable doc GTKDOC)
 		$(cmake-utils_use_enable geoloc GEOLOCATION)
 		$(cmake-utils_use_find_package gles2 OpenGLES2)
+		$(cmake-utils_use_enable gles2 GLES2)
 		$(cmake-utils_use_enable gstreamer VIDEO)
 		$(cmake-utils_use_enable gstreamer WEB_AUDIO)
 		$(cmake-utils_use_enable introspection)

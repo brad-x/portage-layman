@@ -4,7 +4,7 @@
 
 EAPI=5
 
-ESVN_REPO_URI="http://beast-mcmc.googlecode.com/svn/trunk/"
+ESVN_REPO_URI="https://beast-mcmc.googlecode.com/svn/trunk/"
 
 WANT_ANT_TASKS="ant-junit4"
 EANT_GENTOO_CLASSPATH="colt,jdom-1.0,itext,junit-4,jebl,matrix-toolkits-java,commons-math-2,jdom-jaxen-1.0"
@@ -18,9 +18,9 @@ inherit java-pkg-2 java-ant-2 eutils
 MY_P=BEASTv${PV}
 
 DESCRIPTION="Bayesian MCMC of Evolution & Phylogenetics using Molecular Sequences"
-HOMEPAGE="http://code.google.com/p/beast-mcmc/"
+HOMEPAGE="https://code.google.com/p/beast-mcmc/"
 #SRC_URI=""
-SRC_URI="http://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
+SRC_URI="https://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
 
 LICENSE="LGPL-3"
 SLOT="0"

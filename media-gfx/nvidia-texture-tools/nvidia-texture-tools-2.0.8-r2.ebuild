@@ -7,8 +7,8 @@ inherit cmake-utils eutils multilib toolchain-funcs
 
 DESCRIPTION="A set of cuda-enabled texture tools and compressors"
 HOMEPAGE="http://developer.nvidia.com/object/texture_tools.html"
-SRC_URI="http://${PN}.googlecode.com/files/${P}-1.tar.gz
-	http://dev.gentoo.org/~ssuominen/${P}-patchset-1.tar.xz"
+SRC_URI="https://${PN}.googlecode.com/files/${P}-1.tar.gz
+	https://dev.gentoo.org/~ssuominen/${P}-patchset-1.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"

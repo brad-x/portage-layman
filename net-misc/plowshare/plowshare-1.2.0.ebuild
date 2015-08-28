@@ -7,9 +7,9 @@ EAPI=5
 inherit bash-completion-r1
 
 DESCRIPTION="Command-line downloader and uploader for file-sharing websites"
-HOMEPAGE="http://code.google.com/p/plowshare/"
-# Fetched from http://${PN}.googlecode.com/archive/v${PV}.tar.gz
-SRC_URI="http://dev.gentoo.org/~voyageur/distfiles/${P}.tar.gz"
+HOMEPAGE="https://code.google.com/p/plowshare/"
+# Fetched from https://${PN}.googlecode.com/archive/v${PV}.tar.gz
+SRC_URI="https://dev.gentoo.org/~voyageur/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

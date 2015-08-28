@@ -7,8 +7,8 @@ EAPI=4
 inherit base cmake-utils
 
 DESCRIPTION="Small event-driven (SAX-style) JSON parser"
-HOMEPAGE="http://lloyd.github.com/yajl/"
-SRC_URI="http://github.com/lloyd/yajl/tarball/${PV} -> ${P}.tar.gz"
+HOMEPAGE="https://lloyd.github.com/yajl/"
+SRC_URI="https://github.com/lloyd/yajl/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

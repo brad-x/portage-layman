@@ -7,19 +7,19 @@ PYTHON_COMPAT=( python2_7 )
 inherit elisp-common eutils multilib multiprocessing python-single-r1 toolchain-funcs
 
 DESCRIPTION="The Mozc engine for IBus Framework"
-HOMEPAGE="http://code.google.com/p/mozc/"
+HOMEPAGE="https://code.google.com/p/mozc/"
 
 PROTOBUF_VER="2.5.0"
 GMOCK_VER="1.6.0"
 GTEST_VER="1.6.0"
 JSONCPP_VER="0.6.0-rc2"
 GYP_DATE="20140602"
-MOZC_URL="http://mozc.googlecode.com/files/${P}.tar.bz2"
-PROTOBUF_URL="http://protobuf.googlecode.com/files/protobuf-${PROTOBUF_VER}.tar.bz2"
+MOZC_URL="https://mozc.googlecode.com/files/${P}.tar.bz2"
+PROTOBUF_URL="https://protobuf.googlecode.com/files/protobuf-${PROTOBUF_VER}.tar.bz2"
 GMOCK_URL="https://googlemock.googlecode.com/files/gmock-${GMOCK_VER}.zip"
 GTEST_URL="https://googletest.googlecode.com/files/gtest-${GTEST_VER}.zip"
 JSONCPP_URL="mirror://sourceforge/jsoncpp/jsoncpp-src-${JSONCPP_VER}.tar.gz"
-GYP_URL="http://dev.gentoo.org/~naota/files/gyp-${GYP_DATE}.tar.bz2"
+GYP_URL="https://dev.gentoo.org/~naota/files/gyp-${GYP_DATE}.tar.bz2"
 SRC_URI="${MOZC_URL} ${PROTOBUF_URL} ${GYP_URL}
 	test? ( ${GMOCK_URL} ${GTEST_URL} ${JSONCPP_URL} )"
 

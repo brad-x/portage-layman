@@ -7,8 +7,8 @@ EAPI=4
 inherit eutils
 
 DESCRIPTION="Tool for updating or switching between versions of the Linux kernel source"
-HOMEPAGE="http://git.kernel.org/?p=linux/kernel/git/rostedt/ketchup.git;a=summary"
-SRC_URI="http://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
+HOMEPAGE="https://git.kernel.org/?p=linux/kernel/git/rostedt/ketchup.git;a=summary"
+SRC_URI="https://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"

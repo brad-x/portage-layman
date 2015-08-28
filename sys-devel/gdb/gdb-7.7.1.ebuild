@@ -43,13 +43,13 @@ SRC_URI="${SRC_URI} ${PATCH_VER:+mirror://gentoo/${P}-patches-${PATCH_VER}.tar.x
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 if [[ ${PV} != 9999* ]] ; then
-	KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~m68k ~mips ppc ppc64 ~s390 sparc x86 ~ppc-aix ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sparc x86 ~ppc-aix ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 fi
 IUSE="+client expat lzma multitarget nls +python +server test vanilla zlib"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="!dev-util/gdbserver
-	>=sys-libs/ncurses-5.2-r2:5=
+	>=sys-libs/ncurses-5.2-r2:0=
 	sys-libs/readline:0=
 	expat? ( dev-libs/expat )
 	lzma? ( app-arch/xz-utils )
@@ -98,7 +98,7 @@ src_configure() {
 
 	local myconf=(
 		--with-pkgversion="$(gdb_branding)"
-		--with-bugurl='http://bugs.gentoo.org/'
+		--with-bugurl='https://bugs.gentoo.org/'
 		--disable-werror
 		# Disable modules that are in a combined binutils/gdb tree. #490566
 		--disable-{binutils,etc,gas,gold,gprof,ld}

@@ -139,7 +139,7 @@ case ${KDE_AUTODEPS} in
 		RDEPEND+=" >=kde-frameworks/kf-env-3"
 		COMMONDEPEND+="	>=dev-qt/qtcore-${QT_MINIMAL}:5"
 
-		if [[ ${CATEGORY} = kde-plasma ]]; then
+		if [[ ${CATEGORY} = kde-plasma && ${PN} != polkit-kde-agent ]]; then
 			RDEPEND+="
 				!kde-apps/kde4-l10n[-minimal(-)]
 			"
@@ -427,6 +427,7 @@ kde5_src_prepare() {
 		# only build unit tests when required
 		if ! use_if_iuse test ; then
 			comment_add_subdirectory autotests
+			comment_add_subdirectory test
 			comment_add_subdirectory tests
 		fi
 	fi

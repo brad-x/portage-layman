@@ -8,7 +8,7 @@ KDE_HANDBOOK="optional"
 inherit kde4-base
 
 DESCRIPTION="An advanced download manager for KDE"
-HOMEPAGE="http://www.kde.org/applications/internet/kget/"
+HOMEPAGE="https://www.kde.org/applications/internet/kget/"
 KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug bittorrent gpg mms sqlite webkit"
 
@@ -20,7 +20,7 @@ RDEPEND="
 	gpg? ( $(add_kdebase_dep kdepimlibs) )
 	mms? ( media-libs/libmms )
 	sqlite? ( dev-db/sqlite:3 )
-	webkit? ( >=kde-misc/kwebkitpart-0.9.6 )
+	webkit? ( >=kde-misc/kwebkitpart-0.9.6:4 )
 "
 DEPEND="${RDEPEND}
 	dev-libs/boost

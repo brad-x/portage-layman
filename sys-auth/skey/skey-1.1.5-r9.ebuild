@@ -9,11 +9,11 @@ inherit flag-o-matic eutils toolchain-funcs
 DESCRIPTION="Linux Port of OpenBSD Single-key Password System"
 HOMEPAGE="http://www.openbsd.org/faq/faq8.html#SKey"
 SRC_URI="mirror://gentoo/${P}.tar.bz2
-	http://dev.gentoo.org/~ulm/distfiles/${P}-patches-3.tar.xz"
+	https://dev.gentoo.org/~ulm/distfiles/${P}-patches-3.tar.xz"
 
 LICENSE="BSD MIT RSA BEER-WARE"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="static-libs"
 
 DEPEND="dev-lang/perl

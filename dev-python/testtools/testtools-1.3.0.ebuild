@@ -12,8 +12,8 @@ inherit distutils-r1 versionator
 SERIES="trunk"
 
 DESCRIPTION="Extensions to the Python unittest library"
-HOMEPAGE="https://launchpad.net/testtools http://pypi.python.org/pypi/testtools"
-SRC_URI="http://launchpad.net/${PN}/${SERIES}/${PV}/+download/${P}.tar.gz"
+HOMEPAGE="https://launchpad.net/testtools https://pypi.python.org/pypi/testtools"
+SRC_URI="https://launchpad.net/${PN}/${SERIES}/${PV}/+download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

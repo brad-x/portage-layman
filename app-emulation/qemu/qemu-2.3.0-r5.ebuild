@@ -19,7 +19,7 @@ if [[ ${PV} = *9999* ]]; then
 else
 	SRC_URI="http://wiki.qemu-project.org/download/${P}.tar.bz2
 	${BACKPORTS:+
-		http://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz}"
+		https://dev.gentoo.org/~cardoe/distfiles/${P}-${BACKPORTS}.tar.xz}"
 	KEYWORDS="amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
 fi
 
@@ -77,7 +77,7 @@ SOFTMMU_LIB_DEPEND="${COMMON_LIB_DEPEND}
 	infiniband? ( sys-infiniband/librdmacm:=[static-libs(+)] )
 	jpeg? ( virtual/jpeg:=[static-libs(+)] )
 	lzo? ( dev-libs/lzo:2[static-libs(+)] )
-	ncurses? ( sys-libs/ncurses:5=[static-libs(+)] )
+	ncurses? ( sys-libs/ncurses:0=[static-libs(+)] )
 	nfs? ( >=net-fs/libnfs-1.9.3[static-libs(+)] )
 	numa? ( sys-process/numactl[static-libs(+)] )
 	png? ( media-libs/libpng:0=[static-libs(+)] )

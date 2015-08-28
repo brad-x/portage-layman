@@ -8,9 +8,9 @@ inherit eutils
 
 MY_P=${PN}-${PV/./-}
 DESCRIPTION="The GNU Emacs Lisp Reference Manual"
-HOMEPAGE="http://www.gnu.org/software/emacs/manual/"
+HOMEPAGE="https://www.gnu.org/software/emacs/manual/"
 SRC_URI="mirror://gnu/emacs/${MY_P}.tar.gz
-	http://dev.gentoo.org/~ulm/emacs/${P}-patches.tar.gz"
+	https://dev.gentoo.org/~ulm/emacs/${P}-patches.tar.gz"
 
 LICENSE="FDL-1.1+"
 SLOT="21"

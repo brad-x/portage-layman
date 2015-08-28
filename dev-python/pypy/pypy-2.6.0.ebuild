@@ -12,7 +12,7 @@ CPY_PATCHSET_VERSION="2.7.10-0"
 DESCRIPTION="A fast, compliant alternative implementation of the Python language"
 HOMEPAGE="http://pypy.org/"
 SRC_URI="https://bitbucket.org/pypy/pypy/downloads/${P}-src.tar.bz2
-	http://dev.gentoo.org/~floppym/python/python-gentoo-patches-${CPY_PATCHSET_VERSION}.tar.xz"
+	https://dev.gentoo.org/~floppym/python/python-gentoo-patches-${CPY_PATCHSET_VERSION}.tar.xz"
 
 LICENSE="MIT"
 SLOT="0/$(get_version_component_range 1-2 ${PV})"
@@ -26,7 +26,7 @@ RDEPEND=">=sys-libs/zlib-1.1.3:0=
 	dev-libs/openssl:0=[-bindist]
 	bzip2? ( app-arch/bzip2:0= )
 	gdbm? ( sys-libs/gdbm:0= )
-	ncurses? ( sys-libs/ncurses:5= )
+	ncurses? ( sys-libs/ncurses:0= )
 	sqlite? ( dev-db/sqlite:3= )
 	tk? (
 		dev-lang/tk:0=
@@ -42,42 +42,46 @@ PDEPEND="app-admin/python-updater"
 S="${WORKDIR}/${P}-src"
 
 pkg_pretend() {
-	if use low-memory; then
-		if ! python_is_installed pypy; then
-			eerror "USE=low-memory requires a (possibly old) version of dev-python/pypy"
-			eerror "or dev-python/pypy-bin being installed. Please install it using e.g.:"
-			eerror
-			eerror "  $ emerge -1v dev-python/pypy-bin"
-			eerror
-			eerror "before attempting to build dev-python/pypy[low-memory]."
-			die "dev-python/pypy-bin (or dev-python/pypy) needs to be installed for USE=low-memory"
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		if use low-memory; then
+			if ! python_is_installed pypy; then
+				eerror "USE=low-memory requires a (possibly old) version of dev-python/pypy"
+				eerror "or dev-python/pypy-bin being installed. Please install it using e.g.:"
+				eerror
+				eerror "  $ emerge -1v dev-python/pypy-bin"
+				eerror
+				eerror "before attempting to build dev-python/pypy[low-memory]."
+				die "dev-python/pypy-bin (or dev-python/pypy) needs to be installed for USE=low-memory"
+			fi
+
+			CHECKREQS_MEMORY="1750M"
+			use amd64 && CHECKREQS_MEMORY="3500M"
+		else
+			CHECKREQS_MEMORY="3G"
+			use amd64 && CHECKREQS_MEMORY="6G"
 		fi
 
-		CHECKREQS_MEMORY="1750M"
-		use amd64 && CHECKREQS_MEMORY="3500M"
-	else
-		CHECKREQS_MEMORY="3G"
-		use amd64 && CHECKREQS_MEMORY="6G"
+		check-reqs_pkg_pretend
 	fi
-
-	check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	pkg_pretend
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		pkg_pretend
 
-	if python_is_installed pypy; then
-		if [[ ! ${EPYTHON} || ${EPYTHON} == pypy ]] || use low-memory; then
-			einfo "Using already-installed PyPy to perform the translation."
-			local EPYTHON=pypy
-		else
-			einfo "Using ${EPYTHON} to perform the translation. Please note that upstream"
-			einfo "recommends using PyPy for that. If you wish to do so, please unset"
-			einfo "the EPYTHON variable."
+		if python_is_installed pypy; then
+			if [[ ! ${EPYTHON} || ${EPYTHON} == pypy ]] || use low-memory; then
+				einfo "Using already-installed PyPy to perform the translation."
+				local EPYTHON=pypy
+			else
+				einfo "Using ${EPYTHON} to perform the translation. Please note that upstream"
+				einfo "recommends using PyPy for that. If you wish to do so, please unset"
+				einfo "the EPYTHON variable."
+			fi
 		fi
-	fi
 
-	python-any-r1_pkg_setup
+		python-any-r1_pkg_setup
+	fi
 }
 
 src_prepare() {

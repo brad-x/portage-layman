@@ -57,9 +57,9 @@ HOMEPAGE="http://www.scala-lang.org/"
 SRC_URI="!binary?
 (	https://github.com/scala/scala/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	${JURI[@]}
-	http://dev.gentoo.org/~gienah/snapshots/${P}-maven-deps.tar.gz
+	https://dev.gentoo.org/~gienah/snapshots/${P}-maven-deps.tar.gz
 )
-binary? ( http://dev.gentoo.org/~gienah/files/dist/${P}-gentoo-binary.tar.bz2 )"
+binary? ( https://dev.gentoo.org/~gienah/files/dist/${P}-gentoo-binary.tar.bz2 )"
 
 LICENSE="BSD"
 SLOT="${SV}/${PV}"
@@ -73,16 +73,14 @@ COMMON_DEP="dev-java/ant-core:0
 DEPEND="${COMMON_DEP}
 	java-virtuals/jdk-with-com-sun:0
 	!binary? (
-		>=virtual/jdk-1.6.0
-		<virtual/jdk-1.9.0
+		|| ( =virtual/jdk-1.6* =virtual/jdk-1.7* =virtual/jdk-1.8* )
 		dev-java/ant-core:0
 		dev-java/ant-contrib:0
 		dev-java/ant-nodeps:0
 		media-gfx/graphviz
 	)
 	binary? (
-		>=virtual/jdk-1.7.0
-		<virtual/jdk-1.9.0
+		|| ( =virtual/jdk-1.7* =virtual/jdk-1.8* )
 	)
 	app-arch/xz-utils:0"
 
@@ -136,7 +134,7 @@ java_prepare() {
 		epatch "${FILESDIR}/${P}-no-git.patch"
 		# Note: to bump scala, some things to try are:
 		# 1. update all the sha1s in JURI
-		# 2. remove the http://dev.gentoo.org/~gienah/snapshots/${P}-maven-deps.tar.gz from SRC_URI
+		# 2. remove the https://dev.gentoo.org/~gienah/snapshots/${P}-maven-deps.tar.gz from SRC_URI
 		# 3. try emerge scala.  Check if it downloads more stuff in src_compile to ${WORKDIR}/.m2
 		# or /var/tmp/portage/.m2 or /root/.m2
 		# 4. tar up all the .m2 junk into ${P}-maven-deps.tar.gz and add it to SRC_URI.

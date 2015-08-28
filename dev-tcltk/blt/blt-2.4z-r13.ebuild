@@ -13,13 +13,13 @@ HOMEPAGE="
 	http://blt.sourceforge.net/
 	http://jos.decoster.googlepages.com/bltfortk8.5.2"
 SRC_URI="
-	http://dev.gentoo.org/~jlec/distfiles/${PN}${PV}${MY_V_SUFFIX}.tar.gz
+	https://dev.gentoo.org/~jlec/distfiles/${PN}${PV}${MY_V_SUFFIX}.tar.gz
 	http://jos.decoster.googlepages.com/${PN}${PV}${MY_V_SUFFIX}.tar.gz"
 
 IUSE="jpeg static-libs X"
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="alpha amd64 ~arm ~hppa ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 
 DEPEND="
 	dev-lang/tk:0=

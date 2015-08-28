@@ -7,7 +7,7 @@ EAPI=5
 #if LIVE
 AUTOTOOLS_AUTORECONF=yes
 EGIT_REPO_URI="git://github.com/leafnode/${PN}.git
-	http://github.com/leafnode/${PN}.git"
+	https://github.com/leafnode/${PN}.git"
 
 inherit git-r3
 #endif
@@ -39,7 +39,7 @@ RDEPEND="dev-libs/glib:2=
 	xmpp? ( dev-libs/expat:0= )
 	zlib? ( sys-libs/zlib:0= )
 
-	ncurses? ( sys-libs/ncurses:5=[unicode=]
+	ncurses? ( sys-libs/ncurses:0=[unicode=]
 		gpm? ( sys-libs/gpm:0= )
 		spell? ( app-text/aspell:0= ) )
 	sqlite? ( dev-db/sqlite:3= )"

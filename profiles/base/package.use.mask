@@ -5,6 +5,20 @@
 # This file requires >=portage-2.1.1
 # New entries go on top.
 
+# Johannes Huber <johu@gentoo.org> (28 Aug 2015)
+# Dependency not in tree yet
+kde-apps/kaccounts-integration kdepim
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (27 Aug 2015)
+# PDF generation fails due to missing dependencies and the general brokenness
+# of gtkdoc-pkpdf, bug #552356
+=net-libs/gnutls-2.12.23-r6 doc
+=net-libs/gnutls-3.3.15 doc
+
+# Michael Palimaka <kensington@gentoo.org> (27 Aug 2015)
+# Unreleased dependencies
+kde-apps/dolphin thumbnail
+
 # James Le Cuirot <chewi@gentoo.org> (18 Aug 2015)
 # gcc[awt] is only used by gcj-jdk[awt] and that isn't needed by
 # anything in the tree. The toolchain folks aren't keen to support it
@@ -299,10 +313,6 @@ sys-infiniband/ofed ofed_drivers_ehca
 # leading to build failures. This is becoming more and more painful...
 >=kde-apps/marble-4.12.49.9999 python
 
-# Lars Wendler <polynomial-c@gentoo.org> (12 Apr 2014)
-# Required ffmpeg version still is masked (#507474)
->=media-libs/xine-lib-1.2.5 avformat
-
 # Julian Ospald <hasufell@gentoo.org> (06 Apr 2014)
 # broken wrt #501582
 <net-misc/openvpn-9999 polarssl
@@ -330,12 +340,6 @@ dev-vcs/git mediawiki
 # Sergey Popov <pinkbyte@gentoo.org> (27 Dec 2013)
 # Mask because Boost.Context library does not work on most of arches
 dev-libs/boost context
-
-# Lars Wendler <polynomial-c@gentoo.org> (26 Dec 2013)
-# Masked until upstream has fixed support with >=polarssl-1.3.0
-# (see upstream bug https://github.com/fatbob313/umurmur/issues/24)
-# and affected versions are removed from the tree.
-<media-sound/umurmur-0.2.14 polarssl
 
 # Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2013)
 # Gstreamer support fails to build due to libtool shortcomings when using
@@ -406,7 +410,7 @@ sys-apps/hwloc cuda gl opencl
 # Samuli Suominen <ssuominen@gentoo.org> (07 Aug 2013)
 # There is no support for recent app-pda/libimobiledevice wrt bug #471920
 # Upstream removed entire support in future release:
-# http://code.google.com/p/clementine-player/source/detail?r=3d434f1c881890dd77fea6d0e3de3afc86971196
+# https://code.google.com/p/clementine-player/source/detail?r=3d434f1c881890dd77fea6d0e3de3afc86971196
 # Remove this entry once <=media-sound/clementine-1.1.1 has left the building
 media-sound/clementine ios
 <media-sound/clementine-1.2.0 ipod
@@ -502,7 +506,7 @@ gnome-extra/zeitgeist-datasources chromium tomboy
 
 # Alexandre Rostovtsev <tetromino@gentoo.org> (27 Dec 2012)
 # Incompatible with evolution-data-server-3.6, blocks upgrade to gnome-3.6
-# See bug #436460 and http://git.gnome.org/browse/tracker/log/?h=evo-new-api
+# See bug #436460 and https://git.gnome.org/browse/tracker/log/?h=evo-new-api
 app-misc/tracker eds
 
 # Christoph Jungans <ottxor@gentoo.org> (26 Dec 2012)
@@ -640,8 +644,9 @@ sys-devel/gcc libssp
 media-video/transcode nuv pic
 
 # Davide Pesavento <pesa@gentoo.org> (30 Nov 2011)
-# JavaScriptCore JIT is supported only on amd64/arm/x86, so
-# mask USE="jit" here and unmask it in the relevant arch profiles.
+# The QML (V4) and JSC JITs are supported only on amd64/arm/x86, so
+# mask the flag here and unmask it in the appropriate arch profiles.
+dev-qt/qtdeclarative jit
 dev-qt/qtscript jit
 dev-qt/qtwebkit jit
 
@@ -661,7 +666,7 @@ gnome-base/gvfs bluray
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (12 Oct 2011)
 # Upstream support before 27.x not ready:
-# http://code.google.com/p/chromium/issues/detail?id=32757
+# https://code.google.com/p/chromium/issues/detail?id=32757
 <www-client/chromium-27.0.1448.0 pulseaudio
 
 # Nirbheek Chauhan <nirbheek@gentoo.org> (17 Sep 2011)
@@ -694,10 +699,6 @@ net-dns/pdnsd isdn urandom
 # Justin Lecher <jlec@gentoo.org> (17 Nov 2010)
 # Upstream didn't release patches for aria yet
 >=sci-chemistry/cns-1.3 aria
-
-# Tomáš Chvátal <scarabeus@gentoo.org> (8 Sep 2010)
-# drm don't even build here so mask everywhere expect live.
-<x11-libs/cairo-9999 drm
 
 # Alex Legler <a3li@gentoo.org> (1 Sep 2010)
 # This feature is marked as experimental by upstream.

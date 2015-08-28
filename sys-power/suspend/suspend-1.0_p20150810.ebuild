@@ -10,8 +10,8 @@ BASE_PV="1.0_p20120915"
 
 DESCRIPTION="Userspace Software Suspend and S2Ram"
 HOMEPAGE="http://suspend.sourceforge.net/"
-SRC_URI="http://dev.gentoo.org/~bircoph/distfiles/${PN}-${BASE_PV}.tar.xz
-	http://dev.gentoo.org/~bircoph/patches/${P}.patch.xz"
+SRC_URI="https://dev.gentoo.org/~bircoph/distfiles/${PN}-${BASE_PV}.tar.xz
+	https://dev.gentoo.org/~bircoph/patches/${P}.patch.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -54,5 +54,5 @@ src_install() {
 
 pkg_postinst() {
 	elog "In order to make this package work with genkernel see:"
-	elog "http://bugs.gentoo.org/show_bug.cgi?id=156445"
+	elog "https://bugs.gentoo.org/show_bug.cgi?id=156445"
 }

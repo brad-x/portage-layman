@@ -8,8 +8,8 @@ PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1
 
 DESCRIPTION="metadata.xml generator for ebuilds"
-HOMEPAGE="http://cgit.gentoo.org/proj/metagen.git"
-SRC_URI="http://dev.gentoo.org/~neurogeek/metagen_releases/${P}.tar.gz"
+HOMEPAGE="https://cgit.gentoo.org/proj/metagen.git"
+SRC_URI="https://dev.gentoo.org/~neurogeek/metagen_releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

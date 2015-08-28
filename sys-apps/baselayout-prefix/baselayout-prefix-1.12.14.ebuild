@@ -10,8 +10,8 @@ inherit eutils toolchain-funcs multilib prefix flag-o-matic user
 PVER=1709
 
 DESCRIPTION="Baselayout for Gentoo Prefix installs"
-HOMEPAGE="http://prefix.gentoo.org/"
-SRC_URI="http://dev.gentoo.org/~grobian/distfiles/${P}.${PVER}.tar.bz2"
+HOMEPAGE="https://prefix.gentoo.org/"
+SRC_URI="https://dev.gentoo.org/~grobian/distfiles/${P}.${PVER}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
