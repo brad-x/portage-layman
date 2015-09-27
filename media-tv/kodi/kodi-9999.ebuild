@@ -9,7 +9,7 @@ EAPI="5"
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite"
 
-inherit eutils linux-info python-single-r1 multiprocessing autotools
+inherit eutils linux-info python-single-r1 multiprocessing autotools toolchain-funcs
 
 CODENAME="Isengard"
 case ${PV} in
@@ -68,7 +68,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	media-libs/jasper
 	media-libs/jbigkit
 	>=media-libs/libass-0.9.7
-	bluray? ( media-libs/libbluray )
+	bluray? ( >=media-libs/libbluray-0.7.0 )
 	css? ( media-libs/libdvdcss )
 	media-libs/libmad
 	media-libs/libmodplug
@@ -125,7 +125,9 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	app-arch/xz-utils
 	dev-lang/swig
+	dev-libs/crossguid
 	dev-util/gperf
+	texturepacker? ( media-libs/giflib )
 	X? ( x11-proto/xineramaproto )
 	dev-util/cmake
 	x86? ( dev-lang/nasm )
@@ -170,7 +172,9 @@ src_prepare() {
 	multijob_finish
 	elibtoolize
 
-	[[ ${PV} == "9999" ]] && emake -f codegenerator.mk
+	if [[ ${PV} == "9999" ]] || use java ; then #558798
+		tc-env_build emake -f codegenerator.mk
+	fi
 
 	# Disable internal func checks as our USE/DEPEND
 	# stuff handles this just fine already #408395

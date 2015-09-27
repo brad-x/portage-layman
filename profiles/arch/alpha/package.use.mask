@@ -2,6 +2,29 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
+# Tobias Klausmann <klausman@gentoo.org> (19 Sep 2015)
+# app-portage/g-sorcery pulls in pymongo and a whole host of deps that don't
+# work on alpha. Mask USE flag for layman accordingly
+app-portage/layman -g-sorcery
+
+# Brian Evans <grknight@gentoo.org> (17 Sep 2015)
+# Mask new USE flags for percona-server which are not available on alpha
+dev-db/percona-server tokudb tokudb-backup-plugin
+
+# Tobias Klausmann <klausman@gentoo.org> (16 Sep 2015)
+# Mask USE=sssd for sudo because sys-auth/sssd is relatively big and doesn't
+# compile on alpha. The version specified does not have the USE flag, but that
+# version of sudo has the optional functionality.
+>=app-admin/sudo-1.8.6 sssd
+
+# Brian Evans <grknight@gentoo.org> (14 Sep 2015)
+# Mask new USE flags for mariadb which all arches do not yet have dependencies
+>=dev-db/mariadb-10.1.0 innodb-snappy
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (10 Sep 2015)
+# Requires wifi USE flag, which is masked for this arch
+net-misc/networkmanager wext
+
 # Tobias Klausmann <klausman@gentoo.org> (10 Aug 2015)
 # Opting out of the net-misc/ofono dep tree until we have a user request
 >=media-sound/pulseaudio-6.0 ofono-headset
@@ -21,16 +44,8 @@ dev-python/wsgiproxy2 test
 dev-python/urllib3 test
 
 # Gilles Dartiguelongue <eva@gentoo.org> (09 Jun 2015)
-# net-fs/libnfs lacks alpha keyword, bug #551576
-gnome-base/gvfs nfs
-
-# Gilles Dartiguelongue <eva@gentoo.org> (09 Jun 2015)
 # dev-lang/luajit and dev-lua/lgi and lack alpha keyword, bug #551540
 dev-libs/libpeas lua jit
-
-# Ben de Groot <yngwin@gentoo.org> (03 May 2015)
-# media-libs/rubberband lacks alpha keyword, bug #548446
-media-video/mpv rubberband
 
 # Mike Frysinger <vapier@gentoo.org> (16 Mar 2015)
 # Needs sci-physics/bullet tested #499974

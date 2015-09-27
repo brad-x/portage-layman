@@ -15,7 +15,7 @@ HOMEPAGE="https://wiki.gnome.org/Projects/Folks"
 
 LICENSE="LGPL-2.1+"
 SLOT="0/25" # subslot = libfolks soname version
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-linux"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-linux"
 
 # TODO: --enable-profiling
 # Vala isn't really optional, https://bugzilla.gnome.org/show_bug.cgi?id=701099
@@ -28,8 +28,8 @@ COMMON_DEPEND="
 	dev-libs/dbus-glib
 	>=dev-libs/libgee-0.10:0.8[introspection]
 	dev-libs/libxml2
-	sys-libs/ncurses:=
-	sys-libs/readline:=
+	sys-libs/ncurses:0=
+	sys-libs/readline:0=
 
 	bluetooth? ( >=net-wireless/bluez-5 )
 	eds? ( >=gnome-extra/evolution-data-server-3.13.90:=[vala] )

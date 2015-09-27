@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+
 	cabal_chdeps \
 		'glib >= 0.12.5.0 && < 0.13' 'glib >= 0.12.5.0 && < 0.14' \
 		'gtk >= 0.12.5.0 && < 0.13' 'gtk >= 0.12.5.0 && < 0.14'

@@ -13,7 +13,7 @@ HOMEPAGE="https://git.gnome.org/browse/mutter/"
 LICENSE="GPL-2+"
 SLOT="0"
 IUSE="+introspection +kms test wayland"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
 
 # libXi-1.7.4 or newer needed per:
 # https://bugzilla.gnome.org/show_bug.cgi?id=738944
@@ -60,7 +60,7 @@ COMMON_DEPEND="
 		virtual/libgudev
 		x11-libs/libdrm:= )
 	wayland? (
-		>=dev-libs/wayland-1.5.90
+		>=dev-libs/wayland-1.6.90
 		>=media-libs/clutter-1.20[wayland]
 		x11-base/xorg-server[wayland] )
 "

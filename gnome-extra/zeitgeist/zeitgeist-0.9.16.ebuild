@@ -19,7 +19,7 @@ SRC_URI="https://launchpad.net/zeitgeist/${DIR_PV}/${PV}/+download/${P}.tar.xz
 
 LICENSE="LGPL-2+ LGPL-3+ GPL-2+"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
 IUSE="+datahub downloads-monitor extensions +fts icu introspection nls plugins sql-debug telepathy"
 
 REQUIRED_USE="
@@ -28,7 +28,6 @@ REQUIRED_USE="
 
 RDEPEND="
 	${PYTHON_DEPS}
-	!gnome-extra/zeitgeist-datahub
 	dev-libs/json-glib
 	dev-python/dbus-python[${PYTHON_USEDEP}]
 	dev-python/pygobject:2[${PYTHON_USEDEP}]

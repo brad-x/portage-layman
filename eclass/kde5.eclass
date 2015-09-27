@@ -33,7 +33,7 @@ EXPORT_FUNCTIONS pkg_pretend pkg_setup src_unpack src_prepare src_configure src_
 # @ECLASS-VARIABLE: QT_MINIMAL
 # @DESCRIPTION:
 # Minimal Qt version to require for the package.
-: ${QT_MINIMAL:=5.4.1}
+: ${QT_MINIMAL:=5.4.2}
 
 # @ECLASS-VARIABLE: KDE_AUTODEPS
 # @DESCRIPTION:
@@ -107,9 +107,9 @@ fi
 : ${KDE_SELINUX_MODULE:=none}
 
 if [[ ${KDEBASE} = kdevelop ]]; then
-	HOMEPAGE="http://www.kdevelop.org/"
+	HOMEPAGE="https://www.kdevelop.org/"
 else
-	HOMEPAGE="http://www.kde.org/"
+	HOMEPAGE="https://www.kde.org/"
 fi
 
 LICENSE="GPL-2"
@@ -139,9 +139,10 @@ case ${KDE_AUTODEPS} in
 		RDEPEND+=" >=kde-frameworks/kf-env-3"
 		COMMONDEPEND+="	>=dev-qt/qtcore-${QT_MINIMAL}:5"
 
-		if [[ ${CATEGORY} = kde-plasma && ${PN} != polkit-kde-agent ]]; then
+		if [[ ${CATEGORY} = kde-frameworks || ${CATEGORY} = kde-plasma && ${PN} != polkit-kde-agent ]]; then
 			RDEPEND+="
 				!kde-apps/kde4-l10n[-minimal(-)]
+				!<kde-apps/kde4-l10n-15.08.0-r1
 			"
 		fi
 
@@ -339,7 +340,9 @@ debug-print "${LINENO} ${ECLASS} ${FUNCNAME}: SRC_URI is ${SRC_URI}"
 # Do some basic settings
 kde5_pkg_pretend() {
 	debug-print-function ${FUNCNAME} "$@"
-	_check_gcc_version
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		_check_gcc_version
+	fi
 }
 
 # @FUNCTION: kde5_pkg_setup
@@ -347,7 +350,9 @@ kde5_pkg_pretend() {
 # Do some basic settings
 kde5_pkg_setup() {
 	debug-print-function ${FUNCNAME} "$@"
-	_check_gcc_version
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		_check_gcc_version
+	fi
 }
 
 # @FUNCTION: kde5_src_unpack
@@ -404,7 +409,7 @@ kde5_src_prepare() {
 			popd > /dev/null
 		fi
 
-		if [[ ${KDE_HANDBOOK} = true && -d ${KDE_DOC_DIR} ]] ; then
+		if [[ ${KDE_HANDBOOK} = true && -d ${KDE_DOC_DIR} && ${CATEGORY} != kde-apps ]] ; then
 			pushd ${KDE_DOC_DIR} > /dev/null
 			for lang in *; do
 				if ! has ${lang} ${LINGUAS} ; then

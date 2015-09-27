@@ -30,7 +30,7 @@ COMMON_DEPEND="
 			dev-lang/perl:*
 			${PYTHON_DEPS}
 		)
-		xml? ( dev-libs/libxml2:2= )
+		xml? ( dev-libs/libxml2:2=[${MULTILIB_USEDEP}] )
 	)
 	gold? ( >=sys-devel/binutils-2.22:*[cxx] )
 	libedit? ( dev-libs/libedit:0=[${MULTILIB_USEDEP}] )
@@ -155,6 +155,8 @@ src_unpack() {
 src_prepare() {
 	# Make ocaml warnings non-fatal, bug #537308
 	sed -e "/RUN/s/-warn-error A//" -i test/Bindings/OCaml/*ml  || die
+	# Fix libdir for ocaml bindings install, bug #559134
+	epatch "${FILESDIR}"/cmake/${PN}-3.7.0-ocaml-multilib.patch
 
 	# Make it possible to override Sphinx HTML install dirs
 	# https://llvm.org/bugs/show_bug.cgi?id=23780
@@ -190,8 +192,10 @@ src_prepare() {
 		# https://llvm.org/bugs/show_bug.cgi?id=23793
 		epatch "${FILESDIR}"/cmake/clang-0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch
 
-		# Workaround bug #553416 until upstream fixes it
-		epatch "${FILESDIR}"/clang-3.7-strip_doc_refs.patch
+		# Fix WX sections, bug #421527
+		find "${S}"/projects/compiler-rt/lib/builtins -type f -name \*.S -exec sed \
+			 -e '$a\\n#if defined(__linux__) && defined(__ELF__)\n.section .note.GNU-stack,"",%progbits\n#endif' \
+			 -i {} \; || die
 	fi
 
 	if use lldb; then
@@ -278,6 +282,8 @@ multilib_src_configure() {
 			-DLLVM_ENABLE_SPHINX=$(usex doc)
 			-DLLVM_ENABLE_DOXYGEN=OFF
 			-DLLVM_INSTALL_HTML="${EPREFIX}/usr/share/doc/${PF}/html"
+			-DSPHINX_WARNINGS_AS_ERRORS=OFF
+			-DLLVM_INSTALL_UTILS=ON
 		)
 
 		if use clang; then
@@ -491,5 +497,12 @@ multilib_src_install_all() {
 		}
 		python_foreach_impl python_inst
 		popd >/dev/null || die
+	fi
+}
+
+pkg_postinst() {
+	if use clang; then
+		elog "To enable OpenMP support in clang, install sys-libs/libomp"
+		elog "and use the '-fopenmp=libomp' command line option"
 	fi
 }

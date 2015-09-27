@@ -19,6 +19,11 @@ app-portage/diffmask python_targets_pypy python_targets_pypy3
 # Please see: https://wiki.gentoo.org/wiki/SELinux/FAQ#Can_I_use_SELinux_with_SystemD.3F
 app-emulation/libvirt firewalld
 gnome-base/gdm systemd wayland
+net-firewall/fwknop firewalld
 sys-kernel/dracut dracut_modules_systemd
 www-servers/uwsgi uwsgi_plugins_systemd_logger
 x11-wm/mutter kms
+
+# Alex Brandt <alunduil@gentoo.org> (6 Sep 2015)
+# app-emulation/rkt[rkt_stage1_src] requires systemd which isn't available with selinux.
+app-emulation/rkt rkt_stage1_src

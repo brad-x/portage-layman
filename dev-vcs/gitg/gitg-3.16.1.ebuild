@@ -14,7 +14,7 @@ HOMEPAGE="https://wiki.gnome.org/Apps/Gitg"
 
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="debug glade +python"
 
 REQUIRED_USE="python? ( ^^ ( $(python_gen_useflags '*') ) )"
@@ -28,8 +28,9 @@ RDEPEND="
 	>=app-text/gtkspell-3.0.3:3
 	>=dev-libs/glib-2.38:2
 	>=dev-libs/gobject-introspection-0.10.1
-	dev-libs/libgit2[threads]
+	dev-libs/libgit2:0/22[threads]
 	>=dev-libs/libgit2-glib-0.22.0[ssh]
+	<dev-libs/libgit2-glib-0.23.0
 	>=dev-libs/libpeas-1.5.0[gtk]
 	>=gnome-base/gsettings-desktop-schemas-0.1.1
 	>=net-libs/webkit-gtk-2.2:4[introspection]
@@ -62,6 +63,10 @@ src_prepare() {
 		-e '/CFLAGS/s:-g::g' \
 		-e '/CFLAGS/s:-O0::g' \
 		-i configure.ac || die
+
+	sed \
+		-e 's/name="WebKit2" version="3.0"/name="WebKit2" version="4.0"/' \
+		-i Gitg-1.0.gir || die
 
 	gnome2_src_prepare
 	vala_src_prepare

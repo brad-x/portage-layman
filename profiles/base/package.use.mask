@@ -5,6 +5,62 @@
 # This file requires >=portage-2.1.1
 # New entries go on top.
 
+# Nathan Phillip Brink <binki@gentoo.org> (26 Sep 2015)
+# git useflag requires dev-libs/libgit2 which few arches support
+dev-util/geany-plugins git
+
+# Pawel Hajdan jr <phajdan.jr@gentoo.org> (25 Sep 2015)
+# Upstream gtk3 support is experimental:
+# https://code.google.com/p/chromium/issues/detail?id=132847
+www-client/chromium gtk3
+
+# Justin Lecher <jlec@gentoo.org> (22 Sep 2015)
+# Downloads files during installation
+# https://bugs.gentoo.org/show_bug.cgi?id=533876
+>=sci-libs/vtk-6.1.0 examples
+
+# Brian Evans <grknight@gentoo.org (14 Sep 2015)
+# Mask new USE flags for mariadb which all arches do not yet have dependencies
+>=dev-db/mariadb-10.1.0 mroonga sst-xtrabackup galera
+
+# Fabian Groffen <grobian@gentoo.org> (08 Sep 2015)
+# GnuTLS support is currently broken/causes hang, bug #559834
+# http://dev.mutt.org/trac/ticket/3772
+>=mail-client/mutt-1.5.23-r8 gnutls
+
+# Jason Zaman <perfinion@gentoo.org> (06 Sep 2015)
+# This is for cgmanager which is linux only.
+# Unmasked in default/linux/package.use.mask.
+sys-auth/consolekit cgroups
+
+# Mike Gilbert <floppym@gentoo.org> (05 Sep 2015)
+# sys-boot/gnu-efi is not supported on all archs.
+sys-apps/systemd gnuefi
+
+# Manuel Rüger <mrueg@gentoo.org> (03 Sep 2015)
+# Mask USE=ruby for packages that solely rely on the soon to be deprecated
+# ruby 1.9
+# See bug #547828
+<app-mobilephone/obexftp-0.24 ruby
+# See bug #541648
+<dev-libs/Ice-3.6 ruby
+# See bug #547768
+<net-irc/epic5-1.1.10-r1 ruby
+# See bug #547832
+sci-libs/gdal ruby
+# See bug #547834
+<sys-apps/paludis-2.4.0 ruby
+# See bug #480574
+media-libs/mlt ruby
+
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (02 Sep 2015)
+# x11-drivers/xf86-video-amdgpu is not keyworded on most arches
+x11-base/xorg-drivers video_cards_amdgpu
+
+# Andreas K. Huettel <dilfridge@gentoo.org> (1 Sep 2015)
+# Currently broken upstream. We still hope it will get fixed.
+app-office/libreoffice telepathy
+
 # Johannes Huber <johu@gentoo.org> (28 Aug 2015)
 # Dependency not in tree yet
 kde-apps/kaccounts-integration kdepim
@@ -17,7 +73,7 @@ kde-apps/kaccounts-integration kdepim
 
 # Michael Palimaka <kensington@gentoo.org> (27 Aug 2015)
 # Unreleased dependencies
-kde-apps/dolphin thumbnail
+kde-apps/dolphin:5 thumbnail
 
 # James Le Cuirot <chewi@gentoo.org> (18 Aug 2015)
 # gcc[awt] is only used by gcj-jdk[awt] and that isn't needed by
@@ -422,7 +478,8 @@ media-sound/clementine ios
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (13 Jul 2013)
 # GL/GLES support in cairo is mutually exclusive, bug #428770.
 x11-libs/cairo gles2
-dev-libs/weston gles2 rpi
+dev-libs/weston rpi
+<dev-libs/weston-1.9.0 gles2
 
 # Alexis Ballier <aballier@gentoo.org> (03 Jul 2013)
 # The idea behind using libunwind there is to avoid needing to link to libgcc_s

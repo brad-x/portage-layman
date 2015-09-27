@@ -11,7 +11,7 @@ HOMEPAGE="http://mirbsd.de/mksh"
 SRC_URI="http://www.mirbsd.org/MirOS/dist/mir/mksh/${PN}-R${PV}.tgz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 IUSE="static"
 DEPEND="static? ( dev-libs/klibc )"
 RDEPEND=""
@@ -27,7 +27,7 @@ src_compile() {
 	fi
 	export CPPFLAGS="${CPPFLAGS} -DMKSH_DEFAULT_PROFILEDIR=\\\"${EPREFIX}/etc\\\""
 	# we can't assume lto existing/enabled, so we add a fallback
-	sh Build.sh -r -c lto || sh Rebuild.sh || die
+	sh Build.sh -r -c lto || sh Build.sh -r || die
 }
 
 src_install() {

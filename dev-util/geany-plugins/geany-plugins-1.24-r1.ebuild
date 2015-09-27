@@ -14,12 +14,13 @@ SRC_URI="http://plugins.geany.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ia64 ppc ~ppc64 sparc x86"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sparc x86"
 IUSE="+autoclose +commander debugger +defineformat devhelp enchant gpg gtkspell lua markdown multiterm nls python scope soup webkit"
 
 LINGUAS="be ca da de es fr gl ja pt pt_BR ru tr zh_CN"
 
 COMMON_DEPEND=">=dev-util/geany-$(get_version_component_range 1-2)
+	<dev-util/geany-1.25
 	autoclose? ( x11-libs/gtk+:2 )
 	commander? ( x11-libs/gtk+:2 )
 	defineformat? ( x11-libs/gtk+:2 )
@@ -36,7 +37,7 @@ COMMON_DEPEND=">=dev-util/geany-$(get_version_component_range 1-2)
 	enchant? ( app-text/enchant )
 	gpg? ( app-crypt/gpgme )
 	gtkspell? ( app-text/gtkspell:2 )
-	lua? ( dev-lang/lua )
+	lua? ( dev-lang/lua:* )
 	markdown? (
 		app-text/discount
 		net-libs/webkit-gtk:2

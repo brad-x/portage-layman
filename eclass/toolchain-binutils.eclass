@@ -56,7 +56,7 @@ fi
 is_cross() { [[ ${CHOST} != ${CTARGET} ]] ; }
 
 DESCRIPTION="Tools necessary to build programs"
-HOMEPAGE="http://sourceware.org/binutils/"
+HOMEPAGE="https://sourceware.org/binutils/"
 
 case ${BTYPE} in
 	git) SRC_URI="" ;;
@@ -76,7 +76,7 @@ add_src_uri() {
 	else
 		a+=".bz2"
 	fi
-	set -- mirror://gentoo http://dev.gentoo.org/~vapier/dist
+	set -- mirror://gentoo https://dev.gentoo.org/~vapier/dist
 	SRC_URI="${SRC_URI} ${@/%//${a}}"
 }
 add_src_uri binutils-${BVER}-patches-${PATCHVER}.tar ${PATCHVER}
@@ -210,7 +210,7 @@ _eprefix_init() {
 
 # Intended for ebuilds to override to set their own versioning information.
 toolchain-binutils_bugurl() {
-	printf "http://bugs.gentoo.org/"
+	printf "https://bugs.gentoo.org/"
 }
 toolchain-binutils_pkgversion() {
 	printf "Gentoo ${BVER}"

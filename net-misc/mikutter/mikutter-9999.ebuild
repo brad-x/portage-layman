@@ -4,7 +4,7 @@
 
 EAPI=5
 
-USE_RUBY="ruby20"
+USE_RUBY="ruby20 ruby21"
 
 inherit eutils ruby-ng
 
@@ -55,17 +55,24 @@ all_ruby_unpack() {
 }
 
 each_ruby_install() {
+	local rubyversion
+
+	if use ruby_targets_ruby22; then
+		rubyversion=ruby22
+	elif use ruby_targets_ruby21; then
+		rubyversion=ruby21
+	elif use ruby_targets_ruby20; then
+		rubyversion=ruby20
+	else
+		die "Select Ruby verion 2.x"
+	fi
+
 	exeinto /usr/share/mikutter
 	doexe mikutter.rb
 	insinto /usr/share/mikutter
 	doins -r core plugin
-	#if use ruby_targets_ruby21; then
-	#	sed -e 's/ruby19/ruby21/' "${FILESDIR}"/mikutter
-	if use ruby_targets_ruby20; then
-		sed -e 's/ruby19/ruby20/' "${FILESDIR}"/mikutter
-	else
-		die
-	fi | newbin - mikutter
+	sed -e "s/ruby19/${rubyversion}/" "${FILESDIR}"/mikutter \
+		| newbin - mikutter
 	dodoc README
 	make_desktop_entry mikutter Mikutter \
 		/usr/share/mikutter/core/skin/data/icon.png

@@ -4,7 +4,6 @@
 
 EAPI=5
 
-
 DESCRIPTION="A collection of Polish translations of Linux manual pages"
 HOMEPAGE="http://sourceforge.net/projects/manpages-pl/"
 SRC_URI="mirror://sourceforge/manpages-pl/manpages-pl-${PV}.tar.bz2"
@@ -17,4 +16,12 @@ DOCS=( AUTHORS README )
 
 S="${WORKDIR}/manpages-pl-${PV}"
 
-RDEPEND="virtual/man"
+src_prepare() {
+	epatch_user
+	#mans provided by other packages
+	mans="generated/man1/groups.1 po/man1/groups.1.po"
+
+	for man in ${mans}; do
+		rm ${man} || die
+	done
+}

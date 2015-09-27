@@ -19,19 +19,19 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3 GPL-2 LGPL-2.1 MPL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 RDEPEND="
 	>=dev-lang/R-3.1
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pandas-0.13.1[${PYTHON_USEDEP}]
-	dev-python/ipython[${PYTHON_USEDEP}]
 	virtual/python-singledispatch[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? ( $(python_gen_cond_dep 'dev-python/singledispatch[${PYTHON_USEDEP}]' python2_7 python3_3) )"
+PDEPEND="dev-python/ipython[${PYTHON_USEDEP}]"
 
 # ggplot2 is an optional test dep but not in portage
 S="${WORKDIR}/${MY_P}"

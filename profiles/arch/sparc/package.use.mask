@@ -2,6 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
+# Brian Evans <grknight@gentoo.org> (17 Sep 2015)
+# Mask new USE flags for percona-server which are not available on sparc
+dev-db/percona-server tokudb tokudb-backup-plugin
+
+# Brian Evans <grknight@gentoo.org> (14 Sep 2015)
+# Mask new USE flags for mariadb which all arches do not yet have dependencies
+>=dev-db/mariadb-10.1.0 innodb-snappy
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (10 Sep 2015)
+# Requires wifi USE flag, which is masked for this arch
+net-misc/networkmanager wext
+
 # Bernard Cafarelli <voyageur@gentoo.org> (06 Aug 2015)
 # Dependencies missing keywords, bug #543604
 sys-devel/llvm ocaml
@@ -321,3 +333,7 @@ net-libs/ortp srtp
 # Ultrabug <ultrabug@gentoo.org) (05 Sept 2011)
 # missing keyword for net-libs/zeromq
 app-admin/rsyslog zeromq
+
+# Marius Brehler <marfbre@linux.sungazer.de> (13 Aug 2015)
+# missing keyword
+>=sci-misc/boinc-7.4.42-r1 X

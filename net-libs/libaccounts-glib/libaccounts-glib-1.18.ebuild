@@ -24,5 +24,7 @@ RDEPEND="$DEPEND"
 
 src_configure() {
 	export HAVE_GCOV_FALSE='#'
-	econf $(use_enable debug)
+	econf \
+		$(use_enable debug) \
+		--disable-tests
 }

@@ -82,7 +82,7 @@ fi
 if [[ -n ${WANT_AUTOCONF} ]] ; then
 	case ${WANT_AUTOCONF} in
 		none)       _autoconf_atom="" ;; # some packages don't require autoconf at all
-		2.1)        _autoconf_atom="=sys-devel/autoconf-${WANT_AUTOCONF}*" ;;
+		2.1)        _autoconf_atom="~sys-devel/autoconf-2.13" ;;
 		# if you change the "latest" version here, change also autotools_env_setup
 		latest|2.5) _autoconf_atom=">=sys-devel/autoconf-2.69" ;;
 		*)          die "Invalid WANT_AUTOCONF value '${WANT_AUTOCONF}'" ;;
@@ -475,13 +475,14 @@ autotools_run_tool() {
 
 	autotools_env_setup
 
-	local STDERR_TARGET="${T}/$1.out"
+	# Allow people to pass in full paths. #549268
+	local STDERR_TARGET="${T}/${1##*/}.out"
 	# most of the time, there will only be one run, but if there are
 	# more, make sure we get unique log filenames
 	if [[ -e ${STDERR_TARGET} ]] ; then
 		local i=1
 		while :; do
-			STDERR_TARGET="${T}/$1-${i}.out"
+			STDERR_TARGET="${T}/${1##*/}-${i}.out"
 			[[ -e ${STDERR_TARGET} ]] || break
 			: $(( i++ ))
 		done

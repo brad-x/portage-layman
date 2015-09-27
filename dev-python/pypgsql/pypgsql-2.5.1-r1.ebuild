@@ -3,9 +3,10 @@
 # $Id$
 
 EAPI=5
+
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 flag-o-matic
 
 MY_P="pyPgSQL-${PV}"
 
@@ -15,16 +16,19 @@ SRC_URI="mirror://sourceforge/pypgsql/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~x86"
+KEYWORDS="amd64 ia64 x86"
 IUSE="examples"
 
-DEPEND="dev-db/postgresql"
+DEPEND="dev-db/postgresql:*"
 RDEPEND="${DEPEND}
 	dev-python/egenix-mx-base[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}"
 
-CFLAGS="${CFLAGS} -fno-strict-aliasing"
+python_prepare_all() {
+	append-cflags -fno-strict-aliasing
+	distutils-r1_python_prepare_all
+}
 
 python_install_all() {
 	use examples && local EXAMPLES=( examples/. )

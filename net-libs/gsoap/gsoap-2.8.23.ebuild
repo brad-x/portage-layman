@@ -8,13 +8,13 @@ inherit autotools eutils
 
 MY_P="${PN}-2.8"
 
-DESCRIPTION="A cross-platform open source C and C++ SDK to ease the development of SOAP/XML Web services"
+DESCRIPTION="A cross-platform open source C and C++ SDK for SOAP/XML Web services"
 HOMEPAGE="http://gsoap2.sourceforge.net"
 SRC_URI="mirror://sourceforge/gsoap2/gsoap_${PV}.zip"
 
 LICENSE="GPL-2 gSOAP"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc debug examples ipv6 gnutls +ssl"
 
 DEPEND="app-arch/unzip

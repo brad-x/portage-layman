@@ -4,9 +4,17 @@
 
 # This file requires >=portage-2.1.1
 
-# Michael Palimaka <kensington@gentoo.org> (12 Aug 2015)
-# Unkeyworded dependencies
-kde-frameworks/kauth policykit
+# Nathan Phillip Brink <binki@gentoo.org> (26 Sep 2015)
+# git useflag requires dev-libs/libgit2 which few arches support
+dev-util/geany-plugins -git
+
+# Brian Evans <grknight@gentoo.org (14 Sep 2015)
+# Unmask new USE flags for mariadb on supported arches
+>=dev-db/mariadb-10.1.0 -mroonga -sst-xtrabackup -galera
+
+# Mike Gilbert <floppym@gentoo.org> (05 Sep 2015)
+# sys-boot/gnu-efi is not supported on all archs.
+sys-apps/systemd -gnuefi
 
 # James Le Cuirot <chewi@gentoo.org> (28 Jul 2015)
 # JavaFX and the browser plugin are included on x86 Linux.
@@ -32,10 +40,6 @@ net-im/telepathy-connection-managers -steam
 # Jeroen Roovers <jer@gentoo.org> (31 Jan 2015)
 # >x11-drivers/nvidia-drivers-346 on x86 has no UVM support (bug #534156)
 >x11-drivers/nvidia-drivers-346 uvm
-
-# Pacho Ramos <pacho@gentoo.org> (18 Jan 2015)
-# Missing keywords
-media-plugins/gst-plugins-meta vaapi
 
 # Tim Harder <radhermit@gentoo.org> (11 Oct 2014)
 # Unmask skype support for unstable keywords

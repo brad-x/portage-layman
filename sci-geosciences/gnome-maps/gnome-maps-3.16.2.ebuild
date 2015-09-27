@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.gnome.org/Apps/Maps"
 LICENSE="GPL-2+ LGPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0"
 SLOT="0"
 IUSE=""
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 RDEPEND="
 	>=app-misc/geoclue-0.12.99:2.0
@@ -26,12 +26,12 @@ RDEPEND="
 	media-libs/clutter:1.0[introspection]
 	media-libs/cogl:1.0[introspection]
 	>=media-libs/libchamplain-0.12.10-r1:0.12[gtk,introspection]
+	net-libs/libgfbgraph
 	net-libs/libsoup:2.4[introspection]
 	>=sci-geosciences/geocode-glib-3.15.2[introspection]
 	x11-libs/gdk-pixbuf:2[introspection]
 	>=x11-libs/gtk+-3.15.9:3[introspection]
 "
-
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
 	virtual/pkgconfig

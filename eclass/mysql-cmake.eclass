@@ -195,9 +195,9 @@ configure_cmake_standard() {
 		if ! use extraengine ; then
 			mycmakeargs+=(
 				-DWITHOUT_FEDERATED_STORAGE_ENGINE=1
-				-DPLUGIN_FEDERATED=0
+				-DPLUGIN_FEDERATED=NO
 				-DWITHOUT_FEDERATEDX_STORAGE_ENGINE=1
-				-DPLUGIN_FEDERATEDX=0 )
+				-DPLUGIN_FEDERATEDX=NO )
 		fi
 
 		mycmakeargs+=(
@@ -236,6 +236,10 @@ configure_cmake_standard() {
 					$(cmake-utils_use_with innodb-lzo INNODB_LZO) )
 		fi
 
+		if in_iuse innodb-snappy ; then
+			mycmakeargs+=( $(cmake-utils_use_with innodb-snappy INNODB_SNAPPY)  )
+		fi
+
 		if mysql_version_is_at_least "10.1.2" ; then
 			mycmakeargs+=( $(mysql-cmake_use_plugin cracklib CRACKLIB_PASSWORD_CHECK ) )
 		fi
@@ -245,8 +249,15 @@ configure_cmake_standard() {
 
 	if [[ ${PN} == "percona-server" ]]; then
 		mycmakeargs+=(
-			$(cmake-utils_use_with pam)
+			$(cmake-utils_use_with pam PAM)
 		)
+		if in_iuse tokudb ; then
+			# TokuDB Backup plugin requires valgrind unconditionally
+			mycmakeargs+=(
+				$(mysql-cmake_use_plugin tokudb TOKUDB)
+				$(usex tokudb-backup-plugin "" -DTOKUDB_BACKUP_DISABLED=1)
+			)
+		fi
 	fi
 
 	if [[ ${PN} == "mysql-cluster" ]]; then
@@ -302,9 +313,20 @@ mysql-cmake_src_prepare() {
 
 	if in_iuse tokudb ; then
 		# Don't build bundled xz-utils
-		rm -f "${S}/storage/tokudb/ft-index/cmake_modules/TokuThirdParty.cmake"
-		touch "${S}/storage/tokudb/ft-index/cmake_modules/TokuThirdParty.cmake"
-		sed -i 's/ build_lzma//' "${S}/storage/tokudb/ft-index/ft/CMakeLists.txt" || die
+		if [[ -d "${S}/storage/tokudb/ft-index" ]] ; then
+			rm -f "${S}/storage/tokudb/ft-index/cmake_modules/TokuThirdParty.cmake" || die
+			touch "${S}/storage/tokudb/ft-index/cmake_modules/TokuThirdParty.cmake" || die
+			sed -i 's/ build_lzma//' "${S}/storage/tokudb/ft-index/ft/CMakeLists.txt" || die
+		elif [[ -d "${S}/storage/tokudb/PerconaFT" ]] ; then
+			rm "${S}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake" || die
+			touch "${S}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake" || die
+			sed -i -e 's/ build_lzma//' -e 's/ build_snappy//' "${S}/storage/tokudb/PerconaFT/ft/CMakeLists.txt" || die
+			sed -i -e 's/add_dependencies\(tokuportability_static_conv build_jemalloc\)//' "${S}/storage/tokudb/PerconaFT/portability/CMakeLists.txt" || die
+		fi
+
+		if [[ -d "${S}/plugin/tokudb-backup-plugin" ]] && ! use tokudb-backup-plugin ; then
+			 rm -r "${S}/plugin/tokudb-backup-plugin/Percona-TokuBackup" || die
+		fi
 	fi
 
 	# Remove the bundled groonga if it exists
@@ -395,7 +417,9 @@ mysql-cmake_src_configure() {
 		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates"
 	fi
 	# As of 5.7, exceptions and rtti are used!
-	if ! mysql_version_is_at_least "5.7" ; then
+	if [[ ${PN} -eq 'percona-server' ]] && mysql_version_is_at_least "5.6.26" ; then
+		CXXFLAGS="${CXXFLAGS} -fno-rtti"
+	elif ! mysql_version_is_at_least "5.7" ; then
 		CXXFLAGS="${CXXFLAGS} -fno-exceptions -fno-rtti"
 	fi
 	export CXXFLAGS

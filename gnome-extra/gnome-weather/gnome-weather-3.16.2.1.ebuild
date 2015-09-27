@@ -12,7 +12,7 @@ HOMEPAGE="https://wiki.gnome.org/Design/Apps/Weather"
 
 LICENSE="GPL-2+ LGPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="test"
 
 RDEPEND="
@@ -23,7 +23,7 @@ RDEPEND="
 	>=x11-libs/gtk+-3.11.4:3
 "
 DEPEND="${RDEPEND}
-	dev-util/appdata-tools
+	dev-libs/appstream-glib
 	>=dev-util/intltool-0.26
 	virtual/pkgconfig
 	test? ( dev-util/dogtail )

@@ -170,9 +170,9 @@ SRC_URI="${SERVER_URI}"
 if [[ ${MY_EXTRAS_VER} != "live" && ${MY_EXTRAS_VER} != "none" ]]; then
 	SRC_URI="${SRC_URI}
 		mirror://gentoo/mysql-extras-${MY_EXTRAS_VER}.tar.bz2
-		http://dev.gentoo.org/~robbat2/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2
-		http://dev.gentoo.org/~jmbsvicetto/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2
-		http://dev.gentoo.org/~grknight/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2"
+		https://dev.gentoo.org/~robbat2/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2
+		https://dev.gentoo.org/~jmbsvicetto/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2
+		https://dev.gentoo.org/~grknight/distfiles/mysql-extras-${MY_EXTRAS_VER}.tar.bz2"
 fi
 
 DESCRIPTION="A fast, multi-threaded, multi-user SQL database server"
@@ -190,7 +190,7 @@ if [[ ${PN} == "percona-server" ]]; then
 	DESCRIPTION="An enhanced, drop-in replacement for MySQL from the Percona team"
 fi
 LICENSE="GPL-2"
-SLOT="0/${SUBSLOT:=0}"
+SLOT="0/${SUBSLOT:-0}"
 
 IUSE="+community cluster debug embedded extraengine jemalloc latin1
 	+perl profiling selinux ssl systemtap static static-libs tcmalloc test"
@@ -230,6 +230,9 @@ if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]]; then
 	# MariaDB 10.1 introduces InnoDB/XtraDB compression with external libraries
 	# Choices are bzip2, lz4, lzma, lzo.  bzip2 and lzma enabled by default as they are system libraries
 	mysql_version_is_at_least "10.1.1" && IUSE="${IUSE} innodb-lz4 innodb-lzo"
+
+	# It can also compress with app-arch/snappy
+	mysql_version_is_at_least "10.1.7" && IUSE="${IUSE} innodb-snappy"
 
 	# 10.1.2 introduces a cracklib password checker
 	mysql_version_is_at_least "10.1.1" && IUSE="${IUSE} cracklib"
@@ -364,6 +367,7 @@ if [[ ${PN} == "mariadb" || ${PN} == "mariadb-galera" ]] ; then
 		"
 
 	mysql_version_is_at_least "10.1.2" && DEPEND="${DEPEND} cracklib? ( sys-libs/cracklib:0= )"
+	mysql_version_is_at_least "10.1.7" && DEPEND="${DEPEND} innodb-snappy? ( app-arch/snappy )"
 fi
 
 if [[ ${PN} == "percona-server" ]] ; then
@@ -571,7 +575,9 @@ mysql-multilib_src_configure() {
 		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates"
 	fi
 	# As of 5.7, exceptions are used!
-	if ! mysql_version_is_at_least "5.7" ; then
+	if [[ ${PN} == "percona-server" ]] && mysql_version_is_at_least "5.6.26" ; then
+                CXXFLAGS="${CXXFLAGS} -fno-rtti"
+        elif ! mysql_version_is_at_least "5.7" ; then
 		CXXFLAGS="${CXXFLAGS} -fno-exceptions -fno-rtti"
 	fi
 	export CXXFLAGS
@@ -779,6 +785,27 @@ mysql-multilib_pkg_preinst() {
 	if [[ ${PN} == "mysql-cluster" ]] ; then
 		mysql_version_is_at_least "7.2.9" && java-pkg-opt-2_pkg_preinst
 	fi
+	# Here we need to see if the implementation switched client libraries
+	# First, we check if this is a new instance of the package and a client library already exists
+	# Then, we check if this package is rebuilt but the previous instance did not
+	# have the client-libs USE set.
+	# Instances which do not have a client-libs USE can only be replaced by a different provider
+	local SHOW_ABI_MESSAGE
+	if ! in_iuse client-libs || use_if_iuse client-libs ; then
+	        if [[ -z ${REPLACING_VERSIONS} && -e "${EROOT}usr/$(get_libdir)/libmysqlclient.so" ]] ; then
+			SHOW_ABI_MESSAGE=1
+		elif [[ ${REPLACING_VERSIONS} && -e "${EROOT}usr/$(get_libdir)/libmysqlclient.so" ]] && \
+			in_iuse client-libs && ! built_with_use --missing true ${CATEGORY}/${PN} client-libs ; then
+			SHOW_ABI_MESSAGE=1
+		fi
+
+	fi
+	if [[ ${SHOW_ABI_MESSAGE} ]] ; then
+                elog "Due to ABI changes when switching between different client libraries,"
+                elog "revdep-rebuild must find and rebuild all packages linking to libmysqlclient."
+                elog "Please run: revdep-rebuild --library libmysqlclient.so.${SUBSLOT:-18}"
+                ewarn "Failure to run revdep-rebuild may cause issues with other programs or libraries"
+        fi
 }
 
 # @FUNCTION: mysql-multilib_pkg_postinst

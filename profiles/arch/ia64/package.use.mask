@@ -2,6 +2,26 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
+# Brian Evans <grknight@gentoo.org> (17 Sep 2015)
+# Mask new USE flags for percona-server which are not available on ia64
+dev-db/percona-server tokudb tokudb-backup-plugin
+
+# Brian Evans <grknight@gentoo.org> (14 Sep 2015)
+# Mask new USE flags for mariadb which all arches do not yet have dependencies
+>=dev-db/mariadb-10.1.0 innodb-snappy
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (10 Sep 2015)
+# Requires wifi USE flag, which is masked for this arch
+net-misc/networkmanager wext
+
+# Pacho Ramos <pacho@gentoo.org> (06 Sep 2015)
+# Missing keywords
+media-sound/pulseaudio ofono-headset
+
+# Mike Gilbert <floppym@gentoo.org> (05 Sep 2015)
+# sys-boot/gnu-efi is not supported on all archs.
+sys-apps/systemd -gnuefi
+
 # James Le Cuirot <chewi@gentoo.org> (11 Jul 2015)
 # Requires dev-java/fop but we don't support java on ia64.
 gnome-extra/libgda reports
@@ -269,3 +289,7 @@ dev-lisp/clisp hyperspec pari svm
 
 # missing keywords
 media-plugins/gst-plugins-meta dts dv lame libvisual modplug mms taglib vcd wavpack
+
+# Marius Brehler <marfbre@linux.sungazer.de> (13 Aug 2015)
+# missing keyword
+>=sci-misc/boinc-7.4.42-r1 X

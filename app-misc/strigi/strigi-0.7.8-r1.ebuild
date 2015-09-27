@@ -20,7 +20,7 @@ HOMEPAGE="https://projects.kde.org/projects/kdesupport/strigi/strigi"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="clucene +dbus debug exif fam ffmpeg inotify libav log +qt4 test"
+IUSE="clucene +dbus debug exif fam ffmpeg +inotify libav log +qt4 test"
 
 RDEPEND="
 	app-arch/bzip2
@@ -51,6 +51,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}/${P}-gcc-4.8.patch"
 	"${FILESDIR}/${P}-libav10.patch"
+	"${FILESDIR}/${P}-ffmpeg29.patch"
 )
 
 if [[ ${PV} == 9999 ]] ; then
