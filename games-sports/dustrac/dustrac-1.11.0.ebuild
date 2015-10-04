@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/dustrac/${P}.tar.gz"
 
 LICENSE="GPL-3+ CC-BY-SA-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 RDEPEND="
@@ -19,11 +19,11 @@ RDEPEND="
 	dev-qt/qtgui:5
 	dev-qt/qtopengl:5
 	dev-qt/qtxml:5
-	dev-qt/linguist-tools:5
 	media-libs/libvorbis
 	media-libs/openal
 	virtual/opengl"
 DEPEND="${RDEPEND}
+	dev-qt/linguist-tools:5
 	dev-qt/qttest:5
 	virtual/pkgconfig"
 

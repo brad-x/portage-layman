@@ -30,6 +30,24 @@
 
 #--- END OF EXAMPLES ---
 
+# Mike Pagano <mpagano@gentoo.org> (2 Oct 2015)
+# A regression in kernel 4.1.9 could lead to a system
+# lockup.  This has been fixed in gentoo-sources-4.1.9-r1
+# and the hope is that this patch will make it to 4.1.10
+# Expires (2 Oct 2017)
+=sys-kernel/vanilla-sources-4.1.9
+=sys-kernel/gentoo-sources-4.1.9
+
+# Michał Górny <mgorny@gentoo.org> (1 Oct 2015)
+# Thoroughly broken for me since the switch to Python 3 / PyQt5. Masking
+# to account for opt-in testing.
+=games-emulation/m64py-0.2.3
+
+# Patrice Clement <monsieurp@gentoo.org> (1 Oct 2015)
+# Project is over 10 years old and seems to have stalled.
+# Masked for removal in 30 days. See bug 561954.
+dev-java/xmlc
+
 # Andreas K. Huettel <dilfridge@gentoo.org> (27 Sep 2015)
 # Dead upstream, buggy, effectively unmaintained. Removal
 # in 30 days.
@@ -201,7 +219,7 @@ sci-libs/cctbx
 <sci-libs/coot-data-3
 sci-libs/ccp4-libs
 <=sci-libs/clipper-2.1_p100511-r1
-<=sci-libs/mmdb-1.25.5-r1:0
+<sci-libs/mmdb-1.25.5-r1:0
 <sci-libs/monomer-db-5.41
 <sci-libs/ssm-1.4
 x11-libs/libxdl_view
@@ -257,12 +275,6 @@ app-emulation/kvm-kmod
 # Lars Wendler <polynomial-c@gentoo.org> (20 Aug 2015)
 # Masked for testing
 =net-misc/iputils-20150815
-
-# Johannes Huber <johu@gentoo.org> (18 Aug 2015)
-# Masked for removal in 30 days. Does not compile with
-# dev-python/PyQt4-4.11.4, which blocks stabilization.
-# Dead upstream. Last commit 6 years ago. See bug #558020.
-net-misc/guidedog
 
 # Brian Evans <grknight@gentoo.org> (16 Aug 2015)
 # Mask new PEAR installer as it is likely to break
