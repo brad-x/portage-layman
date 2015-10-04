@@ -11,7 +11,7 @@ HOMEPAGE="http://oss.linbit.com/csync2/"
 SRC_URI="http://oss.linbit.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 IUSE="mysql postgres sqlite ssl xinetd"
 
@@ -39,7 +39,8 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	# Parallel install fails, bug #561382
+	emake -j1 DESTDIR="${D}" install
 
 	if use xinetd ; then
 		insinto /etc/xinetd.d
