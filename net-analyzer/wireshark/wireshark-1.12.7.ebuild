@@ -220,7 +220,7 @@ src_install() {
 	insinto /usr/include/wiretap
 	doins wiretap/wtap.h
 
-	if use gtk3 || use qt4; then
+	if use gtk3 || use qt4 || use qt5; then
 		local c d
 		for c in hi lo; do
 			for d in 16 32 48; do
@@ -234,7 +234,7 @@ src_install() {
 		domenu wireshark.desktop
 	fi
 
-	if use qt4; then
+	if use qt4 || use qt5; then
 		sed -e '/Exec=/s|wireshark|&-qt|g' wireshark.desktop > wireshark-qt.desktop || die
 		domenu wireshark-qt.desktop
 	fi
