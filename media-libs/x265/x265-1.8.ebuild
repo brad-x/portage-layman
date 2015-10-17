@@ -22,7 +22,7 @@ HOMEPAGE="http://x265.org/"
 LICENSE="GPL-2"
 # subslot = libx265 soname
 SLOT="0/68"
-IUSE="+10bit test"
+IUSE="+10bit pic test"
 
 ASM_DEPEND=">=dev-lang/yasm-1.2.0"
 RDEPEND=""
@@ -41,6 +41,10 @@ src_unpack() {
 	fi
 }
 
+src_prepare() {
+	epatch "${FILESDIR}/${PV}-build-Disable-march-selection-from-CMakeLists.txt.patch"	# bug #510890
+}
+
 multilib_src_configure() {
 	append-cflags -fPIC
 	append-cxxflags -fPIC
@@ -51,9 +55,17 @@ multilib_src_configure() {
 		-DLIB_INSTALL_DIR="$(get_libdir)"
 	)
 
-	if [ "${ABI}" = x86 ] ; then
+	if [[ ${ABI} = x86 ]] ; then
 		use 10bit && ewarn "Disabling 10bit support on x86 as it does not build (or requires to disable assembly optimizations)"
 		mycmakeargs+=( -DHIGH_BIT_DEPTH=OFF )
+		# Bug #528202
+		if use pic ; then
+			ewarn "PIC has been requested but x86 asm is not PIC-safe, disabling it."
+			mycmakeargs+=( -DENABLE_ASSEMBLY=OFF )
+		fi
+	elif [[ ${ABI} = x32 ]] ; then
+		# bug #510890
+		mycmakeargs+=( -DENABLE_ASSEMBLY=OFF )
 	fi
 
 	cmake-utils_src_configure
@@ -64,11 +76,11 @@ src_configure() {
 }
 
 multilib_src_test() {
-	if has ${MULTILIB_ABI_FLAG} abi_x86_32 abi_x86_64 ; then
-		cd "${BUILD_DIR}/test" || die
-		for i in TestBench ; do
-			./${i} || die
-		done
+	if [ -x "${BUILD_DIR}/test/TestBench" ] ; then
+		"${BUILD_DIR}/test/TestBench" || die
+	else
+		einfo "Unit tests check only assembly, and you do not seem to have any."
+		einfo "Skipping tests."
 	fi
 }
 
