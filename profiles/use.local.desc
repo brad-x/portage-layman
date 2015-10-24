@@ -959,6 +959,7 @@ app-misc/screen:multiuser - Enable multiuser support (by setting correct permiss
 app-misc/screen:nethack - Express error messages in nethack style
 app-misc/screenfetch:X - Use the media-gfx/scrot package to take screenshots
 app-misc/sphinx:id64 - use 64-bit document and word IDs
+app-misc/sphinx:re2 - use the dev-libs/re2 regular expression library
 app-misc/sphinx:stemmer - Enable language stemming support
 app-misc/strigi:clucene - Enable dev-cpp/clucene backend support.
 app-misc/strigi:inotify - Enable support for inotify.
@@ -1293,9 +1294,11 @@ dev-db/mariadb:innodb-lzo - Enables lzo compression methods for InnoDB/XtraDB
 dev-db/mariadb:innodb-snappy - Enables snappy compression methods for InnoDB/XtraDB using app-arch/snappy
 dev-db/mariadb:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/mariadb:latin1 - Use LATIN1 encoding instead of UTF8
+dev-db/mariadb:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
 dev-db/mariadb:max-idx-128 - Raise the max index per table limit from 64 to 128
 dev-db/mariadb:minimal - Install client programs only, no server
 dev-db/mariadb:mroonga - Add support for the Mroonga engine for interfacing with the Groonga text search
+dev-db/mariadb:openssl - Enable SSL connections and crypto functions using dev-libs/openssl
 dev-db/mariadb:oqgraph - Add support for the Open Query GRAPH engine
 dev-db/mariadb:pam - Enable the optional PAM authentication plugin for the server
 dev-db/mariadb:profiling - Add support for statement profiling (requires USE=community).
@@ -1307,6 +1310,7 @@ dev-db/mariadb:systemtap - Build support for profiling and tracing using dev-uti
 dev-db/mariadb:test - Install upstream testsuites for end use.
 dev-db/mariadb:tokudb - Add support for TokuDB storage engine
 dev-db/mariadb:tools - Build the command line tools (mysql, mysqldump, mysqladmin, etc)
+dev-db/mariadb:yassl - Enable SSL connections and crypto functions using the bundled yaSSL
 dev-db/mariadb-galera:client-libs - Build the libmysqlclient libraries
 dev-db/mariadb-galera:cluster - Add support for NDB clustering (deprecated)
 dev-db/mariadb-galera:community - Enables the community features from upstream.
@@ -1314,6 +1318,8 @@ dev-db/mariadb-galera:embedded - Build embedded server (libmysqld)
 dev-db/mariadb-galera:extraengine - Add support for alternative storage engines (Archive, CSV, Blackhole, Federated(X), Partition)
 dev-db/mariadb-galera:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/mariadb-galera:latin1 - Use LATIN1 encoding instead of UTF8
+dev-db/mariadb-galera:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
+dev-db/mariadb-galera:openssl - Enable SSL connections and crypto functions using dev-libs/openssl
 dev-db/mariadb-galera:oqgraph - Add support for the Open Query GRAPH engine
 dev-db/mariadb-galera:profiling - Add support for statement profiling (requires USE=community).
 dev-db/mariadb-galera:server - Build the server program
@@ -1324,6 +1330,7 @@ dev-db/mariadb-galera:systemtap - Build support for profiling and tracing using 
 dev-db/mariadb-galera:test - Install upstream testsuites for end use.
 dev-db/mariadb-galera:tokudb - Add support for TokuDB storage engine
 dev-db/mariadb-galera:tools - Build the command line tools (mysql, mysqldump, mysqladmin, etc)
+dev-db/mariadb-galera:yassl - Enable SSL connections and crypto functions using the bundled yaSSL
 dev-db/maxscale:jemalloc - Use dev-libs/jemalloc for allocations
 dev-db/maxscale:rabbitmq - Add support for RabbitMQ message queue
 dev-db/mongodb:mms-agent - Install the MongoDB Monitoring Service agent
@@ -1337,24 +1344,30 @@ dev-db/mysql:embedded - Build embedded server (libmysqld)
 dev-db/mysql:extraengine - Add support for alternative storage engines (Archive, CSV, Blackhole, Federated(X), Partition)
 dev-db/mysql:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/mysql:latin1 - Use LATIN1 encoding instead of UTF8
+dev-db/mysql:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
 dev-db/mysql:max-idx-128 - Raise the max index per table limit from 64 to 128
 dev-db/mysql:minimal - Install client programs only, no server
+dev-db/mysql:openssl - Enable SSL connections and crypto functions using dev-libs/openssl
 dev-db/mysql:profiling - Add support for statement profiling (requires USE=community).
 dev-db/mysql:server - Build the server program
 dev-db/mysql:systemtap - Build support for profiling and tracing using dev-util/systemtap
 dev-db/mysql:test - Install upstream testsuites for end use.
 dev-db/mysql:tools - Build the command line tools (mysql, mysqldump, mysqladmin, etc)
+dev-db/mysql:yassl - Enable SSL connections and crypto functions using the bundled yaSSL
 dev-db/mysql-cluster:cluster - Add support for NDB clustering
 dev-db/mysql-cluster:community - Enables the community features from upstream.
 dev-db/mysql-cluster:embedded - Build embedded server (libmysqld)
 dev-db/mysql-cluster:extraengine - Add support for alternative storage engines (Archive, CSV, Blackhole, Federated(X), Partition)
 dev-db/mysql-cluster:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/mysql-cluster:latin1 - Use LATIN1 encoding instead of UTF8
+dev-db/mysql-cluster:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
 dev-db/mysql-cluster:max-idx-128 - Raise the max index per table limit from 64 to 128
 dev-db/mysql-cluster:minimal - Install client programs only, no server
+dev-db/mysql-cluster:openssl - Enable SSL connections and crypto functions using dev-libs/openssl
 dev-db/mysql-cluster:profiling - Add support for statement profiling (requires USE=community).
 dev-db/mysql-cluster:systemtap - Build support for profiling and tracing using dev-util/systemtap
 dev-db/mysql-cluster:test - Install upstream testsuites for end use.
+dev-db/mysql-cluster:yassl - Enable SSL connections and crypto functions using the bundled yaSSL
 dev-db/mysql-connector-c++:gcov - Build coverage support
 dev-db/percona-server:client-libs - Build the libmysqlclient libraries
 dev-db/percona-server:cluster - Add support for NDB clustering (deprecated)
@@ -1363,7 +1376,8 @@ dev-db/percona-server:embedded - Build embedded server (libmysqld)
 dev-db/percona-server:extraengine - Add support for alternative storage engines (Archive, CSV, Blackhole, Federated(X), Partition)
 dev-db/percona-server:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/percona-server:latin1 - Use LATIN1 encoding instead of UTF8
-dev-db/percona-server:minimal - Install client programs only, no server
+dev-db/percona-server:libressl - Enable SSL connections and crypto functions using dev-libs/libressl
+dev-db/percona-server:openssl - Enable SSL connections and crypto functions using dev-libs/openssl
 dev-db/percona-server:profiling - Add support for statement profiling (requires USE=community).
 dev-db/percona-server:server - Build the server program
 dev-db/percona-server:systemtap - Build support for profiling and tracing using dev-util/systemtap
@@ -1371,6 +1385,7 @@ dev-db/percona-server:test - Install upstream testsuites for end use.
 dev-db/percona-server:tokudb - Add support for TokuDB storage engine
 dev-db/percona-server:tokudb-backup-plugin - Builds the TokuDB backup plugin
 dev-db/percona-server:tools - Build the command line tools (mysql, mysqldump, mysqladmin, etc)
+dev-db/percona-server:yassl - Enable SSL connections and crypto functions using the bundled yaSSL
 dev-db/pgadmin3:databasedesigner - Enable the Database Designer component
 dev-db/pgbouncer:libevent - Use libevent 2.0+ and evdns as the DNS backend
 dev-db/pgbouncer:udns - Use udns as the DNS backend. Supports IPv4 only.
@@ -1529,6 +1544,7 @@ dev-haskell/dav:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/distributive:lib-werror - Compile with the ghc -Werror option
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.
+dev-haskell/extra:network-uri - use network-uri package
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
 dev-haskell/gtk:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY. Some GTK libraries open image files without specifing binary mode. If you have trouble loading gtk in ghci, then it may help to turn this option off.
@@ -2164,6 +2180,8 @@ dev-ml/lwt:toplevel - Enables enhanced toplevel.
 dev-ml/ocaml-cstruct:async - Support for asynchronous execution
 dev-ml/ocaml-cstruct:camlp4 - Enable support for camlp4
 dev-ml/ocaml-cstruct:lwt - Enable threads via lwt
+dev-ml/ocaml-dns:async - support for asynchronous execution
+dev-ml/ocaml-dns:lwt - enable threads via lwt
 dev-ml/ocaml-uri:allservices - Compile support for all service types
 dev-ml/ocamlnet:cryptokit - Enables encryption support via dev-ml/cryptokit
 dev-ml/ocamlnet:httpd - Enables net-httpd web server component
@@ -3174,7 +3192,6 @@ gnome-extra/synapse:plugins - Build support for plugins using librest
 gnome-extra/synapse:zeitgeist - Add support for Zeitgeist event tracking system
 gnome-extra/zeitgeist:datahub - Use build datahub for passive event injection
 gnome-extra/zeitgeist:downloads-monitor - Monitor the XDG_DOWNLOAD_DIRECTORY
-gnome-extra/zeitgeist:extensions - Use gnome-extra/zeitgeist-extentions to enhance the internal routines
 gnome-extra/zeitgeist:fts - Enable the full text search extension
 gnome-extra/zeitgeist:plugins - Use gnome-extra/zeitgeist-datasources to enable numerous packages to inject events
 gnome-extra/zeitgeist:sql-debug - Enable SQL debugging
@@ -3214,7 +3231,6 @@ kde-apps/dolphin-plugins:bazaar - Enable support for the bazaar VCS
 kde-apps/dolphin-plugins:mercurial - Enable support for the mercurial VCS
 kde-apps/gwenview:kipi - Support for the KDE Image Plugin Interface.
 kde-apps/kaccessible:speechd - Enable support for the speech-dispatcher speech synthesizer
-kde-apps/kaccounts-integration:kdepim - KDE PIM integration via kde-apps/kdepimlibs
 kde-apps/kalzium:editor - Enable the embedded molecule editor/viewer
 kde-apps/kalzium:solver - Enable the equation solver
 kde-apps/kate:addons - Build and install additional plugins
@@ -3226,6 +3242,8 @@ kde-apps/kdebase-kioslaves:sftp - Enable SFTP protocol support using net-libs/li
 kde-apps/kdebase-meta:display-manager - Pull in a graphical display manager
 kde-apps/kdebase-meta:wallpapers - Install the KDE wallpapers
 kde-apps/kdebase-runtime-meta:crash-reporter - Builds a gui tool to submit crash information to the upstream backtracker
+kde-apps/kdebase-runtime-meta:minimal - Install a Plasma 5 compatible subset of the package
+kde-apps/kdebase-runtime-meta:oldwallet - Install kde-apps/kwalletd on a minimal setup for migration purposes
 kde-apps/kdenetwork-meta:ppp - Enable support for net-dialup/ppp.
 kde-apps/kdeutils-meta:floppy - Install kde-base/kfloppy to format and create DOS or ext2fs filesystems in a floppy.
 kde-apps/kget:bittorrent - Enable bittorrent transfer plugin through net-libs/libktorrent
@@ -3762,10 +3780,10 @@ media-gfx/jpeg2ps:metric - Default to A4 paper size
 media-gfx/k3d:3ds - Enable support for 3D Studio models
 media-gfx/k3d:cuda - Use nvidia cuda toolkit for speeding up computations
 media-gfx/k3d:gts - Add Support for the GNU Triangulated Surface Library sci-libs/gts
-media-gfx/kphotoalbum:face - Enable face detection and recognition using media-libs/libkface
+media-gfx/kphotoalbum:face - Enable face detection and recognition using kde-apps/libkface
 media-gfx/kphotoalbum:geolocation - Add support for kde-apps/marble
 media-gfx/kphotoalbum:kipi - Support for the KDE Image Plugin Interface
-media-gfx/kphotoalbum:map - Enable map display support using media-libs/libkgeomap
+media-gfx/kphotoalbum:map - Enable map display support using kde-apps/libkgeomap
 media-gfx/librecad:3d - Require all 2D coordinates stored as 3D
 media-gfx/librecad:tools - Build additional tool programs: tff2lff
 media-gfx/luminance-hdr:fits - Enable support for the FITS format
@@ -4096,7 +4114,7 @@ media-plugins/hexter:gtk2 - Enable x11-libs/gtk+:2 based GUI
 media-plugins/imlib2_loaders:eet - Enable Eet image loader
 media-plugins/imlib2_loaders:xcf - Enable XCF image loader
 media-plugins/kipi-plugins:expoblending - Build the expoblending plugin, which requires media-gfx/hugin
-media-plugins/kipi-plugins:gpssync - Build the gpssync plugin, which requires media-lib/libkgeomap and thereby marble
+media-plugins/kipi-plugins:gpssync - Build the gpssync plugin, which requires kde-apps/libkgeomap and thereby marble
 media-plugins/kipi-plugins:linguas_ha - Hausa translation
 media-plugins/kipi-plugins:linguas_mi - Maori translation
 media-plugins/kipi-plugins:linguas_tt - ?? translation
@@ -4623,6 +4641,7 @@ media-video/ffmpeg:mipsdspr1 - Enables MIPS DSP ASE R1 optimizations.
 media-video/ffmpeg:mipsdspr2 - Enables MIPS DSP ASE R2 optimizations.
 media-video/ffmpeg:mipsfpu - Enables floating point MIPS optimizations.
 media-video/ffmpeg:network - Enables network streaming support
+media-video/ffmpeg:nvenc - Adds support for NVIDIA Encoder (NVENC) API for hardware accelerated encoding on NVIDIA cards.
 media-video/ffmpeg:openh264 - Enables H.264 encoding suppoprt via media-libs/openh264.
 media-video/ffmpeg:openssl - Enables dev-libs/openssl support. Adds support for encrypted network protocols (TLS/HTTPS).
 media-video/ffmpeg:opus - Adds (decoding) support for the Opus codec via media-libs/opus.
@@ -4743,6 +4762,8 @@ media-video/mpv:rubberband - Enable high quality pitch correction via media-libs
 media-video/mpv:sdl - Enable media-libs/libsdl2 based video and audio outputs
 media-video/mpv:vf-dlopen - Install additional video filters for using with -vf dlopen
 media-video/noad:libmpeg2 - Support for libmpeg2 library
+media-video/nvenc:samples - Install video samples to use with the tools.
+media-video/nvenc:tools - Build and install example tools.
 media-video/nvidia-settings:gtk3 - Additionally build the GTK 3 library
 media-video/ogmrip:ogm - Support for OGM container format
 media-video/ogmrip:srt - Support for SRT subtitle format
@@ -5556,6 +5577,8 @@ net-libs/iojs:snapshot - Enable snapshot creation for faster startup
 net-libs/ldns:dane - Enable DNS-based Authentication of Named Entities (DANE) support
 net-libs/ldns:ecdsa - Enable ECDSA support
 net-libs/ldns:gost - Enable GOST support
+net-libs/libbitcoinconsensus:bitcoin_policy_cltv - Check LockTime Verify policy: Your node will recognise and assist OP_CHECKLOCKTIMEVERIFY (BIP65) transactions
+net-libs/libbitcoinconsensus:bitcoin_policy_dcmp - Data Carrier Multi-Push policy: Your node will assist transactions with multiple pushes in their data carrier (if any)
 net-libs/libbitcoinconsensus:ljr - Enable Luke Dashjr's patches
 net-libs/libbtbb:pcap - Add support for network packet capture via net-libs/libpcap
 net-libs/libbtbb:wireshark-plugins - Build the wireshark plugins for bluetooth baseband sniffing
@@ -5903,6 +5926,7 @@ net-misc/dropbear:shadow - Enable shadow password support
 net-misc/dropbox:librsync-bundled - Use bundled librsync library
 net-misc/electrum:cli - Enables the CLI interface
 net-misc/electrum:cosign - Enable plugin to support multisig wallets between multiple Electrum clients
+net-misc/electrum:email - Enable plugin to support emailing invoices
 net-misc/electrum:fiat - Enable plugin for looking up fiat values of bitcoin
 net-misc/electrum:greenaddress_it - Enable plugin to verify GreenAddress.it instant transactions
 net-misc/electrum:gtk3 - Enable support for gtk+3
@@ -6145,6 +6169,10 @@ net-misc/strongswan:strongswan_plugins_unity - Enable support for the unity plug
 net-misc/strongswan:strongswan_plugins_vici - Enable support for the vici plugin.
 net-misc/strongswan:strongswan_plugins_whitelist - Enable support for the whitelist plugin.
 net-misc/stunnel:stunnel3 - Install the stunnel3 wrapper.
+net-misc/sx:client - Access the SX Cluster from this machine via its Nginx server. Also responsible for tools required to run the server.
+net-misc/sx:ipv6 - Enable support for communication via IPv6.
+net-misc/sx:server - Enable SX's server component.
+net-misc/sx:ssl - Enable communication security via OpenSSL.
 net-misc/teamviewer:system-wine - Use app-emulation/wine instead of bundled wine.
 net-misc/termpkg:uucp - Adds support for uucp style device locking
 net-misc/tigervnc:server - Build TigerVNC server
@@ -6236,6 +6264,7 @@ net-p2p/bitcoin-qt:upnp - Enable Universal Plug and Play
 net-p2p/bitcoin-qt:wallet - Enable wallet support
 net-p2p/bitcoin-qt:xt - Enable Mike Hearn's Bitcoin XT patches
 net-p2p/bitcoin-qt:zeromq - Report blocks and transactions via zeromq
+net-p2p/bitcoind:addrindex - Enable BtcDrak's addrindex patch
 net-p2p/bitcoind:bitcoin_policy_cltv - Check LockTime Verify policy: Your node will recognise and assist OP_CHECKLOCKTIMEVERIFY (BIP65) transactions
 net-p2p/bitcoind:bitcoin_policy_cpfp - Child-Pays-For-Parent policy: If you mine, you will give consideration to child transaction fees to pay for their parents
 net-p2p/bitcoind:bitcoin_policy_dcmp - Data Carrier Multi-Push policy: Your node will assist transactions with multiple pushes in their data carrier (if any)
@@ -6607,6 +6636,7 @@ sci-electronics/pcb:xrender - Translucent PCB display for Motif/Lesstif GUI
 sci-electronics/pulseview:decode - Enable decoding of protocols while capturing
 sci-electronics/sigrok-cli:decode - Enable decoding of protocols while capturing
 sci-electronics/splat:hires - Builds additional high resolution application 'rfsplat-hd'.
+sci-geosciences/gdal-grass:postgres - Include support for dev-db/postgresql
 sci-geosciences/geocode-glib:introspection - Use dev-libs/gobject-introspection for introspection
 sci-geosciences/gmt:gdal - Enable sci-libs/gdal library support
 sci-geosciences/gmt:gmtfull - Full resolution bathymetry database
@@ -6624,8 +6654,11 @@ sci-geosciences/gpsd:sockets - export gpsd over unix sockets
 sci-geosciences/grass:gdal - Use sci-libs/gdal for import and export of most external raster and vector map formats
 sci-geosciences/grass:geos - Use sci-libs/geos for v.buffer and adds extended options to the v.select module
 sci-geosciences/grass:gmath - Enable gmath wrapper for BLAS/Lapack (virtual/blas, virtual/lapack)
+sci-geosciences/grass:liblas - Include support for LAS and LAZ encoded LiDAR files through sci-geosciences/liblas
 sci-geosciences/grass:opencl - Enable OpenCL support
 sci-geosciences/gshhs:data - Add earth data with sci-geosciences/gshhs-data
+sci-geosciences/liblas:gdal - Add support for the sci-libs/gdal geospatial raster library
+sci-geosciences/liblas:geotiff - Add support for geo-tagged TIFF files with sci-libs/libgeotiff
 sci-geosciences/mapnik:gdal - Enable sci-libs/gdal library support
 sci-geosciences/mapnik:geos - Enable sci-libs/geos library support
 sci-geosciences/mapserver:gdal - Enable sci-libs/gdal library support
@@ -7729,6 +7762,7 @@ www-apps/webdavcgi:rcs - Adds support for a revision controlled backend with RCS
 www-apps/wordpress:akismet - Installs Akismet comment spam plug-in
 www-apps/wordpress:themes - Installs themes (including default theme)
 www-client/chromium:gtk3 - Use gtk3 instead of gtk2
+www-client/chromium:hangouts - Enable support for Google Hangouts features such as screen sharing
 www-client/chromium:hidpi - Enable support for high-resolution screens (high dots per inch)
 www-client/chromium:hotwording - Enable voice-recognition support (Ok Google)
 www-client/chromium:pic - Disable optimized assembly code that is not PIC friendly
@@ -7816,6 +7850,8 @@ www-misc/monitorix:hddtemp - Use SMART to monitor the temperature of hard drives
 www-misc/monitorix:httpd - Enables the CGI webserver with any package that satisfies virtual/httpd-cgi.
 www-misc/monitorix:lm_sensors - Additional hardware mnitoring sensors with sys-apps/lm_sensors.
 www-misc/monitorix:postfix - Analyze postfix logs with net-mail/pflogsumm.
+www-misc/shellinabox:pam - Enable PAM support.
+www-misc/shellinabox:ssl - Enable SSL support.
 www-misc/vdradmin-am:vdr - Support for media-video/vdr. Disable this if the VDR you want to control runs at a remote machine.
 www-misc/xxv:themes - Enable more themes via x11-themes/xxv-skins
 www-misc/zoneminder:curl - Enable using net-misc/curl for streaming from cameras

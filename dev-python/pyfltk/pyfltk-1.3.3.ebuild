@@ -6,7 +6,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{3_3,3_4} )
+PYTHON_COMPAT=( python3_{3,4,5} )
 
 inherit distutils-r1 flag-o-matic
 
@@ -19,7 +19,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz -> ${MY_PN}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="1"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="doc"
 
 DEPEND=">=x11-libs/fltk-1.3.0:1[opengl]"

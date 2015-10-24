@@ -77,8 +77,7 @@ S="${WORKDIR}/${MY_P}"
 
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
-	opengl? ( X )
-"
+	opengl? ( X )"
 
 pkg_setup() {
 	if use lapack; then
@@ -111,10 +110,13 @@ pkg_setup() {
 src_prepare() {
 	# Fix undefined reference to errno in lib/raster/open.c
 	# see http://trac.osgeo.org/grass/changeset/66398
-	epatch "${FILESDIR}/${P}-include-errno.patch"
+	epatch "${FILESDIR}/${P}"-include-errno.patch
 
 	# Fix undeclared variable if OSG is disabled
-	epatch "${FILESDIR}/${P}-declare-inespg.patch"
+	epatch "${FILESDIR}/${P}"-declare-inespg.patch
+
+	# Bug #563490
+	epatch "${FILESDIR}/${PV}"-sec-format.patch
 
 	# Fix unversioned python calls
 	local pyver=${EPYTHON/python/}
@@ -173,7 +175,7 @@ src_configure() {
 
 src_compile() {
 	# we don't want to link against embedded mysql lib
-	emake MYSQLDLIB=""
+	emake CC="$(tc-getCC)" MYSQLDLIB=""
 }
 
 src_install() {

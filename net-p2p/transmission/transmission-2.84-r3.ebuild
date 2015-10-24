@@ -15,7 +15,7 @@ SRC_URI="http://download.transmissionbt.com/${PN}/files/${P}.tar.xz"
 LICENSE="|| ( GPL-2 GPL-3 Transmission-OpenSSL-exception ) GPL-2 MIT"
 SLOT=0
 IUSE="ayatana gtk lightweight systemd qt4 qt5 xfs"
-KEYWORDS="~amd64 ~arm ~mips ~ppc ppc64 ~x86 ~x86-fbsd ~amd64-linux"
+KEYWORDS="amd64 ~arm ~mips ~ppc ppc64 x86 ~x86-fbsd ~amd64-linux"
 
 RDEPEND=">=dev-libs/libevent-2.0.10:=
 	dev-libs/openssl:0=
@@ -102,10 +102,11 @@ src_compile() {
 	emake
 
 	if use qt4 || use qt5; then
-		use qt4 && local -x QT_SELECT=4
-		use qt5 && local -x QT_SELECT=5
+		local qt_bindir
+		use qt4 && qt_bindir=$(qt4_get_bindir)
+		use qt5 && qt_bindir=$(qt5_get_bindir)
 		emake -C qt
-		lrelease qt/translations/*.ts || die
+		"${qt_bindir}"/lrelease qt/translations/*.ts || die
 	fi
 }
 
