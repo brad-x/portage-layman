@@ -24,9 +24,7 @@ RDEPEND=">=dev-python/urllib3-1.8[${PYTHON_USEDEP}]
 		<dev-python/urllib3-2.0[${PYTHON_USEDEP}]"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}] )
 	test? ( ${RDEPEND}
 		>=dev-python/requests-1.0.0[${PYTHON_USEDEP}]
 		<dev-python/requests-3.0.0[${PYTHON_USEDEP}]
@@ -36,6 +34,15 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		dev-python/pretty-yaml[${PYTHON_USEDEP}]
 		dev-python/nosexcover[${PYTHON_USEDEP}]
 		|| ( virtual/jre:1.8 virtual/jre:1.7 ) )"
+
+python_prepare_all() {
+	# rename manpage to elasticsearch-py
+	sed \
+		-e "s@('index', 'elasticsearch'@('index', 'elasticsearch-py'@g" \
+		-i docs/conf.py || die
+
+	distutils-r1_python_prepare_all
+}
 
 python_test() {
 	ES="${WORKDIR}/elasticsearch-${ES_VERSION}"

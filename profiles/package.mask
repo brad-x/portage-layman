@@ -30,6 +30,12 @@
 
 #--- END OF EXAMPLES ---
 
+# Ian Delaney <idella4@gentoo.org> (27 Oct 2015)
+# fails to build dev-lisp/sbcl-1.2.16 #563812
+# mgorny: dev-lisp/uiop as version-bound revdep
+=dev-lisp/asdf-3.1.6
+=dev-lisp/uiop-3.1.6
+
 # Justin Lecher <jlec@gentoo.org> (23 Oct 2015)
 # Breaking changes #563540
 =app-text/ghostscript-gpl-9.18
@@ -116,25 +122,6 @@ dev-java/xmlc
 # Dead upstream, buggy, effectively unmaintained. Removal
 # in 30 days.
 app-emulation/vmware-view-open-client
-
-# James Le Cuirot <chewi@gentoo.org> (27 Sep 2015)
-# No release since 2007 and no revdeps. Removal in 30 days.
-dev-java/commons-transaction
-
-# James Le Cuirot <chewi@gentoo.org> (27 Sep 2015)
-# A string of interdependent obsolete Java packages. hibernate and
-# axis are alive upstream but we have no immediate plans to bump
-# them. hibernate has also been modularized so would now be called
-# hibernate-core anyway. Removal in 30 days.
-dev-java/commons-modeler
-dev-java/hibernate
-dev-java/hibernate-annotations
-dev-java/jax-rpc
-dev-java/mx4j
-dev-java/mx4j-core
-dev-java/mx4j-tools
-dev-java/proxool
-www-servers/axis:1
 
 # Dion Moult <moult@gentoo.org> (24 Sep 2015)
 # Masked for removal in 30 days. Bug #466724
@@ -223,58 +210,12 @@ dev-util/bunny
 # Mask for removal in 30 days. Obsolete. Bug #561040.
 dev-php/smarty-docs
 
-# Ian Delaney <idella4@gentoo.org> (21 Jul 2015)
-# Packages deprecated in favour of new form of
-# net-firewall/shorewall
-# Bug #560392
-net-firewall/shorewall-core
-net-firewall/shorewall-init
-net-firewall/shorewall-lite
-net-firewall/shorewall6
-net-firewall/shorewall6-lite
-<net-firewall/shorewall-4.6.10.1
-
 # Andreas K. Huettel <dilfridge@gentoo.org> (19 Sep 2015)
 # Masked for security reasons, bugs 516044, 552644
 # Keeping it in the tree for now for users who cannot upgrade
 # (commercial product, separate licenses for major versions)
 =app-emulation/vmware-workstation-9*
 =app-emulation/vmware-modules-271*
-
-# Justin Lecher <jlec@gentoo.org> (15 Sep 2015)
-# Outdated and multiple bugs
-# Use upstream installer for up to version
-dev-libs/libjwc_c
-dev-libs/libjwc_f
-sci-chemistry/arp-warp-bin
-sci-chemistry/balbes
-sci-chemistry/ccp4
-sci-chemistry/ccp4-apps
-sci-chemistry/ccp4i
-<sci-chemistry/coot-0.8
-sci-chemistry/imosflm
-sci-chemistry/makecif
-sci-chemistry/molrep
-sci-chemistry/mosflm
-sci-chemistry/mrbump
-sci-chemistry/oasis
-sci-chemistry/pdb-extract
-sci-chemistry/pointless
-sci-chemistry/refmac
-sci-chemistry/scala
-sci-chemistry/sfcheck
-sci-chemistry/solve-resolve-bin
-sci-chemistry/xdsi
-sci-chemistry/xia2
-sci-libs/balbes-db
-sci-libs/cctbx
-<sci-libs/coot-data-3
-sci-libs/ccp4-libs
-<=sci-libs/clipper-2.1_p100511-r1
-<sci-libs/mmdb-1.25.5-r1:0
-<sci-libs/monomer-db-5.41
-<sci-libs/ssm-1.4
-x11-libs/libxdl_view
 
 # Michał Górny <mgorny@gentoo.org> (09 Sep 2015)
 # Package to be used with gentoo-x86 CVS, so pretty much defunct now.
@@ -474,10 +415,6 @@ www-apps/trac-downloads
 # Causes undefined references few layers down (in mediastreamer),
 # someone needs to investigate.
 >=net-libs/libzrtpcpp-4
-
-# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (03 Sep 2014)
-# Temporary mask until it is verified to work
-=media-libs/raspberrypi-userland-0_pre20140830
 
 # Christian Faulhammer <fauli@gentoo.org> (02 Sep 2014)
 # website not working anymore and will stay like this,

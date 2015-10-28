@@ -499,6 +499,7 @@ app-editors/nano:justify - Enable justify/unjustify functions for text formattin
 app-editors/nano:magic - Add magic file support (sys-apps/file) to automatically detect appropriate syntax highlighting
 app-editors/nano:minimal - Disable all fancy features, including ones that otherwise have a dedicated USE flag (such as spelling).
 app-editors/ne:tinfo - Link against libtinfo from sys-libs/ncurses
+app-editors/neovim:jemalloc - Use dev-libs/jemalloc for allocations
 app-editors/neovim:nvimpager - Install nvimpager symlink to less.sh macro
 app-editors/tea:aspell - Enable spellchecking using app-text/aspell
 app-editors/tea:hunspell - Enable spellchecking using app-text/hunspell
@@ -1705,7 +1706,6 @@ dev-java/commons-logging:avalon-framework - Add optional support for avalon-fram
 dev-java/commons-logging:avalon-logkit - Add optional support for avalon-logkit
 dev-java/commons-logging:log4j - Add optional support for log4j
 dev-java/commons-logging:servletapi - Add optional support for servletapi
-dev-java/commons-modeler:commons-digester - Add support for the commons-digester based Mbeans Descriptor source
 dev-java/ecj-gcj:native - Build a native binary along with the jar. Provides faster execution time, but needs about 1G memory and some patience to compile.
 dev-java/eclipse-ecj:ant - Support using ecj in Ant builds via dev-java/ant-eclipse-ecj
 dev-java/emma:launcher - Install /usr/bin/emma. Collides with sci-biology/emboss.
@@ -3375,6 +3375,7 @@ kde-frameworks/kwallet:gpg - Support wallets with GnuPG encryption in addition t
 kde-frameworks/kxmlgui:attica - Enable support for kde-frameworks/attica
 kde-frameworks/networkmanager-qt:teamd - Enable Teamd control support
 kde-frameworks/plasma:egl - Enable EGL support
+kde-frameworks/plasma:gles2 - Use GLES 2.0 or later instead of full OpenGL
 kde-frameworks/sonnet:aspell - Enable the app-text/aspell spell-checking backend
 kde-frameworks/sonnet:hunspell - Enable the app-text/hunspell spell-checking backend
 kde-misc/kcm-grub2:hwinfo - Used to work out supported framebuffer resolutions
@@ -6212,6 +6213,7 @@ net-misc/wicd:pm-utils - Installs the pm-utils hooks for suspend/resume and requ
 net-misc/x2goserver:fuse - Use sys-fs/sshfs-fuse to allow shared folders
 net-misc/xrdp:fuse - Enable clipboard file / device redirection via sys-fs/fuse
 net-misc/yaydl:soundextract - Extract the soundtracks of the downloaded videos
+net-misc/youtube-viewer:gtk - Install the gtk GUI, called gtk-youtube-viewer
 net-nds/389-ds-base:auto-dn-suffix - Enable auto bind with auto dn suffix over unix domain socket (LDAPI) support
 net-nds/389-ds-base:autobind - Enable auto bind over unix domain socket (LDAPI) support
 net-nds/389-ds-base:bitwise - Enable bitwise plugin - supported data in raw/bitwise format
@@ -6576,8 +6578,6 @@ sci-chemistry/avogadro:glsl - Enable glsl features via GLEW.
 sci-chemistry/ball:cuda - Include cuda support
 sci-chemistry/ball:sql - Include SQL database support
 sci-chemistry/ball:webkit - Uses dev-qt/qtwebkit for drawing
-sci-chemistry/ccp4:arpwarp - Add binary arp-warp for molecular replacement
-sci-chemistry/ccp4:balbes - Install sci-chemistry/balbes
 sci-chemistry/chemtool:emf - EMF export support
 sci-chemistry/cns:aria - Support patch for sci-chemistry/aria
 sci-chemistry/eden:double-precision - More precise calculations at the expense of speed
@@ -6601,7 +6601,6 @@ sci-chemistry/molequeue:client - Build the client application
 sci-chemistry/molequeue:server - Build the serve application
 sci-chemistry/molequeue:zeromq - Build with net-libs/zeromq support
 sci-chemistry/mopac7:gmxmopac7 - Add support library for gromacs
-sci-chemistry/oasis:minimal - Restricts functionality on free software
 sci-chemistry/pdb2pqr:opal - Add web interface via opal
 sci-chemistry/pdb2pqr:pdb2pka - Install experimental pdb2pka interface
 sci-chemistry/pymol:apbs - Install the apbs plugin
@@ -7944,6 +7943,9 @@ www-servers/uwsgi:zeromq - Enable logging and deployment via ZeroMQ.
 www-servers/varnish:jemalloc - Use dev-libs/jemalloc for allocations
 www-servers/varnish:tools - Build additional tools: varnishhist, varnishstat, varnishtop, varnishsizes
 www-servers/xsp:developer - creates .mdb files for either Release and Debug
+www-servers/xsp:net35 - use .NET 3.5 Framework
+www-servers/xsp:net40 - use .NET 4.0 Framework
+www-servers/xsp:net45 - use .NET 4.5 Framework
 x11-apps/ardesia:cwiid - cwiid support: collection of Linux tools written in C for interfacing to the Nintendo Wiimote.
 x11-apps/copyq:webkit - enables the application to use advanced HTML rendering and fetching remote images and other data
 x11-apps/intel-gpu-tools:python - Install python based register dumper utilities
