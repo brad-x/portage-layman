@@ -30,9 +30,30 @@
 
 #--- END OF EXAMPLES ---
 
-# Matt Turner <mattst88@gentoo.org> (Oct 27 2015)
-# xproto-7.0.28 breaks xorg-server
->=x11-proto/xproto-7.0.28
+# Michał Górny <mgorny@gentoo.org> (30 Oct 2015)
+# Uses unsafe ioctls that could result in data corruption. Upstream
+# is working on replacing them in the wip/dedup-syscall branch.
+# Keep it masked until they are done. sys-fs/duperemove is
+# the suggested replacement for the meantime.
+sys-fs/bedup
+
+# James Le Cuirot <chewi@gentoo.org> (29 Oct 2015)
+# Dead project with no revdeps. Removal in 30 days.
+dev-java/flute
+
+# Patrice Clement <monsieurp@gentoo.org> (29 Oct 2015)
+# Upstream is somewhat alive but there are better XML parsers out there.
+# Removal in 30 days. See #268619.
+dev-java/castor
+
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (29 Oct 2015)
+# Mask until it is decided how to address xorg-server file collisions #564358
+=x11-drivers/xf86-input-evdev-2.10.0
+
+# Patrice Clement <monsieurp@gentoo.org> (29 Oct 2015)
+# No release since 2007. Has dependencies on old ebuilds.
+# Removal in 30 days. See #564370
+dev-db/octopus
 
 # Ian Delaney <idella4@gentoo.org> (27 Oct 2015)
 # fails to build dev-lisp/sbcl-1.2.16 #563812
@@ -351,10 +372,6 @@ app-emulation/emul-linux-x86-jna
 # Sergei Trofimovich <slyfox@gentoo.org> (29 Jan 2015)
 # Mask live ebuild
 =dev-util/radare2-9999
-
-# Anthony G. Basile <blueness@gentoo.org> (28 Jan 2015)
-# Its broken and we're waiting for fixes from upstream, bug #536196
-=net-misc/tor-0.2.6.2_alpha-r1
 
 # Anthony G. Basile <blueness@gentoo.org> (9 Jan 2015)
 # p.mask the -9999 version
