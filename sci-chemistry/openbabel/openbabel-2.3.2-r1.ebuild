@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/openbabel/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="amd64 ~arm ppc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="doc openmp test wxwidgets"
 
 RDEPEND="
@@ -49,7 +49,7 @@ src_prepare() {
 }
 
 src_configure() {
-	need-wxwidgets unicode
+	use wxwidgets && need-wxwidgets unicode
 	local mycmakeargs=()
 	mycmakeargs+=(
 		-DOPENBABEL_USE_SYSTEM_INCHI=ON

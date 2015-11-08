@@ -107,8 +107,6 @@ RDEPEND="${COMMON_DEPEND}
 	qt5? ( dev-python/PyQt5[gui,widgets,${PYTHON_USEDEP}] )
 	"
 
-RESTRICT="mirror"
-
 # A few C++ source files are written to srcdir.
 # Other than that, the ebuild shall be fit for out-of-source build.
 DISTUTILS_IN_SOURCE_BUILD=1
@@ -215,6 +213,7 @@ python_configure() {
 wrap_setup() {
 	local MPLSETUPCFG=${BUILD_DIR}/setup.cfg
 	export MPLSETUPCFG
+	unset DISPLAY
 
 	# Note: remove build... if switching to out-of-source build
 	"${@}" build --build-lib="${BUILD_DIR}"/build/lib
