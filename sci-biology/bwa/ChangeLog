@@ -1,85 +1,56 @@
 # ChangeLog for sci-biology/bwa
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/bwa/ChangeLog,v 1.19 2015/04/20 20:21:41 jlec Exp $
+# (auto-generated from git log)
 
-  20 Apr 2015; Justin Lecher <jlec@gentoo.org> -bwa-0.5.0.ebuild,
-  -bwa-0.6.2.ebuild:
-  Drop old
+*bwa-0.7.12 (09 Aug 2015)
 
-  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> bwa-0.7.12.ebuild:
-  Stable for x86, wrt bug #544944
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bwa-0.7.12.ebuild,
+  +files/bwa-0.7.12-Makefile.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Agostino Sarubbo <ago@gentoo.org> bwa-0.7.12.ebuild:
-  Stable for amd64, wrt bug #544944
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Mar 2015; Justin Lecher <jlec@gentoo.org> -bwa-0.5.0-r1.ebuild,
-  -bwa-0.5.9.ebuild, -bwa-0.6.1.ebuild:
-  Drop old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bwa-0.7.12 (03 Mar 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Mar 2015; Justin Lecher <jlec@gentoo.org> +bwa-0.7.12.ebuild,
-  +files/bwa-0.7.12-Makefile.patch:
-  Version Bump; thanks Ted Tanberry
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*bwa-0.6.2 (21 Jan 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jan 2013; Andrey Kislyuk <weaver@gentoo.org> +bwa-0.6.2.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*bwa-0.6.1 (30 Nov 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Nov 2011; Andrey Kislyuk <weaver@gentoo.org> -bwa-0.5.8a.ebuild,
-  +bwa-0.6.1.ebuild:
-  Version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*bwa-0.5.9 (01 May 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  01 May 2011; Justin Lecher <jlec@gentoo.org> +bwa-0.5.9.ebuild:
-  Version Bump, #354925
-
-*bwa-0.5.8a (09 Oct 2010)
-
-  09 Oct 2010; Andrey Kislyuk <weaver@gentoo.org> +bwa-0.5.8a.ebuild:
-  Version bump
-
-*bwa-0.5.0-r1 (07 Sep 2010)
-
-  07 Sep 2010; Kacper Kowalik <xarthisius@gentoo.org> -bwa-0.4.6.ebuild,
-  +bwa-0.5.0-r1.ebuild:
-  Respect LDFLAGS wrt bug 336348. Thanks to Diego for the report. Add proper
-  pthread support, drop empty DEPENDs. Drop old.
-
-  23 May 2010; Pacho Ramos <pacho@gentoo.org> bwa-0.5.0.ebuild:
-  stable amd64, bug 314907
-
-  26 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> bwa-0.5.0.ebuild:
-  x86 stable wrt bug #314907
-
-*bwa-0.5.0 (28 Oct 2009)
-
-  28 Oct 2009; Andrey Kislyuk <weaver@gentoo.org> +bwa-0.5.0.ebuild:
-  Version bump
-
-  12 Jun 2009; Christian Faulhammer <fauli@gentoo.org> bwa-0.4.6.ebuild:
-  respect CFLAGS, thus removing the hard 64bit build and other niceties
-  upstream hard forces on users, see bug 273065 by flameeyes; restore ~x86
-  KEYWORD
-
-  07 Jun 2009; Diego E. Pettenò <flameeyes@gentoo.org> bwa-0.4.6.ebuild:
-  Remove ~x86 keyword, see bug #273065.
-
-*bwa-0.4.6 (20 Apr 2009)
-
-  20 Apr 2009; Andrey Kislyuk <weaver@gentoo.org> -bwa-0.4.5.ebuild,
-  +bwa-0.4.6.ebuild:
-  Version bump
-
-*bwa-0.4.5 (26 Feb 2009)
-
-  26 Feb 2009; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
-  +bwa-0.4.5.ebuild:
-  New package, ebuild written by me.

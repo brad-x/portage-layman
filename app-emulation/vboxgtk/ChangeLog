@@ -1,103 +1,66 @@
 # ChangeLog for app-emulation/vboxgtk
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vboxgtk/ChangeLog,v 1.22 2015/04/08 07:30:35 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
-  Remove old Python implementations
+*vboxgtk-0.8.2-r1 (09 Aug 2015)
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +vboxgtk-0.8.2-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  22 Jul 2013; Michał Górny <mgorny@gentoo.org> -vboxgtk-0.8.0-r3.ebuild,
-  -vboxgtk-0.8.2.ebuild:
-  Drop old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Apr 2013; Michał Górny <mgorny@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
-  distutils-r1_python_prepare_all has to be called after modifying ${S}. This
-  will ensure that proper files are copied if package is switched to an in-
-  source build.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Jan 2013; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
-  remove obsolete deps
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Jan 2013; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
-  fix argparse dep
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Jan 2013; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
-  add virtual/python-argparse to RDEPEND
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*vboxgtk-0.8.2-r1 (06 Jan 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Jan 2013; Julian Ospald <hasufell@gentoo.org> +vboxgtk-0.8.2-r1.ebuild:
-  revbump: migrate to distutils-r1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*vboxgtk-0.8.2 (27 Oct 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
+  Enable https for all google URIs
 
-  27 Oct 2012; Julian Ospald <hasufell@gentoo.org> -vboxgtk-0.8.1.ebuild,
-  +vboxgtk-0.8.2.ebuild, -files/vboxgtk.desktop.in:
-  version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*vboxgtk-0.8.1 (26 Oct 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> vboxgtk-0.8.2-r1.ebuild:
+  Convert URIs for googlecode.com to https
 
-  26 Oct 2012; Julian Ospald <hasufell@gentoo.org> +vboxgtk-0.8.1.ebuild,
-  +files/vboxgtk.desktop.in:
-  version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Oct 2012; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.0-r3.ebuild:
-  fix build time deps
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*vboxgtk-0.8.0-r3 (24 Oct 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Oct 2012; Julian Ospald <hasufell@gentoo.org> -vboxgtk-0.8.0-r2.ebuild,
-  +vboxgtk-0.8.0-r3.ebuild:
-  fix dependencies wrt #438682
+  Bug: https://bugs.gentoo.org/552720
 
-*vboxgtk-0.8.0-r2 (17 Oct 2012)
-
-  17 Oct 2012; Julian Ospald <hasufell@gentoo.org> -vboxgtk-0.8.0.ebuild,
-  -vboxgtk-0.8.0-r1.ebuild, +vboxgtk-0.8.0-r2.ebuild:
-  force revbump, so no user is left with broken runtime deps
-
-  17 Oct 2012; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.0.ebuild,
-  vboxgtk-0.8.0-r1.ebuild:
-  fix dependencies wrt #438682
-
-*vboxgtk-0.8.0-r1 (26 Sep 2012)
-
-  26 Sep 2012; Julian Ospald <hasufell@gentoo.org> +vboxgtk-0.8.0-r1.ebuild:
-  migrate to python-distutils-ng.eclass
-
-  23 Jul 2012; Julian Ospald <hasufell@gentoo.org> vboxgtk-0.8.0.ebuild,
-  metadata.xml:
-  adopt package, fix RESTRICT_PYTHON_ABIS, remove shebang-conversion, don't
-  overwrite distutils_src_prepare
-
-*vboxgtk-0.8.0 (22 Jul 2012)
-
-  22 Jul 2012; Pacho Ramos <pacho@gentoo.org> +vboxgtk-0.8.0.ebuild,
-  -vboxgtk-0.5.0-r1.ebuild:
-  Version bump, remove old (#398443 by b1254633).
-
-  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer as he is not able to maintain this anymore.
-
-  07 Jan 2011; Lars Wendler <polynomial-c@gentoo.org> vboxgtk-0.5.0.ebuild,
-  vboxgtk-0.5.0-r1.ebuild:
-  app-emulation/virtualbox-ose was pkgmoved to app-emulation/virtualbox.
-
-*vboxgtk-0.5.0-r1 (28 Apr 2010)
-
-  28 Apr 2010; Mounir Lamouri <volkmar@gentoo.org> +vboxgtk-0.5.0-r1.ebuild:
-  vboxgtk doesn't support python-3. Fix bug 311191.
-
-*vboxgtk-0.5.0 (11 Oct 2009)
-
-  11 Oct 2009; Mounir Lamouri <volkmar@gentoo.org> -vboxgtk-0.4.1.ebuild,
-  +vboxgtk-0.5.0.ebuild:
-  Version bump to 0.5.0
-
-*vboxgtk-0.4.1 (30 May 2009)
-
-  30 May 2009; Mounir Lamouri <volkmar@gentoo.org> +metadata.xml,
-  +vboxgtk-0.4.1.ebuild:
-  Initial commit, see bug 254718

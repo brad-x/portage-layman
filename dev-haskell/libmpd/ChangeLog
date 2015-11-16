@@ -1,57 +1,74 @@
 # ChangeLog for dev-haskell/libmpd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/libmpd/ChangeLog,v 1.13 2015/08/01 15:18:21 slyfox Exp $
+# (auto-generated from git log)
 
-  01 Aug 2015; Sergei Trofimovich <slyfox@gentoo.org> libmpd-0.9.0.2.ebuild:
-  Disable tests, needs porting to ghc-7.10.
+*libmpd-0.9.0.2 (09 Aug 2015)
+*libmpd-0.9.0.1 (09 Aug 2015)
+*libmpd-0.8.0.4-r1 (09 Aug 2015)
+*libmpd-0.8.0.3-r1 (09 Aug 2015)
+*libmpd-0.8.0.1-r1 (09 Aug 2015)
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
-
-*libmpd-0.9.0.2 (01 Jun 2015)
-
-  01 Jun 2015; Sergei Trofimovich <slyfox@gentoo.org> +libmpd-0.9.0.2.ebuild:
-  Version bump, allows latest dev-haskell/utf8-string, bug #550950 by riepernet.
-
-*libmpd-0.9.0.1 (25 Oct 2014)
-
-  25 Oct 2014; Sergei Trofimovich <slyfox@gentoo.org> +libmpd-0.9.0.1.ebuild:
-  Version bump (bug #526648 by Phil Tooley).
-
-  25 Jul 2014; Sergei Trofimovich <slyfox@gentoo.org> libmpd-0.8.0.1-r1.ebuild,
-  libmpd-0.8.0.3-r1.ebuild, libmpd-0.8.0.4-r1.ebuild:
-  Drop trailing '.' from description.
-
-  25 Jul 2014; Sergei Trofimovich <slyfox@gentoo.org> metadata.xml:
-  Drop redundant '<maintainer>' field, leave only '<herd>'.
-
-*libmpd-0.8.0.4-r1 (03 Jul 2014)
-
-  03 Jul 2014; Mark Wright <gienah@gentoo.org> +libmpd-0.8.0.4-r1.ebuild:
-  Bump libmpd to 0.8.0.4-r1
-
-*libmpd-0.8.0.3-r1 (22 May 2014)
-
-  22 May 2014; Sergei Trofimovich <slyfox@gentoo.org> +libmpd-0.8.0.3-r1.ebuild:
-  Version bump (noticed by rieper).
-
-  21 Feb 2014; Sergei Trofimovich <slyfox@gentoo.org> -libmpd-0.7.2.ebuild:
-  Drop old.
-
-*libmpd-0.8.0.1-r1 (01 Jan 2013)
-
-  01 Jan 2013; Sergei Trofimovich <slyfox@gentoo.org> +libmpd-0.8.0.1-r1.ebuild:
-  Version bump.
-
-  06 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org> libmpd-0.7.2.ebuild:
-  Get rid of 'dev-haskell/time' depend as it's a ghc's core library.
-
-  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> libmpd-0.7.2.ebuild:
-  move dev-haskell/libmpd/libmpd-0.7.2.ebuild ebuild to mirror://hackage
-
-*libmpd-0.7.2 (13 Apr 2012)
-
-  13 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org> +libmpd-0.7.2.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libmpd-0.8.0.1-r1.ebuild, +libmpd-0.8.0.3-r1.ebuild,
+  +libmpd-0.8.0.4-r1.ebuild, +libmpd-0.9.0.1.ebuild, +libmpd-0.9.0.2.ebuild,
   +metadata.xml:
-  Initial version. An MPD client library for haskell. Depend for
-  x11-misc/xmobar-0.14
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> libmpd-0.8.0.1-r1.ebuild,
+  libmpd-0.8.0.3-r1.ebuild, libmpd-0.8.0.4-r1.ebuild, libmpd-0.9.0.1.ebuild,
+  libmpd-0.9.0.2.ebuild:
+  Use https by default
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  29 Sep 2015; Sergei Trofimovich <slyfox@gentoo.org> libmpd-0.9.0.2.ebuild:
+  x86, amd64 stable, bug #561508
+
+  Package-Manager: portage-2.2.22
+

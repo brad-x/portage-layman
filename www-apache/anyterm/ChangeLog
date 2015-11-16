@@ -1,135 +1,67 @@
 # ChangeLog for www-apache/anyterm
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/anyterm/ChangeLog,v 1.25 2014/08/10 20:13:32 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> anyterm-1.1.29.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*anyterm-1.1.29 (09 Aug 2015)
 
-  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop apache herd as discussed in http://www.gossamer-
-  threads.com/lists/gentoo/dev/262834
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +anyterm-1.1.29.ebuild,
+  +files/anyterm-1.1.28-respect-LDFLAGS.patch,
+  +files/anyterm-1.1.29-boost-1.50.patch, +files/anyterm-1.1.29-gcc-4.4.patch,
+  +files/anyterm.conf.d, +files/anyterm.init.d, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Jul 2012; Mike Gilbert <floppym@gentoo.org>
-  +files/anyterm-1.1.29-boost-1.50.patch, anyterm-1.1.29.ebuild:
-  Fix build failure with Boost 1.50. Patch by Arfrever.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  anyterm-1.1.29.ebuild:
-  Fix dependencies (bug #293087).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Sep 2009; Benedikt Böhm <hollow@gentoo.org> -anyterm-1.1.28.ebuild:
-  cleanup
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*anyterm-1.1.29 (17 Jul 2009)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Jul 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -files/50_anyterm.conf, -files/anyterm-1.1.15-browser-gentoo.patch,
-  -files/anyterm-1.1.15-postinst-en.txt,
-  -files/anyterm-1.1.22-respect-flags.patch, +anyterm-1.1.29.ebuild,
-  +files/anyterm-1.1.29-gcc-4.4.patch:
-  Version bump. Fix building with GCC 4.4 (bug #278154).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 May 2009; Markus Meier <maekke@gentoo.org> anyterm-1.1.28.ebuild:
-  add ~amd64, bug #265763
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Mar 2009; Petteri Räty <betelgeuse@gentoo.org> -anyterm-1.1.16.ebuild,
-  -anyterm-1.1.22.ebuild, -anyterm-1.1.24.ebuild:
-  Remove old versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*anyterm-1.1.28 (24 Jan 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Jan 2009; Peter Volkov <pva@gentoo.org>
-  +files/anyterm-1.1.28-respect-LDFLAGS.patch, +files/anyterm.conf.d,
-  +files/anyterm.init.d, +anyterm-1.1.28.ebuild:
-  Version bump, #237655, thank Arfrever Frehtes Taifersar Arahesis and Moshe
-  Kamensky.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
+  Bug: https://bugs.gentoo.org/552720
 
-*anyterm-1.1.24 (01 Jul 2008)
+*anyterm-1.1.29-r1 (07 Nov 2015)
 
-  01 Jul 2008; Benedikt Böhm <hollow@gentoo.org> +anyterm-1.1.24.ebuild:
-  version bump wrt #229977
+  07 Nov 2015; Patrice Clement <monsieurp@gentoo.org>
+  +anyterm-1.1.29-r1.ebuild:
+  EAPI 5 bump.
 
-  01 Jun 2008; Benedikt Böhm <hollow@gentoo.org>
-  +files/anyterm-1.1.22-respect-flags.patch, anyterm-1.1.22.ebuild:
-  fix #214377
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  23 Mar 2008; Benedikt Böhm <hollow@gentoo.org> anyterm-1.1.16.ebuild:
-  fix depend.apache usage wrt #208033
-
-*anyterm-1.1.22 (22 Mar 2008)
-
-  22 Mar 2008; Benedikt Böhm <hollow@gentoo.org> +anyterm-1.1.22.ebuild:
-  version bump wrt #209865
-
-  23 Feb 2008; Benedikt Böhm <hollow@gentoo.org> metadata.xml,
-  -anyterm-1.1.15.ebuild:
-  fix metadata; remove old version
-
-*anyterm-1.1.16 (10 Jan 2008)
-
-  10 Jan 2008; Benedikt Böhm <hollow@gentoo.org> files/50_anyterm.conf,
-  +anyterm-1.1.16.ebuild:
-  version bump, #203928
-
-  06 Jan 2008; Benedikt Böhm <hollow@gentoo.org>
-  -files/anyterm-1.1.8-apachemod-Makefile.patch,
-  -files/anyterm-1.1.8-browser-gentoo.patch,
-  -files/anyterm-1.1.8-common-extern.patch,
-  -files/anyterm-1.1.8-libpbe-no-pg_config.patch,
-  -files/anyterm-1.1.8-postinst-en.txt, -anyterm-1.1.8-r2.ebuild,
-  anyterm-1.1.15.ebuild:
-  fix #203928; cleanup
-
-*anyterm-1.1.15 (08 Sep 2007)
-
-  08 Sep 2007; Benedikt Böhm <hollow@gentoo.org>
-  +files/anyterm-1.1.15-browser-gentoo.patch,
-  +files/anyterm-1.1.15-postinst-en.txt, +anyterm-1.1.15.ebuild:
-  version bump
-
-  01 Sep 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing twp from metadata due to his retirement (see #190561 for reference).
-
-  29 Jul 2007; Christian Heim <phreak@gentoo.org> anyterm-1.1.8-r2.ebuild:
-  Fixing the DEPEND/RDEPEND for the move of net-www/apache to
-  www-servers/apache (#78622). Fixing the DEPEND/RDEPEND for the move of
-  net-www/mod_auth_pam to www-apache/mod_auth_pam.
-
-  29 Jul 2007; Christian Heim <phreak@gentoo.org> anyterm-1.1.8-r2.ebuild:
-  Fixing the DEPEND/RDEPEND for the move of net-www/apache to
-  www-servers/apache (#78622).
-
-  26 May 2007; Luca Longinotti <chtekk@gentoo.org> anyterm-1.1.8-r2.ebuild:
-  Fix bug #179840.
-
-  15 Jan 2007; Luca Longinotti <chtekk@gentoo.org> metadata.xml,
-  anyterm-1.1.8-r2.ebuild:
-  Add Apache herd, cleanup.
-
-*anyterm-1.1.8-r2 (25 Jan 2006)
-
-  25 Jan 2006; Tom Payne <twp@gentoo.org>
-  +files/anyterm-1.1.8-postinst-en.txt, files/50_anyterm.conf,
-  files/anyterm-1.1.8-browser-gentoo.patch, -anyterm-1.1.8-r1.ebuild,
-  +anyterm-1.1.8-r2.ebuild:
-  Improved default security and webapp support. Thanks webapp and apache herds.
-
-*anyterm-1.1.8-r1 (24 Jan 2006)
-
-  24 Jan 2006; Tom Payne <twp@gentoo.org>
-  files/anyterm-1.1.8-browser-gentoo.patch, -anyterm-1.1.8.ebuild,
-  +anyterm-1.1.8-r1.ebuild:
-  Fix dumb anyterm_command configuration error.
-
-*anyterm-1.1.8 (23 Jan 2006)
-
-  23 Jan 2006; Tom Payne <twp@gentoo.org>
-  +files/anyterm-1.1.8-browser-gentoo.patch, +files/50_anyterm.conf,
-  +files/anyterm-1.1.8-apachemod-Makefile.patch,
-  +files/anyterm-1.1.8-common-extern.patch,
-  +files/anyterm-1.1.8-libpbe-no-pg_config.patch, +metadata.xml,
-  +anyterm-1.1.8.ebuild:
-  Initial version. Bug # 98647.

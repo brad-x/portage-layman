@@ -1,110 +1,64 @@
 # ChangeLog for dev-java/jakarta-jstl
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jakarta-jstl/ChangeLog,v 1.24 2010/04/05 22:52:20 caster Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Apr 2010; Vlastimil Babka <caster@gentoo.org>
-  -jakarta-jstl-1.1.2-r1.ebuild:
-  Remove old.
+*jakarta-jstl-1.1.2-r2 (09 Aug 2015)
 
-  09 Feb 2010; Joseph Jezak <josejx@gentoo.org>
-  jakarta-jstl-1.1.2-r2.ebuild:
-  Marked ppc stable for bug #296226.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/build-xml.patch,
+  +jakarta-jstl-1.1.2-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Dec 2009; Brent Baude <ranger@gentoo.org> jakarta-jstl-1.1.2-r2.ebuild:
-  stable ppc64, bug 296226
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Dec 2009; Markus Meier <maekke@gentoo.org>
-  jakarta-jstl-1.1.2-r2.ebuild:
-  amd64/x86 stable, bug #296226
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*jakarta-jstl-1.1.2-r2 (08 Nov 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Nov 2009; Vlastimil Babka <caster@gentoo.org>
-  +jakarta-jstl-1.1.2-r2.ebuild:
-  Revbump to remove dependency on 1.5 jdk - bug #292001.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Mar 2008; Petteri Räty <betelgeuse@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  RESTRICT test for the upcoming generic src_test. Needs cactus packaged.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Nov 2007; Christian Faulhammer <opfer@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  filtered jikes and quoted some variables
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Sep 2007; Miroslav Šulc <fordfrog@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Fixed order of virtual/jdk versions so we have the latest first.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Aug 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  ppc stable
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jakarta-jstl-1.1.2-r2.ebuild:
+  Use https by default
 
-  15 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  amd64 stable, bug #188734.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Aug 2007; Christian Faulhammer <opfer@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  stable x86, bug 187681
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Aug 2007; Markus Rothe <corsair@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Stable on ppc64; bug #188734
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Jun 2007; Markus Rothe <corsair@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Added ~ppc64; bug #181652
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 May 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Add ~x86-fbsd keyword. Bug #176906.
-
-  09 Dec 2006; Diego Pettenò <flameeyes@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Add ~x86-fbsd keyword.
-
-  10 Oct 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  -files/jakarta-jstl-1.1.2-remove-bootclasspath.patch,
-  +files/build-xml.patch, -jakarta-jstl-1.1.2.ebuild,
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Made new patch that adds xalan to classpath, since previous patch was
-  removing boot classpath. This one does both. Removed previous ebuild and
-  patch.
-
-  27 Sep 2006; Joshua Nichols <nichoj@gentoo.org>
-  jakarta-jstl-1.1.2-r1.ebuild:
-  Added missing xalan dep. Force either 1.4 or 1.5, as it fails to compile
-  with 1.6 because of changes in the JDBC API. Reported in bug #148410.
-
-*jakarta-jstl-1.1.2-r1 (18 Sep 2006)
-
-  18 Sep 2006; Joshua Nichols <nichoj@gentoo.org>
-  +jakarta-jstl-1.1.2-r1.ebuild:
-  Revision bump to support the new Java system.
-
-  14 Sep 2006; Joshua Nichols <nichoj@gentoo.org> jakarta-jstl-1.1.2.ebuild:
-  Added ~ppc, bug #134206.
-
-  13 Sep 2006; Joshua Nichols <nichoj@gentoo.org>
-  +files/jakarta-jstl-1.1.2-remove-bootclasspath.patch,
-  jakarta-jstl-1.1.2.ebuild:
-  Added patch to remove unnecessary bootclasspath from javac. This allows for
-  the possibility to keywrod on ppc and elsewhere. Provided by Aymeric Nys
-  <aymeric@nnx.com> in bug #134206.
-
-  03 Apr 2006; Joshua Nichols <nichoj@gentoo.org> jakarta-jstl-1.1.2.ebuild:
-  Removed unecessary tomcat dependency.
-
-  17 Aug 2005; Petteri Räty <betelgeuse@gentoo.org>
-  jakarta-jstl-1.1.2.ebuild:
-  Marked stable on x86 in preparation for Netbeans 4.0.
-
-  04 May 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  jakarta-jstl-1.1.2.ebuild:
-  added missing servletapi depend, fixes #91366
-
-*jakarta-jstl-1.1.2 (17 Apr 2005)
-
-  17 Apr 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  +jakarta-jstl-1.1.2.ebuild:
-  Initial import, fixes #58906.
+  Bug: https://bugs.gentoo.org/552720
 

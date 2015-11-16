@@ -1,58 +1,63 @@
 # ChangeLog for dev-python/simpy
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/simpy/ChangeLog,v 1.15 2015/07/03 13:17:28 jlec Exp $
+# (auto-generated from git log)
 
-*simpy-3.0.8 (03 Jul 2015)
+*simpy-3.0.8 (09 Aug 2015)
+*simpy-3.0.3 (09 Aug 2015)
+*simpy-2.3.1-r1 (09 Aug 2015)
 
-  03 Jul 2015; Justin Lecher <jlec@gentoo.org> +simpy-3.0.8.ebuild:
-  Version Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +simpy-2.3.1-r1.ebuild, +simpy-3.0.3.ebuild, +simpy-3.0.8.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> simpy-2.3.1-r1.ebuild:
-  Drop old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Mar 2015; Ian Delaney <idella4@gentoo.org> -simpy-2.3.1.ebuild,
-  -simpy-2.3.ebuild, simpy-3.0.3.ebuild:
-  clean old impl add py3.4 support, rm old ebuilds with old EAPI and eclass
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Mar 2014; Justin Lecher <jlec@gentoo.org> simpy-3.0.3.ebuild:
-  Fix doc installation, #504184
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*simpy-3.0.3 (07 Mar 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Mar 2014; Justin Lecher <jlec@gentoo.org> +simpy-3.0.3.ebuild:
-  Version Bump,# 503702
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*simpy-2.3.1-r1 (04 Jun 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Jun 2013; Justin Lecher <jlec@gentoo.org> +simpy-2.3.1-r1.ebuild,
-  metadata.xml:
-  Bump to new python eclasses
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*simpy-2.3.1 (26 Aug 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Aug 2012; Justin Lecher <jlec@gentoo.org> +simpy-2.3.1.ebuild:
-  Version Bump
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Mar 2012; Justin Lecher <jlec@gentoo.org> simpy-2.3.ebuild:
-  Remove version restriction from dev-python/sphinx DEP, #409021
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  28 Feb 2012; Justin Lecher <jlec@gentoo.org> simpy-2.3.ebuild:
-  Fix building of man pages, patch provided by Ian Delaney, #398165
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Feb 2012; Patrick Lauer <patrick@gentoo.org> simpy-2.3.ebuild:
-  Restricting py2.5
-
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> simpy-2.3.ebuild:
-  Restricting pypy #404007
-
-  10 Jan 2012; Justin Lecher <jlec@gentoo.org> simpy-2.3.ebuild:
-  Drop USE=doc, because doc building fails, #398165
-
-*simpy-2.3 (06 Jan 2012)
-
-  06 Jan 2012; Justin Lecher <jlec@gentoo.org> +simpy-2.3.ebuild,
-  +metadata.xml:
-  Moved from sci overlay to tree

@@ -1,66 +1,62 @@
 # ChangeLog for sci-visualization/ggobi
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/ggobi/ChangeLog,v 1.13 2013/02/25 06:32:47 bicatali Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*ggobi-2.1.10 (25 Feb 2013)
+*ggobi-2.1.10 (09 Aug 2015)
+*ggobi-2.1.9-r1 (09 Aug 2015)
+*ggobi-2.1.8 (09 Aug 2015)
 
-  25 Feb 2013; Sébastien Fabbro <bicatali@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/ggobi-2.1.10-desktop.patch, +files/ggobi-2.1.10-hardened.patch,
-  +ggobi-2.1.10.ebuild:
-  Version bump (tar ball from Debian). Added a desktop file patch and some m4
-  macro cleanup before autoreconf (bug #448824)
+  +files/ggobi-2.1.8-graphviz.patch, +files/ggobi-2.1.8-plugindir.patch,
+  +files/ggobi-2.1.8-syslibltdl.patch, +files/ggobi-2.1.9-as-needed.patch,
+  +ggobi-2.1.8.ebuild, +ggobi-2.1.9-r1.ebuild, +ggobi-2.1.10.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.9-r1.ebuild,
-  metadata.xml:
-  keyword amd64-linux, x86-linux
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*ggobi-2.1.9-r1 (26 Jun 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/ggobi-2.1.9-as-needed.patch, +ggobi-2.1.9-r1.ebuild,
-  -ggobi-2.1.9.ebuild:
-  Fixed for as-needed. Install plugins in libdir (bug #423363)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> ggobi-2.1.8.ebuild,
-  ggobi-2.1.9.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.9.ebuild:
-  Added doc flag to allow remove unwanted docs
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*ggobi-2.1.9 (27 Jul 2011)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  files/ggobi-2.1.8-graphviz.patch, +ggobi-2.1.9.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> ggobi-2.1.8.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Nov 2010; Kacper Kowalik <xarthisius@gentoo.org> ggobi-2.1.8.ebuild:
-  Fix automake called by maintainer-mode wrt bug 342747. Thanks to Diego
-  Elio Pettenò for the report.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Apr 2010; Markos Chandras <hwoarang@gentoo.org> ggobi-2.1.8.ebuild:
-  Stable on amd64 wrt bug #301484
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Jan 2010; Christian Faulhammer <fauli@gentoo.org> ggobi-2.1.8.ebuild:
-  stable x86, bug 301484
-
-  14 Dec 2009; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.8.ebuild,
-  +files/ggobi-2.1.8-plugindir.patch, +files/ggobi-2.1.8-syslibltdl.patch:
-  Now use system libltdl instead of bundled one. Closing bug #273766
-
-  14 Dec 2009; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.8.ebuild:
-  Changed plugin directory to libdir instead of datadir
-
-*ggobi-2.1.8 (20 Mar 2009)
-
-  20 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/ggobi-2.1.8-graphviz.patch, +metadata.xml, +ggobi-2.1.8.ebuild:
-  Initial import from the science overlay to the main tree, with a patch for
-  graphviz > 2.22 from Guillaume Horel, bug #262595
-
-  29 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +sci-visualization/ggobi/metadata.xml:
-  Initial import

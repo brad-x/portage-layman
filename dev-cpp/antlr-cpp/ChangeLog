@@ -1,0 +1,20 @@
+# ChangeLog for dev-cpp/antlr-cpp
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*antlr-cpp-2.7.7 (14 Oct 2015)
+
+  14 Oct 2015; James Le Cuirot <chewi@gentoo.org> +antlr-cpp-2.7.7.ebuild,
+  +files/2.7.7-gcc.patch, +files/2.7.7-libtool.patch, +metadata.xml:
+  New package, split from dev-java/antlr
+
+  The old ANTLR 2 ebuild tried to cram all the runtimes together, which
+  was messy. The C++ runtime does not need any Java components at build
+  time or runtime so it makes sense to split this out. The C++ runtime
+  for ANTLR 4 is maintained separately by upstream anyway.
+
+  This new package does a better job of building the shared library with
+  the help of libtool. It also supports multilib.
+
+  Package-Manager: portage-2.2.20.1
+

@@ -1,85 +1,56 @@
 # ChangeLog for net-libs/libwhisker
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libwhisker/ChangeLog,v 1.17 2014/11/09 22:12:31 dilfridge Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*libwhisker-2.5-r1 (09 Nov 2014)
+*libwhisker-2.5-r1 (09 Aug 2015)
 
-  09 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  -libwhisker-2.5.ebuild, +libwhisker-2.5-r1.ebuild:
-  Revbump without changes, since the EAPI was increased to 5 in the past
-  without revbump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libwhisker-2.5-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  09 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org> libwhisker-2.5.ebuild:
-  Replace perlinfo with perl_set_version
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Jul 2014; Mikle Kolyada <zlogene@gentoo.org> libwhisker-2.5.ebuild:
-  Bump to EAPI=5
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*libwhisker-2.5 (20 Feb 2010)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Feb 2010; Torsten Veller <tove@gentoo.org> -libwhisker-2.2.ebuild,
-  +libwhisker-2.5.ebuild, metadata.xml:
-  Version bump. Cleanup
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Mar 2005; Michael Cummings <mcummings@gentoo.org>
-  -libwhisker-1.8.ebuild, -libwhisker-2.1.ebuild, libwhisker-2.2.ebuild:
-  Removing old versions based on keywords
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Mar 2005; Michael Cummings <mcummings@gentoo.org>
-  libwhisker-2.2.ebuild:
-  Removing mirror restriction from this library. From RFP: 
-  If you want to tweak wget by using -U parameter so you can straight download 
-  from wiretrip.net, that's fine too.  If you want to download from 
-  sourceforge.net, that's fine too (three?).  I do want to note that I 
-  majorly slack in updating the copy on sourceforge, so it's not as up to 
-  date as wiretrip.net.  And if you want to mirror it on your own servers, 
-  that's fine...just please try to keep it up to date (I always announce new 
-  versions to the libwhisker mailing list, so as long as someone is 
-  monitoring that, it should be fine).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Jan 2005; Gustavo Zacarias <gustavoz@gentoo.org> libwhisker-2.2.ebuild:
-  Stable on sparc
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libwhisker-2.2 (31 Jan 2005)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Jan 2005; Michael Cummings <mcummings@gentoo.org> +libwhisker-2.2.ebuild:
-  New version of library, upstream bump in -current's version
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Nov 2004; Jason Wever <weeve@gentoo.org> libwhisker-1.8.ebuild:
-  Stable on sparc.
-
-*libwhisker-2.1 (21 Sep 2004)
-
-  21 Sep 2004; Michael Cummings <mcummings@gentoo.org> +libwhisker-2.1.ebuild:
-  New version of the ever popular libwhisker. Please read the output before
-  filing a bug - the author of this library has asked that we not mirror or
-  allow wget's of his source code. Do not file (another) bug about this.
-
-  21 Sep 2004; Michael Cummings <mcummings@gentoo.org> :
-  Update digest
-
-  29 Mar 2004; Michael Cummings <mcummings@gentoo.org> libwhisker-1.8.ebuild:
-  fixed SRC_URI
-
-  21 Mar 2004; Michael Boman <mboman@gentoo.org> libwhisker-1.8.ebuild:
-  QA: Unnecessary definition of S and RDEPEND removed. Adding categories to
-  dependencies. See bug 45110 for details.
-
-  14 Mar 2004; Michael Cummings <mcummings@gentoo.org> libwhisker-1.8.ebuild:
-  Swapped depend and rdepend, closing bug 44513
-
-  27 Feb 2004; Michael Cummings <mcummings@gentoo.org> libwhisker-1.8.ebuild:
-  Unmasking after 144 days masked
-
-  29 Nov 2003; <rac@gentoo.org> libwhisker-1.8.ebuild:
-  Fix SRC_URI, digest.  Address bug 34208
-
-*libwhisker-1.8 (06 Oct 2003)
-
-  06 Oct 2003; Michael Cummings <mcummings@gentoo.org> Changelog,
-  libwhisker-1.8.ebuild, metadata.xml:
-  Finally closing bug 12116. Version bumped, but the original ebuild was by
-  Marlon Jabbur <mjabbur@terra.com.br>

@@ -1,136 +1,56 @@
 # ChangeLog for media-libs/libsvg
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libsvg/ChangeLog,v 1.41 2012/05/05 08:02:34 jdhore Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libsvg-0.1.4-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+*libsvg-0.1.4-r1 (09 Aug 2015)
 
-  06 Feb 2011; Mart Raudsepp <leio@gentoo.org> libsvg-0.1.4-r1.ebuild:
-  Drop to ~mips
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libsvg-0.1.4-asneeded.patch, +libsvg-0.1.4-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Nov 2010; Markus Meier <maekke@gentoo.org> libsvg-0.1.4-r1.ebuild:
-  change jpeg dep to virtual/jpeg
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*libsvg-0.1.4-r1 (24 May 2010)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 May 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +libsvg-0.1.4-r1.ebuild:
-  Fix implicit declaration of function "png_set_gray_1_2_4_to_8" wrt #321321
-  by Diego E. Pettenò.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jan 2010; Christian Faulhammer <fauli@gentoo.org> libsvg-0.1.4.ebuild:
-  Transfer Prefix keywords
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Jan 2009; Christoph Mende <angelos@gentoo.org>
-  +files/libsvg-0.1.4-asneeded.patch, libsvg-0.1.4.ebuild:
-  QA: Link against libjpeg, bug 247739
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Peter Johanson (latexer, #206688) from metadata.xml.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Feb 2008; Jeroen Roovers <jer@gentoo.org> -libsvg-0.1.2.ebuild,
-  libsvg-0.1.4.ebuild:
-  Stable for HPPA (bug #211558).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Feb 2008; Samuli Suominen <drac@gentoo.org> -libsvg-0.1.3.ebuild,
-  libsvg-0.1.4.ebuild:
-  Use emake and change HOMEPAGE.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Feb 2008; Diego Pettenò <flameeyes@gentoo.org> libsvg-0.1.4.ebuild:
-  Run elibtoolize.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Jan 2008; Fabian Groffen <grobian@gentoo.org> libsvg-0.1.4.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  Bug: https://bugs.gentoo.org/552720
 
-  01 Sep 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing twp from metadata due to his retirement (see #190561 for reference).
-
-  25 Aug 2007; Steve Dibb <beandog@gentoo.org> libsvg-0.1.4.ebuild:
-  amd64 stable
-
-  25 Jun 2007; Piotr Jaroszyński <peper@gentoo.org> metadata.xml,
-  libsvg-0.1.2.ebuild, libsvg-0.1.3.ebuild, libsvg-0.1.4.ebuild:
-  (QA) Fix deps. bug #151232.
-
-  12 Mar 2007; Raúl Porcel <armin76@gentoo.org> libsvg-0.1.4.ebuild:
-  x86 stable
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  10 Sep 2006; Javier Villavicencio <the_paya@gentoo.org>
-  libsvg-0.1.4.ebuild:
-  Add ~x86-fbsd keyword.
-
-  04 Sep 2006; Joshua Kinard <kumba@gentoo.org> libsvg-0.1.4.ebuild:
-  Marked stable on mips.
-
-  20 Feb 2006; Markus Rothe <corsair@gentoo.org> libsvg-0.1.4.ebuild:
-  Stable on ppc64
-
-  04 Feb 2006; Aron Griffis <agriffis@gentoo.org> libsvg-0.1.4.ebuild:
-  Mark 0.1.4 stable on ia64
-
-  03 Feb 2006; Guy Martin <gmsoft@gentoo.org> libsvg-0.1.2.ebuild:
-  Stable on hppa.
-
-  31 Jan 2006; Aron Griffis <agriffis@gentoo.org> libsvg-0.1.4.ebuild:
-  Mark 0.1.4 stable on alpha
-
-  22 Jan 2006; Tobias Scherbaum <dertobi123@gentoo.org> libsvg-0.1.4.ebuild:
-  Marked ppc stable for bug #119634; Stabilize Gnome-2.12.2
-
-  20 Jan 2006; Gustavo Zacarias <gustavoz@gentoo.org> libsvg-0.1.4.ebuild:
-  Stable on sparc wrt #119634
-
-  10 Dec 2005; Tom Gall <tgall@gentoo.org> libsvg-0.1.2.ebuild:
-  stable on ppc64
-
-  28 Oct 2005; Bryan Østergaard <kloeri@gentoo.org> libsvg-0.1.4.ebuild:
-  Add ~alpha and ~ia64 keywords + clean up KEYWORDS mess.
-
-  26 Oct 2005; Fabian Groffen <grobian@gentoo.org> libsvg-0.1.4.ebuild:
-  Marked ~ppc-macos for bug #108690
-
-  25 Oct 2005; Rene Nussbaumer <killerfox@gentoo.org> libsvg-0.1.4.ebuild:
-  Unstable on hppa.
-
-  19 Oct 2005; Tom Gall <tgall@gentoo.org> libsvg-0.1.3.ebuild:
-  added ~ppc64, bug #108808
-
-  15 Sep 2005; Luis Medinas <metalgod@gentoo.org> libsvg-0.1.2.ebuild:
-  Marked Stable on AMD64
-
-*libsvg-0.1.4 (10 Jul 2005)
-
-  10 Jul 2005; Mike Frysinger <vapier@gentoo.org> +libsvg-0.1.4.ebuild:
-  Version bump.
-
-  25 Feb 2005; Peter Johanson <latexer@gentoo.org> :
-  Fix digest. See bug #83319
-
-*libsvg-0.1.3 (24 Feb 2005)
-
-  24 Feb 2005; Peter Johanson <latexer@gentoo.org> metadata.xml,
-  +libsvg-0.1.3.ebuild:
-  Bump, and add myself as a maintainer.
-
-  04 Jun 2004; Jason Wever <weeve@gentoo.org> libsvg-0.1.2.ebuild:
-  Added ~sparc keyword.
-
-  04 Jun 2004; <twp@gentoo.org> libsvg-0.1.2.ebuild:
-  Added media-libs/jpeg dependency. Bug # 52997.
-
-  11 May 2004; Travis Tilley <lv@gentoo.org> libsvg-0.1.2.ebuild:
-  added ~amd64 keyword
-
-  09 May 2004; <twp@gentoo.org> libsvg-0.1.2.ebuild:
-  Stable on x86.
-
-  18 Mar 2004; David Holm <dholm@gentoo.org> libsvg-0.1.2.ebuild:
-  Added to ~ppc.
-
-*libsvg-0.1.2 (18 Mar 2004)
-
-  18 Mar 2004; Tom Payne <twp@gentoo.org> libsvg-0.1.2.ebuild :
-  Initial commit.

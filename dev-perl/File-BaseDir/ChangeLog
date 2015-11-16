@@ -1,149 +1,56 @@
 # ChangeLog for dev-perl/File-BaseDir
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-BaseDir/ChangeLog,v 1.43 2015/06/13 22:46:17 dilfridge Exp $
+# (auto-generated from git log)
 
-  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  File-BaseDir-0.30.0-r1.ebuild:
-  Module::Build is no longer part of core Perl and has been moved to dev-perl
+*File-BaseDir-0.30.0-r1 (09 Aug 2015)
 
-  04 Apr 2015; Mike Frysinger <vapier@gentoo.org> File-BaseDir-0.30.0-r1.ebuild:
-  Mark arm64/m68k stable.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +File-BaseDir-0.30.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  02 Mar 2015; Yixun Lan <dlan@gentoo.org> File-BaseDir-0.30.0-r1.ebuild:
-  add arm64 support, tested on A53 board
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*File-BaseDir-0.30.0-r1 (21 Aug 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +File-BaseDir-0.30.0-r1.ebuild, -File-BaseDir-0.30.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 May 2012; Alexis Ballier <aballier@gentoo.org> File-BaseDir-0.30.0.ebuild:
-  keyword ~amd64-fbsd
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Mar 2012; Matt Turner <mattst88@gentoo.org> File-BaseDir-0.30.0.ebuild:
-  Added ~mips.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Sep 2011; Fabian Groffen <grobian@gentoo.org> File-BaseDir-0.30.0.ebuild:
-  Marked ~x86-macos
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -File-BaseDir-0.03.ebuild:
-  Cleanup
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Sep 2011; Torsten Veller <tove@gentoo.org> File-BaseDir-0.30.0.ebuild:
-  Merge stable keywords from former version scheme ebuild
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*File-BaseDir-0.30.0 (31 Aug 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Aug 2011; Torsten Veller <tove@gentoo.org> +File-BaseDir-0.30.0.ebuild:
-  Change version scheme
-
-  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  File-BaseDir-0.03.ebuild:
-  keyword ~sparc-solaris
-
-  05 Aug 2011; Naohiro Aota <naota@gentoo.org> File-BaseDir-0.03.ebuild:
-  Add ~x86-fbsd
-
-  31 Jul 2011; Raúl Porcel <armin76@gentoo.org> File-BaseDir-0.03.ebuild:
-  s390/sh stable
-
-  09 Apr 2011; Markus Meier <maekke@gentoo.org> File-BaseDir-0.03.ebuild:
-  arm stable, bug #359627
-
-  27 Mar 2011; Tobias Klausmann <klausman@gentoo.org> File-BaseDir-0.03.ebuild:
-  Stable on alpha, bug #359627
-
-  03 Mar 2011; Jonathan Callen <abcd@gentoo.org> File-BaseDir-0.03.ebuild:
-  Add ~amd64-linux/~x86-linux keywords
-
-  13 Feb 2011; Raúl Porcel <armin76@gentoo.org> File-BaseDir-0.03.ebuild:
-  Add ~alpha/~arm/~s390/~sh
-
-  14 Jan 2011; Torsten Veller <tove@gentoo.org> -File-BaseDir-0.02.ebuild:
-  Cleanup
-
-  23 Oct 2010; Samuli Suominen <ssuominen@gentoo.org>
-  File-BaseDir-0.03.ebuild:
-  ppc64 stable wrt #321147
-
-  24 May 2010; <nixnut@gentoo.org> File-BaseDir-0.03.ebuild:
-  ppc stable #321147
-
-  23 May 2010; Torsten Veller <tove@gentoo.org> File-BaseDir-0.03.ebuild:
-  Stable on amd64 (#321147). EAPI=3. Add test deps
-
-  06 Jul 2009; Jeroen Roovers <jer@gentoo.org> File-BaseDir-0.03.ebuild:
-  Stable for HPPA too.
-
-  18 Nov 2008; Torsten Veller <tove@gentoo.org> File-BaseDir-0.03.ebuild:
-  New virtuals: module-build
-
-  15 Jul 2008; Raúl Porcel <armin76@gentoo.org> File-BaseDir-0.03.ebuild:
-  ia64/sparc/x86 stable
-
-  17 May 2008; Torsten Veller <tove@gentoo.org> File-BaseDir-0.03.ebuild:
-  Add module-build to DEPEND and run tests
-
-*File-BaseDir-0.03 (25 Apr 2008)
-
-  25 Apr 2008; Samuli Suominen <drac@gentoo.org> +File-BaseDir-0.03.ebuild:
-  Version bump.
-
-  13 Mar 2008; Jeroen Roovers <jer@gentoo.org> File-BaseDir-0.02.ebuild:
-  Marked ~hppa too.
-
-  15 Jan 2007; Michael Cummings <mcummings@gentoo.org>
-  File-BaseDir-0.02.ebuild:
-  Ebuild maintenance
-
-  07 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  File-BaseDir-0.02.ebuild:
-  Marking amd64 stable
-
-  05 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  File-BaseDir-0.02.ebuild:
-  Adding perl dep; fixed DEPEND
-
-  10 Jul 2006; Aron Griffis <agriffis@gentoo.org> File-BaseDir-0.02.ebuild:
-  Mark 0.02 stable on ia64
-
-  30 Mar 2006; Aron Griffis <agriffis@gentoo.org> File-BaseDir-0.02.ebuild:
-  Mark 0.02 ~ia64
-
-  09 Jun 2005; <dang@gentoo.org> File-BaseDir-0.02.ebuild:
-  Added ~amd64
-
-  25 Apr 2005; Michael Cummings <mcummings@gentoo.org>
-  File-BaseDir-0.02.ebuild:
-  cleaning
-
-  08 Apr 2005; Yuta SATOH <nigoro@gentoo.org> File-BaseDir-0.02.ebuild:
-  Stable on ppc64
-
-  22 Dec 2004; Yuta SATOH <nigoro@gentoo.org> File-BaseDir-0.02.ebuild:
-  added ~ppc64
-
-  12 Dec 2004; Jason Wever <weeve@gentoo.org> File-BaseDir-0.02.ebuild:
-  Stable on sparc.
-
-  02 Sep 2004; David Holm <dholm@gentoo.org> File-BaseDir-0.02.ebuild:
-  Added to ~ppc.
-
-  10 Aug 2004; Ferris McCormick <fmccor@gentoo.org> File-BaseDir-0.02.ebuild:
-  Add ~sparc keyword (Bug 59940).  Passes internal tests & filer seems to work.
-
-  31 Mar 2004; Michael Cummings <mcummings@gentoo.org>
-  File-BaseDir-0.02.ebuild:
-  Marking stable
-
-*File-BaseDir-0.02 (14 Feb 2004)
-
-  14 Feb 2004; Eric Sammer <esammer@gentoo.org> File-BaseDir-0.02.ebuild:
-  Initial import of File-BaseDir submitted by Sven Wegener
-  <sven.wegener@stealer.net> as a dependency for the yet to be added
-  app-misc/filer. Thanks to Sven Wegener. Part of bug #41605.

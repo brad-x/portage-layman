@@ -1,130 +1,126 @@
 # ChangeLog for app-text/linuxdoc-tools
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/linuxdoc-tools/ChangeLog,v 1.26 2013/07/21 10:06:42 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  21 Jul 2013; Pacho Ramos <pacho@gentoo.org>
-  -files/linuxdoc-tools-0.9.13-letter.patch,
-  -files/linuxdoc-tools-0.9.20-lib64.patch,
-  -files/linuxdoc-tools-0.9.21-ldflags.patch, -linuxdoc-tools-0.9.21_p11.ebuild,
-  metadata.xml:
-  Cleanup due http://gentoo.2317880.n4.nabble.com/sgml-herd-has-no-maintainers-
-  again-td259655.html
+*linuxdoc-tools-0.9.68-r1 (09 Aug 2015)
 
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org>
-  linuxdoc-tools-0.9.68-r1.ebuild:
-  Stable for ppc, wrt bug #464220
-
-  14 May 2013; Agostino Sarubbo <ago@gentoo.org>
-  linuxdoc-tools-0.9.68-r1.ebuild:
-  Stable for x86, wrt bug #464220
-
-  13 May 2013; Chema Alonso <nimiux@gentoo.org>
-  linuxdoc-tools-0.9.68-r1.ebuild:
-  Stable for amd64 wrt bug #464220
-
-  22 Mar 2013; Sergey Popov <pinkbyte@gentoo.org>
-  -linuxdoc-tools-0.9.68.ebuild, linuxdoc-tools-0.9.68-r1.ebuild:
-  Fix incorrect version string in upstream tarball, wrt bug #442482, add
-  epatch_user. Drop broken ebuild
-
-*linuxdoc-tools-0.9.68-r1 (21 Mar 2013)
-
-  21 Mar 2013; Sergey Popov <pinkbyte@gentoo.org>
-  +linuxdoc-tools-0.9.68-r1.ebuild:
-  Fix incorrect prefix path, that is saved in scripts at install phase, wrt bug
-  #442482. Thanks to Manfred Knick for discovering this issue
-
-  21 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> linuxdoc-tools-0.9.68.ebuild:
-  Move sed for setting proper sgml catalog path to src_prepare, fix tex-related
-  files installation, wrt bug #442482
-
-*linuxdoc-tools-0.9.68 (20 Mar 2013)
-
-  20 Mar 2013; Sergey Popov <pinkbyte@gentoo.org>
-  +linuxdoc-tools-0.9.68.ebuild, +files/linuxdoc-tools-0.9.68-compiler.patch,
-  +files/linuxdoc-tools-0.9.68-letter.patch,
-  +files/linuxdoc-tools-0.9.68-lex.patch:
-  Version bump, wrt bug #287557. Fix building with new lex, wrt bug #442482
-
-  16 Nov 2012; Ulrich Müller <ulm@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild:
-  Update LICENSE, this is exactly the MIT/X11 license, only with different
-  copyright holder.
-
-  01 Aug 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild,
-  +files/linuxdoc-tools-0.9.21-ldflags.patch:
-  Respect LDFLAGS wrt bug 287555
-
-  25 Jan 2010; Raúl Porcel <armin76@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild:
-  Add ~ia64 wrt #281056
-
-  20 Apr 2009; Markus Meier <maekke@gentoo.org> linuxdoc-tools-0.9.21_p11:
-  amd64 stable, bug #247555
-
-  14 Apr 2009; Raúl Porcel <armin76@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild:
-  x86 stable wrt #247555
-
-  11 Apr 2009; nixnut <nixnut@gentoo.org> linuxdoc-tools-0.9.21_p11.ebuild:
-  ppc stable #247555
-
-  02 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild:
-  rename USE=tetex to USE=latex for bug 196745
-
-  02 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
-  linuxdoc-tools-0.9.21_p11.ebuild:
-  add app-text/opensp to DEPEND as reported in bug 230391 by Christian Korff
-  <christian DOT korff AT gmail DOT com>
-
-  02 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
-  -files/linuxdoc-tools-0.9.20-strip.patch, -files/linuxdoc-tools-fi.patch,
-  -linuxdoc-tools-0.9.21_p4.ebuild:
-  clean up
-
-*linuxdoc-tools-0.9.21_p11 (29 Sep 2007)
-
-  29 Sep 2007; <pva@gentoo.org> +linuxdoc-tools-0.9.21_p11.ebuild:
-  Version bump, bug #190967.
-
-  13 Mar 2007; Leonardo Boshell <leonardop@gentoo.org> metadata.xml:
-  Replacing text-markup herd with the new sgml herd.
-
-  16 Feb 2007; Leonardo Boshell <leonardop@gentoo.org>
-  linuxdoc-tools-0.9.21_p4.ebuild:
-  Remove invalid use of ROOT (bug #167240).
-
-  22 Sep 2006; Donnie Berkholz <dberkholz@gentoo.org>;
-  linuxdoc-tools-0.9.21_p4.ebuild:
-  Keyword ~ppc.
-
-  06 Sep 2006; Diego Pettenò <flameeyes@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/linuxdoc-tools-0.9.21-malloc.patch,
-  linuxdoc-tools-0.9.21_p4.ebuild:
-  Add patch to build on FreeBSD and add ~x86-fbsd keyword. See bug #146536.
+  +files/linuxdoc-tools-0.9.68-compiler.patch,
+  +files/linuxdoc-tools-0.9.68-letter.patch,
+  +files/linuxdoc-tools-0.9.68-lex.patch, +linuxdoc-tools-0.9.68-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*linuxdoc-tools-0.9.21_p4 (01 Jul 2006)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Jul 2006; Martin Schlemmer <azarah@gentoo.org>
-  +files/linuxdoc-tools-0.9.13-letter.patch,
-  +files/linuxdoc-tools-0.9.20-lib64.patch,
-  +files/linuxdoc-tools-0.9.20-strip.patch, +files/linuxdoc-tools-fi.patch,
-  +linuxdoc-tools-0.9.21_p4.ebuild:
-  Update version. Add patches from fedora and fix catalog path (based on
-  fedora's method, but non-broken). Install latex files.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Nov 2005; Leonardo Boshell <leonardop@gentoo.org>
-  linuxdoc-tools-0.9.21.ebuild:
-  Restrict app-text/tetex dependency to avoid access violations (bug #105905).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Aug 2005; Leonardo Boshell <leonardop@gentoo.org>
-  linuxdoc-tools-0.9.21.ebuild:
-  Use a mirror:// URI in SRC_URI.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*linuxdoc-tools-0.9.21 (12 Aug 2005)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Aug 2005; Leonardo Boshell <leonardop@gentoo.org>
-  linuxdoc-tools-0.9.21.ebuild:
-  New package, requested on bug #88232.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*linuxdoc-tools-0.9.69 (26 Aug 2015)
+
+  26 Aug 2015; Ian Delaney <idella4@gentoo.org>
+  +files/linuxdoc-tools-0.9.69-compiler.patch,
+  +files/linuxdoc-tools-0.9.69-disable-doc-build.patch,
+  +linuxdoc-tools-0.9.69.ebuild, metadata.xml:
+  bump; major rewrite with new patches
+
+  Add new proxy user maintainer to metadata requested via bug #558610,
+  all patches and ebuild submitted, discussed and run tested by Coacher,
+  patching to build and install to manage non standard doc build,
+  closes the bug #558610
+
+  Package-Manager: portage-2.2.20
+
+  06 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  linuxdoc-tools-0.9.69.ebuild:
+  Stable for amd64. Stable for ppc+x86 using the ALLARCHES policy. Fixes bug
+  562292.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  06 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/linuxdoc-tools-0.9.21-malloc.patch,
+  -files/linuxdoc-tools-0.9.68-compiler.patch,
+  -files/linuxdoc-tools-0.9.68-letter.patch,
+  -files/linuxdoc-tools-0.9.68-lex.patch,
+  -files/linuxdoc-tools-0.9.69-disable-doc-build.patch,
+  -linuxdoc-tools-0.9.68-r1.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  06 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  +files/linuxdoc-tools-0.9.69-disable-doc-build.patch:
+  Add back a patch actually needed.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  13 Oct 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  linuxdoc-tools-0.9.69.ebuild:
+  add missing dep on sys-devel/flex
+
+*linuxdoc-tools-0.9.71 (21 Oct 2015)
+
+  21 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  +linuxdoc-tools-0.9.71.ebuild:
+  version bump to 0.9.71
+
+  * Update HOMEPAGE and SRC_URI as upstream has moved to GitLab.
+  * Properly separate DEPEND and RDEPEND entries.
+  * Remove multiple patches and fixes as they were merged upstream.
+  * Handle 'doc' USE via a new configure option instead of a
+    USE-conditional patch.
+
+  21 Oct 2015; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  sync metadata.xml contents with upstream README
+
+  31 Oct 2015; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  metadata.xml: update maintainer's email address
+
+  Package-Manager: portage-2.2.23
+

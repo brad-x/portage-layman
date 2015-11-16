@@ -1,87 +1,57 @@
 # ChangeLog for sci-chemistry/eden
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/eden/ChangeLog,v 1.23 2015/04/20 20:26:23 jlec Exp $
+# (auto-generated from git log)
 
-  20 Apr 2015; Justin Lecher <jlec@gentoo.org> -eden-5.3-r1.ebuild:
-  Drop old
+*eden-5.3-r2 (09 Aug 2015)
 
-  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> eden-5.3-r2.ebuild:
-  Stable for x86, wrt bug #546376
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +eden-5.3-r2.ebuild,
+  +files/5.3-makefile-fixes.patch, +files/eden-5.3-format-security.patch,
+  +files/eden-5.3-impl-dec.patch, +files/makefile-fixes.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> eden-5.3-r2.ebuild:
-  Stable for amd64, wrt bug #546376
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*eden-5.3-r2 (11 Mar 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Mar 2015; Justin Lecher <jlec@gentoo.org> +eden-5.3-r2.ebuild,
-  +files/eden-5.3-format-security.patch, -eden-5.3.ebuild:
-  Fix for format-security, bug #542276; move to new python eclasses and EAPI=5
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Feb 2013; Justin Lecher <jlec@gentoo.org> eden-5.3-r1.ebuild,
-  metadata.xml:
-  Use tc-getPKG_CONFIG from toolchain-funcs.eclass instead of plain pkg-config
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Jul 2012; Justin Lecher <jlec@gentoo.org> files/5.3-makefile-fixes.patch,
-  eden-5.3-r1.ebuild, +files/eden-5.3-impl-dec.patch, metadata.xml:
-  Respect the CFLAGS everywhere, #428190; fix some implicit declarations; bump
-  EAPI to 4
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> eden-5.3-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> eden-5.3-r1.ebuild:
-  x86 stable wrt bug #393823
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> eden-5.3-r1.ebuild:
-  Stable for AMD64, wrt bug #393823
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Dec 2011; Justin Lecher <jlec@gentoo.org> eden-5.3-r1.ebuild:
-  Add missing die, use pkg-config for gsl detection.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*eden-5.3-r1 (18 Sep 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  18 Sep 2010; Justin Lecher <jlec@gentoo.org>
-  +files/5.3-makefile-fixes.patch, +eden-5.3-r1.ebuild:
-  Respecting LDFLAGS, 337557; using python.eclass, QA fixes, prefix fixes,
-  keyworded for ~amd64
-
-  23 Jun 2010; Sébastien Fabbro <bicatali@gentoo.org> eden-5.3.ebuild:
-  Removed bindist flag, should be compatible GPL-3 anyway
-
-  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
-
-  17 Feb 2008; Markus Dittrich <markusle@gentoo.org> eden-5.3.ebuild:
-  Corrected out of date HOMEPAGE and switched SRC_URI to Gentoo mirrors.
-
-  15 Feb 2008; Markus Dittrich <markusle@gentoo.org> eden-5.3.ebuild:
-  Fixed QA issues and added bindist for >=gsl-1.10 (see bug #199451).
-
-  28 Apr 2007; Sven Wegener <swegener@gentoo.org> eden-5.3.ebuild:
-  Drop dodir from dodir/*into combination.
-
-  15 Mar 2007; Danny van Dyk <kugelfang@gentoo.org> eden-5.3.ebuild:
-  QA: Removed illegal use of ${ROOT}. Bug #168043
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  20 Sep 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  (#148281) Change herd to sci-chemistry from sci.
-
-  05 Aug 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  Remove myself as maintainer, anyone feel free to work on this, although I'll
-  continue to do so as well.
-
-  09 Jul 2006; Donnie Berkholz <dberkholz@gentoo.org>; eden-5.3.ebuild:
-  x86 stable.
-
-  07 Jul 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  Update to my new email address.
-
-*eden-5.3 (16 Dec 2005)
-
-  16 Dec 2005; Donnie Berkholz <dberkholz@gentoo.org>;
-  +files/makefile-fixes.patch, +metadata.xml, +eden-5.3.ebuild:
-  A crystallographic real-space electron-density refinement and optimization
-  program.

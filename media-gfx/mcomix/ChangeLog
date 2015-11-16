@@ -1,108 +1,63 @@
 # ChangeLog for media-gfx/mcomix
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/mcomix/ChangeLog,v 1.21 2015/04/21 05:40:16 rhill Exp $
+# (auto-generated from git log)
 
-*mcomix-1.01 (21 Apr 2015)
+*mcomix-1.01 (09 Aug 2015)
+*mcomix-1.00-r1 (09 Aug 2015)
 
-  21 Apr 2015; Ryan Hill <rhill@gentoo.org> +mcomix-1.01.ebuild:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +mcomix-1.00-r1.ebuild,
+  +mcomix-1.01.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> mcomix-1.00-r1.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> mcomix-1.00-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jun 2014; Mike Gilbert <floppym@gentoo.org> -mcomix-1.00.ebuild:
-  Remove old.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Mar 2014; Ryan Hill <rhill@gentoo.org> metadata.xml:
-  Change my email.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mcomix-1.00-r1 (08 Jul 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Jul 2013; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.99-r1.ebuild,
-  +mcomix-1.00-r1.ebuild, -files/mcomix-0.99-auto-rotate.patch:
-  Stop installing comicthumb for bug #471532. It's a leftover from comix and
-  has never actually worked properly here. Change imaging dep to virtual. If
-  you encounter blockers then try uninstalling dev-python/imaging first. Remove
-  old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*mcomix-1.00 (26 May 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 May 2013; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.98.ebuild,
-  -mcomix-0.99.ebuild, +mcomix-1.00.ebuild:
-  Version bump. Port to distutils-r1 eclass. Drop unrar dependency and mention
-  it in postinst instead (bug #467138). Remove old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*mcomix-0.99-r1 (01 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Jan 2013; Ryan Hill <dirtyepic@gentoo.org> +mcomix-0.99-r1.ebuild,
-  +files/mcomix-0.99-auto-rotate.patch:
-  Add missing gdk-pixbuf dependency, reported by abc def. Backport auto-rotate
-  patch from upstream.
+  Bug: https://bugs.gentoo.org/552720
 
-*mcomix-0.99 (21 Jul 2012)
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> mcomix-1.00-r1.ebuild,
+  mcomix-1.01.ebuild:
+  Convert from virtual/python-imaging to plain dev-python/pillow
 
-  21 Jul 2012; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.97.1.ebuild,
-  +mcomix-0.99.ebuild:
-  Version bump. Remove old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mcomix-0.98 (26 Apr 2012)
-
-  26 Apr 2012; Ryan Hill <dirtyepic@gentoo.org> +mcomix-0.98.ebuild:
-  Version bump.
-
-  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> mcomix-0.97.1.ebuild:
-  Restricting jython
-
-  24 Feb 2012; Ryan Hill <dirtyepic@gentoo.org> mcomix-0.97.1.ebuild:
-  Use PYTHON_USE_WITH to check for sqlite availability and drop alternate
-  dependency on pysqlite due to limitations of python.eclass wrt any-of depends
-  (bug #405133).
-
-*mcomix-0.97.1 (19 Feb 2012)
-
-  19 Feb 2012; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.96.ebuild,
-  +mcomix-0.97.1.ebuild:
-  Version bump. Fixes segfaults on amd64 with new versions of app-arch/unrar
-  that install libunrar (bug #401355).
-
-  29 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> mcomix-0.96.ebuild:
-  Add dependency on virtual/jpeg. 99% of archives I've encountered are in jpeg
-  format.
-
-  29 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> mcomix-0.96.ebuild:
-  New libunrar.so segfaults a lot. Relax dependency so people can downgrade.
-
-  23 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.95.ebuild,
-  mcomix-0.96.ebuild, metadata.xml:
-  Depend on unrar-4.1.4-r1 to support encrypted archives and make it manditory.
-  Remove old version that could corrupt data.
-
-*mcomix-0.96 (30 Dec 2011)
-
-  30 Dec 2011; Ryan Hill <dirtyepic@gentoo.org> -mcomix-0.94.ebuild,
-  +mcomix-0.96.ebuild, metadata.xml:
-  Version bump. Fix destruction of cbr archives when opened w/ p7zip, fix hang
-  when opening passworded cbr archives, do not reset file permissions to 0600
-  after editing an archive, and do not reopen last open archive after a crash.
-  Adds finer-grained control over double-page view for title and wide pages.
-  Remove old.
-
-*mcomix-0.95 (15 Nov 2011)
-
-  15 Nov 2011; Ryan Hill <dirtyepic@gentoo.org> +mcomix-0.95.ebuild:
-  Version bump.
-
-  07 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> mcomix-0.94.ebuild:
-  Fix dependencies as per upstream advice. Add note about lha and 7z archives.
-
-  06 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> mcomix-0.94.ebuild:
-  Update mime db's.
-
-*mcomix-0.94 (06 Oct 2011)
-
-  06 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> +mcomix-0.94.ebuild,
-  +metadata.xml:
-  New.

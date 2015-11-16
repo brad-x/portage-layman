@@ -1,78 +1,112 @@
 # ChangeLog for app-emacs/magit
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/magit/ChangeLog,v 1.18 2015/06/07 07:51:59 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*magit-1.2.2 (09 Aug 2015)
+*magit-1.2.0-r1 (09 Aug 2015)
 
-  20 May 2015; Mikle Kolyada <zlogene@gentoo.org> magit-1.2.2.ebuild:
-  amd64/x86 stable wrt bug #549892
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/50magit-gentoo.el,
+  +files/magit-1.2.0-delete-directory.patch, +magit-1.2.0-r1.ebuild,
+  +magit-1.2.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*magit-1.2.2 (25 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Mar 2015; Ulrich Müller <ulm@gentoo.org> +magit-1.2.2.ebuild:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Aug 2014; Chema Alonso <nimiux@gentoo.org> magit-1.2.0-r1.ebuild:
-  Stable for amd64 wrt bug #509736
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Jul 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> magit-1.2.0-r1.ebuild:
-  x86 stable wrt bug #509736
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 May 2014; Ulrich Müller <ulm@gentoo.org> -magit-1.2.0.ebuild:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> magit-1.2.0-r1.ebuild:
+  Use https by default
 
-*magit-1.2.0-r1 (23 May 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 May 2014; Ulrich Müller <ulm@gentoo.org> +magit-1.2.0-r1.ebuild,
-  +files/magit-1.2.0-delete-directory.patch:
-  Fix incompatibily with emacs-vcs. Call elisp-compile, because the upstream
-  build system doesn't care about byte-compile errors.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 May 2014; Hans de Graaff <graaff@gentoo.org> magit-1.2.0.ebuild:
-  Fix HOMEPAGE. Restrict tests since the tests are not included in the archive.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 May 2014; Hans de Graaff <graaff@gentoo.org> -magit-1.0.0.ebuild,
-  -magit-1.1.1.ebuild:
-  Cleanup.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Jan 2013; Sébastien Fabbro <bicatali@gentoo.org> magit-1.2.0.ebuild:
-  Keyworded amd64-linux and x86-linux
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*magit-1.2.0 (26 Nov 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Nov 2012; Ulrich Müller <ulm@gentoo.org> magit-1.0.0.ebuild,
-  magit-1.1.1.ebuild, +magit-1.2.0.ebuild:
-  Version bump, bug 444776. Specify LICENSE more precisely.
+  Bug: https://bugs.gentoo.org/552720
 
-*magit-1.1.1 (02 Apr 2012)
+*magit-2.2.2 (22 Oct 2015)
 
-  02 Apr 2012; Ulrich Müller <ulm@gentoo.org> -magit-0.8.1.ebuild,
-  -magit-0.8.2.ebuild, magit-1.0.0.ebuild, +magit-1.1.1.ebuild, metadata.xml:
-  Version bump, update HOMEPAGE and SRC_URI, bug 410521. Add contrib USE flag.
-  Remove old.
+  22 Oct 2015; Hans de Graaff <graaff@gentoo.org> +magit-2.2.2.ebuild:
+  add 2.2.2
 
-*magit-1.0.0 (17 Apr 2011)
+  Drop x86 keyword due to new dependency on app-emacs/dash,
+  bug 563748.
 
-  17 Apr 2011; Ulrich Mueller <ulm@gentoo.org> +magit-1.0.0.ebuild:
-  Version bump, bug 363923.
+  Package-Manager: portage-2.2.20.1
 
-  18 Jul 2010; Christian Faulhammer <fauli@gentoo.org> -magit-0.7.ebuild:
-  clean up
+  22 Oct 2015; Hans de Graaff <graaff@gentoo.org> -magit-1.2.0-r1.ebuild:
+  cleanup
 
-*magit-0.8.2 (18 Jul 2010)
+  Package-Manager: portage-2.2.20.1
 
-  18 Jul 2010; Christian Faulhammer <fauli@gentoo.org> +magit-0.8.2.ebuild:
-  version bump for bug 328345 by f <zhixun.lin AT gmail DOT com>
+  22 Oct 2015; Hans de Graaff <graaff@gentoo.org> magit-2.2.2.ebuild:
+  Fix SRC_URI
 
-*magit-0.8.1 (13 Jun 2010)
+  Package-Manager: portage-2.2.20.1
 
-  13 Jun 2010; Christian Faulhammer <fauli@gentoo.org> +magit-0.8.1.ebuild:
-  version bump and new homepage, as reported by f <zhixun DOT lin AT gmail
-  DOT com> in bug 322899
+*magit-2.2.2-r1 (26 Oct 2015)
 
-*magit-0.7 (10 Oct 2009)
+  26 Oct 2015; Ulrich Müller <ulm@gentoo.org> -magit-2.2.2.ebuild,
+  +magit-2.2.2-r1.ebuild:
+  Fix build failure.
 
-  10 Oct 2009; Ulrich Mueller <ulm@gentoo.org> +files/50magit-gentoo.el,
-  +magit-0.7.ebuild, +metadata.xml:
-  Initial import from Emacs overlay, bug 254531. Ebuild contributed by me.
+  Fix documentation build failure by avoiding the horrible upstream
+  build system altogether. Drop the "contrib" USE flag since there is
+  no contrib directory any more. Install some additional doc files.
+
+  Bug: 564152
+
+  Package-Manager: portage-2.2.23
+
+*magit-2.2.2-r2 (27 Oct 2015)
+
+  27 Oct 2015; Ulrich Müller <ulm@gentoo.org> -magit-2.2.2-r1.ebuild,
+  +magit-2.2.2-r2.ebuild:
+  Use eclass defaults for all phases, and other fixes.
+
+  Update HOMEPAGE and LICENSE. Depend on >=app-emacs/dash-2.12.1,
+  see <https://github.com/magnars/dash.el/issues/130>.
+  Thanks to Jonas Bernoulli for pointing this out.
+
+  Use defaults of elisp.eclass for all phase functions.
+  Require Emacs 24 at least (should really be 24.4).
+
+  Package-Manager: portage-2.2.23
+

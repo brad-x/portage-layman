@@ -1,45 +1,58 @@
 # ChangeLog for net-misc/lanmap
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/lanmap/ChangeLog,v 1.10 2014/10/26 11:07:31 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  26 Oct 2014; Jeroen Roovers <jer@gentoo.org> files/lanmap-81-make.patch:
-  Fix bashism in Makefile.in (bug #526906).
+*lanmap-81-r2 (09 Aug 2015)
+*lanmap-81-r1 (09 Aug 2015)
 
-*lanmap-81-r2 (26 Oct 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lanmap-81-make.patch, +files/lanmap-81-printf-format.patch,
+  +lanmap-81-r1.ebuild, +lanmap-81-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  26 Oct 2014; Jeroen Roovers <jer@gentoo.org> +lanmap-81-r2.ebuild,
-  +files/lanmap-81-printf-format.patch:
-  Fix one format security warning.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Jul 2014; Jeroen Roovers <jer@gentoo.org> lanmap-81-r1.ebuild,
-  +files/lanmap-81-make.patch, -files/makefile.patch:
-  Rename patch. Regenerate configure. Convert sed script into (same) patch. Set
-  proper dependencies.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Sep 2013; Rick Farina <zerochaos@gentoo.org> lanmap-81-r1.ebuild:
-  fix bug 485878 and bump eapi
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Feb 2013; Zac Medico <zmedico@gentoo.org> lanmap-81-r1.ebuild:
-  Add ~arm-linux keyword.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Sep 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
-  dropping maintainership, backup herd exists
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Apr 2012; Zac Medico <zmedico@gentoo.org> lanmap-81-r1.ebuild:
-  Add ~amd64-linux keyword.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Aug 2011; Zac Medico <zmedico@gentoo.org> lanmap-81-r1.ebuild:
-  Bump to EAPI 3, fix for prefix, and add ~x86-linux keyword.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*lanmap-81-r1 (26 Dec 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Dec 2009; Jeremy Olexa <darkside@gentoo.org> -lanmap-81.ebuild,
-  +lanmap-81-r1.ebuild:
-  Fix improper dep for stable graphviz, bug 298404
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*lanmap-81 (25 Dec 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Dec 2009; Jeremy Olexa <darkside@gentoo.org> +lanmap-81.ebuild,
-  +files/makefile.patch, +metadata.xml:
-  Initial import. Many thanks to Justin Lecher (jlec), bug 249631. Moved
-  from sunrise

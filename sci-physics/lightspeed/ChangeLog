@@ -1,97 +1,58 @@
 # ChangeLog for sci-physics/lightspeed
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/lightspeed/ChangeLog,v 1.21 2012/08/07 17:35:36 bicatali Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  keyword amd64-linux, x86-linux
+*lightspeed-1.2a-r1 (09 Aug 2015)
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lightspeed-1.2a-autoconf.patch,
+  +files/lightspeed-1.2a-libpng15.patch, +lightspeed-1.2a-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  16 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  lightspeed-1.2a-r1.ebuild:
-  Add x11-libs/libXmu dependency (thanks Piotr Szymaniak bug #403401), switched
-  to EAPI4
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
-  lightspeed-1.2a-r1.ebuild, +files/lightspeed-1.2a-libpng15.patch:
-  Fix building with libpng15 wrt #378397 by Diego Elio Pettenò
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Apr 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  lightspeed-1.2a-r1.ebuild, +files/lightspeed-1.2a-autoconf.patch:
-  Fix for the GTK M4 macro checking gtk:1, thanks Alex Belykh, bug #353785
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Mar 2011; Justin Lecher <jlec@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Dec 2010; Justin Lecher <jlec@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  Reintroduced eautoreconf to avoid maintainer mode, 339739
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  lightspeed-1.2a-r1.ebuild:
-  Cleaned and removed the eautoreconf since the Debian patch already applied
-  it
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  -lightspeed-1.2a.ebuild:
-  Removed gtk-1 version
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Dec 2008; Markus Meier <maekke@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  amd64/x86 stable, bug #250360
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Dec 2008; nixnut <nixnut@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  Stable on ppc wrt bug 250360
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  lightspeed-1.2a-r1.ebuild:
-  Polishing desktop entry
+  Bug: https://bugs.gentoo.org/552720
 
-  21 May 2008; Samuli Suominen <drac@gentoo.org> lightspeed-1.2a-r1.ebuild:
-  Use newicon instead of doicon to install properly. Remove filetype extension
-  from Icon= for Theme Specification.
-
-*lightspeed-1.2a-r1 (06 Jan 2008)
-
-  06 Jan 2008; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
-  +lightspeed-1.2a-r1.ebuild:
-  Updated with gtk-2 dependency, see bug #204621. Warning: still buggy.
-
-  06 Jan 2008; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
-  lightspeed-1.2a.ebuild:
-  Modernized ebuild, now forced png and tiff (did not want to fix the
-  autotools to allow -tiff -png when png and tiff are installed). Added
-  longdescription. Dependency is on GTK-1 only, not GTK-2.
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  02 Jul 2006; Luis Medinas <metalgod@gentoo.org> metadata.xml:
-  Update metadata to sci-physics.
-
-  02 Jul 2006; Luis Medinas <metalgod@gentoo.org> +metadata.xml,
-  +lightspeed-1.2a.ebuild:
-  Moved from sci-misc/lightspeed to sci-physics/lightspeed.
-
-  15 Jun 2005; Malcolm Lashley <malc@gentoo.org> lightspeed-1.2a.ebuild:
-  Stable on amd64 - closes bug #95914
-
-  06 May 2005; David Holm <dholm@gentoo.org> lightspeed-1.2a.ebuild:
-  Added to ~ppc.
-
-*lightspeed-1.2a (27 Dec 2004)
-
-  27 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +lightspeed-1.2a.ebuild:
-  Moved from app-sci/lightspeed to sci-misc/lightspeed.
-
-  25 Apr 2004; Aron Griffis <agriffis@gentoo.org> lightspeed-1.2a.ebuild:
-  Add die following econf for bug 48950
-
-  09 Mar 2004; Daniel Ahlberg <aliz@gentoo.org> lightspeed-1.2a.ebuild:
-  Adding amd64 keyword. Closing #43776.
-
-*lightspeed-1.2a (12 Jan 2003)
-
-  12 Jan 2003; Marin Holzer <mholzer@gentoo.org> lightspeed-1.2a.ebuild
-  files/digest-lightspeed-1.2a ChangeLog :
-  Added initial Version submitted by pez@apocalyptech.com in #13029

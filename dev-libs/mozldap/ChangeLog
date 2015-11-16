@@ -1,41 +1,60 @@
 # ChangeLog for dev-libs/mozldap
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/mozldap/ChangeLog,v 1.8 2013/03/29 03:25:30 patrick Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  29 Mar 2013; Patrick Lauer <patrick@gentoo.org> mozldap-6.0.7.ebuild:
-  Fix install paths #463642
+*mozldap-6.0.7 (09 Aug 2015)
+*mozldap-6.0.6-r2 (09 Aug 2015)
 
-*mozldap-6.0.7 (14 Mar 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/configure.in.patch, +files/mozldap-6.0.4-pkgconfig.patch,
+  +files/mozldap-6.0.6-ldflags.patch, +files/mozldap-6.0.7-configure.in.patch,
+  +files/nspr-m4.patch, +files/nss-m4.patch, +metadata.xml,
+  +mozldap-6.0.6-r2.ebuild, +mozldap-6.0.7.ebuild:
+  proj/gentoo: Initial commit
 
-  14 Mar 2013; Fabio Erculiani <lxnay@gentoo.org>
-  files/mozldap-6.0.4-pkgconfig.patch, +mozldap-6.0.7.ebuild,
-  +files/mozldap-6.0.7-configure.in.patch, files/configure.in.patch:
-  version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jul 2012; Fabio Erculiani <lxnay@gentoo.org> mozldap-6.0.6-r2.ebuild:
-  amd64 and x86 stable, as per bug #420131
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> mozldap-6.0.6-r2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*mozldap-6.0.6-r2 (05 Sep 2010)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Sep 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  -mozldap-6.0.6-r1.ebuild, +mozldap-6.0.6-r2.ebuild,
-  +files/mozldap-6.0.6-ldflags.patch:
-  Respect LDFLAGS wrt bug 327335. Thanks to Andreis Vinogradovs ( slepnoga )
-  <spamslepnoga@inbox.ru> for the report.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Jul 2010; Fabio Erculiani <lxnay@gentoo.org> mozldap-6.0.6-r1.ebuild:
-  reorganize dependencies, add dev-libs/svrcore to RDEPEND
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Jul 2010; Fabio Erculiani <lxnay@gentoo.org> mozldap-6.0.6-r1.ebuild:
-  fix mozldap lib dir installation (and revert to ln for now)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mozldap-6.0.6-r1 (07 Jul 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jul 2010; Fabio Erculiani <lxnay@gentoo.org>
-  +files/mozldap-6.0.4-pkgconfig.patch, +files/configure.in.patch,
-  +files/nspr-m4.patch, +files/nss-m4.patch, +mozldap-6.0.6-r1.ebuild,
-  +metadata.xml:
-  new ebuild, Mozilla LDAP C SDK
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

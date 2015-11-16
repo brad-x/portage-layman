@@ -1,229 +1,117 @@
 # ChangeLog for dev-python/rdflib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rdflib/ChangeLog,v 1.60 2015/06/07 15:53:27 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*rdflib-4.2.0 (09 Aug 2015)
+*rdflib-4.1.2 (09 Aug 2015)
+*rdflib-3.2.3-r1 (09 Aug 2015)
 
-  07 Jun 2015; Markus Meier <maekke@gentoo.org> rdflib-4.1.2.ebuild:
-  arm stable, bug #540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/rdflib-3.1.0-test.patch, +metadata.xml, +rdflib-3.2.3-r1.ebuild,
+  +rdflib-4.1.2.ebuild, +rdflib-4.2.0.ebuild:
+  proj/gentoo: Initial commit
 
-  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> rdflib-4.1.2.ebuild:
-  Stable for alpha, wrt bug #540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Drop old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> rdflib-4.1.2.ebuild:
-  x86 stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> rdflib-4.1.2.ebuild:
-  ppc stable, bug 540290
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> rdflib-4.1.2.ebuild:
-  ppc64 stable, bug 540290
+  19 Aug 2015; Ian Delaney <idella4@gentoo.org> rdflib-4.1.2.ebuild,
+  rdflib-4.2.0.ebuild:
+  take out doctests from test phase, fixes Bug #358189
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> rdflib-4.1.2.ebuild:
-  amd64 stable, bug 540290
+  Package-Manager: portage-2.2.20
 
-*rdflib-4.2.0 (28 Feb 2015)
+  19 Aug 2015; Ian Delaney <idella4@gentoo.org> +files/rdflib-4-test.patch,
+  rdflib-4.1.2.ebuild, rdflib-4.2.0.ebuild:
+  add -test.patch
 
-  28 Feb 2015; Patrick Lauer <patrick@gentoo.org> +rdflib-4.2.0.ebuild:
-  Bump
+  fixes upstream https://github.com/RDFLib/rdflib/issues/396
 
-  02 Feb 2015; Manuel Rüger <mrueg@gentoo.org> -rdflib-3.2.3.ebuild:
-  Remove old.
+  Package-Manager: portage-2.2.20
 
-  28 Dec 2014; Mike Gilbert <floppym@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  s/PYTHON_USE_WITH/PYTHON_REQ_USE/
+*rdflib-4.2.1 (19 Aug 2015)
 
-  30 Nov 2014; Michał Górny <mgorny@gentoo.org> rdflib-4.1.2.ebuild:
-  Add missing PYTHON_USEDEPs.
+  19 Aug 2015; Ian Delaney <idella4@gentoo.org>
+  -files/rdflib-3.1.0-test.patch, rdflib-4.2.0.ebuild, +rdflib-4.2.1.ebuild:
+  bump, rm unneeded var DISTUTILS_NO_PARALLEL_BUILD
 
-  20 Nov 2014; Tobias Klausmann <klausman@gentoo.org> rdflib-4.1.2.ebuild:
-  Keyworded on alpha, bug 518436
+  Add doc build, info to user re Warnings and Errors and optional
+  packages for build, rm old disused patch, drop recent patch
+  now merged in bumped release
 
-  18 Nov 2014; Ian Delaney <idella4@gentoo.org> -rdflib-3.1.0.ebuild,
-  -rdflib-3.2.1.ebuild, -rdflib-3.2.2.ebuild, -rdflib-4.0.1.ebuild,
-  -rdflib-4.0.ebuild, -rdflib-4.1.0.ebuild, -rdflib-4.1.1.ebuild,
+  Package-Manager: portage-2.2.20
+
+  19 Aug 2015; Mike Gilbert <floppym@gentoo.org> rdflib-4.2.1.ebuild:
+  Fix whitespace and simplify docs path
+
+  Package-Manager: portage-2.2.20_p134
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> rdflib-3.2.3-r1.ebuild,
+  rdflib-4.1.2.ebuild, rdflib-4.2.0.ebuild, rdflib-4.2.1.ebuild:
+  Use https by default
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  14 Oct 2015; Justin Lecher <jlec@gentoo.org> rdflib-4.2.1.ebuild:
+  Keyword under ALLARCHES policy
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=518436
+
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> rdflib-3.2.3-r1.ebuild,
   rdflib-4.1.2.ebuild:
-  drop py3.2, rm old
+  Drop deprecated usage of DISTUTILS_NO_PARALLEL_BUILD
 
-  13 Aug 2014; Anthony G. Basile <blueness@gentoo.org> rdflib-4.0.1.ebuild,
-  rdflib-4.1.0.ebuild, rdflib-4.1.1.ebuild, rdflib-4.1.2.ebuild:
-  Keyword ~ppc64, bug #518436
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Jul 2014; Ian Delaney <idella4@gentoo.org> rdflib-4.1.2.ebuild:
-  Add py3.4 support
+  11 Nov 2015; Justin Lecher <jlec@gentoo.org> rdflib-3.2.3-r1.ebuild,
+  rdflib-4.1.2.ebuild, rdflib-4.2.0.ebuild, rdflib-4.2.1.ebuild:
+  Depend on threading support in python
 
-  26 May 2014; Ian Delaney <idella4@gentoo.org> rdflib-4.1.2.ebuild:
-  take out py3.4 to fix bug #510996
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 May 2014; Ian Delaney <idella4@gentoo.org> rdflib-4.1.2.ebuild:
-  drop py2.6 add py3.4 support, update test phase
-
-*rdflib-4.1.2 (09 May 2014)
-
-  09 May 2014; Patrick Lauer <patrick@gentoo.org> +rdflib-4.1.2.ebuild:
-  Bump
-
-*rdflib-4.1.1 (22 Apr 2014)
-
-  22 Apr 2014; Ian Delaney <idella4@gentoo.org> +rdflib-4.1.1.ebuild:
-  bump
-
-  15 Jan 2014; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for sparc, wrt bug #482056
-
-  15 Jan 2014; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for ppc, wrt bug #482056
-
-  15 Jan 2014; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for ppc64, wrt bug #482056
-
-  15 Jan 2014; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for alpha, wrt bug #482056
-
-*rdflib-4.1.0 (14 Jan 2014)
-
-  14 Jan 2014; Patrick Lauer <patrick@gentoo.org> +rdflib-4.1.0.ebuild:
-  Bump
-
-  19 Dec 2013; Akinori Hattori <hattya@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  ia64 stable wrt bug #482056
-
-  11 Oct 2013; Markus Meier <maekke@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  arm stable, bug #482056
-
-  15 Sep 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for x86, wrt bug #482056
-
-  15 Sep 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Stable for amd64, wrt bug #482056
-
-  12 Sep 2013; Michał Górny <mgorny@gentoo.org> rdflib-4.0.1.ebuild:
-  Replace virtual/pyparsing dep with dev-python/pyparsing. The split versions
-  were removed and all in-tree versions support all impls now.
-
-  06 Sep 2013; Mike Gilbert <floppym@gentoo.org> rdflib-3.2.3-r1.ebuild,
-  rdflib-4.0.1.ebuild, rdflib-4.0.ebuild:
-  Remove misspelled REQUIERED_USE variable.
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> rdflib-3.2.3-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-  17 Jun 2013; Ian Delaney <idella4@gentoo.org> rdflib-4.0.1.ebuild:
-  update deps, test phase, tidy install phase
-
-*rdflib-4.0.1 (22 May 2013)
-
-  22 May 2013; Justin Lecher <jlec@gentoo.org> +rdflib-4.0.1.ebuild:
-  Version Bump
-
-*rdflib-4.0 (22 May 2013)
-
-  22 May 2013; Patrick Lauer <patrick@gentoo.org> +rdflib-4.0.ebuild:
-  Bump
-
-*rdflib-3.2.3-r1 (12 May 2013)
-
-  12 May 2013; Justin Lecher <jlec@gentoo.org> +rdflib-3.2.3-r1.ebuild,
-  metadata.xml:
-  Bump to new python r1 eclasses
-
-  02 Feb 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~arm, wrt bug #449220
-
-  06 Jan 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~sparc, wrt bug #449220
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~alpha, wrt bug #449220
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~ia64, wrt bug #449220
-
-  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~ppc64, wrt bug #449220
-
-  11 Dec 2012; Agostino Sarubbo <ago@gentoo.org> rdflib-3.2.3.ebuild:
-  Add ~ppc, wrt bug #421061
-
-  27 Nov 2012; Ian Delaney <idella4@gentoo.org> rdflib-3.2.3.ebuild:
-  Again revised consequent to re-prompt from Arfrever, rm of nuisance .pyc files
-  from source that broke distutils_src_test, initial test phase now viable,
-  tested, restored
-
-  26 Nov 2012; Ian Delaney <idella4@gentoo.org> rdflib-3.2.3.ebuild:
-  removed initial broken src_test subsequent to a prompt from Afrever wrt Bug
-  #440230, not previously cited Bug #406567
-
-*rdflib-3.2.3 (17 Nov 2012)
-
-  17 Nov 2012; Ian Delaney <idella4@gentoo.org> +rdflib-3.2.3.ebuild:
-  bump; 3.2.3; test suite 'fixed' to fix trawling of non tests files, fixes Bug
-  #406567
-
-  07 Oct 2012; Mike Gilbert <floppym@gentoo.org> rdflib-3.1.0.ebuild,
-  rdflib-3.2.1.ebuild, rdflib-3.2.2.ebuild:
-  Update HOMEPAGE as suggested by Arfrever.
-
-*rdflib-3.2.2 (29 Sep 2012)
-
-  29 Sep 2012; Tim Harder <radhermit@gentoo.org> +rdflib-3.2.2.ebuild:
-  Version bump.
-
-*rdflib-3.2.1 (04 May 2012)
-
-  04 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +rdflib-3.2.1.ebuild:
-  Version bump, fixes #401657 by Justin Lecher <jlec@gentoo.org>. Thanks to Ian
-  Delaney <johneed@hotmail.com> for help
-
-  02 Apr 2012; Justin Lecher <jlec@gentoo.org> rdflib-3.1.0.ebuild,
-  +files/rdflib-3.1.0-test.patch:
-  backport latest fix for tests, #410555
-
-  12 Sep 2011; Jesus Rivero <neurogeek@gentoo.org> rdflib-3.1.0.ebuild:
-  Delete "zodb" USE flag. Patch by Arfrever.
-
-*rdflib-3.1.0 (27 Mar 2011)
-
-  27 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +rdflib-3.1.0.ebuild:
-  Version bump.
-
-  25 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  rdflib-3.0.0.ebuild:
-  Fix LICENSE (bug #335582). Fix dependencies. Use PyPI mirrors.
-
-*rdflib-3.0.0 (13 May 2010)
-
-  13 May 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +rdflib-3.0.0.ebuild:
-  Version bump.
-
-  26 Jan 2010; Jeremy Olexa <darkside@gentoo.org> rdflib-2.4.1.ebuild:
-  Add ~x86-linux as tested in bug 302359
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -rdflib-2.4.0.ebuild:
-  Remove old
-
-*rdflib-2.4.1 (10 Aug 2009)
-
-  10 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  rdflib-2.4.0.ebuild, +rdflib-2.4.1.ebuild:
-  Version bump. Restrict tests. Set SUPPORT_PYTHON_ABIS.
-
-  23 Dec 2008; Markus Meier <maekke@gentoo.org> rdflib-2.4.0.ebuild:
-  add ~amd64, bug #252185
-
-  06 Aug 2008; Jesus Rivero <neurogeek@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
-
-*rdflib-2.4.0 (25 Mar 2008)
-
-  25 Mar 2008; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
-  +rdflib-2.4.0.ebuild:
-  Initial commit. Closes #161492. Thank you Mikael Lammentausta
-  <mikael.lammentausta@savonia-amk.fi>, Sam Jacobson <sam@eversoft.co.nz>,
-  Sunrise.

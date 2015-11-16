@@ -1,165 +1,69 @@
 # ChangeLog for app-i18n/transifex-client
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/transifex-client/ChangeLog,v 1.34 2015/04/08 07:30:36 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> transifex-client-0.10.ebuild,
+*transifex-client-0.11.1_beta (09 Aug 2015)
+*transifex-client-0.10 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/transifex-client-0.8.0-tests.patch, +metadata.xml,
+  +transifex-client-0.10.ebuild, +transifex-client-0.11.1_beta.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> transifex-client-0.10.ebuild,
   transifex-client-0.11.1_beta.ebuild:
-  Remove old Python implementations
+  Use https by default
 
-*transifex-client-0.11.1_beta (19 Dec 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Dec 2014; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.11.1_beta.ebuild, -transifex-client-0.11_beta.ebuild:
-  Version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Oct 2014; Markos Chandras <hwoarang@gentoo.org>
-  transifex-client-0.10.ebuild, transifex-client-0.11_beta.ebuild:
-  Add missing setuptools dep. Bug #515180
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 May 2014; Markos Chandras <hwoarang@gentoo.org>
-  -transifex-client-0.8.0-r1.ebuild, -transifex-client-0.9.2.ebuild,
-  transifex-client-0.10.ebuild:
-  Stabilize 0.10 for amd64/x86 and drop old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*transifex-client-0.11_beta (30 May 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 May 2014; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.11_beta.ebuild:
-  Version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*transifex-client-0.10 (07 Dec 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Dec 2013; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.10.ebuild:
-  Version bump
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> transifex-client-0.9.2.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Jun 2013; Agostino Sarubbo <ago@gentoo.org> transifex-client-0.9.2.ebuild:
-  Stable for x86, wrt bug #471094
-
-  30 Jun 2013; Agostino Sarubbo <ago@gentoo.org> transifex-client-0.9.2.ebuild:
-  Stable for amd64, wrt bug #471094
-
-*transifex-client-0.9.2 (21 Jun 2013)
-
-  21 Jun 2013; Tomáš Chvátal <scarabeus@gentoo.org>
-  +transifex-client-0.9.2.ebuild, -transifex-client-0.9.ebuild:
-  Update to 0.9.2. This version fixes translator mode. Remove older 0.9. Update
-  to distutils-r1 eclass. Use github address as pypi sometimes didn't get the
-  tarball while tags are there always.
-
-*transifex-client-0.9 (22 May 2013)
-
-  22 May 2013; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.9.ebuild:
-  Version bump
-
-  03 Mar 2013; Markos Chandras <hwoarang@gentoo.org>
-  -transifex-client-0.8.0.ebuild, transifex-client-0.8.0-r1.ebuild:
-  remove old, stabilize everywhere
-
-*transifex-client-0.8.0-r1 (06 Feb 2013)
-
-  06 Feb 2013; Mike Gilbert <floppym@gentoo.org>
-  +files/transifex-client-0.8.0-tests.patch, +transifex-client-0.8.0-r1.ebuild:
-  Don't install tests, bug 455250.
-
-  26 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
-  -transifex-client-0.7.3.ebuild:
-  Remove old
-
-  04 Aug 2012; Johannes Huber <johu@gentoo.org> transifex-client-0.8.0.ebuild:
-  Stable for x86, wrt bug #428874
-
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> transifex-client-0.8.0.ebuild:
-  Stable for amd64, wrt bug #428874
-
-*transifex-client-0.8.0 (27 Jun 2012)
-
-  27 Jun 2012; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.8.0.ebuild:
-  Version bump
-
-  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> -transifex-client-0.5.2.ebuild,
-  -transifex-client-0.7.2.ebuild, -transifex-client-0.7.ebuild:
-  Remove old wrt bug 421987.
-
-  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> transifex-client-0.7.3.ebuild:
-  marked x86 per bug 421987
-
-  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> transifex-client-0.7.3.ebuild:
-  Stable for amd64, wrt bug #421987
-
-*transifex-client-0.7.3 (13 May 2012)
-
-  13 May 2012; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.7.3.ebuild:
-  Version bump
-
-*transifex-client-0.7.2 (20 Feb 2012)
-
-  20 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.7.2.ebuild, -transifex-client-0.6.1.ebuild,
-  -transifex-client-0.6.ebuild:
-  version bump. remove old
-
-*transifex-client-0.7 (19 Feb 2012)
-
-  19 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.7.ebuild:
-  version bump
-
-*transifex-client-0.6.1 (10 Jan 2012)
-
-  10 Jan 2012; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.6.1.ebuild:
-  version bump
-
-*transifex-client-0.6 (24 Dec 2011)
-
-  24 Dec 2011; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.6.ebuild:
-  version bump
-
-  07 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
-  -transifex-client-0.4.1.ebuild, -transifex-client-0.5.ebuild,
-  transifex-client-0.5.2.ebuild:
-  Stable on amd64 wrt bug #377893. Remove old
-
-  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  transifex-client-0.5.2.ebuild:
-  x86 stable wrt bug #377893
-
-  29 Jun 2011; Markus Meier <maekke@gentoo.org> transifex-client-0.5.ebuild:
-  x86 stable, bug #372607
-
-*transifex-client-0.5.2 (24 Jun 2011)
-
-  24 Jun 2011; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.5.2.ebuild:
-  Version bump
-
-  23 Jun 2011; Markos Chandras <hwoarang@gentoo.org>
-  transifex-client-0.5.ebuild:
-  Stable on amd64 wrt bug #372607
-
-*transifex-client-0.5 (17 May 2011)
-
-  17 May 2011; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.5.ebuild:
-  Version bump
-
-  13 Apr 2011; Markus Meier <maekke@gentoo.org> transifex-client-0.4.1.ebuild:
-  x86 stable, bug #358573
-
-  13 Mar 2011; Markos Chandras <hwoarang@gentoo.org>
-  transifex-client-0.4.1.ebuild:
-  Stable on amd64 wrt bug #358573
-
-*transifex-client-0.4.1 (11 Feb 2011)
-
-  11 Feb 2011; Markos Chandras <hwoarang@gentoo.org>
-  +transifex-client-0.4.1.ebuild, +metadata.xml:
-  Initial commit

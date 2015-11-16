@@ -1,47 +1,58 @@
 # ChangeLog for x11-misc/xwit
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xwit/ChangeLog,v 1.13 2013/08/03 17:04:30 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  03 Aug 2013; Jeroen Roovers <jer@gentoo.org> xwit-3.4-r1.ebuild:
-  Install README.
+*xwit-3.4-r1 (09 Aug 2015)
+*xwit-3.4 (09 Aug 2015)
 
-*xwit-3.4-r1 (03 Aug 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/Makefile,
+  +files/malloc.patch, +files/xwit-3.4-malloc-includes.patch, +metadata.xml,
+  +xwit-3.4.ebuild, +xwit-3.4-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Aug 2013; Jeroen Roovers <jer@gentoo.org> +xwit-3.4-r1.ebuild,
-  +files/xwit-3.4-malloc-includes.patch, files/Makefile:
-  Simplify Makefile. Add some includes, treat realloc the same as malloc.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Dec 2012; Ulrich Müller <ulm@gentoo.org> xwit-3.4.ebuild:
-  Fix LICENSE, see README and notices in source files, bug 446764.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Apr 2010; Samuli Suominen <ssuominen@gentoo.org> xwit-3.4.ebuild,
-  +files/Makefile:
-  Use small Makefile instead of obsolete X11R6 imake.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Oct 2006; Thomas Cort <tcort@gentoo.org> xwit-3.4.ebuild:
-  Added ~amd64 wrt Bug #151022.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Oct 2006; David Shakaryan <omp@gentoo.org> xwit-3.4.ebuild:
-  Remove monolithic X from dependencies, fix HOMEPAGE and fix quotes.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> xwit-3.4.ebuild:
-  Fixed DEPEND for modular X.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jul 2005; David Holm <dholm@gentoo.org> xwit-3.4.ebuild:
-  Added to ~ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jun 2005; Markus Nigbur <pyrania@gentoo.org> +files/malloc.patch,
-  xwit-3.4.ebuild:
-  Fixed bug #82626.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Apr 2004; Markus Nigbur <pyrania@gentoo.org> xwit-3.4.ebuild:
-  Marked stable.
+  Bug: https://bugs.gentoo.org/552720
 
-*xwit-3.4 (13 Dec 2003)
-
-  13 Dec 2003; Ian Leitch <port001@gentoo.org> xwit-3.4.ebuild:
-  Initial commit. Thanks to Mathias Gumz <gumz@cs.uni-magdeburg.de> for the
-  ebuild. #29339

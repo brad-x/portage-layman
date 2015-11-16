@@ -1,65 +1,57 @@
 # ChangeLog for net-nntp/sn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/sn/ChangeLog,v 1.6 2011/11/22 01:39:53 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Nov 2011; Tim Harder <radhermit@gentoo.org> sn-0.3.8.ebuild,
-  +files/sn-0.3.8-parallel-make.patch, +files/sn-0.3.8-qa.patch:
-  Update to EAPI 4, add ~amd64 keyword, respect CFLAGS (bug #241092), respect
-  LDFLAGS (bug #337884), fix qa warnings (bug #386917 by Michael), and fix
-  parallel make issues.
+*sn-0.3.8 (09 Aug 2015)
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> sn-0.3.8.ebuild:
-  Remove virtual/libc
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sn-0.3.8-parallel-make.patch, +files/sn-0.3.8-qa.patch,
+  +metadata.xml, +sn-0.3.8.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 May 2005; Sven Wegener <swegener@gentoo.org> sn-0.3.8.ebuild:
-  Added cross-compile support.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*sn-0.3.8 (17 Jan 2005)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Jan 2005; Sven Wegener <swegener@gentoo.org> +metadata.xml,
-  +sn-0.3.8.ebuild:
-  Moved from net-news/sn to net-nntp/sn.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Dec 2004; Sven Wegener <swegener@gentoo.org> -sn-0.3.7.ebuild:
-  Removed old ebuild.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Nov 2004; Sven Wegener <swegener@gentoo.org> sn-0.3.8.ebuild:
-  Marked stable on x86.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*sn-0.3.8 (12 Aug 2004)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Aug 2004; Sven Wegener <swegener@gentoo.org> +sn-0.3.8.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Jul 2004; Sven Wegener <swegener@gentoo.org> -sn-0.3.6.ebuild:
-  Removed old ebuild.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Jul 2004; Sven Wegener <swegener@gentoo.org> sn-0.3.7.ebuild:
-  Marked stable on x86.
+  Bug: https://bugs.gentoo.org/552720
 
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> sn-0.3.6.ebuild,
-  sn-0.3.7.ebuild:
-  virtual/glibc -> virtual/libc
-
-  19 Jun 2004; David Holm <dholm@gentoo.org> sn-0.3.7.ebuild:
-  Added to ~ppc.
-
-*sn-0.3.7 (19 Jun 2004)
-
-  19 Jun 2004; Sven Wegener <swegener@gentoo.org> +metadata.xml,
-  sn-0.3.6.ebuild, +sn-0.3.7.ebuild:
-  Version bump. Made CFLAGS aware. Fixed parallel build error. Updated
-  dependencies. Added IUSE="". Added metadata.xml.
-
-*sn-0.3.6 (05 Mar 2003)
-
-  05 Mar 2003; Mike Frysinger <vapier@gentoo.org> :
-  Version bump #16839.
-
-*sn-0.3.5 (31 Dec 2002)
-
-  31 Dec 2002; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Christian Dietl <christian@expires.de>.

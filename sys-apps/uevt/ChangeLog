@@ -1,72 +1,65 @@
 # ChangeLog for sys-apps/uevt
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/uevt/ChangeLog,v 1.17 2014/06/04 09:04:18 ssuominen Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  04 Jun 2014; Samuli Suominen <ssuominen@gentoo.org>
-  +files/uevt-2.3-vala-0.24.patch, uevt-2.3-r1.ebuild:
-  Support >=dev-lang/vala-0.24.0 wrt #509512 by Alexandre Rostovtsev. Prefer
-  sys-power/upower-pm-utils over sys-power/upower because that's the only way to
-  get Hibernate and Suspend support in this version of UEvt. However, don't
-  force it because the power management features are optional.
+*uevt-2.3-r1 (09 Aug 2015)
 
-  26 May 2014; Samuli Suominen <ssuominen@gentoo.org> uevt-2.3-r1.ebuild:
-  Fix dependencies to allow sys-power/upower-pm-utils.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/uevt-2.3-support_for_more_than_one_CPU.patch,
+  +files/uevt-2.3-vala-0.24.patch, +metadata.xml, +uevt-2.3-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  04 May 2014; Alexandre Rostovtsev <tetromino@gentoo.org> uevt-2.3-r1.ebuild:
-  Add VALA_MAX_API_VERSION, fails to build with valac-0.24
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Oct 2013; Samuli Suominen <ssuominen@gentoo.org> uevt-2.3-r1.ebuild:
-  Fix missing dev-lang/vala DEPEND wrt #488686 by Jesús Guerrero
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Apr 2013; Jeroen Roovers <jer@gentoo.org> uevt-2.3-r1.ebuild:
-  Use vala.eclass (bug #467402).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Apr 2013; Jeroen Roovers <jer@gentoo.org> uevt-2.3-r1.ebuild:
-  Spelling, grammar.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Nov 2012; Samuli Suominen <ssuominen@gentoo.org -uevt-2.3.ebuild:
-  old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> uevt-2.3-r1.ebuild,
-  +files/uevt-2.3-support_for_more_than_one_CPU.patch:
-  amd64/x86 stable; grab last upstream commit to fix multicore support
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
-  Part of the desktop-misc herd now.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*uevt-2.3-r1 (31 Jul 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> uevt-2.3-r1.ebuild:
+  Use https by default
 
-  31 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +uevt-2.3-r1.ebuild:
-  Fix testsuite wrt #428438 by Diego Elio Pettenò. Switch from dev-lang/vala
-  SLOT of :0.12 to :0.16.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> uevt-2.3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> uevt-2.3.ebuild:
-  Pin to SLOT="0" of sys-fs/udisks.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -uevt-2.2.ebuild:
-  old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> uevt-2.3.ebuild:
-  amd64/x86 stable
+  Bug: https://bugs.gentoo.org/552720
 
-*uevt-2.3 (08 Sep 2011)
-
-  08 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +uevt-2.3.ebuild:
-  Version bump.
-
-  08 Jun 2011; Samuli Suominen <ssuominen@gentoo.org> uevt-2.2.ebuild:
-  Force at least 0.12 of vala from :0.12 SLOT wrt #369853 by Robin Johnson.
-
-*uevt-2.2 (09 May 2011)
-
-  09 May 2011; Samuli Suominen <ssuominen@gentoo.org> +uevt-2.2.ebuild:
-  Version bump.
-
-*uevt-2.1_p20110313 (13 Mar 2011)
-
-  13 Mar 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +uevt-2.1_p20110313.ebuild:
-  Initial commit.

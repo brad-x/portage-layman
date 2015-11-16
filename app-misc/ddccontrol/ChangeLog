@@ -1,206 +1,61 @@
 # ChangeLog for app-misc/ddccontrol
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ddccontrol/ChangeLog,v 1.45 2015/06/07 08:02:37 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*ddccontrol-0.4.2_p20140105-r1 (09 Aug 2015)
 
-  06 Sep 2014; Mike Frysinger <vapier@gentoo.org>
-  ddccontrol-0.4.2_p20140105-r1.ebuild, metadata.xml:
-  Rename USE=ddcpci to standard USE=pci, and only pull in pciutils when USE=pci.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +ddccontrol-0.4.2_p20140105-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  17 Jun 2014; Manuel Rüger <mrueg@gentoo.org>
-  -ddccontrol-0.4.2_p20140105.ebuild:
-  Cleanup old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jun 2014; Pacho Ramos <pacho@gentoo.org>
-  ddccontrol-0.4.2_p20140105-r1.ebuild:
-  amd64 stable, bug #510668
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Jun 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  ddccontrol-0.4.2_p20140105-r1.ebuild:
-  x86 stable wrt bug #510668
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*ddccontrol-0.4.2_p20140105-r1 (18 May 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 May 2014; Pacho Ramos <pacho@gentoo.org>
-  +ddccontrol-0.4.2_p20140105-r1.ebuild:
-  Drop support for old gnome-panel (#508854)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Mar 2014; Manuel Rüger <mrueg@gentoo.org> -ddccontrol-0.4.2-r1.ebuild,
-  -ddccontrol-0.4.2-r2.ebuild, -ddccontrol-0.4.2_p20130703.ebuild,
-  -files/ddccontrol-0.4.2-automake.patch,
-  -files/ddccontrol-0.4.2-no-ddcpci.patch,
-  -files/ddccontrol-0.4.2-pciutils-libz.patch,
-  -files/ddccontrol-0.4.2-support-fglrx.patch:
-  Cleanup old. Drop stable ppc keyword.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Mar 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  ddccontrol-0.4.2_p20140105.ebuild:
-  x86 stable wrt bug #491922
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Mar 2014; Pacho Ramos <pacho@gentoo.org> ddccontrol-0.4.2_p20140105.ebuild:
-  amd64 stable, bug 491922
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*ddccontrol-0.4.2_p20140105 (30 Jan 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jan 2014; Manuel Rüger <mrueg@gentoo.org>
-  +ddccontrol-0.4.2_p20140105.ebuild:
-  Add new snapshot.
+  Bug: https://bugs.gentoo.org/552720
 
-*ddccontrol-0.4.2_p20130703 (04 Jan 2014)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  04 Jan 2014; Manuel Rüger <mrueg@gentoo.org>
-  +ddccontrol-0.4.2_p20130703.ebuild:
-  Add new snapshot.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jan 2014; Manuel Rüger <mrueg@gentoo.org> -ddccontrol-0.1.3.ebuild,
-  -ddccontrol-0.2.ebuild, -ddccontrol-0.3-r1.ebuild, -ddccontrol-0.3-r2.ebuild,
-  -ddccontrol-0.3.ebuild, -ddccontrol-0.4.1.ebuild, -ddccontrol-0.4.2.ebuild,
-  -files/ddccontrol-0.3-fix-libpanelapplet-dep.patch,
-  -files/ddccontrol-0.3-u64-conflicting-types.patch,
-  -files/ddccontrol-asneeded.patch, ddccontrol-0.4.2-r2.ebuild, metadata.xml:
-  Take over maintenance. Cleanup old.
-
-  30 Jul 2013; Mike Frysinger <vapier@gentoo.org> ddccontrol-0.4.2-r2.ebuild:
-  Fix building with automake-1.13 #467574 by Ian Stakenvicius.
-
-*ddccontrol-0.4.2-r2 (10 Jul 2013)
-
-  10 Jul 2013; Manuel Rüger <mrueg@gentoo.org> +ddccontrol-0.4.2-r2.ebuild,
-  +files/ddccontrol-0.4.2-support-fglrx.patch:
-  Non-maintainer commit: Add support for fglrx (AMD ADL). Fix desktop file.
-  See bug #475568
-
-  08 Jul 2013; Michael Weber <xmw@gentoo.org> metadata.xml:
-  remove errorneous herd proxy-maint.
-
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
-
-  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
-  Ensure upstream dev is in metadata.
-
-  08 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
-  ddccontrol-0.4.2-r1.ebuild:
-  Stable ppc, bug #418599
-
-  08 Aug 2012; Andreas Schuerch <nativemad@gentoo.org>
-  ddccontrol-0.4.2-r1.ebuild:
-  x86 stable, see bug 418599
-
-  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> ddccontrol-0.4.2-r1.ebuild:
-  Stable on amd64 wrt bug #418599
-
-  25 Apr 2012; Justin Lecher <jlec@gentoo.org> ddccontrol-0.1.3.ebuild,
-  ddccontrol-0.2.ebuild, ddccontrol-0.3.ebuild, ddccontrol-0.3-r1.ebuild,
-  ddccontrol-0.3-r2.ebuild, ddccontrol-0.4.1.ebuild, ddccontrol-0.4.2.ebuild:
-  Drop unnessecary die
-
-  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
-  Drop nicolas as he is no longer the upstream maintainer.
-
-*ddccontrol-0.4.2-r1 (25 Jan 2012)
-
-  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> +ddccontrol-0.4.2-r1.ebuild,
-  +files/ddccontrol-0.4.2-automake.patch,
-  +files/ddccontrol-0.4.2-no-ddcpci.patch, metadata.xml:
-  Migrate to EAPI=4, fix build with newer automake with patch from upstream,
-  add USE=static-libs support, and add USE=ddcpci to control the setuid binary.
-
-  29 Mar 2011; Christoph Mende <angelos@gentoo.org> ddccontrol-0.1.3.ebuild,
-  ddccontrol-0.2.ebuild, ddccontrol-0.3.ebuild, ddccontrol-0.3-r1.ebuild,
-  ddccontrol-0.3-r2.ebuild, ddccontrol-0.4.1.ebuild, ddccontrol-0.4.2.ebuild:
-  Fixed slot deps
-
-  09 Mar 2008; Mart Raudsepp <leio@gentoo.org> ddccontrol-0.4.2.ebuild:
-  Fix build with newer intltool, bug 199600
-
-  17 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  ddccontrol-0.4.2.ebuild:
-  stable x86, bug 162733
-
-  16 Jul 2007; Christoph Mende <angelos@gentoo.org> ddccontrol-0.4.2.ebuild:
-  Stable on amd64 wrt bug #162733
-
-  15 Jul 2007; nixnut <nixnut@gentoo.org> ddccontrol-0.4.2.ebuild:
-  Stable on ppc wrt bug 162735
-
-  15 Jul 2007; Robin H. Johnson <robbat2@gentoo.org>
-  +files/ddccontrol-0.4.2-pciutils-libz.patch, ddccontrol-0.4.2.ebuild:
-  Bug #163057 - compile fix for zlib'd pciutils. Also fix compile on ppc for
-  in/out/ioperm usage.
-
-  01 Mar 2007; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
-  Add metadata.xml note that upstream wishes to be CCd on all bugs for this
-  package.
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  04 Jan 2007; Robin H. Johnson <robbat2@gentoo.org>
-  ddccontrol-0.4.2.ebuild:
-  Bug #157659, missing dependancies for build.
-
-*ddccontrol-0.4.2 (01 Oct 2006)
-
-  01 Oct 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +ddccontrol-0.4.2.ebuild:
-  Version bump, bug #149760
-
-  06 Jun 2006; Simon Stelling <blubb@gentoo.org> ddccontrol-0.4.1.ebuild:
-  stable on amd64
-
-  24 May 2006; Mark Loeser <halcy0n@gentoo.org> ddccontrol-0.4.1.ebuild:
-  Stable on x86; bug #131283
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org>
-  files/digest-ddccontrol-0.1.3, files/digest-ddccontrol-0.2,
-  files/digest-ddccontrol-0.3, files/digest-ddccontrol-0.3-r1,
-  files/digest-ddccontrol-0.3-r2, Manifest:
-  Fixing SHA256 digest, pass four
-
-*ddccontrol-0.4.1 (24 Mar 2006)
-
-  24 Mar 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +ddccontrol-0.4.1.ebuild:
-  Version bump, bug #126882.
-
-*ddccontrol-0.3-r2 (27 Feb 2006)
-
-  27 Feb 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/ddccontrol-0.3-fix-libpanelapplet-dep.patch,
-  +files/ddccontrol-0.3-u64-conflicting-types.patch,
-  +ddccontrol-0.3-r2.ebuild:
-  Bug #124093 and #123581, patches for new libpci and gnome-2.12 from upstream
-  dev.
-
-*ddccontrol-0.3-r1 (20 Feb 2006)
-
-  20 Feb 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/ddccontrol-asneeded.patch, +ddccontrol-0.3-r1.ebuild:
-  Bug #122640 --as-needed fixes patch from Ben Skeggs <darktama@iinet.net.au>.
-
-*ddccontrol-0.3 (12 Dec 2005)
-
-  12 Dec 2005; Robin H. Johnson <robbat2@gentoo.org> +ddccontrol-0.3.ebuild:
-  Bug #112917, version bump.
-
-  03 Sep 2005; Robin H. Johnson <robbat2@gentoo.org> ddccontrol-0.2.ebuild:
-  Tested ~amd64 using temporary laptop I have.
-
-  21 Aug 2005; Robin H. Johnson <robbat2@gentoo.org>
-  ddccontrol-0.1.3.ebuild, ddccontrol-0.2.ebuild:
-  Improve description. Bug #103116.
-
-*ddccontrol-0.2 (20 Aug 2005)
-
-  20 Aug 2005; Robin H. Johnson <robbat2@gentoo.org> +ddccontrol-0.2.ebuild:
-  Bug #102383, version bump.
-
-*ddccontrol-0.1.3 (03 Aug 2005)
-
-  03 Aug 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +ddccontrol-0.1.3.ebuild:
-  Initial commit, based on ebuild submitted by upstream author Nicolas Boichat
-  <nicolas@boichat.ch>, bug #95324.

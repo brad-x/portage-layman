@@ -1,74 +1,58 @@
 # ChangeLog for media-libs/gst-rtsp-server
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-rtsp-server/ChangeLog,v 1.19 2015/06/26 09:22:58 ago Exp $
+# (auto-generated from git log)
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> gst-rtsp-server-1.4.5.ebuild:
-  Stable for x86, wrt bug #551814
+*gst-rtsp-server-1.4.5 (09 Aug 2015)
+*gst-rtsp-server-0.10.8-r1 (09 Aug 2015)
 
-  21 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> gst-rtsp-server-1.4.5.ebuild:
-  amd64 stable wrt bug #551814
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +gst-rtsp-server-0.10.8-r1.ebuild, +gst-rtsp-server-1.4.5.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  31 May 2015; Manuel Rüger <mrueg@gentoo.org> -gst-rtsp-server-0.10.8.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gst-rtsp-server-1.4.5 (02 May 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 May 2015; Gilles Dartiguelongue <eva@gentoo.org>
-  +gst-rtsp-server-1.4.5.ebuild:
-  Version bump for 1.0 slot, bug #538666.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Mar 2015; Pacho Ramos <pacho@gentoo.org> gst-rtsp-server-0.10.8-r1.ebuild:
-  x86 stable, bug 534012
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Mar 2015; Pacho Ramos <pacho@gentoo.org> gst-rtsp-server-0.10.8-r1.ebuild:
-  amd64 stable, bug 534012
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Jan 2015; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup metadata
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Jan 2015; Pacho Ramos <pacho@gentoo.org> gst-rtsp-server-0.10.8-r1.ebuild:
-  Use vala.eclass
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Jan 2015; Gilles Dartiguelongue <eva@gentoo.org>
-  +gst-rtsp-server-0.10.8-r1.ebuild:
-  Bump to EAPI=5, use python-r1 eclass, use gstreamer eclass for default
-  configure arguments and multilib support, fix dependencies, do install
-  prebuilt gtk-doc documentation, install examples on demand.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Apr 2014; Matt Turner <mattst88@gentoo.org> metadata.xml:
-  Remove myself as maintainer.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
-  gst-rtsp-server-0.10.8.ebuild:
-  Slot gstreamer dependencies in preparation for gstreamer-1.0, and slot ebuild
-  to 0.10 since upstream is working on a gst-1.0-compatible version.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gst-rtsp-server-0.10.8.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  gst-rtsp-server-0.10.8.ebuild:
-  x86 stable wrt bug #393411
-
-  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gst-rtsp-server-0.10.8.ebuild:
-  Stable for AMD64, wrt bug #393411
-
-  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
-  gst-rtsp-server-0.10.8.ebuild:
-  Depend on correct slot of pygobject.
-
-  01 Sep 2011; Matt Turner <mattst88@gentoo.org> gst-rtsp-server-0.10.8.ebuild:
-  Depend on gstreamer[introspection?], bug 381369.
-
-  01 Sep 2011; Matt Turner <mattst88@gentoo.org> gst-rtsp-server-0.10.8.ebuild:
-  Use PYTHON_DEPEND. Thanks to Arfrever for pointing it out.
-
-  31 Aug 2011; Matt Turner <mattst88@gentoo.org> gst-rtsp-server-0.10.8.ebuild:
-  Doesn't build with python-3, so python_set_active_version 2. Bug 379781.
-
-*gst-rtsp-server-0.10.8 (17 Aug 2011)
-
-  17 Aug 2011; Matt Turner <mattst88@gentoo.org>
-  +gst-rtsp-server-0.10.8.ebuild, +metadata.xml:
-  Added gst-rtsp-server-0.10.8, bug 280910. Thanks to Ooblick for the ebuild on
-  which this one is based.

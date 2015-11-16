@@ -1,54 +1,58 @@
 # ChangeLog for x11-wm/amiwm
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/amiwm/ChangeLog,v 1.14 2013/10/19 15:20:01 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Oct 2013; Pacho Ramos <pacho@gentoo.org> -amiwm-0.20_p48.ebuild,
-  metadata.xml:
-  Cleanup due desktop-wm removal
+*amiwm-0.21_p2 (09 Aug 2015)
 
-*amiwm-0.21_p2 (11 Jun 2011)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +amiwm-0.21_p2.ebuild,
+  +files/amiwm-0.20_p48-flex.patch, +files/amiwm-0.20_p48-gentoo.diff,
+  +files/amiwm-0.21_p2-gentoo.diff, +files/amiwm-0.21_p2-implicts.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Jun 2011; Kacper Kowalik <xarthisius@gentoo.org> +amiwm-0.21_p2.ebuild,
-  +files/amiwm-0.21_p2-gentoo.diff, +files/amiwm-0.21_p2-implicts.patch:
-  Version bump wrt #354575 by Tomáš Hlušička <tomas.hlusicka@seznam.cz>
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 May 2010; Kacper Kowalik <xarthisius@gentoo.org> amiwm-0.20_p48.ebuild,
-  +files/amiwm-0.20_p48-gentoo.diff:
-  Fix parallel build wrt bug 248680, don't strip files wrt bug 299918.
-  Thanks Diego for reporting.
-  Fix install directories, respect CC and user flags, multilib-strict.
-  Fix incompatible implicit declaration of built-in function.
-  Update dependencies.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Dec 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  amiwm-0.20_p48.ebuild:
-  Use -j1 for build (bug #248680).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Dec 2007; Santiago M. Mola <coldwind@gentoo.org> amiwm-0.20_p48.ebuild:
-  Keyworded ~amd64
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jul 2007; David Shakaryan <omp@gentoo.org> amiwm-0.20_p48.ebuild:
-  Remove virtual/x11 from dependencies.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Feb 2006; Krzysiek Pawlik <nelchael@gentoo.org> amiwm-0.20_p48.ebuild:
-  Fixed DEPEND for modular X.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Dec 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/amiwm-0.20_p48-flex.patch, amiwm-0.20_p48.ebuild:
-  Fix building with flex-2.5.31 #110169.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 May 2005; David Holm <dholm@gentoo.org> amiwm-0.20_p48.ebuild:
-  Added to ~ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Sep 2003; <paul@gentoo.org> amiwm-0.20_p48.ebuild:
-  Change the (R) character into (R) to disallow confusion. (The character was
-  not in UTF-8)
+  Bug: https://bugs.gentoo.org/552720
 
-*amiwm-0.20_p48 (06 Sep 2003)
-
-  06 Sep 2003; Karl Trygve Kalleberg <karltk@gentoo.org> amiwm-0.20_p48.ebuild:
-  Initial import.  Ebuild submitted by Henrik Hellerstedt <henrik@katedral.se>.
-  Fixes #1858.

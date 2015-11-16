@@ -1,0 +1,34 @@
+# ChangeLog for sys-libs/binutils-libs
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*binutils-libs-2.25.1 (26 Sep 2015)
+
+  26 Sep 2015; Mike Frysinger <vapier@gentoo.org>
+  +binutils-libs-2.25.1.ebuild, +metadata.xml:
+  new package #528088
+
+  Since packages want to link against binutils libs (bfd/opcodes) and
+  properly track updates when the binutils SONAMEs change, split the
+  libs out into a dedicated package.  This way we can continue with
+  the multi-SLOT-ed binutils package w/out making the library users
+  go crazy.
+
+*binutils-libs-2.25.1-r1 (29 Sep 2015)
+
+  29 Sep 2015; Mike Frysinger <vapier@gentoo.org>
+  -binutils-libs-2.25.1.ebuild, +binutils-libs-2.25.1-r1.ebuild:
+  add multilib support #558902
+
+  29 Sep 2015; Mike Frysinger <vapier@gentoo.org>
+  binutils-libs-2.25.1-r1.ebuild:
+  add MULTILIB_USEDEP to zlib dep
+
+  01 Oct 2015; Michał Górny <mgorny@gentoo.org>
+  binutils-libs-2.25.1-r1.ebuild:
+  Fix cross-ABI header mismatch
+
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=561918
+
+  Package-Manager: portage-2.2.20
+

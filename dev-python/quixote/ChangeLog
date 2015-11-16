@@ -1,174 +1,56 @@
 # ChangeLog for dev-python/quixote
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/quixote/ChangeLog,v 1.44 2015/02/01 21:47:42 mrueg Exp $
+# (auto-generated from git log)
 
-  01 Feb 2015; Manuel Rüger <mrueg@gentoo.org> -quixote-2.7.ebuild:
-  Remove old.
+*quixote-2.8 (09 Aug 2015)
 
-  28 Jan 2015; Agostino Sarubbo <ago@gentoo.org> quixote-2.8.ebuild:
-  Stable for ppc, wrt bug #535370
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +quixote-2.8.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> quixote-2.8.ebuild:
-  Stable for x86, wrt bug #535370
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jan 2015; Agostino Sarubbo <ago@gentoo.org> quixote-2.8.ebuild:
-  Stable for amd64, wrt bug #535370
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*quixote-2.8 (19 May 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 May 2014; Ian Delaney <idella4@gentoo.org> +quixote-2.8.ebuild,
-  -quixote-2.6.ebuild:
-  bump; add IUSE doc, test. Tests restricted due to need for a running server
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.7.ebuild:
-  Restricting python 2.5
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Jun 2012; Brent Baude <ranger@gentoo.org> quixote-2.7.ebuild:
-  Marking quixote-2.7 ppc for bug 418917
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Jun 2012; Johannes Huber <johu@gentoo.org> quixote-2.7.ebuild:
-  Stable for x86, wrt bug #418917
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> quixote-2.7.ebuild:
-  Stable for amd64, wrt bug #418917
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*quixote-2.7 (19 Apr 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Apr 2012; Patrick Lauer <patrick@gentoo.org> +quixote-2.7.ebuild:
-  Bump
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Feb 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.6.ebuild:
-  Restricting jython
-
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.6.ebuild:
-  Restricting pypy #404019
-
-  01 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  quixote-2.6.ebuild:
-  Update EAPI. Fix dependencies. Set SUPPORT_PYTHON_ABIS. Avoid breaking
-  strict-aliasing rules.
-
-  01 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -quixote-0.6.1.ebuild:
-  Delete.
-
-  07 Jan 2010; Joseph Jezak <josejx@gentoo.org> quixote-2.6.ebuild:
-  Marked ppc stable for bug #294696.
-
-  07 Jan 2010; Steve Dibb <beandog@gentoo.org> quixote-2.6.ebuild:
-  amd64 stable, bug 294696
-
-  04 Jan 2010; Christian Faulhammer <fauli@gentoo.org> quixote-2.6.ebuild:
-  stable x86, bug 294696
-
-  20 Dec 2009; Fabian Groffen <grobian@gentoo.org> quixote-2.6.ebuild:
-  Merged keywords from Prefix overlay
-
-  26 Nov 2009; Dirkjan Ochtman <djc@gentoo.org> quixote-2.6.ebuild:
-  Fix problems with non-existent documentation files.
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -quixote-1.0.ebuild,
-  -quixote-1.2.ebuild, -quixote-2.4.ebuild, -quixote-2.5.ebuild:
-  Remove old
-
-*quixote-2.6 (15 Feb 2009)
-
-  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> +quixote-2.6.ebuild:
-  Bump to 2.6
-
-*quixote-2.5 (23 Feb 2008)
-*quixote-1.2 (23 Feb 2008)
-
-  23 Feb 2008; Benedikt Böhm <hollow@gentoo.org> metadata.xml,
-  quixote-0.6.1.ebuild, quixote-1.0.ebuild, +quixote-1.2.ebuild,
-  quixote-2.4.ebuild, +quixote-2.5.ebuild:
-  version bumps, bug #169030 and #206507
-
-  17 Jan 2008; Fabian Groffen <grobian@gentoo.org> quixote-1.0.ebuild,
-  quixote-2.4.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  08 Nov 2007; Grant Goodyear <g2boojum@gentoo.org> metadata.xml:
-  Removed myself as maintainer.
-
-  05 Jul 2007; Ali Polatel <hawking@gentoo.org> quixote-2.4.ebuild:
-  moved DOCS to src_install. Removed default doc names from DOCS
-
-  05 Jul 2007; Ali Polatel <hawking@gentoo.org> quixote-0.6.1.ebuild,
-  quixote-1.0.ebuild:
-  use DOCS, mydoc is deprecated. Removed default doc names from DOCS
-
-  27 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> quixote-2.4.ebuild:
-  Add ~amd64 wrt bug #167397.
-
-  21 Feb 2007; Lukasz Strzygowski <lucass@gentoo.org>
-  files/digest-quixote-0.6.1, files/digest-quixote-1.0, Manifest:
-  Convert to Manifest2.
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> quixote-2.4.ebuild:
-  Mark 2.4 ~ia64
-
-*quixote-2.4 (04 Feb 2006)
-
-  04 Feb 2006; Lukasz Strzygowski <lucass@gentoo.org> +quixote-2.4.ebuild:
-  Version bump: new license and some cleanup, bugs #98006 and #91579.
-
-  19 Feb 2005; <gongloo@gentoo.org> quixote-1.0.ebuild:
-  Stable on ppc-macos.
-
-  07 Feb 2005; Fernando Serboncini <fserb@gentoo.org> quixote-0.6.1.ebuild,
-  quixote-1.0.ebuild:
-  moved 'inherit' to the right place
-
-  19 Jan 2005; <gongloo@gentoo.org> quixote-1.0.ebuild:
-  Keyworded ~ppc-macos.
-
-  03 Jul 2004; David Holm <dholm@gentoo.org> quixote-1.0.ebuild:
-  Added to ~ppc.
-
-*quixote-1.0 (02 Jul 2004)
-
-  02 Jul 2004; Grant Goodyear <g2boojum@gentoo.org> +quixote-1.0.ebuild:
-  Version bump
-
-*quixote-0.7_alpha3 (05 Dec 2003)
-
-  05 Dec 2003; Grant Goodyear <g2boojum@gentoo.org> quixote-0.7_alpha3.ebuild:
-  New version
-
-*quixote-0.7_alpha2 (12 Nov 2003)
-
-  12 Nov 2003; Grant Goodyear <g2boojum@gentoo.org> quixote-0.7_alpha2.ebuild:
-  New version (still the dev branch).  Being bad, I somehow forgot
-  to update the changelog for marking 0.6.1 as x86 as well as adding
-  0.7_alpha1 (and marking it ~x86), as it's part of quixote's development
-  branch.  
-
-*quixote-0.7_alpha1 (23 Oct 2003)
-
-*quixote-0.6.1 (11 Aug 2003)
-
-  11 Aug 2003; Grant Goodyear <g2boojum@gentoo.org> quixote-0.6.1.ebuild:
-  Version bump; marking ~x86 for now.
-
-*quixote-0.6 (02 May 2003)
-
-  02 May 2003; Grant Goodyear <g2boojum@gentoo.org> quixote-0.6.ebuild,
-  quixote-0.6_beta2.ebuild, quixote-0.6_beta2.ebuild,
-  quixote-0.6_beta6.ebuild, quixote-0.6_beta6.ebuild:
-  New version.  Removed old betas.
-
-*quixote-0.6_beta2 (21 Apr 2003)
-
-  21 Apr 2003; Grant Goodyear <g2boojum@gentoo.org> quixote-0.5.1.ebuild,
-  quixote-0.6_beta2.ebuild, quixote-0.6_beta6.ebuild:
-  New python web framework. Marked stable for 0.5.1 because I've used it.
-  Leaving the beta's marked unstable, since they're still beta.
-  That said, I highly recommend that all users who want to use quixote
-  use the latest beta, as there have been some significant changes.
-  (If it's good enough for LWN, it's good enough for me.)
-
-*quixote-0.5.1 (22 Jun 2003)
- 
-  12 Jul 2003; Daniel Ahlberg <aliz@gentoo.org> :
-  Added missing changelog entry.

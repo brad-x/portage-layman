@@ -1,68 +1,59 @@
 # ChangeLog for media-libs/opengl-apple
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/opengl-apple/ChangeLog,v 1.9 2015/03/31 18:02:51 ulm Exp $
+# (auto-generated from git log)
 
-  31 Mar 2015; Ulrich Müller <ulm@gentoo.org> opengl-apple-3.ebuild,
-  opengl-apple-4.ebuild, opengl-apple-5.ebuild:
-  Update dependency after package move of eselect modules to app-eselect.
+*opengl-apple-5 (09 Aug 2015)
+*opengl-apple-4 (09 Aug 2015)
+*opengl-apple-3 (09 Aug 2015)
 
-*opengl-apple-5 (20 Jul 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/gl.pc,
+  +metadata.xml, +opengl-apple-3.ebuild, +opengl-apple-4.ebuild,
+  +opengl-apple-5.ebuild:
+  proj/gentoo: Initial commit
 
-  20 Jul 2013; Fabian Groffen <grobian@gentoo.org> +opengl-apple-5.ebuild:
-  Bump to match layout used by new(er) eselect-opengl
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Dec 2012; Fabian Groffen <grobian@gentoo.org> opengl-apple-3.ebuild,
-  opengl-apple-4.ebuild:
-  Change licence to public-domain, bug #445872
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Sep 2011; Fabian Groffen <grobian@gentoo.org> opengl-apple-3.ebuild,
-  opengl-apple-4.ebuild:
-  Drop USE=doc since opengl-manpages no longer seem to exist, bug #384197
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org>
-  opengl-apple-3.ebuild, opengl-apple-4.ebuild:
-  Add --use-old option to eselect call.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*opengl-apple-4 (21 Sep 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Sep 2010; Fabian Groffen <grobian@gentoo.org> +opengl-apple-4.ebuild,
-  +files/gl.pc:
-  Bump, include pkg-config file thanks to heiko for bug #337965
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Jan 2010; Fabian Groffen <grobian@gentoo.org> opengl-apple-3.ebuild:
-  Bump to EAPI=3, fix eselect-opengl dependency got 'fixed' previously
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*opengl-apple-3 (24 Jan 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Jan 2010; Fabian Groffen <grobian@gentoo.org> +opengl-apple-3.ebuild,
-  +metadata.xml:
-  Renamed to opengl-apple for consistency with other -apple packages,
-  imported in gentoo-x86.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*apple-opengl-3 (14 Dec 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Dec 2009; Fabian Groffen <grobian@gentoo.org> +apple-opengl-3.ebuild:
-  Version bump, drop Apple OpenGL Framework stuff, and only link to X11
-  stuff. This fixes freeglut-2.6 compilation, but most importantly, it seems
-  opengl is always meant to be the X11/Xorg variant, since otherwise the
-  framework will be used instead.
-
-  11 Apr 2009; Fabian Groffen <grobian@gentoo.org> +metadata.xml,
-  apple-opengl-2.ebuild:
-  Removed EAPI="prefix", added metadata.xml
-
-*apple-opengl-2 (09 Nov 2008)
-
-  09 Nov 2008; Fabian Groffen <grobian@gentoo.org> -apple-opengl-1.ebuild,
-  +apple-opengl-2.ebuild:
-  Bump, heiko_ complains that we conflict with x11-proto/glproto, so depend on
-  it, and remove the conflicting files
-
-  09 Nov 2008; Fabian Groffen <grobian@gentoo.org> apple-opengl-1.ebuild:
-  also add GLw
-
-  09 Nov 2008; Fabian Groffen <grobian@gentoo.org> apple-opengl-1.ebuild:
-  Include glx.h and versioned libraries from /usr/X11R6
-
-  09 Nov 2008; Fabian Groffen <grobian@gentoo.org> ChangeLog:
-  initial version of opengl wrapper around the Apple Framework

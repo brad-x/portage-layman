@@ -1,98 +1,58 @@
 # ChangeLog for dev-ml/ocamlweb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/ocamlweb/ChangeLog,v 1.26 2015/06/01 08:28:35 aballier Exp $
+# (auto-generated from git log)
 
-*ocamlweb-1.39 (01 Jun 2015)
+*ocamlweb-1.39 (09 Aug 2015)
+*ocamlweb-1.38-r1 (09 Aug 2015)
 
-  01 Jun 2015; Alexis Ballier <aballier@gentoo.org> +ocamlweb-1.39.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/ocamlweb-1.37-strip.patch, +metadata.xml, +ocamlweb-1.38-r1.ebuild,
+  +ocamlweb-1.39.ebuild:
+  proj/gentoo: Initial commit
 
-  01 Jun 2015; Alexis Ballier <aballier@gentoo.org> -ocamlweb-1.38.ebuild:
-  remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> ocamlweb-1.38-r1.ebuild:
-  Stable for x86, wrt bug #492052
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Dec 2013; Agostino Sarubbo <ago@gentoo.org> ocamlweb-1.38-r1.ebuild:
-  Stable for ppc, wrt bug #492052
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*ocamlweb-1.38-r1 (05 Jul 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Jul 2013; Alexis Ballier <aballier@gentoo.org> +ocamlweb-1.38-r1.ebuild:
-  revbump it to be sure everyone gets the changes
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jul 2013; Alexis Ballier <aballier@gentoo.org> ocamlweb-1.38.ebuild:
-  Install texmf files in the correct directory
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Jul 2013; Alexis Ballier <aballier@gentoo.org> ocamlweb-1.38.ebuild:
-  eapi5 and add subslot dep on ocaml. add a src_compile phase since it seems it
-  doesnt get run otherwise
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Aug 2012; Alexis Ballier <aballier@gentoo.org> -ocamlweb-1.37.ebuild,
-  -files/ocamlweb-1.37-tests.patch:
-  remove old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Jul 2012; Brent Baude <ranger@gentoo.org> ocamlweb-1.38.ebuild:
-  Marking ocamlweb-1.38 ppc for bug 422035
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> ocamlweb-1.38.ebuild:
-  marked x86 per bug 422035
+  Bug: https://bugs.gentoo.org/552720
 
-*ocamlweb-1.38 (18 May 2012)
-
-  18 May 2012; Alexis Ballier <aballier@gentoo.org> +ocamlweb-1.38.ebuild:
-  version bump
-
-  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> ocamlweb-1.37.ebuild:
-  remove ptex dep as it is going away
-
-  30 May 2009; Ulrich Mueller <ulm@gentoo.org> ocamlweb-1.37.ebuild:
-  Remove app-text/tetex from dependencies, bug 227443.
-
-  20 Apr 2008; Alexis Ballier <aballier@gentoo.org> -ocamlweb-1.36.ebuild:
-  remove old
-
-  20 Apr 2008; Markus Meier <maekke@gentoo.org> ocamlweb-1.37.ebuild:
-  x86 stable, bug #217535
-
-  19 Apr 2008; nixnut <nixnut@gentoo.org> ocamlweb-1.37.ebuild:
-  Stable on ppc wrt bug 217535
-
-  03 Mar 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/ocamlweb-1.37-strip.patch, ocamlweb-1.37.ebuild:
-  dont prestrip files
-
-  03 Mar 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/ocamlweb-1.37-tests.patch, ocamlweb-1.37.ebuild:
-  specify extension of the tex file so that latex doesnt try to compile the
-  ELF file during tests... inherit latex-package to have better TeX database
-  handling in pkg phases
-
-  03 Mar 2008; Alexis Ballier <aballier@gentoo.org> ocamlweb-1.37.ebuild:
-  switch to latex-base
-
-  26 May 2007; Alexis Ballier <aballier@gentoo.org> ocamlweb-1.37.ebuild:
-  ~amd64, dont install COPYING, quote directory variables
-
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  04 Feb 2006; Matthieu Sozeau <mattam@gentoo.org> -ocamlweb-1.34.ebuild,
-  +ocamlweb-1.37.ebuild:
-  Remove old version and add latest one as unstable.
-
-*ocamlweb-1.36 (07 Feb 2005)
-
-  07 Feb 2005; Matthieu Sozeau <mattam@gentoo.org> ocamlweb-1.34.ebuild,
-  +ocamlweb-1.36.ebuild:
-  Add latest version, compatible with ocaml-3.08.
-
-  08 Aug 2004; Matthieu Sozeau <mattam@gentoo.org> ocamlweb-1.34.ebuild:
-  Mark stable.
-
-*ocamlweb-1.34 (05 Feb 2004)
-
-  05 Feb 2004; Matthieu Sozeau <mattam@gentoo.org> metadata.xml,
-  ocamlweb-1.34.ebuild:
-  ocamlweb is a literate programming tool for ocaml, it can output TeX docs
-  from literate sources.

@@ -1,66 +1,56 @@
 # ChangeLog for dev-embedded/uisp
-# Copyright 2000-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/uisp/ChangeLog,v 1.17 2013/07/21 11:10:07 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  21 Jul 2013; Agostino Sarubbo <ago@gentoo.org> uisp-20050207-r1.ebuild:
-  Stable for amd64, wrt bug #477284
+*uisp-20050207-r1 (09 Aug 2015)
 
-  05 Feb 2013; Mike Frysinger <vapier@gentoo.org> uisp-20050207-r1.ebuild:
-  Update to EAPI=4 and drop useless depends #455726 by Christoph Junghans.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mega-48-88-168.patch, +metadata.xml, +uisp-20050207-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  20 Oct 2007; Denis Dupeyron <calchan@gentoo.org> -files/uisp-gcc34.patch,
-  -uisp-20040311.ebuild, uisp-20050207-r1.ebuild:
-  Fixed bug #196483. Fixed compilation failing on warnings due to -Werror in
-  CXXFLAGS. Removed old ebuild.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Sep 2007; Denis Dupeyron <calchan@gentoo.org> -uisp-20050103.ebuild:
-  Removed useless uisp-20050103 which fixes bug #193017.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Sep 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  uisp-20050207-r1.ebuild:
-  Stable on x86
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*uisp-20050207-r1 (28 Jun 2005)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jun 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  +files/mega-48-88-168.patch, -uisp-20050207.ebuild,
-  +uisp-20050207-r1.ebuild:
-  Bump with fixed and new device support
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*uisp-20050207 (10 Jun 2005)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Jun 2005; Gustavo Zacarias <gustavoz@gentoo.org> +uisp-20050207.ebuild:
-  New upstream version
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 May 2005; David Holm <dholm@gentoo.org> uisp-20050103.ebuild:
-  Added to ~ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*uisp-20050103 (03 Jan 2005)
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Jan 2005; Daniel Black <dragonheart@gentoo.org> +files/uisp-gcc34.patch,
-  -uisp-20030618.ebuild, uisp-20040311.ebuild, +uisp-20050103.ebuild:
-  Removed 2003 version. Patched 2004 version as per bug #74216 with patch by Ian
-  Hubbertz <gentoo2@hubbertz.de>. Version bump commited
-
-  18 Jul 2004; Robin H. Johnson <robbat2@gentoo.org> uisp-20040311.ebuild:
-  stable on x86.
-
-  24 Mar 2004; Daniel Black <dragonheart@gentoo.org> uisp-20030618.ebuild:
-  Removed surperflous S assignment
-
-*uisp-20040311 (23 Mar 2004)
-
-  23 Mar 2004; Daniel Black <dragonheart@gentoo.org> uisp-20040311.ebuild:
-  version bump thanks to Wolf Goetze <wolf@goetze.co.uk> bug #45370
-
-  05 Mar 2004; Daniel Black <dragonheart@gentoo.org> uisp-20030618.ebuild:
-  Marked stable on x86
-
-*uisp-20030618 (28 Oct 2003)
-
-  28 Oct 2003; Robin H. Johnson <robbat2@gentoo.org> metadata.xml,
-  uisp-20030618.ebuild:
-  initial commit, bug #23651 submitted by Wolf Goetze <wolf@goetze.co.uk>

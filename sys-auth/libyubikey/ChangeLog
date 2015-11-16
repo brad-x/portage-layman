@@ -1,44 +1,57 @@
 # ChangeLog for sys-auth/libyubikey
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/libyubikey/ChangeLog,v 1.8 2015/04/14 07:36:29 jlec Exp $
+# (auto-generated from git log)
 
-*libyubikey-1.13 (14 Apr 2015)
+*libyubikey-1.13 (09 Aug 2015)
+*libyubikey-1.12 (09 Aug 2015)
 
-  14 Apr 2015; Justin Lecher <jlec@gentoo.org> +libyubikey-1.13.ebuild,
-  -libyubikey-1.10.ebuild, -libyubikey-1.9.ebuild, metadata.xml:
-  Version Bump; drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libyubikey-1.12.ebuild,
+  +libyubikey-1.13.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libyubikey-1.12 (19 Aug 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Aug 2014; Rick Farina <zerochaos@gentoo.org> +libyubikey-1.12.ebuild:
-  version bump, bug 513944
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Apr 2013; Rick Farina <zerochaos@gentoo.org> libyubikey-1.10.ebuild:
-  tested on ~x86
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*libyubikey-1.10 (24 Mar 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Mar 2013; Diego E. Pettenò <flameeyes@gentoo.org> +libyubikey-1.10.ebuild:
-  Version bump; use autotools-utils.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*libyubikey-1.9 (24 Jun 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> +libyubikey-1.9.ebuild,
-  -files/libyubikey-1.6-rpath.patch, -libyubikey-1.6.ebuild:
-  Version bump yubikey-related packages. Close bugs #394565, #394563, #423289,
-  #371345, #394567. Remove old and old patch.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> libyubikey-1.6.ebuild:
-  USE="static-libs" and convert to prune_libtool_files() function. Remove
-  -Werror from AM_INIT_AUTOMAKE for compability with sys-devel/automake >= 1.12
-  wrt #423255 by Diego Elio Pettenò.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*libyubikey-1.6 (23 Oct 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +libyubikey-1.6.ebuild, +files/libyubikey-1.6-rpath.patch, +metadata.xml:
-  Add libyubikey, proxy-maintained by Brant Gurganus. Ebuild and patch from
-  bug #342103, updated for style and repoman.

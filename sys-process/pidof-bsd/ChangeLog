@@ -1,57 +1,60 @@
 # ChangeLog for sys-process/pidof-bsd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/pidof-bsd/ChangeLog,v 1.11 2015/02/21 16:10:24 mgorny Exp $
+# (auto-generated from git log)
 
-  21 Feb 2015; Michał Górny <mgorny@gentoo.org>
-  +files/pidof-bsd-20050501-fbsd10.patch, pidof-bsd-20050501-r4.ebuild:
-  Fix build failure on FreeBSD 10.0, https://github.com/gentoo/gentoo-portage-
-  rsync-mirror/pull/31 by nigoro.
+*pidof-bsd-20050501-r4 (09 Aug 2015)
 
-*pidof-bsd-20050501-r4 (24 May 2012)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pidof-bsd-20050501-fbsd10.patch,
+  +files/pidof-bsd-20050501-firstarg.patch,
+  +files/pidof-bsd-20050501-gfbsd.patch,
+  +files/pidof-bsd-20050501-pname.patch, +metadata.xml,
+  +pidof-bsd-20050501-r4.ebuild:
+  proj/gentoo: Initial commit
 
-  24 May 2012; Richard Yao <ryao@gentoo.org> +pidof-bsd-20050501-r4.ebuild,
-  -pidof-bsd-20050501-r3.ebuild, files/pidof-bsd-20050501-pname.patch:
-  Fix patch to avoid undefined behavior, bug \#417181
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
-  pidof-bsd-20050501-r3.ebuild:
-  keyword ~amd64-fbsd
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Jul 2009; Alexis Ballier <aballier@gentoo.org>
-  pidof-bsd-20050501-r3.ebuild:
-  make patches a bash array
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Jul 2009; Alexis Ballier <aballier@gentoo.org>
-  -pidof-bsd-20050501-r1.ebuild, -pidof-bsd-20050501-r2.ebuild:
-  remove old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 Jul 2009; Alexis Ballier <aballier@gentoo.org>
-  pidof-bsd-20050501-r3.ebuild:
-  depend on fbsd-mk-defs to avoid failures when building stages
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Nov 2008; Diego E. Pettenò <flameeyes@gentoo.org>
-  files/pidof-bsd-20050501-pname.patch:
-  Fix patch with absolute paths.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Oct 2006; Roy Marples <uberlord@gentoo.org>
-  pidof-bsd-20050501-r3.ebuild:
-  Added ~sparc-fbsd keyword.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pidof-bsd-20050501-r3 (25 Sep 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Sep 2006; Javier Villavicencio <the_paya@gentoo.org>
-  +files/pidof-bsd-20050501-pname.patch, +pidof-bsd-20050501-r3.ebuild:
-  Added patch from Roy Marples, fixes for new baselayout.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*pidof-bsd-20050501-r2 (13 Apr 2006)
+  Bug: https://bugs.gentoo.org/552720
 
-  13 Apr 2006; Diego Pettenò <flameeyes@gentoo.org>
-  +files/pidof-bsd-20050501-firstarg.patch, +pidof-bsd-20050501-r2.ebuild:
-  Add patch to check only first argument when using pidof -x, fixes rc-daemon.
-
-*pidof-bsd-20050501-r1 (01 Apr 2006)
-
-  01 Apr 2006; Diego Pettenò <flameeyes@gentoo.org>
-  +files/pidof-bsd-20050501-gfbsd.patch, +metadata.xml,
-  +pidof-bsd-20050501-r1.ebuild:
-  Initial import in portage, from gentoo-alt overlay.

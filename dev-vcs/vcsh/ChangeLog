@@ -1,58 +1,65 @@
 # ChangeLog for dev-vcs/vcsh
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/vcsh/ChangeLog,v 1.12 2015/05/10 10:21:40 tamiko Exp $
+# (auto-generated from git log)
 
-*vcsh-1.20150502 (10 May 2015)
+*vcsh-1.20150502 (09 Aug 2015)
+*vcsh-1.20141026 (09 Aug 2015)
+*vcsh-1.20140508-r2 (09 Aug 2015)
 
-  10 May 2015; Matthias Maier <tamiko@gentoo.org> +vcsh-1.20150502.ebuild:
-  version bump; bug #548794; thanks to Austin M. Matherne
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +vcsh-1.20140508-r2.ebuild, +vcsh-1.20141026.ebuild,
+  +vcsh-1.20150502.ebuild:
+  proj/gentoo: Initial commit
 
-*vcsh-1.20141026 (11 Nov 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Nov 2014; Matthias Maier <tamiko@gentoo.org> +vcsh-1.20141026.ebuild,
-  -vcsh-1.20130724.ebuild, -vcsh-1.20131214.ebuild, -vcsh-1.20140508.ebuild,
-  metadata.xml:
-  take over maintainership; version bump; drop old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*vcsh-1.20140508-r2 (10 Sep 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Sep 2014; Tiziano Müller <dev-zero@gentoo.org> +vcsh-1.20140508-r2.ebuild,
-  -vcsh-1.20140508-r1.ebuild:
-  Use tarball with prebuilt manpage instead.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*vcsh-1.20140508-r1 (09 Sep 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> vcsh-1.20140508-r2.ebuild,
+  vcsh-1.20141026.ebuild, vcsh-1.20150502.ebuild:
+  Use https by default
 
-  09 Sep 2014; Tiziano Müller <dev-zero@gentoo.org> +vcsh-1.20140508-r1.ebuild:
-  Make installation of manpage optional via USE=doc due to ruby dep for building
-  it. Install sample hooks as docs.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*vcsh-1.20140508 (25 May 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 May 2014; Pavlos Ratis <dastergon@gentoo.org> +vcsh-1.20140508.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*vcsh-1.20131214 (24 Dec 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Dec 2013; Pavlos Ratis <dastergon@gentoo.org> +vcsh-1.20131214.ebuild:
-  EAPI 5, version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Dec 2013; Pavlos Ratis <dastergon@gentoo.org> metadata.xml:
-  add myself as maintainer
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Dec 2013; Pacho Ramos <pacho@gentoo.org> -vcsh-0.20120227.ebuild,
-  metadata.xml:
-  Cleanup due bug #65652
+  Bug: https://bugs.gentoo.org/552720
 
-*vcsh-1.20130724 (09 Aug 2013)
-
-  09 Aug 2013; Patrick Lauer <patrick@gentoo.org> +vcsh-1.20130724.ebuild:
-  Bump
-
-  22 Apr 2012; Torsten Veller <tove@gentoo.org> vcsh-0.20120227.ebuild:
-  dev-vcs/git is a runtime dependency
-
-*vcsh-0.20120227 (08 Apr 2012)
-
-  08 Apr 2012; Torsten Veller <tove@gentoo.org> +vcsh-0.20120227.ebuild,
-  +metadata.xml:
-  Initial commit

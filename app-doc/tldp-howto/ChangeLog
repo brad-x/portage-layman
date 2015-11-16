@@ -1,53 +1,57 @@
 # ChangeLog for app-doc/tldp-howto
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/tldp-howto/ChangeLog,v 1.10 2013/10/21 03:42:12 dirtyepic Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  21 Oct 2013; Ryan Hill <dirtyepic@gentoo.org> tldp-howto-20120707.ebuild:
-  Fix install error when "text" is the only USE flag enabled (bug #488706).
+*tldp-howto-20120707 (09 Aug 2015)
+*tldp-howto-20100701 (09 Aug 2015)
 
-*tldp-howto-20120707 (14 Oct 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +tldp-howto-20100701.ebuild, +tldp-howto-20120707.ebuild:
+  proj/gentoo: Initial commit
 
-  14 Oct 2013; Ryan Hill <dirtyepic@gentoo.org> -tldp-howto-20100101.ebuild,
-  +tldp-howto-20120707.ebuild, metadata.xml:
-  Version bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Sep 2013; Mike Frysinger <vapier@gentoo.org> tldp-howto-20100101.ebuild,
-  tldp-howto-20100701.ebuild:
-  Mark m68k/s390/sh stable.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Jul 2012; Ryan Hill <dirtyepic@gentoo.org> metadata.xml:
-  Maintainer -> app-doc.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> tldp-howto-20100101.ebuild,
-  tldp-howto-20100701.ebuild:
-  Move EAPI assignment to top of ebuild, bug 411875.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Oct 2010; Ryan Hill <dirtyepic@gentoo.org> tldp-howto-20100101.ebuild,
-  tldp-howto-20100701.ebuild:
-  Stabilize for all.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*tldp-howto-20100701 (01 Jul 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Jul 2010; Ryan Hill <dirtyepic@gentoo.org> +tldp-howto-20100701.ebuild:
-  Version bump. The following HOWTOs have seen updates:
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  - The Unix and Internet Fundamentals HOWTO
-  - Text Terminal HOWTO
-  - Quake HOWTO
-  - The Software-RAID HOWTO
-  - Software Release Practise HOWTO
-  - The Unix Hardware Buyer HOWTO
-  - Linux User Group HOWTO
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Feb 2010; Christian Faulhammer <fauli@gentoo.org>
-  tldp-howto-20100101.ebuild:
-  add ~x86 for bug 305693
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Jan 2010; Ryan Hill <dirtyepic@gentoo.org> tldp-howto-20100101.ebuild:
-  Drop LDP license, bug #301030.
+  Bug: https://bugs.gentoo.org/552720
 
-*tldp-howto-20100101 (01 Jan 2010)
-
-  01 Jan 2010; Ryan Hill <dirtyepic@gentoo.org> +tldp-howto-20100101.ebuild,
-  +metadata.xml:
-  New ebuild consolidating all the app-doc/howto-* ebuilds.

@@ -1,0 +1,97 @@
+# ChangeLog for dev-ruby/recog
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*recog-2.0.6 (04 Sep 2015)
+
+  04 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> +metadata.xml,
+  +recog-2.0.6.ebuild:
+  net-analyzer/metasploit: add a modern version of metasploit (and a ton of
+  deps for it)
+
+  05 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> recog-2.0.6.ebuild:
+  net-analyzer/metasploit (and deps): re-add ~arm keyword
+
+*recog-2.0.12 (05 Sep 2015)
+
+  05 Sep 2015; Hans de Graaff <graaff@gentoo.org> +recog-2.0.12.ebuild:
+  version bump
+
+  Fix FEATURES=test and USE=doc.
+  Fix LICENSE.
+
+  Package-Manager: portage-2.2.20.1
+
+  05 Sep 2015; Hans de Graaff <graaff@gentoo.org> recog-2.0.12.ebuild:
+  fix Id header
+
+  Package-Manager: portage-2.2.20.1
+
+  05 Sep 2015; Hans de Graaff <graaff@gentoo.org> recog-2.0.12.ebuild:
+  add missing test dependency.
+
+  Dependency on dev-ruby/regexp_parser was missing.
+  Also drop keywords on ~arm and ~x86 due to this,
+  bug 559628.
+
+  Package-Manager: portage-2.2.20.1
+
+  07 Sep 2015; Michał Górny <mgorny@gentoo.org> recog-2.0.6.ebuild:
+  net-analyzer/metasploit (and deps): Revert "re-add ~arm keyword"
+
+  This causes issue due to a number of non-keyworded dependencies.
+
+  Reverts: 3270b7eb07 (net-analyzer/metasploit (and deps): re-add ~arm
+  keyword)
+
+  07 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> recog-2.0.6.ebuild:
+  Revert "net-analyzer/metasploit (and deps): Revert "re-add ~arm keyword""
+
+  This reverts commit 8bdbfab2f6bedacee6cb37559ce5cb63aba7a285.
+
+  Not trying to be rude here, just the easiest way to readd this commit it to
+  revert the revert.
+
+  07 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> recog-2.0.12.ebuild:
+  readding ~arm and ~x86
+
+  Package-Manager: portage-2.2.20.1
+
+  15 Sep 2015; Justin Lecher <jlec@gentoo.org> recog-2.0.6.ebuild:
+  Fix Malformed Id header on line: 3
+
+  Convert Header to Id
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*recog-2.0.13 (22 Sep 2015)
+
+  22 Sep 2015; Hans de Graaff <graaff@gentoo.org> +recog-2.0.13.ebuild:
+  version bump
+
+  Package-Manager: portage-2.2.20.1
+
+*recog-2.0.14 (01 Oct 2015)
+
+  01 Oct 2015; Hans de Graaff <graaff@gentoo.org> -recog-2.0.13.ebuild,
+  +recog-2.0.14.ebuild:
+  version bump
+
+  Also clean up previous version since it had bugs.
+
+  Package-Manager: portage-2.2.20.1
+
+  08 Oct 2015; Zero_Chaos <zerochaos@gentoo.org> recog-2.0.6.ebuild,
+  recog-2.0.12.ebuild, recog-2.0.14.ebuild:
+  reslot so metasploit can use different versions
+
+*recog-2.0.14-r1 (08 Oct 2015)
+*recog-2.0.6-r1 (08 Oct 2015)
+
+  08 Oct 2015; Zero_Chaos <zerochaos@gentoo.org> -recog-2.0.6.ebuild,
+  +recog-2.0.6-r1.ebuild, -recog-2.0.12.ebuild, -recog-2.0.14.ebuild,
+  +recog-2.0.14-r1.ebuild:
+  bump and fix collisions
+
+  Package-Manager: portage-2.2.22
+

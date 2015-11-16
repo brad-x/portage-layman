@@ -1,0 +1,40 @@
+# ChangeLog for dev-ruby/postgres_ext
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*postgres_ext-2.4.1 (04 Sep 2015)
+
+  04 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> +metadata.xml,
+  +postgres_ext-2.4.1.ebuild:
+  net-analyzer/metasploit: add a modern version of metasploit (and a ton of
+  deps for it)
+
+  04 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> postgres_ext-2.4.1.ebuild:
+  fix to include activerecord:4.0
+
+  05 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> postgres_ext-2.4.1.ebuild:
+  net-analyzer/metasploit (and deps): re-add ~arm keyword
+
+  07 Sep 2015; Michał Górny <mgorny@gentoo.org> postgres_ext-2.4.1.ebuild:
+  net-analyzer/metasploit (and deps): Revert "re-add ~arm keyword"
+
+  This causes issue due to a number of non-keyworded dependencies.
+
+  Reverts: 3270b7eb07 (net-analyzer/metasploit (and deps): re-add ~arm
+  keyword)
+
+  07 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> postgres_ext-2.4.1.ebuild:
+  Revert "net-analyzer/metasploit (and deps): Revert "re-add ~arm keyword""
+
+  This reverts commit 8bdbfab2f6bedacee6cb37559ce5cb63aba7a285.
+
+  Not trying to be rude here, just the easiest way to readd this commit it to
+  revert the revert.
+
+  15 Sep 2015; Justin Lecher <jlec@gentoo.org> postgres_ext-2.4.1.ebuild:
+  Fix Malformed Id header on line: 3
+
+  Convert Header to Id
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

@@ -1,170 +1,66 @@
 # ChangeLog for net-misc/ser
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ser/ChangeLog,v 1.40 2015/05/16 11:04:51 pacho Exp $
+# (auto-generated from git log)
 
-  16 May 2015; Pacho Ramos <pacho@gentoo.org> ser-0.9.7-r1.ebuild:
-  Rename jabber to xmpp USE (#216300)
+*ser-0.9.7-r1 (09 Aug 2015)
 
-  21 Mar 2015; Justin Lecher <jlec@gentoo.org> ser-0.9.7-r1.ebuild:
-  use dosbin instead of exeinto /usr/sbin/ && doexe
-
-  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> ser-0.9.7-r1.ebuild:
-  Rename virtual/postgresql to dev-db/postgresql
-
-*ser-0.9.7-r1 (04 Nov 2014)
-
-  04 Nov 2014; Patrick Lauer <patrick@gentoo.org> +ser-0.9.7-r1.ebuild,
-  -ser-0.9.7.ebuild:
-  Improve ebuild for repoman happy
-
-  03 Nov 2014; Aaron W. Swenson <titanofold@gentoo.org> ser-0.9.7.ebuild:
-  Update PostgreSQL dependencies and/or checks to virtual/postgresql.
-
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> ser-0.9.7.ebuild:
-  Inherit the user eclass for enewuser/etc...
-
-  27 Oct 2013; Pacho Ramos <pacho@gentoo.org> -ser-0.9.4.ebuild, metadata.xml:
-  Voip herd is removed: http://article.gmane.org/gmane.linux.gentoo.devel/88434
-
-  11 Aug 2012; Markus Meier <maekke@gentoo.org> ser-0.9.7.ebuild:
-  x86 stable, bug #419317
-
-  17 Jun 2010; Patrick Lauer <patrick@gentoo.org> ser-0.9.4.ebuild,
-  ser-0.9.7.ebuild:
-  Migrating away from deprecated postgres virtuals
-
-  28 Aug 2009; Petteri Räty <betelgeuse@gentoo.org> -ser-0.9.6.ebuild:
-  Remove old version.
-
-  15 Jun 2008; Zac Medico <zmedico@gentoo.org> ser-0.9.4.ebuild,
-  ser-0.9.6.ebuild, ser-0.9.7.ebuild:
-  Bug #226505 - For compatibility with phase execution order in
-  >=portage-2.1.5, call has_version inside pkg_preinst instead of
-  pkg_postinst.
-
-  21 May 2008; Tiziano Müller <dev-zero@gentoo.org> ser-0.9.4.ebuild,
-  ser-0.9.6.ebuild, ser-0.9.7.ebuild:
-  Changed dependency for postgresql from dev-db/postgresql to
-  virtual/postgresql-server
-
-*ser-0.9.7 (09 Jan 2008)
-
-  09 Jan 2008; Stefan Knoblich <stkn@gentoo.org>
-  +files/ser-0.9.7-extmod-ldap.diff, +files/ser-0.9.7-extmod-ldaps.diff,
-  +files/ser-0.9.7-mysql.diff, +files/ser-0.9.7-radius.diff,
-  +ser-0.9.7.ebuild:
-  Version bump. Includes fixes from #183912 sent by Stefan Gula.
-  Added patches for ldap and ldaps module to link against
-  libsasl2.
-
-  10 Aug 2007; Steve Dibb <beandog@gentoo.org> ser-0.9.6.ebuild:
-  add ~amd64, multilib, bug 188292
-
-  14 Apr 2007; Stefan Schweizer <genstef@gentoo.org> -ser-0.9.0.ebuild,
-  ser-0.9.4.ebuild:
-  Fix makefile thanks to kingtong in bug 116165
-
-  06 Dec 2006; Timothy Redaelli <drizzt@gentoo.org> ser-0.9.6.ebuild:
-  Remove -minline-all-stringops from sparc64, this fix bug #157109.
-
-  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> ser-0.9.0.ebuild,
-  ser-0.9.4.ebuild, ser-0.9.6.ebuild:
-  dev-db/mysql => virtual/mysql
-
-*ser-0.9.6 (07 Nov 2006)
-
-  07 Nov 2006; Timothy Redaelli <drizzt@gentoo.org> +ser-0.9.6.ebuild:
-  Version bump. Thanks to Daniel Webert. Bug #143844
-
-  04 Oct 2006; Joshua Jackson <tsunam@gentoo.org> ser-0.9.4.ebuild:
-  Stable x86; bug #143847
-
-  14 Aug 2006; Stefan Schweizer <genstef@gentoo.org> +metadata.xml:
-  Add metadata thanks to Daniel Webert <rockoo@gmail.com> in bug 143843
-
-  20 Jun 2006; Stefan Schweizer <genstef@gentoo.org> ser-0.9.0.ebuild,
-  ser-0.9.4.ebuild:
-  QA: Move enew{user,group} to pkg_setup, bug 137213
-
-  16 Sep 2005; Stefan Knoblich <stkn@gentoo.org> ser-0.9.0.ebuild,
-  ser-0.9.4.ebuild:
-  Fixed default location of configuration file in ser executable
-  by adding a trailing / in src_compile (#106184).
-
-*ser-0.9.4 (12 Sep 2005)
-
-  12 Sep 2005; Stefan Knoblich <stkn@gentoo.org> +ser-0.9.4.ebuild:
-  Version bump.
-
-  12 Sep 2005; Stefan Knoblich <stkn@gentoo.org> -ser-0.8.9.ebuild,
-  -ser-0.8.10.ebuild, -ser-0.8.11.ebuild, -ser-0.8.14.ebuild:
-  Removed old versions.
-
-  12 Sep 2005; Stefan Knoblich <stkn@gentoo.org> ser-0.9.0.ebuild:
-  Splitted DEPEND into RDEPEND / DEPEND and stable on x86.
-
-  12 Sep 2005; Stefan Knoblich <stkn@gentoo.org> files/ser.confd:
-  Added location of config file to default options, because ser is looking for
-  it in the wrong place.
-
-  23 Aug 2005; Diego Pettenò <flameeyes@gentoo.org> ser-0.9.0.ebuild:
-  Use -1 instead of /bin/false on enewuser call.
-
-  15 Jun 2005; David Holm <dholm@gentoo.org> ser-0.9.0.ebuild:
-  Added to ~ppc.
-
-  14 Jun 2005; Jason Wever <weeve@gentoo.org> ser-0.9.0.ebuild:
-  Added ~sparc keyword.
-
-  12 Jun 2005; Stefan Knoblich <stkn@gentoo.org> ser-0.9.0.ebuild:
-  Removed -* keyword, files are on gentoo mirrors now.
-
-*ser-0.9.0 (12 Jun 2005)
-
-  12 Jun 2005; Stefan Knoblich <stkn@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/ethz-1.0-ser-0.9.0.diff, +files/ldap-1.0-ser-0.9.0.diff,
-  +files/ldaps-1.0-ser-0.9.0.diff, +files/silomail-1.0-ser-0.9.0.diff,
-  +files/ser.confd, +files/ser.rc6, +ser-0.9.0.ebuild:
-  Version bump and enhancements.
+  +files/ldaps-1.0-ser-0.9.0.diff, +files/ser-0.9.7-extmod-ldap.diff,
+  +files/ser-0.9.7-extmod-ldaps.diff, +files/ser-0.9.7-mysql.diff,
+  +files/ser-0.9.7-radius.diff, +files/ser.confd, +files/ser.rc6,
+  +files/silomail-1.0-ser-0.9.0.diff, +metadata.xml, +ser-0.9.7-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*ser-0.8.14 (25 Dec 2004)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Dec 2004; Andrej Kacian <ticho@gentoo.org> ser-0.8.10.ebuild,
-  ser-0.8.11.ebuild, +ser-0.8.14.ebuild, ser-0.8.9.ebuild:
-  Version bump. Closes #75627, reported by Daniel Webert
-  <rockoo@rockoo.homelinux.org>. Also changed SRC_URI in all ebuilds to use
-  ${PV}.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jun 2004; Aron Griffis <agriffis@gentoo.org> ser-0.8.10.ebuild,
-  ser-0.8.11.ebuild, ser-0.8.9.ebuild:
-  Fix use invocation
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*ser-0.8.11 (19 Nov 2003)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Nov 2003; Martin Holzer <mholzer@gentoo.org> ser-0.8.11.ebuild:
-  Version bumped. Ebuild submitted by Nils Ohlmeier <nils@ohlmeier.de> in #27812.
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/ser.rc6:
+  [QA] Remove executable bit from files, bug 550434.
 
-  12 Jun 2003; <msterret@gentoo.org> ser-0.8.10.ebuild, ser-0.8.9.ebuild:
-  fix Header
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*ser-0.8.10 (15 Nov 2002)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Nov 2002; Matt Keadle <mkeadle@gentoo.org> ser-0.9.10.ebuild
-  ChangeLog files/digest-ser-0.8.10:
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  Security update. From the iptel.org website: "We discovered the security
-  bug #1 in SER. If the SL module tries to filter ACKs without a To header
-  SER can crash. * We strongly recommend all users to update to version
-  0.8.10."
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  Bug #1 is described as "Filtering ACKs without To header with the SL
-  module can crash SER"
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*ser-0.8.9 (5 Nov 2002)
-  
-  5 Nov 2002; Matt Keadle <mkeadle@gentoo.org> ser-0.8.9.ebuild
-  ChangeLog files/digest-ser-0.8.9:
+  Bug: https://bugs.gentoo.org/552720
 
-  Added initial ChangeLog which should be updated whenever the package is
-  updated in any way. Many, many thanks to Nils Ohlmeier, one of the SER
-  developers, for this ebuild. 
+  10 Oct 2015; Mike Frysinger <vapier@gentoo.org> ser-0.9.7-r1.ebuild:
+  fix various encoding corruption
+

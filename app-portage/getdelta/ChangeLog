@@ -1,131 +1,56 @@
 # ChangeLog for app-portage/getdelta
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/getdelta/ChangeLog,v 1.28 2015/07/22 01:43:32 mrueg Exp $
+# (auto-generated from git log)
 
-  22 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -getdelta-0.7.8.ebuild,
-  -getdelta-0.7.9-r1.ebuild, -getdelta-0.7.9.ebuild:
-  Remove old.
+*getdelta-0.7.9-r2 (09 Aug 2015)
 
-  09 Jul 2014; Patrick Lauer <patrick@gentoo.org> getdelta-0.7.9-r1.ebuild,
-  getdelta-0.7.9-r2.ebuild, getdelta-0.7.9.ebuild:
-  Beat things into a shape where they make sense
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/getdelta-0.7.9.patch, +getdelta-0.7.9-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  10 May 2013; Patrick Lauer <patrick@gentoo.org> getdelta-0.7.9-r1.ebuild,
-  getdelta-0.7.9-r2.ebuild:
-  Whitespace
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*getdelta-0.7.9-r2 (17 Mar 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Mar 2013; Patrick Lauer <patrick@gentoo.org> +getdelta-0.7.9-r2.ebuild:
-  Fix make.conf location #461726
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*getdelta-0.7.9-r1 (20 Aug 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Aug 2012; Patrick Lauer <patrick@gentoo.org> +getdelta-0.7.9-r1.ebuild:
-  Hackfix for #431816
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Mar 2012; Michael Sterrett <mr_bones_@gentoo.org> getdelta-0.7.9.ebuild:
-  inherit goes near the top
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Mar 2012; Michael Sterrett <mr_bones_@gentoo.org> getdelta-0.7.9.ebuild:
-  fix quoting
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*getdelta-0.7.9 (19 Mar 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Mar 2012; Patrick Lauer <patrick@gentoo.org> +files/getdelta-0.7.9.patch,
-  +getdelta-0.7.9.ebuild:
-  Bump and fix for #239439
+  Bug: https://bugs.gentoo.org/552720
 
-  24 May 2010; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Taking over from Mr. Maintainer-Needed
-
-  22 May 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Add maintainer-needed to metadata.xml
-
-  31 Mar 2010; Christian Ruppert <idl0r@gentoo.org> getdelta-0.7.8.ebuild:
-  Fix repoman complains about unquoted variables. Add missing die
-  statements.
-
-  13 Oct 2007; Stefan Schweizer <genstef@gentoo.org> -getdelta-0.7.6.ebuild,
-  -getdelta-0.7.7.ebuild, getdelta-0.7.8.ebuild:
-  Fix wrong /bin/sh usage thanks to Martin Väth
-  <vaeth@mathematik.uni-wuerzburg.de> in bug 192423
-
-*getdelta-0.7.8 (14 Jul 2007)
-
-  14 Jul 2007; Stefan Schweizer <genstef@gentoo.org> +getdelta-0.7.8.ebuild:
-  version bump
-
-  15 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
-  add <herd>no-herd</herd>
-
-*getdelta-0.7.7 (31 Jan 2007)
-
-  31 Jan 2007; <genstef@gentoo.org> +getdelta-0.7.7.ebuild:
-  version bump
-
-  24 Jan 2007; Marius Mauch <genone@gentoo.org> getdelta-0.7.6.ebuild:
-  Replacing einfo with elog
-
-*getdelta-0.7.6 (08 Oct 2006)
-
-  08 Oct 2006; Stefan Schweizer <genstef@gentoo.org> -getdelta-0.7.5.ebuild,
-  +getdelta-0.7.6.ebuild:
-  version bump
-
-*getdelta-0.7.5 (07 Oct 2006)
-
-  07 Oct 2006; Stefan Schweizer <genstef@gentoo.org> -getdelta-0.7.4.ebuild,
-  +getdelta-0.7.5.ebuild:
-  version bump
-
-*getdelta-0.7.4 (09 Sep 2006)
-
-  09 Sep 2006; Stefan Schweizer <genstef@gentoo.org> metadata.xml,
-  -getdelta-0.7.2.ebuild, +getdelta-0.7.4.ebuild:
-  version bump fixing userfetch thanks to Andy <andyreif@studcs.uni-sb.de> in
-  bug 145285
-
-*getdelta-0.7.2 (18 Aug 2006)
-
-  18 Aug 2006; Stefan Schweizer <genstef@gentoo.org> metadata.xml,
-  -getdelta-0.7.0.ebuild, +getdelta-0.7.2.ebuild:
-  version bump
-
-  13 Aug 2005; Jose Luis Rivero <yoswink@gentoo.org> getdelta-0.7.0.ebuild:
-  Keyworded ~alpha wrt #93379 getdelta-0.7.0.ebuild
-
-  10 May 2005; Stefan Schweizer <genstef@gentoo.org> -getdelta-0.6.9.ebuild,
-  getdelta-0.7.0.ebuild:
-  ~amd64 thanks to dang and cparrott in #gentoo-amd64-dev
-
-*getdelta-0.7.0 (09 May 2005)
-
-  09 May 2005; Stefan Schweizer <genstef@gentoo.org> +getdelta-0.7.0.ebuild:
-  New version using bdelta for smaller patches, "-amd64" removed since it
-  should work on amd64
-
-  09 May 2005; Stefan Schweizer <genstef@gentoo.org> -getdelta-0.6.7.ebuild,
-  getdelta-0.6.9.ebuild:
-  Add legacy xdelta DEPEND to avoid conflicts, thanks to blackpengui, and
-  remove old ebuildn
-
-  20 Mar 2005; Stefan Schweizer <genstef@gentoo.org> getdelta-0.6.9.ebuild:
-  ~sparc thanks to Frank Schmitt
-
-*getdelta-0.6.9 (13 Mar 2005)
-
-  13 Mar 2005; Stefan Schweizer <genstef@gentoo.org> +getdelta-0.6.9.ebuild:
-  version bump, it is now possible to disable getdelta for one emerge only:
-  "GETDELTA=0 emerge foobar"
-
-*getdelta-0.6.7 (05 Mar 2005)
-
-  05 Mar 2005; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
-  +getdelta-0.6.7.ebuild:
-  New ebuild thanks to Alexander Jenisch <nt-@gmx.de> in bug 66790, thanks to
-  Nicolai Lissner <nlissne@linux01.gwdg.de> for getdelta and ebuild mirroring
-  and to Torsten Veller <torsten@veller.net> for previous ebuild enhancements

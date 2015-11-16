@@ -1,108 +1,80 @@
 # ChangeLog for dev-php/pecl-ssh2
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/pecl-ssh2/ChangeLog,v 1.15 2015/05/29 16:16:08 grknight Exp $
+# (auto-generated from git log)
 
-*pecl-ssh2-0.12-r2 (29 May 2015)
+*pecl-ssh2-0.12-r2 (09 Aug 2015)
+*pecl-ssh2-0.12-r1 (09 Aug 2015)
 
-  29 May 2015; Brian Evans <grknight@gentoo.org> +pecl-ssh2-0.12-r2.ebuild:
-  Revbump to add php5.6 support wrt bug 550728
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pecl-ssh2-0.12-r1.ebuild, +pecl-ssh2-0.12-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  14 Oct 2014; Brian Evans <grknight@gentoo.org> -pecl-ssh2-0.11.3-r1.ebuild,
-  -pecl-ssh2-0.12.ebuild:
-  Drop old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Oct 2014; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.12-r1.ebuild:
-  Stable for x86, wrt bug #514722
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Oct 2014; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.12-r1.ebuild:
-  Stable for amd64, wrt bug #514722
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  pecl-ssh2-0.11.3-r1.ebuild, pecl-ssh2-0.12-r1.ebuild, pecl-ssh2-0.12.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*pecl-ssh2-0.12-r1 (28 Jul 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jul 2013; Ole Markus With <olemarkus@gentoo.org> +pecl-ssh2-0.12-r1.ebuild:
-  Revbump. Removing php 5.3 support, adding 5.5 support
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Mar 2013; Ole Markus With <olemarkus@gentoo.org>
-  -pecl-ssh2-0.11.2-r1.ebuild, -pecl-ssh2-0.11.3.ebuild:
-  Removed older ebuilds
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pecl-ssh2-0.12 (04 Mar 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Mar 2013; Ole Markus With <olemarkus@gentoo.org> +pecl-ssh2-0.12.ebuild:
-  Version bump, bug 453840. Thanks to tazinblack
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Oct 2012; Markus Meier <maekke@gentoo.org> pecl-ssh2-0.11.3-r1.ebuild:
-  x86 stable, bug #427024
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Aug 2012; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.11.3-r1.ebuild:
-  Stable for amd64, wrt bug #427024
+*pecl-ssh2-0.12-r3 (27 Sep 2015)
 
-*pecl-ssh2-0.11.3-r1 (03 Mar 2012)
+  27 Sep 2015; Michael Orlitzky <mjo@gentoo.org> +pecl-ssh2-0.12-r3.ebuild:
+  revbump to remove incorrect DOCS.
 
-  03 Mar 2012; Ole Markus With <olemarkus@gentoo.org>
-  +pecl-ssh2-0.11.3-r1.ebuild:
-  Version bump supporting php 5.4
+  The DOCS array contained two files that didn't exist. Now they're
+  gone. The LICENSE was also changed to PHP-3.01 per the project
+  homepage.
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pecl-ssh2-0.11.3.ebuild:
-  x86 stable wrt bug #400321
+  Package-Manager: portage-2.2.20.1
 
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.11.3.ebuild:
-  Stable for amd64, wrt bug #400321
+  03 Nov 2015; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.12-r3.ebuild:
+  amd64 stable wrt bug #561640
 
-*pecl-ssh2-0.11.3 (23 Oct 2011)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  23 Oct 2011; Ole Markus With <olemarkus@gentoo.org> +pecl-ssh2-0.11.3.ebuild:
-  Version bump (bug 387951)
+  03 Nov 2015; Agostino Sarubbo <ago@gentoo.org> pecl-ssh2-0.12-r3.ebuild:
+  x86 stable wrt bug #561640
 
-  04 Jan 2011; Markos Chandras <hwoarang@gentoo.org>
-  pecl-ssh2-0.11.2-r1.ebuild:
-  Stable on amd64 wrt bug #349659
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  04 Jan 2011; Christian Faulhammer <fauli@gentoo.org>
-  pecl-ssh2-0.11.2-r1.ebuild:
-  stable x86, bug 349659
-
-*pecl-ssh2-0.11.2-r1 (04 Nov 2010)
-*pecl-ssh2-0.11.2 (04 Nov 2010)
-
-  04 Nov 2010; Matti Bickel <mabi@gentoo.org> -pecl-ssh2-0.11.0.ebuild,
-  +pecl-ssh2-0.11.2.ebuild, +pecl-ssh2-0.11.2-r1.ebuild:
-  add version supporting minor version slotting, version bump
-
-  14 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  pecl-ssh2-0.11.0-r1.ebuild:
-  Stable on amd64 wrt bug #339686
-
-  14 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  pecl-ssh2-0.11.0-r1.ebuild:
-  stable x86, bug 339686
-
-*pecl-ssh2-0.11.0-r1 (29 Dec 2009)
-
-  29 Dec 2009; Christian Hoffmann <hoffie@gentoo.org>
-  +pecl-ssh2-0.11.0-r1.ebuild, files/pecl-ssh2-0.11.0-php-5.3-compat.patch:
-  new attempt at getting a version which works with 5.2 and 5.3
-
-  27 Dec 2009; Christian Hoffmann <hoffie@gentoo.org>
-  pecl-ssh2-0.11.0.ebuild:
-  reverting the php-5.3 compatibility change because of bug 298449; this has
-  not been noticed before because the bug only occurs with
-  dev-lang/php[threads]; will make another attempt at fixing the actual bug
-  later
-
-  24 Dec 2009; Christian Hoffmann <hoffie@gentoo.org>
-  pecl-ssh2-0.11.0.ebuild, +files/pecl-ssh2-0.11.0-php-5.3-compat.patch:
-  php-5.3 compatibility, bug 274512
-
-  15 Oct 2009; Markus Meier <maekke@gentoo.org> pecl-ssh2-0.11.0.ebuild:
-  amd64/x86 stable, bug #288070
-
-*pecl-ssh2-0.11.0 (11 Aug 2009)
-
-  11 Aug 2009; Hanno Boeck <hanno@gentoo.org> +pecl-ssh2-0.11.0.ebuild,
-  +metadata.xml:
-  Initial commit of php bindings for libssh2.

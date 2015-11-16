@@ -1,83 +1,57 @@
 # ChangeLog for app-misc/clockywock
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/clockywock/ChangeLog,v 1.20 2013/05/17 12:38:37 pinkbyte Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 May 2013; Sergey Popov <pinkbyte@gentoo.org> -clockywock-0.2.3f.ebuild,
-  -files/clockywock-0.2.3f-makefile.patch:
-  Drop old version
+*clockywock-0.3.1a (09 Aug 2015)
 
-  04 Apr 2013; Agostino Sarubbo <ago@gentoo.org> clockywock-0.3.1a.ebuild:
-  Stable for x86, wrt bug #464412
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +clockywock-0.3.1a.ebuild, +files/clockywock-0.3.1a-makefile.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Apr 2013; Agostino Sarubbo <ago@gentoo.org> clockywock-0.3.1a.ebuild:
-  Stable for amd64, wrt bug #464412
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*clockywock-0.3.1a (02 Mar 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> +clockywock-0.3.1a.ebuild,
-  +files/clockywock-0.3.1a-makefile.patch, metadata.xml:
-  Version bump: EAPI 5, use base eclass, add ~amd64-linux and ~x86-linux
-  keywords, set new HOMEPAGE and SRC_URI, assign myself as maintainer
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -clockywock-0.2.3.ebuild:
-  Remove old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Mar 2012; Sebastian Pipping <sping@gentoo.org> clockywock-0.2.3f.ebuild:
-  Fix SRC_URI and HOMEPAGE
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  clockywock-0.2.3f.ebuild:
-  x86 stable wrt bug #393453
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> clockywock-0.2.3f.ebuild:
-  Stable for AMD64, wrt bug #393453
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Dec 2011; Pacho Ramos <pacho@gentoo.org> -clockywock-0.2.3d.ebuild,
-  metadata.xml:
-  Drop maintainer due retirement, bug #353461; drop old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Dec 2011; Mike Frysinger <vapier@gentoo.org> clockywock-0.2.3f.ebuild:
-  Fix building with glibc-2.14 #371383 by Diego Elio Pettenò.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Feb 2011; Kevin McCarthy <signals@gentoo.org> metadata.xml:
-  Update metadata. Take direct maintainership and remove proxy maintainers.
+  Bug: https://bugs.gentoo.org/552720
 
-*clockywock-0.2.3f (31 Jan 2011)
-
-  31 Jan 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +clockywock-0.2.3f.ebuild, +files/clockywock-0.2.3f-makefile.patch:
-  Version bump wrt #353082 by Kevin McCarthy.
-
-*clockywock-0.2.3d (26 Mar 2010)
-
-  26 Mar 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +clockywock-0.2.3d.ebuild:
-  Version bump wrt #194801 by Ceesjan Luiten.
-
-  26 Mar 2008; Raúl Porcel <armin76@gentoo.org> clockywock-0.2.3.ebuild:
-  x86 stable
-
-  14 Feb 2008; Samuli Suominen <drac@gentoo.org>
-  -files/clockywock-0.2.2-cxxflags.patch,
-  -files/clockywock-0.2.2-headers.patch, -clockywock-0.2.2.ebuild,
-  clockywock-0.2.3.ebuild:
-  amd64 stable
-
-*clockywock-0.2.3 (19 Jul 2007)
-
-  19 Jul 2007; Samuli Suominen <drac@gentoo.org> +clockywock-0.2.3.ebuild:
-  Version bump for bug 185908, thanks to Kevin Fullerton.
-
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove tcort from metadata.xml due to retirement.
-
-  19 Nov 2006; Thomas Cort <tcort@gentoo.org> clockywock-0.2.2.ebuild:
-  Stable on amd64.
-
-*clockywock-0.2.2 (14 Oct 2006)
-
-  14 Oct 2006; Thomas Cort <tcort@gentoo.org>
-  +files/clockywock-0.2.2-cxxflags.patch,
-  +files/clockywock-0.2.2-headers.patch, +metadata.xml,
-  +clockywock-0.2.2.ebuild:
-  Initial commit.

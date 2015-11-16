@@ -1,102 +1,61 @@
 # ChangeLog for dev-python/kid
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/kid/ChangeLog,v 1.22 2015/04/14 12:49:57 ago Exp $
+# (auto-generated from git log)
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> kid-0.9.6-r1.ebuild:
-  Stable for ia64, wrt bug #540290
+*kid-0.9.6-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> kid-0.9.6-r1.ebuild:
-  Drop old Python implementations
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +kid-0.9.6-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> kid-0.9.6-r1.ebuild:
-  x86 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> kid-0.9.6-r1.ebuild:
-  amd64 stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Dec 2014; Mike Gilbert <floppym@gentoo.org> kid-0.9.6-r1.ebuild:
-  python-r1 cleanup.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Oct 2013; Fabian Groffen <grobian@gentoo.org> kid-0.9.6-r1.ebuild:
-  Marked ~x64-macos, bug #487670
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*kid-0.9.6-r1 (05 Jun 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> kid-0.9.6-r1.ebuild:
+  Use https by default
 
-  05 Jun 2013; Ian Delaney <idella4@gentoo.org> +kid-0.9.6-r1.ebuild,
-  -kid-0.9.6.ebuild:
-  revbump, migrate -> distutils-r1, remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Oct 2009; Fabian Groffen <grobian@gentoo.org> kid-0.9.6.ebuild:
-  Merge from Prefix
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  kid-0.9.6.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*kid-0.9.6 (17 Jul 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org> -kid-0.9.5.ebuild,
-  +kid-0.9.6.ebuild:
-  Version bump. Dropped old version.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org> kid-0.9.5.ebuild:
-  Removed use_setuptools sed.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*kid-0.9.5 (03 Feb 2007)
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Feb 2007; Tiziano Müller <dev-zero@gentoo.org>
-  -files/kid-0.9.4-ezsetup-gentoo.patch,
-  -files/kid-0.9-ezsetup-gentoo.patch, -kid-0.9.1.ebuild, -kid-0.9.3.ebuild,
-  -kid-0.9.4.ebuild, +kid-0.9.5.ebuild:
-  Version bump including some cleanups and fixes. Dropped old versions.
-
-  24 Dec 2006; Lukasz Strzygowski <lucass@gentoo.org> kid-0.9.4.ebuild:
-  Fixed deps, bug #158870.
-
-*kid-0.9.4 (23 Dec 2006)
-
-  23 Dec 2006; Lukasz Strzygowski <lucass@gentoo.org>
-  +files/kid-0.9.4-ezsetup-gentoo.patch, files/kid-0.9-ezsetup-gentoo.patch,
-  +kid-0.9.4.ebuild:
-  Version bump (bug #158870), updated patch.
-
-*kid-0.9.3 (21 Jul 2006)
-
-  21 Jul 2006; Lukasz Strzygowski <lucass@gentoo.org>
-  -files/kid-0.7.1-ezsetup-gentoo.patch,
-  -files/kid-0.8-ezsetup-gentoo.patch, -kid-0.7.1.ebuild, -kid-0.8.ebuild,
-  -kid-0.9.ebuild, kid-0.9.1.ebuild, +kid-0.9.3.ebuild:
-  Version bump: added src_test. Removed older versions.
-
-*kid-0.9.1 (27 May 2006)
-
-  27 May 2006; Lukasz Strzygowski <lucass@gentoo.org> +kid-0.9.1.ebuild:
-  Version bump. Closing bug #134509, thanks to Nicolas Lalevee.
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> kid-0.9.ebuild:
-  Mark 0.9 ~ia64
-
-*kid-0.9 (30 Mar 2006)
-
-  30 Mar 2006; Lukasz Strzygowski <lucass@gentoo.org>
-  +files/kid-0.9-ezsetup-gentoo.patch, metadata.xml, +kid-0.9.ebuild:
-  Version bump and cleanup. Added description to metadata.
-
-  17 Mar 2006; Scott Stoddard <deltacow@gentoo.org> kid-0.8.ebuild:
-  Added ~amd64.
-
-*kid-0.8 (06 Jan 2006)
-
-  06 Jan 2006; Lukasz Strzygowski <lucass@gentoo.org>
-  +files/kid-0.8-ezsetup-gentoo.patch, +kid-0.8.ebuild:
-  Version bump, updated patch, fixed typo (bug #117549). Fixed to install html
-  docs and examples.
-
-  28 Nov 2005; Marien Zwart <marienz@gentoo.org> kid-0.7.1.ebuild:
-  Add missing eutils inherit.
-
-*kid-0.7.1 (10 Nov 2005)
-
-  10 Nov 2005; Rob Cakebread <pythonhead@gentoo.org>
-  +files/kid-0.7.1-ezsetup-gentoo.patch, +metadata.xml, +kid-0.7.1.ebuild:
-  Initial commit.

@@ -1,137 +1,61 @@
 # ChangeLog for mail-mta/esmtp
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/esmtp/ChangeLog,v 1.35 2013/03/17 20:01:03 zx2c4 Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Mar 2013; Jason A. Donenfeld <zx2c4@gentoo.org> esmtp-1.2.ebuild:
-  Block OpenSMTPD.
+*esmtp-1.2 (09 Aug 2015)
 
-  06 Nov 2012; Eray Aslan <eras@gentoo.org> esmtp-1.2.ebuild:
-  mail-mta/nbsmtp is no longer in the tree - remove from DEPEND
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +esmtp-1.2.ebuild,
+  +files/mailer.conf, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Jun 2011; Eray Aslan <eras@gentoo.org> -esmtp-0.5.0-r1.ebuild:
-  remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jun 2011; Brent Baude <ranger@gentoo.org> esmtp-1.2.ebuild:
-  Marking esmtp-1.2 ppc for bug 366973
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Jun 2011; Raúl Porcel <armin76@gentoo.org> esmtp-0.5.0-r1.ebuild,
-  esmtp-1.2.ebuild:
-  Drop alpha/sparc keywords
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> esmtp-1.2.ebuild:
-  x86 stable wrt bug #366973
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 May 2011; Markos Chandras <hwoarang@gentoo.org> esmtp-1.2.ebuild:
-  Stable on amd64 wrt bug #366973
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 May 2011; Eray Aslan <eras@gentoo.org> esmtp-1.2.ebuild:
-  Add sample esmtprc file to docs dir.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 May 2011; Eray Aslan <eras@gentoo.org> esmtp-1.2.ebuild:
-  add flex to DEPEND - bug #221389
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Mar 2011; Eray Aslan <eras@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  mailwrapper USE flag is gone. Remove if use mailwrapper..fi construct from
-  ebuild.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Mar 2011; Eray Aslan <eras@gentoo.org> esmtp-0.5.0-r1.ebuild,
-  esmtp-1.2.ebuild:
-  Change to new style virtual/mta - bug 360305. Remove mailwrapper support -
-  bug 158003
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Mar 2011; Eray Aslan <eras@gentoo.org> -esmtp-0.6.0.ebuild,
-  -esmtp-1.0.ebuild:
-  remove old versions
+  Bug: https://bugs.gentoo.org/552720
 
-*esmtp-1.2 (09 Jun 2010)
+*esmtp-1.2-r1 (30 Sep 2015)
 
-  09 Jun 2010; Patrick Lauer <patrick@gentoo.org> +esmtp-1.2.ebuild:
-  Bump for #321639
+  30 Sep 2015; Julian Ospald <hasufell@gentoo.org> +esmtp-1.2-r1.ebuild:
+  add libressl support
 
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org> esmtp-1.0.ebuild:
-  Transfer Prefix keywords
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> esmtp-0.5.0-r1.ebuild,
-  esmtp-0.6.0.ebuild:
-  Remove virtual/libc
-
-*esmtp-1.0 (24 Mar 2009)
-
-  24 Mar 2009; Torsten Veller <tove@gentoo.org> +esmtp-1.0.ebuild:
-  Version bump (#261462). Thanks to Kai Dietrich
-
-*esmtp-0.6.0 (22 Jul 2008)
-
-  22 Jul 2008; Tobias Scherbaum <dertobi123@gentoo.org> ChangeLog:
-  Version bump, remove mailwrapper support, #198106
-
-  24 Apr 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  esmtp-0.5.0-r1.ebuild:
-  ppc stable, bug #174274
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  05 Feb 2006; Diego Pettenò <flameeyes@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Add ~amd64 keyword.
-
-  27 Jan 2006; Tom Martin <slarti@gentoo.org> esmtp-0.5.1.ebuild:
-  Marked ~amd64, resolves bug #118865.
-
-  04 Jul 2005; Andrej Kacian <ticho@gentoo.org> files/mailer.conf,
-  esmtp-0.5.1.ebuild:
-  Added compatibility with mailer-config-0.2. See bug #97589.
-
-  30 May 2005; Fernando J. Pereda <ferdy@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Stable on alpha
-
-*esmtp-0.5.1 (27 May 2005)
-
-  27 May 2005; Fernando J. Pereda <ferdy@gentoo.org> +esmtp-0.5.1.ebuild:
-  version bump (p.masked wrt mailer.eclass)
-
-  12 May 2005; Fernando J. Pereda <ferdy@gentoo.org> esmtp-0.5.0-r1.ebuild,
-  esmtp-0.5.0-r2.ebuild:
-  keyworded ~alpha
-
-*esmtp-0.5.0-r2 (26 Apr 2005)
-
-  26 Apr 2005; Fernando J. Pereda <ferdy@gentoo.org> +files/mailer.conf,
-  +esmtp-0.5.0-r2.ebuild:
-  add 0.5.0-r2 to use the new system (p.masked)
-
-  15 Jan 2005; Jason Wever <weeve@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Added ~sparc keyword.
-
-  13 Jan 2005; Andrej Kacian <ticho@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Fixed mailwrapper support.
-
-  01 Nov 2004; Andrej Kacian <ticho@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Stable on x86
-
-  26 Sep 2004; Andrej Kacian <ticho@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Made esmtp PROVIDE virtual/mta. Closes #63775, reported by Stephan Kapfinger
-  <s.kapfinger@gmx.de>.
-
-  05 Sep 2004; Sven Wegener <swegener@gentoo.org> :
-  Fixed ChangeLog header.
-
-  05 Sep 2004; David Holm <dholm@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Added to ~ppc.
-
-  04 Sep 2004; Jon Hood <squinky86@gentoo.org> esmtp-0.5.0-r1.ebuild:
-  Change virtual/glibc --> virtual/libc.
-
-*esmtp-0.5.0-r1 (03 Sep 2004)
-
-  03 Sep 2004; Andrej Kacian <ticho@gentoo.org> +esmtp-0.5.0-r1.ebuild,
-  -esmtp-0.5.0.ebuild:
-  Support mailwrapper correctly by adding mailwrapper to IUSE and modifying
-  ebuild code accordingly.
-
-*esmtp-0.5.0 (03 Sep 2004)
-
-  03 Sep 2004; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
-  +esmtp-0.5.0.ebuild:
-  Initial revision. Ebuild submitted by Jan Narovec <finn@sendmail.cz>, closing
-  #45857. Modified to be compatible with mailwrapper.

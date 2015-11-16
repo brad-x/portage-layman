@@ -1,123 +1,56 @@
 # ChangeLog for games-fps/quake3-cpma
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-cpma/ChangeLog,v 1.25 2014/04/18 06:54:09 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  18 Apr 2014; Ulrich Müller <ulm@gentoo.org> quake3-cpma-1.48.ebuild:
-  Fix LICENSE, bug 506950.
+*quake3-cpma-1.48 (09 Aug 2015)
 
-  01 Feb 2012; Michael Sterrett <mr_bones_@gentoo.org> quake3-cpma-1.48.ebuild:
-  update SRC_URI
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/server.cfg,
+  +metadata.xml, +quake3-cpma-1.48.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  -quake3-cpma-1.46.ebuild, quake3-cpma-1.48.ebuild:
-  stable for x86; drop old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org> quake3-cpma-1.46.ebuild,
-  quake3-cpma-1.48.ebuild:
-  drop amd64 support (bug #387369)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*quake3-cpma-1.48 (16 Sep 2011)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  +quake3-cpma-1.48.ebuild:
-  version bump (bug #383273)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Oct 2009; Tristan Heaven <nyhm@gentoo.org> quake3-cpma-1.46.ebuild:
-  Stable on amd64/x86
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Oct 2009; Tristan Heaven <nyhm@gentoo.org> quake3-cpma-1.46.ebuild:
-  EAPI=2; move maps to MOD_DIR
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*quake3-cpma-1.46 (24 Jul 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jul 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +quake3-cpma-1.46.ebuild:
-  version bump (bug #204954)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*quake3-cpma-1.43 (17 Aug 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Aug 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  -quake3-cpma-1.1.ebuild, -quake3-cpma-1.2.ebuild,
-  -quake3-cpma-1.31.ebuild, -quake3-cpma-1.32.ebuild,
-  +quake3-cpma-1.43.ebuild:
-  Cleaning up older versions and bumping to 1.43 using some modifications
-  suggested by Paul Bredbury <brebs@sent.com>. Closing bug #157164.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  23 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  quake3-cpma-1.38-r1.ebuild:
-  Removing unused variables.
-
-  23 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  quake3-cpma-1.38-r1.ebuild:
-  Added explicit KEYWORDS since this should run on ppc and fixed dependencies.
-
-*quake3-cpma-1.38-r1 (23 Oct 2006)
-
-  23 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  +quake3-cpma-1.38-r1.ebuild:
-  Added new revision for testing which uses the brand-spankin-new
-  games-mods.eclass to reduce ebuild code.
-
-*quake3-cpma-1.38 (03 Oct 2006)
-
-  03 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  +quake3-cpma-1.38.ebuild:
-  Version bump.  Ebuild by Arnaud Vrac <rawoul@gmail.com>.  Closing bug #146228.
-
-  16 Sep 2005; Ciaran McCreesh <ciaranm@gentoo.org> ChangeLog:
-  Converted to UTF-8, fixed encoding screwups
-
-*quake3-cpma-1.32 (14 Jun 2005)
-
-  14 Jun 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  +quake3-cpma-1.32.ebuild:
-  Version bumped to 1.32 and closing bug #94455.
-
-*quake3-cpma-1.31 (27 Dec 2004)
-
-  27 Dec 2004; Mike Frysinger <vapier@gentoo.org> +quake3-cpma-1.31.ebuild:
-  Version bump #53578 by Jan Brinkmann.
-
-*quake3-cpma-1.2 (29 Jan 2004)
-
-  29 Jan 2004; Mike Frysinger <vapier@gentoo.org>:
-  Version bump #38003 by jouko maksimainen.
-
-*quake3-cpma-1.1 (16 Jul 2003)
-
-  16 Jul 2003; Mike Frysinger <vapier@gentoo.org>:
-  Version bump + games-q3mod.eclass support #23871.
-
-*quake3-cpma-0.99_rc8.ebuild (23 Oct 2002)
-
-  23 Oct 2002; Mike Frysinger <vapier@gentoo.org> quake3-cpma-0.99_rc8.ebuild
-  quake3-cpma.env.d :
-  Version bumpbed and added an env.d file to protect the server.cfg file
-
-*quake3-cpma-0.99_rc7.ebuild (15 Oct 2002)
-
-  15 Oct 2002; Mike Frysinger <vapier@gentoo.org> quake3-cpma-0.99x-r2.ebuild
-  quake3-cpma-0.99x.ebuild quake3-cpma-0.99_rc7.ebuild :
-  Removed old files and added a new one for package naming/upgrade ... stupid x ;)
-
-*quake3-cpma-0.99x-r2.ebuild (17 julio 2002)
-
-  06 Aug 2002; Mark Guertin <gerk@gentoo.org> :
-  Added -ppc to keywords
-
-  20 Jul 2002: Jose Alberto Suárez López <bass@gentoo.org> quake3-cpma-0.99x-r2.ebuild:
-  Really fixed perms.
-  
-  17 jul 2002; Jose Alberto Suárez López <bass@gentoo.org> quake3-cpma-0.99x-r2.ebuild :
-  Added KEYWORDS.
-
-*quake3-cpma (25 Jun 2002)
-
-  17 jul 2002; Jose Alberto Suárez López <bass@gentoo.org> quake3-cpma-0.99x.ebuild :
-  Added LICENSE, KEYWORDS, SLOT.
-
-  25 Jun 2002; J.Alberto S.L. <bass@gentoo.org> quake3-cpma-0.99x.ebuild:
-  First relase.

@@ -1,82 +1,58 @@
 # ChangeLog for sci-biology/amos
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/amos/ChangeLog,v 1.20 2015/04/08 18:20:42 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> amos-3.1.0-r1.ebuild:
-  Drop old Python implementations
+*amos-3.1.0-r1 (09 Aug 2015)
+*amos-3.1.0 (09 Aug 2015)
 
-*amos-3.1.0-r1 (29 Dec 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +amos-3.1.0.ebuild,
+  +amos-3.1.0-r1.ebuild, +files/amos-3.1.0-gcc-4.7.patch,
+  +files/amos-3.1.0-goBambus2.py-indent-and-cleanup.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  29 Dec 2013; Justin Lecher <jlec@gentoo.org> +amos-3.1.0-r1.ebuild,
-  +files/amos-3.1.0-goBambus2.py-indent-and-cleanup.patch:
-  Fix python support
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Mar 2013; Justin Lecher <jlec@gentoo.org> amos-3.1.0.ebuild, metadata.xml:
-  Change USE name from qt to qt4, #462218
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> amos-3.1.0.ebuild:
-  Move Qt dependencies to the new category
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Jul 2012; Justin Lecher <jlec@gentoo.org> -amos-2.0.8-r1.ebuild,
-  -files/amos-2.0.8-gcc44.patch, -amos-3.0.0.ebuild, -amos-3.0.1.ebuild,
-  amos-3.1.0.ebuild, +files/amos-3.1.0-gcc-4.7.patch:
-  Add fix for gcc-4.7, #425264; cleaned old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Oct 2011; Justin Lecher <jlec@gentoo.org> amos-3.1.0.ebuild, metadata.xml:
-  Another simplification
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> amos-3.1.0.ebuild:
-  x86 stable wrt bug #384343
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> amos-3.1.0.ebuild:
-  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
-  Elijah "Armageddon" El Lazkani in bug #384343.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*amos-3.1.0 (12 Aug 2011)
-*amos-3.0.1 (12 Aug 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Aug 2011; Andrey Kislyuk <weaver@gentoo.org> +amos-3.0.1.ebuild,
-  +amos-3.1.0.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  28 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> amos-3.0.0.ebuild:
-  x86 stable wrt bug #368287
-
-  23 May 2011; Markos Chandras <hwoarang@gentoo.org> amos-3.0.0.ebuild:
-  Stable on amd64 wrt bug #368287
-
-*amos-3.0.0 (03 Feb 2011)
-
-  03 Feb 2011; Andrey Kislyuk <weaver@gentoo.org> +amos-3.0.0.ebuild:
-  Version bump
-
-  11 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> -amos-2.0.8.ebuild:
-  Drop old ebuild
-
-*amos-2.0.8-r1 (11 Feb 2010)
-
-  11 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> +amos-2.0.8-r1.ebuild:
-  Remove qt3 dependency per bug 304467
-
-  30 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> amos-2.0.8.ebuild,
-  +files/amos-2.0.8-gcc44.patch:
-  Fix building with GCC 4.4 and GLIBC 2.10+ wrt #279572.
-
-  15 Mar 2009; Markus Meier <maekke@gentoo.org> amos-2.0.8.ebuild:
-  amd64/x86 stable, bug #261786
-
-*amos-2.0.8 (26 Aug 2008)
-
-  26 Aug 2008; weaver <weaver@gentoo.org> +amos-2.0.8.ebuild:
-  Bump to 2.0.8, drop patch
-
-  17 Jun 2008; weaver <weaver@gentoo.org> ChangeLog:
-  Bump to 2.0.7 and add gcc-4.3 patch, bug 227597, thanks to Marek Miller
-
-*amos-2.0.5 (26 May 2008)
-
-  26 May 2008; weaver <weaver@gentoo.org> +metadata.xml, +amos-2.0.5.ebuild:
-  Initial commit. New package from sunrise, bug 175293

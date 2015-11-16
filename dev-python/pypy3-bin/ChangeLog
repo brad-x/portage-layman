@@ -1,23 +1,86 @@
 # ChangeLog for dev-python/pypy3-bin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy3-bin/ChangeLog,v 1.5 2015/01/28 19:45:44 mgorny Exp $
+# (auto-generated from git log)
 
-  28 Jan 2015; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0.ebuild:
-  Switch to CPU_FLAGS_X86.
+*pypy3-bin-2.4.0 (09 Aug 2015)
 
-  23 Dec 2014; Alice Ferrazzi <alicef@gentoo.org> metadata.xml:
-  Update email and removed proxy-maintainers herd
-
-  22 Nov 2014; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0.ebuild:
-  Fix pypy3 blocker, reported by jlec.
-
-  13 Nov 2014; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneeded useflags from metadata.xml
-
-*pypy3-bin-2.4.0 (09 Nov 2014)
-
-  09 Nov 2014; Michał Górny <mgorny@gentoo.org> +files/1.9-distutils.unixccompil
-  er.UnixCCompiler.runtime_library_dir_option.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/1.9-distutils.unix
+  ccompiler.UnixCCompiler.runtime_library_dir_option.patch,
   +files/1.9-scripts-location.patch, +files/2.3.1-shared-lib.patch,
   +metadata.xml, +pypy3-bin-2.4.0.ebuild:
-  Introduce the binary packages for PyPy3.
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+*pypy3-bin-2.4.0-r1 (13 Aug 2015)
+
+  13 Aug 2015; Michał Górny <mgorny@gentoo.org> -pypy3-bin-2.4.0.ebuild,
+  +pypy3-bin-2.4.0-r1.ebuild:
+  dev-python/pypy*-bin: add subslot deps on sys-libs/ncurses
+
+  Package-Manager: portage-2.2.20
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  pypy3-bin-2.4.0-r1.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  26 Aug 2015; Mike Frysinger <vapier@gentoo.org> pypy3-bin-2.4.0-r1.ebuild:
+  dev-python/pypy*: fix ncurses dep #557472
+
+  There is no 5 subslot, so trying to depend on it won't actually work.
+
+  26 Aug 2015; Mike Frysinger <vapier@gentoo.org> pypy3-bin-2.4.0-r1.ebuild:
+  sys-libs/ncurses: move to SLOT=0 #557472
+
+  Use SLOT=0 for installing of main development files like other packages
+  so we can use other SLOTs for installing SONAME libs for binary packages.
+
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  12 Nov 2015; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0-r1.ebuild:
+  dev-python/pypy*: Fix epython.py module first install
+

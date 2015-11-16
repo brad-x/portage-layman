@@ -1,51 +1,56 @@
 # ChangeLog for virtual/libudev
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/libudev/ChangeLog,v 1.11 2014/08/06 18:32:03 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*libudev-215-r1 (06 Aug 2014)
+*libudev-215-r1 (09 Aug 2015)
 
-  06 Aug 2014; Michał Górny <mgorny@gentoo.org> +libudev-215-r1.ebuild,
-  -libudev-215.ebuild:
-  Revbump to ensure that users get rebuild due to USE=systemd rather than
-  blocker against it, and to ensure that previous breakage with USE=systemd
-  ,static-libs does not persist.
-
-  04 Aug 2014; Michał Górny <mgorny@gentoo.org> libudev-215.ebuild:
-  Fix not installing anything with USE=systemd,static-libs. That combination
-  should be forbidden via REQUIRED_USE.
-
-  03 Aug 2014; Samuli Suominen <ssuominen@gentoo.org> libudev-215.ebuild:
-  Help Portage make the right decision by introducing USE="systemd" wrt #515230.
-  This is a bug in the Package Manager.
-
-  30 Jul 2014; Samuli Suominen <ssuominen@gentoo.org> -libudev-208.ebuild:
-  old
-
-*libudev-215 (29 Jul 2014)
-
-  29 Jul 2014; Samuli Suominen <ssuominen@gentoo.org> +libudev-215.ebuild:
-  New virtual version wrt #518416 for package managers with no proper in-place
-  dependency handling.
-
-  25 Jul 2014; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
-  systemd@g.o to maintainers.
-
-  18 Jun 2014; Michał Górny <mgorny@gentoo.org> libudev-208.ebuild:
-  Update dependencies to require guaranteed EAPI=5 or multilib ebuilds, bug
-  #513718.
-
-  09 Jun 2014; Mike Frysinger <vapier@gentoo.org> libudev-208.ebuild:
-  Mark arm64/m68k/s390/sh stable.
-
-  02 Jun 2014; Samuli Suominen <ssuominen@gentoo.org> libudev-208.ebuild:
-  Stabilize for everyone because providers have been marked stable wrt bugs
-  #506078 and #505962
-
-  29 Mar 2014; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
-  Add eudev@g.o as a maintainer
-
-*libudev-208 (27 Mar 2014)
-
-  27 Mar 2014; Michał Górny <mgorny@gentoo.org> +libudev-208.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libudev-215-r1.ebuild,
   +metadata.xml:
-  Introduce a new virtual for clear := deps on libudev provider.
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

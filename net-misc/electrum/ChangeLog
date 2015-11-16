@@ -1,179 +1,79 @@
 # ChangeLog for net-misc/electrum
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/electrum/ChangeLog,v 1.39 2015/07/07 02:56:24 patrick Exp $
+# (auto-generated from git log)
 
-  07 Jul 2015; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneeded useflag description from metadata.xml
+*electrum-2.3.3 (09 Aug 2015)
+*electrum-2.1.1 (09 Aug 2015)
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org> -electrum-2.0.3.ebuild:
-  Remove older unstable version.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +electrum-2.1.1.ebuild,
+  +electrum-2.3.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org> electrum-2.1.1.ebuild:
-  Stable on amd64 and x86.  Bug #541538.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*electrum-2.3.3 (04 Jul 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Jul 2015; Anthony G. Basile <blueness@gentoo.org> +electrum-2.3.3.ebuild:
-  Version bump.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 May 2015; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unused useflag description from metadata.xml
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 May 2015; Anthony G. Basile <blueness@gentoo.org>
-  -electrum-1.9.8-r1.ebuild, -electrum-2.0.0.ebuild,
-  -files/1.9.8-gtk3-fix.patch, -files/electrum.desktop-1.9.7.patch,
-  -files/setup.py-1.9.7.patch:
-  Drop older versions.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*electrum-2.1.1 (04 May 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 May 2015; Anthony G. Basile <blueness@gentoo.org> +electrum-2.1.1.ebuild:
-  Version bump.  Bug #548394.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> electrum-1.9.8-r1.ebuild:
-  Drop old Python implementations
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*electrum-2.0.3 (17 Mar 2015)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Mar 2015; Anthony G. Basile <blueness@gentoo.org> +electrum-2.0.3.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Mar 2015; Anthony G. Basile <blueness@gentoo.org> electrum-1.9.8-r1.ebuild,
-  electrum-2.0.0.ebuild:
-  Fix bug #542614.
+*electrum-2.5.1 (24 Oct 2015)
 
-  03 Mar 2015; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
-  Fix gpg signature of Manifest.
-
-  03 Mar 2015; Anthony G. Basile <blueness@gentoo.org> -electrum-1.7.4.ebuild,
-  -electrum-1.8.1.ebuild, -electrum-1.9.7.ebuild, -electrum-1.9.8.ebuild:
-  Remove older versions.
-
-*electrum-2.0.0 (03 Mar 2015)
-
-  03 Mar 2015; Anthony G. Basile <blueness@gentoo.org> +electrum-2.0.0.ebuild,
+  24 Oct 2015; Anthony G. Basile <blueness@gentoo.org> +electrum-2.5.1.ebuild,
   metadata.xml:
-  Version bump.
+  bump to 2.5.1, bug #563866.
 
-*electrum-1.9.8-r1 (01 Mar 2015)
+  Package-Manager: portage-2.2.20.1
 
-  01 Mar 2015; Anthony G. Basile <blueness@gentoo.org>
-  +electrum-1.9.8-r1.ebuild, +files/1.9.8-gtk3-fix.patch, metadata.xml:
-  Fix bug #510688 and #509028
+  30 Oct 2015; Justin Lecher <jlec@gentoo.org> electrum-2.5.1.ebuild,
+  metadata.xml:
+  Move to virtual/dnspython
 
-  14 Feb 2015; Michał Górny <mgorny@gentoo.org> electrum-1.9.7.ebuild,
-  electrum-1.9.8.ebuild:
-  USE=qrcode requires zbar[v4l], bug #539984 with PR by Michael Mair-Keimberger.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Nov 2014; Michał Górny <mgorny@gentoo.org> electrum-1.9.7.ebuild,
-  electrum-1.9.8.ebuild:
-  Add missing PYTHON_USEDEPs.
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> electrum-2.5.1.ebuild:
+  Sanitize virtual namespace of python packages
 
-*electrum-1.9.8 (17 Mar 2014)
+  Rename virtual/MODULE to virtual/python-MODULE
 
-  17 Mar 2014; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.8.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jan 2014; Anthony G. Basile <blueness@gentoo.org> electrum-1.7.4.ebuild,
-  electrum-1.8.1.ebuild, electrum-1.9.7.ebuild:
-  Fix python deps, bug #494368
-
-  18 Jan 2014; Anthony G. Basile <blueness@gentoo.org>
-  +files/electrum.desktop-1.9.7.patch, +files/setup.py-1.9.7.patch,
-  -files/electrum.desktop-1.9.6.patch, -files/setup.py-1.9.6.patch:
-  Fix patches for 1.9.7
-
-*electrum-1.9.7 (18 Jan 2014)
-
-  18 Jan 2014; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.7.ebuild,
-  -electrum-1.9.6.ebuild, metadata.xml:
-  Version bump
-
-  17 Dec 2013; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
-  Fix gpg signiture on Manifest
-
-*electrum-1.9.6 (17 Dec 2013)
-
-  17 Dec 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.6.ebuild,
-  +files/electrum.desktop-1.9.6.patch, +files/setup.py-1.9.6.patch,
-  -electrum-1.9.3.ebuild, -electrum-1.9.4.ebuild:
-  Version bump, remove older broken 1.9.x
-
-*electrum-1.9.4 (13 Nov 2013)
-
-  13 Nov 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.4.ebuild:
-  Version bump
-
-*electrum-1.9.3 (12 Nov 2013)
-
-  12 Nov 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.3.ebuild,
-  -electrum-1.9.2.ebuild:
-  Version bump
-
-  06 Nov 2013; Anthony G. Basile <blueness@gentoo.org> -electrum-1.7.3.ebuild,
-  -electrum-1.8.ebuild, -electrum-1.9.ebuild:
-  Remove older unstable
-
-*electrum-1.9.2 (06 Nov 2013)
-
-  06 Nov 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.2.ebuild:
-  Version bump
-
-*electrum-1.9 (05 Nov 2013)
-
-  05 Nov 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.9.ebuild:
-  Version bump
-
-*electrum-1.8.1 (14 Aug 2013)
-
-  14 Aug 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.8.1.ebuild:
-  Version bump, bug #480976
-
-*electrum-1.8 (02 Jun 2013)
-
-  02 Jun 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.8.ebuild:
-  Version bump
-
-  15 May 2013; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
-  Fix failed gpg signing of Manifest
-
-  15 May 2013; Anthony G. Basile <blueness@gentoo.org> -electrum-1.0.ebuild,
-  -electrum-1.6.2.ebuild, -electrum-1.7.2.ebuild, -electrum-1.7.ebuild:
-  Remove older unstable
-
-*electrum-1.7.4 (15 May 2013)
-
-  15 May 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.7.4.ebuild:
-  Version bump
-
-*electrum-1.7.3 (14 Apr 2013)
-
-  14 Apr 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.7.3.ebuild:
-  Version bump
-
-*electrum-1.7.2 (25 Mar 2013)
-
-  25 Mar 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.7.2.ebuild:
-  Version bump
-
-  22 Mar 2013; Anthony G. Basile <blueness@gentoo.org> electrum-1.7.ebuild:
-  Fix files deleted for USE=qt or gtk, thanks Maks Verver, bug #462532
-
-*electrum-1.7 (19 Mar 2013)
-
-  19 Mar 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.7.ebuild:
-  Version bump
-
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
-
-*electrum-1.6.2 (12 Feb 2013)
-
-  12 Feb 2013; Anthony G. Basile <blueness@gentoo.org> +electrum-1.6.2.ebuild:
-  Version bump, bug #452932
-
-*electrum-1.0 (16 Sep 2012)
-
-  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> +electrum-1.0.ebuild,
-  +metadata.xml:
-  Initial commit

@@ -1,32 +1,95 @@
 # ChangeLog for dev-java/netty-common
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/netty-common/ChangeLog,v 1.6 2015/07/01 08:47:14 ago Exp $
+# (auto-generated from git log)
 
-  01 Jul 2015; Agostino Sarubbo <ago@gentoo.org> netty-common-4.0.21.ebuild:
-  Stable for x86, wrt bug #553680
+*netty-common-4.0.21 (09 Aug 2015)
+*netty-common-4.0.19 (09 Aug 2015)
 
-  01 Jul 2015; Agostino Sarubbo <ago@gentoo.org> netty-common-4.0.21.ebuild:
-  Stable for amd64, wrt bug #553680
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/netty-common-4.0.19-build.xml, +files/netty-common-4.0.21-build.xml,
+  +metadata.xml, +netty-common-4.0.19.ebuild, +netty-common-4.0.21.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Feb 2015; Zac Medico <zmedico@gentoo.org> netty-common-4.0.21.ebuild:
-  Increase netty-common-4.0.21 java dep to 1.7 for bug 529108.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*netty-common-4.0.21 (15 Jul 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jul 2014; Johann Schmitz <ercpe@gentoo.org>
-  +files/netty-common-4.0.21-build.xml, +netty-common-4.0.21.ebuild,
-  files/netty-common-4.0.19-build.xml, netty-common-4.0.19.ebuild:
-  Version bump (bug #515854), dropped code for the failing tests, cleaned things
-  up (in 4.0.19 too)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*netty-common-4.0.19 (19 May 2014)
+  11 Aug 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/netty-common-4.0.21-build.xml, netty-common-4.0.21.ebuild:
+  Simply build process by using java-pkg-simple in lieu of java-ant-2. Remove
+  corresponding ant build.xml files. Fixes bug 557288.
 
-  19 May 2014; Tom Wijsman <TomWij@gentoo.org>
-  +files/netty-common-4.0.19-build.xml, +metadata.xml,
-  +netty-common-4.0.19.ebuild:
-  New ebuild for dev-java/netty-common, async event-driven framework for rapid
-  development of high performance network applications; requested by Arfrever,
-  needed for new Jython versions.
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  11 Aug 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/netty-common-4.0.19-build.xml, -netty-common-4.0.19.ebuild:
+  Remove old version.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  05 Sep 2015; Zac Medico <zmedico@gentoo.org> netty-common-4.0.21.ebuild:
+  require java 7 for bug 529108
+
+  Package-Manager: portage-2.2.20.1
+
+*netty-common-4.0.22 (01 Oct 2015)
+
+  01 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  +netty-common-4.0.22.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*netty-common-4.0.32 (13 Oct 2015)
+
+  13 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -netty-common-4.0.22.ebuild, +netty-common-4.0.32.ebuild:
+  Version bump to latest release.
+
+  Version bump to latest release, removed previous unstable version
+

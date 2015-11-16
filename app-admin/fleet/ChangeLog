@@ -1,124 +1,89 @@
 # ChangeLog for app-admin/fleet
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/fleet/ChangeLog,v 1.28 2015/07/19 16:17:47 alunduil Exp $
+# (auto-generated from git log)
 
-  19 Jul 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.10.1-r1.ebuild:
-  remove version 0.10.1-r1
+*fleet-9999 (09 Aug 2015)
+*fleet-0.11.1 (09 Aug 2015)
+*fleet-0.11.0-r1 (09 Aug 2015)
+*fleet-0.11.0 (09 Aug 2015)
 
-  19 Jul 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.10.1.ebuild:
-  remove version 0.10.1
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/fleet.service,
+  +files/fleet.socket, +files/fleetd.service, +fleet-0.11.0.ebuild,
+  +fleet-0.11.0-r1.ebuild, +fleet-0.11.1.ebuild, +fleet-9999.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*fleet-0.11.1 (19 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Jul 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.11.1.ebuild:
-  add version 0.11.1
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*fleet-0.11.0-r1 (07 Jul 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Jul 2015; William Hubbs <williamh@gentoo.org> +fleet-0.11.0-r1.ebuild:
-  rev bump to encorporate the changes from the live ebuild, approved by alunduil
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Jul 2015; William Hubbs <williamh@gentoo.org> fleet-9999.ebuild:
-  with approval of alunduil: add slot dependency on dev-lang/Go and drop keepdir
-  call
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.10.0-r1.ebuild:
-  remove version 0.10.0-r1
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.10.0.ebuild:
-  remove version 0.10.0
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*fleet-0.11.0 (04 Jul 2015)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.11.0.ebuild:
-  add version 0.11.0
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  Bug: https://bugs.gentoo.org/552720
 
-*fleet-0.10.1-r1 (27 May 2015)
+*fleet-0.11.5 (30 Aug 2015)
 
-  27 May 2015; Zac Medico <zmedico@gentoo.org> +fleet-0.10.1-r1.ebuild,
-  fleet-9999.ebuild:
-  Add test? ( dev-go/go-tools ) dep for 'go vet' and enable tests.
+  30 Aug 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.11.5.ebuild:
+  add version 0.11.5
 
-  02 May 2015; Alex Brandt <alunduil@gentoo.org> fleet-9999.ebuild:
-  land changes from 0.10.1 onto 9999
+  Package-Manager: portage-2.2.20.1
 
-  02 May 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.9.2.ebuild:
-  remove version 0.9.2
+  30 Aug 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.11.0.ebuild:
+  remove version 0.11.0
 
-  02 May 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.9.1.ebuild:
-  remove version 0.9.1
+  Package-Manager: portage-2.2.20.1
 
-*fleet-0.10.1 (02 May 2015)
+  30 Aug 2015; Alex Brandt <alunduil@gentoo.org> fleet-9999.ebuild:
+  drop postinst message from live ebuild
 
-  02 May 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.10.1.ebuild:
-  add version 0.10.1
+  The postinst message in the live ebuild is applicable if coming from a
+  version
+  less than 0.11.0.  These versions are no longer available and haven't been
+  for
+  some time.
 
-*fleet-0.10.0-r1 (25 Apr 2015)
+  Package-Manager: portage-2.2.20.1
 
-  25 Apr 2015; Alex Brandt <alunduil@gentoo.org> +files/fleet.socket,
-  +fleet-0.10.0-r1.ebuild, files/fleet.service:
-  add version 0.10.0-r1  provided by Stefan Junker <code@stefanjunker.de>  *
-  renamed: fleetd.service -> fleet.service * added fleet.socket * added elog
-  message elaborating
+  31 Oct 2015; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  update maintainer's email address in metadata
 
-  17 Apr 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.9.0.ebuild:
-  remove version 0.9.0
+  Package-Manager: portage-2.2.23
 
-*fleet-0.10.0 (17 Apr 2015)
-
-  17 Apr 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.10.0.ebuild:
-  add version 0.10.0
-
-  17 Apr 2015; Alex Brandt <alunduil@gentoo.org> fleet-9999.ebuild:
-  drop irrelevant message about old version updates
-
-  05 Apr 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.8.3.ebuild:
-  remove version 0.8.3
-
-*fleet-0.9.2 (05 Apr 2015)
-
-  05 Apr 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.9.2.ebuild:
-  add version 0.9.2
-
-  28 Feb 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.5.4.ebuild:
-  remove version 0.5.4
-
-*fleet-0.9.1 (28 Feb 2015)
-
-  28 Feb 2015; Alex Brandt <alunduil@gentoo.org> +fleet-0.9.1.ebuild:
-  add version 0.9.1
-
-  28 Feb 2015; Alex Brandt <alunduil@gentoo.org> -fleet-0.5.3.ebuild:
-  remove version 0.5.3
-
-*fleet-0.9.0 (07 Dec 2014)
-
-  07 Dec 2014; Alex Brandt <alunduil@gentoo.org> +fleet-0.9.0.ebuild,
-  fleet-9999.ebuild:
-  add version 0.9.0
-
-  06 Nov 2014; Alex Brandt <alunduil@gentoo.org> metadata.xml:
-  add Stefan Junker to metadata  Stefan assisted with the latest updates to the
-  fleet ebuilds but in my haste to get them in the tree I overlooked mentioning
-  this fact.
-
-*fleet-0.8.3 (01 Nov 2014)
-
-  01 Nov 2014; Alex Brandt <alunduil@gentoo.org> +fleet-0.8.3.ebuild,
-  fleet-9999.ebuild:
-  add version 0.8.3
-
-  28 Aug 2014; Alex Brandt <alunduil@gentoo.org> fleet-9999.ebuild:
-  binary moved: fleet -> fleetd
-
-*fleet-9999 (19 Jul 2014)
-*fleet-0.5.4 (19 Jul 2014)
-*fleet-0.5.3 (19 Jul 2014)
-
-  19 Jul 2014; Alex Brandt <alunduil@gentoo.org> +fleet-0.5.3.ebuild,
-  +fleet-0.5.4.ebuild, +fleet-9999.ebuild, +files/fleet.service, +metadata.xml:
-  New ebuild for app-admin/fleet. Ebuild adapted from
-  https://github.com/coreos/coreos-overlay.

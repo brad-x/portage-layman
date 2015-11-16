@@ -1,144 +1,75 @@
 # ChangeLog for dev-python/jsonpickle
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/jsonpickle/ChangeLog,v 1.32 2015/06/07 13:40:24 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*jsonpickle-0.9.2 (09 Aug 2015)
+*jsonpickle-0.9.1 (09 Aug 2015)
+*jsonpickle-0.8.0 (09 Aug 2015)
 
-*jsonpickle-0.9.2 (05 Apr 2015)
-
-  05 Apr 2015; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.9.2.ebuild,
-  -jsonpickle-0.9.0.ebuild:
-  bump one rm one
-
-  28 Mar 2015; Markus Meier <maekke@gentoo.org> jsonpickle-0.9.1.ebuild:
-  add ~arm, bug #543850
-
-*jsonpickle-0.9.1 (20 Mar 2015)
-
-  20 Mar 2015; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.9.1.ebuild,
-  -jsonpickle-0.4.0-r1.ebuild, -jsonpickle-0.7.2.ebuild:
-  bump; drop arm to allow adding of optional rdep, correction to HOMEPAGE, cite
-  upstream bug for a regression in testsuite
-
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> jsonpickle-0.8.0.ebuild:
-  x86 stable, bug 540290
-
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> jsonpickle-0.8.0.ebuild:
-  amd64 stable, bug 540290
-
-*jsonpickle-0.4.0-r1 (08 Feb 2015)
-
-  08 Feb 2015; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.4.0-r1.ebuild:
-  re-add -0.4.0-r1 stable
-
-*jsonpickle-0.9.0 (07 Feb 2015)
-
-  07 Feb 2015; Ian Delaney <idella4@gentoo.org>
-  +files/0.9.0-drop-broken-backend.patch, +jsonpickle-0.9.0.ebuild,
-  -files/jsonpickle-0.6.1-test-fix-backport.patch, -jsonpickle-0.4.0-r1.ebuild,
-  -jsonpickle-0.6.1.ebuild, -jsonpickle-0.7.1.ebuild:
-  bump; upgrade patch for tests, rm disused patch and old
-
-*jsonpickle-0.8.0 (04 Oct 2014)
-
-  04 Oct 2014; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.8.0.ebuild:
-  bump
-
-  24 Sep 2014; Markus Meier <maekke@gentoo.org> jsonpickle-0.7.2.ebuild:
-  add ~arm, bug #519616
-
-*jsonpickle-0.7.2 (11 Aug 2014)
-
-  11 Aug 2014; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.7.2.ebuild:
-  bump; add IUSE doc, drop arm keyword to enable addition of doc deps, add doc
-  build/install, update test phase
-
-*jsonpickle-0.7.1 (12 May 2014)
-
-  12 May 2014; Ian Delaney <idella4@gentoo.org> +jsonpickle-0.7.1.ebuild,
-  -jsonpickle-0.4.0.ebuild:
-  bump; drop py2.6 add py3.4 support, drop redundant patch, rm old
-
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> jsonpickle-0.4.0-r1.ebuild:
-  Add support for the new PyPy slotting.
-
-  24 Feb 2014; Justin Lecher <jlec@gentoo.org> jsonpickle-0.6.1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.9.0-drop-broken-backend.patch,
   +files/jsonpickle-0.6.1-drop-brocken-backend.patch,
-  +files/jsonpickle-0.6.1-test-fix-backport.patch:
-  Fix tests
+  +jsonpickle-0.8.0.ebuild, +jsonpickle-0.9.1.ebuild,
+  +jsonpickle-0.9.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Feb 2014; Justin Lecher <jlec@gentoo.org> jsonpickle-0.6.1.ebuild:
-  add py3 support
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Sep 2013; Markus Meier <maekke@gentoo.org> jsonpickle-0.6.1.ebuild:
-  add ~arm, bug #483324
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> jsonpickle-0.4.0-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Sep 2013; Patrick Lauer <patrick@gentoo.org> jsonpickle-0.6.1.ebuild:
-  Whitespace
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*jsonpickle-0.6.1 (02 Sep 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jsonpickle-0.8.0.ebuild,
+  jsonpickle-0.9.1.ebuild, jsonpickle-0.9.2.ebuild:
+  Use https by default
 
-  02 Sep 2013; Patrick Lauer <patrick@gentoo.org> +jsonpickle-0.6.1.ebuild:
-  Bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Jun 2013; Sergey Popov <pinkbyte@gentoo.org> jsonpickle-0.4.0-r1.ebuild:
-  Add ~arm keyword
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Jun 2013; Sergey Popov <pinkbyte@gentoo.org> jsonpickle-0.4.0-r1.ebuild:
-  Stable on amd64 and x86, wrt bug #474118
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*jsonpickle-0.4.0-r1 (29 Apr 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Apr 2013; Justin Lecher <jlec@gentoo.org> +jsonpickle-0.4.0-r1.ebuild,
-  metadata.xml:
-  Move to new python eclasses
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jsonpickle-0.8.0.ebuild:
+  Use https by default
 
-  09 Sep 2011; Justin Lecher <jlec@gentoo.org> jsonpickle-0.4.0.ebuild:
-  keyworded *-linux, tested by me
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Aug 2011; Markos Chandras <hwoarang@gentoo.org> jsonpickle-0.4.0.ebuild:
-  Ignore test failures with Jython. Fix dependencies. Run tests requiring
-  dev-python/feedparser. Patch by Arfrever.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> -jsonpickle-0.3.1.ebuild:
-  Remove old ebuild. Requested by Arfrever
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*jsonpickle-0.4.0 (29 Jul 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  +jsonpickle-0.4.0.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  jsonpickle-0.3.1.ebuild:
-  Update EAPI. Fix dependencies.
-
-  06 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -jsonpickle-0.2.0.ebuild, -jsonpickle-0.3.0.ebuild:
-  Delete.
-
-*jsonpickle-0.3.1 (12 Dec 2009)
-
-  12 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +jsonpickle-0.3.1.ebuild:
-  Version bump.
-
-*jsonpickle-0.3.0 (12 Dec 2009)
-
-  12 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +jsonpickle-0.3.0.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-  30 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
-  jsonpickle-0.2.0.ebuild:
-  keyworded ~arch for x86, bug 275353
-
-*jsonpickle-0.2.0 (19 Jun 2009)
-
-  19 Jun 2009; Tiziano Müller <dev-zero@gentoo.org>
-  +jsonpickle-0.2.0.ebuild, +metadata.xml:
-  Initial commit (needed as dependency for git-cola).

@@ -1,48 +1,66 @@
 # ChangeLog for dev-python/pyplusplus
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyplusplus/ChangeLog,v 1.8 2015/01/01 23:43:25 mgorny Exp $
+# (auto-generated from git log)
 
-  01 Jan 2015; Michał Górny <mgorny@gentoo.org> -pyplusplus-1.0.0.ebuild,
-  pyplusplus-1.0.0-r1.ebuild, pyplusplus-1.0.0_p20131206.ebuild,
-  pyplusplus-9999.ebuild:
-  Avoid unnecessary doc-regen in the old version, remove the obsolete doc-regen
-  code in the new version. Add missing PYTHON_USEDEP. Fix running tests.
+*pyplusplus-9999 (09 Aug 2015)
+*pyplusplus-1.0.0_p20131206 (09 Aug 2015)
+*pyplusplus-1.0.0-r1 (09 Aug 2015)
 
-  03 May 2014; Benda Xu <heroxbd@gentoo.org>
-  files/pyplusplus-1.0.0_p20131206-numpy.patch:
-  refine the boost numpy patch to only handle arithmatic typed arrays
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pyplusplus-1.0.0_p20131206-numpy.patch, +metadata.xml,
+  +pyplusplus-1.0.0-r1.ebuild, +pyplusplus-1.0.0_p20131206.ebuild,
+  +pyplusplus-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Feb 2014; Benda Xu <heroxbd@gentoo.org>
-  files/pyplusplus-1.0.0_p20131206-numpy.patch,
-  pyplusplus-1.0.0_p20131206.ebuild:
-  patch: boost numpy owner should be bp::object unconditionally; use dos style
-  line breaks.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Dec 2013; Benda Xu <heroxbd@gentoo.org>
-  files/pyplusplus-1.0.0_p20131206-numpy.patch:
-  patch submitted upstream
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*pyplusplus-9999 (06 Dec 2013)
-*pyplusplus-1.0.0_p20131206 (06 Dec 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Dec 2013; Benda Xu <heroxbd@gentoo.org>
-  +files/pyplusplus-1.0.0_p20131206-numpy.patch,
-  +pyplusplus-1.0.0_p20131206.ebuild, +pyplusplus-9999.ebuild, metadata.xml:
-  new snapshot with boost-numpy support.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Oct 2013; Michał Górny <mgorny@gentoo.org> pyplusplus-1.0.0-r1.ebuild,
-  pyplusplus-1.0.0.ebuild:
-  Remove redundant python_export_best (done by the eclass). Fix eclass use.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  pyplusplus-1.0.0_p20131206.ebuild, pyplusplus-9999.ebuild:
+  Use https by default
 
-*pyplusplus-1.0.0-r1 (16 Sep 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Sep 2013; Benda Xu <heroxbd@gentoo.org> +pyplusplus-1.0.0-r1.ebuild,
-  metadata.xml:
-  add USE flag for indexing_suite_v2.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pyplusplus-1.0.0 (30 Aug 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Aug 2013; Benda Xu <heroxbd@gentoo.org> +metadata.xml,
-  +pyplusplus-1.0.0.ebuild:
-  initial commit. bug 212014. Credits to k0001, yury and Ross for creating and
-  refining the ebuild.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

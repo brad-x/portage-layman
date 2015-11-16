@@ -1,76 +1,69 @@
 # ChangeLog for xfce-extra/xfce4-netspeed-plugin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-netspeed-plugin/ChangeLog,v 1.16 2015/08/05 11:18:40 perfinion Exp $
+# (auto-generated from git log)
 
-  05 Aug 2015; Jason Zaman <perfinion@gentoo.org> metadata.xml:
-  Replace herd with xfce@g.o
+*xfce4-netspeed-plugin-0.3.1 (09 Aug 2015)
+*xfce4-netspeed-plugin-0.3 (09 Aug 2015)
 
-  01 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  xfce4-netspeed-plugin-0.3.1.ebuild:
-  amd64 stable wrt bug #553500
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xfce4-netspeed-plugin-0.3.ebuild, +xfce4-netspeed-plugin-0.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-  01 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  xfce4-netspeed-plugin-0.3.1.ebuild:
-  x86 stable wrt bug #553500
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*xfce4-netspeed-plugin-0.3.1 (14 Apr 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Apr 2015; Michał Górny <mgorny@gentoo.org>
-  +xfce4-netspeed-plugin-0.3.1.ebuild:
-  Version bump. Fixes remembering 'Automatically Choose Network Device' option,
-  bug #532194.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Feb 2013; Samuli Suominen <ssuominen@gentoo.org>
-  -xfce4-netspeed-plugin-0.1.ebuild:
-  old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Feb 2013; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-netspeed-plugin-0.3.ebuild:
-  amd64/x86 stable
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
-  -xfce4-netspeed-plugin-0.2.ebuild,
-  -files/xfce4-netspeed-plugin-0.2-port-to-libxfce4ui.patch:
-  old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*xfce4-netspeed-plugin-0.3 (30 Dec 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-netspeed-plugin-0.3.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  xfce4-netspeed-plugin-0.3.ebuild, xfce4-netspeed-plugin-0.3.1.ebuild:
+  Enable https for all google URIs
 
-*xfce4-netspeed-plugin-0.2 (17 Dec 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-netspeed-plugin-0.2.ebuild,
-  +files/xfce4-netspeed-plugin-0.2-port-to-libxfce4ui.patch:
-  Version bump. Patch to use libxfce4ui instead of the dead libxfcegui4.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  xfce4-netspeed-plugin-0.3.ebuild, xfce4-netspeed-plugin-0.3.1.ebuild:
+  Convert URIs for googlecode.com to https
 
-  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-netspeed-plugin-0.1.ebuild:
-  EAPI5
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-netspeed-plugin-0.1.ebuild:
-  EAPI5
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
-  xfce4-netspeed-plugin-0.1.ebuild:
-  x86 stable, see bug 429484
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Oct 2012; <ago@gentoo.org> xfce4-netspeed-plugin-0.1.ebuild:
-  Stable for amd64, wrt bug #429484
+  Bug: https://bugs.gentoo.org/552720
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org>
-  xfce4-netspeed-plugin-0.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-netspeed-plugin-0.1.ebuild:
-  Install to libdir instead of libexecdir.
-
-*xfce4-netspeed-plugin-0.1 (25 Nov 2011)
-
-  25 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-netspeed-plugin-0.1.ebuild:
-  Initial commit.

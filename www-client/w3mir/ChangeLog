@@ -1,76 +1,56 @@
 # ChangeLog for www-client/w3mir
-# Copyright 2000-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/w3mir/ChangeLog,v 1.18 2014/07/25 00:27:42 zlogene Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  25 Jul 2014; Mikle Kolyada <zlogene@gentoo.org> -w3mir-1.0.10-r1.ebuild,
-  w3mir-1.0.10-r2.ebuild:
-  Mark stable; Drop old.
+*w3mir-1.0.10-r2 (09 Aug 2015)
 
-*w3mir-1.0.10-r2 (15 Jul 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/w3mir-1.0.10-cwd.diff, +metadata.xml, +w3mir-1.0.10-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Jul 2014; Mikle Kolyada <zlogene@gentoo.org> +w3mir-1.0.10-r2.ebuild:
-  Revision bump: EAPI=5
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Feb 2013; Zac Medico <zmedico@gentoo.org> w3mir-1.0.10-r1.ebuild:
-  Add ~arm-linux and ~x86-linux keywords.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Apr 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Fix up metadata.xml. If there's no maintainer for the package, the metadata
-  also needs to contain m-needed@g.o.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Jan 2008; Raúl Porcel <armin76@gentoo.org> -w3mir-1.0.10.ebuild:
-  old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 May 2007; Thilo Bangert <bangert@gentoo.org> +metadata.xml:
-  add metadata.xml
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Mar 2006; Joseph Jezak <josejx@gentoo.org> w3mir-1.0.10-r1.ebuild:
-  Marked ppc stable for bug #115183.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org> w3mir-1.0.10-r1.ebuild:
-  Stable on x86 wrt bug #115183.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Mar 2006; Fernando J. Pereda <ferdy@gentoo.org> w3mir-1.0.10-r1.ebuild:
-  Stable on alpha wrt bug #115183. Tested by Thomas Cort <tcort@cs.ubishops.ca>
+  Bug: https://bugs.gentoo.org/552720
 
-*w3mir-1.0.10-r1 (24 Mar 2006)
-
-  24 Mar 2006; Diego Pettenò <flameeyes@gentoo.org>
-  +files/w3mir-1.0.10-cwd.diff, +w3mir-1.0.10-r1.ebuild:
-  Add patch to fix mirroring to /, thanks to Patric Mueller for the patch (bug
-  #115183). Add ~amd64.
-
-  13 Feb 2006; Michael Cummings <mcummings@gentoo.org> w3mir-1.0.10.ebuild:
-  Virtuals for perl-core
-
-  28 Nov 2005; <mcumming@gentoo.org> w3mir-1.0.10.ebuild:
-  Switched from perl-module to perl-app eclass
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org> w3mir-1.0.10.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-*w3mir-1.0.10 (18 Mar 2005)
-
-  18 Mar 2005; Seemant Kulleen <seemant@gentoo.org> +w3mir-1.0.10.ebuild:
-  Moved from net-www/w3mir to www-client/w3mir.
-
-  29 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  04 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  w3mir-1.0.10.ebuild:
-  Masked w3mir-1.0.10.ebuild stable for ppc
-
-  11 Jun 2004; Bryan Østergaard <kloeri@gentoo.org> w3mir-1.0.10.ebuild:
-  Stable on alpha.
-
-*w3mir-1.0.10 (07 May 2003)
-
-  07 May 2003; <rac@gentoo.org> w3mir-1.0.10.ebuild:
-  Initial import.  Ebuild submitted by Mol <newsg@infofab.no> in bug #13164.

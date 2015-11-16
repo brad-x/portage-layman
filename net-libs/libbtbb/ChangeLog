@@ -1,108 +1,102 @@
 # ChangeLog for net-libs/libbtbb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libbtbb/ChangeLog,v 1.20 2015/04/18 12:39:52 swegener Exp $
+# (auto-generated from git log)
 
-  18 Apr 2015; Sven Wegener <swegener@gentoo.org> libbtbb-2014.02.4.ebuild,
-  libbtbb-9999.ebuild:
-  Rename distfile to include package name.
+*libbtbb-9999 (09 Aug 2015)
+*libbtbb-2014.02.4 (09 Aug 2015)
 
-  19 Mar 2015; Rick Farina <zerochaos@gentoo.org> libbtbb-9999.ebuild:
-  make pcap properly optional
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libbtbb-2014.02.4.ebuild, +libbtbb-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libbtbb-2014.02.4 (01 Nov 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Nov 2014; Rick Farina <zerochaos@gentoo.org> +libbtbb-2014.02.4.ebuild,
-  -libbtbb-2014.02.2.ebuild, libbtbb-9999.ebuild:
-  version bump, bug fixes against wireshark 1.12.x
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jul 2014; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneeded useflag description from metadata.xml
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Jul 2014; Rick Farina <zerochaos@gentoo.org> -libbtbb-2012.10.3-r2.ebuild,
-  libbtbb-2014.02.2.ebuild, libbtbb-9999.ebuild:
-  fix for bug 516178, wireshark 1.12 renamed a header file, backport from git
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*libbtbb-2014.02.2 (04 Apr 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Apr 2014; Rick Farina <zerochaos@gentoo.org> +libbtbb-2014.02.2.ebuild,
-  libbtbb-9999.ebuild:
-  updating versioned release to latest
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Apr 2014; Rick Farina <zerochaos@gentoo.org> libbtbb-9999.ebuild,
-  metadata.xml:
-  updates to live ebuild
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jun 2013; Rick Farina <zerochaos@gentoo.org> -libbtbb-0.7.ebuild,
-  -libbtbb-0.8.ebuild, -libbtbb-2012.10.1.ebuild, -libbtbb-2012.10.3-r1.ebuild,
-  -libbtbb-2012.10.3.ebuild, libbtbb-2012.10.3-r2.ebuild, libbtbb-9999.ebuild:
-  cleanup old ebuilds and fix for get_PV to detect RC versions of wireshark
-  properly
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libbtbb-2012.10.3-r1 (27 Apr 2013)
-*libbtbb-2012.10.3-r2 (27 Apr 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Apr 2013; Rick Farina <zerochaos@gentoo.org> +libbtbb-2012.10.3-r1.ebuild,
-  +libbtbb-2012.10.3-r2.ebuild, libbtbb-9999.ebuild:
-  fix slot of libbtbb
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org> libbtbb-9999.ebuild:
-  fixing EGIT_PROJECT, thanks to radhermit for pointing out the issue
+  28 Aug 2015; Zero_Chaos <zerochaos@gentoo.org> libbtbb-9999.ebuild:
+  restrict wireshark plugin to wireshark 1.x for now
 
-*libbtbb-2012.10.3 (30 Oct 2012)
+  Package-Manager: portage-2.2.20.1
 
-  30 Oct 2012; Rick Farina <zerochaos@gentoo.org> +libbtbb-2012.10.3.ebuild:
-  version bump with 32 bit fixes
+  04 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> libbtbb-9999.ebuild:
+  add new btbredr wireshark plugin
 
-  08 Oct 2012; Rick Farina <zerochaos@gentoo.org> libbtbb-9999.ebuild:
-  fixing live ebuild to match release
+  Package-Manager: portage-2.2.20.1
 
-*libbtbb-2012.10.1 (08 Oct 2012)
+*libbtbb-2015.09.1 (05 Sep 2015)
 
-  08 Oct 2012; Rick Farina <zerochaos@gentoo.org> +libbtbb-2012.10.1.ebuild,
-  metadata.xml:
-  bump and add wireshark plugin
+  05 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> +libbtbb-2015.09.1.ebuild:
+  version bump
 
-  11 Jul 2012; Rick Farina <zerochaos@gentoo.org>
-  -files/wireshark-1.8-btbb.patch, -libbtbb-0.8-r1.ebuild, libbtbb-0.8.ebuild,
-  libbtbb-9999.ebuild:
-  rolling back major no no of third-party patches for wireshark
+  05 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> -libbtbb-2014.02.4.ebuild:
+  drop old
 
-*libbtbb-0.8-r1 (09 Jul 2012)
+  Package-Manager: portage-2.2.20.1
 
-  09 Jul 2012; Rick Farina <zerochaos@gentoo.org>
-  +files/wireshark-1.8-btbb.patch, +libbtbb-0.8-r1.ebuild, libbtbb-9999.ebuild:
-  add wireshark patches for bluetooth baseband support
+*libbtbb-2015.09.2 (06 Sep 2015)
 
-  06 Jul 2012; Rick Farina <zerochaos@gentoo.org> libbtbb-9999.ebuild:
-  fixing missing SRC_URI in live conditional
+  06 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> -libbtbb-2015.09.1.ebuild,
+  +libbtbb-2015.09.2.ebuild:
+  net-wireless/{kismet-,}ubertooth: new release, plus rx_only firmware
 
-*libbtbb-0.8 (05 Jul 2012)
+*libbtbb-2015.09.2-r1 (22 Sep 2015)
 
-  05 Jul 2012; Rick Farina <zerochaos@gentoo.org> +libbtbb-0.8.ebuild,
-  metadata.xml:
-  bump to 0.8 stable release
+  22 Sep 2015; Zero_Chaos <zerochaos@gentoo.org> -libbtbb-2015.09.2.ebuild,
+  +libbtbb-2015.09.2-r1.ebuild:
+  fix wireshark plugin naming issues with patch from upstream
 
-*libbtbb-0.7 (23 Nov 2011)
+  Package-Manager: portage-2.2.20.1
 
-  23 Nov 2011; Nathan Phillip Brink <binki@gentoo.org> -libbtbb-0.6.ebuild,
-  -files/libbtbb-0.6-soname-symlink.patch, +libbtbb-0.7.ebuild,
-  libbtbb-9999.ebuild:
-  Bump to libbtbb-0.7, dropping 0.6, at zero_chaos's request. No longer
-  requires buildsys patch.
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-*libbtbb-0.6 (16 Oct 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Oct 2011; Nathan Phillip Brink <binki@gentoo.org> -libbtbb-0.5.ebuild,
-  -files/libbtbb-0.5-flags.patch, -files/libbtbb-0.5-makefile.patch,
-  +libbtbb-0.6.ebuild, +files/libbtbb-0.6-soname-symlink.patch,
-  libbtbb-9999.ebuild:
-  Bump to libbtbb-0.6 at zero_chaos's request, with a patch to fix QA warning
-  about missing SONAME symlink.
+*libbtbb-2015.10.1 (12 Oct 2015)
 
-*libbtbb-9999 (31 May 2011)
-*libbtbb-0.5 (31 May 2011)
+  12 Oct 2015; Zero_Chaos <zerochaos@gentoo.org> +libbtbb-2015.10.1.ebuild:
+  net-wireless/ubertooth net-wireless/kismet-ubertooth net-libs/libbtbb:
+  version bump
 
-  31 May 2011; Nathan Phillip Brink <binki@gentoo.org> +libbtbb-0.5.ebuild,
-  +files/libbtbb-0.5-flags.patch, +files/libbtbb-0.5-makefile.patch,
-  +libbtbb-9999.ebuild, +metadata.xml:
-  Add new ebuild dev-libs/libbtbb, proxy-maintained by zero_chaos.

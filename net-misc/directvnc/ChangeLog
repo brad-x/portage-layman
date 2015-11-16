@@ -1,116 +1,74 @@
 # ChangeLog for net-misc/directvnc
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/directvnc/ChangeLog,v 1.30 2014/01/17 07:15:32 dlan Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Jan 2014; Yixun Lan <dlan@gentoo.org> -directvnc-0.7.5.ebuild,
-  -directvnc-0.7.5-r1.ebuild, metadata.xml:
-  drop old, update maintainer email
+*directvnc-0.7.8 (09 Aug 2015)
+*directvnc-0.7.6-r1 (09 Aug 2015)
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +directvnc-0.7.6-r1.ebuild, +directvnc-0.7.8.ebuild,
+  +files/directvnc-0.7.6-mouse.patch, +files/directvnc-0.7.8-mouse.patch,
+  +files/directvnc-mouse.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*directvnc-0.7.6-r1 (19 Feb 2013)
-*directvnc-0.7.8 (19 Feb 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Feb 2013; Thomas Kahle <tomka@gentoo.org> +directvnc-0.7.6-r1.ebuild,
-  +directvnc-0.7.8.ebuild, +files/directvnc-0.7.6-mouse.patch,
-  +files/directvnc-0.7.8-mouse.patch, -directvnc-0.7.6.ebuild, metadata.xml:
-  bump and maintenance (proxy-commit)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Feb 2013; Thomas Kahle <tomka@gentoo.org> metadata.xml:
-  Pick up for proxy maintainership
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Feb 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup up due #48914
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> directvnc-0.7.5.ebuild,
-  directvnc-0.7.5-r1.ebuild, directvnc-0.7.6.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> directvnc-0.7.6-r1.ebuild,
+  directvnc-0.7.8.ebuild:
+  Use https by default
 
-  26 Feb 2011; Kevin McCarthy <signals@gentoo.org> directvnc-0.7.5.ebuild,
-  directvnc-0.7.5-r1.ebuild, directvnc-0.7.6.ebuild:
-  Updated depends from media-libs/jpeg to virtual/jpeg
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*directvnc-0.7.6 (03 Sep 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Sep 2010; Michele Noberasco <s4t4n@gentoo.org> +directvnc-0.7.6.ebuild:
-  Version bump. Closes bug #305107.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Sep 2010; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5.ebuild,
-  directvnc-0.7.5-r1.ebuild:
-  Honour Gentoo LDFLAGS. Closes bug #334867.
-  Some basic QA on ebuilds.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Nov 2007; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5-r1.ebuild:
-  Stable for x86.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> directvnc-0.7.6-r1.ebuild,
+  directvnc-0.7.8.ebuild:
+  Use https by default
 
-*directvnc-0.7.5-r1 (20 Jul 2007)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jul 2007; Michele Noberasco <s4t4n@gentoo.org> +directvnc-0.7.5-r1.ebuild:
-  Revision bump, with patch to make mouse support optional. Closes bug #176970.
-  directvnc-0.7.5.ebuild:
-  Added missing media-libs/jpeg dependancy. Closes bug #176959.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Jan 2007; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5.ebuild:
-  Added missing x11-proto/xproto dependancy. Fixed DEPEND and RDEPEND.
-  Closes bug #152511.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Jun 2006; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5.ebuild:
-  removed INSTALL from dodoc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Apr 2006; Alec Warner <antarus@gentoo.org> Manifest:
-  Fixing SHA256 digest, pass four
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Feb 2006; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5.ebuild:
-  Removed unneded virtual/x11 dependancy.
-
-  20 Dec 2005; Michele Noberasco <s4t4n@gentoo.org> directvnc-0.7.5.ebuild:
-  Added some magic sed to fix bug #116148. Also, creaded missing metadata.xml
-  and assigned package to myself as maintainer.
-
-  16 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> directvnc-0.7.5.ebuild:
-  aded ~amd64 to KEYWORDS. fixes #77599.
-
-*directvnc-0.7.5 (01 Jun 2004)
-
-  01 Jun 2004; Mike Frysinger <vapier@gentoo.org> +directvnc-0.7.5.ebuild:
-  Version bump #46802 by Malte S. Stretz.
-
-  26 Dec 2003; Jason Wever <weeve@gentoo.org> directvnc-0.6.1.ebuild,
-  directvnc-0.7.ebuild:
-  Masked on sparc as DirectFB doesn't work on sparc.
-
-*directvnc-0.7 (17 Jan 2003)
-
-  17 Jan 2003; Mike Frysinger <vapier@gentoo.org> :
-  Added a small patch to fix dfb.c.
-
-  07 Nov 2002; Seemant Kulleen <seemant@gentoo.org> directvnc-0.7.ebuild
-  files/digest-directvnc-0.7 :
-  Version bump, thanks to: andreh@lddd.org (Andre Heidemann) in bug #9521.
-
-*directvnc-0.6.1 (06 Jul 2002)
-
-  17 Jan 2003; Mike Frysinger <vapier@gentoo.org> :
-  Added a small patch to fix dfb.c.
-
-  08 Aug 2002; Seemant Kulleen <seemant@gentoo.org> directvnc-0.6.1.ebuild :
-  FHS compliance.
-
-  06 Jul 2002; Seemant Kulleen <seemant@gentoo.org> directvnc-0.6.1.ebuild
-  files/digest-directvnc-0.6.1 files/dfb.c :
-  Version bump, and the dfb.c from directvnc's CVS, where the API changes
-  for DirectFB since 0.9.10 have been implemented.  Now, this will compile
-  against portage's version of DirectFB.
-
-*directvnc-0.6-r1 (03 Jul 2002)
-
-  03 Jul 2002; Grant Goodyear <g2boojum@gentoo.org> ChangeLog  :
-  Fixed DirectFB dep to be ~0.9.10
-
-*directvnc-0.6 (31 May 2002)
-
-  31 May 2002; Grant Goodyear <g2boojum@gentoo.org> 
-  New import.  Note that the stuff in src_unpack (and the automake/
-  autoconf dependencies) should go away in the next release, since
-  they're only there to fix the author's mistake.

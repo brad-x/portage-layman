@@ -1,142 +1,70 @@
 # ChangeLog for sys-block/btrace
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/btrace/ChangeLog,v 1.30 2015/08/02 18:39:12 ago Exp $
+# (auto-generated from git log)
 
-  02 Aug 2015; Agostino Sarubbo <ago@gentoo.org> btrace-1.0.3.ebuild:
-  Stable for x86, wrt bug #532544
+*btrace-1.1.0 (09 Aug 2015)
+*btrace-1.0.3 (09 Aug 2015)
+*btrace-1.0.1-r1 (09 Aug 2015)
+*btrace-1.0.1 (09 Aug 2015)
+*btrace-1.0.0 (09 Aug 2015)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> btrace-1.0.3.ebuild:
-  ppc stable wrt bug #532544
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +btrace-1.0.0.ebuild,
+  +btrace-1.0.1.ebuild, +btrace-1.0.1-r1.ebuild, +btrace-1.0.3.ebuild,
+  +btrace-1.1.0.ebuild, +files/btrace-1.0.0-parallel-make.patch,
+  +files/btrace-1.0.1-ldflags-parallel-make.patch,
+  +files/btrace-1.1.0-ldflags-parallel-make.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Jun 2015; Agostino Sarubbo <ago@gentoo.org> btrace-1.0.3.ebuild:
-  Stable for amd64, wrt bug #532544
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*btrace-1.1.0 (07 Feb 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Feb 2015; Lars Wendler <polynomial-c@gentoo.org> +btrace-1.1.0.ebuild,
-  +files/btrace-1.1.0-ldflags-parallel-make.patch:
-  Version bump.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> btrace-1.0.0.ebuild,
-  btrace-1.0.1-r1.ebuild, btrace-1.0.1.ebuild, btrace-1.0.3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Jan 2014; Pacho Ramos <pacho@gentoo.org> -btrace-0.0.20071210202527.ebuild:
-  Drop old version that cannot be downloaded (#269121 by Jan Kunzmann)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*btrace-1.0.3 (21 Feb 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +btrace-1.0.3.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Feb 2011; Thomas Kahle <tomka@gentoo.org> btrace-1.0.1-r1.ebuild:
-  x86 stable per bug 353581
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> btrace-1.0.0.ebuild,
+  btrace-1.0.1.ebuild, btrace-1.0.1-r1.ebuild, btrace-1.0.3.ebuild,
+  btrace-1.1.0.ebuild:
+  Use https for kernel.org and redhat.com
 
-  11 Feb 2011; Markos Chandras <hwoarang@gentoo.org> btrace-1.0.1-r1.ebuild:
-  Stable on amd64 wrt bug #353581
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Feb 2011; Joshua Kinard <kumba@gentoo.org>
-  btrace-0.0.20071210202527.ebuild, btrace-1.0.0.ebuild, btrace-1.0.1.ebuild,
-  btrace-1.0.1-r1.ebuild:
-  Removed -mips-headers references.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  btrace-1.0.1-r1.ebuild:
-  ppc stable wrt #353581
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*btrace-1.0.1-r1 (03 Feb 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Feb 2011; Robin H. Johnson <robbat2@gentoo.org>
-  -btrace-0.0.20060428050322.ebuild, -btrace-0.0.20060614042007.ebuild,
-  -btrace-0.0.20070730162628.ebuild, -btrace-0.99.3.ebuild,
-  btrace-1.0.0.ebuild, btrace-1.0.1.ebuild, +btrace-1.0.1-r1.ebuild,
-  +files/btrace-1.0.1-ldflags-parallel-make.patch:
-  Revamp the parallel build improvements. Bug #335741: respect LDFLAGS. Bug
-  #348281: Fix USE=doc building missing DEPEND. Bug #269121: Remove old
-  versions where SRC_URI is no longer valid.
-
-*btrace-1.0.1 (25 Jan 2011)
-
-  25 Jan 2011; Robin H. Johnson <robbat2@gentoo.org> +btrace-1.0.1.ebuild:
-  Version bump.
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org>
-  btrace-0.0.20060428050322.ebuild, btrace-0.0.20060614042007.ebuild,
-  btrace-0.0.20070730162628.ebuild, btrace-0.0.20071210202527.ebuild,
-  btrace-0.99.3.ebuild, btrace-1.0.0.ebuild:
-  Remove virtual/libc
-
-*btrace-1.0.0 (13 Apr 2009)
-
-  13 Apr 2009; Robin H. Johnson <robbat2@gentoo.org>
-  +files/btrace-1.0.0-parallel-make.patch, +btrace-1.0.0.ebuild:
-  Version bump per bug #254611. Parallel make fix per bug #233389.
-
-  03 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
-  btrace-0.0.20060428050322.ebuild, btrace-0.0.20060614042007.ebuild,
-  btrace-0.0.20070730162628.ebuild, btrace-0.0.20071210202527.ebuild,
-  btrace-0.99.3.ebuild:
-  change dependency from virtual/tetex to virtual/latex-base
-
-*btrace-0.99.3 (28 May 2008)
-
-  28 May 2008; Robin H. Johnson <robbat2@gentoo.org> +btrace-0.99.3.ebuild:
-  Version bump, also fix doc installing per bug #222717.
-
-  16 Dec 2007; Samuli Suominen <drac@gentoo.org>
-  btrace-0.0.20071210202527.ebuild:
-  amd64 stable wrt #202240
-
-  16 Dec 2007; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20071210202527.ebuild:
-  Fix manpage install location.
-
-  15 Dec 2007; Dawid Węgliński <cla@gentoo.org>
-  btrace-0.0.20071210202527.ebuild:
-  Stable on x86 (bug #202240)
-
-  15 Dec 2007; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20060614042007.ebuild, btrace-0.0.20070730162628.ebuild:
-  Make repoman stop whining.
-
-  15 Dec 2007; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20071210202527.ebuild:
-  Missing dep dev-libs/libaio for the btreplay program.
-
-  14 Dec 2007; nixnut <nixnut@gentoo.org> btrace-0.0.20071210202527.ebuild:
-  Stable on ppc wrt bug 202240
-
-*btrace-0.0.20071210202527 (14 Dec 2007)
-
-  14 Dec 2007; Robin H. Johnson <robbat2@gentoo.org>
-  +btrace-0.0.20071210202527.ebuild:
-  Version bump.
-
-*btrace-0.0.20070730162628 (18 Aug 2007)
-
-  18 Aug 2007; Robin H. Johnson <robbat2@gentoo.org>
-  +btrace-0.0.20070730162628.ebuild:
-  Version bump.
-
-  14 Jul 2007; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20060614042007.ebuild:
-  Bug #184016, install pdf doc properly.
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-*btrace-0.0.20060614042007 (14 Jun 2006)
-
-  14 Jun 2006; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20060428050322.ebuild, +btrace-0.0.20060614042007.ebuild:
-  Bug #136482, fix tetex DEPEND. Also version bump.
-
-  07 Jun 2006; Robin H. Johnson <robbat2@gentoo.org>
-  btrace-0.0.20060428050322.ebuild:
-  Bug #135905, fix typo.
-
-*btrace-0.0.20060428050322 (07 May 2006)
-
-  07 May 2006; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +btrace-0.0.20060428050322.ebuild:
-  Initial package by Robin H. Johnson <robbat2@gentoo.org>.

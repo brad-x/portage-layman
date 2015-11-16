@@ -1,209 +1,63 @@
 # ChangeLog for sys-apps/usermode-utilities
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/usermode-utilities/ChangeLog,v 1.40 2015/07/14 07:44:00 vapier Exp $
+# (auto-generated from git log)
 
-  14 Jul 2015; Mike Frysinger <vapier@gentoo.org>
-  usermode-utilities-20070815-r3.ebuild:
-  Update to EAPI=5 and use subslots on readline.
+*usermode-utilities-20070815-r3 (09 Aug 2015)
 
-  12 May 2013; Mike Frysinger <vapier@gentoo.org>
-  usermode-utilities-20070815-r3.ebuild:
-  Update to EAPI=4.  Add arm love.  Handle AR/CC/CPPFLAGS.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/usermode-utilities-20070815-humfsify-owner.patch,
+  +files/usermode-utilities-20070815-rollup.patch, +metadata.xml,
+  +usermode-utilities-20070815-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Jun 2012; Pacho Ramos <pacho@gentoo.org>
-  usermode-utilities-20070815-r3.ebuild:
-  Fix missing RDEPEND, bug #393351 by Michael (kensington).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Jun 2012; Pacho Ramos <pacho@gentoo.org>
-  -files/usermode-utilities-20060216-unlazy.patch,
-  -files/usermode-utilities-20070815-nostrip.patch,
-  -usermode-utilities-20070815-r1.ebuild,
-  -usermode-utilities-20070815-r2.ebuild, -usermode-utilities-20070815.ebuild,
-  metadata.xml:
-  Drop maintainer from metadata as talked with him, bug #90641. Drop old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
-  usermode-utilities-20070815-r3.ebuild:
-  Stable for AMD64, wrt bug #392873
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  usermode-utilities-20070815-r3.ebuild:
-  x86 stable wrt bug #392873
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*usermode-utilities-20070815-r3 (02 May 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 May 2011; Daniel Gryniewicz <dang@gentoo.org>
-  +usermode-utilities-20070815-r3.ebuild,
-  +files/usermode-utilities-20070815-humfsify-owner.patch:
-  Fix owner of humfsify; bug #364531
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*usermode-utilities-20070815-r2 (05 Aug 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Aug 2010; Daniel Gryniewicz <dang@gentoo.org>
-  -files/20040406-CAN-2004-1295.patch,
-  -files/usermode-utilities-20060323-nostrip.patch,
-  +usermode-utilities-20070815-r2.ebuild,
-  +files/usermode-utilities-20070815-rollup.patch:
-  Fix bug #331099 and consolidate patches
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*usermode-utilities-20070815-r1 (10 Apr 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  10 Apr 2010; Daniel Gryniewicz <dang@gentoo.org>
-  -usermode-utilities-20040406-r1.ebuild,
-  -usermode-utilities-20060216.ebuild, -usermode-utilities-20060323.ebuild,
-  +usermode-utilities-20070815-r1.ebuild, metadata.xml:
-  Add fuse USE flag; bug #314451
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org>
-  usermode-utilities-20040406-r1.ebuild, usermode-utilities-20060216.ebuild,
-  usermode-utilities-20060323.ebuild, usermode-utilities-20070815.ebuild:
-  Remove virtual/libc
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  15 May 2009; Markus Meier <maekke@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  amd64 stable, bug #269061
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 May 2009; Christian Faulhammer <fauli@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  stable x86, bug 269061
-
-  29 Dec 2008; Daniel Gryniewicz <dang@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  Oops, put back src_install
-
-  22 Dec 2008; Daniel Gryniewicz <dang@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  Add fuse dep; bug #251568
-
-  18 Dec 2008; Daniel Gryniewicz <dang@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  Fix some build issues; bug #251390
-
-  14 Feb 2008; Diego Pettenò <flameeyes@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  Sed also the makefile for uml_moo and uml_mkcow, it uses a different rule
-  schema.
-
-  14 Feb 2008; Daniel Gryniewicz <dang@gentoo.org>
-  usermode-utilities-20070815.ebuild:
-  respect LDFLAGS; bug #209724
-
-*usermode-utilities-20070815 (22 Dec 2007)
-
-  22 Dec 2007; Daniel Gryniewicz <dang@gentoo.org>
-  +files/usermode-utilities-20070815-nostrip.patch,
-  +usermode-utilities-20070815.ebuild:
-  Bump to 20070815
-
-*usermode-utilities-20060323 (11 Jun 2007)
-
-  11 Jun 2007; Daniel Gryniewicz <dang@gentoo.org>
-  +files/usermode-utilities-20060323-nostrip.patch,
-  +usermode-utilities-20060323.ebuild:
-  Bump to 20060323
-  	- include fix for prestriped files (bug #181480)
-
-*usermode-utilities-20060216 (14 Aug 2006)
-
-  14 Aug 2006; Daniel Gryniewicz <dang@gentoo.org>
-  +files/usermode-utilities-20060216-unlazy.patch, +metadata.xml,
-  +usermode-utilities-20060216.ebuild:
-  Add new upstream for bug #123703 and bug #72366, and take maintainership
-
-  13 Apr 2005; John Mylchreest <johnm@gentoo.org>
-  +files/20040406-CAN-2004-1295.patch:
-  missing patch!
-
-  13 Apr 2005; John Mylchreest <johnm@gentoo.org> :
-  fixing net_slip vuln. #74482
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  usermode-utilities-20020906.ebuild, usermode-utilities-20030118.ebuild,
-  usermode-utilities-20030120.ebuild, usermode-utilities-20030122.ebuild,
-  usermode-utilities-20030202.ebuild, usermode-utilities-20030205-r1.ebuild,
-  usermode-utilities-20030205.ebuild, usermode-utilities-20030903.ebuild,
-  usermode-utilities-20040114.ebuild, usermode-utilities-20040406.ebuild:
-  virtual/glibc -> virtual/libc
-
-*usermode-utilities-20040406 (30 Apr 2004)
-
-  30 Apr 2004; Michael Imhof <tantive@gentoo.org> usermode-utilities-20040406.ebuild:
-  Version bumped. Closes #47470.
-
-  07 Mar 2004; Gustavo Zacarias <gustavoz@gentoo.org>
-  usermode-utilities-20020906.ebuild, usermode-utilities-20030118.ebuild,
-  usermode-utilities-20030120.ebuild, usermode-utilities-20030122.ebuild,
-  usermode-utilities-20030202.ebuild, usermode-utilities-20030205-r1.ebuild,
-  usermode-utilities-20030205.ebuild, usermode-utilities-20030903.ebuild,
-  usermode-utilities-20040114.ebuild:
-  -sparc all, um linux doesn't work on sparc yet
-
-*usermode-utilities-20040114 (28 Jan 2004)
-
-  28 Jan 2004; Michal Januszewski <spock@gentoo.org>
-  usermode-utilities-20020906.ebuild, usermode-utilities-20030118.ebuild,
-  usermode-utilities-20030120.ebuild, usermode-utilities-20030122.ebuild,
-  usermode-utilities-20030202.ebuild, usermode-utilities-20030205-r1.ebuild,
-  usermode-utilities-20030205.ebuild, usermode-utilities-20030903.ebuild,
-  usermode-utilities-20040114.ebuild:
-  Version bump, fixed headers in all ebuilds.
-
-*usermode-utilities-20030903 (22 Sep 2003)
-
-  22 Sep 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped. Should close #28693.
-
-*usermode-utilities-20030205-r1 (12 Mar 2003)
-
-  12 Mar 2003; Michael Imhof <tantive@gentoo.org>
-  Unmasked
-
-  12 Mar 2003; Michael Imhof <tantive@gentoo.org>
-  Added -DTUNTAP to emake. Should close #16384.
-
-*usermode-utilities-20030205 (02 Mar 2003)
-
-  02 Mar 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped. Cleaned out old ebuilds.
-
-*usermode-utilities-20030202 (02 Mar 2003)
-
-  02 Mar 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
-
-*usermode-utilities-20030122 (27 Jan 2003)
-
-  27 Jan 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
-
-*usermode-utilities-20030120 (27 Jan 2003)
-
-  27 Jan 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
-
-*usermode-utilities-20030118 (27 Jan 2003)
-
-  27 Jan 2003; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
- 
-*usermode-utilities-20021103 (06 Nov 2002)
-
-  06 Nov 2002; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
-
-*usermode-utilities-20021102 (03 Nov 2002)
-
-  03 Nov 2002; Michael Imhof <tantive@gentoo.org>
-  Version bumped.
-
-*usermode-utilities-* (10 Oct 2002)
-
-  10 Oct 2002; Michael Imhof <tantive@gentoo.org>
-  Moved dev-util/usermode to sys-apps/usermode-utilities
-
-*usermode-utilities-20020906 (08 Oct 2002)
-
-  08 Oct 2002; Michael Imhof <tantive@gentoo.org>
-  Version bump thanks to sasquach

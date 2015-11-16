@@ -1,163 +1,60 @@
 # ChangeLog for app-misc/detox
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/detox/ChangeLog,v 1.39 2015/07/29 08:25:31 jlec Exp $
+# (auto-generated from git log)
 
-  29 Jul 2015; Justin Lecher <jlec@gentoo.org> -detox-1.2.0-r2.ebuild:
-  Drop old
+*detox-1.2.0-r3 (09 Aug 2015)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> detox-1.2.0-r3.ebuild:
-  ppc stable wrt bug #552902
-
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> detox-1.2.0-r3.ebuild:
-  Stable for x86, wrt bug #552902
-
-  23 Jun 2015; Agostino Sarubbo <ago@gentoo.org> detox-1.2.0-r3.ebuild:
-  Stable for amd64, wrt bug #552902
-
-*detox-1.2.0-r3 (23 Jun 2015)
-
-  23 Jun 2015; Justin Lecher <jlec@gentoo.org> +detox-1.2.0-r3.ebuild,
-  +files/detox-1.2.0-format-security.patch:
-  Make build format-security save, bug #521084; bump to EAPI=5; drop base.eclass
-  usage
-
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
-
-  01 Aug 2012; Justin Lecher <jlec@gentoo.org> -detox-1.2.0.ebuild,
-  -detox-1.2.0-r1.ebuild:
-  Drop old
-
-  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> detox-1.2.0.ebuild,
-  detox-1.2.0-r1.ebuild, detox-1.2.0-r2.ebuild:
-  Drop sparc keywords
-
-  28 Jun 2012; Brent Baude <ranger@gentoo.org> detox-1.2.0-r2.ebuild:
-  Marking detox-1.2.0-r2 ppc for bug 418601
-
-  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> detox-1.2.0-r2.ebuild:
-  Stable for amd64, wrt bug #418601
-
-  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> detox-1.2.0-r2.ebuild:
-  marked x86 per bug 418601
-
-*detox-1.2.0-r2 (25 Mar 2012)
-
-  25 Mar 2012; Justin Lecher <jlec@gentoo.org> +detox-1.2.0-r2.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +detox-1.2.0-r3.ebuild,
+  +files/detox-1.2.0-LDFLAGS.patch,
   +files/detox-1.2.0-change-default-sequence-to-use-utf8-table.patch,
-  +files/detox-1.2.0-install-missing-file.patch:
-  Fix typo in manpage, #407923 &
-  http://sourceforge.net/tracker/?func=detail&aid=3034084&group_id=101612&atid=
-  630103 ; import some patches from debian, including moving default encoding
-  to utf8
+  +files/detox-1.2.0-format-security.patch,
+  +files/detox-1.2.0-install-missing-file.patch,
+  +files/detox-1.2.0-parallel.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*detox-1.2.0-r1 (15 Feb 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Feb 2012; Justin Lecher <jlec@gentoo.org> +detox-1.2.0-r1.ebuild,
-  metadata.xml:
-  Moved to EAPI=4, add ~linux keywords tested by me
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Jan 2011; Justin Lecher <jlec@gentoo.org> detox-1.2.0.ebuild:
-  Some Clean up
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Aug 2009; Jeremy Olexa <darkside@gentoo.org>
-  -files/1.1.1-install-permissions-fix.patch,
-  -files/detox-1.1.1-use-correct-type.diff:
-  remove unused patches
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Aug 2009; Jeremy Olexa <darkside@gentoo.org> -detox-1.1.1-r2.ebuild,
-  -detox-1.2.0_rc3.ebuild:
-  remove old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Dec 2008; Raúl Porcel <armin76@gentoo.org> detox-1.2.0.ebuild:
-  x86 stable wrt #250427
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org> detox-1.2.0.ebuild:
-  ppc stable, bug #250427
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Dec 2008; Friedrich Oslage <bluebird@gentoo.org> detox-1.2.0.ebuild:
-  Stable on sparc, bug #250427
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Dec 2008; Jeremy Olexa <darkside@gentoo.org> detox-1.2.0.ebuild:
-  amd64 stable, bug 250427
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*detox-1.2.0 (14 Oct 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Oct 2008; Peter Volkov <pva@gentoo.org>
-  +files/detox-1.2.0-LDFLAGS.patch, +files/detox-1.2.0-parallel.patch,
-  +detox-1.2.0.ebuild:
-  Version bump, bug #241328, thank pavel sanda for report.
-
-  21 Dec 2007; Samuli Suominen <drac@gentoo.org>
-  files/1.1.1-install-permissions-fix.patch, detox-1.1.1-r2.ebuild:
-  Fix executable permissions for installed binary, amd64 stable wrt #184548
-
-  18 Dec 2007; Ulrich Mueller <ulm@gentoo.org> detox-1.1.1-r2.ebuild,
-  detox-1.2.0_rc3.ebuild:
-  Do not use parallel install, bug #202696.
-
-  17 Dec 2007; Raúl Porcel <armin76@gentoo.org> detox-1.1.1-r2.ebuild,
-  detox-1.2.0_rc3.ebuild:
-  sparc/x86 stable and fix 1.2.0
-
-*detox-1.2.0_rc3 (17 Dec 2007)
-*detox-1.1.1-r2 (17 Dec 2007)
-
-  17 Dec 2007; Raúl Porcel <armin76@gentoo.org>
-  +files/1.1.1-install-permissions-fix.patch, +detox-1.1.1-r2.ebuild,
-  +detox-1.2.0_rc3.ebuild:
-  Version bump wrt #191559 and fix bug #184548
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  03 Sep 2006; <blubb@gentoo.org> detox-1.1.1-r1.ebuild:
-  stable on amd64
-
-  07 Apr 2006; Bryan Østergaard <kloeri@gentoo.org metadata.xml:
-  Remove ciaranm from metadata.xml.
-
-  06 Aug 2005; Ciaran McCreesh <ciaranm@gentoo.org> detox-1.1.1-r1.ebuild:
-  Don't install .sample files into /etc
-
-  30 Jul 2005; Aaron Walker <ka0ttic@gentoo.org> detox-1.1.1-r1.ebuild:
-  Stable on mips.
-
-  11 Jul 2005; Gustavo Zacarias <gustavoz@gentoo.org> detox-1.1.1-r1.ebuild:
-  Stable on sparc
-
-  10 Jul 2005; Aaron Walker <ka0ttic@gentoo.org> detox-1.1.1-r1.ebuild:
-  Stable on x86.
-
-  11 Jun 2005; David Holm <dholm@gentoo.org> detox-1.1.1-r1.ebuild:
-  Added to ~ppc.
-
-*detox-1.1.1-r1 (10 Jun 2005)
-
-  10 Jun 2005; Aaron Walker <ka0ttic@gentoo.org>
-  +files/detox-1.1.1-use-correct-type.diff, +detox-1.1.1-r1.ebuild:
-  Revision bump; upstream uses a char (and assumes it's unsigned on top of it)
-  where they should've used an int - bug 95628.
-
-  03 May 2005; Herbie Hopkins <herbs@gentoo.org> detox-1.1.1.ebuild:
-  Marked ~amd64 wrt bug #91274.
-
-  19 Apr 2005; Ciaran McCreesh <ciaranm@gentoo.org> detox-1.1.1.ebuild:
-  x86 sparc mips stable
-
-*detox-1.1.1 (14 Mar 2005)
-
-  14 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org> +detox-1.1.1.ebuild:
-  New version. Patches no longer necessary as they have been merged by upstream.
-
-  06 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org>
-  +files/detox-1.1.0-destdir.patch, +files/detox-1.1.0-parallel_build.patch,
-  detox-1.1.0.ebuild:
-  Switch to using patches rather than scary sed voodoo after discussion with
-  upstream.
-
-*detox-1.1.0 (05 Mar 2005)
-
-  05 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org> +metadata.xml,
-  +detox-1.1.0.ebuild:
-  New package.

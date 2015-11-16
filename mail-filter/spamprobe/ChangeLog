@@ -1,128 +1,58 @@
 # ChangeLog for mail-filter/spamprobe
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/spamprobe/ChangeLog,v 1.30 2014/08/10 21:17:24 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> spamprobe-1.4d.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*spamprobe-1.4d (09 Aug 2015)
 
-  19 Feb 2013; Ryan Hill <dirtyepic@gentoo.org> spamprobe-1.4d.ebuild,
-  +files/spamprobe-1.4d-gcc47.patch:
-  Fix build with GCC 4.7 (bug #421769).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/spamprobe-1.4b-gcc43.patch, +files/spamprobe-1.4d+db-5.0.patch,
+  +files/spamprobe-1.4d-gcc47.patch, +files/spamprobe-1.4d-libpng14.patch,
+  +metadata.xml, +spamprobe-1.4d.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Feb 2011; Kevin McCarthy <signals@gentoo.org> spamprobe-1.4d.ebuild:
-  Updated depends from media-libs/jpeg to virtual/jpeg
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Jan 2011; Diego E. Pettenò <flameeyes@gentoo.org> -spamprobe-1.4b.ebuild,
-  -files/spamprobe-1.4b-gcc41.patch, spamprobe-1.4d.ebuild,
-  +files/spamprobe-1.4d+db-5.0.patch:
-  Remove old version and fix build with berkdb 5.0 (bug #319941).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Mar 2010; Samuli Suominen <ssuominen@gentoo.org> spamprobe-1.4d.ebuild,
-  +files/spamprobe-1.4d-libpng14.patch:
-  Fix building with libpng14.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Feb 2009; Markus Meier <maekke@gentoo.org> spamprobe-1.4d.ebuild:
-  amd64/x86 stable, bug #245859
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Jul 2008; Peter Alfredsen <loki_val@gentoo.org> spamprobe-1.4d.ebuild:
-  Fix gcc-4.3 patch location per bug 232427
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 May 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Andrej Kacian (Ticho) from metadata.xml (as per #59986).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Apr 2008; Andrej Kacian <ticho@gentoo.org>
-  +files/spamprobe-1.4b-gcc43.patch, -spamprobe-1.4a.ebuild,
-  spamprobe-1.4d.ebuild:
-  Add patch to fix building on gcc4.3, bug #219552 by Peter Alfredsen.
-  Remove old ebuild.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*spamprobe-1.4d (06 Jan 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Jan 2007; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.4d.ebuild:
-  Version bump. Add gif, jpeg and png USE flags.
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Apr 2006; Tom Martin <slarti@gentoo.org> spamprobe-1.4b.ebuild:
-  Marked ~amd64.
-
-  27 Mar 2006; <ticho@gentoo.org> spamprobe-1.4b.ebuild:
-  Stable on x86.
-
-  18 Mar 2006; <ticho@gentoo.org> -spamprobe-1.0a.ebuild,
-  -spamprobe-1.2.ebuild, -spamprobe-1.2a.ebuild, -spamprobe-1.4.ebuild,
-  spamprobe-1.4a.ebuild:
-  1.4a stable on x86. Pruned obsolete ebuilds.
-
-  16 Mar 2006; Mark Loeser <halcy0n@gentoo.org>
-  +files/spamprobe-1.4b-gcc41.patch, spamprobe-1.4b.ebuild:
-  Add patch to fix compilation with gcc-4.1; bug #125347
-
-*spamprobe-1.4b (19 Feb 2006)
-
-  19 Feb 2006; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.4b.ebuild:
-  Version bump.
-
-*spamprobe-1.4a (31 Jan 2006)
-
-  31 Jan 2006; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.4a.ebuild:
-  Version bump.
-
-*spamprobe-1.4 (10 Jan 2006)
-
-  10 Jan 2006; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.4.ebuild:
-  Version bump.
-
-  24 Aug 2005; Andrej Kacian <ticho@gentoo.org> spamprobe-1.2.ebuild,
-  spamprobe-1.2a.ebuild:
-  Stable on x86. Reordered KEYWORDS.
-
-*spamprobe-1.2a (23 Jun 2005)
-
-  23 Jun 2005; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.2a.ebuild:
-  Version bump.
-
-*spamprobe-1.2 (22 Jun 2005)
-
-  22 Jun 2005; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.2.ebuild:
-  Version bump.
-
-  24 Feb 2005; Andrej Kacian <ticho@gentoo.org> -spamprobe-0.9h.ebuild,
-  -spamprobe-1.0.ebuild:
-  Removed ebuilds for deprecated versions.
-
-  14 Jan 2005; Andrej Kacian <ticho@gentoo.org> spamprobe-1.0a.ebuild:
-  Stable on x86.
-
-  06 Dec 2004; Andrej Kacian <ticho@gentoo.org> spamprobe-1.0.ebuild:
-  Stable on x86.
-
-*spamprobe-1.0a (23 Nov 2004)
-
-  23 Nov 2004; Andrej Kacian <ticho@gentoo.org> +spamprobe-1.0a.ebuild:
-  Version bump.
-
-  01 Nov 2004; Andrej Kacian <ticho@gentoo.org> spamprobe-0.9h.ebuild:
-  Stable on x86
-
-*spamprobe-1.0 (23 Oct 2004)
-
-  23 Oct 2004; Andrej Kacian <ticho@gentoo.org> metadata.xml,
-  spamprobe-0.9h.ebuild, +spamprobe-1.0.ebuild:
-  Version bump. Closes #68579, reported by Alexander Schneider
-  <A.Schneider@magicspace.de>. Tidy up the ebuild a bit. Install contrib/
-  stuff from package into /usr/share/spamprobe.
-
-  18 Oct 2004; Andrej Kacian <ticho@gentoo.org> spamprobe-0.9h.ebuild:
-  Changed SRC_URI of the db4 patch to mirror://gentoo/.
-
-  18 Oct 2004; David Holm <dholm@gentoo.org> spamprobe-0.9h.ebuild:
-  Added to ~ppc.
-
-*spamprobe-0.9h (14 Sep 2004)
-
-  14 Sep 2004; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
-  +spamprobe-0.9h.ebuild:
-  Initial version. Closes #19192, ebuild and patch submitted by Alexander
-  Schneider <A.Schneider@magicspace.de>.

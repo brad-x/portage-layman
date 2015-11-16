@@ -1,77 +1,56 @@
 # ChangeLog for sys-cluster/crmsh
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/crmsh/ChangeLog,v 1.15 2015/04/08 18:25:44 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> crmsh-2.1.1.ebuild:
-  Drop old Python implementations
+*crmsh-2.1.1 (09 Aug 2015)
 
-*crmsh-2.1.1 (02 Dec 2014)
-
-  02 Dec 2014; Ultrabug <ultrabug@gentoo.org> -crmsh-1.2.6.ebuild,
-  -crmsh-2.1.0.ebuild, +crmsh-2.1.1.ebuild:
-  version bump, drop old stuff
-
-*crmsh-2.1.0 (08 Oct 2014)
-
-  08 Oct 2014; Ultrabug <ultrabug@gentoo.org> -crmsh-2.0.0.ebuild,
-  +crmsh-2.1.0.ebuild:
-  version bump, drop invalid fix #515030
-
-  25 Jun 2014; Patrick Lauer <patrick@gentoo.org> crmsh-2.0.0.ebuild:
-  Remove keywords from live ebuild
-
-*crmsh-2.0.0 (16 Jun 2014)
-
-  16 Jun 2014; Ultrabug <ultrabug@gentoo.org> -crmsh-1.2.4.ebuild,
-  -crmsh-1.2.5-r3.ebuild, +crmsh-2.0.0.ebuild:
-  version bump, drop old
-
-  24 Oct 2013; Kacper Kowalik <xarthisius@gentoo.org> crmsh-1.2.4.ebuild,
-  crmsh-1.2.5-r3.ebuild, crmsh-1.2.6.ebuild:
-  Add dev-python/lxml to rdeps wrt #489246 by Sergey Popov <pinkbyte@gentoo.org>
-
-*crmsh-1.2.6 (17 Oct 2013)
-
-  17 Oct 2013; Ultrabug <ultrabug@gentoo.org> -crmsh-1.2.1.ebuild,
-  +crmsh-1.2.6.ebuild:
-  version bump, drop old
-
-  04 Jun 2013; Justin Lecher <jlec@gentoo.org> crmsh-1.2.5-r3.ebuild:
-  Support multi ABI installations
-
-*crmsh-1.2.5-r3 (04 Jun 2013)
-
-  04 Jun 2013; Justin Lecher <jlec@gentoo.org> -crmsh-1.2.5-r2.ebuild,
-  +crmsh-1.2.5-r3.ebuild, metadata.xml:
-  Fix for correct usage of new python eclasses
-
-*crmsh-1.2.5-r2 (23 May 2013)
-
-  23 May 2013; Ultrabug <ultrabug@gentoo.org> -crmsh-1.2.5-r1.ebuild,
-  +crmsh-1.2.5-r2.ebuild:
-  fix #466668 thx to jer
-
-*crmsh-1.2.5-r1 (17 May 2013)
-
-  17 May 2013; Ultrabug <ultrabug@gentoo.org> -crmsh-1.2.5.ebuild,
-  +crmsh-1.2.5-r1.ebuild:
-  fix #470108 by mschiff
-
-*crmsh-1.2.5 (14 Feb 2013)
-
-  14 Feb 2013; Ultrabug <ultrabug@gentoo.org> +crmsh-1.2.5.ebuild:
-  Version bump
-
-*crmsh-1.2.4 (18 Jan 2013)
-
-  18 Jan 2013; Ultrabug <ultrabug@gentoo.org> +crmsh-1.2.4.ebuild:
-  version bump
-
-  14 Nov 2012; Jeroen Roovers <jer@gentoo.org> crmsh-1.2.1.ebuild:
-  Marked ~hppa (bug #442408).
-
-*crmsh-1.2.1 (29 Oct 2012)
-
-  29 Oct 2012; Ultrabug <ultrabug@gentoo.org> +crmsh-1.2.1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +crmsh-2.1.1.ebuild,
   +metadata.xml:
-  Initial commit
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

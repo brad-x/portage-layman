@@ -1,58 +1,57 @@
 # ChangeLog for dev-util/btyacc
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/btyacc/ChangeLog,v 1.15 2012/05/31 02:48:31 aballier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  31 May 2012; Alexis Ballier <aballier@gentoo.org> btyacc-3.0-r2.ebuild:
-  keyword ~amd64-fbsd
+*btyacc-3.0-r2 (09 Aug 2015)
 
-*btyacc-3.0-r2 (06 Oct 2011)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +btyacc-3.0-r2.ebuild,
+  +files/btyacc-3.0-includes.patch, +files/btyacc-3.0-makefile.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Oct 2011; Patrick Lauer <patrick@gentoo.org> -btyacc-3.0.ebuild,
-  -btyacc-3.0-r1.ebuild, +btyacc-3.0-r2.ebuild, metadata.xml:
-  Fix for #361013, changing metadata to reflect proxy-maintainer
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Nov 2010; Patrick Lauer <patrick@gentoo.org> btyacc-3.0-r1.ebuild:
-  Adding ~amd64 keyword
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Feb 2010; Jonathan Callen <abcd@gentoo.org> btyacc-3.0-r1.ebuild:
-  Transfer prefix keywords, add fix for Darwin
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> btyacc-3.0.ebuild:
-  Remove virtual/libc
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*btyacc-3.0-r1 (04 Sep 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Sep 2009; Jeroen Roovers <jer@gentoo.org> +btyacc-3.0-r1.ebuild,
-  +files/btyacc-3.0-makefile.patch:
-  Respect CC (bug #243974), append to CFLAGS (but not -g), append to
-  LDFLAGS, use system LD.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 Oct 2008; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  +files/btyacc-3.0-includes.patch, btyacc-3.0.ebuild:
-  include missing header since gcc-4.3 is pickier about such things, 
-  patch courtesy of Elias Pipping (bug #240950)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
-  add <herd>no-herd</herd>
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> btyacc-3.0.ebuild:
-  Stable on ppc.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> btyacc-3.0.ebuild:
-  virtual/glibc -> virtual/libc
-
-  17 Mar 2004; Seemant Kulleen <seemant@gentoo.org> btyacc-3.0.ebuild:
-  spelling of Berkeley fixed, thanks to: Martin Rieder <bugs@martinrieder.de> in
-  bug #44927
-
-  06 Mar 2004; David Holm <dholm@gentoo.org> btyacc-3.0.ebuild:
-  Added to ~ppc.
-
-*btyacc-3.0 (10 May 2003)
-
-  10 May 2003; Alastair Tse <liquidx@gentoo.org> btyacc-3.0.ebuild:
-  initial ebuild. thanks to Edward Duffy <eduffy@clemson.edu> (#19360)
+  Bug: https://bugs.gentoo.org/552720
 

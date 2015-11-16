@@ -1,57 +1,56 @@
 # ChangeLog for dev-java/jaxp
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jaxp/ChangeLog,v 1.20 2014/06/29 00:13:06 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  29 Jun 2014; Manuel Rüger <mrueg@gentoo.org> -jaxp-1.4.ebuild:
-  NM: Cleanup old.
+*jaxp-1.4-r1 (09 Aug 2015)
 
-  19 Oct 2012; Christoph Junghans <ottxor@gentoo.org> jaxp-1.4-r1.ebuild:
-  added prefix support (bug #435572)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/build.xml-1.4,
+  +jaxp-1.4-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Mar 2012; Brent Baude <ranger@gentoo.org> jaxp-1.4-r1.ebuild:
-  Marking jaxp-1.4-r1 ppc for bug 396875
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> jaxp-1.4-r1.ebuild:
-  x86 stable wrt bug #396875
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> jaxp-1.4-r1.ebuild:
-  Stable for amd64, wrt bug #396875
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Mar 2009; Petteri Räty <betelgeuse@gentoo.org> jaxp-1.4-r1.ebuild:
-  Use ln instead of dosym as dosym seems to be making the build fail.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*jaxp-1.4-r1 (11 Feb 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Feb 2009; Petteri Räty <betelgeuse@gentoo.org> +jaxp-1.4-r1.ebuild:
-  Install a jaxp.jar symlink to jaxp-ri.jar.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Dec 2007; Krzysiek Pawlik <nelchael@gentoo.org> jaxp-1.4.ebuild:
-  Stable on ppc, see bug #200585.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org> jaxp-1.4.ebuild:
-  amd64 stable, bug #187681.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Aug 2007; Christian Faulhammer <opfer@gentoo.org> jaxp-1.4.ebuild:
-  stable x86, bug 187681
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Aug 2007; Krzysiek Pawlik <nelchael@gentoo.org> metadata.xml:
-  Remove myself from <maintainer>.
+  Bug: https://bugs.gentoo.org/552720
 
-  23 May 2007; Diego Pettenò <flameeyes@gentoo.org> jaxp-1.4.ebuild:
-  Add ~x86-fbsd keyword. Bug #176906.
-
-  07 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> jaxp-1.4.ebuild:
-  Disable building javadocs using new features from java-pkg-2.eclass.
-
-  04 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> files/build.xml-1.4,
-  jaxp-1.4.ebuild:
-  Use repackaged version of distfile.
-
-  04 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> jaxp-1.4.ebuild:
-  Set JDK/JRE to 1.5, see bug #177069.
-
-*jaxp-1.4 (01 May 2007)
-
-  01 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> +files/build.xml-1.4,
-  +metadata.xml, +jaxp-1.4.ebuild:
-  Initial commit of jaxp.

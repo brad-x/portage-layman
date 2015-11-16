@@ -1,182 +1,57 @@
 # ChangeLog for www-apache/modsecurity-crs
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/modsecurity-crs/ChangeLog,v 1.40 2013/02/21 16:09:08 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  21 Feb 2013; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.7.ebuild:
-  Stable for sparc, wrt bug #457864
+*modsecurity-crs-2.2.7 (09 Aug 2015)
+*modsecurity-crs-2.2.6-r1 (09 Aug 2015)
 
-  18 Feb 2013; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.7.ebuild:
-  Stable for ppc, wrt bug #457864
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +modsecurity-crs-2.2.6-r1.ebuild, +modsecurity-crs-2.2.7.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Feb 2013; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.7.ebuild:
-  Stable for x86, wrt bug #457864
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Feb 2013; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.7.ebuild:
-  Stable for amd64, wrt bug #457864
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*modsecurity-crs-2.2.7 (24 Jan 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Jan 2013; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.7.ebuild, -modsecurity-crs-2.2.5.ebuild:
-  Version bump and remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Dec 2012; Raúl Porcel <armin76@gentoo.org>
-  modsecurity-crs-2.2.6-r1.ebuild:
-  sparc stable wrt #438724
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop apache herd as discussed in http://www.gossamer-
-  threads.com/lists/gentoo/dev/262834
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
-  modsecurity-crs-2.2.6-r1.ebuild:
-  stable ppc, bug #438724
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
-  modsecurity-crs-2.2.6-r1.ebuild:
-  x86 stable, see bug 438724
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
-  modsecurity-crs-2.2.6-r1.ebuild:
-  Stable for amd64, wrt bug #438724
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*modsecurity-crs-2.2.6-r1 (17 Oct 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.6-r1.ebuild, -modsecurity-crs-2.2.6.ebuild:
-  Remove srl_rules as they are currently broken with ModSec 2.7. Thanks to
-  Clemente Aguiar in bug #436982 for reporting.
-
-  30 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  modsecurity-crs-2.2.6.ebuild:
-  Update dependency to ModSec 2.7 as per bug #436632.
-
-*modsecurity-crs-2.2.6 (28 Sep 2012)
-
-  28 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.6.ebuild:
-  Version bump.
-
-  11 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  -modsecurity-crs-2.1.2.ebuild, -modsecurity-crs-2.2.3.ebuild,
-  -modsecurity-crs-2.2.4.ebuild:
-  Remove old.
-
-  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> modsecurity-crs-2.2.5.ebuild:
-  sparc stable wrt #429222
-
-  21 Aug 2012; Johannes Huber <johu@gentoo.org> modsecurity-crs-2.2.5.ebuild:
-  Stable for x86, wrt bug #429222
-
-  08 Aug 2012; Brent Baude <ranger@gentoo.org> modsecurity-crs-2.2.5.ebuild:
-  Marking modsecurity-crs-2.2.5 ppc for bug 429222
-
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.5.ebuild:
-  Stable for amd64, wrt bug #429222
-
-  17 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  modsecurity-crs-2.2.5.ebuild:
-  Add lua and geoip USE flag to install the scripts and enable/disable the
-  related rules. Thanks to Matt McAdoo for the report.
-
-*modsecurity-crs-2.2.5 (16 Jun 2012)
-
-  16 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.5.ebuild:
-  Version bump.
-
-  25 Mar 2012; Brent Baude <ranger@gentoo.org> modsecurity-crs-2.2.4.ebuild:
-  Marking modsecurity-crs-2.2.4 ppc for bug 409199
-
-*modsecurity-crs-2.2.4 (20 Mar 2012)
-
-  20 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.4.ebuild:
-  Version bump.
-
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  modsecurity-crs-2.2.3.ebuild:
-  x86 stable wrt bug #404867
-
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> modsecurity-crs-2.2.3.ebuild:
-  Stable for amd64, wrt bug #404867
-
-*modsecurity-crs-2.2.3 (20 Dec 2011)
-
-  20 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.3.ebuild, -modsecurity-crs-2.2.1.ebuild,
-  -modsecurity-crs-2.2.2.ebuild:
-  Version bump and remove old.
-
-  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> modsecurity-crs-2.1.2.ebuild:
-  sparc stable wrt #383315
-
-*modsecurity-crs-2.2.2 (17 Oct 2011)
-
-  17 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.2.ebuild:
-  Version bump.
-
-  20 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
-  modsecurity-crs-2.1.2.ebuild:
-  x86 stable, see bug 383315
-
-  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> modsecurity-crs-2.1.2.ebuild:
-  Marked stable as a dependency of www-apache/mod_security based on arch
-  testing by Agostino "ago" Sarubbo.
-
-*modsecurity-crs-2.2.1 (17 Sep 2011)
-
-  17 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.2.1.ebuild:
-  Version bump; thanks to Kilburn Abrahams in bug #382119.
-
-  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  modsecurity-crs-2.1.2.ebuild, metadata.xml:
-  Drop unused local desc, eapi4.
-
-  19 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  -modsecurity-crs-2.0.8.ebuild, -modsecurity-crs-2.0.10.ebuild,
-  -modsecurity-crs-2.1.1.ebuild:
-  Remove old versions.
-
-*modsecurity-crs-2.1.2 (23 Mar 2011)
-
-  23 Mar 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.1.2.ebuild:
-  Version bump and use the new layout for rules.
-
-  26 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  modsecurity-crs-2.1.1.ebuild:
-  Marked ~ppc wrt #338548
-
-*modsecurity-crs-2.1.1 (31 Dec 2010)
-
-  31 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.1.1.ebuild:
-  Version bump, this version introduces experimental rules as well.
-
-  03 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  modsecurity-crs-2.0.10.ebuild:
-  Add log about the recent changes in 2.0.9+ about blocking/scoring.
-
-*modsecurity-crs-2.0.10 (01 Dec 2010)
-
-  01 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.0.10.ebuild:
-  Version bump, the phpids is optional upstream now.
-
-  24 Oct 2010; Raúl Porcel <armin76@gentoo.org>
-  modsecurity-crs-2.0.8.ebuild:
-  Add ~sparc wrt #338548
-
-  13 Oct 2010; Markus Meier <maekke@gentoo.org>
-  modsecurity-crs-2.0.8.ebuild:
-  add ~x86, bug #338548
-
-*modsecurity-crs-2.0.8 (24 Sep 2010)
-
-  24 Sep 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +modsecurity-crs-2.0.8.ebuild, +metadata.xml:
-  Add an ebuild for the ModSecurity Core Rule Set split out of mod_security
-  itself.

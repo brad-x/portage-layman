@@ -1,71 +1,59 @@
 # ChangeLog for sci-biology/infernal
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/infernal/ChangeLog,v 1.15 2014/07/06 11:34:46 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Jul 2014; Justin Lecher <jlec@gentoo.org> infernal-1.0.2-r1.ebuild,
-  +files/infernal-1.0.2-perl-5.16-2.patch,
-  -files/infernal-1.0.2-perl-5.16.patch:
-  Add patch as binary to prevent CVS magics, #431076
+*infernal-1.0.2-r1 (09 Aug 2015)
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/infernal-1.0.2-ldflags.patch, +files/infernal-1.0.2-overflows.patch,
+  +files/infernal-1.0.2-parallel-build.patch,
+  +files/infernal-1.0.2-perl-5.16-2.patch, +infernal-1.0.2-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  15 Jul 2012; Justin Lecher <jlec@gentoo.org> -infernal-1.0.2.ebuild:
-  Cleaned old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Jul 2012; Justin Lecher <jlec@gentoo.org>
-  files/infernal-1.0.2-perl-5.16.patch:
-  Fix cvs updates of commiter names in patches, #426588
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Jun 2012; Justin Lecher <jlec@gentoo.org> infernal-1.0.2-r1.ebuild,
-  +files/infernal-1.0.2-perl-5.16.patch:
-  Fix for perl-5.16, #422561; move to EAPI=4
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Feb 2011; Markos Chandras <hwoarang@gentoo.org> infernal-1.0.2-r1.ebuild:
-  Stable on amd64 wrt bug #353571
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  infernal-1.0.2-r1.ebuild:
-  x86 stable wrt bug #353571
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*infernal-1.0.2-r1 (04 Nov 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Nov 2010; Kacper Kowalik <xarthisius@gentoo.org> -infernal-1.0.ebuild,
-  +infernal-1.0.2-r1.ebuild, +files/infernal-1.0.2-ldflags.patch,
-  +files/infernal-1.0.2-overflows.patch,
-  +files/infernal-1.0.2-parallel-build.patch:
-  Fix parallel build wrt bug 311919. Thanks to Myckel Habets
-  <m.e.j.habets@biology.leidenuniv.nl> for patch and report. Fix buffer
-  overflow wrt bug 338179 and respect LDFLAGS wrt bug 338177. Thanks to
-  Diego Elio Pettenò for the reports. Drop old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  infernal-1.0.2.ebuild:
-  x86 stable wrt bug #311837
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  29 Mar 2010; Pacho Ramos <pacho@gentoo.org> infernal-1.0.2.ebuild:
-  amd64 stable, bug 311837
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*infernal-1.0.2 (27 Jan 2010)
-
-  27 Jan 2010; Andrey Kislyuk <weaver@gentoo.org> +infernal-1.0.2.ebuild:
-  Version bump
-
-  22 Sep 2009; Markus Meier <maekke@gentoo.org> infernal-1.0.ebuild:
-  x86 stable, bug #282114
-
-  06 Sep 2009; Jeremy Olexa <darkside@gentoo.org> infernal-1.0.ebuild:
-  amd64 stable, bug 282114
-
-  20 Aug 2009; Andrey Kislyuk <weaver@gentoo.org> infernal-1.0.ebuild:
-  Tweak SRC_URI to include version
-
-*infernal-1.0 (09 Jul 2009)
-
-  09 Jul 2009; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
-  +infernal-1.0.ebuild:
-  Import from Science overlay
-
-  08 Mar 2009; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
-  New package, ebuild written by me
+  Bug: https://bugs.gentoo.org/552720
 

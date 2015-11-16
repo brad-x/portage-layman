@@ -1,251 +1,99 @@
 # ChangeLog for dev-java/tomcat-native
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/tomcat-native/ChangeLog,v 1.54 2015/03/28 15:39:36 fordfrog Exp $
+# (auto-generated from git log)
 
-  28 Mar 2015; Miroslav Šulc <fordfrog@gentoo.org>
-  -tomcat-native-1.1.29.ebuild, -tomcat-native-1.1.30.ebuild,
-  -tomcat-native-1.1.31.ebuild:
-  removed obsolete ebuilds
+*tomcat-native-1.1.33 (09 Aug 2015)
+*tomcat-native-1.1.32 (09 Aug 2015)
 
-*tomcat-native-1.1.33 (28 Mar 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +tomcat-native-1.1.32.ebuild, +tomcat-native-1.1.33.ebuild:
+  proj/gentoo: Initial commit
 
-  28 Mar 2015; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.33.ebuild:
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> tomcat-native-1.1.32.ebuild,
+  tomcat-native-1.1.33.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*tomcat-native-1.1.33-r1 (13 Oct 2015)
+
+  13 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -tomcat-native-1.1.33.ebuild, +tomcat-native-1.1.33-r1.ebuild:
+  Modified to build jar.
+
+  Modified ebuild to build the jar in addition to the .so
+
+  13 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  tomcat-native-1.1.33-r1.ebuild:
+  Add missing dies.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  13 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  tomcat-native-1.1.33-r1.ebuild:
+  Clear QA warnings.
+
+  Take test? condition off RDEPEND variable and stick it in DEPEND.
+  Take RDEPEND off DEPEND variable.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*tomcat-native-1.2.2 (12 Nov 2015)
+
+  12 Nov 2015; Miroslav Šulc <fordfrog@gentoo.org>
+  +tomcat-native-1.2.2.ebuild:
   version bump
 
-  25 Feb 2015; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.32.ebuild:
-  Stable for x86, wrt bug #535096
+  Package-Manager: portage-2.2.24
 
-  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.32.ebuild:
-  Stable for amd64, wrt bug #535096
-
-*tomcat-native-1.1.32 (14 Nov 2014)
-
-  14 Nov 2014; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.32.ebuild:
-  version bump
-
-*tomcat-native-1.1.31 (24 Sep 2014)
-
-  24 Sep 2014; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.31.ebuild:
-  Version bump
-
-  18 Apr 2014; Miroslav Šulc <fordfrog@gentoo.org>
-  -tomcat-native-1.1.23.ebuild, -tomcat-native-1.1.24.ebuild,
-  -tomcat-native-1.1.27.ebuild, -tomcat-native-1.1.28.ebuild:
-  removed old versions
-
-*tomcat-native-1.1.30 (18 Apr 2014)
-
-  18 Apr 2014; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.30.ebuild:
-  version bump
-
-  03 Mar 2014; Pacho Ramos <pacho@gentoo.org> tomcat-native-1.1.29.ebuild:
-  amd64 stable, bug #495398
-
-  24 Feb 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  tomcat-native-1.1.29.ebuild:
-  x86 stable wrt bug #495398
-
-*tomcat-native-1.1.29 (15 Oct 2013)
-
-  15 Oct 2013; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.29.ebuild:
-  version bump
-
-*tomcat-native-1.1.28 (17 Sep 2013)
-
-  17 Sep 2013; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.28.ebuild:
-  version bump
-
-  20 May 2013; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.27.ebuild:
-  Stable for x86, wrt bug #463034
-
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.27.ebuild:
-  Stable for amd64, wrt bug #463034
-
-*tomcat-native-1.1.27 (13 Feb 2013)
-
-  13 Feb 2013; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.27.ebuild:
-  version bump
-
-  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.24.ebuild:
-  Stable for amd64, wrt bug #427332
-
-  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> tomcat-native-1.1.24.ebuild:
-  marked x86 per bug 427332
-
-*tomcat-native-1.1.24 (14 Jun 2012)
-
-  14 Jun 2012; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.24.ebuild:
-  Version bump
-
-  14 Jun 2012; Miroslav Šulc <fordfrog@gentoo.org>
-  -tomcat-native-1.1.15.ebuild, -tomcat-native-1.1.16.ebuild,
-  -tomcat-native-1.1.18.ebuild, -tomcat-native-1.1.20.ebuild,
-  -tomcat-native-1.1.22.ebuild:
-  Removed old ebuilds
-
-  04 Jun 2012; Johannes Huber <johu@gentoo.org> tomcat-native-1.1.23.ebuild:
-  Stable for x86, wrt bug #418341
-
-  31 May 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.23.ebuild:
-  Stable for amd64, wrt bug #418341
-
-*tomcat-native-1.1.23 (11 Mar 2012)
-
-  11 Mar 2012; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.23.ebuild:
-  Version bump
-
-  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  tomcat-native-1.1.22.ebuild:
-  x86 stable wrt bug #404645
-
-  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.22.ebuild:
-  Stable for amd64, wrt bug #404645
-
-*tomcat-native-1.1.22 (15 Dec 2011)
-
-  15 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.22.ebuild:
-  Version bump
-
-  26 May 2010; Pacho Ramos <pacho@gentoo.org> tomcat-native-1.1.20.ebuild:
-  stable amd64, bug 316551
-
-  18 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  tomcat-native-1.1.20.ebuild:
-  x86 stable wrt bug #316551
-
-*tomcat-native-1.1.20 (21 Apr 2010)
-
-  21 Apr 2010; Petteri Räty <betelgeuse@gentoo.org>
-  +tomcat-native-1.1.20.ebuild:
-  Version bump. Fixes bug #316545.
-
-  02 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  tomcat-native-1.1.18.ebuild:
-  x86 stable wrt bug #304245
-
-  01 Feb 2010; Markus Meier <maekke@gentoo.org> tomcat-native-1.1.16.ebuild:
-  amd64/x86 stable, bug #300410
-
-  10 Jan 2010; Petteri Räty <betelgeuse@gentoo.org>
-  -tomcat-native-1.1.13-r1.ebuild, -tomcat-native-1.1.14.ebuild:
-  Remove old versions.
-
-*tomcat-native-1.1.18 (10 Jan 2010)
-
-  10 Jan 2010; Petteri Räty <betelgeuse@gentoo.org>
-  +tomcat-native-1.1.18.ebuild:
-  Version bump using EAPI 2. Resolves bug #296163.
-
-*tomcat-native-1.1.16 (16 Jan 2009)
-
-  16 Jan 2009; Petteri Räty <betelgeuse@gentoo.org>
-  +tomcat-native-1.1.16.ebuild:
-  Version bump. Fixes bug #255181.
-
-  10 Jan 2009; Markus Meier <maekke@gentoo.org> tomcat-native-1.1.15.ebuild:
-  amd64/x86 stable, bug #253684
-
-  08 Dec 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Removing wltjr as a maintainer since he was retired.
-
-*tomcat-native-1.1.15 (19 Oct 2008)
-
-  19 Oct 2008; Miroslav Šulc <fordfrog@gentoo.org>
-  +tomcat-native-1.1.15.ebuild:
-  Version bump
-
-*tomcat-native-1.1.14 (07 Jul 2008)
-
-  07 Jul 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  -tomcat-native-1.1.8.ebuild, -tomcat-native-1.1.10.ebuild,
-  -tomcat-native-1.1.12.ebuild, +tomcat-native-1.1.14.ebuild:
-  Bumped to lastest release, removed past versions/cleanup
-
-  02 Mar 2008; Wulf C. Krueger <philantrop@gentoo.org>
-  tomcat-native-1.1.13-r1.ebuild:
-  Marked stable on amd64 as per security bug 209410.
-
-  27 Feb 2008; Christian Faulhammer <opfer@gentoo.org>
-  tomcat-native-1.1.13-r1.ebuild:
-  stable x86, security bug 209410
-
-  18 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  tomcat-native-1.1.12.ebuild, tomcat-native-1.1.13-r1.ebuild:
-  Switched from make -> emake in src_install
-
-*tomcat-native-1.1.13-r1 (18 Feb 2008)
-
-  18 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  -tomcat-native-1.1.13.ebuild, +tomcat-native-1.1.13-r1.ebuild:
-  Added sed to set version 1.1.12 -> 1.1.13, bad upstream. Removed version
-  with wrong tagging.
-
-*tomcat-native-1.1.13 (15 Feb 2008)
-
-  15 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  +tomcat-native-1.1.13.ebuild:
-  Bumped to latest release
-
-*tomcat-native-1.1.12 (15 Jan 2008)
-
-  15 Jan 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  +tomcat-native-1.1.12.ebuild:
-  Bumped to latest release
-
-  12 Oct 2007; Christian Faulhammer <opfer@gentoo.org> ChangeLog:
-  stable x86, security bug 195576
-
-  12 Oct 2007; Dawid Węgliński <cla@gentoo.org>
-  tomcat-native-1.1.10.ebuild:
-  Stable on x86 (bug #195576)
-
-  12 Oct 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  tomcat-native-1.1.8.ebuild, tomcat-native-1.1.10.ebuild:
-  amd64 stable, bug #195576. Added quotes.
-
-  10 Jul 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  tomcat-native-1.1.8.ebuild, tomcat-native-1.1.10.ebuild:
-  Added rdep of jre per bug #181668
-
-*tomcat-native-1.1.10 (22 May 2007)
-
-  22 May 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  +tomcat-native-1.1.10.ebuild:
-  Bumped to latest release.
-
-  12 Apr 2007; Christian Faulhammer <opfer@gentoo.org>
-  tomcat-native-1.1.8.ebuild:
-  stable amd64, bug 168287
-
-  13 Mar 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  tomcat-native-1.1.8.ebuild:
-  Corrected virtual deps
-
-  26 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  tomcat-native-1.1.8.ebuild:
-  stable x86; bug 168287
-
-  28 Jan 2007; Luca Longinotti <chtekk@gentoo.org>
-  tomcat-native-1.1.8.ebuild:
-  Fix apr dep.
-
-  05 Jan 2007; Vlastimil Babka <caster@gentoo.org>
-  tomcat-native-1.1.8.ebuild:
-  Convert einfo to elog.
-
-*tomcat-native-1.1.8 (05 Jan 2007)
-
-  05 Jan 2007; William L. Thomson Jr. <wltjr@gentoo.org> +metadata.xml,
-  +tomcat-native-1.1.8.ebuild:
-  Initial ebuild for libtcnative-1.so, Tomcat's native APR library

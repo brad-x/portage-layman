@@ -1,65 +1,59 @@
 # ChangeLog for sci-biology/njplot
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/njplot/ChangeLog,v 1.13 2015/03/02 13:14:37 jlec Exp $
+# (auto-generated from git log)
 
-*njplot-2.3-r1 (02 Mar 2015)
+*njplot-2.3-r1 (09 Aug 2015)
+*njplot-2.3 (09 Aug 2015)
 
-  02 Mar 2015; Justin Lecher <jlec@gentoo.org>
-  +files/njplot-2.3-buildsystem.patch, +files/njplot-2.3-format-security.patch,
-  +njplot-2.3-r1.ebuild, njplot-2.3.ebuild:
-  Fix dependencies, #425710; make buildsystem sane; fix format-security
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/njplot-2.3-buildsystem.patch,
+  +files/njplot-2.3-format-security.patch, +metadata.xml, +njplot-2.3.ebuild,
+  +njplot-2.3-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Oct 2009; Markus Meier <maekke@gentoo.org> njplot-2.3.ebuild:
-  amd64/x86 stable, bug #290935
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*njplot-2.3 (04 Sep 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Sep 2009; Andrey Kislyuk <weaver@gentoo.org> metadata.xml,
-  +njplot-2.3.ebuild, -njplot-20050109.ebuild:
-  Version bump, clean up, fix bug 248338, take maintainership
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  njplot-20050109.ebuild:
-  Drop virtual/x11 references.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 May 2007; Olivier Fisette <ribosome@gentoo.org> metadata.xml:
-  Stepped down from maintaining this package.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Feb 2006; Olivier Fisette <ribosome@gentoo.org> njplot-20050109.ebuild:
-  Ported to modular X.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Jan 2005; Olivier Fisette <ribosome@gentoo.org> njplot-20050109.ebuild:
-  Ebuild cleanup.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Jan 2005; Olivier Fisette <ribosome@gentoo.org> njplot-20050109.ebuild:
-  Added to x86.
+  Bug: https://bugs.gentoo.org/552720
 
-*njplot-20050109 (09 Jan 2005)
-
-  09 Jan 2005; Olivier Fisette <ribosome@gentoo.org> -njplot-1.ebuild,
-  +njplot-20050109.ebuild:
-  Changed versioning scheme. (Upstream does not use version numbers.)
-
-*njplot-1 (09 Jan 2005)
-
-  09 Jan 2005; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +njplot-1.ebuild:
-  Moved from sci-biology/njplot-unrooted to sci-biology/njplot.
-
-*njplot-unrooted-1 (23 Dec 2004)
-
-  23 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +njplot-unrooted-1.ebuild:
-  Moved from app-sci/njplot-unrooted to sci-biology/njplot-unrooted.
-
-*njplot-unrooted-1 (06 Oct 2004)
-
-  06 Oct 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +njplot-unrooted-1.ebuild:
-  Initial import.

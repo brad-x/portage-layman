@@ -1,82 +1,61 @@
 # ChangeLog for net-print/pkpgcounter
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/pkpgcounter/ChangeLog,v 1.16 2013/06/09 18:56:00 floppym Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  09 Jun 2013; Mike Gilbert <floppym@gentoo.org> pkpgcounter-3.50-r1.ebuild:
-  Depend on virtual/python-imaging.
+*pkpgcounter-3.50-r1 (09 Aug 2015)
 
-*pkpgcounter-3.50-r1 (13 May 2012)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pkpgcounter-3.50-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  13 May 2012; Pacho Ramos <pacho@gentoo.org> +pkpgcounter-3.50-r1.ebuild,
-  -pkpgcounter-3.50.ebuild, metadata.xml:
-  Drop psyco support, bug #410359.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  pkpgcounter-3.50.ebuild:
-  Use Python 2 (bug #315871).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Apr 2011; Ulrich Mueller <ulm@gentoo.org> pkpgcounter-3.20.ebuild,
-  pkpgcounter-3.50.ebuild:
-  Depend on dev-lang/python because virtual/python will go away, bug 358849.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*pkpgcounter-3.50 (06 Oct 2008)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Oct 2008; Stefan Briesenick <sbriesen@gentoo.org>
-  +pkpgcounter-3.50.ebuild:
-  version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Christian Andreetta (satya, #48841) from metadata.xml.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pkpgcounter-3.20 (18 Nov 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Nov 2007; Stefan Schweizer <genstef@gentoo.org>
-  -pkpgcounter-1.72.ebuild, -pkpgcounter-1.80.ebuild,
-  -pkpgcounter-1.83.ebuild, -pkpgcounter-2.10.ebuild,
-  +pkpgcounter-3.20.ebuild:
-  version bump thanks to Daniel Heule <nerve@ipwar.ch> in bug 196892
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Bug: https://bugs.gentoo.org/552720
 
-*pkpgcounter-2.10 (02 Oct 2006)
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> pkpgcounter-3.50-r1.ebuild:
+  Convert from virtual/python-imaging to plain dev-python/pillow
 
-  02 Oct 2006; Patrick McLean <chutzpah@gentoo.org>
-  +pkpgcounter-2.10.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Aug 2006; Patrick McLean <chutzpah@gentoo.org> pkpgcounter-1.72.ebuild,
-  pkpgcounter-1.80.ebuild, pkpgcounter-1.83.ebuild:
-  Change the docs cleaning rm to use  rather than the name of the package.
-
-*pkpgcounter-1.83 (23 Aug 2006)
-
-  23 Aug 2006; Patrick McLean <chutzpah@gentoo.org> pkpgcounter-1.72.ebuild,
-  pkpgcounter-1.80.ebuild, +pkpgcounter-1.83.ebuild:
-  Version bump (bug #143517). Update HOMEPAGE and SRC_URI to new locations in
-  all versions since the old values are no longer valid.
-
-  23 Aug 2006; Patrick McLean <chutzpah@gentoo.org> metadata.xml,
-  pkpgcounter-1.72.ebuild, pkpgcounter-1.80.ebuild:
-  Make sure that only one copy of the docs are installed (bug #143518). Remove
-  the "x86?" for the psyco use flag as it is now in use.mask for all non-x86
-  arches.
-
-*pkpgcounter-1.80 (16 Feb 2006)
-
-  16 Feb 2006; Christian Andreetta <satya@gentoo.org>
-  +pkpgcounter-1.80.ebuild:
-  Version bump. 'psyco' local use flag to use dev-python/psyco accelerator (x86
-  only)
-
-  15 Nov 2005; <dang@gentoo.org> pkpgcounter-1.72.ebuild:
-  Marked ~amd64
-
-*pkpgcounter-1.72 (08 Nov 2005)
-
-  08 Nov 2005; Christian Andreetta <satya@gentoo.org> +metadata.xml,
-  +pkpgcounter-1.72.ebuild:
-  new ebuild submission: net-print/pykota dependency (bug #110679)

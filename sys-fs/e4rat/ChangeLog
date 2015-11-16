@@ -1,84 +1,65 @@
 # ChangeLog for sys-fs/e4rat
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/e4rat/ChangeLog,v 1.18 2014/12/01 11:38:10 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*e4rat-0.2.4_pre20141201 (01 Dec 2014)
+*e4rat-0.2.4_pre20141201 (09 Aug 2015)
+*e4rat-0.2.3-r1 (09 Aug 2015)
 
-  01 Dec 2014; Pacho Ramos <pacho@gentoo.org> +e4rat-0.2.4_pre20141201.ebuild:
-  Add a new snapshot fixing multiple bugs, including bug #506128 by Tim
-  Mohlmann.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +e4rat-0.2.3-r1.ebuild,
+  +e4rat-0.2.4_pre20141201.ebuild, +files/e4rat-0.2.2-libdir.patch,
+  +files/e4rat-0.2.2-shared-build.patch, +files/e4rat-0.2.3-boostfsv3.patch,
+  +files/e4rat-libdir.patch, +files/e4rat-shared-build.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  01 Aug 2013; Pacho Ramos <pacho@gentoo.org> e4rat-0.2.3-r1.ebuild:
-  Update README.gentoo doc as referenced wiki page no longer exists (#479376 by
-  Patrick Lauer) and upstream README is enough for us.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jul 2013; Pacho Ramos <pacho@gentoo.org> e4rat-0.2.3-r1.ebuild:
-  Inform people about how to work with systemd
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Jan 2013; Pacho Ramos <pacho@gentoo.org> -e4rat-0.2.3.ebuild,
-  e4rat-0.2.3-r1.ebuild:
-  Install missing doc file, also use readme.gentoo eclass
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jan 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Remove myself from metadata
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Jan 2013; Agostino Sarubbo <ago@gentoo.org> e4rat-0.2.3-r1.ebuild:
-  Stable for x86, wrt bug #448004
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> e4rat-0.2.4_pre20141201.ebuild,
+  metadata.xml:
+  Use https by default
 
-  22 Dec 2012; Agostino Sarubbo <ago@gentoo.org> e4rat-0.2.3-r1.ebuild:
-  Stable for amd64, wrt bug #448004
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Dec 2012; Pacho Ramos <pacho@gentoo.org> e4rat-0.2.3-r1.ebuild:
-  Add missing lsof RDEPEND, #448004 by Vicente Olivert Riera
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Dec 2012; Pacho Ramos <pacho@gentoo.org> -e4rat-0.2.1-r2.ebuild,
-  -e4rat-0.2.2.ebuild, metadata.xml:
-  Add me as comaintainer
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*e4rat-0.2.3-r1 (06 Nov 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Nov 2012; Markos Chandras <hwoarang@gentoo.org> +e4rat-0.2.3-r1.ebuild,
-  +files/e4rat-0.2.3-boostfsv3.patch:
-  Apply patch to fix building with boost >= 1.50. Bug #425422, Thanks to Olivier
-  Huber <oli.huber@gmail.com>
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> e4rat-0.2.3.ebuild:
-  x86 stable wrt bug #436684
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  07 Oct 2012; Agostino Sarubbo <ago@gentoo.org> e4rat-0.2.3.ebuild:
-  Stable for amd64, wrt bug #436684
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*e4rat-0.2.3 (06 May 2012)
-
-  06 May 2012; Markos Chandras <hwoarang@gentoo.org> +e4rat-0.2.3.ebuild:
-  version bump
-
-*e4rat-0.2.2 (05 May 2012)
-
-  05 May 2012; Markos Chandras <hwoarang@gentoo.org> +e4rat-0.2.2.ebuild,
-  +files/e4rat-0.2.2-libdir.patch, +files/e4rat-0.2.2-shared-build.patch,
-  -e4rat-0.2.1-r1.ebuild, -e4rat-0.2.1.ebuild:
-  Version bump. Bug #412825
-
-*e4rat-0.2.1-r2 (08 Jan 2012)
-
-  08 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +e4rat-0.2.1-r2.ebuild:
-  Check for CONFIG_AUDITSYSCALL (#394321). Add link to upstream documentation
-  (#394323). Add note about prelink (#394325). Move binaries to /sbin
-
-*e4rat-0.2.1-r1 (11 Dec 2011)
-
-  11 Dec 2011; Michał Górny <mgorny@gentoo.org> +e4rat-0.2.1-r1.ebuild,
-  +files/e4rat-libdir.patch, +files/e4rat-shared-build.patch:
-  Patch the buildsystem to build against shared libraries, and build shared
-  library as well.
-
-  10 Dec 2011; Markos Chandras <hwoarang@gentoo.org> e4rat-0.2.1.ebuild:
-  Drop erroneous src_prepare function. Bug #394255
-
-*e4rat-0.2.1 (10 Dec 2011)
-
-  10 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +e4rat-0.2.1.ebuild,
-  +metadata.xml:
-  Initial commit. Bug #363207. Thanks to Michael Orlitzky
-  <michael@orlitzky.com>

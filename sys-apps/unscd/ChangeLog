@@ -1,95 +1,62 @@
 # ChangeLog for sys-apps/unscd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/unscd/ChangeLog,v 1.21 2015/05/24 06:58:54 vapier Exp $
+# (auto-generated from git log)
 
-  24 May 2015; Mike Frysinger <vapier@gentoo.org> unscd-0.52-r2.ebuild:
-  Mark stable for all #535652.
+*unscd-0.52-r2 (09 Aug 2015)
+*unscd-0.51 (09 Aug 2015)
 
-*unscd-0.52-r2 (08 Apr 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/unscd-tmpfiles.conf, +files/unscd.initd, +files/unscd.initd-r1,
+  +files/unscd.service, +metadata.xml, +unscd-0.51.ebuild,
+  +unscd-0.52-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Zac Medico <zmedico@gentoo.org> +files/unscd-tmpfiles.conf,
-  +files/unscd.service, +unscd-0.52-r2.ebuild, -unscd-0.52-r1.ebuild:
-  Add systemd service unit for bug 546004.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Oct 2014; Tim Harder <radhermit@gentoo.org> -unscd-0.39.ebuild,
-  -unscd-0.45.ebuild, -unscd-0.47.ebuild, -unscd-0.48.ebuild,
-  -unscd-0.49.ebuild, -unscd-0.52.ebuild:
-  Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*unscd-0.52-r1 (09 Oct 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Oct 2014; Justin Lecher <jlec@gentoo.org> +unscd-0.52-r1.ebuild,
-  +files/unscd.initd-r1, metadata.xml:
-  Streamline init script, bump EAPI
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*unscd-0.52 (04 Sep 2014)
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/unscd.initd:
+  [QA] Remove executable bit from files, bug 550434.
 
-  04 Sep 2014; Tim Harder <radhermit@gentoo.org> +unscd-0.52.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Mar 2014; Agostino Sarubbo <ago@gentoo.org> unscd-0.51.ebuild:
-  Stable for x86, wrt bug #502922
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Mar 2014; Pacho Ramos <pacho@gentoo.org> unscd-0.51.ebuild:
-  amd64 stable, bug #502922
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*unscd-0.51 (11 Dec 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Dec 2013; Tim Harder <radhermit@gentoo.org> +unscd-0.51.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 May 2013; Mike Frysinger <vapier@gentoo.org> unscd-0.49.ebuild:
-  Require glibc be built with USE=nscd #469624 by Volker Hemmann.
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Aug 2012; Mike Frysinger <vapier@gentoo.org> unscd-0.49.ebuild:
-  Stabilize for all #430750 by Plopmaster.
-
-*unscd-0.49 (06 Jul 2012)
-
-  06 Jul 2012; Mike Frysinger <vapier@gentoo.org> +unscd-0.49.ebuild:
-  Version bump #425012 by teidakankan.
-
-*unscd-0.48 (15 Jan 2012)
-
-  15 Jan 2012; Mike Frysinger <vapier@gentoo.org> +unscd-0.48.ebuild:
-  Version bump #398923 by Samuli Suominen.
-
-*unscd-0.47 (06 Aug 2010)
-
-  06 Aug 2010; Mike Frysinger <vapier@gentoo.org> +unscd-0.47.ebuild:
-  Version bump #331409 by Dennis Schridde.
-
-*unscd-0.45 (15 Feb 2010)
-
-  15 Feb 2010; Mike Frysinger <vapier@gentoo.org> +unscd-0.45.ebuild:
-  Version bump #305275 by tomas charvat.
-
-  14 Jun 2009; Mike Frysinger <vapier@gentoo.org> files/unscd.initd:
-  Fix typo pointed out by Duncan Smith #273781.
-
-*unscd-0.39 (07 Jun 2009)
-
-  07 Jun 2009; Mike Frysinger <vapier@gentoo.org> +unscd-0.39.ebuild,
-  +files/unscd.initd:
-  Version bump #273079 by Raúl Porcel and add init.d script #266891 by
-  Heath Caldwell.
-
-  14 Apr 2009; Raúl Porcel <armin76@gentoo.org> unscd-0.35.ebuild:
-  x86 stable wrt #265571
-
-  10 Apr 2009; Mike Frysinger <vapier@gentoo.org> unscd-0.35.ebuild:
-  Make sure correct version is reported #265571 by Jeremy Olexa.
-
-  10 Apr 2009; Jeremy Olexa <darkside@gentoo.org> unscd-0.35.ebuild:
-  amd64 stable, bug 265571
-
-*unscd-0.37 (09 Apr 2009)
-
-  09 Apr 2009; Mike Frysinger <vapier@gentoo.org> +unscd-0.37.ebuild:
-  Version bump.
-
-*unscd-0.35 (22 Nov 2008)
-
-  22 Nov 2008; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
-  +unscd-0.35.ebuild:
-  Initial ebuild by me.

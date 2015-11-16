@@ -1,218 +1,82 @@
 # ChangeLog for dev-python/foolscap
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/foolscap/ChangeLog,v 1.61 2015/07/30 12:58:09 ago Exp $
+# (auto-generated from git log)
 
-  30 Jul 2015; Agostino Sarubbo <ago@gentoo.org> foolscap-0.7.0.ebuild:
-  Stable for sparc, wrt bug #552242
+*foolscap-0.8.0 (09 Aug 2015)
+*foolscap-0.7.0 (09 Aug 2015)
+*foolscap-0.6.4-r1 (09 Aug 2015)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> foolscap-0.7.0.ebuild:
-  ppc stable wrt bug #552242
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +foolscap-0.6.4-r1.ebuild, +foolscap-0.7.0.ebuild, +foolscap-0.8.0.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> foolscap-0.7.0.ebuild:
-  x86 stable wrt bug #552242
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> foolscap-0.7.0.ebuild:
-  Stable for amd64, wrt bug #552242
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*foolscap-0.8.0 (16 Jun 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jun 2015; Ian Delaney <idella4@gentoo.org> +foolscap-0.8.0.ebuild,
-  -foolscap-0.6.5.ebuild, metadata.xml:
-  bump rewrite doc build, set bordering to deps of twisted
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> foolscap-0.6.4-r1.ebuild:
-  Drop old Python implementations
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> foolscap-0.6.4-r1.ebuild,
+  foolscap-0.7.0.ebuild, foolscap-0.8.0.ebuild:
+  Use https by default
 
-  27 Mar 2015; Manuel Rüger <mrueg@gentoo.org> -foolscap-0.6.4.ebuild:
-  Remove old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> foolscap-0.6.4-r1.ebuild:
-  ppc stable, bug 540290
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> foolscap-0.6.4-r1.ebuild:
-  ppc64 stable, bug 540290
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -foolscap-0.6.0.ebuild,
-  -foolscap-0.6.1.ebuild, -foolscap-0.6.3.ebuild:
-  Remove old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Nov 2014; Chema Alonso <nimiux@gentoo.org> foolscap-0.6.4-r1.ebuild:
-  Stable for amd64 wrt bug #518242
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*foolscap-0.7.0 (02 Oct 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Oct 2014; Ian Delaney <idella4@gentoo.org> +foolscap-0.7.0.ebuild,
-  foolscap-0.6.5.ebuild:
-  bump; re-add missed IUSE ssl in deps in prior version and set to + in bumped,
-  its use strongly encouraged (in source docs) by upstream
+  Bug: https://bugs.gentoo.org/552720
 
-*foolscap-0.6.5 (19 Aug 2014)
+  23 Sep 2015; Agostino Sarubbo <ago@gentoo.org> foolscap-0.7.0.ebuild:
+  ppc64 stable wrt bug #552242
 
-  19 Aug 2014; Ian Delaney <idella4@gentoo.org> +foolscap-0.6.5.ebuild:
-  bump; drop py2.6, drop IUSE ssl from RDEPEND & set pyopenssl as a dep
-  unconditionally, add IUSE test, tidy DEPEND & test phase
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc64"
 
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  foolscap-0.6.4-r1.ebuild:
-  x86 stable wrt bug #518242
+  23 Sep 2015; Justin Lecher <jlec@gentoo.org> -foolscap-0.6.4-r1.ebuild,
+  metadata.xml:
+  Drop old
 
-*foolscap-0.6.4-r1 (25 Aug 2013)
+  obsoletes
 
-  25 Aug 2013; Michał Górny <mgorny@gentoo.org> +foolscap-0.6.4-r1.ebuild:
-  Convert to distutils-r1 wrt bug #482442.
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=452350
 
-  03 Aug 2013; Michał Górny <mgorny@gentoo.org> foolscap-0.6.0.ebuild,
-  foolscap-0.6.1.ebuild, foolscap-0.6.3.ebuild, foolscap-0.6.4.ebuild:
-  Move dev-python/twisted to dev-python/twisted-core.
+  Package-Manager: portage-2.2.21
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Sep 2012; Anthony G. Basile <blueness@gentoo.org> foolscap-0.6.4.ebuild:
-  Stable ppc ppc64, bug #429030
-
-  12 Sep 2012; Johannes Huber <johu@gentoo.org> foolscap-0.6.4.ebuild:
-  Stable for x86, wrt bug #429030
-
-  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> foolscap-0.6.4.ebuild:
-  Stable for amd64, wrt bug #429030
-
-  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> foolscap-0.6.0.ebuild:
-  Drop s390 keywords
-
-  03 Jul 2012; Mike Gilbert <floppym@gentoo.org> foolscap-0.6.4.ebuild:
-  Drop src_prepare per Arfrever.
-
-*foolscap-0.6.4 (28 Jun 2012)
-
-  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +foolscap-0.6.4.ebuild:
-  Bump
-
-*foolscap-0.6.3 (09 Mar 2012)
-
-  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +foolscap-0.6.3.ebuild:
-  Bump for #402567
-
-  23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> foolscap-0.6.1.ebuild:
-  ppc64 stable wrt #355269
-
-  11 Mar 2011; Thomas Kahle <tomka@gentoo.org> foolscap-0.6.1.ebuild:
-  x86 stable per bug 355269
-
-  27 Feb 2011; Brent Baude <ranger@gentoo.org> foolscap-0.6.1.ebuild:
-  stable ppc, bug 355269
-
-  17 Feb 2011; Markos Chandras <hwoarang@gentoo.org> foolscap-0.6.1.ebuild:
-  Stable on amd64 wrt bug #355269
-
-  19 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -foolscap-0.4.2.ebuild, -foolscap-0.5.1.ebuild:
-  Delete.
-
-  19 Jan 2011; Raúl Porcel <armin76@gentoo.org> foolscap-0.6.0.ebuild:
-  s390 stable
-
-  17 Jan 2011; <xarth@gentoo.org> foolscap-0.6.0.ebuild:
-  ppc64 stable wrt #350889
-
-*foolscap-0.6.1 (16 Jan 2011)
-
-  16 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +foolscap-0.6.1.ebuild:
-  Version bump.
-
-  15 Jan 2011; Markus Meier <maekke@gentoo.org> foolscap-0.6.0.ebuild:
-  x86 stable, bug #350889
-
-  07 Jan 2011; Markos Chandras <hwoarang@gentoo.org> foolscap-0.6.0.ebuild:
-  Stable on amd64 wrt bug #350889
-
-  06 Jan 2011; Brent Baude <ranger@gentoo.org> foolscap-0.6.0.ebuild:
-  Marking foolscap-0.6.0 ppc for bug 350889
-
-*foolscap-0.6.0 (29 Dec 2010)
-
-  29 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +foolscap-0.6.0.ebuild:
-  Version bump. Disable test failing with openssl-1 (bug #330079).
-
-  07 Oct 2010; Samuli Suominen <ssuominen@gentoo.org> foolscap-0.5.1.ebuild:
-  ppc64 stable wrt #337142
-
-  05 Oct 2010; Markus Meier <maekke@gentoo.org> foolscap-0.5.1.ebuild:
-  x86 stable, bug #337142
-
-  29 Sep 2010; Brent Baude <ranger@gentoo.org> foolscap-0.5.1.ebuild:
-  Marking foolscap-0.5.1 ppc for bug 337142
-
-  21 Sep 2010; Markos Chandras <hwoarang@gentoo.org> foolscap-0.5.1.ebuild:
-  Stable on amd64 wrt bug #337142
-
-  18 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  foolscap-0.5.1.ebuild:
-  Fix dependencies.
-
-  13 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  foolscap-0.5.1.ebuild:
-  Add "ssl" USE flag.
-
-*foolscap-0.5.1 (27 Jul 2010)
-
-  27 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -foolscap-0.3.1.ebuild, +foolscap-0.5.1.ebuild:
-  Version bump.
-
-  30 Apr 2010; Fabian Groffen <grobian@gentoo.org> foolscap-0.4.2.ebuild:
-  Keyworded for several Prefix arches
-
-  20 Apr 2010; Jeremy Olexa <darkside@gentoo.org> foolscap-0.4.2.ebuild:
-  Add ~amd64-linux as tested in bug 315917
-
-  10 Jan 2010; Brent Baude <ranger@gentoo.org> foolscap-0.4.2.ebuild:
-  Marking foolscap-0.4.2 ppc64 for bug 286858
-
-  03 Nov 2009; Raúl Porcel <armin76@gentoo.org> foolscap-0.4.2.ebuild:
-  s390 stable wrt #286858
-
-  07 Oct 2009; nixnut <nixnut@gentoo.org> foolscap-0.4.2.ebuild:
-  ppc stable #286858
-
-  03 Oct 2009; Markus Meier <maekke@gentoo.org> foolscap-0.4.2.ebuild:
-  amd64/x86 stable, bug #286858
-
-*foolscap-0.4.2 (28 Aug 2009)
-
-  28 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +foolscap-0.4.2.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-  03 May 2009; Raúl Porcel <armin76@gentoo.org> foolscap-0.3.1.ebuild:
-  s390 stable
-
-  18 Mar 2009; Brent Baude <ranger@gentoo.org> foolscap-0.3.1.ebuild:
-  Marking foolscap-0.3.1 ppc for bug 255051
-
-  15 Mar 2009; Brent Baude <ranger@gentoo.org> foolscap-0.3.1.ebuild:
-  Marking foolscap-0.3.1 ppc64 for bug 255051
-
-  08 Mar 2009; Markus Meier <maekke@gentoo.org> foolscap-0.3.1.ebuild:
-  amd64/x86 stable, bug #255051
-
-  24 Feb 2009; Joseph Jezak <josejx@gentoo.org> foolscap-0.3.1.ebuild:
-  Marked ~ppc for bug #242292.
-
-  04 Jan 2009; Raúl Porcel <armin76@gentoo.org> foolscap-0.3.1.ebuild:
-  Add ~s390 wrt #242292
-
-  28 Oct 2008; Brent Baude <ranger@gentoo.org> foolscap-0.3.1.ebuild:
-  Marking foolscap-0.3.1 ~ppc64 for bug 242292
-
-  24 Oct 2008; Raúl Porcel <armin76@gentoo.org> foolscap-0.3.1.ebuild:
-  Add ~ia64 wrt #242292
-
-  08 Oct 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  foolscap-0.3.1.ebuild:
-  Added ~x86
-
-*foolscap-0.3.1 (17 Sep 2008)
-
-  17 Sep 2008; Ali Polatel <hawking@gentoo.org> +metadata.xml,
-  +foolscap-0.3.1.ebuild:
-  Initial ebuild.

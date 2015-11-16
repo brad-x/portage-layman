@@ -1,45 +1,68 @@
 # ChangeLog for media-video/snappy
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/snappy/ChangeLog,v 1.10 2014/07/23 15:23:23 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Jul 2014; Agostino Sarubbo <ago@gentoo.org> snappy-1.0.ebuild:
-  Stable for x86, wrt bug #512012
+*snappy-1.0 (09 Aug 2015)
 
-  22 Jul 2014; Agostino Sarubbo <ago@gentoo.org> snappy-1.0.ebuild:
-  Stable for amd64, wrt bug #512912
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +snappy-1.0.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Apr 2014; Pacho Ramos <pacho@gentoo.org> -snappy-0.2.ebuild,
-  -snappy-9999.ebuild:
-  Drop old and live ebuild as nobody is really maintaining it (was completely
-  outdated for current master)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*snappy-1.0 (29 Mar 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  29 Mar 2014; Pacho Ramos <pacho@gentoo.org> +snappy-1.0.ebuild:
-  Version bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Mar 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #239126
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org> snappy-0.2.ebuild,
-  snappy-9999.ebuild:
-  Collides with spice-gtk, add a blocker for now with a FIXME so that it
-  doesn't get forgotten.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Sep 2011; Michał Górny <mgorny@gentoo.org> snappy-9999.ebuild:
-  Migrate to git-2.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*snappy-0.2 (20 Jun 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +snappy-0.2.ebuild:
-  Bump to 0.2, with many new features!
-  See http://luisbg.blogalia.com/historias/69950
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> snappy-9999.ebuild:
-  Fix description by inheriting before setting DESCRIPTION
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*snappy-9999 (14 Jun 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +snappy-9999.ebuild,
-  +metadata.xml:
-  Add the media player snappy because leio wants it in the tree
+*snappy-1.0-r1 (17 Oct 2015)
+
+  17 Oct 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/snappy-1.0-clutter-1.22.patch, +files/snappy-1.0-clutter-gst-3.patch,
+  +files/snappy-1.0-configure1.patch, +files/snappy-1.0-configure2.patch,
+  +files/snappy-1.0-string-concatenation.patch,
+  +files/snappy-1.0-video-texture.patch, +snappy-1.0-r1.ebuild:
+  Fix blocker (#562736 by Martin Sekera), apply upstream fixes to make this
+  work again with gnome 3.16 stack.
+
+  Package-Manager: portage-2.2.23
+

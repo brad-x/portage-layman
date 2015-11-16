@@ -1,117 +1,80 @@
 # ChangeLog for dev-python/tlslite
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/tlslite/ChangeLog,v 1.30 2015/06/07 16:17:17 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*tlslite-0.4.3-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Drop old Python implementations
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +tlslite-0.4.3-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -tlslite-0.4.3.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Apr 2014; Mike Gilbert <floppym@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Replace pointless calls to python_gen_usedep with PYTHON_USEDEP.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Add support for the new PyPy slotting.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Stable for x86, wrt bug #470466
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> tlslite-0.4.3-r1.ebuild:
+  Use https by default
 
-  24 Jul 2013; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.3-r1.ebuild:
-  Stable for amd64, wrt bug #470466
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jul 2013; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
-  Add python herd.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Jul 2013; Pacho Ramos <pacho@gentoo.org>
-  -files/tlslite-0.3.8-python25.diff, -tlslite-0.3.8-r2.ebuild,
-  -tlslite-0.4.0.ebuild, -tlslite-0.4.1.ebuild, metadata.xml:
-  Cleanup due #92799
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 May 2013; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.3.ebuild:
-  Stable for x86, wrt bug #461166
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.3.ebuild:
-  Stable for amd64, wrt bug #461166
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*tlslite-0.4.3-r1 (18 Apr 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Apr 2013; Ian Delaney <idella4@gentoo.org> +tlslite-0.4.3-r1.ebuild:
-  migration -> distutils-r1
+  Bug: https://bugs.gentoo.org/552720
 
-*tlslite-0.4.3 (20 Jan 2013)
+*tlslite-0.4.8 (13 Sep 2015)
 
-  20 Jan 2013; Ian Delaney <idella4@gentoo.org> +tlslite-0.4.3.ebuild:
-  bump; tests remain restricted, on testing both tests hang, test phase added
-  but disabled, closes req from Ago, Bug 451242
+  13 Sep 2015; Justin Lecher <jlec@gentoo.org> tlslite-0.4.3-r1.ebuild,
+  +tlslite-0.4.8.ebuild:
+  Version Bump
 
-  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tlslite-0.4.0.ebuild:
-  marked x86 per bug 418921
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=560278
 
-  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.0.ebuild:
-  Stable for amd64, wrt bug #418921
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*tlslite-0.4.1 (24 Jun 2012)
+  14 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-id
 
-  24 Jun 2012; Stefan Briesenick <sbriesen@gentoo.org> +tlslite-0.4.1.ebuild:
-  version bump, solving bug #419953.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Mar 2012; Mike Gilbert <floppym@gentoo.org> tlslite-0.4.0.ebuild:
-  Fix dependencies. Don't inherit unused eclass. Patch by Arfrever.
+  10 Oct 2015; Mike Frysinger <vapier@gentoo.org> tlslite-0.4.8.ebuild:
+  fix various encoding corruption
 
-*tlslite-0.4.0 (02 Mar 2012)
-
-  02 Mar 2012; Stefan Briesenick <sbriesen@gentoo.org> +tlslite-0.4.0.ebuild:
-  version bump, solving bug #405329.
-
-  31 Dec 2009; Christian Faulhammer <fauli@gentoo.org>
-  tlslite-0.3.8-r2.ebuild:
-  stable x86, bug 287622
-
-  26 Dec 2009; Pacho Ramos <pacho@gentoo.org> tlslite-0.3.8-r2.ebuild:
-  amd64 stable, bug 287622
-
-*tlslite-0.3.8-r2 (24 Dec 2009)
-
-  24 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -tlslite-0.3.8-r1.ebuild, +tlslite-0.3.8-r2.ebuild,
-  files/tlslite-0.3.8-python25.diff:
-  Fix some generator-related exceptions with Python >=2.5 (bug #262900).
-
-  25 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  tlslite-0.3.8-r1.ebuild:
-  Set SUPPORT_PYTHON_ABIS. Update dependencies.
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -tlslite-0.3.8.ebuild:
-  Remove old
-
-*tlslite-0.3.8-r1 (05 Jan 2008)
-
-  05 Jan 2008; Stefan Briesenick <sbriesen@gentoo.org>
-  +files/tlslite-0.3.8-python25.diff, +tlslite-0.3.8-r1.ebuild:
-  added patch for python 2.5, solving bug #204278.
-
-  10 Dec 2007; Stefan Briesenick <sbriesen@gentoo.org> tlslite-0.3.8.ebuild:
-  corrected dependencies, removed ia64 keyword (see bugs #198366 and 199481).
-
-  30 May 2006; Stefan Briesenick <sbriesen@gentoo.org> tlslite-0.3.8.ebuild:
-  fixed 'userpriv' problem, see bug #134917.
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org> files/digest-tlslite-0.3.8,
-  Manifest:
-  Fixing SHA256 digest, pass four
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> tlslite-0.3.8.ebuild:
-  Mark 0.3.8 ~ia64
-
-*tlslite-0.3.8 (06 Feb 2006)
-
-  06 Feb 2006; Stefan Briesenick <sbriesen@gentoo.org> +metadata.xml,
-  +tlslite-0.3.8.ebuild:
-  initial commit.

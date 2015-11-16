@@ -1,90 +1,58 @@
 # ChangeLog for net-analyzer/snmptt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snmptt/ChangeLog,v 1.22 2015/05/24 00:56:31 mrueg Exp $
+# (auto-generated from git log)
 
-  24 May 2015; Manuel Rüger <mrueg@gentoo.org> -snmptt-1.3.ebuild:
-  Remove old.
+*snmptt-1.4 (09 Aug 2015)
+*snmptt-1.2 (09 Aug 2015)
 
-*snmptt-1.4 (26 Nov 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/snmptt.initd,
+  +files/snmptt.initd-r1, +metadata.xml, +snmptt-1.2.ebuild,
+  +snmptt-1.4.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Nov 2013; Jeroen Roovers <jer@gentoo.org> +snmptt-1.4.ebuild,
-  +files/snmptt.initd-r1:
-  Version bump. Clean up init script. Use /run not /var/run.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 May 2012; Raúl Porcel <armin76@gentoo.org> snmptt-1.2.ebuild,
-  snmptt-1.3.ebuild:
-  Drop sparc keywords
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*snmptt-1.3 (09 Jun 2011)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Jun 2011; Jeroen Roovers <jer@gentoo.org> +snmptt-1.3.ebuild:
-  Version bump. Remove useless elog messages. Merge dosbin/doins/dohtml
-  commands and replace weird cp command.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Mar 2008; Benedikt Böhm <hollow@gentoo.org> snmptt-1.2.ebuild:
-  add ~amd64
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Jan 2008; Raúl Porcel <armin76@gentoo.org> -snmptt-0.9-r1.ebuild,
-  -snmptt-1.0.ebuild, -snmptt-1.1.ebuild, snmptt-1.2.ebuild:
-  sparc/x86 stable, remove old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*snmptt-1.2 (28 Jul 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Jul 2007; Martin Jackson <mjolnir@gentoo.org> +snmptt-1.2.ebuild:
-  Bump to 1.2 for 184764
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Jul 2007; Raúl Porcel <armin76@gentoo.org> snmptt-1.1.ebuild:
-  x86 stable
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 May 2007; Marius Mauch <genone@gentoo.org> snmptt-0.9-r1.ebuild,
-  snmptt-1.0.ebuild, snmptt-1.1.ebuild:
-  Replacing einfo with elog
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-*snmptt-1.1 (18 Feb 2006)
-
-  18 Feb 2006; Marcelo Goes <vanquirius@gentoo.org> +files/snmptt.initd,
-  +snmptt-1.1.ebuild:
-  1.1 version bump. Set mode=daemon by default and add init script for bug
-  105354. Thanks to Anatoly Shipitsin <sauron at infocentr dot ru>.
-
-  12 Feb 2005; Jason Wever <weeve@gentoo.org> snmptt-1.0.ebuild:
-  Stable on sparc.
-
-  31 Jan 2005; Aaron Walker <ka0ttic@gentoo.org> snmptt-1.0.ebuild:
-  Marked stable on x86.
-
-  12 Jan 2005; Jason Wever <weeve@gentoo.org> snmptt-0.9-r1.ebuild:
-  Stable on sparc.
-
-*snmptt-0.9-r1 (25 Oct 2004)
-
-  25 Oct 2004; Eldad Zack <eldad@gentoo.org> +snmptt-1.0.ebuild,
-  snmptt-0.9-r1.ebuild:
-  Version bump (Closes #68765). Marked 0.9 x86 stable.
-
-  17 Sep 2004; Jason Wever <weeve@gentoo.org> snmptt-0.9-r1.ebuild:
-  Added ~sparc keyword.
-
-*snmptt-0.9-r1 (15 Sep 2004)
-
-  15 Sep 2004; Jon Hood <squinky86@gentoo.org> +snmptt-0.9-r1.ebuild:
-  Version bump to fix #64130; correctly install documentation and binaries,
-  thanks to Jason Wever <weeve@gentoo.org>.
-
-  11 Sep 2004; Jon Hood <squinky86@gentoo.org> snmptt-0.9.ebuild:
-  Fix dependencies irt #63498. Thanks Lazar Obradovic <laza@yu.net>.
-
-  16 Aug 2004; Eldad Zack <eldad@gentoo.org> snmptt-0.9.ebuild:
-  x86 stable
-
-  17 Jul 2004; David Holm <dholm@gentoo.org> snmptt-0.9.ebuild:
-  Added to ~ppc.
-
-*snmptt-0.9 (09 Jul 2004)
-
-  09 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml,
-  +snmptt-0.9.ebuild:
-  Initial ebuild. Thanks to Karl Dag Gursli <karl-d@gursli.com>. Closes #50968

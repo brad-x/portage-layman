@@ -1,141 +1,58 @@
 # ChangeLog for app-xemacs/edit-utils
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-xemacs/edit-utils/ChangeLog,v 1.38 2014/08/10 18:55:05 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> edit-utils-2.39.ebuild,
-  edit-utils-2.43.ebuild, edit-utils-2.44.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*edit-utils-2.44 (09 Aug 2015)
+*edit-utils-2.43 (09 Aug 2015)
+*edit-utils-2.39 (09 Aug 2015)
 
-  22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> edit-utils-2.43.ebuild:
-  ppc64 stable wrt #369897
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +edit-utils-2.39.ebuild,
+  +edit-utils-2.43.ebuild, +edit-utils-2.44.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jul 2011; Markos Chandras <hwoarang@gentoo.org> edit-utils-2.43.ebuild:
-  Stable on amd64 wrt bug #369897
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jun 2011; Brent Baude <ranger@gentoo.org> edit-utils-2.43.ebuild:
-  Marking edit-utils-2.43 ppc stable for bug 369897
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Jun 2011; Raúl Porcel <armin76@gentoo.org> edit-utils-2.43.ebuild:
-  alpha/sparc stable wrt #369897
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Jun 2011; Thomas Kahle <tomka@gentoo.org> edit-utils-2.43.ebuild:
-  x86 stable per bug 369897
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Jun 2011; Hans de Graaff <graaff@gentoo.org> -edit-utils-2.40.ebuild:
-  Remove old version.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*edit-utils-2.44 (24 May 2011)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 May 2011; Hans de Graaff <graaff@gentoo.org> +edit-utils-2.44.ebuild:
-  Bump to experimental version since this contains my patches that make editing
-  ruby bearable.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*edit-utils-2.43 (13 Aug 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Aug 2010; Hans de Graaff <graaff@gentoo.org> +edit-utils-2.43.ebuild:
-  Version bump: bug fixes.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*edit-utils-2.40 (22 Feb 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Feb 2009; Hans de Graaff <graaff@gentoo.org> +edit-utils-2.40.ebuild:
-  Version bump with minor fixes, including a security fix we released
-  ourselves earlier.
-
-  07 Feb 2009; Christian Faulhammer <fauli@gentoo.org>
-  -edit-utils-2.36.ebuild, -edit-utils-2.37.ebuild:
-  clean up, because of vulnerability affected versions
-
-  05 Jul 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  edit-utils-2.39.ebuild:
-  ppc stable, bug #221197
-
-  26 Jun 2008; Santiago M. Mola <coldwind@gentoo.org>
-  edit-utils-2.39.ebuild:
-  amd64 stable wrt security bug #221197
-
-  26 Jun 2008; Raúl Porcel <armin76@gentoo.org> edit-utils-2.39.ebuild:
-  alpha/sparc stable wrt #221197
-
-  25 Jun 2008; Markus Rothe <corsair@gentoo.org> edit-utils-2.39.ebuild:
-  Stable on ppc64; bug #221197
-
-  25 Jun 2008; Christian Faulhammer <opfer@gentoo.org>
-  edit-utils-2.39.ebuild:
-  stable x86, security bug 221197
-
-*edit-utils-2.39 (15 Jun 2008)
-
-  15 Jun 2008; Hans de Graaff <graaff@gentoo.org> +edit-utils-2.39.ebuild:
-  Version bump with custom packages created by me instead of upstream. Fixes
-  #221197.
-
-  12 May 2008; Markus Rothe <corsair@gentoo.org> edit-utils-2.37.ebuild:
-  Stable on ppc64
-
-  05 May 2008; Raúl Porcel <armin76@gentoo.org> edit-utils-2.37.ebuild:
-  alpha/sparc stable wrt #219332
-
-  02 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  edit-utils-2.37.ebuild:
-  stable x86, bug 219332
-
-  30 Apr 2008; nixnut <nixnut@gentoo.org> edit-utils-2.37.ebuild:
-  Stable on ppc wrt bug 219332
-
-  26 Apr 2008; Hans de Graaff <graaff@gentoo.org> edit-utils-2.37.ebuild:
-  Mark stable on amd64 , bug #219332
-
-  19 Mar 2008; Hans de Graaff <graaff@gentoo.org> metadata.xml:
-  A herd should not be listed as maintainer
-
-  25 Oct 2007; Hans de Graaff <graaff@gentoo.org> -edit-utils-1.98.ebuild:
-  Remove old version
-
-  03 Jun 2007; Hans de Graaff <graaff@gentoo.org> edit-utils-2.36.ebuild:
-  Stable on amd64, ppc, ppc64, sparc, x86 as per #175560
-
-  29 May 2007; Raúl Porcel <armin76@gentoo.org> edit-utils-2.36.ebuild:
-  alpha stable wrt #175560
-
-  05 May 2007; Hans de Graaff <graaff@gentoo.org> edit-utils-1.98.ebuild:
-  Use RDEPEND instead of DEPEND
-
-*edit-utils-2.37 (05 May 2007)
-
-  05 May 2007; Hans de Graaff <graaff@gentoo.org> -edit-utils-2.34.ebuild,
-  +edit-utils-2.37.ebuild:
-  Version bump: wide-edit mode added.
-  Remove older version
-
-*edit-utils-2.36 (22 Dec 2006)
-
-  22 Dec 2006; Hans de Graaff <graaff@gentoo.org> +edit-utils-2.36.ebuild:
-  Version bump.
-
-*edit-utils-2.34 (11 Nov 2006)
-
-  11 Nov 2006; Hans de Graaff <graaff@gentoo.org> +metadata.xml,
-  -edit-utils-1.95.ebuild, +edit-utils-2.34.ebuild:
-  Version bump; remove old version; add metadata.
-
-  29 Sep 2005; Joseph Jezak <josejx@gentoo.org> edit-utils-1.98.ebuild:
-  Marked ppc stable.
-
-  09 Aug 2004; Tom Gall <tgall@gentoo.org> edit-utils-1.98,ebuild:
-  stable on ppc64, bug #57174
-
-  02 Oct 2003; Aron Griffis <agriffis@gentoo.org> edit-utils-1.98.ebuild:
-  Stable on alpha
-
-*edit-utils-1.98 (22 Feb 2003)
-
-  22 Feb 2003;  <rendhalver@gentoo.org> edit-utils-1.95.ebuild edit-utils-1.98.ebuild files/digest-edit-utils-1.98 :
-  Add ~alpha to KEYWORDS
-
-  22 Feb 2003; Rendhalver <rendhalver@gentoo.org> :
-  new stable ebuild
-
-*edit-utils-1.95 (16 Dec 2002)
-
-  16 Dec 2002; Rendhalver [Peter Brown] <rendhalver@gentoo.org> :
-  Initial import.

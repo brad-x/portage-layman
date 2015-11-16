@@ -1,96 +1,57 @@
 # ChangeLog for x11-misc/xkeycaps
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xkeycaps/ChangeLog,v 1.28 2014/06/09 20:29:24 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  09 Jun 2014; Jeroen Roovers <jer@gentoo.org> -xkeycaps-2.46.ebuild,
-  -files/Imakefile.patch:
-  Old.
+*xkeycaps-2.47-r1 (09 Aug 2015)
 
-  23 Dec 2012; Ulrich Müller <ulm@gentoo.org> xkeycaps-2.46.ebuild,
-  xkeycaps-2.47-r1.ebuild:
-  Fix LICENSE, see notices in source files, bug 446768.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xkeycaps-2.47-Imakefile.patch, +files/xkeycaps-2.47-man.patch,
+  +metadata.xml, +xkeycaps-2.47-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> xkeycaps-2.46.ebuild,
-  xkeycaps-2.47-r1.ebuild:
-  Drop sparc keywords
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2012; Brent Baude <ranger@gentoo.org> xkeycaps-2.47-r1.ebuild:
-  Marking xkeycaps-2.47-r1 ppc64 for bug 397285
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xkeycaps-2.47-r1.ebuild:
-  x86 stable wrt bug #397285
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Feb 2012; Brent Baude <ranger@gentoo.org> xkeycaps-2.47-r1.ebuild:
-  Marking xkeycaps-2.47-r1 ppc for bug 397285
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xkeycaps-2.47-r1.ebuild:
-  Stable for amd64, wrt bug #397285
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*xkeycaps-2.47-r1 (27 Aug 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Aug 2010; Kacper Kowalik <xarthisius@gentoo.org> -xkeycaps-2.47.ebuild,
-  +xkeycaps-2.47-r1.ebuild:
-  Respect CC,CFLAGS,LDFLAGS wrt bug 334661. Thanks to Diego for the report.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*xkeycaps-2.47 (07 Dec 2008)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Dec 2008; <ssuominen@gentoo.org> +files/xkeycaps-2.47-Imakefile.patch,
-  +files/xkeycaps-2.47-man.patch, +xkeycaps-2.47.ebuild:
-  Version bump for bug 215218, thanks to <timofonic at gmail.com>.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> xkeycaps-2.46.ebuild:
-  amd64 stable
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Oct 2006; David Shakaryan <omp@gentoo.org> xkeycaps-2.46.ebuild:
-  Remove monolithic X from dependencies and fix quotes.
-
-  11 Oct 2006; Krzysiek Pawlik <nelchael@gentoo.org> xkeycaps-2.46.ebuild:
-  Add missing x11-misc/xbitmaps to DEPEND, see bug #150787.
-
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> xkeycaps-2.46.ebuild:
-  Fixed DEPEND for modular X.
-
-  26 Jan 2005; Markus Rothe <corsair@gentoo.org> xkeycaps-2.46.ebuild:
-  Stable on ppc64
-
-  18 Dec 2004; Markus Rothe <corsair@gentoo.org> xkeycaps-2.46.ebuild:
-  added ~ppc64 to KEYWORDS; bug #73667
-
-  05 Dec 2004; Markus Nigbur <pyrania@gentoo.org> :
-  Removed -r1 again. See bug #73436.
-
-*xkeycaps-2.46-r1 (05 Dec 2004)
-
-  05 Dec 2004; Markus Nigbur <pyrania@gentoo.org> +xkeycaps-2.46-r1.ebuild:
-  Added manpage. Fixing bug #70318.
-
-  10 May 2004; Travis Tilley <lv@gentoo.org> xkeycaps-2.46.ebuild:
-  added ~amd64 keyword
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> xkeycaps-2.46.ebuild:
-  Add inherit eutils
-
-  06 Dec 2003; Markus Nigbur <pyrania@gentoo.org> xkeycaps-2.46.ebuild,
-  files/Imakefile.patch:
-  Created patch for Imakefile. Thanks to Florian Loitsch for finding the bogus.
-
-  03 Nov 2003; Abhishek Amit <abhishek@gentoo.org> metadata.xml:
-  Added metadata.xml
-
-  18 Oct 2003; Michael Sterrett <mr_bones_@gentoo.org> xkeycaps-2.46.ebuild:
-  tidy; added IUSE; use sed-4; more error checking; more docs
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*xkeycaps-2.46 (1 Feb 2002)
-
-  15 Feb 2003; Mark Guertin <gerk@gentoo.org> xkeycaps-2.46.ebuild :
-  set ppc in keywords
-
-  1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
-  
-  Added initial ChangeLog which should be updated whenever the package is
-  updated in any way. This changelog is targetted to users. This means that the
-  comments should well explained and written in clean English. The details about
-  writing correct changelogs are explained in the skel.ChangeLog file which you
-  can find in the root directory of the portage repository.

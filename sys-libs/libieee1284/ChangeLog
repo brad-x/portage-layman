@@ -1,158 +1,59 @@
 # ChangeLog for sys-libs/libieee1284
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libieee1284/ChangeLog,v 1.38 2014/03/05 15:54:43 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Mar 2014; Agostino Sarubbo <ago@gentoo.org> libieee1284-0.2.11-r3.ebuild:
-  Stable for ppc, wrt bug #495962
+*libieee1284-0.2.11-r3 (09 Aug 2015)
+*libieee1284-0.2.11-r2 (09 Aug 2015)
+*libieee1284-0.2.11-r1 (09 Aug 2015)
 
-  02 Mar 2014; Pacho Ramos <pacho@gentoo.org> libieee1284-0.2.11-r3.ebuild:
-  amd64 stable, bug #495962
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libieee1284-0.2.11-r1.ebuild, +libieee1284-0.2.11-r2.ebuild,
+  +libieee1284-0.2.11-r3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Feb 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  libieee1284-0.2.11-r3.ebuild:
-  x86 stable wrt bug #495962
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Oct 2013; Michał Górny <mgorny@gentoo.org> libieee1284-0.2.11-r3.ebuild:
-  Explicitly call einstalldocs in multilib_src_install_all() to accomodate bug
-  #483304.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*libieee1284-0.2.11-r3 (10 Aug 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  +libieee1284-0.2.11-r3.ebuild:
-  Convert to multilib and stack it for medialibs r10
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Dec 2012; Mike Frysinger <vapier@gentoo.org> libieee1284-0.2.11-r2.ebuild:
-  Only setup python when USE=python #446612 by Elfenbein, Karsten.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
-  libieee1284-0.2.11-r1.ebuild, libieee1284-0.2.11-r2.ebuild:
-  Fix double prefix install
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jan 2012; Brent Baude <ranger@gentoo.org> libieee1284-0.2.11-r2.ebuild:
-  Marking libieee1284-0.2.11-r2 ppc for bug 393889
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  libieee1284-0.2.11-r2.ebuild:
-  x86 stable wrt bug #393889
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> libieee1284-0.2.11-r2.ebuild:
-  Stable for AMD64, wrt bug #393889
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  libieee1284-0.2.11-r2.ebuild:
-  Fix thinko.
+  Bug: https://bugs.gentoo.org/552720
 
-*libieee1284-0.2.11-r2 (20 Apr 2011)
-
-  20 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  -libieee1284-0.2.8.ebuild, -libieee1284-0.2.10.ebuild,
-  -libieee1284-0.2.11.ebuild, +libieee1284-0.2.11-r2.ebuild:
-  Remove old version; add a new one with static-libs USE flag and dropped .la
-  files.
-
-  15 Oct 2010; Brent Baude <ranger@gentoo.org> libieee1284-0.2.11-r1.ebuild:
-  stable ppc, bug 338349
-
-  06 Oct 2010; Markus Meier <maekke@gentoo.org>
-  libieee1284-0.2.11-r1.ebuild:
-  x86 stable, bug #338349
-
-  24 Sep 2010; Markos Chandras <hwoarang@gentoo.org>
-  libieee1284-0.2.11-r1.ebuild:
-  Stable on amd64 wrt bug #338349
-
-*libieee1284-0.2.11-r1 (02 Jun 2010)
-
-  02 Jun 2010; Peter Volkov <pva@gentoo.org> +libieee1284-0.2.11-r1.ebuild:
-  Improve python handling and make python bindings USE configurable, fixes
-  bug #301666, thank Oschtan and Alex 12th Voronkov for report.
-
-  01 Jul 2009; Alexis Ballier <aballier@gentoo.org>
-  libieee1284-0.2.11.ebuild:
-  keyword ~x86-fbsd
-
-  01 Jun 2009; nixnut <nixnut@gentoo.org> libieee1284-0.2.11.ebuild:
-  ppc stable #258078
-
-  31 May 2009; Markus Meier <maekke@gentoo.org> libieee1284-0.2.11.ebuild:
-  amd64/x86 stable, bug #258078
-
-*libieee1284-0.2.11 (12 Oct 2007)
-
-  12 Oct 2007; Mike Frysinger <vapier@gentoo.org>
-  +libieee1284-0.2.11.ebuild:
-  Version bump #189803 by Mario Hein.
-
-  18 Sep 2007; Mike Frysinger <vapier@gentoo.org> libieee1284-0.2.8.ebuild:
-  Fixup autotool handling #192892 by Nico R.
-
-  27 Jun 2007; Christian Faulhammer <opfer@gentoo.org>
-  libieee1284-0.2.8.ebuild:
-  stable x86, bug 182364
-
-  26 Jun 2007; Lars Weiler <pylon@gentoo.org> libieee1284-0.2.8.ebuild:
-  Stable on ppc; bug #182364.
-
-  18 Jun 2007; Christoph Mende <angelos@gentoo.org>
-  libieee1284-0.2.8.ebuild:
-  Stable on amd64 wrt bug 182364
-
-*libieee1284-0.2.10 (17 Jun 2007)
-
-  17 Jun 2007; Mike Frysinger <vapier@gentoo.org>
-  +libieee1284-0.2.10.ebuild:
-  Version bump.
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org>
-  libieee1284-0.2.8.ebuild:
-  Remove gnuconfig_update usage, leave it to econf.
-
-  09 Dec 2006; Tiziano Müller <dev-zero@gentoo.org> ChangeLog:
-  Fixed automake dependency by inheriting from autotools instead of libtool
-  plus the corresponding changes. Minor cleanups.
-
-  27 Jan 2005; Joseph Jezak <josejx@gentoo.org> libieee1284-0.2.8.ebuild:
-  Marked ~ppc, as it seems to work now.
-
-*libieee1284-0.2.8 (16 Jan 2005)
-
-  16 Jan 2005; Robin H. Johnson <robbat2@gentoo.org>
-  +files/libieee1284-0.2.8-dbjh-v4.diff, +libieee1284-0.2.8.ebuild:
-  Bug #75119, #53971, a version bump finally.
-
-  18 May 2003; Seemant Kulleen <seemant@gentoo.org> libieee1284-0.2.1.ebuild:
-  wrapped the DEPENDS in the doc USE flag, closing bug #12704 by Aaron Stone
-  <aaron@engr.Paly.NET>
-
-*libieee1284-0.2.1 (29 Aug 2002)
-
-  29 Sep 2002; Martin Schlemmer <azarah@gentoo.org> :
-  Libtoolize to fix bug #5638.
-
-  29 Aug 2002; Seemant Kulleen <seemant@gentoo.org> libieee1284-0.2.1.ebuild
-  files/digest-libieee1284-0.2.1 :
-
-  Version bump to bugfix release.
-
-*libieee1284-0.2.0 (04 Aug 2002)
-
-  04 Aug 2002; Seemant Kulleen <seemant@gentoo.org> libieee1284-0.2.0.ebuild :
-
-  Version bump, and dependency changed to be NOT version specific for
-  docbook-sgml-utils.
-
-*libieee1284-0.1.6 (03 Jul 2002)
-
-  20 Jul 2002; mark Guertin <gerk@gentoo.org> libieee1284-0.1.6.ebuild
-  Adjusted keywords (-ppc)
-
-  03 Jul 2002; Seemant Kulleen <seemant@gentoo.org> libieee1284-0.1.6.ebuild
-  ChangeLog files/digest-libieee1284-0.1.6 :
-
-  New package, which is needed by sane-backends to support some scanner
-  types.  Thanks to Troy Dack troy@tkdack.com in bug #4207 for finding this
-  out.

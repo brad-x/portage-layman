@@ -1,99 +1,65 @@
 # ChangeLog for dev-ml/ocurl
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/ocurl/ChangeLog,v 1.25 2015/07/27 07:44:57 aballier Exp $
+# (auto-generated from git log)
 
-*ocurl-0.7.5 (27 Jul 2015)
+*ocurl-0.7.5 (09 Aug 2015)
+*ocurl-0.7.4 (09 Aug 2015)
+*ocurl-0.6.1 (09 Aug 2015)
 
-  27 Jul 2015; Alexis Ballier <aballier@gentoo.org> +ocurl-0.7.5.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +ocurl-0.6.1.ebuild, +ocurl-0.7.4.ebuild, +ocurl-0.7.5.ebuild:
+  proj/gentoo: Initial commit
 
-  28 Jun 2015; Alexis Ballier <aballier@gentoo.org> -ocurl-0.5.3.ebuild,
-  -ocurl-0.5.6.ebuild, -files/ocurl-0.5.1-asneeded.patch:
-  remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*ocurl-0.7.4 (28 Jun 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Jun 2015; Alexis Ballier <aballier@gentoo.org> +ocurl-0.7.4.ebuild:
-  version bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Feb 2015; Agostino Sarubbo <ago@gentoo.org> ocurl-0.6.1.ebuild:
-  Stable for x86, wrt bug #535132
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Feb 2015; Agostino Sarubbo <ago@gentoo.org> ocurl-0.6.1.ebuild:
-  Stable for ppc, wrt bug #535132
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> ocurl-0.6.1.ebuild:
-  Stable for amd64, wrt bug #535132
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*ocurl-0.6.1 (13 Feb 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Feb 2014; Alexis Ballier <aballier@gentoo.org> +ocurl-0.6.1.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> ocurl-0.5.6.ebuild:
-  Stable for x86, wrt bug #492054
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Dec 2013; Chema Alonso <nimiux@gentoo.org> ocurl-0.5.6.ebuild:
-  Stable for amd64 wrt bug #492054
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Dec 2013; Agostino Sarubbo <ago@gentoo.org> ocurl-0.5.6.ebuild:
-  Stable for ppc, wrt bug #492054
+*ocurl-0.7.6 (30 Oct 2015)
 
-*ocurl-0.5.6 (22 Jul 2013)
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> +ocurl-0.7.6.ebuild:
+  Bump to 0.7.6.
 
-  22 Jul 2013; Alexis Ballier <aballier@gentoo.org> +ocurl-0.5.6.ebuild:
-  version bump
+  Package-Manager: portage-2.2.23
 
-  22 Jul 2013; Alexis Ballier <aballier@gentoo.org> -ocurl-0.2.1.ebuild,
-  -ocurl-0.5.1.ebuild:
-  remove old
-
-  10 Jul 2013; Vicente Olivert Riera <vincent@gentoo.org> ocurl-0.5.3.ebuild:
-  ppc stable, bug #460110
-
-  10 Mar 2013; Alexis Ballier <aballier@gentoo.org> ocurl-0.5.3.ebuild:
-  eapi5: define subslot and add missing dep on ocaml:=[ocamlopt]
-
-  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ocurl-0.5.3.ebuild:
-  x86 stable wrt bug #393761
-
-  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ocurl-0.5.3.ebuild:
-  Stable for AMD64, wrt bug #393761
-
-*ocurl-0.5.3 (09 Apr 2010)
-
-  09 Apr 2010; Alexis Ballier <aballier@gentoo.org> +ocurl-0.5.3.ebuild:
-  version bump
-
-*ocurl-0.5.1 (21 Jun 2009)
-
-  21 Jun 2009; Alexis Ballier <aballier@gentoo.org> +ocurl-0.5.1.ebuild,
-  +files/ocurl-0.5.1-asneeded.patch:
-  version bump
-
-  21 Jun 2009; Alexis Ballier <aballier@gentoo.org> ocurl-0.2.1.ebuild:
-  dont install copying
-
-  31 Aug 2007; Alexis Ballier <aballier@gentoo.org>
-  -files/0.1.6-curl-helper.patch, -ocurl-0.1.6.ebuild:
-  cleanup unused version
-
-  12 Aug 2007; Christian Faulhammer <opfer@gentoo.org> ocurl-0.2.1.ebuild:
-  stable x86, bug 187731
-
-  08 Aug 2007; Joseph Jezak <josejx@gentoo.org> ocurl-0.2.1.ebuild:
-  Marked ppc stable for bug #187731.
-
-*ocurl-0.2.1 (17 Apr 2007)
-
-  17 Apr 2007; Alexis Ballier <aballier@gentoo.org> +ocurl-0.2.1.ebuild:
-  Version bump, ~amd64, fixes compilation against curl-7.16
-
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-*ocurl-0.1.6 (09 Mar 2005)
-
-  09 Mar 2005; Matthieu Sozeau <mattam@gentoo.org>
-  +files/0.1.6-curl-helper.patch, +ocurl-0.1.6.ebuild:
-  curl binding for ocaml.

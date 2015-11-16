@@ -1,102 +1,106 @@
 # ChangeLog for dev-lang/ispc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ispc/ChangeLog,v 1.22 2015/07/12 17:57:48 ottxor Exp $
+# (auto-generated from git log)
 
-*ispc-1.8.2 (12 Jul 2015)
+*ispc-1.8.2 (09 Aug 2015)
+*ispc-1.8.1 (09 Aug 2015)
 
-  12 Jul 2015; Christoph Junghans <ottxor@gentoo.org> +ispc-1.8.2.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +ispc-1.8.1.ebuild,
+  +ispc-1.8.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> ispc-1.8.1.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Jan 2015; Christoph Junghans <ottxor@gentoo.org>
-  -files/ispc-1.7.0-llvm-version.patch, -ispc-1.7.0.ebuild, -ispc-1.8.0.ebuild:
-  removed old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*ispc-1.8.1 (13 Jan 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Jan 2015; Christoph Junghans <ottxor@gentoo.org> +ispc-1.8.1.ebuild:
-  version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ispc-1.8.0 (25 Oct 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Oct 2014; Christoph Junghans <ottxor@gentoo.org> +ispc-1.8.0.ebuild:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Jun 2014; Christoph Junghans <ottxor@gentoo.org>
-  +files/ispc-1.7.0-llvm-version.patch, ispc-1.7.0.ebuild:
-  fix build with llvm-3.4.2 (bug #515114)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jun 2014; Christoph Junghans <ottxor@gentoo.org> -ispc-1.4.4.ebuild,
-  -ispc-1.5.0.ebuild, -ispc-1.6.0.ebuild:
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ispc-1.8.1.ebuild,
+  ispc-1.8.2.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  07 Oct 2015; Christoph Junghans <ottxor@gentoo.org> -ispc-1.8.1.ebuild:
   remove old
 
-*ispc-1.7.0 (12 May 2014)
+  Package-Manager: portage-2.2.20.1
 
-  12 May 2014; Christoph Junghans <ottxor@gentoo.org> +ispc-1.7.0.ebuild:
-  version bump
+*ispc-1.8.2-r1 (07 Oct 2015)
 
-*ispc-1.6.0 (22 Dec 2013)
+  07 Oct 2015; Christoph Junghans <ottxor@gentoo.org> -ispc-1.8.2.ebuild,
+  +ispc-1.8.2-r1.ebuild:
+  doesn't build with <=llvm-3.3
 
-  22 Dec 2013; Christoph Junghans <ottxor@gentoo.org> +ispc-1.6.0.ebuild:
-  version bump
+  Details on github ispc/ispc#1096
 
-*ispc-1.5.0 (08 Nov 2013)
-*ispc-1.4.4 (08 Nov 2013)
+  Gentoo-Bug: #560038
 
-  08 Nov 2013; Christoph Junghans <ottxor@gentoo.org> +ispc-1.4.4.ebuild,
-  +ispc-1.5.0.ebuild, -ispc-1.4.3.ebuild:
-  version bump
+  Package-Manager: portage-2.2.20.1
 
-*ispc-1.4.3 (26 Jun 2013)
+*ispc-1.8.2-r2 (20 Oct 2015)
 
-  26 Jun 2013; Christoph Junghans <ottxor@gentoo.org> +ispc-1.4.3.ebuild,
-  -ispc-1.4.1.ebuild:
-  version bump
+  20 Oct 2015; Christoph Junghans <ottxor@gentoo.org> -ispc-1.8.2-r1.ebuild,
+  +ispc-1.8.2-r2.ebuild:
+  doesn't build with >=llvm-3.7
 
-*ispc-1.4.1 (31 May 2013)
+  Details on github ispc/ispc#1106
 
-  31 May 2013; Christoph Junghans <ottxor@gentoo.org> +ispc-1.4.1.ebuild,
-  -ispc-1.3.1.ebuild:
-  version bump (thx to alexxy)
+  Gentoo-Bug: #562630
 
-  11 Jan 2013; Christoph Junghans <ottxor@gentoo.org> ispc-1.3.1.ebuild:
-  update SRC_URI
+  Package-Manager: portage-2.2.20.1
 
-*ispc-1.3.1 (10 Jan 2013)
+*ispc-1.8.2-r3 (20 Oct 2015)
 
-  10 Jan 2013; Christoph Junghans <ottxor@gentoo.org> +ispc-1.3.1.ebuild,
-  -files/ispc-1.3.0-gcc-4.7.patch, -ispc-1.3.0.ebuild:
-  version bump (fixes bug #450786, thx to upstream)
+  20 Oct 2015; Christoph Junghans <ottxor@gentoo.org> +ispc-1.8.2-r3.ebuild:
+  add upstream patch to support llvm-3.7
 
-  08 Jan 2013; Christoph Junghans <ottxor@gentoo.org> -ispc-1.2.2.ebuild,
-  ispc-1.3.0.ebuild:
-  fix llvm deps (bug #450786), python dep, remove old
+  Details on github ispc/ispc#1106
 
-  10 Sep 2012; Christoph Junghans <ottxor@gentoo.org> metadata.xml:
-  updated metadata.xml
+  Gentoo-Bug: #562630
 
-  26 Aug 2012; Christoph Junghans <ottxor@gentoo.org> ispc-1.3.0.ebuild:
-  switch to vcs-snapshot
+  Package-Manager: portage-2.2.20.1
 
-  20 Jul 2012; Christoph Junghans <ottxor@gentoo.org>
-  +files/ispc-1.3.0-gcc-4.7.patch, ispc-1.3.0.ebuild:
-  fix build with gcc-4.7 (bug #427376)
-
-*ispc-1.3.0 (07 Jul 2012)
-
-  07 Jul 2012; Christoph Junghans <ottxor@gentoo.org> +ispc-1.3.0.ebuild:
-  version bump
-
-  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ispc-1.2.2.ebuild:
-  Add ~amd64
-
-  17 Jun 2012; Christoph Junghans <ottxor@gentoo.org> ispc-1.2.2.ebuild:
-  fixed redundant license (bug #421401)
-
-*ispc-1.2.2 (14 Jun 2012)
-
-  14 Jun 2012; Christoph Junghans <ottxor@gentoo.org> +ispc-1.2.2.ebuild,
-  +metadata.xml:
-  initial commit

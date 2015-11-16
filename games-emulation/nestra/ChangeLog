@@ -1,75 +1,57 @@
 # ChangeLog for games-emulation/nestra
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/nestra/ChangeLog,v 1.20 2015/04/08 14:54:13 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org> nestra-0.66-r2.ebuild:
-  mark stable
+*nestra-0.66-r2 (09 Aug 2015)
 
-  08 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org> nestra-0.66-r2.ebuild:
-  tidy
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nestra-0.66-exec-stack.patch, +files/nestra-0.66-include.patch,
+  +metadata.xml, +nestra-0.66-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Feb 2015; Michael Sterrett <mr_bones_@gentoo.org> nestra-0.66-r2.ebuild:
-  tidy
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Oct 2014; Michał Górny <mgorny@gentoo.org> nestra-0.66-r2.ebuild:
-  Support multilib providers for deps. Bump to EAPI=5.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
-  nestra-0.66-r2.ebuild:
-  stable x86, bug 279543
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Jul 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  nestra-0.66-r2.ebuild:
-  EAPI=2
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*nestra-0.66-r2 (01 Sep 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Sep 2008; Tristan Heaven <nyhm@gentoo.org>
-  +files/nestra-0.66-include.patch, +nestra-0.66-r2.ebuild:
-  Fix implicit declarations and linking on amd64, bug #206375
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Dec 2006; Chris Gianelloni <wolf31o2@gentoo.org> nestra-0.66-r1.ebuild:
-  Removing old virtual/x11 dependency.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org>
-  files/digest-nestra-0.66-r1, Manifest:
-  Fixing SHA256 digest, pass four
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Feb 2006; Joshua Baergen <joshuabaergen@gentoo.org>
-  nestra-0.66-r1.ebuild:
-  Add modular X dependencies (bug #121697, Tupone Alfredo).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Feb 2006; Simon Stelling <blubb@gentoo.org> nestra-0.66-r1.ebuild:
-  remove old 2004.3 multilib checks
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Jan 2006; Mike Frysinger <vapier@gentoo.org>
-  +files/nestra-0.66-exec-stack.patch, nestra-0.66-r1.ebuild:
-  Build nestra without an executable stack.
-
-  10 Jan 2006; Mike Frysinger <vapier@gentoo.org> nestra-0.66-r1.ebuild:
-  Fix LDFLAGS support.
-
-  13 Jul 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  nestra-0.66-r1.ebuild:
-  call games_pkg_setup more; error check sed; use default src_compile
-
-  13 Jul 2005; Simon Stelling <blubb@gentoo.org> nestra-0.66-r1.ebuild:
-  fixed bug 94871
-
-  21 Mar 2005; Jeremy Huddleston <eradicator@gentoo.org>
-  nestra-0.66-r1.ebuild:
-  Added support to build 32bit version on amd64.
-
-*nestra-0.66-r1 (27 Mar 2004)
-
-  27 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> nestra-0.66-r1.ebuild:
-  depend on sed >= 4; use emake; error check; upgrade to debian patch -7; use
-  mirror:// syntax
-
-*nestra-0.66 (27 Dec 2002)
-
-  18 Jul 2003; Mike Frysinger <vapier@gentoo.org> :
-  Add debian patch + games.eclass support.
-
-  27 Dec 2002; Ryan Phillips <rphillips@gentoo.org> nestra-0.66.ebuild :
-  initial release

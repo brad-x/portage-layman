@@ -1,94 +1,85 @@
 # ChangeLog for media-fonts/mathematica-fonts
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/mathematica-fonts/ChangeLog,v 1.17 2015/08/06 12:59:35 amadio Exp $
+# (auto-generated from git log)
 
-*mathematica-fonts-10.0 (06 Aug 2015)
+*mathematica-fonts-10.0 (09 Aug 2015)
+*mathematica-fonts-7.0 (09 Aug 2015)
 
-  06 Aug 2015; Guilherme Amadio <amadio@gentoo.org>
-  +mathematica-fonts-10.0.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +mathematica-fonts-7.0.ebuild, +mathematica-fonts-10.0.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 May 2009; Peter Volkov <pva@gentoo.org> mathematica-fonts-7.0.ebuild:
-  Updated SRC_URI since upstream changed download location, bug #270518,
-  thank Alexander Kozyrev for report and fix.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Dec 2008; Peter Volkov <pva@gentoo.org> mathematica-fonts-7.0.ebuild:
-  Changed postinst instructions since they broke font rendering, bug
-  #231746, thank Martin von Gagern for report.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*mathematica-fonts-7.0 (02 Dec 2008)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Dec 2008; Peter Volkov <pva@gentoo.org> -mathematica-fonts-4.2.ebuild,
-  -mathematica-fonts-5.2.ebuild, -mathematica-fonts-6.0.ebuild,
-  -mathematica-fonts-6.0-r1.ebuild, +mathematica-fonts-7.0.ebuild:
-  Download location for old fonts is unknown at the moment, removing them.
-  Version bump straight to stable, since this are only fonts possible to
-  install.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mathematica-fonts-6.0-r1 (20 May 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 May 2008; Ryan Hill <dirtyepic@gentoo.org>
-  +mathematica-fonts-6.0-r1.ebuild:
-  Install the Linux-specific fonts rather than the general Windows ones.
-  Fixes rendering issues reported on bug #203739.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Jan 2008; Raúl Porcel <armin76@gentoo.org>
-  mathematica-fonts-6.0.ebuild:
-  Add ~alpha/~ia64/~sparc
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mathematica-fonts-6.0 (31 Dec 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 Dec 2007; Ryan Hill <dirtyepic@gentoo.org>
-  +mathematica-fonts-6.0.ebuild:
-  Version bump.  Bug #203739.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org>
-  mathematica-fonts-4.2.ebuild, mathematica-fonts-5.2.ebuild:
-  (QA) RESTRICT clean up.
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Jun 2007; Luca Barbato <lu_zero@gentoo.org>
-  mathematica-fonts-5.2.ebuild:
-  Marked ~ppc ~ppc64
+  28 Sep 2015; Agostino Sarubbo <ago@gentoo.org>
+  mathematica-fonts-10.0.ebuild:
+  amd64 stable wrt bug #561692
 
-  19 Mar 2007; Marius Mauch <genone@gentoo.org>
-  mathematica-fonts-4.2.ebuild, mathematica-fonts-5.2.ebuild:
-  Replacing einfo with elog
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  18 Mar 2007; Simon Stelling <blubb@gentoo.org>
-  mathematica-fonts-5.2.ebuild:
-  stable on amd64; bug 170325
+  28 Sep 2015; Justin Lecher <jlec@gentoo.org> mathematica-fonts-10.0.ebuild,
+  metadata.xml:
+  Stable for ALLARCHES
 
-  21 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  mathematica-fonts-5.2.ebuild:
-  stable x86; bug 167022
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=561692
 
-  26 Nov 2006; Diego Pettenò <flameeyes@gentoo.org>
-  mathematica-fonts-5.2.ebuild:
-  Add ~x86-fbsd keyword.
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mathematica-fonts-5.2 (14 Aug 2006)
+  28 Sep 2015; Justin Lecher <jlec@gentoo.org> -mathematica-fonts-7.0.ebuild:
+  Clean old
 
-  14 Aug 2006; Marinus Schraal <foser@gentoo.org> mathematica-fonts-5.2.ebuild :
-  Clean up the ebuild
-  remove freetype USE, it all comes in one pack now
-  remove nofetch restrict
+  obsoletes:
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=265444
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=298165
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=561158
 
-  14 Aug 2006; Marinus Schraal <foser@gentoo.org> mathematica-fonts-4.2.ebuild :
-  Fix download URI, thanks to Felix and Jason in #136836
-
-  26 Jul 2005; Diego Pettenò <flameeyes@gentoo.org>
-  mathematica-fonts-4.2.ebuild:
-  Added to ~amd64.
-
-  21 May 2005; Mamoru KOMACHI <usata@gentoo.org>
-  mathematica-fonts-4.2.ebuild:
-  Added an instruction to let users modify mozilla prefs.
-  Thanks to Nikolas 'Atrus' Coukouma <otto@atrus.org>; bug #93100.
-
-*mathematica-fonts-4.2 (03 May 2005)
-
-  03 May 2005; Mamoru KOMACHI <usata@gentoo.org> +metadata.xml,
-  +mathematica-fonts-4.2.ebuild:
-  Initial import. Ebuild submitted by Matthieu Sozeau <mattam@gentoo.org>;
-  bug #52014.
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 

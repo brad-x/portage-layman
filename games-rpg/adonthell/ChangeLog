@@ -1,137 +1,58 @@
 # ChangeLog for games-rpg/adonthell
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/adonthell/ChangeLog,v 1.32 2015/04/08 18:11:42 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> adonthell-0.3.5-r1.ebuild:
-  Drop old Python implementations
+*adonthell-0.3.5-r1 (09 Aug 2015)
 
-  20 Oct 2014; Alfredo Tupone <tupone@gentoo.org> adonthell-0.3.5-r1.ebuild,
-  +files/adonthell-0.3.5-format.patch:
-  Fix compile with format-security. Bug #520470 by Agostino Sarubbo
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +adonthell-0.3.5-r1.ebuild, +files/adonthell-0.3.5-configure.in.patch,
+  +files/adonthell-0.3.5-format.patch, +files/adonthell-0.3.5-gcc46.patch,
+  +files/adonthell-0.3.5-glibc-2.10.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  29 Jul 2014; Michael Sterrett <mr_bones_@gentoo.org> -adonthell-0.3.5.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> adonthell-0.3.5.ebuild,
-  adonthell-0.3.5-r1.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Aug 2013; Agostino Sarubbo <ago@gentoo.org> adonthell-0.3.5-r1.ebuild:
-  Stable for ppc, wrt bug #480552
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Aug 2013; Agostino Sarubbo <ago@gentoo.org> adonthell-0.3.5-r1.ebuild:
-  Stable for x86, wrt bug #480552
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Aug 2013; Agostino Sarubbo <ago@gentoo.org> adonthell-0.3.5-r1.ebuild:
-  Stable for amd64, wrt bug #480552
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Aug 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  adonthell-0.3.5-r1.ebuild:
-  slot libsdl dep
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*adonthell-0.3.5-r1 (03 Feb 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Feb 2013; Julian Ospald <hasufell@gentoo.org> +adonthell-0.3.5-r1.ebuild:
-  migrate to python-single-r1
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> adonthell-0.3.5.ebuild:
-  Move EAPI assignment to top of ebuild, bug 411875.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Apr 2011; Tupone Alfredo <tupone@gentoo.org> adonthell-0.3.5.ebuild,
-  +files/adonthell-0.3.5-gcc46.patch:
-  Fix build with gcc-4.6 Bug #363731 by Diego Elio Pettenò
+  Bug: https://bugs.gentoo.org/552720
 
-  04 May 2010; Tupone Alfredo <tupone@gentoo.org> adonthell-0.3.5.ebuild:
-  Force python2 fixing bug #312271 by arfrever@gentoo.org
-
-  06 Jan 2010; Joseph Jezak <josejx@gentoo.org> adonthell-0.3.5.ebuild:
-  Marked ppc stable for bug #288816.
-
-  26 Nov 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  adonthell-0.3.5.ebuild, +files/adonthell-0.3.5-glibc-2.10.patch:
-  re-add glibc210 patch
-
-  21 Nov 2009; Markus Meier <maekke@gentoo.org> adonthell-0.3.5.ebuild:
-  x86 stable, bug #288816
-
-*adonthell-0.3.5 (11 Sep 2009)
-
-  11 Sep 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +adonthell-0.3.5.ebuild, +files/adonthell-0.3.5-configure.in.patch:
-  version bump (bug #226191)
-
-  26 Jul 2009; Ryan Hill <dirtyepic@gentoo.org> adonthell-0.3.4a-r1.ebuild,
-  +files/adonthell-0.3.4a-glibc-2.10.patch:
-  Fix building with glibc-2.10. (bug #226191)
-
-  29 May 2008; Tristan Heaven <nyhm@gentoo.org> adonthell-0.3.4a-r1.ebuild:
-  Move swig to DEPEND, bug #221483
-
-*adonthell-0.3.4a-r1 (12 Feb 2007)
-
-  12 Feb 2007; Tristan Heaven <nyhm@gentoo.org>
-  +files/adonthell-0.3.4a-external-libs.patch, -adonthell-0.3.4a.ebuild,
-  +adonthell-0.3.4a-r1.ebuild:
-  Use external SDL_ttf and SDL_mixer, bug #166536
-
-  02 Nov 2006; Tristan Heaven <nyhm@gentoo.org> adonthell-0.3.4a.ebuild:
-  Add nls dependencies
-
-  20 Oct 2006; Tristan Heaven <nyhm@gentoo.org>
-  +files/adonthell-0.3.4a-inline.patch, files/0.3.4a-configure.in.patch,
-  adonthell-0.3.4a.ebuild:
-  Update configure.in patch to respect CXXFLAGS; Add patch for linking errors;
-  Depend on dev-lang/swig, bug #144257
-
-  23 Sep 2006; Mike Frysinger <vapier@gentoo.org> adonthell-0.3.4a.ebuild:
-  Cleanup autotools #148762 by David Philippi.
-
-  03 Apr 2006; <Tupone@gentoo.org> +files/adonthell-0.3.4a-gcc-41.patch,
-  adonthell-0.3.4a.ebuild:
-  gcc-4.1 fix, bug #121081 by Jan Jitse Venselaar
-
-  23 Mar 2006; <Tupone@gentoo.org> files/0.3.4a-configure.in.patch:
-  Linking problem, missing -lutil, bug #111236 by Luu Danh Hieu
-
-  15 Jun 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  adonthell-0.3.3-r1.ebuild, adonthell-0.3.4a.ebuild:
-  Removed INSTALL file.
-
-*adonthell-0.3.4a (09 Jun 2005)
-
-  09 Jun 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/0.3.4a-configure.in.patch, +adonthell-0.3.4a.ebuild:
-  version bump
-
-  13 Mar 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  files/0.3.3-configure.in.patch, adonthell-0.3.3-r1.ebuild:
-  cleaned up python library code in configure.in; added work-around for bug
-  #83434 that caused a compile failure related to nls support; more deps for use
-  doc; keepdir the directory that games that use adonthell will use.
-
-  06 Dec 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  adonthell-0.3.3-r1.ebuild:
-  requires oggvorbis; tidy
-
-  11 Feb 2004; David Holm <dholm@gentoo.org> adonthell-0.3.3-r1.ebuild:
-  Added to ~ppc.
-
-*adonthell-0.3.3-r1 (20 Mar 2003)
-
-  21 Jun 2003; Mike Frysinger <vapier@gentoo.org> :
-  Added a small patch back ported from 0.3.4-cvs #17281.
-
-  27 Mar 2003; Michael Nazaroff <naz@gentoo.org> adonthell-0.3.3-r1.ebuild:
-  Added a License to the ebuild.
-  
-  20 Mar 2003; Graham Forest <vladimir@gentoo.org> adonthell-0.3.3-r1.ebuild:
-  Removed usage of pic USE flag
-
-*adonthell-0.3.3 (02 Mar 2003)
-
-  27 Mar 2003; Michael Nazaroff <naz@gentoo.org> adonthell-3.3.ebuild:
-  Added a License to the ebuild.
-  
-  02 Mar 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Luca Barbato <lu_zero@gentoo.org> #11875.

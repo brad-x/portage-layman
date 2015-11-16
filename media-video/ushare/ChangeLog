@@ -1,123 +1,65 @@
 # ChangeLog for media-video/ushare
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ushare/ChangeLog,v 1.29 2014/02/14 21:07:28 hwoarang Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  14 Feb 2014; Markos Chandras <hwoarang@gentoo.org> files/ushare.init.d.ng:
-  Fix typo
+*ushare-1.1a-r6 (09 Aug 2015)
+*ushare-1.1a-r5 (09 Aug 2015)
 
-  14 Feb 2014; Markos Chandras <hwoarang@gentoo.org> files/ushare.init.d.ng:
-  Remove bashisms
-
-  30 Sep 2013; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r6.ebuild:
-  Stable for x86, wrt bug #484910
-
-  28 Sep 2013; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r6.ebuild:
-  Stable for amd64, wrt bug #484910
-
-*ushare-1.1a-r6 (18 Aug 2013)
-
-  18 Aug 2013; Markos Chandras <hwoarang@gentoo.org> -ushare-1.1a-r4.ebuild,
-  +ushare-1.1a-r6.ebuild, +files/ushare.init.d.ng, +files/ushare.service:
-  Revbump to bring back the sysconf support and migrate away from the
-  /etc/conf.d/ushare file. This also allows easier intergration with systemd.
-
-  16 Feb 2013; Pacho Ramos <pacho@gentoo.org> ushare-1.1a-r5.ebuild:
-  Don't show elog messages always (#457596)
-
-  15 Feb 2013; Markos Chandras <hwoarang@gentoo.org>
-  +files/07_all_drop_optimizations.patch, ushare-1.1a-r5.ebuild:
-  Respect CC (#457612). Drop -O3 (#457614)
-
-  14 Feb 2013; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r5.ebuild:
-  Stable for x86, wrt bug #457410
-
-  14 Feb 2013; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r5.ebuild:
-  Stable for amd64, wrt bug #457410
-
-  16 Dec 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
-  Drop no-herd from metadata.xml
-
-*ushare-1.1a-r5 (08 Nov 2012)
-
-  08 Nov 2012; Markos Chandras <hwoarang@gentoo.org>
-  +files/06_all_ushare_disable_sysconf.patch, +ushare-1.1a-r5.ebuild:
-  Revbump to disable parsing of the default configuration file.
-  /etc/conf.d/ushare should work for Gentoo users
-
-  16 Sep 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Remove non-existing maintainer. Take over maintainership
-
-  16 Sep 2012; Markos Chandras <hwoarang@gentoo.org> files/ushare.init.d:
-  Revert my last commit
-
-  16 Sep 2012; Markos Chandras <hwoarang@gentoo.org> files/ushare.init.d:
-  Add missing -c option for shared directories. Bug #434548. Thanks to Robert
-  Meyer <r.meyer@net-wizard.org>
-
-  31 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -ushare-1.1a-r3.ebuild:
-  Remove old
-
-*ushare-1.1a-r4 (18 Aug 2012)
-
-  18 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +ushare-1.1a-r4.ebuild,
-  -ushare-1.1a-r1.ebuild, files/ushare.init.d:
-  Revbump directly to stable to replace -c with -u in the init script. Remove
-  old
-
-  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> ushare-1.1a-r3.ebuild:
-  marked x86 per bug 423747
-
-  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r3.ebuild:
-  Stable for amd64, wrt bug #423747
-
-  09 Jun 2012; Zac Medico <zmedico@gentoo.org> ushare-1.1a-r1.ebuild,
-  ushare-1.1a-r3.ebuild:
-  inherit user for enewuser
-
-*ushare-1.1a-r3 (27 May 2012)
-
-  27 May 2012; Michael Weber <xmw@gentoo.org>
-  +files/05_all_missing_headers.patch, -ushare-1.1a-r2.ebuild,
-  +ushare-1.1a-r3.ebuild:
-  Revbump to include includes patch by Sal Gonzalez (bug 415649)
-
-*ushare-1.1a-r2 (27 May 2012)
-
-  27 May 2012; Michael Weber <xmw@gentoo.org>
-  +files/04_all_ushare_upnp_build_fix.patch, +ushare-1.1a-r2.ebuild:
-  Revbump to support net-libs/libupnp-1.6.14 (thanks Sal Gonzalez, bug 415649)
-
-  25 May 2012; Markos Chandras <hwoarang@gentoo.org> ushare-1.1a-r1.ebuild:
-  Lower libupnp dependency
-
-  22 May 2012; Johannes Huber <johu@gentoo.org> ushare-1.1a-r1.ebuild:
-  Stable for x86, wrt bug #415723
-
-  18 May 2012; Agostino Sarubbo <ago@gentoo.org> ushare-1.1a-r1.ebuild:
-  Stable for amd64, wrt bug #415723
-
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ushare-1.1a-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-*ushare-1.1a-r1 (02 Apr 2012)
-
-  02 Apr 2012; Pacho Ramos <pacho@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/01_all_ushare_build_system.patch,
   +files/02_all_ushare_build_warnings.patch,
-  +files/03_all_ushare_mp4_video_mime.patch, +ushare-1.1a-r1.ebuild,
-  -ushare-1.1a.ebuild, metadata.xml:
-  Revision bump fixing tons of bugs and with a new maintainer by #403979. Thanks
-  a lot to Sal Gonzalez for his work. Remove old.
+  +files/03_all_ushare_mp4_video_mime.patch,
+  +files/04_all_ushare_upnp_build_fix.patch,
+  +files/05_all_missing_headers.patch,
+  +files/06_all_ushare_disable_sysconf.patch,
+  +files/07_all_drop_optimizations.patch, +files/ushare.conf.d,
+  +files/ushare.init.d, +files/ushare.init.d.ng, +files/ushare.service,
+  +metadata.xml, +ushare-1.1a-r5.ebuild, +ushare-1.1a-r6.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Feb 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
-  orphan package because I am not interested any longer
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Dec 2009; Jeremy Olexa <darkside@gentoo.org> ushare-1.1a.ebuild:
-  Fix building with USE=nls, bug 298207
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*ushare-1.1a (23 Dec 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Dec 2009; Jeremy Olexa <darkside@gentoo.org> +ushare-1.1a.ebuild,
-  +files/ushare.conf.d, +files/ushare.init.d, +metadata.xml:
-  Initial import. Many thanks to all the contributors on bug 192561. Moved
-  from sunrise overlay with modifications by myself
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

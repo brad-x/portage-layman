@@ -1,74 +1,57 @@
 # ChangeLog for app-cdr/dvd95
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvd95/ChangeLog,v 1.15 2015/06/09 09:24:44 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*dvd95-1.6_p0 (09 Aug 2015)
 
-  19 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -dvd95-1.5_p3.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +dvd95-1.6_p0.ebuild,
+  +files/dvd95-1.3_p2-desktop-entry.patch,
+  +files/dvd95-1.6_p0-link-libxml2.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Jan 2015; Michał Górny <mgorny@gentoo.org> dvd95-1.5_p3.ebuild,
-  dvd95-1.6_p0.ebuild:
-  Switch to CPU_FLAGS_X86.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Patrick Lauer <patrick@gentoo.org> dvd95-1.5_p3.ebuild,
-  dvd95-1.6_p0.ebuild:
-  Fix description for more repoman happy
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Dec 2012; Sebastian Pipping <sping@gentoo.org> dvd95-1.6_p0.ebuild,
-  +files/dvd95-1.6_p0-link-libxml2.patch:
-  Fix linking error (bug #402669)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dvd95-1.5_p3.ebuild,
-  dvd95-1.6_p0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*dvd95-1.6_p0 (19 Mar 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  19 Mar 2010; Pacho Ramos <pacho@gentoo.org> -dvd95-1.5_p0.ebuild,
-  +dvd95-1.6_p0.ebuild:
-  Version bump and remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*dvd95-1.5_p3 (24 Dec 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Dec 2009; Pacho Ramos <pacho@gentoo.org> +dvd95-1.5_p3.ebuild:
-  Version bump (bug 277490), translations fixed, tests fixed (thanks to
-  Diego for reporting bug 279882), and bug 293041 solved by upstream
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 May 2009; Samuli Suominen <ssuominen@gentoo.org> -dvd95-1.3_p2.ebuild,
-  dvd95-1.5_p0.ebuild:
-  Missing media-video/mplayer rdepend wrt #269068
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*dvd95-1.5_p0 (07 May 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  07 May 2009; Samuli Suominen <ssuominen@gentoo.org> +dvd95-1.5_p0.ebuild:
-  Version bump. It seems LINGUAS works without a hack now.
-
-*dvd95-1.3_p2 (06 Jun 2008)
-
-  06 Jun 2008; Samuli Suominen <ssuominen@gentoo.org>
-  +files/dvd95-1.3_p2-desktop-entry.patch, -dvd95-1.2_p0.ebuild,
-  +dvd95-1.3_p2.ebuild:
-  Version bump for bug 223927. Fix desktop entry for bug 204319. Try to
-  handle LINGUAS for bug 204322. Missing deps for bug 205020.
-
-*dvd95-1.3_p0 (16 Dec 2007)
-
-  16 Dec 2007; Lars Weiler <pylon@gentoo.org> -dvd95-1.1_p1.ebuild,
-  dvd95-1.2_p0.ebuild, +dvd95-1.3_p0.ebuild:
-  Version bump; bug #202089.  Cleanup.  Quotes.
-
-*dvd95-1.2_p0 (28 Feb 2007)
-
-  28 Feb 2007; Lars Weiler <pylon@gentoo.org> +dvd95-1.2_p0.ebuild:
-  Version bump; bug #159739.
-
-  23 Dec 2006; Piotr Jaroszyński <peper@gentoo.org> dvd95-1.1_p1.ebuild:
-  Add ~amd64 wrt bug #156968.
-
-*dvd95-1.1_p1 (03 Dec 2006)
-
-  03 Dec 2006; Lars Weiler <pylon@gentoo.org> +metadata.xml,
-  +dvd95-1.1_p1.ebuild:
-  New ebuild from Bug #141704.

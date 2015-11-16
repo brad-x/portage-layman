@@ -1,133 +1,63 @@
 # ChangeLog for dev-ruby/bcat
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bcat/ChangeLog,v 1.39 2015/07/25 13:04:04 mrueg Exp $
+# (auto-generated from git log)
 
-  25 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -bcat-0.6.2.ebuild:
-  Remove old.
+*bcat-0.6.2-r2 (09 Aug 2015)
+*bcat-0.6.2-r1 (09 Aug 2015)
 
-  25 Jul 2015; Mikle Kolyada <zlogene@gentoo.org> bcat-0.6.2-r1.ebuild:
-  sparc stable wrt bug #542574
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bcat-0.6.2-r1.ebuild,
+  +bcat-0.6.2-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 May 2015; Markus Meier <maekke@gentoo.org> bcat-0.6.2-r1.ebuild:
-  arm stable, bug #542574
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 May 2015; Jeroen Roovers <jer@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for PPC64 (bug #542574).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> bcat-0.6.2-r1.ebuild:
-  ppc stable wrt bug #542574
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for ia64, wrt bug #542574
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> bcat-0.6.2-r1.ebuild,
+  bcat-0.6.2-r2.ebuild:
+  Use https by default
 
-  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for alpha, wrt bug #542574
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for x86, wrt bug #542574
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for amd64, wrt bug #542574
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Mar 2015; Hans de Graaff <graaff@gentoo.org> bcat-0.6.2-r2.ebuild:
-  Add ruby22.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Mar 2015; Jeroen Roovers <jer@gentoo.org> bcat-0.6.2-r1.ebuild:
-  Stable for HPPA (bug #542574).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Jan 2015; Hans de Graaff <graaff@gentoo.org> bcat-0.6.2.ebuild,
-  bcat-0.6.2-r1.ebuild, bcat-0.6.2-r2.ebuild:
-  Update blocker on speech-tools now that there are fixed version which no
-  longer collide, bug 418301.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Nov 2014; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2.ebuild:
-  Stable for ppc64, wrt bug #493780
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Nov 2014; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2.ebuild:
-  Stable for ppc, wrt bug #493780
-
-  15 Aug 2014; Raúl Porcel <armin76@gentoo.org> bcat-0.6.2.ebuild:
-  sparc stable, bug #493780
-
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> bcat-0.6.2-r1.ebuild,
-  bcat-0.6.2-r2.ebuild, bcat-0.6.2.ebuild:
-  Remove trailing '.' from DESCRIPTION.
-
-  21 Jul 2014; Tobias Klausmann <klausman@gentoo.org> bcat-0.6.2.ebuild:
-  Stable on alpha, bug #493780
-
-*bcat-0.6.2-r2 (09 May 2014)
-
-  09 May 2014; Peter Wilmott <p8952@gentoo.org> +bcat-0.6.2-r2.ebuild:
-  Add ruby21 target.
-
-  05 Apr 2014; Manuel Rüger <mrueg@gentoo.org> bcat-0.6.2-r1.ebuild,
-  bcat-0.6.2.ebuild:
-  Remove ree18 and ruby18 target.
-
-  01 Feb 2014; Akinori Hattori <hattya@gentoo.org> bcat-0.6.2.ebuild:
-  ia64 stable wrt bug #493780
-
-  26 Jan 2014; Agostino Sarubbo <ago@gentoo.org> bcat-0.6.2.ebuild:
-  Stable for x86, wrt bug #493780
-
-  19 Jan 2014; Pacho Ramos <pacho@gentoo.org> bcat-0.6.2.ebuild:
-  amd64 stable, bug 493780
-
-  26 Dec 2013; Markus Meier <maekke@gentoo.org> bcat-0.6.2.ebuild:
-  arm stable, bug #493780
-
-  22 Dec 2013; Jeroen Roovers <jer@gentoo.org> bcat-0.6.2.ebuild:
-  Stable for HPPA (bug #493780).
-
-*bcat-0.6.2-r1 (17 Nov 2013)
-
-  17 Nov 2013; Manuel Rüger <mrueg@gentoo.org> +bcat-0.6.2-r1.ebuild:
-  Add ruby20 target.
-
-  01 Sep 2013; Hans de Graaff <graaff@gentoo.org> bcat-0.6.2.ebuild:
-  Drop virtual/ruby-test-unit which is a noop, bug 380711.
-
-  15 Jan 2013; Rick Farina <zerochaos@gentoo.org> bcat-0.6.2.ebuild:
-  adding ~arm keywords to net-analyzer/metasploit rdeps
-
-  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> bcat-0.6.2.ebuild:
-  Add ~alpha/~ia64/~sparc wrt #417573
-
-  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org> bcat-0.6.2.ebuild:
-  Keyword ~ppc ~ppc64, bug #417573
-
-  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
-  Update metadata.xml so that it's the same as most other packages.
-
-  22 Jul 2012; Hans de Graaff <graaff@gentoo.org> bcat-0.6.2.ebuild:
-  Add blocker on speech-tools which also tries to install bcat.
-
-  22 Jul 2012; Hans de Graaff <graaff@gentoo.org> -bcat-0.6.1.ebuild:
-  Remove old version.
-
-  11 Jul 2012; Andreas Schuerch <nativemad@gentoo.org> bcat-0.6.2.ebuild:
-  x86 keyworded, see bug 417537
-
-  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> bcat-0.6.2.ebuild:
-  Marked ~hppa (bug #417573).
-
-  02 Mar 2012; Naohiro Aota <naota@gentoo.org> bcat-0.6.2.ebuild:
-  Add ~x86-fbsd
-
-  29 Jan 2012; Hans de Graaff <graaff@gentoo.org> bcat-0.6.2.ebuild:
-  Add ruby19. Fix tests.
-
-*bcat-0.6.2 (11 Sep 2011)
-
-  11 Sep 2011; Hans de Graaff <graaff@gentoo.org> +bcat-0.6.2.ebuild:
-  Version bump.
-
-*bcat-0.6.1 (23 Jun 2011)
-
-  23 Jun 2011; Hans de Graaff <graaff@gentoo.org> +bcat-0.6.1.ebuild,
-  +metadata.xml:
-  Initial import. New dependency of dev-util/aruba.

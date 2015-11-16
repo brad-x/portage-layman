@@ -1,101 +1,57 @@
 # ChangeLog for app-text/xmldiff
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xmldiff/ChangeLog,v 1.25 2015/04/14 23:44:40 mrueg Exp $
+# (auto-generated from git log)
 
-  14 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -xmldiff-0.6.9-r1.ebuild,
-  -xmldiff-0.6.9.ebuild:
-  Remove old.
+*xmldiff-0.6.10-r1 (09 Aug 2015)
+*xmldiff-0.6.10 (09 Aug 2015)
 
-*xmldiff-0.6.10-r1 (18 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xmldiff-0.6.10.ebuild, +xmldiff-0.6.10-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Jan 2015; Michał Górny <mgorny@gentoo.org> +xmldiff-0.6.10-r1.ebuild:
-  Convert to distutils-r1.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Aug 2012; Mike Gilbert <floppym@gentoo.org> xmldiff-0.6.10.ebuild,
-  xmldiff-0.6.9-r1.ebuild, xmldiff-0.6.9.ebuild:
-  Update HOMEPAGE to prevent redirect. Suggested by Arfrever.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> xmldiff-0.6.10.ebuild,
-  xmldiff-0.6.9-r1.ebuild:
-  Restricting jython
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Dec 2011; Michael Weber <xmw@gentoo.org> xmldiff-0.6.10.ebuild:
-  ppc stable (bug 378063)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> xmldiff-0.6.10.ebuild:
-  alpha/ia64/sparc stable wrt #378063
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xmldiff-0.6.10.ebuild:
-  x86 stable wrt bug #378063
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xmldiff-0.6.10.ebuild:
-  Stable on amd64 wrt bug #378063
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Aug 2011; Zac Medico <zmedico@gentoo.org> xmldiff-0.6.10.ebuild:
-  Add ~x86-linux keyword.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*xmldiff-0.6.10 (08 Jan 2011)
-*xmldiff-0.6.9-r1 (08 Jan 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  08 Jan 2011; Michael Weber <xmw@gentoo.org> +xmldiff-0.6.9-r1.ebuild,
-  +xmldiff-0.6.10.ebuild, metadata.xml:
-  Taking maintainership, resolving python issues (thanks to David Abbott on bug
-  312129) and bumping to 0.6.10 (thanks to Stefan de Konink <stefan@konink.de>
-  on bug 349499).
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  xmldiff-0.6.9.ebuild:
-  Fix deprecation warnings.
-
-  08 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -xmldiff-0.6.8.ebuild:
-  Delete.
-
-  07 Aug 2010; Raúl Porcel <armin76@gentoo.org> xmldiff-0.6.9.ebuild:
-  ia64/sparc stable wrt #321591
-
-  01 Aug 2010; Christian Faulhammer <fauli@gentoo.org> xmldiff-0.6.9.ebuild:
-  stable x86, bug 321591
-
-  31 Jul 2010; Pacho Ramos <pacho@gentoo.org> xmldiff-0.6.9.ebuild:
-  amd64 stable, bug 321591
-
-  25 Jul 2010; Tobias Klausmann <klausman@gentoo.org> xmldiff-0.6.9.ebuild:
-  Stable on alpha, bug #321591
-
-  27 Jun 2010; <nixnut@gentoo.org> xmldiff-0.6.9.ebuild:
-  ppc stable #321591
-
-  16 Apr 2010; Raúl Porcel <armin76@gentoo.org> xmldiff-0.6.8.ebuild,
-  xmldiff-0.6.9.ebuild:
-  Add ~alpha wrt #296548
-
-  19 Feb 2010; Raúl Porcel <armin76@gentoo.org> xmldiff-0.6.8.ebuild,
-  xmldiff-0.6.9.ebuild:
-  Add ~ia64/~sparc
-
-  05 Jan 2010; Joseph Jezak <josejx@gentoo.org> xmldiff-0.6.8.ebuild,
-  xmldiff-0.6.9.ebuild:
-  Marked ~ppc.
-
-  25 Oct 2009; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove coldwind from metadata.xml (#181764)
-
-*xmldiff-0.6.9 (19 Aug 2009)
-
-  19 Aug 2009; Patrick Lauer <patrick@gentoo.org> +xmldiff-0.6.9.ebuild:
-  Bump to 0.6.9, fixes #278988
-
-  22 Sep 2007; Christoph Mende <angelos@gentoo.org> xmldiff-0.6.8.ebuild:
-  Added ~amd64 wrt bug #193129
-
-  28 Jun 2007; Santiago M. Mola <coldwind@gentoo.org>
-  -files/xmldiff-0.6.8-python2.5.patch:
-  Fixing stupid cvs breakage thanks to Chris Mayo. Fixes bug #183566
-
-*xmldiff-0.6.8 (28 Jun 2007)
-
-  28 Jun 2007; Santiago M. Mola <coldwind@gentoo.org>
-  +files/xmldiff-0.6.8-python2.5.patch, +metadata.xml,
-  +xmldiff-0.6.8.ebuild:
-  Initial commit, fixes bug #181256

@@ -1,90 +1,64 @@
 # ChangeLog for games-board/openyahtzee
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/openyahtzee/ChangeLog,v 1.22 2014/09/20 06:48:53 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  20 Sep 2014; Michael Sterrett <mr_bones_@gentoo.org> openyahtzee-1.9.1.ebuild:
-  EAPI=5; tidy
+*openyahtzee-1.9.1 (09 Aug 2015)
 
-  30 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/openyahtzee-1.9-gcc45.patch, -files/openyahtzee-1.9-underlink.patch,
-  -openyahtzee-1.9.ebuild:
-  old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +openyahtzee-1.9.1.ebuild:
+  proj/gentoo: Initial commit
 
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> openyahtzee-1.9.1.ebuild:
-  Stable for x86, wrt bug #451468
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Jan 2013; Agostino Sarubbo <ago@gentoo.org> openyahtzee-1.9.1.ebuild:
-  Stable for ppc, wrt bug #451468
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Jan 2013; Agostino Sarubbo <ago@gentoo.org> openyahtzee-1.9.1.ebuild:
-  Stable for amd64, wrt bug #451468
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org> openyahtzee-1.9.1.ebuild:
-  boost is needed for building (bug #451518)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Jul 2012; Julian Ospald <hasufell@gentoo.org> openyahtzee-1.9.1.ebuild:
-  drop unused eutils too
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Jul 2012; Julian Ospald <hasufell@gentoo.org> openyahtzee-1.9.1.ebuild,
-  -files/openyahtzee-1.9.1-underlink.patch:
-  underlinkg patch not needed anymore (fixes bug 426530), source only compiles
-  on >=sys-devel/gcc-4.6 add check, dropped autotools eclass and eautoreconf
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*openyahtzee-1.9.1 (11 Jul 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/openyahtzee-1.9.1-underlink.patch, +openyahtzee-1.9.1.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Jun 2011; Tupone Alfredo <tupone@gentoo.org> openyahtzee-1.9.ebuild,
-  +files/openyahtzee-1.9-underlink.patch:
-  Fix underlink. Bug #369529 by Diego Elio Pettenò
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 May 2010; Tupone Alfredo <tupone@gentoo.org> openyahtzee-1.9.ebuild,
-  +files/openyahtzee-1.9-gcc45.patch:
-  Fix build with gcc-4.5. Bug #318601 by flameeyes@gentoo.org
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Jan 2010; Brent Baude <ranger@gentoo.org> openyahtzee-1.9.ebuild:
-  keyworded ~arch for ppc, bug 296287
+*openyahtzee-1.9.2 (07 Nov 2015)
 
-  21 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  openyahtzee-1.9.ebuild:
-  Fix building with -Wl,--as-needed wrt #294177 by Kacper Kowalik.
+  07 Nov 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/openyahtzee-1.9.2-wx3.0.patch, +openyahtzee-1.9.2.ebuild:
+  Version bump and support wxGTK:3.0 (#563962)
 
-  19 Sep 2009; Markus Meier <maekke@gentoo.org> openyahtzee-1.9.ebuild:
-  amd64/x86 stable, bug #285383
+  Package-Manager: portage-2.2.23
 
-*openyahtzee-1.9 (17 Aug 2009)
-
-  17 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +openyahtzee-1.9.ebuild:
-  version bump (bug #281735)
-
-  02 May 2008; Markus Meier <maekke@gentoo.org> openyahtzee-1.8.1.ebuild:
-  amd64/x86 stable, bug #219793
-
-*openyahtzee-1.8.1 (18 Mar 2008)
-
-  18 Mar 2008; Tristan Heaven <nyhm@gentoo.org> +openyahtzee-1.8.1.ebuild:
-  Version bump
-
-  29 Feb 2008; Carsten Lohrke <carlo@gentoo.org> openyahtzee-1.7.ebuild,
-  openyahtzee-1.8.ebuild:
-  Remove icon extension from desktop entry to match Icon Theme Specification.
-
-*openyahtzee-1.8 (31 Oct 2007)
-
-  31 Oct 2007; Tupone Alfredo <tupone@gentoo.org> +openyahtzee-1.8.ebuild:
-  Version bump. Bug #195468 by Guy Rutenberg
-
-  28 Sep 2007; Ryan Hill <dirtyepic@gentoo.org> openyahtzee-1.7.ebuild:
-  Lock wxGTK to 2.6.
-
-  22 May 2007; Tristan Heaven <nyhm@gentoo.org> openyahtzee-1.7.ebuild:
-  Add ~x86 keyword
-
-*openyahtzee-1.7 (11 May 2007)
-
-  11 May 2007; Tupone Alfredo <tupone@gentoo.org> +metadata.xml,
-  +openyahtzee-1.7.ebuild:
-  New package, requested wih bug #137555 by Guy Rutenberg

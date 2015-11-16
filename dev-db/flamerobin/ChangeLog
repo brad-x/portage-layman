@@ -1,109 +1,57 @@
 # ChangeLog for dev-db/flamerobin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/flamerobin/ChangeLog,v 1.22 2015/06/09 13:09:04 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*flamerobin-0.9.2 (09 Aug 2015)
 
-  25 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> flamerobin-0.9.2.ebuild:
-  Set proper license information, wrt bug #444628. Thanks to Ulrich Müller for
-  discovering this issue
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/flamerobin-0.9.2-gcc46.patch, +flamerobin-0.9.2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Mar 2012; Pacho Ramos <pacho@gentoo.org> flamerobin-0.9.2.ebuild:
-  RDEPEND on x11-libs/wxGTK:2.8[X], bug #405831 by Piotr Szymaniak.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Feb 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/flamerobin-0.9.2-gcc46.patch, -files/FlameRobin.desktop,
-  flamerobin-0.9.2.ebuild:
-  Fix gcc-4.6 compilation, bug #363459 by Diego Elio Pettenò and Kacper Kowalik
-  (Xarthisius).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Feb 2012; Pacho Ramos <pacho@gentoo.org> flamerobin-0.9.2.ebuild:
-  Drop duplicated menu entry and unneeded icon (bug #403919 by Dmitry A.
-  Bakshaev and Jeroen Roovers).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Sep 2010; Ryan Hill <dirtyepic@gentoo.org> -flamerobin-0.8.3.ebuild,
-  -flamerobin-0.8.6.ebuild:
-  Drop old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*flamerobin-0.9.2 (11 Jun 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Jun 2009; Alistair Bush <ali_bush@gentoo.org> +flamerobin-0.9.2.ebuild:
-  Version bump on behalf of wtljr.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Apr 2009; Christian Faulhammer <fauli@gentoo.org>
-  flamerobin-0.8.3.ebuild, flamerobin-0.8.6.ebuild:
-  use EAPI 1 to select a specific slot (2.8) of wxGTK
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Apr 2009; Christian Faulhammer <fauli@gentoo.org>
-  flamerobin-0.8.3.ebuild, flamerobin-0.8.6.ebuild:
-  Raise dependency for wxGTK, see bug 234817
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Dec 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Removing wltjr as a maintainer since he was retired.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*flamerobin-0.8.6 (19 Mar 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Mar 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  -flamerobin-0.8.1.ebuild, +flamerobin-0.8.6.ebuild:
-  Bumped to latest release, removed past versions
-
-*flamerobin-0.8.3 (26 Dec 2007)
-
-  26 Dec 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  -flamerobin-0.7.5-r1.ebuild, -flamerobin-0.7.6.ebuild,
-  -flamerobin-0.8.0.ebuild, +flamerobin-0.8.3.ebuild:
-  Bumped to latest release, removed older versions
-
-*flamerobin-0.8.1 (18 Oct 2007)
-
-  18 Oct 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  +flamerobin-0.8.1.ebuild:
-  Bumped to latest release. Added temp hack/fix to make configure executable.
-
-*flamerobin-0.8.0 (09 Oct 2007)
-
-  09 Oct 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  +flamerobin-0.8.0.ebuild:
-  Bumped to latest release. Ideally wants wxGTK 2.8.6, but it's not in tree.
-  Still fully compatible with 2.6
-
-  16 May 2007; Ryan Hill <dirtyepic@gentoo.org> flamerobin-0.7.5-r1.ebuild,
-  flamerobin-0.7.6.ebuild:
-  Pass wx-config location to econf for bug #178713.
-
-  08 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
-  flamerobin-0.7.6.ebuild:
-  stable x86, bug #159228
-
-*flamerobin-0.7.6 (22 Nov 2006)
-
-  22 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  +flamerobin-0.7.6.ebuild:
-  Version bump for new release
-
-  07 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  flamerobin-0.7.5-r1.ebuild:
-  Attempted fix for bug 154006. Inheriting wxwidgets eclass now and using it's
-  functions.
-
-  05 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  -flamerobin-0.7.5.ebuild:
-  Removed previous version with invalid atom
-
-*flamerobin-0.7.5-r1 (04 Nov 2006)
-
-  04 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  +flamerobin-0.7.5-r1.ebuild:
-  Fixed dodocs, switch to doicon domenu for desktop entry, fixed invalid dep
-  atom of firebird per bug #154058
-
-  04 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org> metadata.xml:
-  Got a little herd happy, updated metadata.xml to no-herd
-
-*flamerobin-0.7.5 (04 Nov 2006)
-
-  04 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org>
-  +files/FlameRobin.desktop, +metadata.xml, +flamerobin-0.7.5.ebuild:
-  Initial ebuild for FlameRobin

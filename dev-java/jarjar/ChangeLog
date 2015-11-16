@@ -1,151 +1,92 @@
 # ChangeLog for dev-java/jarjar
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jarjar/ChangeLog,v 1.40 2015/07/11 09:21:37 chewi Exp $
+# (auto-generated from git log)
 
-  11 Jul 2015; James Le Cuirot <chewi@gentoo.org> jarjar-0.9.ebuild:
-  Drop java on ia64.
+*jarjar-1.4 (09 Aug 2015)
+*jarjar-0.9 (09 Aug 2015)
 
-  27 May 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
-  Disable tests altogether with RESTRICT=test.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.9-bootclasspath.patch, +files/0.9-system-jars.patch,
+  +jarjar-0.9.ebuild, +jarjar-1.4.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 May 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
-  Declare dependencies with SLOTs to avoid java-pkg_ensure-dep QA warnings. Fix
-  bug 550140.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 May 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
-  Adjust SLOTs in CDEPEND.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*jarjar-1.4 (28 Apr 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Apr 2015; Patrice Clement <monsieurp@gentoo.org> +jarjar-1.4.ebuild:
-  Version bump. Drop ia64 ppc ppc64 x86-fbsd KEYWORDS. Fix bug 263636.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> jarjar-0.9.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  16 Aug 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
+  Stable for all.
 
-  28 Jul 2013; Fabian Groffen <grobian@gentoo.org> jarjar-0.9.ebuild:
-  Marked ~x64-macos, bug #435528
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  14 Jun 2013; Alexis Ballier <aballier@gentoo.org> jarjar-0.9.ebuild:
-  keyword ~amd64-fbsd
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org> jarjar-0.9.ebuild:
-  adding ~arm
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> jarjar-0.9.ebuild:
-  Add back ia64 love #349020 by Dennis Schridde.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> jarjar-0.9.ebuild:
-  Drop ia64 support #345433
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jarjar-1.4.ebuild:
+  Convert URIs for googlecode.com to https
 
-  23 Jan 2010; Alexis Ballier <aballier@gentoo.org> jarjar-0.9.ebuild:
-  keyword ~x86-fbsd and fix cp call to be bsd-compatible in src_test
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org> jarjar-0.9.ebuild:
-  Transfer Prefix keywords
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Oct 2009; Vlastimil Babka <caster@gentoo.org>
-  +files/0.9-bootclasspath.patch, jarjar-0.9.ebuild,
-  -files/asm-2.0_alpha-buildfile.patch:
-  Fix building with ecj, bug #191378.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  10 Sep 2008; Brent Baude <ranger@gentoo.org> jarjar-0.9.ebuild:
-  Marking jarjar-0.9 ppc64 stable for dep to bug 235747
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Jan 2008; Raúl Porcel <armin76@gentoo.org> jarjar-0.9.ebuild:
-  Add ~ia64 wrt #129773
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  12 Jan 2008; Brent Baude <ranger@gentoo.org> jarjar-0.9.ebuild:
-  Marking jarjar-0.9 ~ppc64 for bug 129773
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Dec 2007; Petteri Räty <betelgeuse@gentoo.org> -jarjar-0.6-r1.ebuild,
-  jarjar-0.9.ebuild:
-  Add ANT_TASKS none as it and build.sysclasspath=ignore should be enough to
-  fix bug #191357 although I can't reproduce.
+  10 Nov 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
+  Keyword for arm.
 
-  17 Aug 2007; Tobias Scherbaum <dertobi123@gentoo.org> jarjar-0.9.ebuild:
-  ppc stable
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  15 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org> jarjar-0.9.ebuild:
-  amd64 stable, bug #187751.
+  10 Nov 2015; Patrice Clement <monsieurp@gentoo.org> jarjar-1.4.ebuild:
+  Housekeeping wrt EAPI 5 compliance.
 
-  15 Aug 2007; Christian Faulhammer <opfer@gentoo.org> jarjar-0.9.ebuild:
-  stable x86, bug 187751
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  30 May 2007; Petteri Räty <betelgeuse@gentoo.org> jarjar-0.9.ebuild:
-  Fix src_test.
+  10 Nov 2015; Patrice Clement <monsieurp@gentoo.org> -jarjar-0.9.ebuild:
+  Clean up old.
 
-  26 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> jarjar-0.6-r1.ebuild,
-  jarjar-0.9.ebuild:
-  Add ~ppc.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  26 May 2007; Vlastimil Babka <caster@gentoo.org> jarjar-0.9.ebuild:
-  Fix jar-from call and DEPEND to actually compile.
-
-  26 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> jarjar-0.9.ebuild:
-  Fix jar-from call to match *DEPEND.
-
-  18 May 2007; Petteri Räty <betelgeuse@gentoo.org> jarjar-0.9.ebuild:
-  DEPEND on splitted ant.
-
-*jarjar-0.9 (18 May 2007)
-
-  18 May 2007; Petteri Räty <betelgeuse@gentoo.org>
-  +files/0.9-system-jars.patch, +jarjar-0.9.ebuild:
-  Version bump. Fixes bug #168853. Registers the ant task so ant will be able
-  to use it automatically. Does not run jarjar on itself so now uses system
-  jars instead of bundling them inside the installed jar.
-
-  20 Apr 2007; Petteri Räty <betelgeuse@gentoo.org> -jarjar-0.6.ebuild:
-  Remove generation 1 ebuild.
-
-  20 Apr 2007; Petteri Räty <betelgeuse@gentoo.org> jarjar-0.6-r1.ebuild:
-  Add dev-java/ant-core to RDEPEND.
-
-  01 Mar 2007; Petteri Räty <betelgeuse@gentoo.org> jarjar-0.6-r1.ebuild:
-  Marked stable on amd64 for bug #168864.
-
-  01 Mar 2007; Christian Faulhammer <opfer@gentoo.org> jarjar-0.6-r1.ebuild:
-  stable x86; bug 168864
-
-  01 Mar 2007; Petteri Räty <betelgeuse@gentoo.org> jarjar-0.6-r1.ebuild:
-  Ebuild cleanup and depend on >=virtual/{jdk,jre}-1.4 because bundles 1.4
-  bytecode.
-
-  23 Sep 2006; Joshua Nichols <nichoj@gentoo.org> jarjar-0.6.ebuild,
-  jarjar-0.6-r1.ebuild:
-  Tightened asm dependency, in prepration for asm-2.2.x, which is sloted 2.2.
-
-  08 Sep 2006; Joshua Nichols <nichoj@gentoo.org> jarjar-0.6-r1.ebuild:
-  Fix for java-strict. Was missing implicitly dependend on jar from ant-core.
-
-*jarjar-0.6-r1 (27 Jul 2006)
-
-  27 Jul 2006; Joshua Nichols <nichoj@gentoo.org> +jarjar-0.6-r1.ebuild:
-  Revision bump to support new Java system.
-
-  11 Aug 2005; Petteri Räty <betelgeuse@gentoo.org>
-  -jarjar-0.4_p20050105.ebuild, jarjar-0.6.ebuild:
-  The installed jar is not versioned any more.
-  Removed the old version because it does not compile
-  against the most recent asm.
-
-  03 Aug 2005; Petteri Räty <betelgeuse@gentoo.org>
-  jarjar-0.4_p20050105.ebuild, jarjar-0.6.ebuild:
-  Changed the DESCRIPTION to be neutral. Resolves bug 101231. Thanks to Chris 
-  Nokleberg <chris@sixlegs.com> for reporting and sorry if someone was offended.
-
-*jarjar-0.6 (31 Jul 2005)
-
-  31 Jul 2005; Lim Swee Tat <st_lim@gentoo.org> +jarjar-0.6.ebuild:
-  Version bump.  Need to support cglib-2.1 which is needed for hibernate-3.0
-
-  18 May 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  jarjar-0.4_p20050105.ebuild:
-  stable on amd64 and x86
-
-*jarjar-0.4_p20050105 (05 Jan 2005)
-
-  05 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> +metadata.xml,
-  +files/asm-2.0_alpha-buildfile.patch, +jarjar-0.4_p20050105.ebuild:
-  Initial import. Dependency of #67395.

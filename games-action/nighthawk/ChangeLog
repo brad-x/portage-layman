@@ -1,54 +1,62 @@
 # ChangeLog for games-action/nighthawk
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/nighthawk/ChangeLog,v 1.16 2015/01/01 19:25:22 tupone Exp $
+# (auto-generated from git log)
 
-  01 Jan 2015; Tupone Alfredo <tupone@gentoo.org> nighthawk-2.2.ebuild:
-  EAPI 4
+*nighthawk-2.2 (09 Aug 2015)
 
-  19 Oct 2010; Michael Sterrett <mr_bones_@gentoo.org> nighthawk-2.2.ebuild:
-  EAPI=2; honor LDFLAGS (bug #341719)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nighthawk-2.2-gcc42.patch, +files/nighthawk.patch, +metadata.xml,
+  +nighthawk-2.2.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Apr 2008; Mike Frysinger <vapier@gentoo.org> nighthawk-2.2.ebuild:
-  Fixup a slightly botched autoconf run #218936.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2008; Chris Gianelloni <wolf31o2@gentoo.org> nighthawk-2.2.ebuild:
-  Shorten DESCRIPTION by removing extraneous text.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Jun 2007; Tristan Heaven <nyhm@gentoo.org>
-  +files/nighthawk-2.2-gcc42.patch, nighthawk-2.2.ebuild:
-  Patch for gcc-4.2
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org> nighthawk-2.2.ebuild:
-  Removed reference to virtual/x11.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Jan 2006; Joshua Baergen <joshuabaergen@gentoo.org>
-  nighthawk-2.2.ebuild:
-  Add modular X dependencies.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 May 2005; Marcus D. Hanwell <marcus@gentoo.org> nighthawk-2.2.ebuild:
-  Stable on amd64.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Mar 2005; Jan Brinkmann <luckyduck@gentoo.org> nighthawk-2.2.ebuild:
-  added ~amd64 KEYWORD, fixes #84325
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Feb 2005; Michael Sterrett <mr_bones_@gentoo.org> nighthawk-2.2.ebuild:
-  fix HOMEPAGE (bug #83305); tidy
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> nighthawk-2.2.ebuild:
-  Added IUSE.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org> nighthawk-2.2.ebuild:
-  use games eclass (bug 34644); inherit eutils for epatch; patch in src_unpack;
-  more error checking/messages; tidy
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Jul 2003; Michael Sterrett <msterret@gentoo.org> nighthawk-2.2.ebuild:
-  fix DESCRIPTION; tidy
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-*nighthawk-2.2 (16 Jul 2002)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Sep 2002; Mike Frysinger <vapier@gentoo.org> nighthawk.patch:
-  Added an additional small patch to compile under gcc3.2
-
-  16 Jul 2002; J. Alberto S. L. <bass@gentoo.org> nighthawk-2.2-1.ebuild: 
-    First relase
-    

@@ -1,173 +1,56 @@
 # ChangeLog for dev-perl/XML-Generator
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Generator/ChangeLog,v 1.47 2014/08/22 20:38:46 axs Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*XML-Generator-1.40.0-r1 (22 Aug 2014)
+*XML-Generator-1.40.0-r1 (09 Aug 2015)
 
-  22 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +XML-Generator-1.40.0-r1.ebuild, -XML-Generator-1.40.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +XML-Generator-1.40.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Mar 2012; Torsten Veller <tove@gentoo.org> -XML-Generator-1.01.ebuild:
-  Cleanup
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> XML-Generator-1.40.0.ebuild:
-  alpha/ia64/s390/sh/sparc stable wrt #400267
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  XML-Generator-1.40.0.ebuild:
-  x86 stable wrt bug #400267
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Mar 2012; Brent Baude <ranger@gentoo.org> XML-Generator-1.40.0.ebuild:
-  Marking XML-Generator-1.40.0 ppc64 for bug 400267
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2012; Markus Meier <maekke@gentoo.org> XML-Generator-1.40.0.ebuild:
-  arm stable, bug #400267
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Feb 2012; Brent Baude <ranger@gentoo.org> XML-Generator-1.40.0.ebuild:
-  Marking XML-Generator-1.40.0 ppc for bug 400267
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> XML-Generator-1.40.0.ebuild:
-  Stable for HPPA (bug #400267).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> XML-Generator-1.40.0.ebuild:
-  Stable for amd64, wrt bug #400267
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Jul 2011; Torsten Veller <tove@gentoo.org> -XML-Generator-1.03.ebuild:
-  Cleanup
+  Bug: https://bugs.gentoo.org/552720
 
-*XML-Generator-1.40.0 (16 Jul 2011)
-
-  16 Jul 2011; Torsten Veller <tove@gentoo.org> +XML-Generator-1.40.0.ebuild:
-  Version bump
-
-*XML-Generator-1.03 (25 Aug 2009)
-
-  25 Aug 2009; Robin H. Johnson <robbat2@gentoo.org>
-  +XML-Generator-1.03.ebuild:
-  Version bump via perl-bump experimental tool.
-
-  30 Sep 2008; Torsten Veller <tove@gentoo.org> -XML-Generator-0.99.ebuild,
-  -XML-Generator-1.0.ebuild, XML-Generator-1.01.ebuild:
-  Cleanup
-
-  28 Mar 2008; Jeroen Roovers <jer@gentoo.org> XML-Generator-1.01.ebuild:
-  Stable for HPPA too.
-
-  05 Feb 2008; Markus Rothe <corsair@gentoo.org> XML-Generator-1.01.ebuild:
-  Stable on ppc64
-
-  13 Jan 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  XML-Generator-1.01.ebuild:
-  ppc. stable
-
-  17 Dec 2007; Samuli Suominen <drac@gentoo.org> XML-Generator-1.01.ebuild:
-  amd64 stable
-
-  06 Dec 2007; Raúl Porcel <armin76@gentoo.org> XML-Generator-1.01.ebuild:
-  alpha/ia64/sparc/x86 stable
-
-  10 Nov 2007; Samuli Suominen <drac@gentoo.org> XML-Generator-1.0.ebuild:
-  amd64 stable
-
-*XML-Generator-1.01 (19 Oct 2007)
-
-  19 Oct 2007; Christian Hartmann <ian@gentoo.org>
-  +XML-Generator-1.01.ebuild:
-  Version bump
-
-  06 Oct 2007; Tom Gall <tgall@gentoo.org>
-  XML-Generator-1.0.ebuild:
-  stable on ppc64
-
-  09 Aug 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  XML-Generator-1.0.ebuild:
-  Stable on ppc.
-
-  09 Aug 2007; Gustavo Zacarias <gustavoz@gentoo.org>
-  XML-Generator-1.0.ebuild:
-  Stable on sparc
-
-  30 Jul 2007; Raúl Porcel <armin76@gentoo.org> XML-Generator-1.0.ebuild:
-  alpha/ia64/x86 stable
-
-*XML-Generator-1.0 (25 Jun 2007)
-
-  25 Jun 2007; Michael Cummings <mcummings@gentoo.org>
-  +XML-Generator-1.0.ebuild:
-  Version bump
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  06 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Adding perl dep; fixed DEPEND
-
-  05 Jul 2006; Christian Hartmann <ian@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Fixed RDEPEND wrt bug #134781; fixed header
-
-  03 Oct 2005; MATSUU Takuto <matsuu@gentoo.org> XML-Generator-0.99.ebuild:
-  Stable on sh.
-
-  02 Oct 2005; Aron Griffis <agriffis@gentoo.org> XML-Generator-0.99.ebuild:
-  Mark 0.99 stable on ia64
-
-  26 Aug 2005; Aron Griffis <agriffis@gentoo.org> XML-Generator-0.99.ebuild:
-  add ~ia64
-
-  29 Apr 2005; Michael Cummings <mcummings@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Cleaning for mirror
-
-  19 Apr 2005; Bryan Østergaard <kloeri@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Stable on alpha, bug 89141.
-
-  04 Mar 2005; Alex Howells <astinus@gentoo.org> XML-Generator-0.99.ebuild:
-  Keywording ~alpha
-
-  03 Nov 2004; Bret Curtis <psi29a@gentoo.org> XML-Generator-0.99.ebuild:
-  added to ~mips for testing
-
-  28 Aug 2004; Tom Gall <tgall@gentoo.org> XML-Generator-0.99.ebuild:
-  stable on ppc64, bug #60196
-
-  13 Jun 2004; Luca Barbato <lu_zero@gentoo.org> XML-Generator-0.99.ebuild:
-  Marked ppc
-
-  12 Jun 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Stable on amd64
-
-  22 May 2004; Jason Wever <weeve@gentoo.org> XML-Generator-0.99.ebuild:
-  Stable on sparc.
-
-  17 May 2004; Guy Martin <gmsoft@gentoo.org> XML-Generator-0.99.ebuild:
-  Marked stable on hppa.
-
-  15 May 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  XML-Generator-0.99.ebuild:
-  Adding to stable x86 as this is needed by webmin... including versions
-  already stable. See bug #45950 for more information.
-
-  14 Apr 2004; Michael McCabe <randy@gentoo.org> XML-Generator-0.99.ebuild:
-  adding s390 keywords
-
-  10 Apr 2004; Travis Tilley <lv@gentoo.org> XML-Generator-0.99.ebuild:
-  added ~amd64 keyword
-
-  10 Apr 2004; David Holm <dholm@gentoo.org> XML-Generator-0.99.ebuild:
-  Added to ~ppc.
-
-*XML-Generator-0.99 (10 Apr 2004)
-
-  10 Apr 2004; Eric Sammer <esammer@gentoo.org> XML-Generator-0.99.ebuild,
-  metadata.xml:
-  Initial version. Closes bug #45950. Ebuild by Jason Wever and
-  Michael Cummings.

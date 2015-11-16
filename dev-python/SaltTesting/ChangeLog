@@ -1,55 +1,68 @@
 # ChangeLog for dev-python/SaltTesting
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/SaltTesting/ChangeLog,v 1.11 2015/07/05 06:53:10 idella4 Exp $
+# (auto-generated from git log)
 
-*SaltTesting-2015.5.8 (05 Jul 2015)
+*SaltTesting-2015.5.8 (09 Aug 2015)
+*SaltTesting-2015.2.16 (09 Aug 2015)
+*SaltTesting-2014.8.5 (09 Aug 2015)
 
-  05 Jul 2015; Ian Delaney <idella4@gentoo.org> +SaltTesting-2015.5.8.ebuild:
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +SaltTesting-2014.8.5.ebuild, +SaltTesting-2015.2.16.ebuild,
+  +SaltTesting-2015.5.8.ebuild,
+  +files/SaltTesting-0.5.2-silence-DepricationWarning.patch, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+*SaltTesting-2015.7.10 (21 Aug 2015)
+
+  21 Aug 2015; Ian Delaney <idella4@gentoo.org> SaltTesting-2015.5.8.ebuild,
+  +SaltTesting-2015.7.10.ebuild:
   bump
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  Package-Manager: portage-2.2.20
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> SaltTesting-2014.8.5.ebuild:
-  Drop old Python implementations
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> SaltTesting-2014.8.5.ebuild:
-  x86 stable, bug 540290
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> SaltTesting-2014.8.5.ebuild:
-  amd64 stable, bug 540290
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*SaltTesting-2015.2.16 (17 Feb 2015)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Feb 2015; Patrick McLean <chutzpah@gentoo.org>
-  +SaltTesting-2015.2.16.ebuild, -SaltTesting-0.5.2.ebuild,
-  -SaltTesting-0.5.3.ebuild, -SaltTesting-2014.4.24.ebuild:
-  Version bump, remove old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*SaltTesting-2014.8.5 (16 Jan 2015)
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Jan 2015; Patrick McLean <chutzpah@gentoo.org>
-  +SaltTesting-2014.8.5.ebuild:
-  Version bump.
-
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> SaltTesting-0.5.2.ebuild,
-  SaltTesting-0.5.3.ebuild, SaltTesting-2014.4.24.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-*SaltTesting-2014.4.24 (06 May 2014)
-
-  06 May 2014; Patrick McLean <chutzpah@gentoo.org>
-  +SaltTesting-2014.4.24.ebuild:
-  Version bump.
-
-*SaltTesting-0.5.3 (26 Feb 2014)
-
-  26 Feb 2014; Patrick McLean <chutzpah@gentoo.org> +SaltTesting-0.5.3.ebuild:
-  Version bump.
-
-*SaltTesting-0.5.2 (12 Nov 2013)
-
-  12 Nov 2013; Patrick McLean <chutzpah@gentoo.org> +SaltTesting-0.5.2.ebuild,
-  +files/SaltTesting-0.5.2-silence-DepricationWarning.patch, +metadata.xml:
-  Initial import, required testing tools needed in the several Salt Stack
-  projects.

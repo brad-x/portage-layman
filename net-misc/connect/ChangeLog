@@ -1,62 +1,63 @@
 # ChangeLog for net-misc/connect
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/connect/ChangeLog,v 1.15 2014/07/06 13:20:53 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> connect-1.100.ebuild,
+*connect-1.103 (09 Aug 2015)
+*connect-1.100 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +connect-1.100.ebuild,
+  +connect-1.103.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> connect-1.100.ebuild,
   connect-1.103.ebuild:
-  Replace obsolete mirror://bitbucket with the real URI.
+  Use https by default
 
-  15 Feb 2014; Wolfram Schlich <wschlich@gentoo.org> -connect-100.ebuild:
-  removed -100 as -1.100 is the replacement
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Feb 2014; Wolfram Schlich <wschlich@gentoo.org> connect-1.100.ebuild:
-  re-added stable keywords from -100 to -1.100
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Feb 2014; Wolfram Schlich <wschlich@gentoo.org> connect-1.100.ebuild:
-  adjusted 1.100 to new HOMEPAGE and SRC_URI
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*connect-1.100 (15 Feb 2014)
-*connect-1.103 (15 Feb 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Feb 2014; Wolfram Schlich <wschlich@gentoo.org> +connect-1.100.ebuild,
-  +connect-1.103.ebuild:
-  version bump, re-added version 100 as 1.100 according to upstream versioning
-  schema
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> connect-100.ebuild:
-  x86 stable, see bug 384471
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> connect-100.ebuild:
-  Stable for amd64, wrt bug #384471
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> connect-100.ebuild:
-  Remove virtual/libc
-
-  01 Jun 2008; Wolfram Schlich <wschlich@gentoo.org> -connect-1.95.ebuild,
-  -connect-1.96.ebuild, connect-100.ebuild:
-  add missing IUSE as per bug #224375, remove old versions
-
-*connect-100 (25 Oct 2007)
-
-  25 Oct 2007; Wolfram Schlich <wschlich@gentoo.org> +connect-100.ebuild:
-  version bump (now uses svn revisions as version number) and homepage update
-
-  23 Sep 2007; Wulf C. Krueger <philantrop@gentoo.org> connect-1.96.ebuild:
-  Keyworded ~amd64 as per bug 191477.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*connect-1.96 (19 Oct 2006)
-
-  19 Oct 2006; Wolfram Schlich <wschlich@gentoo.org> +connect-1.96.ebuild:
-  version bump
-
-  02 Jul 2006; Chris White <chriswhite@gentoo.org> metadata.xml:
-  Japanese metadata.xml translation.  Thanks to Yoshino-san in bug #134207.
-
-*connect-1.95 (19 Sep 2005)
-
-  19 Sep 2005; Wolfram Schlich <wschlich@gentoo.org> +metadata.xml,
-  +connect-1.95.ebuild:
-  initial import

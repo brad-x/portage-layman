@@ -1,140 +1,98 @@
 # ChangeLog for dev-python/enable
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/enable/ChangeLog,v 1.31 2015/06/07 13:15:48 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*enable-4.4.1 (09 Aug 2015)
 
-  18 Apr 2015; Sven Wegener <swegener@gentoo.org> enable-4.4.1.ebuild:
-  Rename distfile to include package name.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +enable-4.4.1.ebuild,
+  +files/enable-3.3.0-nofreetype.patch, +files/enable-4-rogue-tests.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> enable-4.4.1.ebuild:
-  x86 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> enable-4.4.1.ebuild:
-  Needs swig:0
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> enable-4.4.1.ebuild:
-  amd64 stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Dec 2014; Mike Gilbert <floppym@gentoo.org> -enable-4.3.0.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*enable-4.4.1 (14 Nov 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> enable-4.4.1.ebuild:
+  Use https by default
 
-  14 Nov 2014; Ian Delaney <idella4@gentoo.org> +enable-4.4.1.ebuild:
-  bump; update SRC_URI, add missing test dep, fix qa issue in build, drop old
-  patches, minor fix to doc build, upgrade test phase
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*enable-4.3.0 (14 May 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 May 2013; Ian Delaney <idella4@gentoo.org> +enable-4.3.0.ebuild,
-  -enable-3.4.0.ebuild, -enable-3.4.1.ebuild, -enable-4.0.0.ebuild,
-  -enable-4.1.0.ebuild, -enable-4.2.0-r1.ebuild, -enable-4.2.0.ebuild,
-  files/enable-4-rogue-tests.patch:
-  bump, re-make of enable-4-rogue-tests.patch for new version, drop old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Apr 2013; Ian Delaney <idella4@gentoo.org> enable-4.2.0-r1.ebuild:
-  minor corrections/tidyup
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*enable-4.2.0-r1 (15 Apr 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Apr 2013; Ian Delaney <idella4@gentoo.org> +enable-4.2.0-r1.ebuild:
-  migration -> distutils-r1
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Apr 2013; Patrick Lauer <patrick@gentoo.org> enable-4.2.0.ebuild:
-  Fix dependencies
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> enable-4.2.0.ebuild:
-  Keyword amd64-linux and x86-linux
+*enable-4.5.1 (29 Sep 2015)
 
-  30 Nov 2012; Ian Delaney <idella4@gentoo.org>
-  +files/enable-4-rogue-tests.patch, enable-4.1.0.ebuild, enable-4.2.0.ebuild:
-  Fixes to test suites in 4.1,2.0, special patch saved to devspace to make
-  workable mix of correct and wrong import paths, skirt 1 invalid test, set 2
-  tests to xfail, fixes Bug #422945
+  29 Sep 2015; Justin Lecher <jlec@gentoo.org> enable-4.4.1.ebuild,
+  +enable-4.5.1.ebuild, +files/enable-4.4.1-swig.patch:
+  Version Bump and fix for newer swig
 
-*enable-4.2.0 (09 Oct 2012)
+  backport fix for newer swig
 
-  09 Oct 2012; Patrick Lauer <patrick@gentoo.org> +enable-4.2.0.ebuild:
-  Bump
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=561752
 
-  07 Aug 2012; Patrick Lauer <patrick@gentoo.org> enable-4.1.0.ebuild:
-  Restricting py-2.5
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Feb 2012; Patrick Lauer <patrick@gentoo.org> enable-3.4.0.ebuild,
-  enable-3.4.1.ebuild, enable-4.0.0.ebuild, enable-4.1.0.ebuild:
-  Restricting pypy
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=pypi
 
-*enable-4.1.0 (17 Jan 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +enable-4.1.0.ebuild:
-  Version bump
+  10 Oct 2015; Justin Lecher <jlec@gentoo.org> enable-4.5.1.ebuild,
+  +files/enable-4.5.1-gcc-5.patch, metadata.xml:
+  Add support for gcc-5
 
-  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> enable-4.0.0.ebuild:
-  Syntax fix
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=561836
 
-  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> enable-4.0.0.ebuild:
-  Fixed tests thanks to Arfrever
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*enable-4.0.0 (03 Aug 2011)
+  31 Oct 2015; Justin Lecher <jlec@gentoo.org> enable-4.5.1.ebuild,
+  +files/enable-4.5.1-doc.patch, +files/enable-4.5.1-version.patch:
+  Backport fixes for doc building
 
-  03 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +enable-4.0.0.ebuild:
-  Version bump. Possible API break.
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=564510
 
-*enable-3.4.1 (27 Mar 2011)
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +enable-3.4.1.ebuild:
-  Version bump.
-
-*enable-3.4.0 (30 Jan 2011)
-
-  30 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -files/enable-3.0.2-nofreetype.patch, -enable-3.3.2.ebuild,
-  +enable-3.4.0.ebuild:
-  Version bump.
-
-*enable-3.3.2 (18 Oct 2010)
-
-  18 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -enable-3.3.1.ebuild, +enable-3.3.2.ebuild:
-  Version bump.
-
-  16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> enable-3.3.1.ebuild:
-  virtual/glu -> virtual/opengl
-
-*enable-3.3.1 (07 Jul 2010)
-
-  07 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -enable-3.2.0.ebuild, +enable-3.3.1.ebuild:
-  Version bump.
-
-  24 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> enable-3.3.0.ebuild,
-  +files/enable-3.3.0-nofreetype.patch:
-  Added proper patch this time and updated docs
-
-*enable-3.3.0 (21 Mar 2010)
-
-  21 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> +enable-3.3.0.ebuild:
-  Version bump
-
-  16 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> -enable-3.1.0.ebuild:
-  Removed old
-
-*enable-3.2.0 (05 Sep 2009)
-
-  05 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -enable-3.0.2.ebuild, +enable-3.2.0.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-*enable-3.1.0 (27 Mar 2009)
-
-  27 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org> +enable-3.1.0.ebuild:
-  Version bump
-
-*enable-3.0.2 (15 Jan 2009)
-
-  15 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/enable-3.0.2-nofreetype.patch, +metadata.xml, +enable-3.0.2.ebuild:
-  Initial import

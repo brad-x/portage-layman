@@ -1,84 +1,66 @@
 # ChangeLog for x11-misc/alock
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/alock/ChangeLog,v 1.22 2015/06/28 02:17:01 mrueg Exp $
+# (auto-generated from git log)
 
-  28 Jun 2015; Manuel Rüger <mrueg@gentoo.org> -alock-60-r3.ebuild:
-  Remove old.
+*alock-94 (09 Aug 2015)
 
-  13 Jul 2011; Markus Meier <maekke@gentoo.org> alock-94.ebuild:
-  x86 stable, bug #371979
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +alock-94.ebuild,
+  +files/implicit_pointer_conversion_fix_amd64.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  18 Jun 2011; Markos Chandras <hwoarang@gentoo.org> alock-94.ebuild:
-  Stable on amd64 wrt bug #371979
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jun 2011; Michael Weber <xmw@gentoo.org> alock-94.ebuild:
-  ppc stable (bug 371979)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Jul 2010; Samuli Suominen <ssuominen@gentoo.org> alock-94.ebuild:
-  Use precompiled manpage wrt #327467 (set XMLTO to true). Fix license from
-  GPL-2 to MIT. Respect CC.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Jun 2010; Markos Chandras <hwoarang@gentoo.org> alock-60-r3.ebuild,
-  alock-94.ebuild:
-  Remove LICENSE file from dodoc
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*alock-94 (05 Jun 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
-  +files/implicit_pointer_conversion_fix_amd64.patch, alock-60-r3.ebuild,
-  +alock-94.ebuild:
-  Fix imlib linking wrt bug #311819 and bumped to v94
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Jan 2010; Patrick Lauer <patrick@gentoo.org> alock-60-r3.ebuild:
-  Fixing deps for #227715
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Aug 2009; Petteri Räty <betelgeuse@gentoo.org> alock-60-r3.ebuild:
-  Migrate to EAPI 2 in order to drop built_with_use call.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> alock-94.ebuild:
+  Enable https for all google URIs
 
-  12 May 2008; Krzysiek Pawlik <nelchael@gentoo.org> alock-60-r3.ebuild:
-  Add imlib and pam useflags, see bug #220425.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> alock-60-r3.ebuild:
-  amd64 stable, clean up and add desktop-misc to herd.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> alock-94.ebuild:
+  Convert URIs for googlecode.com to https
 
-  31 Jan 2008; René Nussbaumer <killerfox@gentoo.org> metadata.xml:
-  Taking over maintainership
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Jan 2008; Michael Hanselmann <hansmi@gentoo.org> metadata.xml:
-  Remove myself as maintainer.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Jan 2008; René Nussbaumer <killerfox@gentoo.org> alock-60-r3.ebuild:
-  Fixing missing dependency. Fixes bug #204979.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Jan 2008; Markus Meier <maekke@gentoo.org> alock-60-r3.ebuild:
-  make sure that imlib2 is built with X, x86 stable, bug #204934
+  Bug: https://bugs.gentoo.org/552720
 
-  18 Oct 2007; Michael Hanselmann <hansmi@gentoo.org> -alock-60-r2.ebuild:
-  Remove old ebuild.
-
-*alock-60-r3 (07 Jul 2007)
-
-  07 Jul 2007; Michael Hanselmann <hansmi@gentoo.org> -alock-60-r1.ebuild,
-  +alock-60-r3.ebuild:
-  Install manpages to the right place, bug #184252. Patch by Tiago Cunha.
-
-*alock-60-r2 (05 Jul 2007)
-
-  05 Jul 2007; Michael Hanselmann <hansmi@gentoo.org> -alock-60.ebuild,
-  +alock-60-r2.ebuild:
-  New ebuild from Greg Fitzgerald in bug 184253. Adds --with-all parameter to
-  configure.
-
-*alock-60-r1 (27 Apr 2007)
-
-  27 Apr 2007; Michael Hanselmann <hansmi@gentoo.org> +alock-60-r1.ebuild:
-  Rewrite src_install, bug #175797.
-
-  24 Apr 2007; Andrej Kacian <ticho@gentoo.org> alock-60.ebuild:
-  Added ~x86, bug #175797 by Robert R. Russell <zoohoo_linux at allegiance.tv>
-
-*alock-60 (05 Jan 2007)
-
-  05 Jan 2007; Michael Hanselmann <hansmi@gentoo.org> +metadata.xml,
-  +alock-60.ebuild:
-  Added to portage, ebuild by myself.

@@ -1,94 +1,57 @@
 # ChangeLog for media-video/gaupol
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/gaupol/ChangeLog,v 1.22 2015/06/15 18:07:29 jlec Exp $
+# (auto-generated from git log)
 
-  15 Jun 2015; Justin Lecher <jlec@gentoo.org> -gaupol-0.17.1.ebuild,
-  -gaupol-0.19.2.ebuild, metadata.xml:
-  Drop old
+*gaupol-0.28.2 (09 Aug 2015)
+*gaupol-0.19.2-r1 (09 Aug 2015)
 
-  11 Jun 2015; Agostino Sarubbo <ago@gentoo.org> gaupol-0.19.2-r1.ebuild:
-  Stable for amd64, wrt bug #535512
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +gaupol-0.19.2-r1.ebuild,
+  +gaupol-0.28.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 May 2015; Patrick Lauer <patrick@gentoo.org> gaupol-0.28.2.ebuild:
-  Fix header
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gaupol-0.28.2 (27 May 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 May 2015; Michał Górny <mgorny@gentoo.org> +gaupol-0.28.2.ebuild:
-  Version bump. Bug #449306. Ebuild from Louis Sautier with some minor changes.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*gaupol-0.19.2-r1 (22 May 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 May 2014; Michał Górny <mgorny@gentoo.org> +gaupol-0.19.2-r1.ebuild:
-  Convert to distutils-r1.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*gaupol-0.19.2 (23 Apr 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Apr 2012; Patrick Lauer <patrick@gentoo.org> +gaupol-0.19.2.ebuild:
-  Bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -gaupol-0.17.ebuild:
-  Delete.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Feb 2011; Markos Chandras <hwoarang@gentoo.org> gaupol-0.17.1.ebuild:
-  Stable on amd64 wrt bug #354673
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*gaupol-0.17.1 (11 Jan 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +gaupol-0.17.1.ebuild:
-  Version bump.
-
-  24 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -gaupol-0.15.1.ebuild:
-  Delete.
-
-  24 Oct 2010; Markos Chandras <hwoarang@gentoo.org> gaupol-0.17.ebuild:
-  Stable on amd64 wrt bug #342483
-
-  24 Oct 2010; Samuli Suominen <ssuominen@gentoo.org> gaupol-0.17.ebuild:
-  Call gnome2_icon_savelist from pkg_preinst.
-
-*gaupol-0.17 (21 Sep 2010)
-
-  21 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +gaupol-0.17.ebuild:
-  Version bump.
-
-  25 May 2010; Pacho Ramos <pacho@gentoo.org> gaupol-0.15.1.ebuild:
-  stable amd64, bug 318817
-
-*gaupol-0.15.1 (06 Apr 2010)
-
-  06 Apr 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +gaupol-0.15.1.ebuild:
-  Version bump (bug #304409). Set SUPPORT_PYTHON_ABIS.
-
-  19 Jun 2008; Samuli Suominen <drac@gentoo.org> gaupol-0.12.3.ebuild:
-  Call addpredict for /root/.gconf{,d} instead of ~ wrt #228301, thanks to
-  Petr Pisar for reporting.
-
-*gaupol-0.12.3 (18 Jun 2008)
-
-  18 Jun 2008; Samuli Suominen <drac@gentoo.org> +gaupol-0.12.3.ebuild:
-  Version bump for bug 194634.
-
-*gaupol-0.9 (18 Aug 2007)
-
-  18 Aug 2007; Samuli Suominen <drac@gentoo.org> +gaupol-0.9.ebuild:
-  Version bump.
-
-  15 Aug 2007; Steve Dibb <beandog@gentoo.org> gaupol-0.7.2.ebuild:
-  amd64 stable
-
-  01 May 2007; Marius Mauch <genone@gentoo.org> gaupol-0.7.2.ebuild:
-  Replacing einfo with elog
-
-*gaupol-0.7.2 (25 Jan 2007)
-
-  25 Jan 2007; Steve Dibb <beandog@gentoo.org> +gaupol-0.7.2.ebuild:
-  Version bump, bug 162575
-
-  01 Dec 2006; Steve Dibb <beandog@gentoo.org> ChangeLog:
-  Initial import, bug 118703, thanks to Ben de Groot for ebuild

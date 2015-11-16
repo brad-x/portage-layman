@@ -1,92 +1,58 @@
 # ChangeLog for x11-libs/libxsettings-client
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libxsettings-client/ChangeLog,v 1.24 2014/07/01 23:38:10 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*libxsettings-client-0.17-r1 (01 Jul 2014)
+*libxsettings-client-0.17-r1 (09 Aug 2015)
+*libxsettings-client-0.17 (09 Aug 2015)
 
-  01 Jul 2014; Jeroen Roovers <jer@gentoo.org>
-  -libxsettings-client-0.10.ebuild, +libxsettings-client-0.17-r1.ebuild,
-  -files/0.10-as-needed.patch:
-  Override gpe_src_configure (bug #515340). Add USE=static-libs (and
-  prune_libtool_files). Clean up sed scripts.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libxsettings-client-0.17.ebuild, +libxsettings-client-0.17-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Jan 2013; Raúl Porcel <armin76@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  sh stable wrt #397253
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Add missing inheritance of eutils.eclass
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  Stable for amd64, wrt bug #309407
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  x86 stable wrt bug #397253
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Feb 2012; Markus Meier <maekke@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  arm stable, bug #397253
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Feb 2012; Brent Baude <ranger@gentoo.org> libxsettings-client-0.17.ebuild:
-  Marking libxsettings-client-0.17 ppc for bug 397253
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Feb 2010; Jeroen Roovers <jer@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  Respect CFLAGS (bug #241536).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jun 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  libxsettings-client-0.17.ebuild:
-  Properly rebuild autotools, avoid maintainer-mode rebuild.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libxsettings-client-0.17 (01 Mar 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Mar 2009; <miknix@gentoo.org> +libxsettings-client-0.17.ebuild:
-  Version bump. This ebuild now uses the gpe eclass.
-
-  26 Sep 2007; Jeroen Roovers <jer@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Marked ~hppa too.
-
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  libxsettings-client-0.10.ebuild:
-  Drop virtual/x11 references.
-
-  25 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>;
-  +files/0.10-as-needed.patch, libxsettings-client-0.10.ebuild:
-  Fix for --as-needed: libXsettings-client needs to link against libX11.
-
-  07 Aug 2006; <yvasilev@gentoo.org> libxsettings-client-0.10.ebuild:
-  Added ~arm keyword.
-
-  04 Jun 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Fix building shared libs on uclibc, see bug #135462.
-
-  15 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Fixed DEPEND for modular X.
-
-  31 Oct 2005; Krzysiek Pawlik <nelchael@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Fixed dodoc not to install COPYING.
-
-  01 Jul 2005; Joseph Jezak <josejx@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Marked ppc stable.
-
-  10 May 2005; David Holm <dholm@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Added to ~ppc.
-
-  11 Apr 2004; Markus Nigbur <pyrania@gentoo.org>
-  libxsettings-client-0.10.ebuild:
-  Marked stable.
-
-*libxsettings-client-0.10 (16 Dec 2003)
-
-  16 Dec 2003; Ian Leitch <port001@gentoo.org> : libxsettings-client-0.10.ebuild
-  Initial commit, thanks to Rene Wagner <reenoo@gmx.de>. #29008
+  Bug: https://bugs.gentoo.org/552720
 

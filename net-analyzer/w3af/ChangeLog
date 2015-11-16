@@ -1,106 +1,74 @@
 # ChangeLog for net-analyzer/w3af
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/w3af/ChangeLog,v 1.22 2015/04/18 12:41:35 swegener Exp $
+# (auto-generated from git log)
 
-  18 Apr 2015; Sven Wegener <swegener@gentoo.org> w3af-1.5.ebuild:
-  Rename distfile to include package name.
+*w3af-1.5 (09 Aug 2015)
+*w3af-1.1-r1 (09 Aug 2015)
 
-  21 Mar 2015; Justin Lecher <jlec@gentoo.org> -w3af-1.0.ebuild,
-  -w3af-1.0_rc5-r1.ebuild, -w3af-1.1.ebuild, w3af-1.1-r1.ebuild,
-  w3af-1.5.ebuild:
-  use esvn_clean; clean die usage; drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/use_simplejson_instead_of_jsonpy.patch, +files/w3af_console,
+  +files/w3af_gui, +metadata.xml, +w3af-1.1-r1.ebuild, +w3af-1.5.ebuild:
+  proj/gentoo: Initial commit
 
-  31 Dec 2014; Mike Gilbert <floppym@gentoo.org> w3af-1.1-r1.ebuild,
-  w3af-1.5.ebuild:
-  Fixup python-single-r1 conversion.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*w3af-1.5 (23 Dec 2013)
-*w3af-1.1-r1 (23 Dec 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Dec 2013; Rick Farina <zerochaos@gentoo.org> +w3af-1.1-r1.ebuild,
-  +w3af-1.5.ebuild:
-  update w3af-1.1 to python-single-r1 and most of an ebuild for 1.5 (need to fix
-  deps but out of time)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Jan 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Update metadata.xml
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Jan 2013; Michał Górny <mgorny@gentoo.org> w3af-1.0.ebuild,
-  w3af-1.0_rc5-r1.ebuild, w3af-1.1.ebuild:
-  Remove improper dep on pysqlite:2 (not used in the code).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> w3af-1.1.ebuild:
-  Stable for x86, wrt bug #435198
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Oct 2012; <ago@gentoo.org> w3af-1.1.ebuild:
-  Stable for amd64, wrt bug #435198
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  add proxy-maintainers as herd
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*w3af-1.1 (19 Jan 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +w3af-1.1.ebuild:
-  Version bump thanks to Montjoie
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Dec 2011; Mike Gilbert <floppym@gentoo.org> w3af-1.0_rc5-r1.ebuild:
-  Force usage of python2. Patch by Ian Delaney. Resolves bug 367801.
+  24 Sep 2015; Agostino Sarubbo <ago@gentoo.org> w3af-1.1-r1.ebuild:
+  amd64 stable wrt bug #529472
 
-  15 Jul 2011; Markus Meier <maekke@gentoo.org> w3af-1.0.ebuild:
-  x86 stable, bug #372809
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  30 Jun 2011; Markos Chandras <hwoarang@gentoo.org> w3af-1.0.ebuild:
-  Stable on amd64 wrt bug #372809
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  29 May 2011; Markos Chandras <hwoarang@gentoo.org> w3af-1.0.ebuild:
-  add pysvn dependency. Bug #368869
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*w3af-1.0 (27 May 2011)
-*w3af-1.0_rc5-r1 (27 May 2011)
+  18 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> w3af-1.1-r1.ebuild:
+  x86 stable wrt bug #529472
 
-  27 May 2011; Markos Chandras <hwoarang@gentoo.org> -w3af-1.0_rc4-r1.ebuild,
-  -w3af-1.0_rc5.ebuild, +w3af-1.0_rc5-r1.ebuild, +w3af-1.0.ebuild:
-  Version bump thanks to LABBE Corentin (Montjoie)
-  <corentin.labbe@geomatys.fr>. Restrict python3 abis. Bug #367801
+  Package-Manager: portage-2.2.20.1
 
-*w3af-1.0_rc5 (29 Jan 2011)
-
-  29 Jan 2011; Markos Chandras <hwoarang@gentoo.org> +w3af-1.0_rc5.ebuild:
-  Version bump thanks to LABBE Corentin (Montjoie)
-
-*w3af-1.0_rc4-r1 (29 Dec 2010)
-
-  29 Dec 2010; Markos Chandras <hwoarang@gentoo.org> -w3af-1.0_rc4.ebuild,
-  +w3af-1.0_rc4-r1.ebuild:
-  Revbump. Addresses bug #349780. Thanks to LABBE Corentin (Montjoie)
-
-*w3af-1.0_rc4 (05 Nov 2010)
-
-  05 Nov 2010; Markos Chandras <hwoarang@gentoo.org>
-  -w3af-1.0_rc3-r2.ebuild, +w3af-1.0_rc4.ebuild:
-  Version bump. Bug #343933
-
-*w3af-1.0_rc3-r2 (27 Oct 2010)
-
-  27 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  +w3af-1.0_rc3-r2.ebuild, +files/use_simplejson_instead_of_jsonpy.patch,
-  +files/w3af_console, +files/w3af_gui, -w3af-1.0_rc3-r1.ebuild:
-  Multiple QA fixes. Thanks to Anton Bolshakov and montjoie for the fixes
-  and patches. Bug #272200
-
-  06 Sep 2010; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Fix empty herd tag.
-
-*w3af-1.0_rc3-r1 (31 Aug 2010)
-
-  31 Aug 2010; Markos Chandras <hwoarang@gentoo.org> -w3af-1.0_rc3.ebuild,
-  +w3af-1.0_rc3-r1.ebuild:
-  Bring back few of the dependencies. Bug #272200. Thanks to Anton Bolshakov
-  <anton.bugs@gmail.com> for reporting
-
-*w3af-1.0_rc3 (31 Aug 2010)
-
-  31 Aug 2010; Markos Chandras <hwoarang@gentoo.org> +w3af-1.0_rc3.ebuild,
-  +metadata.xml:
-  Moved from sunrise overlay. Bug #272200. Thanks to LABBE Corentin
-  (Montjoie) <corentin.labbe@geomatys.fr> for the ebuild

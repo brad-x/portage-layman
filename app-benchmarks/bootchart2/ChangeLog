@@ -1,109 +1,56 @@
 # ChangeLog for app-benchmarks/bootchart2
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart2/ChangeLog,v 1.25 2015/06/05 16:10:08 floppym Exp $
+# (auto-generated from git log)
 
-  05 Jun 2015; Mike Gilbert <floppym@gentoo.org> bootchart2-0.14.7-r1.ebuild:
-  Restore ~arm keyword.
+*bootchart2-0.14.7-r1 (09 Aug 2015)
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> -bootchart2-0.14.5-r1.ebuild,
-  -bootchart2-0.14.5.ebuild:
-  Drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +bootchart2-0.14.7-r1.ebuild, +files/bootchart2.init, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> bootchart2-0.14.5-r1.ebuild:
-  Remove old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bootchart2-0.14.7-r1 (30 Nov 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Nov 2014; Justin Lecher <jlec@gentoo.org> -bootchart2-0.14.7.ebuild,
-  +bootchart2-0.14.7-r1.ebuild:
-  Fix sed, #530740
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*bootchart2-0.14.7 (24 Nov 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Nov 2014; Justin Lecher <jlec@gentoo.org> +bootchart2-0.14.7.ebuild:
-  Version Bump; Add python3_4 support, #530342
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> bootchart2-0.14.5-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 May 2013; Justin Lecher <jlec@gentoo.org> bootchart2-0.14.5-r1.ebuild:
-  Fix usage of new python r1 eclasses (missing PYTHON_REQUIRED_USE)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Feb 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~arm, wrt bug #449220
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*bootchart2-0.14.5-r1 (30 Jan 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Jan 2013; Justin Lecher <jlec@gentoo.org> -bootchart2-0.14.2-r3.ebuild,
-  -bootchart2-0.14.4.ebuild, +bootchart2-0.14.5-r1.ebuild, metadata.xml:
-  drop old; add USE=X for track-only installations, #454340; move to new python
-  eclasses
-
-  06 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~sparc, wrt bug #449220
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~alpha, wrt bug #449220
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~ia64, wrt bug #449220
-
-  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~ppc64, wrt bug #449220
-
-  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
-  Add ~ppc, wrt bug #449220
-
-*bootchart2-0.14.5 (30 Jun 2012)
-
-  30 Jun 2012; Justin Lecher <jlec@gentoo.org> +bootchart2-0.14.5.ebuild:
-  Version bump, unrestrict for py3
-
-*bootchart2-0.14.4 (14 Jun 2012)
-
-  14 Jun 2012; Justin Lecher <jlec@gentoo.org> -bootchart2-0.14.2-r1.ebuild,
-  -bootchart2-0.14.2-r2.ebuild, bootchart2-0.14.2-r3.ebuild,
-  +bootchart2-0.14.4.ebuild:
-  Version Bump, Cleaned old
-
-*bootchart2-0.14.2-r3 (29 May 2012)
-
-  29 May 2012; Justin Lecher <jlec@gentoo.org> +bootchart2-0.14.2-r3.ebuild:
-  Default on *getty as default
-
-  15 May 2012; Justin Lecher <jlec@gentoo.org> bootchart2-0.14.2-r1.ebuild,
-  bootchart2-0.14.2-r2.ebuild:
-  Remove reference on documentation from postinst(), #415687
-
-  23 Apr 2012; Justin Lecher <jlec@gentoo.org> bootchart2-0.14.2-r1.ebuild,
-  bootchart2-0.14.2-r2.ebuild:
-  Added dependency on sys-apps/lsb-release requested by Sergei Trofimovich
-
-*bootchart2-0.14.2-r2 (16 Apr 2012)
-
-  16 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +bootchart2-0.14.2-r2.ebuild:
-  Fix pybootchart shebang to work on active python3 setup. Allow pycairo[svg]
-  for USE="-svg" case.
-
-  04 Apr 2012; Justin Lecher <jlec@gentoo.org> files/bootchart2.init:
-  Initscripts only can use einfo not elog
-
-  03 Apr 2012; Justin Lecher <jlec@gentoo.org> files/bootchart2.init:
-  Closing if clause in init script
-
-*bootchart2-0.14.2-r1 (02 Apr 2012)
-
-  02 Apr 2012; Justin Lecher <jlec@gentoo.org> +files/bootchart2.init,
-  -bootchart2-0.14.2.ebuild, +bootchart2-0.14.2-r1.ebuild:
-  add init script for termination
-
-*bootchart2-0.14.2 (02 Apr 2012)
-
-  02 Apr 2012; Justin Lecher <jlec@gentoo.org> +bootchart2-0.14.2.ebuild,
-  +metadata.xml:
-  New addition, ebuild after submission by Gustavo Sverzut Barbieri, Lucian
-  Muresan & Henry Gebhardt; #345695

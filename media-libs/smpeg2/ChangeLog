@@ -1,47 +1,58 @@
 # ChangeLog for media-libs/smpeg2
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/smpeg2/ChangeLog,v 1.10 2015/05/21 10:46:55 ago Exp $
+# (auto-generated from git log)
 
-  21 May 2015; Agostino Sarubbo <ago@gentoo.org> smpeg2-2.0.0-r3.ebuild:
-  Stable for amd64, wrt bug #537320
+*smpeg2-2.0.0-r3 (09 Aug 2015)
 
-  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> smpeg2-2.0.0-r3.ebuild:
-  x86 stable wrt bug #537320
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/smpeg2-2.0.0-smpeg2-config.patch, +metadata.xml,
+  +smpeg2-2.0.0-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  12 Mar 2015; Michael Sterrett <mr_bones_@gentoo.org> -smpeg2-2.0.0-r2.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*smpeg2-2.0.0-r3 (22 Feb 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Feb 2015; Michael Sterrett <mr_bones_@gentoo.org> +smpeg2-2.0.0-r3.ebuild,
-  files/smpeg2-2.0.0-smpeg2-config.patch:
-  add the patch from smpeg to work around bug #538876; rev bump to push out
-  diffs
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Jan 2015; Michał Górny <mgorny@gentoo.org> smpeg2-2.0.0-r2.ebuild:
-  Switch to CPU_FLAGS_X86.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org> -smpeg2-2.0.0-r1.ebuild,
-  smpeg2-2.0.0-r2.ebuild:
-  old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  smpeg2-2.0.0-r3.ebuild:
+  Use https by default
 
-  18 Jun 2014; Michał Górny <mgorny@gentoo.org> smpeg2-2.0.0-r2.ebuild:
-  Update dependencies to require guaranteed EAPI=5 or multilib ebuilds, bug
-  #513718.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*smpeg2-2.0.0-r2 (18 Apr 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Apr 2014; Julian Ospald <hasufell@gentoo.org> +smpeg2-2.0.0-r2.ebuild:
-  add multilib support
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*smpeg2-2.0.0-r1 (07 Oct 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Oct 2013; Julian Ospald <hasufell@gentoo.org> -smpeg2-2.0.0.ebuild,
-  +smpeg2-2.0.0-r1.ebuild, +files/smpeg2-2.0.0-smpeg2-config.patch:
-  fix smpeg2-config
+  Bug: https://bugs.gentoo.org/552720
 
-*smpeg2-2.0.0 (28 Aug 2013)
-
-  28 Aug 2013; Julian Ospald <hasufell@gentoo.org> +smpeg2-2.0.0.ebuild,
-  +metadata.xml:
-  initial import wrt #481792

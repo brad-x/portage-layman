@@ -1,81 +1,57 @@
 # ChangeLog for sys-libs/lrmi
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/lrmi/ChangeLog,v 1.24 2013/01/20 10:08:32 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  20 Jan 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due retirement, bug #35242
+*lrmi-0.10-r1 (09 Aug 2015)
 
-  20 Aug 2010; Michał Januszewski <spock@gentoo.org> lrmi-0.10-r1.ebuild,
-  +files/lrmi-0.10-ldflags.patch:
-  Respect LDFLAGS (bug #331913).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lrmi-0.10-kernel-2.6.26.patch, +files/lrmi-0.10-ldflags.patch,
+  +lrmi-0.10-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Dec 2008; <ssuominen@gentoo.org> lrmi-0.10-r1.ebuild:
-  Respect AR, CC and RANLIB.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Oct 2008; Michał Januszewski <spock@gentoo.org> -lrmi-0.8.ebuild:
-  Remove an old ebuild.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Oct 2008; Markus Meier <maekke@gentoo.org> lrmi-0.10-r1.ebuild:
-  x86 stable, bug #239857
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Aug 2008; Michał Januszewski <spock@gentoo.org> -lrmi-0.6.ebuild,
-  -lrmi-0.7.ebuild, -lrmi-0.9.ebuild, -lrmi-0.10.ebuild:
-  Remove old ebuilds.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Aug 2008; Michał Januszewski <spock@gentoo.org>
-  +files/lrmi-0.10-kernel-2.6.26.patch, lrmi-0.10-r1.ebuild:
-  Fix bug #235495.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Apr 2007; Michał Januszewski <spock@gentoo.org> metadata.xml:
-  Add myself as maintainer.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*lrmi-0.10-r1 (14 Feb 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Feb 2006; Mike Frysinger <vapier@gentoo.org> +lrmi-0.10-r1.ebuild:
-  Fix library installing as pointed out by the PaX Team.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*lrmi-0.10 (24 Jan 2006)
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Jan 2006; Mike Frysinger <vapier@gentoo.org> +lrmi-0.10.ebuild:
-  Version bump.
-
-  13 Nov 2005; Mark Loeser <halcy0n@gentoo.org> lrmi-0.8.ebuild:
-  Stable on x86; bug #112364
-
-*lrmi-0.9 (13 Nov 2005)
-
-  13 Nov 2005; Mike Frysinger <vapier@gentoo.org> +lrmi-0.9.ebuild:
-  Version bump #112179 by PaX Team.
-
-  08 Nov 2004; Daniel Drake <dsd@gentoo.org> lrmi-0.8.ebuild:
-  Library installation fix thanks to Stefan Schweizer <sschweizer@gmail.com> in
-  bug 57299 (ok'd by vapier)
-
-  07 Aug 2004; Tom Martin <slarti@gentoo.org> lrmi-0.8.ebuild:
-  Added fix for static library installation which was left out previously.
-
-  07 Aug 2004; Tom Martin <slarti@gentoo.org> lrmi-0.8.ebuild:
-  Fixed dynamic library installation; bug 57299. Thanks very much to Stefan
-  Schweizer <sschweizer@gmail.com> for reporting.
-
-  02 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> lrmi-0.6.ebuild,
-  lrmi-0.7.ebuild, lrmi-0.8.ebuild:
-  virtual/glibc -> virtual/libc
-
-*lrmi-0.8 (15 Jun 2004)
-
-  15 Jun 2004; Hanno Boeck <hanno@gentoo.org> +lrmi-0.8.ebuild:
-  Version bump.
-
-*lrmi-0.7 (23 Mar 2003)
-
-  23 Mar 2003; Hanno Boeck <hanno@gentoo.org> lrmi-0.7.ebuild :
-  New version.
-
-*lrmi-0.6 (21 Oct 2002)
-
-  21 Oct 2002; Hanno Boeck <hanno@gentoo.org> lrmi-0.6.0.ebuild :
-  Ebuild for lrmi added.

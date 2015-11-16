@@ -1,103 +1,66 @@
 # ChangeLog for dev-python/blockcanvas
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/blockcanvas/ChangeLog,v 1.22 2015/03/08 23:40:43 pacho Exp $
+# (auto-generated from git log)
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> blockcanvas-4.0.3-r1.ebuild:
-  x86 stable, bug 540290
+*blockcanvas-4.0.3-r1 (09 Aug 2015)
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> blockcanvas-4.0.3-r1.ebuild:
-  amd64 stable, bug 540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +blockcanvas-4.0.3-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Dec 2014; Ian Delaney <idella4@gentoo.org> -blockcanvas-4.0.3.ebuild:
-  rm old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jun 2013; Mike Gilbert <floppym@gentoo.org> blockcanvas-4.0.3-r1.ebuild,
-  blockcanvas-4.0.3.ebuild:
-  Depend on virtual/python-imaging.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*blockcanvas-4.0.3-r1 (14 May 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 May 2013; Ian Delaney <idella4@gentoo.org> +blockcanvas-4.0.3-r1.ebuild:
-  revbump; migration -> distutils-r1
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 May 2013; Ian Delaney <idella4@gentoo.org> -blockcanvas-3.2.1.ebuild,
-  -blockcanvas-4.0.0.ebuild, -blockcanvas-4.0.1.ebuild:
-  drop old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> blockcanvas-4.0.3-r1.ebuild:
+  Use https by default
 
-*blockcanvas-4.0.3 (03 Apr 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Apr 2013; Patrick Lauer <patrick@gentoo.org> +blockcanvas-4.0.3.ebuild:
-  Bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> blockcanvas-4.0.1.ebuild:
-  Keyword amd64-linux and x86-linux
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Nov 2012; Ian Delaney <idella4@gentoo.org> blockcanvas-4.0.1.ebuild:
-  Setting tests to restricted wrt Bug 422953 by flameeyes
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Aug 2012; Patrick Lauer <patrick@gentoo.org> blockcanvas-4.0.0.ebuild,
-  blockcanvas-4.0.1.ebuild:
-  Fixing jython restrict
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*blockcanvas-4.0.1 (17 Jan 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  +blockcanvas-4.0.1.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-*blockcanvas-4.0.0 (03 Aug 2011)
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> blockcanvas-4.0.3-r1.ebuild:
+  Convert from virtual/python-imaging to plain dev-python/pillow
 
-  03 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  +blockcanvas-4.0.0.ebuild:
-  Version bump. Possible API break.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*blockcanvas-3.2.1 (30 Jan 2011)
-
-  30 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -blockcanvas-3.2.0.ebuild, +blockcanvas-3.2.1.ebuild:
-  Version bump.
-
-*blockcanvas-3.2.0 (18 Oct 2010)
-
-  18 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -blockcanvas-3.1.1.ebuild, +blockcanvas-3.2.0.ebuild:
-  Version bump.
-
-  07 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  blockcanvas-3.1.1.ebuild:
-  Set PYTHON_DEPEND. Simplify src_test().
-
-*blockcanvas-3.1.1 (22 Mar 2010)
-
-  22 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  +blockcanvas-3.1.1.ebuild:
-  Version bump
-
-  16 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  -blockcanvas-3.0.2.ebuild, +blockcanvas-3.1.0.ebuild:
-  Re-added correct blockcanvas
-
-  16 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  -blockcanvas-3.1.0.ebuild:
-  Removed old
-
-*blockcanvas-3.1.0 (07 Sep 2009)
-
-  07 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +blockcanvas-3.1.0.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-  24 Apr 2009; Patrick Lauer <patrick@gentoo.org> -blockcanvas-3.0.1.ebuild:
-  Remove old
-
-*blockcanvas-3.0.2 (27 Mar 2009)
-
-  27 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +blockcanvas-3.0.2.ebuild:
-  Version bump
-
-*blockcanvas-3.0.1 (15 Jan 2009)
-
-  15 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +blockcanvas-3.0.1.ebuild:
-  Initial import

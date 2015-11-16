@@ -1,130 +1,98 @@
 # ChangeLog for app-emulation/qemu-guest-agent
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu-guest-agent/ChangeLog,v 1.24 2015/08/04 08:19:37 ago Exp $
+# (auto-generated from git log)
 
-  04 Aug 2015; Agostino Sarubbo <ago@gentoo.org> qemu-guest-agent-2.3.0.ebuild:
-  Stable for x86, wrt bug #556630
+*qemu-guest-agent-2.3.0 (09 Aug 2015)
+*qemu-guest-agent-2.2.0 (09 Aug 2015)
+*qemu-guest-agent-2.1.2 (09 Aug 2015)
+*qemu-guest-agent-2.0.0 (09 Aug 2015)
+*qemu-guest-agent-1.6.0-r1 (09 Aug 2015)
+*qemu-guest-agent-1.5.2-r2 (09 Aug 2015)
 
-  04 Aug 2015; Agostino Sarubbo <ago@gentoo.org> qemu-guest-agent-2.3.0.ebuild:
-  Stable for amd64, wrt bug #556630
-
-*qemu-guest-agent-2.3.0 (28 Apr 2015)
-
-  28 Apr 2015; Mike Frysinger <vapier@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/qemu-ga-systemd.service, +files/qemu-ga-systemd.udev,
+  +files/qemu-ga.conf-r1, +files/qemu-ga.init-r1, +files/qemu-ga.logrotate,
+  +metadata.xml, +qemu-guest-agent-1.5.2-r2.ebuild,
+  +qemu-guest-agent-1.6.0-r1.ebuild, +qemu-guest-agent-2.0.0.ebuild,
+  +qemu-guest-agent-2.1.2.ebuild, +qemu-guest-agent-2.2.0.ebuild,
   +qemu-guest-agent-2.3.0.ebuild:
-  Version bump.
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org>
-  qemu-guest-agent-1.5.2-r2.ebuild, qemu-guest-agent-1.6.0-r1.ebuild,
-  qemu-guest-agent-2.0.0.ebuild, qemu-guest-agent-2.1.2.ebuild,
-  qemu-guest-agent-2.2.0.ebuild:
-  Remove old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*qemu-guest-agent-2.2.0 (15 Feb 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Feb 2015; Mike Frysinger <vapier@gentoo.org>
-  +qemu-guest-agent-2.2.0.ebuild:
-  Version bump.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Feb 2015; Mike Frysinger <vapier@gentoo.org>
-  qemu-guest-agent-2.1.2.ebuild:
-  Stabilize for all #538744 by Bertrand Jacquin.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*qemu-guest-agent-2.1.2 (26 Oct 2014)
+*qemu-guest-agent-2.3.1 (12 Aug 2015)
 
-  26 Oct 2014; Mike Frysinger <vapier@gentoo.org>
-  +qemu-guest-agent-2.1.2.ebuild:
-  Version bump #526878 by Thomas Stein.
+  12 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  +qemu-guest-agent-2.3.1.ebuild:
+  qemu: version bump to 2.3.1
 
-*qemu-guest-agent-2.0.0 (18 May 2014)
+*qemu-guest-agent-2.4.0 (12 Aug 2015)
 
-  18 May 2014; Mike Frysinger <vapier@gentoo.org>
-  +qemu-guest-agent-2.0.0.ebuild:
-  Version bump #488968 by Thomas Stein.
+  12 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  +qemu-guest-agent-2.4.0.ebuild:
+  qemu: version bump to 2.4.0
 
-  18 May 2014; Mike Frysinger <vapier@gentoo.org> files/qemu-ga-systemd.udev:
-  Fix typo in udev rule #510558 by Alexander Tsoy.
+  12 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  -qemu-guest-agent-1.5.2-r2.ebuild, -qemu-guest-agent-1.6.0-r1.ebuild,
+  -qemu-guest-agent-2.0.0.ebuild, -qemu-guest-agent-2.1.2.ebuild,
+  -qemu-guest-agent-2.2.0.ebuild:
+  qemu-guest-agent: trim old
 
-*qemu-guest-agent-1.5.2-r2 (12 Sep 2013)
-*qemu-guest-agent-1.6.0-r1 (12 Sep 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Sep 2013; Tiziano Müller <dev-zero@gentoo.org>
-  +qemu-guest-agent-1.5.2-r2.ebuild, +qemu-guest-agent-1.6.0-r1.ebuild,
-  -qemu-guest-agent-1.5.2-r1.ebuild, -qemu-guest-agent-1.6.0.ebuild:
-  Add implicit dependency on sysvinit >=2.88-r5 since qemu-ga calls shutdown
-  with '-P'/'-H' but without '-h' and this got added in 2.88-r5
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org>
-  qemu-guest-agent-1.5.2-r1.ebuild, qemu-guest-agent-1.6.0.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*qemu-guest-agent-1.6.0 (16 Aug 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Aug 2013; Doug Goldstein <cardoe@gentoo.org>
-  +qemu-guest-agent-1.6.0.ebuild:
-  Version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*qemu-guest-agent-1.5.2-r1 (11 Aug 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Aug 2013; Doug Goldstein <cardoe@gentoo.org> +files/qemu-ga.conf-r1,
-  +files/qemu-ga.init-r1, +qemu-guest-agent-1.5.2-r1.ebuild,
-  -files/qemu-ga.conf, -files/qemu-ga.init, -qemu-guest-agent-1.2.0.ebuild,
-  -qemu-guest-agent-1.4.2.ebuild, -qemu-guest-agent-1.5.2.ebuild:
-  Fix issue with paths being prefixed with /usr/local. Correctly move everything
-  to /run from /var/run. Fix issue with daemon not starting up correctly due to
-  missing options. Add GA_OPTIONS to init script config for other options like a
-  --fsfreeze-hook. bug #480438. bug #480370.
+  08 Sep 2015; Agostino Sarubbo <ago@gentoo.org>
+  qemu-guest-agent-2.4.0.ebuild:
+  amd64 stable wrt bug #558416
 
-*qemu-guest-agent-1.5.2 (09 Aug 2013)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  09 Aug 2013; Doug Goldstein <cardoe@gentoo.org>
-  +qemu-guest-agent-1.5.2.ebuild:
-  Versio bump. bug #480380
+  08 Sep 2015; Agostino Sarubbo <ago@gentoo.org>
+  qemu-guest-agent-2.4.0.ebuild:
+  x86 stable wrt bug #558416
 
-*qemu-guest-agent-1.4.2 (03 Jun 2013)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  03 Jun 2013; Doug Goldstein <cardoe@gentoo.org>
-  +qemu-guest-agent-1.4.2.ebuild:
-  Version bump for new features and to fix CVE-2013-2007.
-
-  10 May 2013; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unused flag description from metadata
-
-  10 Feb 2013; Doug Goldstein <cardoe@gentoo.org>
-  -qemu-guest-agent-1.1.1.ebuild:
-  Remove older version
-
-  10 Feb 2013; Doug Goldstein <cardoe@gentoo.org>
-  qemu-guest-agent-1.2.0.ebuild:
-  Fix python build depends. bug #448264, thanks to David Weber
-  <davidwerbung@gmx.de>
-
-  13 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
-  qemu-guest-agent-1.1.1.ebuild, qemu-guest-agent-1.2.0.ebuild:
-  Use udev_newrules to install udev rules into correct path wrt #447116 by
-  Alexander Tsoy
-
-  30 Oct 2012; Doug Goldstein <cardoe@gentoo.org> files/qemu-ga.init:
-  Remove empty depend to fix bug #436310
-
-*qemu-guest-agent-1.2.0 (29 Oct 2012)
-
-  29 Oct 2012; Doug Goldstein <cardoe@gentoo.org>
-  +qemu-guest-agent-1.2.0.ebuild:
-  Version bump. Always install systemd files.
-
-  09 Oct 2012; Doug Goldstein <cardoe@gentoo.org>
-  qemu-guest-agent-1.1.1.ebuild:
-  Update qemu blocker to reflect app-emulation/qemu-kvm -> app-emulation/qemu.
-
-  28 Jul 2012; Doug Goldstein <cardoe@gentoo.org> qemu-guest-agent-1.1.1.ebuild:
-  Remove trailing whitespace
-
-*qemu-guest-agent-1.1.1 (28 Jul 2012)
-
-  28 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
-  +qemu-guest-agent-1.1.1.ebuild, +files/qemu-ga.conf, +files/qemu-ga.init,
-  +files/qemu-ga.logrotate, +files/qemu-ga-systemd.service,
-  +files/qemu-ga-systemd.udev, +metadata.xml:
-  Add separate ebuild for the QEMU guest agent so it can be used when Gentoo is
-  a guest instead of installing the all of QEMU for just the guest.

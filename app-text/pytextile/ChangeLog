@@ -1,169 +1,73 @@
 # ChangeLog for app-text/pytextile
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pytextile/ChangeLog,v 1.45 2015/06/06 08:14:17 jlec Exp $
+# (auto-generated from git log)
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*pytextile-2.2.2 (09 Aug 2015)
+*pytextile-2.2.1 (09 Aug 2015)
+*pytextile-2.1.8 (09 Aug 2015)
 
-  17 May 2015; Jeroen Roovers <jer@gentoo.org> pytextile-2.2.1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pytextile-2.1.8-sanitizer.patch, +metadata.xml,
+  +pytextile-2.1.8.ebuild, +pytextile-2.2.1.ebuild, +pytextile-2.2.2.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pytextile-2.2.1.ebuild,
   pytextile-2.2.2.ebuild:
-  Mark ~ppc64 (bug #527396).
+  Use https by default
 
-*pytextile-2.2.2 (16 Feb 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Feb 2015; Ian Delaney <idella4@gentoo.org> +pytextile-2.2.2.ebuild:
-  bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Dec 2014; Kacper Kowalik <xarthisius@gentoo.org> -pytextile-2.1.5.ebuild:
-  Drop old, fixes #453980
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Nov 2014; Ian Delaney <idella4@gentoo.org> pytextile-2.2.1.ebuild:
-  update HOMEPAGE noted by Arfrever
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Nov 2014; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.8.ebuild:
-  Stable for sparc, wrt bug #527394
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Nov 2014; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.8.ebuild:
-  Stable for x86, wrt bug #527394
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Nov 2014; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.8.ebuild:
-  Stable for ppc, wrt bug #527394
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Oct 2014; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.8.ebuild:
-  Stable for ppc64, wrt bug #527394
+  15 Oct 2015; Justin Lecher <jlec@gentoo.org> pytextile-2.2.2.ebuild:
+  Keyword under ALLARCHES policy
 
-  30 Oct 2014; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.8.ebuild:
-  Stable for amd64, wrt bug #527394
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=527396
 
-*pytextile-2.2.1 (29 Oct 2014)
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Oct 2014; Ian Delaney <idella4@gentoo.org> +pytextile-2.2.1.ebuild:
-  bump; add new dep for testsuite, drop ppc ppc64 sparc x86-fbsd keywords
-  accordingly, drop redundant patch
-
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> pytextile-2.1.5.ebuild,
-  pytextile-2.1.8.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-  07 Jul 2014; Ian Delaney <idella4@gentoo.org>
-  +files/pytextile-2.1.8-sanitizer.patch, pytextile-2.1.8.ebuild:
-  patch to fix broken test, update ebuild accordingly
-
-  31 May 2014; Ian Delaney <idella4@gentoo.org> pytextile-2.1.8.ebuild:
-  add fix to test failings noted by Arfrever, fix typo
-
-*pytextile-2.1.8 (29 May 2014)
-
-  29 May 2014; Ian Delaney <idella4@gentoo.org> +pytextile-2.1.8.ebuild:
-  bump; add py3 pypy support, test phase
-
-  09 Apr 2012; Mike Gilbert <floppym@gentoo.org> -pytextile-2.1.4.ebuild,
-  pytextile-2.1.5.ebuild:
-  Depend on setuptools, #408241 by lucapost. Confirmed by Ian Delaney. Remove
-  old.
-
-  06 Mar 2012; Brent Baude <ranger@gentoo.org> pytextile-2.1.5.ebuild:
-  Marking pytextile-2.1.5 ppc for bug 399957
-
-  02 Mar 2012; Brent Baude <ranger@gentoo.org> pytextile-2.1.5.ebuild:
-  Marking pytextile-2.1.5 ppc64 for bug 399957
-
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pytextile-2.1.5.ebuild:
-  x86 stable wrt bug #399957
-
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pytextile-2.1.5.ebuild:
-  Stable for amd64, wrt bug #399957
-
-*pytextile-2.1.5 (29 Jul 2011)
-
-  29 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> +pytextile-2.1.5.ebuild,
-  metadata.xml:
-  Version bump
-
-  01 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  pytextile-2.1.4.ebuild:
-  Use PYTHON_DEPEND instead of NEED_PYTHON. Simplify src_test().
-
-  20 Jan 2010; <hwoarang@gentoo.org> pytextile-2.1.4.ebuild:
-  Stable on amd64 wrt bug #300240
-
-  12 Jan 2010; nixnut <nixnut@gentoo.org> pytextile-2.1.4.ebuild:
-  ppc stable #300240
-
-  11 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  pytextile-2.1.4.ebuild:
-  stable x86, bug 300240
-
-  10 Jan 2010; Brent Baude <ranger@gentoo.org> pytextile-2.1.4.ebuild:
-  stable ppc64, bug 300240
-
-*pytextile-2.1.4 (05 Dec 2009)
-
-  05 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +pytextile-2.1.4.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-*pytextile-2.1.3 (03 Apr 2009)
-
-  03 Apr 2009; Patrick Lauer <patrick@gentoo.org> +pytextile-2.1.3.ebuild:
-  Bump to 2.1.3, fixes #264567
-
-  28 May 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Julien Allanos (dju) from metadata.xml (as per #87168). Assigning
-  to maintainer-needed.
-
-  30 Dec 2007; Markus Meier <maekke@gentoo.org> pytextile-2.0.11.ebuild:
-  x86 stable, bug #203602
-
-  29 Dec 2007; Brent Baude <ranger@gentoo.org> pytextile-2.0.11.ebuild:
-  Marking pytextile-2.0.11 ppc64 for bug 203602
-
-  29 Dec 2007; nixnut <nixnut@gentoo.org> pytextile-2.0.11.ebuild:
-  Stable on ppc wrt bug 203602
-
-  28 Dec 2007; Doug Klima <cardoe@gentoo.org> pytextile-2.0.11.ebuild:
-  amd64 stable wrt bug #203602
-
-  15 May 2007; Steve Dibb <beandog@gentoo.org> pytextile-2.0.10.ebuild:
-  amd64 stable
-
-  13 Feb 2007; Markus Rothe <corsair@gentoo.org> pytextile-2.0.11.ebuild:
-  Added ~ppc64; bug #166675
-
-  02 Feb 2007; Julien Allanos <dju@gentoo.org> pytextile-2.0.11.ebuild:
-  Added setuptools dependency, closes bug #164984.
-
-*pytextile-2.0.11 (01 Feb 2007)
-
-  01 Feb 2007; Julien Allanos <dju@gentoo.org> +pytextile-2.0.11.ebuild:
-  Version bump, closes bug #164274.
-
-  11 Sep 2006; Javier Villavicencio <the_paya@gentoo.org>
-  pytextile-2.0.10.ebuild:
-  Add ~x86-fbsd keyword.
-
-  17 Jan 2006; Julien Allanos <dju@gentoo.org> pytextile-2.0.10.ebuild:
-  Updated HOMEPAGE and SRC_URI.
-
-  11 Jan 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  pytextile-2.0.10.ebuild:
-  ppc stable, bug #118302
-
-  10 Jan 2006; Mark Loeser <halcy0n@gentoo.org> pytextile-2.0.10.ebuild:
-  Stable on x86; bug #118302
-
-  20 Nov 2005; Joseph Jezak <josejx@gentoo.org> pytextile-2.0.10.ebuild:
-  Marked ~ppc for bug #111069.
-
-  09 Nov 2005; Jason Wever <weeve@gentoo.org> pytextile-2.0.10.ebuild:
-  Added ~sparc keyword wrt bug #111069.
-
-  01 Nov 2005; Marcus D. Hanwell <cryos@gentoo.org> pytextile-2.0.10.ebuild:
-  Marked ~amd64, bug 111069.
-
-*pytextile-2.0.10 (31 Oct 2005)
-
-  31 Oct 2005; Julien Allanos <dju@gentoo.org> +metadata.xml,
-  +pytextile-2.0.10.ebuild:
-  New ebuild, closes bug #92151.
-  Thanks to Tyson Burghardt <tysonburghardt@sbcglobal.net> for initial input.

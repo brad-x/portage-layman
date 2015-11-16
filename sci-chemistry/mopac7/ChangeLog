@@ -1,146 +1,62 @@
 # ChangeLog for sci-chemistry/mopac7
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mopac7/ChangeLog,v 1.32 2015/03/05 11:44:08 jlec Exp $
+# (auto-generated from git log)
 
-*mopac7-1.15-r1 (05 Mar 2015)
+*mopac7-1.15-r1 (09 Aug 2015)
+*mopac7-1.15 (09 Aug 2015)
 
-  05 Mar 2015; Justin Lecher <jlec@gentoo.org> +mopac7-1.15-r1.ebuild,
-  -mopac7-1.10-r1.ebuild, metadata.xml:
-  Drop old; EAPI bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/Makefile,
+  +metadata.xml, +mopac7-1.15.ebuild, +mopac7-1.15-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Jan 2014; Ulrich Müller <ulm@gentoo.org> mopac7-1.10-r1.ebuild,
-  mopac7-1.15.ebuild:
-  Fix LICENSE, bug 496688.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Oct 2012; Justin Lecher <jlec@gentoo.org> mopac7-1.10-r1.ebuild,
-  mopac7-1.15.ebuild, metadata.xml:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> mopac7-1.15.ebuild:
-  Add ~amd64-linux keyword
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> mopac7-1.10-r1.ebuild,
-  mopac7-1.15.ebuild:
-  Add dependency on virtual/fortran
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> mopac7-1.10-r1.ebuild,
-  mopac7-1.15.ebuild:
-  Added fortran-2.eclass support
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 May 2011; Brent Baude <ranger@gentoo.org> mopac7-1.15.ebuild:
-  Marking mopac7-1.15 ppc for bug 331175
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Dec 2010; Justin Lecher <jlec@gentoo.org> mopac7-1.15.ebuild:
-  Removal of fortran.eclass, #348851
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Dec 2010; Justin Lecher <jlec@gentoo.org> -mopac7-1.13.ebuild,
-  -mopac7-1.13-r1.ebuild, -mopac7-1.14-r1.ebuild:
-  Removed versions not working with automake 1.6
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Oct 2010; Markos Chandras <hwoarang@gentoo.org> mopac7-1.15.ebuild:
-  Stable on amd64 wrt bug #331175
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Sep 2010; Christian Faulhammer <fauli@gentoo.org> mopac7-1.15.ebuild:
-  stable x86, bug 331175
+  Bug: https://bugs.gentoo.org/552720
 
-*mopac7-1.15 (17 Jun 2010)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  17 Jun 2010; Justin Lecher <jlec@gentoo.org> +mopac7-1.15.ebuild,
-  +files/Makefile, metadata.xml:
-  Version Bump, included optional build of libgmxmopac7
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mopac7-1.14-r2 (16 Jun 2010)
-
-  16 Jun 2010; Justin Lecher <jlec@gentoo.org> mopac7-1.14-r1.ebuild,
-  +mopac7-1.14-r2.ebuild:
-  gmxmopac7 support, Importing from sci overlay
-
-  15 Jun 2010; Justin Lecher <jlec@gentoo.org> mopac7-1.10-r1.ebuild,
-  mopac7-1.13.ebuild, mopac7-1.13-r1.ebuild:
-  QA, removed WANT_AUTO*=latest
-
-  18 Jan 2009; Jeff Gardner <je_fro@gentoo.org> ChangeLog:
-  Fix for bug #254491. Big Thanks to Permjacov E. A. and Rene Meier. Also
-  removing mopac7-1.14.ebuild because of repoman warning: Upstream parallel
-  compilation bug (ebuild calls emake -j1 on line: 55)
-
-  28 Nov 2008; Patrick Lauer <patrick@gentoo.org> mopac7-1.14.ebuild:
-  Adding econf call so it can actually work. No idea how this got through,
-  sorry.
-
-*mopac7-1.14 (27 Nov 2008)
-
-  27 Nov 2008; Patrick Lauer <patrick@gentoo.org> +mopac7-1.14.ebuild:
-  Bump to 1.14 with ok from dberkholz
-
-*mopac7-1.13-r1 (13 Jul 2008)
-
-  13 Jul 2008; Jeff Gardner <je_fro@gentoo.org> +mopac7-1.13-r1.ebuild:
-  Fix to use gfortran
-
-*mopac7-1.13 (08 Jul 2008)
-
-  08 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>; +mopac7-1.13.ebuild:
-  Bump. Pull in newer libf2c so configure doesn't fail.
-
-  07 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -mopac7-1.00-r1.ebuild,
-  -mopac7-1.10.ebuild:
-  QA: Removed unused versions.
-
-  14 Dec 2006; Jeff Gardner <je_fro@gentoo.org> ChangeLog:
-  Fix for autotools wrt bug 152425
-
-  24 Nov 2006; Steve Dibb <beandog@gentoo.org> mopac7-1.00-r1.ebuild,
-  mopac7-1.10.ebuild, mopac7-1.10-r1.ebuild:
-  Add ~amd64, bug 133268
-
-  20 Sep 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  (#148281) Change herd to sci-chemistry from sci.
-
-  05 Aug 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  Remove myself as maintainer, anyone feel free to work on this, although I'll
-  continue to do so as well.
-
-  09 Jul 2006; Donnie Berkholz <dberkholz@gentoo.org>;
-  mopac7-1.10-r1.ebuild:
-  x86/ppc stable.
-
-  07 Jul 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  Update to my new email address.
-
-*mopac7-1.10-r1 (13 May 2006)
-
-  13 May 2006; Donnie Berkholz <dberkholz@gentoo.org>;
-  +mopac7-1.10-r1.ebuild:
-  Fix parallel build. Remove the really ugly LDFLAGS hack, it's no longer
-  needed. Cleaner installation of executable and wrapper.
-
-*mopac7-1.10 (06 Dec 2005)
-
-  06 Dec 2005; Donnie Berkholz <dberkholz@gentoo.org>; -mopac7-1.00.ebuild,
-  +mopac7-1.10.ebuild:
-  New version. GCC-4 and 64-bit fixes, as well as new libmopac7.h
-
-  06 Aug 2005; David Holm <dholm@gentoo.org> mopac7-1.00-r1.ebuild:
-  Added to ~ppc.
-
-*mopac7-1.00-r1 (05 Aug 2005)
-
-  05 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
-  +mopac7-1.00-r1.ebuild:
-  (#101288) Fix run_mopac7 shell script, courtesy of Mathias Weigt
-  <m.weigt@uni-bonn.de>.
-
-  10 Jul 2005; Donnie Berkholz <dberkholz@gentoo.org>; mopac7-1.00.ebuild:
-  (#98457) Parallel build broken.
-
-  10 Jul 2005; Donnie Berkholz <dberkholz@gentoo.org>; mopac7-1.00.ebuild:
-  Fix f2c dep to libf2c.
-
-*mopac7-1.00 (08 Jul 2005)
-
-  08 Jul 2005; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
-  +mopac7-1.00.ebuild:
-  Initial commit, ebuild by me. This will be useful for the new ghemical. It's
-  a quite solid semi-empirical package.

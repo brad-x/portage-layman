@@ -1,176 +1,74 @@
 # ChangeLog for sci-physics/bullet
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/bullet/ChangeLog,v 1.36 2015/07/07 20:45:48 jauhien Exp $
+# (auto-generated from git log)
 
-*bullet-2.83.4 (07 Jul 2015)
+*bullet-2.83.4 (09 Aug 2015)
+*bullet-2.82 (09 Aug 2015)
+*bullet-2.81 (09 Aug 2015)
+*bullet-2.80 (09 Aug 2015)
 
-  07 Jul 2015; Jauhien Piatlicki <jauhien@gentoo.org> +bullet-2.83.4.ebuild,
-  metadata.xml:
-  version bump: close bug 548860
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bullet-2.80.ebuild,
+  +bullet-2.81.ebuild, +bullet-2.82.ebuild, +bullet-2.83.4.ebuild,
+  +files/bullet-2.77-gcc46.patch, +files/bullet-2.77-libdir.patch,
+  +files/bullet-2.77-soversion.patch, +files/bullet-2.78-soversion.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*bullet-2.82 (23 Feb 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Feb 2014; Sébastien Fabbro <bicatali@gentoo.org> +bullet-2.82.ebuild:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bullet-2.81 (04 Mar 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Mar 2013; Sébastien Fabbro <bicatali@gentoo.org> +bullet-2.81.ebuild,
-  metadata.xml:
-  Version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Dec 2012; Justin Lecher <jlec@gentoo.org> -bullet-2.77.ebuild,
-  metadata.xml:
-  Drop old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Dec 2012;  <ago@gentoo.org> bullet-2.80.ebuild:
-  Stable for x86, wrt bug #436568
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 Nov 2012; <ago@gentoo.org> bullet-2.80.ebuild:
-  Stable for amd64, wrt bug #436568
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bullet-2.80.ebuild:
-  keyword ~ppc64, bug #436566
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> bullet-2.80.ebuild,
+  bullet-2.81.ebuild, bullet-2.82.ebuild:
+  Enable https for all google URIs
 
-  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.79-r1.ebuild,
-  bullet-2.80.ebuild, metadata.xml:
-  removed old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Jun 2012; Sebastien Fabbro <fabbros@gentoo.org> bullet-2.80.ebuild:
-  html docs are built with doxygen if doc flag is set, bug #421827, thanks
-  Vitaly
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> bullet-2.80.ebuild,
+  bullet-2.81.ebuild, bullet-2.82.ebuild:
+  Convert URIs for googlecode.com to https
 
-*bullet-2.80 (22 May 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 May 2012; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.78.ebuild,
-  +bullet-2.80.ebuild:
-  Version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.79-r1.ebuild:
-  Add dependence on media-libs/freeglut, thanks Julian Bayardo bug #403433
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*bullet-2.79-r1 (19 Dec 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.79.ebuild,
-  +bullet-2.79-r1.ebuild:
-  Now really installs libraries, fixing bug #395097
-
-*bullet-2.79 (28 Nov 2011)
-
-  28 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.78.ebuild,
-  +bullet-2.79.ebuild:
-  Version bump
-
-*bullet-2.78 (17 Apr 2011)
-
-  17 Apr 2011; Justin Lecher <jlec@gentoo.org> bullet-2.77.ebuild,
-  +files/bullet-2.77-gcc46.patch, +bullet-2.78.ebuild,
-  +files/bullet-2.78-soversion.patch:
-  Version Bump, backport fix for gcc46 problems, #363223
-
-  22 Mar 2011; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.76-r1.ebuild,
-  bullet-2.77.ebuild, metadata.xml:
-  Added double precision flag
-
-  25 Feb 2011; Fabian Groffen <grobian@gentoo.org> bullet-2.77.ebuild:
-  Marked ~amd64-linux, bug #356099
-
-  10 Feb 2011; Markos Chandras <hwoarang@gentoo.org> bullet-2.77.ebuild:
-  Stable on amd64 wrt bug #354007
-
-  09 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bullet-2.77.ebuild:
-  x86 stable wrt bug #354007
-
-*bullet-2.77 (06 Nov 2010)
-
-  06 Nov 2010; Sébastien Fabbro <bicatali@gentoo.org> +bullet-2.77.ebuild,
-  +files/bullet-2.77-libdir.patch, +files/bullet-2.77-soversion.patch,
-  metadata.xml:
-  Version bump
-
-  16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org>
-  bullet-2.76-r1.ebuild:
-  virtual/glut -> media-libs/glut
-
-  29 Jun 2010; Kacper Kowalik <xarthisius@gentoo.org> -bullet-2.75.ebuild:
-  Remove old
-
-  25 May 2010; Pacho Ramos <pacho@gentoo.org> bullet-2.76-r1.ebuild:
-  stable amd64, bug 318455
-
-  10 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  bullet-2.76-r1.ebuild:
-  x86 stable wrt bug #318455
-
-*bullet-2.76-r1 (26 Mar 2010)
-
-  26 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.76.ebuild,
-  +bullet-2.76-r1.ebuild:
-  Fixed pkg-config file for include directory and library directory, bug
-  #311375
-
-*bullet-2.76 (23 Mar 2010)
-
-  23 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> +bullet-2.76.ebuild:
-  Version bump
-
-  01 Dec 2009; Markus Meier <maekke@gentoo.org> bullet-2.75.ebuild:
-  amd64 stable, bug #294438
-
-  24 Nov 2009; Christian Faulhammer <fauli@gentoo.org> bullet-2.75.ebuild:
-  stable x86, bug 294438
-
-  23 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  -bullet-2.73-r1.ebuild, -bullet-2.74.ebuild, bullet-2.75.ebuild:
-  Fixed a pkg-config file, bug #294127
-
-*bullet-2.75 (14 Sep 2009)
-
-  14 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org> +bullet-2.75.ebuild:
-  Version bump, and switching to cmake. Libraries have names with first
-  letter upcase. Removed threads flag since only use (an autodetected) for
-  PS3
-
-  24 Jun 2009; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.74.ebuild,
-  +files/bullet-2.74-missing-header.patch:
-  Added missing header, fixing bug #267418
-
-*bullet-2.74 (24 Mar 2009)
-
-  24 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/bullet-2.74-noextra.patch, +bullet-2.74.ebuild:
-  Version bump
-
-  16 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  bullet-2.73-r1.ebuild:
-  Added a dos2unix to get rid of DOS terminations in install-sh, closing bug
-  #255166
-
-*bullet-2.73-r1 (06 Jan 2009)
-
-  06 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  files/bullet-2.73-autotools.patch, -bullet-2.69.ebuild,
-  -bullet-2.73.ebuild, +bullet-2.73-r1.ebuild:
-  Fixed installation directory for include files and pkgconfig location,
-  closing bug #253785
-
-*bullet-2.73 (08 Dec 2008)
-
-  08 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/bullet-2.73-autotools.patch, -bullet-2.67.ebuild,
-  +bullet-2.73.ebuild:
-  Version bump
-
-*bullet-2.69 (08 Jul 2008)
-
-  08 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.67.ebuild,
-  +bullet-2.69.ebuild:
-  Version bump. Removed dev-util/jam now obsolete. Thanks Marek Miller for
-  testing (bug #231168).
-
-*bullet-2.67 (11 Mar 2008)
-
-  11 Mar 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +bullet-2.67.ebuild:
-  Initial import. Thanks Renato Caldas <seventhguardian@gmail.com> for his
-  initial work. Closing bug #166192

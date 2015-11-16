@@ -1,75 +1,58 @@
 # ChangeLog for dev-libs/uulib
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/uulib/ChangeLog,v 1.23 2014/10/11 20:19:46 zlogene Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  11 Oct 2014; Mikle Kolyada <zlogene@gentoo.org> uulib-0.5.20-r1.ebuild:
-  Add ~ppc64 keyword wrt bug #268307
+*uulib-0.5.20-r1 (09 Aug 2015)
+*uulib-0.5.20 (09 Aug 2015)
 
-*uulib-0.5.20-r1 (11 Oct 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/uulib-0.5.20-shared.patch, +metadata.xml, +uulib-0.5.20.ebuild,
+  +uulib-0.5.20-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Oct 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  +uulib-0.5.20-r1.ebuild, +files/uulib-0.5.20-shared.patch:
-  Add patch to also build and install a shared object, needed for bug 268307
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Mar 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #53266
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jun 2012; Mike Frysinger <vapier@gentoo.org> uulib-0.5.20.ebuild:
-  Update to EAPI=4 and respect ar/ranlib settings.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Jan 2010; Christian Faulhammer <fauli@gentoo.org> uulib-0.5.20.ebuild:
-  Transfer Prefix keywords
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Sep 2008; <solar@gentoo.org> uulib-0.5.20.ebuild:
-  - make cross compile aware
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Jan 2008; Fabian Groffen <grobian@gentoo.org> uulib-0.5.20.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Aug 2005; Lina Pezzella <j4rg0n@gentoo.org> uulib-0.5.20.ebuild:
-  Stable ppc-macos
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Jul 2005; Lina Pezzella <j4rg0n@gentoo.org> uulib-0.5.20.ebuild:
-  Testing ppc-macos. Submitted on behalf of Fabian Groffen.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Jun 2005; Simon Stelling <blubb@gentoo.org> uulib-0.5.20.ebuild:
-  stable on amd64
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Apr 2005; Aron Griffis <agriffis@gentoo.org> uulib-0.5.20.ebuild:
-  stable on ia64
+  Bug: https://bugs.gentoo.org/552720
 
-  29 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  23 Aug 2004; Bryan Østergaard <kloeri@gentoo.org> uulib-0.5.20.ebuild:
-  Stable on alpha.
-
-  19 Aug 2004; Gustavo Zacarias <gustavoz@gentoo.org> uulib-0.5.20.ebuild:
-  Stable on sparc
-
-  24 Jul 2004; Lars Weiler <pylon@gentoo.org> uulib-0.5.20.ebuild:
-  Stable on ppc.
-
-  17 Jul 2004; Sven Wegener <swegener@gentoo.org> uulib-0.5.20.ebuild:
-  Marked stable on x86.
-
-  15 Jul 2004; Sven Wegener <swegener@gentoo.org> uulib-0.5.20.ebuild:
-  Added to ~arm after testing on coral.dev.gentoo.org.
-
-  22 Jun 2004; Gustavo Zacarias <gustavoz@gentoo.org> uulib-0.5.20.ebuild:
-  Keyworded ~sparc wrt #54351
-
-  22 Jun 2004; Bryan Østergaard <kloeri@gentoo.org> uulib-0.5.20.ebuild:
-  Add ~alpha, bug #54351.
-
-  19 Jun 2004; Danny van Dyk <kugelfang@gentoo.org> uulib-0.5.20.ebuild:
-  Marked ~amd64.
-
-  18 Jun 2004; David Holm <dholm@gentoo.org> uulib-0.5.20.ebuild:
-  Added to ~ppc.
-
-*uulib-0.5.20 (17 Jun 2004)
-
-  17 Jun 2004; Sven Wegener <swegener@gentoo.org> +uulib-0.5.20.ebuild:
-  Initial import, ebuild written by me. Needed as a dependency for the to be
-  added net-news/nzbget.

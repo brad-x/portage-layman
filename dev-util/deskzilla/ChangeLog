@@ -1,93 +1,57 @@
 # ChangeLog for dev-util/deskzilla
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/deskzilla/ChangeLog,v 1.17 2014/08/10 21:26:39 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> deskzilla-1.7.1-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*deskzilla-1.7.1-r1 (09 Aug 2015)
 
-*deskzilla-1.7.1-r1 (02 Mar 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +deskzilla-1.7.1-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  02 Mar 2014; Johann Schmitz <ercpe@gentoo.org> +deskzilla-1.7.1-r1.ebuild,
-  -deskzilla-1.6.1.ebuild, -deskzilla-1.7.1.ebuild,
-  -files/deskzilla_gentoo.license:
-  Moved gentoo license from FILESDIR to mirror system (bug #373271)  Dropped
-  1.6.1 because the distfile isn't available on upstream servers
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> deskzilla-1.6.1.ebuild,
-  deskzilla-1.7.1.ebuild:
-  inherit eutils for make_desktop_entry
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*deskzilla-1.7.1 (18 Oct 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Oct 2009; Vlastimil Babka <caster@gentoo.org> -deskzilla-1.5.1.ebuild,
-  -deskzilla-1.6.ebuild, +deskzilla-1.7.1.ebuild:
-  Version bump, bug #272366.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Mar 2009; Joseph Jezak <josejx@gentoo.org> deskzilla-1.6.ebuild,
-  deskzilla-1.6.1.ebuild:
-  Marked ~ppc for bug #215151.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> deskzilla-1.7.1-r1.ebuild,
+  metadata.xml:
+  Use https by default
 
-*deskzilla-1.6.1 (19 Apr 2008)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Apr 2008; Vlastimil Babka <caster@gentoo.org> +deskzilla-1.6.1.ebuild:
-  Version bump. Minor fixes.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*deskzilla-1.6 (29 Mar 2008)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  29 Mar 2008; Vlastimil Babka <caster@gentoo.org> -deskzilla-1.4.1.ebuild,
-  +deskzilla-1.6.ebuild:
-  Version bump, bug #215151.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Feb 2008; Carsten Lohrke <carlo@gentoo.org> deskzilla-1.4.1.ebuild,
-  deskzilla-1.5.1.ebuild:
-  Remove icon extension from desktop entry to match Icon Theme Specification.
+  Bug: https://bugs.gentoo.org/552720
 
-*deskzilla-1.5.1 (23 Nov 2007)
-
-  23 Nov 2007; Vlastimil Babka <caster@gentoo.org> -deskzilla-1.4.ebuild,
-  +deskzilla-1.5.1.ebuild:
-  Version bump.
-
-*deskzilla-1.4.1 (16 Jul 2007)
-
-  16 Jul 2007; Vlastimil Babka <caster@gentoo.org> -deskzilla-1.3.ebuild,
-  +deskzilla-1.4.1.ebuild:
-  Version bump. From now on install to unversioned dir under /opt. Should
-  remove the need to select gentoo license again after each upgrade. Remove
-  version 1.3.
-
-  06 Jul 2007; Petteri Räty <betelgeuse@gentoo.org> deskzilla-1.4.ebuild:
-  Fix location of the gentoo license given by pkg_postinst. Fixes bug #184409.
-
-*deskzilla-1.4 (19 Jun 2007)
-
-  19 Jun 2007; Vlastimil Babka <caster@gentoo.org>
-  -deskzilla-1.4_beta1.ebuild, -deskzilla-1.4_beta2.ebuild,
-  +deskzilla-1.4.ebuild:
-  Version bump and remove the betas.
-
-  16 Jun 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  deskzilla-1.4_beta2.ebuild:
-  Added ~ppc, bug #180408
-
-*deskzilla-1.4_beta2 (09 Jun 2007)
-
-  09 Jun 2007; Vlastimil Babka <caster@gentoo.org>
-  +deskzilla-1.4_beta2.ebuild:
-  Version bump, bugfixes.
-
-*deskzilla-1.4_beta1 (27 May 2007)
-
-  27 May 2007; Vlastimil Babka <caster@gentoo.org>
-  +deskzilla-1.4_beta1.ebuild:
-  Version bump. Bug fixes, most importantly timestamps in bugs.gentoo.org.
-
-  30 Apr 2007; Marius Mauch <genone@gentoo.org> deskzilla-1.3.ebuild:
-  Replacing einfo with elog
-
-*deskzilla-1.3 (24 Apr 2007)
-
-  24 Apr 2007; Vlastimil Babka <caster@gentoo.org>
-  +files/deskzilla_gentoo.license, +metadata.xml, +deskzilla-1.3.ebuild:
-  Initial ebuild, previously developed in java-experimental overlay and
-  contributed by Marat Radchenko <valder@yandex.ru>, bug #171472.

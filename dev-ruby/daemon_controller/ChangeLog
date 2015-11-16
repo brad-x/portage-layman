@@ -1,181 +1,65 @@
 # ChangeLog for dev-ruby/daemon_controller
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/daemon_controller/ChangeLog,v 1.40 2015/06/07 17:35:28 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*daemon_controller-1.2.0-r1 (09 Aug 2015)
+*daemon_controller-1.2.0 (09 Aug 2015)
+*daemon_controller-1.1.8 (09 Aug 2015)
 
-  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> daemon_controller-1.2.0.ebuild:
-  Stable for x86, wrt bug #533896
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +daemon_controller-1.1.8.ebuild, +daemon_controller-1.2.0.ebuild,
+  +daemon_controller-1.2.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> daemon_controller-1.2.0.ebuild:
-  Stable for amd64, wrt bug #533896
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Mar 2015; Hans de Graaff <graaff@gentoo.org>
-  daemon_controller-1.2.0-r1.ebuild:
-  Add ruby22.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*daemon_controller-1.2.0-r1 (29 Dec 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Dec 2014; Hans de Graaff <graaff@gentoo.org>
-  daemon_controller-1.2.0.ebuild, +daemon_controller-1.2.0-r1.ebuild:
-  Create stable candidate.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 Nov 2014; Manuel Rüger <mrueg@gentoo.org> -daemon_controller-1.1.1.ebuild:
-  Cleanup old.
-
-  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> daemon_controller-1.1.8.ebuild:
-  Mark amd64 stable. Bug #503380.
-
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> daemon_controller-1.1.1.ebuild,
-  daemon_controller-1.1.8.ebuild, daemon_controller-1.2.0.ebuild:
-  Remove trailing '.' from DESCRIPTION.
-
-  14 Jul 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  daemon_controller-1.1.8.ebuild:
-  x86 stable wrt bug #512188
-
-  09 Apr 2014; Hans de Graaff <graaff@gentoo.org>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> daemon_controller-1.1.8.ebuild,
   daemon_controller-1.2.0.ebuild:
-  Add ruby21.
+  Use https by default
 
-  05 Apr 2014; Manuel Rüger <mrueg@gentoo.org> daemon_controller-1.1.1.ebuild,
-  daemon_controller-1.1.8.ebuild, daemon_controller-1.2.0.ebuild:
-  Remove ree18 and ruby18 target.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*daemon_controller-1.2.0 (04 Mar 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Mar 2014; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.2.0.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Mar 2014; Hans de Graaff <graaff@gentoo.org>
-  -daemon_controller-1.1.7.ebuild:
-  Cleanup.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*daemon_controller-1.1.8 (17 Dec 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Dec 2013; Manuel Rüger <mrueg@gentoo.org> +daemon_controller-1.1.8.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Nov 2013; Manuel Rüger <mrueg@gentoo.org>
-  -daemon_controller-1.1.5-r1.ebuild:
-  Cleanup old.
+  Bug: https://bugs.gentoo.org/552720
 
-*daemon_controller-1.1.7 (21 Oct 2013)
-
-  21 Oct 2013; Manuel Rüger <mrueg@gentoo.org> +daemon_controller-1.1.7.ebuild,
-  -daemon_controller-1.1.4.ebuild, -daemon_controller-1.1.5.ebuild:
-  Version bump. Cleanup old.
-
-*daemon_controller-1.1.5-r1 (06 Oct 2013)
-
-  06 Oct 2013; Manuel Rüger <mrueg@gentoo.org>
-  +daemon_controller-1.1.5-r1.ebuild:
-  Add ruby20 target.
-
-  11 Aug 2013; Hans de Graaff <graaff@gentoo.org>
-  -daemon_controller-0.2.6.ebuild, -daemon_controller-1.1.2.ebuild:
-  Cleanup.
-
-*daemon_controller-1.1.5 (31 Jul 2013)
-
-  31 Jul 2013; Manuel Rüger <mrueg@gentoo.org> +daemon_controller-1.1.5.ebuild:
-  Version bump
-
-*daemon_controller-1.1.4 (14 Jul 2013)
-
-  14 Jul 2013; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.1.4.ebuild:
-  Version bump.
-
-*daemon_controller-1.1.2 (30 Apr 2013)
-
-  30 Apr 2013; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.1.2.ebuild:
-  Version bump.
-
-  30 Apr 2013; Hans de Graaff <graaff@gentoo.org>
-  -daemon_controller-1.0.0.ebuild, -daemon_controller-1.1.0.ebuild:
-  Cleanup.
-
-  05 Apr 2013; Agostino Sarubbo <ago@gentoo.org> daemon_controller-1.1.1.ebuild:
-  Stable for x86, wrt bug #464366
-
-  05 Apr 2013; Agostino Sarubbo <ago@gentoo.org> daemon_controller-1.1.1.ebuild:
-  Stable for amd64, wrt bug #464366
-
-*daemon_controller-1.1.1 (22 Jan 2013)
-
-  22 Jan 2013; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.1.1.ebuild:
-  Version bump.
-
-  02 Jan 2013; Andreas Schuerch <nativemad@gentoo.org>
-  daemon_controller-1.0.0.ebuild:
-  x86 stable, see bug 440098
-
-  04 Nov 2012; <ago@gentoo.org> daemon_controller-1.1.0.ebuild:
-  Stable for amd64, wrt bug #440098
-
-*daemon_controller-1.1.0 (30 Oct 2012)
-
-  30 Oct 2012; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.1.0.ebuild:
-  Version bump.
-
-  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
-  Update metadata.xml so that it's the same as most other packages.
-
-  13 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  daemon_controller-1.0.0.ebuild:
-  Bump to EAPI 4; use the new rspec recipe for tests (requires a fix, but allows
-  us to get rid of the rspec:0 dependency). Add a note about jruby not working.
-
-  05 Aug 2012; Hans de Graaff <graaff@gentoo.org>
-  -daemon_controller-0.2.6-r1.ebuild:
-  Cleanup.
-
-  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  daemon_controller-0.2.6.ebuild:
-  x86 stable wrt bug #410409
-
-  07 May 2012; Agostino Sarubbo <ago@gentoo.org>
-  daemon_controller-0.2.6.ebuild:
-  Stable for amd64, wrt bug #410409
-
-*daemon_controller-1.0.0 (07 Apr 2012)
-
-  07 Apr 2012; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-1.0.0.ebuild:
-  Version bump.
-
-*daemon_controller-0.2.6-r1 (01 Apr 2012)
-
-  01 Apr 2012; Hans de Graaff <graaff@gentoo.org>
-  daemon_controller-0.2.6.ebuild, +daemon_controller-0.2.6-r1.ebuild:
-  Revision bump to create a stable candidate.
-
-  08 Jan 2012; Hans de Graaff <graaff@gentoo.org>
-  daemon_controller-0.2.6.ebuild:
-  Add ruby19, fixing bug 398013. Shorten description to make repoman happy.
-
-  24 Jun 2011; Hans de Graaff <graaff@gentoo.org>
-  daemon_controller-0.2.6.ebuild:
-  Depend on proper slot of rspec.
-
-  24 Jun 2011; Hans de Graaff <graaff@gentoo.org>
-  -daemon_controller-0.2.5.ebuild:
-  Remove old version.
-
-*daemon_controller-0.2.6 (19 Feb 2011)
-
-  19 Feb 2011; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-0.2.6.ebuild:
-  Version bump.
-
-*daemon_controller-0.2.5 (25 Oct 2010)
-
-  25 Oct 2010; Hans de Graaff <graaff@gentoo.org>
-  +daemon_controller-0.2.5.ebuild, +metadata.xml:
-  Initial import. New dependency for www-apache/passenger.

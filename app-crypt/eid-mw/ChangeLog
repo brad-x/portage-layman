@@ -1,59 +1,124 @@
 # ChangeLog for app-crypt/eid-mw
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/eid-mw/ChangeLog,v 1.12 2015/03/04 17:44:08 swift Exp $
+# (auto-generated from git log)
 
-  04 Mar 2015; Sven Vermeulen <swift@gentoo.org> -eid-mw-4.0.2_p1188.ebuild,
-  -eid-mw-4.0.4_p1253.ebuild:
-  Drop 4.0.2 and 4.0.4 as recent e-ids require later versions to be read/used
+*eid-mw-9999 (09 Aug 2015)
+*eid-mw-4.0.6_p1620 (09 Aug 2015)
+*eid-mw-4.0.6_p1480 (09 Aug 2015)
 
-*eid-mw-4.0.6_p1620 (24 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +eid-mw-4.0.6_p1480.ebuild, +eid-mw-4.0.6_p1620.ebuild, +eid-mw-9999.ebuild,
+  +files/eid-mw-4.0.2_p1188+gcc-4.7.patch, +files/fix-nodialog-bug.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Jan 2015; Sven Vermeulen <swift@gentoo.org> +eid-mw-4.0.6_p1620.ebuild,
-  eid-mw-9999.ebuild:
-  Fix bug #536504 - Use github as source repo and bump to 4.0.6_p1620 thanks to
-  Vincent Hardy
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Patrick Lauer <patrick@gentoo.org> eid-mw-4.0.2_p1188.ebuild,
-  eid-mw-4.0.4_p1253.ebuild, eid-mw-4.0.6_p1480.ebuild, eid-mw-9999.ebuild:
-  Fix description for more repoman happy
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*eid-mw-9999 (10 Jul 2014)
-*eid-mw-4.0.6_p1480 (10 Jul 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Jul 2014; Sven Vermeulen <swift@gentoo.org> +eid-mw-4.0.6_p1480.ebuild,
-  +eid-mw-9999.ebuild, +files/fix-nodialog-bug.patch:
-  Fix bug #515680 - Bump eid-mw, also commit live ebuild. Thanks to Vincent
-  Hardy
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*eid-mw-4.0.4_p1253 (07 Mar 2014)
+  16 Aug 2015; Sven Vermeulen <swift@gentoo.org> eid-mw-9999.ebuild,
+  +files/gtk_not_required_9999.patch, metadata.xml:
+  Update -9999 to drop gtk requirement in newest builds
 
-  07 Mar 2014; Sven Vermeulen <swift@gentoo.org> +eid-mw-4.0.4_p1253.ebuild:
-  New eid middleware version, thanks to Vincent Hardy (bug #494772)
+  Provided by Vincent Hardy, this patches the live ebuild to drop the gtk
+  requirement from the code. It also includes the pkgconfig file.
 
-  30 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Fix gtk package name in metadata, wrt bug #438314. Thanks to Arne Stäcker
-  for discovering this issue
+  Gentoo-Bug: 557604
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  Package-Manager: portage-2.2.20.1
 
-  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  files/eid-mw-4.0.2_p1188+gcc-4.7.patch:
-  Fix patch to always include unistd.h without conditions for now. Thanks
-  Xavier.
+*eid-mw-4.1.4 (16 Aug 2015)
 
-  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +files/eid-mw-4.0.2_p1188+gcc-4.7.patch, eid-mw-4.0.2_p1188.ebuild:
-  Add patch to build with GCC 4.7 (fixes bug #422873).
+  16 Aug 2015; Sven Vermeulen <swift@gentoo.org> +eid-mw-4.1.4.ebuild,
+  +files/gtk_not_required_4.1.4.patch:
+  Version bump to 4.1.4
 
-  31 May 2012; Zac Medico <zmedico@gentoo.org> eid-mw-4.0.2_p1188.ebuild:
-  inherit multilib for get_libdir
+  As provided by Vincent Hardy, this brings eid-mw to version 4.1.4
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> eid-mw-4.0.2_p1188.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Gentoo-Bug: 557604
 
-*eid-mw-4.0.2_p1188 (07 Apr 2012)
+  Package-Manager: portage-2.2.20.1
 
-  07 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +eid-mw-4.0.2_p1188.ebuild, +metadata.xml:
-  Initial import of eid-mw by Vincent Hardy.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> eid-mw-4.0.6_p1480.ebuild:
+  Convert URIs for googlecode.com to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  09 Nov 2015; Ian Delaney <idella4@gentoo.org> eid-mw-9999.ebuild,
+  files/gtk_not_required_4.1.4.patch:
+  add gtk_not_required_4.1.4.patch addressing issue in gentoo bug
+
+  Submitted by proxy maintainer via the gentoo bug
+
+  Gentoo bug: #564582
+
+  Package-Manager: portage-2.2.23
+
+*eid-mw-4.1.9 (11 Nov 2015)
+
+  11 Nov 2015; Ian Delaney <idella4@gentoo.org> eid-mw-4.1.4.ebuild,
+  +eid-mw-4.1.9.ebuild:
+  bump to 4.1.9 wrt the gentoo bug, missed in previous commit
+
+  Also Reduced DESCRIPTION to < 80 chars fixing the QA violation in only
+  recent
+  two versions. ebuild by proxy maintainer via the gentoo bug
+
+  Gentoo bug: #564582
+
+  Package-Manager: portage-2.2.24
+
+  14 Nov 2015; Ian Delaney <idella4@gentoo.org> eid-mw-4.1.4.ebuild,
+  eid-mw-4.1.9.ebuild, eid-mw-9999.ebuild, files/gtk_not_required_4.1.4.patch,
+  files/gtk_not_required_9999.patch:
+  revise and correct patches
+
+  Patches apply to versions 4.1.4, 4.1.9 and the live ebuild,
+  supplied by proxy maintainer sourced from the gentoo bug
+
+  Gentoo bug: #564582
+
+  Package-Manager: portage-2.2.24
+

@@ -1,134 +1,67 @@
 # ChangeLog for net-misc/dibbler
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dibbler/ChangeLog,v 1.32 2015/02/10 10:10:12 ago Exp $
+# (auto-generated from git log)
 
-  10 Feb 2015; Agostino Sarubbo <ago@gentoo.org> dibbler-1.0.0.ebuild:
-  Stable for x86, wrt bug #539110
+*dibbler-1.0.0 (09 Aug 2015)
+*dibbler-1.0.0_rc2 (09 Aug 2015)
+*dibbler-0.8.4 (09 Aug 2015)
 
-  07 Feb 2015; Agostino Sarubbo <ago@gentoo.org> dibbler-1.0.0.ebuild:
-  Stable for amd64, wrt bug #539110
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +dibbler-0.8.4.ebuild,
+  +dibbler-1.0.0_rc2.ebuild, +dibbler-1.0.0.ebuild, +files/dibbler-client,
+  +files/dibbler-client.service, +files/dibbler-relay, +files/dibbler-server,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Feb 2015; Jeroen Roovers <jer@gentoo.org> dibbler-1.0.0.ebuild:
-  Stable for HPPA (bug #539110).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*dibbler-1.0.0 (14 Nov 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Nov 2014; Bernard Cafarelli <voyageur@gentoo.org> +dibbler-1.0.0.ebuild:
-  Version bump to final 1.0
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*dibbler-1.0.0_rc2 (22 Aug 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Aug 2014; Bernard Cafarelli <voyageur@gentoo.org> -dibbler-0.7.3.ebuild,
-  -dibbler-0.8.3-r1.ebuild, +dibbler-1.0.0_rc2.ebuild:
-  Version bump to 1.0 rc, reported to work better than current 0.8 branch.
-  Fixes bug #487876 by Alexander Wright
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Feb 2014; Agostino Sarubbo <ago@gentoo.org> dibbler-0.8.4.ebuild:
-  Stable for x86, wrt bug #499102
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Jan 2014; Chema Alonso <nimiux@gentoo.org> dibbler-0.8.4.ebuild:
-  Stable for amd64 wrt bug #499102
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Jan 2014; Jeroen Roovers <jer@gentoo.org> dibbler-0.8.4.ebuild:
-  Stable for HPPA (bug #499102).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*dibbler-0.8.4 (02 Dec 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Dec 2013; Bernard Cafarelli <voyageur@gentoo.org> +dibbler-0.8.4.ebuild,
-  metadata.xml:
-  Adding myself to maintainers (mostly for dibbler-client), version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  09 Nov 2013; Pacho Ramos <pacho@gentoo.org> dibbler-0.8.3-r1.ebuild:
-  x86 stable, bug #477168
+*dibbler-1.0.1 (12 Oct 2015)
 
-  22 Sep 2013; Agostino Sarubbo <ago@gentoo.org> dibbler-0.8.3-r1.ebuild:
-  Stable for amd64, wrt bug #477168
-
-  18 Sep 2013; Jeroen Roovers <jer@gentoo.org> dibbler-0.8.3-r1.ebuild:
-  Stable for HPPA (bug #477168).
-
-  14 Sep 2013; Pacho Ramos <pacho@gentoo.org> dibbler-0.8.3-r1.ebuild:
-  Fix deps #484908 by Aballier
-
-*dibbler-0.8.3-r1 (14 Sep 2013)
-
-  14 Sep 2013; Pacho Ramos <pacho@gentoo.org> +dibbler-0.8.3-r1.ebuild,
-  +files/dibbler-client.service, -dibbler-0.8.0.ebuild, -dibbler-0.8.2.ebuild,
-  -dibbler-0.8.3.ebuild, -files/dibbler-0.8.2-gcc47.patch,
-  -files/dibbler-gcc-4.1.patch:
-  Install unit file, drop old
-
-  13 Sep 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  drop to maintainer-needed
-
-*dibbler-0.8.3 (05 Apr 2013)
-
-  05 Apr 2013; Sergey Popov <pinkbyte@gentoo.org> +dibbler-0.8.3.ebuild:
-  Version bump, wrt bug #461556. Add epatch_user, use readme.gentoo eclass,
-  some generic cleanups
-
-  12 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
-  +files/dibbler-0.8.2-gcc47.patch, dibbler-0.8.2.ebuild:
-  Add gcc-4.7 patch. Bug #426342
-
-*dibbler-0.8.2 (15 May 2012)
-
-  15 May 2012; Markos Chandras <hwoarang@gentoo.org> +dibbler-0.8.2.ebuild:
+  12 Oct 2015; Bernard Cafarelli <voyageur@gentoo.org> +dibbler-1.0.1.ebuild:
   version bump
 
-  15 May 2012; Markos Chandras <hwoarang@gentoo.org> dibbler-0.8.0.ebuild:
-  Fix doc useflag. Bug #395593
+  Package-Manager: portage-2.2.23
 
-  15 May 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add myself as maintainer
-
-  14 May 2012; Pacho Ramos <pacho@gentoo.org> -dibbler-0.4.1.ebuild,
-  -dibbler-0.6.1.ebuild, metadata.xml:
-  Drop maintainer as he will not take care of this stuff in the near future as
-  talked with him via mail. Drop old.
-
-*dibbler-0.8.0 (04 Dec 2011)
-
-  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +dibbler-0.8.0.ebuild:
-  non-maintainer version bump. Bug #382173
-
-  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> dibbler-0.7.3.ebuild:
-  Stable for HPPA (bug #375539).
-
-  11 Sep 2011; Markus Meier <maekke@gentoo.org> dibbler-0.7.3.ebuild:
-  x86 stable, bug #375539
-
-  07 Sep 2011; Tony Vroon <chainsaw@gentoo.org> dibbler-0.7.3.ebuild:
-  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
-  Lazkani in bug #375539 filed by Markos "hwoarang" Chandras.
-
-*dibbler-0.7.3 (25 Apr 2009)
-
-  25 Apr 2009; Patrick Lauer <patrick@gentoo.org> +dibbler-0.7.3.ebuild:
-  Bump to 0.7.3. Fixes #230173. Ebuild modifications by Petr Pisar.
-
-  14 Jan 2009; Mike Frysinger <vapier@gentoo.org> dibbler-0.6.1.ebuild:
-  Cleanup ebuild and fix building with newer glibc #240916 by Diego E.
-  Pettenò.
-
-*dibbler-0.6.1 (26 Sep 2007)
-
-  26 Sep 2007; Guy Martin <gmsoft@gentoo.org> +dibbler-0.6.1.ebuild:
-  Version bump. Fix #166013.
-
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> dibbler-0.4.1.ebuild:
-  Fix *initd, *confd and *envd calls (#173884, #174266)
-
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  16 May 2006; Guy Martin <gmsoft@gentoo.org> +files/dibbler-gcc-4.1.patch,
-  dibbler-0.4.1.ebuild:
-  Added fix for gcc-4.1 (#133322).
-
-*dibbler-0.4.1 (20 Sep 2005)
-
-  20 Sep 2005; Guy Martin <gmsoft@gentoo.org> +files/dibbler-client,
-  +files/dibbler-relay, +files/dibbler-server, +metadata.xml,
-  +dibbler-0.4.1.ebuild:
-  Initial import. Ebuild made by Tomasz Mrugalski <thomson@klub.com.pl>.

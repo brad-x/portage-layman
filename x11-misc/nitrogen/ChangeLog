@@ -1,100 +1,56 @@
 # ChangeLog for x11-misc/nitrogen
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/nitrogen/ChangeLog,v 1.24 2014/01/26 11:47:54 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  26 Jan 2014; Jeroen Roovers <jer@gentoo.org> -nitrogen-1.4-r1.ebuild,
-  -nitrogen-1.5.1.ebuild, -files/nitrogen-1.4-png.patch,
-  -files/Makefile-as-needed.patch:
-  Old.
+*nitrogen-1.5.2 (09 Aug 2015)
 
-  26 Jan 2014; Agostino Sarubbo <ago@gentoo.org> nitrogen-1.5.2.ebuild:
-  Stable for x86, wrt bug #498940
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nitrogen-1.5.2-gold.patch, +metadata.xml, +nitrogen-1.5.2.ebuild:
+  proj/gentoo: Initial commit
 
-  23 Jan 2014; Chema Alonso <nimiux@gentoo.org> nitrogen-1.5.2.ebuild:
-  Stable for amd64 wrt bug #498940
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Aug 2012; Jeroen Roovers <jer@gentoo.org> nitrogen-1.5.2.ebuild,
-  +files/nitrogen-1.5.2-gold.patch:
-  Fix building with the gold linker (bug #431882).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> nitrogen-1.4-r1.ebuild,
-  nitrogen-1.5.1.ebuild, nitrogen-1.5.2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*nitrogen-1.5.2 (19 Jul 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Jul 2011; Jeroen Roovers <jer@gentoo.org> +nitrogen-1.5.2.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Mar 2011; Christoph Mende <angelos@gentoo.org> nitrogen-1.4-r1.ebuild,
-  nitrogen-1.5.1.ebuild:
-  Fixed slot deps
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Mar 2011; Kevin McCarthy <signals@gentoo.org> nitrogen-1.4-r1.ebuild:
-  Slotted gtk+ and gtkmm depends and EAPI=2 bump to support it.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Jul 2010; Kacper Kowalik <xarthisius@gentoo.org> -nitrogen-1.5.ebuild:
-  Remove old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*nitrogen-1.5.1 (12 Jul 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Jul 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  +nitrogen-1.5.1.ebuild:
-  Version bump. Fixes bug 327603
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Jun 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove omp from metadata.xml (#147119)
-
-*nitrogen-1.5 (03 Feb 2010)
-
-  03 Feb 2010; Samuli Suominen <ssuominen@gentoo.org> +nitrogen-1.5.ebuild:
-  Version bump wrt #303275, thanks to Kaleb Elwert for reporting.
-
-  23 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  files/nitrogen-1.4-png.patch:
-  Include string.h instead of png.h wrt #296783 by Dominik Behr.
-
-  03 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
-  nitrogen-1.4-r1.ebuild, +files/nitrogen-1.4-png.patch:
-  Fix compilation wrt #291737, thanks to Łukasz Michalik for reporting.
-
-  14 Jul 2009; <omp@gentoo.org> -nitrogen-1.2.ebuild:
-  Remove older version.
-
-*nitrogen-1.4-r1 (14 Jul 2009)
-
-  14 Jul 2009; <omp@gentoo.org> +nitrogen-1.4-r1.ebuild:
-  Depend directly on gnome-base/librsvg. (bug #267231)
-
-  11 Jan 2009; Markus Meier <maekke@gentoo.org> nitrogen-1.4.ebuild:
-  x86 stable, bug #254237
-
-  10 Jan 2009; Jeremy Olexa <darkside@gentoo.org> nitrogen-1.4.ebuild:
-  amd64 stable, bug 254237
-
-  03 Dec 2008; David Shakaryan <omp@gentoo.org>
-  +files/Makefile-as-needed.patch, nitrogen-1.4.ebuild:
-  Patch for --as-needed by Christian Ruppert (idl0r). (bug #248576)
-
-*nitrogen-1.4 (11 Aug 2008)
-
-  11 Aug 2008; David Shakaryan <omp@gentoo.org> -nitrogen-1.0.ebuild,
-  +nitrogen-1.4.ebuild:
-  Version bump and remove older version. (bug #233100)
-
-*nitrogen-1.2 (14 Apr 2008)
-
-  14 Apr 2008; David Shakaryan <omp@gentoo.org> +nitrogen-1.2.ebuild:
-  Version bump.
-
-  30 Sep 2007; David Shakaryan <omp@gentoo.org> -nitrogen-1.0_rc4.ebuild:
-  Remove old release candidate.
-
-*nitrogen-1.0 (29 May 2007)
-
-  29 May 2007; David Shakaryan <omp@gentoo.org> +nitrogen-1.0.ebuild:
-  Version bump. (bug #180052)
-
-  20 Oct 2006; David Shakaryan <omp@gentoo.org> +metadata.xml,
-  +nitrogen-1.0_rc4.ebuild:
-  Initial ebuild by me.

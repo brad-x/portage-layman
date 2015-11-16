@@ -7,8 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1 git-r3 user
 
-DESCRIPTION="Services for discovering, registering, and retrieving
-virtual machine images"
+DESCRIPTION="Services for discovering, registering, and retrieving VM images"
 HOMEPAGE="https://launchpad.net/glance"
 EGIT_REPO_URI="https://github.com/openstack/glance.git"
 EGIT_BRANCH="stable/liberty"
@@ -29,8 +28,7 @@ DEPEND="
 		<=dev-python/Babel-2.0[${PYTHON_USEDEP}]
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		<=dev-python/coverage-4.0[${PYTHON_USEDEP}]
-		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
-		<=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
+		~dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		<=dev-python/mox3-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
@@ -84,8 +82,7 @@ RDEPEND="
 		<dev-python/sqlalchemy-1.1.0[${PYTHON_USEDEP}]
 	)
 	~dev-python/anyjson-0.3.3[${PYTHON_USEDEP}]
-	>=dev-python/eventlet-0.17.4[${PYTHON_USEDEP}]
-	<=dev-python/eventlet-0.17.4[${PYTHON_USEDEP}]
+	~dev-python/eventlet-0.17.4[${PYTHON_USEDEP}]
 	>=dev-python/pastedeploy-1.5.0[${PYTHON_USEDEP}]
 	<=dev-python/pastedeploy-1.5.2[${PYTHON_USEDEP}]
 	>=dev-python/routes-1.12.3[${PYTHON_USEDEP}]
@@ -159,7 +156,7 @@ RDEPEND="
 	>=dev-python/castellan-0.2.0[${PYTHON_USEDEP}]
 	<=dev-python/castellan-0.2.1[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-1.0[${PYTHON_USEDEP}]
-	<=dev-python/cryptography-1.0.1-r9999[${PYTHON_USEDEP}]
+	<=dev-python/cryptography-1.1-r9999[${PYTHON_USEDEP}]
 "
 
 PATCHES=(

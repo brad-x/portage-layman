@@ -1,90 +1,58 @@
 # ChangeLog for media-libs/raul
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/raul/ChangeLog,v 1.20 2015/01/03 12:03:20 mgorny Exp $
+# (auto-generated from git log)
 
-  03 Jan 2015; Michał Górny <mgorny@gentoo.org> raul-0.8.0-r1.ebuild:
-  Add PYTHON_REQ_USE as necessary for waf.
+*raul-0.8.0-r1 (09 Aug 2015)
+*raul-0.8.0 (09 Aug 2015)
 
-*raul-0.8.0-r1 (25 Dec 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/ldconfig2.patch,
+  +files/raul-0.8.0-gcc47.patch, +metadata.xml, +raul-0.8.0.ebuild,
+  +raul-0.8.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Dec 2014; Michał Górny <mgorny@gentoo.org> +raul-0.8.0-r1.ebuild:
-  Convert to python-any-r1.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> raul-0.8.0.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> raul-0.8.0.ebuild,
-  +files/raul-0.8.0-gcc47.patch:
-  fix build with gcc 4.7, bug #425274
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  01 Jun 2012; Ian Stakenvicius <axs@gentoo.org> -raul-0.5.1.ebuild,
-  -files/raul-0.5.1-gcc44.patch, -raul-0.6.0.ebuild, -raul-0.7.0.ebuild,
-  -files/ldconfig.patch:
-  removed old ebuilds and files
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Jun 2012; Ian Stakenvicius <axs@gentoo.org> raul-0.8.0.ebuild:
-  cleaned up ebuild, added logic to switch to python2 as required for this
-  particular waf
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> raul-0.5.1.ebuild,
-  raul-0.6.0.ebuild, raul-0.7.0.ebuild, raul-0.8.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> raul-0.8.0.ebuild:
-  x86 stable wrt bug #393869
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> raul-0.8.0.ebuild:
-  Stable for AMD64, wrt bug #393869
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*raul-0.8.0 (13 Jan 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Jan 2011; Alexis Ballier <aballier@gentoo.org> +files/ldconfig2.patch,
-  +raul-0.8.0.ebuild:
-  version bump
+  Bug: https://bugs.gentoo.org/552720
 
-*raul-0.7.0 (09 Oct 2010)
-
-  09 Oct 2010; Alexis Ballier <aballier@gentoo.org> +raul-0.7.0.ebuild:
-  version bump
-
-*raul-0.6.0 (12 Apr 2010)
-
-  12 Apr 2010; Alexis Ballier <aballier@gentoo.org> +raul-0.6.0.ebuild,
-  +files/ldconfig.patch:
-  version bump
-
-  02 Aug 2009; <chainsaw@gentoo.org> raul-0.5.1.ebuild:
-  Marked stable on AMD64 as a dependency of media-sound/patchage-0.4.2;
-  requested by Alexis Ballier <aballier@gentoo.org> in bug #278595.
-  Compile-tested on a dual hex-core Opteron with USE="-debug -doc -jack
-  -test".
-
-  30 Jul 2009; Ryan Hill <dirtyepic@gentoo.org> raul-0.5.1.ebuild,
-  +files/raul-0.5.1-gcc44.patch:
-  Fix build w/ GCC 4.4. (bug #276495)
-
-  22 Jul 2009; Christian Faulhammer <fauli@gentoo.org> raul-0.5.1.ebuild:
-  stable x86, bug 278595
-
-  17 Sep 2008; Alexis Ballier <aballier@gentoo.org> -raul-0.5.0.ebuild:
-  remove old
-
-*raul-0.5.1 (17 Sep 2008)
-
-  17 Sep 2008; Alexis Ballier <aballier@gentoo.org> +raul-0.5.1.ebuild:
-  version bump
-
-  24 Jul 2008; Raúl Porcel <armin76@gentoo.org> raul-0.5.0.ebuild:
-  Add ~x86 wrt #232862
-
-*raul-0.5.0 (09 Jul 2008)
-
-  09 Jul 2008; Alexis Ballier <aballier@gentoo.org> -raul-0.4.0.ebuild,
-  +raul-0.5.0.ebuild:
-  version bump
-
-*raul-0.4.0 (29 May 2008)
-
-  29 May 2008; Alexis Ballier <aballier@gentoo.org> +metadata.xml,
-  +raul-0.4.0.ebuild:
-  initial import, ebuild by me

@@ -1,245 +1,61 @@
 # ChangeLog for dev-perl/gnome2-wnck
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/gnome2-wnck/ChangeLog,v 1.59 2015/05/01 12:29:26 dilfridge Exp $
+# (auto-generated from git log)
 
-  01 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  gnome2-wnck-0.160.0-r1.ebuild:
-  dev-perl/extutils-depends just became dev-perl/ExtUtils-Depends
+*gnome2-wnck-0.160.0-r1 (09 Aug 2015)
 
-*gnome2-wnck-0.160.0-r1 (25 Aug 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +gnome2-wnck-0.160.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +gnome2-wnck-0.160.0-r1.ebuild, -gnome2-wnck-0.160.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Apr 2012; Torsten Veller <tove@gentoo.org> -gnome2-wnck-0.16.ebuild:
-  Cleanup
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> gnome2-wnck-0.16.ebuild,
-  gnome2-wnck-0.160.0.ebuild:
-  Drop ia64/sparc keywords
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  gnome2-wnck-0.160.0.ebuild:
-  x86 stable wrt bug #400291
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Feb 2012; Brent Baude <ranger@gentoo.org> gnome2-wnck-0.160.0.ebuild:
-  Marking gnome2-wnck-0.160.0 ppc for bug 400291
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> gnome2-wnck-0.160.0.ebuild:
-  Stable for amd64, wrt bug #400291
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gnome2-wnck-0.160.0 (04 Sep 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> +gnome2-wnck-0.160.0.ebuild:
-  Maintenance. Use CPAN mirrors. Change version scheme
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
-  gnome2-wnck-0.16.ebuild:
-  Fix slot-deps on gnome libs
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Sep 2008; Torsten Veller <tove@gentoo.org> -files/window_close_patch,
-  -gnome2-wnck-0.14.ebuild, gnome2-wnck-0.16.ebuild:
-  Fix LICENSE. Cleanup
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  25 May 2008; Markus Meier <maekke@gentoo.org> gnome2-wnck-0.16.ebuild:
-  amd64 stable, bug #204386
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 May 2008; Raúl Porcel <armin76@gentoo.org> gnome2-wnck-0.16.ebuild:
-  ia64 stable wrt #204386
-
-  21 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  gnome2-wnck-0.16.ebuild:
-  stable x86, bug 204386
-
-  21 May 2008; nixnut <nixnut@gentoo.org> gnome2-wnck-0.16.ebuild:
-  Stable on ppc wrt bug 204386
-
-  21 May 2008; Ferris McCormick <fmccor@gentoo.org> gnome2-wnck-0.16.ebuild:
-  Sparc stable, Bug #204386.
-
-  05 May 2008; Samuli Suominen <drac@gentoo.org> -gnome2-wnck-0.11.ebuild,
-  -gnome2-wnck-0.12.ebuild, -gnome2-wnck-0.13.ebuild,
-  gnome2-wnck-0.14.ebuild:
-  Move pkgconfig to DEPEND wrt #217278.
-
-*gnome2-wnck-0.16 (08 Apr 2008)
-
-  08 Apr 2008; Torsten Veller <tove@gentoo.org> +gnome2-wnck-0.16.ebuild:
-  Version bump. Closes #208810 and #204386.
-
-  06 Jul 2007; Raúl Porcel <armin76@gentoo.org> gnome2-wnck-0.14.ebuild:
-  ia64 stable
-
-  30 Mar 2007; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.13.ebuild, gnome2-wnck-0.14.ebuild:
-  Updating deps, bug 152205
-
-  05 Mar 2007; Andrej Kacian <ticho@gentoo.org> gnome2-wnck-0.14.ebuild:
-  Stable on x86, bug #169152.
-
-  24 Dec 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  gnome2-wnck-0.14.ebuild:
-  Stable on ppc.
-
-  25 Nov 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.14.ebuild:
-  sparc stable
-
-  24 Nov 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.14.ebuild:
-  amd64 stable
-
-  25 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  gnome2-wnck-0.13.ebuild:
-  Stable on sparc
-
-  21 Oct 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  gnome2-wnck-0.13.ebuild:
-  ppc stable
-
-  20 Oct 2006; Aron Griffis <agriffis@gentoo.org> gnome2-wnck-0.13.ebuild:
-  Mark 0.13 stable on ia64
-
-  20 Oct 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.11.ebuild, gnome2-wnck-0.12.ebuild, gnome2-wnck-0.13.ebuild,
-  gnome2-wnck-0.14.ebuild:
-  Marking amd64 stable
-
-  15 Oct 2006; Bryan Østergaard <kloeri@gentoo.org>
-  gnome2-wnck-0.12.ebuild:
-  Stable on ia64.
-
-*gnome2-wnck-0.14 (25 Sep 2006)
-
-  25 Sep 2006; Michael Cummings <mcummings@gentoo.org>
-  +gnome2-wnck-0.14.ebuild:
-  Version bump
-
-  16 Sep 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  gnome2-wnck-0.12.ebuild:
-  ppc stable
-
-  05 Sep 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  gnome2-wnck-0.12.ebuild:
-  Stable on sparc
-
-  07 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.12.ebuild, gnome2-wnck-0.13.ebuild:
-  Marking amd64 stable
-
-  06 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.11.ebuild, gnome2-wnck-0.12.ebuild, gnome2-wnck-0.13.ebuild:
-  Adding perl dep; fixed DEPEND
-
-  27 Jul 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  -gnome2-wnck-0.04-r1.ebuild, -gnome2-wnck-0.10.ebuild:
-  clean out broken and older ebuilds
-
-*gnome2-wnck-0.13 (21 Jul 2006)
-
-  21 Jul 2006; Michael Cummings <mcummings@gentoo.org>
-  +gnome2-wnck-0.13.ebuild:
-  Version bump
-
-  10 Jul 2006; Aron Griffis <agriffis@gentoo.org> gnome2-wnck-0.11.ebuild:
-  Mark 0.11 stable on ia64
-
-  05 Jul 2006; Christian Hartmann <ian@gentoo.org>
-  gnome2-wnck-0.04-r1.ebuild, gnome2-wnck-0.10.ebuild,
-  gnome2-wnck-0.11.ebuild, gnome2-wnck-0.12.ebuild:
-  Fixed RDEPEND wrt bug #134781
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org>
-  files/digest-gnome2-wnck-0.04-r1, files/digest-gnome2-wnck-0.10,
-  files/digest-gnome2-wnck-0.11, Manifest:
-  Fixing SHA256 digest, pass four
-
-*gnome2-wnck-0.12 (26 Apr 2006)
-
-  26 Apr 2006; <mcumming@gentoo.org> +gnome2-wnck-0.12.ebuild:
-  Version bump
-
-  30 Mar 2006; Aron Griffis <agriffis@gentoo.org> gnome2-wnck-0.11.ebuild:
-  Mark 0.11 ~ia64
-
-  06 Feb 2006; Simon Stelling <blubb@gentoo.org> gnome2-wnck-0.11.ebuild:
-  stable on amd64
-
-  16 Jan 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  gnome2-wnck-0.11.ebuild:
-  Stable on sparc
-
-  15 Jan 2006; Michael Hanselmann <hansmi@gentoo.org>
-  gnome2-wnck-0.11.ebuild:
-  Stable on ppc.
-
-  13 Jan 2006; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.11.ebuild:
-  marking stable x86
-
-*gnome2-wnck-0.11 (14 Nov 2005)
-
-  14 Nov 2005; Michael Cummings <mcummings@gentoo.org>
-  +gnome2-wnck-0.11.ebuild:
-  Version bump upstream
-
-  17 Jun 2005; Michael Hanselmann <hansmi@gentoo.org>
-  gnome2-wnck-0.10.ebuild:
-  Stable on ppc.
-
-  15 Jun 2005; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.04-r1.ebuild, -gnome2-wnck-0.04.ebuild,
-  gnome2-wnck-0.10.ebuild:
-  Bugs 96117, 95813, and 95552 should be covered by this change in deps and bump
-
-  09 Jun 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  gnome2-wnck-0.10.ebuild:
-  Stable on sparc
-
-  09 May 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  gnome2-wnck-0.10.ebuild:
-  Keyworded ~sparc
-
-  05 May 2005; Sven Wegener <swegener@gentoo.org> gnome2-wnck-0.04.ebuild,
-  gnome2-wnck-0.04-r1.ebuild, gnome2-wnck-0.10.ebuild:
-  Removed * postfix from <, <=, >= and > dependencies.
-
-  22 Apr 2005; Simon Stelling <blubb@gentoo.org> gnome2-wnck-0.04-r1.ebuild:
-  stable on amd64
-
-*gnome2-wnck-0.10 (07 Mar 2005)
-
-  07 Mar 2005; Michael Cummings <mcummings@gentoo.org>
-  +gnome2-wnck-0.10.ebuild:
-  version bump; bug 57713
-
-  20 Dec 2004; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.04-r1.ebuild:
-  unmasking for x86
-
-  14 Aug 2004; Tom Martin <slarti@gentoo.org> gnome2-wnck-0.04-r1.ebuild,
-  gnome2-wnck-0.04.ebuild:
-  Marked ~amd64 (and fix strange CVS header problem.. it was missing a
-  trailing $).
-
-*gnome2-wnck-0.04-r1 (14 Aug 2004)
-
-  14 Aug 2004; Michael Cummings <mcummings@gentoo.org>
-  +files/window_close_patch, +gnome2-wnck-0.04-r1.ebuild:
-  Patch supplied by Delfim Machado in bug 57713 to address issues with
-  compilation on somep latforms. Confirmed the patch didn't affect systems that
-  were able to compile the module originally.
-
-  14 Jun 2004; David Holm <dholm@gentoo.org> gnome2-wnck-0.04.ebuild:
-  Added to ~ppc.
-
-*gnome2-wnck-0.04 (13 Jun 2004)
-
-  13 Jun 2004; Michael Cummings <mcummings@gentoo.org>
-  gnome2-wnck-0.04.ebuild:
-  Ebuild submitted by teedog@myrealbox.com in bug 52839;

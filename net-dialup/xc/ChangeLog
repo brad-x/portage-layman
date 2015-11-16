@@ -1,140 +1,66 @@
 # ChangeLog for net-dialup/xc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/xc/ChangeLog,v 1.39 2015/07/30 12:53:30 ago Exp $
+# (auto-generated from git log)
 
-  30 Jul 2015; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r4.ebuild:
-  Stable for sparc, wrt bug #535552
+*xc-4.3.2-r4 (09 Aug 2015)
+*xc-4.3.2-r3 (09 Aug 2015)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> xc-4.3.2-r4.ebuild:
-  ppc stable wrt bug #535552
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xc-4.3.2-add-115200.patch,
+  +files/xc-4.3.2-fix-set_bps-overflow.patch, +files/xc-4.3.2-gentoo.patch,
+  +files/xc-4.3.2-implicit-decl.patch, +metadata.xml, +xc-4.3.2-r3.ebuild,
+  +xc-4.3.2-r4.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r4.ebuild:
-  Stable for x86, wrt bug #535552
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jun 2015; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r4.ebuild:
-  Stable for amd64, wrt bug #535552
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*xc-4.3.2-r4 (19 Apr 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Apr 2014; Joshua Kinard <kumba@gentoo.org> xc-4.3.2-r3.ebuild,
-  +xc-4.3.2-r4.ebuild, +files/xc-4.3.2-fix-set_bps-overflow.patch,
-  metadata.xml:
-  Update DESCRIPTION and add 4.3.2-r4, which corrects a buffer overflow if
-  specifying 115200 baud in xc.init.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> xc-4.3.2-r3.ebuild:
-  Set correct package license
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> xc-4.3.2-r3.ebuild:
-  Remove unnecessary binary striping, wrt bug #460112. Thanks to Agostino
-  Sarubbo for discovering this issue
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> -xc-4.3.2-r1.ebuild,
-  -xc-4.3.2-r2.ebuild:
-  Drop old revisions
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r3.ebuild:
-  Stable for sparc, wrt bug #460012
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r3.ebuild:
-  Stable for ppc64, wrt bug #460012
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r3.ebuild:
-  Stable for ppc, wrt bug #460012
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r3.ebuild:
-  Stable for x86, wrt bug #460012
+  23 Sep 2015; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r4.ebuild:
+  ppc64 stable wrt bug #535552
 
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xc-4.3.2-r3.ebuild:
-  Stable for amd64, wrt bug #460012
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc64"
 
-  02 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> xc-4.3.2-r3.ebuild:
-  Add missing build-time dependency on pkgconfig
-
-*xc-4.3.2-r3 (02 Mar 2013)
-
-  02 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> +xc-4.3.2-r3.ebuild,
-  files/xc-4.3.2-gentoo.patch:
-  Revision bump: respect AR and RANLIB, fix building with
-  sys-libs/ncurses[tinfo] wrt bug #459796
-
-  21 Mar 2011; Mike Frysinger <vapier@gentoo.org> xc-4.3.2-r2.ebuild:
-  Stabilize for all.
-
-  06 Feb 2011; Mart Raudsepp <leio@gentoo.org> xc-4.3.2-r1.ebuild:
-  Drop to ~mips
-
-*xc-4.3.2-r2 (31 Jan 2010)
-
-  31 Jan 2010; Mike Frysinger <vapier@gentoo.org> +xc-4.3.2-r2.ebuild,
-  files/xc-4.3.2-add-115200.patch, files/xc-4.3.2-gentoo.patch,
-  files/xc-4.3.2-implicit-decl.patch:
-  Fix multilib handling, more implicit decls, and improve crc output.
-
-  18 Oct 2008; Alin Năstac <mrness@gentoo.org> -files/xc-4.3.2-gentoo.diff,
-  +files/xc-4.3.2-gentoo.patch, xc-4.3.2-r1.ebuild:
-  Merge sed patches into gentoo.patch (#240882).
-
-  24 Apr 2008; <solar@gentoo.org> xc-4.3.2-r1.ebuild:
-  - make ebuild cross-compile aware
-
-  15 Apr 2007; Alin Năstac <mrness@gentoo.org>
-  +files/xc-4.3.2-implicit-decl.patch, xc-4.3.2-r1.ebuild:
-  Fix implicit declaration warnings.
-
-  23 Sep 2006; Alin Nastac <mrness@gentoo.org> files/xc-4.3.2-gentoo.diff:
-  Avoid pre-stripped binaries QA warning.
-
-  16 Mar 2006; Alin Nastac <mrness@gentoo.org> xc-4.3.2-r1.ebuild:
-  Quote $FILESDIR and $D.
-
-  27 Jun 2005; Markus Rothe <corsair@gentoo.org> xc-4.3.2-r1.ebuild:
-  Stable on ppc64
-
-  21 May 2005; Markus Rothe <corsair@gentoo.org> xc-4.3.2-r1.ebuild:
-  Added ~ppc64 to KEYWORDS
-
-  21 Apr 2005; Simon Stelling <blubb@gentoo.org> xc-4.3.2-r1.ebuild:
-  stable on amd64
-
-  12 Nov 2004; Simon Stelling <blubb@gentoo.org> xc-4.3.2-r1.ebuild:
-  added ~amd64
-
-  16 Oct 2004; Mike Frysinger <vapier@gentoo.org> xc-4.3.2-r1.ebuild:
-  Fix stupid dependency on sys-libs/libtermcap-compat (i.e. remove it) #64212.
-
-  08 Jun 2004; David Holm <dholm@gentoo.org> xc-4.3.2-r1.ebuild:
-  Added to ~ppc.
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> xc-4.3.2-r1.ebuild:
-  Add inherit eutils
-
-  13 Apr 2004; Joshua Kinard <kumba@gentoo.org> xc-4.3.2-r1.ebuild:
-  Marked stable on x86, sparc, mips.
-
-*xc-4.3.2-r1 (16 Jan 2004)
-
-  16 Jan 2004; Joshua Kinard <kumba@gentoo.org> xc-4.3.2-r1.ebuild,
-  files/xc-4.3.2-add-115200.patch:
-  Added a small patch which allows xc to use 115200 baud speed for serial port
-  connections (I wanted to use this program to link into my cobalt raq2, which
-  operates at such a speed, and minicom has issues). Also tweaked the Makefile
-  to import CFLAGS from the portage environment.
-
-  19 Nov 2003; Heinrich Wendel <lanius@gentoo.org> metadata.xml:
-  metadata.xml
-
-*xc-4.3.2 (06 Sep 2002)
-
-  01 Jul 2003; Joshua Kinard <kumba@gentoo.org> xc-4.3.2.ebuild:
-  Fixed compile-time issue in which ${WARN} was somehow being called into the
-  Makefile and killing the build by making all text turn yellow. Added a WARN=""
-  to the make line in src_compile().  Closes Bug #23799.
-  Also added ~sparc and ~mips to KEYWORDS
-
-  23 May 2003; Chuck Brewer <killian@gentoo.org>:
-  Added manifest.
-
-  06 Sep 2002; Daniel Ahlberg <aliz@gentoo.org> :
-  Initial import. xc is needed for xmodem transfers, found by Paul Ruhland <pruhland@rochester.rr.com>
-  in bug #5943.

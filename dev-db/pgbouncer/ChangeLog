@@ -1,77 +1,60 @@
 # ChangeLog for dev-db/pgbouncer
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/pgbouncer/ChangeLog,v 1.15 2015/04/16 07:14:56 mgorny Exp $
+# (auto-generated from git log)
 
-*pgbouncer-1.5.5 (16 Apr 2015)
+*pgbouncer-1.5.5 (09 Aug 2015)
+*pgbouncer-1.5.4-r1 (09 Aug 2015)
+*pgbouncer-1.5.4 (09 Aug 2015)
 
-  16 Apr 2015; Michał Górny <mgorny@gentoo.org> +pgbouncer-1.5.5.ebuild:
-  Version bump with DoS bugfix. Update HOMEPAGE & SRC_URI.
-  https://github.com/gentoo/gentoo-portage-rsync-mirror/pull/98 by jbergstroem.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/logrotate,
+  +files/pgbouncer-dirs.patch, +files/pgbouncer.confd, +files/pgbouncer.initd,
+  +metadata.xml, +pgbouncer-1.5.4.ebuild, +pgbouncer-1.5.4-r1.ebuild,
+  +pgbouncer-1.5.5.ebuild:
+  proj/gentoo: Initial commit
 
-  30 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pgbouncer-1.5.4-r1.ebuild:
-  Stable for x86, wrt bug #485972
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pgbouncer-1.5.4-r1.ebuild:
-  Stable for amd64, wrt bug #485972
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*pgbouncer-1.5.4-r1 (18 Aug 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Aug 2013; Aaron W. Swenson <titanofold@gentoo.org>
-  +pgbouncer-1.5.4-r1.ebuild, files/pgbouncer.initd:
-  Fix bugs 478142, 478240, and 477350.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Jul 2013; Aaron W. Swenson <titanofold@gentoo.org> pgbouncer-1.5.4.ebuild:
-  Fix dependencies.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*pgbouncer-1.5.4 (19 Jul 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Jul 2013; Aaron W. Swenson <titanofold@gentoo.org>
-  -pgbouncer-1.4.2.ebuild, -pgbouncer-1.5.ebuild, -pgbouncer-1.5.1.ebuild,
-  -pgbouncer-1.5.2.ebuild, -pgbouncer-1.5.3.ebuild, -pgbouncer-1.5.3-r1.ebuild,
-  +pgbouncer-1.5.4.ebuild, +files/logrotate, +files/pgbouncer.confd,
-  +files/pgbouncer-dirs.patch, files/pgbouncer.initd, metadata.xml:
-  Clean out old and insecure versions. Version bump. Fixes bugs 425480, 460310,
-  477062, and 425034.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*pgbouncer-1.5.3-r1 (14 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> +pgbouncer-1.5.3-r1.ebuild:
-  Revision bump for reflect latest change
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> files/pgbouncer.initd:
-  Update initscript, fix bugs #410645 and #410647, thanks to Johan Bergström
-
-*pgbouncer-1.5.3 (13 Nov 2012)
-
-  13 Nov 2012; <titan@gentoo.org> +pgbouncer-1.5.3.ebuild:
-  Version bump. Fixes bugs 419171 and 440940.
-
-*pgbouncer-1.5.2 (18 Jun 2012)
-
-  18 Jun 2012; Patrick Lauer <patrick@gentoo.org> +pgbouncer-1.5.2.ebuild:
-  Bump
-
-  04 Jun 2012; Zac Medico <zmedico@gentoo.org> pgbouncer-1.4.2.ebuild,
-  pgbouncer-1.5.1.ebuild, pgbouncer-1.5.ebuild:
-  inherit user for enewgroup and enewuser
-
-*pgbouncer-1.5.1 (18 Apr 2012)
-
-  18 Apr 2012; Aaron W. Swenson <titanofold@gentoo.org>
-  +pgbouncer-1.5.1.ebuild:
-  Version Bump
-
-*pgbouncer-1.5 (29 Mar 2012)
-
-  29 Mar 2012; Aaron W. Swenson <titanofold@gentoo.org> +pgbouncer-1.5.ebuild:
-  Version bump. Fixes bug 405225.
-
-*pgbouncer-1.4.2 (16 Nov 2011)
-
-  16 Nov 2011; Aaron W. Swenson <titanofold@gentoo.org>
-  +pgbouncer-1.4.2.ebuild, +files/pgbouncer.initd, +metadata.xml:
-  Initial commit. Ebuild written by Johan Bergström <bugs@bergstroem.nu>.
-  Fixes bug 243232.

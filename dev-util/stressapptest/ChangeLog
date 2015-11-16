@@ -1,49 +1,85 @@
 # ChangeLog for dev-util/stressapptest
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/stressapptest/ChangeLog,v 1.9 2014/08/05 02:23:08 vapier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*stressapptest-1.0.7_p1 (05 Aug 2014)
+*stressapptest-1.0.7_p1 (09 Aug 2015)
+*stressapptest-1.0.6-r2 (09 Aug 2015)
+*stressapptest-1.0.6-r1 (09 Aug 2015)
+*stressapptest-1.0.6 (09 Aug 2015)
+*stressapptest-1.0.4 (09 Aug 2015)
 
-  05 Aug 2014; Mike Frysinger <vapier@gentoo.org>
-  +stressapptest-1.0.7_p1.ebuild:
-  Add the 1.0.7 release per upstream.
-
-*stressapptest-1.0.6-r2 (04 Aug 2014)
-
-  04 Aug 2014; Mike Frysinger <vapier@gentoo.org>
-  +files/stressapptest-1.0.6-channel-hash.patch, +stressapptest-1.0.6-r2.ebuild:
-  Backport channel hash updates from upstream.
-
-*stressapptest-1.0.6-r1 (04 Aug 2014)
-
-  04 Aug 2014; Mike Frysinger <vapier@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/stressapptest-1.0.4-cpuid-pic.patch,
   +files/stressapptest-1.0.6-autotools.patch,
+  +files/stressapptest-1.0.6-channel-hash.patch,
   +files/stressapptest-1.0.6-misc-fixes.patch,
-  +files/stressapptest-1.0.6-pthread-test.patch, +stressapptest-1.0.6-r1.ebuild:
-  Pull random clean up fixes from upstream to simplify build and make it cross-
-  compile.
+  +files/stressapptest-1.0.6-pthread-test.patch, +metadata.xml,
+  +stressapptest-1.0.4.ebuild, +stressapptest-1.0.6.ebuild,
+  +stressapptest-1.0.6-r1.ebuild, +stressapptest-1.0.6-r2.ebuild,
+  +stressapptest-1.0.7_p1.ebuild:
+  proj/gentoo: Initial commit
 
-*stressapptest-1.0.6 (13 May 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 May 2013; Mike Frysinger <vapier@gentoo.org> +stressapptest-1.0.6.ebuild:
-  Version bump #469164 by Agostino Sarubbo.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Jan 2013; Mike Frysinger <vapier@gentoo.org>
-  files/stressapptest-1.0.4-cpuid-pic.patch:
-  Also tweak cpuid asm in worker.cc.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Jan 2013; Mike Frysinger <vapier@gentoo.org>
-  +files/stressapptest-1.0.4-cpuid-pic.patch, stressapptest-1.0.4.ebuild:
-  Fix building for x86/PIE.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Dec 2012; Mike Frysinger <vapier@gentoo.org> stressapptest-1.0.4.ebuild:
-  Add some ~arm love.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Nov 2012; Mike Frysinger <vapier@gentoo.org> stressapptest-1.0.4.ebuild:
-  Depend on libaio since we use it.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*stressapptest-1.0.4 (27 Nov 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Nov 2012; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
-  +stressapptest-1.0.4.ebuild:
-  Initial ebuild based on the one in sunrise #289320 by Martin Böcher.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> stressapptest-1.0.4.ebuild,
+  stressapptest-1.0.6.ebuild, stressapptest-1.0.6-r1.ebuild,
+  stressapptest-1.0.6-r2.ebuild, stressapptest-1.0.7_p1.ebuild:
+  Enable https for all google URIs
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> stressapptest-1.0.4.ebuild,
+  stressapptest-1.0.6.ebuild, stressapptest-1.0.6-r1.ebuild,
+  stressapptest-1.0.6-r2.ebuild:
+  Convert URIs for googlecode.com to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  10 Oct 2015; Mike Frysinger <vapier@gentoo.org>
+  files/stressapptest-1.0.6-autotools.patch:
+  fix various encoding corruption
+

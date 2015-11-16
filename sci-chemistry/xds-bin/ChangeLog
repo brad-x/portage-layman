@@ -1,99 +1,65 @@
 # ChangeLog for sci-chemistry/xds-bin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/xds-bin/ChangeLog,v 1.18 2015/04/07 14:40:02 jlec Exp $
+# (auto-generated from git log)
 
-*xds-bin-20150301 (03 Mar 2015)
+*xds-bin-20150301 (09 Aug 2015)
 
-  03 Mar 2015; Justin Lecher <jlec@gentoo.org> +xds-bin-20150301.ebuild,
-  -xds-bin-20141119.ebuild:
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xds-bin-20150301.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*xds-bin-20151019 (19 Oct 2015)
+
+  19 Oct 2015; Justin Lecher <jlec@gentoo.org> -xds-bin-20150301.ebuild,
+  +xds-bin-20151019.ebuild:
   Version Bump
 
-*xds-bin-20141119 (02 Mar 2015)
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Mar 2015; Justin Lecher <jlec@gentoo.org> +xds-bin-20141119.ebuild,
-  -xds-bin-20141018.ebuild:
-  Version Bump, #516390
-
-*xds-bin-20141018 (14 Jan 2015)
-
-  14 Jan 2015; Justin Lecher <jlec@gentoo.org> -xds-bin-20140110.ebuild,
-  +xds-bin-20141018.ebuild:
-  Version Bump
-
-*xds-bin-20140110 (06 Jul 2014)
-
-  06 Jul 2014; Justin Lecher <jlec@gentoo.org> -xds-bin-20131111.ebuild,
-  +xds-bin-20140110.ebuild:
-  Version Bump, #516390
-
-*xds-bin-20131111 (28 Nov 2013)
-
-  28 Nov 2013; Justin Lecher <jlec@gentoo.org> -xds-bin-20130530.ebuild,
-  +xds-bin-20131111.ebuild:
-  Version Bump
-
-*xds-bin-20130530 (30 May 2013)
-
-  30 May 2013; Justin Lecher <jlec@gentoo.org> -xds-bin-20120926.ebuild,
-  +xds-bin-20130530.ebuild:
-  Version Bump
-
-*xds-bin-20120926 (24 Mar 2013)
-
-  24 Mar 2013; Justin Lecher <jlec@gentoo.org> -xds-bin-20111230.ebuild,
-  +xds-bin-20120926.ebuild, metadata.xml:
-  Version Bump, #462730
-
-  25 Jul 2012; Justin Lecher <jlec@gentoo.org> xds-bin-20111230.ebuild,
-  metadata.xml:
-  Use QA_PREBUILT for binary packages
-
-*xds-bin-20111230 (31 Dec 2011)
-
-  31 Dec 2011; Justin Lecher <jlec@gentoo.org> -xds-bin-20111220.ebuild,
-  +xds-bin-20111230.ebuild:
-  Version Bump
-
-*xds-bin-20111220 (20 Dec 2011)
-
-  20 Dec 2011; Justin Lecher <jlec@gentoo.org> -xds-bin-20110610.ebuild,
-  +xds-bin-20111220.ebuild:
-  Version Bump
-
-*xds-bin-20110610 (10 Jun 2011)
-
-  10 Jun 2011; Justin Lecher <jlec@gentoo.org> -xds-bin-20110111.ebuild,
-  +xds-bin-20110610.ebuild:
-  Version Bump
-
-  11 Jan 2011; Justin Lecher <jlec@gentoo.org> xds-bin-20110111.ebuild:
-  Included docs again
-
-*xds-bin-20110111 (11 Jan 2011)
-
-  11 Jan 2011; Justin Lecher <jlec@gentoo.org> -xds-bin-20100510.ebuild,
-  +xds-bin-20110111.ebuild:
-  Version Bump
-
-*xds-bin-20100510 (21 May 2010)
-
-  21 May 2010; Justin Lecher <jlec@gentoo.org> -xds-bin-20091228.ebuild,
-  +xds-bin-20100510.ebuild:
-  Version Bump, no docs this time, QA_EXECSTACK set
-
-*xds-bin-20091228 (31 Jan 2010)
-
-  31 Jan 2010; Justin Lecher (jlec) <jlec@gentoo.org>
-  -xds-bin-20080602.ebuild, +xds-bin-20091228.ebuild:
-  Version bump, fixing bug 247788
-  Adding new Viewer as RDEPEND
-
-  17 Oct 2008; Markus Meier <maekke@gentoo.org> metadata.xml:
-  smp USE-flag is global now
-
-*xds-bin-20080602 (03 Aug 2008)
-
-  03 Aug 2008; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
-  +xds-bin-20080602.ebuild:
-  (#209120) New package: X-ray Detector Software for processing
-  single-crystal monochromatic diffraction data.

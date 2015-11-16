@@ -1,40 +1,70 @@
 # ChangeLog for media-plugins/amb-plugins
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/amb-plugins/ChangeLog,v 1.8 2011/12/19 19:44:45 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Dec 2011; Tim Harder <radhermit@gentoo.org> -amb-plugins-0.4.0.ebuild,
-  -files/amb-plugins-makefile.patch:
-  Remove old.
+*amb-plugins-0.8.1 (09 Aug 2015)
 
-  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> amb-plugins-0.8.1.ebuild:
-  Stable for AMD64, wrt bug #392795
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +amb-plugins-0.8.1.ebuild, +files/amb-plugins-0.8.1-Makefile.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  amb-plugins-0.8.1.ebuild:
-  x86 stable wrt bug #392795
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*amb-plugins-0.8.1 (24 Jan 2011)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jan 2011; Alexis Ballier <aballier@gentoo.org> +amb-plugins-0.8.1.ebuild,
-  +files/amb-plugins-0.8.1-Makefile.patch:
-  version bump, by Gavin Pryke <gavinlee303@googlemail.com>, bug #349953
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Oct 2009; Markus Meier <maekke@gentoo.org> amb-plugins-0.4.0.ebuild:
-  amd64/x86 stable, bug #286773
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*amb-plugins-0.4.0 (04 Aug 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Aug 2009; Alexis Ballier <aballier@gentoo.org>
-  -amb-plugins-0.3.0.ebuild, +amb-plugins-0.4.0.ebuild,
-  +files/amb-plugins-makefile.patch:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Aug 2008; Raúl Porcel <armin76@gentoo.org> amb-plugins-0.3.0.ebuild:
-  Add ~x86 wrt #234579
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*amb-plugins-0.3.0 (13 Dec 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Dec 2007; Alexis Ballier <aballier@gentoo.org> +metadata.xml,
-  +amb-plugins-0.3.0.ebuild:
-  initial import, bug #105094
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*amb-plugins-0.8.1-r1 (15 Oct 2015)
+
+  15 Oct 2015; Gavin Pryke <gavinlee303@gmail.com>
+  +amb-plugins-0.8.1-r1.ebuild:
+  fix HOMEPAGE, SRC_URI, EAPI=5. bug #437186
+
+  The HOMEPAGE and SRC_URI for kokkinizita upstream was changed
+  some time ago. These changes point said variables to the new
+  location. The previous ebuild was EAPI=3 which is deprecated so
+  bumped to EAPI=5, revbumped and modified ebuild accordingly.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=437186
 

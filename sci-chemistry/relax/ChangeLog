@@ -1,206 +1,91 @@
 # ChangeLog for sci-chemistry/relax
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/relax/ChangeLog,v 1.37 2015/04/07 14:39:15 jlec Exp $
+# (auto-generated from git log)
 
-*relax-3.3.8 (04 Apr 2015)
+*relax-3.3.8 (09 Aug 2015)
+*relax-3.3.7 (09 Aug 2015)
+*relax-3.3.6 (09 Aug 2015)
+*relax-3.3.5 (09 Aug 2015)
+*relax-3.3.4 (09 Aug 2015)
 
-  04 Apr 2015; Justin Lecher <jlec@gentoo.org> +relax-3.3.8.ebuild:
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +relax-3.3.4.ebuild, +relax-3.3.5.ebuild, +relax-3.3.6.ebuild,
+  +relax-3.3.7.ebuild, +relax-3.3.8.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  12 Oct 2015; Justin Lecher <jlec@gentoo.org> -relax-3.3.4.ebuild,
+  -relax-3.3.5.ebuild, -relax-3.3.6.ebuild, -relax-3.3.7.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*relax-3.3.9 (12 Oct 2015)
+
+  12 Oct 2015; Justin Lecher <jlec@gentoo.org> +relax-3.3.9.ebuild:
   Version Bump
 
-*relax-3.3.7 (15 Mar 2015)
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Mar 2015; Justin Lecher <jlec@gentoo.org> +relax-3.3.7.ebuild,
-  relax-3.3.6.ebuild:
+*relax-4.0.0 (16 Oct 2015)
+
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> +relax-4.0.0.ebuild:
   Version Bump
 
-  07 Feb 2015; Justin Lecher <jlec@gentoo.org> -files/relax-2.1.0-gentoo.patch,
-  -files/relax-2.2.1-gentoo.patch, -files/relax-3.0.1-gentoo.patch,
-  -files/relax-3.0.2-wxpython.patch, -files/relax-3.0.2-wxpython-2.patch,
-  -files/relax-3.1.0-sample-script.patch,
-  -files/relax-3.1.0-sample-script-backport.patch,
-  -files/relax-3.1.7-dpar.patch, -files/relax-3.2.2-gentoo.patch:
-  Drop old patches
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*relax-3.3.6 (07 Feb 2015)
+*relax-4.0.0-r1 (25 Oct 2015)
 
-  07 Feb 2015; Justin Lecher <jlec@gentoo.org> -relax-2.1.0.ebuild,
-  -relax-2.2.1.ebuild, -relax-2.2.5.ebuild, -relax-3.0.1.ebuild,
-  -relax-3.0.2-r2.ebuild, -relax-3.1.0-r2.ebuild, -relax-3.1.1-r1.ebuild,
-  -relax-3.1.2.ebuild, -relax-3.1.3.ebuild, -relax-3.1.4.ebuild,
-  -relax-3.1.5.ebuild, -relax-3.1.6.ebuild, -relax-3.1.7.ebuild,
-  -relax-3.1.7-r1.ebuild, -relax-3.2.0.ebuild, -relax-3.2.1.ebuild,
-  -relax-3.2.2.ebuild, -relax-3.2.3.ebuild, -relax-3.3.0.ebuild,
-  -relax-3.3.1.ebuild, -relax-3.3.2.ebuild, -relax-3.3.3.ebuild,
-  +relax-3.3.6.ebuild, -relax-9999.ebuild:
-  Version Bump; drop old
+  25 Oct 2015; Pacho Ramos <pacho@gentoo.org> +relax-4.0.0-r1.ebuild:
+  Support wxGTK:3.0
 
-*relax-3.3.5 (29 Jan 2015)
+  Package-Manager: portage-2.2.23
 
-  29 Jan 2015; Justin Lecher <jlec@gentoo.org> +relax-3.3.5.ebuild:
-  Version Bump
-
-*relax-3.3.4 (05 Dec 2014)
-
-  05 Dec 2014; Justin Lecher <jlec@gentoo.org> +relax-3.3.4.ebuild:
-  Version Bump
-
-*relax-3.3.3 (25 Nov 2014)
-
-  25 Nov 2014; Justin Lecher <jlec@gentoo.org> +relax-3.3.3.ebuild:
-  Version Bump
-
-*relax-3.3.2 (17 Nov 2014)
-
-  17 Nov 2014; Justin Lecher <jlec@gentoo.org> +relax-3.3.2.ebuild:
-  Version Bump
-
-*relax-3.3.1 (10 Oct 2014)
-
-  10 Oct 2014; Justin Lecher <jlec@gentoo.org> +relax-3.3.1.ebuild:
-  Version Bump
-
-*relax-3.3.0 (15 Sep 2014)
-
-  15 Sep 2014; Justin Lecher <jlec@gentoo.org> +relax-3.3.0.ebuild:
-  Version Bump
-
-*relax-3.2.3 (04 Jul 2014)
-
-  04 Jul 2014; Justin Lecher <jlec@gentoo.org> +relax-3.2.3.ebuild:
-  Version Bump
-
-*relax-3.2.2 (06 Jun 2014)
-
-  06 Jun 2014; Justin Lecher <jlec@gentoo.org> +relax-3.2.2.ebuild,
-  +files/relax-3.2.2-gentoo.patch:
-  Version Bump
-
-*relax-3.2.1 (26 May 2014)
-
-  26 May 2014; Justin Lecher <jlec@gentoo.org> +relax-3.2.1.ebuild:
-  Version Bump
-
-*relax-3.2.0 (22 May 2014)
-
-  22 May 2014; Justin Lecher <jlec@gentoo.org> +relax-3.2.0.ebuild:
-  Version Bump
-
-*relax-3.1.7-r1 (15 May 2014)
-
-  15 May 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.7-r1.ebuild,
-  +files/relax-3.1.7-dpar.patch:
-  Backport fix for http://gna.org/bugs/?22039
-
-*relax-3.1.7 (18 Mar 2014)
-
-  18 Mar 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.7.ebuild:
-  Version Bump
-
-*relax-3.1.6 (06 Mar 2014)
-
-  06 Mar 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.6.ebuild:
-  Version Bump
-
-*relax-3.1.5 (05 Feb 2014)
-
-  05 Feb 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.5.ebuild:
-  Version Bump
-
-*relax-3.1.4 (03 Feb 2014)
-
-  03 Feb 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.4.ebuild:
-  Version Bump
-
-*relax-3.1.3 (17 Jan 2014)
-
-  17 Jan 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.3.ebuild:
-  Version Bump
-
-*relax-3.1.2 (14 Jan 2014)
-
-  14 Jan 2014; Justin Lecher <jlec@gentoo.org> +relax-3.1.2.ebuild:
-  Version Bump
-
-*relax-3.1.1-r1 (11 Dec 2013)
-
-  11 Dec 2013; Justin Lecher <jlec@gentoo.org> -relax-3.1.1.ebuild,
-  +relax-3.1.1-r1.ebuild:
-  Fix again png again
-
-*relax-3.1.1 (11 Dec 2013)
-
-  11 Dec 2013; Justin Lecher <jlec@gentoo.org> +relax-3.1.1.ebuild:
-  Version Bump
-
-*relax-9999 (29 Nov 2013)
-*relax-3.1.0-r2 (29 Nov 2013)
-
-  29 Nov 2013; Justin Lecher <jlec@gentoo.org> -relax-3.1.0-r1.ebuild,
-  +relax-3.1.0-r2.ebuild, +relax-9999.ebuild,
-  +files/relax-3.1.0-sample-script-backport.patch:
-  Add another backport for sample scripts; add live ebuild
-
-*relax-3.1.0-r1 (29 Nov 2013)
-
-  29 Nov 2013; Justin Lecher <jlec@gentoo.org> -relax-3.1.0.ebuild,
-  +relax-3.1.0-r1.ebuild:
-  Fix icons
-
-*relax-3.1.0 (29 Nov 2013)
-
-  29 Nov 2013; Justin Lecher <jlec@gentoo.org> +relax-3.1.0.ebuild,
-  +files/relax-3.1.0-sample-script.patch:
-  Version Bump
-
-*relax-3.0.2-r2 (27 Nov 2013)
-
-  27 Nov 2013; Justin Lecher <jlec@gentoo.org> -relax-3.0.2-r1.ebuild,
-  +relax-3.0.2-r2.ebuild, +files/relax-3.0.2-wxpython-2.patch:
-  Fix test and wxpython support
-
-*relax-3.0.2-r1 (27 Nov 2013)
-
-  27 Nov 2013; Justin Lecher <jlec@gentoo.org> -relax-3.0.2.ebuild,
-  +relax-3.0.2-r1.ebuild, +files/relax-3.0.2-wxpython.patch:
-  Fix wxpython-2.8 usage
-
-*relax-3.0.2 (27 Nov 2013)
-
-  27 Nov 2013; Justin Lecher <jlec@gentoo.org> relax-2.2.5.ebuild,
-  +relax-3.0.2.ebuild:
-  Version Bump
-
-  16 Nov 2013; Ryan Hill <dirtyepic@gentoo.org> relax-2.1.0.ebuild,
-  relax-2.2.1.ebuild, relax-2.2.5.ebuild, relax-3.0.1.ebuild:
-  Remove wxwidgets_pkg_setup call (unnecessary with USE deps).
-
-*relax-3.0.1 (22 Oct 2013)
-
-  22 Oct 2013; Justin Lecher <jlec@gentoo.org> +relax-3.0.1.ebuild,
-  +files/relax-3.0.1-gentoo.patch:
-  Version Bump
-
-  29 May 2013; Justin Lecher <jlec@gentoo.org> relax-2.2.1.ebuild,
-  relax-2.2.5.ebuild:
-  Fix usage of new python r1 eclasses (missing PYTHON_REQUIRED_USE,
-  PYTHON_DEPS)
-
-  14 May 2013; Justin Lecher <jlec@gentoo.org> relax-2.2.5.ebuild:
-  Add missing dep on dev-python/wxpython
-
-*relax-2.2.5 (13 May 2013)
-
-  13 May 2013; Justin Lecher <jlec@gentoo.org> +relax-2.2.5.ebuild:
-  Version Bump
-
-*relax-2.2.1 (04 Feb 2013)
-
-  04 Feb 2013; Justin Lecher <jlec@gentoo.org> +relax-2.2.1.ebuild,
-  +files/relax-2.2.1-gentoo.patch, metadata.xml:
-  Version Bump
-
-*relax-2.1.0 (19 Jul 2012)
-
-  19 Jul 2012; Justin Lecher <jlec@gentoo.org> +relax-2.1.0.ebuild,
-  +files/relax-2.1.0-gentoo.patch, +metadata.xml:
-  New addition

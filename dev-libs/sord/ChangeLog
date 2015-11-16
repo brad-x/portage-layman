@@ -1,67 +1,75 @@
 # ChangeLog for dev-libs/sord
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/sord/ChangeLog,v 1.15 2015/01/03 00:15:22 mgorny Exp $
+# (auto-generated from git log)
 
-  03 Jan 2015; Michał Górny <mgorny@gentoo.org> sord-0.12.0.ebuild,
-  sord-0.12.2.ebuild:
-  Use python-any-r1 for waf.
+*sord-0.12.2 (09 Aug 2015)
+*sord-0.12.0 (09 Aug 2015)
 
-  02 Nov 2014; Alexis Ballier <aballier@gentoo.org> -sord-0.10.0.ebuild,
-  -sord-0.10.4.ebuild:
-  remove old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +sord-0.12.0.ebuild, +sord-0.12.2.ebuild:
+  proj/gentoo: Initial commit
 
-*sord-0.12.2 (02 Nov 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Nov 2014; Alexis Ballier <aballier@gentoo.org> +sord-0.12.2.ebuild:
-  version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Nov 2014; Alexis Ballier <aballier@gentoo.org> -sord-0.5.0.ebuild,
-  -sord-0.8.0.ebuild, -files/ldconfig.patch:
-  remove old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*sord-0.12.0 (21 Feb 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Feb 2013; Alexis Ballier <aballier@gentoo.org> +sord-0.12.0.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Dec 2012; Agostino Sarubbo <ago@gentoo.org> sord-0.10.4.ebuild:
-  Add ~ppc, wrt bug #421061
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*sord-0.10.4 (20 Oct 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Oct 2012; Alexis Ballier <aballier@gentoo.org> +sord-0.10.4.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*sord-0.10.0 (30 Aug 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Aug 2012; Alexis Ballier <aballier@gentoo.org> +sord-0.10.0.ebuild:
-  version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sord-0.5.0.ebuild,
-  sord-0.8.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Sep 2015; Agostino Sarubbo <ago@gentoo.org> sord-0.12.2.ebuild:
+  amd64 stable wrt bug #532274
 
-*sord-0.8.0 (22 Apr 2012)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  22 Apr 2012; Alexis Ballier <aballier@gentoo.org> +sord-0.8.0.ebuild:
-  version bump
+*sord-0.14.0 (13 Oct 2015)
 
-  01 Mar 2012; Thomas Kahle <tomka@gentoo.org> sord-0.5.0.ebuild:
-  marked ~x86 per bug 397887
+  13 Oct 2015; Alexis Ballier <aballier@gentoo.org> +sord-0.14.0.ebuild:
+  Bump to 0.14.0
 
-  07 Dec 2011; Alexis Ballier <aballier@gentoo.org> -sord-0.4.2.ebuild:
-  remove old
+  Package-Manager: portage-2.2.23
 
-*sord-0.5.0 (11 Oct 2011)
+  25 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> sord-0.12.2.ebuild:
+  x86 stable wrt bug #532274
 
-  11 Oct 2011; Alexis Ballier <aballier@gentoo.org> +sord-0.5.0.ebuild:
-  version bump
+  Package-Manager: portage-2.2.20.1
 
-  27 May 2011; Alexis Ballier <aballier@gentoo.org> sord-0.4.2.ebuild:
-  export CC variables and depend on pkgconfig
-
-*sord-0.4.2 (27 May 2011)
-
-  27 May 2011; Alexis Ballier <aballier@gentoo.org> +sord-0.4.2.ebuild,
-  +files/ldconfig.patch, +metadata.xml:
-  initial import, ebuild by me

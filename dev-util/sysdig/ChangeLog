@@ -1,22 +1,102 @@
 # ChangeLog for dev-util/sysdig
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/sysdig/ChangeLog,v 1.4 2015/03/09 19:07:51 mgorny Exp $
+# (auto-generated from git log)
 
-  09 Mar 2015; Michał Górny <mgorny@gentoo.org> sysdig-0.1.98.ebuild:
-  Increase jsoncpp dep, bug #542248.
+*sysdig-0.1.98 (09 Aug 2015)
+*sysdig-0.1.92 (09 Aug 2015)
 
-*sysdig-0.1.98 (04 Mar 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +sysdig-0.1.92.ebuild, +sysdig-0.1.98.ebuild:
+  proj/gentoo: Initial commit
 
-  04 Mar 2015; Michał Górny <mgorny@gentoo.org> +sysdig-0.1.98.ebuild:
-  Version bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Nov 2014; Michał Górny <mgorny@gentoo.org> metadata.xml,
-  sysdig-0.1.92.ebuild:
-  Add USE=modules to support disabling kernel modules (e.g. to work with
-  dumpfiles only). Add a pkg_pretend().
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*sysdig-0.1.92 (11 Nov 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Nov 2014; Michał Górny <mgorny@gentoo.org> +metadata.xml,
-  +sysdig-0.1.92.ebuild:
-  Introduce initial version of sysdig, bug #510718.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  sysdig-0.1.92.ebuild, sysdig-0.1.98.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*sysdig-0.1.104 (26 Sep 2015)
+
+  26 Sep 2015; Gregory M. Turner <gmt@be-evil.net> +sysdig-0.1.104.ebuild:
+  Version bump: 0.1.104
+
+  Update to latest upstream release.  Fix SRC_URI to reference
+  auto-generated github "tag" tarball.
+
+  Fixes: #559218
+  Signed-off-by: Gregory M. Turner <gmt@be-evil.net>
+
+  27 Sep 2015; Gregory M. Turner <gmt@be-evil.net> sysdig-0.1.104.ebuild:
+  0.1.104: Unbundle ncurses
+
+  Unbundle the new libncurses library dependency, which appears
+  due to 0.1.104's addition of the csysdig utility.  Also, add
+  libncurses to {,R}DEPEND, since, once we unbundle, the library
+  obviously must come from ${ROOT}.  Building against
+  sys-libs/libncurses-5.9-r3 (the latest version in the stable
+  branch) has been successfully tested thanks to mgorny.
+
+  Fixes: #559218
+  Signed-off-by: Gregory M. Turner <gmt@be-evil.net>
+
+  28 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  sysdig-0.1.92.ebuild, sysdig-0.1.98.ebuild, sysdig-0.1.104.ebuild:
+  Make CONFIG_TRACEPOINTS check non-fatal
+
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  29 Oct 2015; Michał Górny <mgorny@gentoo.org> sysdig-0.1.104.ebuild:
+  Build against correct kernel, #564282
+
+  Pass KERNELDIR to kernel module build to force correct kernel source
+  directory.
+
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=564282
+

@@ -1,62 +1,65 @@
 # ChangeLog for lxqt-base/lxqt-powermanagement
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxqt-base/lxqt-powermanagement/ChangeLog,v 1.13 2015/04/15 06:48:40 dlan Exp $
+# (auto-generated from git log)
 
-  15 Apr 2015; Yixun Lan <dlan@gentoo.org> lxqt-powermanagement-0.9.0.ebuild:
-  restore arm keyword, bug 528676
+*lxqt-powermanagement-0.9.0 (09 Aug 2015)
+*lxqt-powermanagement-0.8.0 (09 Aug 2015)
+*lxqt-powermanagement-0.7.0 (09 Aug 2015)
 
-  03 Apr 2015; Michael Palimaka <kensington@gentoo.org>
-  lxqt-powermanagement-0.9.0.ebuild:
-  Drop ~arm keyword due to unsatisfied dependencies wrt bug #545432.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +lxqt-powermanagement-0.7.0.ebuild, +lxqt-powermanagement-0.8.0.ebuild,
+  +lxqt-powermanagement-0.9.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Apr 2015; Yixun Lan <dlan@gentoo.org> lxqt-powermanagement-0.9.0.ebuild:
-  keyword arm/arm64, tested on cortex-a9/cortex-a53 hardware
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*lxqt-powermanagement-0.9.0 (10 Feb 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Feb 2015; Ben de Groot <yngwin@gentoo.org>
-  +lxqt-powermanagement-0.9.0.ebuild:
-  LXQt 0.9.0 version bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Jan 2015; Michael Palimaka <kensington@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild, lxqt-powermanagement-0.8.0.ebuild:
-  Update SRC_URI by Michael Vetter <g.bluehut@gmail.com> wrt bug #537032.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*lxqt-powermanagement-0.8.0 (08 Nov 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Nov 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +lxqt-powermanagement-0.8.0.ebuild:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Nov 2014; Ben de Groot <yngwin@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  Move libqtxdg to new category
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Nov 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  make dependencies more precise (preparation for LXQt 0.8.0 release)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Oct 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  add sys-power/upower-pm-utils as possible RDEPEND together with sys-
-  power/upower, bug 525886, thanks to J.O. Aho
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Oct 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  add sys-power/upower to RDEPEND, fix bug 524620, thanks to  Priit Laes (IRC:
-  plaes)
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Sep 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  fix bug#522208
+  01 Oct 2015; Michael Palimaka <kensington@gentoo.org>
+  lxqt-powermanagement-0.8.0.ebuild, lxqt-powermanagement-0.9.0.ebuild:
+  dev-qt/linguist-tools is a build-time dependency
 
-  29 May 2014; Manuel Rüger <mrueg@gentoo.org>
-  lxqt-powermanagement-0.7.0.ebuild:
-  Add ~arm keyword.
+  Package-Manager: portage-2.2.20.1
 
-*lxqt-powermanagement-0.7.0 (27 May 2014)
-
-  27 May 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +lxqt-powermanagement-0.7.0.ebuild, +metadata.xml:
-  Initial import from the qt overlay, thanks to Harvey Mittens and Davide
-  Pesavento, see bug #509946

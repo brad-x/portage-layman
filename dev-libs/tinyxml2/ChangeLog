@@ -1,76 +1,60 @@
 # ChangeLog for dev-libs/tinyxml2
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/tinyxml2/ChangeLog,v 1.17 2015/06/06 19:37:40 jlec Exp $
+# (auto-generated from git log)
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*tinyxml2-2.2.0 (09 Aug 2015)
+*tinyxml2-1.0.9_p20121123 (09 Aug 2015)
 
-  23 Mar 2015; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Drop myself as maintainer.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/tinyxml2-1.0.1_p20120531-test-return-status.patch,
+  +files/tinyxml2-1.0.9_p20121123-test.patch, +metadata.xml,
+  +tinyxml2-1.0.9_p20121123.ebuild, +tinyxml2-2.2.0.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Feb 2015; Mikle Kolyada <zlogene@gentoo.org> tinyxml2-2.2.0.ebuild:
-  Add ~arm keyword
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Dec 2014; Tim Harder <radhermit@gentoo.org> -tinyxml2-2.0.2.ebuild,
-  -tinyxml2-2.1.0.ebuild:
-  Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Dec 2014; Tim Harder <radhermit@gentoo.org> tinyxml2-2.2.0.ebuild:
-  Stabilize for amd64 and x86.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*tinyxml2-2.2.0 (07 Oct 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Oct 2014; Tim Harder <radhermit@gentoo.org> +tinyxml2-2.2.0.ebuild:
-  Version bump.
-
-*tinyxml2-2.1.0 (21 Apr 2014)
-
-  21 Apr 2014; Tim Harder <radhermit@gentoo.org> +tinyxml2-2.1.0.ebuild:
-  Version bump.
-
-  29 Mar 2014; Tim Harder <radhermit@gentoo.org>
-  -tinyxml2-1.0.1_p20120531.ebuild, -files/tinyxml2-1.0.1_p20120531-test.patch:
-  Remove old.
-
-*tinyxml2-2.0.2 (29 Mar 2014)
-
-  29 Mar 2014; Tim Harder <radhermit@gentoo.org> +tinyxml2-2.0.2.ebuild:
-  Version bump (bug #506102).
-
-  06 Jan 2013; <jd@gentoo.org> tinyxml2-1.0.9_p20121123.ebuild:
-  marked x86 per bug 450334
-
-  05 Jan 2013; Agostino Sarubbo <ago@gentoo.org>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
   tinyxml2-1.0.9_p20121123.ebuild:
-  Stable for amd64, wrt bug #450334
+  Use https by default
 
-*tinyxml2-1.0.9_p20121123 (24 Nov 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Nov 2012; Tim Harder <radhermit@gentoo.org>
-  +tinyxml2-1.0.9_p20121123.ebuild, +files/tinyxml2-1.0.9_p20121123-test.patch:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Sep 2012; Tim Harder <radhermit@gentoo.org>
-  tinyxml2-1.0.1_p20120531.ebuild:
-  Set CMAKE_MIN_VERSION.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
-  tinyxml2-1.0.1_p20120531.ebuild:
-  Stable for amd64, wrt bug #427592
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Jul 2012; Jeff Horelick <jdhore@gentoo.org>
-  tinyxml2-1.0.1_p20120531.ebuild:
-  marked x86 per bug 427592
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Jun 2012; Tim Harder <radhermit@gentoo.org>
-  tinyxml2-1.0.1_p20120531.ebuild,
-  +files/tinyxml2-1.0.1_p20120531-test-return-status.patch:
-  Properly die if tests fail.
-
-*tinyxml2-1.0.1_p20120531 (31 May 2012)
-
-  31 May 2012; Tim Harder <radhermit@gentoo.org>
-  +tinyxml2-1.0.1_p20120531.ebuild, +files/tinyxml2-1.0.1_p20120531-test.patch,
-  +metadata.xml:
-  Initial import. Used by recent versions of libmediainfo (fixes bug #414647 by
-  hasufell).

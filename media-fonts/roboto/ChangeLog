@@ -1,46 +1,59 @@
 # ChangeLog for media-fonts/roboto
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/roboto/ChangeLog,v 1.9 2015/03/07 12:48:31 yngwin Exp $
+# (auto-generated from git log)
 
-*roboto-2015.03 (07 Mar 2015)
+*roboto-2015.03 (09 Aug 2015)
+*roboto-1.2 (09 Aug 2015)
 
-  07 Mar 2015; Ben de Groot <yngwin@gentoo.org> +roboto-2015.03.ebuild,
-  -roboto-20111129.ebuild, -roboto-20120823.ebuild, -roboto-20130731.ebuild:
-  Re-packaged current state of roboto fonts in googlefontdirectory repo
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/90-roboto-regular.conf, +metadata.xml, +roboto-1.2.ebuild,
+  +roboto-2015.03.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Mar 2015; Yixun Lan <dlan@gentoo.org> roboto-1.2.ebuild:
-  add arm64 support, tested on A53 board
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 May 2014; Manuel Rüger <mrueg@gentoo.org> roboto-1.2.ebuild:
-  Add ~arm keyword.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Nov 2013; Ben de Groot <yngwin@gentoo.org> roboto-1.2.ebuild:
-  Mark stable
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*roboto-1.2 (06 Nov 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Nov 2013; Ben de Groot <yngwin@gentoo.org> +roboto-1.2.ebuild,
-  files/90-roboto-regular.conf:
-  Version bump. Adapt to packaging change. Use upstream versioning. I will mark
-  this version stable in a few days, and mask the old versions to give users a
-  regular upgrade path.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  roboto-2015.03.ebuild:
+  Use https by default
 
-*roboto-20130731 (25 Oct 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 Oct 2013; Ben de Groot <yngwin@gentoo.org> +files/90-roboto-regular.conf,
-  +roboto-20130731.ebuild:
-  Version bump. Add fontconfig file to set Regular weight as default, instead of
-  Black. Thanks to John Flatness in bug #464666.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Oct 2013; Fabian Groffen <grobian@gentoo.org> roboto-20120823.ebuild:
-  Marked ~x64-macos, bug #486818
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> roboto-20111129.ebuild:
-  No open bugs. Stable on amd64 and x86. Mark testing on amd64-linux and
-  x86-linux.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*roboto-20111129 (25 Jul 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
-  +roboto-20111129.ebuild:
-  Initial commit. Ebuild by user BT in bug #423727.

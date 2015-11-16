@@ -1,84 +1,56 @@
 # ChangeLog for media-libs/libkarma
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libkarma/ChangeLog,v 1.21 2015/05/06 10:00:57 mrueg Exp $
+# (auto-generated from git log)
 
-  06 May 2015; Manuel Rüger <mrueg@gentoo.org>
-  -files/libkarma-0.1.0-destdir.patch, -libkarma-0.1.0-r1.ebuild:
-  Remove old.
+*libkarma-0.1.2 (09 Aug 2015)
 
-  18 Aug 2012; Michael Weber <xmw@gentoo.org> libkarma-0.1.2.ebuild:
-  ppc stable (bug 407701)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libkarma-0.1.0-ldflags.patch, +libkarma-0.1.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  22 May 2012; Agostino Sarubbo <ago@gentoo.org> libkarma-0.1.2.ebuild:
-  Stable for amd64, wrt bug #407701
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Apr 2012; Markus Meier <maekke@gentoo.org> libkarma-0.1.2.ebuild:
-  x86 stable, bug #407701
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*libkarma-0.1.2 (22 Jan 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +libkarma-0.1.2.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> libkarma-0.1.0-r1.ebuild:
-  Fix libusb depend to correct SLOT.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Sep 2010; Pacho Ramos <pacho@gentoo.org> libkarma-0.1.0-r1.ebuild,
-  +files/libkarma-0.1.0-ldflags.patch:
-  Make this respect LDFLAGS, bug #336151 by Diego E. 'Flameeyes' Pettenò.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 May 2009; Brent Baude <ranger@gentoo.org> libkarma-0.1.0-r1.ebuild:
-  Marking libkarma-0.1.0-r1 ppc for bug 269538
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 May 2009; Markus Meier <maekke@gentoo.org> libkarma-0.1.0-r1.ebuild:
-  amd64/x86 stable, bug #269538
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libkarma-0.1.0-r1 (12 May 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 May 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +libkarma-0.1.0-r1.ebuild, +files/libkarma-0.1.0-destdir.patch:
-  Fix pkgconfig file wrt #245539 by using DESTDIR as it should.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Jun 2008; Thomas Anderson <gentoofan23@gentoo.org>
-  libkarma-0.1.0.ebuild:
-  Really stable libkarma on amd64
-
-  22 Jun 2008; Thomas Anderson <gentoofan23@gentoo.org>
-  +files/libkarma-0.1.0-multilib.patch, libkarma-0.1.0.ebuild:
-  amd64 stable, fix multilib issues, bug #213033
-
-  18 May 2008; Markus Meier <maekke@gentoo.org> libkarma-0.1.0.ebuild:
-  x86 stable, bug #213033
-
-  16 May 2008; nixnut <nixnut@gentoo.org> libkarma-0.1.0.ebuild:
-  Stable on ppc wrt bug 213033
-
-  16 May 2008; Markus Rothe <corsair@gentoo.org> libkarma-0.1.0.ebuild:
-  Stable on ppc64; bug #213033
-
-*libkarma-0.1.0 (23 May 2007)
-
-  23 May 2007; Stefan Schweizer <genstef@gentoo.org> +libkarma-0.1.0.ebuild:
-  version bump thanks to Frank Zschockelt <gentoo@freakysoft.de> in bug 179039
-
-*libkarma-0.0.6-r1 (09 Mar 2007)
-
-  09 Mar 2007; Charlie Shepherd <masterdriverz@gentoo.org>
-  +files/libkarma-0.0.6-mono.patch, +files/libkarma-0.0.6-soname.patch,
-  -libkarma-0.0.6.ebuild, +libkarma-0.0.6-r1.ebuild:
-  Add mono useflag and give shared library a SONAME
-
-  09 Mar 2007; <genstef@gentoo.org> libkarma-0.0.6.ebuild:
-  Add needed libusb depend thanks jmbsvicetto
-
-  06 Mar 2007; Markus Rothe <corsair@gentoo.org> libkarma-0.0.6.ebuild:
-  Added ~ppc64; bug #168812
-
-  01 Mar 2007; Matti Bickel <mabi@gentoo.org> libkarma-0.0.6.ebuild:
-  ~ppc added (bug #168812)
-
-*libkarma-0.0.6 (28 Feb 2007)
-
-  28 Feb 2007; Charlie Shepherd <masterdriverz@gentoo.org> +metadata.xml,
-  +libkarma-0.0.6.ebuild:
-  Add new dep for Amarok; bug 168611. Thanks to jmbsvicetto.

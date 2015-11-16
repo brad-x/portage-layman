@@ -1,125 +1,60 @@
 # ChangeLog for app-text/uudeview
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/uudeview/ChangeLog,v 1.32 2010/04/06 01:29:35 abcd Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Apr 2010; Jonathan Callen <abcd@gentoo.org> uudeview-0.5.20-r1.ebuild:
-  Bump to EAPI=3, add prefix keywords
+*uudeview-0.5.20-r1 (09 Aug 2015)
 
-  10 Nov 2009; Jonathan Callen <abcd@gentoo.org> uudeview-0.5.20-r1.ebuild:
-  List all patches to be applied directly; clean up ebuild
-
-  29 May 2009; Robert Buchholz <rbu@gentoo.org> -uudeview-0.5.20.ebuild:
-  Remove ebuild that is vulnerable to GLSA 200808-11, bug #271750.
-
-  03 Aug 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  uudeview-0.5.20-r1.ebuild:
-  ppc stable, bug #222275
-
-  03 Aug 2008; Tobias Heinlein <keytoaster@gentoo.org>
-  uudeview-0.5.20-r1.ebuild:
-  amd64 stable wrt security bug #222275
-
-  30 Jul 2008; Raúl Porcel <armin76@gentoo.org> uudeview-0.5.20-r1.ebuild:
-  sparc/x86 stable wrt #222275
-
-*uudeview-0.5.20-r1 (28 Jul 2008)
-
-  28 Jul 2008; Robert Buchholz <rbu@gentoo.org>
-  -files/uudeview-0.5.18-optimize_size.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/uudeview-0.5.20-CVE-2004-2265.patch,
   +files/uudeview-0.5.20-CVE-2008-2266.patch,
   +files/uudeview-0.5.20-bugfixes.patch, +files/uudeview-0.5.20-man.patch,
-  +files/uudeview-0.5.20-rename.patch, +uudeview-0.5.20-r1.ebuild:
-  Non-maintainer bump
-  Pull in source patches from Debian
-  * Fix temporary file issue (CVE-2004-2265, CVE-2008-2266, bug #222275)
-  * Update uudeview man page, include uuwish man page
-  * Several bug fixes
-  
-  Other changes:
-  * Remove dead 'debug' use flag
-  * Remove old patch
+  +files/uudeview-0.5.20-rename.patch, +metadata.xml,
+  +uudeview-0.5.20-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Jan 2008; Fabian Groffen <grobian@gentoo.org> uudeview-0.5.20.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  uudeview-0.5.20.ebuild:
-  removed tcl and X USE flags as they are just useless. USE=tk now properly
-  builds the X version of the software
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
-  uudeview-0.5.20.ebuild:
-  moved tcltk USE flag over to separate tk and tcl flags, see bug #17808
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Nov 2005; Fabian Groffen <grobian@gentoo.org> uudeview-0.5.20.ebuild:
-  Marked ~ppc-macos (bug #109433)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Apr 2005; Simon Stelling <blubb@gentoo.org> uudeview-0.5.20.ebuild:
-  stable on amd64
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  19 Jun 2004; Danny van Dyk <kugelfang@gentoo.org> uudeview-0.5.20.ebuild:
-  Marked ~amd64.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Jun 2004; Aron Griffis <agriffis@gentoo.org> uudeview-0.5.20.ebuild:
-  Fix use invocation
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Apr 2004; Daniel Black <dragonheart@gentoo.org> metadata.xml,
-  uudeview-0.5.20.ebuild:
-  QA - removed runtime dependance on autoconf
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Mar 2004; David Holm <dholm@gentoo.org> uudeview-0.5.20.ebuild:
-  Added to ~ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Mar 2004; Jason Wever <weeve@gentoo.org> uudeview-0.5.20.ebuild:
-  Stable on sparc wrt bug #44859.
+  Bug: https://bugs.gentoo.org/552720
 
-*uudeview-0.5.20 (26 Mar 2004)
-
-  26 Mar 2004; Seemant Kulleen <seemant@gentoo.org> uudeview-0.5.13.ebuild,
-  uudeview-0.5.18.ebuild, uudeview-0.5.20.ebuild:
-  update for security fix as per bug #44859, by Jeff Patterson <helixj@yahoo.ca>
-  and contributed to heavily by: CondorDES <condor-gentoo@condordes.net>
-
-  22 Feb 2004; Daniel Ahlberg <aliz@gentoo.org> uudeview-0.5.18.ebuild,
-  files/uudeview-0.5.18-optimize_size.patch:
-  Fix compilation with -Os and get handling of optimization to configure right. Closing #42466.
-
-  24 Aug 2003; Michael Sterrett <msterret@gentoo.org> uudeview-0.5.18.ebuild:
-  use emake; add error message; tidy
-
-*uudeview-0.5.18 (08 Nov 2002)
-
-  01 Aug 2003; Mike Frysinger <vapier@gentoo.org> :
-  Cleanup ... use econf, use_enable, and debug USE flag
-
-  13 Jan 2003; Nick Hadaway <raker@gentoo.org> uudeview-0.5.18.ebuild :
-  Added DEBUGBUILD support so those with -g options in their make.conf
-  don't get them stripped out by configure.
-
-  12 Jan 2003; Nick Hadaway <raker@gentoo.org> uudeview-0.5.18.ebuild :
-  Changed from emake to make.
-
-  08 Nov 2002; Hanno Boeck <hanno@gentoo.org> uudeview-0.5.18.ebuild :
-  New version.
-
-*uudeview-0.5.13 (04 Jun 2002)
-
-  01 Aug 2003; Mike Frysinger <vapier@gentoo.org> :
-  Cleanup ... use econf, use_enable, and debug USE flag
-
-  2 Aug 2002; phoen][x <phoenix@gentoo.org> uudeview-0.5.13.ebuild :
-  Added KEYWORDS, SLOT.
-
-  03 Jun 2002; George Shapovalov <george@gentoo.org> uudeview-0.5.13.ebuild, files/digest-uudeview-0.5.13 :
-  
-  First submission
-  From the home page:
-
-   UUDeview is a program that helps you transmit and receive binary files over 
-   the Internet, using electronic mail or newsgroups The UUDeview package includes 
-   both an encoder and a decoder. The decoder automatically detects the type of 
-   encoding used, offering MIME's Base64 and BinHex as well as the popular 
-   uuencoding and the less frequently used xxencoding methods. Recently, support 
-   for the popular yEnc encoding was also added. The encoder runs the other way 
-   around and encodes a binary file for sending it by mail or news. 

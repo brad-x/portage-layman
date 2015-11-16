@@ -1,100 +1,70 @@
 # ChangeLog for media-video/get_flash_videos
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/get_flash_videos/ChangeLog,v 1.20 2014/11/27 23:44:22 dilfridge Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  27 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+*get_flash_videos-9999 (09 Aug 2015)
+*get_flash_videos-1.24-r1 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/get_flash_videos-youtubefix.patch, +get_flash_videos-1.24-r1.ebuild,
+  +get_flash_videos-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  get_flash_videos-1.24-r1.ebuild, get_flash_videos-9999.ebuild:
+  Enable https for all google URIs
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   get_flash_videos-1.24-r1.ebuild:
-  Remove call to perl-module_pkg_postinst, does not do anything outside
-  perl-core
+  Convert URIs for googlecode.com to https
 
-  29 Jul 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  get_flash_videos-1.24-r1.ebuild, get_flash_videos-9999.ebuild:
-  perl-core/x -> virtual/perl-x
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Jul 2014; Mikle Kolyada <zlogene@gentoo.org>
-  -get_flash_videos-1.23-r1.ebuild, -get_flash_videos-1.24.ebuild,
-  get_flash_videos-1.24-r1.ebuild, get_flash_videos-9999.ebuild:
-  Bump to EAPI=5; Stable for all and drop old (bug #478714); Dependencies: perl-
-  core/* -> virtual/perl-*
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 May 2013; Markos Chandras <hwoarang@gentoo.org>
-  get_flash_videos-9999.ebuild:
-  Add dev-perl/Module-Find to RDEPEND. bug #461324
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Feb 2013; Zac Medico <zmedico@gentoo.org> get_flash_videos-1.24-r1.ebuild:
-  Add ~arm-linux keyword.
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Feb 2013; Pacho Ramos <pacho@gentoo.org> get_flash_videos-1.24-r1.ebuild:
-  Don't show elog messages always (#457596)
-
-*get_flash_videos-9999 (13 Oct 2012)
-
-  13 Oct 2012; Jason A. Donenfeld <zx2c4@gentoo.org>
-  +get_flash_videos-9999.ebuild:
-  Since get_flash_videos is always adapting for site changes, and because no
-  packages have been released since 2010, it makes sense to have a live ebuild,
-  since this is what most users in the get_flash_videos community use, as well
-  as the devs.
-
-  14 Apr 2012; Zac Medico <zmedico@gentoo.org> get_flash_videos-1.24-r1.ebuild:
-  Add ~amd64-linux keyword.
-
-*get_flash_videos-1.24-r1 (29 Feb 2012)
-
-  29 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
-  +files/get_flash_videos-youtubefix.patch, +get_flash_videos-1.24-r1.ebuild:
-  Apply youtube fix from upstream. Bug #405761. Thanks to Peter Fox
-  <gentoo@roestock.demon.co.uk>
-
-  29 Jul 2011; Zac Medico <zmedico@gentoo.org> get_flash_videos-1.24.ebuild:
-  Add ~x86-linux keyword.
-
-  18 Mar 2011; Thomas Kahle <tomka@gentoo.org> get_flash_videos-1.24.ebuild:
-  x86 stable per bug 353088
-
-  11 Mar 2011; Markos Chandras <hwoarang@gentoo.org>
-  get_flash_videos-1.24.ebuild:
-  Stable on amd64 wrt bug #353088
-
-*get_flash_videos-1.24 (14 Dec 2010)
-
-  14 Dec 2010; Markos Chandras <hwoarang@gentoo.org>
-  +get_flash_videos-1.24.ebuild:
-  Version bump. Fixes bug #348665
-
-  15 Nov 2010; Markos Chandras <hwoarang@gentoo.org>
-  get_flash_videos-1.23-r1.ebuild:
-  Stable on amd64 wrt bug #343607
-
-  10 Nov 2010; Thomas Kahle <tomka@gentoo.org>
-  get_flash_videos-1.23-r1.ebuild:
-  x86 stable per bug #343607
-
-  27 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  get_flash_videos-1.23-r1.ebuild:
-  Put the tarball on gentoo mirrors. Fix S variable to match the latest code
-
-*get_flash_videos-1.23-r1 (20 Aug 2010)
-
-  20 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  -get_flash_videos-1.21.ebuild, -get_flash_videos-1.23.ebuild,
-  +get_flash_videos-1.23-r1.ebuild:
-  Fix SRC_URI. Bug #333707
-
-  03 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  get_flash_videos-1.23.ebuild:
-  Remove utils.t test wrt bug #330409. Thanks to Olivier Huber
-  <oli.huber@gmail.com> for reporting
-
-*get_flash_videos-1.23 (29 Jul 2010)
-
-  29 Jul 2010; Markos Chandras <hwoarang@gentoo.org>
-  +get_flash_videos-1.23.ebuild:
-  Version bump
-
-*get_flash_videos-1.21 (11 Jul 2010)
-
-  11 Jul 2010; Markos Chandras <hwoarang@gentoo.org>
-  +get_flash_videos-1.21.ebuild, +metadata.xml:
-  Initial commit of get_flash_videos application. Fixes bug #318929. Thanks
-  to Maxime de Roucy <maxime.deroucy@gmail.com> for the ebuild

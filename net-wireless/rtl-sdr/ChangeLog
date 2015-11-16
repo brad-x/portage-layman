@@ -1,66 +1,61 @@
 # ChangeLog for net-wireless/rtl-sdr
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/rtl-sdr/ChangeLog,v 1.12 2015/07/31 01:10:58 zerochaos Exp $
+# (auto-generated from git log)
 
-*rtl-sdr-0.5.3_p20150730 (31 Jul 2015)
+*rtl-sdr-9999 (09 Aug 2015)
+*rtl-sdr-0.5.3_p20150730 (09 Aug 2015)
+*rtl-sdr-0.5.3-r1 (09 Aug 2015)
+*rtl-sdr-0.5.3 (09 Aug 2015)
+*rtl-sdr-0.5.0 (09 Aug 2015)
 
-  31 Jul 2015; Rick Farina <zerochaos@gentoo.org>
-  +rtl-sdr-0.5.3_p20150730.ebuild:
-  been 18 months since a tag, so I'll make one up
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +rtl-sdr-0.5.0.ebuild, +rtl-sdr-0.5.3.ebuild, +rtl-sdr-0.5.3-r1.ebuild,
+  +rtl-sdr-0.5.3_p20150730.ebuild, +rtl-sdr-9999.ebuild:
+  proj/gentoo: Initial commit
 
-*rtl-sdr-0.5.3-r1 (21 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Mar 2015; Rick Farina <zerochaos@gentoo.org> +rtl-sdr-0.5.3-r1.ebuild,
-  rtl-sdr-9999.ebuild:
-  add detach kernel driver option to co-exist with the kernel rtl driver, switch
-  to cmake build system per upstream default, don't install udev rules, if the
-  user wants 666 rules let's not make it easy to cripple security
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Dec 2014; Thomas Beierlein <tomjbe@gentoo.org> rtl-sdr-0.5.3.ebuild,
-  rtl-sdr-9999.ebuild:
-  Fix docdir (bug 533330)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*rtl-sdr-0.5.3 (06 Jul 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Jul 2014; Rick Farina <zerochaos@gentoo.org> +rtl-sdr-0.5.3.ebuild,
-  rtl-sdr-9999.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jun 2013; Rick Farina <zerochaos@gentoo.org> -rtl-sdr-0.5.0-r1.ebuild,
-  -rtl-sdr-0_pre20130414.ebuild, rtl-sdr-0.5.0.ebuild, rtl-sdr-9999.ebuild:
-  remove old ebuild, remove udev rule in favor of improved elog messages
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*rtl-sdr-0.5.0-r1 (27 Jun 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Jun 2013; Rick Farina <zerochaos@gentoo.org> +rtl-sdr-0.5.0-r1.ebuild,
-  rtl-sdr-9999.ebuild:
-  adding upstream udev rule
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jun 2013; Rick Farina <zerochaos@gentoo.org> rtl-sdr-0.5.0.ebuild:
-  fix bug #472418 caused by not correcting SRC_URI
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*rtl-sdr-0.5.0 (05 Jun 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Jun 2013; Rick Farina <zerochaos@gentoo.org> +rtl-sdr-0.5.0.ebuild,
-  rtl-sdr-9999.ebuild:
-  upstream made a snapshot, and I added an ~arm keyword
-
-*rtl-sdr-0_pre20130414 (01 Jun 2013)
-
-  01 Jun 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +rtl-sdr-0_pre20130414.ebuild, rtl-sdr-9999.ebuild:
-  Add snapshot ebuild.
-
-  11 Aug 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  rtl-sdr-9999.ebuild:
-  Install udev rules file to documentation directory and notify user of its
-  purpose.
-
-  05 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> metadata.xml:
-  Assign maintainership to radio herd.
-
-*rtl-sdr-9999 (12 Apr 2012)
-
-  12 Apr 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> +metadata.xml,
-  +rtl-sdr-9999.ebuild:
-  Initial commit.

@@ -5,7 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{3,4} pypy )
-PYTHON_REQ_USE='sqlite?'
+PYTHON_REQ_USE='sqlite?,threads(+)'
 WEBAPP_NO_AUTO_INSTALL="yes"
 
 inherit bash-completion-r1 distutils-r1 eutils git-r3 versionator webapp
@@ -77,7 +77,7 @@ src_install() {
 	elog "Other features can be enhanced by"
 	optfeature "GEO Django" sci-libs/gdal[geos]
 	optfeature "Memcached support" dev-python/pylibmc dev-python/python-memcached
-	optfeature "ImageField Support" virtual/python-imaging
+	optfeature "ImageField Support" dev-python/pillow
 	optfeature "Password encryption" dev-python/bcrypt
 	optfeature "Extended templating support" dev-python/jinja
 	echo ""

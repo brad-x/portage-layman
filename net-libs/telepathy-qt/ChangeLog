@@ -1,229 +1,75 @@
 # ChangeLog for net-libs/telepathy-qt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-qt/ChangeLog,v 1.40 2015/06/16 01:16:53 pesa Exp $
+# (auto-generated from git log)
 
-*telepathy-qt-0.9.6.1 (16 Jun 2015)
+*telepathy-qt-0.9.6.1 (09 Aug 2015)
+*telepathy-qt-0.9.5 (09 Aug 2015)
 
-  16 Jun 2015; Davide Pesavento <pesa@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/0.9.6.1-default-source.patch, +files/0.9.6.1-yes-release.patch,
-  +telepathy-qt-0.9.6.1.ebuild, -telepathy-qt-0.9.6.ebuild:
-  Version bump.
+  +metadata.xml, +telepathy-qt-0.9.5.ebuild, +telepathy-qt-0.9.6.1.ebuild:
+  proj/gentoo: Initial commit
 
-*telepathy-qt-0.9.6 (15 May 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 May 2015; Ben de Groot <yngwin@gentoo.org> +telepathy-qt-0.9.6.ebuild:
-  version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 May 2015; Davide Pesavento <pesa@gentoo.org> telepathy-qt-0.9.5.ebuild:
-  Specify glib SLOT.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 May 2015; Davide Pesavento <pesa@gentoo.org> telepathy-qt-0.9.5.ebuild:
-  Add missing REQUIRED_USE.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Mar 2015; Michael Palimaka <kensington@gentoo.org>
-  -files/telepathy-qt-0.9.3-avatar-duplication.patch,
-  -files/telepathy-qt-0.9.3-cmake-2.8.12.patch,
-  -files/telepathy-qt-0.9.3-tp-glib-0.18-tests.patch,
-  -telepathy-qt-0.9.3-r2.ebuild:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Mar 2015; Agostino Sarubbo <ago@gentoo.org> telepathy-qt-0.9.5.ebuild:
-  Stable for x86, wrt bug #542094
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Mar 2015; Agostino Sarubbo <ago@gentoo.org> telepathy-qt-0.9.5.ebuild:
-  Stable for amd64, wrt bug #542094
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Mar 2015; Michael Palimaka <kensington@gentoo.org>
-  telepathy-qt-0.9.5.ebuild:
-  Disable broken test wrt bug #442178.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Mar 2015; Michael Palimaka <kensington@gentoo.org>
-  telepathy-qt-0.9.5.ebuild:
-  Remove unused inherit.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jan 2015; Johannes Huber <johu@gentoo.org> telepathy-qt-0.9.5.ebuild:
-  Shorten pkg setup. Sort functions.
+  Bug: https://bugs.gentoo.org/552720
 
-*telepathy-qt-0.9.5 (15 Sep 2014)
+  19 Oct 2015; Agostino Sarubbo <ago@gentoo.org> telepathy-qt-0.9.6.1.ebuild:
+  amd64 stable wrt bug #562582
 
-  15 Sep 2014; Johannes Huber <johu@gentoo.org> +telepathy-qt-0.9.5.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  08 Jul 2014; Davide Pesavento <pesa@gentoo.org> -telepathy-qt-0.9.3-r1.ebuild,
-  metadata.xml:
-  old
+  25 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> telepathy-qt-0.9.6.1.ebuild:
+  x86 stable wrt bug #562582
 
-  07 Jul 2014; Pacho Ramos <pacho@gentoo.org> telepathy-qt-0.9.3-r2.ebuild:
-  amd64/x86 stable, bug #514464
+  Package-Manager: portage-2.2.20.1
 
-*telepathy-qt-0.9.3-r2 (04 Jul 2014)
+  25 Oct 2015; Michael Palimaka <kensington@gentoo.org>
+  -telepathy-qt-0.9.5.ebuild:
+  remove old
 
-  04 Jul 2014; Pacho Ramos <pacho@gentoo.org> +telepathy-qt-0.9.3-r2.ebuild:
-  Drop farsight support (#514464)
+  Package-Manager: portage-2.2.20.1
 
-  13 Apr 2014; Johannes Huber <johu@gentoo.org>
-  -files/telepathy-qt-0.8.0-automagicness.patch,
-  -files/telepathy-qt-0.9.1-automagicness.patch,
-  -files/telepathy-qt-0.9.1-gcc-4.7.patch, -telepathy-qt-0.8.0.ebuild,
-  -telepathy-qt-0.9.2.ebuild, -telepathy-qt-0.9.3.ebuild, metadata.xml:
-  Remove old.
-
-  13 Apr 2014; Johannes Huber <johu@gentoo.org> telepathy-qt-0.9.3-r1.ebuild:
-  amd64/x86 stable, bug #489220
-
-  02 Apr 2014; Johannes Huber <johu@gentoo.org> telepathy-qt-0.9.3-r1.ebuild:
-  Restrict tests because they hang and we need stabilization.
-
-  24 Oct 2013; Johannes Huber <johu@gentoo.org>
-  +files/telepathy-qt-0.9.3-cmake-2.8.12.patch, telepathy-qt-0.9.3-r1.ebuild:
-  Add upstream patch to fix configure phase with dev-util/cmake-2.8.12 wrt bug
-  #489220.
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> telepathy-qt-0.9.3-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-*telepathy-qt-0.9.3-r1 (05 Jun 2013)
-
-  05 Jun 2013; Johannes Huber <johu@gentoo.org>
-  +files/telepathy-qt-0.9.3-avatar-duplication.patch,
-  +telepathy-qt-0.9.3-r1.ebuild:
-  Revision bump. EAPI 5, migrate to non obsolete python eclass, adds upstream
-  patch which fixes avatars stored several times when they exist spotted by
-  Lamarque V. Souza <lamarque@gmail.com> wrt bug #472180.
-
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> telepathy-qt-0.8.0.ebuild,
-  telepathy-qt-0.9.2.ebuild, telepathy-qt-0.9.3.ebuild:
-  Move Qt dependencies to the new category
-
-  23 Dec 2012; Markus Meier <maekke@gentoo.org> telepathy-qt-0.9.3.ebuild:
-  add ~arm
-
-  14 Nov 2012; Johannes Huber <johu@gentoo.org> telepathy-qt-0.9.3.ebuild:
-  Stable for x86, wrt bug #441456
-
-  06 Nov 2012; <ago@gentoo.org> telepathy-qt-0.9.3.ebuild:
-  Stable for amd64, wrt bug #441456
-
-  11 Sep 2012; Johannes Huber <johu@gentoo.org>
-  +files/telepathy-qt-0.9.3-tp-glib-0.18-tests.patch, telepathy-qt-0.9.3.ebuild:
-  Make tests working with tp-glib-0.18 by adding upstream patch spotted by
-  Alexandre Rostovtsev <tetromino@gentoo.org> and usage of virtualx.eclass.
-
-*telepathy-qt-0.8.0 (31 Jul 2012)
-
-  31 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> +telepathy-qt-0.8.0.ebuild,
-  metadata.xml:
-  Restore back 0.8.0 version for qutim.
-
-  31 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
-  Remove unused useflag and add kde herd too to metadata.
-
-  31 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> -telepathy-qt-0.8.0.ebuild,
-  -telepathy-qt-0.9.1.ebuild, telepathy-qt-0.9.2.ebuild:
-  Stabilise 0.9.2 as it works. Punt older.
-
-*telepathy-qt-0.9.3 (15 Jul 2012)
-
-  15 Jul 2012; Johannes Huber <johu@gentoo.org> +telepathy-qt-0.9.3.ebuild:
-  Version bump.
-
-*telepathy-qt-0.9.2 (12 Jul 2012)
-
-  12 Jul 2012; Michael Palimaka <kensington@gentoo.org>
-  +telepathy-qt-0.9.2.ebuild:
-  Version bump.
-
-  02 Jul 2012; Johannes Huber <johu@gentoo.org> telepathy-qt-0.8.0.ebuild:
-  marked x86 per bug 421121
-
-  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> telepathy-qt-0.8.0.ebuild:
-  Stable for amd64, wrt bug #421121
-
-  24 Jun 2012; Davide Pesavento <pesa@gentoo.org>
-  -files/telepathy-qt-0.9.0-automagicness.patch, -telepathy-qt-0.9.0.ebuild,
-  telepathy-qt-0.8.0.ebuild:
-  Restrict tests in 0.8.0 to allow stabilization. Remove 0.9.0.
-
-  21 Jun 2012; Michael Palimaka <kensington@gentoo.org>
-  +files/telepathy-qt-0.9.1-gcc-4.7.patch, telepathy-qt-0.9.1.ebuild:
-  Fix build with GCC 4.7 by backporting upstream patch. Fixes bug #421921.
-
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> telepathy-qt-0.8.0.ebuild,
-  telepathy-qt-0.9.0.ebuild, telepathy-qt-0.9.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-*telepathy-qt-0.9.1 (19 Apr 2012)
-
-  19 Apr 2012; Johannes Huber <johu@gentoo.org>
-  +files/telepathy-qt-0.9.1-automagicness.patch, +telepathy-qt-0.9.1.ebuild,
-  metadata.xml:
-  Version bump by Michael (kensington) <gentoo@scribeofthenile.com> wrt bug
-  #409847.
-
-  04 Apr 2012; Johannes Huber <johu@gentoo.org> telepathy-qt-0.9.0.ebuild:
-  Raise dep.
-
-*telepathy-qt-0.9.0 (25 Jan 2012)
-
-  25 Jan 2012; Johannes Huber <johu@gentoo.org>
-  +files/telepathy-qt-0.9.0-automagicness.patch, +telepathy-qt-0.9.0.ebuild,
-  -files/telepathy-qt-0.5.12-automagicness.patch, -telepathy-qt-0.5.15.ebuild,
-  telepathy-qt-0.8.0.ebuild:
-  Version bump wrt bug #400669. Remove old. Make tests optional and add missing
-  dep, fixes bug #373955.
-
-  24 Jan 2012; Johannes Huber <johu@gentoo.org> Manifest:
-  Fix manifest.
-
-*telepathy-qt4-0.8.0 (03 Dec 2011)
-
-  03 Dec 2011; Davide Pesavento <pesa@gentoo.org>
-  +files/0.8.0_automagicness.patch, +telepathy-qt4-0.8.0.ebuild:
-  Version bump (bug #392003)
-
-*telepathy-qt4-0.5.15 (20 Apr 2011)
-
-  20 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  -telepathy-qt4-0.5.0.ebuild, -telepathy-qt4-0.5.6.ebuild,
-  -telepathy-qt4-0.5.8.ebuild, -telepathy-qt4-0.5.12.ebuild,
-  +telepathy-qt4-0.5.15.ebuild:
-  Version bump. Drop all older.
-
-*telepathy-qt4-0.5.12 (23 Mar 2011)
-
-  23 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  +files/0.5.12_automagicness.patch, +telepathy-qt4-0.5.12.ebuild,
-  metadata.xml:
-  Version bump. Fix automagicness. Non-maintainer commit.
-
-*telepathy-qt4-0.5.8 (04 Mar 2011)
-
-  04 Mar 2011; Theo Chatzimichos <tampakrap@gentoo.org>
-  +telepathy-qt4-0.5.8.ebuild:
-  Version bump, cleanup: glib/gnome depedencies are now optional
-
-*telepathy-qt4-0.5.6 (13 Feb 2011)
-
-  13 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  -telepathy-qt4-0.3.4-r1.ebuild, +telepathy-qt4-0.5.6.ebuild:
-  Version bump. Drop older. Non-maintainer commit.
-
-*telepathy-qt4-0.5.0 (18 Nov 2010)
-
-  18 Nov 2010; Tomas Touceda <chiiph@gentoo.org>
-  +telepathy-qt4-0.5.0.ebuild:
-  Version bump
-
-*telepathy-qt4-0.3.4-r1 (02 Jun 2010)
-
-  02 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
-  -telepathy-qt4-0.3.4.ebuild, +telepathy-qt4-0.3.4-r1.ebuild:
-  Use static-libs use flag instead of static. Fixes bug #322493 thanks to
-  Kacper Kowalik (Xarthisius)
-
-*telepathy-qt4-0.3.4 (30 May 2010)
-
-  30 May 2010; Markos Chandras <hwoarang@gentoo.org>
-  +telepathy-qt4-0.3.4.ebuild, +metadata.xml:
-  Initial commit of telepathy-qt4. Moved from qting-edge overlay. Fixes bug
-  #300397

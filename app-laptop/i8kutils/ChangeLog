@@ -1,100 +1,78 @@
 # ChangeLog for app-laptop/i8kutils
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/i8kutils/ChangeLog,v 1.25 2015/04/07 14:06:39 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  15 Feb 2014; Pacho Ramos <pacho@gentoo.org> -i8kutils-1.33.ebuild,
-  i8kutils-1.33-r1.ebuild:
-  x86/amd64 stable (#500084), drop old
+*i8kutils-1.33-r1 (09 Aug 2015)
 
-*i8kutils-1.33-r1 (06 Jan 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/i8k.conf,
+  +files/i8k.init-r1, +files/i8kmon.service, +i8kutils-1.33-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Jan 2014; Pacho Ramos <pacho@gentoo.org> +files/i8kmon.service,
-  +i8kutils-1.33-r1.ebuild:
-  Add unit file for i8kmon (#497178)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Aug 2012; Michael Palimaka <kensington@gentoo.org> -files/i8k.init,
-  -i8kutils-1.25-r1.ebuild, -i8kutils-1.25.ebuild:
-  Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Aug 2012; Johannes Huber <johu@gentoo.org> i8kutils-1.33.ebuild:
-  Stable for x86, wrt bug #428876
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> i8kutils-1.33.ebuild:
-  Stable for amd64, wrt bug #428876
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*i8kutils-1.33 (01 Jul 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Jul 2012; Justin Lecher <jlec@gentoo.org> i8kutils-1.25.ebuild,
-  i8kutils-1.25-r1.ebuild, +i8kutils-1.33.ebuild:
-  Version Bump, Correct HOMEPAGE, correct SRC_URI; respect CFLAGS, #240015;
-  respect LDFLAGS, #337349; respect CC, #243602; handle examples installation
-  through USE; move to EAPI=4
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Jul 2012; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Fix up metadata.xml. If there's no maintainer for the package, the metadata
-  also needs to contain m-needed@g.o.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> i8kutils-1.25.ebuild,
-  i8kutils-1.25-r1.ebuild:
-  Remove virtual/libc
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*i8kutils-1.25-r1 (29 Oct 2008)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Oct 2008; Olivier Crête <tester@gentoo.org> +files/i8k.init-r1,
-  +i8kutils-1.25-r1.ebuild:
-  Fix init script, fixes bug #216742
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Apr 2007; Olivier Crête <tester@gentoo.org> i8kutils-1.25.ebuild:
-  Use newconfd/newinitd (bug #174266)
+*i8kutils-1.42 (08 Nov 2015)
 
-  02 Oct 2006; Olivier Crête <tester@gentoo.org> files/i8k.init:
-  Make i8kmon init script really work, fixes #110572
+  08 Nov 2015; Ioan-Adrian Ratiu <adi@adirat.com> +i8kutils-1.42.ebuild,
+  metadata.xml:
+  bump to v1.42
 
-  09 Aug 2006; Doug Goldstein <cardoe@gentoo.org> i8kutils-1.25.ebuild:
-  USE flag split tcltk->tcl & tk per bug #17808
+  sys-power/acpi added to RDEPEND
 
-  16 Jan 2006; Mark Loeser <halcy0n@gentoo.org> i8kutils-1.25.ebuild:
-  Whitespace fix
+  Signed-off-by: Ioan-Adrian Ratiu <adi@adirat.com>
 
-  15 Jan 2006; Olivier Crête <tester@gentoo.org> i8kutils-1.25.ebuild:
-  More fixing of the installation of i8kmon
+  12 Nov 2015; Ioan-Adrian Ratiu <adi@adirat.com>
+  +files/i8kutils-1.42-Makefile.patch, +files/i8kutils-gcc5.patch,
+  i8kutils-1.42.ebuild:
+  fix gcc5 build for v1.42
 
-  06 Jan 2006; Olivier Crête <tester@gentoo.org> metadata.xml,
-  -i8kutils-1.17.ebuild, -i8kutils-1.17-r1.ebuild, i8kutils-1.25.ebuild:
-  Taking over unmaintained package, removed older versions, removed
-  virtual/x11 dep since tk already has the deps, fixed use of tcltk flag
+  Recipe enhancements requested in the bug are also included
 
-  21 Apr 2005; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  i8kutils-1.17-r1.ebuild, i8kutils-1.17.ebuild, i8kutils-1.25.ebuild:
-  added -* since Dell only makes x86 and amd64 hardware
+  Gentoo bug: #565466
 
-  31 Mar 2005; <blubb@gentoo.org> i8kutils-1.25.ebuild:
-  stable on amd64
+  Signed-off-by: Ioan-Adrian Ratiu <adi@adirat.com>
 
-  08 Dec 2004; Olivier Crete <tester@gentoo.org> i8kutils-1.25.ebuild:
-  Mark stable on x86 since 1.17 doesnt build on 2.6.. Fixes bug 58093
-
-*i8kutils-1.25 (04 Aug 2004)
-
-  04 Aug 2004; Karol Wojtaszek <sekretarz@gentoo.org> +i8kutils-1.25.ebuild:
-  Version bump, fixing SRC_URI
-
-*i8kutils-1.17 (08 Mar 2004)
-
-  08 Mar 2004; Peter Johanson <latexer@gentoo.org> i8kutils-1.17-r1.ebuild,
-  i8kutils-1.17.ebuild, metadata.xml, files/i8k.conf, files/i8k.init:
-  Moved to app-laptop from sys-apps
-
-*i8kutils-1.17-r1 (04 Dec 2003)
-
-  04 Dec 2003; Hanno Boeck <hanno@gentoo.org> i8kutils-1.17-r1.ebuild,
-  files/i8k.conf, files/i8k.init:
-  init-script added (thanks to Frank Szczerba in bug #17022).
-
-*i8kutils-1.17 (08 Nov 2002)
-
-  24 Feb 2003; Nicholas Wourms <dragon@gentoo.org> i8kutils-1.17.ebuild :
-  This is definitely not for mips.
-
-  08 Nov 2002; Hanno Boeck <hanno@gentoo.org> i8kutils-1.17.ebuild :
-  Added i8kutils-ebuild. Resolves bug #4628.

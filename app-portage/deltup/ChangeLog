@@ -1,134 +1,64 @@
 # ChangeLog for app-portage/deltup
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/deltup/ChangeLog,v 1.33 2015/06/07 08:10:47 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*deltup-0.4.6 (09 Aug 2015)
+*deltup-0.4.5-r1 (09 Aug 2015)
 
-  13 Mar 2015; Yixun Lan <dlan@gentoo.org> deltup-0.4.6.ebuild,
-  -files/deltup-0.4.4-CFLAGS.patch, -files/deltup-0.4.6-fix-prefix.patch:
-  explicitly set PREFIX variable
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +deltup-0.4.5-r1.ebuild,
+  +deltup-0.4.6.ebuild, +files/deltup-0.4.4-gcc47.patch,
+  +files/deltup-0.4.4-zlib-1.2.5.2.patch, +files/deltup-0.4.5-underlink.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*deltup-0.4.6 (12 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Mar 2015; Yixun Lan <dlan@gentoo.org> -deltup-0.4.5.ebuild,
-  deltup-0.4.5-r1.ebuild, +deltup-0.4.6.ebuild,
-  -files/deltup-0.4.4-asneeded.patch, -files/deltup-0.4.4-gcc44.patch,
-  +files/deltup-0.4.6-fix-prefix.patch,
-  -files/bzip2-1.0.2-makefile-CFLAGS.patch,
-  -files/bzip2-1.0.3-makefile-CFLAGS.patch, -files/gcc-4.3-compile.fix,
-  metadata.xml:
-  version bump, drop old, add new proxy maintainer, thanks Ameretat Reith
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> deltup-0.4.5-r1.ebuild,
-  deltup-0.4.5.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Oct 2013; Pacho Ramos <pacho@gentoo.org>
-  +files/deltup-0.4.5-underlink.patch, deltup-0.4.5-r1.ebuild:
-  Fix underlinking bug 455758
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Jul 2013; Chris Reffett <creffett@gentoo.org> -deltup-0.4.4.ebuild:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*deltup-0.4.5-r1 (07 Jul 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jul 2013; Chris Reffett <creffett@gentoo.org> +deltup-0.4.5-r1.ebuild:
-  Revision bump. Remove bundled old bzip wrt bug 459456.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*deltup-0.4.5 (30 Jan 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Jan 2013; Patrick Lauer <patrick@gentoo.org> +deltup-0.4.5.ebuild:
-  Bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> deltup-0.4.4.ebuild,
-  +files/deltup-0.4.4-gcc47.patch:
-  Fix building with gcc 4.7, wrt bug #429652. Thanks to Diego Elio Pettenò for
-  discovering this issue and eroen - for providing patch
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Dec 2012; Paul Varner <fuzzyray@gentoo.org> metadata.xml:
-  Move to maintainer-needed, due to not being maintained by anyone in the
-  tools-portage herd.
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> deltup-0.4.4.ebuild,
-  +files/deltup-0.4.4-zlib-1.2.5.2.patch:
-  Fix building with sys-libs/zlib >= 1.2.5.2 wrt #406203. Thanks to Alexander
-  Polozov for reporting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 May 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove genstef from metadata.xml (#66339)
-
-  08 Mar 2010; Sebastian Pipping <sping@gentoo.org> deltup-0.4.4.ebuild:
-  Fix SRC_URI for bzip2-1.0.3 (bug #259598)
-
-  02 Aug 2009; Víctor Ostorga <vostorga@gentoo.org> deltup-0.4.4.ebuild,
-  +files/deltup-0.4.4-CFLAGS.patch, +files/deltup-0.4.4-asneeded.patch,
-  files/bzip2-1.0.2-makefile-CFLAGS.patch,
-  +files/bzip2-1.0.3-makefile-CFLAGS.patch:
-  Respecting CFLAGS and LDFLAGS, fixing build with --as-needed. Patch thanks
-  to Zeev Tarantov, bugs #240121 #246916 #246189
-
-  15 May 2009; Ryan Hill <dirtyepic@gentoo.org> deltup-0.4.4.ebuild,
-  +files/deltup-0.4.4-gcc44.patch:
-  Fix building with GCC 4.4. Patch from Martin Väth in bug #269252.
-
-  17 Jun 2008; Samuli Suominen <drac@gentoo.org> deltup-0.4.4.ebuild:
-  Fix xdelta dep. from >=1.1.3 to =1* wrt #206006.
-
-  02 Apr 2008; Stefan Schweizer <genstef@gentoo.org>
-  +files/gcc-4.3-compile.fix, deltup-0.4.4.ebuild:
-  gcc-4.3 support, bug 215364
-
-*deltup-0.4.4.ebuild (29 Aug 2007)
-
-  29 Aug 2007; Stefan Schweizer <genstef@gentoo.org> -deltup-0.4.3.ebuild,
-  deltup-0.4.4.ebuild:
-  Use CHOST specific g++ thanks to Chris Slycord <cslycord@gmail.com> in bug
-  186718
-
-*deltup-0.4.4 (13 Jul 2007)
-
-  13 Jul 2007; Stefan Schweizer <genstef@gentoo.org> +deltup-0.4.4.ebuild:
-  version bump, fixing bug 175625
-
-*deltup-0.4.3 (30 Mar 2007)
-
-  30 Mar 2007; <genstef@gentoo.org> -deltup-0.4.2-r1.ebuild,
-  -deltup-0.4.3_pre2.ebuild, -deltup-0.4.3_pre2-r1.ebuild,
-  +deltup-0.4.3.ebuild:
-  Version bump, better bzip-1.0.4 support
-
-*deltup-0.4.3_pre2-r1 (31 Jan 2007)
-
-  31 Jan 2007; <genstef@gentoo.org> +deltup-0.4.3_pre2-r1.ebuild:
-  Add deltup for bzip 1.0.4 thanks blackpenguin
-
-*deltup-0.4.3_pre2 (11 Aug 2006)
-
-  11 Aug 2006; Stefan Schweizer <genstef@gentoo.org>
-  +deltup-0.4.3_pre2.ebuild:
-  version bump thanks to Hub441
-
-  13 Aug 2005; Jose Luis Rivero <yoswink@gentoo.org> deltup-0.4.2-r1.ebuild:
-  Keyworded ~alpha wrt #93379 deltup-0.4.2-r1.ebuild
-
-  10 May 2005; Stefan Schweizer <genstef@gentoo.org> deltup-0.4.2-r1.ebuild:
-  ~amd64 thanks to dang and cparrott in #gentoo-amd64-dev
-
-  09 May 2005; Stefan Schweizer <genstef@gentoo.org> -deltup-0.4.2.ebuild,
-  deltup-0.4.2-r1.ebuild:
-  Change DEPEND to allow usage with bdelta, thanks to blackpenguin
-
-*deltup-0.4.2-r1 (28 Apr 2005)
-
-  28 Apr 2005; Stefan Schweizer <genstef@gentoo.org>
-  +files/bzip2-1.0.2-makefile-CFLAGS.patch, +deltup-0.4.2-r1.ebuild:
-  Fiy bzip2 1.0.2 <-> 1.0.3 problem by adding a static 1.0.2, bug 89475
-
-*deltup-0.4.2 (05 Mar 2005)
-
-  05 Mar 2005; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
-  +deltup-0.4.2.ebuild:
-  New ebuild thanks to Alexander Jenisch <nt-@gmx.de> in bug 66790, thanks to
-  Nicolai Lissner <nlissne@linux01.gwdg.de> for getdelta and ebuild mirroring
-  and to Torsten Veller <torsten@veller.net> for previous ebuild enhancements

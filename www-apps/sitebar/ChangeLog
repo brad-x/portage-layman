@@ -1,124 +1,58 @@
 # ChangeLog for www-apps/sitebar
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/sitebar/ChangeLog,v 1.29 2012/10/17 03:00:18 phajdan.jr Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sitebar-3.3.9-r2.ebuild:
-  x86 stable wrt bug #429228
+*sitebar-3.3.9-r2 (09 Aug 2015)
+*sitebar-3.3.9-r1 (09 Aug 2015)
 
-  04 Oct 2012; Brent Baude <ranger@gentoo.org> sitebar-3.3.9-r2.ebuild:
-  Marking sitebar-3.3.9-r2 ppc for bug 429228
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/inc_writer.inc.php.diff, +files/postinstall-en.txt, +metadata.xml,
+  +sitebar-3.3.9-r1.ebuild, +sitebar-3.3.9-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> sitebar-3.3.9-r2.ebuild:
-  Stable for amd64, wrt bug #429228
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*sitebar-3.3.9-r2 (30 Jun 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  30 Jun 2012; Stefan Briesenick <sbriesen@gentoo.org>
-  +sitebar-3.3.9-r2.ebuild, +files/inc_writer.inc.php.diff, metadata.xml:
-  EAPI=4, added PHP 5.3 patch, added optional plugins.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Sep 2010; Matti Bickel <mabi@gentoo.org> sitebar-3.3.9-r1.ebuild:
-  change virtual/php to virtual/httpd-php (bug #319623)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Mar 2010; Benedikt Böhm <hollow@gentoo.org> -sitebar-3.3.9.ebuild,
-  sitebar-3.3.9-r1.ebuild:
-  remove old version
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Feb 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  sitebar-3.3.9-r1.ebuild:
-  ppc stable, bug #209014
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Feb 2008; Christoph Mende <angelos@gentoo.org> sitebar-3.3.9-r1.ebuild:
-  Stable on amd64, bug #209014
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Feb 2008; Christian Faulhammer <opfer@gentoo.org>
-  sitebar-3.3.9-r1.ebuild:
-  stable x86, bug 209014
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*sitebar-3.3.9-r1 (17 Jan 2008)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Jan 2008; Gunnar Wrobel <wrobel@gentoo.org> +sitebar-3.3.9-r1.ebuild:
-  Fixed dependencies (#205846).
-
-  18 Oct 2007; <wrobel@gentoo.org> -files/debian.patch,
-  -sitebar-3.3.8-r1.ebuild:
-  -m Removed insecure versions (#195810).
-
-  18 Oct 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  sitebar-3.3.9.ebuild:
-  ppc stable, bug #195810
-
-*sitebar-3.3.9 (16 Oct 2007)
-
-  16 Oct 2007; <wrobel@gentoo.org> +sitebar-3.3.9.ebuild:
-  -m Added sitebar-3.3.9 in response to #195810
-
-  29 Jul 2007; Christian Heim <phreak@gentoo.org> sitebar-3.3.8-r1.ebuild:
-  Fixing the DEPEND/RDEPEND for the move of net-www/apache to
-  www-servers/apache (#78622).
-
-  02 Jan 2007; Renat Lumpau <rl03@gentoo.org> sitebar-3.3.8-r1.ebuild:
-  Drop mysql dep wrt bug 159781
-
-  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> sitebar-3.3.8-r1.ebuild:
-  dev-db/mysql => virtual/mysql
-
-  22 Aug 2006; Renat Lumpau <rl03@gentoo.org> -sitebar-3.2.6.ebuild:
-  Removed old version
-
-  18 Aug 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  sitebar-3.3.8-r1.ebuild:
-  ppc stable, bug #142597
-
-*sitebar-3.3.8-r1 (17 Aug 2006)
-
-  17 Aug 2006; Renat Lumpau <rl03@gentoo.org> +files/debian.patch,
-  -sitebar-3.3.8.ebuild, +sitebar-3.3.8-r1.ebuild:
-  Apply Debian patch wrt bug #142597.
-
-*sitebar-3.3.8 (02 Apr 2006)
-
-  02 Apr 2006; Renat Lumpau <rl03@gentoo.org> -sitebar-3.3.7.ebuild,
-  +sitebar-3.3.8.ebuild:
-  Version bump wrt bug #128346.
-
-*sitebar-3.3.7 (21 Feb 2006)
-
-  21 Feb 2006; Renat Lumpau <rl03@gentoo.org> -sitebar-3.3.3.ebuild,
-  -sitebar-3.3.5.ebuild, +sitebar-3.3.7.ebuild:
-  Version bump wrt bug #123315, cleaned out old versions.
-
-*sitebar-3.3.5 (28 Sep 2005)
-
-  28 Sep 2005; Renat Lumpau <rl03@gentoo.org> +sitebar-3.3.5.ebuild:
-  Version bump wrt bug #107445.
-
-  24 Aug 2005; Homer Parker <hparker@gentoo.org> sitebar-3.3.3.ebuild:
-  Marked ~amd64.
-
-  22 Aug 2005; Renat Lumpau <rl03@gentoo.org> files/postinstall-en.txt:
-  Housekeeping
-
-  22 Aug 2005; Renat Lumpau <rl03@gentoo.org> files/postinstall-en.txt,
-  sitebar-3.3.3.ebuild:
-  Housekeeping
-
-*sitebar-3.3.3 (03 Jul 2005)
-
-  03 Jul 2005; Renat Lumpau <rl03@gentoo.org> files/postinstall-en.txt,
-  +sitebar-3.3.3.ebuild:
-  Version bump, closes #94332
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  sitebar-3.2.6.ebuild:
-  Masked sitebar-3.2.6.ebuild stable for ppc
-
-  31 Aug 2004; David Holm <dholm@gentoo.org> sitebar-3.2.6.ebuild:
-  Added to ~ppc.
-
-*sitebar-3.2.6 (18 Aug 2004)
-
-  18 Aug 2004; Renat Lumpau <rl03@gentoo.org> +metadata.xml,
-  +files/postinstall-en.txt, +sitebar-3.2.6.ebuild:
-  Initial ebuild (bugs #29841 and #53490)
+  Bug: https://bugs.gentoo.org/552720
 

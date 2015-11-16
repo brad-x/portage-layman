@@ -1,50 +1,59 @@
 # ChangeLog for dev-ada/aunit
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ada/aunit/ChangeLog,v 1.13 2009/03/24 14:30:58 george Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*aunit-2.03 (24 Mar 2009)
+*aunit-2.03 (09 Aug 2015)
+*aunit-2.01 (09 Aug 2015)
+*aunit-1.05 (09 Aug 2015)
 
-  24 Mar 2009; George Shapovalov <george@gentoo.org> +aunit-2.03.ebuild:
-  added new version, upstream made it again compatible with new gnat
-  (#250060)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +aunit-1.05.ebuild,
+  +aunit-2.01.ebuild, +aunit-2.03.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Jan 2008; George Shapovalov <george@gentoo.org> aunit-1.05.ebuild,
-  aunit-2.01.ebuild:
-  updated DEPEND to use virtual/ada, fixed quotations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 May 2007; George Shapovalov <george@gentoo.org> -aunit-1.03.ebuild:
-  removed old version
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*aunit-2.01 (28 May 2007)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 May 2007; George Shapovalov <george@gentoo.org> +aunit-2.01.ebuild:
-  new (2007) version
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*aunit-1.05 (28 May 2007)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> aunit-2.03.ebuild,
+  metadata.xml:
+  Use https by default
 
-  28 May 2007; George Shapovalov <george@gentoo.org> +aunit-1.05.ebuild:
-  updated the 2006' version
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Feb 2007; George Shapovalov <george@gentoo.org> -aunit-1.01.ebuild:
-  removed old and masked version
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Jan 2007; Marius Mauch <genone@gentoo.org> aunit-1.01.ebuild:
-  Replacing einfo with elog
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*aunit-1.03 (14 Nov 2006)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Nov 2006; George Shapovalov <george@gentoo.org> +aunit-1.03.ebuild:
-  new version, uses gnat.eclass
-
-  13 May 2006; George Shapovalov <george@gentoo.org> ChangeLog:
-  removed inherit gnat until adapted for new eclass
-
-  12 May 2006; George Shapovalov <george@gentoo.org> aunit-1.01.ebuild:
-  added standard src_compile, otherwise it breaks with new gnat.eclass,
-  removed ~ppc from keywords
-
-*aunit-1.01 (28 Oct 2003)
-
-  28 Oct 2003; David Holm <dholm@gentoo.org> aunit-1.01.ebuild, metadata.xml:
-  Aunit provides an xUnit testing framework for Ada.
+  Bug: https://bugs.gentoo.org/552720
 

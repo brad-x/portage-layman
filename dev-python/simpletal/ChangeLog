@@ -1,86 +1,64 @@
 # ChangeLog for dev-python/simpletal
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/simpletal/ChangeLog,v 1.14 2015/06/18 05:53:01 patrick Exp $
+# (auto-generated from git log)
 
-*simpletal-5.2 (18 Jun 2015)
+*simpletal-5.2 (09 Aug 2015)
+*simpletal-5.1-r1 (09 Aug 2015)
+*simpletal-4.2-r1 (09 Aug 2015)
 
-  18 Jun 2015; Patrick Lauer <patrick@gentoo.org> +simpletal-5.2.ebuild:
-  Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +simpletal-4.2-r1.ebuild, +simpletal-5.1-r1.ebuild, +simpletal-5.2.ebuild:
+  proj/gentoo: Initial commit
 
-*simpletal-5.1-r1 (09 Jan 2015)
-*simpletal-4.2-r1 (09 Jan 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jan 2015; Ian Delaney <idella4@gentoo.org> +simpletal-4.2-r1.ebuild,
-  +simpletal-5.1-r1.ebuild, -simpletal-4.2.ebuild, -simpletal-5.0.ebuild,
-  -simpletal-5.1.ebuild:
-  revbumps; conversion -> distutils-r1, rm old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> simpletal-4.2.ebuild,
-  simpletal-5.0.ebuild, simpletal-5.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Nov 2013; Patrick Lauer <patrick@gentoo.org> simpletal-4.2.ebuild,
-  simpletal-5.0.ebuild, simpletal-5.1.ebuild:
-  Shorten description, make repoman happier
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*simpletal-5.1 (09 Mar 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> simpletal-4.2-r1.ebuild,
+  simpletal-5.1-r1.ebuild, simpletal-5.2.ebuild:
+  Use https by default
 
-  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +simpletal-5.1.ebuild:
-  Bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  simpletal-4.2.ebuild, simpletal-5.0.ebuild:
-  Use PYTHON_DEPEND instead of NEED_PYTHON.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*simpletal-5.0 (22 Nov 2009)
-*simpletal-4.2 (22 Nov 2009)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Nov 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -simpletal-4.1.ebuild, +simpletal-4.2.ebuild, +simpletal-5.0.ebuild:
-  Version bump (4.2 is the last version supporting Python 2). Set SUPPORT_PYTHON_ABIS.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jul 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  simpletal-4.1.ebuild:
-  Restrict tests (bug #276689).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*simpletal-4.1 (25 Jun 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Jun 2007; Lukasz Strzygowski <lucass@gentoo.org> -simpletal-3.9.ebuild,
-  -simpletal-3.11.ebuild, -simpletal-3.13.ebuild, -simpletal-4.0.ebuild,
-  +simpletal-4.1.ebuild:
-  Version bump (bug #143817): cleanup, added examples use-flag, added dep
-  on pyxml, marked ~amd64. Dropped old versions.
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Feb 2007; Lukasz Strzygowski <lucass@gentoo.org>
-  files/digest-simpletal-3.9, files/digest-simpletal-3.11,
-  files/digest-simpletal-3.13, Manifest:
-  Convert to Manifest2.
-
-*simpletal-4.0 (08 Feb 2006)
-
-  08 Feb 2006; Marien Zwart <marienz@gentoo.org> +simpletal-4.0.ebuild:
-  Bump to 4.0 (bug #116742), add src_test.
-
-*simpletal-3.13 (16 Oct 2005)
-
-  16 Oct 2005; Bryan Østergaard <kloeri@gentoo.org> +simpletal-3.13.ebuild:
-  Version bump.
-
-  26 Aug 2005; Aron Griffis <agriffis@gentoo.org> simpletal-3.11.ebuild:
-  add ~ia64
-
-*simpletal-3.11 (02 Jan 2005)
-
-  02 Jan 2005; Bryan Østergaard <kloeri@gentoo.org> +metadata.xml,
-  +simpletal-3.11.ebuild, +simpletal-3.9.ebuild:
-  Move from net-zope to dev-python, bug 72252.
-
-*simpletal-3.11 (09 Nov 2004)
-
-  09 Nov 2004; Radoslaw Stachowiak <radek@gentoo.org>
-  +simpletal-3.11.ebuild:
-  New version release. Also added html documentation to ebuild.
-
-  12 May 2004; Jodok Batlogg <batlogg@gentoo.org>; :
-  initial import, user submitted ebuild, fixes #50278, thanks to Iain Smith
-  <gentoo@iesmith.net>

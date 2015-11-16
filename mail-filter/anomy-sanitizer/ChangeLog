@@ -1,93 +1,58 @@
 # ChangeLog for mail-filter/anomy-sanitizer
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/anomy-sanitizer/ChangeLog,v 1.21 2013/07/13 07:48:36 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> anomy-sanitizer-1.76-r1.ebuild:
-  Stable for x86, wrt bug #476106
+*anomy-sanitizer-1.76-r1 (09 Aug 2015)
 
-  12 Jul 2013; Agostino Sarubbo <ago@gentoo.org> anomy-sanitizer-1.76-r1.ebuild:
-  Stable for amd64, wrt bug #476106
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +anomy-sanitizer-1.76-r1.ebuild, +files/anomy.conf,
+  +files/sample2_mailfilter.sh, +files/sample_mailfiler.sh, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Feb 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  anomy-sanitizer-1.76-r1.ebuild:
-  quote ROOT
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Jun 2012; Zac Medico <zmedico@gentoo.org> anomy-sanitizer-1.76-r1.ebuild:
-  inherit user for enewgroup and enewuser
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Mar 2012; Pacho Ramos <pacho@gentoo.org>
-  -files/sample_e-mail-architektur.flw, anomy-sanitizer-1.76-r1.ebuild:
-  Move binary file away from CVS tree
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Jun 2011; Justin Lecher <jlec@gentoo.org> -anomy-sanitizer-1.67.ebuild,
-  -anomy-sanitizer-1.70.ebuild, -anomy-sanitizer-1.76.ebuild,
-  anomy-sanitizer-1.76-r1.ebuild, -files/sample_e-mail-architecture.png:
-  No binaryfiles in VCS please, #370867
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jun 2011; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Move to maintainer-needed
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> anomy-sanitizer-1.76-r1.ebuild,
+  metadata.xml:
+  Use https by default
 
-  18 Mar 2007; Marius Mauch <genone@gentoo.org> anomy-sanitizer-1.67.ebuild,
-  anomy-sanitizer-1.70.ebuild, anomy-sanitizer-1.76.ebuild,
-  anomy-sanitizer-1.76-r1.ebuild:
-  Replacing einfo with elog
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*anomy-sanitizer-1.76-r1 (20 Feb 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Feb 2006; Michael Cummings <mcummings@gentoo.org>
-  +anomy-sanitizer-1.76-r1.ebuild:
-  Bug 123522, ebuild submitted by jakub to clean up anomy-sanitizer
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Feb 2006; Michael Cummings <mcummings@gentoo.org>
-  anomy-sanitizer-1.67.ebuild, anomy-sanitizer-1.70.ebuild,
-  anomy-sanitizer-1.76.ebuild:
-  Virtuals for perl-core
+  Bug: https://bugs.gentoo.org/552720
 
-*anomy-sanitizer-1.76 (08 Jan 2006)
-
-  08 Jan 2006; Michael Cummings <mcummings@gentoo.org>
-  +anomy-sanitizer-1.76.ebuild:
-  Version bump; also closes bug 100592
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  anomy-sanitizer-1.70.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  anomy-sanitizer-1.67.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-*anomy-sanitizer-1.70 (13 May 2005)
-
-  13 May 2005; Michael Cummings <mcummings@gentoo.org>
-  +anomy-sanitizer-1.70.ebuild:
-  Version bump, bug 78001
-
-  25 Sep 2004; Tom Martin <slarti@gentoo.org> anomy-sanitizer-1.67.ebuild:
-  Marked ~amd64.
-
-  04 Sep 2004; Thomas Matthijs <axxo@gentoo.org> anomy-sanitizer-1.67.ebuild:
-  fix depend syntax 58347
-
-  05 Jun 2004; David Holm <dholm@gentoo.org> anomy-sanitizer-1.67.ebuild:
-  Added to ~ppc.
-
-*anomy-sanitizer-1.67 (02 Jun 2004)
-
-  02 Jun 2004; Seemant Kulleen <seemant@gentoo.org> +metadata.xml,
-  +files/anomy.conf, +files/sample2_mailfilter.sh,
-  +files/sample_e-mail-architecture.png, +files/sample_e-mail-architektur.flw,
-  +files/sample_mailfiler.sh, +anomy-sanitizer-1.67.ebuild:
-  Moved from net-mail/anomy-sanitizer to mail-filter/anomy-sanitizer.
-
-*anomy-sanitizer-1.67 (16 Apr 2004)
-
-  16 Apr 2004; Michael Cummings <mcummings@gentoo.org>
-  anomy-sanitizer-1.67.ebuild, metadata.xml, files/anomy.conf,
-  files/sample2_mailfilter.sh, files/sample_e-mail-architecture.png,
-  files/sample_e-mail-architektur.flw, files/sample_mailfiler.sh:
-  Anomy-sanitizer mail filter, originally posted by Thiemo Kellner
-  <thiemo@thiam.ch> and worked on by Alessandro Pisani <alextxm@tin.it>.

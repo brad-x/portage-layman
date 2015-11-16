@@ -1,104 +1,62 @@
 # ChangeLog for dev-ruby/samuel
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/samuel/ChangeLog,v 1.28 2015/07/01 05:51:48 graaff Exp $
+# (auto-generated from git log)
 
-  01 Jul 2015; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3-r2.ebuild:
-  Update mocha dependency.
+*samuel-0.3.3-r2 (09 Aug 2015)
+*samuel-0.3.3-r1 (09 Aug 2015)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +samuel-0.3.3-r1.ebuild, +samuel-0.3.3-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Apr 2015; Agostino Sarubbo <ago@gentoo.org> samuel-0.3.3-r1.ebuild:
-  Stable for amd64, wrt bug #543256
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*samuel-0.3.3-r2 (29 Mar 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  29 Mar 2015; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3-r1.ebuild,
-  +samuel-0.3.3-r2.ebuild:
-  Create stable candidate.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Oct 2014; Manuel Rüger <mrueg@gentoo.org> -samuel-0.3.3.ebuild,
-  samuel-0.3.3-r1.ebuild:
-  Drop jruby target. Cleanup old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> samuel-0.3.3-r1.ebuild,
-  samuel-0.3.3.ebuild:
-  Remove trailing '.' from DESCRIPTION.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> samuel-0.3.3-r1.ebuild:
+  Use https by default
 
-  24 Apr 2014; Manuel Rüger <mrueg@gentoo.org> samuel-0.3.3.ebuild:
-  Remove ruby18 support.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Apr 2014; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3-r1.ebuild:
-  Add jruby test dependency on bouncy-castle-java, fixing bug 349766.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  19 Apr 2014; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3-r1.ebuild:
-  Add ruby21. Update mocha to work with all ruby targets.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Dec 2013; Anthony G. Basile <blueness@gentoo.org> samuel-0.3.3-r1.ebuild:
-  Fix failed gpg signiture
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*samuel-0.3.3-r1 (17 Nov 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Nov 2013; Manuel Rüger <mrueg@gentoo.org> +samuel-0.3.3-r1.ebuild,
-  samuel-0.3.3.ebuild:
-  Restore ~ppc64 keyword for dev-ruby/fakeweb.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Nov 2013; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3.ebuild:
-  Add ruby20. Drop ppc64 for bug 465948.
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Jan 2013; Rick Farina <zerochaos@gentoo.org> samuel-0.3.3.ebuild:
-  adding ~arm keywords to net-analyzer/metasploit rdeps
-
-  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> samuel-0.3.3.ebuild:
-  Fix license, bug 445456.
-
-  22 Sep 2012; Hans de Graaff <graaff@gentoo.org> -samuel-0.3.2.ebuild:
-  Cleanup.
-
-*samuel-0.3.3 (08 Jul 2012)
-
-  08 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +samuel-0.3.3.ebuild:
-  Version bump.
-
-  01 May 2012; Raúl Porcel <armin76@gentoo.org> samuel-0.3.2.ebuild:
-  Drop ia64/sparc keywords
-
-  05 Dec 2011; Naohiro Aota <naota@gentoo.org> samuel-0.3.2.ebuild:
-  Add ~x86-fbsd.
-
-  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> samuel-0.3.2.ebuild:
-  Add ~ia64/~sparc wrt #351835
-
-  24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> samuel-0.3.2.ebuild:
-  Marked ~ppc64 wrt #351835
-
-  31 Aug 2010; Alex Legler <a3li@gentoo.org> samuel-0.3.2.ebuild:
-  Add REE 1.8 support.
-
-  16 Aug 2010; Diego E. Pettenò <flameeyes@gentoo.org> samuel-0.3.2.ebuild:
-  Block test-unit:2 for testing.
-
-  28 May 2010; Joseph Jezak <josejx@gentoo.org> samuel-0.3.2.ebuild:
-  Marked ~ppc.
-
-  12 Feb 2010; Diego E. Pettenò <flameeyes@gentoo.org> samuel-0.3.2.ebuild:
-  Add ~x86 keyword (tested in development container).
-
-  11 Feb 2010; Diego E. Pettenò <flameeyes@gentoo.org> samuel-0.3.2.ebuild:
-  Add missing test dependency over httpclient.
-
-  14 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org> samuel-0.3.2.ebuild:
-  Enable jruby support.
-
-*samuel-0.3.2 (13 Jan 2010)
-
-  13 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -samuel-0.3.1.ebuild, -files/samuel-0.3.1-ruby19.patch,
-  +samuel-0.3.2.ebuild:
-  Version bump, drop patch as the new version already contain the fix.
-
-*samuel-0.3.1 (12 Jan 2010)
-
-  12 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +samuel-0.3.1.ebuild, +files/samuel-0.3.1-ruby19.patch, +metadata.xml:
-  Initial import of samuel needed to de-bundle fakeweb.

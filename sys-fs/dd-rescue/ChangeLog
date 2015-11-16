@@ -1,170 +1,96 @@
 # ChangeLog for sys-fs/dd-rescue
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/dd-rescue/ChangeLog,v 1.39 2015/01/28 22:34:03 mgorny Exp $
+# (auto-generated from git log)
 
-  28 Jan 2015; Michał Górny <mgorny@gentoo.org> dd-rescue-1.45.ebuild,
-  dd-rescue-1.46.ebuild, metadata.xml:
-  Switch to CPU_FLAGS_X86.
+*dd-rescue-1.46 (09 Aug 2015)
+*dd-rescue-1.45 (09 Aug 2015)
+*dd-rescue-1.44 (09 Aug 2015)
+*dd-rescue-1.40 (09 Aug 2015)
+*dd-rescue-1.33 (09 Aug 2015)
+*dd-rescue-1.28 (09 Aug 2015)
 
-*dd-rescue-1.46 (17 Oct 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +dd-rescue-1.28.ebuild,
+  +dd-rescue-1.33.ebuild, +dd-rescue-1.40.ebuild, +dd-rescue-1.44.ebuild,
+  +dd-rescue-1.45.ebuild, +dd-rescue-1.46.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  17 Oct 2014; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.46.ebuild:
-  Version bump #524860 by jospezial.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Jun 2014; Joshua Kinard <kumba@gentoo.org> metadata.xml:
-  Fixed local USE flag description, per #514738.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*dd-rescue-1.45 (01 Jun 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  01 Jun 2014; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.45.ebuild,
-  metadata.xml:
-  Version bump. Add USE flags for automagic deps #511858 by Juergen Rose.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*dd-rescue-1.44 (28 May 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 May 2014; Lars Wendler <polynomial-c@gentoo.org> +dd-rescue-1.44.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jan 2014; Lars Wendler <polynomial-c@gentoo.org> -dd-rescue-1.10.ebuild,
-  -dd-rescue-1.24.ebuild, -dd-rescue-1.25.ebuild:
-  Removed old versions and files.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*dd-rescue-1.40 (28 Aug 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Aug 2013; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.40.ebuild:
-  Version bump #479608 by Jonas Stein.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*dd-rescue-1.33 (11 Jun 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Jun 2013; Tony Vroon <chainsaw@gentoo.org> +dd-rescue-1.33.ebuild:
-  Version bump, as requested by Agostino "ago" Sarubbo in bug #454534. Adds a
-  manpage and support for double, triple & quadruple data overwrite.
+*dd-rescue-1.99 (09 Sep 2015)
 
-  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.28.ebuild:
-  Stable for x86, wrt bug #441530
+  09 Sep 2015; Lars Wendler <polynomial-c@gentoo.org> +dd-rescue-1.99.ebuild,
+  +files/dd_rescue-1.99-test_fix.patch:
+  Bump to version 1.99
 
-  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.28.ebuild:
-  Stable for ppc, wrt bug #441530
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  09 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> dd-rescue-1.28.ebuild:
-  Stable on amd64, wrt bug #441530
+  09 Sep 2015; Lars Wendler <polynomial-c@gentoo.org> -dd-rescue-1.33.ebuild,
+  -dd-rescue-1.40.ebuild, -dd-rescue-1.44.ebuild, -dd-rescue-1.45.ebuild:
+  Removed old.
 
-  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> dd-rescue-1.25.ebuild,
-  dd-rescue-1.28.ebuild:
-  Remanifest
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> dd-rescue-1.10.ebuild,
-  dd-rescue-1.24.ebuild:
-  Move to ~sparc
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.46.ebuild:
+  amd64 stable wrt bug #560076
 
-*dd-rescue-1.28 (28 Aug 2012)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  28 Aug 2012; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.28.ebuild:
-  Version bump.
+  20 Sep 2015; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.46.ebuild:
+  x86 stable wrt bug #560076
 
-  10 Aug 2012; Johannes Huber <johu@gentoo.org> dd-rescue-1.25.ebuild:
-  Stable for x86, wrt bug #422209
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  08 Aug 2012; Brent Baude <ranger@gentoo.org> dd-rescue-1.25.ebuild:
-  Marking dd-rescue-1.25 ppc for bug 422209
+  22 Sep 2015; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.46.ebuild:
+  ppc stable wrt bug #560076
 
-  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> dd-rescue-1.25.ebuild:
-  Stable on amd64 wrt bug #422209
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  24 May 2012; Mike Frysinger <vapier@gentoo.org> dd-rescue-1.10.ebuild,
-  dd-rescue-1.24.ebuild, dd-rescue-1.25.ebuild:
-  Inherit flag-o-matic for append-ldflags, and use that rather than append-
-  flags.
-
-  04 Feb 2012; Tim Harder <radhermit@gentoo.org>
-  -files/dd-rescue-1.14-ldflags.patch:
-  Remove old patch.
-
-  04 Feb 2012; Tim Harder <radhermit@gentoo.org> -dd-rescue-1.14-r1.ebuild,
-  -dd-rescue-1.23.ebuild:
-  Remove old.
-
-*dd-rescue-1.25 (04 Feb 2012)
-
-  04 Feb 2012; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.25.ebuild:
-  Version bump.
-
-*dd-rescue-1.24 (05 Dec 2011)
-
-  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.24.ebuild:
-  Version bump. Update to EAPI 4.
-
-  19 Nov 2010; Justin Lecher <jlec@gentoo.org> dd-rescue-1.23.ebuild:
-  Import Prefix Changes
-
-*dd-rescue-1.23 (17 Nov 2010)
-
-  17 Nov 2010; Diego E. Pettenò <flameeyes@gentoo.org> -dd-rescue-1.11.ebuild,
-  -dd-rescue-1.12.ebuild, -dd-rescue-1.14.ebuild, +dd-rescue-1.23.ebuild:
-  Version bump (closes bug #340415); avoid using patch for fixing LDFLAGS;
-  respect CC (solves half of the original bug #212296); optionally use the
-  fallocate-capable version if using GNU/Linux.
-
-*dd-rescue-1.14-r1 (17 Oct 2010)
-
-  17 Oct 2010; <chainsaw@gentoo.org> +dd-rescue-1.14-r1.ebuild,
-  +files/dd-rescue-1.14-ldflags.patch:
-  Instill LDFLAGS respect into build system. Closes bug #337475 by Diego
-  Elio "Flameeyes" Pettenò.
-
-  19 Sep 2009; Robin H. Johnson <robbat2@gentoo.org> dd-rescue-1.14.ebuild:
-  Adding ~arm support. Tested on mv78100.arm.dev.gentoo.org thanks to
-  Marvell.
-
-*dd-rescue-1.14 (30 Sep 2007)
-
-  30 Sep 2007; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.14.ebuild:
-  Version bump #193644 by ph.
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-*dd-rescue-1.12 (29 Nov 2006)
-
-  29 Nov 2006; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.12.ebuild:
-  Version bump #156555 by PaX Team.
-
-  28 Feb 2006; Joshua Kinard <kumba@gentoo.org> dd-rescue-1.11.ebuild:
-  Added ~mips to KEYWORDS.
-
-*dd-rescue-1.11 (12 Aug 2005)
-
-  12 Aug 2005; Mike Frysinger <vapier@gentoo.org> +dd-rescue-1.11.ebuild:
-  Version bump #87945 by Alexandru Toma.
-
-  26 Oct 2004; Mike Frysinger <vapier@gentoo.org> dd-rescue-1.10.ebuild:
-  USE=static support #68615 by Martin von Gagern.
-
-*dd-rescue-1.10 (04 Sep 2004)
-
-  04 Sep 2004; Sven Wegener <swegener@gentoo.org> +dd-rescue-1.10.ebuild:
-  Version bump.
-
-  05 Jun 2004; David Holm <dholm@gentoo.org> dd-rescue-1.03.ebuild:
-  Added to ~ppc.
-
-*dd-rescue-1.03 (02 Jun 2004)
-
-  02 Jun 2004; Daniel Ahlberg <aliz@gentoo.org> dd-rescue-1.03.ebuild:
-  Version bump, found by Alexandru Toma <flash3001@yahoo.com> in #52431.
-
-*dd-rescue-1.02 (15 Sep 2003)
-
-  15 Sep 2003; Seemant Kulleen <seemant@gentoo.org> dd_rescue-1.02.ebuild:
-  moved to sys-fs
-
-  24 Aug 2003; Jason Wever <weeve@gentoo.org> dd_rescue-1.02.ebuild:
-  Marked stable for sparc.
-
-  29 May 2003; Jason Wever <weeve@gentoo.org> dd_rescue-1.02.ebuild:
-  Added ~sparc to keywords.
-
-*dd-rescue-1.02 (13 Feb 2003)
-
-  13 Feb 2003; Daniel Ahlberg <aliz@gentoo.org> :
-  Initial import. Ebuild submitted by Matthias Schwarzott <zzam@gmx.de> in #15002.

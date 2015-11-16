@@ -1,92 +1,57 @@
 # ChangeLog for dev-java/xmlrpc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xmlrpc/ChangeLog,v 1.24 2015/07/06 14:02:04 monsieurp Exp $
+# (auto-generated from git log)
 
-  06 Jul 2015; Patrice Clement <monsieurp@gentoo.org> xmlrpc-3.1.3.ebuild:
-  Also, mend test classpath.
+*xmlrpc-3.1.3 (09 Aug 2015)
 
-  06 Jul 2015; Patrice Clement <monsieurp@gentoo.org> xmlrpc-3.1.3.ebuild:
-  Remove broken test. Sort test dependencies. Fix bug 554050.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xmlrpc-2.0.1.build.xml.patch, +metadata.xml, +xmlrpc-3.1.3.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Jun 2015; Patrice Clement <monsieurp@gentoo.org> -xmlrpc-2.0.1.ebuild:
-  Remove vulnerable version. Fix security bug 385811.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Jun 2015; Agostino Sarubbo <ago@gentoo.org> xmlrpc-3.1.3.ebuild:
-  Stable for ppc, wrt bug #551992
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Jun 2015; Agostino Sarubbo <ago@gentoo.org> xmlrpc-3.1.3.ebuild:
-  Stable for x86, wrt bug #551992
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jun 2015; Agostino Sarubbo <ago@gentoo.org> xmlrpc-3.1.3.ebuild:
-  Stable for amd64, wrt bug #551992
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*xmlrpc-3.1.3 (30 Aug 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  xmlrpc-3.1.3.ebuild:
+  Use https by default
 
-  30 Aug 2014; Johann Schmitz <ercpe@gentoo.org> +xmlrpc-3.1.3.ebuild:
-  Version bump wrt bug #339400
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Nov 2007; Petteri Räty <betelgeuse@gentoo.org>
-  -xmlrpc-1.2_beta1-r1.ebuild, -xmlrpc-1.2_beta1-r2.ebuild:
-  Delete old version.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Nov 2007; Lars Weiler <pylon@gentoo.org> xmlrpc-2.0.1.ebuild:
-  stable ppc, bug #197476
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Nov 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  xmlrpc-2.0.1.ebuild:
-  amd64 stable, bug #197476.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Oct 2007; Christian Faulhammer <opfer@gentoo.org> xmlrpc-2.0.1.ebuild:
-  stable x86, bug 197476
+  Bug: https://bugs.gentoo.org/552720
 
-  07 May 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  xmlrpc-1.2_beta1-r1.ebuild:
-  ppc stable
-
-*xmlrpc-2.0.1 (24 Apr 2007)
-
-  24 Apr 2007; Vlastimil Babka <caster@gentoo.org>
-  +files/xmlrpc-2.0.1.build.xml.patch, +xmlrpc-2.0.1.ebuild:
-  Version bump with source, examples USE flags, and src_test.
-
-  05 Jan 2007; Vlastimil Babka <caster@gentoo.org>
-  xmlrpc-1.2_beta1-r1.ebuild, xmlrpc-1.2_beta1-r2.ebuild:
-  Convert einfo to elog.
-
-*xmlrpc-1.2_beta1-r2 (23 Jul 2006)
-
-  23 Jul 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +xmlrpc-1.2_beta1-r2.ebuild:
-  Migrated to Generation 2.
-
-  07 Oct 2005; Petteri Räty <betelgeuse@gentoo.org>
-  xmlrpc-1.2_beta1-r1.ebuild:
-  xmlrpc only needs ant-core, not the full ant. Removed installation of
-  License.txt.
-
-  22 Apr 2005; Simon Stelling <blubb@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  stable on amd64
-
-  20 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  added missing jikes dependency. see #78819.
-
-  22 Oct 2004; Dylan Carlson <absinthe@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  Keywords ~amd64.
-
-  18 Oct 2004; David Holm <dholm@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  Added to ~ppc.
-
-  16 Oct 2004; Thomas Matthijs <axxo@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  use java-pkg_dohtml instead of dohtml to also install the package-list in
-  case of api docs: #50740
-
-  30 Aug 2004; Chris Aniszczyk <zx@gentoo.org> xmlrpc-1.2_beta1.ebuild:
-  Marking stable x86
-
-  07 Aug 2004; Tom Martin <slarti@gentoo.org> :
-  Typo in DESCRIPTION: lightweigt -> lightweight. Bug 59717.
-
-*xmlrpc-1.2_beta1 (25 Jul 2004)
-
-  25 Jul 2004; <mkennedy@gentoo.org> +metadata.xml, +xmlrpc-1.2_beta1.ebuild:
-  Initial port.  Ebuild contributed by Matthew Kennedy <mkennedy@gentoo.org>

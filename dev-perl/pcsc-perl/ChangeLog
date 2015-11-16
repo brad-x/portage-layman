@@ -1,66 +1,56 @@
 # ChangeLog for dev-perl/pcsc-perl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/pcsc-perl/ChangeLog,v 1.11 2014/08/05 11:12:46 zlogene Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Aug 2014; Mikle Kolyada <zlogene@gentoo.org> pcsc-perl-1.4.13-r1.ebuild:
-  Fix DESCRIPTION
+*pcsc-perl-1.4.13-r1 (09 Aug 2015)
 
-  05 Nov 2013; Mikle Kolyada <zlogene@gentoo.org> -pcsc-perl-1.4.11.ebuild,
-  -pcsc-perl-1.4.12.ebuild, -pcsc-perl-1.4.13.ebuild:
-  drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pcsc-perl-1.4.13-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*pcsc-perl-1.4.13-r1 (27 Aug 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Aug 2013; Ian Delaney <idella4@gentoo.org> +pcsc-perl-1.4.13-r1.ebuild:
-  revbump -> EAPI 5
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*pcsc-perl-1.4.13 (01 Apr 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  01 Apr 2013; Diego E. Pettenò <flameeyes@gentoo.org> +pcsc-perl-1.4.13.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*pcsc-perl-1.4.12 (18 Oct 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +pcsc-perl-1.4.12.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -pcsc-perl-1.4.10.ebuild, metadata.xml:
-  Remove old version since we're going to need pcsc-lite-1.6.6 stable soon.
-  Move the package to crypto herd fully.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pcsc-perl-1.4.11 (06 Dec 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -pcsc-perl-1.4.7.ebuild, -pcsc-perl-1.4.9.ebuild, pcsc-perl-1.4.10.ebuild,
-  +pcsc-perl-1.4.11.ebuild:
-  Version bump to work with pcsc-lite 1.6.5; tweak dependencies for previous
-  verison. Remove older versions.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*pcsc-perl-1.4.10 (08 Oct 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  pcsc-perl-1.4.9.ebuild, +pcsc-perl-1.4.10.ebuild:
-  Version bump for pcsc-perl to build with pcsc 1.6.4; tweak dependencies on
-  1.4.9 to require a previous version.
-
-*pcsc-perl-1.4.9 (26 Jul 2010)
-
-  26 Jul 2010; Steve Arnold <nerdboy@gentoo.org> pcsc-perl-1.4.7.ebuild,
-  +pcsc-perl-1.4.9.ebuild:
-  Updated to latest upstream to match new pcsc-lite package (fixes bug 
-  326343).
-
-  07 Feb 2010; Torsten Veller <tove@gentoo.org> pcsc-perl-1.4.7.ebuild:
-  Drop ~mips (#142036)
-
-*pcsc-perl-1.4.7 (11 Jan 2009)
-
-  11 Jan 2009; Steve Arnold <nerdboy@gentoo.org> +metadata.xml,
-  +pcsc-perl-1.4.7.ebuild:
-  New ebuild for pcsc-perl. Ebuild written by me. Very handy for setting 
-  up and using the PC/SC smartcard tools that go with the daemon package.  
-  Tested with a USB smartcard reader (Axalto Reflex USB v3).  The older 
-  reader I tried (mentioned on several forum posts) won't work without 
-  a firmware update.

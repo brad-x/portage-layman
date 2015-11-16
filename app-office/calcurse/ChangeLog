@@ -1,164 +1,78 @@
 # ChangeLog for app-office/calcurse
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/calcurse/ChangeLog,v 1.39 2014/12/31 14:51:12 kensington Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*calcurse-3.2.1 (31 Dec 2014)
+*calcurse-3.2.1 (09 Aug 2015)
+*calcurse-3.1.4 (09 Aug 2015)
 
-  31 Dec 2014; Michael Palimaka <kensington@gentoo.org> +calcurse-3.2.1.ebuild:
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +calcurse-3.1.4.ebuild,
+  +calcurse-3.2.1.ebuild, +files/calcurse-3.1.4-tinfo.patch, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*calcurse-4.0.0 (24 Oct 2015)
+
+  24 Oct 2015; Patrice Clement <monsieurp@gentoo.org> +calcurse-4.0.0.ebuild,
+  +files/calcurse-4.0.0-tinfo.patch:
   Version bump.
 
-  23 Nov 2014; Jeroen Roovers <jer@gentoo.org>
-  +files/calcurse-3.1.4-tinfo.patch, calcurse-3.1.4.ebuild:
-  Fix building against sys-libs/ncurses[tinfo] (bug #529804). Remove unneeded
-  IUSE linguas.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  04 Jul 2013; Michael Palimaka <kensington@gentoo.org> -calcurse-3.1.1.ebuild,
-  -calcurse-3.1.2.ebuild, -calcurse-3.1.3.ebuild:
-  Remove old.
+  24 Oct 2015; Patrice Clement <monsieurp@gentoo.org> calcurse-4.0.0.ebuild:
+  Fix header.
 
-  04 Jul 2013; Agostino Sarubbo <ago@gentoo.org> calcurse-3.1.4.ebuild:
-  Stable for x86, wrt bug #470340
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  04 Jun 2013; Chema Alonso <nimiux@gentoo.org> calcurse-3.1.4.ebuild:
-  Stable for amd64 wrt bug #470340
+  24 Oct 2015; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Take over maintainership.
 
-  01 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #151880
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  23 Mar 2013; Agostino Sarubbo <ago@gentoo.org> calcurse-3.1.3.ebuild:
-  Stable for x86, wrt bug #461942
-
-  16 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> calcurse-3.1.3.ebuild:
-  Stable on amd64, wrt bug #461942
-
-  11 Mar 2013; Jeroen Roovers <jer@gentoo.org> calcurse-3.1.4.ebuild:
-  Remove unused eclass inherit.
-
-*calcurse-3.1.4 (11 Mar 2013)
-
-  11 Mar 2013; Jeroen Roovers <jer@gentoo.org> +calcurse-3.1.4.ebuild:
-  Version bump.
-
-*calcurse-3.1.3 (05 Feb 2013)
-
-  05 Feb 2013; Jeroen Roovers <jer@gentoo.org> +calcurse-3.1.3.ebuild:
-  Version bump.
-
-  30 Jan 2013; Jeroen Roovers <jer@gentoo.org> -calcurse-2.9.2.ebuild,
-  -calcurse-3.0.0.ebuild:
-  Old.
-
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> calcurse-3.1.1.ebuild:
-  Stable for x86, wrt bug #450902
-
-  19 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> calcurse-3.1.1.ebuild:
-  Stable on amd64, wrt bug #450902
-
-*calcurse-3.1.2 (08 Jan 2013)
-
-  08 Jan 2013; Jeroen Roovers <jer@gentoo.org> calcurse-2.9.2.ebuild,
-  calcurse-3.0.0.ebuild, calcurse-3.1.1.ebuild, +calcurse-3.1.2.ebuild:
-  Fix license. Version bump.
-
-*calcurse-3.1.1 (10 Dec 2012)
-
-  10 Dec 2012; Jeroen Roovers <jer@gentoo.org> +calcurse-3.1.1.ebuild:
-  Version bump.
-
-  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> calcurse-3.0.0.ebuild:
-  Remove duplicate linguas_* entries.
-
-  23 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> calcurse-3.0.0.ebuild:
-  add missing test to IUSE
-
-*calcurse-3.0.0 (23 Aug 2012)
-
-  23 Aug 2012; Jeroen Roovers <jer@gentoo.org> +calcurse-3.0.0.ebuild:
-  Version bump.
-
-  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> -calcurse-2.7.ebuild:
-  Old.
-
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> calcurse-2.9.2.ebuild:
-  x86 stable wrt bug #403903
-
-  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> calcurse-2.9.2.ebuild:
-  Stable for amd64, wrt bug #403903
-
-  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> -calcurse-2.3.ebuild,
-  -files/calcurse-2.3-cflags.patch, -files/calcurse-2.3-locale.patch,
-  -calcurse-2.4.ebuild, -calcurse-2.5.ebuild:
-  Old.
-
-*calcurse-2.9.2 (04 Dec 2011)
-
-  04 Dec 2011; Cédric Krier <cedk@gentoo.org> +calcurse-2.9.2.ebuild:
-  Version bump
-
-  18 May 2010; Kenneth Prugh <ken69267@gentoo.org> calcurse-2.7.ebuild:
-  amd64 stable, bug #318783
-
-  17 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> calcurse-2.7.ebuild:
-  x86 stable wrt bug #318783
-
-*calcurse-2.7 (28 Feb 2010)
-
-  28 Feb 2010; Cédric Krier <cedk@gentoo.org> +calcurse-2.7.ebuild:
-  Version bump
-
-  25 Jan 2009; Markus Meier <maekke@gentoo.org> calcurse-2.3.ebuild:
-  amd64/x86 stable, bug #256301
-
-  25 Jan 2009; Cédric Krier <cedk@gentoo.org> calcurse-2.4.ebuild:
-  Remove unused inherit.autotools
-
-*calcurse-2.5 (25 Jan 2009)
-
-  25 Jan 2009; Cédric Krier <cedk@gentoo.org> +calcurse-2.5.ebuild:
-  Version bump
-
-*calcurse-2.4 (28 Dec 2008)
-
-  28 Dec 2008; Cédric Krier <cedk@gentoo.org> +calcurse-2.4.ebuild:
-  Version bump
-
-  01 Nov 2008; Cédric Krier <cedk@gentoo.org>
-  -files/calcurse-2.1-cflags.patch, +files/calcurse-2.3-locale.patch,
-  -calcurse-2.1.ebuild, calcurse-2.3.ebuild:
-  Fix for missing locale.h include for bug #244739 and remove old
-
-*calcurse-2.3 (25 Oct 2008)
-
-  25 Oct 2008; Cédric Krier <cedk@gentoo.org>
-  +files/calcurse-2.3-cflags.patch, calcurse-2.1.ebuild,
-  +calcurse-2.3.ebuild:
-  Version bump and fix IUSE
-
-  25 Oct 2008; Cédric Krier <cedk@gentoo.org>
-  +files/calcurse-2.1-cflags.patch, calcurse-2.1.ebuild:
-  Fix CFLAGS for bug #240119 and add missing IUSE
-
-*calcurse-2.1 (17 May 2008)
-
-  17 May 2008; Cédric Krier <cedk@gentoo.org> -calcurse-1.7.ebuild,
-  -calcurse-1.8.ebuild, -calcurse-2.0.ebuild, +calcurse-2.1.ebuild:
-  Version bump
-
-*calcurse-2.0 (08 Mar 2008)
-
-  08 Mar 2008; Cédric Krier <cedk@gentoo.org> +calcurse-2.0.ebuild:
-  Version bump
-
-  22 Sep 2007; Wulf C. Krueger <philantrop@gentoo.org> calcurse-1.8.ebuild:
-  Keyworded ~amd64 as per bug 189034.
-
-*calcurse-1.8 (29 May 2007)
-
-  29 May 2007; Cédric Krier <cedk@gentoo.org> +calcurse-1.8.ebuild:
-  Version bump
-
-*calcurse-1.7 (01 May 2007)
-
-  01 May 2007; Cedric Krier <cedk@gentoo.org> +metadata.xml,
-  +calcurse-1.7.ebuild:
-  New ebuild for bug #111327, thanks to Tomoyuki Sakurai

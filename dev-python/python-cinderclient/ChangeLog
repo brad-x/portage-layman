@@ -1,103 +1,108 @@
 # ChangeLog for dev-python/python-cinderclient
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-cinderclient/ChangeLog,v 1.20 2015/07/24 05:32:58 prometheanfire Exp $
+# (auto-generated from git log)
 
-*python-cinderclient-1.1.2 (24 Jul 2015)
+*python-cinderclient-1.2.1-r1 (09 Aug 2015)
+*python-cinderclient-1.2.1 (09 Aug 2015)
+*python-cinderclient-1.1.2 (09 Aug 2015)
+*python-cinderclient-1.1.1 (09 Aug 2015)
+*python-cinderclient-1.0.9 (09 Aug 2015)
 
-  24 Jul 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.1.2.ebuild:
-  bup
-
-*python-cinderclient-1.2.1-r1 (21 Jul 2015)
-
-  21 Jul 2015; Matthew Thode <prometheanfire@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +python-cinderclient-1.0.9.ebuild, +python-cinderclient-1.1.1.ebuild,
+  +python-cinderclient-1.1.2.ebuild, +python-cinderclient-1.2.1.ebuild,
   +python-cinderclient-1.2.1-r1.ebuild:
-  removing argparse from requirements.txt
+  proj/gentoo: Initial commit
 
-  08 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  python-cinderclient-1.1.1.ebuild:
-  x86 stable wrt bug #554114
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  python-cinderclient-1.1.1.ebuild:
-  amd64 stable wrt bug #554114
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*python-cinderclient-1.2.1 (30 May 2015)
+  23 Aug 2015; Matthew Thode <prometheanfire@gentoo.org>
+  python-cinderclient-1.1.2.ebuild:
+  fixing typo in dep of python-keystoneclient
 
-  30 May 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.2.1.ebuild:
-  bup
+  Package-Manager: portage-2.2.20.1
 
-*python-cinderclient-1.1.1 (18 Nov 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Nov 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.1.1.ebuild:
-  bup
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Aug 2014; Matthew Thode <prometheanfire@gentoo.org>
-  -python-cinderclient-1.0.7.ebuild:
-  removing old and jankey
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org>
-  python-cinderclient-1.0.7.ebuild, python-cinderclient-1.0.9.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+  24 Aug 2015; Agostino Sarubbo <ago@gentoo.org>
+  python-cinderclient-1.1.2.ebuild:
+  amd64 stable wrt bug #558448
 
-*python-cinderclient-1.0.9 (27 Apr 2014)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  27 Apr 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.0.9.ebuild, -python-cinderclient-1.0.5-r1.ebuild:
-  updating clients
+  24 Aug 2015; Agostino Sarubbo <ago@gentoo.org>
+  python-cinderclient-1.1.2.ebuild:
+  x86 stable wrt bug #558448
 
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org>
-  python-cinderclient-1.0.7.ebuild:
-  Keyword ~amd64-linux ~x86-linux
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*python-cinderclient-1.0.7 (30 Nov 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Nov 2013; Ian Delaney <idella4@gentoo.org>
-  +python-cinderclient-1.0.7.ebuild, python-cinderclient-1.0.5-r1.ebuild:
-  bump; update deps, test phase
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Nov 2013; Ian Delaney <idella4@gentoo.org> metadata.xml,
-  python-cinderclient-1.0.5-r1.ebuild:
-  switch herd, unrestrict test & update test phase
+  Bug: https://bugs.gentoo.org/552720
 
-*python-cinderclient-1.0.5-r1 (13 Sep 2013)
+  26 Aug 2015; Matthew Thode <prometheanfire@gentoo.org>
+  -python-cinderclient-1.1.1.ebuild:
+  project/openstack: cleaning up old ebuilds
 
-  13 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.0.5-r1.ebuild, -python-cinderclient-1.0.4.ebuild,
-  -python-cinderclient-1.0.5.ebuild:
-  cinderclient is now distutils-r1 happy
+  Package-Manager: portage-2.2.20.1
 
-*python-cinderclient-1.0.5 (11 Aug 2013)
+*python-cinderclient-1.3.1 (03 Sep 2015)
 
-  11 Aug 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.0.5.ebuild, -python-cinderclient-1.0.2.ebuild:
-  just an update for cinderclient
+  03 Sep 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +python-cinderclient-1.3.1.ebuild:
+  bup for liberty
 
-*python-cinderclient-1.0.4 (16 May 2013)
+  10 Nov 2015; Agostino Sarubbo <ago@gentoo.org>
+  python-cinderclient-1.3.1.ebuild:
+  amd64 stable wrt bug #564826
 
-  16 May 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.0.4.ebuild:
-  updating cinderclient to remove conflict with novaclient
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  19 Mar 2013; Matthew Thode <prometheanfire@gentoo.org>
-  python-cinderclient-1.0.2.ebuild:
-  changed the description in the ebuild
+  10 Nov 2015; Agostino Sarubbo <ago@gentoo.org>
+  python-cinderclient-1.3.1.ebuild:
+  x86 stable wrt bug #564826
 
-  21 Jan 2013; Matthew Thode <prometheanfire@gentoo.org>
-  python-cinderclient-1.0.2.ebuild:
-  the requests dep was inverted
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*python-cinderclient-1.0.2 (21 Jan 2013)
-
-  21 Jan 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-cinderclient-1.0.2.ebuild, +metadata.xml:
-  inital add of python-cinderclient

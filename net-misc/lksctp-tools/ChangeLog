@@ -1,204 +1,76 @@
 # ChangeLog for net-misc/lksctp-tools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/lksctp-tools/ChangeLog,v 1.50 2015/08/06 07:15:09 ago Exp $
+# (auto-generated from git log)
 
-  06 Aug 2015; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.16.ebuild:
-  Stable for x86, wrt bug #550584
+*lksctp-tools-1.0.16 (09 Aug 2015)
+*lksctp-tools-1.0.13 (09 Aug 2015)
 
-  03 Aug 2015; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.16.ebuild:
-  Stable for amd64, wrt bug #550584
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lksctp-tools-1.0.13-build.patch,
+  +files/lksctp-tools-1.0.8-prefix.patch, +lksctp-tools-1.0.13.ebuild,
+  +lksctp-tools-1.0.16.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Jul 2015; Tobias Klausmann <klausman@gentoo.org>
-  lksctp-tools-1.0.16.ebuild:
-  Stable on alpha, bug 550584
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Nov 2014; Jeroen Roovers <jer@gentoo.org> lksctp-tools-1.0.16.ebuild:
-  Stable for HPPA (bug #505942).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Nov 2014; Mike Frysinger <vapier@gentoo.org> lksctp-tools-1.0.16.ebuild:
-  Add arm/arm64/hppa/ia64/m68k/s390/sh love #529436 by Michał Górny.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Sep 2014; Joshua Kinard <kumba@gentoo.org> lksctp-tools-1.0.16.ebuild:
-  Added ~mips to KEYWORDS.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*lksctp-tools-1.0.16 (25 Mar 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Mar 2014; Lars Wendler <polynomial-c@gentoo.org>
-  -lksctp-tools-1.0.11-r1.ebuild, +lksctp-tools-1.0.16.ebuild:
-  Version bump (bug #501488 by OGINO Masanori). Removed old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for sparc, wrt bug #464468
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for x86, wrt bug #464468
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for alpha, wrt bug #464468
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for ppc64, wrt bug #464468
+  Bug: https://bugs.gentoo.org/552720
 
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for ppc, wrt bug #464468
+  06 Sep 2015; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.16.ebuild:
+  ppc stable wrt bug #550584
 
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Stable for amd64, wrt bug #464468
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  04 May 2013; Mike Frysinger <vapier@gentoo.org> lksctp-tools-1.0.13.ebuild:
-  Fix building with newer automake.
+  18 Sep 2015; Jeroen Roovers <jer@gentoo.org> lksctp-tools-1.0.16.ebuild:
+  Stable for PPC64 (bug #550584).
 
-*lksctp-tools-1.0.13 (24 Feb 2013)
+  Package-Manager: portage-2.2.20.1
 
-  24 Feb 2013; Diego E. Pettenò <flameeyes@gentoo.org>
-  +files/lksctp-tools-1.0.13-build.patch, +lksctp-tools-1.0.13.ebuild,
-  -lksctp-tools-1.0.12.ebuild:
-  Version bump; move to autotools-utils; fix LICENSE.
+  21 Sep 2015; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.16.ebuild:
+  sparc stable wrt bug #550584
 
-*lksctp-tools-1.0.12 (23 Jan 2013)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="sparc"
 
-  23 Jan 2013; Diego E. Pettenò <flameeyes@gentoo.org>
-  +lksctp-tools-1.0.12.ebuild, -lksctp-tools-1.0.10.ebuild:
-  Version bump.
-
-  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> lksctp-tools-1.0.11-r1.ebuild:
-  alpha/sparc stable wrt #400449
-
-  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  lksctp-tools-1.0.11-r1.ebuild:
-  x86 stable wrt bug #400449
-
-  02 Mar 2012; Brent Baude <ranger@gentoo.org> lksctp-tools-1.0.11-r1.ebuild:
-  Marking lksctp-tools-1.0.11-r1 ppc64 for bug 400449
-
-  01 Mar 2012; Brent Baude <ranger@gentoo.org> lksctp-tools-1.0.11-r1.ebuild:
-  Marking lksctp-tools-1.0.11-r1 ppc for bug 400449
-
-  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> lksctp-tools-1.0.11-r1.ebuild:
-  Stable for amd64, wrt bug #400449
-
-  29 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  lksctp-tools-1.0.11-r1.ebuild:
-  Fix epatch call.
-
-*lksctp-tools-1.0.11-r1 (29 Aug 2011)
-
-  29 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  -lksctp-tools-1.0.11.ebuild, +lksctp-tools-1.0.11-r1.ebuild:
-  Revision bump: disable strict aliasing until upstream fixes it; add
-  static-libs USE flag.
-
-  21 Aug 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -files/lksctp-tools-1.0.6-as-needed.patch,
-  -files/lksctp-tools-1.0.8-as-needed.patch:
-  Drop unused files.
-
-  12 Jul 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -lksctp-tools-1.0.6.ebuild, -lksctp-tools-1.0.8.ebuild:
-  Drop older versions.
-
-  11 Jul 2010; Brent Baude <ranger@gentoo.org> lksctp-tools-1.0.10.ebuild:
-  stable ppc64, bug 322321
-
-  26 Jun 2010; <nixnut@gentoo.org> lksctp-tools-1.0.10.ebuild:
-  ppc stable #322321
-
-  24 Jun 2010; Pacho Ramos <pacho@gentoo.org> lksctp-tools-1.0.10.ebuild:
-  stable amd64, bug 322321
-
-  20 Jun 2010; Raúl Porcel <armin76@gentoo.org> lksctp-tools-1.0.10.ebuild:
-  alpha/sparc stable wrt #322321
-
-  14 Jun 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  lksctp-tools-1.0.10.ebuild:
-  x86 stable wrt bug #322321
-
-*lksctp-tools-1.0.11 (01 Jun 2010)
-
-  01 Jun 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -lksctp-tools-1.0.1.ebuild, -lksctp-tools-1.0.2.ebuild,
-  -lksctp-tools-1.0.4.ebuild, +lksctp-tools-1.0.11.ebuild, metadata.xml:
-  Version bump; cleanup old versions; avoid installing static library for
-  preloadable entry, remove libtool files.
-
-*lksctp-tools-1.0.10 (25 Apr 2009)
-
-  25 Apr 2009; Patrick Lauer <patrick@gentoo.org>
-  +lksctp-tools-1.0.10.ebuild:
-  Bump to 1.0.10, fixes #236473
-
-  24 Aug 2008; Markus Rothe <corsair@gentoo.org> lksctp-tools-1.0.8.ebuild:
-  Stable on ppc64; bug #231553
-
-  19 Aug 2008; Peter Volkov <pva@gentoo.org> lksctp-tools-1.0.8.ebuild:
-  amd64 stable, bug #231553
-
-  16 Aug 2008; Raúl Porcel <armin76@gentoo.org> lksctp-tools-1.0.8.ebuild:
-  alpha/sparc/x86 stable wrt #231553
-
-  12 Aug 2008; Ferris McCormick <fmccor@gentoo.org>
-  lksctp-tools-1.0.8.ebuild:
-  Sparc stable, needed for Bug #231553 (this package builds lots of tests but
-  doesn't do anything with them).
-
-  19 Jun 2008; Friedrich Oslage <bluebird@gentoo.org>
-  lksctp-tools-1.0.8.ebuild:
-  Add ~sparc keyword, bug #226085
-
-  15 Jun 2008; Tobias Klausmann <klausman@gentoo.org>
-  lksctp-tools-1.0.8.ebuild:
-  Keyworded on alpha, bug #226085
-
-  12 Jun 2008; Brent Baude <ranger@gentoo.org> lksctp-tools-1.0.8.ebuild:
-  Marking lksctp-tools-1.0.8 ~ppc64 for bug 226085
-
-*lksctp-tools-1.0.8 (16 Mar 2008)
-
-  16 Mar 2008; Mike Frysinger <vapier@gentoo.org>
-  +files/lksctp-tools-1.0.8-as-needed.patch,
-  +files/lksctp-tools-1.0.8-prefix.patch, +lksctp-tools-1.0.8.ebuild:
-  Version bump and fix withsctp #181602.
-
-  14 Jan 2008; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
-  Metadata update.
-
-  11 Jun 2007; nixnut <nixnut@gentoo.org> lksctp-tools-1.0.6.ebuild:
-  Stable on ppc wrt bug 181602
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*lksctp-tools-1.0.6 (28 Sep 2006)
-
-  28 Sep 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/lksctp-tools-1.0.6-as-needed.patch, +lksctp-tools-1.0.6.ebuild:
-  Version bump, bug #145992, with as-needed fix.
-
-*lksctp-tools-1.0.4 (12 Dec 2005)
-
-  12 Dec 2005; Robin H. Johnson <robbat2@gentoo.org>
-  +lksctp-tools-1.0.4.ebuild:
-  Version bump.
-
-  25 Jun 2005; Sven Wegener <swegener@gentoo.org> lksctp-tools-1.0.1.ebuild,
-  lksctp-tools-1.0.2.ebuild:
-  Removed useless || dependency.
-
-*lksctp-tools-1.0.2 (01 May 2005)
-
-  01 May 2005; Robin H. Johnson <robbat2@gentoo.org>
-  +lksctp-tools-1.0.2.ebuild:
-  Version bump.
-
-  01 May 2005; Robin H. Johnson <robbat2@gentoo.org>
-  lksctp-tools-1.0.1.ebuild:
-  Fix DESC bug #91051, move to stable x86.
-
-  11 Jan 2005; John Mylchreest <johnm@gentoo.org> lksctp-tools-1.0.1.ebuild:
-  fixing linux-headers DEPEND for 2005.0. can we get away with a virtual?
-
-*lksctp-tools-1.0.1 (23 Nov 2004)
-
-  23 Nov 2004; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +lksctp-tools-1.0.1.ebuild:
-  Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>

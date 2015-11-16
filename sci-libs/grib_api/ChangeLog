@@ -1,78 +1,59 @@
 # ChangeLog for sci-libs/grib_api
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/grib_api/ChangeLog,v 1.16 2015/04/08 18:49:15 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> grib_api-1.11.0.ebuild:
-  Drop old Python implementations
+*grib_api-1.11.0 (09 Aug 2015)
+*grib_api-1.9.16 (09 Aug 2015)
 
-  28 Nov 2014; Pacho Ramos <pacho@gentoo.org> grib_api-1.11.0.ebuild:
-  Support python 3.4
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/grib_api-1.9.16-autotools.patch, +files/grib_api-1.9.16-jpeg2k.patch,
+  +files/grib_api-1.9.9-ieeefloat.patch, +grib_api-1.9.16.ebuild,
+  +grib_api-1.11.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*grib_api-1.11.0 (28 Oct 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Oct 2013; Sébastien Fabbro <bicatali@gentoo.org> +grib_api-1.11.0.ebuild,
-  metadata.xml:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Jun 2013; Michael Weber <xmw@gentoo.org> grib_api-1.9.16.ebuild:
-  Depend on SLOT=0 of media-libs/openjpeg (bug 440086)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  -files/grib_api-1.9.5-32bit.patch, -files/grib_api-1.9.5-autotools.patch,
-  -files/grib_api-1.9.9-autotools.patch, grib_api-1.9.16.ebuild:
-  Do not build for python-3 (bug #445047)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/grib_api-1.9.16-jpeg2k.patch, -grib_api-1.9.5-r1.ebuild,
-  -grib_api-1.9.9-r1.ebuild, grib_api-1.9.16.ebuild, metadata.xml:
-  Fixed a shell script, jpeg2k (bug #413703, thanks jer), and keyword
-  amd64-linux x86-linux
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*grib_api-1.9.16 (18 Apr 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +grib_api-1.9.16.ebuild,
-  +files/grib_api-1.9.16-autotools.patch:
-  Version bump. Updated autotools patch. Perl flag removed since upstream does
-  not ship perl sources anymore
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*grib_api-1.9.9-r1 (27 Feb 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> -grib_api-1.9.9.ebuild,
-  +grib_api-1.9.9-r1.ebuild, files/grib_api-1.9.9-autotools.patch:
-  Install samples in proper FHS directory. Python routines now installed
-  without changing PYTHONPATH (bug #405177). Switchd to EAPI4
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Dec 2011; Justin Lecher <jlec@gentoo.org> grib_api-1.9.9.ebuild:
-  Fix for linker failure, #391797
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> grib_api-1.9.9.ebuild:
-  Fixed automagic and jpeg2k support, bug #391797
-
-*grib_api-1.9.9 (20 Nov 2011)
-
-  20 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> +grib_api-1.9.9.ebuild,
-  +files/grib_api-1.9.9-autotools.patch, +files/grib_api-1.9.9-ieeefloat.patch:
-  Version bump. Still patch the normal version since the autotools does not
-  have the perl bindings. Fix bug #378167, thanks tove.
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> grib_api-1.9.5-r1.ebuild:
-  Add dependency on virtual/fortran
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> grib_api-1.9.5-r1.ebuild:
-  Added fortran-2.eclass support
-
-  25 Apr 2011; Justin Lecher <jlec@gentoo.org> grib_api-1.9.5-r1.ebuild,
-  +files/grib_api-1.9.5-32bit.patch:
-  _FORTIFY_SOURCE indicates presence of overflow Fix, #351013
-
-*grib_api-1.9.5-r1 (21 Dec 2010)
-
-  21 Dec 2010; Sébastien Fabbro <bicatali@gentoo.org> -grib_api-1.9.5.ebuild,
-  +grib_api-1.9.5-r1.ebuild, files/grib_api-1.9.5-autotools.patch:
-  Fixed a bunch of bad enable/disable assumptions in the configure script
-
-*grib_api-1.9.5 (30 Nov 2010)
-
-  30 Nov 2010; Sébastien Fabbro <bicatali@gentoo.org> +grib_api-1.9.5.ebuild,
-  +files/grib_api-1.9.5-autotools.patch, +metadata.xml:
-  Initial import

@@ -1,193 +1,97 @@
 # ChangeLog for sys-apps/microcode-data
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/microcode-data/ChangeLog,v 1.36 2015/04/16 19:16:15 vapier Exp $
+# (auto-generated from git log)
 
-  16 Apr 2015; Mike Frysinger <vapier@gentoo.org>
-  microcode-data-20150121.ebuild:
-  Mark x86 stable #546182.
+*microcode-data-20150121 (09 Aug 2015)
+*microcode-data-20140913 (09 Aug 2015)
+*microcode-data-20140624 (09 Aug 2015)
+*microcode-data-20140430 (09 Aug 2015)
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> microcode-data-20150121.ebuild:
-  Stable for amd64, wrt bug #546182
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/intel-microcode2ucode.c, +metadata.xml,
+  +microcode-data-20140430.ebuild, +microcode-data-20140624.ebuild,
+  +microcode-data-20140913.ebuild, +microcode-data-20150121.ebuild:
+  proj/gentoo: Initial commit
 
-*microcode-data-20150121 (08 Feb 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Feb 2015; Markos Chandras <hwoarang@gentoo.org>
-  +microcode-data-20150121.ebuild:
-  Version bump. Thanks to Thomas D. Bug #537294
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*microcode-data-20140913 (17 Sep 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Sep 2014; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20140913.ebuild, -microcode-data-20130906.ebuild:
-  Update to new version and drop old version.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  microcode-data-20140430.ebuild:
-  x86 stable wrt bug #515604
+*microcode-data-20150121-r1 (11 Aug 2015)
 
-  11 Aug 2014; Chema Alonso <nimiux@gentoo.org> microcode-data-20140430.ebuild:
-  Stable for amd64 wrt bug #515604
+  11 Aug 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  +microcode-data-20150121-r1.ebuild:
+  microcode-data: add USE flags to control install of file sets #403119
 
-*microcode-data-20140624 (28 Jun 2014)
+  With newer kernels, there's no need to install the microcode.dat file
+  as they can automatically load the ucode files themselves.  Add USE
+  flags so people can avoid installing the parts they don't need.
 
-  28 Jun 2014; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20140624.ebuild, -microcode-data-20100209.ebuild,
-  -microcode-data-20101123.ebuild, -microcode-data-20110428.ebuild,
-  -microcode-data-20110915-r1.ebuild, -microcode-data-20110915.ebuild,
-  -microcode-data-20111110.ebuild, -microcode-data-20120606.ebuild,
-  -microcode-data-20130222.ebuild, -microcode-data-20140122.ebuild:
-  Version bump and remove older versions.
+  11 Aug 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  microcode-data-20150121-r1.ebuild:
+  microcode-data: add USE=initramfs #528712
 
-*microcode-data-20140430 (30 May 2014)
+  This flag quickly generates a small initramfs that the kernel needs to
+  load the microcode at boot time.  This way people don't have to figure
+  out the right incantations themselves.
 
-  30 May 2014; Markos Chandras <hwoarang@gentoo.org>
-  +microcode-data-20140430.ebuild:
-  Version bump
+  12 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  microcode-data-20150121-r1.ebuild:
+  add missing iucode_tool dep #528712#45
 
-*microcode-data-20140122 (06 Mar 2014)
+  12 Aug 2015; Tobias Klausmann <klausman@gentoo.org>
+  microcode-data-20150121-r1.ebuild:
+  Drop reference to obsolete init.d script in -ctl
 
-  06 Mar 2014; Tim Harder <radhermit@gentoo.org>
-  +microcode-data-20140122.ebuild:
-  Version bump (bug #503482).
+  Gentoo-Bug: 528712
 
-  11 Jan 2014; Pacho Ramos <pacho@gentoo.org> microcode-data-20130906.ebuild:
-  amd64/x86 stable, bug #495928
+  Package-Manager: portage-2.2.20.1
 
-  02 Jan 2014; Markos Chandras <hwoarang@gentoo.org> metadata.xml,
-  microcode-data-20130222.ebuild, microcode-data-20130906.ebuild:
-  Remove dead URL from 2013* ebuilds. Bug #496794
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*microcode-data-20130906 (14 Sep 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Sep 2013; Markos Chandras <hwoarang@gentoo.org>
-  +microcode-data-20130906.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Jun 2013; Agostino Sarubbo <ago@gentoo.org> microcode-data-20130222.ebuild:
-  Stable for x86, wrt bug #474302
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Jun 2013; Agostino Sarubbo <ago@gentoo.org> microcode-data-20130222.ebuild:
-  Stable for amd64, wrt bug #474302
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Apr 2013; Mike Frysinger <vapier@gentoo.org>
-  microcode-data-20130222.ebuild:
-  Add a useful site that explains more about microcodes.
+  Bug: https://bugs.gentoo.org/552720
 
-*microcode-data-20130222 (27 Apr 2013)
+*microcode-data-20151106 (11 Nov 2015)
 
-  27 Apr 2013; Mike Frysinger <vapier@gentoo.org>
-  +microcode-data-20130222.ebuild:
-  Version bump #440194 by Manuel Rüger.
+  11 Nov 2015; Mike Frysinger <vapier@gentoo.org>
+  +microcode-data-20151106.ebuild:
+  version bump to 20151106 #565352
 
-  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  microcode-data-20120606.ebuild:
-  x86 stable wrt bug #429198
-
-  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
-  microcode-data-20120606.ebuild:
-  Stable for amd64, wrt bug #429198
-
-*microcode-data-20120606 (06 Jun 2012)
-
-  06 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20120606.ebuild:
-  Version bump.
-
-*microcode-data-20111110 (12 Dec 2011)
-
-  12 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20111110.ebuild:
-  Version bump.
-
-*microcode-data-20110915-r1 (12 Dec 2011)
-
-  12 Dec 2011; Mike Frysinger <vapier@gentoo.org>
-  +files/intel-microcode2ucode.c, +microcode-data-20110915-r1.ebuild:
-  Split up microcode files for the kernel to autoload (using util from Fedora).
-
-*microcode-data-20110915 (22 Sep 2011)
-
-  22 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20110915.ebuild:
-  Version bump.
-
-  10 May 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  microcode-data-20110428.ebuild:
-  Fix mistake (save before committing).
-
-*microcode-data-20110428 (10 May 2011)
-
-  10 May 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20110428.ebuild:
-  Version bump.
-
-  24 Jan 2011; Jeremy Olexa <darkside@gentoo.org>
-  microcode-data-20101123.ebuild:
-  marking stable x86/amd64 (only provides one file, ack from base-system
-  team)
-
-  20 Jan 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  -microcode-data-20090330.ebuild, microcode-data-20100209.ebuild,
-  -microcode-data-20100826.ebuild, -microcode-data-20100914.ebuild,
-  microcode-data-20101123.ebuild:
-  Remove old versions; correct wrong LICENSE value, the microcode is not
-  provided as-is but with a non-free license.
-
-*microcode-data-20101123 (17 Dec 2010)
-
-  17 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20101123.ebuild:
-  Version bump.
-
-*microcode-data-20100914 (13 Oct 2010)
-
-  13 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +microcode-data-20100914.ebuild:
-  Version bump.
-
-*microcode-data-20100826 (19 Sep 2010)
-
-  19 Sep 2010; Mike Frysinger <vapier@gentoo.org>
-  +microcode-data-20100826.ebuild:
-  Version bump #337983.
-
-  19 Sep 2010; Mike Frysinger <vapier@gentoo.org>
-  microcode-data-20100209.ebuild:
-  Stabilize for amd64/x86.
-
-*microcode-data-20100209 (13 Feb 2010)
-
-  13 Feb 2010; Mike Frysinger <vapier@gentoo.org>
-  +microcode-data-20100209.ebuild:
-  Version bump #304757 by Matthew Turnbull. Block older microcode-ctl
-  versions #268586 by Vasileios P. Lourdas.
-
-*microcode-data-20090927 (06 Dec 2009)
-
-  06 Dec 2009; Mike Frysinger <vapier@gentoo.org>
-  +microcode-data-20090927.ebuild:
-  Version bump #290370 by Jochen.
-
-  10 Jun 2009; Markus Meier <maekke@gentoo.org>
-  microcode-data-20090330.ebuild:
-  amd64/x86 stable, bug #273054
-
-*microcode-data-20090330 (02 May 2009)
-
-  02 May 2009; Raúl Porcel <armin76@gentoo.org>
-  -microcode-data-20080401.ebuild, -microcode-data-20080910.ebuild,
-  +microcode-data-20090330.ebuild:
-  Version bump wrt #264498, fix installdir wrt #233141 remove old
-
-*microcode-data-20080910 (17 Sep 2008)
-
-  17 Sep 2008; Mike Frysinger <vapier@gentoo.org>
-  +microcode-data-20080910.ebuild:
-  Version bump by Philipp Psurek #237884.
-
-*microcode-data-20080401 (05 May 2008)
-
-  05 May 2008; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
-  +microcode-data-20080401.ebuild:
-  Split microcode stuff off from microcode-ctl package as done by Mike Nerone
-  #194271.

@@ -1,72 +1,56 @@
 # ChangeLog for net-p2p/mktorrent
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/mktorrent/ChangeLog,v 1.16 2015/05/23 13:53:09 pacho Exp $
+# (auto-generated from git log)
 
-  23 May 2015; Pacho Ramos <pacho@gentoo.org> -mktorrent-1.0.ebuild:
-  Drop old
+*mktorrent-1.0-r1 (09 Aug 2015)
 
-  23 May 2015; Pacho Ramos <pacho@gentoo.org> mktorrent-1.0-r1.ebuild:
-  x86 stable, bug #540794
-
-  22 May 2015; Agostino Sarubbo <ago@gentoo.org> mktorrent-1.0-r1.ebuild:
-  Stable for amd64, wrt bug #540794
-
-  02 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  mktorrent-1.0-r1.ebuild:
-  Fix openssl slot
-
-*mktorrent-1.0-r1 (02 May 2015)
-
-  02 May 2015; Andreas K. Huettel <dilfridge@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mktorrent-1.0-r1.ebuild:
-  Port to EAPI=5
+  proj/gentoo: Initial commit
 
-  20 May 2011; Justin Lecher <jlec@gentoo.org> mktorrent-1.0.ebuild,
-  metadata.xml:
-  Default to largefile support, #358279
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Oct 2010; Christian Faulhammer <fauli@gentoo.org> mktorrent-1.0.ebuild:
-  stable x86, bug 339937
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Oct 2010; Markos Chandras <hwoarang@gentoo.org> mktorrent-1.0.ebuild:
-  Stable on amd64 wrt bug #339937
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Oct 2010; Samuli Suominen <ssuominen@gentoo.org> -mktorrent-0.7.ebuild,
-  mktorrent-1.0.ebuild, metadata.xml:
-  Rename invalid USE flag "openssl" to "ssl".
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mktorrent-1.0 (20 Apr 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Apr 2010; Stanislav Ochotnicky <sochotnicky@gentoo.org>
-  +mktorrent-1.0.ebuild:
-  Version bump, bug #307319
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*mktorrent-0.7 (17 Aug 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Aug 2009; Robert Buchholz <rbu@gentoo.org> metadata.xml,
-  mktorrent-0.4.ebuild, +mktorrent-0.7.ebuild:
-  0.4: amd64 stable, 0.7: version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  29 Jan 2008; Samuli Suominen <drac@gentoo.org> mktorrent-0.4.ebuild:
-  Link to libcrypto instead of libssl for required symbols. Keyword ~amd64 wrt
-  #207845.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Jan 2008; Dawid Węgliński <cla@gentoo.org> mktorrent-0.4.ebuild:
-  Stable on x86 (bug #207845)
+  Bug: https://bugs.gentoo.org/552720
 
-*mktorrent-0.4 (30 Dec 2007)
-
-  30 Dec 2007; Raúl Porcel <armin76@gentoo.org> -mktorrent-0.2.ebuild,
-  +mktorrent-0.4.ebuild:
-  Version bump, remove old
-
-  26 Dec 2007; Christian Heim <phreak@gentoo.org>
-  +files/digest-mktorrent-0.2, Manifest:
-  Adding the missing digest.
-
-*mktorrent-0.2 (16 Oct 2007)
-
-  16 Oct 2007; Raúl Porcel <armin76@gentoo.org> +metadata.xml,
-  +mktorrent-0.2.ebuild:
-  New package, initial ebuild by Kalidarn <dcecchin at gmail dot com>, bug
-  #195934

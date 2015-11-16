@@ -1,121 +1,56 @@
 # ChangeLog for net-irc/ptlink-ircd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ptlink-ircd/ChangeLog,v 1.18 2015/04/21 09:08:59 jlec Exp $
+# (auto-generated from git log)
 
-  21 Apr 2015; Justin Lecher <jlec@gentoo.org> -ptlink-ircd-6.19.6-r1.ebuild,
-  metadata.xml:
-  Drop old
+*ptlink-ircd-6.19.6-r2 (09 Aug 2015)
 
-*ptlink-ircd-6.19.6-r2 (21 Mar 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/ptlink-ircd.confd,
+  +files/ptlink-ircd.initd, +metadata.xml, +ptlink-ircd-6.19.6-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  21 Mar 2015; Justin Lecher <jlec@gentoo.org> +ptlink-ircd-6.19.6-r2.ebuild,
-  ptlink-ircd-6.19.6-r1.ebuild:
-  use ecvs_clean; Bump to EAPI=5
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  ptlink-ircd-6.19.6-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> ptlink-ircd-6.19.6-r1.ebuild:
-  Inherit the user eclass for enewuser/etc...
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Jun 2009; Samuli Suominen <ssuominen@gentoo.org>
-  ptlink-ircd-6.19.6-r1.ebuild:
-  Don't hardcode ecompress --suffix in postinst msg wrt #272934, thanks to
-  Victor Ostorga.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ptlink-ircd-6.19.6-r1 (16 Dec 2007)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Dec 2007; Dawid Węgliński <cla@gentoo.org>
-  +ptlink-ircd-6.19.6-r1.ebuild:
-  Revbump, force users to reinstall package with install_cert function, see
-  bug #201678 for details
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 May 2007; Marius Mauch <genone@gentoo.org> ptlink-ircd-6.19.6.ebuild:
-  Replacing einfo with elog
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Feb 2007; Raúl Porcel <armin76@gentoo.org> -ptlink-ircd-6.19.3.ebuild:
-  old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*ptlink-ircd-6.19.6 (27 Oct 2006)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Oct 2006; Markus Ullmann <jokey@gentoo.org> -files/ptlink-ircd.conf.d,
-  +files/ptlink-ircd.confd, -files/ptlink-ircd.init.d,
-  +files/ptlink-ircd.initd, -ptlink-ircd-6.19.1.ebuild,
-  -ptlink-ircd-6.19.2.ebuild, ptlink-ircd-6.19.3.ebuild,
-  +ptlink-ircd-6.19.6.ebuild:
-  Version bump and cleanup
+  Bug: https://bugs.gentoo.org/552720
 
-*ptlink-ircd-6.19.3 (30 Jan 2005)
-
-  30 Jan 2005; Sven Wegener <swegener@gentoo.org>
-  +ptlink-ircd-6.19.3.ebuild:
-  Version bump.
-
-*ptlink-ircd-6.19.2 (12 Dec 2004)
-
-  12 Dec 2004; Sven Wegener <swegener@gentoo.org>
-  +ptlink-ircd-6.19.2.ebuild:
-  Version bump.
-
-  25 Nov 2004; Sven Wegener <swegener@gentoo.org>
-  -ptlink-ircd-6.18.2.ebuild, ptlink-ircd-6.19.1.ebuild:
-  Added support for the ssl USE flag. Removed old ebuild.
-
-  25 Nov 2004; Sven Wegener <swegener@gentoo.org> ptlink-ircd-6.18.2.ebuild,
-  ptlink-ircd-6.19.1.ebuild:
-  Disabled ipv6 support as upstream considers it unstable.
-
-*ptlink-ircd-6.19.1 (14 Nov 2004)
-
-  14 Nov 2004; Sven Wegener <swegener@gentoo.org>
-  -ptlink-ircd-6.18.1.ebuild, ptlink-ircd-6.18.2.ebuild,
-  +ptlink-ircd-6.19.1.ebuild:
-  Version bump. Removed old ebuild.
-
-*ptlink-ircd-6.18.2 (18 Oct 2004)
-
-  18 Oct 2004; Sven Wegener <swegener@gentoo.org>
-  +ptlink-ircd-6.18.2.ebuild:
-  Version bump.
-
-  11 Jul 2004; Sven Wegener <swegener@gentoo.org> files/ptlink-ircd.init.d:
-  Added provide ircd to init script.
-
-*ptlink-ircd-6.18.1 (11 Jul 2004)
-
-  11 Jul 2004; Sven Wegener <swegener@gentoo.org> +metadata.xml,
-  +files/ptlink-ircd.conf.d, +files/ptlink-ircd.init.d,
-  +ptlink-ircd-6.18.1.ebuild:
-  Renamed from net-irc/ptlink and version bumped.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> ptlink-6.14.2.ebuild,
-  ptlink-6.16.2.ebuild:
-  virtual/glibc -> virtual/libc
-
-  09 Jun 2004; Ciaran McCreesh <ciaranm@gentoo.org> ptlink-6.16.2.ebuild:
-  Added ~sparc, #53446
-
-  29 May 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  ptlink-6.14.2.ebuild, ptlink-6.16.2.ebuild:
-  Masked ptlink-6.16.2.ebuild testing for ppc
-
-  29 May 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  ptlink-6.14.2.ebuild:
-  Masked ptlink-6.14.2.ebuild testing for ppc
-
-*ptlink-6.16.2 (11 Mar 2004)
-
-  11 Mar 2004; Chuck Short <zul@gentoo.org> ptlink-6.14.2.ebuild,
-  ptlink-6.16.2.ebuild:
-  Version bump, closes #44304.
-
-  24 Oct 2003; Chuck Short <zul@gentoo.org> files/ptlinkircd.rc:
-  rc script fix up.
-
-*ptlink-6.14.2 (11 Oct 2003)
-
-  11 Oct 2003; Chuck Short <zul@gentoo.org> metadata.xml,
-  ptlink-6.14.2.ebuild, files/ptlinkircd.confd, files/ptlinkircd.rc:
-  Added new ebuild by James Webster jimmyj@netstat.org.
-  Closes bug #15007.

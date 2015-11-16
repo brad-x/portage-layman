@@ -1,141 +1,58 @@
 # ChangeLog for www-apps/phpmp
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/phpmp/ChangeLog,v 1.15 2013/02/06 19:40:20 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Feb 2013; Agostino Sarubbo <ago@gentoo.org> phpmp-0.11.0-r1.ebuild:
-  Stable for sparc, wrt bug #448534
+*phpmp-0.11.0-r1 (09 Aug 2015)
+*phpmp-0.11.0 (09 Aug 2015)
 
-  04 Feb 2013; Agostino Sarubbo <ago@gentoo.org> phpmp-0.11.0-r1.ebuild:
-  Stable for alpha, wrt bug #448534
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/postinstall-en.txt, +metadata.xml, +phpmp-0.11.0.ebuild,
+  +phpmp-0.11.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  24 Jun 2012; Matti Bickel <mabi@gentoo.org> phpmp-0.11.0-r1.ebuild:
-  drop depend.php in favour of an explicit dep (nothing really changes here)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Oct 2010; Markos Chandras <hwoarang@gentoo.org> phpmp-0.11.0-r1.ebuild:
-  Stable on amd64 wrt bug #336869
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  phpmp-0.11.0-r1.ebuild:
-  x86 stable, bug 336869
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*phpmp-0.11.0-r1 (03 Jul 2010)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Jul 2010; Matti Bickel <mabi@gentoo.org> +phpmp-0.11.0-r1.ebuild:
-  eapi bump for php-5.3 (bug #298205)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Feb 2008; Benedikt Böhm <hollow@gentoo.org> metadata.xml,
-  phpmp-0.11.0.ebuild:
-  ebuild cleanup wrt #208584; fix metadata
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Oct 2006; Renat Lumpau <rl03@gentoo.org> phpmp-0.11.0.ebuild:
-  PHP needs PCRE. Bug #152008.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Sep 2006; Javier Villavicencio <the_paya@gentoo.org>
-  phpmp-0.11.0.ebuild:
-  Add ~x86-fbsd keyword.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Jan 2006; Renat Lumpau <rl03@gentoo.org> phpmp-0.11.0.ebuild:
-  Fixed mod_php dependency
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Sep 2004; Jeremy Huddleston <eradicator@gentoo.org> phpmp-0.11.0.ebuild:
-  Stable amd64, sparc.
-
-  05 Sep 2004; Sven Wegener <swegener@gentoo.org> :
-  Fixed ChangeLog header.
-
-  23 Aug 2004; Bryan Østergaard <kloeri@gentoo.org> phpmp-0.11.0.ebuild:
-  Stable on alpha.
-
-*phpmp-0.10.2 (15 Aug 2004)
-
-  15 Aug 2004; Stuart Herbert <stuart@gentoo.org> +metadata.xml,
-  +files/postinstall-en.txt, +phpmp-0.10.2.ebuild, +phpmp-0.11.0.ebuild:
-  Moved from net-www/phpmp to www-apps/phpmp.
-
-  19 Jul 2004; Bryan Østergaard <kloeri@gentoo.org> phpmp-0.10.2.ebuild:
-  Stable on alpha.
-
-  13 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> phpmp-0.11.0.ebuild:
-  Added ~amd64
-
-  27 Jun 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.10.2.ebuild:
-  x86 stable
-
-*phpmp-0.11.0 (26 Jun 2004)
-
-  26 Jun 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.11.0.ebuild:
-  Version bumped.
-
-  11 Jun 2004; Bryan Østergaard <kloeri@gentoo.org> phpmp-0.10.1-r1.ebuild:
-  Stable on alpha.
-
-*phpmp-0.10.2 (23 May 2004)
-
-  23 May 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.10.2.ebuild,
-  files/postinstall-en.txt:
-  Version bumped.
-
-*phpmp-0.10.1-r1 (29 Mar 2004)
-
-  29 Mar 2004; Stuart Herbert <stuart@gentoo.org> phpmp-0.10.1-r1.ebuild:
-  Added missing file transparent.gif to the src_install(); closes bug #45143
-
-*phpmp-0.10.1 (25 Mar 2004)
-
-  25 Mar 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.10.1.ebuild:
-  Version bumped.
-
-  21 Mar 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.10.0.ebuild,
-  phpmp-0.9.1.ebuild:
-  adding categorie. see 45110 for details
-
-*phpmp-0.10.0 (03 Mar 2004)
-
-  03 Mar 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.10.0.ebuild,
-  phpmp-0.9.1.ebuild:
-  Version bumped.
-
-  03 Mar 2004; Martin Holzer <mholzer@gentoo.org> phpmp-0.9.1.ebuild:
-  moving webapp-detect inside functions
-
-  23 Feb 2004; Stuart Herbert <stuart@gentoo.org> phpmp-0.9.1.ebuild:
-  Unmasked on x86; fixes bug #38891
-
-  15 Dec 2003; Stuart Herbert <stuart@gentoo.org> phpmp-0.9.0.ebuild,
-  phpmp-0.9.1.ebuild:
-  Fix for bug #32636
-
-  15 Dec 2003; <spider@gentoo.org> phpmp-0.9.0.ebuild, phpmp-0.9.1.ebuild:
-  QA: fixing chown user.group to user:group, bug #35127
-
-*phpmp-0.9.1 (31 Oct 2003)
-
-  31 Oct 2003; Martin Holzer <mholzer@gentoo.org> phpmp-0.9.1.ebuild:
-  Version bumped.
-
-*phpmp-0.9.0 (08 Oct 2003)
-
-  08 Oct 2003; Martin Holzer <mholzer@gentoo.org> phpmp-0.9.0.ebuild:
-  Version bumped.
-
-  04 Sep 2003; stuart phpmp-0.8.3.ebuild:
-  Marked as stable
-
-*phpmp-0.8.3 (13 Aug 2003)
-
-  13 Aug 2003; Stuart Herbert <stuart@gentoo.org> phpmp-0.8.3.ebuild:
-  Added ebuild for latest version - 0.8.3
-  Fixes bug 26549
-
-*phpmp-0.8.2 (03 Aug 2003)
-
-  04 Aug 2003; Stuart Herbert <stuart@gentoo.org> phpmp-0.8.2.ebuild:
-  Fix for problem preventing installation when no webserver installed.
-  Thanks to g2boojum for alerting me to this.
-
-  03 Aug 2003; Stuart Herbert <stuart@gentoo.org> phpmp-0.8.2.ebuild:
-  Initial checkin, based on an ebuild submitted by starz@antisocial.com as
-  bug #24659

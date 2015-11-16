@@ -1,86 +1,57 @@
 # ChangeLog for x11-plugins/asapm
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/asapm/ChangeLog,v 1.23 2014/12/31 15:47:37 kensington Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  31 Dec 2014; Michael Palimaka <kensington@gentoo.org> -asapm-3.1.ebuild:
-  Remove old.
+*asapm-3.1-r1 (09 Aug 2015)
 
-  25 Mar 2014; Jeroen Roovers <jer@gentoo.org> asapm-3.1-r1.ebuild,
-  +files/asapm-3.1-autoconf.patch, files/asapm-3.1-ldflags.patch:
-  Fix configure.in error when sourcing config.site.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +asapm-3.1-r1.ebuild,
+  +files/asapm-3.1-autoconf.patch, +files/asapm-3.1-include.patch,
+  +files/asapm-3.1-ldflags.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Mar 2014; Jeroen Roovers <jer@gentoo.org> asapm-3.1-r1.ebuild,
-  +files/asapm-3.1-include.patch:
-  Fix some compiler warnings.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*asapm-3.1-r1 (23 Mar 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Mar 2014; Michael Palimaka <kensington@gentoo.org> +asapm-3.1-r1.ebuild,
-  +files/asapm-3.1-ldflags.patch:
-  Revision bump migrating to EAPI 5. Add missing dependency. Remove transitive
-  dependency. Remove jpeg USE flag that did nothing. Update HOMEPAGE wrt bug
-  #367185. Respect LDFLAGS wrt bug #336818. Fully respect CC wrt bug #444944.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Oct 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop afterstep herd
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Nov 2012; Agostino Sarubbo <ago@gentoo.org> asapm-3.1.ebuild:
-  Add ~amd64
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Nov 2010; Bernard Cafarelli <voyageur@gentoo.org> asapm-3.1.ebuild:
-  Move to virtual/jpeg
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Dec 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/asapm-2.10-gentoo.diff, -asapm-2.10.ebuild, -asapm-2.11.ebuild,
-  -asapm-3.0.ebuild:
-  clean out old files
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Nov 2006; Gustavo Zacarias <gustavoz@gentoo.org> asapm-2.10.ebuild,
-  asapm-2.11.ebuild, asapm-3.0.ebuild, asapm-3.1.ebuild:
-  We lack APM/ACPI so -sparc
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Nov 2006; Christian Faulhammer <opfer@gentoo.org> asapm-3.1.ebuild:
-  stable x86, bug #153218
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Nov 2006; Joseph Jezak <josejx@gentoo.org> asapm-3.1.ebuild:
-  Marked ppc stable for bug #153218.
+  Bug: https://bugs.gentoo.org/552720
 
-*asapm-3.1 (07 Oct 2006)
-
-  07 Oct 2006; Bryan Østergaard <kloeri@gentoo.org> +asapm-3.1.ebuild:
-  Version bump + modular X fixes, bug 100805.
-
-*asapm-3.0 (20 Jun 2005)
-
-  20 Jun 2005; Aaron Walker <ka0ttic@gentoo.org> +asapm-3.0.ebuild:
-  Version bump.
-
-  17 Jun 2005; Aaron Walker <ka0ttic@gentoo.org> +metadata.xml:
-  Added metadata.xml (afterstep herd).
-
-  28 Jun 2004; Aron Griffis <agriffis@gentoo.org> asapm-2.10.ebuild:
-  glibc -> libc
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> asapm-2.10.ebuild:
-  Add inherit eutils
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*asapm-2.11 (12 Apr 2002)
-
-  15 Feb 2003; Mark Guertin <gerk@gentoo.org> asapm-2.11.ebuild :
-  set ppc in keywords
-
-  12 Apr 2002; Seemant Kulleen <seemant@gentoo.org> asapm-2.11.ebuild :
-
-  Version bump with USE dependent jpeg support
-
-*asapm-2.10 (1 Feb 2002)
-
-  1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
-  
-  Added initial ChangeLog which should be updated whenever the package is
-  updated in any way. This changelog is targetted to users. This means that the
-  comments should well explained and written in clean English. The details about
-  writing correct changelogs are explained in the skel.ChangeLog file which you
-  can find in the root directory of the portage repository.

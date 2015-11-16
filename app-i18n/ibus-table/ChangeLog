@@ -1,178 +1,91 @@
 # ChangeLog for app-i18n/ibus-table
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-table/ChangeLog,v 1.31 2014/12/27 11:24:29 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*ibus-table-1.5.0-r1 (27 Dec 2014)
+*ibus-table-1.5.0-r1 (09 Aug 2015)
+*ibus-table-1.5.0 (09 Aug 2015)
+*ibus-table-1.3.9.20110827-r1 (09 Aug 2015)
+*ibus-table-1.3.0.20100621 (09 Aug 2015)
+*ibus-table-1.2.0.20100111 (09 Aug 2015)
 
-  27 Dec 2014; Michał Górny <mgorny@gentoo.org> +ibus-table-1.5.0-r1.ebuild:
-  Convert to python-single-r1.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/ibus-table-1.5.0-pycompile.patch, +ibus-table-1.2.0.20100111.ebuild,
+  +ibus-table-1.3.0.20100621.ebuild, +ibus-table-1.3.9.20110827-r1.ebuild,
+  +ibus-table-1.5.0.ebuild, +ibus-table-1.5.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Feb 2013; Ben de Groot <yngwin@gentoo.org>
-  +files/ibus-table-1.5.0-pycompile.patch:
-  Add missing patch
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Feb 2013; Ben de Groot <yngwin@gentoo.org> ibus-table-1.5.0.ebuild:
-  proper quoting
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*ibus-table-1.5.0 (05 Feb 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Feb 2013; Ben de Groot <yngwin@gentoo.org> +ibus-table-1.5.0.ebuild:
-  version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ibus-table-1.3.9.20110827-r1 (14 Jun 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Jun 2012; Naohiro Aota <naota@gentoo.org>
-  +ibus-table-1.3.9.20110827-r1.ebuild, -ibus-table-1.3.9.20110827.ebuild:
-  Set PYTHON to proeprly call python2
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   ibus-table-1.2.0.20100111.ebuild, ibus-table-1.3.0.20100621.ebuild,
-  ibus-table-1.3.9.20110827.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  ibus-table-1.3.9.20110827-r1.ebuild, ibus-table-1.5.0.ebuild,
+  ibus-table-1.5.0-r1.ebuild:
+  Enable https for all google URIs
 
-*ibus-table-1.3.9.20110827 (17 Sep 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Sep 2011; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.3.9.20110827.ebuild:
-  Version bumped.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  ibus-table-1.2.0.20100111.ebuild, ibus-table-1.3.0.20100621.ebuild,
+  ibus-table-1.3.9.20110827-r1.ebuild, ibus-table-1.5.0.ebuild,
+  ibus-table-1.5.0-r1.ebuild:
+  Convert URIs for googlecode.com to https
 
-  16 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  ibus-table-1.2.0.20100111.ebuild, ibus-table-1.3.0.20100621.ebuild:
-  Fix deprecation warnings.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ibus-table-1.3.0.20100621 (23 Jun 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Jun 2010; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.3.0.20100621.ebuild:
-  Version bumped.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 May 2010; Pacho Ramos <pacho@gentoo.org>
-  ibus-table-1.2.0.20100111.ebuild:
-  stable amd64, bug 305767
+  Bug: https://bugs.gentoo.org/552720
 
-  04 May 2010; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-1.1.0.20090615.ebuild, -ibus-table-1.2.0.20090904.ebuild,
-  ibus-table-1.2.0.20100111.ebuild:
-  Fixed python dependency, bug #311211. Removed old versions.
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
+  ibus-table-1.2.0.20100111.ebuild, ibus-table-1.3.0.20100621.ebuild,
+  ibus-table-1.3.9.20110827-r1.ebuild, ibus-table-1.5.0.ebuild,
+  ibus-table-1.5.0-r1.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  01 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  ibus-table-1.2.0.20100111.ebuild:
-  x86 stable wrt bug #305767
+  Package-Manager: portage-2.2.20.1
 
-*ibus-table-1.2.0.20100111 (13 Jan 2010)
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  13 Jan 2010; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-1.2.0.20090625.ebuild, -ibus-table-1.2.0.20090804.ebuild,
-  +ibus-table-1.2.0.20100111.ebuild:
-  Version bumped. Removed old versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ibus-table-1.2.0.20090904 (07 Sep 2009)
-
-  07 Sep 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.2.0.20090904.ebuild:
-  Version bumped. Removed minimal USE flag. Fixed dependency.
-
-*ibus-table-1.2.0.20090804 (04 Aug 2009)
-
-  04 Aug 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.2.0.20090804.ebuild:
-  Version bumped.
-
-*ibus-table-1.2.0.20090625 (04 Jul 2009)
-
-  04 Jul 2009; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-1.1.0.20090601.ebuild, -ibus-table-1.1.0.20090603.ebuild,
-  -ibus-table-1.1.0.20090609.ebuild, +ibus-table-1.2.0.20090625.ebuild:
-  Version bumped, #276334. Removed old versions.
-
-*ibus-table-1.1.0.20090615 (18 Jun 2009)
-
-  18 Jun 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090615.ebuild:
-  Version bumped.
-
-*ibus-table-1.1.0.20090609 (09 Jun 2009)
-
-  09 Jun 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090609.ebuild:
-  Version bumped.
-
-*ibus-table-1.1.0.20090603 (04 Jun 2009)
-
-  04 Jun 2009; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-1.1.0.20090306.ebuild, -ibus-table-1.1.0.20090505.ebuild,
-  -ibus-table-1.1.0.20090527.ebuild, +ibus-table-1.1.0.20090603.ebuild:
-  Version bumped. Removed old versions.
-
-*ibus-table-1.1.0.20090601 (01 Jun 2009)
-
-  01 Jun 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090601.ebuild:
-  Version bumped.
-
-  31 May 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090527.ebuild:
-  Version bumped.
-
-*ibus-table-1.1.0.20090527 (31 May 2009)
-
-  31 May 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090527.ebuild:
-  Version bumped.
-
-*ibus-table-1.1.0.20090505 (07 May 2009)
-
-  07 May 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090505.ebuild:
-  Version bumped.
-
-  31 Mar 2009; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-0.1.2.20090104.ebuild, -ibus-table-1.1.0.20090220.ebuild:
-  Removed old versions.
-
-*ibus-table-1.1.0.20090306 (07 Mar 2009)
-
-  07 Mar 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090306.ebuild:
-  Version bumped.
-
-*ibus-table-1.1.0.20090220 (25 Feb 2009)
-
-  25 Feb 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-1.1.0.20090220.ebuild:
-  Version bumped.
-
-  05 Feb 2009; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-0.1.1.20081115.ebuild, ibus-table-0.1.2.20090104.ebuild:
-  Fixed dependency. Removed old version.
-
-*ibus-table-0.1.2.20090104 (04 Jan 2009)
-
-  04 Jan 2009; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-0.1.1.20081014.ebuild, -ibus-table-0.1.2.20090101.ebuild,
-  +ibus-table-0.1.2.20090104.ebuild:
-  Version bumped. Added LGPL-2.1 to LICENSE. Removed old versions.
-
-*ibus-table-0.1.2.20090101 (02 Jan 2009)
-
-  02 Jan 2009; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-0.1.2.20090101.ebuild:
-  Version bumped.
-
-*ibus-table-0.1.1.20081115 (16 Nov 2008)
-
-  16 Nov 2008; MATSUU Takuto <matsuu@gentoo.org>
-  -ibus-table-0.1.1.20080901.ebuild, +ibus-table-0.1.1.20081115.ebuild:
-  Version bumped.
-
-*ibus-table-0.1.1.20081014 (19 Oct 2008)
-
-  19 Oct 2008; MATSUU Takuto <matsuu@gentoo.org>
-  +ibus-table-0.1.1.20081014.ebuild:
-  Version bumped. Fixed QA issue.
-
-*ibus-table-0.1.1.20080901 (10 Sep 2008)
-
-  10 Sep 2008; MATSUU Takuto <matsuu@gentoo.org> +metadata.xml,
-  +ibus-table-0.1.1.20080901.ebuild:
-  Initial import, bug #236483.

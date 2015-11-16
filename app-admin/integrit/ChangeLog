@@ -1,85 +1,57 @@
 # ChangeLog for app-admin/integrit
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/integrit/ChangeLog,v 1.27 2015/06/09 12:56:49 mrueg Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Manuel Rüger <mrueg@gentoo.org> -integrit-4.1.ebuild:
-  Remove old.
+*integrit-4.1-r1 (09 Aug 2015)
+*integrit-4.0 (09 Aug 2015)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +integrit-4.0.ebuild,
+  +integrit-4.1-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Oct 2012; Tim Harder <radhermit@gentoo.org> integrit-4.1-r1.ebuild:
-  Make test script executable so tests run properly.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*integrit-4.1-r1 (22 Oct 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Oct 2012; Agostino Sarubbo <ago@gentoo.org> +integrit-4.1-r1.ebuild:
-  New revision, EAPI4 + restrict test
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*integrit-4.1 (04 Jan 2009)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Jan 2009; Patrick Lauer <patrick@gentoo.org> +integrit-4.1.ebuild:
-  Bump to 4.1. Fixes #202803
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  -integrit-3.02.00.ebuild, -integrit-3.05.ebuild, integrit-4.0.ebuild:
-  QA: Use the user-chosen ar/cc instead of just running ar/gcc directly,
-  quoted ${S} and removed broken versions
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Robert Clark (hyakuhei, #154737) from metadata.xml.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Jan 2008; Tobias Scherbaum <dertobi123@gentoo.org> integrit-4.0.ebuild:
-  ppc. stable
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Dec 2007; Raúl Porcel <armin76@gentoo.org> integrit-4.0.ebuild:
-  x86 stable
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Jun 2007; Christian Faulhammer <opfer@gentoo.org> ChangeLog:
-  modified ChangeLog to meet common standards
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Jan 2007; Marius Mauch <genone@gentoo.org> integrit-3.02.00.ebuild,
-  integrit-3.05.ebuild, integrit-4.0.ebuild:
-  Replacing einfo with elog
-
-*integrit-4.0 (17 Jan 2007)
-
-  17 Jan 2007; Robert Clark <hyakuhei@gentoo.org> +integrit-4.0.ebuild:
-  bumped to version 4. No outstanding bugs as of this date.
-
-  08 May 2006; Thomas Cort <tcort@gentoo.org> integrit-3.02.00.ebuild,
-  integrit-3.05.ebuild:
-  Removed INSTALL from dodoc.
-
-*integrit-3.05 (03 Oct 2005)
-
-  03 Oct 2005; Chris White <chriswhite@gentoo.org> +integrit-3.05.ebuild:
-  Bump to version 3.05. Fixes bug #106749. Tested by creating a database of
-  /usr and modifying a file in /usr/lib.
-
-  20 Aug 2005; Luis Medinas <metalgod@gentoo.org> integrit-3.02.00.ebuild:
-  Added ~amd64 keywords.
-
-  19 Apr 2005; Elfyn McBratney <beu@gentoo.org> metadata.xml:
-  Remove retired developer from metadata.xml.
-
-  31 Dec 2004; Chris White <chriswhite@gentoo.org> +metadata.xml:
-  Taking over as maintainer.
-
-  05 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  integrit-3.02.00.ebuild:
-  Masked integrit-3.02.00.ebuild stable for ppc
-
-  06 Jun 2004; Daniel Black <dragonheart@gentoo.org> integrit-3.02.00.ebuild:
-  QA - IUSE fix
-
-  11 Jun 2003; <msterret@gentoo.org> integrit-3.02.00.ebuild:
-  fix Header
-
-*integrit-3.02.00 (23 Oct 2002)
-
-  28 Mar 2003; Pieter Van den Abeele <pvdabeel@gentoo.org> :
-  Moving this to ppc unstable
-
-  23 Oct 2002; Zach Welch <zwelch@gentoo.org> : 
-  Import from bug 9454, contributed by Danny Pansters <danny@ricin.com>

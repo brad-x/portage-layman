@@ -1,85 +1,57 @@
 # ChangeLog for dev-java/ldapsdk
-# Copyright 2000-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ldapsdk/ChangeLog,v 1.20 2014/11/25 10:38:33 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  25 Nov 2014; Manuel Rüger <mrueg@gentoo.org> -ldapsdk-4.1.7-r3.ebuild:
-  Cleanup old.
+*ldapsdk-4.1.7-r4 (09 Aug 2015)
 
-  25 Nov 2014; Agostino Sarubbo <ago@gentoo.org> ldapsdk-4.1.7-r4.ebuild:
-  Stable for x86, wrt bug #525012
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/4.1.7-fix-jdk-1.7-enum.patch, +files/ldapsdk-gentoo.patch,
+  +ldapsdk-4.1.7-r4.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  10 Nov 2014; Agostino Sarubbo <ago@gentoo.org> ldapsdk-4.1.7-r4.ebuild:
-  Stable for amd64, wrt bug #525012
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*ldapsdk-4.1.7-r4 (21 Jun 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Jun 2014; Johann Schmitz <ercpe@gentoo.org>
-  +files/4.1.7-fix-jdk-1.7-enum.patch, +ldapsdk-4.1.7-r4.ebuild:
-  EAPI bump; fixed bug #513580 (renamed variables named "enum"), some QA
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Jun 2014; Manuel Rüger <mrueg@gentoo.org> -ldapsdk-4.1.7-r2.ebuild:
-  NM: Cleanup superseeded ebuilds.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Apr 2008; Petteri Räty <betelgeuse@gentoo.org>
-  ldapsdk-4.1.7-r3.ebuild:
-  The changes in this revision would not have warranted a revision bump so
-  just stable myself.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*ldapsdk-4.1.7-r3 (14 Feb 2008)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  +ldapsdk-4.1.7-r3.ebuild:
-  Quoted vars, set EAPI=1 and switched to slot deps, set JAVA_PKG_IUSE
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Feb 2007; Vlastimil Babka <caster@gentoo.org> -ldapsdk-4.1.7-r1.ebuild:
-  Cleanup.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Feb 2007; Steve Dibb <beandog@gentoo.org> ldapsdk-4.1.7-r2.ebuild:
-  amd64 stable, bug 164734
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Feb 2007; Petteri Räty <betelgeuse@gentoo.org>
-  ldapsdk-4.1.7-r2.ebuild:
-  Does not compile with jikes so filtering it. Fixes bug #164828.
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Jan 2007; Petteri Räty <betelgeuse@gentoo.org>
-  ldapsdk-4.1.7-r1.ebuild, ldapsdk-4.1.7-r2.ebuild:
-  Marked -r2 stable on x86 and relaxed dev-java/jss dependency atom for the
-  upcoming 4.2 version bump.
-
-*ldapsdk-4.1.7-r2 (21 Dec 2006)
-
-  21 Dec 2006; Petteri Räty <betelgeuse@gentoo.org>
-  +ldapsdk-4.1.7-r2.ebuild:
-  Revision bump using generation 2. Added the source use flag.
-
-  05 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  ldapsdk-4.1.7-r1.ebuild:
-  Dropping sparc keywords, see #96229
-
-  12 Jul 2005; Thomas Matthijs <axxo@gentoo.org> ldapsdk-4.1.7-r1.ebuild:
-  Style/Dep fixes
-
-  26 Apr 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  ldapsdk-4.1.7-r1.ebuild:
-  Stable on sparc
-
-  02 Apr 2005; Jan Brinkmann <luckyduck@gentoo.org> ldapsdk-4.1.7-r1.ebuild,
-  -ldapsdk-4.1.7.ebuild:
-  cleanup, removed old revision with a dependency to oro.
-
-*ldapsdk-4.1.7-r1 (29 Mar 2005)
-
-  29 Mar 2005; Jan Brinkmann <luckyduck@gentoo.org> +ldapsdk-4.1.7-r1.ebuild:
-  moved from dev-java/oro to dev-java/jakarta-oro dependency. see #71337.
-
-  23 Mar 2005; Gustavo Zacarias <gustavoz@gentoo.org> ldapsdk-4.1.7.ebuild:
-  Keyworded ~sparc wrt #84992
-
-  04 Feb 2005; Jan Brinkmann <luckyduck@gentoo.org> ldapsdk-4.1.7.ebuild:
-  stable on x86 and amd64.
-
-*ldapsdk-4.1.7 (18 Dec 2004)
-
-  18 Dec 2004; Karl Trygve Kalleberg <karltk@gentoo.org> ldapsdk-4.1.7.ebuild:
-  Initial import. Ebuild submitted by the fearsome Jan Brinkmann 
-  <lucky@the-luckyduck.de>, fixes #74290.

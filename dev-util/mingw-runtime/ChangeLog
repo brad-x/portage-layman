@@ -1,146 +1,63 @@
 # ChangeLog for dev-util/mingw-runtime
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mingw-runtime/ChangeLog,v 1.31 2015/07/21 21:11:54 mrueg Exp $
+# (auto-generated from git log)
 
-  21 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -mingw-runtime-3.16.ebuild:
-  Remove old.
+*mingw-runtime-4.0.3.1 (09 Aug 2015)
+*mingw-runtime-3.20.2 (09 Aug 2015)
+*mingw-runtime-3.20 (09 Aug 2015)
+*mingw-runtime-3.18 (09 Aug 2015)
 
-  27 Feb 2015; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.16.ebuild,
-  mingw-runtime-3.18.ebuild, mingw-runtime-3.20.2.ebuild,
-  mingw-runtime-3.20.ebuild, mingw-runtime-4.0.3.1.ebuild:
-  Use more readable CTARGET setup logic.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mingw-runtime-3.12-DESTDIR.patch,
+  +files/mingw-runtime-3.18-gcc-4.6.patch,
+  +files/mingw-runtime-3.20-LDBL_MIN_EXP.patch, +metadata.xml,
+  +mingw-runtime-3.18.ebuild, +mingw-runtime-3.20.ebuild,
+  +mingw-runtime-3.20.2.ebuild, +mingw-runtime-4.0.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-*mingw-runtime-4.0.3.1 (02 Jun 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Jun 2014; Mike Frysinger <vapier@gentoo.org> +mingw-runtime-4.0.3.1.ebuild:
-  Version bump #511490 by Yevgeny Filatov.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 May 2013; Patrick Lauer <patrick@gentoo.org> mingw-runtime-3.18.ebuild,
-  mingw-runtime-3.20.2.ebuild, mingw-runtime-3.20.ebuild:
-  Fix inherit
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*mingw-runtime-3.20.2 (17 Dec 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Dec 2012; Mike Frysinger <vapier@gentoo.org> +mingw-runtime-3.20.2.ebuild:
-  Version bump #436482 by Sergei Trofimovich.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Aug 2012; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.20.ebuild:
-  Make sure we install docs into unique cross-compiler dir to avoid collisions.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Aug 2012; Mike Frysinger <vapier@gentoo.org>
-  +files/mingw-runtime-3.18-gcc-4.6.patch, mingw-runtime-3.18.ebuild:
-  Add fix for building with gcc-4.6 #419627 by Maciej Szmigiero.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Aug 2012; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.20.ebuild,
-  +files/mingw-runtime-3.20-LDBL_MIN_EXP.patch:
-  Add patch to fix LDBL_MIN_EXP build failures #395893 by Matthias Dahl.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jan 2012; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.20.ebuild:
-  Mask until #395893 is sorted out to fix initial builds.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*mingw-runtime-3.20 (10 Dec 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Dec 2011; Mike Frysinger <vapier@gentoo.org> +mingw-runtime-3.20.ebuild:
-  Version bump.
-
-  22 Sep 2010; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.18.ebuild:
-  Mark amd64/x86 stable.
-
-*mingw-runtime-3.18 (20 Jun 2010)
-
-  20 Jun 2010; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.18.ebuild:
-  Version bump.
-
-  20 Jun 2010; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.16.ebuild:
-  Mark amd64/x86 stable.
-
-*mingw-runtime-3.16 (05 Nov 2009)
-
-  05 Nov 2009; Mike Frysinger <vapier@gentoo.org> +mingw-runtime-3.16.ebuild:
-  Version bump #291981 by Rafał Mużyło.
-
-  05 Nov 2009; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.15.2.ebuild:
-  Mark amd64/x86 stable.
-
-*mingw-runtime-3.15.2 (10 Jan 2009)
-
-  10 Jan 2009; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.15.2.ebuild:
-  Version bump.
-
-  10 Jan 2009; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.15.1.ebuild:
-  Mark amd64/x86 stable.
-
-*mingw-runtime-3.15.1 (05 Oct 2008)
-
-  05 Oct 2008; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.15.1.ebuild:
-  Version bump.
-
-  17 Sep 2008; Mike Frysinger <vapier@gentoo.org>
-  files/mingw-runtime-3.12-DESTDIR.patch:
-  Tweak patch to apply nicely to multiple mingw versions #237085 by Richard
-  Li.
-
-*mingw-runtime-3.15 (08 Sep 2008)
-
-  08 Sep 2008; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.15.ebuild:
-  Version bump.
-
-  02 Jul 2008; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.14.ebuild:
-  Workaround portage IUSE deficiencies by adding the expanded
-  crosscompile_opts.
-
-*mingw-runtime-3.14 (20 Jan 2008)
-
-  20 Jan 2008; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.14.ebuild:
-  Version bump #205990 by Dennis Schridde.
-
-*mingw-runtime-3.13 (06 Oct 2007)
-
-  06 Oct 2007; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.13.ebuild:
-  Version bump #192643 by Dennis Schridde.
-
-  24 Jun 2007; Piotr Jaroszyński <peper@gentoo.org>
-  mingw-runtime-3.10.ebuild, mingw-runtime-3.11.ebuild,
-  mingw-runtime-3.11_p20061202.ebuild:
-  (QA) Don't use KEYWORDS="-*". bug #160519.
-
-*mingw-runtime-3.12 (07 Apr 2007)
-
-  07 Apr 2007; Mike Frysinger <vapier@gentoo.org>
-  +files/mingw-runtime-3.12-DESTDIR.patch, +mingw-runtime-3.12.ebuild:
-  Version bump #173120 by Dennis Schridde.
-
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove cretin from metadata.xml due to retirement.
-
-  17 Feb 2007; Mike Frysinger <vapier@gentoo.org>
-  +files/mingw-runtime-3.11-include.patch,
-  mingw-runtime-3.11_p20061202.ebuild:
-  Add fix from upstream #166933 by Dennis Schridde.
-
-*mingw-runtime-3.11_p20061202 (14 Feb 2007)
-
-  14 Feb 2007; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.11_p20061202.ebuild:
-  Version bump #166852 by Dennis Schridde.
-
-*mingw-runtime-3.11 (09 Jan 2007)
-
-  09 Jan 2007; Mike Frysinger <vapier@gentoo.org>
-  +mingw-runtime-3.11.ebuild:
-  Version bump #161007 by Dennis Schridde.
-
-  23 Sep 2006; Mike Frysinger <vapier@gentoo.org> mingw-runtime-3.9.ebuild,
-  mingw-runtime-3.10.ebuild:
-  Make sure we strip with the target toolchain #148437.
-
-*mingw-runtime-3.10 (17 Sep 2006)
-
-  17 Sep 2006; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

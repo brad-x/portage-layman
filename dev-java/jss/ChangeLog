@@ -1,124 +1,97 @@
 # ChangeLog for dev-java/jss
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jss/ChangeLog,v 1.30 2015/05/23 21:40:39 monsieurp Exp $
+# (auto-generated from git log)
 
-  23 May 2015; Patrice Clement <monsieurp@gentoo.org> jss-4.3-r1.ebuild:
-  Revert previous commit and declare linux_info's and java-pkg-2's pkg_setup
-  subfunctions in pkg_setup(). Fix bug 539100.
+*jss-4.3-r1 (09 Aug 2015)
+*jss-4.3 (09 Aug 2015)
+*jss-4.2.5 (09 Aug 2015)
 
-  23 May 2015; Patrice Clement <monsieurp@gentoo.org> jss-4.3-r1.ebuild:
-  Revert previous commit and declare linux_infos
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/jss-3.4-target_source.patch, +files/jss-4.2.5-use_pkg-config.patch,
+  +files/jss-4.3-cflags.patch, +files/jss-4.3-ldflags.patch,
+  +files/jss-4.3-secitem.patch, +jss-4.2.5.ebuild, +jss-4.3.ebuild,
+  +jss-4.3-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 May 2015; Patrice Clement <monsieurp@gentoo.org> jss-4.3-r1.ebuild:
-  Manually set JAVA_HOME since it is needed at compilation time. Fix bug 539100.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*jss-4.3-r1 (05 Jun 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jun 2013; Tom Wijsman <TomWij@gentoo.org> +files/jss-4.3-cflags.patch,
-  +files/jss-4.3-secitem.patch, +jss-4.3-r1.ebuild:
-  Revision bump to 4.3-r1. EAPI 5. Fix Java environment, see bug #472198. Fix
-  use of CFLAGS, see bug #428188. Possibly bug #463582 is fixed as a side
-  effect.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> jss-4.2.5.ebuild,
-  jss-4.3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Jan 2012; Ralph Sennhauser <sera@gentoo.org> jss-4.3.ebuild:
-  Fix building with Linux 3.x. #379283
-  Thanks to Andreis_Vinogradovs ( slepnoga ) <andreis.vinogradovs@gmail.com>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Aug 2010; Kacper Kowalik <xarthisius@gentoo.org> jss-4.3.ebuild,
-  +files/jss-4.3-ldflags.patch:
-  Respect LDFLAGS wrt bug 327619. Thanks to Andreis Vinogradovs (slepnoga)
-  <spamslepnoga@inbox.ru> for the report.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Dec 2009; Markus Meier <maekke@gentoo.org> jss-4.3.ebuild:
-  amd64/x86 stable, bug #295590
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*jss-4.3 (03 Nov 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Nov 2009; Vlastimil Babka <caster@gentoo.org> -jss-3.4-r1.ebuild,
-  -jss-4.2.ebuild, -files/jss-4.2-pkg-config.patch, +jss-4.3.ebuild:
-  Version bump, bug #290890. Remove old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 May 2008; Markus Meier <maekke@gentoo.org> jss-4.2.5.ebuild:
-  amd64/x86 stable, bug #223573
+  Bug: https://bugs.gentoo.org/552720
 
-  11 May 2008; Markus Meier <maekke@gentoo.org> jss-4.2.ebuild:
-  amd64 stable, bug #214780
+  27 Sep 2015; James Le Cuirot <chewi@gentoo.org> -jss-4.2.5.ebuild:
+  Remove old
 
-*jss-4.2.5 (04 May 2008)
+  Package-Manager: portage-2.2.20.1
 
-  04 May 2008; Petteri Räty <betelgeuse@gentoo.org>
-  +files/jss-4.2.5-use_pkg-config.patch, +jss-4.2.5.ebuild:
-  Version bump. Fixes bug #189443. Thanks to Mario Fetka <mario-fetka@gmx.at>.
+*jss-4.3.2 (01 Oct 2015)
 
-  28 Mar 2008; Christian Faulhammer <opfer@gentoo.org> jss-4.2.ebuild:
-  stable x86, bug 214780
+  01 Oct 2015; James Le Cuirot <chewi@gentoo.org>
+  +files/jss-4.3-javadoc.patch, +files/jss-4.3.2-ldflags.patch,
+  -jss-4.3-r1.ebuild, +jss-4.3.2.ebuild:
+  Version bump to 4.3.2
 
-  08 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org> jss-3.4-r1.ebuild:
-  Quoted vars
+   * Set CC and AR correctly (bug #428188)
+   * Fix javadoc under Java 8
+   * Similify Linux kernel version fix
+   * Get more tests passing though they still need to be RESTRICTed
 
-  08 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org> jss-4.2.ebuild:
-  Added fix for amd64 thanks to Gergan Penkov, added back ~amd64 keyword per
-  bug #164736
+  Package-Manager: portage-2.2.20.1
 
-  25 May 2007; Petteri Räty <betelgeuse@gentoo.org> jss-3.4-r1.ebuild:
-  Add pkg_setup that calls both linux-info_pkg_setup and java-pkg-2_pkg_setup
-  for bug #179788.
+  09 Nov 2015; Agostino Sarubbo <ago@gentoo.org> jss-4.3.2.ebuild:
+  amd64 stable wrt bug #564872
 
-  02 Apr 2007; Petteri Räty <betelgeuse@gentoo.org> -jss-3.4.ebuild,
-  jss-3.4-r1.ebuild:
-  Mark stable on amd64 wrt bug #167273 and remove old gen 1 ebuild.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  20 Feb 2007; Christian Faulhammer <opfer@gentoo.org> jss-3.4-r1.ebuild:
-  stable x86; bug 167273
+  11 Nov 2015; Agostino Sarubbo <ago@gentoo.org> jss-4.3.2.ebuild:
+  x86 stable wrt bug #564872
 
-  16 Feb 2007; Petteri Räty <betelgeuse@gentoo.org> jss-3.4-r1.ebuild,
-  jss-4.2.ebuild:
-  ${ROOT} should not be used in src_unpack, bug #167271.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*jss-4.2 (31 Jan 2007)
+  12 Nov 2015; James Le Cuirot <chewi@gentoo.org> -jss-4.3.ebuild:
+  Remove old
 
-  31 Jan 2007; Petteri Räty <betelgeuse@gentoo.org>
-  +files/jss-4.2-pkg-config.patch, metadata.xml, +jss-4.2.ebuild:
-  Version bump. Fixes bug #164607 and hopefully bug #164056. Dropped amd64
-  keywords because I could not test if the changes work there.
+  Package-Manager: portage-2.2.20.1
 
-  05 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org> jss-3.4.ebuild:
-  Dropping sparc keywords, see #96229
-
-  05 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org> jss-3.4-r1.ebuild:
-  Dropping sparc keywords, see #96229
-
-*jss-3.4-r1 (14 Aug 2006)
-
-  14 Aug 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/jss-3.4-target_source.patch, +jss-3.4-r1.ebuild:
-  Migrated to new Java build system.
-
-  05 Aug 2005; Petteri Räty <betelgeuse@gentoo.org> jss-3.4.ebuild:
-  the ebuild now inherits linux-info.eclass to fix bug 101427
-
-  12 Jul 2005; Thomas Matthijs <axxo@gentoo.org> jss-3.4.ebuild:
-  fix bug 98374
-
-  12 Jul 2005; Thomas Matthijs <axxo@gentoo.org> jss-3.4.ebuild:
-  Dep fix
-
-  26 Apr 2005; Gustavo Zacarias <gustavoz@gentoo.org> jss-3.4.ebuild:
-  Stable on sparc
-
-  23 Mar 2005; Gustavo Zacarias <gustavoz@gentoo.org> jss-3.4.ebuild:
-  Sparc workaround added, keyworded ~sparc wrt #84992
-
-  04 Feb 2005; Jan Brinkmann <luckyduck@gentoo.org> jss-3.4.ebuild:
-  the ebuild now also installs libjss3.so, marked stable on x86 and amd64.
-  fixing #79490
-
-*jss-3.4 (18 Dec 2004)
-
-  18 Dec 2004; Karl Trygve Kalleberg <karltk@gentoo.org> jss-3.4.ebuild:
-  Initial import. Ebuild submitted by the talented Jan Brinkmann 
-  <lucky@the-luckyduck.de>, fixes #70244.

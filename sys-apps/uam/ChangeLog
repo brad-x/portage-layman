@@ -1,156 +1,64 @@
 # ChangeLog for sys-apps/uam
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/uam/ChangeLog,v 1.36 2014/07/06 13:22:22 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> uam-0.3.1.ebuild,
-  uam-0.3.2.ebuild, uam-0.3.ebuild, uam-9999.ebuild:
-  Replace obsolete mirror://bitbucket with the real URI.
+*uam-9999 (09 Aug 2015)
+*uam-0.3.2 (09 Aug 2015)
+*uam-0.3.1 (09 Aug 2015)
+*uam-0.3 (09 Aug 2015)
 
-  14 Jan 2014; Agostino Sarubbo <ago@gentoo.org> uam-0.3.2.ebuild:
-  Stable for x86, wrt bug #495936
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +uam-0.3.ebuild, +uam-0.3.1.ebuild, +uam-0.3.2.ebuild, +uam-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org> uam-0.3.2.ebuild:
-  amd64 stable, bug #495936
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Oct 2013; Michał Górny <mgorny@gentoo.org> uam-9999.ebuild:
-  Switch to git-r3.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*uam-0.3.2 (26 Sep 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Sep 2013; Michał Górny <mgorny@gentoo.org> +uam-0.3.2.ebuild:
-  Version bump. Fixes requiring tinynotify-send aside sw-notify-send, bug
-  #485898.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*uam-0.3.1 (04 Jun 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> uam-9999.ebuild:
+  Use https by default
 
-  04 Jun 2013; Michał Górny <mgorny@gentoo.org> +uam-0.3.1.ebuild:
-  Version bump. Fixes notification text with uam-pmount.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Jun 2013; Michał Górny <mgorny@gentoo.org> uam-9999.ebuild:
-  Use udev_reload rather than custom reloading snippet.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*uam-9999 (15 Dec 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Dec 2012; Michał Górny <mgorny@gentoo.org> +uam-9999.ebuild:
-  Import the live ebuild.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> uam-0.3.ebuild:
-  Use virtual/udev instead of sys-fs/udev wrt #444398
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Sep 2012; Michał Górny <mgorny@gentoo.org> metadata.xml, uam-0.3.ebuild:
-  Sync URIs.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Aug 2012; Michał Górny <mgorny@gentoo.org> -uam-0.2.1.ebuild:
-  Drop old.
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> uam-0.3.ebuild:
-  marked x86 per bug 422193
-
-  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> uam-0.3.ebuild:
-  Stable for amd64, wrt bug #422193
-
-  24 May 2012; Michał Górny <mgorny@gentoo.org> uam-0.2.1.ebuild,
-  uam-0.3.ebuild:
-  Drop eutils inherit (no longer used).
-
-  24 May 2012; Mike Frysinger <vapier@gentoo.org> uam-0.2.1.ebuild,
-  uam-0.3.ebuild:
-  Inherit user for enewuser/etc...
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> uam-0.3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  09 Jan 2012; Michał Górny <mgorny@gentoo.org> +uam-0.2.1.ebuild:
-  Restore the stable ebuild. Sorry for the mistake.
-
-*uam-0.3 (07 Jan 2012)
-
-  07 Jan 2012; Michał Górny <mgorny@gentoo.org> -uam-0.2.1.ebuild,
-  +uam-0.3.ebuild:
-  Version bump. The new version adds pmount/pumount wrappers, sends
-  notifications with actions and fixes a number of minor issues.
-
-  26 Nov 2011; Michał Górny <mgorny@gentoo.org> metadata.xml:
-  Update bugs-to.
-
-  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> uam-0.2.1.ebuild:
-  x86 stable wrt bug #388385
-
-  26 Oct 2011; Tony Vroon <chainsaw@gentoo.org> uam-0.2.1.ebuild:
-  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
-  Elijah "Armageddon" El Lazkani in bug #388385.
-
-  24 Oct 2011; Michał Górny <mgorny@gentoo.org> uam-0.2.1.ebuild:
-  Use mirror://github/ as introduced lately.
-
-*uam-0.2.1 (03 Jul 2011)
-
-  03 Jul 2011; Michał Górny <mgorny@gentoo.org> -uam-0.2.ebuild,
-  +uam-0.2.1.ebuild:
-  Version bump. The new version fixes ntfs-3g config, and describes CD/DVD
-  mounting a little more.
-
-*uam-0.2 (20 Jun 2011)
-
-  20 Jun 2011; Michał Górny <mgorny@gentoo.org> -uam-0.1.1-r1.ebuild,
-  +uam-0.2.ebuild:
-  Version bump. The new version introduces CD/DVD mounting support.
-
-*uam-0.1.1-r1 (30 Apr 2011)
-
-  30 Apr 2011; Michał Górny <mgorny@gentoo.org> -uam-0.1.1.ebuild,
-  +uam-0.1.1-r1.ebuild:
-  Install in /lib, following similar change to sys-fs/udev.
-
-*uam-0.1.1 (31 Jan 2011)
-
-  31 Jan 2011; Michał Górny <mgorny@gentoo.org> -uam-0.1.ebuild,
-  +uam-0.1.1.ebuild:
-  Version bump. The new version fixes trying to mount whole UDF volume (bug
-  #353151) and introduces support for device filtering through uam.conf.
-
-*uam-0.1 (20 Jan 2011)
-
-  20 Jan 2011; Michał Górny <mgorny@gentoo.org> -uam-0.0.7.ebuild,
-  -uam-0.0.7.1.ebuild, +uam-0.1.ebuild:
-  Version bump. The new version finally fixes a long outstanding issue with uam
-  attempting to mount filesystem before rootfs is mounted R/W (bug #352104).
-
-  14 Jan 2011; Michał Górny <mgorny@gentoo.org> uam-0.0.7.ebuild,
-  uam-0.0.7.1.ebuild:
-  Update the elog messages to denote that sw-notify-send is now in the tree.
-
-*uam-0.0.7.1 (13 Jan 2011)
-
-  13 Jan 2011; Michał Górny <mgorny@gentoo.org> +uam-0.0.7.1.ebuild:
-  Version bump. The new version uses autotools as the buildsystem.
-
-  20 Dec 2010; Michał Górny <mgorny@gentoo.org> uam-0.0.7.ebuild:
-  Change the SRC_URIs to use cloud.github.com directly. This avoids issues with
-  (pointless) SSL and old wget versions. Update the HOMEPAGE.
-
-  19 Dec 2010; Michał Górny <mgorny@gentoo.org> metadata.xml:
-  Update the <bugs-to/> URL.
-
-  23 Oct 2010; Michał Górny <mgorny@gentoo.org> metadata.xml:
-  Update metadata.xml.
-
-  13 Oct 2010; Markus Meier <maekke@gentoo.org> uam-0.0.7.ebuild:
-  add ~x86, bug #339399
-
-*uam-0.0.7 (07 Oct 2010)
-
-  07 Oct 2010; Michał Górny <mgorny@gentoo.org> -uam-0.0.6.ebuild,
-  +uam-0.0.7.ebuild:
-  Trivial version bump. The new version fixes mountpoint removal (cleanup)
-  when pumount is used.
-
-  01 Oct 2010; Michał Górny <mgorny@gentoo.org> uam-0.0.6.ebuild:
-  Reload udev rules only if ${ROOT}/dev/.udev exists. Thanks to ABCD for the
-  suggestion.
-
-*uam-0.0.6 (01 Oct 2010)
-
-  01 Oct 2010; Michał Górny <mgorny@gentoo.org> +uam-0.0.6.ebuild,
-  +metadata.xml:
-  Import from the Sunrise overlay, per bug #278363.

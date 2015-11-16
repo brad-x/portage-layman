@@ -1,122 +1,63 @@
 # ChangeLog for dev-python/webpy
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/webpy/ChangeLog,v 1.32 2015/01/16 13:03:12 idella4 Exp $
+# (auto-generated from git log)
 
-  16 Jan 2015; Ian Delaney <idella4@gentoo.org> -webpy-0.34.ebuild,
-  -webpy-0.36.ebuild, webpy-0.37-r1.ebuild:
-  rm old
+*webpy-0.37-r1 (09 Aug 2015)
+*webpy-0.37 (09 Aug 2015)
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> webpy-0.37-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +webpy-0.37.ebuild, +webpy-0.37-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*webpy-0.37-r1 (21 Mar 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Mar 2013; Ian Delaney <idella4@gentoo.org> +webpy-0.37-r1.ebuild:
-  migration revbump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> webpy-0.37.ebuild:
-  Restricting jython
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> webpy-0.37.ebuild:
-  Stable for HPPA (bug #429044).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Sep 2012; Johannes Huber <johu@gentoo.org> webpy-0.37.ebuild:
-  Stable for x86, wrt bug #429044
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> webpy-0.37.ebuild,
+  webpy-0.37-r1.ebuild:
+  Use https by default
 
-  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> webpy-0.37.ebuild:
-  Stable for amd64, wrt bug #429044
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*webpy-0.37 (28 Jun 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +webpy-0.37.ebuild:
-  Bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> webpy-0.36.ebuild:
-  x86 stable wrt bug #400341
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> webpy-0.34.ebuild,
-  webpy-0.36.ebuild:
-  Restricting pypy #403839
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Feb 2012; Jeroen Roovers <jer@gentoo.org> webpy-0.36.ebuild:
-  Stable for HPPA (bug #400341).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> webpy-0.36.ebuild:
-  Stable for amd64, wrt bug #400341
+  Bug: https://bugs.gentoo.org/552720
 
-*webpy-0.36 (13 Sep 2011)
-
-  13 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +webpy-0.36.ebuild:
-  Version bump to 0.36.
-
-  02 Aug 2010; Jeroen Roovers <jer@gentoo.org> webpy-0.34.ebuild:
-  Stable for HPPA too.
-
-  11 Jul 2010; Markus Meier <maekke@gentoo.org> webpy-0.34.ebuild:
-  x86 stable, bug #325383
-
-  26 Jun 2010; Christoph Mende <angelos@gentoo.org> webpy-0.34.ebuild:
-  Stable on amd64 wrt bug #325383
-
-  24 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  webpy-0.34.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
-
-  01 Jun 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> webpy-0.32.ebuild:
-  x86 stable wrt bug #321431
-
-  26 May 2010; Pacho Ramos <pacho@gentoo.org> webpy-0.32.ebuild:
-  stable amd64, bug 321431
-
-*webpy-0.34 (25 May 2010)
-
-  25 May 2010; Dirkjan Ochtman <djc@gentoo.org> +webpy-0.34.ebuild:
-  Version bump to 0.34, bug 311097.
-
-  24 May 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove wrobel from metadata.xml (#111816)
-
-  20 Dec 2009; Fabian Groffen <grobian@gentoo.org> webpy-0.32.ebuild:
-  Merged keywords from Prefix
-
-*webpy-0.32 (04 Sep 2009)
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -webpy-0.30.ebuild,
-  +webpy-0.32.ebuild:
-  Bump to 0.32. Remove 0.30.
-
-  10 Apr 2009; Guy Martin <gmsoft@gentoo.org> webpy-0.31.ebuild:
-  Added ~hppa to KEYWORDS.
-
-  02 Apr 2009; Patrick Lauer <patrick@gentoo.org> webpy-0.31.ebuild:
-  SRC_URI fix, thanks to Xiaobing Jiang for noticing.
-
-*webpy-0.31 (15 Feb 2009)
-
-  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> +webpy-0.31.ebuild:
-  Bump to 0.31
-
-  08 Jan 2009; Patrick Lauer <patrick@gentoo.org> -webpy-0.2.ebuild,
-  -webpy-0.22.ebuild, -webpy-0.23.ebuild:
-  Removing old
-
-*webpy-0.30 (04 Jan 2009)
-
-  04 Jan 2009; Patrick Lauer <patrick@gentoo.org> +webpy-0.30.ebuild:
-  Bump to 0.3, named 0.30 because of upstream versioning, fixes #251035
-
-*webpy-0.23 (11 Feb 2008)
-
-  11 Feb 2008; Gunnar Wrobel <wrobel@gentoo.org> +webpy-0.23.ebuild:
-  Added webpy-0.23 to the tree.
-
-  20 Dec 2007; Gunnar Wrobel <wrobel@gentoo.org> ChangeLog:
-  Added webpy-0.22 to the tree (#196487).
-
-  26 Apr 2007; Steve Dibb <beandog@gentoo.org> webpy-0.2.ebuild:
-  add ~amd64, bug 175187
-
-*webpy-0.2 (19 Jan 2007)
-
-  19 Jan 2007; <wrobel@gentoo.org> +metadata.xml, +webpy-0.2.ebuild:
-  Added web.py-0.2 to the tree.

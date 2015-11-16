@@ -1,267 +1,132 @@
 # ChangeLog for dev-scheme/chicken
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-scheme/chicken/ChangeLog,v 1.60 2013/12/11 01:20:32 creffett Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  11 Dec 2013; Chris Reffett <creffett@gentoo.org> -chicken-3.3.0.ebuild,
-  -chicken-4.6.0.ebuild, -chicken-4.7.3-r1.ebuild, -chicken-4.8.0.3.ebuild:
-  Security cleanup wrt bug 462458
+*chicken-4.8.0.3-r1 (09 Aug 2015)
 
-  14 Jul 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3-r1.ebuild:
-  Stable for alpha, wrt bug #476172
-
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3-r1.ebuild:
-  Stable for ppc64, wrt bug #476172
-
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3-r1.ebuild:
-  Stable for ppc, wrt bug #476172
-
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3-r1.ebuild:
-  Stable for x86, wrt bug #476172
-
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3-r1.ebuild:
-  Stable for amd64, wrt bug #476172
-
-*chicken-4.8.0.3-r1 (08 Jul 2013)
-
-  08 Jul 2013; Michael Weber <xmw@gentoo.org> +chicken-4.8.0.3-r1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +chicken-4.8.0.3-r1.ebuild, +files/50hen-gentoo.el,
+  +files/chicken-4.5.0-r0-ARCH-to-zARCH-hack.patch,
+  +files/chicken-4.7.3-parallel-build.patch,
   +files/chicken-4.8.0.3-CVE-2013-1874.patch,
   +files/chicken-4.8.0.3-CVE-2013-2024.patch,
   +files/chicken-4.8.0.3-CVE-2013-2075_1.patch,
-  +files/chicken-4.8.0.3-CVE-2013-2075_2.patch:
-  Revbump to include security patches (bugs 462458, 469392, 467966)
+  +files/chicken-4.8.0.3-CVE-2013-2075_2.patch,
+  +files/chicken-4.8.0.3-parallel-build.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Apr 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3.ebuild:
-  Stable for amd64, wrt bug #455200
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Apr 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3.ebuild:
-  Stable for x86, wrt bug #455200
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Apr 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3.ebuild:
-  Stable for alpha, wrt bug #455200
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Apr 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3.ebuild:
-  Stable for ppc64, wrt bug #455200
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Apr 2013; Agostino Sarubbo <ago@gentoo.org> chicken-4.8.0.3.ebuild:
-  Stable for ppc, wrt bug #455200
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*chicken-4.8.0.3 (08 Apr 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Apr 2013; Panagiotis Christopoulos <pchrist@gentoo.org>
-  -chicken-4.8.0.2.ebuild, -files/chicken-4.8.0.2-parallel-build.patch,
-  +chicken-4.8.0.3.ebuild, +files/chicken-4.8.0.3-parallel-build.patch:
-  pushd chicken-4.8.0.3, remove 4.8.0.2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*chicken-4.8.0.2 (07 Apr 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Apr 2013; Panagiotis Christopoulos <pchrist@gentoo.org>
-  -chicken-4.8.0.1.ebuild, -files/chicken-4.8.0.1-parallel-build.patch,
-  +chicken-4.8.0.2.ebuild, +files/chicken-4.8.0.2-parallel-build.patch:
-  Pushing chicken 4.8.0.2, removing 4.8.0.1
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*chicken-4.8.0.1 (05 Feb 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Feb 2013; Panagiotis Christopoulos <pchrist@gentoo.org>
-  -chicken-4.8.0.ebuild, +chicken-4.8.0.1.ebuild,
-  +files/chicken-4.8.0.1-parallel-build.patch,
-  -files/chicken-4.8.0-parallel-build.patch:
-  Bump chicken to 4.8.0.1, fixes security issues addressed in bug #455200,
-  thanks to proxy-maintainer Erik Falor (fadein) ewfalor at gmail dot com
+*chicken-4.10.0 (13 Sep 2015)
 
-*chicken-4.8.0 (17 Jan 2013)
+  13 Sep 2015; Ian Delaney <idella4@gentoo.org> +chicken-4.10.0.ebuild,
+  +files/4.10.0-parallel-build.patch:
+  bump to 4.10.0
 
-  17 Jan 2013; Panagiotis Christopoulos <pchrist@gentoo.org>
-  +chicken-4.8.0.ebuild, +files/chicken-4.8.0-parallel-build.patch:
-  Bump. Thanks to proxy-maintainer Erik Falor (fadein) ewfalor at gmail dot com
-  .
+  ebuild and patch submitted by maintainer in sec bug #467966
 
-*chicken-4.7.3-r1 (10 Dec 2011)
+  Package-Manager: portage-2.2.20.1
 
-  10 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> -chicken-4.5.0.ebuild,
-  -chicken-4.7.3.ebuild, +chicken-4.7.3-r1.ebuild:
-  Fix bug #393561 with variable. Delete some old versions. Thanks to Erik Falor
-  <ewfalor@gmail.com>
+*chicken-4.10.0-r1 (17 Oct 2015)
 
-*chicken-4.7.3 (07 Dec 2011)
+  17 Oct 2015; Ian Delaney <idella4@gentoo.org> +chicken-4.10.0-r1.ebuild:
+  revbump
 
-  07 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> +chicken-4.7.3.ebuild,
-  +files/chicken-4.7.3-parallel-build.patch, metadata.xml:
-  Version bump, assign package to proxy-maintainers, thanks to Erik Falor. Bug
-  fixes will arrive soon
+  drop use of parallel-build and the -parallel-build.patch by request
+  of proxy maintainer via the gentoo bug, also many stylistic and qa
+  improvements to the code of the ebuild
 
-*chicken-4.6.0 (06 Oct 2010)
+  Gentoo bug: #467966
 
-  06 Oct 2010; Tomas Touceda <chiiph@gentoo.org> +chicken-4.6.0.ebuild:
-  Version bump
+  Package-Manager: portage-2.2.20.1
 
-  07 Jun 2010; Panagiotis Christopoulos <pchrist@gentoo.org>
-  chicken-4.5.0.ebuild, +files/chicken-4.5.0-r0-ARCH-to-zARCH-hack.patch:
-  nasty hack to fix buildsystem's and portage variable collision, wrt bug
-  #322527
+  17 Oct 2015; Ian Delaney <idella4@gentoo.org> -chicken-4.10.0.ebuild,
+  -files/4.10.0-parallel-build.patch:
+  clean affected version -4.10.0, patch
 
-*chicken-4.5.0 (01 Jun 2010)
+  Gentoo Security bug: #467966
 
-  01 Jun 2010; Tomas Touceda <chiiph@gentoo.org> -chicken-3.1.0.ebuild,
-  -chicken-3.2.0.ebuild, -chicken-3.4.0.ebuild, -chicken-4.0.0.ebuild,
-  -chicken-4.1.0.ebuild, -chicken-4.2.0.ebuild, +chicken-4.5.0.ebuild:
-  Version bump. Removed native emacs support, replaced with scheme-complete.
-  Clean up old testing/stable versions, leaving just 3.3.0 and 4.5.0.
+  Package-Manager: portage-2.2.20.1
 
-*chicken-4.2.0 (02 Nov 2009)
+  21 Oct 2015; Tobias Klausmann <klausman@gentoo.org>
+  chicken-4.10.0-r1.ebuild:
+  add alpha keyword
 
-  02 Nov 2009; Marijn Schouten <hkBst@gentoo.org> chicken-4.1.0.ebuild,
-  +chicken-4.2.0.ebuild:
-  bump
+  Gentoo-Bug: 467966
 
-*chicken-4.1.0 (14 Sep 2009)
+  Package-Manager: portage-2.2.23
 
-  14 Sep 2009; Luis F. Araujo <araujo@gentoo.org> +chicken-4.1.0.ebuild:
-  Version bump
+  23 Oct 2015; Agostino Sarubbo <ago@gentoo.org> chicken-4.10.0-r1.ebuild:
+  amd64 stable wrt bug #467966
 
-  29 Aug 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  chicken-4.0.0.ebuild:
-  Add -j1 to make install as well (bug #283158).
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  18 Apr 2009; Markus Meier <maekke@gentoo.org> chicken-3.3.0:
-  amd64/x86 stable, bug #265097
+  01 Nov 2015; Mikle Kolyada <zlogene@gentoo.org> chicken-4.10.0-r1.ebuild:
+  x86 stable wrt bug #467966
 
-  15 Apr 2009; Marijn Schouten <hkBst@gentoo.org> chicken-4.0.0.ebuild:
-  force non-parallel build (bug 265881)
+  Package-Manager: portage-2.2.20.1
 
-  15 Apr 2009; Brent Baude <ranger@gentoo.org> chicken-3.3.0.ebuild:
-  Marking chicken-3.3.0 ppc64 for bug 265097
+  04 Nov 2015; Agostino Sarubbo <ago@gentoo.org> chicken-4.10.0-r1.ebuild:
+  ppc stable wrt bug #467966
 
-  11 Apr 2009; nixnut <nixnut@gentoo.org> chicken-3.3.0.ebuild:
-  ppc stable #265097
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  08 Apr 2009; Tobias Klausmann <klausman@gentoo.org> chicken-3.3.0.ebuild:
-  Stable on alpha, bug #265097
+  13 Nov 2015; Agostino Sarubbo <ago@gentoo.org> chicken-4.10.0-r1.ebuild:
+  ppc64 stable wrt bug #467966
 
-*chicken-3.4.0 (06 Apr 2009)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc64"
 
-  06 Apr 2009; Marijn Schouten <hkBst@gentoo.org> +chicken-3.4.0.ebuild:
-  add latest chicken-3 release
+  15 Nov 2015; Ian Delaney <idella4@gentoo.org> -chicken-4.8.0.3-r1.ebuild:
+  cleanup; rm vn. 4.10.0-r1 wrt the gentoo bug
 
-*chicken-4.0.0 (06 Apr 2009)
+  Gentoo bug: #467966
 
-  06 Apr 2009; Marijn Schouten <hkBst@gentoo.org> +chicken-4.0.0.ebuild:
-  Major version bump: default macro system is now hygienic
+  Package-Manager: portage-2.2.24
 
-*chicken-3.3.0 (12 Jul 2008)
-
-  12 Jul 2008; Marijn Schouten <hkBst@gentoo.org> +chicken-3.3.0.ebuild:
-  bump (bug 231547)
-
-*chicken-3.2.0 (01 May 2008)
-
-  01 May 2008; Marijn Schouten <hkBst@gentoo.org> +chicken-3.2.0.ebuild:
-  bump
-
-  22 Apr 2008; Ulrich Mueller <ulm@gentoo.org> -chicken-1.89.ebuild,
-  -chicken-2.2.ebuild, -chicken-2.3.ebuild, -chicken-2.5.ebuild,
-  -chicken-2.6.ebuild, -chicken-2.731.ebuild, -chicken-3.0.0.ebuild,
-  chicken-3.1.0.ebuild:
-  Fix Emacs support. Don't install scheme-complete.el with USE=emacs; a	newer
-  version is now provided by app-emacs/scheme-complete, bug 218630. Remove old
-  ebuilds as requested by hkbst.
-
-  18 Apr 2008; nixnut <nixnut@gentoo.org> chicken-3.1.0.ebuild:
-  Stable on ppc wrt bug 217408
-
-  15 Apr 2008; Raúl Porcel <armin76@gentoo.org> chicken-3.1.0.ebuild:
-  alpha stable
-
-  14 Apr 2008; Markus Meier <maekke@gentoo.org> chicken-3.1.0.ebuild:
-  amd64/x86 stable, bug #217408
-
-  14 Apr 2008; Markus Rothe <corsair@gentoo.org> chicken-3.1.0.ebuild:
-  Stable on ppc64; bug #217408
-
-*chicken-3.1.0 (26 Mar 2008)
-
-  26 Mar 2008; Marijn Schouten <hkBst@gentoo.org> +chicken-3.1.0.ebuild:
-  bump, hopefully this version can go stable in a few weeks
-  Thanks to Leonardo Valeri Manera <l.valerimanera@gmail.com>
-
-  23 Mar 2008; Christian Faulhammer <opfer@gentoo.org> ChangeLog:
-  fix ChangeLog
-
-  13 Feb 2008; Jeroen Roovers <jer@gentoo.org> chicken-2.6.ebuild,
-  chicken-2.731.ebuild, chicken-3.0.0.ebuild:
-  Remove hppa keywording.
-
-*chicken-3.0.0 (29 Jan 2008)
-
-  29 Jan 2008; Marijn Schouten <hkBst@gentoo.org> +chicken-3.0.0.ebuild:
-  bump per bug 207963. Now uses host libpcre.
-
-  20 Dec 2007; Marijn Schouten <hkBst@gentoo.org> chicken-2.731.ebuild:
-  fix bug 201220, thanks to José Romildo Malaquias <j.romildo@gmail.com> for
-  the patch
-
-*chicken-2.731 (28 Nov 2007)
-
-  28 Nov 2007; Marijn Schouten <hkBst@gentoo.org> +chicken-2.731.ebuild:
-  bump
-
-  21 Nov 2007; Raúl Porcel <armin76@gentoo.org> chicken-2.6.ebuild:
-  Add ~alpha wrt #199368
-
-  20 Nov 2007; Markus Rothe <corsair@gentoo.org> chicken-2.6.ebuild:
-  Added ~ppc64; bug #199368
-
-  19 Nov 2007; Jeroen Roovers <jer@gentoo.org> chicken-2.6.ebuild:
-  Marked ~hppa (bug #199368).
-
-  06 Sep 2007; Marijn Schouten <hkBst@gentoo.org> chicken-2.6.ebuild:
-  add dep for libffi
-
-  13 Jun 2007; Marijn Schouten <hkBst@gentoo.org> chicken-2.6.ebuild:
-  fix bug 181334
-
-*chicken-2.6 (10 May 2007)
-
-  10 May 2007; Marijn Schouten <hkBst@gentoo.org> +chicken-2.6.ebuild:
-  add 2.6 and make it install syntax-case egg by default
-
-*chicken-2.5 (12 Jan 2007)
-
-  12 Jan 2007; Marijn Schouten <hkBst@gentoo.org> +chicken-2.5.ebuild:
-  added 2.5 ebuild
-
-  11 May 2006; Matthew Kennedy <mkennedy@gentoo.org> ChangeLog:
-  Adding GPG signature.
-
-*chicken-2.3 (11 May 2006)
-
-  11 May 2006; Matthew Kennedy <mkennedy@gentoo.org> +chicken-2.3.ebuild:
-  New upstream version; Resolves Bug #128282.
-
-  07 Mar 2006; Matthew Kennedy <mkennedy@gentoo.org> metadata.xml:
-  Fix invalid Herd name -- Was "dev-scheme", should have been "scheme".
-
-*chicken-2.2 (30 Sep 2005)
-
-  30 Sep 2005; Matthew Kennedy <mkennedy@gentoo.org> +files/50hen-gentoo.el,
-  -chicken-1.22.ebuild, +chicken-2.2.ebuild:
-  New upstream version; Resolves Bug #106738; Removed old ebuilds; Resolves
-  Bug #90583; Support optional Emacs library, hen.el; DEPEND on
-  dev-libs/libpcre.
-
-  24 May 2005; David Holm <dholm@gentoo.org> chicken-1.89.ebuild:
-  Added to ~ppc.
-
-  09 Apr 2005; Simon Stelling <blubb@gentoo.org> chicken-1.89.ebuild:
-  added ~amd64 and corrected multilib handling
-
-*chicken-1.89 (07 Feb 2005)
-
-  07 Feb 2005; Matthew Kennedy <mkennedy@gentoo.org> +metadata.xml,
-  +chicken-1.22.ebuild, +chicken-1.89.ebuild:
-  Move from dev-lisp/; Updated ebuild; Resolves bug #78247 and #80599
-
-*chicken-1.22 (20 Nov 2003)
-
-  20 Nov 2003; <mkennedy@gentoo.org> chicken-1.22.ebuild:
-  Initial import. Ebuild contributed by Mirian Crzig Lennox <mirian@cosmic.com>
-  and modified by Matthew Kennedy <mkennedy@gentoo.org>

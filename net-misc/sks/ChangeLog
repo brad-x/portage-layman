@@ -1,69 +1,89 @@
 # ChangeLog for net-misc/sks
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/sks/ChangeLog,v 1.13 2015/07/26 19:32:50 k_f Exp $
+# (auto-generated from git log)
 
-  26 Jul 2015; Kristian Fiskerstrand <k_f@gentoo.org>
-  +files/sks-1.1.5-disable-warn-error-a.patch, sks-1.1.5-r1.ebuild:
-  warn-error A is set for development versions (tagged with +) upstream, however
-  it is not intended to actually be fatal errors for released versions. We want
-  to keep EdDSA support, i.e it is actually one commit past 1.1.5, so just
-  disabling making warnings fatal.
+*sks-1.1.5-r1 (09 Aug 2015)
+*sks-1.1.5 (09 Aug 2015)
 
-*sks-1.1.5-r1 (02 Feb 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sks-1.1.5-disable-warn-error-a.patch, +files/sks-1.1.5-eddsa.patch,
+  +files/sks-db.initd, +files/sks-db.service, +files/sks-recon.initd,
+  +files/sks-recon.service, +files/sks.confd, +metadata.xml,
+  +sks-1.1.5.ebuild, +sks-1.1.5-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  02 Feb 2015; Kristian Fiskerstrand <k_f@gentoo.org>
-  +files/sks-1.1.5-eddsa.patch, +sks-1.1.5-r1.ebuild:
-  Add support for EdDSA (Ed25519) from the upstream master branch
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jul 2014;  <kristianf@gentoo.org> metadata.xml:
-  Taking over full maintainership instead of through proxy-maint
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*sks-1.1.5 (05 May 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 May 2014; Manuel Rüger <mrueg@gentoo.org> +sks-1.1.5.ebuild,
-  -files/bdb_stubs-gentoo.patch, -files/sks-1.1.4-ECC_OID_fix_x86.patch,
-  -files/sks-1.1.4-man_url.patch, -sks-1.1.2.ebuild, -sks-1.1.4-r1.ebuild,
-  -sks-1.1.4.ebuild:
-  Version bump. Cleanup old. Proxy commit for Kristian Fiskerstrand. Fixes bug
-  #509352 (CVE-2014-3207).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Dec 2013; Patrick Lauer <patrick@gentoo.org> sks-1.1.4-r1.ebuild:
-  Whitespace
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> sks-1.1.5.ebuild,
+  sks-1.1.5-r1.ebuild:
+  Use https by default
 
-*sks-1.1.4-r1 (13 Dec 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Dec 2013; Manuel Rüger <mrueg@gentoo.org> +files/sks-1.1.4-man_url.patch,
-  +sks-1.1.4-r1.ebuild:
-  Update doc url in man-page, create docfile. Patches by Kristian Fiskerstrand.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*sks-1.1.4 (22 Nov 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Nov 2013; Manuel Rüger <mrueg@gentoo.org>
-  +files/sks-1.1.4-ECC_OID_fix_x86.patch, +files/sks-db.initd,
-  +files/sks-db.service, +files/sks-recon.initd, +files/sks-recon.service,
-  +files/sks.confd, +sks-1.1.4.ebuild, metadata.xml:
-  Version bump. Add initd scripts and systemd unit files by Emery Hemingway.
-  Fixes bug #427030. Add Kristian Fiskerstrand as maintainer and proxy-
-  maintainers as herd.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Dec 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer as talked with him
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Feb 2012; Mike Doty <kingtaco@gentoo.org> sks-1.1.2.ebuild:
-  fixed symlinks
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Feb 2012; Mike Doty <kingtaco@gentoo.org> sks-1.1.2.ebuild:
-  Fixed symlinks
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Feb 2012; Mike Doty <kingtaco@gentoo.org> sks-1.1.2.ebuild, metadata.xml:
-  Fixed formatting in metadata.xml
-  Fixed USE=optimize src_install()
+  21 Sep 2015; Kristian Fiskerstrand <k_f@gentoo.org> sks-1.1.5-r1.ebuild:
+  1.1.5-r1: Stable for amd64
 
-  06 Feb 2012; Mike Doty <kingtaco@gentoo.org> ChangeLog:
-  Signing Manifest
+  Package-Manager: portage-2.2.20.1
 
-*sks-1.1.2 (06 Feb 2012)
+  21 Sep 2015; Kristian Fiskerstrand <k_f@gentoo.org> -sks-1.1.5.ebuild:
+  Remove old 1.1.5
 
-  06 Feb 2012; Mike Doty <kingtaco@gentoo.org> +sks-1.1.2.ebuild,
-  +files/bdb_stubs-gentoo.patch, +metadata.xml:
-  Initial commit
+  Package-Manager: portage-2.2.20.1
+
+*sks-1.1.5-r2 (31 Oct 2015)
+
+  31 Oct 2015; Kristian Fiskerstrand <k_f@gentoo.org>
+  +files/sks-1.1.5-curve25519.patch, +sks-1.1.5-r2.ebuild:
+  Revision bump, adding curve25519 encryption support
+
+  Upstream patch in issue
+  https://bitbucket.org/skskeyserver/sks-keyserver/issues/36/curve25519-oid-
+  for-encryption
+  has been reviewed and is going for inclusion
+
+  Package-Manager: portage-2.2.20.1
+

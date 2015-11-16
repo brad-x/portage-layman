@@ -1,129 +1,56 @@
 # ChangeLog for net-misc/csync
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/csync/ChangeLog,v 1.25 2014/12/24 05:15:50 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  24 Dec 2014; Jeroen Roovers <jer@gentoo.org> csync-0.50.0.ebuild:
-  Fix DEPEND.
+*csync-0.50.0 (09 Aug 2015)
 
-  25 Nov 2014; Bernard Cafarelli <voyageur@gentoo.org> csync-0.50.0.ebuild:
-  Drop blocker on owncloud-client, it now installs ocsync in a private
-  directory, bug #530062
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +csync-0.50.0.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Feb 2014; Bernard Cafarelli <voyageur@gentoo.org> csync-0.50.0.ebuild:
-  Also block newer owncloud-client, as it bundles ocsync
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*csync-0.50.0 (06 Feb 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Feb 2014; Bernard Cafarelli <voyageur@gentoo.org> +csync-0.50.0.ebuild,
-  -csync-0.90.4.ebuild, metadata.xml:
-  Take package, switch to correct upstream version, bug #479806
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Feb 2014; Michael Palimaka <kensington@gentoo.org> metadata.xml:
-  Send to maintainer-needed.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*csync-0.90.4 (03 Dec 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Dec 2013; Chris Reffett <creffett@gentoo.org> +csync-0.90.4.ebuild,
-  -csync-0.90.0.ebuild:
-  Version bump wrt bug 489582
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Sep 2013; Chris Reffett <creffett@gentoo.org> -csync-0.70.6.ebuild,
-  -csync-0.70.7.ebuild, -csync-0.80.0.ebuild,
-  -files/csync-0.60.2-removebadtest.patch:
-  Drop old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*csync-0.90.0 (17 Sep 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Sep 2013; Chris Reffett <creffett@gentoo.org> +csync-0.90.0.ebuild:
-  Version bump wrt bug 483696. Remove test patch and restrict tests completely
-  (they were causing compile phase to fail).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*csync-0.80.0 (28 Jun 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Jun 2013; Pavlos Ratis <dastergon@gentoo.org> +csync-0.80.0.ebuild:
-  Version bump, bug 475112
-
-*csync-0.70.7 (29 Apr 2013)
-
-  29 Apr 2013; Michael Palimaka <kensington@gentoo.org> +csync-0.70.7.ebuild,
-  -csync-0.70.4-r1.ebuild, -files/csync-0.70.1-automagicness.patch:
-  Version bump. Remove old.
-
-*csync-0.70.6 (15 Apr 2013)
-
-  15 Apr 2013; Michael Palimaka <kensington@gentoo.org> +csync-0.70.6.ebuild,
-  -csync-0.70.3.ebuild, -files/csync-0.60.2-automagicness.patch,
-  -files/csync-0.60.4-automagicness.patch, -files/csync-automagicness.patch:
-  Version bump. Remove old.
-
-*csync-0.70.4-r1 (11 Mar 2013)
-
-  11 Mar 2013; Chris Reffett <creffett@gentoo.org> +csync-0.70.4-r1.ebuild,
-  -csync-0.70.4.ebuild:
-  Revision bump. Move files from /usr/etc/ to /etc/ wrt bug 460760
-
-*csync-0.70.4 (28 Feb 2013)
-
-  28 Feb 2013; Chris Reffett <creffett@gentoo.org> +csync-0.70.4.ebuild:
-  Version bump wrt bug 459476
-
-*csync-0.70.3 (31 Jan 2013)
-
-  31 Jan 2013; Tomáš Chvátal <scarabeus@gentoo.org> +csync-0.70.3.ebuild,
-  -csync-0.60.1.ebuild, -csync-0.60.3.ebuild, -csync-0.60.4.ebuild,
-  -csync-0.70.1.ebuild:
-  Version bump to 0.70.3 to support mirall-1.2.0. Punt older.
-
-*csync-0.70.1 (22 Jan 2013)
-
-  22 Jan 2013; Chris Reffett <creffett@gentoo.org> +csync-0.70.1.ebuild,
-  +files/csync-0.70.1-automagicness.patch:
-  Version bump. Reroll automagic patch, add dev-libs/check dependency
-
-*csync-0.60.4 (21 Dec 2012)
-
-  21 Dec 2012; Chris Reffett <creffett@gentoo.org> +csync-0.60.4.ebuild,
-  +files/csync-0.60.4-automagicness.patch:
-  Version bump.
-
-*csync-0.60.3 (14 Dec 2012)
-
-  14 Dec 2012; Chris Reffett <creffett@gentoo.org> +csync-0.60.3.ebuild,
-  +files/csync-0.60.2-automagicness.patch,
-  +files/csync-0.60.2-removebadtest.patch, -csync-0.50.8.ebuild,
-  -csync-0.60.0-r1.ebuild:
-  Version bump, remove old.
-
-*csync-0.60.1 (16 Nov 2012)
-
-  16 Nov 2012; Johannes Huber <johu@gentoo.org> +csync-0.60.1.ebuild:
-  Version bump.
-
-*csync-0.60.0-r1 (17 Oct 2012)
-
-  17 Oct 2012; Michael Palimaka <kensington@gentoo.org> +csync-0.60.0-r1.ebuild,
-  -csync-0.60.0.ebuild:
-  Install docs into the correct directory.
-
-  15 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> csync-0.60.0.ebuild:
-  Respect docdir.
-
-*csync-0.60.0 (13 Oct 2012)
-
-  13 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> +csync-0.60.0.ebuild:
-  Bump to latest.
-
-  28 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> csync-0.50.8.ebuild:
-  Raise the dep over iniparser.
-
-  28 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> csync-0.50.8.ebuild:
-  Enable external logging.
-
-  28 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> csync-0.50.8.ebuild:
-  Mark testing on x86.
-
-*csync-0.50.8 (28 Aug 2012)
-
-  28 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> +csync-0.50.8.ebuild,
-  +files/csync-automagicness.patch, +metadata.xml:
-  Add csync package required for miral owncloud service.

@@ -1,116 +1,58 @@
 # ChangeLog for app-i18n/x-unikey
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/x-unikey/ChangeLog,v 1.30 2015/06/28 10:14:55 zlogene Exp $
+# (auto-generated from git log)
 
-  28 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> -x-unikey-1.0.4-r1.ebuild,
-  x-unikey-1.0.4-r2.ebuild:
-  x86 stable wrt bug #552188; Drop old.
+*x-unikey-1.0.4-r2 (09 Aug 2015)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/01x-unikey,
+  +files/x-unikey-1.0.4-gcc43.patch, +files/x-unikey-1.0.4-gcc44.patch,
+  +files/x-unikey-1.0.4-gentoo.patch, +metadata.xml,
+  +x-unikey-1.0.4-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  21 Apr 2015; Patrick Lauer <patrick@gentoo.org> x-unikey-1.0.4-r2.ebuild:
-  Whitespace
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*x-unikey-1.0.4-r2 (20 Apr 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Apr 2015; Manuel Rüger <mrueg@gentoo.org> +x-unikey-1.0.4-r2.ebuild:
-  Update EAPI.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -x-unikey-0.9.2.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Oct 2012;  <naota@gentoo.org> x-unikey-0.9.2.ebuild,
-  x-unikey-1.0.4-r1.ebuild:
-  Convert gtk-query-immodules-gtk2 into safe usage. #413527
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> x-unikey-1.0.4-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> x-unikey-0.9.2.ebuild,
-  x-unikey-1.0.4-r1.ebuild:
-  Fix slot-dep on gtk+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Feb 2010; Markus Meier <maekke@gentoo.org> x-unikey-1.0.4-r1.ebuild:
-  x86 stable, bug #302497
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Aug 2009; Samuli Suominen <ssuominen@gentoo.org>
-  x-unikey-1.0.4-r1.ebuild, +files/x-unikey-1.0.4-gcc44.patch:
-  Fix building with GCC 4.4+ and GLIBC 2.10+ wrt #277565.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*x-unikey-1.0.4-r1 (31 Dec 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Dec 2008; MATSUU Takuto <matsuu@gentoo.org>
-  +files/x-unikey-1.0.4-gcc43.patch, +files/x-unikey-1.0.4-gentoo.patch,
-  -x-unikey-1.0.ebuild, -x-unikey-1.0.2.ebuild, +x-unikey-1.0.4-r1.ebuild:
-  Added ~amd64. Fixed gcc-4.3 issue, bug #250682. Clean up. Removed old
-  versions.
-
-  16 Aug 2008; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove pclouds from metadata.xml (#49680)
-
-  22 Jul 2007; Denis Dupeyron <calchan@gentoo.org> x-unikey-0.9.2.ebuild,
-  x-unikey-1.0.ebuild, x-unikey-1.0.2.ebuild, x-unikey-1.0.4.ebuild:
-  Drop virtual/x11 dependency.
-
-  09 Apr 2007; Nguyễn Thái Ngọc Duy <pclouds@gentoo.org>
-  x-unikey-0.9.2.ebuild, x-unikey-1.0.ebuild, x-unikey-1.0.2.ebuild,
-  x-unikey-1.0.4.ebuild:
-  Use doenvd, #173884
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org> x-unikey-0.9.2.ebuild,
-  x-unikey-1.0.ebuild, x-unikey-1.0.2.ebuild, x-unikey-1.0.4.ebuild:
-  Convert to use elog.
-
-  11 Sep 2006; Nguyễn Thái Ngọc Duy <pclouds@gentoo.org>
-  files/digest-x-unikey-1.0.2, files/digest-x-unikey-1.0.4, Manifest:
-  Fixed digest conflicts, #147171
-
-*x-unikey-1.0.4 (06 May 2006)
-
-  06 May 2006; <pclouds@gentoo.org> +x-unikey-1.0.4.ebuild:
-  Bumped to 1.0.4
-
-  10 Feb 2006; Alastair Tse <liquidx@gentoo.org> x-unikey-0.9.2.ebuild,
-  x-unikey-1.0.ebuild, x-unikey-1.0.2.ebuild:
-  modular-x-ified
-
-  08 Aug 2005; David Holm <dholm@gentoo.org> x-unikey-1.0.2.ebuild:
-  Added to ~ppc.
-
-*x-unikey-1.0.2 (07 Aug 2005)
-
-  07 Aug 2005; <pclouds@gentoo.org> -x-unikey-0.9.1d.ebuild,
-  +x-unikey-1.0.2.ebuild:
-  Version bump
-
-*x-unikey-1.0 (18 Jul 2005)
-
-  18 Jul 2005; <pclouds@gentoo.org> x-unikey-0.9.2.ebuild,
-  +x-unikey-1.0.ebuild:
-  Stable 0.9.2 on x86, Bumped to 1.0
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org>
-  x-unikey-0.9.1d.ebuild:
-  Stable on ppc.
-
-*x-unikey-0.9.2 (22 Nov 2004)
-
-  22 Nov 2004; <pclouds@gentoo.org> +x-unikey-0.9.2.ebuild:
-  version bump
-
-  04 Sep 2004; <pclouds@gentoo.org> x-unikey-0.9.1d.ebuild:
-  Stable on x86
-
-  29 Jun 2004; David Holm <dholm@gentoo.org> x-unikey-0.9.1d.ebuild:
-  Added to ~ppc.
-
-*x-unikey-0.9.1d (28 Jun 2004)
-
-  28 Jun 2004; <pclouds@gentoo.org> x-unikey-0.9.1d.ebuild,
-  files/01x-unikey:
-  new package, committed by Lang Thang <langthang@vn21.homelinux.org> in bug
-  #49301

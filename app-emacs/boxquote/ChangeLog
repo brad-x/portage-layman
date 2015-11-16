@@ -1,96 +1,56 @@
 # ChangeLog for app-emacs/boxquote
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/boxquote/ChangeLog,v 1.27 2012/09/08 18:06:02 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  08 Sep 2012; Ulrich Müller <ulm@gentoo.org> boxquote-1.23.ebuild:
-  Change EAPI to 4.
+*boxquote-1.23 (09 Aug 2015)
 
-  17 Nov 2009; Ulrich Mueller <ulm@gentoo.org> -boxquote-1.21.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +boxquote-1.23.ebuild,
+  +files/50boxquote-gentoo.el, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  17 Nov 2009; Brent Baude <ranger@gentoo.org> boxquote-1.23.ebuild:
-  Marking boxquote-1.23 ppc64 for bug 290655
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Nov 2009; nixnut <nixnut@gentoo.org> boxquote-1.23.ebuild:
-  ppc stable #290655
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  30 Oct 2009; Markus Meier <maekke@gentoo.org> boxquote-1.23.ebuild:
-  amd64/x86 stable, bug #290655
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*boxquote-1.23 (27 Sep 2009)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Sep 2009; Ulrich Mueller <ulm@gentoo.org> +files/50boxquote-gentoo.el,
-  boxquote-1.21.ebuild, -files/51boxquote-gentoo.el, +boxquote-1.23.ebuild:
-  Version bump. Rename site-init file to canonical name.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Jun 2008; Ulrich Mueller <ulm@gentoo.org> -boxquote-1.18-r1.ebuild:
-  Remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jun 2008; Markus Rothe <corsair@gentoo.org> boxquote-1.21.ebuild:
-  Stable on ppc64; bug #228687
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jun 2008; nixnut <nixnut@gentoo.org> boxquote-1.21.ebuild:
-  Stable on ppc wrt bug 228687
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Jun 2008; Christian Faulhammer <opfer@gentoo.org> boxquote-1.21.ebuild:
-  stable x86/amd64, bug 228687
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jun 2008; Ulrich Mueller <ulm@gentoo.org> boxquote-1.21.ebuild:
-  Do not assign SIMPLE_ELISP since elisp.eclass now detects this case
-  automatically.
+  Bug: https://bugs.gentoo.org/552720
 
-*boxquote-1.21 (21 May 2008)
-
-  21 May 2008; Ulrich Mueller <ulm@gentoo.org> +boxquote-1.21.ebuild:
-  Version bump.
-
-  01 Jun 2007; nixnut <nixnut@gentoo.org> boxquote-1.18-r1.ebuild:
-  Stable on ppc wrt bug 178722
-
-  19 May 2007; Markus Rothe <corsair@gentoo.org> boxquote-1.18-r1.ebuild:
-  Stable on ppc64; bug #178722
-
-  16 May 2007; Christian Faulhammer <opfer@gentoo.org>
-  boxquote-1.18-r1.ebuild:
-  stable x86/amd64, bug 178722
-
-*boxquote-1.18-r1 (16 Apr 2007)
-
-  16 Apr 2007; Ulrich Mueller <ulm@gentoo.org> +files/51boxquote-gentoo.el,
-  +boxquote-1.18-r1.ebuild:
-  Generate autoload file for package initialisation, using new function
-  elisp-make-autoload-file of elisp-common.eclass.
-
-  07 Mar 2007; Christian Faulhammer <opfer@gentoo.org>
-  files/50boxquote-gentoo.el:
-  add load path correctly, fixes bug 169588, reported by Ulrich Mueller
-  <ulm@kph.uni-mainz.de>
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  09 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
-  -boxquote-1.14.ebuild:
-  clean up
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> boxquote-1.18.ebuild:
-  Stable on ppc.
-
-  20 Aug 2004; Tom Gall <tgall@gentoo.org> boxquote-1.18.ebuild:
-  stable on ppc64 bug #58500
-
-  22 Apr 2004; David Holm <dholm@gentoo.org> boxquote-1.18.ebuild:
-  Added to ~ppc.
-
-*boxquote-1.18 (20 Nov 2003)
-
-  20 Nov 2003; <mkennedy@gentoo.org> boxquote-1.18.ebuild:
-  minor version bump
-
-*boxquote-1.14 (31 Oct 2002)
-
-  31 Oct 2002; Matthew Kennedy <mkennedy@gentoo.org> ChangeLog,
-  boxquote-1.14.ebuild, files/50boxquote-gentoo.el,
-  files/digest-boxquote-1.14 :
-
-  Initial import.

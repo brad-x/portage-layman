@@ -1,151 +1,71 @@
 # ChangeLog for dev-ruby/jeweler
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/jeweler/ChangeLog,v 1.36 2015/07/25 08:33:11 graaff Exp $
+# (auto-generated from git log)
 
-  25 Jul 2015; Hans de Graaff <graaff@gentoo.org> -jeweler-1.8.4.ebuild:
-  Cleanup. Drop latest ruby19-only stable version since nothing in the tree
-  depends on it and new versions require many new stable dependencies.
+*jeweler-2.0.1-r2 (09 Aug 2015)
+*jeweler-2.0.1-r1 (09 Aug 2015)
 
-  07 Jun 2015; Hans de Graaff <graaff@gentoo.org> jeweler-2.0.1-r1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +jeweler-2.0.1-r1.ebuild,
+  +jeweler-2.0.1-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  11 Aug 2015; Hans de Graaff <graaff@gentoo.org> jeweler-2.0.1-r1.ebuild:
+  add missing test dependency on dev-ruby/hoe
+
+  Package-Manager: portage-2.2.20
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jeweler-2.0.1-r1.ebuild,
   jeweler-2.0.1-r2.ebuild:
-  Use a gem-based test-unit version for consistency accross ruby versions to
-  fix the tests.
+  Use https by default
 
-*jeweler-2.0.1-r2 (07 Jun 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jun 2015; Hans de Graaff <graaff@gentoo.org> jeweler-2.0.1-r1.ebuild,
-  +jeweler-2.0.1-r2.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Apr 2015; Hans de Graaff <graaff@gentoo.org> jeweler-2.0.1-r1.ebuild:
-  Avoid test dependency on dev-util/cucumber.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Mar 2015; Hans de Graaff <graaff@gentoo.org> -jeweler-1.8.6.ebuild,
-  -jeweler-2.0.1.ebuild:
-  Cleanup.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Mar 2015; Hans de Graaff <graaff@gentoo.org> jeweler-2.0.1.ebuild:
-  Add missing ~x86 keyword.
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Mar 2015; Agostino Sarubbo <ago@gentoo.org> jeweler-2.0.1-r1.ebuild:
-  Add ~x86, wrt bug #541768
-
-  04 Mar 2015; Agostino Sarubbo <ago@gentoo.org> jeweler-2.0.1-r1.ebuild:
-  Add ~ppc64, wrt bug #541768
-
-  04 Mar 2015; Agostino Sarubbo <ago@gentoo.org> jeweler-2.0.1-r1.ebuild:
-  Add ~ppc, wrt bug #541768
-
-*jeweler-2.0.1-r1 (01 Mar 2015)
-
-  01 Mar 2015; Hans de Graaff <graaff@gentoo.org> +jeweler-2.0.1-r1.ebuild:
-  Add ruby20, ruby21. Add missing keywords and drop ppc, ppc64 accordingly, bug
-  541768.
-
-  15 Aug 2014; Anthony G. Basile <blueness@gentoo.org> jeweler-2.0.1.ebuild:
-  Keyword ~ppc ~ppc64, bug #511424
-
-*jeweler-2.0.1 (25 May 2014)
-
-  25 May 2014; Hans de Graaff <graaff@gentoo.org> +jeweler-2.0.1.ebuild:
-  Version bump. Drop ppc, ppc64, x86 due to new dependencies, bug 511424.
-
-  05 Apr 2014; Manuel Rüger <mrueg@gentoo.org> jeweler-1.8.4.ebuild,
-  jeweler-1.8.6.ebuild:
-  Remove ree18 and ruby18 target.
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> jeweler-1.8.4.ebuild:
-  Stable for x86, wrt bug #447586
-
-  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> jeweler-1.8.4.ebuild:
-  Stable for amd64, wrt bug #447586
-
-*jeweler-1.8.6 (17 Jul 2013)
-
-  17 Jul 2013; Hans de Graaff <graaff@gentoo.org> +jeweler-1.8.6.ebuild:
-  Version bump. Add additional dependencies listed in the gemspec.
-
-  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> jeweler-1.8.4.ebuild:
-  Keyword ~ppc wrt #432830
-
-  06 Sep 2012; Hans de Graaff <graaff@gentoo.org> jeweler-1.8.4.ebuild:
-  Fix building when jeweler is not installed yet.
-
-  20 Aug 2012; Hans de Graaff <graaff@gentoo.org> -jeweler-1.6.4.ebuild,
-  -jeweler-1.8.3.ebuild:
-  Cleanup.
-
-*jeweler-1.8.4 (05 Jul 2012)
-
-  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +jeweler-1.8.4.ebuild:
-  Version bump.
-
-*jeweler-1.8.3 (08 Apr 2012)
-
-  08 Apr 2012; Hans de Graaff <graaff@gentoo.org> +jeweler-1.8.3.ebuild:
-  Version bump.
-
-  02 Jan 2012; Hans de Graaff <graaff@gentoo.org> jeweler-1.6.4.ebuild:
-  Add ruby19.
-
-  02 Jan 2012; Hans de Graaff <graaff@gentoo.org> -jeweler-1.5.2-r1.ebuild,
-  -jeweler-1.6.2.ebuild, -jeweler-1.6.3.ebuild:
-  Remove old versions.
-
-  24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> jeweler-1.6.4.ebuild:
-  Marked ~ppc64 wrt #369741
-
-*jeweler-1.6.4 (21 Jul 2011)
-
-  21 Jul 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.6.4.ebuild:
-  Version bump.
-
-*jeweler-1.6.3 (03 Jul 2011)
-
-  03 Jul 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.6.3.ebuild:
-  Version bump.
-
-  03 Jul 2011; Hans de Graaff <graaff@gentoo.org> -jeweler-1.4.0.ebuild,
-  -jeweler-1.5.2.ebuild, -jeweler-1.6.0.ebuild:
-  Remove old versions.
-
-*jeweler-1.6.2 (02 Jun 2011)
-
-  02 Jun 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.6.2.ebuild:
-  Version bump. Drop ppc64 keyword due to dev-ruby/bundler dependency, bug
-  369741.
-
-*jeweler-1.6.0 (06 May 2011)
-
-  06 May 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.6.0.ebuild:
-  Version bump.
-
-*jeweler-1.5.2-r1 (25 Apr 2011)
-
-  25 Apr 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.5.2-r1.ebuild:
-  Remove git from gemspec since we don't provide this and it breaks loading
-  of jeweler when referenced in the gemspec.
-
-  11 Apr 2011; Hans de Graaff <graaff@gentoo.org> jeweler-1.5.2.ebuild:
-  Remove unused targets from Rakefile that require additional dependencies.
-  Fixes bug 363007.
-
-*jeweler-1.5.2 (11 Mar 2011)
-
-  11 Mar 2011; Hans de Graaff <graaff@gentoo.org> +jeweler-1.5.2.ebuild:
-  Version bump.
-
-  27 Dec 2010; Fabian Groffen <grobian@gentoo.org> jeweler-1.4.0.ebuild:
-  Added Prefix keywords
-
-  29 Sep 2010; Brent Baude <ranger@gentoo.org> jeweler-1.4.0.ebuild:
-  Marking jeweler-1.4.0 ~ppc64 for bug 321283
-
-  20 Jul 2010; Christian Faulhammer <fauli@gentoo.org> jeweler-1.4.0.ebuild:
-  add ~x86, bug 328915
-
-*jeweler-1.4.0 (30 Apr 2010)
-
-  30 Apr 2010; Hans de Graaff <graaff@gentoo.org> +jeweler-1.4.0.ebuild,
-  +metadata.xml:
-  Initial import.

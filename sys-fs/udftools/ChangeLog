@@ -1,159 +1,68 @@
 # ChangeLog for sys-fs/udftools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udftools/ChangeLog,v 1.35 2015/05/12 05:05:19 vapier Exp $
+# (auto-generated from git log)
 
-*udftools-1.0.0b-r10 (12 May 2015)
+*udftools-1.0.0b-r10 (09 Aug 2015)
+*udftools-1.0.0b-r9 (09 Aug 2015)
 
-  12 May 2015; Mike Frysinger <vapier@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/cdrwtool-linux2.6-fix-v2.patch, +files/pktcdvd.init,
+  +files/udftools-1.0.0b-bigendian.patch, +files/udftools-1.0.0b-gcc4.patch,
+  +files/udftools-1.0.0b-limits_h.patch,
+  +files/udftools-1.0.0b-openflags.patch,
   +files/udftools-1.0.0b3-extsize.patch,
   +files/udftools-1.0.0b3-man-missing-options.patch,
   +files/udftools-1.0.0b3-mkudffs-bigendian.patch,
   +files/udftools-1.0.0b3-staticanal.patch,
   +files/udftools-1.0.0b3-warningfixes.patch,
   +files/udftools-1.0.0b3-warningfixes2.patch,
-  +files/udftools-1.0.0b3-wrudf_help.patch, +udftools-1.0.0b-r10.ebuild:
-  Update to latest EAPI and import a bunch of Fedora patches.
+  +files/udftools-1.0.0b3-wrudf_help.patch, +metadata.xml,
+  +udftools-1.0.0b-r9.ebuild, +udftools-1.0.0b-r10.ebuild:
+  proj/gentoo: Initial commit
 
-  12 May 2015; Mike Frysinger <vapier@gentoo.org>
-  files/udftools-1.0.0b-limits_h.patch:
-  Pull in stdlib.h for system prototype.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 May 2015; Mike Frysinger <vapier@gentoo.org> udftools-1.0.0b-r9.ebuild:
-  Force older C standard to fix building w/gcc-5 #548324 by Martin Väth.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Feb 2013; Zac Medico <zmedico@gentoo.org> udftools-1.0.0b-r9.ebuild:
-  Add ~arm-linux keyword.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Apr 2012; Zac Medico <zmedico@gentoo.org> udftools-1.0.0b-r9.ebuild:
-  Add ~amd64-linux keyword.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Dec 2011; Mike Frysinger <vapier@gentoo.org> udftools-1.0.0b-r9.ebuild,
-  files/udftools-1.0.0b-bigendian.patch, files/udftools-1.0.0b-gcc4.patch,
-  files/udftools-1.0.0b-openflags.patch:
-  Depend on readline since we use it #395623 by Maxim Kammerer. Clean up
-  ebuild/patches while we are here.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  29 Jul 2011; Zac Medico <zmedico@gentoo.org> udftools-1.0.0b-r9.ebuild:
-  Add ~x86-linux keyword.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Sep 2010; Samuli Suominen <ssuominen@gentoo.org>
-  udftools-1.0.0b-r9.ebuild, +files/udftools-1.0.0b-limits_h.patch:
-  Fix building with recent linux-headers wrt #335511 by Diego E. Pettenò.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Nov 2009; Raúl Porcel <armin76@gentoo.org> udftools-1.0.0b-r9.ebuild:
-  sparc/x86 stable wrt #289721
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
-  udftools-1.0.0b-r9.ebuild:
-  amd64 stable wrt #289721
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> udftools-1.0.0b-r6.ebuild:
-  Remove virtual/libc
+  Bug: https://bugs.gentoo.org/552720
 
-*udftools-1.0.0b-r9 (04 Dec 2008)
-
-  04 Dec 2008; Daniel Drake <dsd@gentoo.org>
-  +files/udftools-1.0.0b-openflags.patch, +udftools-1.0.0b-r9.ebuild:
-  Fix gcc4.3 compilation failure, patch from Magnus Granberg in bug #232100
-
-  04 Dec 2008; Daniel Drake <dsd@gentoo.org> metadata.xml:
-  Drop maintainership. I'll still help on bugs, but probably not on a timely
-  fashion. Others are encouraged to commit to or take over this package.
-
-*udftools-1.0.0b-r8 (31 Oct 2008)
-
-  31 Oct 2008; Daniel Drake <dsd@gentoo.org> files/pktcdvd.init,
-  +udftools-1.0.0b-r8.ebuild:
-  Make pktcdvd initscript POSIX-compatible, patch from Martin Väth in bug
-  #192420
-
-  13 Nov 2007; Samuli Suominen <drac@gentoo.org> udftools-1.0.0b-r7.ebuild:
-  amd64 stable
-
-  11 Jun 2007; Gustavo Zacarias <gustavoz@gentoo.org>
-  udftools-1.0.0b-r7.ebuild:
-  Stable on sparc
-
-  09 May 2007; Gustavo Zacarias <gustavoz@gentoo.org>
-  udftools-1.0.0b-r7.ebuild:
-  Keyworded ~sparc
-
-*udftools-1.0.0b-r7 (02 May 2007)
-
-  02 May 2007; Daniel Drake <dsd@gentoo.org> +udftools-1.0.0b-r7.ebuild:
-  Add fsck.udf symlink, suggested by John Brendler in bug #172609
-
-  15 Aug 2006; Daniel Drake <dsd@gentoo.org> udftools-1.0.0b-r6.ebuild:
-  Stable on x86
-
-  27 May 2006; Daniel Drake <dsd@gentoo.org> udftools-1.0.0b-r6.ebuild:
-  Stable on amd64
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org>
-  files/digest-udftools-1.0.0b-r5, Manifest:
-  Fixing SHA256 digest, pass four
-
-  21 Jan 2006; Lars Weiler <pylon@gentoo.org> udftools-1.0.0b-r5.ebuild:
-  Added ~ppc to keywords.
-
-  28 Nov 2005; Luis Medinas <metalgod@gentoo.org> udftools-1.0.0b-r5.ebuild:
-  Stable on amd64. Closes bug #113655.
-
-  26 Nov 2005; Daniel Drake <dsd@gentoo.org>
-  +files/udftools-1.0.0b-gcc4.patch, udftools-1.0.0b-r5.ebuild:
-  gcc4 compile fix, thanks to Dario Birtic <dariobirtic@gmx.net> in bug #112122
-
-  25 Oct 2005; Daniel Drake <dsd@gentoo.org> udftools-1.0.0b-r5.ebuild:
-  Stable on x86
-
-*udftools-1.0.0b-r5 (05 Sep 2005)
-
-  05 Sep 2005; Daniel Drake <dsd@gentoo.org> +files/pktcdvd.init,
-  +udftools-1.0.0b-r5.ebuild:
-  Add pktcdvd init script, based off work by John Ross Hunt and Eugeny in bug
-  #77726
-
-  02 Jan 2005; Daniel Drake <dsd@gentoo.org> -udftools-1.0.0b.ebuild:
-  Remove old versions
-
-  02 Jan 2005; Tom Martin <slarti@gentoo.org> udftools-1.0.0b-r4.ebuild:
-  Stable on amd64.
-
-  02 Jan 2005; Daniel Drake <dsd@gentoo.org> udftools-1.0.0b-r4.ebuild:
-  Stable on x86
-
-*udftools-1.0.0b-r4 (30 Dec 2004)
-
-  30 Dec 2004; Daniel Drake <dsd@gentoo.org> metadata.xml,
-  +files/cdrwtool-linux2.6-fix-v2.patch, -files/cdrwtool-linux2.6-fix.patch,
-  -udftools-1.0.0b-r3.ebuild, +udftools-1.0.0b-r4.ebuild:
-  Updated 2.6 compatibility patch, now also works with Linux 2.4 thanks to Ben
-  Peddell <klightspeed@klightspeed.is-a-geek.net>
-
-*udftools-1.0.0b-r3 (06 Nov 2004)
-
-  06 Nov 2004; <dsd@gentoo.org> metadata.xml,
-  +files/cdrwtool-linux2.6-fix.patch, +udftools-1.0.0b-r3.ebuild:
-  New maintainer. Version bump and pktsetup patch thanks to Rafal Dejewski
-  <r2dtu@wp.pl> and Daniel Webert <rockoo@rockoo.homelinux.org> in bug #49760.
-  Add a cdrwtool fix for recent 2.6 kernels.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  udftools-1.0.0b.ebuild:
-  virtual/glibc -> virtual/libc
-
-  14 Mar 2004; Seemant Kulleen <seemant@gentoo.org> udftools-1.0.0b.ebuild:
-  fix assignment of P=, it SHOULD be MY_P, peoplels -al Closing bug #44712 by
-  Michael Sterret <mr_bones_@gentoo.org>
-
-*udftools-1.0.0b (15 Sep 2003)
-
-  15 Sep 2003; Seemant Kulleen <seemant@gentoo.org> udftools-1.0.0b.ebuild:
-  moved to sys-fs
-
-*udftools-1.0.0b (12 Aug 2002)
-
-  12 Aug 2002; Joachim Blaabjerg <styx@gentoo.org> udftools-1.0.0b.ebuild:
-
-  Added udftools-1.0.0b.ebuild, author: Paul Thompson <set@pobox.com>.
-  Masked for testing, probably closes bug #4137.

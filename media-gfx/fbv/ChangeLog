@@ -1,77 +1,57 @@
 # ChangeLog for media-gfx/fbv
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/fbv/ChangeLog,v 1.21 2012/03/04 09:16:22 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> +files/fbv-1.0b-cc.patch,
-  fbv-1.0b.ebuild:
-  Fix crosscompilation, bug #349128 by  Stuart Longland.
+*fbv-1.0b (09 Aug 2015)
 
-  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> fbv-1.0b.ebuild,
-  +files/fbv-1.0b-libpng15.patch:
-  Fix building with libpng15 wrt #381413 by Diego Elio Pettenò
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +fbv-1.0b.ebuild,
+  +files/fbv-1.0b-cc.patch, +files/fbv-1.0b-libpng15.patch,
+  +files/oob-segfault-fbv-1.0b.diff, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #34534
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Feb 2011; Kevin McCarthy <signals@gentoo.org> fbv-1.0b.ebuild:
-  Updated depends from media-libs/jpeg to virtual/jpeg
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Feb 2010; Steve Dibb <beandog@gentoo.org> fbv-1.0b.ebuild:
-  Fix typo, bug 305149
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Jan 2009; Christoph Mende <angelos@gentoo.org> -fbv-0.99.ebuild,
-  fbv-1.0b.ebuild:
-  QA: Cleanup, respect CFLAGS (bug 240794)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 May 2008; <solar@gentoo.org> fbv-1.0b.ebuild:
-  - keyworded for ~arm
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Jun 2006; Daniel Black <dragonheart@gentoo.org> fbv-1.0b.ebuild:
-  remove bmp - thanks jakub as per bug #136493
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Aug 2005; Luis Medinas <metalgod@gentoo.org> fbv-1.0b.ebuild:
-  Marked ~amd64.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jul 2005; David Holm <dholm@gentoo.org> fbv-1.0b.ebuild:
-  Added to ~ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Jul 2005; Markus Rothe <corsair@gentoo.org> fbv-1.0b.ebuild:
-  Stable on ppc64
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Jul 2005; Daniel Black <dragonheart@gentoo.org> fbv-0.99.ebuild,
-  fbv-1.0b.ebuild:
-  finished fixed for giflib and the deprecation of libungif - bug #85720
-
-  24 Apr 2005; Daniel Black <dragonheart@gentoo.org> fbv-0.99.ebuild:
-  Changed libungif to giflib for version 0.99
-
-  28 Mar 2005; Michał Januszewski <spock@gentoo.org> fbv-1.0b.ebuild:
-  Removed dependency on libungif and changed the makefiles so that everything
-  could work properly with giflib.
-
-  30 Jan 2005; Daniel Black <dragonheart@gentoo.org>
-  +files/oob-segfault-fbv-1.0b.diff, fbv-1.0b.ebuild, +metadata.xml:
-  Patch added as per bug 78015. Thanks to Philip Nilsson <leffeman@gmail.com>
-
-  26 Jan 2005; Markus Rothe <corsair@gentoo.org> fbv-0.99.ebuild:
-  Stable on ppc64
-
-*fbv-1.0b (04 Jan 2005)
-
-  04 Jan 2005; Daniel Black <dragonheart@gentoo.org> fbv-0.99.ebuild,
-  +fbv-1.0b.ebuild:
-  QA fix - eclass gcc replaced with toolchain-funcs. Version bump as per bug
-  #76535 by Philip Nilsson <leffeman@gmail.com>
-
-  18 Dec 2004; Markus Rothe <corsair@gentoo.org> fbv-0.99.ebuild:
-  added ~ppc64 to KEYWORDS; bug #74653
-
-  07 Oct 2004; Karol Wojtaszek <sekretarz@gentoo.org> fbv-0.99.ebuild:
-  Using ./configure instead of econf, because econf defines some switches that
-  aren't valid in fbv configure script
-
-*fbv-0.99 (25 Aug 2003)
-
-  25 Aug 2003; Mamoru KOMACHI <usata@gentoo.org> fbv-0.99.ebuild:
-  Initial import.  Closing Bug #27281
+  Bug: https://bugs.gentoo.org/552720
 

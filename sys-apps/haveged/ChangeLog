@@ -1,134 +1,84 @@
 # ChangeLog for sys-apps/haveged
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/haveged/ChangeLog,v 1.32 2015/01/08 08:53:02 aballier Exp $
+# (auto-generated from git log)
 
-  08 Jan 2015; Alexis Ballier <aballier@gentoo.org> haveged-1.9.1.ebuild:
-  keyword ~arm
+*haveged-1.9.1 (09 Aug 2015)
+*haveged-1.7a-r1 (09 Aug 2015)
+*haveged-1.7a (09 Aug 2015)
+*haveged-1.5 (09 Aug 2015)
 
-*haveged-1.9.1 (24 Feb 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/haveged-conf.d,
+  +files/haveged-init.d.2, +files/haveged-init.d.3, +files/haveged.conf,
+  +files/service.gentoo, +haveged-1.5.ebuild, +haveged-1.7a.ebuild,
+  +haveged-1.7a-r1.ebuild, +haveged-1.9.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Feb 2014; Anthony G. Basile <blueness@gentoo.org> +haveged-1.9.1.ebuild:
-  Version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Feb 2014; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
-  I will give it lots of love, thanks robbat2 :)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Sep 2013; Agostino Sarubbo <ago@gentoo.org> haveged-1.7a-r1.ebuild:
-  Stable for x86, wrt bug #480108
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Sep 2013; Agostino Sarubbo <ago@gentoo.org> haveged-1.7a-r1.ebuild:
-  Stable for amd64, wrt bug #480108
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*haveged-1.7a-r1 (25 Jul 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Jul 2013; Justin Lecher <jlec@gentoo.org> +haveged-1.7a-r1.ebuild,
-  +files/haveged.conf, +files/service.gentoo:
-  Add systemd support, #478148
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*haveged-1.7a (24 Feb 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Feb 2013; Diego E. Pettenò <flameeyes@gentoo.org> +haveged-1.7a.ebuild,
-  -files/haveged-1.7-build.patch, -haveged-1.6.ebuild, -haveged-1.7.ebuild:
-  Version bump (just applies the same patch we did), use autotools-utils, use
-  proper license value.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*haveged-1.7 (25 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Jan 2013; Diego E. Pettenò <flameeyes@gentoo.org>
-  +files/haveged-1.7-build.patch, +files/haveged-init.d.3, +haveged-1.7.ebuild:
-  Version bump; new version now installs a library as well as the daemon, and
-  requires some patching. New init script forces a different pidfile location
-  and uses /run directly instead of /var/run.
+  Bug: https://bugs.gentoo.org/552720
 
-*haveged-1.6 (06 Jan 2013)
+  17 Oct 2015; Markus Meier <maekke@gentoo.org> haveged-1.9.1.ebuild:
+  arm stable, bug #561930
 
-  06 Jan 2013; Diego E. Pettenò <flameeyes@gentoo.org> +haveged-1.6.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.23
+  RepoMan-Options: --include-arches="arm"
 
-  28 Dec 2012; Diego E. Pettenò <flameeyes@gentoo.org> -haveged-1.4.ebuild,
-  files/haveged-init.d.2:
-  Remove old. Fix dependencies on init script.
+  19 Oct 2015; Agostino Sarubbo <ago@gentoo.org> haveged-1.9.1.ebuild:
+  amd64 stable wrt bug #561930
 
-  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> haveged-1.5.ebuild:
-  Stable for x86, wrt bug #441506
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  06 Nov 2012; <ago@gentoo.org> haveged-1.5.ebuild:
-  Stable for amd64, wrt bug #441506
+  24 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> haveged-1.9.1.ebuild:
+  x86 stable wrt bug #561930
 
-  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
-  Re-assign to sysadmin herd.
+  Package-Manager: portage-2.2.20.1
 
-*haveged-1.5 (15 Aug 2012)
+  24 Oct 2015; Anthony G. Basile <blueness@gentoo.org> -haveged-1.5.ebuild,
+  -haveged-1.7a.ebuild, -haveged-1.7a-r1.ebuild:
+  clean up older versions.
 
-  15 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +haveged-1.5.ebuild,
-  -haveged-1.3a.ebuild:
-  Version bump; remove oldest version.
+  Package-Manager: portage-2.2.20.1
 
-  14 Aug 2012; Johannes Huber <johu@gentoo.org> haveged-1.4.ebuild:
-  Stable for x86, wrt bug #422171
-
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> haveged-1.4.ebuild:
-  Stable for amd64, wrt bug #422171
-
-  02 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> -files/haveged-init.d,
-  -haveged-1.1.ebuild, -haveged-1.2.ebuild, haveged-1.4.ebuild:
-  Remove old versions; run tests in parallel if so chosen.
-
-  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> haveged-1.3a.ebuild:
-  Stable for amd64, wrt bug #406611
-
-  13 Apr 2012; Jeff Horelick <jdhore@gentoo.org> haveged-1.3a.ebuild:
-  marked x86 per bug 406611
-
-*haveged-1.4 (13 Apr 2012)
-
-  13 Apr 2012; Jeremy Olexa <darkside@gentoo.org> +haveged-1.4.ebuild:
-  Version bump, minimal changes for end user (diagnostic and experimental
-  features added)
-
-  10 Feb 2012; Thomas Kahle <tomka@gentoo.org> haveged-1.2.ebuild:
-  marked x86 per bug 390087
-
-  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> haveged-1.2.ebuild:
-  Stable for amd64, wrt bug #390087
-
-  26 Jan 2012; Jeremy Olexa <darkside@gentoo.org> haveged-1.1.ebuild,
-  haveged-1.2.ebuild, haveged-1.3a.ebuild:
-  Revert: add ~arm, works on armv7
-
-*haveged-1.3a (26 Jan 2012)
-
-  26 Jan 2012; Jeremy Olexa <darkside@gentoo.org> -haveged-1.01.ebuild,
-  +haveged-1.3a.ebuild:
-  Version bump from upstream, includes a non-daemon mode
-
-*haveged-1.2 (17 Oct 2011)
-
-  17 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +haveged-1.2.ebuild,
-  +files/haveged-init.d.2:
-  Version bump; add an OpenRC-based init script that actually checks the
-  haveged started status.
-
-  06 Aug 2011; Markus Meier <maekke@gentoo.org> haveged-1.1.ebuild:
-  x86 stable, bug #368699
-
-  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> haveged-1.1.ebuild:
-  Stable on amd64 wrt bug #368699
-
-  17 May 2011; Jeremy Olexa <darkside@gentoo.org> haveged-1.1.ebuild:
-  Ebuild Improvements which include using a more robust test suite, bug
-  366641
-
-*haveged-1.1 (11 Apr 2011)
-
-  11 Apr 2011; Robin H. Johnson <robbat2@gentoo.org> +haveged-1.1.ebuild:
-  Bug #363013: version bump.
-
-  08 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org> files/haveged-init.d:
-  Make the init script provide the entropy service.
-
-*haveged-1.01 (05 Jan 2011)
-
-  05 Jan 2011; Robin H. Johnson <robbat2@gentoo.org> +haveged-1.01.ebuild,
-  +files/haveged-conf.d, +files/haveged-init.d, +metadata.xml:
-  Add another entropy daemon.

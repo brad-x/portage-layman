@@ -1,60 +1,68 @@
 # ChangeLog for x11-plugins/pidgin-mbpurple
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-mbpurple/ChangeLog,v 1.13 2013/03/17 17:43:45 hwoarang Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+*pidgin-mbpurple-0.3.0-r2 (09 Aug 2015)
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pidgin-mbpurple-0.3.0-r2.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   pidgin-mbpurple-0.3.0-r2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Enable https for all google URIs
 
-  03 Mar 2011; Christian Faulhammer <fauli@gentoo.org>
-  -pidgin-mbpurple-0.3.0.ebuild:
-  clean up
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Feb 2011; Markos Chandras <hwoarang@gentoo.org>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   pidgin-mbpurple-0.3.0-r2.ebuild:
-  Stable on amd64 wrt bug #356517
+  Convert URIs for googlecode.com to https
 
-  27 Feb 2011; Christian Faulhammer <fauli@gentoo.org>
-  pidgin-mbpurple-0.3.0-r2.ebuild:
-  stable x86, bug 356517
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pidgin-mbpurple-0.3.0-r2 (18 Jan 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Jan 2011; Christian Faulhammer <fauli@gentoo.org>
-  -pidgin-mbpurple-0.3.0-r1.ebuild, +pidgin-mbpurple-0.3.0-r2.ebuild:
-  Add some comments and make some QA warnings go away. Ebuild by Nils
-  Andresen (maintainer)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*pidgin-mbpurple-0.3.0-r1 (13 Jan 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  13 Jan 2011; Christian Faulhammer <fauli@gentoo.org>
-  +pidgin-mbpurple-0.3.0-r1.ebuild, metadata.xml:
-  Make interface plugin optional but enabled by default, this removes the
-  hard dependency on USE=gtk with Pidgin, thanks to Cyprien Nicolas (fulax)
-  <c DOT nicolas+bugs AT gmail DOT com> in bug 350963
-
-  26 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  pidgin-mbpurple-0.3.0.ebuild:
-  Stable on amd64 wrt bug #334315
-
-  24 Aug 2010; Christian Faulhammer <fauli@gentoo.org>
-  pidgin-mbpurple-0.3.0.ebuild:
-  stable x86, bug 334315
-
-  18 Jul 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  pidgin-mbpurple-0.3.0.ebuild:
-  Respect CC and LDFLAGS
-
-  13 Jul 2010; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Added missing herd tag to metadata.xml
-
-*pidgin-mbpurple-0.3.0 (17 Jun 2010)
-
-  17 Jun 2010; Christian Faulhammer <fauli@gentoo.org> +pidgin-mbpurple-0.3.0.ebuild,
-  +metadata.xml:
-  initial commit for bug 242942, ebuild provided by Nils Andresen <nils AT
-  nils-andresen DOT de>, who will be proxied by me

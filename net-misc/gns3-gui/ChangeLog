@@ -1,59 +1,65 @@
 # ChangeLog for net-misc/gns3-gui
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/gns3-gui/ChangeLog,v 1.10 2015/05/20 11:13:50 bman Exp $
+# (auto-generated from git log)
 
-*gns3-gui-1.3.3 (20 May 2015)
+*gns3-gui-1.3.3 (09 Aug 2015)
+*gns3-gui-1.3.2 (09 Aug 2015)
 
-  20 May 2015;  <aaron@gentoo.org> +gns3-gui-1.3.3.ebuild,
-  -gns3-gui-1.3.1-r1.ebuild:
-  version bump; rm old; rm sed call as upstream fixed setup.py
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +gns3-gui-1.3.2.ebuild,
+  +gns3-gui-1.3.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*gns3-gui-1.3.2 (10 May 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 May 2015; Aaron Bauman <bman@gentoo.org> +gns3-gui-1.3.2.ebuild:
-  version bump to 1.3.2; rm net-misc/gns3 blocker following tree removal
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Apr 2015; Aaron Bauman <bman@gentoo.org> gns3-gui-1.3.1-r1.ebuild:
-  add >=dev-python/raven-5.2.0 dep; no revbump as net-misc/gns3-server requires
-  same package
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*gns3-gui-1.3.1-r1 (21 Apr 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Apr 2015; Aaron Bauman <bman@gentoo.org> +gns3-gui-1.3.1-r1.ebuild,
-  -gns3-gui-1.3.1.ebuild:
-  revision bump; vulnerable dev-python/requests per bug 543480; package no
-  longer requires dev-python/requests-2.4.3; thanks to Arfrever
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*gns3-gui-1.3.1 (18 Apr 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Apr 2015; Aaron Bauman <bman@gentoo.org> +gns3-gui-1.3.1.ebuild,
-  -gns3-gui-1.2.3.ebuild, -gns3-gui-1.3.0.ebuild:
-  rm old; add gns3-gui-1.3.1; remove PyQt4 blocker; update gns3-converter
-  requirement
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gns3-gui-1.3.0 (06 Apr 2015)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Apr 2015; Aaron Bauman <bman@gentoo.org> +gns3-gui-1.3.0.ebuild,
-  -gns3-gui-1.2.ebuild:
-  version bump; rm gns3-gui-1.2.ebuild; change mirror to github; change dev-
-  python/requests dependency to 2.4.3 only
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Mar 2015; Aaron Bauman <bman@gentoo.org> metadata.xml:
-  update maintainer in metadata
+  Bug: https://bugs.gentoo.org/552720
 
-*gns3-gui-1.2.3 (26 Feb 2015)
+*gns3-gui-1.3.10 (19 Sep 2015)
 
-  26 Feb 2015;  <aaron@gentoo.org> +gns3-gui-1.2.3.ebuild:
-  version bump to 1.2.3
+  19 Sep 2015; Aaron Bauman <bman@gentoo.org> -gns3-gui-1.3.2.ebuild,
+  +gns3-gui-1.3.10.ebuild:
+  rm gns3-gui-1.3.2; add gns3-gui-1.3.10 with qt4 and qt5; remove unneeded sed
 
-*gns3-gui-1.2 (22 Nov 2014)
+  Package-Manager: portage-2.2.20.1
 
-  22 Nov 2014; Ian Delaney <idella4@gentoo.org> +gns3-gui-1.2.ebuild,
-  -gns3-gui-1.1.ebuild:
-  bump; update deps, rm old
-
-*gns3-gui-1.1 (14 Nov 2014)
-
-  14 Nov 2014; Patrick Lauer <patrick@gentoo.org> +gns3-gui-1.1.ebuild,
-  +metadata.xml:
-  Moving package from dev-python, where it was wrongly committed

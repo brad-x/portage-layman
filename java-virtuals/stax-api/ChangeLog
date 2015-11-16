@@ -1,85 +1,57 @@
 # ChangeLog for java-virtuals/stax-api
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/java-virtuals/stax-api/ChangeLog,v 1.22 2014/12/02 14:27:37 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  02 Dec 2014; Manuel Rüger <mrueg@gentoo.org> stax-api-1-r4.ebuild:
-  Update to EAPI=5
+*stax-api-1-r4 (09 Aug 2015)
 
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org> stax-api-1-r4.ebuild:
-  keyword ~amd64-fbsd
-
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org> stax-api-1-r4.ebuild:
-  adding ~arm
-
-  04 Oct 2012; Ralph Sennhauser <sera@gentoo.org> stax-api-1-r4.ebuild:
-  Change license to public-domain. #426800
-
-  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> stax-api-1-r4.ebuild:
-  Marked ~x64-macos
-
-*stax-api-1-r4 (22 Oct 2011)
-
-  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> -stax-api-1-r3.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +stax-api-1-r4.ebuild:
-  Another revbump to really fix the provider string, bug #388113 thanks to
-  Ralph Sennhauser.
+  proj/gentoo: Initial commit
 
-  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> -stax-api-1-r1.ebuild,
-  stax-api-1-r3.ebuild:
-  Stabilize the revbump everywhere and drop the old version. Nothing
-  arch-specific here and we don't want bug 383175.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*stax-api-1-r3 (16 Sep 2011)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Sep 2011; Serkan Kaba <serkan@gentoo.org> -stax-api-1-r2.ebuild,
-  +stax-api-1-r3.ebuild:
-  Revbump to fix typo
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*stax-api-1-r2 (11 Sep 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Sep 2011; Serkan Kaba <serkan@gentoo.org> +stax-api-1-r2.ebuild:
-  Bump to add jre7
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  stax-api-1-r4.ebuild:
+  Use https by default
 
-  24 Apr 2010; Fabian Groffen <grobian@gentoo.org> stax-api-1-r1.ebuild:
-  Marked ~sparc-solaris ~x86-solaris, bug #314093
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Jan 2010; Fabian Groffen <grobian@gentoo.org> stax-api-1-r1.ebuild:
-  Marked ~x64-solaris
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Dec 2009; Christian Faulhammer <fauli@gentoo.org> stax-api-1-r1.ebuild:
-  QA: transfer Prefix keywords
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Oct 2009; Petteri Räty <betelgeuse@gentoo.org> -stax-api-1.ebuild:
-  Remove old revision.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Oct 2009; Petteri Räty <betelgeuse@gentoo.org> stax-api-1-r1.ebuild:
-  Add ̃~x86-fbsd.
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Jul 2009; nixnut <nixnut@gentoo.org> stax-api-1-r1.ebuild:
-  ppc stable #274029
-
-  04 Jul 2009; Brent Baude <ranger@gentoo.org> stax-api-1-r1.ebuild:
-  Marking stax-api-1-r1 ppc64 for bug 275190
-
-  02 Jul 2009; Markus Meier <maekke@gentoo.org> stax-api-1-r1.ebuild:
-  amd64 stable, bug #274029
-
-  01 Jul 2009; Christian Faulhammer <fauli@gentoo.org> stax-api-1-r1.ebuild:
-  stable x86, bug 275190
-
-  17 Jun 2009; Christian Faulhammer <fauli@gentoo.org> stax-api-1.ebuild:
-  stable x86, bug 274029
-
-*stax-api-1-r1 (23 May 2009)
-
-  23 May 2009; Alistair Bush <ali_bush@gentoo.org> +stax-api-1-r1.ebuild:
-  Bump to support features available in java-config-2.1.8
-
-  20 Mar 2009; Joseph Jezak <josejx@gentoo.org> stax-api-1.ebuild:
-  Marked ~ppc64.
-
-*stax-api-1 (05 Oct 2008)
-
-  05 Oct 2008; Serkan Kaba <serkan@gentoo.org> +metadata.xml,
-  +stax-api-1.ebuild:
-  Add java-virtuals/stax-api. Fixes bug #224677.

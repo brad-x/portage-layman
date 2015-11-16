@@ -1,25 +1,84 @@
 # ChangeLog for dev-java/istack-commons-buildtools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/istack-commons-buildtools/ChangeLog,v 1.4 2015/06/12 16:34:42 monsieurp Exp $
+# (auto-generated from git log)
 
-  12 Jun 2015; Patrice Clement <monsieurp@gentoo.org>
-  istack-commons-buildtools-2.22.ebuild:
-  Soften SLOT and change it to 0 after checking compatibility with apicheck.
+*istack-commons-buildtools-20090620 (09 Aug 2015)
+*istack-commons-buildtools-2.22 (09 Aug 2015)
 
-*istack-commons-buildtools-2.22 (12 Jun 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/istack-commons-20090620-less-maven.patch,
+  +istack-commons-buildtools-2.22.ebuild,
+  +istack-commons-buildtools-20090620.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 Jun 2015; Patrice Clement <monsieurp@gentoo.org>
-  +istack-commons-buildtools-2.22.ebuild:
-  Version bump. Fix bug 188015.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Apr 2012; Ulrich Müller <ulm@gentoo.org>
-  istack-commons-buildtools-20090620.ebuild:
-  Move EAPI assignment to top of ebuild, bug 411875.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*istack-commons-buildtools-20090620 (21 Jun 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
-  +istack-commons-buildtools-20090620.ebuild,
-  +files/istack-commons-20090620-less-maven.patch, +metadata.xml:
-  Part of new istack-commons (upstream pom.xml tag is 1.1-SNAPSHOT) in a new
-  slot, needed for jersey. buildtools portion was not packaged before.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*istack-commons-buildtools-2.22-r1 (13 Sep 2015)
+
+  13 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  +istack-commons-buildtools-2.22-r1.ebuild:
+  Add doc+source flags to {JAVA_PKG_USE,IUSE}. Sort dependencies in DEPEND.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  13 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/istack-commons-20090620-less-maven.patch,
+  -istack-commons-buildtools-2.22.ebuild,
+  -istack-commons-buildtools-20090620.ebuild:
+  Remove broken and old ebuild. Fixes bug 276171.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  13 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  istack-commons-buildtools-2.22-r1.ebuild:
+  Stable for amd64+x86.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

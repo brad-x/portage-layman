@@ -1,160 +1,59 @@
 # ChangeLog for sci-chemistry/raster3d
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/raster3d/ChangeLog,v 1.36 2015/04/07 14:38:49 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*raster3d-3.0.3 (24 Jul 2014)
+*raster3d-3.0.3 (09 Aug 2015)
+*raster3d-3.0.2 (09 Aug 2015)
 
-  24 Jul 2014; Justin Lecher <jlec@gentoo.org> +raster3d-3.0.3.ebuild,
-  metadata.xml:
-  Version Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/2.9.1-as-needed.patch, +files/3.0.2-as-needed.patch,
+  +files/3.0.2-gentoo-prefix.patch, +files/raster3d-gcc-4.1-gentoo.patch,
+  +metadata.xml, +raster3d-3.0.2.ebuild, +raster3d-3.0.3.ebuild:
+  proj/gentoo: Initial commit
 
-  14 Dec 2012; Ulrich Müller <ulm@gentoo.org> raster3d-3.0.2.ebuild:
-  Fix LICENSE, Artistic License, Version 2.0 according to HOMEPAGE.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Oct 2012; Justin Lecher <jlec@gentoo.org> raster3d-3.0.2.ebuild:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Mar 2012; Justin Lecher <jlec@gentoo.org> -raster3d-2.7c.ebuild,
-  -raster3d-2.9.2.ebuild:
-  Dropped old, fixes #384863
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Mar 2012; Brent Baude <ranger@gentoo.org> raster3d-3.0.2.ebuild:
-  Marking raster3d-3.0.2 ppc for bug 385627
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Nov 2011; Justin Lecher <jlec@gentoo.org> raster3d-2.7c.ebuild,
-  raster3d-2.9.2.ebuild, raster3d-3.0.2.ebuild, metadata.xml:
-  Corrected Slotting of media-libs/libpng and media-libs/tiff
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> raster3d-3.0.2.ebuild:
-  Stable on amd64 wrt bug #385627
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> raster3d-3.0.2.ebuild:
-  x86 stable wrt bug #385627
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> raster3d-2.7c.ebuild,
-  raster3d-2.9.2.ebuild, raster3d-3.0.2.ebuild:
-  Add dependency on virtual/fortran
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> raster3d-2.7c.ebuild,
-  raster3d-2.9.2.ebuild, raster3d-3.0.2.ebuild:
-  Added fortran-2.eclass support
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Mar 2011; Justin Lecher <jlec@gentoo.org> raster3d-3.0.2.ebuild:
-  Fix for parallel build, #358555
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Mar 2011; Justin Lecher <jlec@gentoo.org> files/3.0.2-as-needed.patch:
-  Prll compilation fix
-
-*raster3d-3.0.2 (27 Feb 2011)
-
-  27 Feb 2011; Justin Lecher <jlec@gentoo.org> +files/3.0.2-as-needed.patch,
-  +files/3.0.2-gentoo-prefix.patch, raster3d-2.7c.ebuild,
-  +raster3d-3.0.2.ebuild, metadata.xml:
-  Version Bump
-
-  17 Dec 2010; Justin Lecher <jlec@gentoo.org> raster3d-2.9.2.ebuild:
-  Fix for fortran.eclass removal
-
-  16 Dec 2010; Justin Lecher <jlec@gentoo.org> raster3d-2.7c.ebuild,
-  raster3d-2.9.2.ebuild:
-  Removal of fortran.eclass, #348851
-
-  08 Nov 2010; Kacper Kowalik <xarthisius@gentoo.org> raster3d-2.7c.ebuild,
-  -raster3d-2.7d.ebuild, -files/raster3d-2.7d-gcc4-gentoo.patch,
-  -raster3d-2.7s.ebuild, -raster3d-2.9.1.ebuild, raster3d-2.9.2.ebuild:
-  media-libs/jpeg -> virtual/jpeg. Drop old.
-
-*raster3d-2.9.2 (02 Apr 2010)
-
-  02 Apr 2010; Justin Lecher <jlec@gentoo.org> +raster3d-2.9.2.ebuild:
-  Version Bump
-
-  01 Apr 2010; Justin Lecher <jlec@gentoo.org> raster3d-2.9.1.ebuild:
-  Fixed Prefix support, #312117
-
-*raster3d-2.9.1 (28 Mar 2010)
-
-  28 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
-  +files/2.9.1-as-needed.patch, +raster3d-2.9.1.ebuild, metadata.xml:
-  Version Bump, keyworded for ~*-linux, as-needed aware linking, removed
-  uneeded imake DEPEND
-
-  16 Oct 2008; Markus Dittrich <markusle@gentoo.org> raster3d-2.7s.ebuild, raster3d-2.7d.ebuild:
-  Added -ffixed-line-length-132 to FFLAGS to avoid gcc-4.1.2 errors 
-  due to lines extending beyond 72 characters (fixes bug #242232).
-
-  08 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>; raster3d-2.7s.ebuild:
-  Keyword ~amd64.
-
-*raster3d-2.7s (08 Jul 2008)
-
-  08 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>;
-  +raster3d-2.7s.ebuild:
-  (#231118) Bump. Small cleanup of make->emake so MAKEOPTS are respected.
-
-*raster3d-2.7d (08 Sep 2007)
-
-  08 Sep 2007; Markus Dittrich <markusle@gentoo.org>
-  +files/raster3d-2.7d-gcc4-gentoo.patch,
-  files/raster3d-gcc-4.1-gentoo.patch, +raster3d-2.7d.ebuild:
-  Fixed gcc patch to work with gcc-4.2 and bumped raster3d to new
-  version (see bug #190511).
-
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>; raster3d-2.7c.ebuild:
-  Drop virtual/x11 references.
-
-  07 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -raster3d-2.6e.ebuild:
-  QA: Removed unused versions.
-
-  20 Sep 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  (#148281) Change herd to sci-chemistry from sci.
-
-  07 Aug 2006; Donnie Berkholz <dberkholz@gentoo.org>; raster3d-2.7c.ebuild:
-  (#141425) Stable on x86/ppc.
-
-  21 May 2006; Donnie Berkholz <spyderous@gentoo.org>; raster3d-2.7c.ebuild:
-  Keyword ~ppc.
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org> files/digest-raster3d-2.6e,
-  Manifest:
-  Fixing SHA256 digest, pass four
-
-  12 Apr 2006; Markus Dittrich <markusle@gentoo.org>
-  +files/raster3d-gcc-4.1-gentoo.patch, raster3d-2.7c.ebuild:
-  Applied patch to fix compile problems using gcc-4.1. Thanks to
-  Patrizio Bassi <hetfield666@gmail.com> for testing. This fixes
-  bug #125190.
-
-  11 Apr 2006; Markus Dittrich <markusle@gentoo.org> raster3d-2.6e.ebuild,
-  raster3d-2.7c.ebuild:
-  Added missing x11-misc/imake to DEPEND. This fixes bug #128747.
-  Also moved raster3d-2.6e to modular X.
-
-  18 Jan 2006; Donnie Berkholz <spyderous@gentoo.org>; raster3d-2.7c.ebuild:
-  Fix dependencies for modular X.
-
-*raster3d-2.7c (20 Oct 2005)
-
-  20 Oct 2005; Olivier Fisette <ribosome@gentoo.org> +raster3d-2.7c.ebuild:
-  New version.
-
-*raster3d-2.6e (24 Dec 2004)
-
-  24 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +raster3d-2.6e.ebuild:
-  Moved from app-sci/raster3d to sci-chemistry/raster3d.
-
-  19 Apr 2004; Patrick Kursawe <phosphan@gentoo.org> raster3d-2.6e.ebuild:
-  Adding IUSE
-
-*raster3d-2.6e (01 Nov 2002)
-
-  01 Nov 2002; George Shapovalov <george@gentoo.org> raster3d-2.6e.ebuild :
-  
-  first commit
-  Raster3D is a set of tools for
-  generating high quality raster images of proteins or other molecules. The
-  homepage is at http://www.bmsc.washington.edu/raster3d/raster3d.html.
-  
-  ebuild submitted by Jianghai Zhu <zhu5@purdue.edu>

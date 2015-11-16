@@ -1,148 +1,80 @@
 # ChangeLog for net-libs/wt
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/wt/ChangeLog,v 1.30 2014/12/28 16:30:23 titanofold Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> wt-3.2.2_p1-r1.ebuild,
-  wt-3.3.1.ebuild:
-  Rename virtual/postgresql to dev-db/postgresql
+*wt-3.3.1 (09 Aug 2015)
+*wt-3.2.2_p1-r1 (09 Aug 2015)
 
-  03 Nov 2014; Aaron W. Swenson <titanofold@gentoo.org> wt-3.2.2_p1-r1.ebuild,
-  wt-3.3.1.ebuild:
-  Update PostgreSQL dependencies and/or checks to virtual/postgresql.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/cmakelist.patch,
+  +files/wt-fix-automagic.patch, +metadata.xml, +wt-3.2.2_p1-r1.ebuild,
+  +wt-3.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> wt-3.2.2_p1-r1.ebuild,
-  wt-3.3.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Nov 2013; Matthew Marlowe <mattm@gentoo.org> wt-3.3.1.ebuild:
-  Keywording wt-3.3.1 for ~amd64 and ~x86, Bump has passed initial dev testing.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Nov 2013; Matthew Marlowe <mattm@gentoo.org> wt-3.3.1.ebuild:
-  Fix compilation issue in newest bump - no longer need cmakelist patch.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*wt-3.3.1 (15 Nov 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Nov 2013; Matthew Marlowe <mattm@gentoo.org> +wt-3.3.1.ebuild,
-  -wt-3.2.0-r1.ebuild, -wt-3.2.3.ebuild, -wt-3.3.0.ebuild,
-  wt-3.2.2_p1-r1.ebuild:
-  Bump wt-3.3.1 (latest bug fixes from upstream), Bump All Ebuilds EAPI 2->3,
-  Remove legacy unstabilized ebuilds
+*wt-3.3.4 (10 Aug 2015)
 
-*wt-3.3.0 (27 Sep 2013)
+  10 Aug 2015; Anthony G. Basile <blueness@gentoo.org> -wt-3.3.1.ebuild,
+  +wt-3.3.4.ebuild:
+  bump to 3.3.4 because previous versions are broken.  Bug #537608.
 
-  27 Sep 2013; Matthew Marlowe <mattm@gentoo.org> +wt-3.3.0.ebuild:
-  First test ebuild for wt-3.3.0
+  Package-Manager: portage-2.2.20
 
-  22 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wt-3.2.2_p1-r1.ebuild:
-  Stable for x86, wrt bug #460292
+  19 Aug 2015; Anthony G. Basile <blueness@gentoo.org> wt-3.3.4.ebuild:
+  3.3.4 stable on amd64 and x86
 
-  14 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wt-3.2.2_p1-r1.ebuild:
-  Stable for amd64, wrt bug #460292
+  Gentoo-Bug: 537608
 
-  18 Jul 2013; Chris Reffett <creffett@gentoo.org> wt-3.2.0-r1.ebuild,
-  wt-3.2.2_p1-r1.ebuild, wt-3.2.3.ebuild:
-  Convert base_src_prepare to cmake-utils_src_prepare, bug 475518. Also add
-  inherit of user.eclass to make repoman happy.
+  Package-Manager: portage-2.2.20.1
 
-  25 Feb 2013; Agostino Sarubbo <ago@gentoo.org> wt-3.2.0-r1.ebuild:
-  Stable for x86, wrt bug #410903
+  24 Aug 2015; Anthony G. Basile <blueness@gentoo.org> -wt-3.2.2_p1-r1.ebuild:
+  remove older broken version.
 
-*wt-3.2.3 (11 Feb 2013)
+  Gentoo-Bug: 537608
 
-  11 Feb 2013; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.3.ebuild:
-  minor version bump, no keywords during testing period.
+  Package-Manager: portage-2.2.20.1
 
-*wt-3.2.2_p1-r1 (02 Oct 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> +files/cmakelist.patch,
-  +wt-3.2.2_p1-r1.ebuild, -wt-3.2.2_p1.ebuild:
-  Glory, glory, hallelujah!  All praise the r1 revision of 3.2.2 and attached
-  patch in ${FILESDIR} as they truly seemed to resolved a bug in the upstream
-  cmakefile that was causing major qa issues.  Committing now and may we all
-  live happily ever after.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.2_p1.ebuild:
-  Added another reference to DESTDIR in cmake args.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.2_p1.ebuild:
-  According to http://www.cmake.org/Wiki/CMake_FAQ#Does_CMake.27s_.22make_instal
-  l.22_support_DESTDIR.3F, cmake supports DESTDIR so I've added it to variables
-  passed during the call to the cmake install function.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.2_p1.ebuild:
-  Expanded dodir/chown/chmod commands in src_install in yet another try to see
-  if we can get rid of all the portage sandbox messages.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.2_p1.ebuild:
-  Hopefully last qa fix.  Because wt can act as its own webserver and can't
-  depend on apache or any other webserver users being installed, we need to
-  create its own user/group and tell cmake to set ownership of /var/run/wt and
-  other data directories to user/group wt.
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.2_p1.ebuild:
-  Hopeful fix for the QA install issues associated with cmake eclass and net-
-  libs/wt.
-
-*wt-3.2.2_p1 (02 Oct 2012)
-
-  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.2_p1.ebuild,
-  -wt-3.2.2.ebuild:
-  Bump for wt-3.2.2_p1. First attempts at fixing bug 425436 and hopefully bump
-  will resolve other issues.
-
-*wt-3.2.2 (27 Jul 2012)
-
-  27 Jul 2012; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.2.ebuild,
-  -wt-3.2.1.ebuild:
-  Bump for wt-3.2.2 on testing arches, removed never keyworded 3.2.1, 3.2.0 is
-  still our stable release.
-
-  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> wt-3.2.0-r1.ebuild:
-  Stable for amd64, wrt bug #410903
-
-*wt-3.2.1 (05 Apr 2012)
-
-  05 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.1.ebuild:
-  bump for newest release with temporary mask
-
-  05 Apr 2012; Matthew Marlowe <mattm@gentoo.org> -wt-3.1.5.ebuild,
-  -wt-3.1.6.ebuild, -wt-3.1.7.ebuild, -wt-3.2.0.ebuild:
-  remove deprecated ebuilds
-
-  21 Jan 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.2.0-r1.ebuild:
-  Unmasking major bump to wt-3.2.0-r1 based on successful reports and no open
-  bugs, keyword testing ~amd64 and ~x86
-
-*wt-3.2.0-r1 (09 Jan 2012)
-
-  09 Jan 2012; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.0-r1.ebuild:
-  Partial fix for bug #397753, 3.2.0 does not include AUTHORS file in docs.
-
-*wt-3.2.0 (05 Jan 2012)
-
-  05 Jan 2012; Matthew Marlowe <mattm@gentoo.org> +wt-3.2.0.ebuild:
-  first draft of wt 3.2.0 ebuild - it is temporarily masked until all major
-  bugs resolved
-
-  05 Jan 2012; Matthew Marlowe <mattm@gentoo.org> wt-3.1.5.ebuild,
-  wt-3.1.6.ebuild, wt-3.1.7.ebuild, metadata.xml:
-  Moving package mask from profile to ebuilds in preparation for taking over
-  package - hope to bump to latest 3.2 release soon - will review all open bugs
-
-*wt-3.1.7 (20 Dec 2010)
-
-  20 Dec 2010; Peter Volkov <pva@gentoo.org> +wt-3.1.7.ebuild:
-  Version bump, thank Nikoli for this job.
-
-*wt-3.1.6 (06 Nov 2010)
-
-  06 Nov 2010; Peter Volkov <pva@gentoo.org> +wt-3.1.6.ebuild:
-  Version bump, bug 344001, thank José Romildo Malaquias for report and
-  Nikoli for this job.
-
-*wt-3.1.5 (14 Oct 2010)
-
-  14 Oct 2010; Peter Volkov <pva@gentoo.org> +wt-3.1.5.ebuild,
-  +files/wt-fix-automagic.patch, +metadata.xml:
-  Initial import, the dependency of future releases of the eiskaltdcpp,
-  thank Nikoli for this job.

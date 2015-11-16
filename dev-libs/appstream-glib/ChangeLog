@@ -1,103 +1,152 @@
 # ChangeLog for dev-libs/appstream-glib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/appstream-glib/ChangeLog,v 1.26 2015/07/19 11:03:41 maekke Exp $
+# (auto-generated from git log)
 
-  19 Jul 2015; Markus Meier <maekke@gentoo.org> appstream-glib-0.4.0.ebuild:
-  add ~arm, bug #553926
+*appstream-glib-0.4.0 (09 Aug 2015)
+*appstream-glib-0.3.4 (09 Aug 2015)
 
-  17 Jul 2015; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.4.0.ebuild:
-  Mark ~ppc64 (bug #553926).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +appstream-glib-0.3.4.ebuild, +appstream-glib-0.4.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  15 Jul 2015; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.4.0.ebuild:
-  Mark ~hppa (bug #553926).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*appstream-glib-0.4.0 (04 Jul 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Jul 2015; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.4.0.ebuild:
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*appstream-glib-0.5.0 (05 Sep 2015)
+
+  05 Sep 2015; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.5.0.ebuild:
   Version bump
 
-  20 Jun 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  sparc keyword, bug #523924
+  Package-Manager: portage-2.2.20.1
 
-  20 Jun 2015; Pacho Ramos <pacho@gentoo.org> -appstream-glib-0.3.3-r1.ebuild:
-  Drop old
+  06 Sep 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.4.0.ebuild,
+  appstream-glib-0.5.0.ebuild:
+  ppc/sparc keyword, bug #553926
 
-  07 Jun 2015; Markus Meier <maekke@gentoo.org> appstream-glib-0.3.4.ebuild:
-  arm stable, bug #534012
+  Package-Manager: portage-2.2.20.1
 
-  29 Mar 2015; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.3.4.ebuild:
-  Stable for HPPA (bug #534012).
+  07 Sep 2015; Michał Górny <mgorny@gentoo.org> appstream-glib-0.4.0.ebuild,
+  appstream-glib-0.5.0.ebuild:
+  Revert "ppc/sparc keyword, bug #553926"
 
-  15 Mar 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  x86 stable, bug 534012
+  The >=dev-util/appdata-tools-0.1.8-r1 dependency is not keyworded.
 
-  15 Mar 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  ppc64 stable, bug 534012
+  Reverts: 62efb9b66b7 (dev-libs/appstream-glib: ppc/sparc keyword, bug
+  #553926)
 
-  15 Mar 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  ppc stable, bug 534012
+  07 Sep 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.4.0.ebuild,
+  appstream-glib-0.5.0.ebuild:
+  ppc/sparc keyword, bug #553926
 
-  14 Mar 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  amd64 stable, bug 534012
+  Package-Manager: portage-2.2.20.1
 
-  04 Feb 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.4.ebuild:
-  ia64 keyword, bug #523924 by Émeric Maschino
+  07 Sep 2015; Mikle Kolyada <zlogene@gentoo.org> appstream-glib-0.5.0.ebuild:
+  amd64 stable wrt bug #551826
 
-*appstream-glib-0.3.4 (24 Jan 2015)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
 
-  24 Jan 2015; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.3.4.ebuild:
-  Version bump, drop .la files
+  08 Sep 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.5.0.ebuild:
+  soname was bumped from .7 to .8, thanks to Gilles for noticing
 
-  24 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  appstream-glib-0.3.3-r1.ebuild:
-  Raise fontconfig dependency to 2.11, bug #526506.
+  Package-Manager: portage-2.2.20.1
 
-  08 Dec 2014; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.3.3-r1.ebuild:
-  x86 keyword, bug #523924
+  12 Sep 2015; Agostino Sarubbo <ago@gentoo.org> appstream-glib-0.5.0.ebuild:
+  x86 stable wrt bug #551826
 
-*appstream-glib-0.3.3-r1 (08 Dec 2014)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  08 Dec 2014; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.3.3-r1.ebuild,
-  -appstream-glib-0.3.0.ebuild, -appstream-glib-0.3.2.ebuild,
-  -appstream-glib-0.3.3.ebuild:
-  Use properly generated tarballs
+  20 Sep 2015; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.5.0.ebuild:
+  Stable for HPPA (bug #551826).
 
-*appstream-glib-0.3.3 (05 Dec 2014)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
 
-  05 Dec 2014; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.3.3.ebuild:
+  20 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
+  appstream-glib-0.5.0.ebuild:
+  add ~alpha keyword
+
+  Gentoo-Bug: 553926
+
+  Package-Manager: portage-2.2.20.1
+
+  28 Sep 2015; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.5.0.ebuild:
+  Stable for PPC64 (bug #551826).
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
+
+  03 Oct 2015; Markus Meier <maekke@gentoo.org> appstream-glib-0.5.0.ebuild:
+  arm stable, bug #551826
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="arm"
+
+  18 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> appstream-glib-0.5.0.ebuild:
+  sparc stable wrt bug #551826
+
+  Package-Manager: portage-2.2.20.1
+
+  12 Nov 2015; Agostino Sarubbo <ago@gentoo.org> appstream-glib-0.5.0.ebuild:
+  ppc stable wrt bug #565086
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
+
+  14 Nov 2015; Pacho Ramos <pacho@gentoo.org> appstream-glib-0.4.0.ebuild,
+  appstream-glib-0.5.0.ebuild:
+  ia64 keyword, bug #553926 by Émeric Maschino
+
+  Package-Manager: portage-2.2.24
+
+*appstream-glib-0.5.3 (14 Nov 2015)
+
+  14 Nov 2015; Pacho Ramos <pacho@gentoo.org> +appstream-glib-0.5.3.ebuild:
   Version bump
 
-  24 Nov 2014; Michał Górny <mgorny@gentoo.org> appstream-glib-0.3.2.ebuild:
-  [QA] Add missing blocker on colliding versions of dev-util/appdata-tools. Use
-  PDEPEND instead of RDEPEND on the metapackage to solve collisions. Fix
-  overwritten RDEPEND.
+  Package-Manager: portage-2.2.24
 
-  23 Nov 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  appstream-glib-0.3.2.ebuild:
-  Do not block apptools-data for now but require dummy package instead.
-
-*appstream-glib-0.3.2 (23 Nov 2014)
-
-  23 Nov 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  +appstream-glib-0.3.2.ebuild:
-  Version bump. Completely superseeds appdata-tools.
-
-  23 Oct 2014; Markus Meier <maekke@gentoo.org> appstream-glib-0.3.0.ebuild:
-  add ~arm, bug #523924
-
-  16 Oct 2014; Anthony G. Basile <blueness@gentoo.org>
-  appstream-glib-0.3.0.ebuild:
-  Keyword ~ppc ~ppc64, bug #523924
-
-  05 Oct 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  appstream-glib-0.3.0.ebuild:
-  Add gtk-doc to DEPEND, bug #523922.
-
-  28 Sep 2014; Jeroen Roovers <jer@gentoo.org> appstream-glib-0.3.0.ebuild:
-  Marked ~hppa too.
-
-*appstream-glib-0.3.0 (27 Sep 2014)
-
-  27 Sep 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  +appstream-glib-0.3.0.ebuild, +metadata.xml:
-  Initial commit, required by newer appdata-tools.

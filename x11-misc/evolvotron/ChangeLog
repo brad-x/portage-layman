@@ -1,123 +1,63 @@
 # ChangeLog for x11-misc/evolvotron
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/evolvotron/ChangeLog,v 1.30 2013/09/05 19:24:10 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Sep 2013; Agostino Sarubbo <ago@gentoo.org> evolvotron-0.6.2.ebuild:
-  Stable for x86, wrt bug #482722
+*evolvotron-0.6.3 (09 Aug 2015)
+*evolvotron-0.6.2 (09 Aug 2015)
+*evolvotron-0.6.1 (09 Aug 2015)
 
-  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> evolvotron-0.6.2.ebuild:
-  Stable for amd64, wrt bug #482722
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +evolvotron-0.6.1.ebuild,
+  +evolvotron-0.6.2.ebuild, +evolvotron-0.6.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Aug 2013; Jeroen Roovers <jer@gentoo.org> evolvotron-0.6.2.ebuild:
-  Fix RDEPEND.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Aug 2013; Jeroen Roovers <jer@gentoo.org> evolvotron-0.6.3.ebuild:
-  Remove unneeded python build dependency.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*evolvotron-0.6.3 (27 Aug 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Aug 2013; Jeroen Roovers <jer@gentoo.org> +evolvotron-0.6.3.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> evolvotron-0.6.1.ebuild,
-  evolvotron-0.6.2.ebuild:
-  Move Qt dependencies to the new category
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*evolvotron-0.6.2 (30 Oct 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> +evolvotron-0.6.2.ebuild,
-  metadata.xml:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jun 2010; Samuli Suominen <ssuominen@gentoo.org>
-  evolvotron-0.6.1.ebuild:
-  Force Python 2.x wrt #317011.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jan 2010; Markus Meier <maekke@gentoo.org> evolvotron-0.6.1.ebuild:
-  x86 stable, bug #298358
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  evolvotron-0.6.1.ebuild:
-  amd64 stable wrt #298358
+  Bug: https://bugs.gentoo.org/552720
 
-*evolvotron-0.6.1 (20 Dec 2009)
+  13 Sep 2015; Manuel Rüger <mrueg@gentoo.org> -evolvotron-0.6.1.ebuild:
+  Remove old
 
-  20 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +evolvotron-0.6.1.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
 
-  06 May 2009; Raúl Porcel <armin76@gentoo.org> evolvotron-0.5.1.ebuild:
-  x86 stable wrt #268743
-
-  28 Jul 2008; Carsten Lohrke <carlo@gentoo.org> evolvotron-0.5.0.ebuild,
-  evolvotron-0.5.1.ebuild:
-  QA: Get rid of deprecated qt_min_version().
-
-  23 Jul 2008; Santiago M. Mola <coldwind@gentoo.org>
-  evolvotron-0.5.1.ebuild:
-  amd64 stable
-
-*evolvotron-0.5.1 (11 Feb 2008)
-
-  11 Feb 2008; Samuli Suominen <drac@gentoo.org>
-  -files/evolvotron-0.3.1-gcc4.patch, -evolvotron-0.4.0.ebuild,
-  +evolvotron-0.5.1.ebuild:
-  Version bump by Justin Blanchard.
-
-  09 Nov 2007; Dawid Węgliński <cla@gentoo.org> evolvotron-0.5.0.ebuild:
-  Stable on x86
-
-  09 Nov 2007; Samuli Suominen <drac@gentoo.org> evolvotron-0.5.0.ebuild:
-  dev-libs/boost is required at build time wrt #198391.
-
-*evolvotron-0.5.0 (03 Nov 2007)
-
-  03 Nov 2007; Samuli Suominen <drac@gentoo.org> +evolvotron-0.5.0.ebuild:
-  Version bump, also closing bug 144160.
-
-  02 Aug 2007; Roy Marples <uberlord@gentoo.org> evolvotron-0.4.0.ebuild:
-  Keyworded ~x86-fbsd, #156902 thanks to Marc Kowarsky.
-
-  14 Jul 2007; Raúl Porcel <armin76@gentoo.org> evolvotron-0.4.0.ebuild:
-  x86 stable
-
-*evolvotron-0.4.0 (11 May 2007)
-
-  11 May 2007; Samuli Suominen <drac@gentoo.org> +evolvotron-0.4.0.ebuild:
-  Version bump for bug 177271.
-
-  03 Sep 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/evolvotron-0.3.1-gcc4.patch, evolvotron-0.3.1.ebuild:
-  Make evolvotron compile with gcc4, see bug #146119.
-
-  16 Feb 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  evolvotron-0.3.1.ebuild:
-  Fix compilation with Qt4 installed, see bug #123048.
-
-  07 Jul 2005; Caleb Tennis <caleb@gentoo.org> evolvotron-0.3.1.ebuild:
-  Fix qt dep
-
-  19 Jun 2005; Jonathan Smith <smithj@gentoo.org> +metadata.xml,
-  -evolvotron-0.2.2.ebuild, evolvotron-0.3.1.ebuild:
-  added metadata, 0.3.1 stable x86, cleanup
-
-  07 May 2005; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  evolvotron-0.3.1.ebuild:
-  mark ~ppc
-
-*evolvotron-0.3.1 (03 Nov 2004)
-
-  03 Nov 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  +evolvotron-0.3.1.ebuild:
-  version bump (bug #63369)
-
-  03 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org>
-  evolvotron-0.2.2.ebuild:
-  Turn on fullscreen support.
-
-*evolvotron-0.2.2 (02 Nov 2003)
-
-  02 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org>
-  evolvotron-0.2.2.ebuild:
-  initial commit; ebuild based on the one submitted by Matija Suklje via
-  bug 29421

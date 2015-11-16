@@ -1,138 +1,58 @@
 # ChangeLog for sci-physics/paw
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/paw/ChangeLog,v 1.34 2015/08/01 12:46:17 bircoph Exp $
+# (auto-generated from git log)
 
-*paw-2.14.04-r5 (01 Aug 2015)
+*paw-2.14.04-r5 (09 Aug 2015)
+*paw-2.14.04-r4 (09 Aug 2015)
 
-  01 Aug 2015; Andrew Savchenko <bircoph@gentoo.org> +paw-2.14.04-r5.ebuild:
-  Update Debian patchset. Imported from science overlay.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/paw-2.14.04-glibc-2.10.patch, +metadata.xml, +paw-2.14.04-r4.ebuild,
+  +paw-2.14.04-r5.ebuild:
+  proj/gentoo: Initial commit
 
-  01 Aug 2015; Andrew Savchenko <bircoph@gentoo.org> -paw-2.14.04-r2.ebuild,
-  -paw-2.14.04-r3.ebuild, -files/paw-2.14.04-missing-headers.patch:
-  Remove old, fixes bug 478634.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  30 Jul 2015; Agostino Sarubbo <ago@gentoo.org> paw-2.14.04-r4.ebuild:
-  Stable for sparc, wrt bug #550572
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Jun 2015; Agostino Sarubbo <ago@gentoo.org> paw-2.14.04-r4.ebuild:
-  Stable for x86, wrt bug #550572
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  01 Jun 2015; Jeroen Roovers <jer@gentoo.org> paw-2.14.04-r4.ebuild:
-  Stable for HPPA (bug #550572).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 May 2015; Agostino Sarubbo <ago@gentoo.org> paw-2.14.04-r4.ebuild:
-  Stable for amd64, wrt bug #550572
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 May 2015; Andrew Savchenko <bircoph@gentoo.org> paw-2.14.04-r2.ebuild,
-  paw-2.14.04-r3.ebuild, paw-2.14.04-r4.ebuild:
-  Update homepage.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org> paw-2.14.04-r4.ebuild:
-  Switch to EAPI5 and respect RANLIB (bug #468188)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*paw-2.14.04-r4 (17 Jan 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Jan 2013; Sébastien Fabbro <bicatali@gentoo.org> +paw-2.14.04-r4.ebuild,
-  metadata.xml:
-  Updated Debian patch. Keyworded amd64-linux and x86-linux
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> paw-2.14.04-r2.ebuild,
-  paw-2.14.04-r3.ebuild:
-  Update dependency after package move from x11-libs/openmotif to
-  x11-libs/motif.
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Oct 2012; Justin Lecher <jlec@gentoo.org> paw-2.14.04-r2.ebuild,
-  paw-2.14.04-r3.ebuild, metadata.xml:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
-
-*paw-2.14.04-r3 (21 Jul 2011)
-
-  21 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> +paw-2.14.04-r3.ebuild:
-  New debian patch set. Switch to EAPI4
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> paw-2.14.04-r2.ebuild:
-  Add dependency on virtual/fortran
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> paw-2.14.04-r2.ebuild:
-  Added fortran-2.eclass support
-
-  10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> paw-2.14.04-r2.ebuild:
-  Fix openmotif dependency.
-
-  25 Jun 2010; Justin Lecher <jlec@gentoo.org> paw-2.14.04-r2.ebuild:
-  Included USE for static bins, #252497
-
-  07 Dec 2009; Jeroen Roovers <jer@gentoo.org> paw-2.14.04-r2.ebuild:
-  Stable for HPPA (bug #294442).
-
-  04 Dec 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  paw-2.14.04-r2.ebuild:
-  Re-changing to old style patching at least until patch-2.6 is not buggy
-  and masked
-
-  26 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  paw-2.14.04-r2.ebuild:
-  Fixing patch application with more recent versions
-
-  17 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  paw-2.14.04-r2.ebuild:
-  Removed static flags which does not work and is just too much work for now
-
-  11 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  paw-2.14.04-r2.ebuild, +files/paw-2.14.04-glibc-2.10.patch,
-  +files/paw-2.14.04-missing-headers.patch:
-  Fixed glibc bug #275020, thanks Andrew Savchenko, and add missing header
-
-  05 May 2009; Christian Faulhammer <fauli@gentoo.org>
-  paw-2.14.04-r2.ebuild:
-  stable x86, bug 245875
-
-  17 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org> paw-2.14.04-r2:
-  Modernize to make it consistent with other cernlib ebuilds
-
-  22 Mar 2009; Jeremy Olexa <darkside@gentoo.org> paw-2.14.04-r2.ebuild:
-  amd64 stable, bug 245875
-
-  03 Mar 2009; Ferris McCormick <fmccor@gentoo.org> paw-2.14.04-r2.ebuild:
-  Sparc stable, part of Bug #245875.
-
-  15 Jul 2008; Ferris McCormick <fmccor@gentoo.org> paw-2.14.04-r2.ebuild:
-  Add ~sparc for testing, dependency required for Bug #230716.
-
-  14 Jul 2008; Jeroen Roovers <jer@gentoo.org> paw-2.14.04-r2.ebuild:
-  Remove extraneous KEYWORDS entry.
-
-  14 Jul 2008; Jeroen Roovers <jer@gentoo.org> paw-2.14.04-r2.ebuild:
-  Marked ~hppa (bug #230716).
-
-  10 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  -paw-2.14.04-r1.ebuild, paw-2.14.04-r2.ebuild:
-  Added libXaw as dependency, removed src_test (bug #231208)
-
-  29 Jun 2008; Torsten Veller <tove@gentoo.org> paw-2.14.04-r1.ebuild,
-  paw-2.14.04-r2.ebuild:
-  Add missing die: || "..." -> || die "..."
-
-  27 Jun 2008; Ulrich Mueller <ulm@gentoo.org> paw-2.14.04-r1.ebuild,
-  paw-2.14.04-r2.ebuild:
-  Change dependency from virtual/motif to x11-libs/openmotif, bug 224749.
-
-*paw-2.14.04-r2 (07 Jun 2008)
-
-  07 Jun 2008; Sébastien Fabbro <bicatali@gentoo.org> -paw-2.14.04.ebuild,
-  +paw-2.14.04-r2.ebuild:
-  New patch from Debian, fixes a few issue with cfortran
-
-*paw-2.14.04-r1 (11 Mar 2008)
-
-  11 Mar 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  +paw-2.14.04-r1.ebuild:
-  New series of patches from Debian, more compatible with gfortran and better
-  tests. Much ebuild cleaning.
-
-*paw-2.14.04 (24 Aug 2007)
-
-  24 Aug 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +paw-2.14.04.ebuild:
-  Initial import.

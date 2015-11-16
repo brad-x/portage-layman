@@ -1,147 +1,56 @@
 # ChangeLog for media-sound/listen
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/listen/ChangeLog,v 1.33 2013/05/28 04:53:29 ssuominen Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  28 May 2013; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.5-r1.ebuild:
-  Use python-single-r1.eclass instead of python.eclass. Remove deprecated
-  optional gnome-vfs-python dependency. Fix MimeType in .desktop file.
+*listen-0.6.5-r1 (09 Aug 2015)
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> listen-0.6.5-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/listen-0.6.5-Makefile.patch, +listen-0.6.5-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*listen-0.6.5-r1 (14 Sep 2011)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Sep 2011; Pacho Ramos <pacho@gentoo.org> -listen-0.6.5.ebuild,
-  +listen-0.6.5-r1.ebuild:
-  Use webkit always due gtkmozembed removal (bug #372247), drop libsexy support
-  as it's deprecated (bug #381209). Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.5.ebuild:
-  Remove media-libs/tunepimp (Old RDF service) dep. in favour of
-  dev-python/python-musicbrainz (New XML service). Control it by USE="cdda"
-  instead of "musicbrainz" wrt #355777 by Sebastian Pipping.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Nov 2010; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.5.ebuild:
-  Use libnotify instead of direct notification daemon depend.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Jun 2010; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.5.ebuild:
-  Don't run src_test() because "make check" is not for running testsuite
-  in this package wrt #324719 by Diego E. Pettenò.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2010; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.5.ebuild:
-  Move gnome-vfs-python RDEPEND behind USE gnome because it's runtime
-  optional wrt #318377 by Josh Saddler.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*listen-0.6.5 (06 Apr 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Apr 2010; Samuli Suominen <ssuominen@gentoo.org> +listen-0.6.5.ebuild,
-  +files/listen-0.6.5-Makefile.patch:
-  Version bump and remove USE="hal" wrt #313399. Fix SRC_URI wrt #311065 by
-  Johann Schmitz. Missing dbus-python rdepend wrt #299891 by Paul Mulders.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*listen-0.6.3 (28 Aug 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> +listen-0.6.3.ebuild:
-  Version bump wrt #280089, thanks to Roel Brook for reporting.
-
-  18 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.2.ebuild:
-  RDEPEND for pyxdg wrt "No module named xdg.BaseDirectory".
-
-  17 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.2.ebuild:
-  USE musicbrainz wrt #175495, thanks to Pacho Ramos for reporting.
-
-  17 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> listen-0.6.2.ebuild:
-  Block dev-tinyos/listen and media-radio/ax25-apps wrt #247811.
-
-*listen-0.6.2 (17 Jul 2009)
-
-  17 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> +listen-0.6.2.ebuild,
-  +files/listen-0.6.2-Makefile.patch:
-  Version bump.
-
-  11 Aug 2007; Samuli Suominen <ssuominen@gentoo.org> listen-0.5-r1.ebuild:
-  Fix elementtree depends for bug 185533.
-
-  16 Jul 2007; Michael Sterrett <mr_bones_@gentoo.org> listen-0.5.ebuild,
-  listen-0.5-r1.ebuild:
-  add cdr to IUSE
-
-  15 Jul 2007; J. Alberto Suárez López <bass@gentoo.org>
-  listen-0.5.ebuild:
-  Fixing dbus bug and depend problem
-
-  23 Apr 2007; Sven Wegener <swegener@gentoo.org> listen-0.5.ebuild:
-  Sync IUSE (+libsexy)
-
-*listen-0.5 (07 Apr 2007)
-
-  07 Apr 2007; J. Alberto Suárez López <bass@gentoo.org>
-  -listen-0.5_beta1-r1.ebuild, -listen-0.5_beta1-r2.ebuild,
-  +listen-0.5.ebuild:
-  Final 0.5 version.
-
-*listen-0.5_beta1-r2 (21 Jan 2007)
-
-  21 Jan 2007; J. Alberto Suárez López <bass@gentoo.org>
-  +listen-0.5_beta1-r2.ebuild:
-  dbus love :) #157720
-
-  02 Jan 2007; Michael Sterrett <mr_bones_@gentoo.org> -listen-0.4.3.ebuild:
-  clean out an older ebuild with a (now) broken sqlite dependency
-
-*listen-0.5_beta1-r1 (15 Oct 2006)
-
-  15 Oct 2006; J. Alberto Suárez López <bass@gentoo.org>
-  files/Makefile.patch, listen-0.5_beta1-r1.ebuild:
-  Fixed listen script #151379
-  Ready for Sexy and muscibrainz but not working yet.
-
-*listen-0.5_beta1 (12 Oct 2006)
-
-  13 Oct 2006; Simon Stelling <blubb@gentoo.org> listen-0.5_beta1.ebuild:
-  fix wrt multilib-strict and re-add ~amd64; bug 146613
-
-  12 Oct 2006; J. Alberto Suárez López <bass@gentoo.org>
-  +files/Makefile.patch, +files/check.patch, +listen-0.5_beta1.ebuild:
-  new beta version #148931
-
-*listen-0.4.3-r2 (11 Aug 2006)
-
-  11 Aug 2006; J. Alberto Suárez López <bass@gentoo.org>
-  +listen-0.4.3-r2.ebuild:
-  Fixed bug #143125
-
-*listen-0.4.3-r1 (13 Jul 2006)
-
-  13 Jul 2006; J. Alberto Suárez López <bass@gentoo.org>
-  -listen-0.4.2-r2.ebuild, +listen-0.4.3-r1.ebuild:
-  Fixed sqlite depend
-
-  12 Jul 2006; Danny van Dyk <kugelfang@gentoo.org> listen-0.4.2-r2.ebuild,
-  listen-0.4.3.ebuild:
-  QA: Added cdr to IUSE.
-
-*listen-0.4.3 (30 May 2006)
-
-  30 May 2006; J. Alberto Suárez López <bass@gentoo.org>
-  +listen-0.4.3.ebuild:
-  Version bump. #132686
-
-*listen-0.4.2-r2 (9 Apr 2006)
-
-  13 Apr 2006; J. Alberto Suárez López <bass@gentoo.org>
-  listen-0.4.2-r2.ebuild:
-  added gnome-vfs hal check
-
-  12 Apr 2006; J. Alberto Suárez López <bass@gentoo.org>
-  listen-0.4.2-r2.ebuild:
-  added cdr flag and serpentine rdepend
-
-  12 Apr 2006; J. Alberto Suárez López <bass@gentoo.org>
-  listen-0.4.2-r2.ebuild:
-  added cdr flag and serpentine rdepend
-
-  9 Apr 2006: Jose Alberto Suarez Lopez <bass@gentoo.org> listen-0.4.2-r2.ebuild:
-  First relase.
-  Thanks contributors #121740
+  Bug: https://bugs.gentoo.org/552720
 

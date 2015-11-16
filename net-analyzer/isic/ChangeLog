@@ -1,88 +1,56 @@
 # ChangeLog for net-analyzer/isic
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/isic/ChangeLog,v 1.22 2014/07/12 18:24:45 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  12 Jul 2014; Jeroen Roovers <jer@gentoo.org> isic-0.07-r1.ebuild,
-  metadata.xml:
-  EAPI bump. Remove short <longdescription>.
+*isic-0.07-r1 (09 Aug 2015)
 
-  26 Sep 2012; Anthony G. Basile <blueness@gentoo.org> isic-0.07-r1.ebuild:
-  stable ppc, bug #393895
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +isic-0.07-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Dec 2011; Tim Harder <radhermit@gentoo.org> -isic-0.07.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Dec 2011; Tim Harder <radhermit@gentoo.org> isic-0.07-r1.ebuild:
-  Respect CC.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Dec 2011; Agostino Sarubbo <ago@gentoo.org> isic-0.07-r1.ebuild:
-  Stable for AMD64, wrt bug #393895
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> isic-0.07-r1.ebuild:
-  x86 stable wrt bug #393895
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Remove useless maintainer tag.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*isic-0.07-r1 (11 Jun 2011)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Jun 2011; Jeroen Roovers <jer@gentoo.org> +isic-0.07-r1.ebuild:
-  Fix build failure (bug #351285). Install man page in the appropriate place
-  (bug #247953). Move econf to src_configure(). Use emake instead of make.
-  Remove unused inherit.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Sep 2007; Markus Ullmann <jokey@gentoo.org>
-  -files/isic-0.06-gcc4.patch, -files/isic-0.06-makefile.patch,
-  -isic-0.06.ebuild:
-  Cleanup
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Mar 2007; Raúl Porcel <armin76@gentoo.org> isic-0.07.ebuild:
-  x86 stable
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*isic-0.07 (25 Jan 2007)
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Jan 2007; Marcelo Goes <vanquirius@gentoo.org> +isic-0.07.ebuild:
-  0.07 version bump. Updated HOMEPAGE, SRC_URI. gcc and makefile patches no
-  longer necessary. Includes ipv6 tools.
-
-  16 Aug 2005; Simon Stelling <blubb@gentoo.org> isic-0.06.ebuild:
-  added ~amd64 keyword
-
-  29 Jul 2005; Daniel Black <dragonheart@gentoo.org> isic-0.06.ebuild:
-  removed die from epatch || die.
-
-  19 Jul 2005; David Holm <dholm@gentoo.org> isic-0.06.ebuild:
-  Added to ~ppc.
-
-  10 Apr 2005; Marcelo Goes <vanquirius@gentoo.org>
-  +files/isic-0.06-gcc4.patch, isic-0.06.ebuild:
-  Adding gcc-4 patch from Debian.
-
-  09 Jan 2005; Daniel Black <dragonheart@gentoo.org> metadata.xml,
-  -files/0.05-libnet-1.0.patch, -isic-0.05-r1.ebuild, -isic-0.05.ebuild,
-  isic-0.06.ebuild:
-  Removed old version as per bug #75193. Old versions had dependancy errors.
-  Vanquirius <marcelogoes@gmail.com> confirmed the new version is working.
-
-*isic-0.06 (08 Jan 2005)
-
-  08 Jan 2005; Daniel Black <dragonheart@gentoo.org>
-  +files/isic-0.06-makefile.patch, +isic-0.06.ebuild:
-  version bump as per bug #75193. Thanks to Vanquirius <marcelogoes@gmail.com>
-
-  10 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml,
-  isic-0.05-r1.ebuild, isic-0.05.ebuild:
-  Tidy
-
-*isic-0.05-r1 (21 Aug 2003)
-
-  21 Aug 2003; Mike Frysinger <vapier@gentoo.org> :
-  Patch to compile against SLOT-ed libnet-1.0.x #17772.
-
-*isic-0.05 (25 Feb 2003)
-
-  07 Mar 2003; Martin Holzer <mholzer@gentoo.org> isic-0.05.ebuild :
-  Fixed Depend to libnet-1.0*. Closes #17017.
-
-  25 Feb 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me for #11785.

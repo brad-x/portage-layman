@@ -1,48 +1,56 @@
 # ChangeLog for net-irc/ptlink-opm
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ptlink-opm/ChangeLog,v 1.12 2014/01/08 06:37:57 vapier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> ptlink-opm-1.3.1.ebuild:
-  Inherit the user eclass for enewuser/etc...
+*ptlink-opm-1.3.1 (09 Aug 2015)
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/ptlink-opm.conf.d,
+  +files/ptlink-opm.init.d, +metadata.xml, +ptlink-opm-1.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Nov 2004; Sven Wegener <swegener@gentoo.org> -ptlink-opm-1.3.0.ebuild,
-  ptlink-opm-1.3.1.ebuild:
-  There's no need to override path.h because the configure script has options
-  for it.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Nov 2004; Sven Wegener <swegener@gentoo.org> ptlink-opm-1.3.0.ebuild,
-  ptlink-opm-1.3.1.ebuild:
-  Modified to install scan_rules.dconf in /etc/ptlink-opm.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*ptlink-opm-1.3.1 (14 Nov 2004)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Nov 2004; Sven Wegener <swegener@gentoo.org> -ptlink-opm-1.1.1.ebuild,
-  ptlink-opm-1.3.0.ebuild, +ptlink-opm-1.3.1.ebuild:
-  Version bump. Removed old ebuild.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ptlink-opm-1.3.0 (18 Oct 2004)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Oct 2004; Sven Wegener <swegener@gentoo.org> +ptlink-opm-1.3.0.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Aug 2004; Sven Wegener <swegener@gentoo.org> ptlink-opm-1.1.1.ebuild:
-  Added sed-4 dependency.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jul 2004; David Holm <dholm@gentoo.org> ptlink-opm-1.1.1.ebuild:
-  Added to ~ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Jul 2004; Sven Wegener <swegener@gentoo.org> files/ptlink-opm.init.d:
-  Added use ircd to init script.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Jul 2004; Sven Wegener <swegener@gentoo.org> ptlink-opm-1.1.1.ebuild:
-  We need to inherit eutils for enewuser.
+  Bug: https://bugs.gentoo.org/552720
 
-*ptlink-opm-1.1.1 (11 Jul 2004)
-
-  11 Jul 2004; Sven Wegener <swegener@gentoo.org> +metadata.xml,
-  +files/ptlink-opm.conf.d, +files/ptlink-opm.init.d,
-  +ptlink-opm-1.1.1.ebuild:
-  Initial import, ebuild written by me.

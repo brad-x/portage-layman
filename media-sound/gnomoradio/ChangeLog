@@ -1,98 +1,58 @@
 # ChangeLog for media-sound/gnomoradio
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gnomoradio/ChangeLog,v 1.25 2014/08/10 21:06:12 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> gnomoradio-0.15.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*gnomoradio-0.15.1 (09 Aug 2015)
 
-  21 Jul 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/gnomoradio-0.15.1-glib-single-include.patch, gnomoradio-0.15.1.ebuild:
-  Let it compile against glib-2.32
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gnomoradio-0.15.1-gcc42.patch, +files/gnomoradio-0.15.1-gcc43.patch,
+  +files/gnomoradio-0.15.1-glib-single-include.patch,
+  +files/gnomoradio-0.15.1-lm.patch, +gnomoradio-0.15.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> gnomoradio-0.15.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Mar 2011; Christoph Mende <angelos@gentoo.org> gnomoradio-0.15.1.ebuild:
-  Fixed slot deps
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  gnomoradio-0.15.1.ebuild, +files/gnomoradio-0.15.1-lm.patch:
-  Insert -lm to LIBADD for forced asneeded wrt #274074.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Dec 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/gnomoradio-0.15.1-gcc43.patch, gnomoradio-0.15.1.ebuild:
-  fix build with gcc 4.3, bug #251221
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Jun 2008; Samuli Suominen <drac@gentoo.org>
-  +files/gnomoradio-0.15.1-gcc42.patch, gnomoradio-0.15.1.ebuild:
-  Select one libsigc++ slot wrt #228483. Fix building with GCC 4.2 (and thus
-  also 4.3).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Jan 2008; Samuli Suominen <drac@gentoo.org> gnomoradio-0.15.1.ebuild:
-  depend on dev-util/pkgconfig wrt #205653
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Feb 2007; Mart Raudsepp <leio@gentoo.org> -gnomoradio-0.13.ebuild:
-  Punt old version
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  gnomoradio-0.15.1.ebuild:
-  stable x86; bug 161452
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Feb 2007; Steve Dibb <beandog@gentoo.org> gnomoradio-0.15.1.ebuild:
-  amd64 stable, bug 161452
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Dec 2005; Luca Barbato <lu_zero@gentoo.org> gnomoradio-0.13.ebuild,
-  gnomoradio-0.15.1.ebuild:
-  oggvorbis Cleanup
-
-  23 Dec 2004; Simon Stelling <blubb@gentoo.org> gnomoradio-0.15.1.ebuild:
-  added ~amd64
-
-  08 Dec 2004; Michael Hanselmann <hansmi@gentoo.org>
-  gnomoradio-0.15.1.ebuild:
-  Added to ~ppc.
-
-  23 Nov 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  gnomoradio-0.15.1.ebuild:
-  Added to ~sparc
-
-*gnomoradio-0.15.1 (12 Nov 2004)
-
-  12 Nov 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  -gnomoradio-0.11.2.ebuild, gnomoradio-0.13.ebuild,
-  +gnomoradio-0.15.1.ebuild:
-  Version bump closes bug #61726.
-
-  12 Nov 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  gnomoradio-0.13.ebuild:
-  Stable amd64, x86.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  gnomoradio-0.11.2.ebuild:
-  virtual/glibc -> virtual/libc
-
-  18 Jun 2004; David Holm <dholm@gentoo.org> gnomoradio-0.13.ebuild:
-  Added to ~ppc.
-
-*gnomoradio-0.13 (15 Jun 2004)
-
-  15 Jun 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  +gnomoradio-0.13.ebuild:
-  Version bump closes bug #53543.  Added ~amd64.
-
-  30 May 2004; Yi Qiang <khai@gentoo.org> gnomoradio-0.11.2.ebuild:
-  Fixed gtkmm deps
-
-  06 May 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  gnomoradio-0.11.2.ebuild:
-  Added oggvorbis to IUSE.
-
-*gnomoradio-0.11.2 (08 May 2004)
-
-  08 May 2004; Chris Aniszczyk <zx@gentoo.org> +metadata.xml,
-  +gnomoradio-0.11.2.ebuild:
-  Initial Import. Closes #37527.
-  Thanks to mattgerg@users.sourceforge.net for the initial ebuild.

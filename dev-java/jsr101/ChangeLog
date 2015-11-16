@@ -1,54 +1,77 @@
 # ChangeLog for dev-java/jsr101
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jsr101/ChangeLog,v 1.13 2015/06/13 09:44:33 zlogene Exp $
+# (auto-generated from git log)
 
-  13 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> -jsr101-1.4-r1.ebuild,
-  jsr101-1.4-r2.ebuild:
-  amd64/x86 stable wrt bug #551536; Drop old.
+*jsr101-1.4-r2 (09 Aug 2015)
 
-*jsr101-1.4-r2 (09 Jun 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +jsr101-1.4-r2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  09 Jun 2015; Patrice Clement <monsieurp@gentoo.org> +jsr101-1.4-r2.ebuild:
-  EAPI 5 bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Jun 2008; Serkan Kaba <serkan@gentoo.org> -jsr101-1.1.ebuild,
-  -jsr101-1.4.ebuild:
-  Remove old versions.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 May 2008; Christian Faulhammer <opfer@gentoo.org> jsr101-1.4-r1.ebuild:
-  stable x86, bug 219932
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 May 2008; Kenneth Prugh <ken69267@gentoo.org> jsr101-1.4-r1.ebuild:
-  amd64 stable, bug #219932
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*jsr101-1.4-r1 (03 May 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 May 2008; Petteri Räty <betelgeuse@gentoo.org> +jsr101-1.4-r1.ebuild:
-  Fix building on 1.5 by using java-virtuals/saaj-api.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*jsr101-1.4 (02 May 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 May 2008; Petteri Räty <betelgeuse@gentoo.org> +jsr101-1.4.ebuild:
-  Version bump building the classes from axis sources to remove fetch
-  restriction. Fixes bug #219932.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Dec 2007; Krzysiek Pawlik <nelchael@gentoo.org> jsr101-1.1.ebuild:
-  Fix download URL, see bug #201339.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org> jsr101-1.1.ebuild:
-  amd64 stable, bug #187681.
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Aug 2007; Christian Faulhammer <opfer@gentoo.org> jsr101-1.1.ebuild:
-  stable x86, bug 187681
+*jsr101-1.4-r3 (13 Oct 2015)
 
-  11 Aug 2007; Krzysiek Pawlik <nelchael@gentoo.org> metadata.xml:
-  Remove myself from <maintainer>.
+  13 Oct 2015; Patrice Clement <monsieurp@gentoo.org> +jsr101-1.4-r3.ebuild:
+  Do away with hacks and make use of java-pkg-simple. Add doc and source
+  support. Fixes bug 220073.
 
-  23 May 2007; Diego Pettenò <flameeyes@gentoo.org> jsr101-1.1.ebuild:
-  Add ~x86-fbsd keyword. Bug #176906.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*jsr101-1.1 (01 May 2007)
+  14 Oct 2015; Patrice Clement <monsieurp@gentoo.org> jsr101-1.4-r3.ebuild:
+  Stable for amd64. Stable for ppc+x86 using the ALLARCHES policy.
 
-  01 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> +metadata.xml,
-  +jsr101-1.1.ebuild:
-  Initial commit of jsr101.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  14 Oct 2015; Patrice Clement <monsieurp@gentoo.org> -jsr101-1.4-r2.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

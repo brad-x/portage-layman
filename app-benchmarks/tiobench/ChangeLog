@@ -1,68 +1,57 @@
 # ChangeLog for app-benchmarks/tiobench
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/tiobench/ChangeLog,v 1.21 2015/06/09 09:07:28 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*tiobench-0.3.3-r2 (09 Aug 2015)
 
-  17 Dec 2014; Alice Ferrazzi <alicef@gentoo.org> metadata.xml:
-  Update email and removed proxy-maintainers herd
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.3.3-LDFLAGS.patch, +files/0.3.3-column-description-fix.patch,
+  +files/0.3.3-glibc-2.16.patch, +metadata.xml, +tiobench-0.3.3-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Mar 2014; Manuel Rüger <mrueg@gentoo.org> metadata.xml:
-  Add Alice Ferrazzi as maintainer. Proxied by me.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Mar 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #53266
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Nov 2012; Sven Wegener <swegener@gentoo.org> tiobench-0.3.3-r2.ebuild,
-  +files/0.3.3-glibc-2.16.patch:
-  Rename aligned_alloc to tio_aligned_alloc, bug #429912.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Sep 2009; Patrick Lauer <patrick@gentoo.org> tiobench-0.3.3-r2.ebuild:
-  Removing virtual/libc deps
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Oct 2008; Sven Wegener <swegener@gentoo.org> tiobench-0.3.3-r2.ebuild:
-  Fix direct use of gcc, bug #243526.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Sep 2006; Sven Wegener <swegener@gentoo.org>
-  +files/0.3.3-LDFLAGS.patch, tiobench-0.3.3-r2.ebuild:
-  Add LDFLAGS support.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 May 2005; Sven Wegener <swegener@gentoo.org> -tiobench-0.3.3-r1.ebuild,
-  tiobench-0.3.3-r2.ebuild:
-  Marked 0.3.3-r2 stable on all arches that 0.3.3-r1 is stable on. Only change
-  is a patch that adjusts the ouput format.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Mar 2005; Sven Wegener <swegener@gentoo.org>
-  files/0.3.3-column-description-fix.patch:
-  Fixed patch to not cause sandbox violations, bug #86791.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*tiobench-0.3.3-r2 (22 Mar 2005)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Mar 2005; Sven Wegener <swegener@gentoo.org>
-  +files/0.3.3-column-description-fix.patch, +tiobench-0.3.3-r2.ebuild:
-  Fixed column description to be displayed for every table. Thanks to
-  Christian <evilninja@gmx.net> in bug #85362.
+  Bug: https://bugs.gentoo.org/552720
 
-  18 Dec 2004; Simon Stelling <blubb@gentoo.org> tiobench-0.3.3-r1.ebuild:
-  was testing for a long time, marking stable on amd64
-
-  24 Sep 2004; Sven Wegener <swegener@gentoo.org> -tiobench-0.3.3.ebuild:
-  Removed old ebuild.
-
-  27 Aug 2004; Tom Gall <tgall@gentoo.org> tiobench-0.3.3-r1.ebuild
-  stable on ppc and ppc64
-
-  18 Jul 2004; Daniel Ahlberg <aliz@gentoo.org> :
-  Added amd64 keyword, closing #57108.
-
-*tiobench-0.3.3-r1 (03 Mar 2004)
-
-  03 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> tiobench-0.3.3.ebuild:
-  turn on large file support (bug #43000)
-
-*tiobench-0.3.3 (15 Nov 2003)
-
-  15 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org> tiobench-0.3.3.ebuild:
-  initial commit; ebuild modified from the one submitted by Sven Wegener via bug
-  32499

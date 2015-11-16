@@ -1,39 +1,60 @@
 # ChangeLog for dev-lang/ucblogo
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ucblogo/ChangeLog,v 1.9 2012/10/05 18:42:31 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Oct 2012; Agostino Sarubbo <ago@gentoo.org> ucblogo-5.5-r1.ebuild:
-  Respect CC, wrt to bug #243896
+*ucblogo-5.5-r1 (09 Aug 2015)
+*ucblogo-5.5 (09 Aug 2015)
 
-  02 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  ucblogo-5.5-r1.ebuild:
-  Transfer Prefix keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/50ucblogo-gentoo.el, +files/ucblogo-5.5-destdir.patch,
+  +files/ucblogo-5.5-dont-require-tetex.patch, +files/ucblogo-5.5-fhs.patch,
+  +files/ucblogo-5.5-no-emacs.patch, +metadata.xml, +ucblogo-5.5.ebuild,
+  +ucblogo-5.5-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*ucblogo-5.5-r1 (20 Nov 2007)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Nov 2007; Christian Faulhammer <opfer@gentoo.org>
-  +files/50ucblogo-gentoo.el, +ucblogo-5.5-r1.ebuild:
-  fix GNU Emacs support, see bug 192977
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Jul 2007; Hans de Graaff <graaff@gentoo.org> ucblogo-5.5.ebuild:
-  Drop virtual/x11 references.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Apr 2007; Tom Knight <tomk@gentoo.org>
-  +files/ucblogo-5.5-no-emacs.patch, metadata.xml, ucblogo-5.5.ebuild:
-  Fixed to work with USE="-emacs", fixes bug #146348
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Mar 2006; Mike Frysinger <vapier@gentoo.org>
-  files/ucblogo-5.5-destdir.patch, ucblogo-5.5.ebuild:
-  Fix by Lukasz Demianiuk to add support for DESTDIR to emacs dir #127354.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Nov 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/ucblogo-5.5-dont-require-tetex.patch, ucblogo-5.5.ebuild:
-  Dont abort if tetex isnt installed #113023 by James Cave.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ucblogo-5.5 (21 Sep 2005)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Sep 2005; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

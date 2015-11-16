@@ -1,32 +1,66 @@
 # ChangeLog for net-misc/slimrat
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/slimrat/ChangeLog,v 1.7 2013/03/17 15:06:19 hwoarang Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+*slimrat-9999 (09 Aug 2015)
 
-  11 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
-  Drop me from maint.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +slimrat-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  31 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> -slimrat-1.0.ebuild,
-  slimrat-9999.ebuild:
-  Migrate to eapi4, drop release that was no longer working with most services.
-  The app is developed, but they don't do any releases.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Jul 2010; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Added missing herd tag to metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Jun 2010; Tomáš Chvátal <scarabeus@gentoo.org> slimrat-9999.ebuild:
-  Fixing #321595 and added dependency for plugin.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*slimrat-9999 (26 May 2010)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 May 2010; Tomáš Chvátal <scarabeus@gentoo.org> +slimrat-9999.ebuild:
-  Add also live version.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*slimrat-1.0 (10 Mar 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Mar 2010; Tomáš Chvátal <scarabeus@gentoo.org> +slimrat-1.0.ebuild,
-  +metadata.xml:
-  Initial commit. Per bug #247580.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> slimrat-9999.ebuild:
+  Enable https for all google URIs
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> slimrat-9999.ebuild:
+  Convert URIs for googlecode.com to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

@@ -1,47 +1,57 @@
 # ChangeLog for sys-libs/csu
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/csu/ChangeLog,v 1.10 2015/03/01 09:15:22 grobian Exp $
+# (auto-generated from git log)
 
-  01 Mar 2015; Fabian Groffen <grobian@gentoo.org>
-  +files/csu-85-arm-availability.patch, -files/csu-85-darwin8.patch,
-  csu-85.ebuild:
-  Take simpler approach to fix Availability.h header problem by Michael Weiser,
-  bug #538602
+*csu-85 (09 Aug 2015)
+*csu-79 (09 Aug 2015)
 
-  28 Feb 2015; Fabian Groffen <grobian@gentoo.org> csu-85.ebuild:
-  Let the compiler determine if Availability.h is available for a more reliable
-  result, bug #539964
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +csu-79.ebuild,
+  +csu-85.ebuild, +files/csu-85-arm-availability.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*csu-85 (03 Feb 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Feb 2015; Fabian Groffen <grobian@gentoo.org> +csu-85.ebuild,
-  +files/csu-85-darwin8.patch, csu-79.ebuild:
-  Version bump to version from Darwin14, based on ebuild and patch by Michael
-  Weiser, bug #538602
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Sep 2011; Fabian Groffen <grobian@gentoo.org> csu-79.ebuild:
-  Fix build on case-sensitive volumes, bug #381779
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Sep 2011; Fabian Groffen <grobian@gentoo.org> csu-79.ebuild:
-  Fetch restriction seems to have been removed, fix installation failing,
-  marked ~x86-macos and ~x64-macos
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*csu-79 (15 Mar 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Mar 2011; Fabian Groffen <grobian@gentoo.org> +csu-79.ebuild,
-  +metadata.xml:
-  Version bump. Bring back csu for Darwin. This contains crt1.o and friends for
-  Darwin/Mac OS X systems
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Oct 2006; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove kito from metadata.xml due to retiring.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*csu-57 (19 May 2005)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 May 2005; Kito <kito@gentoo.org> +csu-57.ebuild:
-  version bump. Go ferral tabbey!
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*csu-46 (15 Nov 2004)
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Nov 2004; Kito <kito@gentoo.org> +csu-46.ebuild:
-  initial import. added ~ppc-macos

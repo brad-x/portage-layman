@@ -1,132 +1,70 @@
 # ChangeLog for dev-ruby/faraday
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/faraday/ChangeLog,v 1.30 2015/06/07 17:44:59 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*faraday-0.9.1 (09 Aug 2015)
+*faraday-0.9.0 (09 Aug 2015)
 
-  03 May 2015; Hans de Graaff <graaff@gentoo.org> faraday-0.9.1.ebuild:
-  Add missing test dependency on dev-ruby/rack-test.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +faraday-0.9.0.ebuild,
+  +faraday-0.9.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  18 Apr 2015; Sven Wegener <swegener@gentoo.org> faraday-0.9.0.ebuild,
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> faraday-0.9.0.ebuild,
   faraday-0.9.1.ebuild:
-  Rename distfile to include package name.
+  Use https by default
 
-  03 Apr 2015; Hans de Graaff <graaff@gentoo.org> faraday-0.9.1.ebuild:
-  Add missing test dependency on dev-ruby/httpclient.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Mar 2015; Hans de Graaff <graaff@gentoo.org> -faraday-0.8.8.ebuild:
-  Cleanup.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*faraday-0.9.1 (03 Mar 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Mar 2015; Hans de Graaff <graaff@gentoo.org> +faraday-0.9.1.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jan 2015; Manuel Rüger <mrueg@gentoo.org>
-  -files/faraday-0.4.5-gentoo.patch:
-  Remove old patches.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Aug 2014; Anthony G. Basile <blueness@gentoo.org> faraday-0.8.8.ebuild,
-  faraday-0.9.0.ebuild:
-  Keyword ~ppc ~ppc64, bug #511424
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Jul 2014; Hans de Graaff <graaff@gentoo.org> faraday-0.9.0.ebuild:
-  Add ruby21.
+  Bug: https://bugs.gentoo.org/552720
 
-  16 May 2014; Hans de Graaff <graaff@gentoo.org> faraday-0.9.0.ebuild:
-  Add ruby20.
+*faraday-0.9.2 (10 Oct 2015)
 
-  16 Mar 2014; Manuel Rüger <mrueg@gentoo.org> faraday-0.8.8.ebuild,
-  faraday-0.9.0.ebuild:
-  Missed to remove ruby18 target.
+  10 Oct 2015; Hans de Graaff <graaff@gentoo.org> +faraday-0.9.2.ebuild:
+  add 0.9.2
 
-  16 Mar 2014; Manuel Rüger <mrueg@gentoo.org> -faraday-0.7.6.ebuild,
-  -faraday-0.8.1.ebuild, faraday-0.8.8.ebuild, faraday-0.9.0.ebuild:
-  Cleanup old. Remove ruby18-only dependencies.
+  Package-Manager: portage-2.2.20.1
 
-*faraday-0.9.0 (22 Jan 2014)
-
-  22 Jan 2014; Hans de Graaff <graaff@gentoo.org> +faraday-0.9.0.ebuild:
-  Version bump.
-
-*faraday-0.8.8 (25 Dec 2013)
-
-  25 Dec 2013; Hans de Graaff <graaff@gentoo.org> +faraday-0.8.8.ebuild:
-  Version bump. Also fixes bug 496016.
-
-  05 Aug 2012; Hans de Graaff <graaff@gentoo.org> -faraday-0.4.6.ebuild,
-  -faraday-0.7.4.ebuild, -faraday-0.7.5.ebuild, -faraday-0.8.0.ebuild:
-  Cleanup.
-
-*faraday-0.8.1 (05 Jul 2012)
-
-  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +faraday-0.8.1.ebuild:
-  Version bump.
-
-  17 May 2012; Thomas Kahle <tomka@gentoo.org> faraday-0.8.0.ebuild:
-  marked ~x86 per bug 396547
-
-*faraday-0.8.0 (29 Apr 2012)
-
-  29 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +faraday-0.8.0.ebuild:
-  Version bump; addd sinatra to the test dependencies, remove dropped
-  dependencies, add a dependency over system_timer (for Ruby 1.8/EE only). JRuby
-  has been dropped until it supports sinatra.
-
-*faraday-0.7.6 (08 Apr 2012)
-
-  08 Apr 2012; Hans de Graaff <graaff@gentoo.org> +faraday-0.7.6.ebuild:
-  Version bump.
-
-*faraday-0.7.5 (16 Oct 2011)
-
-  16 Oct 2011; Hans de Graaff <graaff@gentoo.org> +faraday-0.7.5.ebuild:
-  Version bump.
-
-  24 Jul 2011; Thomas Kahle <tomka@gentoo.org> faraday-0.7.4.ebuild:
-  ~x86 per bug 375153
-
-  14 Jul 2011; Hans de Graaff <graaff@gentoo.org> faraday-0.7.4.ebuild:
-  Lower test-unit dependency because tests pass with 2.2.0 as well and 2.3
-  isn't in the tree yet.
-
-*faraday-0.7.4 (14 Jul 2011)
-
-  14 Jul 2011; Hans de Graaff <graaff@gentoo.org> +faraday-0.7.4.ebuild:
-  Version bump. Dropped x86 keyword due to new dependency: bug 375153.
-
-  20 Oct 2010; Hans de Graaff <graaff@gentoo.org> -faraday-0.4.5.ebuild:
-  Remove old version.
-
-*faraday-0.4.6 (29 May 2010)
-
-  29 May 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +faraday-0.4.6.ebuild:
-  Version bump.
-
-  18 May 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  faraday-0.4.5.ebuild:
-  Add ~x86, tested on development container.
-
-*faraday-0.4.5 (13 May 2010)
-
-  13 May 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -faraday-0.4.3.ebuild, -files/faraday-0.4.3-gentoo.patch,
-  +faraday-0.4.5.ebuild, +files/faraday-0.4.5-gentoo.patch:
-  Version bump, fix test dependencies.
-
-  30 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  faraday-0.4.3.ebuild:
-  Add Ruby 1.9 support.
-
-  30 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  faraday-0.4.3.ebuild:
-  Fix rdoc directory.
-
-*faraday-0.4.3 (30 Apr 2010)
-
-  30 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +faraday-0.4.3.ebuild, +files/faraday-0.4.3-gentoo.patch, +metadata.xml:
-  Initial import of the faraday library. Patch sent upstream for 0.4.4
-  release.

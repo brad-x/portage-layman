@@ -1,98 +1,70 @@
 # ChangeLog for app-office/passepartout
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/passepartout/ChangeLog,v 1.25 2014/01/25 02:29:16 creffett Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  25 Jan 2014; Chris Reffett <creffett@gentoo.org> -passepartout-0.7.0.ebuild:
-  Remove old
+*passepartout-0.7.0-r1 (09 Aug 2015)
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> passepartout-0.7.0-r1.ebuild:
-  Stable for x86, wrt bug #491934
-
-  22 Dec 2013; Pacho Ramos <pacho@gentoo.org> passepartout-0.7.0-r1.ebuild:
-  amd64 stable, bug #491934
-
-*passepartout-0.7.0-r1 (24 Jul 2013)
-
-  24 Jul 2013; Jeroen Roovers <jer@gentoo.org> +passepartout-0.7.0-r1.ebuild:
-  Fix docdir. Fix desktop file.
-
-  24 Jul 2013; Jeroen Roovers <jer@gentoo.org>
-  +files/passepartout-0.7.0-automake-1.13.patch, passepartout-0.7.0.ebuild:
-  Fix building with automake-1.13 by Ed Catmur (bug #467594).
-
-  21 Jul 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due http://gentoo.2317880.n4.nabble.com/sgml-herd-has-no-maintainers-
-  again-td259655.html
-
-  14 Jun 2012; Mike Gilbert <floppym@gentoo.org> -passepartout-0.6_p1.ebuild:
-  Remove broken version for bug 387789.
-
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> passepartout-0.6_p1.ebuild,
-  passepartout-0.7.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> passepartout-0.7.0.ebuild:
-  marked x86 per bug 410243
-
-  02 Apr 2012; Agostino Sarubbo <ago@gentoo.org> passepartout-0.7.0.ebuild:
-  Stable for amd64, wrt bug #410243
-
-  25 Mar 2012; Mike Gilbert <floppym@gentoo.org> passepartout-0.7.0.ebuild:
-  Build system calls AC_ARG_WITH incorrectly, causing --without-gnome to enable
-  gnome support. Bug 367867.
-
-  28 Mar 2011; Christoph Mende <angelos@gentoo.org> passepartout-0.6_p1.ebuild:
-  Fixed slot deps
-
-  15 Jan 2010; Tomáš Chvátal <scarabeus@gentoo.org>
-  passepartout-0.7.0.ebuild:
-  Use the new base eclass functions.
-
-  26 Dec 2009; Peter Volkov <pva@gentoo.org> passepartout-0.6_p1.ebuild,
-  passepartout-0.7.0.ebuild:
-  virtual/ghostscript->app-text/ghostscript-gpl: ghostscript-gpl is the only
-  implementation left in the tree.
-
-  05 Jun 2009; Peter Alfredsen <loki_val@gentoo.org> metadata.xml:
-  Retiring, bug 220219.
-
-*passepartout-0.7.0 (20 Dec 2008)
-
-  20 Dec 2008; Peter Alfredsen <loki_val@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/passepartout-0.6-extra_qual.patch,
+  +files/passepartout-0.7.0-automake-1.13.patch,
   +files/passepartout-0.7.0-gcc42.patch,
   +files/passepartout-0.7.0-gcc43.patch,
   +files/passepartout-0.7.0-gcc44.patch,
   +files/passepartout-0.7.0-include-flags.patch,
   +files/passepartout-0.7.0-libtoolization.patch,
   +files/passepartout-0.7.0-libxmlpp-2.6-depend.patch,
-  +files/passepartout-0.7.0-safer.patch, metadata.xml,
-  +passepartout-0.7.0.ebuild:
-  Be maintainer. Keyword ~amd64. Bump, fixing bug 206780. Also fixing: Bug
-  226441, maintainer-mode rebuild. Bug 226441, gcc-4.3 compilation. Bug
-  240389, new libsigc api failure.
+  +files/passepartout-0.7.0-safer.patch, +metadata.xml,
+  +passepartout-0.7.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*passepartout-0.6_p1 (22 Mar 2007)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Mar 2007; Leonardo Boshell <leonardop@gentoo.org>
-  +files/passepartout-0.6-extra_qual.patch, +passepartout-0.6_p1.ebuild:
-  New version including the latest patch released upstream for version 0.6.
-  Updated dependencies. Removed unnecessary or non-existant documents from
-  DOCS. Added extra patch to fix compilations with GCC 4.1.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Mar 2007; Leonardo Boshell <leonardop@gentoo.org> metadata.xml:
-  Replacing text-markup herd with the new sgml herd.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*passepartout-0.6 (02 Apr 2005)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Apr 2005; Mamoru KOMACHI <usata@gentoo.org> +passepartout-0.6.ebuild:
-  Version bumped. This closes bug #77652.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*passepartout-0.5 (08 Nov 2004)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Nov 2004; Mamoru KOMACHI <usata@gentoo.org> +metadata.xml,
-  +passepartout-0.5.ebuild:
-  Initial import. Ebuild submitted by Patrik Kullman <patrik@yes.nu>;
-  bug #59352.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> passepartout-0.7.0-r1.ebuild:
+  Convert URIs for gnome.org and kde.org to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

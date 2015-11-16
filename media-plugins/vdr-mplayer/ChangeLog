@@ -1,161 +1,59 @@
 # ChangeLog for media-plugins/vdr-mplayer
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-mplayer/ChangeLog,v 1.30 2014/01/08 14:57:18 hd_brummy Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  08 Jan 2014; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -files/0.10.0/01_gentoo.diff, -files/0.10.0/series,
-  -files/0.10.1/01_gentoo.diff, -vdr-mplayer-0.10.0.ebuild,
-  -vdr-mplayer-0.10.1.ebuild, vdr-mplayer-0.10.2.ebuild:
-  cleanup; fixed compile with vdr-2.1.2, reported/tested by T.Eckert on
-  vdrportal.de #post1179845
+*vdr-mplayer-0.10.2 (09 Aug 2015)
 
-  09 Jan 2013; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-mplayer-0.10.2.ebuild:
-  vdr-plugin-2.eclass; eapi=5
-
-  31 Mar 2011; Samuli Suominen <ssuominen@gentoo.org>
-  vdr-mplayer-0.10.0.ebuild, vdr-mplayer-0.10.1.ebuild,
-  vdr-mplayer-0.10.2.ebuild:
-  Use virtual/eject instead of sys-apps/eject.
-
-  05 Dec 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/0.10.2/01_gentoo.diff:
-  added missing 0.10.2/01_gentoo.diff
-
-*vdr-mplayer-0.10.2 (01 Dec 2010)
-
-  01 Dec 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.10.2/01_gentoo.diff, +files/confd-0.9.15.sh,
+  +files/mplayersources.conf, +files/rc-addon-0.9.15.sh,
+  +files/vdr-mplayer-0.10.1-glibc-2.10.patch, +metadata.xml,
   +vdr-mplayer-0.10.2.ebuild:
-  version bump; EAPI=2; thx to M.Schinkel #339631
+  proj/gentoo: Initial commit
 
-  11 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.10.1.ebuild:
-  Mark stable on x86.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.10.0.ebuild, vdr-mplayer-0.10.1.ebuild:
-  Improve description
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Aug 2009; Samuli Suominen <ssuominen@gentoo.org>
-  vdr-mplayer-0.10.1.ebuild, +files/vdr-mplayer-0.10.1-glibc-2.10.patch:
-  Fix building with GLIBC 2.10+.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Apr 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.10.0.ebuild, vdr-mplayer-0.10.1.ebuild:
-  Fixed quoting.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*vdr-mplayer-0.10.1 (02 Mar 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2008; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -files/0.9.15/01_gentoo.diff, -files/vdr-mplayer-0.9.14-gentoo.diff,
-  -files/0.9.15/02_slave_mode_default.diff,
-  -files/vdr-mplayer-0.9.14-resume.diff, -files/0.9.15/series,
-  -files/vdr-mplayer-0.9.14-slave-mode-default.diff,
-  +files/0.10.1/01_gentoo.diff, -files/0.9.15/03_vdr-1.5.1.diff,
-  -files/rc-addon.sh, -vdr-mplayer-0.9.14-r2.ebuild,
-  -vdr-mplayer-0.9.15.ebuild, -vdr-mplayer-0.9.15-r1.ebuild,
-  +vdr-mplayer-0.10.1.ebuild:
-  version bump; big cleanup
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Jul 2007; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.10.0.ebuild:
-  Marked stable on x86.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*vdr-mplayer-0.10.0 (17 Jun 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Jun 2007; Matthias Schwarzott <zzam@gentoo.org>
-  +files/0.10.0/01_gentoo.diff, +files/0.10.0/series,
-  +vdr-mplayer-0.10.0.ebuild:
-  Version bumped.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Jun 2007; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.15-r1.ebuild:
-  Marked stable on x86.
-
-*vdr-mplayer-0.9.15-r1 (15 May 2007)
-
-  15 May 2007; Matthias Schwarzott <zzam@gentoo.org>
-  -files/vdr-mplayer-0.9.15-gentoo.diff,
-  -files/vdr-mplayer-0.9.15-slave-mode-default.diff, +files/confd-0.9.15.sh,
-  +files/rc-addon-0.9.15.sh, +files/0.9.15/03_vdr-1.5.1.diff,
-  +files/0.9.15/01_gentoo.diff, +files/0.9.15/series,
-  -files/vdr-mplayer-0.9.15-vdr-1.5.1.patch,
-  +files/0.9.15/02_slave_mode_default.diff, files/mplayersources.conf,
-  vdr-mplayer-0.9.15.ebuild, +vdr-mplayer-0.9.15-r1.ebuild:
-  Changed default sources-file to refer /var/vdr/video. Moved 0.9.15 patches
-  to own subdir. Add support for mplay-sh.
-
-  17 Apr 2007; Matthias Schwarzott <zzam@gentoo.org> files/rc-addon.sh:
-  Removed bash specific stuff.
-
-  25 Mar 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/vdr-mplayer-0.9.15-vdr-1.5.1.patch, vdr-mplayer-0.9.15.ebuild:
-  patch added; ready for VDR-1.5.x
-
-  05 Jan 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-mplayer-0.9.14-r2.ebuild, vdr-mplayer-0.9.15.ebuild:
-  einfo converted to elog
-
-  21 Dec 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.14-r2.ebuild, vdr-mplayer-0.9.15.ebuild:
-  Added alternative depend to eject/unieject, suggested by sbriesen.
-
-  23 Nov 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.14-r2.ebuild, vdr-mplayer-0.9.15.ebuild:
-  No longer directly depend on mplayer, as only mplayer-sh is called from here.
-
-  12 Nov 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.15.ebuild:
-  Marked stable on x86.
-
-  25 Oct 2006; Matthias Schwarzott <zzam@gentoo.org>
-  -vdr-mplayer-0.9.14.ebuild, -vdr-mplayer-0.9.14-r1.ebuild:
-  Cleanup of old versions.
-
-  26 Sep 2006; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-mplayer-0.9.15.ebuild:
-  fixed depend
-
-*vdr-mplayer-0.9.15 (22 Sep 2006)
-
-  22 Sep 2006; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/vdr-mplayer-0.9.15-gentoo.diff,
-  +files/vdr-mplayer-0.9.15-slave-mode-default.diff,
-  +vdr-mplayer-0.9.15.ebuild:
-  version bump
-
-  08 Sep 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.14-r2.ebuild:
-  Stable on x86.
-
-  15 Aug 2006; Matthias Schwarzott <zzam@gentoo.org> metadata.xml:
-  Assigned to Gentoo VDR Project.
-
-*vdr-mplayer-0.9.14-r2 (07 Jul 2006)
-
-  07 Jul 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-mplayer-0.9.14-slave-mode-default.diff,
-  +vdr-mplayer-0.9.14-r2.ebuild:
-  Set default control mode to slave.
-
-  27 Jun 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.14-r1.ebuild:
-  Added runtime-depend to sys-apps/eject.
-
-*vdr-mplayer-0.9.14-r1 (18 Jun 2006)
-
-  18 Jun 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-mplayer-0.9.14-resume.diff, +vdr-mplayer-0.9.14-r1.ebuild:
-  Added patch to fix continuing from resume-position.
-
-  17 Apr 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-mplayer-0.9.14.ebuild:
-  Now inherits eutils.eclass. Marked stable on x86
-
-*vdr-mplayer-0.9.14 (08 Jan 2006)
-
-  08 Jan 2006; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/vdr-mplayer-0.9.14-gentoo.diff, +files/mplayersources.conf,
-  +files/rc-addon.sh, +metadata.xml, +vdr-mplayer-0.9.14.ebuild:
-  initial import, older versions on gentoo.de cvs
+  Bug: https://bugs.gentoo.org/552720
 

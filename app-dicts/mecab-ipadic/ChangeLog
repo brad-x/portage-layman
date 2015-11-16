@@ -1,135 +1,56 @@
 # ChangeLog for app-dicts/mecab-ipadic
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/mecab-ipadic/ChangeLog,v 1.31 2015/06/09 09:39:23 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*mecab-ipadic-2.7.0.20070801 (09 Aug 2015)
 
-  03 Aug 2013; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  check unicode USE flag of mecab
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +mecab-ipadic-2.7.0.20070801.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Aug 2013; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild, metadata.xml:
-  update to EAPI 5
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Aug 2013; Akinori Hattori <hattya@gentoo.org>
-  -mecab-ipadic-2.7.0.20060707.ebuild, -mecab-ipadic-2.7.0.20070610.ebuild:
-  remove old ebuilds
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 May 2012; Alexis Ballier <aballier@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  keyword ~amd64-fbsd
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 May 2010; Alexis Ballier <aballier@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  keyword ~x86-fbsd
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Jan 2010; Jeroen Roovers <jer@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  Stable for HPPA too.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Dec 2009; Raúl Porcel <armin76@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild, mecab-ipadic-2.7.0.20070610.ebuild,
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  Add ~arm
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Mar 2009; Jeroen Roovers <jer@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  Marked ~hppa (bug #260777).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Dec 2008; Raúl Porcel <armin76@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  ia64/sparc stable wrt #245176
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Dec 2008; Brent Baude <ranger@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  Marking mecab-ipadic-2.7.0.20070801 ppc64 for bug 245176
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Nov 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  ppc stable, bug #245176
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Nov 2008; Markus Meier <maekke@gentoo.org>
-  mecab-ipadic-2.7.0.20070801.ebuild:
-  amd64/x86 stable, bug #245176
-
-  18 Jul 2008; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  stable on ppc (needed for bug #228387)
-
-  03 Oct 2007; Tom Gall <tgall@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  stable on ppc64
-
-  09 Sep 2007; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  stable on ia64.
-
-  09 Sep 2007; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  stable on x86.
-
-  25 Aug 2007; Steve Dibb <beandog@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  amd64 stable
-
-*mecab-ipadic-2.7.0.20070801 (09 Aug 2007)
-
-  09 Aug 2007; Akinori Hattori <hattya@gentoo.org>
-  +mecab-ipadic-2.7.0.20070801.ebuild:
-  new upstream release.
-
-  08 Aug 2007; Gustavo Zacarias <gustavoz@gentoo.org>
-  mecab-ipadic-2.7.0.20070610.ebuild:
-  Stable on sparc
-
-*mecab-ipadic-2.7.0.20070610 (11 Jul 2007)
-
-  11 Jul 2007; Akinori Hattori <hattya@gentoo.org>
-  +mecab-ipadic-2.7.0.20070610.ebuild:
-  new upstream release.
-
-  06 May 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  ppc stable
-
-  11 Mar 2007; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  change HOMEPAGE and SRC_URI to sourceforge.net from sourceforge.jp.
-
-  29 Dec 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  Stable on sparc
-
-  03 Dec 2006; Markus Rothe <corsair@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  Stable on ppc64
-
-  30 Oct 2006; Akinori Hattori <hattya@gentoo.org>
-  -mecab-ipadic-2.7.0.20060408.ebuild:
-  remove old ebuild.
-
-  30 Oct 2006; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  stable on x86.
-
-  20 Oct 2006; Michael Cummings <mcummings@gentoo.org>
-  mecab-ipadic-2.7.0.20060707.ebuild:
-  Marking amd64 stable
-
-  12 Jul 2006; Akinori Hattori <hattya@gentoo.org>
-  mecab-ipadic-2.7.0.20060408.ebuild, mecab-ipadic-2.7.0.20060707.ebuild:
-  use emake for install.
-
-*mecab-ipadic-2.7.0.20060707 (10 Jul 2006)
-
-  10 Jul 2006; Mamoru KOMACHI <usata@gentoo.org>
-  +mecab-ipadic-2.7.0.20060707.ebuild:
-  Version bumped.
-
-*mecab-ipadic-2.7.0.20060408 (16 May 2006)
-
-  16 May 2006; Akinori Hattori <hattya@gentoo.org>
-  +mecab-ipadic-2.7.0.20060408.ebuild:
-  Initial revision

@@ -1,117 +1,76 @@
 # ChangeLog for dev-lang/rust
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/rust/ChangeLog,v 1.21 2015/07/04 14:56:04 jauhien Exp $
+# (auto-generated from git log)
 
-*rust-1.1.0 (04 Jul 2015)
+*rust-1.1.0 (09 Aug 2015)
 
-  04 Jul 2015; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-1.1.0-install.patch, +rust-1.1.0.ebuild, -rust-1.0.0.ebuild:
-  version bump, fix bug 553442
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/rust-1.1.0-install.patch, +metadata.xml, +rust-1.1.0.ebuild:
+  proj/gentoo: Initial commit
 
-  06 Jun 2015; Jauhien Piatlicki <jauhien@gentoo.org> rust-1.0.0.ebuild:
-  move to new SLOTs schema
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*rust-1.0.0 (04 Jun 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Jun 2015; Jauhien Piatlicki <jauhien@gentoo.org> +rust-1.0.0.ebuild,
-  -rust-1.0.0_beta2.ebuild, -rust-1.0.0_beta3.ebuild:
-  version bump (bug 550878), fix bug 549220
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*rust-1.0.0_beta3 (03 May 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 May 2015; Jauhien Piatlicki <jauhien@gentoo.org> +rust-1.0.0_beta3.ebuild,
-  -rust-1.0.0_alpha2.ebuild, -rust-1.0.0_beta.ebuild, metadata.xml:
-  version bump, close bug #548128
+*rust-1.2.0 (17 Aug 2015)
 
-*rust-1.0.0_beta2 (20 Apr 2015)
-
-  20 Apr 2015; Jauhien Piatlicki <jauhien@gentoo.org> +rust-1.0.0_beta2.ebuild:
+  17 Aug 2015; Jauhien Piatlicki <jauhien@gentoo.org> -rust-1.1.0.ebuild,
+  +rust-1.2.0.ebuild:
   version bump
 
-*rust-1.0.0_beta (11 Apr 2015)
+  Package-Manager: portage-2.2.18
 
-  11 Apr 2015;  <jauhien@gentoo.org> +rust-1.0.0_beta.ebuild,
-  rust-1.0.0_alpha2.ebuild:
-  version bump, sync with overlay, close bug #546012
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> rust-1.0.0_alpha2.ebuild:
-  Drop old Python implementations
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 Mar 2015; Ulrich Müller <ulm@gentoo.org> rust-1.0.0_alpha2.ebuild:
-  Update dependency after package move of eselect modules to app-eselect.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*rust-1.0.0_alpha2 (24 Feb 2015)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Feb 2015; Jauhien Piatlicki <jauhien@gentoo.org> +rust-1.0.0_alpha2.ebuild,
-  -files/rust-0.13.0-no-ldconfig.patch, -rust-1.0.0_alpha.ebuild:
-  version bump, sync with rust overlay
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*rust-1.0.0_alpha (10 Feb 2015)
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Feb 2015; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-0.13.0-no-ldconfig.patch, +rust-1.0.0_alpha.ebuild,
-  -files/50rust-mode-gentoo.el, -files/rust-0.11.0-libdir.patch,
-  -files/rust-0.11.0-stage0.patch, -files/rust-0.12.0-libdir.patch,
-  -files/rust-0.12.0-no-ldconfig.patch, -files/rust-0.12.0-stage0.patch,
-  -rust-0.11.0-r2.ebuild, -rust-0.12.0.ebuild, -rust-999-r1.ebuild,
-  -rust-9999-r3.ebuild:
-  version bump, remove old versions, move all live stuff to the rust overlay
+  07 Sep 2015; Jauhien Piatlicki <jauhien@gentoo.org> rust-1.2.0.ebuild:
+  fix bug 559826
 
-  12 Jan 2015; William Hubbs <williamh@gentoo.org> metadata.xml:
-  add myself as a maintainer
+  Package-Manager: portage-2.2.20.1
 
-  30 Nov 2014; Jauhien Piatlicki <jauhien@gentoo.org> rust-999-r1.ebuild,
-  rust-9999-r3.ebuild:
-  support for rust-lldb symlink
+*rust-1.3.0 (27 Sep 2015)
 
-  22 Nov 2014; Jauhien Piatlicki <jauhien@gentoo.org> rust-999-r1.ebuild:
-  remove rust-0.12.0-libdir.patch from nightly
+  27 Sep 2015; Jauhien Piatlicki <jauhien@gentoo.org> +rust-1.3.0.ebuild:
+  version bump
 
-  21 Nov 2014; Jauhien Piatlicki <jauhien@gentoo.org> metadata.xml,
-  rust-999-r1.ebuild, rust-9999-r3.ebuild:
-  add system-llvm USE and make it default; remove rust-0.12.0-libdir.patch from
-  git, as it was merged into upstream
+  Package-Manager: portage-2.2.20.1
 
-*rust-0.12.0 (18 Oct 2014)
-*rust-999-r1 (18 Oct 2014)
-*rust-9999-r3 (18 Oct 2014)
-*rust-0.11.0-r2 (18 Oct 2014)
-
-  18 Oct 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-0.12.0-libdir.patch, +files/rust-0.12.0-stage0.patch,
-  +rust-0.11.0-r2.ebuild, +rust-0.12.0.ebuild, +rust-999-r1.ebuild,
-  +rust-9999-r3.ebuild, -files/rust-9999-libdir.patch, -rust-0.11.0-r1.ebuild,
-  -rust-999.ebuild, -rust-9999-r2.ebuild:
-  version bump, switch to new eselect version
-
-*rust-0.11.0-r1 (29 Aug 2014)
-*rust-999 (29 Aug 2014)
-*rust-9999-r2 (29 Aug 2014)
-
-  29 Aug 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-0.11.0-libdir.patch, +files/rust-9999-libdir.patch,
-  +rust-0.11.0-r1.ebuild, +rust-999.ebuild, +rust-9999-r2.ebuild,
-  -rust-0.10.ebuild, -rust-0.11.0.ebuild, -rust-9999.ebuild,
-  files/50rust-mode-gentoo.el, files/rust-0.12.0-no-ldconfig.patch,
-  metadata.xml:
-  Add slotting to rust ebuilds  Add these slots: (major.minor) rust release
-  (nightly) nightly version (git) git master branch  Remove old unslotted
-  versions
-
-*rust-9999 (31 Jul 2014)
-
-  31 Jul 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-0.12.0-no-ldconfig.patch, +rust-9999.ebuild:
-  add live version, thanks to Heather Cynede for patch
-
-*rust-0.11.0 (31 Jul 2014)
-
-  31 Jul 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/rust-0.11.0-stage0.patch, +rust-0.11.0.ebuild, metadata.xml:
-  version bump, closing bug #516466
-
-*rust-0.10 (18 May 2014)
-
-  18 May 2014; Jauhien Piatlicki <jauhien@gentoo.org>
-  +files/50rust-mode-gentoo.el, +metadata.xml, +rust-0.10.ebuild:
-  Initial import, based on the rust overlay work, thanks to Heather

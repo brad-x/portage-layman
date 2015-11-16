@@ -1,112 +1,59 @@
 # ChangeLog for media-libs/liblo
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/liblo/ChangeLog,v 1.28 2015/04/29 14:59:51 aballier Exp $
+# (auto-generated from git log)
 
-*liblo-0.28 (29 Apr 2015)
+*liblo-0.28 (09 Aug 2015)
+*liblo-0.27 (09 Aug 2015)
+*liblo-0.26 (09 Aug 2015)
 
-  29 Apr 2015; Alexis Ballier <aballier@gentoo.org> +liblo-0.28.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/liblo-0.27-no-threads.patch, +liblo-0.26.ebuild, +liblo-0.27.ebuild,
+  +liblo-0.28.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  15 Jun 2013; Alexis Ballier <aballier@gentoo.org> liblo-0.27.ebuild:
-  Remove threads useflag as switching it on or off breaks the ABI, bugs
-  #473282, #473286 and #473356
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Jun 2013; Tim Harder <radhermit@gentoo.org> liblo-0.27.ebuild,
-  +files/liblo-0.27-no-threads.patch:
-  Skip more examples when threads are disabled and don't build examples by
-  default (fixes bug #472036).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*liblo-0.27 (01 Jun 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  01 Jun 2013; Tim Harder <radhermit@gentoo.org> +liblo-0.27.ebuild:
-  Version bump and add threads use flag.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -liblo-0.24.ebuild:
-  old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> liblo-0.26.ebuild:
-  Fix LICENSE from GPL-2 to LGPL-2.1 as per NEWS file. Use
-  prune_libtool_files() from eutils.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> liblo-0.26.ebuild:
-  ppc64 stable wrt #272832
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Sep 2010; Samuli Suominen <ssuominen@gentoo.org> liblo-0.26.ebuild:
-  USE="static-libs" and punt .la files.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Feb 2010; Jonathan Callen <abcd@gentoo.org> liblo-0.26.ebuild:
-  Transfer prefix keywords (no other changes)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Aug 2009; nixnut <nixnut@gentoo.org> liblo-0.26.ebuild:
-  ppc stable #272832
-
-  10 Jun 2009; Markus Meier <maekke@gentoo.org> liblo-0.26.ebuild:
-  amd64/x86 stable, bug #272832
-
-*liblo-0.26 (07 May 2009)
-
-  07 May 2009; Samuli Suominen <ssuominen@gentoo.org> +liblo-0.26.ebuild:
-  Version bump.
-
-*liblo-0.25 (13 Aug 2008)
-
-  13 Aug 2008; Alexis Ballier <aballier@gentoo.org> +liblo-0.25.ebuild:
-  version bump
-
-  18 Apr 2008; Markus Meier <maekke@gentoo.org> -liblo-0.23.ebuild,
-  liblo-0.24.ebuild:
-  x86 stable and remove old, bug #217523
-
-  17 Apr 2008; nixnut <nixnut@gentoo.org> liblo-0.24.ebuild:
-  Stable on ppc wrt bug 217523
-
-  14 Apr 2008; Markus Rothe <corsair@gentoo.org> liblo-0.24.ebuild:
-  Stable on ppc64; bug #217523
-
-  10 Apr 2008; Samuli Suominen <ssuominen@gentoo.org> liblo-0.24.ebuild:
-  amd64 stable
-
-*liblo-0.24 (27 Mar 2008)
-
-  27 Mar 2008; Samuli Suominen <ssuominen@gentoo.org> -liblo-0.22.ebuild,
-  +liblo-0.24.ebuild:
-  Version bump.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  14 Oct 2006; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove kito from metadata.xml due to retiring.
-
-  11 Jun 2006; Markus Rothe <corsair@gentoo.org> liblo-0.23.ebuild:
-  Stable on ppc64
-
-  01 May 2006; Markus Rothe <corsair@gentoo.org> liblo-0.23.ebuild:
-  Added ~ppc64
-
-  30 Mar 2006; Chris White <chriswhite@gentoo.org> liblo-0.23.ebuild:
-  liblo-0.23 x86 stable bug #126970
-
-  23 Mar 2006; Luis Medinas <metalgod@gentoo.org> liblo-0.23.ebuild:
-  Stable on amd64. Bug #126970.
-
-  20 Mar 2006; <keetz@gentoo.org> liblo-0.23.ebuild:
-  stable on ppc and ppc-macos.
-
-*liblo-0.23 (04 Feb 2006)
-
-  04 Feb 2006; <keetz@gentoo.org> -liblo-0.18.ebuild, liblo-0.22.ebuild,
-  +liblo-0.23.ebuild:
-  Version bump. Remove version 0.18, update SRC_URI. Closes bug #121598
-
-*liblo-0.22 (14 Oct 2005)
-
-  14 Oct 2005; Kito <kito@gentoo.org> +liblo-0.22.ebuild:
-  version bump. Closes Bug #109204
-
-*liblo-0.18 (21 Apr 2005)
-
-  21 Apr 2005; Kito <kito@gentoo.org> +metadata.xml, +liblo-0.18.ebuild:
-  inital import. Thanks to Sean Bolton <smbolton@jps.net> and Michael Schnake
-  <schnake@composition.de>. Closes Bug #68350
+  Bug: https://bugs.gentoo.org/552720
 

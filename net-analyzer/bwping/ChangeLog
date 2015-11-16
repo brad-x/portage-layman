@@ -1,91 +1,64 @@
 # ChangeLog for net-analyzer/bwping
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/bwping/ChangeLog,v 1.20 2015/01/11 11:42:41 hwoarang Exp $
+# (auto-generated from git log)
 
-  11 Jan 2015; Markos Chandras <hwoarang@gentoo.org> bwping-1.7-r1.ebuild,
-  files/bwping-1.7-buildsystem-configurable-ipv6.patch:
-  Revert latest commit for bug #530420. We shouldn't care if we can't support
-  the ipv6 case. We only need know whether we can build the support for it. So
-  replace RUN with LINK. This may also fix bug #536184
+*bwping-1.7-r1 (09 Aug 2015)
 
-  20 Dec 2014; Markos Chandras <hwoarang@gentoo.org> bwping-1.7-r1.ebuild:
-  Make sure IPV6 is enabled in the kernel if the ipv6 useflag is set. Bug
-  #530420
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bwping-1.7-r1.ebuild,
+  +files/bwping-1.7-buildsystem-configurable-ipv6.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  10 Jul 2014; Jeroen Roovers <jer@gentoo.org> -bwping-1.4.ebuild,
-  -bwping-1.7.ebuild, files/bwping-1.7-buildsystem-configurable-ipv6.patch:
-  Clean up patch.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Feb 2014; Agostino Sarubbo <ago@gentoo.org> bwping-1.7-r1.ebuild:
-  Stable for x86, wrt bug #495828
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Feb 2014; Chema Alonso <nimiux@gentoo.org> bwping-1.7-r1.ebuild:
-  Stable for amd64 wrt bug #495828
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jul 2013; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Add package to netmon herd, add upstream maintainer info
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*bwping-1.7-r1 (16 Jul 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Jul 2013; Sergey Popov <pinkbyte@gentoo.org> +bwping-1.7-r1.ebuild,
-  +files/bwping-1.7-buildsystem-configurable-ipv6.patch:
-  Revision bump: migrate to autotools-utils eclass, support for ipv6 with
-  apropriate patch for buildsystem, wrt bug #454256
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Feb 2013; Markos Chandras <hwoarang@gentoo.org> -bwping-1.5.ebuild,
-  -bwping-1.6.ebuild:
-  Remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bwping-1.7.ebuild:
-  Stable for x86, wrt bug #454000
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bwping-1.7.ebuild:
-  Stable for amd64, wrt bug #454000
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*bwping-1.7 (08 Dec 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Dec 2012; Markos Chandras <hwoarang@gentoo.org> +bwping-1.7.ebuild:
-  Version bump
+*bwping-1.8 (16 Sep 2015)
 
-*bwping-1.6 (14 Oct 2012)
+  16 Sep 2015; Jeroen Roovers <jer@gentoo.org> bwping-1.7-r1.ebuild,
+  +bwping-1.8.ebuild, -files/bwping-1.7-buildsystem-configurable-ipv6.patch:
+  Version bump.
 
-  14 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +bwping-1.6.ebuild,
-  -bwping-1.2.ebuild:
-  Version bump
+  Package-Manager: portage-2.2.20.1
 
-*bwping-1.5 (27 Sep 2012)
-
-  27 Sep 2012; Markos Chandras <hwoarang@gentoo.org> +bwping-1.5.ebuild:
-  Version bump
-
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> bwping-1.4.ebuild:
-  x86 stable wrt bug #400419
-
-  26 Jan 2012; Markos Chandras <hwoarang@gentoo.org> bwping-1.4.ebuild:
-  Stable on amd64 wrt bug #400419
-
-*bwping-1.4 (26 Aug 2011)
-
-  26 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +bwping-1.4.ebuild:
-  Version bump
-
-  17 Jul 2010; Markos Chandras <hwoarang@gentoo.org> bwping-1.2.ebuild:
-  Stable on amd64 wrt bug #328265
-
-  17 Jul 2010; Christian Faulhammer <fauli@gentoo.org> bwping-1.2.ebuild:
-  stable x86, bug 328265
-
-*bwping-1.2 (05 Jun 2010)
-
-  05 Jun 2010; Markos Chandras <hwoarang@gentoo.org> +bwping-1.2.ebuild,
-  +metadata.xml:
-  Moved from sunrise overlay. Fixes bug #236231. Thanks to Oleg Derevenetz
-  (OlegD) <oleg@vsi.ru> for the sunrise ebuild
-
-  02 Sep 2008; Peter Volkov <pva@gentoo.org> metadata.xml:
-  Fixing metadata.xml to follow sunrise specifications: herd should be
-  maintainer-wanted and no maintainer required.
-
-  02 Sep 2008; Oleg Derevenetz (OlegD) <oleg@vsi.ru> +bwping-1.0.ebuild,
-  +metadata.xml:
-  New Ebuild for bug 236231 thanks to Peter Volkov

@@ -1,106 +1,56 @@
 # ChangeLog for sys-boot/colo
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/colo/ChangeLog,v 1.22 2012/05/18 14:17:11 mattst88 Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  18 May 2012; Matt Turner <mattst88@gentoo.org> colo-1.22.ebuild:
-  Drop pkg_setup that checks if we're using the cobalt profile. The cobalt
-  profiles are dead.
+*colo-1.22 (09 Aug 2015)
 
-  25 Feb 2009; Joshua Kinard <kumba@gentoo.org> colo-1.22.ebuild:
-  Make sys-boot/colo cross-compiler safe, dodge gcc-4.3.x stricter checks,
-  and fixup the ebuild a little.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +colo-1.22.ebuild,
+  +files/default.colo, +files/menu.colo, +files/simple.colo, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Sep 2007; Stuart Longland <redhatter@gentoo.org> -colo-1.19.ebuild,
-  -colo-1.21.ebuild:
-  Clean up old versions of CoLo.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> colo-1.19.ebuild,
-  colo-1.21.ebuild, colo-1.22.ebuild:
-  (QA) RESTRICT clean up.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*colo-1.22 (24 Feb 2007)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Feb 2007; Stuart Longland <redhatter@gentoo.org> +colo-1.22.ebuild:
-  Version bump to 1.22... Cobalt Users: Please test this package and report
-  back... I intend to bump this to stable *very* soon.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*colo-1.21 (25 Mar 2006)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 Mar 2006; Stuart Longland <redhatter@gentoo.org> +colo-1.21.ebuild:
-  Removed old 1.16 ebuild.  Added 1.21 as new unstable release.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Dec 2005; Stuart Longland <redhatter@gentoo.org>
-  -files/colo-linker-overlap-fix.patch, +files/menu.colo,
-  +files/simple.colo, colo-1.16.ebuild, colo-1.19.ebuild:
-  Dump ancient 1.13 release. Promote 1.19 to stable. Removed some stale
-  patches. Created new .colo example files.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Jul 2005; Stuart Longland <redhatter@gentoo.org> colo-1.16.ebuild:
-  No bugs filed in over a month.  Moving colo-1.16 to stable (mips)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*colo-1.19 (04 Jun 2005)
-  04 Jun 2005; Stuart Longland <redhatter@gentoo.org> +colo-1.19.ebuild:
-  Version bump of unstable to v1.19 as per bug #72161
-
-*colo-1.16 (20 Mar 2005)
-
-  20 Mar 2005; Joshua Kinard <kumba@gentoo.org> -colo-1.11.ebuild,
-  colo-1.13.ebuild, +colo-1.16.ebuild:
-  Send 1.11 to the bitbucket; Promote 1.13 to stable, and recruit 1.16 as the
-  new unstable.
-
-  18 Sep 2004; Joshua Kinard <kumba@gentoo.org> colo-1.13.ebuild:
-  Typo fix.
-
-*colo-1.13 (03 Sep 2004)
-
-  03 Sep 2004; Joshua Kinard <kumba@gentoo.org> -files/colo-1.4-gentoo.patch,
-  -files/colo-1.6-gentoo.patch, -files/default.boot.example,
-  +files/default.colo, +files/menu-linux.colo, -colo-1.10.ebuild,
-  colo-1.11.ebuild, +colo-1.13.ebuild, -colo-1.4.ebuild, -colo-1.6.ebuild,
-  -colo-1.8.ebuild, -colo-1.9.ebuild:
-  New colo revision, cleaned up older revisions, Marked 1.11 stable.
-
-*colo-1.11 (02 Aug 2004)
-
-  02 Aug 2004; Joshua Kinard <kumba@gentoo.org>
-  +files/colo-linker-overlap-fix.patch, colo-1.10.ebuild, +colo-1.11.ebuild,
-  colo-1.9.ebuild:
-  Revision bump to 1.11, and 1.9/1.10 bumped to stable.
-
-  28 Jun 2004; Joshua Kinard <kumba@gentoo.org> colo-1.4.ebuild,
-  colo-1.6.ebuild, colo-1.8.ebuild:
-  Marked stable on mips.
-
-*colo-1.10 (25 Jun 2004)
-
-  25 Jun 2004; Joshua Kinard <kumba@gentoo.org> :
-  Long-overdue revision bump. There may be issues in building w/ gcc-3.4.x, but
-  these will get ironed out later.
-
-*colo-1.9 (15 May 2004)
-
-  15 May 2004; Joshua Kinard <kumba@gentoo.org> +colo-1.9.ebuild:
-  Long overdue version bump...
-
-*colo-1.8 (29 Apr 2004)
-
-  29 Apr 2004; Joshua Kinard <kumba@gentoo.org> +colo-1.8.ebuild:
-  New revision which adds tftp/dhcp support for netbooting.
-
-*colo-1.6 (21 Apr 2004)
-
-  21 Apr 2004; Joshua Kinard <kumba@gentoo.org> +files/colo-1.6-gentoo.patch,
-  +colo-1.6.ebuild:
-  New revision of colo. Adds a number of new features, including booting from
-  RAID, loadable initrd, and other bits.
-
-*colo-1.4 (05 Apr 2004)
-
-  05 Apr 2004; Joshua Kinard <kumba@gentoo.org> colo-1.4.ebuild,
-  files/colo-1.4-gentoo.patch files/default.boot.example:
-  Initial import of a modern bootloader for Cobalt MIPS systems
+  Bug: https://bugs.gentoo.org/552720
 

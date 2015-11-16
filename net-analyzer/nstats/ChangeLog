@@ -1,81 +1,57 @@
 # ChangeLog for net-analyzer/nstats
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nstats/ChangeLog,v 1.22 2014/07/15 00:14:28 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  15 Jul 2014; Jeroen Roovers <jer@gentoo.org> nstats-0.4-r2.ebuild,
-  files/nstats-0.4-glibc24.patch, files/nstats-0.4-makefile.patch,
-  +files/nstats-0.4-tinfo.patch, metadata.xml:
-  EAPI bump. Fix building against sys-libs/ncurses[tinfo]. Drop
-  <sys-libs/glibc-2.4 condition. Clean up patches.
+*nstats-0.4-r2 (09 Aug 2015)
 
-  19 Mar 2012; Jeroen Roovers <jer@gentoo.org> -nstats-0.4-r1.ebuild:
-  Old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nstats-0.4-glibc24.patch, +files/nstats-0.4-makefile.patch,
+  +files/nstats-0.4-tinfo.patch, +metadata.xml, +nstats-0.4-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> nstats-0.4-r1.ebuild,
-  nstats-0.4-r2.ebuild:
-  Drop sparc keywords
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nstats-0.4-r2.ebuild:
-  x86 stable wrt bug #404813
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> nstats-0.4-r2.ebuild:
-  Stable for amd64, wrt bug #404813
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*nstats-0.4-r2 (13 Dec 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Dec 2011; Jeroen Roovers <jer@gentoo.org> nstats-0.4-r1.ebuild,
-  +nstats-0.4-r2.ebuild, files/nstats-0.4-makefile.patch:
-  Fix file collisions of nmon and cmon (bug #364685). Fix quoting issues. Do
-  not install COPYING.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Sep 2007; Markus Ullmann <jokey@gentoo.org> -nstats-0.4.ebuild:
-  Cleanup
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Aug 2006; Jon Hood <squinky86@gentoo.org> nstats-0.4-r1.ebuild:
-  Stable on amd64, bug #143909. Thanks postmodern <brodigan@pdx.edu>.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*nstats-0.4-r1 (27 Mar 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Mar 2006; Markus Ullmann <jokey@gentoo.org>
-  +files/nstats-0.4-glibc24.patch, +nstats-0.4-r1.ebuild:
-  Fixed glibc 2.4 compatibility wrt bug #126743
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Feb 2006; Markus Ullmann <jokey@gentoo.org> nstats-0.4.ebuild:
-  Removing virtual/libpcap wrt bug #117898
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Aug 2005; <dang@gentoo.org> nstats-0.4.ebuild:
-  Keyword ~amd64
-
-  19 Jul 2005; David Holm <dholm@gentoo.org> nstats-0.4.ebuild:
-  Added to ~ppc.
-
-  17 Apr 2005; Marcelo Goes <vanquirius@gentoo.org>
-  -files/nstats-0.3.2-r2-gentoo.diff:
-  Removing old patch.
-
-  17 Apr 2005; Marcelo Goes <vanquirius@gentoo.org>
-  +files/nstats-0.4-makefile.patch, nstats-0.4.ebuild:
-  Patching makefile to install bmon as bmon.nstats. This prevents a file
-  collision with net-analyzer/bmon.
-
-  29 Jan 2005; Daniel Black <dragonheart@gentoo.org> nstats-0.4.ebuild:
-  changed net-libs/libpcap depend to virtual/libcap
-
-  10 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml, nstats-0.4.ebuild:
-  Tidy, x86 stable
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*nstats-0.4 (09 Jul 2002)
-
-  09 Jul 2002; Seemant Kulleen <seemant@gentoo.org> nstats-0.4.ebuild
-  files/digest-nstats-0.4 :
-
-  Version bump, thanks to: lb-gentoo@projectdream.org (Lukas Beeler) in bug
-  #2662
-
-*nstats-0.3.2-r2 (14 Apr 2002)
-
-  14 Apr 2002; Donny Davies <woodchip@gentoo.org> :
-  
-  Initial check-in.  Thanks go to Lukas Beeler <lb-gentoo@projectdream.org>.

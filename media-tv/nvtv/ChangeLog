@@ -1,97 +1,56 @@
 # ChangeLog for media-tv/nvtv
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/nvtv/ChangeLog,v 1.15 2015/04/07 20:54:36 dilfridge Exp $
+# (auto-generated from git log)
 
-  07 Apr 2015; Andreas K. Huettel <dilfridge@gentoo.org> -nvtv-0.4.5.ebuild:
-  Drop to unstable (nothing depends on it), remove old EAPI=1 version.
+*nvtv-0.4.7-r1 (09 Aug 2015)
 
-  24 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> nvtv-0.4.5.ebuild,
-  nvtv-0.4.7-r1.ebuild:
-  Use SLOT dependencies for x11-libs/gtk+.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/nvtv.start,
+  +metadata.xml, +nvtv-0.4.7-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  21 Jan 2009; Steve Dibb <beandog@gentoo.org> +nvtv-0.4.5.ebuild:
-  Readd old stable ebuild
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*nvtv-0.4.7-r1 (10 Jan 2009)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jan 2009; Steve Dibb <beandog@gentoo.org> -nvtv-0.4.5.ebuild,
-  -nvtv-0.4.6.ebuild, -nvtv-0.4.7.ebuild, +nvtv-0.4.7-r1.ebuild:
-  Drop old, drop stable keywords, fix zlib dep, bug 187588
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Nov 2007; Matthias Schwarzott <zzam@gentoo.org> nvtv-0.4.5.ebuild,
-  nvtv-0.4.6.ebuild, nvtv-0.4.7.ebuild:
-  Fixed quoting.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> nvtv-0.4.5.ebuild,
-  nvtv-0.4.6.ebuild, nvtv-0.4.7.ebuild:
-  Removed virtual/x11 and made it use newinitd
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Nov 2006; Steve Dibb <beandog@gentoo.org> metadata.xml:
-  Add to media-tv herd
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Mar 2006; Joshua Baergen <joshuabaergen@gentoo.org> nvtv-0.4.5.ebuild,
-  nvtv-0.4.6.ebuild, nvtv-0.4.7.ebuild:
-  Add modular X dependencies.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*nvtv-0.4.7 (06 Jun 2004)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Jun 2004; Bart Lauwers <blauwers@gentoo.org> nvtv-0.4.7.ebuild:
-  Version bump per request in Bug #49698
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Jun 2004; Bart Lauwers <blauwers@gentoo.org> nvtv-0.4.5.ebuild, nvtv-0.4.6.ebuild:
-  Changed dep from Xfree to virtual/x11 per Bug #48959
+  Bug: https://bugs.gentoo.org/552720
 
-*nvtv-0.4.6 (26 Mar 2004)
-
-  26 Mar 2004; Bart Lauwers <blauwers@gentoo.org> nvtv-0.4.6.ebuild:
-  Version bump per request in Bug #23766
-
-  23 Mar 2004; <augustus@gentoo.org> nvtv-0.4.5.ebuild:
-  Added amd64 keyword.
-
-  04 Dec 2003; Seemant Kulleen <seemant@gentoo.org> nvtv-0.4.4.ebuild,
-  nvtv-0.4.5.ebuild:
-  fix up the gtk/gtk2 USE flag use according to bug #34566 by Spider
-  <spider@gentoo.org>
-
-*nvtv-0.4.5 (18 Jun 2003)
-
-  18 Jun 2003; B Lauwers <blauwers@gentoo.org> nvtv-0.4.5.ebuild:
-  New version from prior ebuild per Bug#23040
-
-*nvtv-0.4.4 (18 Jun 2003)
-
-  18 Jun 2003; Seemant Kulleen <seemant@gentoo.org> nvtv-0.4.4.ebuild,
-  files/nvtv.start:
-  moved to media-tv
-
-*nvtv-0.4.4 (16 Mar 2003)
-
-  16 Mar 2003; phoen][x <phoenix@gentoo.org> nvtv-0.4.4.ebuild :
-  Version bump.
-
-*nvtv-0.4.3-0 (10 Feb 2003)
-
-  10 Feb 2003; B.Lauwers <blauwers@gentoo.org> nvtv-0.4.3.ebuild :
-  New version from prior ebuild
-
-*nvtv-4.2.0-0 (09 Dec 2002)
-
-  17 Dec 2002; B.Lauwers <blauwers@gentoo.org> nvtv-0.4.2r1.ebuild :
-  Depency bug fixed per Bug#12067
-
-  9 Dec 2002; B.Lauwers <blauwers@gentoo.org> nvtv-0.4.2.ebuild :
-  New version from prior ebuild plus various cleanups
-
-*nvtv-0.4.0-0 (04 Jun 2002)
-
-  4 Jun 2002; B.Lauwers <blauwers@gentoo.org> nvtv-0.4.0.ebuild :
-  New version from prior ebuild plus various cleanups
-
-*nvtv-0.3.0-0 (03 May 2002)
-
-  3 May 2002; Arcady Genkin <agenkin@thpoon.com> nvtv-0.3.0.ebuild :
-  Cleaned up a few things.
-
-  3 May 2002; B.Lauwers <blauwers@gentoo.com> ChangeLog, nvtv-0.3.0.ebuild :
-  Intial ebuild for nvtv from http://sourceforge.net/projects/nv-tv-out

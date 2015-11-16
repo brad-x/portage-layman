@@ -1,187 +1,59 @@
 # ChangeLog for dev-util/osc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/osc/ChangeLog,v 1.38 2015/04/08 17:54:02 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> osc-0.148.2.ebuild,
-  osc-0.150.1.ebuild, osc-9999.ebuild:
-  Drop old Python implementations
+*osc-9999 (09 Aug 2015)
+*osc-0.150.1 (09 Aug 2015)
+*osc-0.148.2 (09 Aug 2015)
 
-*osc-0.150.1 (15 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/osc-0.139.2-out-of-tree-build.patch, +metadata.xml,
+  +osc-0.148.2.ebuild, +osc-0.150.1.ebuild, +osc-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Jan 2015; Jan Matejka <yac@gentoo.org> +osc-0.150.1.ebuild:
-  Version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Oct 2014; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.146.0.ebuild,
-  osc-0.148.2.ebuild:
-  Stabilise on x86 and amd64, remove older. We need to trigger maintenance so
-  fast-track it.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*osc-0.148.2 (12 Oct 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Oct 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.148.2.ebuild,
-  -osc-0.147.0.ebuild:
-  Version bump to 148.2 which works well with new maintenance workflow.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*osc-0.147.0 (05 Sep 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.147.0.ebuild,
-  -osc-0.144.1.ebuild, osc-0.146.0.ebuild:
-  Version bump to 0.147.0. Stabilse 0.146.0 on amd64 and x86. Drop oldest.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*osc-0.146.0 (23 May 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 May 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.146.0.ebuild,
-  -osc-0.145.0.ebuild:
-  Version bump to 0.146.0 and remove 0.145.0.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*osc-0.145.0 (13 May 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 May 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.145.0.ebuild:
-  Version bump to 0.145.0.
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Apr 2014; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.143.0.ebuild,
-  osc-0.144.1.ebuild:
-  Stabilise on amd64 and x86. Drop older.
-
-*osc-0.144.1 (05 Mar 2014)
-
-  05 Mar 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.144.1.ebuild,
-  -osc-0.144.0.ebuild:
-  Version bump to 0.144.1.
-
-*osc-0.144.0 (28 Feb 2014)
-
-  28 Feb 2014; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.144.0.ebuild:
-  Version bump to 0.144.0
-
-  25 Feb 2014; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.142.2.ebuild,
-  osc-0.143.0.ebuild:
-  Stabilise 0.143.0 on amd64 and x86. Drop older.
-
-  25 Feb 2014; Tomáš Chvátal <scarabeus@gentoo.org> osc-0.143.0.ebuild,
-  osc-9999.ebuild:
-  we want python[xml] not pyxml.
-
-*osc-0.143.0 (23 Feb 2014)
-
-  23 Feb 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +osc-0.143.0.ebuild:
-  version bump to 0.143.0 so I can maintain openSUSE:Tumbleweed properly
-
-  04 Dec 2013; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.141.0.ebuild,
-  -osc-0.142.0.ebuild, osc-0.142.2.ebuild:
-  Stabilise latest on amd64 and x86 and drop older. Needed to fix api
-  incompatibilities.
-
-*osc-0.142.2 (04 Dec 2013)
-
-  04 Dec 2013; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.142.2.ebuild:
-  Version bump to 0.142.2.
-
-*osc-0.142.0 (26 Nov 2013)
-
-  26 Nov 2013; Jan Matejka <yac@gentoo.org> +osc-0.142.0.ebuild:
-  verbump
-
-  02 Nov 2013; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.140.1.ebuild,
-  osc-0.141.0.ebuild, osc-9999.ebuild:
-  Stabilise on amd64 and x86 per previous commit.
-
-*osc-0.141.0 (02 Nov 2013)
-
-  02 Nov 2013; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.141.0.ebuild,
-  osc-9999.ebuild:
-  Version bump to latest to fix crashes with new obs.
-
-  10 Sep 2013; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.139.1.ebuild,
-  osc-0.140.1.ebuild:
-  Stabilise 0.140 on all archs remove older.
-
-*osc-0.140.1 (24 Jul 2013)
-
-  24 Jul 2013; Michal Hrusecky <miska@gentoo.org> +osc-0.140.1.ebuild,
-  -osc-0.139.2.ebuild, osc-9999.ebuild:
-  version bump to new testing, removing previous testing
-
-  29 May 2013; Michal Hrusecky <miska@gentoo.org> osc-0.139.2.ebuild,
-  osc-9999.ebuild:
-  Using DISTUTILS_SINGLE_IMPL=1 because of rpm
-
-  28 May 2013; Michal Hrusecky <miska@gentoo.org> osc-0.139.2.ebuild,
-  osc-9999.ebuild:
-  Small fixes regarding use of python-r1 eclass
-
-*osc-0.139.2 (27 May 2013)
-
-  27 May 2013; Michal Hrusecky <miska@gentoo.org> osc-0.139.1.ebuild,
-  +osc-0.139.2.ebuild, osc-9999.ebuild,
-  +files/osc-0.139.2-out-of-tree-build.patch:
-  updated to version 0.139.2
-  * migrated to distutils-r1 (little patch needed)
-  broke dependency circle (RDEPEND->PDEPEND)
-
-  04 May 2013; Mike Gilbert <floppym@gentoo.org> osc-0.139.1.ebuild,
-  osc-9999.ebuild:
-  Drop dependency on dev-python/elementtree.
-
-  18 Mar 2013; Michal Hrusecky <miska@gentoo.org> -osc-0.137.0.ebuild,
-  osc-0.139.1.ebuild:
-  Fast stabilization to prevent broken stable
-
-*osc-0.139.1 (18 Mar 2013)
-
-  18 Mar 2013; Michal Hrusecky <miska@gentoo.org> +osc-0.139.1.ebuild,
-  osc-9999.ebuild:
-  Fixing paths (bug#446074) and version update
-
-  17 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> -osc-0.136.0.ebuild,
-  osc-0.137.0.ebuild:
-  Stabilise on amd64 and x86, remove older.
-
-*osc-0.137.0 (05 Dec 2012)
-
-  05 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.137.0.ebuild:
-  Version bump to latest.
-
-  19 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> osc-0.136.0.ebuild,
-  osc-9999.ebuild:
-  Depend also on sudo.
-
-  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> osc-0.136.0.ebuild:
-  workaround for bug 399061
-
-  16 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> osc-0.136.0.ebuild,
-  osc-9999.ebuild:
-  Fix py3 crasher by restricting py3. Fixes bug#443514.
-
-  15 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> osc-0.136.0.ebuild,
-  osc-9999.ebuild:
-  Pull in the services as without them almost nothing in osc works.
-
-  15 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> osc-0.136.0.ebuild:
-  We can go stable here without a prob.
-
-*osc-0.136.0 (02 Oct 2012)
-
-  02 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> +osc-0.136.0.ebuild,
-  -osc-0.130.1.ebuild, -osc-0.132.6.ebuild, osc-9999.ebuild:
-  Version bump to latest, use proper git repository, cleanup older.
-
-  17 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
-  Use suse herd.
-
-*osc-0.132.6 (07 Mar 2012)
-
-  07 Mar 2012; Michal Hrusecky <miska@gentoo.org> +osc-0.132.6.ebuild,
-  metadata.xml, osc-0.130.1.ebuild, osc-9999.ebuild:
-  * Added new version 0.132.6 * Migrated to EAPI=4 * Added new comaintainer
-
-  08 Jul 2011; Michal Hrusecky <miska@gentoo.org> osc-0.130.1.ebuild,
-  osc-9999.ebuild:
-  Tested on x86, adding keyword
-
-*osc-9999 (20 Jun 2011)
-*osc-0.130.1 (20 Jun 2011)
-
-  20 Jun 2011; Michal Hrusecky <miska@gentoo.org> +osc-0.130.1.ebuild,
-  +osc-9999.ebuild, +metadata.xml:
-  New ebuild for osc. Ebuild written by me. Fixes bug 350599

@@ -1,152 +1,75 @@
 # ChangeLog for dev-java/saxon
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/saxon/ChangeLog,v 1.47 2015/06/09 14:02:05 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*saxon-9.2.0.6 (09 Aug 2015)
+*saxon-8.4b-r3 (09 Aug 2015)
+*saxon-6.5.5 (09 Aug 2015)
 
-  22 May 2015; James Le Cuirot <chewi@gentoo.org> saxon-9.2.0.6.ebuild:
-  ~arm keyword for v9.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/9.2-build.xml,
+  +files/9.2-edition.properties, +files/build-6.5.5.xml,
+  +files/build-8.4b.xml, +files/saxon-8.4b-jikes.patch, +metadata.xml,
+  +saxon-6.5.5.ebuild, +saxon-8.4b-r3.ebuild, +saxon-9.2.0.6.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> saxon-6.5.5.ebuild,
-  saxon-8.4b-r3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> saxon-9.2.0.6.ebuild:
-  Stable for ppc64, wrt bug #421733
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Oct 2012;  <naota@gentoo.org> saxon-9.2.0.6.ebuild:
-  Add ~x86-fbsd wrt bug #421733
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Oct 2012;  <naota@gentoo.org> saxon-9.2.0.6.ebuild:
-  Add ~x86-fbsd wrt bug #421733
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Aug 2012; Michael Weber <xmw@gentoo.org> saxon-9.2.0.6.ebuild:
-  ppc stable (bug 414381).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> saxon-9.2.0.6.ebuild:
-  x86 stable wrt bug #414381
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 May 2012; Agostino Sarubbo <ago@gentoo.org> saxon-9.2.0.6.ebuild:
-  Stable for amd64, wrt bug #414381
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Mar 2010; Vlastimil Babka <caster@gentoo.org> saxon-8.4b-r3.ebuild,
-  saxon-9.2.0.6.ebuild:
-  Shut repoman up.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*saxon-9.2.0.6 (28 Mar 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Mar 2010; Vlastimil Babka <caster@gentoo.org> +files/9.2-build.xml,
-  -files/build-6.5.2.xml, +files/9.2-edition.properties,
-  +saxon-9.2.0.6.ebuild:
-  Version bump, fixes bug #130568. Thanks to Juan J. García de Soria,
-  Michael Jinks and Hanno Meyer-Thurow.
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Jun 2007; William L. Thomson Jr. <wltjr@gentoo.org> saxon-6.5.5.ebuild:
-  Stable on amd64, bug #180572. Removed older version
+*saxon-9.2.0.6-r1 (29 Sep 2015)
+*saxon-8.4b-r4 (29 Sep 2015)
+*saxon-6.5.5-r1 (29 Sep 2015)
 
-  04 Jun 2007; Christian Faulhammer <opfer@gentoo.org> saxon-6.5.5.ebuild:
-  stable x86, bug 180572
+  29 Sep 2015; James Le Cuirot <chewi@gentoo.org> +saxon-6.5.5-r1.ebuild,
+  +saxon-8.4b-r4.ebuild, +saxon-9.2.0.6-r1.ebuild:
+  Updated dev-java/jdom slot from 1.0 -> 0 for v1
 
-  01 Jun 2007; nixnut <nixnut@gentoo.org> saxon-6.5.5.ebuild:
-  Stable on ppc wrt bug 180572
+  17 Oct 2015; Patrice Clement <monsieurp@gentoo.org> -saxon-8.4b-r3.ebuild,
+  -saxon-8.4b-r4.ebuild:
+  Clean up old. Fixes bug 562972.
 
-  01 Jun 2007; Vlastimil Babka <caster@gentoo.org> saxon-6.5.5.ebuild,
-  -saxon-8.4b-r2.ebuild, saxon-8.4b-r3.ebuild:
-  Add examples useflag for bug #176681. Remove unused revision.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  05 May 2007; Vlastimil Babka <caster@gentoo.org> saxon-8.4b-r3.ebuild:
-  Move -i in cp to front.
-
-  01 May 2007; Matti Bickel <mabi@gentoo.org> saxon-8.4b-r3.ebuild:
-  ppc stable (bug #174419)
-
-*saxon-6.5.5 (22 Apr 2007)
-
-  22 Apr 2007; Vlastimil Babka <caster@gentoo.org> +files/build-6.5.5.xml,
-  +saxon-6.5.5.ebuild:
-  Version bump, bug #175544 by Jiri Tyr <jiri.tyr@e-learning.vslib.cz>.
-  Dropped all deps except jdom and allowed to build with >1.4 JDK because it
-  doesn't seem to be problem anymore.
-
-  22 Apr 2007; Vlastimil Babka <caster@gentoo.org> -saxon-6.5.2.ebuild,
-  -saxon-8.4b.ebuild, -saxon-8.4b-r1.ebuild:
-  Cleanup.
-
-  15 Apr 2007; Andrej Kacian <ticho@gentoo.org> saxon-8.4b-r3.ebuild:
-  Stable on x86, bug #174419.
-
-  13 Apr 2007; <welp@gentoo.org> saxon-8.4b-r3.ebuild:
-  Stable on amd64 wrt bug 174419
-
-*saxon-8.4b-r3 (13 Apr 2007)
-
-  13 Apr 2007; Petteri Räty <betelgeuse@gentoo.org> files/build-8.4b.xml,
-  +saxon-8.4b-r3.ebuild:
-  Add launcher script named saxon8 and add Main-Class attribute to saxon8.jar.
-  Fixes bug #174419.
-
-  12 Apr 2007; <welp@gentoo.org> saxon-6.5.2-r1.ebuild,
-  saxon-8.4b-r2.ebuild:
-  Keyworded ~amd64 wrt bug 167315
-
-  20 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  saxon-6.5.2-r1.ebuild, saxon-8.4b-r2.ebuild:
-  stable x86; bug 167315
-
-  20 Jan 2007; nixnut <nixnut@gentoo.org> saxon-8.4b-r2.ebuild:
-  Stable on ppc wrt bug 142187
-
-  22 Dec 2006; Petteri Räty <betelgeuse@gentoo.org> saxon-8.4b-r2.ebuild:
-  Dependency on sun-jaf is not needed.
-
-*saxon-8.4b-r2 (22 Dec 2006)
-
-  22 Dec 2006; Petteri Räty <betelgeuse@gentoo.org> +saxon-8.4b-r2.ebuild:
-  Revision bump using sun-jaf so that ppc can get this stable in bug #142187.
-  Also relaxed to merge with 1.5 and 1.6 jdks too.
-
-  02 Sep 2006; <blubb@gentoo.org> saxon-8.4b.ebuild:
-  stable on amd64
-
-  29 Jul 2006; Petteri Räty <betelgeuse@gentoo.org> saxon-6.5.2-r1.ebuild:
-  Fixed a typo which resulted in missing dependencies.
-
-  22 Jul 2006; Krzysiek Pawlik <nelchael@gentoo.org> saxon-6.5.2-r1.ebuild,
-  saxon-8.4b-r1.ebuild:
-  ant_src_unpack -> src_unpack
-
-*saxon-6.5.2-r1 (02 Jul 2006)
-*saxon-8.4b-r1 (02 Jul 2006)
-
-  02 Jul 2006; Joshua Nichols <nichoj@gentoo.org> +saxon-6.5.2-r1.ebuild,
-  +saxon-8.4b-r1.ebuild:
-  Revision bumps to support new Java system.
-
-  09 Feb 2006; Joshua Nichols <nichoj@gentoo.org> saxon-6.5.2.ebuild:
-  Stable on x86.
-
-  18 Jan 2006; Joshua Nichols <nichoj@gentoo.org> saxon-8.4b.ebuild:
-  Keyworded ~amd64.
-
-  08 Jan 2006; Joshua Nichols <nichoj@gentoo.org> saxon-6.5.2.ebuild:
-  Added ~amd64 keyword.
-
-*saxon-6.5.2 (08 Jan 2006)
-
-  08 Jan 2006; Joshua Nichols <nichoj@gentoo.org> +files/build-6.5.2.xml,
-  +saxon-6.5.2.ebuild:
-  Need an older version to build aspectj without bundled jars (bug #63293).
-
-  12 Jul 2005; Thomas Matthijs <axxo@gentoo.org> saxon-8.4b.ebuild:
-  Keyword x86
-
-  01 Jul 2005; David Holm <dholm@gentoo.org> saxon-8.4b.ebuild:
-  Added to ~ppc.
-
-*saxon-8.4b (30 Jun 2005)
-
-  30 Jun 2005; Thomas Matthijs <axxo@gentoo.org> +files/build-8.4b.xml,
-  +files/saxon-8.4b-jikes.patch, +metadata.xml, +saxon-8.4b.ebuild:
-  no longer uses packed jars, ebuild by Josh Nichols <nichoj@alum.rpi.edu> in
-  97431

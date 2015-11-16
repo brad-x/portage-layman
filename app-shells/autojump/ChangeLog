@@ -1,92 +1,138 @@
 # ChangeLog for app-shells/autojump
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/autojump/ChangeLog,v 1.18 2015/06/06 07:48:40 jlec Exp $
+# (auto-generated from git log)
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*autojump-21.6.9 (09 Aug 2015)
+*autojump-21.5.8-r1 (09 Aug 2015)
+*autojump-21.3.0-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> autojump-21.3.0-r1.ebuild,
-  autojump-21.5.8-r1.ebuild:
-  Remove old Python implementations
-
-  05 Apr 2015; Ian Delaney <idella4@gentoo.org> autojump-21.6.9.ebuild:
-  Clean old impls, add py3.4 support
-
-  21 Nov 2014; Tim Harder <radhermit@gentoo.org> autojump-21.3.0-r1.ebuild,
-  autojump-21.5.8-r1.ebuild, autojump-21.6.9.ebuild:
-  Rename zsh-completion to gentoo-zsh-completions.
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> autojump-21.3.0-r1.ebuild,
-  autojump-21.5.8-r1.ebuild, autojump-21.6.9.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-*autojump-21.5.8-r1 (06 Aug 2013)
-*autojump-21.6.9 (06 Aug 2013)
-
-  06 Aug 2013; Michael Weber <xmw@gentoo.org> +autojump-21.5.8-r1.ebuild,
-  +autojump-21.6.9.ebuild, -autojump-21.5.8.ebuild,
-  -files/autojump-21.5.8-eprefix.patch:
-  Fix EPREFIX handling (thanks Leho Kraav, bug 465226), version bump.
-
-*autojump-21.5.8 (04 May 2013)
-
-  04 May 2013; Michael Weber <xmw@gentoo.org> +autojump-21.5.8.ebuild,
-  +files/autojump-21.5.8-eprefix.patch, autojump-21.3.0-r1.ebuild:
-  Version bump (thanks Oliver Freyermuth, bug 468056), fix python-r1 support.
-
-*autojump-21.3.0-r1 (04 May 2013)
-
-  04 May 2013; Michael Weber <xmw@gentoo.org> +autojump-21.3.0-r1.ebuild,
-  +files/autojump-21.3.0-supported-shells.patch, -autojump-21.3.0.ebuild:
-  Drop old, fix infinity loop sourcing shell=sh (thanks Kamil Kuduk, bug
-  446312), prefix support (thanks Leho Kraav, bug 465226), fix security issue
-  (bug 467262).
-
-  04 May 2013; Michael Weber <xmw@gentoo.org> -autojump-20.9.ebuild,
-  -autojump-21.1.0.ebuild, -autojump-21.1.2.ebuild, -autojump-21.2.1.ebuild:
-  drop old version
-
-*autojump-21.3.0 (09 Jan 2013)
-
-  09 Jan 2013; Michael Weber <xmw@gentoo.org> +autojump-21.3.0.ebuild:
-  Version bump
-
-*autojump-21.2.1 (09 Jan 2013)
-
-  09 Jan 2013; Michael Weber <xmw@gentoo.org> +autojump-21.2.1.ebuild:
-  Version bump (thanks euscan)
-
-*autojump-21.1.2 (09 Jan 2013)
-
-  09 Jan 2013; Michael Weber <xmw@gentoo.org> +autojump-21.1.2.ebuild:
-  Version bump (thanks euscan)
-
-*autojump-21.1.0 (24 Nov 2012)
-
-  24 Nov 2012; Michael Weber <xmw@gentoo.org> +autojump-21.1.0.ebuild:
-  Version bump
-
-  27 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> autojump-20.9.ebuild:
-  Fix PYTHON invocation
-
-  12 Jun 2012; Michael Weber <xmw@gentoo.org> -autojump-14.ebuild,
-  autojump-20.9.ebuild:
-  vcs-snapshot.eclass, remove old.
-
-*autojump-20.9 (11 Jun 2012)
-
-  11 Jun 2012; Michael Weber <xmw@gentoo.org> +autojump-20.9.ebuild,
-  -autojump-13.ebuild, metadata.xml:
-  Version bump (bug 420461 by haozida), EAPI-4, USE python, tests.
-
-*autojump-14 (22 Dec 2010)
-
-  22 Dec 2010; Michael Weber <xmw@gentoo.org> +autojump-14.ebuild:
-  Version bump, python3 now supported.
-
-*autojump-13 (26 Oct 2010)
-
-  26 Oct 2010; Michael Weber <xmw@gentoo.org> +autojump-13.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +autojump-21.3.0-r1.ebuild, +autojump-21.5.8-r1.ebuild,
+  +autojump-21.6.9.ebuild, +files/autojump-21.3.0-supported-shells.patch,
   +metadata.xml:
-  Initial import fixes 335401, thanks to Olivier Mehani
-  <shtrom-gentoo@ssji.net> for the initial ebuild.
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> autojump-21.3.0-r1.ebuild,
+  autojump-21.5.8-r1.ebuild, autojump-21.6.9.ebuild:
+  Use https by default
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*autojump-22.2.4 (30 Aug 2015)
+
+  30 Aug 2015; Patrice Clement <monsieurp@gentoo.org> +autojump-22.2.4.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Aug 2015; Patrice Clement <monsieurp@gentoo.org> autojump-22.2.4.ebuild:
+  Keyword for ppc+ppc64.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Aug 2015; Patrice Clement <monsieurp@gentoo.org>
+  -autojump-21.3.0-r1.ebuild, -autojump-21.5.8-r1.ebuild,
+  -autojump-21.6.9.ebuild:
+  Remove old.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*autojump-22.2.4-r1 (04 Sep 2015)
+
+  04 Sep 2015; Lukáš Poláček <lukas@ksp.sk> +autojump-22.2.4-r1.ebuild:
+  fix Python import error
+
+  07 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  autojump-22.2.4-r1.ebuild:
+  all-shells/autojump: Make use of ${PN} and remove trailing spaces.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*autojump-22.2.4-r2 (13 Sep 2015)
+
+  13 Sep 2015; Lukáš Poláček <lukas@ksp.sk> +autojump-22.2.4-r2.ebuild:
+  don't install into /usr/local
+
+  Suggested-by: Leho Kraav <leho@kraav.com>
+
+  13 Sep 2015; Lukáš Poláček <lukas@ksp.sk> -autojump-22.2.4-r1.ebuild:
+  remove 22.2.4-r1
+
+  13 Sep 2015; Lukáš Poláček <lukas@ksp.sk> -autojump-22.2.4.ebuild:
+  remove 22.2.4
+
+  13 Sep 2015; Lukáš Poláček <lukas@ksp.sk> autojump-22.2.4-r2.ebuild:
+  use newbashcomp
+
+  Also edit autojump.sh to use /usr/share instead of /usr/local/share
+
+  13 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  autojump-22.2.4-r2.ebuild:
+  Correctly quote ${PN} variable.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*autojump-22.2.4-r3 (23 Sep 2015)
+
+  23 Sep 2015; Lukáš Poláček <lukas@ksp.sk> +autojump-22.2.4-r3.ebuild:
+  Fix autojump in bash
+
+  There is only one file for bash that also contains code for completion,
+  so we don't install completion separately.
+
+  Reported-by: Tomasz Golinski <tomaszg@alpha.uwb.edu.pl>
+
+  23 Sep 2015; Lukáš Poláček <lukas@ksp.sk> -autojump-22.2.4-r2.ebuild:
+  remove 22.2.4-r2
+

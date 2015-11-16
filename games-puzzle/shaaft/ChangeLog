@@ -1,59 +1,66 @@
 # ChangeLog for games-puzzle/shaaft
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/shaaft/ChangeLog,v 1.16 2015/02/18 22:57:46 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  18 Feb 2015; Michael Sterrett <mr_bones_@gentoo.org> shaaft-0.5.0.ebuild:
-  EAPI=5
+*shaaft-0.5.0 (09 Aug 2015)
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> shaaft-0.5.0.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/shaaft-0.5.0-gcc34.patch, +files/shaaft-0.5.0-gcc41.patch,
+  +files/shaaft-0.5.0-gcc43.patch, +files/shaaft-0.5.0-libpng15.patch,
+  +metadata.xml, +shaaft-0.5.0.ebuild:
+  proj/gentoo: Initial commit
 
-  01 Sep 2012; Michael Sterrett <mr_bones_@gentoo.org>
-  files/shaaft-0.5.0-gcc34.patch, files/shaaft-0.5.0-gcc41.patch,
-  files/shaaft-0.5.0-gcc43.patch, files/shaaft-0.5.0-libpng15.patch,
-  shaaft-0.5.0.ebuild:
-  any mod support will do
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> shaaft-0.5.0.ebuild,
-  +files/shaaft-0.5.0-libpng15.patch:
-  Fix building with libpng15 wrt #383247 by Diego Elio Pettenò
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Aug 2011; Michael Sterrett <mr_bones_@gentoo.org> shaaft-0.5.0.ebuild:
-  Add use deps; respect CXXFLAGS; use a non-404 HOMEPAGE (bug #371689)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Mar 2010; Samuli Suominen <ssuominen@gentoo.org> shaaft-0.5.0.ebuild:
-  Fix libpng14 detection wrt #308887 by Locke Shinseiko.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Feb 2009; Michael Sterrett <mr_bones_@gentoo.org> shaaft-0.5.0.ebuild:
-  EAPI=2; skip installing build utility Packer
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 May 2008; Tristan Heaven <nyhm@gentoo.org>
-  +files/shaaft-0.5.0-gcc43.patch, shaaft-0.5.0.ebuild:
-  Fix building with gcc-4.3
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Feb 2007; Simon Stelling <blubb@gentoo.org> shaaft-0.5.0.ebuild:
-  stable on amd64
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> shaaft-0.5.0.ebuild:
+  Use https by default
 
-  21 May 2006; <Tupone@gentoo.org> +files/shaaft-0.5.0-gcc41.patch,
-  shaaft-0.5.0.ebuild:
-  Fix compiling with gcc-4.1
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Mar 2006; Michael Sterrett <mr_bones_@gentoo.org> shaaft-0.5.0.ebuild:
-  X is implicit
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Jun 2005; David Holm <dholm@gentoo.org> shaaft-0.5.0.ebuild:
-  Added to ~ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jun 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  +files/shaaft-0.5.0-gcc34.patch, shaaft-0.5.0.ebuild:
-  Added patch to enable compilation with a 3.4.x gcc/g++, fixes #94301.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*shaaft-0.5.0 (01 Feb 2004)
+  Bug: https://bugs.gentoo.org/552720
 
-  01 Feb 2004; Michael Sterrett <mr_bones_@gentoo.org> metadata.xml,
-  shaaft-0.5.0.ebuild:
-  initial commit; ebuild submitted by Chris Aniszczyk via bug 40031

@@ -1,151 +1,94 @@
 # ChangeLog for games-strategy/megaglest
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/megaglest/ChangeLog,v 1.30 2015/05/13 16:57:34 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  13 May 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/megaglest-3.11.1-cmake.patch, files/megaglest-3.9.1-cmake.patch,
-  megaglest-3.11.1.ebuild:
-  add patch from Michael Palimaka to fix building with newer cmake (bug #548488)
+*megaglest-3.11.1 (09 Aug 2015)
+*megaglest-3.9.1-r1 (09 Aug 2015)
 
-  10 May 2015; Michael Sterrett <mr_bones_@gentoo.org> megaglest-3.11.1.ebuild:
-  add slot on virtual/jpeg dep
-
-  10 May 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/megaglest-3.11.1-cmake.patch:
-  clean unused patch
-
-*megaglest-3.11.1 (10 May 2015)
-
-  10 May 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/megaglest-3.11.1-cmake.patch,
-  +files/megaglest-3.11.1-static-build.patch, +megaglest-3.11.1.ebuild:
-  version bump
-
-  28 Jan 2015; Michał Górny <mgorny@gentoo.org> megaglest-3.9.1-r1.ebuild:
-  Switch to CPU_FLAGS_X86.
-
-  07 Dec 2014; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/megaglest-3.6.0.3-as-needed.patch,
-  -files/megaglest-3.6.0.3-build.patch, -files/megaglest-3.6.0.3-gcc-4.7.patch,
-  -files/megaglest-3.6.0.3-static-build.patch,
-  -files/megaglest-3.7.0-as-needed.patch, -files/megaglest-3.7.0-cmake.patch,
-  -files/megaglest-3.7.0-static-build.patch,
-  -files/megaglest-3.7.1-as-needed.patch, -files/megaglest-3.7.1-gcc47.patch,
-  -files/megaglest-3.7.1-miniupnpc-1.8.patch,
-  -files/megaglest-3.7.1-static-build.patch,
-  -files/megaglest-3.9.0.4-static-build.patch, -megaglest-3.6.0.3.ebuild,
-  -megaglest-3.7.0.ebuild, -megaglest-3.7.1.ebuild, -megaglest-3.9.0.4.ebuild:
-  old
-
-  05 Dec 2014; Agostino Sarubbo <ago@gentoo.org> megaglest-3.9.1-r1.ebuild:
-  Stable for x86, wrt bug #518196
-
-  26 Nov 2014; Chema Alonso <nimiux@gentoo.org> megaglest-3.9.1-r1.ebuild:
-  Stable for amd64 wrt bug #518196
-
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
-
-*megaglest-3.9.1-r1 (16 Sep 2014)
-
-  16 Sep 2014; Julian Ospald <hasufell@gentoo.org> -megaglest-3.9.1.ebuild,
-  +megaglest-3.9.1-r1.ebuild:
-  rm dev-libs/icu dep for USE=-static wrt #522730
-
-  12 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  megaglest-3.9.0.4.ebuild, megaglest-3.9.1.ebuild:
-  Add subslot dependency on dev-libs/icu
-
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> megaglest-3.6.0.3.ebuild,
-  megaglest-3.7.0.ebuild, megaglest-3.7.1.ebuild, megaglest-3.9.0.4.ebuild,
-  megaglest-3.9.1.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
-
-*megaglest-3.9.1 (27 Jan 2014)
-
-  27 Jan 2014; Julian Ospald <hasufell@gentoo.org> +megaglest-3.9.1.ebuild,
+  +files/megaglest-3.11.1-static-build.patch,
   +files/megaglest-3.9.1-cmake.patch,
-  +files/megaglest-3.9.1-static-build.patch:
-  version bump
+  +files/megaglest-3.9.1-static-build.patch, +megaglest-3.9.1-r1.ebuild,
+  +megaglest-3.11.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*megaglest-3.9.0.4 (20 Nov 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Nov 2013; Julian Ospald <hasufell@gentoo.org> -megaglest-3.9.0.3.ebuild,
-  -files/megaglest-3.9.0.3-Waddress.patch,
-  -files/megaglest-3.9.0.3-fribidi.patch,
-  -files/megaglest-3.9.0.3-static-build.patch, +megaglest-3.9.0.4.ebuild,
-  +files/megaglest-3.9.0.4-static-build.patch:
-  version bump, remove old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*megaglest-3.9.0.3 (19 Nov 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Nov 2013; Julian Ospald <hasufell@gentoo.org> +megaglest-3.9.0.3.ebuild,
-  +files/megaglest-3.9.0.3-Waddress.patch,
-  +files/megaglest-3.9.0.3-fribidi.patch,
-  +files/megaglest-3.9.0.3-static-build.patch:
-  version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Oct 2013; Sergei Trofimovich <slyfox@gentoo.org>
-  +files/megaglest-3.7.1-gcc47.patch, megaglest-3.7.1.ebuild:
-  upstream fix for build failure against gcc-4.7
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 May 2013; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild,
-  megaglest-3.7.0.ebuild, megaglest-3.7.1.ebuild:
-  update homepage
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Feb 2013; Julian Ospald <hasufell@gentoo.org> megaglest-3.7.1.ebuild,
-  +files/megaglest-3.7.1-miniupnpc-1.8.patch:
-  fix build with miniupnpc-1.8 wrt #456952
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Dec 2012; Agostino Sarubbo <ago@gentoo.org> megaglest-3.7.1.ebuild:
-  Stable for x86, wrt bug #448546
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Dec 2012; Agostino Sarubbo <ago@gentoo.org> megaglest-3.7.1.ebuild:
-  Stable for amd64, wrt bug #448546
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*megaglest-3.7.1 (23 Nov 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Nov 2012; Julian Ospald <hasufell@gentoo.org> +megaglest-3.7.1.ebuild,
-  +files/megaglest-3.7.1-as-needed.patch,
-  +files/megaglest-3.7.1-static-build.patch:
-  version bump
+  05 Oct 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/megaglest-3.11.1-miniupnpc.patch, megaglest-3.11.1.ebuild:
+  add patch from Sander Sweers to support building against newer miniupnpc
+  (bug #562046)
 
-  15 Nov 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild,
-  megaglest-3.7.0.ebuild:
-  icu is not directly linked
+  Package-Manager: portage-2.2.20.1
 
-*megaglest-3.7.0 (14 Nov 2012)
+  05 Oct 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  megaglest-3.11.1.ebuild:
+  work around parallel make issues - bug #561380
 
-  14 Nov 2012; Julian Ospald <hasufell@gentoo.org> +megaglest-3.7.0.ebuild,
-  +files/megaglest-3.7.0-as-needed.patch, +files/megaglest-3.7.0-cmake.patch,
-  +files/megaglest-3.7.0-static-build.patch:
-  version bump
+  Package-Manager: portage-2.2.20.1
 
-  29 Oct 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild,
-  +files/megaglest-3.6.0.3-gcc-4.7.patch:
-  fix compilation for gcc-4.7 wrt #440134
+*megaglest-3.11.1-r1 (03 Nov 2015)
 
-  17 Sep 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild,
-  metadata.xml:
-  fix some flags/dependencies, also wrt #435286
+  03 Nov 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  -megaglest-3.11.1.ebuild, +megaglest-3.11.1-r1.ebuild:
+  rev bump to move wxGTK slot (bug #563952)
 
-  08 Sep 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild:
-  fix various compilation issues thanks to Arfrever
+  Package-Manager: portage-2.2.20.1
 
-  07 Sep 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild:
-  fix dependencies
+  09 Nov 2015; Agostino Sarubbo <ago@gentoo.org> megaglest-3.11.1-r1.ebuild:
+  amd64 stable wrt bug #564812
 
-  06 Sep 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild:
-  fix editor useflag thanks to Arfrever
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  01 Sep 2012; Julian Ospald <hasufell@gentoo.org> megaglest-3.6.0.3.ebuild,
-  +files/megaglest-3.6.0.3-as-needed.patch:
-  fix as-needed
+  11 Nov 2015; Agostino Sarubbo <ago@gentoo.org> megaglest-3.11.1-r1.ebuild:
+  x86 stable wrt bug #564812
 
-*megaglest-3.6.0.3 (19 Aug 2012)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  19 Aug 2012; Julian Ospald <hasufell@gentoo.org> +megaglest-3.6.0.3.ebuild,
-  +files/megaglest-3.6.0.3-build.patch,
-  +files/megaglest-3.6.0.3-static-build.patch, +metadata.xml:
-  initial commit wrt #340343

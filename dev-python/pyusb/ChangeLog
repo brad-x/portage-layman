@@ -1,86 +1,62 @@
 # ChangeLog for dev-python/pyusb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyusb/ChangeLog,v 1.20 2015/04/08 08:04:53 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> pyusb-1.0.0_beta2.ebuild:
-  Drop old Python implementations
+*pyusb-1.0.0_beta2 (09 Aug 2015)
+*pyusb-0.4.3 (09 Aug 2015)
 
-  26 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -pyusb-0.4.2.ebuild,
-  -pyusb-1.0.0_alpha1.ebuild, -pyusb-1.0.0_alpha3.ebuild,
-  -pyusb-1.0.0_beta1.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pyusb-0.4.3.ebuild, +pyusb-1.0.0_beta2.ebuild:
+  proj/gentoo: Initial commit
 
-*pyusb-1.0.0_beta2 (12 Jan 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Jan 2015; Rick Farina <zerochaos@gentoo.org> +pyusb-1.0.0_beta2.ebuild:
-  version bump, bug #526130 and user request to fix known issues
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> pyusb-0.4.2.ebuild,
-  pyusb-0.4.3.ebuild, pyusb-1.0.0_alpha1.ebuild, pyusb-1.0.0_alpha3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 May 2014; Ian Delaney <idella4@gentoo.org> pyusb-1.0.0_beta1.ebuild:
-  rm deprecated PYTHON_MODNAME
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*pyusb-1.0.0_beta1 (28 May 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 May 2014; Mike Frysinger <vapier@gentoo.org> +pyusb-1.0.0_beta1.ebuild:
-  Version bump #511660 by Ben Chan.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Jan 2013; Mike Gilbert <floppym@gentoo.org> metadata.xml:
-  Add upstream node.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jan 2013; Mike Gilbert <floppym@gentoo.org> pyusb-1.0.0_alpha3.ebuild:
-  Switch to pypi, which has tarballs.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jan 2013; Ian Delaney <idella4@gentoo.org> pyusb-1.0.0_alpha3.ebuild:
-  Added unzip to DEPEND, picked up and thx to Arferever
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*pyusb-1.0.0_alpha3 (05 Jan 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Jan 2013; Ian Delaney <idella4@gentoo.org> +pyusb-1.0.0_alpha3.ebuild:
-  bump, requested by K. Niemi, Bug #447998
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  25 Jul 2012; Steev Klimaszewski <steev@gentoo.org> pyusb-1.0.0_alpha1.ebuild:
-  Add ~arm keywording. Tested on an mx51 and mx6.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pyusb-1.0.0_alpha1 (05 Mar 2011)
-*pyusb-0.4.3 (05 Mar 2011)
-
-  05 Mar 2011; Joseph Jezak <josejx@gentoo.org> +pyusb-0.4.3.ebuild,
-  +pyusb-1.0.0_alpha1.ebuild:
-  Added latest versions.
-
-  07 Jan 2010; Christian Faulhammer <fauli@gentoo.org> pyusb-0.4.2.ebuild:
-  keyworded ~arch for x86, bug 298265
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -pyusb-0.4.1-r1.ebuild:
-  Remove old
-
-  07 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  pyusb-0.4.2.ebuild:
-  Add "examples" USE flag (bug #280585).
-
-*pyusb-0.4.2 (05 Aug 2009)
-
-  05 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +pyusb-0.4.2.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-  01 Jun 2009; Patrick Lauer <patrick@gentoo.org> pyusb-0.4.1-r1.ebuild:
-  Adding ~amd64 keyword
-
-  01 Jun 2009; Patrick Lauer <patrick@gentoo.org> pyusb-0.4.1-r1.ebuild:
-  EAPI goes to the top
-
-*pyusb-0.4.1-r1 (28 May 2009)
-
-  28 May 2009; Joseph Jezak <josejx@gentoo.org> -pyusb-0.4.1.ebuild,
-  +pyusb-0.4.1-r1.ebuild:
-  Added dep on libusb-0.x.
-
-*pyusb-0.4.1 (28 May 2009)
-
-  28 May 2009; Joseph Jezak <josejx@gentoo.org> +metadata.xml,
-  +pyusb-0.4.1.ebuild:
-  Initial commit.

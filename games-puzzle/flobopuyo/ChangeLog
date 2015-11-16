@@ -1,78 +1,57 @@
 # ChangeLog for games-puzzle/flobopuyo
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/flobopuyo/ChangeLog,v 1.19 2015/02/19 19:59:07 tupone Exp $
+# (auto-generated from git log)
 
-  19 Feb 2015; Tupone Alfredo <tupone@gentoo.org> flobopuyo-0.20-r1.ebuild:
-  EAPI 5
+*flobopuyo-0.20-r1 (09 Aug 2015)
 
-  04 Sep 2012; Michael Sterrett <mr_bones_@gentoo.org> flobopuyo-0.20-r1.ebuild:
-  any mod support will do
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/flobopuyo-0.20-gcc4.patch, +files/flobopuyo-0.20-gcc41.patch,
+  +files/flobopuyo-0.20-libs.patch, +flobopuyo-0.20-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  flobopuyo-0.20-r1.ebuild:
-  EAPI=2; add use-based deps
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Aug 2008; Michael Sterrett <mr_bones_@gentoo.org>
-  files/flobopuyo-0.20-libs.patch, flobopuyo-0.20-r1.ebuild:
-  rework Makefile patch for bug 234011
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Jun 2008; nixnut <nixnut@gentoo.org> flobopuyo-0.20-r1.ebuild:
-  Stable on ppc wrt bug 228967
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Jun 2008; Christian Faulhammer <opfer@gentoo.org>
-  flobopuyo-0.20-r1.ebuild:
-  stable x86, bug 228967
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jun 2008; Kenneth Prugh <ken69267@gentoo.org> flobopuyo-0.20-r1.ebuild:
-  amd64 stable, bug #228967
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Mar 2008; Chris Gianelloni <wolf31o2@gentoo.org>
-  flobopuyo-0.20-r1.ebuild:
-  QA cleanup: Removed line to add TryExec to the desktop file since
-  make_desktop_entry does this already.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*flobopuyo-0.20-r1 (20 Apr 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Apr 2006; Diego Pettenò <flameeyes@gentoo.org>
-  +flobopuyo-0.20-r1.ebuild:
-  Add icon and .desktop file, plus check for useflags needed on sdl-image. Bug
-  #128909.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Apr 2006; Diego Pettenò <flameeyes@gentoo.org> flobopuyo-0.20.ebuild:
-  Add ~x86-fbsd keyword.
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  +files/flobopuyo-0.20-libs.patch, flobopuyo-0.20.ebuild:
-  Added library patch and opengl USE flag as requested by flameeyes. Closing
-  bug #126835.
-
-  12 Mar 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  flobopuyo-0.20.ebuild:
-  let portage handle the stripping of the binary (bug #125550)
-
-  02 Feb 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/flobopuyo-0.20-gcc41.patch, flobopuyo-0.20.ebuild:
-  gcc41 patch from flameeyes@gentoo.org (bug #121259)
-
-  03 Jan 2006; Mark Loeser <halcy0n@gentoo.org>
-  +files/flobopuyo-0.20-gcc4.patch, flobopuyo-0.20.ebuild:
-  Add patch to fix compilation on gcc-4, thanks to Diego Pettenò
-  <flameeyes@gentoo.org>; bug #106406
-
-  29 Dec 2004; Joseph Jezak <josejx@gentoo.org> flobopuyo-0.20.ebuild:
-  Marked ppc stable.
-
-  12 Nov 2004; Chris Gianelloni <wolf31o2@gentoo.org> flobopuyo-0.20.ebuild:
-  Added ~amd64 KEYWORDS and closing bug #69656.
-
-  05 Nov 2004; Joseph Jezak <josejx@gentoo.org> flobopuyo-0.20.ebuild:
-  Added ~ppc.
-
-*flobopuyo-0.20 (15 Oct 2004)
-
-  15 Oct 2004; Michael Sterrett <mr_bones_@gentoo.org> +metadata.xml,
-  +flobopuyo-0.20.ebuild:
-  initial commit - ebuild submitted by Rob Cakebread via bug #67028

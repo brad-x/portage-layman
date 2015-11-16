@@ -1,86 +1,56 @@
 # ChangeLog for net-wireless/uhd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/uhd/ChangeLog,v 1.18 2015/02/17 03:32:12 zerochaos Exp $
+# (auto-generated from git log)
 
-*uhd-3.8.2 (17 Feb 2015)
+*uhd-3.8.2 (09 Aug 2015)
 
-  17 Feb 2015; Rick Farina <zerochaos@gentoo.org> +uhd-3.8.2.ebuild,
-  -uhd-3.7.2.ebuild, -uhd-3.8.0.ebuild:
-  version bump, cleanup old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +uhd-3.8.2.ebuild:
+  proj/gentoo: Initial commit
 
-  21 Jan 2015; Pacho Ramos <pacho@gentoo.org> uhd-3.8.0.ebuild:
-  Fix sandbox violations, #534582
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Nov 2014; Rick Farina <zerochaos@gentoo.org> uhd-3.8.0.ebuild:
-  switching to upstream zip file
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Nov 2014; Rick Farina <zerochaos@gentoo.org> uhd-3.8.0.ebuild:
-  pull keywords from uhd-3.8.0 while trying to resolve bug 527650
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*uhd-3.8.0 (29 Oct 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Oct 2014; Rick Farina <zerochaos@gentoo.org> +uhd-3.8.0.ebuild,
-  -uhd-3.7.1.ebuild:
-  version bump and new deps per depcheck
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*uhd-3.7.2 (22 Aug 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Aug 2014; Rick Farina <zerochaos@gentoo.org> +uhd-3.7.2.ebuild,
-  -uhd-3.4.3-r1.ebuild, -uhd-3.4.3-r2.ebuild, -uhd-3.4.3.ebuild,
-  -uhd-3.5.0.ebuild, -uhd-3.5.3.ebuild, -uhd-3.6.2.ebuild, -uhd-3.7.0.ebuild:
-  bump, remove a bunch of old/unneeded versions
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Apr 2014; Jason A. Donenfeld <zx2c4@gentoo.org> metadata.xml:
-  Add self to maintainers.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*uhd-3.7.1 (25 Apr 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Apr 2014; Jason A. Donenfeld <zx2c4@gentoo.org> +uhd-3.7.1.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-*uhd-3.7.0 (22 Feb 2014)
-*uhd-3.6.2 (22 Feb 2014)
-
-  22 Feb 2014; Rick Farina <zerochaos@gentoo.org> +uhd-3.6.2.ebuild,
-  +uhd-3.7.0.ebuild:
-  bump
-
-  16 Sep 2013; Rick Farina <zerochaos@gentoo.org> uhd-3.5.3.ebuild:
-  subslot dep on boost
-
-  05 Jun 2013; Rick Farina <zerochaos@gentoo.org> uhd-3.5.3.ebuild:
-  adding ~arm keyword
-
-*uhd-3.5.3 (30 May 2013)
-
-  30 May 2013; Rick Farina <zerochaos@gentoo.org> +uhd-3.5.3.ebuild:
-  now with more version bump
-
-*uhd-3.5.0 (27 Dec 2012)
-
-  27 Dec 2012; Rick Farina <zerochaos@gentoo.org> +uhd-3.5.0.ebuild:
-  version bump to 3.5.0
-
-*uhd-3.4.3-r2 (18 Oct 2012)
-
-  18 Oct 2012; Rick Farina <zerochaos@gentoo.org> +uhd-3.4.3-r2.ebuild:
-  fix QA violation wrt bug #437996
-
-*uhd-3.4.3-r1 (09 Oct 2012)
-
-  09 Oct 2012; Rick Farina <zerochaos@gentoo.org> +uhd-3.4.3-r1.ebuild:
-  so it seems uhd wasn't being properly installed at all, thanks to mossman for
-  telling me and making me fix this silly little bug
-
-  10 Sep 2012; Rick Farina <zerochaos@gentoo.org> uhd-3.4.3.ebuild:
-  radhermit points out that commits are free and I'm being lame by not saving
-  bytes in DEPEND
-
-  10 Sep 2012; Rick Farina <zerochaos@gentoo.org> uhd-3.4.3.ebuild:
-  remove redundant dep on cmake as pointed out by radhermit
-
-*uhd-3.4.3 (10 Sep 2012)
-
-  10 Sep 2012; Rick Farina <zerochaos@gentoo.org> +metadata.xml,
-  +uhd-3.4.3.ebuild:
-  initial commit of uhd

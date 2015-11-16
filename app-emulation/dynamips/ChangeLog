@@ -1,102 +1,58 @@
 # ChangeLog for app-emulation/dynamips
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/dynamips/ChangeLog,v 1.19 2015/06/09 11:07:58 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*dynamips-0.2.14-r1 (09 Aug 2015)
+*dynamips-0.2.12 (09 Aug 2015)
 
-  06 Apr 2015; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Reassign package, as Aaron Bauman is Gentoo developer now
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +dynamips-0.2.12.ebuild,
+  +dynamips-0.2.14-r1.ebuild, +files/0.2.14-docs.patch,
+  +files/dynamips-0.2.12-makefile.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*dynamips-0.2.14-r1 (28 Nov 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Nov 2014; Sergey Popov <pinkbyte@gentoo.org> -dynamips-0.2.14.ebuild,
-  +dynamips-0.2.14-r1.ebuild:
-  Revision bump: add use flag for building without IPv6 support, drop redundant
-  function definitions. Drop old revision
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*dynamips-0.2.14 (28 Nov 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Nov 2014; Ian Delaney <idella4@gentoo.org> +dynamips-0.2.14.ebuild,
-  +files/0.2.14-docs.patch, -dynamips-0.2.10.ebuild,
-  -files/dynamips-0.2.10-makefile.patch:
-  bump; build system has changed to cmake, patch to remove install_doc function
-  from cmake, drop disused patch & oldest version, closes bug #527550
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Nov 2014; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Reassigning to new maintainer
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Jun 2014; Sergey Popov <pinkbyte@gentoo.org> dynamips-0.2.10.ebuild,
-  dynamips-0.2.12.ebuild:
-  Set app-arch/unzip as build-time only dependency
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*dynamips-0.2.12 (13 Jun 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Jun 2014; Sergey Popov <pinkbyte@gentoo.org> -dynamips-0.2.8-r1.ebuild,
-  +dynamips-0.2.12.ebuild, -files/dynamips-0.2.8-makefile.patch,
-  +files/dynamips-0.2.12-makefile.patch:
-  Version bump, wrt bug #511914, thanks to Aaron Bauman <aaron AT
-  flappyport.com>. Drop old version
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*dynamips-0.2.10 (20 Oct 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Oct 2013; Sergey Popov <pinkbyte@gentoo.org> -dynamips-0.2.8_rc3.ebuild,
-  -dynamips-0.2.8.ebuild, -files/dynamips-0.2.8_rc3-makefile.patch,
-  +dynamips-0.2.10.ebuild, +files/dynamips-0.2.10-makefile.patch:
-  Version bump, drop old
+  Bug: https://bugs.gentoo.org/552720
 
-*dynamips-0.2.8-r1 (25 Aug 2013)
-
-  25 Aug 2013; Sergey Popov <pinkbyte@gentoo.org> +dynamips-0.2.8-r1.ebuild:
-  Revision bump: do not link to libelf statically, wrt bug #480940. Thanks to
-  James Cloos for discovering this issue
-
-  25 Aug 2013; Sergey Popov <pinkbyte@gentoo.org>
-  -dynamips-0.2.8_rc2-r1.ebuild, dynamips-0.2.8_rc3.ebuild,
-  dynamips-0.2.8.ebuild, -files/dynamips-0.2.8_rc2-makefile.patch:
-  Fix dependency on dev-libs/elfutils, wrt bug #480940. Drop old revision
-
-  15 Jul 2013; Sergey Popov <pinkbyte@gentoo.org>
-  +files/dynamips-0.2.8-makefile.patch:
-  Add missing makefile patch
-
-*dynamips-0.2.8 (15 Jul 2013)
-
-  15 Jul 2013; Sergey Popov <pinkbyte@gentoo.org> +dynamips-0.2.8.ebuild:
-  Version bump, wrt bug #476708. EAPI 5, enable verbose build, get rid of base
-  eclass, respect compiler
-
-  15 Jul 2013; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Add myself as primary maintainer, permission granted by Tony Vroon
-
-  05 May 2012; Peter Volkov <pva@gentoo.org> dynamips-0.2.8_rc3.ebuild:
-  Update HOMEPAGE.
-
-*dynamips-0.2.8_rc3 (17 May 2011)
-
-  17 May 2011; Tony Vroon <chainsaw@gentoo.org> +dynamips-0.2.8_rc3.ebuild,
-  +files/dynamips-0.2.8_rc3-makefile.patch:
-  Version bump to the GNS3 community release. All the hard patching work done
-  by Jan Bednar in bug #365049; ported to EAPI=3.
-
-  17 Oct 2010; <chainsaw@gentoo.org>
-  files/dynamips-0.2.8_rc2-makefile.patch:
-  Patch rediffed as per feedback by Samuli Suominen.
-
-*dynamips-0.2.8_rc2-r1 (17 Oct 2010)
-
-  17 Oct 2010; <chainsaw@gentoo.org> -dynamips-0.2.8_rc2.ebuild,
-  +dynamips-0.2.8_rc2-r1.ebuild, files/dynamips-0.2.8_rc2-makefile.patch:
-  Instill LDFLAGS respect into upstream Makefile. Closes bug #338169 by
-  Diego Elio "Flameeyes" Pettenò.
-
-  25 Aug 2009; Raúl Porcel <armin76@gentoo.org> dynamips-0.2.8_rc2.ebuild:
-  Add ~x86 wrt #281315
-
-*dynamips-0.2.8_rc2 (07 Aug 2009)
-
-  07 Aug 2009; <chainsaw@gentoo.org> +dynamips-0.2.8_rc2.ebuild,
-  +files/dynamips-0.2.8_rc2-makefile.patch, +metadata.xml:
-  Initial commit, ebuild sourced from Sunrise overlay but modified slightly.
-  With a warm thank you to Sergey Khalavchuck, Chad A. Simmons, Duncan
-  Lockwood, Mark Silinio and "haad". Closes bug #154491.

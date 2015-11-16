@@ -1,170 +1,58 @@
 # ChangeLog for dev-java/ant-contrib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ant-contrib/ChangeLog,v 1.39 2015/06/09 13:29:08 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*ant-contrib-1.0_beta3-r1 (09 Aug 2015)
+*ant-contrib-1.0_beta2-r2 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild, ant-contrib-1.0_beta3-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +ant-contrib-1.0_beta2-r2.ebuild, +ant-contrib-1.0_beta3-r1.ebuild,
+  +files/tests-visibility.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*ant-contrib-1.0_beta3-r1 (08 Jan 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Jan 2014; Tom Wijsman <TomWij@gentoo.org> +ant-contrib-1.0_beta3-r1.ebuild,
-  -ant-contrib-1.0_beta3.ebuild, ant-contrib-1.0_beta2-r2.ebuild:
-  Fixed up Copyright year. Revision bump for beta3, EAPI 5.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Feb 2010; Vlastimil Babka <caster@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  Fix building with ant 1.8.0, bug #305929.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Jan 2010; Alexis Ballier <aballier@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  keyword ~x86-fbsd, bug #231107 and fix find call to be bsd-compatible
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  Transfer Prefix keywords
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jul 2008; Markus Rothe <corsair@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  Added ~ppc64; bug #231107
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Jul 2008; Kenneth Prugh <ken69267@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  keyworded ~amd64, bug #231107
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Jul 2008; Petteri Räty <betelgeuse@gentoo.org>
-  ant-contrib-1.0_beta3.ebuild:
-  Add latest javatoolkit to DEPEND for cElementTree.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*ant-contrib-1.0_beta3 (07 Jul 2008)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Jul 2008; Petteri Räty <betelgeuse@gentoo.org>
-  +ant-contrib-1.0_beta3.ebuild:
-  Version bump. Fixes bug #229031.
+  Bug: https://bugs.gentoo.org/552720
 
-  09 Mar 2008; Petteri Räty <betelgeuse@gentoo.org>
-  +files/tests-visibility.patch, ant-contrib-1.0_beta2-r2.ebuild:
-  Use EANT_ variables and add a src_test but had to RESTRICT it because they
-  failed to find bcel.
-
-  04 Jan 2008; Vlastimil Babka <caster@gentoo.org>
-  -ant-contrib-1.0_beta2-r1.ebuild:
-  Clean old version.
-
-  25 Nov 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  Stable on ppc, bug #199231.
-
-  18 Nov 2007; Markus Rothe <corsair@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  Stable on ppc64; bug #199231
-
-  17 Nov 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  amd64 stable, bug #199231.
-
-  15 Nov 2007; Markus Meier <maekke@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  x86 stable, bug #199231
-
-  05 Oct 2007; Tom Gall <tgall@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  stable on ppc64
-
-  08 Sep 2007; Joseph Jezak <josejx@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  Marked ppc stable for bug #191613.
-
-  18 Jun 2007; Diego Pettenò <flameeyes@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  Add ~x86-fbsd keyword.
-
-  07 Jun 2007; Markus Rothe <corsair@gentoo.org>
-  ant-contrib-1.0_beta2-r2.ebuild:
-  Added ~ppc64; bug #180467
-
-  01 Jun 2007; Peter Weller <welp@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  Stable on amd64 wrt security bug 178389
-
-*ant-contrib-1.0_beta2-r2 (09 May 2007)
-
-  09 May 2007; Petteri Räty <betelgeuse@gentoo.org>
-  +ant-contrib-1.0_beta2-r2.ebuild:
-  Register task using java-pkg_register-ant-task so it doesn't automatically
-  get picked up any more. Reported in #177814.
-
-  26 Apr 2007; Vlastimil Babka <caster@gentoo.org>
-  -ant-contrib-1.0_beta2.ebuild:
-  Gen-1 punt.
-
-  26 Apr 2007; Christian Faulhammer <opfer@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  stable x86, bug 175982
-
-  25 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  Add dev-java/ant-core to RDEPEND.
-
-  30 Nov 2006; Vlastimil Babka <caster@gentoo.org>
-  ant-contrib-1.0_beta2.ebuild, ant-contrib-1.0_beta2-r1.ebuild:
-  Update xerces dep for upcoming 2.6 slotmove.
-
-  10 Sep 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  Added ~ppc.
-
-  05 Aug 2006; Joshua Nichols <nichoj@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  Addeding missing ant.jar, to satisfy java-strict.
-
-  22 Jul 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  ant-contrib-1.0_beta2-r1.ebuild:
-  ant_src_unpack -> src_unpack
-
-*ant-contrib-1.0_beta2-r1 (02 Jul 2006)
-
-  02 Jul 2006; Joshua Nichols <nichoj@gentoo.org>
-  +ant-contrib-1.0_beta2-r1.ebuild:
-  Revision bump to support new Java system. Added source use flag.
-
-  18 Dec 2005; Petteri Räty <betelgeuse@gentoo.org>
-  ant-contrib-1.0_beta2.ebuild:
-  Added a java-pkg_jar-from call for xerces-2 so that ant-contrib builds with
-  LOCALCLASSPATH disabled in /usr/bin/ant.
-
-*ant-contrib-1.0_beta2 (18 May 2005)
-
-  18 May 2005; Thomas Matthijs <axxo@gentoo.org>
-  +ant-contrib-1.0_beta2.ebuild:
-  version bump
-
-  22 Apr 2005; Simon Stelling <blubb@gentoo.org> :
-  stable on amd64
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org>
-  ant-contrib-1.0_beta1-r1.ebuild:
-  Keywords ~amd64.
-
-  16 Oct 2004; Thomas Matthijs <axxo@gentoo.org>
-  ant-contrib-1.0_beta1-r1.ebuild:
-  use java-pkg_dohtml instead of dohtml to also install the package-list in
-  case of api docs: #50740
-
-*ant-contrib-1.0_beta1-r1 (10 Sep 2004)
-
-  10 Sep 2004; Thomas Matthijs <axxo@gentoo.org>
-  +ant-contrib-1.0_beta1-r1.ebuild, -ant-contrib-1.0_beta1.ebuild:
-  revision bump: ant moved to ant-core
-
-  30 Aug 2004; Chris Aniszczyk <zx@gentoo.org> ant-contrib-1.0_beta1.ebuild:
-  Marking x86
-
-*ant-contrib-1.0_beta1 (31 Jul 2004)
-
-  31 Jul 2004; Thomas Matthijs <axxo@gentoo.org> +metadata.xml,
-  +ant-contrib-1.0_beta1.ebuild:
-  initial import, requested 58693

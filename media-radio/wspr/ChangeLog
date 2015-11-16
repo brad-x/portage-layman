@@ -1,109 +1,78 @@
 # ChangeLog for media-radio/wspr
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/wspr/ChangeLog,v 1.16 2015/05/18 14:32:00 tomjbe Exp $
+# (auto-generated from git log)
 
-*wspr-3.01-r1 (18 May 2015)
+*wspr-3.01-r1 (09 Aug 2015)
+*wspr-3.01 (09 Aug 2015)
+*wspr-2.00-r2 (09 Aug 2015)
 
-  18 May 2015; Thomas Beierlein <tomjbe@gentoo.org> wspr-3.01.ebuild,
-  +wspr-3.01-r1.ebuild, +files/wspr-3.01-numpy.patch:
-  Adapt to >=numpy-1.9.0 (bug #544504). Thanks Teun.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/wspr-2.00-PIL.patch, +files/wspr-2.00-libdir.patch,
+  +files/wspr-2.00-script.patch, +files/wspr-2.00-verbose.patch,
+  +files/wspr-3.01-PIL.patch, +files/wspr-3.01-numpy.patch,
+  +files/wspr-3.01-script.patch, +files/wspr-3.01-verbose.patch,
+  +metadata.xml, +wspr-2.00-r2.ebuild, +wspr-3.01.ebuild,
+  +wspr-3.01-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> wspr-2.00-r2.ebuild,
-  wspr-3.01.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*wspr-3.01 (26 Jun 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Jun 2014; Thomas Beierlein <tomjbe@gentoo.org> +wspr-3.01.ebuild,
-  +files/wspr-3.01-PIL.patch, +files/wspr-3.01-script.patch,
-  +files/wspr-3.01-verbose.patch:
-  Add newer version from SVN snapshot which does not segfault (bug #511630).
-  Thanks for reporting Teun
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Jul 2013; Thomas Beierlein <tomjbe@gentoo.org> -wspr-2.00.ebuild:
-  Drop pre EAPI=4 version wrt bug #478576
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jun 2013; Mike Gilbert <floppym@gentoo.org> wspr-2.00-r2.ebuild:
-  Depend on virtual/python-imaging.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml, wspr-3.01.ebuild,
+  wspr-3.01-r1.ebuild:
+  Use https by default
 
-*wspr-2.00-r2 (03 Jun 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jun 2013; Thomas Beierlein <tomjbe@gentoo.org> -wspr-2.00-r1.ebuild,
-  +wspr-2.00-r2.ebuild:
-  Make last patch a rev bump. Thanks Arfrever for pointing out
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jun 2013; Thomas Beierlein <tomjbe@gentoo.org> wspr-2.00-r1.ebuild,
-  +files/wspr-2.00-PIL.patch:
-  Fix import of PIL modules (Bug #471538)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Mar 2013; Thomas Beierlein <tomjbe@gentoo.org> wspr-2.00-r1.ebuild:
-  Improve build logic. Thanks for help Michal
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Mar 2013; Thomas Beierlein <tomjbe@gentoo.org> wspr-2.00-r1.ebuild:
-  Fix lookup for portaudio (bug #459024). Thanks for reporting Michal
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> wspr-2.00-r2.ebuild,
+  wspr-3.01.ebuild, wspr-3.01-r1.ebuild:
+  Sanitize virtual namespace of python packages
 
-*wspr-2.00-r1 (07 Feb 2013)
+  Rename virtual/MODULE to virtual/python-MODULE
 
-  07 Feb 2013; Thomas Beierlein <tomjbe@gentoo.org> +wspr-2.00-r1.ebuild,
-  +files/wspr-2.00-libdir.patch, +files/wspr-2.00-script.patch,
-  +files/wspr-2.00-verbose.patch:
-  Migrate to distutils-r1 and use virtual/pmw (bug #453570)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jan 2013; Justin Lecher <jlec@gentoo.org> wspr-2.00.ebuild, metadata.xml:
-  Fix SLOT for pmw
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> wspr-2.00-r2.ebuild,
+  wspr-3.01.ebuild, wspr-3.01-r1.ebuild:
+  Convert from virtual/python-imaging to plain dev-python/pillow
 
-  19 Oct 2012; Justin Lecher <jlec@gentoo.org> wspr-2.00.ebuild, metadata.xml:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> wspr-2.00.ebuild:
-  Add dependency on virtual/fortran
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> wspr-2.00.ebuild:
-  Added fortran-2.eclass support
-
-  10 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  wspr-2.00.ebuild:
-  Use Python 2 (bug #362339).
-
-*wspr-2.00 (03 Apr 2011)
-
-  03 Apr 2011; Thomas Beierlein <tomjbe@gentoo.org> +wspr-2.00.ebuild,
-  +metadata.xml:
-  Moved from sunrise
-
-  14 Mar 2011; Justin Lecher <jlec@gentoo.org> wspr-2.00.ebuild:
-  Removed almost deprecated fortran.eclass
-
-  01 Apr 2010; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  fix for changes in python.eclass
-
-  25 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
-  fix metadata.xml
-
-  22 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  use fortran.eclass
-
-  21 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  added dependency on gcc[fortran]
-
-  20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  Simplify MY_P. Thanks Tommy[D]
-
-  20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  simplify sed expression
-
-  20 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-2.00.ebuild:
-  added || die to insinto
-
-  19 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> -wspr-1.12.ebuild,
-  +wspr-2.00.ebuild:
-  Version bump
-
-  17 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> wspr-1.12.ebuild:
-  fix minor configuration problem
-
-  03 Nov 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de> +wspr-1.12.ebuild,
-  +metadata.xml:
-  New ebuild for bug 291186. Thanks Tommy[D] for thorough review and help.

@@ -1,58 +1,56 @@
 # ChangeLog for dev-ada/florist
-# Copyright 2002-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ada/florist/ChangeLog,v 1.17 2015/07/22 20:40:45 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -florist-2006.0.ebuild:
-  Remove old.
+*florist-2007.0 (09 Aug 2015)
 
-*florist-2007.0 (23 Jan 2008)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +florist-2007.0.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Jan 2008; George Shapovalov <george@gentoo.org> florist-2006.0.ebuild,
-  +florist-2007.0.ebuild:
-  added new version, now that we can correctly depend on a proper Ada standard
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 May 2007; George Shapovalov <george@gentoo.org>
-  -files/florist-3.15p-fix.patch, -florist-3.15p.ebuild:
-  removed old style version
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*florist-2006.0 (03 Feb 2007)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Feb 2007; George Shapovalov <george@gentoo.org> metadata.xml,
-  +florist-2006.0.ebuild:
-  added new, new-style, version
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Jan 2007; Marius Mauch <genone@gentoo.org> florist-3.15p.ebuild:
-  Replacing einfo with elog
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 May 2006; George Shapovalov <george@gentoo.org> florist-3.15p.ebuild:
-  removed inherit gnat until adapted for new eclass
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Feb 2005; David Holm <dholm@gentoo.org> +files/florist-3.15p-fix.patch,
-  florist-3.15p.ebuild:
-  Added compilation fix submitted by David Barbassat <david (dot) barbassat
-  (at) nerim (dot) net> (Bug #72383)
-  Stable on ppc
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Jun 2004; Aron Griffis <agriffis@gentoo.org> florist-3.15p.ebuild:
-  add sed-4 dep
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Oct 2003; David Holm <dholm@gentoo.org> florist-3.15p.ebuild:
-  Added to ADA_INCLUDE_PATH and ADA_OBJECTS_PATH. Masked on systems with
-  GNAT-5.*.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Oct 2003; David Holm <dholm@gentoo.org> florist-3.15p.ebuild:
-  Moved to stable on x86.
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Sep 2003; David Holm <dholm@gentoo.org> florist-3.15p.ebuild:
-  Added to ~ppc.
-
-  17 Aug 2003; David Holm <dholm@gentoo.org> metadata.xml:
-  Added metadata.xml.
-
-*florist-3.15p (24 Jul 2003)
-
-  24 Jul 2003; George Shapovalov <george@gentoo.org> florist-3.15p.ebuild, Manifest, files/{digest-florist-3.15p} :
-  initial release (#11290)
-  POSIX Ada Bindings
-  ebuild submitted by Mikko Ala-Fossi <maf@iki.fi>
-  and cleaned up and made GNAE compatible by David Holm <dholm@telia.com>

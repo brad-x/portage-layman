@@ -1,76 +1,56 @@
 # ChangeLog for dev-vcs/cvsspam
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cvsspam/ChangeLog,v 1.3 2014/02/04 01:42:14 creffett Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  04 Feb 2014; Chris Reffett <creffett@gentoo.org> cvsspam-0.2.12.ebuild:
-  EAPI bump
+*cvsspam-0.2.12 (09 Aug 2015)
 
-  22 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  cvsspam-0.2.12.ebuild:
-  dev-util/subversion renamed to dev-vcs/subversion.
-
-  06 Mar 2010; Ulrich Mueller <ulm@gentoo.org> +cvsspam-0.2.12.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +cvsspam-0.2.12.ebuild,
   +files/cvsspam-0.2.12-svn.patch, +metadata.xml:
-  Move cvsspam from dev-util to dev-vcs, bug 56967. Use global subversion
-  USE flag instead of local svn flag. Remove stale patch.
+  proj/gentoo: Initial commit
 
-  03 Mar 2010; Markos Chandras <hwoarang@gentoo.org> -cvsspam-0.2.11.ebuild,
-  -cvsspam-0.2.11-r1.ebuild, cvsspam-0.2.12.ebuild,
-  +files/cvsspam-0.2.12-svn.patch:
-  Add svn use flag. Include patch from Ben Taitelbaum
-  <btaitelb@cs.oberlin.edu>. EAPI2fy it and keyworded for amd64. Fixes bug
-  #157014
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> cvsspam-0.2.11.ebuild,
-  cvsspam-0.2.11-r1.ebuild, cvsspam-0.2.12.ebuild:
-  Remove virtual/libc
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml,
-  cvsspam-0.2.11.ebuild, cvsspam-0.2.11-r1.ebuild, cvsspam-0.2.12.ebuild:
-  Removing Masatomo Nakano (nakano, #200340) from metadata.xml. Fixing the
-  minor syntax errors.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Aug 2005; Michael Hanselmann <hansmi@gentoo.org>
-  cvsspam-0.2.11-r1.ebuild:
-  Stable on ppc.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*cvsspam-0.2.12 (13 Jul 2005)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Jul 2005; Masatomo Nakano <nakano@gentoo.org> +cvsspam-0.2.12.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jun 2005; Masatomo Nakano <nakano@gentoo.org> cvsspam-0.2.11-r1.ebuild:
-  Marked stable on x86.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*cvsspam-0.2.11-r1 (16 May 2005)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 May 2005; Masatomo Nakano <nakano@gentoo.org>
-  +files/cvsspam-0.2.11-gentoo.patch, +cvsspam-0.2.11-r1.ebuild:
-  Added two bug fixing patches. (#63463)
+  Bug: https://bugs.gentoo.org/552720
 
-  12 May 2005; Masatomo Nakano <nakano@gentoo.org> cvsspam-0.2.11.ebuild:
-  Fixed DESCRIPTION.
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> cvsspam-0.2.11.ebuild:
-  Stable on ppc.
-
-  26 Dec 2004; Masatomo Nakano <nakano@gentoo.org> -cvsspam-0.2.10.ebuild,
-  cvsspam-0.2.11.ebuild:
-  Marked stable on x86.
-
-*cvsspam-0.2.11 (13 Dec 2004)
-
-  13 Dec 2004; Masatomo Nakano <nakano@gentoo.org> +cvsspam-0.2.11.ebuild:
-  Version bump.
-
-  03 Sep 2004; David Holm <dholm@gentoo.org> cvsspam-0.2.10.ebuild:
-  Added to ~ppc.
-
-*cvsspam-0.2.10 (27 Aug 2004)
-
-  27 Aug 2004; Masatomo Nakano <nakano@gentoo.org> +metadata.xml,
-  +cvsspam-0.2.10.ebuild:
-  Initial import.

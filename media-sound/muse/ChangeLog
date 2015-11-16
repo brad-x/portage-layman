@@ -1,100 +1,57 @@
 # ChangeLog for media-sound/muse
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/muse/ChangeLog,v 1.26 2012/05/05 08:44:22 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> muse-0.9.2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+*muse-0.9.2 (09 Aug 2015)
 
-  28 Mar 2011; Tim Harder <radhermit@gentoo.org> muse-0.9.2.ebuild:
-  Update to EAPI 2 and use slot dep for gtk+.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/muse-0.9.2-asneeded.patch, +files/muse-0.9.2-gcc43.patch,
+  +metadata.xml, +muse-0.9.2.ebuild:
+  proj/gentoo: Initial commit
 
-  22 Apr 2008; Samuli Suominen <drac@gentoo.org>
-  +files/muse-0.9.2-gcc43.patch, muse-0.9.2.ebuild:
-  Fix for GCC 4.3 by Peter Alfredsen wrt #218923.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Feb 2008; Samuli Suominen <drac@gentoo.org>
-  -files/muse-0.9.1-include.patch, -files/muse-0.9.1-miscfixes.patch,
-  -muse-0.9.1.ebuild:
-  Remove last GTK+-1.2 version reverting sparc back to ~sparc wrt #205452.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Feb 2008; Samuli Suominen <drac@gentoo.org> muse-0.9.2.ebuild:
-  amd64 stable wrt #205452
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 Jan 2008; Christian Faulhammer <opfer@gentoo.org> muse-0.9.2.ebuild:
-  stable x86, bug 205452
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> muse-0.9.1.ebuild:
-  (QA) RESTRICT clean up.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org> muse-0.9.ebuild,
-  muse-0.9.1.ebuild, muse-0.9.2.ebuild:
-  Convert to use elog.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*muse-0.9.2 (12 Nov 2006)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Nov 2006; Alexis Ballier <aballier@gentoo.org>
-  +files/muse-0.9.2-asneeded.patch, +muse-0.9.2.ebuild:
-  Version bump, wrt to bug #122409
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 May 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  -files/muse-0.8.1-strings.patch, -muse-0.7.2.ebuild,
-  -muse-0.8.1-r1.ebuild, muse-0.9.1.ebuild:
-  Dont make use of the deprecated oggvorbis useflag any longer, see #94254.
-  0.9.1 stable on amd64.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> muse-0.9.1.ebuild:
-  added ~amd64 to KEYWORDS. fixes #79925
-
-*muse-0.9.1 (21 Jan 2005)
-
-  21 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  +files/muse-0.9.1-include.patch, +files/muse-0.9.1-miscfixes.patch,
-  +muse-0.9.1.ebuild:
-  added a patch that fixes compilation issues. version bump. fixes bug #75986.
-  thanks to Diego Pettenò <dgp85@users.sourceforge.net>
-
-  18 Dec 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.9.ebuild:
-  Stable sparc.
-
-  23 Nov 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.9.ebuild:
-  Added to ~sparc.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.7.2.ebuild:
-  virtual/glibc -> virtual/libc
-
-  30 May 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.9.ebuild:
-  Stable x86.
-
-  25 Apr 2004; Aron Griffis <agriffis@gentoo.org> muse-0.7.2.ebuild:
-  Add die following econf for bug 48950
-
-  19 Apr 2004; David Holm <dholm@gentoo.org> muse-0.9.ebuild:
-  Added to ~ppc.
-
-*muse-0.9 (18 Apr 2004)
-
-  18 Apr 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.9.ebuild,
-  files/muse-0.9-locale-Makefile.patch:
-  Version bump closes bug #32933.
-
-  03 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.8.1-r1.ebuild:
-  Stable on x86
-
-*muse-0.8.1-r1 (03 Mar 2004)
-
-  03 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> muse-0.8.1-r1.ebuild,
-  files/muse-0.8.1-strings.patch:
-  Fix multi-line strings.  vorbis is required.  Fixes bug #32933.
-
-*muse-0.8.1 (27 Sep 2003)
-
-  27 Sep 2003; jje <jje@gentoo.org> :
-  Version bump.
-
-*muse-0.7.2 (08 Mar 2003)
-
-  08 Mar 2003; jje <jje@gentoo.org> muse-0.7.2.ebuild:
-  Initial revision.
-  
-  Submitted by Jaromil, Maurizio Disimino. Help from j2.
+  Bug: https://bugs.gentoo.org/552720
 

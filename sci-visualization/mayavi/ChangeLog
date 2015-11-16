@@ -1,160 +1,62 @@
 # ChangeLog for sci-visualization/mayavi
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/mayavi/ChangeLog,v 1.33 2015/06/03 21:00:03 mrueg Exp $
+# (auto-generated from git log)
 
-  03 Jun 2015; Manuel Rüger <mrueg@gentoo.org> -mayavi-4.1.0-r1.ebuild,
-  -mayavi-4.2.0.ebuild:
-  Remove old.
+*mayavi-4.3.0 (09 Aug 2015)
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> mayavi-4.3.0.ebuild:
-  amd64 stable, bug 540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mayavi-4.1.0-vtkQt.patch, +files/mayavi-4.2.0-doc.patch,
+  +mayavi-4.3.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*mayavi-4.3.0 (16 Apr 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Apr 2013; Ian Delaney <idella4@gentoo.org> +mayavi-4.3.0.ebuild:
-  bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.2.0.ebuild,
-  metadata.xml:
-  Keyword amd64-linux and x86-linux
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*mayavi-4.2.0 (06 Dec 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Dec 2012; Justin Lecher <jlec@gentoo.org> -mayavi-4.1.0.ebuild,
-  mayavi-4.1.0-r1.ebuild, +mayavi-4.2.0.ebuild, +files/mayavi-4.2.0-doc.patch:
-  Drop old; restrict tests as they are broken, #422951; only build docs with
-  USE=doc and only once, #445782; Version Bump; Add missing Deps
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> mayavi-4.3.0.ebuild:
+  Use https by default
 
-  05 Mar 2012; Justin Lecher <jlec@gentoo.org> mayavi-4.1.0.ebuild,
-  mayavi-4.1.0-r1.ebuild:
-  Add missing RDEP on dev-python/wxpython
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Mar 2012; Justin Lecher <jlec@gentoo.org> mayavi-4.1.0.ebuild,
-  mayavi-4.1.0-r1.ebuild:
-  Resort deps
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*mayavi-4.1.0-r1 (05 Mar 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Mar 2012; Justin Lecher <jlec@gentoo.org> -mayavi-3.4.1.ebuild,
-  -mayavi-4.0.0.ebuild, mayavi-4.1.0.ebuild, +mayavi-4.1.0-r1.ebuild,
-  +files/mayavi-4.1.0-vtkQt.patch:
-  Drop old, #322191; restrict multiabi installation, #405541; include backport
-  patch from upstream, fixes compilation with newer vtk, #399537
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Feb 2012; Justin Lecher <jlec@gentoo.org> mayavi-3.4.1.ebuild,
-  metadata.xml:
-  Cosmetic changes on DESCRIPTION and HOMEPAGE
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*mayavi-4.1.0 (17 Jan 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +mayavi-4.1.0.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  09 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.0.0.ebuild:
-  Added more run dependencies
-
-  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.0.0.ebuild:
-  Added dependencies to traitsui
-
-*mayavi-4.0.0 (04 Aug 2011)
-
-  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +mayavi-4.0.0.ebuild:
-  Version bump. Possible API break.
-
-  01 Feb 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.4.1.ebuild,
-  metadata.xml:
-  Removed doc building because buggy. Now unzip the bundled docs and link in
-  proper directory, fixing bug #341753. Updated longdescription to reflect
-  mayavi2
-
-  01 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -mayavi-1.5-r1.ebuild, -files/mayavi-1.5-tkinter_objects.patch:
-  Delete.
-
-*mayavi-3.4.1 (30 Jan 2011)
-
-  30 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -mayavi-3.4.0.ebuild, +mayavi-3.4.1.ebuild:
-  Version bump.
-
-*mayavi-3.4.0 (18 Oct 2010)
-
-  18 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -mayavi-3.3.2.ebuild, +mayavi-3.4.0.ebuild:
-  Version bump.
-
-*mayavi-3.3.2 (31 May 2010)
-
-  31 May 2010; Justin Lecher <jlec@gentoo.org> mayavi-1.5-r1.ebuild,
-  mayavi-3.3.0.ebuild, mayavi-3.3.1.ebuild, +mayavi-3.3.2.ebuild:
-  Version Bump, fixes incompatibility with vtk-5.6* #322117, fixes for
-  PYTHON ABI support #316255
-
-*mayavi-3.3.1 (21 Mar 2010)
-
-  21 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> +mayavi-3.3.1.ebuild:
-  Version bump
-
-  15 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.3.0.ebuild:
-  Added use dependencies for qt4 and wxwidgets
-
-  15 Mar 2010; Sébastien Fabbro <bicatali@gentoo.org> -mayavi-3.2.0.ebuild,
-  mayavi-3.3.0.ebuild:
-  Fixed building with new setuptools, bug #308213
-
-  14 Sep 2009; Andrey Grozin <grozin@gentoo.org> mayavi-3.3.0.ebuild,
-  +files/mayavi-3.3.0-nodocs.patch:
-  Documentation generation requires X, so docs are cached on Gentoo mirrors.
-  Closing bug #284080.
-
-*mayavi-3.3.0 (06 Sep 2009)
-
-  06 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -mayavi-3.1.0.ebuild, +mayavi-3.3.0.ebuild:
-  Version bump.
-
-  12 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.2.0.ebuild:
-  Removed wxwindows flag, since it is mandatory even with qt
-
-  18 Jun 2009; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.2.0.ebuild:
-  Forced wxwidgets dependency (bug #266799) and added X for PyQt4 (bug
-  #272180)
-
-*mayavi-3.2.0 (27 Mar 2009)
-
-  27 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.1.0.ebuild,
-  +mayavi-3.2.0.ebuild:
-  Version bump and fixed wxwindows dependencies
-
-  20 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.1.0.ebuild:
-  Introduce wxwindows and qt4 flags to enforce opengl, closing bug #261402
-
-  25 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org> -mayavi-1.5.ebuild,
-  mayavi-1.5-r1.ebuild:
-  Removed obsolete revision
-
-*mayavi-1.5-r1 (16 Jan 2009)
-
-  16 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/mayavi-1.5-tkinter_objects.patch, +mayavi-1.5-r1.ebuild:
-  Fix for tkinter object and typo, bug #255108, thanks Colin Macdonald
-
-*mayavi-3.1.0 (15 Jan 2009)
-
-  15 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> mayavi-1.5.ebuild,
-  +mayavi-3.1.0.ebuild:
-  New Enthought version for Mayavi2
-
-  27 Oct 2008; Sébastien Fabbro <bicatali@gentoo.org> mayavi-1.5.ebuild:
-  Switch to EAPI=2 with use dependencies
-
-  27 Apr 2007; Sébastien Fabbro <bicatali@gentoo.org> mayavi-1.5.ebuild:
-  slotting 2->1
-
-*mayavi-1.5 (24 Apr 2007)
-
-  24 Apr 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +mayavi-1.5.ebuild:
-  Initial import. Closing bug #50464. Thanks to Colin Macdonald <cbm@sfu.ca>,
-  Simon-Nicolas Roth <simon.roth@videotron.ca> and others in the bug mentioned
-  for their work.

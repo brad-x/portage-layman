@@ -1,117 +1,59 @@
 # ChangeLog for media-plugins/vdr-pvr350
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-pvr350/ChangeLog,v 1.23 2014/03/03 12:01:08 hd_brummy Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  03 Mar 2014; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-pvr350-1.7.5.ebuild:
-  depend fixed
+*vdr-pvr350-1.7.5 (09 Aug 2015)
+*vdr-pvr350-1.7.4 (09 Aug 2015)
+*vdr-pvr350-1.7.3 (09 Aug 2015)
 
-*vdr-pvr350-1.7.5 (03 Mar 2014)
-
-  03 Mar 2014; Joerg Bornkessel <hd_brummy@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +vdr-pvr350-1.7.3.ebuild, +vdr-pvr350-1.7.4.ebuild,
   +vdr-pvr350-1.7.5.ebuild:
-  bump, keyword ~amd64
+  proj/gentoo: Initial commit
 
-  28 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org> vdr-pvr350-1.7.3.ebuild,
-  vdr-pvr350-1.7.4.ebuild:
-  fix mirror name
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*vdr-pvr350-1.7.4 (27 Jun 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -files/vdr-pvr350-0.0.4.20070807-vdr-1.6.0.diff,
-  -files/vdr-pvr350-0.0.4_pre1-vdr-1.3.42.diff, vdr-pvr350-1.7.3.ebuild,
-  +vdr-pvr350-1.7.4.ebuild, -files/pvr-linux-headers.diff:
-  bump; cleanup; vdr-plugin-2.eclass; eapi=4; new homepage; use mirror; fixed
-  use-flag check
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*vdr-pvr350-1.7.3 (15 Sep 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Sep 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-pvr350-1.7.3.ebuild, -vdr-pvr350-2008.09.07.ebuild:
-  version bump, fix #364669
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Dec 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-pvr350-2008.09.07.ebuild:
-  removed ivtv depend; bug #263295
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  -vdr-pvr350-0.0.4_pre1.ebuild, -vdr-pvr350-0.0.4.20070807.ebuild,
-  -vdr-pvr350-2008.05.30.ebuild:
-  clean out old, dep-broken ebuilds
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Apr 2009; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-2008.09.07.ebuild:
-  Marked stable on x86, Bug #264148.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Nov 2008; Diego E. Pettenò <flameeyes@gentoo.org>
-  files/vdr-pvr350-0.0.4_pre1-vdr-1.3.42.diff:
-  Fix patch with absolute paths.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*vdr-pvr350-2008.09.07 (04 Oct 2008)
-
-  04 Oct 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +vdr-pvr350-2008.09.07.ebuild:
-  Version bumped. It contains various improvements, look into HISTORY for
-  details. Please note, that it will not work with vdr-1.7.1.
-
-  01 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
-
-  01 Jul 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-0.0.4_pre1.ebuild, vdr-pvr350-0.0.4.20070807.ebuild,
-  vdr-pvr350-2008.05.30.ebuild:
-  Add missing a52dec dependency on the newer ebuilds, thanks to gehlhajo.
-  Use BUILD_PARAMS to set additional build parameters.
-
-*vdr-pvr350-2008.05.30 (02 Jun 2008)
-
-  02 Jun 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +vdr-pvr350-2008.05.30.ebuild:
-  Version bumped.
-
-  28 Apr 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-0.0.4.20070807.ebuild:
-  Fixed quoting.
-
-  01 Apr 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-pvr350-0.0.4.20070807-vdr-1.6.0.diff,
-  vdr-pvr350-0.0.4_pre1.ebuild, vdr-pvr350-0.0.4.20070807.ebuild:
-  Make plugin compatible to vdr-1.6.0
-
-*vdr-pvr350-0.0.4.20070807 (19 Aug 2007)
-
-  19 Aug 2007; Matthias Schwarzott <zzam@gentoo.org>
-  +files/pvr-linux-headers.diff, +vdr-pvr350-0.0.4.20070807.ebuild:
-  Version bumped.
-
-  05 Jan 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-pvr350-0.0.4_pre1.ebuild:
-  einfo converted to elog
-
-  04 Jan 2007; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-0.0.4_pre1.ebuild:
-  Marked stable on x86.
-
-  15 Aug 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-0.0.4_pre1.ebuild:
-  No longer use internal vdr-plugin.eclass-variable.
-
-  15 Aug 2006; Matthias Schwarzott <zzam@gentoo.org> metadata.xml:
-  Assigned to Gentoo VDR Project.
-
-  15 May 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-pvr350-0.0.4_pre1.ebuild:
-  Now inherits eutils.eclass
-
-  14 Apr 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-pvr350-0.0.4_pre1-vdr-1.3.42.diff,
-  vdr-pvr350-0.0.4_pre1.ebuild:
-  Added patch to work with vdr-1.3.42 and greater - Thanks to Harri Kaimio
-  <harri@kaimio.fi> - See Bug #128867
-
-*vdr-pvr350-0.0.4_pre1 (21 Mar 2006)
-
-  21 Mar 2006; Matthias Schwarzott <zzam@gentoo.org> +metadata.xml,
-  +vdr-pvr350-0.0.4_pre1.ebuild:
-  Imported from gentoo.de.
+  Bug: https://bugs.gentoo.org/552720
 

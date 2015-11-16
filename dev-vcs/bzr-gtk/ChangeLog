@@ -1,98 +1,65 @@
 # ChangeLog for dev-vcs/bzr-gtk
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/bzr-gtk/ChangeLog,v 1.22 2014/12/25 00:03:12 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*bzr-gtk-0.104.0-r1 (25 Dec 2014)
+*bzr-gtk-0.104.0-r1 (09 Aug 2015)
+*bzr-gtk-0.104.0 (09 Aug 2015)
+*bzr-gtk-0.103.0 (09 Aug 2015)
 
-  25 Dec 2014; Michał Górny <mgorny@gentoo.org> +bzr-gtk-0.104.0-r1.ebuild:
-  Convert to distutils-r1.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bzr-gtk-0.103.0.ebuild,
+  +bzr-gtk-0.104.0.ebuild, +bzr-gtk-0.104.0-r1.ebuild, +files/credits.pickle,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Nov 2014; Pacho Ramos <pacho@gentoo.org> -bzr-gtk-0.100.0.ebuild,
-  metadata.xml:
-  Drop old (#508854)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bzr-gtk-0.103.0.ebuild:
-  Stable for x86, wrt bug #418969
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Oct 2012; Markos Chandras <hwoarang@gentoo.org> bzr-gtk-0.103.0.ebuild:
-  Stable on amd64 wrt bug #418969
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*bzr-gtk-0.104.0 (08 Oct 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Oct 2012; Christian Faulhammer <fauli@gentoo.org> +bzr-gtk-0.104.0.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> bzr-gtk-0.100.0.ebuild,
-  bzr-gtk-0.103.0.ebuild:
-  Drop alpha keywords
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bzr-gtk-0.103.0 (17 Mar 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Mar 2012; Christian Faulhammer <fauli@gentoo.org> +bzr-gtk-0.103.0.ebuild:
-  version bump, GTK+/Gnome 3 support
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> bzr-gtk-0.103.0.ebuild,
+  bzr-gtk-0.104.0.ebuild, bzr-gtk-0.104.0-r1.ebuild:
+  Convert all URIs for launchpad.net from http to https
 
-  05 Feb 2012; Christian Faulhammer <fauli@gentoo.org> bzr-gtk-0.100.0.ebuild:
-  Do not install Nautilus extension if USE=nautilus is disabled, also block if
-  nautilus 3.0 or later is used...adjust some dependencies, reported in bug
-  394515 by Alexandre Rostovtsev
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Feb 2012; Christian Faulhammer <fauli@gentoo.org> -bzr-gtk-0.99.0.ebuild:
-  clean up
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Jan 2012; Thomas Kahle <tomka@gentoo.org> bzr-gtk-0.100.0.ebuild:
-  x86 stable per bug 383751
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Jan 2012; Tobias Klausmann <klausman@gentoo.org> bzr-gtk-0.100.0.ebuild:
-  Stable on alpha, bug #383751
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Oct 2011; Markos Chandras <hwoarang@gentoo.org> bzr-gtk-0.100.0.ebuild:
-  Stable on amd64 wrt bug #383751
-
-*bzr-gtk-0.100.0 (03 Mar 2011)
-
-  03 Mar 2011; Christian Faulhammer <fauli@gentoo.org>
-  +bzr-gtk-0.100.0.ebuild:
-  version bump
-
-  25 Feb 2011; Christian Faulhammer <fauli@gentoo.org>
-  -bzr-gtk-0.98.0.ebuild:
-  clean up
-
-  22 Jan 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  bzr-gtk-0.99.0.ebuild:
-  x86 stable wrt bug #346985
-
-  12 Jan 2011; Markos Chandras <hwoarang@gentoo.org> bzr-gtk-0.99.0.ebuild:
-  Stable on amd64 wrt bug #346985
-
-  14 Nov 2010; Christian Faulhammer <fauli@gentoo.org>
-  bzr-gtk-0.99.0.ebuild:
-  make dev-python/notify-python mandatory and eliminate libnotify USE flag,
-  as reported by Alex Barker <alex AT 1stleg DOT com> in bug 345127
-
-*bzr-gtk-0.99.0 (02 Sep 2010)
-
-  02 Sep 2010; Christian Faulhammer <fauli@gentoo.org>
-  +bzr-gtk-0.99.0.ebuild, +files/credits.pickle:
-  version bump with fix for missing credits.pickle file, taken from Ubuntu
-  package
-
-  12 Aug 2010; Christian Faulhammer <fauli@gentoo.org>
-  bzr-gtk-0.98.0.ebuild:
-  limit to Bazaar versions below 2.2.0
-
-  27 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
-  bzr-gtk-0.98.0.ebuild:
-  fix bug 329463 by restricting Python ABIs to 2.*, Bazaar itself has no
-  Python 3 support
-
-  10 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bzr-gtk-0.98.0.ebuild:
-  Use PYTHON_DEPEND instead of NEED_PYTHON.
-
-*bzr-gtk-0.98.0 (08 Mar 2010)
-
-  08 Mar 2010; Christian Faulhammer <fauli@gentoo.org>
-  +bzr-gtk-0.98.0.ebuild, +metadata.xml:
-  initial commit, ebuild taken from Bazaar overlay, collaborate work from
-  Mark Lee and myself...fixes bug 154959

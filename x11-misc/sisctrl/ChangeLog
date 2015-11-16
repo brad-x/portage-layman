@@ -1,80 +1,57 @@
 # ChangeLog for x11-misc/sisctrl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/sisctrl/ChangeLog,v 1.19 2014/07/01 23:59:38 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  01 Jul 2014; Jeroen Roovers <jer@gentoo.org> sisctrl-0.0.20051202.ebuild,
-  files/sisctrl-0.0.20051202-no-xv.patch:
-  Add -lm. Clean up patch.
+*sisctrl-0.0.20051202 (09 Aug 2015)
 
-  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
-  sisctrl-0.0.20051202.ebuild:
-  Update HOMEPAGE wrt #416097 by "df"
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sisctrl-0.0.20051202-no-xv.patch, +metadata.xml,
+  +sisctrl-0.0.20051202.ebuild:
+  proj/gentoo: Initial commit
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> sisctrl-0.0.20051202.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Mar 2011; Kevin McCarthy <signals@gentoo.org> sisctrl-0.0.20051202.ebuild:
-  Slotted gtk+ and glib depends and EAPI=2 bump to support it.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 May 2007; Raúl Porcel <armin76@gentoo.org>
-  sisctrl-0.0.20051202.ebuild:
-  x86 stable wrt #178600
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*sisctrl-0.0.20051202 (15 Nov 2006)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Nov 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/sisctrl-0.0.20051202-no-xv.patch, +sisctrl-0.0.20051202.ebuild:
-  Version bump, fix bug #149343 and #155208.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  sisctrl-0.0.20031119.ebuild, sisctrl-0.0.20050618.ebuild:
-  Fixed DEPEND for modular X.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Jan 2006; Mike Frysinger <vapier@gentoo.org>
-  +files/sisctrl-0.0.20050618-no-xv.patch, sisctrl-0.0.20050618.ebuild:
-  Cleanup ebuild and fix building when xv is disabled.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Sep 2005; Luis Medinas <metalgod@gentoo.org>
-  sisctrl-0.0.20050618.ebuild:
-  Added ~amd64 keywords. Closes bug #106012.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Jun 2005; Jonathan Smith <smithj@gentoo.org>
-  -sisctrl-0.0.20050320.ebuild:
-  ebuild cleanup
-
-*sisctrl-0.0.20050618 (19 Jun 2005)
-
-  19 Jun 2005; Jonathan Smith <smithj@gentoo.org>
-  +sisctrl-0.0.20050618.ebuild:
-  version bump for #81705
-
-*sisctrl-0.0.20050320 (16 Jun 2005)
-
-  16 Jun 2005; Jonathan Smith <smithj@gentoo.org>
-  -sisctrl-0.0.20041129.ebuild, +sisctrl-0.0.20050320.ebuild:
-  version bump for #81705
-
-*sisctrl-0.0.20041129 (05 Dec 2004)
-
-  05 Dec 2004; <pyrania@gentoo.org> +sisctrl-0.0.20041129.ebuild:
-  Version bump.
-
-  13 Jun 2004; Donnie Berkholz <spyderous@gentoo.org>;
-  sisctrl-0.0.20031119.ebuild:
-  Change x11-base/xfree dependency to virtual/x11 (#52153).
-
-  11 Apr 2004; Markus Nigbur <pyrania@gentoo.org> sisctrl-0.0.20031119.ebuild:
-  Marked stable.
-
-  21 Mar 2004; Martin Holzer <mholzer@gentoo.org> sisctrl-0.0.20031119.ebuild:
-  adding categorie. see 45110 for details
-
-*sisctrl-0.0.20031119 (23 Nov 2003)
-
-  23 Nov 2003; Ian Leitch <port001@gentoo.org> sisctrl-0.0.20031119.ebuild:
-  Initial commit, thanks to Terje Kvernes <terjekv@math.uio.no> for submiting
-  the original ebuild and others for testing - #26073
+  Bug: https://bugs.gentoo.org/552720
 

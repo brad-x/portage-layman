@@ -1,103 +1,63 @@
 # ChangeLog for dev-embedded/srecord
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/srecord/ChangeLog,v 1.23 2015/06/09 13:24:19 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*srecord-1.64 (09 Aug 2015)
+*srecord-1.63 (09 Aug 2015)
+*srecord-1.62 (09 Aug 2015)
+*srecord-1.61 (09 Aug 2015)
+*srecord-1.60 (09 Aug 2015)
+*srecord-1.59 (09 Aug 2015)
 
-*srecord-1.64 (04 Dec 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/srecord-1.57-libtool.patch, +metadata.xml, +srecord-1.59.ebuild,
+  +srecord-1.60.ebuild, +srecord-1.61.ebuild, +srecord-1.62.ebuild,
+  +srecord-1.63.ebuild, +srecord-1.64.ebuild:
+  proj/gentoo: Initial commit
 
-  04 Dec 2014; Tim Harder <radhermit@gentoo.org> +srecord-1.64.ebuild:
-  Version bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> srecord-1.59.ebuild,
-  srecord-1.60.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*srecord-1.63 (03 May 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 May 2014; Tim Harder <radhermit@gentoo.org> +srecord-1.63.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Mar 2014; Michał Górny <mgorny@gentoo.org> srecord-1.59.ebuild,
-  srecord-1.60.ebuild, srecord-1.61.ebuild, srecord-1.62.ebuild:
-  Update libgcrypt dep to use slot :0.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*srecord-1.62 (21 Jul 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jul 2013; Tim Harder <radhermit@gentoo.org> +srecord-1.62.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*srecord-1.61 (05 Feb 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Feb 2013; Tim Harder <radhermit@gentoo.org> +srecord-1.61.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 May 2012; Tim Harder <radhermit@gentoo.org> -srecord-1.58.ebuild:
-  Remove old.
+  Bug: https://bugs.gentoo.org/552720
 
-*srecord-1.60 (31 May 2012)
-
-  31 May 2012; Tim Harder <radhermit@gentoo.org> +srecord-1.60.ebuild:
-  Version bump.
-
-  10 Feb 2012; Tim Harder <radhermit@gentoo.org> -srecord-1.57.ebuild,
-  -files/srecord-1.57-parallel-install.patch:
-  Remove old.
-
-*srecord-1.59 (10 Feb 2012)
-
-  10 Feb 2012; Tim Harder <radhermit@gentoo.org> +srecord-1.59.ebuild:
-  Version bump.
-
-  16 Jan 2012; Tim Harder <radhermit@gentoo.org> -srecord-1.42.ebuild,
-  -files/srecord-1.42-gcc44.patch:
-  Remove old.
-
-*srecord-1.58 (23 Dec 2011)
-
-  23 Dec 2011; Tim Harder <radhermit@gentoo.org> +srecord-1.58.ebuild:
-  Version bump.
-
-*srecord-1.57 (03 Sep 2011)
-
-  03 Sep 2011; Tim Harder <radhermit@gentoo.org> +srecord-1.57.ebuild,
-  +files/srecord-1.57-libtool.patch,
-  +files/srecord-1.57-parallel-install.patch:
-  Version bump (bug #344855). Add static-libs USE flag, update to EAPI 4, and
-  fix parallel install issue.
-
-  25 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> srecord-1.42.ebuild,
-  +files/srecord-1.42-gcc44.patch:
-  Fix building with GCC 4.4 wrt #276691.
-
-*srecord-1.42 (17 Jun 2008)
-
-  17 Jun 2008; Denis Dupeyron <calchan@gentoo.org> +srecord-1.42.ebuild:
-  Version bump.
-
-  17 Jun 2008; Denis Dupeyron <calchan@gentoo.org> srecord-1.40.ebuild:
-  Added dev-libs/boost to DEPEND, fixed RDEPEND (bug #227505).
-
-  17 Jun 2008; Denis Dupeyron <calchan@gentoo.org> -srecord-1.29.ebuild:
-  Removed old ebuild.
-
-*srecord-1.40 (28 Apr 2008)
-
-  28 Apr 2008; Denis Dupeyron <calchan@gentoo.org> +srecord-1.40.ebuild:
-  Version bump with gcc-4.3 support, thanks to Peter Alfredsen (bug
-  #219547).
-
-  30 Mar 2007; Denis Dupeyron <calchan@gentoo.org> srecord-1.29.ebuild:
-  Successfully tested on sparc.
-
-  28 Mar 2007; Denis Dupeyron <calchan@gentoo.org> srecord-1.29.ebuild:
-  Added test to IUSE, thanks to Jakub Moc (bug #172536).
-
-  27 Mar 2007; Denis Dupeyron <calchan@gentoo.org> srecord-1.29.ebuild:
-  Successfully tested on amd64.
-
-*srecord-1.29 (26 Mar 2007)
-
-  26 Mar 2007; Denis Dupeyron <calchan@gentoo.org> +srecord-1.29.ebuild:
-  Initial commit, bug #126372.

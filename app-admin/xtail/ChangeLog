@@ -1,72 +1,57 @@
 # ChangeLog for app-admin/xtail
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/xtail/ChangeLog,v 1.22 2012/11/22 21:19:54 hwoarang Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Nov 2012; Markos Chandras <hwoarang@gentoo.org> xtail-2.1-r1.ebuild,
-  xtail-2.1.ebuild:
-  Change license to BSD. Bug #444338. Thanks to Ulrich Müller <ulm@gentoo.org>
+*xtail-2.1-r1 (09 Aug 2015)
+*xtail-2.1 (09 Aug 2015)
 
-  07 Jun 2012; Brent Baude <ranger@gentoo.org> xtail-2.1-r1.ebuild:
-  Marking xtail-2.1-r1 ppc for bug 418501
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xtail-2.1.ebuild, +xtail-2.1-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Jun 2012; Johannes Huber <johu@gentoo.org> xtail-2.1-r1.ebuild:
-  Stable for x86, wrt bug #418501
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xtail-2.1-r1.ebuild:
-  Stable for amd64, wrt bug #418501
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Jun 2012; Markos Chandras <hwoarang@gentoo.org> xtail-2.1-r1.ebuild:
-  Restore ppc and sparc keywords
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*xtail-2.1-r1 (01 Apr 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Apr 2012; Markos Chandras <hwoarang@gentoo.org> +xtail-2.1-r1.ebuild,
-  metadata.xml:
-  EAPI4, more upstream patches. Thanks to Iván <gentoo.power@gmail.com>. Bug
-  #406679
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org> xtail-2.1.ebuild:
-  EAPI=2; respect CC (bug #243326)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Removing hawking as a maintainer since he was retired.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Jul 2007; Ali Polatel <hawking@gentoo.org> metadata.xml:
-  Changed maintainer to hawking
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Jul 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Assigning app-admin/xtail to m-needed, as beu is being retired (#66608).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Dec 2006; Elfyn McBratney <beu@gentoo.org> metadata.xml,
-  xtail-2.1.ebuild:
-  Update metadata.xml; kill redundant DEPEND on virtual/libc.
+  Bug: https://bugs.gentoo.org/552720
 
-  21 May 2006; Thomas Cort <tcort@gentoo.org> xtail-2.1.ebuild:
-  Stable on amd64.
-
-  10 Aug 2005; Luis Medinas <metalgod@gentoo.org> xtail-2.1.ebuild:
-  Added ~amd64.
-
-  07 Jun 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  xtail-2.1.ebuild:
-  QA - IUSE fix
-
-  26 Apr 2004; Aron Griffis <agriffis@gentoo.org> xtail-2.1.ebuild:
-  Add die following econf for bug 48950
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*xtail-2.1 (21 Apr 2002)
-  
-  30 Jul 2002; Calum Selkirk <cselkirk@gentoo.org> xtail-2.1.ebuild :
-
-  Added ppc to KEYWORDS. Added RDEPEND.
-
-  21 Apr 2002; Matthew Kennedy <mkennedy@gentoo.org> ChangeLog,
-  xtail-2.1.ebuild, files/digest-xtail-2.1 :
-
-  New ebuild.
-  
-  xtail watches the growth of files. It's like running a "tail -f" on
-  a bunch of files at once.

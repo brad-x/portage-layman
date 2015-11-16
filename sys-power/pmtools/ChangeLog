@@ -1,136 +1,71 @@
 # ChangeLog for sys-power/pmtools
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/pmtools/ChangeLog,v 1.23 2014/02/17 06:17:24 prometheanfire Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*pmtools-20110323-r1 (17 Feb 2014)
+*pmtools-20110323-r1 (09 Aug 2015)
+*pmtools-20110323 (09 Aug 2015)
+*pmtools-20071116 (09 Aug 2015)
 
-  17 Feb 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +pmtools-20110323-r1.ebuild:
-  fixes for bug 420607
-
-  03 Nov 2013; Matthew Thode <prometheanfire@gentoo.org> metadata.xml:
-  adding myself to the list of maintainers
-
-  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop mobile herd as talked in gentoo-dev ML
-
-  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, #24135.
-
-  16 Jun 2012; Doug Goldstein <cardoe@gentoo.org> -pmtools-20100123.ebuild:
-  Missed dropping one ebuild from the previous commit.
-
-  16 Jun 2012; Doug Goldstein <cardoe@gentoo.org> pmtools-20071116.ebuild,
-  -pmtools-20100430.ebuild, -pmtools-20100825.ebuild, -pmtools-20101221.ebuild:
-  Drop older versions and point HOMEPAGE/SRC_URI to lesswatts.org which is
-  hosting the 2007 version.
-
-*pmtools-20110323 (03 Apr 2011)
-*pmtools-20101221 (03 Apr 2011)
-
-  03 Apr 2011; Steve Arnold <nerdboy@gentoo.org>
-  -pmtools-20071116-r1.ebuild, -pmtools-20101124.ebuild,
-  +pmtools-20101221.ebuild, +pmtools-20110323.ebuild:
-  Removed a couple of stale versions and updated to latest two upstream
-  releases (the only two available).  Closes bug #358319.
-
-*pmtools-20101124 (07 Dec 2010)
-
-  07 Dec 2010; Steve Arnold <nerdboy@gentoo.org> +pmtools-20101124.ebuild,
-  +files/pmtools-20101124-cflags-ldflags.patch:
-  Updated to latest upstream version (new patch courtesy of Fabio Rossi).
-
-*pmtools-20100825 (04 Oct 2010)
-
-  04 Oct 2010; Steve Arnold <nerdboy@gentoo.org> +pmtools-20100825.ebuild:
-  Updated to latest upstream release; closes bug 338961.
-
-*pmtools-20100430 (02 May 2010)
-
-  02 May 2010; Robin H. Johnson <robbat2@gentoo.org>
-  +pmtools-20100430.ebuild:
-  Bug #318213: Version bump.
-
-*pmtools-20100123 (05 Apr 2010)
-
-  05 Apr 2010; Steve Arnold <nerdboy@gentoo.org> +pmtools-20100123.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pmtools-20071116-64bit.patch,
+  +files/pmtools-20071116-acpixtract-pmtools.patch,
+  +files/pmtools-20071116-cflags-ldflags.patch,
   +files/pmtools-20100123-acpixtract-pmtools.patch,
   +files/pmtools-20100123-cflags-ldflags.patch,
-  +files/pmtools-20100123-madt.patch:
-  Updated to current release; closes bug 308233.  Thanks to Philipp 
-  Nordhus <philipp@tigerclaw.de> for submitting the bug with updated
-  patches.  Includes new turbostat tool for Intel CPUs.
+  +files/pmtools-20100123-madt.patch,
+  +files/pmtools-20101124-cflags-ldflags.patch, +metadata.xml,
+  +pmtools-20071116.ebuild, +pmtools-20110323.ebuild,
+  +pmtools-20110323-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> pmtools-20071116.ebuild,
-  pmtools-20071116-r1.ebuild:
-  Remove virtual/libc
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*pmtools-20071116-r1 (16 Aug 2009)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Aug 2009; Steve Arnold <nerdboy@gentoo.org>
-  +pmtools-20071116-r1.ebuild, +files/pmtools-20071116-64bit.patch,
-  +files/pmtools-20071116-cflags-ldflags.patch:
-  Changes in this revision:
-	1) updated with build patches (kindly provided by Zeev Tarantov 
-	   <zeev.tarantov _at_ gmail.com>, see bug #281567)
-	2) updated to EAPI2
-	3) removed ppc, since ACPI is really only relevant for x86/amd64
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Feb 2009; Steve Arnold <nerdboy@gentoo.org> pmtools-20071116.ebuild:
-  Updated to respect user LDFLAGS (see bug #253087), although I don't
-  think it matters in this case, at least I get no QA warnings...
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Nov 2008; nixnut <nixnut@gentoo.org> pmtools-20071116.ebuild:
-  Stable on ppc wrt bug 236747
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Nov 2008; Markus Meier <maekke@gentoo.org> pmtools-20071116.ebuild:
-  amd64/x86 stable, bug #236747
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jun 2008; Robin H. Johnson <robbat2@gentoo.org>
-  -files/pmtools-20051111-acpixtract-pmtools.patch,
-  -files/pmtools-20051111-madt.patch,
-  -files/pmtools-20061130-acpixtract-pmtools.patch,
-  -files/pmtools-20061130-madt.patch, -pmtools-20051111.ebuild,
-  -pmtools-20051111-r1.ebuild, -pmtools-20061130.ebuild:
-  Remove old versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Jun 2008; Robin H. Johnson <robbat2@gentoo.org>
-  +files/pmtools-20071116-acpixtract-pmtools.patch, pmtools-20071116.ebuild:
-  Respin the pmtools patch.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pmtools-20110323.ebuild:
+  Use https for kernel.org and redhat.com
 
-*pmtools-20071116 (07 Jun 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Jun 2008; Robin H. Johnson <robbat2@gentoo.org>
-  +pmtools-20071116.ebuild:
-  Bug #187537, version bump. MADT patch integrated upstream.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*pmtools-20061130 (01 Apr 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Apr 2007; Robin H. Johnson <robbat2@gentoo.org>
-  +files/pmtools-20061130-acpixtract-pmtools.patch,
-  +files/pmtools-20061130-madt.patch, +pmtools-20061130.ebuild:
-  Bug #164438 - version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  02 Jun 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/pmtools-20051111-acpixtract-pmtools.patch,
-  +files/pmtools-20051111-madt.patch, +metadata.xml,
-  +pmtools-20051111.ebuild, +pmtools-20051111-r1.ebuild:
-  Move pmtools from sys-apps to sys-power where other similar stuff is located.
-
-*pmtools-20051111-r1 (02 Jun 2006)
-
-  02 Jun 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/pmtools-20051111-acpixtract-pmtools.patch,
-  +files/pmtools-20051111-madt.patch, metadata.xml,
-  +pmtools-20051111-r1.ebuild:
-  Revamp ebuild to include all binaries, not conflict with iasl, build
-  cleaner, and be generally better. Also add myself to the maintainer list.
-
-*pmtools-20051111 (07 May 2006)
-
-  07 May 2006; Steve Arnold <nerdboy@gentoo.org> +metadata.xml,
-  +pmtools-20051111.ebuild:
-  new ebuild to provide the acpidump utility (used with iasl)

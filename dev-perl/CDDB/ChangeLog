@@ -1,150 +1,57 @@
 # ChangeLog for dev-perl/CDDB
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/CDDB/ChangeLog,v 1.39 2015/01/09 00:21:37 zlogene Exp $
+# (auto-generated from git log)
 
-  09 Jan 2015; Mikle Kolyada <zlogene@gentoo.org> CDDB-1.222.0-r1.ebuild:
-  Mark stable
+*CDDB-1.222.0-r1 (09 Aug 2015)
+*CDDB-1.220.0-r1 (09 Aug 2015)
 
-*CDDB-1.220.0-r1 (22 Aug 2014)
-*CDDB-1.222.0-r1 (22 Aug 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +CDDB-1.220.0-r1.ebuild,
+  +CDDB-1.222.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  22 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +CDDB-1.220.0-r1.ebuild, +CDDB-1.222.0-r1.ebuild, -CDDB-1.220.0.ebuild,
-  -CDDB-1.222.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*CDDB-1.222.0 (25 Aug 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Aug 2013; Patrick Lauer <patrick@gentoo.org> +CDDB-1.222.0.ebuild:
-  Bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -CDDB-1.220.ebuild:
-  Cleanup
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Sep 2011; Torsten Veller <tove@gentoo.org> CDDB-1.220.0.ebuild:
-  Merge stable keywords from former version scheme ebuild
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*CDDB-1.220.0 (01 Sep 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Sep 2011; Torsten Veller <tove@gentoo.org> +CDDB-1.220.0.ebuild:
-  Change version scheme
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*CDDB-1.220 (14 Jan 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jan 2011; Torsten Veller <tove@gentoo.org> -CDDB-1.22.0.ebuild,
-  +CDDB-1.220.ebuild:
-  Convert ebuild version
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Aug 2010; Torsten Veller <tove@gentoo.org> -CDDB-1.17.ebuild,
-  -CDDB-1.21.ebuild:
-  Cleanup
-
-  27 Jun 2010; <nixnut@gentoo.org> CDDB-1.22.0.ebuild:
-  ppc stable #323529
-
-  20 Jun 2010; Raúl Porcel <armin76@gentoo.org> CDDB-1.22.0.ebuild:
-  ia64/sparc stable wrt #323529
-
-  15 Jun 2010; Torsten Veller <tove@gentoo.org> CDDB-1.22.0.ebuild:
-  Stable on amd64 and x86 (#323529)
-
-*CDDB-1.22.0 (27 Mar 2010)
-
-  27 Mar 2010; Robin H. Johnson <robbat2@gentoo.org> +CDDB-1.22.0.ebuild:
-  Version bump via perl-bump experimental tool.
-
-*CDDB-1.21 (02 Aug 2009)
-
-  02 Aug 2009; Torsten Veller <tove@gentoo.org> +CDDB-1.21.ebuild:
-  Version bump
-
-  30 Jan 2009; Torsten Veller <tove@gentoo.org> metadata.xml,
-  -CDDB-1.16.ebuild, CDDB-1.17.ebuild:
-  Cleanup
-
-  05 Mar 2007; Andrej Kacian <ticho@gentoo.org> CDDB-1.17.ebuild:
-  Stable on x86, bug #169152.
-
-  14 Jan 2007; Michael Cummings <mcummings@gentoo.org> CDDB-1.16.ebuild,
-  CDDB-1.17.ebuild:
-  Ebuild maintenance
-
-  16 Sep 2006; Tobias Scherbaum <dertobi123@gentoo.org> CDDB-1.17.ebuild:
-  ppc stable
-
-  07 Sep 2006; Michael Cummings <mcummings@gentoo.org> -CDDB-1.12.ebuild,
-  -CDDB-1.15.ebuild:
-  Cleaning out old ebuilds
-
-  06 Aug 2006; Michael Cummings <mcummings@gentoo.org> CDDB-1.17.ebuild:
-  Marking amd64 stable
-
-  04 Aug 2006; Michael Cummings <mcummings@gentoo.org> CDDB-1.12.ebuild,
-  CDDB-1.15.ebuild, CDDB-1.16.ebuild, CDDB-1.17.ebuild:
-  Adding perl dep; fixed header; fixed DEPEND
-
-  10 Jul 2006; Aron Griffis <agriffis@gentoo.org> CDDB-1.17.ebuild:
-  Mark 1.17 stable on ia64
-
-  11 Jun 2006; Michael Cummings <mcummings@gentoo.org> CDDB-1.17.ebuild:
-  Marking stable sparc
-
-*CDDB-1.17 (24 Apr 2006)
-
-  24 Apr 2006; <mcummings@gentoo.org> +CDDB-1.17.ebuild:
-  Version bump
-
-  30 Mar 2006; Aron Griffis <agriffis@gentoo.org> CDDB-1.16.ebuild:
-  Mark 1.16 ~ia64
-
-  06 Feb 2006; Simon Stelling <blubb@gentoo.org> CDDB-1.16.ebuild:
-  stable on amd64
-
-  16 Jan 2006; Gustavo Zacarias <gustavoz@gentoo.org> CDDB-1.16.ebuild:
-  Stable on sparc
-
-  15 Jan 2006; Michael Hanselmann <hansmi@gentoo.org> CDDB-1.16.ebuild:
-  Stable on ppc.
-
-  13 Jan 2006; Michael Cummings <mcummings@gentoo.org> CDDB-1.16.ebuild:
-  Marking stable x86
-
-*CDDB-1.16 (09 Nov 2005)
-
-  09 Nov 2005; <mcumming@gentoo.org> +CDDB-1.16.ebuild:
-  New version on cpan, bug 111933
-
-*CDDB-1.15 (24 Apr 2005)
-
-  24 Apr 2005; Michael Cummings <mcummings@gentoo.org> CDDB-1.12.ebuild,
-  +CDDB-1.15.ebuild:
-  New version; mirror syntax cleaning
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> CDDB-1.12.ebuild:
-  Stable on ppc.
-
-  23 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> CDDB-1.12.ebuild:
-  Stable sparc and amd64
-
-  16 Jun 2004; Jeremy Huddleston <eradicator@gentoo.org> CDDB-1.12.ebuild:
-  Stable x86
-
-  15 Jun 2004; Jeremy Huddleston <eradicator@gentoo.org> CDDB-1.12.ebuild:
-  ~amd64 added.
-
-  07 May 2004; Gustavo Zacarias <gustavoz@gentoo.org> CDDB-1.12.ebuild:
-  keyworded ~sparc
-
-*CDDB-1.12 (30 Apr 2004)
-
-  30 Apr 2004; David Holm <dholm@gentoo.org> CDDB-1.12.ebuild:
-  Added to ~ppc.
-
-  29 Apr 2004; Eric Sammer <esammer@gentoo.org> :
-  Initial import of CDDB. Fills a dep for the soon to be added
-  media-sound/choad submitted by Josh Glover <gentoo@jmglov.net>.
-  Closes bug #49432.

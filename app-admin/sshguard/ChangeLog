@@ -1,96 +1,60 @@
 # ChangeLog for app-admin/sshguard
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sshguard/ChangeLog,v 1.22 2015/06/09 08:44:57 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*sshguard-1.5-r3 (09 Aug 2015)
+*sshguard-1.5-r2 (09 Aug 2015)
+*sshguard-1.5-r1 (09 Aug 2015)
 
-*sshguard-1.5-r3 (05 Aug 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sshguard-1.5-day-starts-with-0.patch, +files/sshguard.confd,
+  +files/sshguard.initd, +metadata.xml, +sshguard-1.5-r1.ebuild,
+  +sshguard-1.5-r2.ebuild, +sshguard-1.5-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  05 Aug 2014; Jeroen Roovers <jer@gentoo.org> +sshguard-1.5-r3.ebuild,
-  +files/sshguard-1.5-day-starts-with-0.patch:
-  Fix parsing metalog entries with days starting with 0 by Amyas (bug #518988).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Jan 2013; Jeroen Roovers <jer@gentoo.org> files/sshguard.confd:
-  Fix case in man page reference, by Marckus J. (bug #454788).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> sshguard-1.5-r2.ebuild:
-  Replace append-flags with append-cppflags
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*sshguard-1.5-r2 (17 Jan 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> +sshguard-1.5-r2.ebuild:
-  Revision bump: EAPI 5, add output about selected firewall backend through
-  einfo
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> -sshguard-1.0.ebuild,
-  -sshguard-1.1.ebuild, -sshguard-1.3.ebuild, -sshguard-1.4.ebuild:
-  Old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sshguard-1.5-r1.ebuild:
-  x86 stable wrt bug #396757
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sshguard-1.5-r1.ebuild:
-  Stable for AMD64, wrt bug #396757
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*sshguard-1.5-r1 (25 Apr 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Apr 2011; Jeroen Roovers <jer@gentoo.org> -sshguard-1.5.ebuild,
-  +sshguard-1.5-r1.ebuild, files/sshguard.initd:
-  Use the correct init.d file, and RDEPEND on openrc, by Johan Bergström (bug
-  #351665).
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Apr 2011; Jeroen Roovers <jer@gentoo.org> files/sshguard.confd,
-  files/sshguard.initd:
-  Add --wait option to s-s-d to measure success or failure better.
-
-*sshguard-1.5 (23 Apr 2011)
-
-  23 Apr 2011; Jeroen Roovers <jer@gentoo.org> +sshguard-1.5.ebuild,
-  +files/sshguard.confd, +files/sshguard.initd:
-  Version bump thanks to Johan Bergström and Roland Hopferwieser (bug
-  #351665).
-
-*sshguard-1.4 (12 Nov 2009)
-
-  12 Nov 2009; Peter Volkov <pva@gentoo.org> +sshguard-1.4.ebuild:
-  Version bump, bug #292645, thank Stefan Nilsson for report.
-
-  22 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  metadata.xml:
-  Removing hawking as a maintainer since he was retired.
-
-*sshguard-1.3 (22 Dec 2008)
-
-  22 Dec 2008; Marcelo Goes <vanquirius@gentoo.org> +sshguard-1.3.ebuild:
-  1.3 version bump for bug 246823. Thanks to Priit Laes
-  <amd at store20 dot com>.
-
-*sshguard-1.1 (31 Aug 2008)
-
-  31 Aug 2008; Ali Polatel <hawking@gentoo.org> +sshguard-1.1.ebuild:
-  Version bump.
-
-  18 Jul 2008; Dawid Węgliński <cla@gentoo.org> sshguard-1.0.ebuild:
-  amd64 stable (bug #225235)
-
-  17 Jul 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
-
-  14 Jun 2008; Raúl Porcel <armin76@gentoo.org> sshguard-1.0.ebuild:
-  x86 stable wrt #225235
-
-  15 Aug 2007; Steve Dibb <beandog@gentoo.org> sshguard-1.0.ebuild:
-  add ~amd64, bug 188693
-
-  08 Jul 2007; Ali Polatel <hawking@gentoo.org> sshguard-1.0.ebuild:
-  Added support for g/fbsd (bug #182926 thanks to Pierre Guinoiseau)
-
-  22 Jun 2007; Ali Polatel <hawking@gentoo.org> sshguard-1.0.ebuild:
-  Added virtual/logger to RDEPEND
-
-*sshguard-1.0 (21 Jun 2007)
-
-  21 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com>
-  +sshguard-1.0.ebuild:
-  Import from gentoo-sunrise, bug #169754 (thanks to Brandon Captain)

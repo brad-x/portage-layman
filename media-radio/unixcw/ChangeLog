@@ -1,139 +1,83 @@
 # ChangeLog for media-radio/unixcw
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/unixcw/ChangeLog,v 1.32 2015/07/23 19:35:35 pacho Exp $
+# (auto-generated from git log)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> unixcw-3.4.1.ebuild:
-  ppc stable wrt bug #552662
+*unixcw-3.4.2 (09 Aug 2015)
+*unixcw-3.4.1 (09 Aug 2015)
+*unixcw-3.4.0 (09 Aug 2015)
 
-  04 Jul 2015; Thomas Beierlein <tomjbe@gentoo.org> -unixcw-3.3.1.ebuild,
-  -files/unixcw-2.3--as-needed.patch, -files/unixcw-2.3-audio.patch,
-  -files/unixcw-2.3-config.patch, -files/unixcw-2.3-destdir.patch,
-  -files/unixcw-2.3-fPIC.patch, -files/unixcw-2.3-gcc43.patch,
-  -files/unixcw-2.3-ldflags.patch, -files/unixcw-2.3-parallel-make.patch,
-  -files/unixcw-3.0.2-config.patch, -files/unixcw-3.0.2-destdir.patch,
-  -files/unixcw-3.0.2-parallel-make.patch, -files/unixcw-3.0.2-qt4.patch,
-  -files/unixcw-3.1.1-config.patch, -files/unixcw-3.2.0-console.patch,
-  -files/unixcw-3.2.0-pulseaudio.patch:
-  Cleanup old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +unixcw-3.4.0.ebuild, +unixcw-3.4.1.ebuild, +unixcw-3.4.2.ebuild:
+  proj/gentoo: Initial commit
 
-*unixcw-3.4.2 (04 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Jul 2015; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.4.2.ebuild:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jul 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.1.ebuild:
-  Stable for alpha, wrt bug #552662
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.1.ebuild:
-  Stable for x86, wrt bug #552662
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Jun 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.1.ebuild:
-  Stable for amd64, wrt bug #552662
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Mar 2015; Thomas Beierlein <tomjbe@gentoo.org> -unixcw-3.3.0.ebuild:
-  Drop old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Feb 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.0.ebuild:
-  Stable for alpha, wrt bug #535484
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.0.ebuild:
-  Stable for x86, wrt bug #535484
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*unixcw-3.4.1 (23 Jan 2015)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Jan 2015; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.4.1.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Jan 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.0.ebuild:
-  Stable for ppc, wrt bug #535484
+  14 Sep 2015; Tobias Klausmann <klausman@gentoo.org> unixcw-3.4.2.ebuild:
+  add alpha keyword
 
-  09 Jan 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.0.ebuild:
-  Stable for amd64, wrt bug #535484
+  Gentoo-Bug: 559428
 
-*unixcw-3.4.0 (23 Nov 2014)
+  Package-Manager: portage-2.2.20.1
 
-  23 Nov 2014; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.4.0.ebuild:
-  Version bump
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.2.ebuild:
+  amd64 stable wrt bug #559428
 
-  02 Nov 2014; Agostino Sarubbo <ago@gentoo.org> unixcw-3.3.1.ebuild:
-  Stable for alpha, wrt bug #519628
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  18 Oct 2014; Agostino Sarubbo <ago@gentoo.org> unixcw-3.3.1.ebuild:
-  Stable for ppc, wrt bug #519628
+  20 Sep 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.2.ebuild:
+  x86 stable wrt bug #559428
 
-  10 Oct 2014; Thomas Beierlein <tomjbe@gentoo.org> -unixcw-2.3-r6.ebuild,
-  -unixcw-3.0.2.ebuild, -unixcw-3.1.1.ebuild, -unixcw-3.2.0.ebuild:
-  drop old
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  10 Oct 2014; Agostino Sarubbo <ago@gentoo.org> unixcw-3.3.1.ebuild:
-  Stable for x86, wrt bug #519628
+  22 Sep 2015; Agostino Sarubbo <ago@gentoo.org> unixcw-3.4.2.ebuild:
+  ppc stable wrt bug #559428
 
-  09 Oct 2014; Agostino Sarubbo <ago@gentoo.org> unixcw-3.3.1.ebuild:
-  Stable for amd64, wrt bug #519628
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> unixcw-2.3-r6.ebuild,
-  unixcw-3.0.2.ebuild, unixcw-3.1.1.ebuild, unixcw-3.2.0.ebuild,
-  unixcw-3.3.0.ebuild, unixcw-3.3.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-*unixcw-3.3.1 (16 May 2014)
-
-  16 May 2014; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.3.1.ebuild:
-  Bug fix release
-
-*unixcw-3.3.0 (25 Dec 2013)
-
-  25 Dec 2013; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.3.0.ebuild:
-  Version bump
-
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> unixcw-2.3-r6.ebuild,
-  unixcw-3.0.2.ebuild, unixcw-3.1.1.ebuild, unixcw-3.2.0.ebuild:
-  Move Qt dependencies to the new category
-
-  10 Feb 2013; Thomas Beierlein <tomjbe@gentoo.org> unixcw-3.2.0.ebuild,
-  +files/unixcw-3.2.0-pulseaudio.patch:
-  Add further missing includes
-
-  09 Feb 2013; Thomas Beierlein <tomjbe@gentoo.org> unixcw-3.2.0.ebuild,
-  +files/unixcw-3.2.0-console.patch:
-  Add missing includes (Bug #456304). Thanks Diego
-
-*unixcw-3.2.0 (07 Feb 2013)
-
-  07 Feb 2013; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.2.0.ebuild:
-  Version bump
-
-*unixcw-3.1.1 (06 Aug 2012)
-
-  06 Aug 2012; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.1.1.ebuild,
-  +files/unixcw-3.1.1-config.patch:
-  Version bump
-
-*unixcw-3.0.2 (21 Jun 2012)
-
-  21 Jun 2012; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-3.0.2.ebuild,
-  +files/unixcw-3.0.2-config.patch, +files/unixcw-3.0.2-destdir.patch,
-  +files/unixcw-3.0.2-parallel-make.patch, +files/unixcw-3.0.2-qt4.patch:
-  Version bump
-
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> unixcw-2.3-r6.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  26 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> unixcw-2.3-r6.ebuild:
-  Marked ~ppc wrt #338662
-
-  10 Jan 2011; Thomas Beierlein <tomjbe@gentoo.org> unixcw-2.3-r6.ebuild:
-  Add blocker against <=app-misc/cw-1.0.16-r1 wrt bug #351293
-
-  20 Dec 2010; Tobias Klausmann <klausman@gentoo.org> unixcw-2.3-r6.ebuild:
-  Keyworded on alpha, bug #338662
-
-*unixcw-2.3-r6 (12 Sep 2010)
-
-  12 Sep 2010; Thomas Beierlein <tomjbe@gentoo.org> +unixcw-2.3-r6.ebuild,
-  +files/unixcw-2.3--as-needed.patch, +files/unixcw-2.3-audio.patch,
-  +files/unixcw-2.3-config.patch, +files/unixcw-2.3-destdir.patch,
-  +files/unixcw-2.3-fPIC.patch, +files/unixcw-2.3-gcc43.patch,
-  +files/unixcw-2.3-ldflags.patch, +files/unixcw-2.3-parallel-make.patch,
-  +metadata.xml:
-  Initial portage version, moved from sunrise. Bug #220027

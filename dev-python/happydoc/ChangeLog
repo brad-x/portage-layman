@@ -1,129 +1,57 @@
 # ChangeLog for dev-python/happydoc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/happydoc/ChangeLog,v 1.37 2015/06/09 15:25:20 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*happydoc-3.1-r2 (09 Aug 2015)
 
-  02 Jun 2015; Jack Morgan <jmorgan@gentoo.org> happydoc-3.1-r2.ebuild:
-  sparc stable wrt bug #540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/happydoc-3.1-python-2.6.patch, +files/happydoc-3.1-setup.py,
+  +happydoc-3.1-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> happydoc-3.1-r2.ebuild:
-  Stable for ia64, wrt bug #540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> happydoc-3.1-r2.ebuild:
-  Stable for alpha, wrt bug #540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> happydoc-3.1-r2.ebuild:
-  Drop old Python implementations
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> happydoc-3.1-r2.ebuild:
-  x86 stable, bug 540290
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> happydoc-3.1-r2.ebuild:
-  ppc stable, bug 540290
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> happydoc-3.1-r2.ebuild:
-  amd64 stable, bug 540290
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> happydoc-3.1-r2.ebuild:
-  Add support for the new PyPy slotting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> happydoc-3.1-r2.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*happydoc-3.1-r2 (14 Jun 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jun 2013; Ian Delaney <idella4@gentoo.org> +happydoc-3.1-r2.ebuild:
-  revbump; migrate -> distutils-r1, remove old
+  Bug: https://bugs.gentoo.org/552720
 
-  01 Dec 2012; Tim Harder <radhermit@gentoo.org> happydoc-3.1-r1.ebuild:
-  Fix LICENSE (bug #445414 by ulm).
-
-*happydoc-3.1-r1 (28 Jul 2010)
-
-  28 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -happydoc-3.1.ebuild, +happydoc-3.1-r1.ebuild,
-  +files/happydoc-3.1-python-2.6.patch:
-  Fix raising of exceptions for compatibility with Python 2.6.
-
-  28 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  happydoc-3.1.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
-
-*happydoc-3.1 (25 Feb 2009)
-
-  25 Feb 2009; <neurogeek@gentoo.org> +files/happydoc-3.1-setup.py,
-  +happydoc-3.1.ebuild:
-  Version bump. Closes bug #201280
-
-  04 Jul 2007; Ali Polatel <hawking@gentoo.org> happydoc-2.1.ebuild,
-  happydoc-2.1-r1.ebuild:
-  use DOCS, mydoc is deprecated. don't dodoc license.txt and install.txt
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*happydoc-2.1-r1 (16 May 2006)
-
-  16 May 2006; Marien Zwart <marienz@gentoo.org> +happydoc-2.1-r1.ebuild:
-  Revision bump with no ebuild changes because I forgot to bump it 4 months
-  ago when adding a python 2.4 patch.
-
-  16 May 2006; Marien Zwart <marienz@gentoo.org> -happydoc-2.0.1.ebuild:
-  Remove old ebuild that fails with python 2.4 and up.
-
-  10 Jan 2006; Marien Zwart <marienz@gentoo.org>
-  +files/happydoc-2.1-python-2.4-compat.patch, happydoc-2.1.ebuild:
-  Add a patch to make happydoc 2.1 somewhat work with python 2.4.
-  RESTRICT=test because needed files are not distributed.
-
-  02 Oct 2005; Aron Griffis <agriffis@gentoo.org> happydoc-2.1.ebuild:
-  Mark 2.1 stable on ia64
-
-  13 Sep 2005; <dang@gentoo.org> happydoc-2.1.ebuild:
-  Marked ~amd64
-
-  26 Aug 2005; Aron Griffis <agriffis@gentoo.org> happydoc-2.1.ebuild:
-  add ~ia64
-
-  07 Aug 2005; Michael Hanselmann <hansmi@gentoo.org> happydoc-2.1.ebuild:
-  Stable on ppc.
-
-  30 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  17 Oct 2004; David Holm <dholm@gentoo.org> happydoc-2.1.ebuild:
-  Added to ~ppc.
-
-  31 May 2004; Bryan Østergaard <kloeri@gentoo.org> happydoc-2.1.ebuild:
-  Stable on alpha.
-
-  04 May 2004; Bryan Østergaard <kloeri@gentoo.org> happydoc-2.0.1.ebuild,
-  happydoc-2.1.ebuild:
-  Add missing IUSE.
-
-  26 Feb 2004; Sven Blumenstein <bazik@gentoo.org> happydoc-2.1.ebuild:
-  Stable on sparc.
-
-*happydoc-2.1 (04 Apr 2003)
-
-  04 Apr 2003; Alastair Tse <liquidx@gentoo.org> happydoc-2.1.ebuild:
-  version bump and cleanup
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-# Author Gontran Zepeda <gontran@gontran.net>
-
-*happydoc-2.0.1 (14 May 2002)
-
-  26 Apr 2003; Alastair Tse <liquidx@gentoo.org> happydoc-2.0.1.ebuild:
-  fix syntax error in happydoc
-
-  26 Jul 2002; George Shapovalov <george@gentoo.org> happydoc-2.0.1.ebuild :
-  
-  added KEYWORDS,SLOT,LICENSE,
-  
-  14 May 2002; Jon Nelson <jnelson@gentoo.org> ChangeLog happydoc-2.0.1.ebuild :
-  
-  Thanks to Gontran Zepeda <gontran at gontran.net> for the original ebuild

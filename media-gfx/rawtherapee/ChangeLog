@@ -1,90 +1,71 @@
 # ChangeLog for media-gfx/rawtherapee
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/rawtherapee/ChangeLog,v 1.18 2015/02/04 17:19:18 radhermit Exp $
+# (auto-generated from git log)
 
-  04 Feb 2015; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Drop myself from metadata.
+*rawtherapee-4.2 (09 Aug 2015)
+*rawtherapee-4.1 (09 Aug 2015)
+*rawtherapee-4.0.12 (09 Aug 2015)
+*rawtherapee-4.0.11 (09 Aug 2015)
+*rawtherapee-4.0.10 (09 Aug 2015)
+*rawtherapee-4.0.9-r1 (09 Aug 2015)
 
-*rawtherapee-4.2 (26 Oct 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/rawtherapee-4.0.9-desktop.patch,
+  +files/rawtherapee-4.0.9-no-hg.patch, +metadata.xml,
+  +rawtherapee-4.0.9-r1.ebuild, +rawtherapee-4.0.10.ebuild,
+  +rawtherapee-4.0.11.ebuild, +rawtherapee-4.0.12.ebuild,
+  +rawtherapee-4.1.ebuild, +rawtherapee-4.2.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Oct 2014; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.2.ebuild:
-  Version bump, define CACHE_NAME_SUFFIX to use a static config location (bug
-  #523022).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*rawtherapee-4.1 (11 Jun 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jun 2014; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.1.ebuild:
-  Version bump (bug #506424).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*rawtherapee-4.0.12 (24 Jan 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Jan 2014; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.12.ebuild:
-  Version bump (bug #498244 by DrSlony).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*rawtherapee-4.0.11 (05 Jun 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Jun 2013; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.11.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Apr 2013; Tim Harder <radhermit@gentoo.org> rawtherapee-4.0.10.ebuild:
-  Fix libcanberra dep to require gtk support (bug #467904).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> rawtherapee-4.0.9-r1.ebuild,
+  rawtherapee-4.0.10.ebuild, rawtherapee-4.0.11.ebuild:
+  Convert URIs for googlecode.com to https
 
-  15 Mar 2013; Tim Harder <radhermit@gentoo.org> -rawtherapee-4.0.8.ebuild,
-  -files/rawtherapee-4.0.8-nohg.patch, -rawtherapee-4.0.9.ebuild:
-  Remove old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*rawtherapee-4.0.10 (15 Mar 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Mar 2013; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.10.ebuild:
-  Version bump (bug #460884).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*rawtherapee-4.0.9-r1 (12 Feb 2013)
-
-  12 Feb 2013; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.9-r1.ebuild,
-  +files/rawtherapee-4.0.9-desktop.patch:
-  Revision bump, remove inode/directory from mimetype in desktop file (bug
-  #420081).
-
-  04 Jun 2012; Tim Harder <radhermit@gentoo.org>
-  -files/rawtherapee-4.0.4-nohg.patch, -rawtherapee-4.0.6.ebuild:
-  Remove old.
-
-*rawtherapee-4.0.9 (04 Jun 2012)
-
-  04 Jun 2012; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.9.ebuild,
-  +files/rawtherapee-4.0.9-no-hg.patch:
-  Version bump.
-
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> rawtherapee-4.0.6.ebuild,
-  rawtherapee-4.0.8.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  01 May 2012; Tim Harder <radhermit@gentoo.org> -rawtherapee-4.0.4.ebuild,
-  -rawtherapee-4.0.5.ebuild:
-  Remove old.
-
-*rawtherapee-4.0.8 (01 May 2012)
-
-  01 May 2012; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.8.ebuild,
-  +files/rawtherapee-4.0.8-nohg.patch:
-  Version bump (bug #401683).
-
-*rawtherapee-4.0.6 (07 Dec 2011)
-
-  07 Dec 2011; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.6.ebuild:
-  Version bump.
-
-*rawtherapee-4.0.5 (11 Nov 2011)
-
-  11 Nov 2011; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.5.ebuild:
-  Version bump.
-
-  28 Oct 2011; Tim Harder <radhermit@gentoo.org> rawtherapee-4.0.4.ebuild:
-  Use lcms slot dep and fix check for openmp support (thanks to ssuominen).
-
-*rawtherapee-4.0.4 (28 Oct 2011)
-
-  28 Oct 2011; Tim Harder <radhermit@gentoo.org> +rawtherapee-4.0.4.ebuild,
-  +files/rawtherapee-4.0.4-nohg.patch, +metadata.xml:
-  Initial import (bug #316589).
+  Bug: https://bugs.gentoo.org/552720
 

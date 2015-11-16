@@ -1,130 +1,59 @@
 # ChangeLog for net-mail/up-imapproxy
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/up-imapproxy/ChangeLog,v 1.31 2014/11/15 00:42:13 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  15 Nov 2014; Jeroen Roovers <jer@gentoo.org>
-  +files/up-imapproxy-1.2.7-tinfo.patch, up-imapproxy-1.2.7.ebuild:
-  Fix building against sys-libs/ncurses[tinfo] (bug #527570).
+*up-imapproxy-1.2.7 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> up-imapproxy-1.2.7.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/imapproxy.initd,
+  +files/imapproxyd.8, +files/pimpstat.8,
+  +files/up-imapproxy-1.2.7-ldflags.patch,
+  +files/up-imapproxy-1.2.7-tinfo.patch, +metadata.xml,
+  +up-imapproxy-1.2.7.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Feb 2013; Eray Aslan <eras@gentoo.org>
-  -files/up-imapproxy-1.2.6-debian_patchset_5_and_security_fix.patch,
-  -up-imapproxy-1.2.6.ebuild:
-  Remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  up-imapproxy-1.2.7.ebuild:
-  x86 stable wrt bug #391345
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> up-imapproxy-1.2.7.ebuild:
-  Stable on amd64 wrt bug #391345
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*up-imapproxy-1.2.7 (05 Jun 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Jun 2011; Eray Aslan <eras@gentoo.org> -up-imapproxy-1.2.7_rc2.ebuild,
-  +up-imapproxy-1.2.7.ebuild, +files/up-imapproxy-1.2.7-ldflags.patch:
-  Version bump - bug#309291. Respect LDFLAGS - bug #337355. EAPI bump. Remove
-  old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Sep 2009; Víctor Ostorga <vostorga@gentoo.org> +files/imapproxyd.8,
-  +files/pimpstat.8:
-  Reverting deleletion of files, they are used in ebuild
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Sep 2009; Víctor Ostorga <vostorga@gentoo.org> -files/imapproxyd.8,
-  -files/pimpstat.8:
-  Cleaning out unused files
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jun 2009; Markus Meier <maekke@gentoo.org> up-imapproxy-1.2.6.ebuild:
-  amd64 stable, bug #272044
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
-  up-imapproxy-1.2.6.ebuild:
-  stable x86, security bug 272044
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*up-imapproxy-1.2.6 (01 Jun 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  01 Jun 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +up-imapproxy-1.2.6.ebuild,
-  +files/up-imapproxy-1.2.6-debian_patchset_5_and_security_fix.patch,
-  up-imapproxy-1.2.7_rc2.ebuild, +files/imapproxyd.8, +files/pimpstat.8:
-  Fix security issue differently and apply Debian patchset on top of that to
-  get neat package. Version bump to latest stable instead of using latest
-  release candidate as stable version. Add some manpages for the two
-  commands installed from Debian patchset.
-
-*up-imapproxy-1.2.7_rc2 (01 Jun 2009)
-
-  01 Jun 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +up-imapproxy-1.2.7_rc2.ebuild:
-  Version bump wrt #177780, thanks to Janne Pikkarainen for reporting.
-
-  06 Feb 2007; Simon Stelling <blubb@gentoo.org>
-  up-imapproxy-1.2.5_rc2.ebuild:
-  stable on amd64 wrt security bug 159419
-
-  05 Jan 2007; Christian Faulhammer <opfer@gentoo.org>
-  up-imapproxy-1.2.5_rc2.ebuild:
-  stable x86, security bug #159419
-
-*up-imapproxy-1.2.5_rc2 (02 Jan 2007)
-
-  02 Jan 2007; Andrej Kacian <ticho@gentoo.org>
-  +up-imapproxy-1.2.5_rc2.ebuild:
-  Version bump. Closes bug #159419.
-
-  03 Nov 2006; <blubb@gentoo.org> up-imapproxy-1.2.4.ebuild:
-  stable on amd64
-
-  07 Oct 2006; Andrej Kacian <ticho@gentoo.org>
-  +files/1.2.4-include-fix.patch, up-imapproxy-1.2.4.ebuild:
-  Fix building against >=openssl-0.9.8b. Fix by Francisco Javier <ffelix at
-  sshinf.com>, bug #146473.
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org> Manifest:
-  Fixing SHA256 digest, pass four
-
-  05 Mar 2006; Torsten Veller <tove@gentoo.org> -up-imapproxy-1.2.1.ebuild,
-  -up-imapproxy-1.2.2.ebuild, -up-imapproxy-1.2.3_rc2.ebuild,
-  -up-imapproxy-1.2.3.ebuild:
-  Removed unneeded versions.
-
-  05 Mar 2006; Joshua Jackson <tsunam@gentoo.org> up-imapproxy-1.2.4.ebuild:
-  Stable on x86; bug #107679
-
-*up-imapproxy-1.2.4 (09 Feb 2006)
-
-  09 Feb 2006; Torsten Veller <tove@gentoo.org>
-  +files/1.2.4-string-format-fix.patch, +up-imapproxy-1.2.4.ebuild:
-  Version bump for bug #107679 and fix for CAN-2005-2661.
-
-*up-imapproxy-1.2.3 (02 Mar 2005)
-
-  02 Mar 2005; Andrej Kacian <ticho@gentoo.org> +up-imapproxy-1.2.3.ebuild:
-  Version bump. Closes #83859, reported by Jakub Moc <jakub.moc@seznam.cz>.
-
-  14 Nov 2004; Olivier Crete <tester@gentoo.org>
-  up-imapproxy-1.2.3_rc2.ebuild:
-  Marking stable on x86 per security bug #70521
-
-*up-imapproxy-1.2.3_rc2 (14 Nov 2004)
-
-  14 Nov 2004; Tom Martin <slarti@gentoo.org>
-  +up-imapproxy-1.2.3_rc2.ebuild:
-  Version bump and marked ~amd64. Resolves bug 70521, solving various
-  vulnerabilities.
-
-  18 Oct 2004; David Holm <dholm@gentoo.org> up-imapproxy-1.2.2.ebuild:
-  Added to ~ppc.
-
-*up-imapproxy-1.2.2 (30 Sep 2004)
-
-  30 Sep 2004; Andrej Kacian <ticho@gentoo.org> +up-imapproxy-1.2.2.ebuild:
-  Version bump. Closes #64963, reported by klavs klavsen <kl@vsen.dk>.
-
-*up-imapproxy-1.2.1 (12 Nov 2003)
-
-  12 Nov 2003; <max@gentoo.org> up-imapproxy-1.2.1.ebuild,
-  files/imapproxy.initd:
-  Initial version. Fixes bug 29768.

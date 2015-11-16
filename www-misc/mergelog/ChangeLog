@@ -1,89 +1,57 @@
 # ChangeLog for www-misc/mergelog
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-misc/mergelog/ChangeLog,v 1.19 2012/12/05 11:37:43 kensington Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Dec 2012; Michael Palimaka <kensington@gentoo.org> -mergelog-4.5.ebuild:
-  Remove old.
+*mergelog-4.5-r2 (09 Aug 2015)
 
-  05 Dec 2012; Anthony G. Basile <blueness@gentoo.org> mergelog-4.5-r2.ebuild:
-  stable ppc, bug #424119
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mergelog-4.5-asneeded.patch, +files/mergelog-4.5-splitlog.patch,
+  +mergelog-4.5-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Dec 2012;  <ago@gentoo.org> mergelog-4.5-r2.ebuild:
-  Stable for x86, wrt bug #424119
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> mergelog-4.5-r2.ebuild:
-  Add missing sys-libs/zlib dependency, wrt bug #424119. Thanks to Agostino
-  Sarubbo for discovering this issue
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Dec 2012; <ago@gentoo.org> mergelog-4.5-r2.ebuild:
-  Stable for amd64, wrt bug #424119
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Nov 2012; Sergey Popov <pinkbyte@gentoo.org>
-  files/mergelog-4.5-asneeded.patch:
-  Revert as-needed patch back for properly building in new revision
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mergelog-4.5-r2 (30 Nov 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> -mergelog-4.5-r1.ebuild,
-  +mergelog-4.5-r2.ebuild:
-  Revision bump: EAPI 4, autotools-utils eclass, use default src_install, drop
-  old revision that does not build now
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Nov 2012; Sergey Popov <pinkbyte@gentoo.org>
-  files/mergelog-4.5-asneeded.patch:
-  Fix as-needed patch for newer autoconf
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop apache herd as discussed in http://www.gossamer-
-  threads.com/lists/gentoo/dev/262834
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> mergelog-4.5.ebuild:
-  Remove virtual/libc
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Jul 2009; Benedikt Böhm <hollow@gentoo.org>
-  +files/mergelog-4.5-asneeded.patch, mergelog-4.5.ebuild,
-  mergelog-4.5-r1.ebuild:
-  fix #248482
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Sep 2007; Benedikt Böhm <hollow@gentoo.org> mergelog-4.5-r1.ebuild:
-  maybe fix #192272
-
-*mergelog-4.5-r1 (08 Sep 2007)
-
-  08 Sep 2007; Benedikt Böhm <hollow@gentoo.org>
-  +files/mergelog-4.5-splitlog.patch, +mergelog-4.5-r1.ebuild:
-  fix #168517
-
-  16 May 2007; Christian Faulhammer <opfer@gentoo.org> mergelog-4.5.ebuild:
-  stable amd64, bug 170960
-
-  13 May 2007; Raúl Porcel <armin76@gentoo.org> mergelog-4.5.ebuild:
-  x86 stable wrt bug 177567
-
-  28 Oct 2006; Tom Knight <tomk@gentoo.org> mergelog-4.5.ebuild:
-  Added ~amd64 KEYWORD, fixes bug #143466
-
-  05 Sep 2004; Sven Wegener <swegener@gentoo.org> :
-  Fixed ChangeLog header.
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  mergelog-4.5.ebuild:
-  Masked mergelog-4.5.ebuild stable for ppc
-
-*mergelog-4.5 (15 Aug 2004)
-
-  15 Aug 2004; Stuart Herbert <stuart@gentoo.org> +metadata.xml,
-  +mergelog-4.5.ebuild:
-  Moved from net-www/mergelog to www-misc/mergelog.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> mergelog-4.5.ebuild:
-  virtual/glibc -> virtual/libc
-
-  25 Apr 2004; David Holm <dholm@gentoo.org> mergelog-4.5.ebuild:
-  Added to ~ppc.
-
-*mergelog-4.5 (23 Apr 2004)
-
-  23 Apr 2004; Chuck Short <zul@gentoo.org> mergelog-4.5.ebuild:
-  New ebuild, initially written by Klas Klavsen <kl@vsen.dk> Modified by me.
-  Closes #22747.

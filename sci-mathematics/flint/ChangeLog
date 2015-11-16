@@ -1,62 +1,69 @@
 # ChangeLog for sci-mathematics/flint
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/flint/ChangeLog,v 1.14 2015/04/05 11:19:35 tomka Exp $
+# (auto-generated from git log)
 
-  05 Apr 2015; Thomas Kahle <tomka@gentoo.org> +files/flint-2.4.5-ntl62.patch,
-  flint-2.4.5.ebuild:
-  Fix ntl compatibility (bug 545318)
+*flint-2.4.5 (09 Aug 2015)
+*flint-2.4.4-r1 (09 Aug 2015)
+*flint-2.4.3 (09 Aug 2015)
+*flint-2.3 (09 Aug 2015)
 
-  03 Apr 2015; Thomas Kahle <tomka@gentoo.org>
-  +files/flint-2.4.5-gmp6-compat.patch, flint-2.4.5.ebuild:
-  Fix tests with gmp-6 (bug 545378)
-
-  03 Apr 2015; Patrick Lauer <patrick@gentoo.org> flint-2.4.5.ebuild:
-  Restrict ntl dep #545318
-
-*flint-2.4.5 (02 Apr 2015)
-
-  02 Apr 2015; Thomas Kahle <tomka@gentoo.org> +flint-2.4.5.ebuild:
-  Bump to 2.4.5 (542682)
-
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
-
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> flint-2.4.4-r1.ebuild:
-  x86 stable wrt bug #518208
-
-  01 Aug 2014; Chema Alonso <nimiux@gentoo.org> flint-2.4.4-r1.ebuild:
-  Stable for amd64 wrt bug #518208
-
-*flint-2.4.4-r1 (30 Jul 2014)
-
-  30 Jul 2014; Julian Ospald <hasufell@gentoo.org> -flint-2.4.4.ebuild,
-  +flint-2.4.4-r1.ebuild:
-  fix deps wrt #518500
-
-  02 Jul 2014; Julian Ospald <hasufell@gentoo.org> flint-2.4.4.ebuild,
-  +files/flint-2.4.4-test.patch:
-  fix NTL test build wrt #516028
-
-*flint-2.4.4 (20 Jun 2014)
-
-  20 Jun 2014; Julian Ospald <hasufell@gentoo.org> +flint-2.4.4.ebuild:
-  version bump
-
-  18 May 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  add myself as maintainer
-
-*flint-2.4.3 (18 May 2014)
-
-  18 May 2014; Julian Ospald <hasufell@gentoo.org> +flint-2.4.3.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/flint-2.4.3-cflags-ldflags.patch, +files/flint-2.4.3-libdir.patch,
-  +files/flint-2.4.3-whitespaces.patch, metadata.xml:
-  version bump wrt #507572
+  +files/flint-2.4.3-whitespaces.patch, +files/flint-2.4.4-test.patch,
+  +files/flint-2.4.5-gmp6-compat.patch, +files/flint-2.4.5-ntl62.patch,
+  +flint-2.3.ebuild, +flint-2.4.3.ebuild, +flint-2.4.4-r1.ebuild,
+  +flint-2.4.5.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 May 2013; Patrick Lauer <patrick@gentoo.org> flint-2.3.ebuild:
-  Fixing libdir for #470732
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*flint-2.3 (26 Nov 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Nov 2012; Patrick Lauer <patrick@gentoo.org> +flint-2.3.ebuild,
-  +metadata.xml:
-  Initial import, ebuild by me, fixes #230437
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  12 Nov 2015; Agostino Sarubbo <ago@gentoo.org> flint-2.4.4-r1.ebuild:
+  ppc stable wrt bug #556418
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
+

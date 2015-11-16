@@ -1,146 +1,58 @@
 # ChangeLog for sys-libs/libstatgrab
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libstatgrab/ChangeLog,v 1.33 2015/01/19 16:05:05 radhermit Exp $
+# (auto-generated from git log)
 
-  19 Jan 2015; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Drop myself from metadata.
+*libstatgrab-0.91 (09 Aug 2015)
+*libstatgrab-0.17 (09 Aug 2015)
 
-  19 Jan 2015; Tim Harder <radhermit@gentoo.org> -libstatgrab-0.16.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libstatgrab-0.91-tinfo.patch, +libstatgrab-0.17.ebuild,
+  +libstatgrab-0.91.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  10 Nov 2014; Jeroen Roovers <jer@gentoo.org> libstatgrab-0.91.ebuild,
-  +files/libstatgrab-0.91-tinfo.patch:
-  Fix building against sys-libs/ncurses[tinfo] (bug #481972).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*libstatgrab-0.91 (17 Oct 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Oct 2014; Ian Delaney <idella4@gentoo.org> +libstatgrab-0.91.ebuild:
-  bump; add IUSE examples and their install, permission to bump by maintainer
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> libstatgrab-0.16.ebuild,
-  libstatgrab-0.17.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 May 2014; Manuel Rüger <mrueg@gentoo.org> libstatgrab-0.17.ebuild:
-  Add ~arm keyword.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Aug 2013; Agostino Sarubbo <ago@gentoo.org> libstatgrab-0.17.ebuild:
-  Stable for amd64, wrt bug #422233
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jan 2013; Agostino Sarubbo <ago@gentoo.org> libstatgrab-0.16.ebuild:
-  Stable for amd64, wrt bug #452646
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Aug 2012; Michael Weber <xmw@gentoo.org> libstatgrab-0.17.ebuild:
-  ppc stable (bug 422233).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Aug 2012; Johannes Huber <johu@gentoo.org> libstatgrab-0.17.ebuild:
-  Stable for x86, wrt bug #422233
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Feb 2012; Tim Harder <radhermit@gentoo.org> -libstatgrab-0.10.3.ebuild:
-  Remove old.
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libstatgrab-0.16.ebuild:
-  x86 stable wrt bug #397237
-
-*libstatgrab-0.17 (14 Feb 2012)
-
-  14 Feb 2012; Tim Harder <radhermit@gentoo.org> +libstatgrab-0.17.ebuild,
-  metadata.xml:
-  Version bump. Add myself as maintainer.
-
-  06 Feb 2012; Brent Baude <ranger@gentoo.org> libstatgrab-0.16.ebuild:
-  Marking libstatgrab-0.16 ppc for bug 397237
-
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> -libstatgrab-0.15.ebuild,
-  metadata.xml:
-  Drop maintainer due retirement, bug #34534; remove old.
-
-  03 Jan 2009; Christoph Mende <angelos@gentoo.org>
-  libstatgrab-0.10.3.ebuild, libstatgrab-0.15.ebuild,
-  libstatgrab-0.16.ebuild:
-  QA: Removed unneeded dependencies (bug 236673)
-
-*libstatgrab-0.16 (31 Aug 2008)
-
-  31 Aug 2008; Daniel Black <dragonheart@gentoo.org>
-  libstatgrab-0.10.3.ebuild, -libstatgrab-0.13.ebuild,
-  +libstatgrab-0.16.ebuild:
-  version bump. purge old version. qa fix on 0.10.3
-
-*libstatgrab-0.15 (16 Jul 2007)
-
-  16 Jul 2007; Daniel Black <dragonheart@gentoo.org>
-  -libstatgrab-0.12.ebuild, +libstatgrab-0.15.ebuild:
-  version bump
-
-*libstatgrab-0.13 (11 Jul 2006)
-
-  11 Jul 2006; Daniel Black <dragonheart@gentoo.org>
-  -libstatgrab-0.11.ebuild, -libstatgrab-0.11.1.ebuild,
-  libstatgrab-0.12.ebuild, +libstatgrab-0.13.ebuild:
-  version bump + cleanout
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> libstatgrab-0.12.ebuild:
-  Mark 0.12 ~ia64
-
-*libstatgrab-0.12 (03 Sep 2005)
-
-  03 Sep 2005; Daniel Black <dragonheart@gentoo.org>
-  +libstatgrab-0.12.ebuild:
-  version bump
-
-  08 May 2005; Herbie Hopkins <herbs@gentoo.org> libstatgrab-0.11.1.ebuild:
-  Marked ~amd64 wrt bug #90658.
-
-*libstatgrab-0.11.1 (21 Apr 2005)
-
-  21 Apr 2005; Daniel Black <dragonheart@gentoo.org>
-  +libstatgrab-0.11.1.ebuild:
-  added version 0.11.1 in the hope of fixing bug #87522. Thanks to Botykai
-  Zsolt <zsolt.botykai@online.hSPAMLESSu>
-
-*libstatgrab-0.11 (07 Dec 2004)
-
-  07 Dec 2004; Daniel Black <dragonheart@gentoo.org>
-  -libstatgrab-0.10.2.ebuild, libstatgrab-0.10.3.ebuild,
-  -libstatgrab-0.10.ebuild, +libstatgrab-0.11.ebuild:
-  version bump
-
-*libstatgrab-0.10.3 (12 Sep 2004)
-
-  04 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>:
-  Mask this version (which has BSD support btw) stable
-
-  12 Sep 2004; Daniel Black <dragonheart@gentoo.org>
-  libstatgrab-0.10.2.ebuild, +libstatgrab-0.10.3.ebuild:
-  x86 stable + version bump
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  libstatgrab-0.10.ebuild:
-  Masked libstatgrab-0.10.ebuild stable for ppc
-
-*libstatgrab-0.10.2 (31 Jul 2004)
-
-  04 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>:
-  PPC stable
-
-  31 Jul 2004; Daniel Black <dragonheart@gentoo.org>
-  +libstatgrab-0.10.2.ebuild, libstatgrab-0.10.ebuild:
-  SRC_URI changed and version bump. Thanks to notification by author Tim Bishop
-  <tdb@i-scream.org>
-
-  18 Jul 2004; Daniel Black <dragonheart@gentoo.org> libstatgrab-0.10.ebuild:
-  x86 stable
-
-  02 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  libstatgrab-0.10.ebuild:
-  virtual/glibc -> virtual/libc
-
-  18 Jun 2004; David Holm <dholm@gentoo.org> libstatgrab-0.10.ebuild:
-  Added to ~ppc.
-
-*libstatgrab-0.10 (15 Jun 2004)
-
-  15 Jun 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  +libstatgrab-0.10.ebuild:
-  Initial import thanks to Jens Gutzeit <jens@gutzeit.at> in bug #52628

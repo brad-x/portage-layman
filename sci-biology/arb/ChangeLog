@@ -1,54 +1,61 @@
 # ChangeLog for sci-biology/arb
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/arb/ChangeLog,v 1.11 2015/04/07 14:32:08 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+*arb-5.3 (09 Aug 2015)
+*arb-5.2 (09 Aug 2015)
+*arb-5.1-r1 (09 Aug 2015)
 
-  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> arb-5.1-r1.ebuild,
-  arb-5.2.ebuild, arb-5.3.ebuild:
-  Update dependency after package move from x11-libs/openmotif to
-  x11-libs/motif.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +arb-5.1-r1.ebuild,
+  +arb-5.2.ebuild, +arb-5.3.ebuild, +files/5.1-bfr-overflow.patch,
+  +files/5.1-libs.patch, +files/5.2-libpng15.patch,
+  +files/arb-5.2-gcc-47.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*arb-5.3 (14 Aug 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Aug 2012; Justin Lecher <jlec@gentoo.org> arb-5.2.ebuild,
-  +files/arb-5.2-gcc-47.patch, +arb-5.3.ebuild:
-  Version Bump; add fix for gcc-4.7, #431228
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Mar 2012; Justin Lecher <jlec@gentoo.org> arb-5.1-r1.ebuild,
-  arb-5.2.ebuild:
-  Adopt deps to unbundled x11-libs/libGLw situation
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  +files/5.2-libpng15.patch, arb-5.2.ebuild:
-  Add missing dependency on sys-process/time and fix building with libpng-1.5
-  wrt #378353. Thanks to Diego Elio Pettenò <flameeyes@gentoo.org> for the
-  report and Samuli Suominen <ssuominen@gentoo.org> for the patch
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*arb-5.2 (20 Jun 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> arb-5.1-r1.ebuild,
+  arb-5.2.ebuild, arb-5.3.ebuild, metadata.xml:
+  Use https by default
 
-  20 Jun 2011; Justin Lecher <jlec@gentoo.org> +files/5.1-bfr-overflow.patch,
-  arb-5.1-r1.ebuild, +arb-5.2.ebuild:
-  Version Bump, fix buffer overflow, make gcc46 resistent, fix build failure,
-  #314665,340579,362633
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> arb-5.1-r1.ebuild:
-  Fix openmotif dependency.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> arb-5.1-r1.ebuild:
-  virtual/glut -> media-libs/glut
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*arb-5.1-r1 (13 Mar 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org> +files/5.1-libs.patch,
-  -arb-5.1.ebuild, +arb-5.1-r1.ebuild:
-  Fixed compilation w/ glibc-2.10, #294876
-  Respecting LDFLAGS
-
-*arb-5.1 (03 Oct 2009)
-
-  03 Oct 2009; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
-  +arb-5.1.ebuild:
-  Import from Science overlay and version bump
+  Bug: https://bugs.gentoo.org/552720
 

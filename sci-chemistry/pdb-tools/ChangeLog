@@ -1,91 +1,80 @@
 # ChangeLog for sci-chemistry/pdb-tools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/pdb-tools/ChangeLog,v 1.21 2015/04/08 18:22:13 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> pdb-tools-0.2.1-r1.ebuild,
+*pdb-tools-0.2.1-r2 (09 Aug 2015)
+*pdb-tools-0.2.1-r1 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pdb-tools-0.2.1-r1.ebuild, +pdb-tools-0.2.1-r2.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pdb-tools-0.2.1-r1.ebuild,
   pdb-tools-0.2.1-r2.ebuild:
-  Drop old Python implementations
+  Enable https for all google URIs
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> pdb-tools-0.2.1-r1.ebuild:
-  Add support for the new PyPy slotting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> pdb-tools-0.2.1-r1.ebuild,
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pdb-tools-0.2.1-r1.ebuild,
   pdb-tools-0.2.1-r2.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Convert URIs for googlecode.com to https
 
-*pdb-tools-0.2.1-r2 (11 Aug 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Aug 2013; Justin Lecher <jlec@gentoo.org> -pdb-tools-0.1.4-r3.ebuild,
-  -pdb-tools-0.1.4-r4.ebuild, -pdb-tools-0.2.1.ebuild,
-  +pdb-tools-0.2.1-r2.ebuild:
-  Drop old, #478590; mv generic helper modules to PN subdir, #480026
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Aug 2013; Michał Górny <mgorny@gentoo.org> pdb-tools-0.1.4-r4.ebuild,
-  pdb-tools-0.2.1-r1.ebuild, pdb-tools-0.2.1.ebuild:
-  Drop removed Python implementations from PYTHON_COMPAT.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Aug 2013; Michał Górny <mgorny@gentoo.org> pdb-tools-0.2.1-r1.ebuild:
-  Enable pypy2.0.
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Jun 2013; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r4.ebuild:
-  Fix for correct usage of new python eclasses
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
+  pdb-tools-0.2.1-r1.ebuild, pdb-tools-0.2.1-r2.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  29 May 2013; Justin Lecher <jlec@gentoo.org> pdb-tools-0.2.1.ebuild,
-  pdb-tools-0.2.1-r1.ebuild:
-  Fix usage of new python r1 eclasses (missing PYTHON_REQUIRED_USE)
+  Package-Manager: portage-2.2.20.1
 
-*pdb-tools-0.2.1-r1 (10 May 2013)
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  10 May 2013; Justin Lecher <jlec@gentoo.org> +pdb-tools-0.2.1-r1.ebuild:
-  Fix double prefix installation
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pdb-tools-0.2.1 (26 Apr 2013)
-
-  26 Apr 2013; Justin Lecher <jlec@gentoo.org> +pdb-tools-0.2.1.ebuild:
-  Version Bump
-
-  16 Apr 2013; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r4.ebuild:
-  This package cannot be installed for multiple py abis
-
-*pdb-tools-0.1.4-r4 (16 Apr 2013)
-
-  16 Apr 2013; Justin Lecher <jlec@gentoo.org> +pdb-tools-0.1.4-r4.ebuild,
-  metadata.xml:
-  Move to new python eclass
-
-  19 Oct 2012; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r3.ebuild:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
-
-*pdb-tools-0.1.4-r3 (29 Aug 2011)
-
-  29 Aug 2011; Justin Lecher <jlec@gentoo.org> -pdb-tools-0.1.4-r2.ebuild,
-  +pdb-tools-0.1.4-r3.ebuild, metadata.xml:
-  Fix doubled entries in wrapper scripts
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r2.ebuild:
-  Add dependency on virtual/fortran
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r2.ebuild:
-  Added fortran-2.eclass support
-
-  16 Dec 2010; Justin Lecher <jlec@gentoo.org> pdb-tools-0.1.4-r2.ebuild:
-  Removal of fortran.eclass, #348851
-
-*pdb-tools-0.1.4-r2 (28 Oct 2010)
-
-  28 Oct 2010; Justin Lecher <jlec@gentoo.org> -pdb-tools-0.1.4-r1.ebuild,
-  +pdb-tools-0.1.4-r2.ebuild:
-  important fix and Support for Python ABIs
-
-*pdb-tools-0.1.4-r1 (28 Oct 2010)
-
-  28 Oct 2010; Justin Lecher <jlec@gentoo.org> -pdb-tools-0.1.4.ebuild,
-  +pdb-tools-0.1.4-r1.ebuild:
-  Important fix
-
-*pdb-tools-0.1.4 (28 Oct 2010)
-
-  28 Oct 2010; Justin Lecher <jlec@gentoo.org> +pdb-tools-0.1.4.ebuild,
-  +metadata.xml:
-  New addition

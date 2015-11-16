@@ -1,91 +1,58 @@
 # ChangeLog for dev-perl/Bio-SamTools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Bio-SamTools/ChangeLog,v 1.19 2015/06/13 19:35:04 dilfridge Exp $
+# (auto-generated from git log)
 
-  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  Bio-SamTools-1.390.0-r1.ebuild, Bio-SamTools-1.410.0.ebuild:
-  Module::Build is no longer part of core Perl and has been moved to dev-perl
+*Bio-SamTools-1.410.0 (09 Aug 2015)
+*Bio-SamTools-1.390.0-r1 (09 Aug 2015)
 
-*Bio-SamTools-1.410.0 (18 Apr 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +Bio-SamTools-1.390.0-r1.ebuild, +Bio-SamTools-1.410.0.ebuild,
+  +files/Bio-SamTools-1.390.0-samtools-1.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  18 Apr 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  +Bio-SamTools-1.410.0.ebuild:
-  Version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Oct 2014; Justin Lecher <jlec@gentoo.org> Bio-SamTools-1.390.0-r1.ebuild,
-  +files/Bio-SamTools-1.390.0-samtools-1.patch:
-  Make it build with samtools-1, #523568
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Sep 2014; Justin Lecher <jlec@gentoo.org> -Bio-SamTools-1.330.0.ebuild,
-  -Bio-SamTools-1.370.0-r1.ebuild, -Bio-SamTools-1.380.0.ebuild,
-  Bio-SamTools-1.390.0-r1.ebuild:
-  Drop old; restrict version for dep on samtools, #523568
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*Bio-SamTools-1.390.0-r1 (26 Aug 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +Bio-SamTools-1.390.0-r1.ebuild, -Bio-SamTools-1.390.0.ebuild:
-  bumped EAPI to 5 to help with dev-lang/perl upgrade
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 May 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #199047
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*Bio-SamTools-1.390.0 (03 Sep 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Sep 2013; Patrick Lauer <patrick@gentoo.org> +Bio-SamTools-1.390.0.ebuild:
-  Bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*Bio-SamTools-1.380.0 (17 Aug 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Aug 2013; Patrick Lauer <patrick@gentoo.org> +Bio-SamTools-1.380.0.ebuild:
-  Bump
+  Bug: https://bugs.gentoo.org/552720
 
-*Bio-SamTools-1.370.0-r1 (24 Jan 2013)
-
-  24 Jan 2013; Justin Lecher <jlec@gentoo.org> -Bio-SamTools-1.370.0.ebuild,
-  +Bio-SamTools-1.370.0-r1.ebuild:
-  Bump module version and fix buildsystem, #452364
-
-*Bio-SamTools-1.370.0 (23 Jan 2013)
-
-  23 Jan 2013; Justin Lecher <jlec@gentoo.org> +Bio-SamTools-1.370.0.ebuild:
-  Version Bump, #452364
-
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
-
-  21 Apr 2012; Torsten Veller <tove@gentoo.org> -Bio-SamTools-1.290.0.ebuild,
-  -Bio-SamTools-1.300.0.ebuild, -Bio-SamTools-1.310.0.ebuild:
-  Cleanup
-
-*Bio-SamTools-1.330.0 (29 Feb 2012)
-
-  29 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
-  +Bio-SamTools-1.330.0.ebuild:
-  Version bump via perl-bump experimental tool.
-
-*Bio-SamTools-1.310.0 (25 Sep 2011)
-
-  25 Sep 2011; Torsten Veller <tove@gentoo.org> Bio-SamTools-1.290.0.ebuild,
-  Bio-SamTools-1.300.0.ebuild, +Bio-SamTools-1.310.0.ebuild:
-  Version bump. Fix R/DEPEND.
-
-*Bio-SamTools-1.300.0 (05 Sep 2011)
-
-  05 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
-  +Bio-SamTools-1.300.0.ebuild:
-  Version bump via perl-bump experimental tool.
-
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Bio-SamTools-1.29.ebuild:
-  Cleanup
-
-*Bio-SamTools-1.290.0 (01 Sep 2011)
-
-  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Bio-SamTools-1.290.0.ebuild:
-  Change version scheme
-
-*Bio-SamTools-1.29 (20 Jul 2011)
-
-  20 Jul 2011; Andrey Kislyuk <weaver@gentoo.org> +Bio-SamTools-1.29.ebuild,
-  +metadata.xml:
-  New package, ebuild written by me, dependency of sci-biology/GBrowse

@@ -1,92 +1,79 @@
 # ChangeLog for app-misc/subsurface
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/subsurface/ChangeLog,v 1.17 2015/06/04 19:00:13 kensington Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Michael Palimaka <kensington@gentoo.org> subsurface-4.2.ebuild,
-  subsurface-9999.ebuild:
-  Move various kde-base packages to kde-apps.
+*subsurface-9999 (09 Aug 2015)
+*subsurface-4.2 (09 Aug 2015)
+*subsurface-3.1.1 (09 Aug 2015)
 
-  19 Jan 2015; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Sync bugzilla e-mail address.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +subsurface-3.1.1.ebuild, +subsurface-4.2.ebuild, +subsurface-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Dec 2014; Michael Palimaka <kensington@gentoo.org> subsurface-4.2.ebuild,
-  subsurface-9999.ebuild:
-  Remove bogus subslot dependency operator.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Oct 2014; Yixun Lan <dlan@gentoo.org> -subsurface-4.0.ebuild,
-  -subsurface-4.0.3.ebuild:
-  drop old granted by maintainer, bug 500158#c8
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*subsurface-4.2 (29 Aug 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Aug 2014; Yixun Lan <dlan@gentoo.org> +subsurface-4.2.ebuild,
-  subsurface-9999.ebuild:
-  version bump, requested by maintainer, bug #500158, thanks Martin Gysel
-  (bearsh)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Mar 2014; Sergey Popov <pinkbyte@gentoo.org> subsurface-9999.ebuild:
-  Add missing dependency on dev-libs/libgit2, wrt bug #503778
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*subsurface-4.0.3 (12 Mar 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Mar 2014; Sergey Popov <pinkbyte@gentoo.org> +subsurface-4.0.3.ebuild:
-  Version bump, wrt bug #500158, thanks to Martin Gysel <me AT bearsh.org>
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Feb 2014; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  QA: remove unused local USE flag descriptions
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Feb 2014; Sergey Popov <pinkbyte@gentoo.org> subsurface-4.0.ebuild,
-  subsurface-9999.ebuild:
-  Correct dependency on dev-libs/libdivecomputer
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Feb 2014; Sergey Popov <pinkbyte@gentoo.org> -subsurface-3.0.2-r1.ebuild,
-  -subsurface-3.1.ebuild:
-  Drop old versions
+  Bug: https://bugs.gentoo.org/552720
 
-*subsurface-4.0 (23 Dec 2013)
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-  23 Dec 2013; Tom Wijsman <TomWij@gentoo.org> +subsurface-4.0.ebuild,
-  subsurface-9999.ebuild:
-  Version bump to 4.0, uses Qt 4 now; fixes bug #495098, proxied commit by
-  Martin Gysel (bearsh).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*subsurface-3.1.1 (16 Nov 2013)
+  24 Oct 2015; Ian Delaney <idella4@gentoo.org> metadata.xml,
+  subsurface-4.2.ebuild:
+  reset slot/sub-slot to dep dev-libs/libgit2
 
-  16 Nov 2013; Tom Wijsman <TomWij@gentoo.org> +subsurface-3.1.1.ebuild,
-  subsurface-9999.ebuild:
-  Version bump to 3.1.1, added sqlite dependency and other minor changes; fixes
-  bug #491028. Merged 3.1.1 version bump fixes and move to qt4 from bug #489394
-  into an updated 9999 ebuild, which fixes that bug. Proxied commit for Martin
-  Gysel (bearsh).
+  ack to 'zamabe' for submission of the patch via the gentoo bug
+  Re-set maintainer b-man to dev status in metadata
 
-  11 Nov 2013; Tom Wijsman <TomWij@gentoo.org> metadata.xml:
-  Updated Aaron Bauman's e-mail address.
+  Gentoo bug: #537056
 
-  13 Aug 2013; Tom Wijsman <TomWij@gentoo.org> metadata.xml:
-  Removing myself from metadata.xml because I am part of the proxy-maint herd.
+  Package-Manager: portage-2.2.20.1
 
-*subsurface-3.1 (20 May 2013)
+  25 Oct 2015; Aaron Bauman <bman@gentoo.org> metadata.xml:
+  drop proxy-maintainer
 
-  20 May 2013; Tom Wijsman <TomWij@gentoo.org> +subsurface-3.1.ebuild,
-  metadata.xml:
-  Version bump to 3.1. More LINGUAS, osm-gps-map is now a hard dependency as per
-  upstream, small compilation fixes. Updated ebuild contributed by Martin Gysel
-  (bearsh).
+  Package-Manager: portage-2.2.20.1
 
-*subsurface-3.0.2-r1 (03 Apr 2013)
-
-  03 Apr 2013; Tom Wijsman <TomWij@gentoo.org> +subsurface-3.0.2-r1.ebuild,
-  -subsurface-3.0.2.ebuild, metadata.xml, subsurface-9999.ebuild:
-  Revision bump, fixed language support that broke as part of rewriting the
-  ebuild. Cleaned up parts of the ebuild and added a missing dependency. Added
-  the original ebuild writer Bearsh as the primary proxy maintainer. Extensively
-  tested.
-
-*subsurface-3.0.2 (28 Mar 2013)
-*subsurface-9999 (28 Mar 2013)
-
-  28 Mar 2013; Tom Wijsman <TomWij@gentoo.org> +metadata.xml,
-  +subsurface-3.0.2.ebuild, +subsurface-9999.ebuild:
-  New package for subsurface, an open source dive log program. Ebuild
-  contributed by Martin Gysel aka bearsh, corrected by Aaron Bauman aka B-Man.
-  Fixes bug #462526.

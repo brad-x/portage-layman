@@ -1,75 +1,71 @@
 # ChangeLog for sys-process/bcron
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/bcron/ChangeLog,v 1.19 2011/07/20 17:35:10 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #118937
+*bcron-0.09-r2 (09 Aug 2015)
+*bcron-0.09 (09 Aug 2015)
 
-  20 Apr 2011; Ulrich Mueller <ulm@gentoo.org> bcron-0.09.ebuild,
-  bcron-0.09-r2.ebuild:
-  Don't PROVIDE and don't block against virtual/cron, bug 360109.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bcron-0.09.ebuild,
+  +bcron-0.09-r2.ebuild, +files/bcron-0.09-fix-parallel-build.patch,
+  +files/bcron-0.09-fix-socket-permissions.patch, +files/crontab,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  29 Jan 2011; Thilo Bangert <bangert@gentoo.org> bcron-0.09.ebuild,
-  bcron-0.09-r2.ebuild:
-  dep on virtual/daemontools
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Jan 2011; Thilo Bangert <bangert@gentoo.org> -bcron-0.09-r1.ebuild:
-  remove old version
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bcron-0.09-r2 (09 Aug 2010)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Aug 2010; Thilo Bangert <bangert@gentoo.org> +bcron-0.09-r2.ebuild,
-  +files/bcron-0.09-fix-socket-permissions.patch:
-  fix socket permissions (#328013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*bcron-0.09-r1 (14 Jan 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Jan 2010; Thilo Bangert <bangert@gentoo.org> +bcron-0.09-r1.ebuild,
-  +files/bcron-0.09-fix-parallel-build.patch:
-  EAPI2, fix parallel build (bug #278459), multilib ready
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> bcron-0.09.ebuild:
-  Remove virtual/libc
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Jul 2009; Diego E. Pettenò <flameeyes@gentoo.org> bcron-0.09.ebuild:
-  Use emake -j1 and list the bug for the parallel build failure.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 May 2009; Thilo Bangert <bangert@gentoo.org> files/crontab:
-  reduce chance of race condition - bug #98189
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Mar 2008; Markus Meier <maekke@gentoo.org> bcron-0.09.ebuild:
-  amd64 stable, bug #207629
+  Bug: https://bugs.gentoo.org/552720
 
-  27 Oct 2007; Thilo Bangert <bangert@gentoo.org> bcron-0.09.ebuild:
-  fix quoting - use eclass
+*bcron-0.10 (24 Oct 2015)
 
-  10 Oct 2007; Christian Faulhammer <opfer@gentoo.org> bcron-0.09.ebuild:
-  stable x86, bug 195303
+  24 Oct 2015; Sergey Popov <pinkbyte@gentoo.org> +bcron-0.10.ebuild:
+  version bump
 
-  09 Oct 2007; Daniel Black <dragonheart@gentoo.org> bcron-0.09.ebuild:
-  ~amd64 keyword as per bug #195303 thanks to Sergio Bevilacqua
+  Non-maintainer commit, due to security reasons
+  Port to EAPI 5, add epatch user
 
-  26 Aug 2007; Thilo Bangert <bangert@gentoo.org> files/crontab:
-  remove reference to vixie-cron
+  Gentoo-Bug: 453310
 
-  26 Feb 2007; Thilo Bangert <bangert@gentoo.org> bcron-0.09.ebuild:
-  fix ROOT misuse
-
-  22 Feb 2007; Thilo Bangert <bangert@gentoo.org> bcron-0.09.ebuild:
-  einfo -> elog
-
-  19 Oct 2006; Thilo Bangert <bangert@gentoo.org> metadata.xml,
-  bcron-0.09.ebuild:
-  add to cron herd - add CRON_SYSTEM_CRONTAB (as per bug #89213) - minor
-  cleanups
-
-  06 Jun 2006; Thilo Bangert <bangert@gentoo.org> bcron-0.09.ebuild:
-  fix creation of trigger fifo
-
-*bcron-0.09 (16 May 2006)
-
-  16 May 2006; Thilo Bangert <bangert@gentoo.org> +files/crontab,
-  +metadata.xml, +bcron-0.09.ebuild:
-  initial import. This is bcron, a new cron system designed with secure
-  operations in mind.
+  Package-Manager: portage-2.2.20
 

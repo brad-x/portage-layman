@@ -1,74 +1,58 @@
 # ChangeLog for sci-electronics/gspeakers
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/gspeakers/ChangeLog,v 1.19 2012/10/21 10:28:01 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  21 Oct 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/gspeakers-0.11-glib-single-include.patch, gspeakers-0.11-r1.ebuild:
-  Let it compile with glib-2.32, bug #437770 by Flameeyes.
+*gspeakers-0.11-r1 (09 Aug 2015)
 
-  06 Jul 2012; Thomas Beierlein <tomjbe@gentoo.org> gspeakers-0.11-r1.ebuild:
-  Filter -O0 from src/Makefile. Thanks ago
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gspeakers-0.11-gcc43.patch,
+  +files/gspeakers-0.11-glib-single-include.patch, +gspeakers-0.11-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Jul 2012; Michael Weber <xmw@gentoo.org> -gspeakers-0.11.ebuild,
-  gspeakers-0.11-r1.ebuild:
-  ppc stable (bug 424465), drop old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Jul 2012; Agostino Sarubbo <ago@gentoo.org> gspeakers-0.11-r1.ebuild:
-  Stable for amd64, wrt bug #424465
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Jul 2012; Jeff Horelick <jdhore@gentoo.org> gspeakers-0.11-r1.ebuild:
-  marked x86 per bug 424465
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gspeakers-0.11.ebuild,
-  gspeakers-0.11-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #70723
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Jul 2011; Denis Dupeyron <calchan@gentoo.org> gspeakers-0.11.ebuild,
-  gspeakers-0.11-r1.ebuild:
-  Changed dependency on sci-electronics/ng-spice-rework to
-  sci-electronics/ngspice due to move.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> gspeakers-0.11.ebuild,
-  gspeakers-0.11-r1.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gspeakers-0.11-r1 (01 Jun 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Jun 2010; Thomas Beierlein <tomjbe@gentoo.org>
-  +gspeakers-0.11-r1.ebuild:
-  Fix for bug #298530. Thanks for patch to Chr. Levebvre
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Aug 2009; Marcus D. Hanwell <cryos@gentoo.org> gspeakers-0.11.ebuild:
-  Applied patch from Rafael G. Martins <rafael@rafaelmartins.com>, closes
-  bug 252619.
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Feb 2009; Ryan Hill <dirtyepic@gentoo.org>
-  +files/gspeakers-0.11-gcc43.patch, gspeakers-0.11.ebuild:
-  Fix building with gcc-4.3. Patch by Arttu Valo in bug #251625.
-
-  19 May 2007; Denis Dupeyron <calchan@gentoo.org> gspeakers-0.11.ebuild:
-  Dependencies cleaned up a bit.
-
-  16 May 2007; Denis Dupeyron <calchan@gentoo.org> gspeakers-0.11.ebuild:
-  Fixed bug #153619.
-
-  21 Feb 2007; Denis Dupeyron <calchan@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  02 Jul 2006; Denis Dupeyron <calchan@gentoo.org> metadata.xml:
-  Adjusted metadata, see bug #138062.
-
-  06 May 2005; David Holm <dholm@gentoo.org> gspeakers-0.11.ebuild:
-  Added to ~ppc.
-
-  08 Apr 2005; Marcus D. Hanwell <cryos@gentoo.org> gspeakers-0.11.ebuild:
-  Marked stable on amd64 and x86.
-
-*gspeakers-0.11 (05 Jan 2005)
-
-  05 Jan 2005; Marcus Hanwell <cryos@gentoo.org> +metadata.xml,
-  +gspeakers-0.11.ebuild:
-  Initial import. Ebuild submitted by r1g0 <rigo@home.nl>, thanks, see bug 23201.

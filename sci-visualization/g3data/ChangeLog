@@ -1,76 +1,56 @@
 # ChangeLog for sci-visualization/g3data
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/g3data/ChangeLog,v 1.16 2015/05/13 12:34:55 jlec Exp $
+# (auto-generated from git log)
 
-  13 May 2015; Justin Lecher <jlec@gentoo.org> -g3data-1.5.3.ebuild,
-  g3data-1.5.4.ebuild:
-  Drop old; obsoletes bug #538534; fix HOMEPAGE, bug #523562
+*g3data-1.5.4 (09 Aug 2015)
 
-  13 May 2015; Agostino Sarubbo <ago@gentoo.org> g3data-1.5.4.ebuild:
-  Stable for x86, wrt bug #549152
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/g3data-1.5.3-makefile.patch, +g3data-1.5.4.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 May 2015; Agostino Sarubbo <ago@gentoo.org> g3data-1.5.4.ebuild:
-  Stable for amd64, wrt bug #549152
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Jul 2013; Justin Lecher <jlec@gentoo.org> g3data-1.5.4.ebuild,
-  metadata.xml:
-  Bump to EAPI=5 and use thirdpartymirror
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*g3data-1.5.4 (06 Aug 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +g3data-1.5.4.ebuild,
-  -files/g3data-1.5.1-makefile.patch, -g3data-1.5.1.ebuild:
-  Version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> g3data-1.5.1.ebuild,
-  g3data-1.5.3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #70723
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> g3data-1.5.1.ebuild,
-  g3data-1.5.3.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> g3data-1.5.1.ebuild,
-  g3data-1.5.3.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Apr 2010; Markos Chandras <hwoarang@gentoo.org> g3data-1.5.3.ebuild:
-  Stable on amd64 wrt bug #299847
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Jan 2010; Sébastien Fabbro <bicatali@gentoo.org> g3data-1.5.3.ebuild,
-  files/g3data-1.5.3-makefile.patch:
-  Added a doc flag
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Jan 2010; Christian Faulhammer <fauli@gentoo.org> g3data-1.5.3.ebuild:
-  stable x86, bug 299847
-
-*g3data-1.5.3 (26 Feb 2009)
-
-  26 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/g3data-1.5.3-makefile.patch, +g3data-1.5.3.ebuild:
-  Version bump, fixing more flag propagation in makefile
-
-  27 Nov 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/g3data-1.5.1-makefile.patch, metadata.xml, g3data-1.5.1.ebuild:
-  Removed imlib dependency (bug #249077, thanks Dustin Polke), added
-  pkg-config depend and respect cflags
-
-  18 Jul 2007; Marcus D. Hanwell <cryos@gentoo.org> -g3data-1.5.0.ebuild,
-  g3data-1.5.1.ebuild:
-  Marked stable on amd64. Pruned old version.
-
-*g3data-1.5.1 (11 Jun 2007)
-
-  11 Jun 2007; Marcus D. Hanwell <cryos@gentoo.org> +g3data-1.5.1.ebuild:
-  Version bump.
-
-*g3data-1.5.0 (06 Jun 2006)
-
-  06 Jun 2006; Marcus D. Hanwell <cryos@gentoo.org> +metadata.xml,
-  +g3data-1.5.0.ebuild:
-  Initial import, moved from the science overlay, originally from bug 50565.
-  Thanks to Jonathan S. Romero <jonnyro@jonnyro.isa-geek.com> and Maxim
-  Loginov <Zeliboba@mail.ru> for their work on the initial ebuild.

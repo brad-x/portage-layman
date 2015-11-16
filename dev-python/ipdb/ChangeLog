@@ -1,76 +1,63 @@
 # ChangeLog for dev-python/ipdb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ipdb/ChangeLog,v 1.15 2015/06/20 15:41:03 mrueg Exp $
+# (auto-generated from git log)
 
-*ipdb-0.8.1 (20 Jun 2015)
+*ipdb-0.8.1 (09 Aug 2015)
+*ipdb-0.8 (09 Aug 2015)
 
-  20 Jun 2015; Manuel Rüger <mrueg@gentoo.org> +ipdb-0.8.1.ebuild,
-  -ipdb-0.7-r1.ebuild:
-  Version bump. Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +ipdb-0.8.ebuild,
+  +ipdb-0.8.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> ipdb-0.7-r1.ebuild,
-  ipdb-0.8.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipdb-0.8.ebuild:
-  x86 stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> ipdb-0.8.ebuild:
-  amd64 stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Nov 2014; Pacho Ramos <pacho@gentoo.org> ipdb-0.8.ebuild:
-  Support python 3.4
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ipdb-0.8 (02 Oct 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ipdb-0.8.ebuild,
+  ipdb-0.8.1.ebuild:
+  Use https by default
 
-  02 Oct 2013; Patrick Lauer <patrick@gentoo.org> +ipdb-0.8.ebuild:
-  Bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ipdb-0.7-r1 (25 Aug 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Aug 2013; Mike Gilbert <floppym@gentoo.org> +ipdb-0.7-r1.ebuild,
-  -ipdb-0.6.1.ebuild, -ipdb-0.7.ebuild:
-  Convert to distutils-r1.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*ipdb-0.7 (29 Aug 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> +ipdb-0.7.ebuild,
-  -ipdb-0.6.ebuild:
-  Version bump, drop old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*ipdb-0.6.1 (01 Mar 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +ipdb-0.6.1.ebuild:
-  Version bump to 0.6.1 for bug 402805 (thanks to Ian Delaney).
+  Bug: https://bugs.gentoo.org/552720
 
-*ipdb-0.6 (16 Sep 2011)
-
-  16 Sep 2011; Jesus Rivero <neurogeek@gentoo.org> -ipdb-0.3.ebuild,
-  +ipdb-0.6.ebuild:
-  Version bump. Removed older version.
-
-*ipdb-0.3 (17 Jan 2011)
-
-  17 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -ipdb-0.2.ebuild, +ipdb-0.3.ebuild:
-  Version bump.
-
-*ipdb-0.2 (08 Nov 2010)
-
-  08 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -ipdb-0.1_p1716.ebuild, +ipdb-0.2.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-  07 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  ipdb-0.1_p1716.ebuild:
-  Fix DESCRIPTION and HOMEPAGE.
-
-  10 Jul 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  ipdb-0.1_p1716.ebuild:
-  Add dev-python/setuptools to DEPEND (bug #271577).
-
-*ipdb-0.1_p1716 (04 Apr 2009)
-
-  04 Apr 2009; Benedikt Böhm <hollow@gentoo.org> +metadata.xml,
-  +ipdb-0.1_p1716.ebuild:
-  initial version

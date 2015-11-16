@@ -1,109 +1,67 @@
 # ChangeLog for sci-libs/gerris
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/gerris/ChangeLog,v 1.20 2014/01/15 21:12:19 bicatali Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*gerris-20131206 (15 Jan 2014)
+*gerris-20131206 (09 Aug 2015)
+*gerris-20130531 (09 Aug 2015)
+*gerris-20120731 (09 Aug 2015)
 
-  15 Jan 2014; Sébastien Fabbro <bicatali@gentoo.org> +gerris-20131206.ebuild:
-  Version bump
-
-*gerris-20130531 (22 Jul 2013)
-
-  22 Jul 2013; Sébastien Fabbro <bicatali@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/gerris-20130531-hypre-no-mpi.patch,
   +files/gerris-20130531-lis-matrix-csr.patch,
-  +files/gerris-20130531-use-blas-lapack-system.patch, +gerris-20130531.ebuild,
-  -files/gerris-20100519-autotools.patch,
-  -files/gerris-20111123-autotools.patch, metadata.xml:
-  Version bump and fix bug #450378
+  +files/gerris-20130531-use-blas-lapack-system.patch,
+  +files/gerris-hypre-no-mpi.patch, +gerris-20120731.ebuild,
+  +gerris-20130531.ebuild, +gerris-20131206.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Feb 2013; Justin Lecher <jlec@gentoo.org> -gerris-20100519.ebuild,
-  -gerris-20111123.ebuild, gerris-20120731.ebuild, metadata.xml:
-  Use tc-getPKG_CONFIG from toolchain-funcs.eclass instead of plain pkg-config;
-  drop old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/gerris-hypre-no-mpi.patch, gerris-20120731.ebuild:
-  Restricting test because it requires pre-installation of gerris. Added more
-  mpi flag requirements, and a patch to compile with hypre when mpi is not set
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*gerris-20120731 (02 Aug 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +gerris-20120731.ebuild:
-  Version bump. Keyword amd64-linux x86-linux
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gerris-20100519.ebuild,
-  gerris-20111123.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*gerris-20111123 (23 Jan 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -gerris-0.8.0.ebuild,
-  -gerris-0.9.2.ebuild, -gerris-20080929.ebuild,
-  -files/gerris-20080929-as-needed.patch, -gerris-20100114.ebuild,
-  -files/gerris-20100114-autotools.patch, +gerris-20111123.ebuild,
-  +files/gerris-20111123-autotools.patch, metadata.xml:
-  Version bump. Rewritten for automagic and include more modules. Initial work
-  from Eckard Brauer, bug #387217
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #105599
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> gerris-0.8.0.ebuild,
-  gerris-0.9.2.ebuild, gerris-20080929.ebuild, gerris-20100114.ebuild,
-  gerris-20100519.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 May 2010; Justin Lecher <jlec@gentoo.org> gerris-20080929.ebuild:
-  RESTRICT=test for version 20080929, #278430, broken test design by upstream
+  Bug: https://bugs.gentoo.org/552720
 
-*gerris-20100519 (21 May 2010)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  21 May 2010; Justin Lecher <jlec@gentoo.org> gerris-20100114.ebuild,
-  +gerris-20100519.ebuild, +files/gerris-20100519-autotools.patch:
-  Version Bump, remove python which is only needed for the restricted test
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gerris-20100114 (15 Jan 2010)
-
-  15 Jan 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  +gerris-20100114.ebuild, +files/gerris-20100114-autotools.patch,
-  metadata.xml:
-  Version bump. Added a patch that correct some autotools minor errors and
-  allow parallel building
-
-*gerris-20080929 (03 Oct 2008)
-
-  03 Oct 2008; Markus Dittrich <markusle@gentoo.org>
-  +files/gerris-20080929-as-needed.patch, +gerris-20080929.ebuild:
-  Version bump to newest development snapshot.
-
-  07 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
-
-  12 May 2008; Markus Dittrich <markusle@gentoo.org> gerris-0.8.0.ebuild,
-  gerris-0.9.2.ebuild:
-  Removed runtime dependencies on libtool (fixes bug #221633).
-
-  02 Feb 2007; Markus Dittrich <markusle@gentoo.org> gerris-0.9.2.ebuild:
-  Forced -j1 during emake since make breaks otherwise 
-  (fixes bug #164855).
-
-*gerris-0.9.2 (05 Apr 2006)
-
-  05 Apr 2006; Markus Dittrich <markusle@gentoo.org> +gerris-0.9.2.ebuild:
-  Version bump. Thanks to Tim Cera <timcera@earthlink.net> for
-  pointing this out. This fixes bug #128596.
-
-  17 Mar 2006; Scott Stoddard <deltacow@gentoo.org> gerris-0.8.0.ebuild:
-  Added ~amd64.
-
-  29 Nov 2005; Markus Dittrich <markusle@gentoo.org>
-  files/digest-gerris-0.8.0, Manifest:
-  Fixed bad digest for source tarball. This closes bug #113850.
-
-*gerris-0.8.0 (27 Nov 2005)
-
-  27 Nov 2005; Markus Dittrich <markusle@gentoo.org> +metadata.xml,
-  +gerris-0.8.0.ebuild:
-  Initial import (fixes bug #102323). Many thanks to Tim Cera
-  <timcera@earthlink.net> for his ebuild.

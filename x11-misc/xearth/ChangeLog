@@ -1,95 +1,56 @@
 # ChangeLog for x11-misc/xearth
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xearth/ChangeLog,v 1.27 2015/06/04 14:19:40 pacho Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Pacho Ramos <pacho@gentoo.org> xearth-1.1-r1.ebuild:
-  x11-libs/libXext is needed (#514268)
+*xearth-1.1-r1 (09 Aug 2015)
 
-  18 May 2015; Manuel Rüger <mrueg@gentoo.org> -xearth-1.1.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xearth-1.1-include.patch, +metadata.xml, +xearth-1.1-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> xearth-1.1.ebuild,
-  xearth-1.1-r1.ebuild:
-  Drop sparc keywords
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2012; Brent Baude <ranger@gentoo.org> xearth-1.1-r1.ebuild:
-  Marking xearth-1.1-r1 ppc64 for bug 397283
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> xearth-1.1-r1.ebuild:
-  Stable on alpha, bug #397283
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xearth-1.1-r1.ebuild:
-  x86 stable wrt bug #397283
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Feb 2012; Brent Baude <ranger@gentoo.org> xearth-1.1-r1.ebuild:
-  Marking xearth-1.1-r1 ppc for bug 397283
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xearth-1.1-r1.ebuild:
-  Stable for amd64, wrt bug #397283
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Sep 2010; Jeroen Roovers <jer@gentoo.org>
-  files/xearth-1.1-include.patch:
-  Clean up patch.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Sep 2010; Jeroen Roovers <jer@gentoo.org> xearth-1.1-r1.ebuild:
-  Remove unneeded x11-libs/libXext dependency thanks to Michael Weber (bug
-  #337773 comment #2).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*xearth-1.1-r1 (18 Sep 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Sep 2010; Jeroen Roovers <jer@gentoo.org> +xearth-1.1-r1.ebuild,
-  +files/xearth-1.1-include.patch:
-  Respect LDFLAGS (bug #337773), CC, CFLAGS. Add include.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org> xearth-1.1.ebuild:
-  HOMEPAGE corrected, #309659
-
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>; xearth-1.1.ebuild:
-  Drop virtual/x11 references.
-
-  06 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  16 May 2006; Thomas Cort <tcort@gentoo.org> xearth-1.1.ebuild:
-  Stable on alpha.
-
-  23 Mar 2006; Fernando J. Pereda <ferdy@gentoo.org> xearth-1.1.ebuild:
-  Add ~alpha. Tested by Thomas Cort <tcort@cs.ubishops.ca>
-
-  04 Mar 2006; Krzysiek Pawlik <nelchael@gentoo.org> xearth-1.1.ebuild:
-  Added missing rman to DEPEND.
-
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> xearth-1.1.ebuild:
-  Fixed typo in RDEPEND.
-
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> xearth-1.1.ebuild:
-  Fixed DEPEND for modular X.
-
-  02 Nov 2005; Luis Medinas <metalgod@gentoo.org> xearth-1.1.ebuild:
-  Marked Stable on amd64. Bug #111126.
-
-  01 Nov 2005; Krzysiek Pawlik <nelchael@gentoo.org> xearth-1.1.ebuild:
-  Fixed dodoc not to install COPYING and/or INSTALL.
-
-  27 Aug 2004; Tom Gall <tgall@gentoo.org> xearth-1.1.ebuild:
-  stable on ppc64, bug #59354
-
-  01 Jun 2004; Brandon Hale <tseng@gentoo.org> xearth-1.1.ebuild:
-  Add IUSE=
-
-  23 May 2004; Danny van Dyk <kugelfang@gentoo.org> xearth-1.1.ebuild:
-  Marked ~amd64.
-
-*xearth-1.1 (18 Nov 2003)
-
-  18 Nov 2003; Ian Leitch <port001@gentoo.org> xearth-1.1.ebuild:
-  Moved from app-misc  to x11-misc. metadata.xml created
-
-*xearth-1.1 (12 Aug 2002)
-
-  08 Mar 2003; Graham Forest <vladimir@gentoo.org> xearth-1.1.ebuild:
-  set ppc in keywords
-
-  12 Aug 2002; Ryan Phillips <rphillips@gentoo.org> ChangeLog :
-
-  Initial ebuild in portage.  Thanks to Bret Towe for the ebuild.

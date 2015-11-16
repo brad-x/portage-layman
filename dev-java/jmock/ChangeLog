@@ -1,130 +1,105 @@
 # ChangeLog for dev-java/jmock
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jmock/ChangeLog,v 1.32 2015/06/14 14:58:32 monsieurp Exp $
+# (auto-generated from git log)
 
-  14 Jun 2015; Patrice Clement <monsieurp@gentoo.org> -jmock-1.1.0-r2.ebuild:
+*jmock-2.6.1 (09 Aug 2015)
+*jmock-2.5.1 (09 Aug 2015)
+*jmock-1.2.0 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/1.1.0-build.xml.patch, +files/1.1.0-junit-3.8.2.patch,
+  +files/2.5.1-invokeAll-invokeAny.patch, +jmock-1.2.0.ebuild,
+  +jmock-2.5.1.ebuild, +jmock-2.6.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  27 Aug 2015; Patrice Clement <monsieurp@gentoo.org> jmock-1.2.0.ebuild:
+  Update HOMEPAGE and SRC_URI courtesy of Jeorg Neikes
+  <xenoist@midlandgate.de>. Fixes bug 558908.
+
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  27 Aug 2015; Patrice Clement <monsieurp@gentoo.org> -jmock-2.5.1.ebuild:
   Drop old.
 
-  14 Jun 2015; Patrice Clement <monsieurp@gentoo.org> jmock-1.2.0.ebuild:
-  Stable for amd64. Retroactively marking the other arches stable via ALLARCHES.
-  Fix bug 551400.
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  06 Jun 2015; Patrice Clement <monsieurp@gentoo.org> jmock-1.2.0.ebuild:
-  Remove useless dependency on dev-java/cglib:2.2. See bug 546288.
+*jmock-1.2.0-r1 (28 Aug 2015)
 
-  22 Apr 2015; Patrice Clement <monsieurp@gentoo.org> jmock-2.6.1.ebuild:
-  Remove hard SLOTs depends on virtual/{jdk-jre} in favour of normal deps. Fix
-  bug 547282.
+  28 Aug 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/1.1.0-build.xml.patch, -files/1.1.0-junit-3.8.2.patch,
+  +files/jmock-1.2.0-AbstractMo.patch, +jmock-1.2.0-r1.ebuild:
+  Change the compilation logic. Fixes bug 558908.
 
-  16 Apr 2015; Agostino Sarubbo <ago@gentoo.org> jmock-2.6.1.ebuild:
-  Stable for x86, wrt bug #546298
+  After yesterday's fix i.e. HOMEPAGE and SRC_URI pointing to new URLs, I
+  wrongly
+  assumed the package structure was the same, which, unfortunately, isn't the
+  case.
 
-  16 Apr 2015; Agostino Sarubbo <ago@gentoo.org> jmock-2.6.1.ebuild:
-  Stable for amd64, wrt bug #546298
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*jmock-2.6.1 (14 Apr 2015)
+  29 Aug 2015; Patrice Clement <monsieurp@gentoo.org> jmock-1.2.0-r1.ebuild:
+  Stable for amd64+ppc+ppc64+x86 using the ALLARCHES policy.
 
-  14 Apr 2015; Patrice Clement <monsieurp@gentoo.org> +jmock-2.6.1.ebuild,
-  jmock-2.5.1.ebuild:
-  Bumped to latest version in order to mend SLOTs and compile issues. Fix bug
-  546548.
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  11 Apr 2015; Patrice Clement <monsieurp@gentoo.org> jmock-2.5.1.ebuild:
-  Adjust dev-java/hamcrest-* SLOTs.
+  29 Aug 2015; Patrice Clement <monsieurp@gentoo.org> -jmock-1.2.0.ebuild:
+  Remove old.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> jmock-1.1.0-r2.ebuild,
-  jmock-1.2.0.ebuild, jmock-2.5.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*jmock-2.5.1 (28 Feb 2014)
+  02 Nov 2015; James Le Cuirot <chewi@gentoo.org> jmock-1.2.0-r1.ebuild:
+  Add ~arm keyword
 
-  28 Feb 2014; Johann Schmitz <ercpe@gentoo.org>
-  +files/2.5.1-invokeAll-invokeAny.patch, +jmock-2.5.1.ebuild:
-  Version bump of jmock wrt bug #213175
+  Package-Manager: portage-2.2.20.1
 
-*jmock-1.2.0 (28 Feb 2014)
-
-  28 Feb 2014; Johann Schmitz <ercpe@gentoo.org> +jmock-1.2.0.ebuild:
-  Version bump of jmock to 1.2.0 wrt bug #488818
-
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Marked *-macos
-
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Marked *-macos
-
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org> jmock-1.1.0-r2.ebuild:
-  keyword ~amd64-fbsd
-
-  20 Jan 2010; Brent Baude <ranger@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Marking jmock-1.1.0-r2 ppc64 for bug 281006
-
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  jmock-1.1.0-r2.ebuild:
-  Transfer Prefix keywords
-
-  30 Mar 2008; Markus Rothe <corsair@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Added ~ppc64
-
-  08 Mar 2008; Krzysiek Pawlik <nelchael@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Stable on ppc.
-
-  19 Dec 2007; Petteri Räty <betelgeuse@gentoo.org> -jmock-1.1.0-r1.ebuild:
-  Delete old ebuild.
-
-  05 Jul 2007; Christoph Mende <angelos@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Stable on amd64 wrt bug #184238
-
-  05 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  jmock-1.1.0-r2.ebuild:
-  stable x86, bug 184238
-
-  26 May 2007; Krzysiek Pawlik <nelchael@gentoo.org> jmock-1.1.0-r2.ebuild:
-  Add ~ppc.
-
-  07 May 2007; Vlastimil Babka <caster@gentoo.org>
-  -files/jmock-1.0.1-buildxml.patch, -jmock-1.0.1.ebuild,
-  jmock-1.1.0-r2.ebuild:
-  Migrate to split-ant, tweak style; remove unused version.
-
-  12 Apr 2007; <welp@gentoo.org> jmock-1.1.0-r1.ebuild:
-  Stable on amd64 wrt bug 167517
-
-*jmock-1.1.0-r2 (07 Apr 2007)
-
-  07 Apr 2007; Miroslav Šulc <fordfrog@gentoo.org> +jmock-1.1.0-r2.ebuild:
-  Corrected running of tests with dev-java/ant-1.7.0
-
-  20 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  jmock-1.1.0-r1.ebuild:
-  stable x86; bug 167517
-
-  18 Feb 2007; Petteri Räty <betelgeuse@gentoo.org> -jmock-1.1.0.ebuild:
-  Removed old revision.
-
-*jmock-1.1.0-r1 (09 Jan 2007)
-
-  09 Jan 2007; Joshua Nichols <nichoj@gentoo.org> +jmock-1.1.0-r1.ebuild:
-  Fixed installation of jars, see bug #160955, reported by David Emmett
-  <daisy@xs4all.nl>.
-
-*jmock-1.1.0 (22 Dec 2006)
-
-  22 Dec 2006; Petteri Räty <betelgeuse@gentoo.org>
-  +files/1.1.0-junit-3.8.2.patch, +files/1.1.0-build.xml.patch,
-  +jmock-1.1.0.ebuild:
-  Version bump using generation 2. Adds support for the source use flag, unit
-  tests and builds with junit 3.8.2. Fixes bug #151415.
-
-  17 May 2005; Jan Brinkmann <luckyduck@gentoo.org> jmock-1.0.1.ebuild:
-  stable on amd64 and x86
-
-  05 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> jmock-1.0.1.ebuild:
-  some minor fixes.
-
-*jmock-1.0.1 (04 Jan 2005)
-
-  04 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> +metadata.xml,
-  +files/jmock-1.0.1-buildxml.patch, +jmock-1.0.1.ebuild:
-  Initial import. Ebuild submitted by me. Needed as a indirect dependency of
-  #63290.

@@ -1,204 +1,72 @@
 # ChangeLog for dev-util/coccinelle
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/coccinelle/ChangeLog,v 1.42 2015/07/08 05:52:00 patrick Exp $
+# (auto-generated from git log)
 
-  08 Jul 2015; Patrick Lauer <patrick@gentoo.org> coccinelle-1.0.1.ebuild:
-  Keyword for ~x86
+*coccinelle-1.0.1 (09 Aug 2015)
+*coccinelle-1.0.0 (09 Aug 2015)
 
-  08 Jul 2015; Tim Harder <radhermit@gentoo.org> -coccinelle-1.0.0_rc17.ebuild,
-  -coccinelle-1.0.0_rc18.ebuild, -coccinelle-1.0.0_rc19.ebuild,
-  -coccinelle-1.0.0_rc22.ebuild, -coccinelle-1.0.0_rc23.ebuild,
-  -coccinelle-1.0.0_rc24.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +coccinelle-1.0.0.ebuild,
+  +coccinelle-1.0.1.ebuild, +files/50coccinelle-gentoo.el,
+  +files/coccinelle-1.0.0_rc16-findtool.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*coccinelle-1.0.1 (22 Jun 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jun 2015; Alexis Ballier <aballier@gentoo.org> +coccinelle-1.0.1.ebuild:
-  version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*coccinelle-1.0.0 (16 May 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 May 2015; Alexis Ballier <aballier@gentoo.org> +coccinelle-1.0.0.ebuild:
-  version bump, unbundle dev-ml/menhir and dev-ml/parmap
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> coccinelle-1.0.0_rc17.ebuild,
-  coccinelle-1.0.0_rc18.ebuild, coccinelle-1.0.0_rc19.ebuild:
-  Drop old Python implementations
+*coccinelle-1.0.2 (24 Aug 2015)
 
-*coccinelle-1.0.0_rc24 (07 Feb 2015)
+  24 Aug 2015; Alexis Ballier <aballier@gentoo.org> +coccinelle-1.0.2.ebuild:
+  bump to 1.0.2.
 
-  07 Feb 2015; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc24.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
 
-*coccinelle-1.0.0_rc23 (12 Dec 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Dec 2014; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc23.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*coccinelle-1.0.0_rc22 (12 Oct 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Oct 2014; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc22.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*coccinelle-1.0.0_rc19 (21 Dec 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Dec 2013; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc19.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-*coccinelle-1.0.0_rc18 (16 Sep 2013)
+*coccinelle-1.0.4 (30 Oct 2015)
 
-  16 Sep 2013; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc18.ebuild:
-  Version bump, precompile python code (fixes bug #471928).
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> +coccinelle-1.0.4.ebuild:
+  Bump to 1.0.4.
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> coccinelle-1.0.0_rc17.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Package-Manager: portage-2.2.23
 
-  19 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  coccinelle-1.0.0_rc17.ebuild:
-  add := dep on ocaml pacakges
-
-  30 May 2013; Tim Harder <radhermit@gentoo.org>
-  -coccinelle-1.0.0_rc15-r1.ebuild, -coccinelle-1.0.0_rc16.ebuild,
-  -files/coccinelle-1.0.0_rc14-findtool.patch:
-  Remove old.
-
-  30 May 2013; Tim Harder <radhermit@gentoo.org> coccinelle-1.0.0_rc17.ebuild:
-  Add PYTHON_REQUIRED_USE for python-single-r1.
-
-*coccinelle-1.0.0_rc17 (24 Apr 2013)
-
-  24 Apr 2013; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc17.ebuild:
-  Version bump, migrate to python-single-r1.
-
-  13 Dec 2012; Tim Harder <radhermit@gentoo.org> -coccinelle-1.0.0_rc14.ebuild,
-  -coccinelle-1.0.0_rc15.ebuild:
-  Remove old.
-
-*coccinelle-1.0.0_rc16 (13 Dec 2012)
-
-  13 Dec 2012; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc16.ebuild,
-  +files/coccinelle-1.0.0_rc16-findtool.patch:
-  Version bump.
-
-*coccinelle-1.0.0_rc15-r1 (31 Aug 2012)
-
-  31 Aug 2012; Tim Harder <radhermit@gentoo.org>
-  +coccinelle-1.0.0_rc15-r1.ebuild:
-  Revision bump. Fix script location for spatch binary.
-
-  20 Aug 2012; Tim Harder <radhermit@gentoo.org> -coccinelle-1.0.0_rc12.ebuild:
-  Remove old.
-
-*coccinelle-1.0.0_rc15 (20 Aug 2012)
-
-  20 Aug 2012; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc15.ebuild:
-  Version bump.
-
-  03 Aug 2012; Tim Harder <radhermit@gentoo.org> coccinelle-1.0.0_rc14.ebuild,
-  +files/coccinelle-1.0.0_rc14-findtool.patch:
-  Fix configure method of looking for external tools (bug #429556).
-
-  01 Aug 2012; Tim Harder <radhermit@gentoo.org> -coccinelle-1.0.0_rc11.ebuild,
-  -files/coccinelle-1.0.0_rc7-parallel-make.patch:
-  Remove old.
-
-*coccinelle-1.0.0_rc14 (01 Aug 2012)
-
-  01 Aug 2012; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc14.ebuild:
-  Version bump.
-
-*coccinelle-1.0.0_rc12 (30 Jun 2012)
-
-  30 Jun 2012; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc12.ebuild:
-  Version bump.
-
-  05 May 2012; Alexis Ballier <aballier@gentoo.org>
-  -files/coccinelle-1.0.0_rc7-pcre.patch,
-  -files/coccinelle-1.0.0_rc7-pcre-linking.patch:
-  remove stray patches too
-
-  05 May 2012; Alexis Ballier <aballier@gentoo.org>
-  -coccinelle-1.0.0_rc7.ebuild, -coccinelle-1.0.0_rc10.ebuild:
-  remove old
-
-*coccinelle-1.0.0_rc11 (16 Mar 2012)
-
-  16 Mar 2012; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc11.ebuild,
-  metadata.xml:
-  Version bump. Add myself as a maintainer.
-
-  07 Mar 2012; Tim Harder <radhermit@gentoo.org> -coccinelle-0.2.5-r2.ebuild:
-  Remove old.
-
-*coccinelle-1.0.0_rc10 (05 Mar 2012)
-
-  05 Mar 2012; Tim Harder <radhermit@gentoo.org> +files/50coccinelle-gentoo.el,
-  +coccinelle-1.0.0_rc10.ebuild:
-  Version bump. Add emacs and vim-syntax use flags (bug #398889).
-
-  05 Nov 2011; Tim Harder <radhermit@gentoo.org> coccinelle-1.0.0_rc7.ebuild:
-  Conditionalize python related setup.
-
-*coccinelle-1.0.0_rc7 (04 Nov 2011)
-
-  04 Nov 2011; Tim Harder <radhermit@gentoo.org> +coccinelle-1.0.0_rc7.ebuild,
-  +files/coccinelle-1.0.0_rc7-parallel-make.patch,
-  +files/coccinelle-1.0.0_rc7-pcre.patch,
-  +files/coccinelle-1.0.0_rc7-pcre-linking.patch:
-  Version bump (fixes bug #369343). Update to EAPI 4 and improve python support
-  (bug #324381).
-
-  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> coccinelle-0.2.5-r2.ebuild:
-  remove ptex dep as it is going away
-
-  05 Oct 2011; Alexis Ballier <aballier@gentoo.org>
-  -coccinelle-0.2.5-r1.ebuild:
-  remove old
-
-  23 Jul 2011; Thomas Kahle <tomka@gentoo.org> coccinelle-0.2.5-r2.ebuild:
-  ~x86 per bug 373149
-
-*coccinelle-0.2.5-r2 (26 Jun 2011)
-
-  26 Jun 2011; Alexis Ballier <aballier@gentoo.org>
-  +coccinelle-0.2.5-r2.ebuild:
-  it depends on sexplib, not keyworded on x86, drop keywords
-
-*coccinelle-0.2.5-r1 (09 May 2011)
-
-  09 May 2011; Sergei Trofimovich <slyfox@gentoo.org> -coccinelle-0.2.5.ebuild,
-  +coccinelle-0.2.5-r1.ebuild:
-  Fixed missing runtime depend on findlib as found out Jakub Zawadzki in bug
-  #366553. Added USE=ocaml for ocaml scripting support.
-
-*coccinelle-0.2.5 (08 May 2011)
-
-  08 May 2011; Sergei Trofimovich <slyfox@gentoo.org> -coccinelle-0.2.2.ebuild,
-  +coccinelle-0.2.5.ebuild:
-  version bump. Fixes build failure against modern python versions (bug #331079
-  by Diego Elio Pettenò). Removed old.
-
-  25 May 2010; Alexis Ballier <aballier@gentoo.org>
-  -coccinelle-0.2.0.ebuild, -coccinelle-0.2.1.ebuild:
-  remove old
-
-*coccinelle-0.2.2 (09 Apr 2010)
-
-  09 Apr 2010; Alexis Ballier <aballier@gentoo.org>
-  +coccinelle-0.2.2.ebuild:
-  version bump
-
-  06 Apr 2010; Alexis Ballier <aballier@gentoo.org> coccinelle-0.2.1.ebuild:
-  set VARTEXFONTS to avoid sandbox violations, bug #312343
-
-*coccinelle-0.2.1 (01 Feb 2010)
-
-  01 Feb 2010; Alexis Ballier <aballier@gentoo.org>
-  +coccinelle-0.2.1.ebuild:
-  version bump
-
-*coccinelle-0.2.0 (24 Jan 2010)
-
-  24 Jan 2010; Alexis Ballier <aballier@gentoo.org>
-  +coccinelle-0.2.0.ebuild, +metadata.xml:
-  initial import, ebuild by me, requested by solar

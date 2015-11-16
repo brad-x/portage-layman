@@ -1,57 +1,61 @@
 # ChangeLog for x11-plugins/wmload
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmload/ChangeLog,v 1.15 2015/04/17 12:52:59 voyageur Exp $
+# (auto-generated from git log)
 
-*wmload-0.9.6 (17 Apr 2015)
+*wmload-0.9.6 (09 Aug 2015)
+*wmload-0.9.2 (09 Aug 2015)
 
-  17 Apr 2015; Bernard Cafarelli <voyageur@gentoo.org> +wmload-0.9.6.ebuild,
-  +files/wmload-0.9.6-solaris.patch:
-  Version bump with new homepage, ebuild cleanup
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/wmload-0.9.2-prefix.patch, +files/wmload-0.9.6-solaris.patch,
+  +files/wmload-ComplexProgramTargetNoMan.patch, +files/wmload.desktop,
+  +files/wmload.solaris.patch, +metadata.xml, +wmload-0.9.2.ebuild,
+  +wmload-0.9.6.ebuild:
+  proj/gentoo: Initial commit
 
-  20 Mar 2015; Justin Lecher <jlec@gentoo.org> files/wmload.desktop:
-  Fix desktop file
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Sep 2014; Bernard Cafarelli <voyageur@gentoo.org> wmload-0.9.2.ebuild:
-  Replace einstall with emake install, bug #521684
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Sep 2012; Justin Lecher <jlec@gentoo.org> wmload-0.9.2.ebuild:
-  Use domenu instead insinto + doins to install .desktop files
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Aug 2010; Jeremy Olexa <darkside@gentoo.org> wmload-0.9.2.ebuild,
-  +files/wmload-0.9.2-prefix.patch, +files/wmload.solaris.patch:
-  Migrate changes from Gentoo Prefix overlay. KEYWORDS, EAPI3, specific
-  patches. Approved by maintainer. Also respect LDFLAGS as an extra QA
-  commit.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Nov 2008; Tiago Cunha <tcunha@gentoo.org> wmload-0.9.2.ebuild:
-  stable sparc, bug 215651
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  wmload-0.9.6.ebuild:
+  Use https by default
 
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>; wmload-0.9.2.ebuild:
-  Drop virtual/x11 references.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 May 2007; Christian Faulhammer <opfer@gentoo.org> wmload-0.9.2.ebuild:
-  added ~amd64, bug 177154
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+*wmload-0.9.7 (24 Aug 2015)
 
-  31 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> wmload-0.9.2.ebuild:
-  Fixed DEPEND for modular X.
+  24 Aug 2015; Bernard Cafarelli <voyageur@gentoo.org> metadata.xml,
+  +wmload-0.9.7.ebuild:
+  version bump
 
-  24 Nov 2004; Jason Wever <weeve@gentoo.org> wmload-0.9.2.ebuild:
-  Added ~sparc keyword.
+  Package-Manager: portage-2.2.20.1
 
-  04 Sep 2004; Michele Noberasco <s4t4n@gentoo.org> wmload-0.9.2.ebuild:
-  Stable for x86.
-
-  02 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  wmload-0.9.2.ebuild:
-  Masked wmload-0.9.2.ebuild stable for ppc
-
-  17 Jul 2004; David Holm <dholm@gentoo.org> wmload-0.9.2.ebuild:
-  Added to ~ppc.
-
-*wmload-0.9.2 (17 Jul 2004)
-
-  17 Jul 2004; Michele Noberasco <s4t4n@gentoo.org> wmload-0.9.2.ebuild:
-  Initial import. Thanks to Przemyslaw Maciag. Closes #54552.

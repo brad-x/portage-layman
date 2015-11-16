@@ -1,175 +1,57 @@
 # ChangeLog for app-portage/porticron
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/porticron/ChangeLog,v 1.42 2015/06/06 07:47:51 jlec Exp $
+# (auto-generated from git log)
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*porticron-0.7_p20140126 (09 Aug 2015)
 
-  20 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -porticron-0.6.ebuild,
-  -porticron-0.7_p20131113.ebuild:
-  Remove old.
-
-  30 Jan 2015; Sergey Popov <pinkbyte@gentoo.org> porticron-0.6.ebuild,
-  porticron-0.7_p20131113.ebuild, porticron-0.7_p20140126.ebuild:
-  Add missing dependency on app-portage/gentoolkit as porticron calls
-  glsa-check from it
-
-  12 Nov 2014; Sebastian Pipping <sping@gentoo.org> porticron-0.6.ebuild,
-  porticron-0.7_p20131113.ebuild, porticron-0.7_p20140126.ebuild:
-  Update homepage
-
-  13 Apr 2014; Agostino Sarubbo <ago@gentoo.org> porticron-0.7_p20140126.ebuild:
-  Stable for ppc, wrt bug #505148
-
-  31 Mar 2014; Sergey Popov <pinkbyte@gentoo.org>
-  porticron-0.7_p20140126.ebuild:
-  Stable on x86, wrt bug #505148
-
-  29 Mar 2014; Chema Alonso <nimiux@gentoo.org> porticron-0.7_p20140126.ebuild:
-  Stable for amd64 wrt bug #505148
-
-  28 Mar 2014; Jeroen Roovers <jer@gentoo.org> porticron-0.7_p20140126.ebuild:
-  Stable for HPPA (bug #505148).
-
-*porticron-0.7_p20140126 (06 Feb 2014)
-
-  06 Feb 2014; Michael Weber <xmw@gentoo.org>
-  +files/porticron-0.7_p20140126-portage-2.2.8.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/porticron-0.7_p20140126-portage-2.2.8.patch, +metadata.xml,
   +porticron-0.7_p20140126.ebuild:
-  Add portage 2.2.8 patch by pinkybyte
+  proj/gentoo: Initial commit
 
-*porticron-0.7_p20131113 (11 Jan 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jan 2014; Michael Weber <xmw@gentoo.org> +porticron-0.7_p20131113.ebuild:
-  Version bump, add ~ppc64 (bug 459188).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jan 2014; Michael Weber <xmw@gentoo.org> metadata.xml:
-  Taking maint.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Jun 2013; Benedikt Böhm <hollow@gentoo.org> metadata.xml:
-  remove myself from maintainers
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Jan 2013; Benedikt Böhm <hollow@gentoo.org> -porticron-0.5.ebuild,
-  -porticron-0.5.1.ebuild, -porticron-0.5.2.ebuild, -porticron-0.5.3.ebuild,
-  porticron-0.6.ebuild:
-  add ~arm wrt #451106; remove old versions
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Mar 2012; Brent Baude <ranger@gentoo.org> porticron-0.6.ebuild:
-  Marking porticron-0.6 ppc for bug 367189
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 May 2011; Markus Meier <maekke@gentoo.org> porticron-0.6.ebuild:
-  x86 stable, bug #367189
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 May 2011; Jeroen Roovers <jer@gentoo.org> porticron-0.6.ebuild:
-  Stable for HPPA (bug #367189).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 May 2011; Christoph Mende <angelos@gentoo.org> porticron-0.6.ebuild:
-  Stable on amd64 wrt bug #367189
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*porticron-0.6 (08 Mar 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Mar 2011; Benedikt Böhm <hollow@gentoo.org> +porticron-0.6.ebuild:
-  version bump
-
-*porticron-0.5.3 (12 Nov 2010)
-
-  12 Nov 2010; Benedikt Böhm <hollow@gentoo.org> +porticron-0.5.3.ebuild:
-  version bump
-
-  17 Jul 2010; Benedikt Böhm <hollow@gentoo.org> porticron-0.5.2.ebuild:
-  stable on amd64 & x86
-
-*porticron-0.5.2 (17 Apr 2010)
-
-  17 Apr 2010; Benedikt Böhm <hollow@gentoo.org> -porticron-0.3.ebuild,
-  +porticron-0.5.2.ebuild:
-  version bump
-
-  21 Oct 2009; Jeroen Roovers <jer@gentoo.org> porticron-0.5.ebuild:
-  Stable for HPPA (bug #285656).
-
-*porticron-0.5.1 (03 Oct 2009)
-
-  03 Oct 2009; Benedikt Böhm <hollow@gentoo.org> +porticron-0.5.1.ebuild:
-  version bump, fixes #285978
-
-  27 Sep 2009; nixnut <nixnut@gentoo.org> porticron-0.5.ebuild:
-  ppc stable #285656
-
-  20 Sep 2009; Benedikt Böhm <hollow@gentoo.org> -porticron-0.4.ebuild,
-  porticron-0.5.ebuild:
-  stable on amd64 & x86
-
-*porticron-0.5 (06 Aug 2009)
-
-  06 Aug 2009; Benedikt Böhm <hollow@gentoo.org> +porticron-0.5.ebuild:
-  version bump
-
-  26 Jul 2009; Thilo Bangert <bangert@gentoo.org> metadata.xml:
-  add <herd> tag
-
-*porticron-0.4 (20 Jul 2009)
-
-  20 Jul 2009; Benedikt Böhm <hollow@gentoo.org> +porticron-0.4.ebuild:
-  version bump (now with glsa-check support)
-
-  26 Apr 2009; Brent Baude <ranger@gentoo.org> porticron-0.3.ebuild:
-  stable ppc, bug 265458
-
-  14 Apr 2009; Raúl Porcel <armin76@gentoo.org> porticron-0.3.ebuild:
-  x86 stable wrt #265458
-
-  08 Apr 2009; Jeroen Roovers <jer@gentoo.org> porticron-0.3.ebuild:
-  Stable for HPPA (bug #265458).
-
-  08 Apr 2009; Benedikt Böhm <hollow@gentoo.org> porticron-0.3.ebuild:
-  stable on amd64
-
-  08 Apr 2009; Benedikt Böhm <hollow@gentoo.org> -files/porticron,
-  -porticron-0.2.3.ebuild, porticron-0.3.ebuild:
-  remove cron.daily script wrt #257028
-
-*porticron-0.3 (25 Jan 2009)
-
-  25 Jan 2009; Benedikt Böhm <hollow@gentoo.org> -porticron-0.2.1.ebuild,
-  -porticron-0.2.2.ebuild, +porticron-0.3.ebuild:
-  version bump
-
-*porticron-0.2.3 (15 Jan 2009)
-
-  15 Jan 2009; Benedikt Böhm <hollow@gentoo.org> +porticron-0.2.3.ebuild:
-  version bump: fixes #255049
-
-*porticron-0.2.2 (14 Jan 2009)
-
-  14 Jan 2009; Benedikt Böhm <hollow@gentoo.org> -porticron-0.2.ebuild,
-  porticron-0.2.1.ebuild, +porticron-0.2.2.ebuild:
-  version bump: fixes #253352; fix SRC_URI
-
-  02 Jan 2009; Tobias Scherbaum <dertobi123@gentoo.org>
-  porticron-0.2.1.ebuild:
-  Add ~hppa and ~ppc keywords
-
-  01 Jan 2009; Benedikt Böhm <hollow@gentoo.org> porticron-0.2.1.ebuild:
-  fix HOMEPAGE and SRC_URI
-
-  24 Nov 2008; Benedikt Böhm <hollow@gentoo.org> porticron-0.2.1.ebuild:
-  fix source path
-
-*porticron-0.2.1 (23 Nov 2008)
-
-  23 Nov 2008; Benedikt Böhm <hollow@gentoo.org> -files/porticron-0.1,
-  -porticron-0.1.ebuild, +porticron-0.2.1.ebuild:
-  version bump
-
-*porticron-0.2 (31 Oct 2008)
-
-  31 Oct 2008; Benedikt Böhm <hollow@gentoo.org> +files/porticron,
-  +porticron-0.2.ebuild:
-  version bump wrt #244873
-
-*porticron-0.1 (28 Oct 2008)
-
-  28 Oct 2008; Benedikt Böhm <hollow@gentoo.org> +files/porticron-0.1,
-  +metadata.xml, +porticron-0.1.ebuild:
-  initial version

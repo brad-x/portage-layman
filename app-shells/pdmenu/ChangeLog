@@ -1,97 +1,102 @@
 # ChangeLog for app-shells/pdmenu
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/pdmenu/ChangeLog,v 1.25 2015/08/04 13:30:02 polynomial-c Exp $
+# (auto-generated from git log)
 
-*pdmenu-1.3.4 (04 Aug 2015)
+*pdmenu-1.3.4 (09 Aug 2015)
+*pdmenu-1.3.2-r1 (09 Aug 2015)
 
-  04 Aug 2015; Lars Wendler <polynomial-c@gentoo.org> +pdmenu-1.3.4.ebuild:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pdmenu-impl-dec.patch, +metadata.xml, +pdmenu-1.3.2-r1.ebuild,
+  +pdmenu-1.3.4.ebuild:
+  proj/gentoo: Initial commit
 
-*pdmenu-1.3.2-r1 (05 Dec 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Dec 2012; Lars Wendler <polynomial-c@gentoo.org> -pdmenu-1.3.2.ebuild,
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  17 Oct 2015; Patrice Clement <monsieurp@gentoo.org> pdmenu-1.3.4.ebuild:
+  Use ${PN} whereever possible.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  17 Oct 2015; Patrice Clement <monsieurp@gentoo.org> pdmenu-1.3.4.ebuild:
+  Stable for amd64. Stable mips+x86 using the ALLARCHES policy.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  17 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/pdmenu-impl-dec.patch, -pdmenu-1.3.2-r1.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*pdmenu-1.3.2-r1 (18 Oct 2015)
+
+  18 Oct 2015; Pacho Ramos <pacho@gentoo.org> +files/pdmenu-impl-dec.patch,
   +pdmenu-1.3.2-r1.ebuild:
-  non-maintainer commit: Fixed installation of examples (bug #446086).
+  Revert "app-shells/pdmenu: Clean up old."
 
-  22 Aug 2012; Johannes Huber <johu@gentoo.org> -pdmenu-1.2.89.ebuild,
-  -pdmenu-1.2.95.ebuild:
-  Remove old.
+  This reverts commit 02b747c5e5abf923e7ae803f73f39f3f1db73b06.
 
-  22 Aug 2012; Johannes Huber <johu@gentoo.org> pdmenu-1.3.2.ebuild:
-  Stable for x86, wrt bug #428898
+  18 Oct 2015; Pacho Ramos <pacho@gentoo.org> -pdmenu-1.3.2-r1.ebuild:
+  Drop only the old ebuild as patch is still needed
 
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> pdmenu-1.3.2.ebuild:
-  Stable for amd64, wrt bug #428898
+  Package-Manager: portage-2.2.23
 
-  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> pdmenu-1.2.89.ebuild,
-  pdmenu-1.2.95.ebuild, pdmenu-1.3.2.ebuild:
-  Drop alpha/ia64 keywords
+  09 Nov 2015; Patrice Clement <monsieurp@gentoo.org> pdmenu-1.3.4.ebuild:
+  Make use of $(tc-getCC) to get compiler name right. Fixes bug 483750.
 
-  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> pdmenu-1.2.89.ebuild,
-  pdmenu-1.2.95.ebuild, pdmenu-1.3.2.ebuild:
-  Update HOMEPAGE.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*pdmenu-1.3.2 (01 Jul 2012)
+  09 Nov 2015; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Take over maintainership.
 
-  01 Jul 2012; Justin Lecher <jlec@gentoo.org> pdmenu-1.2.89.ebuild,
-  pdmenu-1.2.95.ebuild, +pdmenu-1.3.2.ebuild, +files/pdmenu-impl-dec.patch,
-  metadata.xml:
-  Version Bump, respect LDFLAGS, #337237; move to EAPI=4; fix implicit
-  declarations
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pdmenu-1.2.95.ebuild:
-  x86 stable wrt bug #418635
-
-  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pdmenu-1.2.95.ebuild:
-  Stable for amd64, wrt bug #418635
-
-  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> -pdmenu-1.2.93.ebuild,
-  metadata.xml:
-  Drop maintainer due retirement, bug 118003. Drop old.
-
-  06 Feb 2011; Mart Raudsepp <leio@gentoo.org> pdmenu-1.2.89.ebuild:
-  Drop to ~mips
-
-*pdmenu-1.2.95 (30 Aug 2008)
-
-  30 Aug 2008; Markus Ullmann <jokey@gentoo.org> +pdmenu-1.2.95.ebuild:
-  Version bump
-
-*pdmenu-1.2.93 (04 Mar 2008)
-
-  04 Mar 2008; Markus Ullmann <jokey@gentoo.org> +pdmenu-1.2.93.ebuild:
-  Version bump for bug #208457
-
-  09 Feb 2008; Samuli Suominen <drac@gentoo.org> pdmenu-1.2.89.ebuild:
-  Keyword ~amd64 and verify it works with slang 2.1.3.
-
-  07 Oct 2007; Markus Ullmann <jokey@gentoo.org> pdmenu-1.2.89.ebuild:
-  Added warning for bug #191295
-
-  03 Jun 2007; Markus Ullmann <jokey@gentoo.org> metadata.xml,
-  pdmenu-1.2.89.ebuild:
-  Take over maintainership from eroyf
-
-  08 Jan 2007; Alexander H. Færøy <eroyf@gentoo.org> pdmenu-1.2.89.ebuild:
-  Stable on IA64.
-
-  04 Dec 2006; Alexander H. Færøy <eroyf@gentoo.org> pdmenu-1.2.89.ebuild:
-  Added to ~ia64.
-
-  04 Dec 2006; Alexander H. Færøy <eroyf@gentoo.org> pdmenu-1.2.89.ebuild:
-  Stable on Alpha.
-
-  05 Nov 2006; Alexander H. Færøy <eroyf@gentoo.org> pdmenu-1.2.89.ebuild:
-  marked ~alpha
-
-  05 Nov 2006; Alexander H. Færøy <eroyf@gentoo.org> pdmenu-1.2.89.ebuild:
-  Added RESTRICT="test", since the test does not work.
-
-  25 Sep 2006; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Update metadata.xml.
-
-*pdmenu-1.2.89 (20 Aug 2006)
-
-  20 Aug 2006; Bryan Østergaard <kloeri@gentoo.org> +metadata.xml,
-  +pdmenu-1.2.89.ebuild:
-  Initial commit. Ebuild by Alexander H. Færøy <alex@stener.nu>

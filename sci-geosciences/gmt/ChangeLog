@@ -1,176 +1,61 @@
 # ChangeLog for sci-geosciences/gmt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gmt/ChangeLog,v 1.31 2015/07/18 20:10:44 tetromino Exp $
+# (auto-generated from git log)
 
-  18 Jul 2015; Alexandre Rostovtsev <tetromino@gentoo.org> gmt-4.5.6.ebuild,
-  gmt-4.5.9.ebuild, +files/gmt-4.5.9-unistd.h.patch:
-  Non-maintainer commit: fix build on modern glibc versions (bug #543624,
-  thanks to Andreas Plesch et al.)
+*gmt-4.5.9 (09 Aug 2015)
+*gmt-4.5.8 (09 Aug 2015)
+*gmt-4.5.6 (09 Aug 2015)
 
-*gmt-4.5.9 (02 Feb 2013)
-
-  02 Feb 2013; Patrick Lauer <patrick@gentoo.org>
-  +files/gmt-4.5.9-no-strip.patch, +gmt-4.5.9.ebuild:
-  Bump
-
-  12 Dec 2012; Justin Lecher <jlec@gentoo.org> gmt-4.5.8.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gmt-4.5.0-no-strip.patch, +files/gmt-4.5.6-respect-ldflags.patch,
   +files/gmt-4.5.8-bfr-overflow.patch, +files/gmt-4.5.8-impl-dec.patch,
-  metadata.xml:
-  Backport fix for buffer overflow, #430030
+  +files/gmt-4.5.9-no-strip.patch, +files/gmt-4.5.9-unistd.h.patch,
+  +gmt-4.5.6.ebuild, +gmt-4.5.8.ebuild, +gmt-4.5.9.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> gmt-4.5.6.ebuild,
-  gmt-4.5.8.ebuild, metadata.xml:
-  Use global USE flag "postscript" instead of local USE flag "ps" for
-  PostScript support
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gmt-4.5.8 (29 May 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  29 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +gmt-4.5.8.ebuild,
-  metadata.xml:
-  Version bump to latest release.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -gmt-4.0.ebuild,
-  gmt-4.5.6.ebuild:
-  Stabilise 4.5.6 on amd64 and x86 and remove older.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 May 2012; Kacper Kowalik <xarthisius@gentoo.org> gmt-4.5.6.ebuild:
-  Fix double prefix install
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> gmt-4.5.6.ebuild:
-  Fix dodoc call. Fixes bug #370805.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> gmt-4.5.6.ebuild:
-  Make triangle configure optional. Thanks to Donnie for spotting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gmt-4.5.6 (07 Jun 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> -gmt-4.1.1.ebuild,
-  -gmt-4.5.0-r2.ebuild, +gmt-4.5.6.ebuild,
-  +files/gmt-4.5.6-respect-ldflags.patch, metadata.xml:
-  Version bump. Drop older.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*gmt-4.5.0-r2 (24 Jun 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Jun 2010; Justin Lecher <jlec@gentoo.org> gmt-4.0.ebuild,
-  gmt-4.1.1.ebuild, -gmt-4.5.0-r1.ebuild, +gmt-4.5.0-r2.ebuild,
-  files/gmt-4.5.0-no-strip.patch:
-  Correct handling of *FLAGS, thanks Martin von Gagern for providing the
-  patch
-
-  17 Jun 2010; Justin Lecher <jlec@gentoo.org> gmt-4.0.ebuild,
-  gmt-4.1.1.ebuild, gmt-4.5.0-r1.ebuild:
-  Blocking sci-biology/probcons to resolve bug 248333
-
-*gmt-4.5.0-r1 (26 Jul 2009)
-
-  26 Jul 2009; Marcus D. Hanwell <cryos@gentoo.org> -gmt-4.5.0.ebuild,
-  +gmt-4.5.0-r1.ebuild, +files/gmt-4.5.0-no-strip.patch:
-  Stop files being pre-stripped, thanks to Martin von Gagern
-  <Martin.vGagern@gmx.net> for the patch, in bug 145277.
-
-*gmt-4.5.0 (25 Jul 2009)
-
-  25 Jul 2009; Marcus D. Hanwell <cryos@gentoo.org> +gmt-4.5.0.ebuild:
-  Version bump (long overdue). Thanks for the suggestions and contributions
-  from people in bug 145277. Closes bug 145277.
-
-  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
-
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> gmt-4.0.ebuild:
-  (QA) RESTRICT clean up.
-
-  08 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -gmt-4.1.ebuild:
-  QA: Removed unused versions.
-
-*gmt-4.1.1 (10 Apr 2006)
-
-  10 Apr 2006; Marcus D. Hanwell <cryos@gentoo.org> +gmt-4.1.1.ebuild:
-  Version bump.
-
-  20 Jan 2006; Marcus D. Hanwell <cryos@gentoo.org> -gmt-3.4.4-r1.ebuild:
-  Trying to sort out unversioned tarball mess, and upstream silent changes,
-  bug 119689.
-
-  10 Jan 2006; Marcus D. Hanwell <cryos@gentoo.org> gmt-4.1.ebuild:
-  Removed the nomirror directive, Paul Wessel confirmed they are no longer
-  counting downloads.
-
-*gmt-4.1 (10 Jan 2006)
-
-  10 Jan 2006; Marcus D. Hanwell <cryos@gentoo.org> +gmt-4.1.ebuild:
-  Version bump.
-
-  10 Jan 2006; Marcus D. Hanwell <cryos@gentoo.org> gmt-4.0.ebuild:
-  Changed mirror as files removed from the main mirror, also removed nomirror
-  with the permission of Paul Wessel. Closes bug 118479.
-
-  20 Nov 2005; Markus Dittrich <markusle@gentoo.org> gmt-4.0.ebuild:
-  Provided proper ftp address in SRC_URI. This fixes bug #113078.
-
-  17 Sep 2005; Ciaran McCreesh <ciaranm@gentoo.org> ChangeLog:
-  Converted to UTF-8, fixed encoding screwups
-
-  29 May 2005; Marcus D. Hanwell <cryos@gentoo.org> gmt-4.0.ebuild:
-  Stable on amd64 and x86.
-
-  23 Feb 2005; Marcus D. Hanwell <cryos@gentoo.org> :
-  Updating digest for gmt-4.0 as GMT_share.tar.bz2 has been changed on their
-  server - closes bug 83084.
-
-*gmt-4.0 (23 Feb 2005)
-
-  23 Feb 2005; Marcus D. Hanwell <cryos@gentoo.org> +gmt-4.0.ebuild:
-  Version bump, thanks to Castelão <castelao@oceanologia.net>, bug 51887. Some
-  modifications by me before adding it to portage.
-
-  04 Feb 2005; Patrick Kursawe <phosphan@gentoo.org> gmt-3.4.4-r1.ebuild,
-  -gmt-3.4.3.ebuild:
-  When using gmtsuppl it needs autoconf-2.13 (see bug #79805)
-  Removed old version.
-
-*gmt-3.4.4-r1 (28 Dec 2004)
-
-  28 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +gmt-3.4.3.ebuild, +gmt-3.4.4-r1.ebuild:
-  Moved from app-sci/gmt to sci-geosciences/gmt.
-
-  07 Aug 2004; Tom Martin <slarti@gentoo.org> gmt-3.4.3.ebuild,
-  gmt-3.4.4-r1.ebuild:
-  Typo in DESCRIPTION: Powerfull -> Powerful. Bug 59717.
-
-  02 Jun 2004; Aron Griffis <agriffis@gentoo.org> gmt-3.4.3.ebuild,
-  gmt-3.4.4-r1.ebuild:
-  Fix use invocation
-
-  17 May 2004; Patrick Kursawe <phosphan@gentoo.org> gmt-3.4.4-r1.ebuild:
-  Going stable
-
-  26 Mar 2004; Patrick Kursawe <phosphan@gentoo.org> gmt-3.4.3.ebuild:
-  Adding "doc" to IUSE
-
-*gmt-3.4.4-r1 (25 Mar 2004)
-
-  25 Mar 2004; Patrick Kursawe <phosphan@gentoo.org> gmt-3.4.4-r1.ebuild:
-  Fixing a few problems building with gmtsuppl in USE.
-
-*gmt-3.4.4 (24 Mar 2004)
-
-  24 Mar 2004; Patrick Kursawe <phosphan@gentoo.org> gmt-3.4.4.ebuild:
-  Version bump because of bug #38477.
-
-*gmt-3.4.3 (08 Jul 2003)
-
-  08 Jul 2003; George Shapovalov <george@gentoo.org> gmt-3.4.3.ebuild, files/digest-gmt-3.4.3 :
-  new version (#23977)
-  evuild now applies local useflags instead of checking some arbitrary vars.
-  Will make this version stable instead of previous one upon some testing.
-  Thanks to Castel?o <castelao@oceanologia.net> for submission
-  
-
-*gmt-3.4.2.ebuild (06 Feb 2003)
-
-  06 Feb 2003; George Shapovalov <george@gentoo.org> ChangeLog, gmt-3.4.2.ebuild, files/digest-gmt-3.4.2 :
-  initial release (#10956)
-  Powerfull map generator
-  ebuild submitted by Castel?o <castelao@oceanologia.net>

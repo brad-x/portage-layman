@@ -1,266 +1,195 @@
 # ChangeLog for media-video/ffmpeg
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.885 2015/08/04 12:02:39 aballier Exp $
+# (auto-generated from git log)
 
-  04 Aug 2015; Alexis Ballier <aballier@gentoo.org> metadata.xml:
-  remove unused usedesc
+*ffmpeg-9999 (09 Aug 2015)
+*ffmpeg-2.7.2 (09 Aug 2015)
+*ffmpeg-2.6.4 (09 Aug 2015)
+*ffmpeg-2.6.3 (09 Aug 2015)
 
-  04 Aug 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.2.16.ebuild,
-  -files/ladspadl.patch:
-  remove old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +ffmpeg-2.6.3.ebuild,
+  +ffmpeg-2.6.4.ebuild, +ffmpeg-2.7.2.ebuild, +ffmpeg-9999.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Aug 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.2.14.ebuild,
-  -ffmpeg-2.7.1.ebuild:
-  remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Aug 2015; Mikle Kolyada <zlogene@gentoo.org> ffmpeg-2.6.3.ebuild:
-  ia64 stable wrt bug #547462
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Aug 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.6.3.ebuild:
-  sparc stable wrt bug #547462
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*ffmpeg-2.6.4 (30 Jul 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 Jul 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.6.4.ebuild:
-  bump the 2.6 branch
+  22 Aug 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.3.ebuild,
+  ffmpeg-2.6.4.ebuild, ffmpeg-2.7.2.ebuild, ffmpeg-9999.ebuild:
+  Check for -mcpu, then -march and finally -mtune for determining cpu type.
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.6.3.ebuild:
-  ppc stable wrt bug #547462
+  Should fix https://bugs.gentoo.org/show_bug.cgi?id=553632
 
-  21 Jul 2015; Alexis Ballier <aballier@gentoo.org> metadata.xml:
-  cleanup metadata.xml unused useflags
+  Package-Manager: portage-2.2.20.1
 
-  21 Jul 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-0.10.16.ebuild,
-  -ffmpeg-1.0.10.ebuild, -ffmpeg-1.2.12.ebuild,
-  -files/ffmpeg-1.0.8-freetype251.patch, -files/flashtest.patch,
-  -files/freiordl.patch:
-  remove versions upstream dropped maintainance
+  22 Aug 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.3.ebuild,
+  ffmpeg-2.6.4.ebuild, ffmpeg-2.7.2.ebuild, ffmpeg-9999.ebuild, metadata.xml:
+  rename rtmp useflag to librtmp, bug #509974
 
-*ffmpeg-2.7.2 (21 Jul 2015)
+  Package-Manager: portage-2.2.20.1
 
-  21 Jul 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.7.2.ebuild:
-  version bump
+  22 Aug 2015; Alexis Ballier <aballier@gentoo.org> metadata.xml:
+  improve librtmp usedesc and keep metadata.xml sorted.
 
-  17 Jul 2015; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.6.3.ebuild:
-  Stable for PPC64 (bug #547462).
+  Package-Manager: portage-2.2.20.1
 
-  17 Jul 2015; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.6.3.ebuild:
-  Stable for HPPA (bug #547462).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Jul 2015; Tobias Klausmann <klausman@gentoo.org> ffmpeg-2.6.3.ebuild:
-  Stable on alpha, bug 547462
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Jul 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-1.2.6-r1.ebuild,
-  -ffmpeg-2.2.15.ebuild, -ffmpeg-2.7.ebuild, -files/dirac_arith_hardened.patch:
-  remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Jul 2015; Tobias Klausmann <klausman@gentoo.org> ffmpeg-2.2.14.ebuild:
-  Stable on alpha, bug 538798
+  24 Aug 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  Add sidxindex tool.
 
-  28 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> ffmpeg-2.6.3.ebuild:
-  x86 stable wrt bug #547462
+  Package-Manager: portage-2.2.20.1
 
-  26 Jun 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*ffmpeg-2.8 (13 Sep 2015)
+
+  13 Sep 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.8.ebuild:
+  bump to 2.8
+
+  Package-Manager: portage-2.2.20.1
+
+  14 Sep 2015; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.8.ebuild:
+  Mark ~hppa (bug #560382).
+
+  Package-Manager: portage-2.2.20.1
+
+  14 Sep 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  9999: update subslot after soname changes.
+
+  Package-Manager: portage-2.2.20.1
+
+  23 Sep 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
   metadata.xml:
-  add snappy useflag
+  Add rubberband useflag.
 
-*ffmpeg-2.2.16 (22 Jun 2015)
+  Package-Manager: portage-2.2.21
 
-  22 Jun 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.2.16.ebuild:
-  version bump for 2.2 branch
+  29 Sep 2015; Tobias Klausmann <klausman@gentoo.org> ffmpeg-2.8.ebuild:
+  add ~alpha keyword
 
-*ffmpeg-2.7.1 (22 Jun 2015)
+  Gentoo-Bug: 560382
 
-  22 Jun 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.7.1.ebuild:
-  version bump
+  Package-Manager: portage-2.2.22
 
-  14 Jun 2015; Markus Meier <maekke@gentoo.org> ffmpeg-2.6.3.ebuild:
-  arm stable, bug #547462
+*ffmpeg-2.8-r1 (04 Oct 2015)
 
-*ffmpeg-2.7 (10 Jun 2015)
-
-  10 Jun 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.7.ebuild:
-  version bump
-
-  05 Jun 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.6.3.ebuild:
-  amd64 stable, bug #547462
-
-  30 May 2015; Markus Meier <maekke@gentoo.org> ffmpeg-2.2.14.ebuild:
-  arm stable, bug #538798
-
-  30 May 2015; Jack Morgan <jmorgan@gentoo.org> ffmpeg-2.2.14.ebuild:
-  ia64 stable wrt bug #538798
-
-  29 May 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.2.14.ebuild,
-  ffmpeg-2.2.15.ebuild, ffmpeg-2.6.3.ebuild, ffmpeg-9999.ebuild:
-  Do not pass extra-cflags/cxxflags to configure as those default to
-  CFLAGS/CXXFLAGS respectively. Just disable optflags instead of passing
-  complete CFLAGS to avoid forced -O3 build: This duplicated CFLAGS on the
-  compile line and overridden important ones set by configure script; fixes bug
-  #550554.
-
-  29 May 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.6.1.ebuild,
-  -ffmpeg-2.6.2.ebuild:
-  remove old
-
-  29 May 2015; Jack Morgan <jmorgan@gentoo.org> ffmpeg-2.2.14.ebuild:
-  sparc stable wrt bug #538798
-
-  19 May 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  bump x265 dep
-
-*ffmpeg-2.6.3 (18 May 2015)
-
-  18 May 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.6.3.ebuild:
-  version bump
-
-  15 May 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.2.14.ebuild:
-  ppc64 stable, bug #538798
-
-  15 May 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.2.14.ebuild:
-  ppc stable, bug #538798
-
-  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.2.14.ebuild:
-  x86 stable wrt bug #538798
-
-*ffmpeg-2.2.15 (18 Apr 2015)
-
-  18 Apr 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.2.15.ebuild:
-  bump for 2.2 branch
-
-*ffmpeg-2.6.2 (13 Apr 2015)
-
-  13 Apr 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.6.2.ebuild:
-  version bump
-
-  11 Apr 2015; Mikle Kolyada <zlogene@gentoo.org> ffmpeg-2.2.14.ebuild:
-  amd64 stable wrt bug #538798
-
-  02 Apr 2015; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.2.14.ebuild:
-  Stable for HPPA (bug #538798).
-
-  17 Mar 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-0.10.15.ebuild,
-  -ffmpeg-2.2.13.ebuild, -ffmpeg-2.5.4.ebuild, -ffmpeg-2.6.ebuild,
-  -files/noneon.patch:
-  remove old
-
-  17 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.1.ebuild,
+  04 Oct 2015; Julian Ospald <hasufell@gentoo.org> +ffmpeg-2.8-r1.ebuild,
   ffmpeg-9999.ebuild:
-  add := dep on fdk-aac
+  add libressl support
 
-*ffmpeg-2.6.1 (17 Mar 2015)
+*ffmpeg-2.8.1 (14 Oct 2015)
 
-  17 Mar 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.6.1.ebuild:
-  version bump
+  14 Oct 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.8.1.ebuild:
+  Bump to 2.8.1
 
-*ffmpeg-2.2.14 (16 Mar 2015)
+  Package-Manager: portage-2.2.23
 
-  16 Mar 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.2.14.ebuild:
-  version bump
-
-*ffmpeg-0.10.16 (12 Mar 2015)
-
-  12 Mar 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-0.10.16.ebuild:
-  version bump
-
-  12 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.ebuild,
-  +files/noneon.patch:
-  backport upstream fix to fix build on arm without neon, bug #543000
-
-*ffmpeg-2.6 (09 Mar 2015)
-
-  09 Mar 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.6.ebuild:
-  version bump
-
-  06 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  drop mips32r2 useflag (removed upstream)
-
-  05 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-1.0.10.ebuild,
-  ffmpeg-1.2.12.ebuild, ffmpeg-1.2.6-r1.ebuild, ffmpeg-2.2.13.ebuild:
-  force libcdio update to shutup repoman warning
-
-  05 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-0.10.15.ebuild,
-  ffmpeg-1.0.10.ebuild, ffmpeg-1.2.12.ebuild, ffmpeg-1.2.6-r1.ebuild,
-  ffmpeg-2.2.13.ebuild, ffmpeg-2.5.4.ebuild, metadata.xml:
-  convert to RESTRICT=bindist, bug #541588
-
-  05 Mar 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-1.2.11.ebuild,
-  -ffmpeg-2.2.12.ebuild, -ffmpeg-2.5.3.ebuild:
-  remove old
-
-  05 Mar 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  convert to RESTRICT=bindist, bug #541588
-
-*ffmpeg-2.2.13 (20 Feb 2015)
-
-  20 Feb 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.2.13.ebuild:
-  bump for the 2.2 branch
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  cosmetics
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  rework a bit cpu features handling to pass only relevant options to configure
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  drop old & useless comment
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  factorize filling IUSE and the map useflag -> configure option.
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  zvbi requires gpl too
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  Do not enable old xlib based x11grab when xcb is used. xcb based grabber is
-  LGPL.
-
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  16 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
   metadata.xml:
-  Add gpl & postproc useflags so that ffmpeg can be built in LGPL mode.
+  Add openh264 support in live ebuild. Bug #555114.
 
-  18 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
-  add required use for x86 cpu flags
+  Package-Manager: portage-2.2.23
 
-*ffmpeg-2.5.4 (14 Feb 2015)
+  24 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  metadata.xml:
+  Add nvenc useflag to live ebuild. Bug #542726.
 
-  14 Feb 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.5.4.ebuild:
-  version bump
+  Package-Manager: portage-2.2.23
 
-*ffmpeg-1.2.12 (14 Feb 2015)
+  28 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  Enable nonfree when enabling nvenc.
 
-  14 Feb 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-1.2.12.ebuild:
-  bump for the 1.2 branch
+  Package-Manager: portage-2.2.23
 
-  11 Feb 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.2.12.ebuild:
-  forward port keywords after masking optional useflags, bug #510340
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  Add aes cpu flag.
 
-  31 Jan 2015; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneded useflag description from metadata.xml
+  Package-Manager: portage-2.2.23
 
-  31 Jan 2015; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneded useflag description from metadata.xml
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  metadata.xml:
+  Add kvazaar useflag.
 
-  30 Jan 2015; Michał Górny <mgorny@gentoo.org> ffmpeg-0.10.15.ebuild,
-  ffmpeg-1.0.10.ebuild, ffmpeg-1.2.11.ebuild, ffmpeg-1.2.6-r1.ebuild,
-  ffmpeg-2.2.12.ebuild, ffmpeg-2.5.3.ebuild, ffmpeg-9999.ebuild:
-  Convert to CPU_FLAGS_X86.
+  Package-Manager: portage-2.2.23
 
-  29 Jan 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-1.2.10.ebuild,
-  -ffmpeg-2.2.11.ebuild, -ffmpeg-2.5.1.ebuild, -ffmpeg-2.5.2.ebuild:
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.8.ebuild,
+  -ffmpeg-2.8-r1.ebuild:
   remove old
 
-*ffmpeg-2.2.12 (22 Jan 2015)
+  Package-Manager: portage-2.2.23
 
-  22 Jan 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.2.12.ebuild:
-  version bump
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  metadata.xml:
+  Add zimg useflag.
 
-*ffmpeg-2.5.3 (10 Jan 2015)
+  Package-Manager: portage-2.2.23
 
-  10 Jan 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.5.3.ebuild:
-  version bump
+  30 Oct 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  metadata.xml:
+  Add chromaprint useflag.
 
-  01 Jan 2015; Andreas K. Huettel <dilfridge@gentoo.org> +ChangeLog-2014,
-  ChangeLog: Split ChangeLog
+  Package-Manager: portage-2.2.23
 
-  For previous entries, please see ChangeLog-2014.
+  12 Nov 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  add := dep on libvpx
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+*ffmpeg-2.8.2 (12 Nov 2015)
+
+  12 Nov 2015; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.8.2.ebuild,
+  +files/libvpx15.patch:
+  bump to 2.8.2 and backport upstream fix to build with libvpx 1.5
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  14 Nov 2015; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild,
+  metadata.xml:
+  Add mmal useflag. Bug #565298.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+

@@ -1,161 +1,89 @@
 # ChangeLog for app-portage/eclass-manpages
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eclass-manpages/ChangeLog,v 1.37 2015/01/13 22:08:06 floppym Exp $
+# (auto-generated from git log)
 
-  13 Jan 2015; Mike Gilbert <floppym@gentoo.org>
-  -eclass-manpages-20120718.ebuild, -eclass-manpages-20130110.ebuild,
-  eclass-manpages-20150113.ebuild:
-  Stable for all. Remove old.
+*eclass-manpages-20150113 (09 Aug 2015)
 
-*eclass-manpages-20150113 (13 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +eclass-manpages-20150113.ebuild, +files/eclass-to-manpage.awk,
+  +files/eclass-to-manpage.sh, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Jan 2015; Mike Gilbert <floppym@gentoo.org>
-  +eclass-manpages-20150113.ebuild:
-  Bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jan 2013; Mike Frysinger <vapier@gentoo.org>
-  eclass-manpages-20130110.ebuild:
-  Re-add bash call #451352 by Justin Lecher.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jan 2013; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Add optional @BUGREPORTS and @VCSURL fields so people can point their eclasses
-  in their overlays to their own trackers.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Jan 2013; Mike Frysinger <vapier@gentoo.org>
-  eclass-manpages-20130110.ebuild:
-  Update to EAPI=4.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*eclass-manpages-20130110 (10 Jan 2013)
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/eclass-to-manpage.sh:
+  [QA] Remove executable bit from files, bug 550434.
 
-  10 Jan 2013; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20130110.ebuild:
-  Version bump.  Support all overlays if available.
+*eclass-manpages-20150814 (14 Aug 2015)
 
-*eclass-manpages-20120718 (18 Jul 2012)
+  14 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  -eclass-manpages-20150113.ebuild, +eclass-manpages-20150814.ebuild,
+  files/eclass-to-manpage.awk, files/eclass-to-manpage.sh:
+  update URL after git migration
 
-  18 Jul 2012; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20120718.ebuild, -eclass-manpages-20100821.ebuild,
-  -eclass-manpages-20111014.ebuild, files/eclass-to-manpage.awk:
-  Add support for @ROFF (idea from Ulrich Müller), and escape any leading .
-  chars in comments to avoid mangling of the content #420153 by Michał Górny.
+  14 Aug 2015; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
+  add a check for the @ECLASS name #537392
 
-  18 Jul 2012; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Error out when we hit an unknown keyword in an @ECLASS block.
+  14 Aug 2015; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
+  fix gensub warnings
 
-  18 Jul 2012; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.sh:
-  Add a -d (debugger) flag to quickly run dgawk.
+  Newer gawk warns when you use an empty string with the 3rd arg to gensub
+  since that only accepts "g", "G", or a number.
 
-  08 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org>
-  eclass-manpages-20100821.ebuild, eclass-manpages-20111014.ebuild:
-  Removed blocker on app-portage/portage-manpages (not in tree for 3 years now).
+  14 Aug 2015; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk,
+  files/eclass-to-manpage.sh:
+  pass up exit codes to the caller
 
-  24 Nov 2011; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Add checks for duplicate func/var documentation (copy & paste).
+  This will let us make errors in the docs fatal in the ebuild if we want.
 
-  17 Oct 2011; Justin Lecher <jlec@gentoo.org> metadata.xml,
-  eclass-manpages-20111014.ebuild:
-  Call bash instead the script directly, because things in FILESDIR might not be
-  executable
+  14 Aug 2015; Mike Frysinger <vapier@gentoo.org>
+  eclass-manpages-20150814.ebuild:
+  fail when there are errors in eclass docs
 
-*eclass-manpages-20111014 (14 Oct 2011)
+  This will get people to file bugs when developers break the documentation.
 
-  14 Oct 2011; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20111014.ebuild, +files/eclass-to-manpage.sh:
-  Split out generation logic so people can quickly run it by hand when updating
-  their eclasses.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  eclass-manpages-20150814.ebuild, metadata.xml:
+  Use https by default
 
-  22 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Add sources.g.o url to SEE ALSO.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Add support for @AUTHOR block since people are going to cram it in there
-  otherwise #375975 by Ralph Sennhauser.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Jul 2011; Mike Frysinger <vapier@gentoo.org> files/eclass-to-manpage.awk:
-  Add @INTERNAL support #375545 by Ralph Sennhauser.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Feb 2011; Ulrich Mueller <ulm@gentoo.org> files/eclass-to-manpage.awk:
-  Add UTF-8 coding tag, bug 244499.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Oct 2010; Mart Raudsepp <leio@gentoo.org>
-  eclass-manpages-20100821.ebuild:
-  Drop to ~mips
+  Bug: https://bugs.gentoo.org/552720
 
-*eclass-manpages-20100821 (21 Aug 2010)
-
-  21 Aug 2010; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20100821.ebuild:
-  Bump to push out accumulated changes in the tree.
-
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  eclass-manpages-20091209.ebuild:
-  Transfer Prefix keywords
-
-*eclass-manpages-20091209 (09 Dec 2009)
-
-  09 Dec 2009; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20091209.ebuild, files/eclass-to-manpage.awk:
-  Detect variables given default values via :${var:=val}.
-
-*eclass-manpages-20091007 (07 Oct 2009)
-
-  07 Oct 2009; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20091007.ebuild:
-  Bump to push out accumulated changes in the tree.
-
-  30 Aug 2008; Mike Frysinger <vapier@gentoo.org>
-  eclass-manpages-20080531.ebuild:
-  Stabilize.
-
-  02 Jun 2008; Zac Medico <zmedico@gentoo.org>
-  eclass-manpages-20070615.ebuild, eclass-manpages-20080531.ebuild:
-  Bug #224421 - Drop the webapp-config blocker since it no longer
-  installs webapp.eclass.5.
-
-*eclass-manpages-20080531 (01 Jun 2008)
-
-  01 Jun 2008; Mike Frysinger <vapier@gentoo.org>
-  +eclass-manpages-20080531.ebuild:
-  Bump to push out accumulated changes in the tree.
-
-  25 May 2008; Zac Medico <zmedico@gentoo.org>
-  eclass-manpages-20070615.ebuild:
-  Block app-admin/webapp-config due to webapp.eclass.5 file collision.
-
-  19 Feb 2008; Doug Klima <cardoe@gentoo.org> metadata.xml:
-  fix herd
-
-  19 Feb 2008; Mike Frysinger <vapier@gentoo.org>
-  files/eclass-to-manpage.awk:
-  Add a new "@DEAD" tag so we skip dead eclasses.
-
-  19 Feb 2008; Mike Frysinger <vapier@gentoo.org>
-  files/eclass-to-manpage.awk:
-  Do not abort if @DESCRIPTION is not set #209665 by mren.
-
-  01 Sep 2007; Mike Frysinger <vapier@gentoo.org>
-  files/eclass-to-manpage.awk:
-  Add support for global-scope variables #190871 and improve handling of
-  variables and errors in general.
-
-  30 Aug 2007; Ulrich Mueller <ulm@gentoo.org> files/eclass-to-manpage.awk:
-  Finally fix whitespace issues of bug #184779.
-
-  07 Aug 2007; Mike Frysinger <vapier@gentoo.org>
-  files/eclass-to-manpage.awk:
-  Add support for @VARIABLE descriptions.
-  Add support for @RETURN values.
-  Add support for @CODE and re-order trailing sections.
-
-  02 Aug 2007; Zac Medico <zmedico@gentoo.org> eclass-manpages-20070615.ebuild:
-  Block app-portage/portage-manpages due to eutils.eclass.5 file collision.
-
-  24 Jul 2007; Mike Frysinger <vapier@gentoo.org>
-  files/eclass-to-manpage.awk:
-  Dont require trailing whitespace to continue paragraphs as that just sets
-  off QA checkers #184779 by Ulrich Mueller.
-
-*eclass-manpages-20070615 (16 Jun 2006)
-
-  16 Jun 2006; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

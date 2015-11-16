@@ -1,275 +1,70 @@
 # ChangeLog for dev-games/crystalspace
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/crystalspace/ChangeLog,v 1.65 2015/06/26 08:58:20 ago Exp $
+# (auto-generated from git log)
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> crystalspace-2.0.ebuild:
-  Stable for x86, wrt bug #551506
+*crystalspace-2.0 (09 Aug 2015)
 
-  12 Jun 2015; Agostino Sarubbo <ago@gentoo.org> crystalspace-2.0.ebuild:
-  Stable for amd64, wrt bug #551506
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +crystalspace-2.0.ebuild,
+  +files/crystalspace-2.0-gcc47.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 May 2015; Michael Sterrett <mr_bones_@gentoo.org> crystalspace-2.0.ebuild:
-  tidy
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Nov 2014; Mike Frysinger <vapier@gentoo.org> crystalspace-2.0.ebuild:
-  Use makeopts_jobs instead of parsing MAKEOPTS by hand.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Nov 2013; Ryan Hill <dirtyepic@gentoo.org> crystalspace-2.0.ebuild:
-  Drop deprecated use of "gtk2" wxGTK profile.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Mar 2013; Ryan Hill <dirtyepic@gentoo.org>
-  files/crystalspace-2.0-gcc47.patch:
-  Further build fixes for GCC 4.7 (bug #459440).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Feb 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -crystalspace-1.4.0.ebuild, -files/crystalspace-1.4.0-bullet.patch,
-  -files/crystalspace-1.4.0-gcc47.patch, -files/crystalspace-1.4.0-png15.patch:
-  old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*crystalspace-2.0 (24 Jan 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jan 2013; Julian Ospald <hasufell@gentoo.org> +crystalspace-2.0.ebuild,
-  +files/crystalspace-2.0-gcc47.patch:
-  version bump wrt #453138
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Jul 2012; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild,
-  +files/crystalspace-1.4.0-gcc47.patch:
-  Fix build with gcc-4.7 Bug #426870 by flameeyes@gentoo.org
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> crystalspace-1.4.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
-  -crystalspace-1.2.1.ebuild, -files/crystalspace-1.2.1-libpng14.patch:
-  old
+*crystalspace-2.0-r1 (15 Nov 2015)
 
-  09 Sep 2011; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild,
-  +files/crystalspace-1.4.0-png15.patch:
-  Build with libpng-1.5 Bug #381723 by Diego Elio Pettenò
+  15 Nov 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  +crystalspace-2.0-r1.ebuild, +files/crystalspace-2.0-wxgtk.patch:
+  rev bump to use wxGTK:3.0 (bug #563968)
 
-  20 Jul 2011; Thomas Kahle <tomka@gentoo.org> crystalspace-1.2.1.ebuild:
-  Dropping to ~x86 wrt to bug 335921
+  Package-Manager: portage-2.2.20.1
 
-  08 Jul 2011; Samuli Suominen <ssuominen@gentoo.org>
-  crystalspace-1.2.1.ebuild:
-  Convert from "useq" to "use".
+  15 Nov 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  crystalspace-2.0-r1.ebuild:
+  add slot to virtual/jpeg dep
 
-  25 Feb 2011; Kevin McCarthy <signals@gentoo.org> crystalspace-1.2.1.ebuild,
-  crystalspace-1.4.0.ebuild:
-  Updated depends from media-libs/jpeg to virtual/jpeg
+  Package-Manager: portage-2.2.20.1
 
-  10 Nov 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-1.4.0.ebuild:
-  fix paths in environment file with patch from Sven Eden (bug #335921)
-
-  17 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org>
-  crystalspace-1.2.1.ebuild:
-  Remove virtual/glu where already virtual/opengl is stated.
-
-  24 Jun 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild:
-  Disabling python, as some dependencies are not found.
-  Should also fix bug #297142 by flameeyes@gentoo.org
-
-  21 Jun 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild:
-  enabling java plugin. 
-
-  20 Jun 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild,
-  +files/crystalspace-1.4.0-bullet.patch, metadata.xml:
-  Include support for bullet library
-
-  19 Jun 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild:
-  Using x11-libs/wxGTK:2.8 (before was 2.6). Enabling parallel make
-
-  15 Jun 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.4.0.ebuild:
-  Fix directory path in elog messages. Raised on bug #174742 by Guido
-
-*crystalspace-1.4.0 (11 Jun 2010)
-
-  11 Jun 2010; Tupone Alfredo <tupone@gentoo.org>
-  +crystalspace-1.4.0.ebuild:
-  Version bump to 1.4.0 Bug #311431 by Jacek Szafarkiewicz
-
-  31 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  crystalspace-1.2.1.ebuild:
-  x86 stable wrt bug #309017
-
-  09 Mar 2010; Samuli Suominen <ssuominen@gentoo.org>
-  crystalspace-1.2.1.ebuild, +files/crystalspace-1.2.1-libpng14.patch:
-  Fix building with libpng14.
-
-  22 Feb 2010; Tupone Alfredo <tupone@gentoo.org> crystalspace-1.0.1.ebuild,
-  crystalspace-1.2.1.ebuild:
-  wxwindows deprecated in favour of wxwidgets. Bug #306289 by Doktor Notor
-
-*crystalspace-1.2.1 (10 Jul 2009)
-
-  10 Jul 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +crystalspace-1.2.1.ebuild:
-  version bump - perl/java support disabled; patches welcome to fix build issues
-
-  21 Nov 2007; Ryan Hill <dirtyepic@gentoo.org> crystalspace-1.0.1.ebuild,
-  crystalspace-1.2.ebuild:
-  Allow building with ftjam for bug #188194
-
-  21 Nov 2007; Ryan Hill <dirtyepic@gentoo.org> crystalspace-1.0.1.ebuild,
-  crystalspace-1.2.ebuild:
-  With the new wxwidgets eclass /usr/bin/wx-config is guaranteed to exist, so
-  this workaround is no longer needed. In any case the eclass no longer sets
-  WX_CONFIG_NAME.
-
-  13 Nov 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  crystalspace-1.0.1.ebuild:
-  Changing ~amd64 to -amd64 due to bug #187093.
-
-  30 Oct 2007; nixnut <nixnut@gentoo.org> crystalspace-0.98.4.ebuild,
-  crystalspace-1.2.ebuild:
-  removed ~ppc/ppc keywords from all versions
-
-  28 Oct 2007; nixnut <nixnut@gentoo.org> crystalspace-1.0.1.ebuild:
-  removed ~ppc wrt bug 168874
-
-  14 Oct 2007; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-1.2.ebuild:
-  fix env file for bug #195829
-
-*crystalspace-1.2 (07 Oct 2007)
-
-  07 Oct 2007; Michael Sterrett <mr_bones_@gentoo.org>
-  +crystalspace-1.2.ebuild:
-  version bump
-
-  06 Sep 2007; Christian Faulhammer <opfer@gentoo.org>
-  crystalspace-1.0.1.ebuild:
-  stable x86, bug 187093
-
-  14 May 2007; Ryan Hill <dirtyepic@gentoo.org> crystalspace-1.0.ebuild,
-  crystalspace-1.0.1.ebuild:
-  Lock to wxGTK-2.6 and use wxwidgets.eclass.
-
-  14 May 2007; Ryan Hill <dirtyepic@gentoo.org> crystalspace-1.0.ebuild,
-  crystalspace-1.0.1.ebuild:
-  Lock to wxGTK-2.6 and use wxwidgets.eclass.
-
-  26 Mar 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  crystalspace-0.98.4.ebuild:
-  Remove dependency on portage, since it really isn't necessary.
-
-  04 Mar 2007; Marius Mauch <genone@gentoo.org> crystalspace-1.0.ebuild,
-  crystalspace-1.0.1.ebuild:
-  Replacing einfo with elog
-
-*crystalspace-1.0.1 (01 Mar 2007)
-
-  01 Mar 2007; <tupone@gentoo.org> +crystalspace-1.0.1.ebuild:
-  Version bumbed to 1.0.1
-  Fixed a problem building plugin: changed -O3 to -O2
-
-  16 Feb 2007; <tupone@gentoo.org> crystalspace-1.0.ebuild:
-  Fixing hang on lightmap recalculation. Bug #166547 by Emilien KIA
-
-  08 Feb 2007; <tupone@gentoo.org> crystalspace-1.0.ebuild:
-  Depends conditionally on dev-games/cegui
-
-  08 Feb 2007; Tristan Heaven <nyhm@gentoo.org> crystalspace-1.0.ebuild:
-  Use java-pkg-opt-2 eclass
-
-  02 Feb 2007; <tupone@gentoo.org> crystalspace-1.0.ebuild:
-  Work around problems raised with bug #155788 comment 18 by Frank Richter
-
-  31 Jan 2007; <tupone@gentoo.org> crystalspace-1.0.ebuild:
-  Adding environment variable definition
-
-  31 Jan 2007; <tupone@gentoo.org> crystalspace-1.0.ebuild:
-  lcms used only by libmng. Removed
-
-*crystalspace-1.0 (31 Jan 2007)
-
-  31 Jan 2007; <tupone@gentoo.org> +crystalspace-1.0.ebuild:
-  Version bump to 1.0 . Bug #155788 by loux thefuture
-
-  14 Aug 2006; Stefan Schweizer <genstef@gentoo.org>
-  crystalspace-0.98.4.ebuild:
-  remove boost-jam as option because it will no longer provide the jam binary
-  thanks to dev-zero in #gentoo-games
-
-  06 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  crystalspace-0.98.4.ebuild, crystalspace-0.99_pre20050823.ebuild:
-  oggvorbis -> vorbis for bug #94254.
-
-*crystalspace-0.99_pre20050823 (31 Aug 2005)
-
-  31 Aug 2005; Philip Walls <malverian@gentoo.org> -crystalspace-0.98.4.20050224.ebuild,
-  -crystalspace-0.99_pre20050518.ebuild,
-  +crystalspace-0.99_pre20050823.ebuild:
-  Prerelease version bump for planeshift
-
-  24 May 2005; David Holm <dholm@gentoo.org>
-  crystalspace-0.99_pre20050518.ebuild:
-  Readded to ~ppc. Please don't remove it without filing a proper bug report.
-
-*crystalspace-0.99_pre20050518 (21 May 2005)
-
-  21 May 2005; Philip Walls <malverian@gentoo.org>
-  +crystalspace-0.99_pre20050518.ebuild:
-  CVS snapshot for Planeshift
-
-  28 Feb 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-0.98.4.20050224.ebuild, crystalspace-0.98.4.ebuild:
-  fix HOMEPAGE (bug #83100)
-
-  24 Feb 2005; Thomas Raschbacher <lordvan@gentoo.org> : crystalspace-0.98.4.20050224.ebuild
-  cvs snapshot for planeshift
-
-  27 Dec 2004; Mike Frysinger <vapier@gentoo.org> +files/0.98.4-gl.patch,
-  crystalspace-0.98.4.ebuild:
-  Add patch to make GL happy #75702 by Tom Wesley.
-
-*crystalspace-0.98.4 (25 Dec 2004)
-
-  25 Dec 2004; Mike Frysinger <vapier@gentoo.org>
-  +crystalspace-0.98.4.ebuild, -crystalspace-20030413-r1.ebuild,
-  -crystalspace-20040604.ebuild:
-  Version bumpage.
-
-  16 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-20040604.ebuild:
-  depend on dev-util/jam (bug #54101)
-
-*crystalspace-20040604 (05 Jun 2004)
-
-  05 Jun 2004; Thomas Raschbacher <lordvan@gentoo.org>
-  +crystalspace-20040604.ebuild:
-  new version (cvs snapshot)
-
-  03 Jun 2004; Thomas Raschbacher <lordvan@gentoo.org>
-  crystalspace-20030413-r1.ebuild:
-  changed dep for ode to match version 0.039 because it doesn't work with 0.5
-
-  13 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-20030413-r1.ebuild:
-  sync IUSE with use flags
-
-  30 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  crystalspace-20030413-r1.ebuild:
-  don't rdepend on nasm
-
-*crystalspace-20030413-r1 (17 Apr 2003)
-
-  17 Apr 2003; Philip Walls <malverian@gentoo.org>
-  crystalspace-20030413-r1.ebuild :
-  Fixed problem with env.d/15crystalspace (vars now on seperate lines)
-
-*crystalspace-20030413 (13 Apr 2003)
-
-  13 Apr 2003; Philip Walls <malverian@gentoo.org>
-  crystalspace-20030413.ebuild :
-  CrystalSpace snapshot that works with Planeshift
-
-*crystalspace-0.96_p002 (02 Apr 2003)
-
-  02 Apr 2003; Philip Walls <malverian@gentoo.org>
-  crystalspace-0.96_p002.ebuild :
-  Initial import. Thanks to lu_zero for testing and original ebuild.

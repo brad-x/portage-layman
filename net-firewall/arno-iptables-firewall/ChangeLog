@@ -1,82 +1,80 @@
 # ChangeLog for net-firewall/arno-iptables-firewall
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/arno-iptables-firewall/ChangeLog,v 1.14 2014/06/26 09:46:35 nimiux Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  26 Jun 2014; Chema Alonso <nimiux@gentoo.org>
-  arno-iptables-firewall-2.0.1e.ebuild:
-  Stable for amd64 wrt bug #509612
+*arno-iptables-firewall-2.0.1e (09 Aug 2015)
+*arno-iptables-firewall-2.0.1d-r2 (09 Aug 2015)
 
-  14 Jun 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  arno-iptables-firewall-2.0.1e.ebuild:
-  x86 stable wrt bug #509612
-
-*arno-iptables-firewall-2.0.1e (02 Apr 2014)
-
-  02 Apr 2014; Tom Wijsman <TomWij@gentoo.org>
-  +arno-iptables-firewall-2.0.1e.ebuild, -arno-iptables-firewall-1.9.2a.ebuild,
-  -arno-iptables-firewall-1.9.2d.ebuild,
-  -arno-iptables-firewall-2.0.1d-r1.ebuild:
-  Version bump to 2.0.1e; fixes bug #500114, proxied commit for Ferenc Erki.
-  Removed old.
-
-  26 Jan 2014; Agostino Sarubbo <ago@gentoo.org>
-  arno-iptables-firewall-2.0.1d-r2.ebuild:
-  Stable for x86, wrt bug #495838
-
-  18 Jan 2014; Pacho Ramos <pacho@gentoo.org>
-  arno-iptables-firewall-2.0.1d-r2.ebuild:
-  amd64 stable, bug #495838
-
-  10 Sep 2013; Sergey Popov <pinkbyte@gentoo.org>
-  -arno-iptables-firewall-2.0.1d.ebuild:
-  Drop old revision
-
-*arno-iptables-firewall-2.0.1d-r2 (06 Sep 2013)
-
-  06 Sep 2013; Pacho Ramos <pacho@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +arno-iptables-firewall-2.0.1d-r2.ebuild,
-  +files/arno-iptables-firewall.service:
-  Add unit file (#483602 by Ferenc Erki)
+  +arno-iptables-firewall-2.0.1e.ebuild, +files/arno-iptables-firewall,
+  +files/arno-iptables-firewall.service,
+  +files/rc.firewall_replace_opts.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*arno-iptables-firewall-2.0.1d-r1 (18 May 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 May 2013; Markos Chandras <hwoarang@gentoo.org>
-  +arno-iptables-firewall-2.0.1d-r1.ebuild, +files/arno-iptables-firewall:
-  Cleanup, EAPI5, initscript and other fixes thanks to Ferenc Erki
-  <erkiferenc@gmail.com>. Bug #465114
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*arno-iptables-firewall-2.0.1d (17 Dec 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Dec 2012; Markos Chandras <hwoarang@gentoo.org>
-  +arno-iptables-firewall-2.0.1d.ebuild, +files/rc.firewall_replace_opts.patch,
-  metadata.xml:
-  Version bump. Fixes 447386. Also fixes outstanding #309473 and #411661. Thanks
-  to Ferenc Erki <erkiferenc@gmail.com>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*arno-iptables-firewall-1.9.2d (10 Oct 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Oct 2009; Víctor Ostorga <vostorga@gentoo.org>
-  +arno-iptables-firewall-1.9.2d.ebuild:
-  Version bump to 1.9.2d , bug 287237
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*arno-iptables-firewall-1.9.2a (03 Jul 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jul 2009; Jeremy Olexa <darkside@gentoo.org>
-  -arno-iptables-firewall-1.9.0_beta3.ebuild,
-  +arno-iptables-firewall-1.9.2a.ebuild:
-  (non maintainer commit) Version bump for security bug 261507, ebuild by
-  Johannes Kellner
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Jul 2008; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
-  Change to maintainer-needed.
+  Bug: https://bugs.gentoo.org/552720
 
-*arno-iptables-firewall-1.9.0_beta3 (10 Jul 2008)
+*arno-iptables-firewall-2.0.1f_rc1 (13 Sep 2015)
 
-  10 Jul 2008; Chris Gianelloni <wolf31o2@gentoo.org> +metadata.xml,
-  +arno-iptables-firewall-1.9.0_beta3.ebuild:
-  Initial import. Ebuild loosely based on previous ebuilds from Christian
-  Loitsch <gentoo-bug@loitsch.org> and Avuton Olrich <avuton@gmail.com>.
-  Closing bug #20726.
+  13 Sep 2015; Ian Delaney <idella4@gentoo.org>
+  +arno-iptables-firewall-2.0.1f_rc1.ebuild:
+  bump, request sourced from bug #559858
+
+  Package-Manager: portage-2.2.20.1
+
+  07 Oct 2015; Ian Delaney <idella4@gentoo.org>
+  -arno-iptables-firewall-2.0.1d-r2.ebuild,
+  -files/arno-iptables-firewall.service,
+  -files/rc.firewall_replace_opts.patch:
+  remove -2.0.1d-r2 and its patches
+
+  request by maintainer in
+
+  Gentoo Bug: #559858
+
+  Package-Manager: portage-2.2.20.1
+

@@ -1,248 +1,98 @@
 # ChangeLog for net-firewall/xtables-addons
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/ChangeLog,v 1.54 2015/07/07 02:53:17 patrick Exp $
+# (auto-generated from git log)
 
-  07 Jul 2015; Patrick Lauer <patrick@gentoo.org> xtables-addons-2.6.ebuild,
-  xtables-addons-2.7.ebuild:
-  Whitespace
+*xtables-addons-2.7 (09 Aug 2015)
+*xtables-addons-2.6 (09 Aug 2015)
+*xtables-addons-2.3 (09 Aug 2015)
+*xtables-addons-2.1 (09 Aug 2015)
+*xtables-addons-1.47.1 (09 Aug 2015)
+*xtables-addons-1.37 (09 Aug 2015)
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  xtables-addons-2.7.ebuild:
-  XTABLES_ADDONS=tarpit is fixed for xtables-addons-2.7.  Upstream commit
-  96ce5e.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xtables-addons-1.37.ebuild, +xtables-addons-1.47.1.ebuild,
+  +xtables-addons-2.1.ebuild, +xtables-addons-2.3.ebuild,
+  +xtables-addons-2.6.ebuild, +xtables-addons-2.7.ebuild:
+  proj/gentoo: Initial commit
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  xtables-addons-2.6.ebuild:
-  Stable on amd64 and x86.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  xtables-addons-2.6.ebuild, xtables-addons-2.7.ebuild:
-  Generalize module + kernel version checking since XTABLES_ADDONS=tarpit
-  doesn't build on linux-4.1 and above.  Bug #553630.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  -xtables-addons-2.4.ebuild, -xtables-addons-2.5.ebuild,
-  xtables-addons-2.6.ebuild, xtables-addons-2.7.ebuild:
-  XTABLES_ADDONS=echo doesn't build on linux-4.0.0 and above.  Bug #553630.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*xtables-addons-2.7 (06 Jul 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  +xtables-addons-2.7.ebuild:
-  Version bump.
+*xtables-addons-2.8 (22 Aug 2015)
 
-*xtables-addons-2.6 (30 Sep 2014)
+  22 Aug 2015; Anthony G. Basile <blueness@gentoo.org>
+  +xtables-addons-2.8.ebuild:
+  version bump to 2.8
 
-  30 Sep 2014; Anthony G. Basile <blueness@gentoo.org>
-  +xtables-addons-2.6.ebuild:
-  Version bump
+  Package-Manager: portage-2.2.20.1
 
-*xtables-addons-2.5 (26 Jun 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Jun 2014; Maxim Koltsov <maksbotan@gentoo.org> +xtables-addons-2.5.ebuild:
-  And bump to 2.5, thanks to mva
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*xtables-addons-2.4 (26 Jun 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jun 2014; Maxim Koltsov <maksbotan@gentoo.org> +xtables-addons-2.4.ebuild:
-  Bump to 2.4, thanks to slepnoga
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Jan 2014; Pacho Ramos <pacho@gentoo.org> xtables-addons-2.3.ebuild:
-  amd64 stable, bug #488016
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> xtables-addons-2.3.ebuild:
-  Stable for x86, wrt bug #488016
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Oct 2013; Maxim Koltsov <maksbotan@gentoo.org> -xtables-addons-1.38.ebuild,
-  -xtables-addons-1.39.ebuild, -xtables-addons-1.45.ebuild,
-  -xtables-addons-2.2.ebuild:
-  Remove old ebuilds, thanks to slepnoga
+*xtables-addons-2.9 (22 Oct 2015)
 
-*xtables-addons-2.3 (18 Jun 2013)
+  22 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  +xtables-addons-2.9.ebuild:
+  version bump to 2.9
 
-  18 Jun 2013; Anthony G. Basile <blueness@gentoo.org>
-  +xtables-addons-2.3.ebuild:
-  Version bump
+  Package-Manager: portage-2.2.20.1
 
-*xtables-addons-2.2 (17 May 2013)
+  23 Oct 2015; Agostino Sarubbo <ago@gentoo.org> xtables-addons-2.8.ebuild:
+  amd64 stable wrt bug #563762
 
-  17 May 2013; Maxim Koltsov <maksbotan@gentoo.org> +xtables-addons-2.2.ebuild:
-  Bump to 2.2, thanks to slepnoga
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  01 Apr 2013; Sergey Popov <pinkbyte@gentoo.org> xtables-addons-1.47.1.ebuild,
-  xtables-addons-2.1.ebuild:
-  Enable verbose build of kernel modules, wrt bug #458012
+  24 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> xtables-addons-2.8.ebuild:
+  x86 stable wrt bug #563762
 
-  06 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xtables-addons-2.1.ebuild:
-  Stable for x86, wrt bug #460148
+  Package-Manager: portage-2.2.20.1
 
-  06 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xtables-addons-1.47.1.ebuild:
-  Stable for x86, wrt bug #451628
+  24 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  -xtables-addons-1.37.ebuild, -xtables-addons-2.1.ebuild,
+  -xtables-addons-2.3.ebuild, -xtables-addons-2.6.ebuild,
+  -xtables-addons-2.7.ebuild:
+  cleanup older version.
 
-  06 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xtables-addons-2.1.ebuild:
-  Stable for amd64, wrt bug #460148
+  Package-Manager: portage-2.2.20.1
 
-  06 Mar 2013; Agostino Sarubbo <ago@gentoo.org> xtables-addons-1.47.1.ebuild:
-  Stable for amd64, wrt bug #451628
-
-  02 Mar 2013; Anthony G. Basile <blueness@gentoo.org>
-  xtables-addons-1.47.1.ebuild:
-  Restrict to kernel versions < 3.7, bug #458014
-
-  18 Feb 2013; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
-  Add myself as proxy maintainer
-
-  16 Feb 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #96436
-
-*xtables-addons-2.1 (29 Dec 2012)
-
-  29 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> +xtables-addons-2.1.ebuild:
-  Version bump, wrt bug #397749, thanks to Andreis Vinogradovs
-
-*xtables-addons-1.47.1 (29 Dec 2012)
-
-  29 Dec 2012; Sergey Popov <pinkbyte@gentoo.org>
-  +xtables-addons-1.47.1.ebuild:
-  Version bump, thanks to mike <mishanq AT gmail.com>, wrt bug #397749
-
-*xtables-addons-1.45 (27 Dec 2012)
-
-  27 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> +xtables-addons-1.45.ebuild:
-  Version bump, thanks to Andreis Vinogradovs
-
-  27 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Adding co-maintainer and proxy maintainers herd
-
-  19 Jun 2012; Jeroen Roovers <jer@gentoo.org> xtables-addons-1.39.ebuild:
-  Add missing RDEPEND on app-arch/unzip by Marcin Mirosław (bug #411855).
-
-*xtables-addons-1.39 (02 Oct 2011)
-
-  02 Oct 2011; Peter Volkov <pva@gentoo.org> +xtables-addons-1.39.ebuild:
-  Version bump.
-
-  25 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.37.ebuild,
-  xtables-addons-1.38.ebuild:
-  Remove negation from ipset module check.
-
-  23 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.38.ebuild:
-  Drop autotools eclass.
-
-  23 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.37.ebuild,
-  xtables-addons-1.38.ebuild:
-  Fix kernel version number in die message.
-
-*xtables-addons-1.38 (19 Sep 2011)
-
-  19 Sep 2011; Peter Volkov <pva@gentoo.org> -xtables-addons-1.28-r1.ebuild,
-  -xtables-addons-1.30.ebuild, -xtables-addons-1.31.ebuild,
-  -xtables-addons-1.36.ebuild, -files/xtables-addons-1.36-absolute-M.patch,
-  -files/xtables-addons-1.36-kernel-detection.patch,
-  xtables-addons-1.37.ebuild, +xtables-addons-1.38.ebuild:
-  Mark 1.37 stable, bug #381611. Version bump, ignore in-kernel CHECKSUM
-  module. Drop old.
-
-  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
-  xtables-addons-1.37.ebuild:
-  x86 stable, see bug 381611
-
-  05 Sep 2011; Tony Vroon <chainsaw@gentoo.org> xtables-addons-1.37.ebuild:
-  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
-  Elijah "Armageddon" El Lazkani in bug #381611. Removed incorrect inherit of
-  autotools, this eclass is not used.
-
-  28 Jul 2011; Peter Volkov <pva@gentoo.org> xtables-addons-1.37.ebuild:
-  Disable TEE for kernel >= 2.6.35 as it's already in kernel and no need to
-  build it here. Fixes bug #376633 reported by Olivier Huber.
-
-*xtables-addons-1.37 (24 Jul 2011)
-
-  24 Jul 2011; Peter Volkov <pva@gentoo.org> +xtables-addons-1.37.ebuild:
-  Version bump.
-
-  20 Jun 2011; Peter Volkov <pva@gentoo.org> xtables-addons-1.36.ebuild,
-  +files/xtables-addons-1.36-absolute-M.patch,
-  +files/xtables-addons-1.36-kernel-detection.patch:
-  Fix sandbox violations reported by Marcin Mirosław in byg 371997.
-
-*xtables-addons-1.36 (16 Jun 2011)
-
-  16 Jun 2011; Peter Volkov <pva@gentoo.org> +xtables-addons-1.36.ebuild:
-  Version bump.
-
-  11 May 2011; Christoph Mende <angelos@gentoo.org> xtables-addons-1.31.ebuild:
-  Stable on amd64 wrt bug #355757
-
-  06 May 2011; Thomas Kahle <tomka@gentoo.org> xtables-addons-1.31.ebuild:
-  x86 stable per bug 355757
-
-  28 Apr 2011; Ulrich Mueller <ulm@gentoo.org> xtables-addons-1.28-r1.ebuild,
-  xtables-addons-1.30.ebuild, xtables-addons-1.31.ebuild:
-  Fix dependency on virtual/linux-sources, bug 118442.
-
-  24 Apr 2011; Ulrich Mueller <ulm@gentoo.org> xtables-addons-1.28-r1.ebuild,
-  xtables-addons-1.30.ebuild, xtables-addons-1.31.ebuild:
-  Remove dependency on virtual/modutils, it is redundant with linux-mod.eclass,
-  bug 358891.
-
-*xtables-addons-1.31 (11 Nov 2010)
-
-  11 Nov 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.31.ebuild:
-  Version bump. New grsecurity match for bug #339596, thank Anthony Basile
-  for pushing this upstream!
-
-  25 Oct 2010; Sven Wegener <swegener@gentoo.org>
-  xtables-addons-1.28-r1.ebuild, xtables-addons-1.30.ebuild:
-  linux-sources is only required at build-time and the ipset extension can
-  be build with ipset installed, just not being installed at the same time.
-
-  14 Oct 2010; Peter Volkov <pva@gentoo.org> -xtables-addons-1.27.ebuild,
-  -xtables-addons-1.28.ebuild:
-  Drop old.
-
-*xtables-addons-1.30 (14 Oct 2010)
-
-  14 Oct 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.30.ebuild:
-  Version bump.
-
-  06 Oct 2010; Markus Meier <maekke@gentoo.org>
-  xtables-addons-1.28-r1.ebuild:
-  x86 stable, bug #337954
-
-  21 Sep 2010; Markos Chandras <hwoarang@gentoo.org>
-  xtables-addons-1.28-r1.ebuild:
-  Stable on amd64 wrt bug #337954
-
-*xtables-addons-1.28-r1 (13 Aug 2010)
-
-  13 Aug 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.28-r1.ebuild:
-  Don't install geoip scripts in case it is disabled and add correct depends
-  for them, bug 332495, thank Marcin Mirosław for report.
-
-*xtables-addons-1.28 (12 Aug 2010)
-
-  12 Aug 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.28.ebuild:
-  Version bump, bug #331399, thank Marcin Mirosław for report.
-
-  02 Jul 2010; Peter Volkov <pva@gentoo.org> -xtables-addons-1.26.ebuild,
-  xtables-addons-1.27.ebuild:
-  Avoid maintainer mode, make build verbose, fix ED->D typo. Drop old.
-
-*xtables-addons-1.27 (01 Jun 2010)
-
-  01 Jun 2010; Peter Volkov <pva@gentoo.org> -xtables-addons-1.25.ebuild,
-  +xtables-addons-1.27.ebuild:
-  Version bump, drop old.
-
-*xtables-addons-1.26 (08 May 2010)
-
-  08 May 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.26.ebuild:
-  Version bump.
-
-*xtables-addons-1.25 (29 Apr 2010)
-
-  29 Apr 2010; Peter Volkov <pva@gentoo.org> +xtables-addons-1.25.ebuild,
-  +metadata.xml:
-  Initial import, ebuild by me. Fixes bug #250407, thank Nathan McSween for
-  report and others who tested this package.

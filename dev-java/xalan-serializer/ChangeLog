@@ -1,91 +1,56 @@
 # ChangeLog for dev-java/xalan-serializer
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xalan-serializer/ChangeLog,v 1.21 2015/07/30 22:35:44 chewi Exp $
+# (auto-generated from git log)
 
-  30 Jul 2015; James Le Cuirot <chewi@gentoo.org>
-  -xalan-serializer-2.7.1.ebuild, xalan-serializer-2.7.2.ebuild:
-  Mark stable according to ALLARCHES policy and drop vulnerable version wrt bug
-  #505602.
+*xalan-serializer-2.7.2 (09 Aug 2015)
 
-  11 Jul 2015; James Le Cuirot <chewi@gentoo.org> xalan-serializer-2.7.1.ebuild:
-  Drop java on ia64.
-
-  30 Jun 2015; James Le Cuirot <chewi@gentoo.org> xalan-serializer-2.7.2.ebuild:
-  Fix bad SRC_URI. Sorry. :(
-
-*xalan-serializer-2.7.2 (30 Jun 2015)
-
-  30 Jun 2015; James Le Cuirot <chewi@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +xalan-serializer-2.7.2.ebuild:
-  Version bump, EAPI bump, and general clean up. Possibly addresses security bug
-  #505602.
+  proj/gentoo: Initial commit
 
-  17 Jun 2014; Manuel Rüger <mrueg@gentoo.org> -xalan-serializer-2.7.0.ebuild:
-  NM: Cleanup superseded ebuilds.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Jun 2013; Alexis Ballier <aballier@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  keyword ~amd64-fbsd
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org> xalan-serializer-2.7.1.ebuild:
-  adding ~arm
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Apr 2012; Mike Frysinger <vapier@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  Add back ia64 love #349020 by Dennis Schridde.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
-  xalan-serializer-2.7.0.ebuild, xalan-serializer-2.7.1.ebuild:
-  Drop ia64 support #345433
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 May 2011; Fabian Groffen <grobian@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  Marked ~x64-freebsd
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Jul 2010; Fabian Groffen <grobian@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  Marked ~x64-macos
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  Transfer Prefix keywords
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Nov 2008; Brent Baude <ranger@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  Marking xalan-serializer-2.7.1 ppc64 for bug 242984
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Oct 2008; nixnut <nixnut@gentoo.org> xalan-serializer-2.7.1.ebuild:
-  Stable on ppc wrt bug 242984
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Oct 2008; Markus Meier <maekke@gentoo.org>
-  xalan-serializer-2.7.1.ebuild:
-  amd64/x86 stable, bug #242984
-
-*xalan-serializer-2.7.1 (27 Jun 2008)
-
-  27 Jun 2008; Alistair Bush <ali_bush@gentoo.org>
-  +xalan-serializer-2.7.1.ebuild:
-  Version Bump #229029.
-
-  25 Nov 2007; Christian Faulhammer <opfer@gentoo.org>
-  xalan-serializer-2.7.0.ebuild:
-  stable x86, bug 199501
-
-  25 Nov 2007; Samuli Suominen <drac@gentoo.org>
-  xalan-serializer-2.7.0.ebuild:
-  amd64 stable wrt #199501
-
-  25 Nov 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  xalan-serializer-2.7.0.ebuild:
-  Stable on ppc, bug #199501.
-
-  23 Nov 2007; Markus Rothe <corsair@gentoo.org>
-  xalan-serializer-2.7.0.ebuild:
-  Stable on ppc64; bug #199501
-
-*xalan-serializer-2.7.0 (26 May 2007)
-
-  26 May 2007; Vlastimil Babka <caster@gentoo.org> +metadata.xml,
-  +xalan-serializer-2.7.0.ebuild:
-  New package for serializer.jar from xalan, now used by both xalan and xerces
-  - bug #156258.

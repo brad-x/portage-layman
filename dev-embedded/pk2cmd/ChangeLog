@@ -1,42 +1,58 @@
 # ChangeLog for dev-embedded/pk2cmd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/pk2cmd/ChangeLog,v 1.8 2015/03/21 15:01:13 jlec Exp $
+# (auto-generated from git log)
 
-  21 Mar 2015; Justin Lecher <jlec@gentoo.org> pk2cmd-1.20.ebuild:
-  use dobin instead of exeinto /usr/bin/ && doexe
+*pk2cmd-1.20 (09 Aug 2015)
 
-  05 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -pk2cmd-1.12.0-r1.ebuild,
-  pk2cmd-1.20.ebuild:
-  Bump to EAPI5, remove old.
-
-  25 May 2012; Samuli Suominen <ssuominen@gentoo.org> pk2cmd-1.12.0-r1.ebuild,
-  pk2cmd-1.20.ebuild:
-  Set SLOT for the virtual/libusb dependency.
-
-  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> pk2cmd-1.12.0-r1.ebuild,
-  pk2cmd-1.20.ebuild:
-  Use virtual/libusb instead of dev-libs/libusb.
-
-  16 Sep 2010; Joseph Jezak <josejx@gentoo.org> pk2cmd-1.12.0-r1.ebuild,
-  pk2cmd-1.20.ebuild:
-  Honor user's LDFLAGs for bug #337521. Marked 1.20 ppc/ppc64 stable.
-
-*pk2cmd-1.20 (02 Feb 2009)
-
-  02 Feb 2009; Joseph Jezak <josejx@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/pk2cmd-add-share-dir-for-dev-file-1.20.patch,
-  pk2cmd-1.12.0-r1.ebuild, +pk2cmd-1.20.ebuild:
-  Revision bump, bug #257138. Marked 1.12.0-r1 stable on ppc/ppc64.
+  +files/pk2cmd-add-share-dir-for-dev-file.patch, +metadata.xml,
+  +pk2cmd-1.20.ebuild:
+  proj/gentoo: Initial commit
 
-*pk2cmd-1.12.0-r1 (21 Sep 2008)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Sep 2008; Joseph Jezak <josejx@gentoo.org>
-  +files/pk2cmd-add-share-dir-for-dev-file.patch, -pk2cmd-1.12.0.ebuild,
-  +pk2cmd-1.12.0-r1.ebuild:
-  Added patch to allow pk2cmd to find the device file without changing the path.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*pk2cmd-1.12.0 (19 Sep 2008)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Sep 2008; Joseph Jezak <josejx@gentoo.org> +metadata.xml,
-  +pk2cmd-1.12.0.ebuild:
-  Initial ebuild import.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

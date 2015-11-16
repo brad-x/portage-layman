@@ -1,111 +1,57 @@
 # ChangeLog for dev-games/vamos
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/vamos/ChangeLog,v 1.27 2015/06/09 13:28:03 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*vamos-0.7.1 (09 Aug 2015)
 
-  25 Jun 2014; Michael Sterrett <mr_bones_@gentoo.org> vamos-0.7.1.ebuild:
-  add boost dep (bug #514266)
-
-  11 Mar 2013; Alfredo Tupone <tupone@gentoo.org> -vamos-0.7.0.ebuild,
-  -files/vamos-0.7.0-as-needed.patch:
-  Removing old. Obsolete bug #460954 by Diego
-
-  10 Mar 2013; Agostino Sarubbo <ago@gentoo.org> vamos-0.7.1.ebuild:
-  Stable for x86, wrt bug #461004
-
-  10 Mar 2013; Agostino Sarubbo <ago@gentoo.org> vamos-0.7.1.ebuild:
-  Stable for amd64, wrt bug #461004
-
-*vamos-0.7.1 (08 Feb 2013)
-
-  08 Feb 2013; Michael Sterrett <mr_bones_@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/vamos-0.7.1-as-needed.patch, +files/vamos-0.7.1-gcc46.patch,
-  +vamos-0.7.1.ebuild, files/vamos-0.7.0-as-needed.patch:
-  version bump
+  +metadata.xml, +vamos-0.7.1.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/vamos-0.6.2-as-needed.patch, -files/vamos-0.6.2-libpng15.patch,
-  -vamos-0.6.2.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Jan 2013; Agostino Sarubbo <ago@gentoo.org> vamos-0.7.0.ebuild:
-  Stable for x86, wrt bug #449934
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jan 2013; Agostino Sarubbo <ago@gentoo.org> vamos-0.7.0.ebuild:
-  Stable for amd64, wrt bug #449934
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*vamos-0.7.0 (14 Nov 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/vamos-0.7.0-as-needed.patch, +vamos-0.7.0.ebuild:
-  version bump (bug #443040)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> vamos-0.6.2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> vamos-0.6.2.ebuild,
-  +files/vamos-0.6.2-libpng15.patch:
-  Fix building with libpng15 wrt #378351 by Diego Elio Pettenò
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> vamos-0.6.2.ebuild:
-  Remove virtual/glu where already virtual/opengl is stated.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> vamos-0.6.2.ebuild:
-  virtual/glut -> media-libs/glut
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jun 2010; Michael Sterrett <mr_bones_@gentoo.org> vamos-0.6.2.ebuild:
-  add USE=static-libs support
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Jun 2010; Michael Sterrett <mr_bones_@gentoo.org> vamos-0.6.2.ebuild,
-  files/vamos-0.6.2-as-needed.patch:
-  fixup deps as report by Sam Varner via email
-
-  03 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> vamos-0.6.2.ebuild:
-  x86 stable wrt bug #303503
-
-*vamos-0.6.2 (12 Oct 2009)
-
-  12 Oct 2009; Michael Sterrett <mr_bones_@gentoo.org> -vamos-0.6.0.ebuild,
-  -files/vamos-0.6.0-as-needed.patch, -files/vamos-0.6.0-gcc43.patch,
-  +vamos-0.6.2.ebuild, +files/vamos-0.6.2-as-needed.patch:
-  version bump; clean old
-
-  12 Feb 2009; Tupone Alfredo <tupone@gentoo.org>
-  +files/vamos-0.5.5-as-needed.patch, +files/vamos-0.6.0-as-needed.patch,
-  vamos-0.5.5.ebuild, vamos-0.6.0.ebuild:
-  Fix --as-needed bug #250072 by flameeyes@gentoo.org
-
-  19 Aug 2008; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/vamos-0.6.0-gcc43.patch, vamos-0.6.0.ebuild:
-  add gcc43 patch submitted by Dannee McGuire (bug #227511)
-
-*vamos-0.6.0 (24 Feb 2008)
-
-  24 Feb 2008; Michael Sterrett <mr_bones_@gentoo.org> +vamos-0.6.0.ebuild:
-  version bump
-
-  21 Jan 2008; Tristan Heaven <nyhm@gentoo.org> vamos-0.5.7.ebuild:
-  Add sdl-ttf dep, bug #206131
-
-*vamos-0.5.7 (21 Jul 2007)
-
-  21 Jul 2007; Tristan Heaven <nyhm@gentoo.org> +vamos-0.5.7.ebuild:
-  Version bump
-
-  10 Feb 2006; Chris Gianelloni <wolf31o2@gentoo.org> vamos-0.5.5.ebuild:
-  Added modular X dependencies and closing bug #121355.
-
-*vamos-0.5.5 (31 Oct 2005)
-
-  31 Oct 2005; Michael Sterrett <mr_bones_@gentoo.org> +vamos-0.5.5.ebuild:
-  version bump
-
-  29 Aug 2005; Michael Sterrett <mr_bones_@gentoo.org> vamos-0.5.4.ebuild:
-  stable for x86
-
-*vamos-0.5.4 (04 Jul 2005)
-
-  04 Jul 2005; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

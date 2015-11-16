@@ -1,92 +1,61 @@
 # ChangeLog for app-laptop/thinkfan
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/thinkfan/ChangeLog,v 1.22 2015/06/09 11:36:07 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*thinkfan-0.9.2-r1 (09 Aug 2015)
+*thinkfan-0.9.2 (09 Aug 2015)
+*thinkfan-0.9_beta2 (09 Aug 2015)
+*thinkfan-0.8.1-r1 (09 Aug 2015)
 
-  19 Apr 2015; Pacho Ramos <pacho@gentoo.org> thinkfan-0.9.2-r1.ebuild:
-  x86 stable wrt bug #534862
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/thinkfan-0.8.1-openrc.patch, +files/thinkfan-0.9.2-openrc.patch,
+  +metadata.xml, +thinkfan-0.8.1-r1.ebuild, +thinkfan-0.9_beta2.ebuild,
+  +thinkfan-0.9.2.ebuild, +thinkfan-0.9.2-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.9.2-r1.ebuild:
-  Stable for amd64, wrt bug #534862
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*thinkfan-0.9.2-r1 (24 Jul 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jul 2014; Michael Weber <xmw@gentoo.org>
-  +files/thinkfan-0.9.2-openrc.patch, +thinkfan-0.9.2-r1.ebuild:
-  Revbump to fix typo in init script
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*thinkfan-0.9.2 (21 Jul 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Jul 2014; Michael Weber <xmw@gentoo.org> +thinkfan-0.9.2.ebuild:
-  Version bump (bug 517556, thanks Sasha Medvedev)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Aug 2013; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.9_beta2.ebuild:
-  Stable for x86, wrt bug #480046
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.9_beta2.ebuild:
-  Stable for amd64, wrt bug #480046
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Aug 2013; Michael Weber <xmw@gentoo.org> thinkfan-0.9_beta2.ebuild:
-  Drop systemd USE flag, use readme.gentoo.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Feb 2013; Michael Weber <xmw@gentoo.org> thinkfan-0.9_beta2.ebuild:
-  Fix USE dependency.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*thinkfan-0.9_beta2 (12 Feb 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Feb 2013; Michael Weber <xmw@gentoo.org>
-  -files/thinkfan-0.7.3-makefile.patch, -files/thinkfan-0.7.3-openrc.patch,
-  -thinkfan-0.8.0.ebuild, -thinkfan-0.8.1.ebuild, +thinkfan-0.9_beta2.ebuild,
-  metadata.xml:
-  Remove old ebuilds and files, version bump to newest beta, cmake-utils, USE
-  flags for atasmart.
-
-  04 Feb 2013; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.8.1-r1.ebuild:
-  Stable for x86, wrt bug #455402
-
-  04 Feb 2013; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.8.1-r1.ebuild:
-  Stable for amd64, wrt bug #455402
-
-*thinkfan-0.8.1-r1 (04 Dec 2012)
-
-  04 Dec 2012; Michael Weber <xmw@gentoo.org> +thinkfan-0.8.1-r1.ebuild,
-  +files/thinkfan-0.8.1-openrc.patch:
-  Revbump to respect config file.
-
-*thinkfan-0.8.1 (06 Oct 2012)
-
-  06 Oct 2012; Michael Weber <xmw@gentoo.org> +thinkfan-0.8.1.ebuild:
-  Version bump (euscan), drop old patches
-
-  23 Jun 2012; Michael Weber <xmw@gentoo.org> -thinkfan-0.8_alpha2.ebuild:
-  Drop old
-
-  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> thinkfan-0.8.0.ebuild:
-  marked x86 per bug 421989
-
-  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.8.0.ebuild:
-  Stable for amd64, wrt bug #421989
-
-*thinkfan-0.8.0 (12 May 2012)
-
-  12 May 2012; Michael Weber <xmw@gentoo.org> +thinkfan-0.8.0.ebuild:
-  Version bump
-
-  19 Apr 2012; Michael Weber <xmw@gentoo.org> -thinkfan-0.7.3.ebuild:
-  Remove old version.
-
-  19 Apr 2012; Jeff Horelick <jdhore@gentoo.org> thinkfan-0.8_alpha2.ebuild:
-  marked x86 per bug 412593
-
-  19 Apr 2012; Agostino Sarubbo <ago@gentoo.org> thinkfan-0.8_alpha2.ebuild:
-  Stable for amd64, wrt bug #412593
-
-*thinkfan-0.8_alpha2 (13 Feb 2012)
-*thinkfan-0.7.3 (13 Feb 2012)
-
-  13 Feb 2012; Michael Weber <xmw@gentoo.org> +thinkfan-0.7.3.ebuild,
-  +files/thinkfan-0.7.3-makefile.patch, +files/thinkfan-0.7.3-openrc.patch,
-  +thinkfan-0.8_alpha2.ebuild:
-  Initial import. Thanks Maxim Konyushikhin for the initial ebuild (bug 387399)

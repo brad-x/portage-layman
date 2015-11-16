@@ -1,80 +1,61 @@
 # ChangeLog for net-libs/libtrace
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libtrace/ChangeLog,v 1.15 2015/02/15 10:06:49 jer Exp $
+# (auto-generated from git log)
 
-*libtrace-3.0.22 (15 Feb 2015)
+*libtrace-3.0.22 (09 Aug 2015)
+*libtrace-3.0.21 (09 Aug 2015)
 
-  15 Feb 2015; Jeroen Roovers <jer@gentoo.org> -libtrace-3.0.20.ebuild,
-  +libtrace-3.0.22.ebuild:
-  Version bump.
-
-  19 Jan 2015; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Drop myself from metadata.
-
-*libtrace-3.0.21 (11 Sep 2014)
-
-  11 Sep 2014; Jeroen Roovers <jer@gentoo.org> -libtrace-3.0.19.ebuild,
-  +libtrace-3.0.21.ebuild:
-  Version bump.
-
-*libtrace-3.0.20 (09 Jul 2014)
-
-  09 Jul 2014; Jeroen Roovers <jer@gentoo.org> -libtrace-3.0.17.ebuild,
-  -libtrace-3.0.18.ebuild, +libtrace-3.0.20.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/libtrace-3.0.20-autoconf-1.13.patch,
   +files/libtrace-3.0.20-libwandio-linking.patch,
-  +files/libtrace-3.0.20-no-examples.patch, +files/libtrace-3.0.20-tinfo.patch:
-  Version bump. Fix linking tracetop against sys-libs/ncurses[tinfo]. Fix
-  parallel make issue building wandiocat.
+  +files/libtrace-3.0.20-no-examples.patch,
+  +files/libtrace-3.0.20-tinfo.patch, +libtrace-3.0.21.ebuild,
+  +libtrace-3.0.22.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libtrace-3.0.19 (08 Mar 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Mar 2014; Tim Harder <radhermit@gentoo.org> +libtrace-3.0.19.ebuild:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Jul 2013; Tim Harder <radhermit@gentoo.org> -libtrace-3.0.14.ebuild,
-  -libtrace-3.0.15.ebuild, -libtrace-3.0.16.ebuild,
-  -files/libtrace-3.0.14-no-doxygen.patch,
-  -files/libtrace-3.0.15-no-doxygen.patch:
-  Remove old.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*libtrace-3.0.18 (07 Jul 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Jul 2013; Tim Harder <radhermit@gentoo.org> +libtrace-3.0.18.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*libtrace-3.0.17 (03 May 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 May 2013; Tim Harder <radhermit@gentoo.org> +libtrace-3.0.17.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Jan 2013; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Fix metadata.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jan 2013; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Add myself as primary maintainer.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*libtrace-3.0.16 (05 Jan 2013)
-
-  05 Jan 2013; Tim Harder <radhermit@gentoo.org> +libtrace-3.0.16.ebuild:
-  Version bump.
-
-  23 Oct 2012; Tim Harder <radhermit@gentoo.org> libtrace-3.0.15.ebuild:
-  Add comment for doxygen patch.
-
-  23 Oct 2012; Tim Harder <radhermit@gentoo.org> libtrace-3.0.15.ebuild,
-  +files/libtrace-3.0.15-no-doxygen.patch:
-  Use prune_libtool_files, properly skip rebuilding docs when doxygen is
-  present, and bump to EAPI 5.
-
-*libtrace-3.0.15 (15 Oct 2012)
-
-  15 Oct 2012; Jeroen Roovers <jer@gentoo.org> +libtrace-3.0.15.ebuild:
-  Version bump.
-
-*libtrace-3.0.14 (03 Sep 2012)
-
-  03 Sep 2012; Tim Harder <radhermit@gentoo.org> +libtrace-3.0.14.ebuild,
-  +files/libtrace-3.0.14-no-doxygen.patch, +metadata.xml:
-  Initial import, ebuild by me (bug #404099).
+  Bug: https://bugs.gentoo.org/552720
 

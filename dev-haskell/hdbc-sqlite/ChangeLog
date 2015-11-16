@@ -1,97 +1,73 @@
 # ChangeLog for dev-haskell/hdbc-sqlite
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc-sqlite/ChangeLog,v 1.19 2014/07/25 08:59:36 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  25 Jul 2014; Sergei Trofimovich <slyfox@gentoo.org> metadata.xml:
-  Drop redundant '<maintainer>' field, leave only '<herd>'.
+*hdbc-sqlite-2.3.3.0 (09 Aug 2015)
 
-  21 Feb 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  -hdbc-sqlite-2.3.0.0.ebuild:
-  Drop old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/HDBC-sqlite3-2.3.3.0-ghc-7.6.patch, +files/TestTime.hs,
+  +hdbc-sqlite-2.3.3.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +files/HDBC-sqlite3-2.3.3.0-ghc-7.6.patch, hdbc-sqlite-2.3.3.0.ebuild:
-  Fix against ghc-7.6.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  hdbc-sqlite-2.3.0.0.ebuild, hdbc-sqlite-2.3.3.0.ebuild:
-  Get rid of 'dev-haskell/time' depend as it's a ghc's core library.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
-  hdbc-sqlite-2.3.0.0.ebuild, hdbc-sqlite-2.3.3.0.ebuild:
-  move dev-haskell/hdbc-sqlite/hdbc-sqlite-2.3.0.0.ebuild ebuild to
-  mirror://hackage
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*hdbc-sqlite-2.3.3.0 (02 Jun 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Jun 2012; Mark Wright <gienah@gentoo.org> +files/TestTime.hs,
-  +hdbc-sqlite-2.3.3.0.ebuild, metadata.xml:
-  Bump hdbc-sqlite to 2.3.3.0
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*hdbc-sqlite-2.3.0.0 (12 Jun 2011)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org>
-  -files/hdbc-sqlite3-helper.h, -hdbc-sqlite-1.0.0.0.ebuild,
-  -hdbc-sqlite-1.0.1.0.ebuild, -hdbc-sqlite-1.1.3.0.ebuild,
-  +hdbc-sqlite-2.3.0.0.ebuild:
-  Version bump. Requested by Christopher Howard (bug #367211). Removed old
-  versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Jul 2010; Sergei Trofimovich <slyfox@gentoo.org>
-  hdbc-sqlite-1.1.3.0.ebuild:
-  Fixed building on newer ghc. Thanks to Emil Karlson <jekarlson@gmail.com>
-  for report and proposed fix.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*hdbc-sqlite-1.1.3.0 (13 Dec 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Dec 2007; Duncan Coutts <dcoutts@gentoo.org>
-  +files/hdbc-sqlite3-helper.h, +hdbc-sqlite-1.1.3.0.ebuild:
-  New version.
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Oct 2007; Duncan Coutts <dcoutts@gentoo.org>
-  hdbc-sqlite-1.0.0.0.ebuild, hdbc-sqlite-1.0.1.0.ebuild:
-  Drop virtual/ghc in favour of dev-lang/ghc
+*hdbc-sqlite-2.3.3.1 (21 Sep 2015)
 
-*hdbc-sqlite-1.0.1.0 (11 Jul 2007)
+  21 Sep 2015; Sergei Trofimovich <slyfox@gentoo.org>
+  +hdbc-sqlite-2.3.3.1.ebuild:
+  version bump, bug #561026
 
-  11 Jul 2007; Duncan Coutts <dcoutts@gentoo.org>
-  +hdbc-sqlite-1.0.1.0.ebuild:
-  New minor version. Fixes bug #180690.
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=561026
 
-  12 Oct 2006; Duncan Coutts <dcoutts@gentoo.org>
-  -hdbc-sqlite-0.99.0.0.ebuild, -hdbc-sqlite-0.99.2.0.ebuild:
-  Remove old pre-1.0 versions.
+  Package-Manager: portage-2.2.20
 
-*hdbc-sqlite-1.0.0.0 (02 Jul 2006)
+  22 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote ids
 
-  02 Jul 2006; Duncan Coutts <dcoutts@gentoo.org>
-  +hdbc-sqlite-1.0.0.0.ebuild:
-  New 1.0 version of HDBC and backends.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*hdbc-sqlite-0.99.2.0 (30 Mar 2006)
-
-  30 Mar 2006; Duncan Coutts <dcoutts@gentoo.org>
-  +hdbc-sqlite-0.99.2.0.ebuild:
-  New Version
-
-  09 Mar 2006; Duncan Coutts <dcoutts@gentoo.org>
-  hdbc-sqlite-0.99.0.0.ebuild:
-  Add ~sparc to KEYWORDS. See bug #124902.
-
-  01 Mar 2006; Michael Hanselmann <hansmi@gentoo.org>
-  hdbc-sqlite-0.99.0.0.ebuild:
-  Added to ~ppc. See bug #124469.
-
-  01 Mar 2006; Markus Rothe <corsair@gentoo.org>
-  hdbc-sqlite-0.99.0.0.ebuild:
-  Added ~ppc64; bug #124469
-
-  23 Feb 2006; Duncan Coutts <dcoutts@gentoo.org>
-  hdbc-sqlite-0.99.0.0.ebuild:
-  Changed the dep on hdbc to use a ~ dep (as suggested by ciaranm)
-
-*hdbc-sqlite-0.99.0.0 (23 Feb 2006)
-
-  23 Feb 2006; <dcoutts@gentoo.org> +metadata.xml,
-  +hdbc-sqlite-0.99.0.0.ebuild:
-  Initial import.

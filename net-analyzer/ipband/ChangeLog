@@ -1,48 +1,62 @@
 # ChangeLog for net-analyzer/ipband
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ipband/ChangeLog,v 1.11 2014/07/12 17:34:14 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  12 Jul 2014; Jeroen Roovers <jer@gentoo.org> ipband-0.8.1-r1.ebuild,
-  files/ipband-0.8.1-gentoo.patch, +files/ipband-0.8.1-postfix.patch:
-  EAPI bump. Remove readme from pkg_postinst(). Convert sed script into patch.
+*ipband-0.8.1-r1 (09 Aug 2015)
 
-  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> -ipband-0.8.ebuild:
-  Old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/ipband-0.8.1-gentoo.patch, +files/ipband-0.8.1-postfix.patch,
+  +files/ipband-init, +ipband-0.8.1-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ipband-0.8.1-r1.ebuild:
-  x86 stable wrt bug #397131
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*ipband-0.8.1-r1 (19 Oct 2010)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Oct 2010; Jeroen Roovers <jer@gentoo.org> -ipband-0.8.1.ebuild,
-  +ipband-0.8.1-r1.ebuild, files/ipband-0.8.1-gentoo.patch:
-  Respect LDFLAGS (bug #341767). Make sed die. Set RDEPEND.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jan 2009; Jeroen Roovers <jer@gentoo.org>
-  +files/ipband-0.8.1-gentoo.patch, ipband-0.8.1.ebuild:
-  Do not strip (bug #251978). Use toolchain. Use dobin.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ipband-0.8.1 (06 Dec 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Dec 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  +ipband-0.8.1.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 May 2007; Marius Mauch <genone@gentoo.org> ipband-0.8.ebuild:
-  Replacing einfo with elog
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> ipband-0.8.ebuild:
-  Use newinitd
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Apr 2007; Peter Weller <welp@gentoo.org> ipband-0.8.ebuild:
-  Keyworded ~amd64 wrt bug 174110
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Apr 2007; Marcelo Goes <vanquirius@gentoo.org> ipband-0.8.ebuild:
-  Mark 0.8 x86 stable. Use emake instead of make, minor cosmetic fixes.
+  Bug: https://bugs.gentoo.org/552720
 
-*ipband-0.8 (03 Feb 2007)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  03 Feb 2007; Martin Jackson <mjolnir@gentoo.org> +files/ipband-init,
-  +metadata.xml, +ipband-0.8.ebuild:
-  Adding new ebuild for bug #149548.  Thanks to Shane Denovan for reporting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 

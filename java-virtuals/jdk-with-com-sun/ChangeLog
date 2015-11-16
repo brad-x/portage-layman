@@ -1,121 +1,66 @@
 # ChangeLog for java-virtuals/jdk-with-com-sun
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/java-virtuals/jdk-with-com-sun/ChangeLog,v 1.23 2015/04/14 21:40:53 chewi Exp $
+# (auto-generated from git log)
 
-  14 Apr 2015; James Le Cuirot <chewi@gentoo.org>
-  jdk-with-com-sun-20111111-r2.ebuild:
-  diablo-jdk is about to be last-rited. Also remove ye olde apple-jdk-bin
-  versions.
+*jdk-with-com-sun-20111111-r2 (09 Aug 2015)
 
-  02 Aug 2014; Ralph Sennhauser <sera@gentoo.org>
-  -jdk-with-com-sun-20111111-r1.ebuild:
-  Remove old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +jdk-with-com-sun-20111111-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*jdk-with-com-sun-20111111-r2 (03 May 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 May 2014; Tom Wijsman <TomWij@gentoo.org>
-  +jdk-with-com-sun-20111111-r2.ebuild:
-  Support oracle-jdk-bin-1.8.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*jdk-with-com-sun-20111111-r1 (30 Jun 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Jun 2013; Tom Wijsman <TomWij@gentoo.org>
-  +jdk-with-com-sun-20111111-r1.ebuild, -jdk-with-com-sun-20111111.ebuild:
-  Remove sun-jdk and sun-jre-bin from the virtuals, acked by Caster. For
-  security bug #473830 reported by Agostino Sarubbo.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Oct 2012; Ralph Sennhauser <sera@gentoo.org>
-  jdk-with-com-sun-20111111.ebuild:
-  Change license to public-domain. #426800
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  jdk-with-com-sun-20111111-r2.ebuild, metadata.xml:
+  Use https by default
 
-  13 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
-  -jdk-with-com-sun-20111030.ebuild, -jdk-with-com-sun-20111107.ebuild:
-  Remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Nov 2011; Fabian Groffen <grobian@gentoo.org>
-  jdk-with-com-sun-20111111.ebuild:
-  Apple-provided JDKs are actually Sun/Oracle's, hence contain com.sun.*
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*jdk-with-com-sun-20111111 (11 Nov 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Nov 2011; Vlastimil Babka <caster@gentoo.org>
-  +jdk-with-com-sun-20111111.ebuild:
-  Add icedtea-7 and icedtea-bin-7 variants.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*jdk-with-com-sun-20111107 (07 Nov 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Nov 2011; Vlastimil Babka <caster@gentoo.org>
-  -jdk-with-com-sun-20080505-r1.ebuild, -jdk-with-com-sun-20100419.ebuild,
-  -jdk-with-com-sun-20110911.ebuild, +jdk-with-com-sun-20111107.ebuild:
-  Prepare for icedtea-bin version and VMHANDLE migration.
+*jdk-with-com-sun-20111111-r3 (04 Sep 2015)
 
-  30 Oct 2011; Vlastimil Babka <caster@gentoo.org>
-  jdk-with-com-sun-20100419.ebuild, jdk-with-com-sun-20110911.ebuild,
-  jdk-with-com-sun-20111030.ebuild:
-  Package move icedtea6-bin to icedtea-bin.
+  04 Sep 2015; Patrice Clement <monsieurp@gentoo.org>
+  +jdk-with-com-sun-20111111-r3.ebuild:
+  Keyword for ppc+ppc64. Add ibm-jdk-bin-1.6 to the list of virtual providers.
 
-*jdk-with-com-sun-20111030 (30 Oct 2011)
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  30 Oct 2011; Vlastimil Babka <caster@gentoo.org>
-  +jdk-with-com-sun-20111030.ebuild:
-  Prepare for icedtea VMHANDLE change.
-
-*jdk-with-com-sun-20110911 (11 Sep 2011)
-
-  11 Sep 2011; Serkan Kaba <serkan@gentoo.org>
-  +jdk-with-com-sun-20110911.ebuild:
-  Bump to add oracle-jdk-bin-1.7
-
-  01 Jun 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  jdk-with-com-sun-20100419.ebuild:
-  x86 stable wrt bug #320519
-
-  25 May 2010; Pacho Ramos <pacho@gentoo.org>
-  jdk-with-com-sun-20100419.ebuild:
-  stable amd64, bug 320519
-
-  23 Apr 2010; Alexis Ballier <aballier@gentoo.org>
-  jdk-with-com-sun-20080505-r1.ebuild, jdk-with-com-sun-20100419.ebuild:
-  change diablo-jdk:1.5 to 1.6, 1.5 is gone
-
-*jdk-with-com-sun-20100419 (19 Apr 2010)
-
-  19 Apr 2010; Vlastimil Babka <caster@gentoo.org>
-  -jdk-with-com-sun-20080505.ebuild, +jdk-with-com-sun-20100419.ebuild:
-  Bump to add icedtea6-bin and icedtea:6 as alternatives.
-
-  23 Dec 2009; Vlastimil Babka <caster@gentoo.org>
-  -jdk-with-com-sun-1.4.ebuild:
-  Remove the 1.4 slot as 1.4 is going away.
-
-  13 Sep 2008; Petteri Räty <betelgeuse@gentoo.org>
-  jdk-with-com-sun-20080505-r1.ebuild:
-  Mark stable.
-
-*jdk-with-com-sun-1.4 (12 Sep 2008)
-
-  12 Sep 2008; Petteri Räty <betelgeuse@gentoo.org>
-  +jdk-with-com-sun-1.4.ebuild:
-  Add slot 1.4 needed for tomcat.
-
-*jdk-with-com-sun-20080505-r1 (12 Sep 2008)
-
-  12 Sep 2008; Miroslav Šulc <fordfrog@gentoo.org>
-  +jdk-with-com-sun-20080505-r1.ebuild:
-  Added blackdown-jdk-1.4.2 so we have a usable 1.4 JDK even on amd64
-  systems
-
-  30 May 2008; Kenneth Prugh <ken69267@gentoo.org>
-  jdk-with-com-sun-20080505.ebuild:
-  amd64 stable, bug #220223
-
-  08 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  jdk-with-com-sun-20080505.ebuild:
-  stable x86, bug 220223
-
-*jdk-with-com-sun-20080505 (05 May 2008)
-
-  05 May 2008; Petteri Räty <betelgeuse@gentoo.org> +metadata.xml,
-  +jdk-with-com-sun-20080505.ebuild:
-  Rename sun-jdk virtual to jdk-with-com-sun to avoid having to specify
-  category with sun-jdk.

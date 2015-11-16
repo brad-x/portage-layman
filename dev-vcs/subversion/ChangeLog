@@ -1,124 +1,171 @@
 # ChangeLog for dev-vcs/subversion
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/subversion/ChangeLog,v 1.248 2015/08/07 09:21:53 klausman Exp $
+# (auto-generated from git log)
 
-  07 Aug 2015; Tobias Klausmann <klausman@gentoo.org> subversion-1.8.14.ebuild:
-  Stable on alpha, bug 556076
+*subversion-1.9.0 (09 Aug 2015)
+*subversion-1.8.14-r1 (09 Aug 2015)
+*subversion-1.8.14 (09 Aug 2015)
+*subversion-1.8.13-r1 (09 Aug 2015)
+*subversion-1.7.21 (09 Aug 2015)
+*subversion-1.7.20 (09 Aug 2015)
 
-  07 Aug 2015; Tobias Klausmann <klausman@gentoo.org> subversion-1.7.21.ebuild:
-  Stable on alpha, bug 556076
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/47_mod_dav_svn.conf, +files/70svn-gentoo.el,
+  +files/subversion-1.5.4-interix.patch,
+  +files/subversion-1.5.6-aix-dso.patch,
+  +files/subversion-1.6.3-hpux-dso.patch,
+  +files/subversion-1.8.0-hpux-dso.patch,
+  +files/subversion-1.8.1-revert_bdb6check.patch,
+  +files/subversion-1.8.5-swig-python-no-gnome-keyring.patch,
+  +files/subversion-fix-parallel-build-support-for-perl-bindings.patch,
+  +files/svnserve.confd, +files/svnserve.initd2, +files/svnserve.initd3,
+  +files/svnserve.xinetd, +metadata.xml, +subversion-1.7.20.ebuild,
+  +subversion-1.7.21.ebuild, +subversion-1.8.13-r1.ebuild,
+  +subversion-1.8.14.ebuild, +subversion-1.8.14-r1.ebuild,
+  +subversion-1.9.0.ebuild:
+  proj/gentoo: Initial commit
 
-  06 Aug 2015; Mikle Kolyada <zlogene@gentoo.org> subversion-1.7.21.ebuild,
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  09 Aug 2015; Mikle Kolyada <zlogene@gentoo.org> subversion-1.7.21.ebuild,
   subversion-1.8.14.ebuild:
-  amd64 stable wrt bug #556076
+  ia64 stable wrt bug #556076
 
-*subversion-1.7.21 (06 Aug 2015)
+  Package-Manager: portage-2.2.20
 
-  06 Aug 2015; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
-  +subversion-1.7.21.ebuild:
-  Version bump for 1.7 series to 1.7.21 for bug 556076, known issue: some tests
-  may fail
+  09 Aug 2015; Mikle Kolyada <zlogene@gentoo.org> subversion-1.7.21.ebuild,
+  subversion-1.8.14.ebuild:
+  x86 stable wrt bug #556076
 
-*subversion-1.9.0 (06 Aug 2015)
-*subversion-1.8.14-r1 (06 Aug 2015)
-*subversion-1.8.14 (06 Aug 2015)
+  Package-Manager: portage-2.2.20
 
-  06 Aug 2015; Lars Wendler <polynomial-c@gentoo.org>
-  -subversion-1.8.13-r2.ebuild, +subversion-1.8.14.ebuild,
-  +subversion-1.8.14-r1.ebuild, +subversion-1.9.0.ebuild:
-  Security bump (bug #556076). Removed old.
+  14 Aug 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.8.14.ebuild:
+  Stable for PPC64 (bug #556076).
 
-  03 Jul 2015; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
-  -subversion-1.7.19.ebuild, -subversion-1.8.11.ebuild:
-  Drop vulnerable versions, bug 545348
+  Package-Manager: portage-2.2.20.1
 
-  03 Jul 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.7.20.ebuild,
-  subversion-1.8.13-r1.ebuild:
-  Stable for alpha, wrt bug #546644
+  15 Aug 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.7.21.ebuild:
+  Stable for PPC64 (bug #556076).
 
-  24 Jun 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.7.20.ebuild,
-  subversion-1.8.13-r1.ebuild:
-  Stable for ppc, wrt bug #545348
+  Package-Manager: portage-2.2.20.1
 
-  11 Jun 2015; Markus Meier <maekke@gentoo.org> subversion-1.8.13-r1.ebuild:
-  arm stable, bug #545348
+  15 Aug 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.8.14.ebuild:
+  Stable for HPPA (bug #556076).
 
-  04 Jun 2015; Michael Palimaka <kensington@gentoo.org>
-  subversion-1.7.19.ebuild, subversion-1.7.20.ebuild, subversion-1.8.11.ebuild,
-  subversion-1.8.13-r1.ebuild, subversion-1.8.13-r2.ebuild:
-  Move various kde-base packages to kde-apps.
+  Package-Manager: portage-2.2.20.1
 
-  02 Jun 2015; Jack Morgan <jmorgan@gentoo.org> subversion-1.7.20.ebuild,
-  subversion-1.8.13-r1.ebuild:
-  sparc stable wrt bug #545348
+  16 Aug 2015; Markus Meier <maekke@gentoo.org> subversion-1.7.21.ebuild,
+  subversion-1.8.14.ebuild:
+  arm stable, bug #556076
 
-  01 Jun 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.8.13-r1.ebuild:
-  Stable for HPPA PPC64 (bug #545348).
+  Package-Manager: portage-2.2.20
 
-  01 Jun 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.8.13-r1.ebuild:
-  Stable for x86, wrt bug #545348
+  18 Aug 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.7.21.ebuild:
+  Stable for HPPA (bug #556076).
 
-  01 Jun 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.8.13-r1.ebuild:
-  Stable for amd64, wrt bug #545348
+  Package-Manager: portage-2.2.20.1
 
-  01 Jun 2015; Jack Morgan <jmorgan@gentoo.org> subversion-1.8.13-r1.ebuild:
-  ia64 stable wrt bug #545348
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*subversion-1.8.13-r2 (30 May 2015)
-*subversion-1.8.13-r1 (30 May 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 May 2015; Lars Wendler <polynomial-c@gentoo.org>
-  -subversion-1.8.13.ebuild, +subversion-1.8.13-r1.ebuild,
-  +subversion-1.8.13-r2.ebuild:
-  Split subversion-1.8.13 into two versions. One for stable users depending on
-  ruby20 and one for unstable users depending on ruby21.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 May 2015; Markus Meier <maekke@gentoo.org> subversion-1.7.20.ebuild:
-  arm stable, bug #545348
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 May 2015; Jack Morgan <jmorgan@gentoo.org> subversion-1.7.20.ebuild:
-  ia64 stable wrt bug #545348
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 May 2015; Jeroen Roovers <jer@gentoo.org> subversion-1.7.20.ebuild:
-  Stable for PPC64 (bug #545348).
+  Bug: https://bugs.gentoo.org/552720
 
-  13 May 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.7.20.ebuild:
-  Stable for amd64, wrt bug #545348
+  26 Aug 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.7.21.ebuild,
+  subversion-1.8.14.ebuild:
+  ppc stable wrt bug #556076
 
-  12 May 2015; Lars Wendler <polynomial-c@gentoo.org> subversion-1.8.13.ebuild:
-  Fixed configure run with USE="-ruby".
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-*subversion-1.7.20 (23 Apr 2015)
+*subversion-1.9.1 (02 Sep 2015)
 
-  23 Apr 2015; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
-  +subversion-1.7.20.ebuild:
-  Version bump for bug 545348
+  02 Sep 2015; Lars Wendler <polynomial-c@gentoo.org>
+  +subversion-1.9.1.ebuild:
+  Bump to version 1.9.1.
 
-  15 Apr 2015; Lars Wendler <polynomial-c@gentoo.org> subversion-1.8.13.ebuild:
-  Removed dependency on swig again (as requested by Arfrever).
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  13 Apr 2015; Lars Wendler <polynomial-c@gentoo.org> subversion-1.8.13.ebuild:
-  Fix dependency for swig.
+  06 Sep 2015; Agostino Sarubbo <ago@gentoo.org> subversion-1.7.21.ebuild,
+  subversion-1.8.14.ebuild:
+  sparc stable wrt bug #556076
 
-  13 Apr 2015; Lars Wendler <polynomial-c@gentoo.org> subversion-1.8.13.ebuild:
-  Added dev-lang/swig to DEPEND.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="sparc"
 
-*subversion-1.8.13 (09 Apr 2015)
+  12 Sep 2015; Fabian Groffen <grobian@gentoo.org> subversion-1.9.1.ebuild:
+  drop gnome keyring patch for OSX as it is seemingly fixed upstream in 1.9.1,
+  bug #560274
 
-  09 Apr 2015; Lars Wendler <polynomial-c@gentoo.org>
-  +subversion-1.8.13.ebuild, +files/svnserve.initd3:
-  Security bump (bug #545348). Added slightly rewritten init script.
+  Package-Manager: portage-2.2.20-prefix
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> subversion-1.7.19.ebuild,
-  subversion-1.8.11.ebuild:
-  Drop old Python implementations
+  13 Sep 2015; Thomas Sachau <tommy@gentoo.org> -subversion-1.7.20.ebuild,
+  -subversion-1.8.13-r1.ebuild:
+  Drop vulnerable versions, bug 556076
 
-  03 Jan 2015; Lars Wendler <polynomial-c@gentoo.org> subversion-1.7.19.ebuild,
-  subversion-1.8.11.ebuild:
-  Fixed compilation with "gnome-keyring" USE flag (bug #534384 and patch by
-  Andrew Savchenko).
+  Package-Manager: portage-2.2.18
 
-  01 Jan 2015; Andreas K. Huettel <dilfridge@gentoo.org> +ChangeLog-2014,
-  ChangeLog: Split ChangeLog
+*subversion-1.9.2 (23 Sep 2015)
 
-  For previous entries, please see ChangeLog-2014.
+  23 Sep 2015; Lars Wendler <polynomial-c@gentoo.org>
+  subversion-1.8.14-r1.ebuild, +subversion-1.9.2.ebuild:
+  Bump to version 1.9.2
+
+  Added new logic to find and use best installed ruby version.
+  Added the same logic to latest unstable 1.8 version as well.
+
+  Package-Manager: portage-2.2.21
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  23 Sep 2015; Lars Wendler <polynomial-c@gentoo.org>
+  -subversion-1.9.0.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.21
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  24 Sep 2015; Mike Gilbert <floppym@gentoo.org> subversion-1.7.21.ebuild,
+  subversion-1.8.14-r1.ebuild, subversion-1.9.2.ebuild:
+  Call python_setup
+
+  Package-Manager: portage-2.2.21_p119
+

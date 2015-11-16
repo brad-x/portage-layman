@@ -1,128 +1,56 @@
 # ChangeLog for net-analyzer/snortalog
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snortalog/ChangeLog,v 1.28 2015/02/22 08:18:27 jer Exp $
+# (auto-generated from git log)
 
-  22 Feb 2015; Jeroen Roovers <jer@gentoo.org> snortalog-2.4.3-r1.ebuild:
-  Depend on dev-lang/perl[ithreads] by OKUMURA N. Shin-ya (bug #540910).
+*snortalog-2.4.3-r1 (09 Aug 2015)
 
-*snortalog-2.4.3-r1 (11 Feb 2015)
-
-  11 Feb 2015; Jeroen Roovers <jer@gentoo.org> -snortalog-2.4.3.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +snortalog-2.4.3-r1.ebuild:
-  Fix CRLFs (bug #539764 by OKUMURA N. Shin-ya).
+  proj/gentoo: Initial commit
 
-*snortalog-2.4.3 (17 Jul 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jul 2014; Jeroen Roovers <jer@gentoo.org> -snortalog-2.4.0.ebuild,
-  +snortalog-2.4.3.ebuild, -files/snortalog-2.4.0-limit-args.diff,
-  -files/snortalog-2.4.0-notcltk.diff:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Jul 2014; Jeroen Roovers <jer@gentoo.org> snortalog-2.4.0.ebuild,
-  files/snortalog-2.4.0-limit-args.diff, files/snortalog-2.4.0-notcltk.diff,
-  metadata.xml:
-  EAPI bump. Clean up patches.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Jul 2010; Markus Meier <maekke@gentoo.org> snortalog-2.4.0.ebuild:
-  add ~arm, bug #301084
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 May 2008; Ferris McCormick <fmccor@gentoo.org> snortalog-2.4.0.ebuild:
-  Add ~sparc --- Bug #221917 (request by Dustin Surawicz) --- it can generate
-  reports.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Nov 2006; Markus Ullmann <jokey@gentoo.org>
-  -files/snortalog-2.3.0-limit-args.diff,
-  files/snortalog-2.4.0-notcltk.diff, -files/snortalog-notcltk.diff,
-  -snortalog-2.2.1.ebuild, -snortalog-2.3.0-r1.ebuild,
-  snortalog-2.4.0.ebuild:
-  tcltk fix and cleanup
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Feb 2006; Michael Cummings <mcummings@gentoo.org>
-  snortalog-2.2.1.ebuild, snortalog-2.3.0-r1.ebuild, snortalog-2.4.0.ebuild:
-  Virtuals for perl-core
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Nov 2005; <soulse@gentoo.org> snortalog-2.4.0.ebuild:
-  Fixed ebuild as per bug #110225, thanks to Toralf <toralf.foerster@gmx.de>
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Sep 2005; Ciaran McCreesh <ciaranm@gentoo.org> ChangeLog:
-  Converted to UTF-8, fixed encoding screwups
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Jun 2005; Andrej Kacian <ticho@gentoo.org> snortalog-2.4.0.ebuild:
-  Added ~amd64 keyword.
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org> snortalog-2.4.0.ebuild:
-  dev-perl/Getopt-Long => perl-core/Getopt-Long migration
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  snortalog-2.3.0-r1.ebuild:
-  dev-perl/Getopt-Long => perl-core/Getopt-Long migration
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org> snortalog-2.2.1.ebuild:
-  dev-perl/Getopt-Long => perl-core/Getopt-Long migration
-
-  24 May 2005; Michael Cummings <mcummings@gentoo.org> snortalog-2.2.1.ebuild,
-  snortalog-2.3.0-r1.ebuild, snortalog-2.4.0.ebuild:
-  dev-perl/DB_File => perl-core/DB_File
-
-  20 Apr 2005; Marcelo Goes <vanquirius@gentoo.org> snortalog-2.4.0.ebuild:
-  Problem with fetching patch, fixes bug 89828. Thanks to Donald R. Gray Jr
-  <donaldgray@dslextreme.com> for reporting.
-
-*snortalog-2.4.0 (14 Apr 2005)
-
-  14 Apr 2005; Aaron Walker <ka0ttic@gentoo.org>
-  -files/snortalog-2.3.0-fix-gui.diff,
-  +files/snortalog-2.4.0-limit-args.diff,
-  +files/snortalog-2.4.0-notcltk.diff, snortalog-2.3.0-r1.ebuild,
-  +snortalog-2.4.0.ebuild:
-  Version bump; Moved >20k patches to the mirrors.
-
-  20 Mar 2005; Marcelo Goes <vanquirius@gentoo.org>
-  +files/snortalog-2.3.0-limit-args.diff, snortalog-2.3.0-r1.ebuild:
-  Fix bug 84745; Thanks to Toralf Förster <toralf.foerster@gmx.de>
-  and Marco Morales <soulse@gmail.com>.
-
-*snortalog-2.3.0-r1 (08 Mar 2005)
-
-  08 Mar 2005; Aaron Walker <ka0ttic@gentoo.org>
-  +files/snortalog-2.3.0-fix-gui.diff, +snortalog-2.3.0-r1.ebuild,
-  -snortalog-2.3.0.ebuild:
-  Revision bump for bug 84390; fixed gui module.
-
-*snortalog-2.3.0 (07 Mar 2005)
-
-  07 Mar 2005; Aaron Walker <ka0ttic@gentoo.org>
-  +files/snortalog-notcltk.diff, snortalog-2.2.1.ebuild,
-  +snortalog-2.3.0.ebuild:
-  Version bump; also added patch that makes Tcl/tk support optional (via
-  USE=tcltk). Thanks to Marco Morales for the ebuild and patch in bug 83987.
-
-  28 Nov 2004; Eldad Zack <eldad@gentoo.org> snortalog-2.2.1.ebuild:
-  Completed dependencies. Closes Bug 72090.
-
-  22 Nov 2004; Eldad Zack <eldad@gentoo.org> snortalog-2.2.1.ebuild:
-  Updated dependencies. (Bug 72090)
-
-  21 Nov 2004; <solar@gentoo.org> snortalog-2.2.1.ebuild:
-  qa fix. was fatal if snortalog.pl is missing - use mv vs. cp - src_install
-  phase may be called more than one time.
-
-  16 Aug 2004; Eldad Zack <eldad@gentoo.org> snortalog-2.2.1.ebuild:
-  x86 stable
-
-  08 Aug 2004; Tom Martin <slarti@gentoo.org> snortalog-2.2.1.ebuild:
-  Typo in DESCRIPTION: powerfull -> powerful. Bug 59717.
-
-  09 Jul 2004; Eldad Zack <eldad@gentoo.org> snortalog-2.2.1.ebuild:
-  added missing IUSE
-
-  01 Jul 2004; David Holm <dholm@gentoo.org> snortalog-2.2.1.ebuild:
-  Added to ~ppc.
-
-*snortalog-2.2.1 (01 Jul 2004)
-
-  01 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml,
-  +snortalog-2.2.1.ebuild:
-  Initial ebuild. Closes #54300. Thanks to Patrizio Bassi
-  <hetfield666@virgilio.it>.
+  Bug: https://bugs.gentoo.org/552720
 

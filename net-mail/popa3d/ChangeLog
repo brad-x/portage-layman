@@ -1,155 +1,64 @@
 # ChangeLog for net-mail/popa3d
-# Copyright 2000-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/popa3d/ChangeLog,v 1.42 2014/08/10 20:45:28 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*popa3d-1.0.2-r1 (09 Aug 2015)
 
-  16 Feb 2013; Eray Aslan <eras@gentoo.org> -popa3d-1.0.2.ebuild:
-  Remove old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/popa3d-initrc,
+  +metadata.xml, +popa3d-1.0.2-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  Stable for sparc, wrt bug #457436
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  Stable for x86, wrt bug #457436
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  Stable for amd64, wrt bug #457436
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Feb 2013; Agostino Sarubbo <ago@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  Stable for ppc, wrt bug #457436
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Feb 2013; Eray Aslan <eras@gentoo.org> popa3d-1.0.2-r1.ebuild:
-  Remove redundant die
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*popa3d-1.0.2-r1 (03 Jan 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jan 2013; Eray Aslan <eras@gentoo.org> +popa3d-1.0.2-r1.ebuild:
-  EAPI bump. Fix more QA warnings.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jan 2013; Eray Aslan <eras@gentoo.org> popa3d-1.0.2.ebuild:
-  Change license to Openwall - bug #449836. Fix QA warnings.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> popa3d-1.0.2-r1.ebuild:
+  Use https by default
 
-  23 Sep 2007; Wulf C. Krueger <philantrop@gentoo.org> popa3d-1.0.2.ebuild:
-  Keyworded ~amd64 as per bug 190075.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Apr 2007; Torsten Veller <tove@gentoo.org> popa3d-1.0.2.ebuild:
-  Use newinitd.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Jan 2007; Fernando J. Pereda <ferdy@gentoo.org>
-  -popa3d-0.6.4.1-r2.ebuild, -popa3d-1.0.ebuild:
-  QA: Clean unused versions.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Jan 2007; Andrej Kacian <ticho@gentoo.org> popa3d-1.0.2.ebuild:
-  Stable on x86, bug #152498.
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Dec 2006; Tobias Scherbaum <dertobi123@gentoo.org> ChangeLog:
-  Stable on ppc wrt bug #152498.
-
-  20 Dec 2006; Gustavo Zacarias <gustavoz@gentoo.org> popa3d-1.0.2.ebuild:
-  Stable on sparc wrt #152498
-
-  26 Aug 2006; Fernando J. Pereda <ferdy@gentoo.org>
-  popa3d-0.6.4.1-r2.ebuild, popa3d-1.0.ebuild, popa3d-1.0.2.ebuild:
-  Fix enewuser calls wrt bug #145153. Spotted by James Rowe <jnrowe@ukfsn.org>
-
-*popa3d-1.0.2 (23 May 2006)
-
-  23 May 2006; Fernando J. Pereda <ferdy@gentoo.org> +popa3d-1.0.2.ebuild:
-  Version bump + cleanups and QA fixes. Closes bug #125814
-
-  23 May 2006; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove port001 from metadata, bug 26349.
-
-  01 Dec 2005; Jason Wever <weeve@gentoo.org> popa3d-1.0.ebuild:
-  Stable on SPARC.
-
-  16 Nov 2005; Ian Leitch <port001@gentoo.org> popa3d-1.0.ebuild:
-  Stable on x86.
-
-  23 Aug 2005; Andrej Kacian <ticho@gentoo.org> popa3d-0.6.4.1-r2.ebuild,
-  popa3d-1.0.ebuild:
-  Use -1 for shell argument to enewuser. Bug #103421.
-
-*popa3d-1.0 (12 Aug 2005)
-
-  12 Aug 2005; Ian Leitch <port001@gentoo.org> +popa3d-1.0.ebuild:
-  Version bump. This version uses some silly default values which are way too
-  high for most systems, these have been replaced by some more sensible
-  values.
-
-  23 May 2005; Ian Leitch <port001@gentoo.org> -popa3d-0.6.4.1-r1.ebuild,
-  popa3d-0.6.4.1-r2.ebuild:
-  Patches pushed to the mirrors, SRC_URI updated - #93647. keepdir on
-  /var/empty - #93659. Removed stale revision.
-
-  21 May 2005; Ian Leitch <port001@gentoo.org> popa3d-0.6.4.1-r2.ebuild:
-  Stable on x86
-
-*popa3d-0.6.4.1-r2 (26 Apr 2005)
-
-  26 Apr 2005; Ian Leitch <port001@gentoo.org> +popa3d-0.6.4.1-r2.ebuild:
-  Ebuild cleanups, thanks to Diego Pettenò <flameeyes@gentoo.org> - #84736
-
-*popa3d-0.6.4.1-r1 (24 Feb 2005)
-
-  24 Feb 2005; <port001@gentoo.org> -files/pam, -popa3d-0.6.3.ebuild,
-  +popa3d-0.6.4.1-r1.ebuild, -popa3d-0.6.4.1.ebuild, -popa3d-0.6.4.ebuild:
-  Fixed up to comply with bug #79240. Stable on x86. Cleaned out old versions.
-
-  06 Nov 2004; Jason Wever <weeve@gentoo.org> popa3d-0.6.4.1.ebuild:
-  Added ~sparc keyword to 0.6.4.1 as it wasn't carried over in the version bump.
-
-  06 Sep 2004; Ciaran McCreesh <ciaranm@gentoo.org> popa3d-0.6.3.ebuild,
-  popa3d-0.6.4.1.ebuild, popa3d-0.6.4.ebuild:
-  Switch to use epause and ebeep, bug #62950
-
-  03 Aug 2004; David Holm <dholm@gentoo.org> popa3d-0.6.4.1.ebuild:
-  Added to ~ppc.
-
-*popa3d-0.6.4.1 (28 Jul 2004)
-
-  28 Jul 2004; Ian Leitch <port001@gentoo.org> +popa3d-0.6.4.1.ebuild:
-  Version bumped
-
-  14 Jul 2004; Jason Wever <weeve@gentoo.org> popa3d-0.6.4.ebuild:
-  Added ~sparc keyword, resolves bug #57102.
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> popa3d-0.6.3.ebuild,
-  popa3d-0.6.4.ebuild:
-  Add inherit eutils
-
-  18 Feb 2004; Hallgrimur H. Gunnarsson <hhg@gentoo.org> popa3d-0.6.4.ebuild:
-  Maildir support was chosen as the default when neither the mbox nor the
-  maildir USE flags were set. This caused the build to fail, since maildir
-  support requires a patch which is only downloaded when the maildir USE flag is
-  set. Now, mailbox support is chosen as the default. This was reported in bug
-  #41710 by Skyler McCurdy <stupidlimits@yahoo.com>.
-
-  16 Dec 2003; Ian Leitch <port001@gentoo.org> popa3d-0.6.3.ebuild,
-  popa3d-0.6.4.ebuild:
-  No need to run depscan.sh in pkgpostinst
-
-*popa3d-0.6.4 (19 Nov 2003)
-
-  19 Nov 2003; Hallgrimur H. Gunnarsson <hhg@gentoo.org> popa3d-0.6.4.ebuild:
-  version bump to 0.6.4
-
-  26 Oct 2003; Ian Leitch <port001@gentoo.org> popa3d-0.6.3.ebuild:
-  Fixed USE=-maildir -mbox bug #32042, thanks to Cameron MacFarland for
-  reporting.
-
-  22 Oct 2003; Ian Leitch <port001@gentoo.org> popa3d-0.6.3.ebuild:
-  PAM support now works like it should have done from the start, thanks to
-  Robert Kerr <LittleThor@xsw.terminator.net> for pointing that one out -
-  #31506. Also fixed a few grammatical errors.
-
-*popa3d-0.6.3 (11 Sep 2003)
-
-  11 Sep 2003; Ian Leitch <port001@gentoo.org> popa3d-0.6.3.ebuild:
-  New package, thanks to Hallgrimur H. Gunnarsson <hhg@data.is> bug #28277,
-  ebuild modified by Hallgrimur and myself. metadata.xml supplied.

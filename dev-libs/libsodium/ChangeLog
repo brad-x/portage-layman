@@ -1,141 +1,92 @@
 # ChangeLog for dev-libs/libsodium
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libsodium/ChangeLog,v 1.36 2015/07/22 16:31:44 zlogene Exp $
+# (auto-generated from git log)
 
-  22 Jul 2015; Mikle Kolyada <zlogene@gentoo.org> libsodium-1.0.2.ebuild:
-  ia64 stable wrt bug #552254
+*libsodium-1.0.3 (09 Aug 2015)
+*libsodium-1.0.2 (09 Aug 2015)
 
-  03 Jul 2015; Agostino Sarubbo <ago@gentoo.org> libsodium-1.0.3.ebuild:
-  Add ~alpha/~sparc wrt bug #546756
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libsodium-1.0.2.ebuild,
+  +libsodium-1.0.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jul 2015; Agostino Sarubbo <ago@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for sparc, wrt bug #552254
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Jul 2015; Agostino Sarubbo <ago@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for alpha, wrt bug #552254
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jun 2015; Agostino Sarubbo <ago@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for ppc, wrt bug #552254
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Jun 2015; Jeroen Roovers <jer@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for PPC64 (bug #552254).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*libsodium-1.0.3 (16 May 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 May 2015; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.3.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Feb 2015; Markus Meier <maekke@gentoo.org> libsodium-1.0.2.ebuild:
-  arm stable, bug #539750
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Feb 2015; Manuel Rüger <mrueg@gentoo.org> -libsodium-1.0.1.ebuild:
-  Remove old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Feb 2015; Pacho Ramos <pacho@gentoo.org> libsodium-1.0.2.ebuild:
-  amd64/x86 stable, bug #540526
+  Bug: https://bugs.gentoo.org/552720
 
-  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for amd64, wrt bug #539750
+*libsodium-1.0.4 (20 Oct 2015)
 
-  18 Feb 2015; Pacho Ramos <pacho@gentoo.org> libsodium-1.0.2.ebuild:
-  --disable-pie needed on x86 (#512734)
-
-  15 Feb 2015; Jeroen Roovers <jer@gentoo.org> libsodium-1.0.2.ebuild:
-  Stable for HPPA (bug #539750).
-
-  09 Feb 2015; Anthony G. Basile <blueness@gentoo.org> libsodium-1.0.1.ebuild,
-  libsodium-1.0.2.ebuild:
-  Keyword ~ppc ~ppc64, bug #489452.
-
-*libsodium-1.0.2 (17 Jan 2015)
-
-  17 Jan 2015; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.2.ebuild,
-  -libsodium-0.6.1.ebuild, -libsodium-1.0.0.ebuild:
-  Version bump. Remove old.
-
-*libsodium-1.0.1 (22 Nov 2014)
-
-  22 Nov 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.1.ebuild,
-  -libsodium-0.7.0.ebuild, -libsodium-0.7.1.ebuild:
-  Version bump. Cleanup old.
-
-*libsodium-1.0.0 (24 Sep 2014)
-
-  24 Sep 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.0.ebuild:
-  Version bump.
-
-*libsodium-0.7.1 (23 Sep 2014)
-
-  23 Sep 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.7.1.ebuild,
-  -libsodium-0.4.5.ebuild, -libsodium-0.5.0-r1.ebuild,
-  -libsodium-0.6.0-r1.ebuild:
-  Version bump. Cleanup old.
-
-*libsodium-0.7.0 (27 Aug 2014)
-
-  27 Aug 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.7.0.ebuild:
-  Version bump.
-
-  26 Aug 2014; Joshua Kinard <kumba@gentoo.org> libsodium-0.6.1.ebuild:
-  Added ~mips to KEYWORDS, per Bug #520740.
-
-*libsodium-0.6.1 (20 Jul 2014)
-
-  20 Jul 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.6.1.ebuild:
+  20 Oct 2015; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.4.ebuild:
   Version bump
 
-*libsodium-0.6.0-r1 (07 Jul 2014)
+  Package-Manager: portage-2.2.23
 
-  07 Jul 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.6.0-r1.ebuild,
-  -libsodium-0.6.0.ebuild:
-  Fix subslot value. Thanks to Arfrever.
+*libsodium-1.0.5 (27 Oct 2015)
 
-*libsodium-0.6.0 (04 Jul 2014)
+  27 Oct 2015; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.5.ebuild:
+  Version bump
 
-  04 Jul 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.6.0.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.23
 
-*libsodium-0.5.0-r1 (26 May 2014)
+  27 Oct 2015; Manuel Rüger <mrueg@gentoo.org> -libsodium-1.0.3.ebuild,
+  -libsodium-1.0.4.ebuild:
+  Remove old
 
-  26 May 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.5.0-r1.ebuild,
-  -libsodium-0.5.0.ebuild:
-  Add subslot as suggested by Arfrever.
+  Package-Manager: portage-2.2.23
 
-*libsodium-0.5.0 (25 May 2014)
+*libsodium-1.0.6 (07 Nov 2015)
 
-  25 May 2014; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.5.0.ebuild:
-  Version bump.
+  07 Nov 2015; Manuel Rüger <mrueg@gentoo.org> +libsodium-1.0.6.ebuild:
+  Version bump
 
-  16 Mar 2014; Mike Frysinger <vapier@gentoo.org> libsodium-0.4.5.ebuild:
-  Add ia64 love.
+  Package-Manager: portage-2.2.24
 
-  07 Dec 2013; Markus Meier <maekke@gentoo.org> libsodium-0.4.5.ebuild:
-  add ~arm, bug #489452
+*libsodium-1.0.6-r1 (07 Nov 2015)
 
-  19 Nov 2013; Manuel Rüger <mrueg@gentoo.org> -libsodium-0.4.3.ebuild:
-  Cleanup old.
+  07 Nov 2015; Manuel Rüger <mrueg@gentoo.org> -libsodium-1.0.6.ebuild,
+  +libsodium-1.0.6-r1.ebuild:
+  Fix subslot. Thanks to Arfrever
 
-  28 Oct 2013; Sébastien Fabbro <bicatali@gentoo.org> libsodium-0.4.5.ebuild:
-  Keyworded amd64-linux and x86-linux
+  Package-Manager: portage-2.2.24
 
-  26 Oct 2013; Jeroen Roovers <jer@gentoo.org> libsodium-0.4.5.ebuild:
-  Marked ~hppa (bug #489452).
-
-*libsodium-0.4.5 (26 Oct 2013)
-
-  26 Oct 2013; Justin Lecher <jlec@gentoo.org> +libsodium-0.4.5.ebuild,
-  metadata.xml:
-  Version Bump
-
-  10 Sep 2013; Julian Ospald <hasufell@gentoo.org> libsodium-0.4.3.ebuild,
-  metadata.xml:
-  use http for better compatibility, improve style and indenting
-
-*libsodium-0.4.3 (10 Sep 2013)
-
-  10 Sep 2013; Manuel Rüger <mrueg@gentoo.org> +libsodium-0.4.3.ebuild,
-  +metadata.xml:
-  Initial version. Added also modifications from hasufell.

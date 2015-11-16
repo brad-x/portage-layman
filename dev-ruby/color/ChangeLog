@@ -1,141 +1,74 @@
 # ChangeLog for dev-ruby/color
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/color/ChangeLog,v 1.35 2015/06/07 17:28:33 jlec Exp $
+# (auto-generated from git log)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+*color-1.7.1-r1 (09 Aug 2015)
+*color-1.7.1 (09 Aug 2015)
 
-  04 Apr 2015; Hans de Graaff <graaff@gentoo.org> color-1.7.1-r1.ebuild:
-  Add ruby22.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +color-1.7.1.ebuild,
+  +color-1.7.1-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  26 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -color-1.4.1-r1.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> color-1.7.1.ebuild:
-  Stable for x86, wrt bug #536892
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Jan 2015; Agostino Sarubbo <ago@gentoo.org> color-1.7.1.ebuild:
-  Stable for amd64, wrt bug #536892
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*color-1.7.1-r1 (17 Jan 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Jan 2015; Manuel Rüger <mrueg@gentoo.org> +color-1.7.1-r1.ebuild,
-  color-1.7.1.ebuild:
-  Create new stable candidate.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Oct 2014; Manuel Rüger <mrueg@gentoo.org> color-1.4.1-r1.ebuild,
-  color-1.7.1.ebuild:
-  Drop jruby target.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Aug 2014; Manuel Rüger <mrueg@gentoo.org> -color-1.6.ebuild,
-  -color-1.7.ebuild:
-  Cleanup old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*color-1.7.1 (19 Jul 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Jul 2014; Hans de Graaff <graaff@gentoo.org> +color-1.7.1.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*color-1.7 (14 Jun 2014)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Jun 2014; Manuel Rüger <mrueg@gentoo.org> +color-1.7.ebuild,
-  -color-1.4.2-r1.ebuild, -color-1.5.1.ebuild:
-  Version bump. Cleanup old.
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=rubyforge
 
-*color-1.6 (20 May 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 May 2014; Hans de Graaff <graaff@gentoo.org> +color-1.6.ebuild:
-  Version bump. Add ruby21.
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-  05 Apr 2014; Manuel Rüger <mrueg@gentoo.org> color-1.4.1-r1.ebuild,
-  color-1.4.2-r1.ebuild, color-1.5.1.ebuild:
-  Remove ree18 and ruby18 target. Remove virtual/ruby-test-unit.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*color-1.5.1 (28 Jan 2014)
+*color-1.8 (26 Oct 2015)
 
-  28 Jan 2014; Hans de Graaff <graaff@gentoo.org> +color-1.5.1.ebuild:
-  Version bump. Avoid hoe dependency.
+  26 Oct 2015; Hans de Graaff <graaff@gentoo.org> +color-1.8.ebuild:
+  add 1.8
 
-*color-1.4.2-r1 (17 Nov 2013)
+  Package-Manager: portage-2.2.20.1
 
-  17 Nov 2013; Manuel Rüger <mrueg@gentoo.org> +color-1.4.2-r1.ebuild,
-  -color-1.4.2.ebuild:
-  Add ruby20 target.
-
-*color-1.4.2 (21 Jul 2013)
-
-  21 Jul 2013; Manuel Rüger <mrueg@gentoo.org> +color-1.4.2.ebuild:
-  Version bump
-
-  13 Jul 2013; Hans de Graaff <graaff@gentoo.org> -color-1.4.1.ebuild:
-  Cleanup.
-
-  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> color-1.4.1-r1.ebuild:
-  Keyword ~ppc/~ppc64 wrt #417513
-
-  14 Aug 2012; Johannes Huber <johu@gentoo.org> color-1.4.1-r1.ebuild:
-  Stable for x86, wrt bug #429964
-
-  06 Aug 2012; Agostino Sarubbo <ago@gentoo.org> color-1.4.1-r1.ebuild:
-  Stable for amd64, wrt bug #429964
-
-  01 May 2012; Raúl Porcel <armin76@gentoo.org> color-1.4.1.ebuild,
-  color-1.4.1-r1.ebuild:
-  Drop ia64/sparc keywords
-
-  18 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> color-1.4.1-r1.ebuild:
-  Add support for ree18.
-
-  09 Jan 2011; Hans de Graaff <graaff@gentoo.org> -color-1.4.0.ebuild:
-  Remove old version.
-
-  09 Jan 2011; Raúl Porcel <armin76@gentoo.org> color-1.4.1.ebuild:
-  ia64/x86 stable wrt #349884
-
-  01 Jan 2011; Markos Chandras <hwoarang@gentoo.org> color-1.4.1.ebuild:
-  Stable on amd64 wrt bug #349884
-
-*color-1.4.1-r1 (27 Dec 2010)
-
-  27 Dec 2010; Hans de Graaff <graaff@gentoo.org> color-1.4.1.ebuild,
-  +color-1.4.1-r1.ebuild:
-  Bump revision to drop ruby19 from stable candidate.
-
-  22 May 2010; Diego E. Pettenò <flameeyes@gentoo.org> color-1.4.0.ebuild,
-  color-1.4.1.ebuild:
-  Various cleanups.
-
-  19 Feb 2010; Diego E. Pettenò <flameeyes@gentoo.org> color-1.4.1.ebuild:
-  Fix up dependencies: since we don't have to strictly follow the
-  gem-specified dependencies, we can stop depending on hoe at runtime, and
-  stop depending on archive-tar-minitar altogether. Enable Ruby 1.9 and
-  JRuby support.
-
-*color-1.4.1 (08 Feb 2010)
-
-  08 Feb 2010; Hans de Graaff <graaff@gentoo.org> +color-1.4.1.ebuild:
-  Version bump with only packaging changes. Convert to ruby-fakegem.
-
-  25 Apr 2009; Raúl Porcel <armin76@gentoo.org> color-1.4.0.ebuild:
-  ia64 stable wrt #265435
-
-  20 Apr 2009; Markus Meier <maekke@gentoo.org> color-1.4.0:
-  x86 stable, bug #265435
-
-  14 Apr 2009; Thomas Anderson <gentoofan23@gentoo.org> color-1.4.0.ebuild:
-  stable amd64, bug 265435
-
-  14 Apr 2009; Hans de Graaff <graaff@gentoo.org> color-1.4.0.ebuild:
-  Add USE_RUBY.
-
-  24 Mar 2008; Raúl Porcel <armin76@gentoo.org> color-1.4.0.ebuild:
-  Add ~ia64
-
-  12 Feb 2008; Christian Faulhammer <opfer@gentoo.org> color-1.4.0.ebuild:
-  keyworded ~arch for x86, bug 209691
-
-*color-1.4.0 (22 Jan 2008)
-
-  22 Jan 2008; Richard Brown <rbrown@gentoo.org> +metadata.xml,
-  +color-1.4.0.ebuild:
-  Initial import. For latest version of pdf-writer

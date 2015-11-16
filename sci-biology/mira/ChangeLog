@@ -1,139 +1,66 @@
 # ChangeLog for sci-biology/mira
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/ChangeLog,v 1.34 2015/08/03 07:08:05 jlec Exp $
+# (auto-generated from git log)
 
-  03 Aug 2015; Justin Lecher <jlec@gentoo.org> -mira-3.9.18.ebuild:
-  Drop old; obsoletes bug #555044
+*mira-4.0.2 (09 Aug 2015)
 
-  02 Aug 2015; Agostino Sarubbo <ago@gentoo.org> mira-4.0.2.ebuild:
-  Stable for x86, wrt bug #556138
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mira-3.0.0-asneeded.patch, +files/mira-3.2.1-boost-1.50.patch,
+  +files/mira-3.4.0.2-boost-1.50.patch, +files/mira-4.0.2-cout.patch,
+  +metadata.xml, +mira-4.0.2.ebuild:
+  proj/gentoo: Initial commit
 
-  31 Jul 2015; Agostino Sarubbo <ago@gentoo.org> mira-4.0.2.ebuild:
-  Stable for amd64, wrt bug #556138
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Jan 2015; Justin Lecher <jlec@gentoo.org> mira-4.0.2.ebuild,
-  +files/mira-4.0.2-cout.patch:
-  Build fix for newer gcc, #537564
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*mira-4.0.2 (23 Jan 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Jan 2015; Justin Lecher <jlec@gentoo.org> +mira-4.0.2.ebuild:
-  Version Bump, thanks Martin Mokrejš for the work
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Jan 2015; Justin Lecher <jlec@gentoo.org> mira-3.9.18.ebuild:
-  Add workaroung for m4 dir location, #536172
+  18 Aug 2015; Justin Lecher <jlec@gentoo.org> mira-4.0.2.ebuild:
+  Add missing USE dep for boost[threads]
 
-  14 Jan 2014; Justin Lecher <jlec@gentoo.org> -mira-3.2.1.ebuild:
-  Drop old
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=558092
 
-  14 Jan 2014; Agostino Sarubbo <ago@gentoo.org> mira-3.9.18.ebuild:
-  Stable for x86, wrt bug #497218
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org> mira-3.9.18.ebuild:
-  amd64 stable, bug #497218
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Jan 2014; Justin Lecher <jlec@gentoo.org> mira-3.2.1.ebuild:
-  Punt base.eclass
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Jan 2014; Justin Lecher <jlec@gentoo.org> -mira-3.2.1-r1.ebuild,
-  -mira-3.4.0.2.ebuild:
-  Drop old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mira-3.9.18 (07 Jul 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jul 2013; Justin Lecher <jlec@gentoo.org> +mira-3.9.18.ebuild:
-  Version Bump; fixed compilation with dev-libs/boost-1.53.0 and some libtool
-  versions, #450322; thanks Martin Mokrejs for all his work
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  Bug: https://bugs.gentoo.org/552720
 
-*mira-3.4.0.2 (07 Nov 2012)
-
-  07 Nov 2012; Justin Lecher <jlec@gentoo.org> mira-3.2.1.ebuild,
-  mira-3.2.1-r1.ebuild, +mira-3.4.0.2.ebuild,
-  +files/mira-3.4.0.2-boost-1.50.patch:
-  Version Bump, #377807
-
-*mira-3.2.1-r1 (07 Nov 2012)
-
-  07 Nov 2012; Justin Lecher <jlec@gentoo.org> mira-3.2.1.ebuild,
-  +mira-3.2.1-r1.ebuild, +files/mira-3.2.1-boost-1.50.patch:
-  Fix for boost >1.50, #425468
-
-  08 Jul 2012; Justin Lecher <jlec@gentoo.org> -mira-3.0.5.ebuild,
-  -mira-3.2.0.ebuild:
-  Drop old
-
-  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mira-3.2.1.ebuild:
-  marked x86 per bug 418439
-
-  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mira-3.2.1.ebuild:
-  Stable for amd64, wrt bug #418439
-
-  23 Jun 2012; Kacper Kowalik <xarthisius.kk@gmail.com> mira-3.2.1.ebuild:
-  Don't install docs that are no longer there, thanks to David Abbott for the
-  patch
-
-*mira-3.2.1 (21 May 2011)
-
-  21 May 2011; Andrey Kislyuk <weaver@gentoo.org> +mira-3.2.1.ebuild:
-  Version bump and fix bug 367921
-
-  11 Feb 2011; Markos Chandras <hwoarang@gentoo.org> mira-3.2.0.ebuild:
-  Stable on amd64 wrt bug #353568
-
-  07 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mira-3.2.0.ebuild:
-  x86 stable wrt bug #353568
-
-  17 Oct 2010; Andrey Kislyuk <weaver@gentoo.org> mira-3.2.0.ebuild:
-  Remove doc USE flag and dependency, workaround for bug 340419
-
-*mira-3.2.0 (26 Sep 2010)
-
-  26 Sep 2010; Andrey Kislyuk <weaver@gentoo.org> -mira-3.0.0.ebuild,
-  -mira-3.0.3.ebuild, +mira-3.2.0.ebuild:
-  Version bump, drop old
-
-  28 Jun 2010; Justin Lecher <jlec@gentoo.org> mira-3.0.0.ebuild,
-  mira-3.0.3.ebuild, mira-3.0.5.ebuild:
-  Prepared for prefix, #325929
-
-*mira-3.0.5 (05 May 2010)
-
-  05 May 2010; Andrey Kislyuk <weaver@gentoo.org> +mira-3.0.5.ebuild:
-  Version bump
-
-*mira-3.0.3 (18 Mar 2010)
-
-  18 Mar 2010; Andrey Kislyuk <weaver@gentoo.org> -mira-3.0.2.ebuild,
-  +mira-3.0.3.ebuild:
-  Hotfix from upstream
-
-*mira-3.0.2 (10 Mar 2010)
-
-  10 Mar 2010; Andrey Kislyuk <weaver@gentoo.org> -mira-3.0.1.ebuild,
-  +mira-3.0.2.ebuild:
-  Hotfix from upstream
-
-*mira-3.0.1 (06 Mar 2010)
-
-  06 Mar 2010; Andrey Kislyuk <weaver@gentoo.org> +mira-3.0.1.ebuild:
-  Version bump (bugfix release)
-
-  25 Feb 2010; Samuli Suominen <ssuominen@gentoo.org> mira-3.0.0.ebuild,
-  +files/mira-3.0.0-asneeded.patch:
-  Fix ax_lib_expat.m4 macro to not use LDFLAGS for passing libraries wrt
-  #305547 by Kacper Kowalik.
-
-  03 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> mira-3.0.0.ebuild:
-  add eautoreconf
-
-  03 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> mira-3.0.0.ebuild:
-  Install 3rd party files
-
-*mira-3.0.0 (02 Feb 2010)
-
-  02 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
-  +mira-3.0.0.ebuild:
-  New package, ebuild written by me

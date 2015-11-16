@@ -1,225 +1,77 @@
 # ChangeLog for app-portage/porthole
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/porthole/ChangeLog,v 1.57 2015/06/09 12:05:44 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*porthole-0.6.1-r3 (09 Aug 2015)
+*porthole-0.6.1-r2 (09 Aug 2015)
+*porthole-0.6.1-r1 (09 Aug 2015)
 
-  12 Feb 2013; Agostino Sarubbo <ago@gentoo.org> porthole-0.6.1-r1.ebuild:
-  Stable for arm, wrt bug #313443
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/porthole-0.6.1-masking_status.patch,
+  +files/porthole-0.6.1-missing-attribute.patch,
+  +files/porthole-0.6.1-missing_import.patch, +metadata.xml,
+  +porthole-0.6.1-r1.ebuild, +porthole-0.6.1-r2.ebuild,
+  +porthole-0.6.1-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Jan 2013; Rick Farina <zerochaos@gentoo.org> porthole-0.6.1-r1.ebuild,
-  porthole-0.6.1-r2.ebuild, porthole-0.6.1-r3.ebuild:
-  adding ~arm keyword
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*porthole-0.6.1-r3 (04 Mar 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Mar 2012; Brian Dolbec <brian.dolbec@gmail.com> +porthole-0.6.1-r3.ebuild,
-  +files/porthole-0.6.1-missing-attribute.patch, metadata.xml:
-  Bump to fix bug 323179. Update metadata.xml
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> porthole-0.6.1-r1.ebuild,
-  porthole-0.6.1-r2.ebuild:
-  Restricting pypy and jython
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Feb 2011; Paul Varner <fuzzyray@gentoo.org> porthole-0.6.1-r1.ebuild,
-  porthole-0.6.1-r2.ebuild:
-  Adjust porthole dependencies to use slots, due to upcoming addition of gtk3.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -porthole-0.6.0.ebuild:
-  Delete.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jul 2010; Jeroen Roovers <jer@gentoo.org> porthole-0.6.0.ebuild,
-  porthole-0.6.1-r1.ebuild, porthole-0.6.1-r2.ebuild:
-  Drop HPPA keywording (bug #324511).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*porthole-0.6.1-r2 (19 Jun 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Jun 2010; Christian Ruppert <idl0r@gentoo.org>
-  +porthole-0.6.1-r2.ebuild, +files/porthole-0.6.1-missing_import.patch:
-  Revision bump to fix bug 323179, thanks to Kete Tefid
-  <ketetefid@gmail.com>.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 May 2010; Kenneth Prugh <ken69267@gentoo.org> porthole-0.6.1-r1.ebuild:
-  amd64 stable, bug #313443
+  Bug: https://bugs.gentoo.org/552720
 
-  11 May 2010; Jeroen Roovers <jer@gentoo.org> porthole-0.6.1-r1.ebuild:
-  Stable for HPPA (bug #313443).
+*porthole-0.6.1-r4 (17 Oct 2015)
 
-  26 Apr 2010; Christian Faulhammer <fauli@gentoo.org>
-  porthole-0.6.1-r1.ebuild:
-  stable x86, bug 313443
+  17 Oct 2015; Brian Dolbec <dolsen@gentoo.org> +porthole-0.6.1-r4.ebuild:
+  Revision bump, convert to EAPI 5
 
-  16 Apr 2010; Brent Baude <ranger@gentoo.org> porthole-0.6.1-r1.ebuild:
-  stable ppc, bug 313443
+  Remove pypy dep due to pygtksourceview no longer having it.
 
-  03 Apr 2010; Christian Ruppert <idl0r@gentoo.org>
-  porthole-0.6.1-r1.ebuild:
-  proxy-commit for Brian Dolbec: Fix python dependencies, bug 311791.
+  Package-Manager: portage-2.2.20.1
 
-*porthole-0.6.1-r1 (27 Feb 2010)
+  13 Nov 2015; Agostino Sarubbo <ago@gentoo.org> porthole-0.6.1-r4.ebuild:
+  amd64 stable wrt bug #565666
 
-  27 Feb 2010; Christian Ruppert <idl0r@gentoo.org> -porthole-0.6.1.ebuild,
-  +porthole-0.6.1-r1.ebuild, +files/porthole-0.6.1-masking_status.patch:
-  Rev bump to 0.6.1-r1, fixes bug 307037.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-*porthole-0.6.1 (26 Feb 2010)
-
-  26 Feb 2010; Christian Ruppert <idl0r@gentoo.org>
-  -porthole-0.6.0_rc2.ebuild, -porthole-0.6.0_rc3.ebuild,
-  -porthole-0.6.0_rc4.ebuild, -files/porthole-0.6.0_rc2-pocompile.patch,
-  -files/porthole-0.6.0_rc3-oneshot-fix.patch, +porthole-0.6.1.ebuild:
-  Version bump to 0.6.1. Remove old release candidates.
-
-  27 Oct 2009; Christian Ruppert <idl0r@gentoo.org> metadata.xml:
-  Add Brian to the metadata.
-
-*porthole-0.6.0 (27 Oct 2009)
-
-  27 Oct 2009; Christian Ruppert <idl0r@gentoo.org> -porthole-0.5.0.ebuild,
-  +porthole-0.6.0.ebuild:
-  Version bump to 0.6.0, bug 219902, thanks to Brian Dolbec
-  <brian.dolbec@gmail.com> and all others.
-  This release fixes bug 224877, bug 238192, bug 264167 and bug 265602.
-  Remove porthole-0.5.0 due to e.g. bug 195465.
-
-  24 May 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  porthole-0.5.0.ebuild, porthole-0.6.0_rc2.ebuild,
-  porthole-0.6.0_rc3.ebuild, porthole-0.6.0_rc4.ebuild:
-  Remove "debug" USE flag.
-
-*porthole-0.6.0_rc4 (05 Jun 2008)
-
-  05 Jun 2008; Paul Varner <fuzzyray@gentoo.org> +porthole-0.6.0_rc4.ebuild:
-  Version bump, more minor bugfixes.
-
-  04 Jun 2008; Jeroen Roovers <jer@gentoo.org> porthole-0.6.0_rc3.ebuild:
-  Marked ~hppa too.
-
-  28 May 2008; Alexis Ballier <aballier@gentoo.org>
-  porthole-0.6.0_rc3.ebuild:
-  keyword ~x86-fbsd
-
-*porthole-0.6.0_rc3 (27 May 2008)
-
-  27 May 2008; Paul Varner <fuzzyray@gentoo.org>
-  +files/porthole-0.6.0_rc3-oneshot-fix.patch, +porthole-0.6.0_rc3.ebuild:
-  Version bump. This version contains support for profuse and etc-proposals
-  via plugins and contins minor bug fixes.
-
-  24 May 2008; nixnut <nixnut@gentoo.org> porthole-0.6.0_rc2.ebuild:
-  Added ~ppc wrt bug 219968
-
-  02 May 2008; Ferris McCormick <fmccor@gentoo.org>
-  porthole-0.6.0_rc2.ebuild:
-  Adding ~sparc, Bug #219968 --- appears to work.
-
-  02 May 2008; Paul Varner <fuzzyray@gentoo.org> porthole-0.6.0_rc2.ebuild:
-  Re-keywording ~amd64, since the segmentation fault errors were caused by
-  dev-python/pygtk-2.12.1, which has now been keyworded -amd64. Testing was
-  successful on my AMD boxes after downgrading pygtk.
-
-  02 May 2008; Paul Varner <fuzzyray@gentoo.org>
-  +files/porthole-0.6.0_rc2-pocompile.patch, porthole-0.6.0_rc2.ebuild:
-  Add die statement to pocompile.sh, in case it fails. Added patch to change
-  the shebang line from /bin/sh to /bin/bash for pocompile.sh, since it was
-  not a POSIX compliant shell script.
-
-*porthole-0.6.0_rc2 (01 May 2008)
-
-  01 May 2008; Paul Varner <fuzzyray@gentoo.org> porthole-0.5.0.ebuild,
-  +porthole-0.6.0_rc2.ebuild:
-  Version bump. Dropping ~amd64, ~ppc ,~sparc, and ~x86-fbsd keywords. This
-  version works fine on my x86 box, but segfaults on my AMD64 box. I don't
-  have the hardware to test the other architectures. Removed dodoc COPYING
-  from ebuilds.
-
-  19 May 2007; Peter Weller <welp@gentoo.org> porthole-0.5.0.ebuild:
-  Keyworded ~x86-fbsd
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  09 Jan 2007; Tiziano Müller <dev-zero@gentoo.org> -porthole-0.4.1.ebuild:
-  Dropped old version.
-
-  10 Aug 2006; Harald van Dĳk <truedfx@gentoo.org> porthole-0.4.1.ebuild:
-  Modify gnome check to work with built_with_use changes
-
-  05 Aug 2006; Harald van Dĳk <truedfx@gentoo.org> porthole-0.4.1.ebuild:
-  Disable USE=gnome check for recent pygtk (#110961)
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org>
-  files/digest-porthole-0.4.1, Manifest:
-  Fixing SHA256 digest, pass four
-
-  27 Feb 2006; Paul Varner <fuzzyray@gentoo.org> porthole-0.5.0.ebuild:
-  Updated RDEPEND and DEPEND to remove gettext from RDEPEND. Bug #123114
-
-  06 Jan 2006; Paul Varner <fuzzyray@gentoo.org> porthole-0.4.1.ebuild:
-  Change pkg_setup() to use built_with_use. Patch from Alec Warner
-  (antarus). Bug #67537
-
-*porthole-0.5.0 (23 Dec 2005)
-
-  23 Dec 2005; Paul Varner <fuzzyray@gentoo.org> +porthole-0.5.0.ebuild:
-  Version bump to 0.5.0
-
-  24 Jun 2005; Aron Griffis <agriffis@gentoo.org> porthole-0.4.1.ebuild:
-  fowners root:portage in src_install doesn't work, and you can't use functions
-  in pkg_* that refer to ${D}.  Use chgrp in pkg_preinst instead. Clean up
-  pkg_setup and spacing in DEPEND
-
-  08 Dec 2004; Marius Mauch <genone@gentoo.org> -porthole-0.3.1.ebuild:
-  removing 0.3.1 as it's reported to break with portage-2.0.51
-
-  30 Nov 2004; Sven Wegener <swegener@gentoo.org> porthole-0.4.1.ebuild:
-  Fixed invalid atoms in *DEPEND.
-
-*porthole-0.4.1 (29 Nov 2004)
-
-  29 Nov 2004; Marius Mauch <genone@gentoo.org> +porthole-0.4.1.ebuild:
-  version bump, required from portage-2.0.51
-
-  17 Oct 2004; David Holm <dholm@gentoo.org> porthole-0.3.1.ebuild:
-  What happened to ppc?!
-
-  22 Sep 2004; Ian Leitch <port001@gentoo.org> porthole-0.3.1.ebuild:
-  Fixed chmod path - #64838. Removed 0.3-r1, 0.3, 0.2 and 40k cvs patch. 
-
-  29 Jun 2004; Danny van Dyk <kugelfang@gentoo.org> porthole-0.3.1.ebuild:
-  Marked ~amd64.
-
-  28 Jun 2004; Ian Leitch <port001@gentoo.org> porthole-0.3.1.ebuild:
-  Look for SLOT 2, not 0 in pkg_setup() - #55444
-
-  28 Jun 2004; Ian Leitch <port001@gentoo.org> porthole-0.3.1.ebuild:
-  Check pygtk was built with gnome support, #54889
-
-*porthole-0.3.1 (25 Jun 2004)
-
-  25 Jun 2004; Ian Leitch <port001@gentoo.org> +porthole-0.3.1.ebuild:
-  Version bump to 0.3.1
-
-  02 May 2004; David Holm <dholm@gentoo.org> porthole-0.3-r1.ebuild:
-  Added to ~ppc.
-
-  01 May 2004; Aron Griffis <agriffis@gentoo.org> porthole-0.3-r1.ebuild:
-  Add inherit eutils
-
-*porthole-0.3-r1 (01 May 2004)
-*porthole-0.3 (01 May 2004)
-
-  01 May 2004; Ian Leitch <port001@gentoo.org>
-  +files/cvs-update-20040414.patch, +porthole-0.3-r1.ebuild,
-  +porthole-0.3.ebuild:
-  Bumped to 0.3-r1
-
-  03 Apr 2004; Daniel Ahlberg <aliz@gentoo.org> porthole-0.2.ebuild:
-  Adding amd64 keyword, closing #46499.
-
-*porthole-0.2 (31 Jan 2004)
-
-  06 Nov 2003; Nicholas Jones <carpaski@gentoo.org> *: Initial commit.
-		

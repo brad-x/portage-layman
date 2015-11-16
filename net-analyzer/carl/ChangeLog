@@ -1,81 +1,56 @@
 # ChangeLog for net-analyzer/carl
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/carl/ChangeLog,v 1.22 2015/05/24 00:57:55 mrueg Exp $
+# (auto-generated from git log)
 
-  24 May 2015; Manuel Rüger <mrueg@gentoo.org> -carl-0.9.ebuild:
-  Remove old.
+*carl-0.9-r1 (09 Aug 2015)
 
-  19 Apr 2015; Pacho Ramos <pacho@gentoo.org> carl-0.9-r1.ebuild:
-  x86 stable wrt bug #536676
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +carl-0.9-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> carl-0.9-r1.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Jan 2015; Tobias Klausmann <klausman@gentoo.org> carl-0.9-r1.ebuild:
-  Stable on alpha, bug 536676
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Jan 2015; Tobias Klausmann <klausman@gentoo.org> carl-0.9-r1.ebuild:
-  Stable on amd64, bug 536676
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Dec 2014; Mike Gilbert <floppym@gentoo.org> carl-0.9-r1.ebuild:
-  Drop PYTHON_MODNAME, bug 533838.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Dec 2014; Tobias Klausmann <klausman@gentoo.org> carl-0.9-r1.ebuild:
-  Also add pypy implementations
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*carl-0.9-r1 (15 Dec 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Dec 2014; Tobias Klausmann <klausman@gentoo.org> +carl-0.9-r1.ebuild:
-  Update ebuild to be compatible with all major Python versions
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Oct 2012; Agostino Sarubbo <ago@gentoo.org> carl-0.9.ebuild:
-  Stable for amd64, wrt bug #437822
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Add netmon herd to maintainers
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Mar 2011; Tobias Klausmann <klausman@gentoo.org> carl-0.9.ebuild:
-  Roll back accidental commit
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Mar 2011; Tobias Klausmann <klausman@gentoo.org> carl-0.9.ebuild:
-  Make carl stable on alpha
-
-  15 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -carl-0.7.ebuild, -carl-0.8.ebuild:
-  Delete.
-
-  12 Oct 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> carl-0.9.ebuild:
-  x86 stable wrt bug #340381
-
-  10 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  carl-0.9.ebuild:
-  Update EAPI.
-
-  08 May 2010; Raúl Porcel <armin76@gentoo.org> carl-0.8.ebuild:
-  x86 stable
-
-*carl-0.9 (18 Apr 2010)
-
-  18 Apr 2010; Tobias Klausmann <klausman@gentoo.org> +carl-0.9.ebuild:
-  Added ebuild for carl 0.9 which includes Python 3 support.
-
-*carl-0.8 (13 Jun 2009)
-
-  13 Jun 2009; Raúl Porcel <armin76@gentoo.org> +carl-0.8.ebuild,
-  metadata.xml:
-  Version bump, remove me as maintainer, add klausman
-
-  31 Dec 2007; Raúl Porcel <armin76@gentoo.org> carl-0.7.ebuild:
-  Make Tobias happy
-
-  15 Feb 2007; Raúl Porcel <armin76@gentoo.org> carl-0.7.ebuild:
-  x86 stable
-
-  15 Jan 2007; Raúl Porcel <armin76@gentoo.org> carl-0.7.ebuild:
-  Fix HOMEPAGE
-
-*carl-0.7 (09 Jan 2007)
-
-  09 Jan 2007; Raúl Porcel (armin76) <armin76@gentoo.org> +metadata.xml,
-  +carl-0.7.ebuild:
-  New ebuild, handy tool for rsync mirrors

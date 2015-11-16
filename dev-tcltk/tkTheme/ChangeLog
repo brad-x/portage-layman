@@ -1,97 +1,57 @@
 # ChangeLog for dev-tcltk/tkTheme
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tkTheme/ChangeLog,v 1.30 2012/03/19 08:02:58 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Mar 2012; Justin Lecher <jlec@gentoo.org> -tkTheme-1.0-r1.ebuild:
-  Cleaned old
+*tkTheme-1.0-r2 (09 Aug 2015)
 
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> tkTheme-1.0-r1.ebuild,
-  tkTheme-1.0-r2.ebuild:
-  Drop sparc keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/1.0-Makefile.in.diff, +files/1.0-cflags.patch,
+  +files/1.0-configure.diff, +metadata.xml, +tkTheme-1.0-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> tkTheme-1.0-r2.ebuild:
-  Stable on alpha, bug #397011
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Feb 2012; Brent Baude <ranger@gentoo.org> tkTheme-1.0-r2.ebuild:
-  Marking tkTheme-1.0-r2 ppc for bug 397011
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tkTheme-1.0-r2.ebuild:
-  x86 stable wrt bug #397011
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Jan 2012; Justin Lecher <jlec@gentoo.org> tkTheme-1.0-r2.ebuild:
-  Aded missing RDEP on x11-libs/libX11
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Jan 2012; Agostino Sarubbo <ago@gentoo.org> tkTheme-1.0-r2.ebuild:
-  Stable for AMD64, wrt bug #397011
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Jan 2012; Justin Lecher <jlec@gentoo.org> -tkTheme-1.0.ebuild:
-  Removed old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Jan 2012; Justin Lecher <jlec@gentoo.org> +files/1.0-cflags.patch,
-  tkTheme-1.0-r2.ebuild, files/1.0-Makefile.in.diff, metadata.xml:
-  Moved to EAPI=4 and autotools-utils.eclass, handle examples static-libs and
-  threading support correctly, added missing deps
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*tkTheme-1.0-r2 (22 Mar 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
-  +tkTheme-1.0-r2.ebuild:
-  EAPI=3 bump and cleanup, respecting CC
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Aug 2009; nixnut <nixnut@gentoo.org> tkTheme-1.0-r1.ebuild:
-  ppc stable #281394
+  Bug: https://bugs.gentoo.org/552720
 
-  29 Aug 2009; Tobias Klausmann <klausman@gentoo.org> tkTheme-1.0-r1.ebuild:
-  Stable on alpha, bug #281394
-
-  18 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
-  tkTheme-1.0-r1.ebuild:
-  stable x86, bug 281394
-
-  14 Aug 2009; Federico Ferri <mescalinum@gentoo.org> tkTheme-1.0-r1.ebuild:
-  add libXpm dep, fix bug 227865
-
-  14 Aug 2007; Ferris McCormick <fmccor@gentoo.org> tkTheme-1.0-r1.ebuild:
-  Sparc stable --- works fine.
-
-  18 May 2007; Peter Weller <welp@gentoo.org> tkTheme-1.0-r1.ebuild:
-  Stable on amd64
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  27 Jun 2005; David Holm <dholm@gentoo.org> tkTheme-1.0-r1.ebuild:
-  Added to ~ppc.
-
-*tkTheme-1.0-r1 (26 Jun 2005)
-
-  26 Jun 2005; MATSUU Takuto <matsuu@gentoo.org> +files/1.0-configure.diff,
-  +tkTheme-1.0-r1.ebuild:
-  Fixed fail to compile on amd64.
-
-  07 Apr 2005; Jan Brinkmann <luckyduck@gentoo.org> tkTheme-1.0.ebuild:
-  added ~amd64 to KEYWORDS, fixes #88185
-
-  02 Apr 2005; Jason Wever <weeve@gentoo.org> tkTheme-1.0.ebuild:
-  Stable on SPARC.
-
-  31 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  19 Jun 2004; Jason Wever <weeve@gentoo.org> tkTheme-1.0.ebuild:
-  Added ~sparc keyword.
-
-  03 Jun 2004; Bryan Østergaard <kloeri@gentoo.org> tkTheme-1.0.ebuild:
-  Stable on alpha.
-
-  04 Apr 2004; Chris Aniszczyk <zx@gentoo.org> metadata.xml,
-  tkTheme-1.0.ebuild:
-  Clean up.
-
-  14 Jan 2004; Aron Griffis <agriffis@gentoo.org> tkTheme-1.0.ebuild:
-  add ~alpha
-
-*tkTheme-1.0 (01 Feb 2003)
-
-  01 Feb 2003; Arcady Genkin <agenkin@gentoo.org> :
-  Initial version of the package.

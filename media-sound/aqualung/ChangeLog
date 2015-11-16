@@ -1,187 +1,69 @@
 # ChangeLog for media-sound/aqualung
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/aqualung/ChangeLog,v 1.39 2015/05/15 12:10:43 billie Exp $
+# (auto-generated from git log)
 
-  15 May 2015; Daniel Pielmeier <billie@gentoo.org> aqualung-1.0_rc1.ebuild:
-  Specify slot dependency for dev-lang/lua
+*aqualung-1.0_rc1 (09 Aug 2015)
 
-  15 May 2015; Daniel Pielmeier <billie@gentoo.org>
-  -aqualung-0.9_beta11-r2.ebuild,
-  -files/aqualung-0.9_beta11-automake-1.13.patch,
-  -files/aqualung-0.9_beta11-avcodec_max_audio_frame_size.patch,
-  -files/aqualung-0.9_beta11-ffmpeg.patch,
-  -files/aqualung-0.9_beta11-libav9.patch,
-  -files/aqualung-0.9_beta11-libavformat54.patch,
-  -files/aqualung-0.9_beta11-use_lrdf_cflags.patch:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +aqualung-1.0_rc1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 May 2015; Agostino Sarubbo <ago@gentoo.org> aqualung-1.0_rc1.ebuild:
-  Stable for amd64, wrt bug #547610
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Apr 2015; Pacho Ramos <pacho@gentoo.org> aqualung-1.0_rc1.ebuild:
-  x86 stable wrt bug #547610
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*aqualung-1.0_rc1 (10 Jun 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Jun 2014; Daniel Pielmeier <billie@gentoo.org> +aqualung-1.0_rc1.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Mar 2014; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta11-r2.ebuild,
-  +files/aqualung-0.9_beta11-avcodec_max_audio_frame_size.patch:
-  Fix bug #505330. Thanks to Bob Johnson for the report.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jan 2014; Samuli Suominen <ssuominen@gentoo.org>
-  -aqualung-0.9_beta11-r1.ebuild:
-  old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Jan 2014; Agostino Sarubbo <ago@gentoo.org> aqualung-0.9_beta11-r2.ebuild:
-  Stable for x86, wrt bug #497248
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Jan 2014; Pacho Ramos <pacho@gentoo.org> aqualung-0.9_beta11-r2.ebuild:
-  amd64 stable, bug #497248
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Jun 2013; Tomáš Chvátal <scarabeus@gentoo.org>
-  +files/aqualung-0.9_beta11-libav9.patch, aqualung-0.9_beta11-r2.ebuild:
-  Add libav9 patch to use new api instead of old one. Fixes bug#443242.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 May 2013; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta11-r2.ebuild,
-  +files/aqualung-0.9_beta11-automake-1.13.patch:
-  Fix building with automake-1.13. Thanks to Ulenrich in bug #468214.
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Jan 2013; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild, aqualung-0.9_beta11-r2.ebuild:
-  Restrict libcdio version to <0.90 for stable aqualung and remove 0.90 support
-  from arch version until a proper patch is available.
+*aqualung-1.0 (02 Sep 2015)
 
-*aqualung-0.9_beta11-r2 (17 Jan 2013)
+  02 Sep 2015; Daniel Pielmeier <billie@gentoo.org> +aqualung-1.0.ebuild:
+  Version bump
 
-  17 Jan 2013; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild, +aqualung-0.9_beta11-r2.ebuild:
-  Revison bump. Switch to EAPI 5. Reorder deps and configure switches. Other
-  minor changes. Ebuild support for bug #452460. Build with libcdio-paranoia
-  still needs a patch to work.
+  Package-Manager: portage-2.2.20.1
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  16 Sep 2015; Alexis Ballier <aballier@gentoo.org> aqualung-1.0.ebuild,
+  +files/ffmpeg29.patch:
+  fix build with ffmpeg git master.
 
-  26 Feb 2012; Alexis Ballier <aballier@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild,
-  +files/aqualung-0.9_beta11-libavformat54.patch:
-  fix build with ffmpeg git
+  Package-Manager: portage-2.2.20.1
 
-  10 Nov 2011; Alexis Ballier <aballier@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild, +files/aqualung-0.9_beta11-ffmpeg.patch:
-  fix build with ffmpeg/libav trunk, bug #379075
-
-  11 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
-  -aqualung-0.9_beta11.ebuild:
-  [This is a placeholder. Please ignore.]
-
-  07 Aug 2011; Markus Meier <maekke@gentoo.org> aqualung-0.9_beta11-r1.ebuild:
-  amd64/x86 stable, bug #376883
-
-  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild:
-  Leave setting -g and -O levels to user with debug build wrt #376895
-
-  01 Aug 2011; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild:
-  Switch to EAPI=4. Fix bug #376895.
-
-  29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org>
-  aqualung-0.9_beta11-r1.ebuild,
-  +files/aqualung-0.9_beta11-use_lrdf_cflags.patch:
-  Use lrdf_CFLAGS to gain -I/usr/include/raptor2 for raptor.h; required with
-  liblrdf-0.4.0-r20.
-
-  31 May 2011; Daniel Pielmeier <billie@gentoo.org> aqualung-0.9_beta11.ebuild,
-  aqualung-0.9_beta11-r1.ebuild:
-  Aqualung needs libcdio built with USE="-minimal". This fixes bug #369151.
-  Thanks to David Honour for the report.
-
-  12 May 2011; Daniel Pielmeier <billie@gentoo.org> aqualung-0.9_beta11.ebuild,
-  aqualung-0.9_beta11-r1.ebuild:
-  Move media-libs/liblrdf to RDEPEND, thanks to John in bug #366475.
-
-  31 Mar 2011; Daniel Pielmeier <billie@gentoo.org> aqualung-0.9_beta11.ebuild,
-  aqualung-0.9_beta11-r1.ebuild:
-  aqualung works with ffmpeg and libav, so switching to virtual/ffmpeg.
-
-*aqualung-0.9_beta11-r1 (15 Mar 2011)
-
-  15 Mar 2011; Daniel Pielmeier <billie@gentoo.org> aqualung-0.9_beta11.ebuild,
-  +aqualung-0.9_beta11-r1.ebuild:
-  Depend on media-libs/alsa-lib instead of old style virtual/alsa bug #359007.
-  Add a new revision to fix doc installation.
-
-  12 Jul 2010; Daniel Pielmeier <billie@gentoo.org>
-  -files/aqualung-0.9_beta10-libmpcdecsv7.patch:
-  Remove unused patch.
-
-  12 Jul 2010; Daniel Pielmeier <billie@gentoo.org>
-  -aqualung-0.9_beta10-r3.ebuild:
-  Remove old.
-
-  23 May 2010; Pacho Ramos <pacho@gentoo.org> aqualung-0.9_beta11.ebuild:
-  stable amd64, bug 307657
-
-  11 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  aqualung-0.9_beta11.ebuild:
-  x86 stable wrt bug #307657
-
-*aqualung-0.9_beta11 (02 Feb 2010)
-
-  02 Feb 2010; Daniel Pielmeier <billie@gentoo.org>
-  +aqualung-0.9_beta11.ebuild:
-  Version bump.
-
-  20 Dec 2009; Daniel Pielmeier <billie@gentoo.org>
-  aqualung-0.9_beta10-r3.ebuild:
-  Add missing backslash in econf. Thanks to ssuominen for the pointer.
-
-*aqualung-0.9_beta10-r3 (20 Dec 2009)
-
-  20 Dec 2009; Daniel Pielmeier <billie@gentoo.org>
-  +aqualung-0.9_beta10-r3.ebuild, metadata.xml:
-  Revision bump. Remove support for musepack (transition package does not
-  build anymore), next release will support SV8. Add support for decoding
-  Monkey's Audio. Ebuild maintenance. Add myself to maintainers.
-
-*aqualung-0.9_beta10-r2 (26 Jul 2009)
-
-  26 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +aqualung-0.9_beta10-r2.ebuild,
-  +files/aqualung-0.9_beta10-libmpcdecsv7.patch:
-  Use transition package media-libs/libmpcdecsv7 instead of
-  media-libs/libmpcdec for Musepack support.
-
-  22 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
-  USE cdda is now global.
-
-  12 May 2009; Samuli Suominen <ssuominen@gentoo.org>
-  aqualung-0.9_beta10-r1.ebuild:
-  Run eautoreconf to avoid maintainer-mode wrt #255874 and remove unused
-  use_enable taglib metadata since it's been removed by upstream.
-
-*aqualung-0.9_beta10-r1 (23 Mar 2009)
-
-  23 Mar 2009; Ben de Groot <yngwin@gentoo.org>
-  +aqualung-0.9_beta10-r1.ebuild:
-  Improvements suggested by Daniel Pielmeier in bug 260422. Dropping no
-  longer used deps taglib and raptor.
-
-*aqualung-0.9_beta10 (21 Mar 2009)
-
-  21 Mar 2009; Ben de Groot <yngwin@gentoo.org> +aqualung-0.9_beta10.ebuild:
-  Version bump. Dep versioning cleanup. Drop loop-playback useflag (now
-  always enabled). Add ifp and lua useflags and deps.
-
-*aqualung-0.9_beta9_p1 (15 Apr 2008)
-
-  15 Apr 2008; Ben de Groot <yngwin@gentoo.org>
-  +files/new-ffmpeg-headers.patch, +metadata.xml,
-  +aqualung-0.9_beta9_p1.ebuild:
-  Initial import. Ebuild adapted from Maarten Maathuis in bug 88532.

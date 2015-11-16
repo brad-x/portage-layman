@@ -1,158 +1,94 @@
 # ChangeLog for media-sound/gimmix
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gimmix/ChangeLog,v 1.38 2015/06/26 08:50:16 ago Exp $
+# (auto-generated from git log)
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> gimmix-0.5.7.2.ebuild:
-  Stable for x86, wrt bug #535490
+*gimmix-0.5.7.2 (09 Aug 2015)
+*gimmix-0.5.7.1 (09 Aug 2015)
 
-  11 Jun 2015; Agostino Sarubbo <ago@gentoo.org> gimmix-0.5.7.2.ebuild:
-  Stable for amd64, wrt bug #535490
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gimmix-0.5.7.1-curl-headers.patch,
+  +files/gimmix-0.5.7.1-symbol-collision.patch, +gimmix-0.5.7.1.ebuild,
+  +gimmix-0.5.7.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 Apr 2015;  <christoph@gentoo.org> gimmix-0.5.7.1.ebuild,
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  19 Sep 2015; Christoph Mende <angelos@gentoo.org> gimmix-0.5.7.1.ebuild,
   gimmix-0.5.7.2.ebuild:
-  Replace dead links
+  change homepage to launchpad
 
-*gimmix-0.5.7.2 (07 Apr 2014)
+  Package-Manager: portage-2.2.20.1
 
-  07 Apr 2014; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.7.2.ebuild:
-  Version bump
+*gimmix-0.5.7.2-r1 (20 Sep 2015)
 
-  22 Mar 2014; Christoph Mende <angelos@gentoo.org>
-  +files/gimmix-0.5.7.1-symbol-collision.patch, gimmix-0.5.7.1.ebuild:
-  Fix compilation
+  20 Sep 2015; Christoph Mende <angelos@gentoo.org>
+  +files/gimmix-0.5.7.2-format-security.patch, +gimmix-0.5.7.2-r1.ebuild:
+  Fix format-security warning (bug #542140)
 
-  25 Jul 2012; Christoph Mende <angelos@gentoo.org>
-  +files/gimmix-0.5.7.1-curl-headers.patch, gimmix-0.5.7.1.ebuild:
-  Fix curl header includes
+  Package-Manager: portage-2.2.20.1
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> gimmix-0.5.7.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  20 Sep 2015; Christoph Mende <angelos@gentoo.org> -gimmix-0.5.7.1.ebuild:
+  remove old version
 
-  13 Mar 2011; Raúl Porcel <armin76@gentoo.org> gimmix-0.5.7.1.ebuild:
-  Drop sparc keywords
+  Package-Manager: portage-2.2.20.1
 
-  01 Mar 2011; <angelos@gentoo.org> -gimmix-0.5.6.1.ebuild,
-  -gimmix-0.5.6.1-r1.ebuild, -files/gimmix-0.5.6.1-tag_info_bugfix1.patch,
-  -gimmix-0.5.7.ebuild:
-  Removed old
+  22 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote ids
 
-  14 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
-  gimmix-0.5.7.1.ebuild:
-  stable x86, bug 324971
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jun 2010; Pacho Ramos <pacho@gentoo.org> gimmix-0.5.7.1.ebuild:
-  stable amd64, bug 324971
+  19 Oct 2015; Agostino Sarubbo <ago@gentoo.org> gimmix-0.5.7.2-r1.ebuild:
+  amd64 stable wrt bug #563302
 
-*gimmix-0.5.7.1 (21 May 2010)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  21 May 2010; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.7.1.ebuild:
-  Version bump
+  24 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> gimmix-0.5.7.2-r1.ebuild:
+  x86 stable wrt bug #563302
 
-*gimmix-0.5.7 (21 Nov 2009)
+  Package-Manager: portage-2.2.20.1
 
-  21 Nov 2009; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.7.ebuild:
-  Version bump
-
-*gimmix-0.5.6.1-r1 (20 Jul 2009)
-
-  20 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +gimmix-0.5.6.1-r1.ebuild, +files/gimmix-0.5.6.1-tag_info_bugfix1.patch:
-  Fix song info box opening wrt #264231, thanks to Christopher Head and
-  Priyank Gosalia (upstream).
-
-  20 Mar 2009; Raúl Porcel <armin76@gentoo.org> gimmix-0.5.6.1.ebuild:
-  x86 stable wrt #262681
-
-  18 Mar 2009; Joseph Jezak <josejx@gentoo.org> gimmix-0.5.6.1.ebuild:
-  Marked ~ppc for bug #250102.
-
-  17 Mar 2009; Thomas Anderson <gentoofan23@gentoo.org>
-  gimmix-0.5.6.1.ebuild:
-  stable amd64, bug 262681
-
-*gimmix-0.5.6.1 (08 Feb 2009)
-
-  08 Feb 2009; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.6.1.ebuild:
-  Version bump
-
-*gimmix-0.5.5 (27 Jan 2009)
-
-  27 Jan 2009; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.5.ebuild:
-  Version bump
-
-*gimmix-0.5.4 (01 Jan 2009)
-
-  01 Jan 2009; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.4.ebuild:
-  Version bump
-
-  12 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  +files/gimmix-0.5.3-missing-prototypes.patch, +gimmix-0.5.3.ebuild:
-  Version bump
-
-*gimmix-0.5.2 (14 Oct 2008)
-
-  14 Oct 2008; Christoph Mende <angelos@gentoo.org> +gimmix-0.5.2.ebuild,
-  -gimmix-0.5.3.ebuild:
-  Wrong ebuild version
-
-*gimmix-0.5.3 (14 Oct 2008)
-
-  14 Oct 2008; Christoph Mende <angelos@gentoo.org> -gimmix-0.5.0.ebuild,
-  +gimmix-0.5.3.ebuild:
-  Version bump
-
-  03 Oct 2008; Friedrich Oslage <bluebird@gentoo.org> gimmix-0.5.0.ebuild:
-  Add ~sparc keyword, bug #238946
-
-*gimmix-0.5.0 (28 Sep 2008)
-
-  28 Sep 2008; Christoph Mende <angelos@gentoo.org> metadata.xml,
-  +gimmix-0.5.0.ebuild:
-  Version bump
-
-  02 May 2008; Samuli Suominen <drac@gentoo.org> gimmix-0.4.3.ebuild:
-  Use berlios mirrors://
-
-  20 Apr 2008; Raúl Porcel <armin76@gentoo.org> gimmix-0.4.3.ebuild:
-  Add ~sparc
-
-  07 Mar 2008; Christoph Mende <angelos@gentoo.org> -gimmix-0.4.2.ebuild:
-  Remove old
-
-  07 Mar 2008; Dawid Węgliński <cla@gentoo.org> gimmix-0.4.3.ebuild:
-  Stable on x86 (bug #212505)
-
-  06 Mar 2008; Christoph Mende <angelos@gentoo.org> gimmix-0.4.3.ebuild:
-  Stable on amd64, bug #212505
-
-*gimmix-0.4.3 (03 Feb 2008)
-
-  03 Feb 2008; Christoph Mende <angelos@gentoo.org> +gimmix-0.4.3.ebuild:
-  Version bump
-
-  21 Jan 2008; Markus Meier <maekke@gentoo.org> gimmix-0.4.2.ebuild:
-  x86 stable, bug #206764
-
-  04 Nov 2007; Christoph Mende <angelos@gentoo.org> -gimmix-0.4.1.ebuild,
-  gimmix-0.4.2.ebuild:
-  Stable on amd64
-
-  03 Oct 2007; Christoph Mende <angelos@gentoo.org> gimmix-0.4.2.ebuild:
-  Cleanup
-
-*gimmix-0.4.2 (03 Oct 2007)
-
-  03 Oct 2007; Christoph Mende <angelos@gentoo.org> +gimmix-0.4.2.ebuild:
-  Version bump
-
-  12 Aug 2007; Christoph Mende <angelos@gentoo.org> gimmix-0.4.1.ebuild:
-  Stable on amd64
-
-  13 Jul 2007; Raúl Porcel <armin76@gentoo.org> gimmix-0.4.1.ebuild:
-  Add ~x86 to make angelos happy, amd64 slacks
-
-*gimmix-0.4.1 (13 Jul 2007)
-
-  13 Jul 2007; Christoph Mende <angelos@gentoo.org> +metadata.xml,
-  +gimmix-0.4.1.ebuild:
-  Initial import, thanks to Torsten Rehn

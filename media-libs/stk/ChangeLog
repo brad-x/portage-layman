@@ -1,105 +1,66 @@
 # ChangeLog for media-libs/stk
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/stk/ChangeLog,v 1.17 2015/03/17 10:47:23 aballier Exp $
+# (auto-generated from git log)
 
-*stk-4.5.0 (17 Mar 2015)
+*stk-4.5.0 (09 Aug 2015)
+*stk-4.4.4-r1 (09 Aug 2015)
 
-  17 Mar 2015; Alexis Ballier <aballier@gentoo.org> +stk-4.5.0.ebuild,
-  +files/stk-4.5.0/010_all_removeForcedFlags.patch,
-  +files/stk-4.5.0/020_all_noExamplesOrDemo.patch,
-  +files/stk-4.5.0/040_all_sharedliblink.patch,
-  +files/stk-4.5.0/050_all_cxxflags.patch:
-  version bump
-
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
-
-  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> -stk-4.4.4.ebuild:
-  remove old
-
-*stk-4.4.4-r1 (24 Nov 2012)
-
-  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.4-r1.ebuild,
-  +files/stk-4.4.4/050_all_cxxflags.patch:
-  do not ignore cxxflags, bug #428384
-
-  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> -stk-4.4.2.ebuild,
-  -files/stk-4.4.2/010_all_removeForcedFlags.patch,
-  -files/stk-4.4.2/020_all_noExamplesOrDemo.patch,
-  -files/stk-4.4.2/030_all_sharedlib.patch,
-  -files/stk-4.4.2/040_all_soname.patch, -files/stk-4.4.2/050_all_abiver.patch,
-  -stk-4.4.3.ebuild, -stk-4.4.3-r1.ebuild,
-  -files/stk-4.4.3/010_all_removeForcedFlags.patch,
-  -files/stk-4.4.3/020_all_noExamplesOrDemo.patch,
-  -files/stk-4.4.3/030_all_sharedlib.patch,
-  -files/stk-4.4.3/040_all_sharedliblink.patch:
-  remove old
-
-*stk-4.4.4 (21 Sep 2012)
-
-  21 Sep 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.4.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/stk-4.4.4/010_all_removeForcedFlags.patch,
   +files/stk-4.4.4/020_all_noExamplesOrDemo.patch,
   +files/stk-4.4.4/030_all_sharedlib.patch,
-  +files/stk-4.4.4/040_all_sharedliblink.patch:
-  version bump
+  +files/stk-4.4.4/040_all_sharedliblink.patch,
+  +files/stk-4.4.4/050_all_cxxflags.patch,
+  +files/stk-4.5.0/010_all_removeForcedFlags.patch,
+  +files/stk-4.5.0/020_all_noExamplesOrDemo.patch,
+  +files/stk-4.5.0/040_all_sharedliblink.patch,
+  +files/stk-4.5.0/050_all_cxxflags.patch, +metadata.xml,
+  +stk-4.4.4-r1.ebuild, +stk-4.5.0.ebuild:
+  proj/gentoo: Initial commit
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> stk-4.4.2.ebuild,
-  stk-4.4.3.ebuild, stk-4.4.3-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*stk-4.4.3-r1 (16 Jan 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.3-r1.ebuild:
-  revbump for previous fix
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jan 2012; Alexis Ballier <aballier@gentoo.org>
-  +files/stk-4.4.3/040_all_sharedliblink.patch:
-  install soname link for libstk.so too, bug #398651 by Nikos Chantziaras
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*stk-4.4.3 (15 Sep 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Sep 2011; Alexis Ballier <aballier@gentoo.org> +stk-4.4.3.ebuild,
-  +files/stk-4.4.3/010_all_removeForcedFlags.patch,
-  +files/stk-4.4.3/020_all_noExamplesOrDemo.patch,
-  +files/stk-4.4.3/030_all_sharedlib.patch:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Feb 2011; Alexis Ballier <aballier@gentoo.org> -stk-4.3.1.ebuild,
-  -files/stk-4.3.1-cflags-lib.patch, -files/stk-4.3.1-fpic.patch,
-  -files/stk-4.3.1-gcc43.patch, -files/stk-4.3.1-gcc44.patch,
-  -files/stk-4.3.1-ldflags.patch, -files/stk-4.3.1-missing.patch:
-  remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*stk-4.4.2 (02 Jan 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jan 2011; Alexis Ballier <aballier@gentoo.org> +stk-4.4.2.ebuild,
-  +files/stk-4.4.2/010_all_removeForcedFlags.patch,
-  +files/stk-4.4.2/020_all_noExamplesOrDemo.patch,
-  +files/stk-4.4.2/030_all_sharedlib.patch,
-  +files/stk-4.4.2/040_all_soname.patch, +files/stk-4.4.2/050_all_abiver.patch:
-  version bump, by Christopher Harvey <chris@basementcode.com>, bug #309037,
-  with some modifications and patches by me.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Aug 2010; Samuli Suominen <ssuominen@gentoo.org>
-  files/stk-4.3.1-gcc44.patch:
-  Include <cstdio> also for RtAudio.cpp wrt #332873 by Jouni Rinne.
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> stk-4.3.1.ebuild,
-  +files/stk-4.3.1-gcc44.patch:
-  Fix building with GCC 4.4 wrt #277668.
-
-  09 Mar 2009; Raúl Porcel <armin76@gentoo.org> stk-4.3.1.ebuild:
-  Add ~x86 wrt #260735
-
-  13 Jan 2009; Alexis Ballier <aballier@gentoo.org> stk-4.3.1.ebuild:
-  fix build without jack, by Thomas 'gimpel' Kuther, bug #232302
-
-*stk-4.3.1 (17 Sep 2008)
-
-  17 Sep 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/stk-4.3.1-cflags-lib.patch, +files/stk-4.3.1-fpic.patch,
-  +files/stk-4.3.1-gcc43.patch, +files/stk-4.3.1-ldflags.patch,
-  +files/stk-4.3.1-missing.patch, +metadata.xml, +stk-4.3.1.ebuild:
-  Initial import; ebuild mainly by Thomas Kuther who I'm proxy maintaining
-  the package for.

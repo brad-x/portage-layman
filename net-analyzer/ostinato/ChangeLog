@@ -1,91 +1,71 @@
 # ChangeLog for net-analyzer/ostinato
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ostinato/ChangeLog,v 1.22 2014/01/23 14:06:16 zerochaos Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Jan 2014; Rick Farina <zerochaos@gentoo.org> -ostinato-0.5.ebuild,
-  ostinato-0.5.1.ebuild:
-  cleanup old, add sub-slot dep on protobuf
+*ostinato-0.5.1 (09 Aug 2015)
 
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> ostinato-0.5.1.ebuild:
-  Stable for x86, wrt bug #477170
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/protobuf-2.4.0.diff, +metadata.xml, +ostinato-0.5.1.ebuild:
+  proj/gentoo: Initial commit
 
-  23 Jul 2013; Agostino Sarubbo <ago@gentoo.org> ostinato-0.5.1.ebuild:
-  Stable for arm, wrt bug #477170
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jul 2013; Chema Alonso <nimiux@gentoo.org> ostinato-0.5.1.ebuild:
-  Stable for amd64 wrt bug #477170
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Jul 2013; Rick Farina <zerochaos@gentoo.org> ostinato-0.5.1.ebuild:
-  adding ~arm
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Jun 2013; Rick Farina <zerochaos@gentoo.org> metadata.xml:
-  picking up from maintainer-needed
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #328951
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> ostinato-0.5.1.ebuild,
-  ostinato-0.5.ebuild:
-  Move Qt dependencies to the new category
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*ostinato-0.5.1 (14 Oct 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Oct 2012; Dane Smith <c1pher@gentoo.org> -ostinato-0.3.ebuild,
-  -ostinato-0.4.1.ebuild, +ostinato-0.5.1.ebuild:
-  Version bump wrt bug 432056. Drop old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ostinato-0.5.1.ebuild:
+  Enable https for all google URIs
 
-  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ostinato-0.5.ebuild:
-  marked x86 per bug 404815
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ostinato-0.5.ebuild:
-  Stable for amd64, wrt bug #404815
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ostinato-0.5.1.ebuild:
+  Convert URIs for googlecode.com to https
 
-*ostinato-0.5 (05 Nov 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Nov 2011; Dane Smith <c1pher@gentoo.org> +ostinato-0.5.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 May 2011; Dane Smith <c1pher@gentoo.org> +files/protobuf-2.4.0.diff:
-  Readd patch. Still needed in stable.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*ostinato-0.4.1 (10 May 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  10 May 2011; Dane Smith <c1pher@gentoo.org> -ostinato-0.4.ebuild,
-  +ostinato-0.4.1.ebuild, -files/protobuf-2.4.0.diff:
-  Version bump. Gentoo patches merged into upstream. Remove old experimental
-  and patch.
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org> ostinato-0.5.1.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-*ostinato-0.4 (19 Apr 2011)
+  Package-Manager: portage-2.2.20.1
 
-  19 Apr 2011; Dane Smith <c1pher@gentoo.org> +ostinato-0.4.ebuild:
-  0.4 released. Version bump.
-
-  19 Apr 2011; Dane Smith <c1pher@gentoo.org> -ostinato-0.2.ebuild,
-  ostinato-0.3.ebuild, +files/protobuf-2.4.0.diff:
-  Add new patch for 0.3 wrt bug 363911. Now works protobuf-2.4.0a
-
-  18 Apr 2011; Dane Smith <c1pher@gentoo.org> ostinato-0.2.ebuild,
-  ostinato-0.3.ebuild:
-  Remove my unintentional downgrade force wrt bug 363911.
-
-  18 Apr 2011; Dane Smith <c1pher@gentoo.org> ostinato-0.2.ebuild,
-  ostinato-0.3.ebuild:
-  Change protobuf dep to depend on <2.4.0 in both 0.2 and 0.3 wrt bug
-  363911.
-
-  18 Dec 2010; Markos Chandras <hwoarang@gentoo.org> ostinato-0.3.ebuild:
-  Stable on amd64 wrt bug #348576
-
-  13 Dec 2010; Dane Smith <c1pher@gentoo.org> ostinato-0.3.ebuild:
-  Stable x86 wrt bug 348576.
-
-*ostinato-0.3 (11 Nov 2010)
-
-  11 Nov 2010; Dane Smith <c1pher@gentoo.org> +ostinato-0.3.ebuild:
-  Version bump.
-
-*ostinato-0.2 (23 Oct 2010)
-
-  23 Oct 2010; Dane Smith <c1pher@gentoo.org> +ostinato-0.2.ebuild,
-  +metadata.xml:
-  New ebuild for Ostinato. Moved from Sunrise overlay wrt bug 317201.

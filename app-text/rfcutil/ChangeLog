@@ -1,124 +1,57 @@
 # ChangeLog for app-text/rfcutil
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/rfcutil/ChangeLog,v 1.40 2013/01/15 20:22:01 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  15 Jan 2013; Ulrich Müller <ulm@gentoo.org> rfcutil-3.2.3-r2.ebuild:
-  Fix LICENSE, see notice in rfc-3.2.3 file, bug 452194.
+*rfcutil-3.2.3-r2 (09 Aug 2015)
 
-  17 Oct 2012; Michael Palimaka <kensington@gentoo.org> -files/rfc-3.2.3.diff,
-  -rfcutil-3.2.3-r1.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/rfc-3.2.3-index.patch, +files/rfc-3.2.3-paths.patch, +metadata.xml,
+  +rfcutil-3.2.3-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rfcutil-3.2.3-r2.ebuild:
-  x86 stable wrt bug #437616
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Oct 2012; Brent Baude <ranger@gentoo.org> rfcutil-3.2.3-r2.ebuild:
-  Marking rfcutil-3.2.3-r2 ppc for bug 437616
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Oct 2012; Anthony G. Basile <blueness@gentoo.org> rfcutil-3.2.3-r2.ebuild:
-  stable ppc ppc64, bug #437616
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> rfcutil-3.2.3-r2.ebuild:
-  Stable on amd64 wrt bug #437616
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*rfcutil-3.2.3-r2 (06 Aug 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Aug 2012; Christoph Junghans <ottxor@gentoo.org>
-  +files/rfc-3.2.3-paths.patch, +rfcutil-3.2.3-r2.ebuild:
-  add prefix changes
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -rfcutil-3.2.3.ebuild:
-  Remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> rfcutil-3.2.3.ebuild,
-  rfcutil-3.2.3-r1.ebuild:
-  Drop alpha/sparc keywords
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2012; Brent Baude <ranger@gentoo.org> rfcutil-3.2.3-r1.ebuild:
-  Marking rfcutil-3.2.3-r1 ppc64 for bug 404619
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Feb 2012; Brent Baude <ranger@gentoo.org> rfcutil-3.2.3-r1.ebuild:
-  Marking rfcutil-3.2.3-r1 ppc for bug 404619
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rfcutil-3.2.3-r1.ebuild:
-  x86 stable wrt bug #404619
-
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rfcutil-3.2.3-r1.ebuild:
-  Stable for amd64, wrt bug #404619
-
-*rfcutil-3.2.3-r1 (13 Dec 2011)
-
-  13 Dec 2011; Jeroen Roovers <jer@gentoo.org> +rfcutil-3.2.3-r1.ebuild,
-  +files/rfc-3.2.3-index.patch, files/rfc-3.2.3.diff:
-  Fix building rfc-index by Hartmut Figge, and thanks to Victor for the patch
-  (bug #335152). Clean up old patch.
-
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #34534
-
-  06 Feb 2011; Mart Raudsepp <leio@gentoo.org> rfcutil-3.2.3.ebuild:
-  Drop to ~mips
-
-  19 Jan 2008; Fabian Groffen <grobian@gentoo.org> rfcutil-3.2.3.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  28 Jan 2007; Marius Mauch <genone@gentoo.org> rfcutil-3.2.3.ebuild:
-  Replacing einfo with elog
-
-  26 Dec 2006; Daniel Black <dragonheart@gentoo.org> rfcutil-3.2.3.ebuild:
-  remove rfc -i that downloaded an index in pkg_postinst thanks to Evil
-  Compile Person in bug #151422
-
-  04 Dec 2006; Alexander H. Færøy <eroyf@gentoo.org> rfcutil-3.2.3.ebuild:
-  Stable on MIPS.
-
-  07 Oct 2005; Daniel Black <dragonheart@gentoo.org> rfcutil-3.2.3.ebuild:
-  Don't install INSTALL documentation
-
-  09 Sep 2005; Aron Griffis <agriffis@gentoo.org> rfcutil-3.2.3.ebuild:
-  Mark 3.2.3 stable on alpha
-
-  15 Mar 2005; Seemant Kulleen <seemant@gentoo.org> :
-  Dependency update: net-www/lynx -> www-client/lynx.
-
-  15 Mar 2005; Seemant Kulleen <seemant@gentoo.org> rfcutil-3.2.3.ebuild:
-  Dependency update: net-www/lynx -> www-client/lynx.
-
-  02 Jan 2005; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  12 Sep 2004; Bryan Østergaard <kloeri@gentoo.org> rfcutil-3.2.3.ebuild:
-  Add ~alpha keyword, bug 63727.
-
-  08 Sep 2004; Mamoru KOMACHI <usata@gentoo.org> rfcutil-3.2.3.ebuild:
-  net-www/w3m -> virtual/w3m
-
-  07 Sep 2004; Tom Gall <tgall@gentoo.org> rfcutil-3.2.3.ebuild:
-  stable on ppc64, bug #63055
-
-  11 Aug 2004; Hasan Khalil <gongloo@gentoo.org> rfcutil-3.2.3.ebuild:
-  Stable on macos.
-
-  28 Jun 2004; Ciaran McCreesh <ciaranm@gentoo.org> rfcutil-3.2.3.ebuild:
-  Added ~mips
-
-  06 Jun 2004; Daniel Black <dragonheart@gentoo.org> rfcutil-3.2.3.ebuild:
-  QA fix - IUSE added
-
-  28 Mar 2004; Marius Mauch <genone@gentoo.org> rfcutil-3.2.3.ebuild:
-  fixed unneccessary browser dependencies.
-
-  24 Mar 2004; Daniel Black <dragonheart@gentoo.org> rfcutil-3.2.3.ebuild,
-  files/rfc-3.2.3.diff, files/rfc-3.2.3.gaarde:
-  QA fix of bug #45358. Cleaned ebuild up too
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*rfcutil-3.2.3 (28 Jul 2002)
-
-  15 Feb 2003; Mark Guertin <gerk@gentoo.org> rfcutil-3.2.3.ebuild :
-  set ppc in keywords
-
-  28 Jul 2002; Daniel Ahlberg <aliz@gentoo.org> rfcutil-3.2.3.ebuild : 
-
-  Initial import. Ebuild submitted by Paul Belt <gaarde@yahoo.com>.  

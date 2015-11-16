@@ -1,164 +1,56 @@
 # ChangeLog for games-fps/rtcw
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcw/ChangeLog,v 1.45 2015/06/14 19:51:56 ulm Exp $
+# (auto-generated from git log)
 
-  14 Jun 2015; Ulrich Müller <ulm@gentoo.org> rtcw-1.41b.ebuild:
-  [QA] Remove emul-linux-x86-* from dependencies.
+*rtcw-1.41b (09 Aug 2015)
 
-  13 Oct 2014; Michał Górny <mgorny@gentoo.org> rtcw-1.41b.ebuild:
-  Support multilib providers for deps. Bump to EAPI=5.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/wolf-ded.rc,
+  +metadata.xml, +rtcw-1.41b.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Sep 2014; Ulrich Müller <ulm@gentoo.org> rtcw-1.41b.ebuild:
-  Drop reverse dependencies of sys-libs/lib-compat to unstable, bug 517932.
-  Replace emul-linux-x86-compat dependency by sys-libs/lib-compat.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Jan 2013; Tupone Alfredo <tupone@gentoo.org> rtcw-1.41b.ebuild:
-  Use QA_PREBUILT Bug #452978 by Diego Elio Pettenò
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> rtcw-1.41b.ebuild:
-  gpl for init script bug #425944
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Apr 2012; Michał Górny <mgorny@gentoo.org> rtcw-1.41b.ebuild:
-  Use mirror:// in SRC_URI.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Feb 2012; Mike Frysinger <vapier@gentoo.org> rtcw-1.41b.ebuild:
-  Move to new unpacker eclass for unpack_makeself.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Dec 2011; Mike Frysinger <vapier@gentoo.org> rtcw-1.41b.ebuild:
-  The games.eclass has dropped GAMES_CHECK_LICENSE support (since portage now
-  has ACCEPT_LICENSE), so drop it here too.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Aug 2010; Michael Sterrett <mr_bones_@gentoo.org> rtcw-1.41b.ebuild:
-  work around buggy video driver (bug #326837) - sed patch from Jared
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Feb 2010; Michael Sterrett <mr_bones_@gentoo.org> rtcw-1.41b.ebuild:
-  EAPI=2; minor tidying; URI patch from Jon (bug #244581)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Jul 2008; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
-  Removing myself from metadata.xml since I am retiring from the project.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Feb 2008; Carsten Lohrke <carlo@gentoo.org> rtcw-1.41b.ebuild:
-  Remove icon extension from desktop entry to match Icon Theme Specification.
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Apr 2007; Sven Wegener <swegener@gentoo.org> rtcw-1.41b.ebuild:
-  Fix *initd, *confd and *envd calls (#173884, #174266)
-
-  12 Mar 2007; Marius Mauch <genone@gentoo.org> rtcw-1.41b.ebuild:
-  Replacing einfo with elog
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  05 Dec 2006; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41b.ebuild:
-  Removing old virtual/x11 dependency.
-
-  13 May 2006; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41b.ebuild:
-  Added sys-libs/lib-compat to RDEPEND on x86 and closing bug #133190.
-
-*rtcw-1.41b (09 May 2006)
-
-  09 May 2006; Chris Gianelloni <wolf31o2@gentoo.org> -rtcw-1.41-r2.ebuild,
-  +rtcw-1.41b.ebuild:
-  Version bump with new patch. Marking stable on amd64 and x86. Removing older
-  versions. Closing bug #132377.
-
-  31 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Changed nomirror to mirror and nostrip to strip.
-
-  24 Jan 2006; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Added modular X dependencies and some general cleanup.
-
-  21 Oct 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Added addition dir variable to games_make_wrapper for bug #109793.
-
-  21 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Changed check_license to explicitly list license to check.
-
-  30 Aug 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Changed to match new 3dgamers mirrors structure in thirdpartymirrors.
-
-  15 Jun 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Removed INSTALL file.
-
-  12 May 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Fixing warning about bug #82149.
-
-  20 Apr 2005; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r2.ebuild:
-  Added warning about bug #82149.
-
-  30 Dec 2004; Chris Gianelloni <wolf31o2@gentoo.org> -rtcw-1.41-r1.ebuild,
-  rtcw-1.41-r2.ebuild:
-  Fixed output and made ebuild create 2 .desktop entries.
-
-  19 Sep 2004; Travis Tilley <lv@gentoo.org> rtcw-1.41-r2.ebuild:
-  added ~amd64 keyword
-
-*rtcw-1.41-r2 (22 Aug 2004)
-
-  22 Aug 2004; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41-r1.ebuild,
-  +rtcw-1.41-r2.ebuild:
-  Changed to use separate GOTY map pack and patch downloads and closing bug
-  #57305.
-
-*rtcw-1.41-r1 (13 Jul 2004)
-
-  13 Jul 2004; Chris Gianelloni <wolf31o2@gentoo.org> -files/wolf,
-  -files/wolf-ded, -files/wolfsp, +rtcw-1.41-r1.ebuild, -rtcw-1.41.ebuild:
-  Added SRC_URI for 1.4-full version to pull in the GOTY maps.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> rtcw-1.41.ebuild:
-  virtual/glibc -> virtual/libc
-
-  03 Jun 2004; Aron Griffis <agriffis@gentoo.org> rtcw-1.41.ebuild:
-  Fix use invocation
-
-  24 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Adding wolfmp wolfsp einfo at end of install and closing bug #48864.
-
-  20 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixing digest and invalid source location.  Bad wolfie!  Closing bug #48480.
-
-  19 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixing src_unpack.
-
-  19 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixing SRC_URI and closing bug #48396.
-
-  13 Dec 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixed SRC_URI location for patches.  Closing bug #35730.
-
-  10 Dec 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixed ebuild for dedicated USE flag and also changed icon name.
-
-  06 Dec 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Added RESTRICT=nomirror.  Closing Bug #35223.
-
-*rtcw-1.41 (03 Oct 2003)
-
-  03 Oct 2003; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml,
-  rtcw-1.41.ebuild, files/wolf, files/wolf-ded, files/wolf-ded.rc:
-  Adding check_license (missed it earlier).
-
-  03 Oct 2003; Chris Gianelloni <wolf31o2@gentoo.org> files/wolf,
-  files/wolf-ded, files/wolf-ded.rc:
-  Add back into portage.  Add check_license function.
-
-  06 Aug 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Making sure icon pixmap is put in /usr/share/pixmaps for the .desktop entry
-
-  05 Aug 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild:
-  Fixed my bad spelling
-
-  16 Jul 2003; Chris Gianelloni <wolf31o2@gentoo.org> rtcw-1.41.ebuild,
-  files/wolf-ded, files/wolf-ded.rc, files/wolfded, files/wolfded.rc,
-  files/wolfmp, files/wolfsp:
-  Add support for unpack_makeself, USE=dedicated, Gnome/KDE .desktop entries,
-  and rename dedicated files to match dedicated scheme
-
-*rtcw-1.41 (07 Jul 2003)
-
-  07 Jul 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by
-  Chris Gianelloni <wolf31o2@hotmail.com>
-  Frederic Mangeant <frederic.mangeant@free.fr>
-  #22151 #22626.

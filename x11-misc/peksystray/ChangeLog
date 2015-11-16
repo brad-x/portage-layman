@@ -1,83 +1,63 @@
 # ChangeLog for x11-misc/peksystray
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/peksystray/ChangeLog,v 1.20 2013/10/19 15:14:40 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Oct 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due desktop-wm removal
+*peksystray-0.4.0 (09 Aug 2015)
+*peksystray-0.2.1 (09 Aug 2015)
 
-  14 Jan 2010; Samuli Suominen <ssuominen@gentoo.org>
-  peksystray-0.4.0.ebuild, +files/peksystray-0.4.0-asneeded.patch:
-  Fix building with -Wl,--as-needed wrt #248577, thanks to Kacper Kowalik
-  for patch.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/peksystray-0.4.0-asneeded.patch, +metadata.xml,
+  +peksystray-0.2.1.ebuild, +peksystray-0.4.0.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Aug 2007; David Shakaryan <omp@gentoo.org>
-  +files/peksystray-0.4.0-ldadd.patch, peksystray-0.4.0.ebuild:
-  Fix AMD64 compile bug; thanks to Kenneth Prugh for patch. (bug #186504)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*peksystray-0.4.0 (24 Jul 2007)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jul 2007; David Shakaryan <omp@gentoo.org> +peksystray-0.4.0.ebuild:
-  Version bump. (bug #169278)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Jul 2007; David Shakaryan <omp@gentoo.org> peksystray-0.2.1.ebuild,
-  peksystray-0.3.0.ebuild:
-  Remove virtual/x11 from dependencies.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Feb 2007; Steve Dibb <beandog@gentoo.org> peksystray-0.2.1.ebuild,
-  peksystray-0.3.0.ebuild:
-  add ~amd64 and mulitlib support, bug 162530
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jun 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  peksystray-0.3.0.ebuild:
-  Restored dropped keywords.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*peksystray-0.3.0 (05 Jun 2006)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Jun 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +peksystray-0.3.0.ebuild:
-  Version bump, see bug #132552.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Feb 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  -files/peksystray-gcc3-mlsl.diff, -peksystray-0.2.ebuild,
-  peksystray-0.2.1.ebuild:
-  Fixed DEPEND for modular X.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Aug 2005; Michael Hanselmann <hansmi@gentoo.org>
-  peksystray-0.2.1.ebuild:
-  Stable on ppc.
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Jul 2005; David Holm <dholm@gentoo.org> peksystray-0.2.1.ebuild:
-  Added to ~ppc.
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=freshmeat
 
-  02 Jul 2005; Bryan Østergaard <kloeri@gentoo.org>
-  peksystray-0.2.1.ebuild:
-  Stable on alpha.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Jun 2005; Jonathan Smith <smithj@gentoo.org> peksystray-0.2.1.ebuild:
-  stable x86
-
-  30 Jan 2005; Tavis Ormandy <taviso@gentoo.org> peksystray-0.2.1.ebuild,
-  peksystray-0.2.ebuild:
-  configure.in doesnt check AC_PATH_X if set $x_libraries
-  explicitly set with --x-libraries. #79528
-
-  28 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-*peksystray-0.2.1 (23 Nov 2004)
-
-  23 Nov 2004; Mamoru KOMACHI <usata@gentoo.org> +metadata.xml,
-  +peksystray-0.2.1.ebuild:
-  Version bumped. Thanks to Thomas Kirchner <gentoo@halffull.org>; bug #71401.
-
-  19 Jun 2004; <pyrania@gentoo.org> peksystray-0.2.ebuild:
-  Removed default ${S}, added IUSE.
-
-  12 Jun 2004; Bryan Østergaard <kloeri@gentoo.org> peksystray-0.2.ebuild:
-  Stable on alpha.
-
-*peksystray-0.2 (10 Jan 2004)
-
-  10 Jan 2004; Tavis Ormandy <taviso@gentoo.org> peksystray-0.2.ebuild,
-  files/peksystray-gcc3-mlsl.diff:
-  Initial import.

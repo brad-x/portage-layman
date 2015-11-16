@@ -1,72 +1,57 @@
 # ChangeLog for app-emacs/remember
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/remember/ChangeLog,v 1.18 2014/02/23 09:28:02 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Feb 2014; Ulrich Müller <ulm@gentoo.org> remember-2.0.ebuild:
-  Update ebuild to EAPI 5. Specify LICENSE more precisely.
+*remember-2.0 (09 Aug 2015)
 
-  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> remember-2.0.ebuild:
-  Drop sparc keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/50remember-gentoo.el, +files/remember-1.9-make-elc.patch,
+  +metadata.xml, +remember-2.0.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Aug 2009; Ulrich Mueller <ulm@gentoo.org> remember-2.0.ebuild:
-  Add RESTRICT=test, fixes bug 279093.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Jan 2009; Christian Faulhammer <fauli@gentoo.org>
-  -remember-1.9-r1.ebuild:
-  clean up
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Jul 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*remember-2.0 (18 Apr 2008)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 Apr 2008; Ulrich Mueller <ulm@gentoo.org> +remember-2.0.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Josh Glover (jmglov, #206782) from metadata.xml.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Oct 2007; Christian Faulhammer <opfer@gentoo.org> -remember-1.9.ebuild:
-  clean up
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jun 2007; Ulrich Mueller <ulm@gentoo.org> remember-1.9-r1.ebuild:
-  Handle USE flags in src_compile.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*remember-1.9-r1 (25 Jun 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Jun 2007; Ulrich Mueller <ulm@gentoo.org>
-  +files/remember-1.9-make-elc.patch, +remember-1.9-r1.ebuild:
-  Add support for bbdb and planner local use flags, fixes bug #182423.
-
-  27 Apr 2007; Ulrich Mueller <ulm@gentoo.org> remember-1.9.ebuild:
-  Undo change of 26 Mar 2007, app-emacs/planner is needed. (Moved us into
-  PDEPEND of app-emacs/planner to avoid the dependency circle, #172137.)
-
-  23 Apr 2007; Ulrich Mueller <ulm@gentoo.org> files/50remember-gentoo.el,
-  remember-1.9.ebuild:
-  Removed redundant pkg_postinst and pkg_postrm, they are provided by
-  elisp.eclass. Autoload functions.
-
-  26 Mar 2007; Christian Faulhammer <opfer@gentoo.org> remember-1.9.ebuild:
-  correct circular dependency with app-emacs/planner, fixes bug 172137,
-  reported by Wolfgang Schnerring <wosc+gentoo@wosc.de>
-
-  13 Mar 2007; Christian Faulhammer <opfer@gentoo.org> remember-1.9.ebuild:
-  remove those automagic dependencies by just hard dependening on bbdb and
-  planner
-
-  28 Feb 2007; Simon Stelling <blubb@gentoo.org> remember-1.9.ebuild:
-  ~amd64; bug 163401
-
-  11 Feb 2007; Joseph Jezak <josejx@gentoo.org> remember-1.9.ebuild:
-  Marked ~ppc for bug #163401.
-
-  02 Feb 2007; Gustavo Zacarias <gustavoz@gentoo.org> remember-1.9.ebuild:
-  Keyworded ~sparc wrt #163401
-
-*remember-1.9 (31 Aug 2006)
-
-  31 Aug 2006; Josh Glover <jmglov@gentoo.org> +files/50remember-gentoo.el,
-  +metadata.xml, +remember-1.9.ebuild:
-  This package was submitted by Evan Monroig in bug #80418
+  Bug: https://bugs.gentoo.org/552720
 

@@ -1,117 +1,56 @@
 # ChangeLog for sys-apps/bar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/bar/ChangeLog,v 1.31 2011/08/14 14:04:19 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  14 Aug 2011; Justin Lecher <jlec@gentoo.org> -bar-1.10.9.ebuild,
-  -bar-1.11.0.ebuild:
-  Removed old versions
+*bar-1.11.1 (09 Aug 2015)
 
-  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> bar-1.10.9.ebuild,
-  bar-1.11.0.ebuild, bar-1.11.1.ebuild:
-  Drop sparc keyword
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bar-1.11.1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Aug 2011; Markus Meier <maekke@gentoo.org> bar-1.11.1.ebuild:
-  x86 stable, bug #375927
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jul 2011; Markos Chandras <hwoarang@gentoo.org> bar-1.11.1.ebuild:
-  Stable on amd64 wrt bug #375927
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bar-1.11.1 (19 Apr 2011)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Apr 2011; Tim Harder <radhermit@gentoo.org> +bar-1.11.1.ebuild:
-  Version bump. Update to EAPI 4.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Jan 2011; Justin Lecher <jlec@gentoo.org> bar-1.11.0.ebuild:
-  Corrected dec Make target, 350965
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Jan 2011; Justin Lecher <jlec@gentoo.org> bar-1.11.0.ebuild:
-  Removed installation of ChangeLog, #350931
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bar-1.11.0 (06 Jan 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jan 2011; Justin Lecher <jlec@gentoo.org> bar-1.10.9.ebuild,
-  +bar-1.11.0.ebuild:
-  Version Bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Jun 2009; Peter Volkov <pva@gentoo.org> -bar-1.10.3.ebuild:
-  Remove old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 May 2009; Tiago Cunha <tcunha@gentoo.org> bar-1.10.9.ebuild:
-  stable sparc, bug 271110
-
-  27 May 2009; Christian Faulhammer <fauli@gentoo.org> bar-1.10.9.ebuild:
-  stable x86, bug 271110
-
-  25 May 2009; Thomas Anderson <gentoofan23@gentoo.org> bar-1.10.9.ebuild:
-  stable amd64, bug 271110
-
-*bar-1.10.9 (27 Jan 2009)
-
-  27 Jan 2009; Peter Volkov <pva@gentoo.org> -bar-1.10.2.ebuild,
-  +bar-1.10.9.ebuild:
-  Version bump. Don't pre-stripped executable, bug #241242, thank Diego E.
-  'Flameeyes' Pettenò for report.
-
-  18 Apr 2007; <welp@gentoo.org> bar-1.10.3.ebuild:
-  Stable on amd64 wrt bug 175087
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  12 Feb 2006; Scott Stoddard <deltacow@gentoo.org> bar-1.10.3.ebuild:
-  ~amd64 added.
-
-  16 Jan 2006; Gustavo Zacarias <gustavoz@gentoo.org> bar-1.10.3.ebuild:
-  Stable on sparc
-
-  14 Dec 2005; Gustavo Zacarias <gustavoz@gentoo.org> bar-1.10.3.ebuild:
-  Fixed and keyworded ~sparc wrt #113392
-
-  05 Feb 2005; Aaron Walker <ka0ttic@gentoo.org> -bar-1.08.ebuild,
-  bar-1.10.3.ebuild:
-  Marked stable on x86 early due to nature of bug fixes over prev version.
-
-*bar-1.10.3 (19 Jan 2005)
-
-  19 Jan 2005; Aaron Walker <ka0ttic@gentoo.org> +bar-1.10.3.ebuild:
-  Version bump; fixes critical I/O bug that could cause data truncation.
-
-  09 Jan 2005; Aaron Walker <ka0ttic@gentoo.org> -bar-1.07.ebuild,
-  bar-1.10.2.ebuild:
-  Marked 1.10.2 stable on x86; removed old 1.07.
-
-  18 Dec 2004; Aaron Walker <ka0ttic@gentoo.org> bar-1.08.ebuild:
-  Never actually marked 1.08 stable.
-
-  11 Dec 2004; Sven Wegener <swegener@gentoo.org> bar-1.10.2.ebuild:
-  app-doc/doxygen only needs to be in DEPEND.
-
-*bar-1.10.2 (06 Dec 2004)
-
-  06 Dec 2004; Aaron Walker <ka0ttic@gentoo.org> metadata.xml,
-  -bar-1.06.ebuild, +bar-1.10.2.ebuild:
-  Version bump; cleaned up ebuild and added support for USE=doc. Marked 1.08
-  stable on x86. Also updated metadata for shell-tools.
-
-  30 Jun 2004; Aron Griffis <agriffis@gentoo.org> bar-1.06.ebuild,
-  bar-1.07.ebuild, bar-1.08.ebuild:
-  sync IUSE (missing), add sed-4 dep
-
-  02 Feb 2004; Heinrich Wendel <lanius@gentoo.org> bar-1.07.ebuild:
-  mark 1.07 x86
-
-*bar-1.08 (02 Feb 2004)
-
-  02 Feb 2004; Heinrich Wendel <lanius@gentoo.org> bar-1.08.ebuild:
-  version bump; fixed DEPEND
-
-*bar-1.07 (26 Dec 2003)
-
-  26 Dec 2003; Heinrich Wendel <lanius@gentoo.org> bar-1.07.ebuild:
-  Version bump; modified to use portage's CFLAGS
-
-*bar-1.06 (21 Nov 2003)
-
-  21 Nov 2003; <rphillips@gentoo.org> bar-1.06.ebuild:
-  new package
+  Bug: https://bugs.gentoo.org/552720
 

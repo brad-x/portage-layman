@@ -1,89 +1,64 @@
 # ChangeLog for dev-libs/qoauth
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/qoauth/ChangeLog,v 1.23 2015/02/22 18:32:01 mgorny Exp $
+# (auto-generated from git log)
 
-  22 Feb 2015; Michał Górny <mgorny@gentoo.org> qoauth-1.0.1.ebuild:
-  Update dependency on QCA plugins to use USE flags on app-crypt/qca:2
-  unconditionally, to provide a single sane path for dependency resolution. Bug
-  #541066.
+*qoauth-1.0.1 (09 Aug 2015)
 
-  28 Jan 2015; Johannes Huber <johu@gentoo.org> qoauth-1.0.1.ebuild:
-  Adjust dependencies to handle merged plugins in >=app-crypt/qca-2.1.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/qoauth-1.0.1-disable-ft.patch, +metadata.xml, +qoauth-1.0.1.ebuild:
+  proj/gentoo: Initial commit
 
-  02 Apr 2013; Agostino Sarubbo <ago@gentoo.org> qoauth-1.0.1.ebuild:
-  Stable for ppc64, wrt bug #462890
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> qoauth-1.0.1.ebuild:
-  Move Qt dependencies to the new category
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> qoauth-1.0.1.ebuild:
-  Mark ppc and ~ppc64. Per johu's request.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 May 2012; Davide Pesavento <pesa@gentoo.org> qoauth-1.0.1.ebuild:
-  EAPI=4
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 May 2012; Davide Pesavento <pesa@gentoo.org> qoauth-1.0.1.ebuild:
-  Use more qt4-r2 eclass features.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Feb 2012; nixnut <nixnut@gentoo.org> qoauth-1.0.1.ebuild:
-  ~ppc, preparing for #396359
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Feb 2012; Davide Pesavento <pesa@gentoo.org> -qoauth-1.0-r1.ebuild,
-  -qoauth-1.0.ebuild, metadata.xml:
-  Remove obsolete versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #278944
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> qoauth-1.0.1.ebuild:
+  Use https by default
 
-  08 Nov 2010; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0.1.ebuild:
-  Fixing bug #337643 for real. Missed sedding out test subdirectory when
-  test useflag is undefined.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Oct 2010; Christian Faulhammer <fauli@gentoo.org> qoauth-1.0.1.ebuild:
-  stable x86, bug 341277
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Oct 2010; Markos Chandras <hwoarang@gentoo.org> qoauth-1.0.1.ebuild:
-  Stable on amd64 wrt bug #341277
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Oct 2010; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0.1.ebuild,
-  +files/qoauth-1.0.1-disable-ft.patch:
-  Disable functional tests that require network connection and rely on
-  3rd party external server (bug #341267).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Oct 2010; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0.1.ebuild:
-  Adding x11-libs/qt-test conditional dependency to compile and run tests
-  (bug #337643).
+  Bug: https://bugs.gentoo.org/552720
 
-*qoauth-1.0.1 (01 Aug 2010)
-
-  01 Aug 2010; Dominik Kapusta <ayoy@gentoo.org> +qoauth-1.0.1.ebuild:
-  Version bump
-
-  20 Dec 2009; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0-r1.ebuild:
-  Porting to qt4-r2.eclass
-
-*qoauth-1.0-r1 (27 Nov 2009)
-
-  27 Nov 2009; Dominik Kapusta <ayoy@gentoo.org> +qoauth-1.0-r1.ebuild:
-  Adding static-libs to IUSE
-
-  02 Nov 2009; Dominik Kapusta <ayoy@gentoo.org> -qoauth-0.1.0.ebuild:
-  Removing 0.1.0 ebuild
-
-  02 Nov 2009; Markus Meier <maekke@gentoo.org> qoauth-1.0.ebuild:
-  amd64/x86 stable, bug #291430
-
-  03 Oct 2009; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0.ebuild,
-  metadata.xml:
-  Removing _debug suffix for debug builds - bug #287489
-
-*qoauth-1.0 (08 Aug 2009)
-
-  08 Aug 2009; Markos Chandras <hwoarang@gentoo.org> +qoauth-1.0.ebuild:
-  Version bump
-
-*qoauth-0.1.0 (14 Jul 2009)
-
-  14 Jul 2009; Markos Chandras <hwoarang@gentoo.org> +qoauth-0.1.0.ebuild,
-  +metadata.xml:
-  Initial commit of qoauth library

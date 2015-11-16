@@ -1,37 +1,136 @@
 # ChangeLog for app-editors/neovim
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/neovim/ChangeLog,v 1.6 2015/07/27 05:12:15 yngwin Exp $
+# (auto-generated from git log)
 
-*neovim-0.0.0_pre20150727 (27 Jul 2015)
+*neovim-0.0.0_pre20150727 (09 Aug 2015)
+*neovim-0.0.0_pre20150627 (09 Aug 2015)
 
-  27 Jul 2015; Ben de Groot <yngwin@gentoo.org>
-  +neovim-0.0.0_pre20150727.ebuild, -neovim-0.0.0_pre20150225.ebuild,
-  -neovim-0.0.0_pre20150329.ebuild, -neovim-0.0.0_pre20150505.ebuild:
-  new development snapshot; remove older
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/nvimrc,
+  +metadata.xml, +neovim-0.0.0_pre20150627.ebuild,
+  +neovim-0.0.0_pre20150727.ebuild:
+  proj/gentoo: Initial commit
 
-*neovim-0.0.0_pre20150627 (27 Jun 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Jun 2015; Ben de Groot <yngwin@gentoo.org>
-  +neovim-0.0.0_pre20150627.ebuild:
-  new development snapshot
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*neovim-0.0.0_pre20150505 (06 May 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 May 2015; Ben de Groot <yngwin@gentoo.org>
-  +neovim-0.0.0_pre20150505.ebuild:
-  new development snapshot
+  14 Aug 2015; Ben de Groot <yngwin@gentoo.org> files/nvimrc:
+  refactor our default nvimrc
 
-*neovim-0.0.0_pre20150329 (29 Mar 2015)
+  Since neovim sets many sensible deafults now (see [1]), we can drop most
+  general settings that were copied from app-editors/vim-core's vimrc.
+  Also apply stripping whitespace only to *.e{build,class} and give users an
+  easy way to turn that off (bug 557352).
 
-  29 Mar 2015; Ben de Groot <yngwin@gentoo.org>
-  +neovim-0.0.0_pre20150329.ebuild:
-  version bump
+  1: https://github.com/neovim/neovim/issues/2676
 
-*neovim-0.0.0_pre20150225 (26 Feb 2015)
+  Package-Manager: portage-2.2.20.1
 
-  26 Feb 2015; Ben de Groot <yngwin@gentoo.org> +files/nvimrc, +metadata.xml,
-  +neovim-0.0.0_pre20150225.ebuild:
-  initial commit
+*neovim-0.0.0_pre20150814 (14 Aug 2015)
+
+  14 Aug 2015; Ben de Groot <yngwin@gentoo.org>
+  +neovim-0.0.0_pre20150814.ebuild:
+  new snapshot
+
+  Add in eclass as bash filetype (as previously done in nvimrc).
+
+  Package-Manager: portage-2.2.20.1
+
+  14 Aug 2015; Ben de Groot <yngwin@gentoo.org> metadata.xml,
+  neovim-0.0.0_pre20150814.ebuild:
+  implement nvimpager useflag
+
+  Package-Manager: portage-2.2.20.1
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  neovim-0.0.0_pre20150627.ebuild, neovim-0.0.0_pre20150727.ebuild,
+  neovim-0.0.0_pre20150814.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*neovim-0.0.0_pre20151022 (23 Oct 2015)
+
+  23 Oct 2015; Ole Reifschneider <tranquility@gentoo.org>
+  +neovim-0.0.0_pre20151022.ebuild:
+  add new snapshot and small improvements
+
+  * use upstream version of libvterm (the fork is no longer needed)
+  * set build type to RelWithDebInfo
+
+  Package-Manager: portage-2.2.23
+
+*neovim-0.0.0_pre20151025 (25 Oct 2015)
+
+  25 Oct 2015; Ole Reifschneider <tranquility@gentoo.org>
+  +files/automagic-jemalloc.patch, metadata.xml,
+  +neovim-0.0.0_pre20151025.ebuild:
+  Add new snapshot and patch automagic jemalloc dep
+
+  Package-Manager: portage-2.2.23
+
+  25 Oct 2015; Ole Reifschneider <tranquility@gentoo.org>
+  neovim-0.0.0_pre20151025.ebuild:
+  Add missing missing eutils eclass
+
+  It did work without it because cmake-utils inherited it.
+
+  Package-Manager: portage-2.2.23
+
+*neovim-0.1.0 (01 Nov 2015)
+
+  01 Nov 2015; Ole Reifschneider <tranquility@gentoo.org> +files/sysinit.vim,
+  +neovim-0.1.0.ebuild:
+  Bump version to 0.1.0
+
+  Package-Manager: portage-2.2.23
+
+  01 Nov 2015; Ole Reifschneider <tranquility@gentoo.org>
+  -neovim-0.0.0_pre20150627.ebuild, -neovim-0.0.0_pre20150727.ebuild,
+  -neovim-0.0.0_pre20150814.ebuild, -neovim-0.0.0_pre20151022.ebuild:
+  Remove old versions
+
+  Package-Manager: portage-2.2.23
+
+  01 Nov 2015; Ole Reifschneider <tranquility@gentoo.org> neovim-0.1.0.ebuild:
+  Remove obsolete eclass
+
+  Package-Manager: portage-2.2.23
+

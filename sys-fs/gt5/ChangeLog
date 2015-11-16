@@ -1,51 +1,57 @@
 # ChangeLog for sys-fs/gt5
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/gt5/ChangeLog,v 1.12 2012/05/27 09:07:48 angelos Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  27 May 2012; Christoph Mende <angelos@gentoo.org> -gt5-1.4.0-r1.ebuild:
-  Remove old
+*gt5-1.4.0-r2 (09 Aug 2015)
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gt5-1.4.0-r2.ebuild:
-  x86 stable wrt bug #397227
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gt5-1.4.0-bash-shabang.patch, +files/gt5-1.4.0-empty-dirs.patch,
+  +gt5-1.4.0-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> gt5-1.4.0-r2.ebuild:
-  Stable for amd64, wrt bug #397227
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gt5-1.4.0-r2 (19 Feb 2011)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Feb 2011; <angelos@gentoo.org> +gt5-1.4.0-r2.ebuild,
-  +files/gt5-1.4.0-empty-dirs.patch:
-  Fixed "directory seems to be empty" (bug #350114)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Jun 2008; Raúl Porcel <armin76@gentoo.org> gt5-1.4.0-r1.ebuild:
-  x86 stable wrt #225353
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Oct 2007; Christoph Mende <angelos@gentoo.org> -gt5-1.3d.ebuild:
-  Cleanup
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Oct 2007; Markus Ullmann <jokey@gentoo.org> gt5-1.4.0-r1.ebuild:
-  testing sparc and x86
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Oct 2007; Christoph Mende <angelos@gentoo.org> gt5-1.4.0-r1.ebuild:
-  Stable on amd64
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gt5-1.4.0-r1 (16 Sep 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Sep 2007; Christoph Mende <angelos@gentoo.org>
-  +files/gt5-1.4.0-bash-shabang.patch, -gt5-1.4.0.ebuild,
-  +gt5-1.4.0-r1.ebuild:
-  Changed interpreter to bash
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*gt5-1.4.0 (02 Sep 2007)
-
-  02 Sep 2007; Christoph Mende <angelos@gentoo.org> +gt5-1.4.0.ebuild:
-  Version bump
-
-  01 Aug 2007; Christoph Mende <angelos@gentoo.org> gt5-1.3d.ebuild:
-  Stable on amd64
-
-*gt5-1.3d (21 Jun 2007)
-
-  21 Jun 2007; Christoph Mende <angelos@gentoo.org> +gt5-1.3d.ebuild:
-  Initial import, thanks to tsattler@gmx.de
+  Bug: https://bugs.gentoo.org/552720
 

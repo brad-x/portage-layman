@@ -1,104 +1,56 @@
 # ChangeLog for dev-libs/serdisplib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/serdisplib/ChangeLog,v 1.22 2015/06/09 14:50:56 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*serdisplib-1.97.9 (09 Aug 2015)
 
-  07 Mar 2014; Chris Reffett <creffett@gentoo.org> -serdisplib-1.97.6.ebuild:
-  Remove old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +serdisplib-1.97.9.ebuild:
+  proj/gentoo: Initial commit
 
-  05 Mar 2014; Agostino Sarubbo <ago@gentoo.org> serdisplib-1.97.9.ebuild:
-  Stable for ppc, wrt bug #500644
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Mar 2014; Pacho Ramos <pacho@gentoo.org> serdisplib-1.97.9.ebuild:
-  amd64 stable, bug #500644
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Feb 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  serdisplib-1.97.9.ebuild:
-  x86 stable wrt bug #500644
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Feb 2014; Michael Sterrett <mr_bones_@gentoo.org>
-  -serdisplib-1.97.5.ebuild:
-  old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 May 2013; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Removing removed lcd herd from metadata
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 May 2012; Samuli Suominen <ssuominen@gentoo.org> serdisplib-1.97.5.ebuild,
-  serdisplib-1.97.6.ebuild, serdisplib-1.97.9.ebuild:
-  Restrict to SLOT="0" of virtual/libusb because the package has no support for
-  libusb-1.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> serdisplib-1.97.5.ebuild,
-  serdisplib-1.97.6.ebuild, serdisplib-1.97.9.ebuild:
-  Use virtual/libusb instead of dev-libs/libusb.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*serdisplib-1.97.9 (06 May 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 May 2012; Pacho Ramos <pacho@gentoo.org> +serdisplib-1.97.9.ebuild,
-  -serdisplib-1.97.7.ebuild:
-  Version bump, remove old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 May 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  lcd herd is empty
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #158470
-
-*serdisplib-1.97.7 (16 Oct 2007)
-
-  16 Oct 2007; Robert Buchholz <rbu@gentoo.org> serdisplib-1.97.5.ebuild,
-  serdisplib-1.97.6.ebuild, +serdisplib-1.97.7.ebuild:
-  Version bump, introducing new devices and some bugfixes.
-  Also fixed a quoting issue.
-
-  29 Aug 2007; Tobias Scherbaum <dertobi123@gentoo.org>
-  serdisplib-1.97.6.ebuild:
-  ppc stable, bug #185693
-
-  11 Aug 2007; Steve Dibb <beandog@gentoo.org> serdisplib-1.97.5.ebuild,
-  serdisplib-1.97.6.ebuild:
-  amd64 stable, bug 185693
-
-*serdisplib-1.97.6 (09 Aug 2007)
-
-  09 Aug 2007; Robert Buchholz <rbu@gentoo.org> +serdisplib-1.97.6.ebuild:
-  Version bump, introducing:
-    * Fixed linking bugs (upstream)
-    * New Nokia drivers (nokcol, PCD8544)
-    * New Osram Pictiva drivers
-
-  23 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  serdisplib-1.97.5.ebuild:
-  stable x86, bug 185693
-
-  03 Jun 2007; Robert Buchholz <rbu@gentoo.org> serdisplib-1.97.5.ebuild:
-  Added ~ppc
-
-  30 Apr 2007; Robert Buchholz <rbu@gentoo.org> metadata.xml,
-  -serdisplib-1.97.4.ebuild, serdisplib-1.97.5.ebuild:
-  gd needs to be built with USE="jpeg png" for serdisp to compile, drop old
-  version
-
-*serdisplib-1.97.5 (11 Mar 2007)
-
-  11 Mar 2007; Robert Buchholz <rbu@gentoo.org> +serdisplib-1.97.5.ebuild:
-  Version bump
-
-*serdisplib-1.97.4 (24 Feb 2007)
-
-  24 Feb 2007; Robert Buchholz <rbu@gentoo.org> metadata.xml,
-  -serdisplib-1.97.2.ebuild, +serdisplib-1.97.4.ebuild:
-  Version bump and amd64 keywords
-
-*serdisplib-1.97.2 (18 Dec 2006)
-
-  18 Dec 2006; Markus Ullmann <jokey@gentoo.org> +metadata.xml,
-  +serdisplib-1.97.2.ebuild:
-  Import from dev overlay
-
-  11 Dec 2006; Robert Buchholz (rbu) <rob@thetruth.de>
-  +serdisplib-1.97.2.ebuild, +metadata.xml:
-  Initial version of serdisplib. Thanks to Erik Wasser for providing the first
-  ebuild in bug #130712

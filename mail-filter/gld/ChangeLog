@@ -1,219 +1,63 @@
 # ChangeLog for mail-filter/gld
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/gld/ChangeLog,v 1.55 2014/12/28 15:54:31 titanofold Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> gld-1.7-r2.ebuild:
-  Rename virtual/postgresql to dev-db/postgresql
+*gld-1.7-r2 (09 Aug 2015)
 
-  03 Nov 2014; Aaron W. Swenson <titanofold@gentoo.org> gld-1.7-r2.ebuild:
-  Update PostgreSQL dependencies and/or checks to virtual/postgresql.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/gld.rc,
+  +files/tables.sql, +gld-1.7-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Nov 2012; Eray Aslan <eras@gentoo.org> -gld-1.7-r1.ebuild:
-  Remove old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gld-1.7-r2.ebuild:
-  Stable for x86, wrt bug #441348
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gld-1.7-r2.ebuild:
-  Stable for amd64, wrt bug #441348
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Nov 2012; Anthony G. Basile <blueness@gentoo.org> gld-1.7-r2.ebuild:
-  stable ppc, bug #441348
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*gld-1.7-r2 (12 Aug 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Aug 2012; Eray Aslan <eras@gentoo.org> +gld-1.7-r2.ebuild,
-  files/tables.sql:
-  Change ip column to 39 chars in sql tables - bug #430384
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 Jun 2011; Eray Aslan <eras@gentoo.org> -gld-1.7.ebuild:
-  Remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jun 2011; Brent Baude <ranger@gentoo.org> gld-1.7-r1.ebuild:
-  Marking gld-1.7-r1 ppc for bug 371013
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Jun 2011; Markus Meier <maekke@gentoo.org> gld-1.7-r1.ebuild:
-  x86 stable, bug #371013
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Jun 2011; Markos Chandras <hwoarang@gentoo.org> gld-1.7-r1.ebuild:
-  Stable on amd64 wrt bug #371013
+  Bug: https://bugs.gentoo.org/552720
 
-*gld-1.7-r1 (11 Aug 2010)
+*gld-1.7-r3 (11 Oct 2015)
 
-  11 Aug 2010; Jeroen Roovers <jer@gentoo.org> +gld-1.7-r1.ebuild:
-  Respect LDFLAGS (bug #331785). Move dosed scripts to src_prepare and make
-  sure they are run properly. Respect CC. Respect CFLAGS. Whitespace.
+  11 Oct 2015; Anthony G. Basile <blueness@gentoo.org> +gld-1.7-r3.ebuild:
+  add libressl support
 
-  17 Jun 2010; Patrick Lauer <patrick@gentoo.org> gld-1.7.ebuild:
-  Migrating away from deprecated postgres virtuals
+  Package-Manager: portage-2.2.20.1
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> gld-1.7.ebuild:
-  Remove virtual/libc
-
-  11 Jul 2009; Torsten Veller <tove@gentoo.org> gld-1.7.ebuild:
-  README.gz -> README (#272910)
-
-  15 Jun 2008; Tobias Scherbaum <dertobi123@gentoo.org>
-  -files/gld-1.5.2-mxgrey-fix.patch, -files/Makefile.in, -gld-1.5.2.ebuild,
-  -gld-1.6.ebuild, gld-1.7.ebuild:
-  Remove useless dep on mail-mta/postfix (#225965), fix quoting, cleanup
-
-  21 May 2008; Tiziano Müller <dev-zero@gentoo.org> gld-1.5.2.ebuild,
-  gld-1.6.ebuild, gld-1.7.ebuild:
-  Changed dependency for postgresql from dev-db/postgresql to
-  virtual/postgresql-server
-
-  16 Jun 2007; Christoph Mende <angelos@gentoo.org> gld-1.7.ebuild:
-  Stable on amd64 wrt bug 160067
-
-  15 Jun 2007; Tobias Scherbaum <dertobi123@gentoo.org> ChangeLog:
-  ppc stable, bug #160067
-
-  11 Jun 2007; Christian Faulhammer <opfer@gentoo.org> gld-1.7.ebuild:
-  stable x86, bug 160067
-
-  18 Mar 2007; Marius Mauch <genone@gentoo.org> gld-1.5.2.ebuild,
-  gld-1.6.ebuild, gld-1.7.ebuild:
-  Replacing einfo with elog
-
-  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> gld-1.5.2.ebuild,
-  gld-1.6.ebuild, gld-1.7.ebuild:
-  dev-db/mysql => virtual/mysql
-
-*gld-1.7 (03 May 2006)
-
-  03 May 2006; Tom Martin <slarti@gentoo.org> +files/tables.sql,
-  +gld-1.7.ebuild:
-  Version bump to 1.7; resolve bug #130802 while we're here. Thanks to
-  Alexander Skwar <askwar@digitalprojects.com> for the updated
-  tables.sql.
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org> files/digest-gld-1.5.2,
-  files/digest-gld-1.6, Manifest:
-  Fixing SHA256 digest, pass four
-
-  16 Apr 2006; Michael Hanselmann <hansmi@gentoo.org> gld-1.6.ebuild:
-  Stable on ppc.
-
-  08 Apr 2006; Joshua Jackson <tsunam@gentoo.org> gld-1.6.ebuild:
-  Stable on x86; bug #124788
-
-  25 Nov 2005; Tom Martin <slarti@gentoo.org> gld-1.6.ebuild:
-  Stable on amd64, resolves bug #113549.
-
-  21 Oct 2005; Tom Martin <slarti@gentoo.org>
-  files/gld-1.5.2-mxgrey-fix.patch:
-  Updated patch. Thanks to <kyberneticist@yahoo.com> in bug #108900.
-
-  15 Oct 2005; Tom Martin <slarti@gentoo.org>
-  +files/gld-1.5.2-mxgrey-fix.patch:
-  Accidentally removed a needed patch in the purge a few days ago. Resolves
-  bug #108900.
-
-*gld-1.6 (08 Oct 2005)
-
-  08 Oct 2005; Tom Martin <slarti@gentoo.org>
-  -files/gld-1.5.2-mxgrey-fix.patch, -gld-1.4.ebuild, -gld-1.5.ebuild,
-  -gld-1.5-r1.ebuild, -gld-1.5-r2.ebuild, +gld-1.6.ebuild:
-  Version bump to 1.6 for bug 108124 and also a purge.
-
-  21 Aug 2005; Tom Martin <slarti@gentoo.org>
-  +files/gld-1.5.2-mxgrey-fix.patch, gld-1.5.2.ebuild:
-  Applied patch from martinsw@linux-net.dnsalias.net to resolve bug 102769.
-
-  14 Aug 2005; Michael Hanselmann <hansmi@gentoo.org> gld-1.5.2.ebuild:
-  Stable on ppc.
-
-  01 Jul 2005; Andrej Kacian <ticho@gentoo.org> gld-1.5.2.ebuild:
-  Stable on x86 and amd64. Bug #97619, by Alexander Stoll <as at
-  ha-networks.com>.
-
-  18 Jun 2005; Andrej Kacian <ticho@gentoo.org> files/gld.rc:
-  Initscript provides "postfix_graylist", so postfix can safely start after
-  gld. Bug #55705, by Duncan Hill <gentoo-bugs at nacnud.force9.co.uk>.
-
-  05 Jun 2005; Michael Hanselmann <hansmi@gentoo.org> gld-1.5.ebuild:
-  Stable on ppc.
-
-  28 Apr 2005; Andrej Kacian <ticho@gentoo.org> -gld-1.3.ebuild:
-  Removed ebuild because distfile is no longer available.
-
-*gld-1.5.2 (21 Apr 2005)
-
-  21 Apr 2005; Tom Martin <slarti@gentoo.org> +gld-1.5.2.ebuild:
-  Version bump. Resolves bug 88971 in the process. Thanks to Benjamin Smee
-  <ben@disciplina.net> for the fix.
-
-*gld-1.5-r2 (20 Apr 2005)
-
-  20 Apr 2005; Tom Martin <slarti@gentoo.org> files/gld.rc,
-  gld-1.5-r1.ebuild, +gld-1.5-r2.ebuild:
-  Update init script dependencies, bug 88574. Also, fix some trailing whitespace.
-
-  16 Apr 2005; Tom Martin <slarti@gentoo.org> gld-1.5-r1.ebuild:
-  Fix the handling of --with-pgsql. There was no --without-pgsql, and it seems
-  that adding this to econf via $(use_with) was in fact making it install
-  *with* postgres.
-
-  16 Apr 2005; Tom Martin <slarti@gentoo.org> gld-1.5.ebuild,
-  gld-1.5-r1.ebuild:
-  Addition on MY_P to both stable and testing versions. It seems upstream has
-  been changing the contents of tarballs while the name is constant,
-  preventing either version from being built. Also, add postgres to IUSE for
-  1.5-r1, I forgot the first time around.
-
-*gld-1.5-r1 (14 Apr 2005)
-
-  14 Apr 2005; Tom Martin <slarti@gentoo.org> +gld-1.5-r1.ebuild:
-  Revision bump to add postgresql support. Tidied installation of SQL files.
-
-  13 Apr 2005; Andrej Kacian <ticho@gentoo.org> gld-1.5.ebuild:
-  Stable on amd64, security bug #88904.
-
-  13 Apr 2005; Andrej Kacian <ticho@gentoo.org> gld-1.5.ebuild:
-  Fix sql files install location.
-
-*gld-1.5 (13 Apr 2005)
-
-  13 Apr 2005; Andrej Kacian <ticho@gentoo.org> +gld-1.5.ebuild:
-  Version bump due to security bug #88904. Adjust default configuration to be
-  more security-conscious.
-
-  13 Nov 2004; Tom Martin <slarti@gentoo.org> gld-1.3.ebuild,
-  gld-1.4.ebuild:
-  newexe -> newinitd for initscripts.
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org> gld-1.4.ebuild:
-  Stable on amd64.
-
-  25 Sep 2004; Tom Martin <slarti@gentoo.org> gld-1.3.ebuild:
-  Stable on amd64.
-
-  25 Sep 2004; Andrej Kacian <ticho@gentoo.org> gld-1.3.ebuild,
-  gld-1.4.ebuild:
-  Stable on x86.
-
-  31 Aug 2004; David Holm <dholm@gentoo.org> gld-1.4.ebuild:
-  Added to ~ppc.
-
-*gld-1.4 (30 Aug 2004)
-
-  30 Aug 2004; Tom Martin <slarti@gentoo.org> +gld-1.4.ebuild:
-  Version bump to 1.4. Thanks to David Holm <dholm@gentoo.org> for reporting in
-  bug 62210.
-
-  13 Aug 2004; Tom Martin <slarti@gentoo.org> gld-1.3.ebuild:
-  Make RDEPEND include DEPEND.
-
-  11 Aug 2004; Tom Martin <slarti@gentoo.org> gld-1.3.ebuild:
-  Fixed DEPEND.
-
-  11 Aug 2004; Tom Martin <slarti@gentoo.org> gld-1.3.ebuild, files/gld.rc:
-  Made the rc-script more verbose, fixed an option order problem with
-  start-stop-daemon. Thanks Tuan Van <langthang@gentoo.org for patch. Added ~x86
-  keyword on behalf of Tuan too.
-
-*gld-1.3 (10 Aug 2004)
-
-  10 Aug 2004; Tom Martin <slarti@gentoo.org> +gld-1.3.ebuild:
-  Initial import. I can only test on amd64, so it lacks [~]x86 for the moment.

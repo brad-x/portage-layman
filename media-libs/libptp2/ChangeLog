@@ -1,107 +1,58 @@
 # ChangeLog for media-libs/libptp2
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libptp2/ChangeLog,v 1.25 2014/08/10 21:10:16 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> libptp2-1.1.10.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*libptp2-1.1.10 (09 Aug 2015)
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #34534
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libptp2-1.1.0-gcc41.patch, +files/libptp2-1.1.0-libusbversion.patch,
+  +files/libptp2-1.1.0-parallel.patch, +files/libptp2-1.1.10-configure.patch,
+  +files/libptp2-1.1.10-makefile.patch, +libptp2-1.1.10.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  20 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> libptp2-1.1.10.ebuild:
-  Fix libusb depend to correct SLOT.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Nov 2009; Markus Meier <maekke@gentoo.org> libptp2-1.1.10.ebuild:
-  amd64 stable, bug #284445
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Jun 2008; Daniel Black <dragonheart@gentoo.org> -libptp2-1.1.0.ebuild:
-  purge 1.1.0
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Jun 2008; Christian Faulhammer <opfer@gentoo.org>
-  libptp2-1.1.10.ebuild:
-  stable x86, bug 228543
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Jun 2008; Markus Rothe <corsair@gentoo.org> libptp2-1.1.10.ebuild:
-  Stable on ppc64; bug #228543
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Jun 2008; nixnut <nixnut@gentoo.org> libptp2-1.1.10.ebuild:
-  Stable on ppc wrt bug 228543
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jun 2008; Daniel Black <dragonheart@gentoo.org>
-  files/libptp2-1.1.10-makefile.patch:
-  autotools fixed thanks Diego - bug #226753
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*libptp2-1.1.10 (28 Dec 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Dec 2007; Daniel Black <dragonheart@gentoo.org>
-  +files/libptp2-1.1.10-configure.patch,
-  +files/libptp2-1.1.10-makefile.patch, +libptp2-1.1.10.ebuild:
-  version bump as requested by cmuelle8 and Wolfgang Goetz in bug #202831
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Jul 2006; Daniel Black <dragonheart@gentoo.org>
-  -files/libptp2-1.0.1-libusbversion.patch,
-  -files/libptp2-1.0.2-libusbversion.patch,
-  -files/libptp2-1.0.2-parallel.patch, -libptp2-1.0.1.ebuild,
-  -libptp2-1.0.2.ebuild, libptp2-1.1.0.ebuild:
-  improved description (bug #140720) suggested by Christian 'Opfer' Faulhammer
-  and removed older versions
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Jul 2006; Joshua Jackson <tsunam@gentoo.org> libptp2-1.1.0.ebuild:
-  Stable x86; bug #140720
-
-  22 Jul 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  libptp2-1.1.0.ebuild:
-  ppc stable, bug #140720
-
-  20 Jul 2006; Markus Rothe <corsair@gentoo.org> libptp2-1.1.0.ebuild:
-  Stable on ppc64; bug #140720
-
-  09 May 2006; Jon Hood <squinky86@gentoo.org> libptp2-1.1.0.ebuild:
-  Add ~amd64, #132678
-
-*libptp2-1.1.0 (07 Jan 2006)
-
-  07 Jan 2006; Marcelo Goes <vanquirius@gentoo.org>
-  +files/libptp2-1.1.0-gcc41.patch,
-  +files/libptp2-1.1.0-libusbversion.patch,
-  +files/libptp2-1.1.0-parallel.patch, +libptp2-1.1.0.ebuild:
-  1.1.0 version bump. Ported existing patches, added gcc-4.1 patch. It should
-  fix bug 118161.
-
-  12 Sep 2005; Michael Hanselmann <hansmi@gentoo.org> libptp2-1.0.2.ebuild:
-  Stable on ppc.
-
-  07 Sep 2005; Markus Rothe <corsair@gentoo.org> libptp2-1.0.2.ebuild:
-  Stable on ppc64
-
-  03 Sep 2005; Daniel Black <dragonheart@gentoo.org>
-  +files/libptp2-1.0.2-parallel.patch, libptp2-1.0.2.ebuild:
-  fixed parallel make (bug #104708). x86 stable on 1.0.2. Thanks Marco Nierlich
-
-*libptp2-1.0.2 (16 Jun 2005)
-
-  16 Jun 2005; Daniel Black <dragonheart@gentoo.org>
-  +files/libptp2-1.0.1-libusbversion.patch,
-  +files/libptp2-1.0.2-libusbversion.patch, libptp2-1.0.1.ebuild,
-  +libptp2-1.0.2.ebuild:
-  patch to make work with libusb-0.1.10a (bug #95545) thanks to Jon White.
-  Version bump also
-
-  26 Jan 2005; Markus Rothe <corsair@gentoo.org> libptp2-1.0.1.ebuild:
-  Stable on ppc64
-
-  18 Dec 2004; Markus Rothe <corsair@gentoo.org> libptp2-1.0.1.ebuild:
-  added ~ppc64 to KEYWORDS
-
-  20 Nov 2004; Daniel Black <dragonheart@gentoo.org> libptp2-1.0.1.ebuild:
-  ppc keyword
-
-  30 Aug 2004; David Holm <dholm@gentoo.org> libptp2-1.0.1.ebuild:
-  Added to ~ppc.
-
-*libptp2-1.0.1 (15 Aug 2004)
-
-  15 Aug 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  +libptp2-1.0.1.ebuild:
-  Initial import. Ebuild by Enrico Morelli <morelli@cerm.unifi.it> in bug
-  #52956. Currently parallel make fails. Bug lodged upstream

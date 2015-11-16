@@ -1,124 +1,91 @@
 # ChangeLog for dev-libs/libgit2-glib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgit2-glib/ChangeLog,v 1.27 2015/07/26 02:27:25 tetromino Exp $
+# (auto-generated from git log)
 
-  26 Jul 2015; Alexandre Rostovtsev <tetromino@gentoo.org>
-  libgit2-glib-0.22.0.ebuild, libgit2-glib-0.22.8.ebuild:
-  Incompatible with libgit2-0.23 due to API changes (bug #555914, thanks to
-  Mike Auty).
+*libgit2-glib-0.22.8 (09 Aug 2015)
+*libgit2-glib-0.22.0 (09 Aug 2015)
+*libgit2-glib-0.0.24 (09 Aug 2015)
+*libgit2-glib-0.0.16 (09 Aug 2015)
+*libgit2-glib-0.0.12 (09 Aug 2015)
 
-  15 May 2015; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.24.ebuild:
-  amd64/x86 stable, bug #530272
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libgit2-glib-0.0.24-automagic-ssh.patch,
+  +files/libgit2-glib-0.22.0-automagic-ssh.patch, +libgit2-glib-0.0.12.ebuild,
+  +libgit2-glib-0.0.16.ebuild, +libgit2-glib-0.0.24.ebuild,
+  +libgit2-glib-0.22.0.ebuild, +libgit2-glib-0.22.8.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libgit2-glib-0.22.8 (01 May 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 May 2015; Gilles Dartiguelongue <eva@gentoo.org>
-  +libgit2-glib-0.22.8.ebuild:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> libgit2-glib-0.0.12.ebuild,
-  libgit2-glib-0.0.16.ebuild:
-  Drop old Python implementations
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Jan 2015; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.24.ebuild,
-  libgit2-glib-0.22.0.ebuild:
-  Add a reference to upstream bug report and make the dependency of 0.0.24
-  stricter
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*libgit2-glib-0.22.0 (20 Jan 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Jan 2015; Rémi Cardona <remi@gentoo.org> +libgit2-glib-0.22.0.ebuild,
-  +files/libgit2-glib-0.22.0-automagic-ssh.patch:
-  Bump to 0.22.0, refresh automagic ssh patch, see bug #536830.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  libgit2-glib-0.0.24.ebuild:
-  Raise minimum vala API to 0.22. Drop deprecated python3.2 support.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Nov 2014; Alexandre Rostovtsev <tetromino@gentoo.org>
-  libgit2-glib-0.0.24.ebuild:
-  Enable vala by default for gitg
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libgit2-glib-0.0.24 (24 Nov 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Nov 2014; Alexandre Rostovtsev <tetromino@gentoo.org>
-  +libgit2-glib-0.0.24.ebuild, +files/libgit2-glib-0.0.24-automagic-ssh.patch,
-  metadata.xml:
-  Version bump, now covers more of libgit2's API
+  Bug: https://bugs.gentoo.org/552720
 
-*libgit2-glib-0.0.16 (24 Jun 2014)
+  07 Sep 2015; Mikle Kolyada <zlogene@gentoo.org> libgit2-glib-0.22.8.ebuild:
+  amd64 stable wrt bug #551826
 
-  24 Jun 2014; Alexandre Rostovtsev <tetromino@gentoo.org>
-  libgit2-glib-0.0.12.ebuild, -libgit2-glib-0.0.14.ebuild,
-  +libgit2-glib-0.0.16.ebuild:
-  Version bump with crasher fix. Require <libgit2-0.21 for 0.0.12 due to API
-  changes.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
 
-*libgit2-glib-0.0.14 (22 Jun 2014)
+  12 Sep 2015; Agostino Sarubbo <ago@gentoo.org> libgit2-glib-0.22.8.ebuild:
+  x86 stable wrt bug #551826
 
-  22 Jun 2014; Justin Lecher <jlec@gentoo.org> +libgit2-glib-0.0.14.ebuild,
-  metadata.xml:
-  Version Bump
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  26 Apr 2014; Pacho Ramos <pacho@gentoo.org> -libgit2-glib-0.0.10.ebuild,
-  -libgit2-glib-0.0.6.ebuild:
-  drop old
+*libgit2-glib-0.23.6 (15 Nov 2015)
 
-  09 Mar 2014; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.12.ebuild:
-  x86 stable, bug 499954
-
-  09 Mar 2014; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.12.ebuild:
-  amd64 stable, bug 499954
-
-*libgit2-glib-0.0.12 (08 Mar 2014)
-
-  08 Mar 2014; Pacho Ramos <pacho@gentoo.org> +libgit2-glib-0.0.12.ebuild:
+  15 Nov 2015; Pacho Ramos <pacho@gentoo.org> +libgit2-glib-0.23.6.ebuild:
   Version bump
 
-  22 Feb 2014; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.10.ebuild:
-  Fix wrong commit, bug 502160
+  Package-Manager: portage-2.2.24
 
-  22 Feb 2014; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.10.ebuild:
-  arch stable, bug 888
+  15 Nov 2015; Pacho Ramos <pacho@gentoo.org>
+  -files/libgit2-glib-0.0.24-automagic-ssh.patch,
+  -files/libgit2-glib-0.22.0-automagic-ssh.patch, -libgit2-glib-0.0.12.ebuild,
+  -libgit2-glib-0.0.16.ebuild, -libgit2-glib-0.0.24.ebuild,
+  -libgit2-glib-0.22.0.ebuild:
+  Drop old
 
-  09 Feb 2014; Gilles Dartiguelongue <eva@gentoo.org>
-  libgit2-glib-0.0.10.ebuild:
-  Add pkgconfig to DEPEND and a version to gtk-doc-am dependency.
+  Package-Manager: portage-2.2.24
 
-*libgit2-glib-0.0.10 (08 Feb 2014)
-
-  08 Feb 2014; Justin Lecher <jlec@gentoo.org> +libgit2-glib-0.0.10.ebuild:
-  Version Bump, #497518
-
-  08 Dec 2013; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.6.ebuild:
-  x86 stable, bug #478252
-
-  08 Dec 2013; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.6.ebuild:
-  Sometimes repository test gets stuck, check again on next major release
-
-  30 Nov 2013; Pacho Ramos <pacho@gentoo.org> libgit2-glib-0.0.6.ebuild:
-  amd64 stable, bug #478252
-
-  13 Oct 2013; Pacho Ramos <pacho@gentoo.org> -libgit2-glib-0.0.4.ebuild,
-  libgit2-glib-0.0.6.ebuild:
-  Also compatible with python3_3
-
-  25 Aug 2013; Markus Meier <maekke@gentoo.org> libgit2-glib-0.0.6.ebuild:
-  add ~x86, bug #473736
-
-*libgit2-glib-0.0.6 (02 Jul 2013)
-
-  02 Jul 2013; Pacho Ramos <pacho@gentoo.org> +libgit2-glib-0.0.6.ebuild,
-  -libgit2-glib-0.0.2.ebuild:
-  Version bump, drop old
-
-*libgit2-glib-0.0.4 (25 Jun 2013)
-
-  25 Jun 2013; Pacho Ramos <pacho@gentoo.org> +libgit2-glib-0.0.4.ebuild:
-  Version bump
-
-*libgit2-glib-0.0.2 (18 Jun 2013)
-
-  18 Jun 2013; Pacho Ramos <pacho@gentoo.org> +libgit2-glib-0.0.2.ebuild,
-  +metadata.xml:
-  Import libgit2-glib as required by latest gedit-plugins

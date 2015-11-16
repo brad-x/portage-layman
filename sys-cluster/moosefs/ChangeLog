@@ -1,43 +1,59 @@
 # ChangeLog for sys-cluster/moosefs
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/moosefs/ChangeLog,v 1.8 2015/04/08 18:25:44 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> moosefs-1.6.26-r1.ebuild,
-  moosefs-1.6.27.ebuild:
-  Drop old Python implementations
+*moosefs-1.6.27 (09 Aug 2015)
+*moosefs-1.6.26-r1 (09 Aug 2015)
 
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> moosefs-1.6.26-r1.ebuild,
-  moosefs-1.6.27.ebuild:
-  Inherit the user eclass for enewuser/etc...
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/mfs.confd,
+  +files/mfs.initd-r1, +files/mfscgiserver.confd,
+  +files/mfscgiserver.initd-r1, +metadata.xml, +moosefs-1.6.26-r1.ebuild,
+  +moosefs-1.6.27.ebuild:
+  proj/gentoo: Initial commit
 
-*moosefs-1.6.27 (07 Jun 2013)
-*moosefs-1.6.26-r1 (07 Jun 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Jun 2013; Ultrabug <ultrabug@gentoo.org> -moosefs-1.6.25.ebuild,
-  -moosefs-1.6.26.ebuild, +moosefs-1.6.26-r1.ebuild, +moosefs-1.6.27.ebuild,
-  -files/mfs.initd, -files/mfscgiserver.initd:
-  version bump, fix #468742 thx to Marcin Grabowski, drop old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*moosefs-1.6.26 (21 Jan 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Jan 2013; Ultrabug <ultrabug@gentoo.org> -moosefs-1.6.20-r2.ebuild,
-  +moosefs-1.6.26.ebuild, +files/mfs.initd-r1, +files/mfscgiserver.initd-r1:
-  Version bump fix #453134, update init scripts, drop old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*moosefs-1.6.25 (02 Jul 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Jul 2012; Ultrabug <ultrabug@gentoo.org> +moosefs-1.6.25.ebuild:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*moosefs-1.6.20-r2 (02 Aug 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Aug 2011; Ultrabug <ultrabug@gentoo.org> -moosefs-1.6.20-r1.ebuild,
-  +moosefs-1.6.20-r2.ebuild, +files/mfscgiserver.confd,
-  +files/mfscgiserver.initd:
-  Add mfs CGI server init script. drop old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*moosefs-1.6.20-r1 (08 Jul 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  08 Jul 2011; Ultrabug <ultrabug@gentoo.org> -moosefs-1.6.20.ebuild,
-  +moosefs-1.6.20-r1.ebuild, files/mfs.confd, files/mfs.initd:
-  Enhanced init script, add an autorestore functionnality. Drop old.
+  Bug: https://bugs.gentoo.org/552720
+

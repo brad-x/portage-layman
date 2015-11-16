@@ -1,95 +1,56 @@
 # ChangeLog for dev-perl/MD5
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/MD5/ChangeLog,v 1.30 2014/08/23 00:16:12 axs Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*MD5-2.30.0-r1 (23 Aug 2014)
+*MD5-2.30.0-r1 (09 Aug 2015)
 
-  23 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org> +MD5-2.30.0-r1.ebuild,
-  -MD5-2.30.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +MD5-2.30.0-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -MD5-2.03.ebuild:
-  Cleanup
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Sep 2011; Torsten Veller <tove@gentoo.org> MD5-2.30.0.ebuild:
-  Merge stable keywords from former version scheme ebuild
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*MD5-2.30.0 (30 Aug 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 Aug 2011; Torsten Veller <tove@gentoo.org> +MD5-2.30.0.ebuild:
-  Change version scheme
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Feb 2010; Torsten Veller <tove@gentoo.org> MD5-2.03.ebuild:
-  Fix LICENSE (#301969). Maintenance
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Jan 2010; Fabian Groffen <grobian@gentoo.org> MD5-2.03.ebuild:
-  Transfer Prefix keywords
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Jan 2007; Michael Cummings <mcummings@gentoo.org> MD5-2.03.ebuild:
-  Ebuild maintenance
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Aug 2006; Michael Cummings <mcummings@gentoo.org> MD5-2.03.ebuild:
-  Adding perl dep; fixed DEPEND
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Jul 2006; Christian Hartmann <ian@gentoo.org> MD5-2.03.ebuild:
-  Fixed RDEPEND wrt bug #134781
+  Bug: https://bugs.gentoo.org/552720
 
-  13 Feb 2006; Michael Cummings <mcummings@gentoo.org> MD5-2.03.ebuild:
-  Virtuals for perl-core
-
-  17 Sep 2005; Aron Griffis <agriffis@gentoo.org> MD5-2.03.ebuild:
-  Mark 2.03 stable on ia64
-
-  25 Aug 2005; Aron Griffis <agriffis@gentoo.org> MD5-2.03.ebuild:
-  add ~ia64
-
-  24 May 2005; Michael Cummings <mcummings@gentoo.org> MD5-2.03.ebuild:
-  dev-perl/Digest-MD5 => perl-core/Digest-MD5
-
-  28 Apr 2005; Michael Cummings <mcummings@gentoo.org> -MD5-2.02.ebuild,
-  -MD5-2.02-r1.ebuild, MD5-2.03.ebuild:
-  Cleaning
-
-  01 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> MD5-2.03.ebuild:
-  Stable on ppc.
-
-  29 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  09 Jul 2004; Bryan Østergaard <kloeri@gentoo.org> MD5-2.03.ebuild:
-  Stable on alpha.
-
-  26 Jun 2004; Danny van Dyk <kugelfang@gentoo.org> MD5-2.03.ebuild:
-  Marked stable on amd64.
-
-*MD5-2.03 (16 Feb 2004)
-
-  16 Feb 2004; Michael Cummings,,, <mcummings@gentoo.org> MD5-2.03.ebuild:
-  Current version of MD5 module. Tests are currently enabled in the ebuild.
-  Builds and runs on x86 and sparc, marking as such.
-
-*MD5-2.02-r1 (31 May 2003)
-
-  31 May 2003; Michael Cummings <mcummings@gentoo.org> MD5-2.02-r1.ebuild:
-  Added missing DEPEND for Digest::MD5
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
-
-  29 Oct 2002; Seemant Kulleen <seemant@gentoo.org> ChangeLog  :
-
-  forced version bump to install into correct locations
-
-*MD5-2.02 (27 Jun 2002)
-
-  31 Jul 2002; Calum Selkirk <cselkirk@gentoo.org> MD5-2.02.ebuild :
-
-  Added ppc to KEYWORDS.
-
-  27 Jun 2002; Seemant Kulleen <seemant@gentoo.org> MD5-2.02.ebuild
-  files/digest-MD5-2.02 :
-
-  New package by Ben Lutgens (lamer@gentoo.org)

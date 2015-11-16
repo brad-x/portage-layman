@@ -1,173 +1,67 @@
 # ChangeLog for app-arch/par2cmdline
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/par2cmdline/ChangeLog,v 1.43 2015/07/23 19:39:21 pacho Exp $
+# (auto-generated from git log)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> par2cmdline-0.6.12.ebuild:
-  ppc stable wrt bug #534816
+*par2cmdline-0.6.13 (09 Aug 2015)
+*par2cmdline-0.6.12 (09 Aug 2015)
+*par2cmdline-0.6.11 (09 Aug 2015)
+*par2cmdline-0.6.3 (09 Aug 2015)
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> par2cmdline-0.6.12.ebuild:
-  Stable for x86, wrt bug #534816
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +par2cmdline-0.6.3.ebuild, +par2cmdline-0.6.11.ebuild,
+  +par2cmdline-0.6.12.ebuild, +par2cmdline-0.6.13.ebuild:
+  proj/gentoo: Initial commit
 
-*par2cmdline-0.6.13 (23 Jun 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Jun 2015; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.13.ebuild:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jun 2015; Agostino Sarubbo <ago@gentoo.org> par2cmdline-0.6.12.ebuild:
-  Stable for amd64, wrt bug #534816
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 May 2015; Tim Harder <radhermit@gentoo.org> -par2cmdline-0.4-r2.ebuild,
-  -par2cmdline-0.6.5.ebuild, -par2cmdline-0.6.6.ebuild,
-  -par2cmdline-0.6.7.ebuild, -par2cmdline-0.6.9.ebuild,
-  -par2cmdline-0.6.10.ebuild, -files/par2cmdline-0.4-gcc4.patch,
-  -files/par2cmdline-0.4-letype.patch, -files/par2cmdline-0.4-offset.patch,
-  -files/par2cmdline-0.4-wildcard-fix.patch:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> par2cmdline-0.6.3.ebuild,
+  par2cmdline-0.6.11.ebuild, par2cmdline-0.6.12.ebuild,
+  par2cmdline-0.6.13.ebuild:
+  Use https by default
 
-*par2cmdline-0.6.12 (20 May 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 May 2015; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.12.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*par2cmdline-0.6.11 (15 Nov 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Nov 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.11.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*par2cmdline-0.6.10 (12 Oct 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Oct 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.10.ebuild:
-  Version bump (bug #525178).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*par2cmdline-0.6.9 (05 Sep 2014)
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Sep 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.9.ebuild:
-  Version bump.
-
-*par2cmdline-0.6.7 (20 Jun 2014)
-
-  20 Jun 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.7.ebuild:
-  Version bump.
-
-*par2cmdline-0.6.6 (29 Apr 2014)
-
-  29 Apr 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.6.ebuild:
-  Version bump.
-
-  05 Mar 2014; Agostino Sarubbo <ago@gentoo.org> par2cmdline-0.6.3.ebuild:
-  Stable for ppc, wrt bug #502606
-
-  04 Mar 2014; Agostino Sarubbo <ago@gentoo.org> par2cmdline-0.6.3.ebuild:
-  Stable for x86, wrt bug #502606
-
-  02 Mar 2014; Pacho Ramos <pacho@gentoo.org> par2cmdline-0.6.3.ebuild:
-  amd64 stable, bug #502606
-
-*par2cmdline-0.6.5 (28 Feb 2014)
-
-  28 Feb 2014; Tim Harder <radhermit@gentoo.org> +par2cmdline-0.6.5.ebuild,
-  metadata.xml:
-  Version bump, add myself as a maintainer.
-
-*par2cmdline-0.6.3 (14 Dec 2013)
-
-  14 Dec 2013; Samuli Suominen <ssuominen@gentoo.org> +par2cmdline-0.6.3.ebuild:
-  Version bump from new upstream (BlackIkeEagle) at github. The development at
-  the original source, parchive.sf.net has been stalled.
-
-  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
-  par2cmdline-0.4-r2.ebuild:
-  Update the ebuild from EAPI=0 to EAPI=4.
-
-  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -par2cmdline-0.5.ebuild:
-  Revert last commit because of unclear upstream status.
-
-*par2cmdline-0.5 (15 Jan 2012)
-
-  15 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +par2cmdline-0.5.ebuild:
-  Version bump.
-
-  15 Jan 2010; Jonathan Callen <abcd@gentoo.org> par2cmdline-0.4-r2.ebuild:
-  Add prefix keywords
-
-  29 Dec 2008; Brent Baude <ranger@gentoo.org> par2cmdline-0.4-r2.ebuild:
-  Marking par2cmdline-0.4-r2 ~ppc64 for bug 251525
-
-  18 Jun 2008; Sven Wegener <swegener@gentoo.org> -par2cmdline-0.4.ebuild,
-  -par2cmdline-0.4-r1.ebuild:
-  Cleanup.
-
-  02 Jan 2008; Fabian Groffen <grobian@gentoo.org> par2cmdline-0.4.ebuild,
-  par2cmdline-0.4-r1.ebuild, par2cmdline-0.4-r2.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  05 Nov 2006; Matti Bickel <mabi@gentoo.org> par2cmdline-0.4-r2.ebuild:
-  Stable on ppc (bug #148573)
-
-  04 Nov 2006; <blubb@gentoo.org> par2cmdline-0.4-r2.ebuild:
-  stable on amd64
-
-  02 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
-  par2cmdline-0.4-r2.ebuild:
-  stabled x86, bug #148573. It is always good when a maintainer knows what
-  version should be stabled. :)
-
-  01 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
-  par2cmdline-0.4-r1.ebuild:
-  stabled x86, bug #148573
-
-*par2cmdline-0.4-r2 (24 Sep 2006)
-
-  24 Sep 2006; Sven Wegener <swegener@gentoo.org>
-  +files/par2cmdline-0.4-letype.patch, +files/par2cmdline-0.4-offset.patch,
-  files/par2cmdline-0.4-wildcard-fix.patch, +par2cmdline-0.4-r2.ebuild:
-  Revision bump, include an update wildcard fix, a fix from debian and a fix
-  from fedora, bugs #129093, #144410 and #137092. Thanks to Michael Evans,
-  Dominik and Simon Siemonsma.
-
-  22 Aug 2005; Sven Wegener <swegener@gentoo.org> par2cmdline-0.4-r1.ebuild:
-  Replace hardlinks with symlinks.
-
-  21 Aug 2005; Sven Wegener <swegener@gentoo.org> metadata.xml,
-  par2cmdline-0.4-r1.ebuild:
-  No need to chmod the docs, dodoc takes care of it.
-
-*par2cmdline-0.4-r1 (13 Aug 2005)
-
-  13 Aug 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/par2cmdline-0.4-gcc4.patch,
-  +files/par2cmdline-0.4-wildcard-fix.patch, +par2cmdline-0.4-r1.ebuild:
-  Fix wildcard expansion of non-regular files by Bardur Arantsson #51817. Also
-  fix building with gcc4 by Dirk-Jan Heijs #102391.
-
-  17 Nov 2004; Mike Frysinger <vapier@gentoo.org> par2cmdline-0.4.ebuild:
-  Use make install DESTDIR.
-
-  03 Aug 2004; David Holm <dholm@gentoo.org> par2cmdline-0.4.ebuild:
-  Added to ~ppc.
-
-  2 Aug 2004; Alexander Plank <alexander@gentoo.org> par2cmdline-0.4.ebuild:
-  add macos keyword bug 58451
-
-  07 Jun 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  par2cmdline-0.3.ebuild, par2cmdline-0.4.ebuild:
-  QA - IUSE fix
-
-*par2cmdline-0.4 (16 May 2004)
-
-  16 May 2004; Robin H. Johnson <robbat2@gentoo.org> par2cmdline-0.4.ebuild:
-  version bump, bug #51189
-
-  12 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> par2cmdline-0.3.ebuild:
-  Don't assign default to S; header fix
-
-  13 Dec 2003; Brad House <brad_mssw@gentoo.org> par2cmdline-0.3.ebuild:
-  mark stable on amd64
-
-*par2cmdline-0.3 (14 Nov 2003)
-
-  14 Nov 2003; Robin H. Johnson <robbat2@gentoo.org> par2cmdline-0.3.ebuild:
-  add par2cmdline from par-2.0.3 as per bug #29874

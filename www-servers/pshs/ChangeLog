@@ -1,73 +1,92 @@
 # ChangeLog for www-servers/pshs
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/pshs/ChangeLog,v 1.14 2015/01/16 19:10:37 mgorny Exp $
+# (auto-generated from git log)
 
-*pshs-0.2.6 (16 Jan 2015)
+*pshs-9999 (09 Aug 2015)
+*pshs-0.2.6 (09 Aug 2015)
+*pshs-0.2.5 (09 Aug 2015)
+*pshs-0.2.4 (09 Aug 2015)
+*pshs-0.2.3 (09 Aug 2015)
+*pshs-0.2.1 (09 Aug 2015)
+*pshs-0.2 (09 Aug 2015)
 
-  16 Jan 2015; Michał Górny <mgorny@gentoo.org> +pshs-0.2.6.ebuild:
-  Version bump. Adds path prefixing support to improve security a bit.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pshs-0.2.ebuild, +pshs-0.2.1.ebuild, +pshs-0.2.3.ebuild,
+  +pshs-0.2.4.ebuild, +pshs-0.2.5.ebuild, +pshs-0.2.6.ebuild,
+  +pshs-9999.ebuild:
+  proj/gentoo: Initial commit
 
-*pshs-0.2.5 (25 Dec 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Dec 2014; Michał Górny <mgorny@gentoo.org> +pshs-0.2.5.ebuild:
-  Version bump. Adds SSL/TLS support. Fixes handling of empty files and
-  filenames with special characters.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Dec 2014; Michał Górny <mgorny@gentoo.org> pshs-9999.ebuild:
-  Add USE=ssl to control newly-added SSL support.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*pshs-0.2.4 (07 Dec 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Dec 2014; Michał Górny <mgorny@gentoo.org> +pshs-0.2.4.ebuild:
-  Version bump. The new version fixes issues with broken connections causing
-  program termination.
+  12 Aug 2015; Michał Górny <mgorny@gentoo.org> -pshs-0.2.ebuild,
+  -pshs-0.2.1.ebuild, -pshs-0.2.3.ebuild, -pshs-0.2.4.ebuild,
+  -pshs-0.2.5.ebuild:
+  drop old
 
-  05 Dec 2014; Michał Górny <mgorny@gentoo.org> -pshs-0.2.2.ebuild:
-  Remove the broken version.
+  Package-Manager: portage-2.2.20
 
-*pshs-0.2.3 (05 Dec 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pshs-9999.ebuild:
+  Use https by default
 
-  05 Dec 2014; Michał Górny <mgorny@gentoo.org> +pshs-0.2.3.ebuild:
-  Version bump. Fixes the build with USE=-qrcode, bug #531584.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pshs-0.2.2 (01 Dec 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Dec 2014; Michał Górny <mgorny@gentoo.org> +pshs-0.2.2.ebuild,
-  metadata.xml, pshs-9999.ebuild:
-  Version bump, now with QRCode printing support.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> pshs-0.2.1.ebuild,
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*pshs-0.3 (02 Oct 2015)
+
+  02 Oct 2015; Michał Górny <mgorny@gentoo.org> +pshs-0.3.ebuild,
   pshs-9999.ebuild:
-  Replace obsolete mirror://bitbucket with the real URI.
+  Version bump with miniupnpc compat & UPnP fix
 
-  16 Oct 2013; Michał Górny <mgorny@gentoo.org> pshs-9999.ebuild:
-  Switch to git-r3. Add SLOT operators to dependencies.
+  Package-Manager: portage-2.2.22
 
-*pshs-9999 (15 Dec 2012)
+*pshs-0.3-r1 (12 Oct 2015)
 
-  15 Dec 2012; Michał Górny <mgorny@gentoo.org> +pshs-9999.ebuild:
-  Import the live ebuild.
+  12 Oct 2015; Anthony G. Basile <blueness@gentoo.org> +pshs-0.3-r1.ebuild,
+  pshs-9999.ebuild:
+  add libressl support
 
-  14 Dec 2012; Michał Górny <mgorny@gentoo.org> metadata.xml:
-  Remove redundant USE=upnp description; it matches the global flag meaning.
+  Package-Manager: portage-2.2.20.1
 
-*pshs-0.2.1 (25 Jun 2012)
-
-  25 Jun 2012; Michał Górny <mgorny@gentoo.org> +pshs-0.2.1.ebuild,
-  metadata.xml:
-  Version bump. The new version fixes build with new iproute2 (bug #423373).
-
-*pshs-0.2 (16 Nov 2011)
-
-  16 Nov 2011; Michał Górny <mgorny@gentoo.org> -pshs-0.1.ebuild,
-  +pshs-0.2.ebuild, metadata.xml:
-  Version bump. The new version introduces fixes to --no-upnp option, index
-  page and sendfile() support. It also adds support for getting local IP via
-  netlink and partial (Range) requests.
-
-*pshs-0.1 (11 Nov 2011)
-
-  11 Nov 2011; Michał Górny <mgorny@gentoo.org> +pshs-0.1.ebuild,
-  +metadata.xml:
-  Add initial version of pretty simple HTTP server, a little CLI tool for file
-  sharing.

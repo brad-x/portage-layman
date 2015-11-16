@@ -1,101 +1,57 @@
 # ChangeLog for sys-boot/arcload
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/arcload/ChangeLog,v 1.19 2015/05/04 05:01:22 kumba Exp $
+# (auto-generated from git log)
 
-*arcload-0.50-r3 (04 May 2015)
+*arcload-0.50-r3 (09 Aug 2015)
+*arcload-0.50-r1 (09 Aug 2015)
 
-  04 May 2015; Joshua Kinard <kumba@gentoo.org> -arcload-0.50-r2.ebuild,
-  +arcload-0.50-r3.ebuild:
-  Comment out the 'deb-elf64-on-m32' patch due to problems on some systems. See
-  #543978.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +arcload-0.50-r1.ebuild,
+  +arcload-0.50-r3.ebuild, +files/arcload.8, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Mar 2015; Joshua Kinard <kumba@gentoo.org> +arcload-0.50-r1.ebuild:
-  Add arcload-0.50-r1 back until Bug #543978 can be resolved.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*arcload-0.50-r2 (05 Mar 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Mar 2015; Joshua Kinard <kumba@gentoo.org> -arcload-0.50-r1.ebuild,
-  +arcload-0.50-r2.ebuild, -files/arcload-0.50-makefile-targets.patch,
-  -files/arcload-0.50-shut-gcc4x-up.patch, +files/arcload.8:
-  Big cleanup: Include some patches and a manpage from Debian, re-work the code
-  a little to compile under an n32-only system (should work for n64 as well),
-  silence many compiler warnings, and move patches to a tarball due to the size
-  of the changes.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> arcload-0.50-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Nov 2012; Anthony G. Basile <blueness@gentoo.org> arcload-0.50-r1.ebuild:
-  Change license to GPL-2+, bug #442018
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Aug 2011; Matt Turner <mattst88@gentoo.org> -arcload-0.43-r1.ebuild,
-  -files/arcload-0.43-tweaks1.patch, arcload-0.50-r1.ebuild, metadata.xml:
-  Drop old 0.43. Bump 0.50 to EAPI=4 and clean up.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Apr 2011; Ulrich Mueller <ulm@gentoo.org> arcload-0.43-r1.ebuild,
-  arcload-0.50-r1.ebuild:
-  Don't PROVIDE virtual/bootloader, bug 359971.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Dec 2010; Matt Turner <mattst88@gentoo.org> arcload-0.43-r1.ebuild,
-  arcload-0.50-r1.ebuild:
-  Make arcload PROVIDE virtual/bootloader, bug 322917
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2009; Joshua Kinard <kumba@gentoo.org>
-  +files/arcload-0.50-makefile-targets.patch,
-  +files/arcload-0.50-shut-gcc4x-up.patch, arcload-0.43-r1.ebuild,
-  -arcload-0.50.ebuild, +arcload-0.50-r1.ebuild:
-  Make arcload cross-compilable by altering the Makefile targets, and quiet
-  down gcc-4.x's warnings. Modified ebuild accordingly and fixed minor QA
-  Issues. Changed mips keyword to unstable.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*arcload-0.50-r1 (02 Mar 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> arcload-0.43-r1.ebuild,
-  arcload-0.50.ebuild:
-  (QA) RESTRICT clean up.
-
-  05 Sep 2006; Joshua Kinard <kumba@gentoo.org> arcload-0.50.ebuild:
-  Stablize.
-
-  09 Apr 2006; Joshua Kinard <kumba@gentoo.org> arcload-0.50.ebuild:
-  Tweak S some to point to the right work directory until upstream fixes the
-  naming of the sourceball.
-
-*arcload-0.50 (04 Apr 2006)
-
-  04 Apr 2006; Joshua Kinard <kumba@gentoo.org> -arcload-0.5.ebuild,
-  +arcload-0.50.ebuild:
-  Rename arcload-0.5's ebuild to arcload-0.50 so portage actually treats it as
-  an upgrade. Upstream is going to change the filename on their end, but as of
-  now, this hasn't been done. Thus, we have a kludge in place that does the
-  change until upstream changes the source filename.
-
-*arcload-0.5 (10 Feb 2006)
-
-  10 Feb 2006; Joshua Kinard <kumba@gentoo.org> +arcload-0.5.ebuild:
-  Import newer version of ARCLoad.  Now with Filesystem Support.
-
-  02 Jan 2006; Joshua Kinard <kumba@gentoo.org> -arcload-0.41.ebuild,
-  arcload-0.43-r1.ebuild:
-  Bump to mips stable, remove 0.41
-
-*arcload-0.43-r1 (15 Oct 2005)
-
-  15 Oct 2005; Joshua Kinard <kumba@gentoo.org>
-  +files/arcload-0.43-tweaks1.patch, +arcload-0.43-r1.ebuild,
-  -arcload-0.43.ebuild:
-  Tweaks to arcload; add an identifier to loader/detect.c for R14K cpus, and
-  make detectbaud() return a default of 9600bps in loader/detect.c
-
-*arcload-0.43 (11 Sep 2005)
-
-  11 Sep 2005; Joshua Kinard <kumba@gentoo.org> +arcload-0.43.ebuild:
-  New version of arcload, the ultimate SGI system bootloader.
-
-*arcload-0.41 (12 Jun 2005)
-
-  12 Jun 2005; Joshua Kinard <kumba@gentoo.org> +metadata.xml,
-  +arcload-0.41.ebuild:
-  Initial import of what is quite possibly, the best bootloader for SGI Mips
-  systems ever. Supports disk booting of IP22, IP27, IP28, IP30, and IP32
-  systems.

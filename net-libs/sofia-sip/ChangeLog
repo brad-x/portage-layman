@@ -1,118 +1,56 @@
 # ChangeLog for net-libs/sofia-sip
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/sofia-sip/ChangeLog,v 1.27 2013/10/27 09:46:42 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  27 Oct 2013; Pacho Ramos <pacho@gentoo.org> -sofia-sip-1.12.10.ebuild,
-  metadata.xml:
-  Cleanup due voip herd removal:
-  http://article.gmane.org/gmane.linux.gentoo.devel/88434
+*sofia-sip-1.12.11 (09 Aug 2015)
 
-  02 Feb 2013; Agostino Sarubbo <ago@gentoo.org> sofia-sip-1.12.11.ebuild:
-  Add ~arm, wrt bug #449220
-
-  15 Jan 2013; Ulrich Müller <ulm@gentoo.org> sofia-sip-1.12.10.ebuild,
-  sofia-sip-1.12.11.ebuild:
-  Specify LICENSE more precisely, bug 452402.
-
-  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> sofia-sip-1.12.11.ebuild:
-  Add ~ppc64, wrt bug #449220
-
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> sofia-sip-1.12.11.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> sofia-sip-1.12.11.ebuild:
-  alpha/ia64/sparc stable wrt #385701
-
-  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> sofia-sip-1.12.11.ebuild:
-  ppc stable wrt #385701
-
-  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> sofia-sip-1.12.11.ebuild:
-  amd64/x86 stable wrt #385701
-
-  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> sofia-sip-1.12.11.ebuild:
-  USE="static-libs" and remove libtool files. Import _part_ of missing LICENSE
-  as referred by COPYRIGHT file.
-
-  06 Aug 2011; Zac Medico <zmedico@gentoo.org> sofia-sip-1.12.11.ebuild:
-  Add ~x86-linux keyword.
-
-*sofia-sip-1.12.11 (15 Jun 2011)
-
-  15 Jun 2011; Pacho Ramos <pacho@gentoo.org> -sofia-sip-1.12.5.ebuild,
-  -sofia-sip-1.12.8.ebuild, -sofia-sip-1.12.9.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +sofia-sip-1.12.11.ebuild:
-  Version bump, remove old.
+  proj/gentoo: Initial commit
 
-  07 Aug 2010; Raúl Porcel <armin76@gentoo.org> sofia-sip-1.12.10.ebuild:
-  ia64/sparc stable wrt #328733
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Aug 2010; Christian Faulhammer <fauli@gentoo.org>
-  sofia-sip-1.12.10.ebuild:
-  stable x86, bug 328733
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  30 Jul 2010; Markos Chandras <hwoarang@gentoo.org>
-  sofia-sip-1.12.10.ebuild:
-  Stable on amd64 wrt bug #328733
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Jul 2010; Pacho Ramos <pacho@gentoo.org> sofia-sip-1.12.10.ebuild:
-  RESTRICT=test for now until a better fix is found to allow stabilization
-  as discussed in bug #321591, problems with tests were reported to upstream
-  but we are still waiting for feedback.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  25 Jul 2010; Tobias Klausmann <klausman@gentoo.org>
-  sofia-sip-1.12.10.ebuild:
-  Stable on alpha, bug #321591
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Jun 2010; <nixnut@gentoo.org> sofia-sip-1.12.10.ebuild:
-  ppc stable #321591
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Apr 2010; Raúl Porcel <armin76@gentoo.org> sofia-sip-1.12.5.ebuild,
-  sofia-sip-1.12.8.ebuild, sofia-sip-1.12.9.ebuild,
-  sofia-sip-1.12.10.ebuild:
-  Add ~alpha wrt #296548
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Feb 2010; Raúl Porcel <armin76@gentoo.org> sofia-sip-1.12.5.ebuild,
-  sofia-sip-1.12.8.ebuild, sofia-sip-1.12.9.ebuild,
-  sofia-sip-1.12.10.ebuild:
-  Add ~ia64/~sparc
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jan 2010; Joseph Jezak <josejx@gentoo.org> sofia-sip-1.12.9.ebuild,
-  sofia-sip-1.12.10.ebuild:
-  Marked ~ppc for bug #245949.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*sofia-sip-1.12.10 (06 Jan 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Jan 2009; Olivier Crête <tester@gentoo.org> +sofia-sip-1.12.10.ebuild:
-  Version bump
-
-*sofia-sip-1.12.9 (26 Jul 2008)
-
-  26 Jul 2008; Olivier Crête <tester@gentoo.org> +sofia-sip-1.12.9.ebuild:
-  Version bump
-
-*sofia-sip-1.12.8 (10 Apr 2008)
-
-  10 Apr 2008; Olivier Crête <tester@gentoo.org> +sofia-sip-1.12.8.ebuild:
-  Version bump
-
-*sofia-sip-1.12.5 (01 May 2007)
-
-  01 May 2007; Stefan Schweizer <genstef@gentoo.org>
-  -sofia-sip-1.12.3.ebuild, +sofia-sip-1.12.5.ebuild:
-  version bump
-
-  08 Oct 2006; Simon Stelling <blubb@gentoo.org> sofia-sip-1.12.3.ebuild:
-  added ~amd64
-
-*sofia-sip-1.12.3 (04 Oct 2006)
-
-  04 Oct 2006; Stefan Schweizer <genstef@gentoo.org>
-  -sofia-sip-1.11.8.ebuild, +sofia-sip-1.12.3.ebuild:
-  version bump
-
-*sofia-sip-1.11.8 (20 May 2006)
-
-  20 May 2006; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
-  +sofia-sip-1.11.8.ebuild:
-  New ebuild inspired by the voip and zugaina overlay, first step for tapioca,
-  bug 127383

@@ -5,7 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{3,4} pypy )
-PYTHON_REQ_USE='sqlite?'
+PYTHON_REQ_USE='sqlite?,threads(+)'
 WEBAPP_NO_AUTO_INSTALL="yes"
 
 inherit bash-completion-r1 distutils-r1 eutils versionator webapp
@@ -79,7 +79,7 @@ src_install() {
 	optfeature "PostgreSQL backend support" dev-python/psycopg:2
 	optfeature "GEO Django" sci-libs/gdal[geos]
 	optfeature "Memcached support" dev-python/pylibmc dev-python/python-memcached
-	optfeature "ImageField Support" virtual/python-imaging
+	optfeature "ImageField Support" dev-python/pillow
 	echo ""
 }
 

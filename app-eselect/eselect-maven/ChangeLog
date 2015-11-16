@@ -1,85 +1,68 @@
 # ChangeLog for app-eselect/eselect-maven
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-eselect/eselect-maven/ChangeLog,v 1.2 2015/04/05 20:46:14 monsieurp Exp $
+# (auto-generated from git log)
 
-*eselect-maven-0.2-r2 (05 Apr 2015)
+*eselect-maven-0.2-r2 (09 Aug 2015)
+*eselect-maven-0.2-r1 (09 Aug 2015)
 
-  05 Apr 2015; Patrice Clement <monsieurp@gentoo.org>
-  +eselect-maven-0.2-r2.ebuild, eselect-maven-0.2-r1.ebuild:
-  EAPI 5 bump wrt bug 543906.
-
-  31 Mar 2015; Ulrich Müller <ulm@gentoo.org> +eselect-maven-0.2-r1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +eselect-maven-0.2-r1.ebuild, +eselect-maven-0.2-r2.ebuild,
   +files/maven-0.2.eselect, +metadata.xml:
-  Move package from app-admin to app-eselect category.
+  proj/gentoo: Initial commit
 
-  06 Apr 2013; Vlastimil Babka <caster@gentoo.org> -eselect-maven-0.1.ebuild,
-  -eselect-maven-0.2.ebuild, eselect-maven-0.2-r1.ebuild, -files/maven.eselect:
-  Add blockers for upcoming packages related to java-config-2.2, so that they
-  are mutual. Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2012; Brent Baude <ranger@gentoo.org> eselect-maven-0.2-r1.ebuild:
-  Marking eselect-maven-0.2-r1 ppc for bug 387691
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org>
-  eselect-maven-0.2-r1.ebuild:
-  Stable on amd64 wrt bug #387691
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  eselect-maven-0.2-r1.ebuild:
-  x86 stable wrt bug #387691
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*eselect-maven-0.2-r1 (19 Jan 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> eselect-maven-0.2-r1.ebuild,
+  eselect-maven-0.2-r2.ebuild, metadata.xml:
+  Use https by default
 
-  19 Jan 2011; Miroslav Šulc <fordfrog@gentoo.org>
-  +eselect-maven-0.2-r1.ebuild:
-  Added maven-bin:3.0, bug #345773
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Jun 2010; Joseph Jezak <josejx@gentoo.org> eselect-maven-0.2.ebuild:
-  Marked ppc stable for bug #314721.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 May 2010; Pacho Ramos <pacho@gentoo.org> eselect-maven-0.2.ebuild:
-  stable amd64, bug 314721
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  eselect-maven-0.2.ebuild:
-  x86 stable wrt bug #314721
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*eselect-maven-0.2 (28 Feb 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Feb 2010; Ulrich Mueller <ulm@gentoo.org> -eselect-maven-0.1-r1.ebuild,
-  +eselect-maven-0.2.ebuild, +files/maven-0.2.eselect, -files/maven.eselect-1:
-  Add support for brief output mode, bug 292101. Remove intermediate version.
+*eselect-maven-0.2-r3 (30 Oct 2015)
 
-*eselect-maven-0.1-r1 (26 Feb 2010)
+  30 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  +eselect-maven-0.2-r3.ebuild:
+  Drop maven-bin 2.x and SLOT 3.x versions only. Drop ppc.
 
-  26 Feb 2010; Fabian Groffen <grobian@gentoo.org>
-  +eselect-maven-0.1-r1.ebuild, +files/maven.eselect-1:
-  Revbump for Prefix fixes, bug #305359
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  eselect-maven-0.1.ebuild:
-  Transfer Prefix keywords
-
-  26 Oct 2009; Mounir Lamouri <volkmar@gentoo.org> eselect-maven-0.1.ebuild:
-  Keywording for ppc, bug 269616
-
-  18 Oct 2009; Petteri Räty <betelgeuse@gentoo.org>
-  eselect-maven-0.1.ebuild:
-  add maven-bin:2.2 and fix so that the latest version is the first to be
-  matched.
-
-  13 May 2009; Alistair Bush <ali_bush@gentoo.org> eselect-maven-0.1.ebuild:
-  Restrict blocker to slot.
-
-  12 May 2009; Alistair Bush <ali_bush@gentoo.org> eselect-maven-0.1.ebuild:
-  Update blocker on maven-bin. We have versionbumped maven-bin in tree.
-
-  12 May 2009; Alistair Bush <ali_bush@gentoo.org>
-  +eselect-maven-0.1.ebuild, +files/maven.eselect, +metadata.xml:
-  Move eselect-maven from java-experimental overlay.
-
-*eselect-maven-0.1 (08 May 2009)
-
-  08 May 2009; Jesse Farinacci <jieryn@gmail.com> +eselect-maven-0.1.ebuild,
-  +files/maven.eselect, +metadata.xml:
-  initial import, related to bug #264027

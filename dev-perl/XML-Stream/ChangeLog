@@ -1,136 +1,57 @@
 # ChangeLog for dev-perl/XML-Stream
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Stream/ChangeLog,v 1.38 2015/06/13 22:22:56 dilfridge Exp $
+# (auto-generated from git log)
 
-  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  XML-Stream-1.240.0.ebuild:
-  Module::Build is no longer part of core Perl and has been moved to dev-perl
+*XML-Stream-1.240.0 (09 Aug 2015)
+*XML-Stream-1.230.0 (09 Aug 2015)
 
-*XML-Stream-1.240.0 (04 Mar 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +XML-Stream-1.230.0.ebuild, +XML-Stream-1.240.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Mar 2015; Patrice Clement <monsieurp@gentoo.org>
-  +XML-Stream-1.240.0.ebuild:
-  Version bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> -XML-Stream-1.22.ebuild,
-  XML-Stream-1.230.0.ebuild:
-  sparc stable wrt bug #511732; Drop old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  ppc stable wrt bug #511732
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  ppc64 stable wrt bug #511732
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  x86 stable wrt bug #511732
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  ia64 stable wrt bug #511732
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  amd64 stable wrt bug #511732
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Jun 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  alpha stable wrt bug #511732
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Jun 2014; Markus Meier <maekke@gentoo.org> XML-Stream-1.230.0.ebuild:
-  arm stable, bug #511732
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Jun 2014; Jeroen Roovers <jer@gentoo.org> XML-Stream-1.230.0.ebuild:
-  Stable for HPPA (bug #511732).
+  Bug: https://bugs.gentoo.org/552720
 
-  28 May 2014; Mikle Kolyada <zlogene@gentoo.org> XML-Stream-1.230.0.ebuild:
-  Bump to EAPI=5
-
-  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
-  XML-Stream-1.230.0.ebuild:
-  Keyword ~arm
-
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
-
-  01 Dec 2011; Torsten Veller <tove@gentoo.org> XML-Stream-1.230.0.ebuild:
-  Only runtime dependencies (tests disabled) so change DEPEND to RDEPEND
-
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -XML-Stream-1.23.ebuild:
-  Cleanup
-
-*XML-Stream-1.230.0 (27 Aug 2011)
-
-  27 Aug 2011; Torsten Veller <tove@gentoo.org> +XML-Stream-1.230.0.ebuild:
-  Change version scheme
-
-*XML-Stream-1.23 (09 Jan 2010)
-
-  09 Jan 2010; Torsten Veller <tove@gentoo.org> +XML-Stream-1.23.ebuild:
-  Version bump
-
-  04 Dec 2007; Markus Rothe <corsair@gentoo.org> XML-Stream-1.22.ebuild:
-  Stable on ppc64; bug #198075
-
-  11 Jun 2007; Brent Baude <ranger@gentoo.org> XML-Stream-1.22.ebuild:
-  Marking XML-Stream-1.22 ~ppc64 for bug #181650
-
-  20 Oct 2006; Michael Cummings <mcummings@gentoo.org>
-  -XML-Stream-1.21.ebuild, XML-Stream-1.22.ebuild:
-  Cleaning up
-
-  06 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  XML-Stream-1.21.ebuild, XML-Stream-1.22.ebuild:
-  Adding perl dep; fixed DEPEND
-
-  05 Jul 2006; Christian Hartmann <ian@gentoo.org> XML-Stream-1.21.ebuild,
-  XML-Stream-1.22.ebuild:
-  Fixed RDEPEND wrt bug #134781
-
-  05 Mar 2006; Guy Martin <gmsoft@gentoo.org> XML-Stream-1.22.ebuild:
-  Stable on hppa.
-
-  13 Feb 2006; Michael Cummings <mcummings@gentoo.org>
-  XML-Stream-1.21.ebuild, XML-Stream-1.22.ebuild:
-  Virtuals for perl-core
-
-  17 Sep 2005; Aron Griffis <agriffis@gentoo.org> XML-Stream-1.22.ebuild:
-  Mark 1.22 stable on ia64
-
-  26 Aug 2005; Aron Griffis <agriffis@gentoo.org> XML-Stream-1.22.ebuild:
-  add ~ia64
-
-  30 Jul 2005; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  XML-Stream-1.21.ebuild, XML-Stream-1.22.ebuild:
-  PowerPC Stable
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org> XML-Stream-1.22.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org> XML-Stream-1.21.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-  30 Mar 2005; Gustavo Zacarias <gustavoz@gentoo.org> XML-Stream-1.22.ebuild:
-  Stable on sparc
-
-  25 Mar 2005; <blubb@gentoo.org> XML-Stream-1.22.ebuild:
-  stable on amd64
-
-  04 Jan 2005; Michael Cummings <mcummings@gentoo.org>
-  XML-Stream-1.21.ebuild, XML-Stream-1.22.ebuild:
-  bug 76590
-
-  24 Dec 2004; Bryan Østergaard <kloeri@gentoo.org> XML-Stream-1.22.ebuild:
-  Stable on alpha.
-
-  21 Dec 2004; Michael Cummings <mcummings@gentoo.org>
-  XML-Stream-1.22.ebuild:
-  Marking stable x86
-
-*XML-Stream-1.22 (18 Nov 2004)
-
-  18 Nov 2004; Don Seiler <rizzo@gentoo.org> +XML-Stream-1.22.ebuild:
-  Version bump
-
-*XML-Stream-1.21 (06 Jun 2004)
-
-  06 Jun 2004; Michael Cummings <mcummings@gentoo.org> XML-Stream-1.21.ebuild,
-  metadata.xml:
-  Dep for soap-lite

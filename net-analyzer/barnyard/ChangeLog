@@ -1,134 +1,57 @@
 # ChangeLog for net-analyzer/barnyard
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/barnyard/ChangeLog,v 1.31 2015/03/25 16:04:09 jlec Exp $
+# (auto-generated from git log)
 
-  25 Mar 2015; Justin Lecher <jlec@gentoo.org> barnyard-0.2.0-r3.ebuild:
-  Fix tcl/tk slotting
+*barnyard-0.2.0-r3 (09 Aug 2015)
 
-  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org>
-  barnyard-0.2.0-r3.ebuild:
-  Rename virtual/postgresql to dev-db/postgresql
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +barnyard-0.2.0-r3.ebuild, +files/barnyard.64bit.diff,
+  +files/barnyard.confd, +files/barnyard.rc6, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Nov 2014; Aaron W. Swenson <titanofold@gentoo.org>
-  barnyard-0.2.0-r3.ebuild:
-  Update PostgreSQL dependencies and/or checks to virtual/postgresql.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> barnyard-0.2.0-r3.ebuild:
-  Update HOMEPAGE
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> -barnyard-0.2.0-r1.ebuild,
-  barnyard-0.2.0-r3.ebuild, files/barnyard.confd:
-  Add copyright info to conf.d script. Add GPL-2 to LICENSE (bug #425978).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jan 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  barnyard-0.2.0-r1.ebuild:
-  drop to ~x86 since snort was also dropped to ~x86
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  -barnyard-0.2.0-r2.ebuild, barnyard-0.2.0-r3.ebuild:
-  Rebuild autotools with modern versions.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jun 2010; Patrick Lauer <patrick@gentoo.org> barnyard-0.2.0-r1.ebuild,
-  barnyard-0.2.0-r2.ebuild, barnyard-0.2.0-r3.ebuild:
-  Migrating away from deprecated postgres virtuals
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*barnyard-0.2.0-r3 (16 Jan 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Jan 2010; Patrick Lauer <pal@gentoo.org> +barnyard-0.2.0-r3.ebuild,
-  +files/barnyard.64bit.diff:
-  Fix for #296249
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> barnyard-0.2.0-r1.ebuild:
-  Remove virtual/libc
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Mar 2009; Patrick Lauer <patrick@gentoo.org> barnyard-0.2.0-r2.ebuild:
-  Adding ~amd64 keyword
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Aug 2008; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Describe local USE flags for GLEP 56.
-
-  21 May 2008; Tiziano Müller <dev-zero@gentoo.org>
-  barnyard-0.2.0-r1.ebuild, barnyard-0.2.0-r2.ebuild:
-  Changed dependency for postgresql from dev-db/postgresql to
-  virtual/postgresql-server
-
-  05 Dec 2007; Markus Ullmann <jokey@gentoo.org> barnyard-0.2.0-r2.ebuild:
-  Fix some autotools mess, quotes, bugs 199118 and bug 199119, thanks to jakub
-  for providing the patch
-
-  01 May 2007; Marius Mauch <genone@gentoo.org> barnyard-0.2.0-r1.ebuild,
-  barnyard-0.2.0-r2.ebuild:
-  Replacing einfo with elog
-
-  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> barnyard-0.2.0-r1.ebuild,
-  barnyard-0.2.0-r2.ebuild:
-  dev-db/mysql => virtual/mysql
-
-  23 Jul 2006; Marcelo Goes <vanquirius@gentoo.org> -barnyard-0.1.0.ebuild,
-  -barnyard-0.2.0.ebuild:
-  Remove old ebuilds.
-
-  15 Feb 2006; Markus Ullmann <jokey@gentoo.org> barnyard-0.1.0.ebuild,
-  barnyard-0.2.0.ebuild, barnyard-0.2.0-r1.ebuild, barnyard-0.2.0-r2.ebuild:
-  Removing virtual/libpcap wrt bug #117898
-
-  28 Jan 2006; Marcelo Goes <vanquirius@gentoo.org>
-  -files/0.2.0-configure-in.patch.gz, -files/0.2.0-op_plugbase.c.patch.gz,
-  -files/0.2.0-sguil_files.patch.gz, barnyard-0.2.0-r2.ebuild:
-  Move patches to mirrors for bug 120670.
-
-*barnyard-0.2.0-r2 (24 Dec 2005)
-
-  24 Dec 2005; Benjamin Smee <strerror@gentoo.org>
-  +files/0.2.0-configure-in.patch.gz, +files/0.2.0-op_plugbase.c.patch.gz,
-  +files/0.2.0-sguil_files.patch.gz, +barnyard-0.2.0-r2.ebuild:
-  Added patches and support for new version of sguil
-
-*barnyard-0.2.0-r1 (08 Oct 2005)
-
-  08 Oct 2005; Benjamin Smee <strerror@gentoo.org>
-  +barnyard-0.2.0-r1.ebuild:
-  New version for sguil integration. Includes init.d and conf.d files
-
-  29 Jan 2005; Daniel Black <dragonheart@gentoo.org> barnyard-0.1.0.ebuild,
-  barnyard-0.2.0.ebuild:
-  changed net-libs/libpcap depend to virtual/libcap
-
-  22 Jan 2005; Jason Wever <weeve@gentoo.org> barnyard-0.1.0.ebuild,
-  barnyard-0.2.0.ebuild:
-  Masked on sparc as snort is now masked on sparc.
-
-  09 Jul 2004; Eldad Zack <eldad@gentoo.org> barnyard-0.1.0.ebuild,
-  barnyard-0.2.0.ebuild, -barnyard-0.2.0_rc1.ebuild:
-  Purged 0.2.0_rc1, 0.2.0 marked x86 stable
-
-  09 Jul 2004; Eldad Zack <eldad@gentoo.org> barnyard-0.1.0.ebuild:
-  Tidy up, fixed mysql issue (#47026). Thanks to Ryu
-  <jasmine.chua@internationalsos.com> and Devon <gentoo@noved.org>
-
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> barnyard-0.1.0.ebuild,
-  barnyard-0.2.0.ebuild, barnyard-0.2.0_rc1.ebuild:
-  change virtual/glibc to virtual/libc
-
-*barnyard-0.2.0 (19 May 2004)
-
-  19 May 2004; Michael Boman <mboman@gentoo.org> +barnyard-0.2.0.ebuild:
-  New upstream version
-
-*barnyard-0.2.0_rc1 (29 Mar 2004)
-
-  29 Mar 2004; Michael Boman <mboman@gentoo.org> barnyard-0.2.0_rc1.ebuild,
-  files/barnyard.confd:
-  New upstream version. Put more variables (less hardcoding) in barnyard.confd.
-
-  21 Mar 2004; Michael Boman <mboman@gentoo.org> barnyard-0.1.0.ebuild:
-  QA: Unnecessary definition of S removed.
-
-  16 Mar 2004; Michael Boman <mboman@gentoo.org> barnyard-0.1.0.ebuild:
-  Marked 0.1.0 stable on x86
-
-*barnyard-0.1.0 (09 Aug 2003)
-
-  09 Aug 2003; <solar@gentoo.org> barnyard-0.1.0.ebuild, metadata.xml,
-  files/barnyard.confd, files/barnyard.rc6:
-  Initial import of barnyard to portage

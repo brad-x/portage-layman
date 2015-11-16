@@ -1,214 +1,64 @@
 # ChangeLog for dev-libs/ossp-uuid
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ossp-uuid/ChangeLog,v 1.57 2015/04/19 09:30:18 pacho Exp $
+# (auto-generated from git log)
 
-  19 Apr 2015; Pacho Ramos <pacho@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  x86 stable wrt bug #536704
+*ossp-uuid-1.6.2-r4 (09 Aug 2015)
+*ossp-uuid-1.6.2-r2 (09 Aug 2015)
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for ia64, wrt bug #536704
-
-  13 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for alpha, wrt bug #536704
-
-  01 Apr 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for sparc, wrt bug #536704
-
-  31 Mar 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for ppc64, wrt bug #536704
-
-  28 Mar 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for ppc, wrt bug #536704
-
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for amd64, wrt bug #536704
-
-  24 Mar 2015; Markus Meier <maekke@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  arm stable, bug #536704
-
-  22 Mar 2015; Brian Evans <grknight@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Drop masked php 5.3 support
-
-  16 Mar 2015; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.2-r4.ebuild:
-  Stable for HPPA (bug #536704).
-
-*ossp-uuid-1.6.2-r4 (17 Oct 2014)
-
-  17 Oct 2014; Brian Evans <grknight@gentoo.org> +ossp-uuid-1.6.2-r4.ebuild,
-  -ossp-uuid-1.6.2-r3.ebuild:
-  Non-maintainer revbump to drop 5.3 wrt bug 524226 ack by dev-zero
-
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> ossp-uuid-1.6.2-r2.ebuild,
-  ossp-uuid-1.6.2-r3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-*ossp-uuid-1.6.2-r3 (25 Jun 2014)
-
-  25 Jun 2014; Tiziano Müller <dev-zero@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/ossp-uuid-1.6.2-fix-data-uuid-from-string.patch,
   +files/ossp-uuid-1.6.2-fix-whatis-entries.patch,
-  +files/ossp-uuid-1.6.2-hwaddr.patch, +files/ossp-uuid-1.6.2-manfix.patch, +fil
-  es/ossp-uuid-1.6.2-uuid-preserve-m-option-status-in-v-option-handling.patch,
-  +ossp-uuid-1.6.2-r3.ebuild, -files/ossp-uuid-1.6.2-gentoo.patch:
-  Also build for php-5.5 (bug #491852), add various bug-fixes from Fedora and
-  Ubuntu/Debian, fix Perl-bindings installation.
-
-  11 Mar 2013; Ole Markus With <olemarkus@gentoo.org>
-  -ossp-uuid-1.6.2-r1.ebuild:
-  Non-maintainer commit: removing older version that depends on php-ext-src
-  while being EAPI2
-
-  11 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for sh, wrt bug #460488
-
-  10 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for s390, wrt bug #460488
-
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for sparc, wrt bug #460488
-
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for ia64, wrt bug #460488
-
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for alpha, wrt bug #460488
-
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for ppc, wrt bug #460488
-
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for ppc64, wrt bug #460488
-
-  08 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for arm, wrt bug #460488
-
-  07 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for x86, wrt bug #460488
-
-  07 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for amd64, wrt bug #460488
-
-  07 Mar 2013; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  Stable for HPPA (bug #460488).
-
-  30 Dec 2012; Ulrich Müller <ulm@gentoo.org> ossp-uuid-1.6.2-r1.ebuild,
-  ossp-uuid-1.6.2-r2.ebuild:
-  Fix LICENSE, see README file, bug 447640.
-
-  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
-  added prefix keywords
-
-*ossp-uuid-1.6.2-r2 (24 May 2012)
-
-  24 May 2012; Tiziano Müller <dev-zero@gentoo.org>
-  -files/ossp-uuid-1.6.1-gentoo.patch, +ossp-uuid-1.6.2-r2.ebuild,
-  +files/ossp-uuid-1.6.2-gentoo-perl.patch, +files/ossp-uuid-1.6.2-php.patch:
-  Add support for perl bindings (bug #350558, thanks to Scott Thomson). Added
-  static-libs USE flag. Support for building with php-5.4.
-
-  12 May 2012; Alexis Ballier <aballier@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  keyword ~amd64-fbsd
-
-  21 Aug 2011; Ole Markus With <olemarkus@gentoo.org> -ossp-uuid-1.6.1.ebuild,
-  -ossp-uuid-1.6.2.ebuild:
-  Non-maintainer commit: removing older ebuilds that depend on dev-lang/php:5
-  (bug 363809)
-
-  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  Stable for HPPA (bug #373357).
-
-  24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  ossp-uuid-1.6.2-r1.ebuild:
-  ppc/ppc64 stable wrt #373357
-
-  23 Jul 2011; Raúl Porcel <armin76@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  alpha/ia64/s390/sh/sparc stable wrt #373357
-
-  15 Jul 2011; Markus Meier <maekke@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  x86 stable, bug #373357
-
-  10 Jul 2011; Markus Meier <maekke@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  arm stable, bug #373357
-
-  30 Jun 2011; Markos Chandras <hwoarang@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
-  Stable on amd64 wrt bug #373357
-
-*ossp-uuid-1.6.2-r1 (05 Jun 2011)
-
-  05 Jun 2011; <olemarkus@gentoo.org> +ossp-uuid-1.6.2-r1.ebuild,
+  +files/ossp-uuid-1.6.2-gentoo-perl.patch,
   +files/ossp-uuid-1.6.2-gentoo-php.patch,
-  +files/ossp-uuid-1.6.2-gentoo-r1.patch:
-  Non-maintainer commit: Made ebuild work with minor version slotted PHP.
-  Split patch so the PHP part could be applied to all versions.
-  See bug 343699
+  +files/ossp-uuid-1.6.2-gentoo-r1.patch, +files/ossp-uuid-1.6.2-hwaddr.patch,
+  +files/ossp-uuid-1.6.2-manfix.patch, +files/ossp-uuid-1.6.2-php.patch, +file
+  s/ossp-uuid-1.6.2-uuid-preserve-m-option-status-in-v-option-handling.patch,
+  +metadata.xml, +ossp-uuid-1.6.2-r2.ebuild, +ossp-uuid-1.6.2-r4.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Apr 2010; Raúl Porcel <armin76@gentoo.org> ossp-uuid-1.6.2.ebuild:
-  alpha/arm/ia64/s390/sh/sparc stable wrt #285475
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  ossp-uuid-1.6.2.ebuild:
-  stable x86, bug 285475
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Dec 2009; Peter Volkov <pva@gentoo.org> metadata.xml:
-  metadata.xml: added required herd tag.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Oct 2009; nixnut <nixnut@gentoo.org> ossp-uuid-1.6.2.ebuild:
-  ppc stable #285475
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Oct 2009; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.2.ebuild:
-  Stable for HPPA (bug #285475).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Oct 2009; Tobias Klausmann <klausman@gentoo.org>
-  ossp-uuid-1.6.2.ebuild:
-  Stable on alpha, bug #285475
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Sep 2009; Brent Baude <ranger@gentoo.org> ossp-uuid-1.6.2.ebuild:
-  Marking ossp-uuid-1.6.2 ppc64 for bug 285475
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 May 2009; Steve Dibb <beandog@gentoo.org> ossp-uuid-1.6.2.ebuild:
-  amd64 stable
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*ossp-uuid-1.6.2 (21 Mar 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Mar 2009; Tiziano Müller <dev-zero@gentoo.org>
-  +files/ossp-uuid-1.6.2-gentoo.patch, +ossp-uuid-1.6.2.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Dec 2008; Raúl Porcel <armin76@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Add ~s390 wrt #215479
-
-  03 Jun 2008; Alexis Ballier <aballier@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  keyword ~sparc-fbsd
-
-  19 May 2008; Tiziano Müller <dev-zero@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  ~mips keyword added
-
-  18 May 2008; Tiziano Müller <dev-zero@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Keyworded for ~ppc, ~arm and ~sh
-
-  09 May 2008; Christian Hoffmann <hoffie@gentoo.org>
-  ossp-uuid-1.6.1.ebuild:
-  call phpize, bug 220519
-
-  24 Apr 2008; Tiziano Müller <dev-zero@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Removed need_php5_cli and added PHP_VERSION=5 to depend on php only when
-  php USE-flag is set (bug #219108).
-
-  07 Apr 2008; Alexis Ballier <aballier@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  keyword ~x86-fbsd
-
-  07 Apr 2008; Markus Rothe <corsair@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Added ~ppc64; bug #215479
-
-  31 Mar 2008; Raúl Porcel <armin76@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Add ~alpha/~ia64/~sparc wrt #215479
-
-  31 Mar 2008; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.1.ebuild:
-  Marked ~hppa (bug #215479).
-
-*ossp-uuid-1.6.1 (28 Mar 2008)
-
-  28 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
-  +files/ossp-uuid-1.6.1-gentoo.patch, +metadata.xml,
-  +ossp-uuid-1.6.1.ebuild:
-  Initial commit (bug #167649, ebuild written by me).

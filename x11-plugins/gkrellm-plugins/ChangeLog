@@ -1,79 +1,56 @@
 # ChangeLog for x11-plugins/gkrellm-plugins
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/gkrellm-plugins/ChangeLog,v 1.20 2013/06/01 11:33:29 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  01 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #144305
+*gkrellm-plugins-2.0 (09 Aug 2015)
 
-  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> gkrellm-plugins-2.0.ebuild:
-  Drop sparc keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +gkrellm-plugins-2.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  gkrellm-plugins-2.0.ebuild:
-  Drop dependency on nonexistant atom
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  gkrellm-plugins-2.0.ebuild:
-  Remove reference to another plugin slated for removal.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  gkrellm-plugins-2.0.ebuild:
-  Remove from the dependencies the packages that are slated for removal.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Jul 2010; Jim Ramsay <lack@gentoo.org> gkrellm-plugins-2.0.ebuild:
-  x11-plugins/gkrellm-hddtemp is masked for removal
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Jul 2008; Jim Ramsay <lack@gentoo.org> metadata.xml:
-  Moved local USE flags to metadata.xml
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Jan 2008; Jim Ramsay <lack@gentoo.org> gkrellm-plugins-2.0.ebuild:
-  Removing gkrellm-bfm, since it is replaced by x11-plugins/bfm with
-  USE=gkrellm. (Bug #207720)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Oct 2007; Jim Ramsay <lack@gentoo.org> gkrellm-plugins-2.0.ebuild:
-  Removing gkrellm-radio, since it segfaults if there is no /dev/radio on your
-  system
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2007; Jim Ramsay <lack@gentoo.org> metadata.xml,
-  gkrellm-plugins-2.0.ebuild:
-  Updated to include most recent gkrellm-2 plugins (bug 30244)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*gkrellm-plugins-2.0 (04 Feb 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Feb 2007; Charlie Shepherd <masterdriverz@gentoo.org> +metadata.xml,
-  -gkrellm-plugins-1.2.11-r1.ebuild, +gkrellm-plugins-2.0.ebuild:
-  Kill old gkrellm-plugins and add new one; bug 151446
+  Bug: https://bugs.gentoo.org/552720
 
-  18 Nov 2006; Saleem Abdulrasool <compnerd@gentoo.org>
-  gkrellm-plugins-1.2.11-r1.ebuild:
-  Drop gnome keyword for gnome-1.x removal
-
-  27 Oct 2006; Diego Pettenò <flameeyes@gentoo.org>
-  gkrellm-plugins-1.2.11-r1.ebuild:
-  Remove plugin depending on masked xmms. Thanks to Jorge Vargas in bug #152936.
-
-  10 Jul 2005; <brix@gentoo.org> gkrellm-plugins-1.2.11-r1.ebuild:
-  gkrellmwireless is now ~sparc, excluding.
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-  31 Oct 2002; Hannes Mehnert <hannes@mehnert.org>
-  gkrellm-plugins-1.2.11-r1.ebuild: moved gkrellmwireless to net-wireless
-
-*gkrellm-plugins-1.2.11-r1 (16 Jun 2002)
-
-  29 Aug 2002; Seemant Kulleen <seemant@gentoo.org> * :
-
-  Relocated to x11-plugins
-
-  16 Jun 2002; Ben Lutgens <lamer@gentoo.org> ChangeLog  :
-
-  Added gkrellshoot and gkrellmweather
-
-*gkrellm-plugins-1.2.11 (10 Jun 2002)
-
-  10 Jun 2002; Ben Lutgens <lamer@gentoo.org> gkrellm-plugins-1.2.11: A
-  rollup package of all gkrellm-plugins in portage. If you add any gkrellm
-  plugins, make sure to add an entry to the DEPEND for your addition. Also
-  keep the revision number the same as the gkrellm package number. Some
-  plugins will only work with certain versions of gkrellm.

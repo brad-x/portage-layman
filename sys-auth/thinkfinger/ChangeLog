@@ -1,93 +1,60 @@
 # ChangeLog for sys-auth/thinkfinger
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/thinkfinger/ChangeLog,v 1.16 2012/06/02 16:21:20 xmw Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  02 Jun 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
-  Add proxy-maintainers herd and remote-id.
+*thinkfinger-0.3-r3 (09 Aug 2015)
 
-  24 May 2012; Mike Frysinger <vapier@gentoo.org> thinkfinger-0.3-r3.ebuild:
-  Inherit user for enewuser/etc... rather than eutils.
-
-  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
-  thinkfinger-0.3-r3.ebuild:
-  Use virtual/libusb instead of dev-libs/libusb.
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> thinkfinger-0.3-r3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  31 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> +files/0.3-strip-strip.patch,
-  thinkfinger-0.3-r3.ebuild:
-  Remove --strip-all from LDFLAGS (was causing build failure with GCC 4.6)
-  (bug #371001).  Clean up ebuild - EAPI 4, remove useless die calls, install
-  udev scripts in /lib, not $(get_libdir), add static-libs USE and port to
-  autotools-utils eclass.
-
-  26 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  thinkfinger-0.3-r3.ebuild:
-  QA: do not call econf in src_compile for EAPI=2 and later. Closes bug
-  #376449.
-
-*thinkfinger-0.3-r3 (16 Jun 2011)
-
-  16 Jun 2011; Michael Weber <xmw@gentoo.org> -thinkfinger-0.3-r2.ebuild,
-  +thinkfinger-0.3-r3.ebuild:
-  Updated ebuild
-
-  01 Oct 2010; Michael Weber <xmw@gentoo.org> metadata.xml:
-  Taking maintainership
-
-*thinkfinger-0.3-r2 (11 Apr 2010)
-
-  11 Apr 2010; <chainsaw@gentoo.org> +files/0.3-send-sync-event.patch,
-  -thinkfinger-0.2.2-r1.ebuild, -thinkfinger-0.3.ebuild,
-  files/60-thinkfinger.rules, -thinkfinger-0.3-r1.ebuild,
-  +thinkfinger-0.3-r2.ebuild:
-  Revision bump by Víctor Enríquez Miguel. Patches from mephinet & Michael
-  Weber close bug #298459. Patch from Michael Weber closes bug #309751.
-
-*thinkfinger-0.3-r1 (18 Feb 2009)
-
-  18 Feb 2009; <chainsaw@gentoo.org> +files/0.3-carriagereturn.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.3-carriagereturn.patch,
   +files/0.3-direct_set_config_usb_hello.patch,
-  +files/0.3-tftoolgroup.patch, +files/60-thinkfinger.rules, metadata.xml,
-  +thinkfinger-0.3-r1.ebuild:
-  Due to lack of hardware I have been unable to attend to this package. I
-  will now however be proxy maintaining for Víctor Enríquez Miguel
-  <victor.quicksilver@gmail.com> , metadata updated to reflect this. Add a
-  fingerprint group so non-root users can use the software, as per the
-  suggestions by Henning Schild <henning@wh9.tu-dresden.de> in bug #228919.
-  Also add explicit chmod/chown statements to the installed script. Do not
-  apply USB configuration 1 to the device, this was never necessary and
-  broke with kernel 2.6.28 ("hello" patch). Added udev rules to make device
-  handling automatic.
+  +files/0.3-send-sync-event.patch, +files/0.3-strip-strip.patch,
+  +files/0.3-tftoolgroup.patch, +files/60-thinkfinger.rules, +metadata.xml,
+  +thinkfinger-0.3-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Sep 2007; Mike Frysinger <vapier@gentoo.org> thinkfinger-0.3.ebuild:
-  Make kernel check a warning and use emake in src_install.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*thinkfinger-0.3 (11 Apr 2007)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Apr 2007; Tony Vroon <chainsaw@gentoo.org> +thinkfinger-0.3.ebuild:
-  Version bump, closes bug #172837. This release requires UINPUT support in
-  the kernel and features USB-level debugging. It should also keep the
-  fingerprint reader from heating up as much as it did on 0.2.2
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Feb 2007; Piotr Jaroszyński <peper@gentoo.org>
-  thinkfinger-0.2.2-r1.ebuild:
-  Add ~amd64 wrt bug #167951.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Feb 2007; Tony Vroon <chainsaw@gentoo.org> thinkfinger-0.2.2-r1.ebuild:
-  Put inherit in correct location, as requested by Mr_Bones.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*thinkfinger-0.2.2-r1 (21 Feb 2007)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Feb 2007; Tony Vroon <chainsaw@gentoo.org> -thinkfinger-0.2.2.ebuild,
-  +thinkfinger-0.2.2-r1.ebuild:
-  Install PAM module into correct directory.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*thinkfinger-0.2.2 (21 Feb 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Feb 2007; Tony Vroon <chainsaw@gentoo.org> +metadata.xml,
-  +thinkfinger-0.2.2.ebuild:
-  Initial commit, ebuild by me but heavily inspired by the work of John
-  Schember <j5483@yahoo.com>. Closes bug #162297.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
 

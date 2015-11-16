@@ -1,54 +1,61 @@
 # ChangeLog for net-firewall/fwipsec
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwipsec/ChangeLog,v 1.14 2014/08/10 20:55:39 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*fwipsec-0.4.2-r1 (09 Aug 2015)
 
-  17 Sep 2010; Robin H. Johnson <robbat2@gentoo.org>
-  fwipsec-0.4.2-r1.ebuild:
-  Builds fine with no sources installed.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +fwipsec-0.4.2-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  22 Mar 2010; Justin Lecher (jlec) <jlec@gentoo.org>
-  fwipsec-0.4.2-r1.ebuild:
-  HOMEPAGE corrected, #309571
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Dec 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing seemant from metadata.xml as per #202469. Assigning to
-  maintainer-needed.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 May 2007; Marius Mauch <genone@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  Replacing einfo with elog
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove pfeifer from metadata.xml due to retirement.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 May 2006; Seemant Kulleen <seemant@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  not, newinitd but doinitd, thanks to Mizipzor in #gentoo
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Sep 2005; Aron Griffis <agriffis@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  Mark 0.4.2-r1 stable on alpha
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jul 2005; Seemant Kulleen <seemant@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  use newinitd for the initscript
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Apr 2005; Aron Griffis <agriffis@gentoo.org> fwipsec-0.4.2-r1.ebuild:
-  stable on ia64
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*fwipsec-0.4.2-r1 (07 Feb 2005)
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Feb 2005; Marcus D. Hanwell <cryos@gentoo.org> +fwipsec-0.4.2-r1.ebuild,
-  -fwipsec-0.4.2.ebuild:
-  Corrected installation location of man page, marked stable on x86 and amd64
-  for Seemant.
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-*fwipsec-0.4.2 (04 Jun 2004)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Jun 2004; Seemant Kulleen <seemant@gentoo.org> +metadata.xml,
-  +fwipsec-0.4.2.ebuild:
-  New firewall easy configuration script. It also gives you the bonus of turning
-  on squid and IP/SEC for VPN's. This package was created by Jay Pfeifer and his
-  associates.

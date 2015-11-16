@@ -1,141 +1,70 @@
 # ChangeLog for net-analyzer/greenbone-security-assistant
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/greenbone-security-assistant/ChangeLog,v 1.21 2015/08/03 12:42:25 jlec Exp $
+# (auto-generated from git log)
 
-*greenbone-security-assistant-6.0.5 (03 Aug 2015)
+*greenbone-security-assistant-6.0.5 (09 Aug 2015)
+*greenbone-security-assistant-6.0.4 (09 Aug 2015)
+*greenbone-security-assistant-6.0.3 (09 Aug 2015)
+*greenbone-security-assistant-5.0.8 (09 Aug 2015)
+*greenbone-security-assistant-5.0.7 (09 Aug 2015)
 
-  03 Aug 2015; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-6.0.5.ebuild:
-  Version Bump
-
-*greenbone-security-assistant-5.0.8 (27 Jul 2015)
-*greenbone-security-assistant-6.0.4 (27 Jul 2015)
-
-  27 Jul 2015; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.8.ebuild,
-  +greenbone-security-assistant-6.0.4.ebuild,
-  -greenbone-security-assistant-5.0.5.ebuild,
-  -greenbone-security-assistant-5.0.6.ebuild,
-  -greenbone-security-assistant-6.0.1.ebuild:
-  Version Bump
-
-*greenbone-security-assistant-5.0.7 (19 May 2015)
-*greenbone-security-assistant-6.0.3 (19 May 2015)
-
-  19 May 2015; Justin Lecher <jlec@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/greenbone-security-assistant-5.0.3-run.patch, +files/gsad,
+  +files/gsad-daemon.conf, +files/gsad.init, +files/gsad.logrotate,
+  +files/gsad.service, +files/gsad.tmpfiles.d,
   +greenbone-security-assistant-5.0.7.ebuild,
-  +greenbone-security-assistant-6.0.3.ebuild:
-  Version Bump
+  +greenbone-security-assistant-5.0.8.ebuild,
+  +greenbone-security-assistant-6.0.3.ebuild,
+  +greenbone-security-assistant-6.0.4.ebuild,
+  +greenbone-security-assistant-6.0.5.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*greenbone-security-assistant-6.0.1 (06 Apr 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Apr 2015; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-6.0.1.ebuild,
-  -greenbone-security-assistant-6.0_beta6.ebuild:
-  Version Bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*greenbone-security-assistant-5.0.6 (06 Mar 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Mar 2015; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.6.ebuild,
-  greenbone-security-assistant-6.0_beta6.ebuild:
-  Version Bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Feb 2015; Patrick Lauer <patrick@gentoo.org>
-  -greenbone-security-assistant-5.0.4.ebuild:
-  Remove old version with unsatisfied dependencies
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/gsad:
+  [QA] Remove executable bit from files, bug 550434.
 
-*greenbone-security-assistant-6.0_beta6 (14 Feb 2015)
-*greenbone-security-assistant-5.0.5 (14 Feb 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Feb 2015; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.5.ebuild,
-  +greenbone-security-assistant-6.0_beta6.ebuild,
-  -greenbone-security-assistant-6.0_beta3.ebuild,
-  -greenbone-security-assistant-6.0_beta4.ebuild:
-  Version Bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Dec 2014; Justin Lecher <jlec@gentoo.org>
-  greenbone-security-assistant-5.0.4.ebuild,
-  greenbone-security-assistant-6.0_beta4.ebuild:
-  Fix version number if depndencies, #532896
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*greenbone-security-assistant-6.0_beta4 (01 Dec 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Dec 2014; Justin Lecher <jlec@gentoo.org>
-  -greenbone-security-assistant-2.0.1.ebuild,
-  -greenbone-security-assistant-4.0.1.ebuild,
-  -greenbone-security-assistant-4.0.2.ebuild,
-  -greenbone-security-assistant-5.0.3-r1.ebuild,
-  +greenbone-security-assistant-6.0_beta4.ebuild:
-  Version Bump; drop old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*greenbone-security-assistant-5.0.4 (04 Nov 2014)
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Nov 2014; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.4.ebuild:
-  Version Bump
-
-*greenbone-security-assistant-6.0_beta3 (22 Oct 2014)
-
-  22 Oct 2014; Justin Lecher <jlec@gentoo.org>
-  -greenbone-security-assistant-5.0.1.ebuild,
-  -greenbone-security-assistant-5.0.3.ebuild,
-  greenbone-security-assistant-5.0.3-r1.ebuild,
-  +greenbone-security-assistant-6.0_beta3.ebuild:
-  Update to latest beta; drop old
-
-  01 Oct 2014; Justin Lecher <jlec@gentoo.org> files/gsad.init:
-  Fix service dependency
-
-*greenbone-security-assistant-5.0.3-r1 (01 Oct 2014)
-
-  01 Oct 2014; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.3-r1.ebuild,
-  +files/greenbone-security-assistant-5.0.3-run.patch, +files/gsad.init,
-  +files/gsad.logrotate, +files/gsad.service, +files/gsad.tmpfiles.d,
-  +files/gsad-daemon.conf:
-  Add systemd support
-
-*greenbone-security-assistant-5.0.3 (28 Sep 2014)
-
-  28 Sep 2014; Justin Lecher <jlec@gentoo.org>
-  +greenbone-security-assistant-5.0.3.ebuild, metadata.xml:
-  Version Bump
-
-*greenbone-security-assistant-5.0.1 (19 Jun 2014)
-
-  19 Jun 2014; Hanno Boeck <hanno@gentoo.org>
-  +greenbone-security-assistant-5.0.1.ebuild:
-  Bump.
-
-*greenbone-security-assistant-4.0.2 (10 Nov 2013)
-
-  10 Nov 2013; Hanno Boeck <hanno@gentoo.org>
-  +greenbone-security-assistant-4.0.2.ebuild:
-  Bump.
-
-  15 Sep 2013; Markus Meier <maekke@gentoo.org>
-  greenbone-security-assistant-4.0.1.ebuild:
-  add ~arm, bug #389453
-
-*greenbone-security-assistant-4.0.1 (01 Jul 2013)
-
-  01 Jul 2013; Hanno Boeck <hanno@gentoo.org>
-  +greenbone-security-assistant-4.0.1.ebuild:
-  Bump, EAPI 5 port, remove old workarounds.
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
-  greenbone-security-assistant-2.0.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  27 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> files/gsad,
-  greenbone-security-assistant-2.0.1.ebuild:
-  Do not build with werror. Use cmake-utils eclass properly. Fix header line in
-  the initscript. Bug found in Sabayon.
-
-*greenbone-security-assistant-2.0.1 (09 Oct 2011)
-
-  09 Oct 2011; Hanno Boeck <hanno@gentoo.org>
-  +greenbone-security-assistant-2.0.1.ebuild, +files/gsad, +metadata.xml:
-  Initial commit of Greenbone Security Assistant, part of openvas.

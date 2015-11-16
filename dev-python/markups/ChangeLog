@@ -1,66 +1,64 @@
 # ChangeLog for dev-python/markups
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/markups/ChangeLog,v 1.16 2015/06/22 10:04:15 jlec Exp $
+# (auto-generated from git log)
 
-*markups-0.6.3 (22 Jun 2015)
+*markups-0.6.3 (09 Aug 2015)
+*markups-0.6.1 (09 Aug 2015)
+*markups-0.2.4-r1 (09 Aug 2015)
 
-  22 Jun 2015; Justin Lecher <jlec@gentoo.org> +markups-0.6.3.ebuild:
-  Version Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +markups-0.2.4-r1.ebuild,
+  +markups-0.6.1.ebuild, +markups-0.6.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*markups-0.6.1 (27 May 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 May 2015; Justin Lecher <jlec@gentoo.org> +markups-0.6.1.ebuild,
-  markups-0.2.4-r1.ebuild:
-  Version Bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Jan 2015; Justin Lecher <jlec@gentoo.org> -markups-0.2.4.ebuild:
-  Drop old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> markups-0.2.4-r1.ebuild:
-  Stable for x86, wrt bug #530536
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> markups-0.2.4-r1.ebuild,
+  markups-0.6.1.ebuild, markups-0.6.3.ebuild:
+  Use https by default
 
-  27 Dec 2014; Agostino Sarubbo <ago@gentoo.org> markups-0.2.4-r1.ebuild:
-  Stable for amd64, wrt bug #530536
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Nov 2014; Ian Delaney <idella4@gentoo.org> markups-0.2.4-r1.ebuild:
-  add pypy support
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Nov 2014; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
-  Add python herd
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*markups-0.2.4-r1 (14 Nov 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Nov 2014; Justin Lecher <jlec@gentoo.org> +markups-0.2.4-r1.ebuild,
-  metadata.xml:
-  Add py3_4 support
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Nov 2014; Tom Wijsman <TomWij@gentoo.org> metadata.xml:
-  Maintainer needed.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Aug 2013; Agostino Sarubbo <ago@gentoo.org> markups-0.2.4.ebuild:
-  Stable for x86, wrt bug #481938
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Aug 2013; Agostino Sarubbo <ago@gentoo.org> markups-0.2.4.ebuild:
-  Stable for amd64, wrt bug #481938
-
-  03 Jul 2013; Tom Wijsman <TomWij@gentoo.org> markups-0.2.4.ebuild:
-  Fix dependencies, make use of PYTHON_USEDEP.
-
-  03 Jul 2013; Tom Wijsman <TomWij@gentoo.org> markups-0.2.4.ebuild:
-  Added missing dev-python/markdown dependency. Added tests, set them to not
-  build in parallel to keep output clean; there is no need for that speedup for
-  this small package.
-
-  03 Jul 2013; Tom Wijsman <TomWij@gentoo.org> markups-0.2.4.ebuild:
-  Added and tested Python 3.3 compatibility, fixes bug #475478 reported by
-  Helmut Jarausch.
-
-*markups-0.2.4 (29 Jun 2013)
-
-  29 Jun 2013; Tom Wijsman <TomWij@gentoo.org> +markups-0.2.4.ebuild,
-  +metadata.xml:
-  New ebuild for dev-python/markups, a wrapper around various text markups;
-  dependency of app-editors/retext. Fixes bug #475200, original ebuild by mrueg.

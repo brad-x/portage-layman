@@ -5,6 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{3,4,5} pypy pypy3 )
+PYTHON_REQ_USE="threads(+)"
 
 inherit bash-completion-r1 distutils-r1
 
@@ -26,9 +27,9 @@ VENDOR_DEPEND="
 	>=dev-python/CacheControl-0.11.5[${PYTHON_USEDEP}]
 	>=dev-python/lockfile-0.10.2[${PYTHON_USEDEP}]
 	>=dev-python/progress-1.2[${PYTHON_USEDEP}]
-	>=dev-python/ipaddress-1.0.14[${PYTHON_USEDEP}]
 	>=dev-python/packaging-15.3[${PYTHON_USEDEP}]
 	>=dev-python/retrying-1.3.3[${PYTHON_USEDEP}]
+	virtual/python-ipaddress[${PYTHON_USEDEP}]
 "
 RDEPEND="${VENDOR_DEPEND}
 	>=dev-python/setuptools-18.2[${PYTHON_USEDEP}]
@@ -57,10 +58,10 @@ python_install_all() {
 
 	COMPLETION="${T}"/completion.tmp
 
-	${EPYTHON} pip/__init__.py completion --bash > "${COMPLETION}" || die
+	"${PYTHON}" pip/__init__.py completion --bash > "${COMPLETION}" || die
 	newbashcomp "${COMPLETION}" ${PN}
 
-	${EPYTHON} pip/__init__.py completion --zsh > "${COMPLETION}" || die
+	"${PYTHON}" pip/__init__.py completion --zsh > "${COMPLETION}" || die
 	insinto /usr/share/zsh/site-functions
 	newins "${COMPLETION}" _pip
 }

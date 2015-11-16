@@ -1,41 +1,57 @@
 # ChangeLog for media-plugins/vdr-extb
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-extb/ChangeLog,v 1.7 2014/02/23 19:48:48 hd_brummy Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Feb 2014; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-extb-0.3.1.ebuild:
-  converted to vdr-plugin-2.eclass
+*vdr-extb-0.3.1 (09 Aug 2015)
 
-  28 Jan 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-extb-0.3.1.ebuild:
-  fixed #336198; minor ebuild fixes; eapi=3
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/vdr-extb-0.3.1-gentoo.diff, +files/vdr-extb-0.3.1_vdr-1.7.13.diff,
+  +metadata.xml, +vdr-extb-0.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-*vdr-extb-0.3.1 (02 Dec 2010)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Dec 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-extb-0.2.9.ebuild, -files/vdr-extb-0.2.9-gentoo.diff,
-  -vdr-extb-0.3.0.ebuild, -files/vdr-extb-0.3.0-gcc4.3.diff,
-  +vdr-extb-0.3.1.ebuild, +files/vdr-extb-0.3.1-gentoo.diff,
-  +files/vdr-extb-0.3.1_vdr-1.7.13.diff:
-  clean up; version bump, fixed also bug #336198
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Jun 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  -files/extb-wakeup-0.2.9.tar.gz, -files/vdr.extb:
-  Remove unused files (one of which was a compressed tarball).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Dec 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-extb-0.3.0-gcc4.3.diff, vdr-extb-0.3.0.ebuild:
-  Fix compilation with gcc-4.3. Bug #251189.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 Mar 2008; Joerg Bornkessel <hd_brummy@gentoo.org> -files/rc.irexec,
-  vdr-extb-0.2.9.ebuild, vdr-extb-0.3.0.ebuild:
-  removed initscript; always present by lirc; package collision
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*vdr-extb-0.3.0 (27 Mar 2008)
-*vdr-extb-0.2.9 (27 Mar 2008)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Mar 2008; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/vdr-extb-0.2.9-gentoo.diff, +files/extb-wakeup-0.2.9.tar.gz,
-  +files/rc.irexec, +files/vdr.extb, +metadata.xml, +vdr-extb-0.2.9.ebuild,
-  +vdr-extb-0.3.0.ebuild:
-  initial ebuild , moved from gentoo.de overlay
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
 

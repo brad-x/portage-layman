@@ -1,113 +1,63 @@
 # ChangeLog for sys-block/noflushd
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/noflushd/ChangeLog,v 1.8 2014/03/10 10:59:50 ssuominen Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Mar 2014; Samuli Suominen <ssuominen@gentoo.org> noflushd-2.7.3.ebuild,
-  noflushd-2.7.4.ebuild:
-  Remove virtual/libc dependency.
+*noflushd-2.8 (09 Aug 2015)
+*noflushd-2.7.5 (09 Aug 2015)
+*noflushd-2.7.4 (09 Aug 2015)
+*noflushd-2.7.3 (09 Aug 2015)
 
-*noflushd-2.8 (10 Oct 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/noflushd.confd,
+  +files/noflushd.rc6, +metadata.xml, +noflushd-2.7.3.ebuild,
+  +noflushd-2.7.4.ebuild, +noflushd-2.7.5.ebuild, +noflushd-2.8.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Oct 2013; Tony Vroon <chainsaw@gentoo.org> +noflushd-2.8.ebuild:
-  Version bump, as requested by Holger Hoffstätte in bug #410567.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Apr 2009; Mike Frysinger <vapier@gentoo.org> noflushd-2.7.5.ebuild:
-  Force data/init dir sanity #265636 by Jeremy Stent.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*noflushd-2.7.5 (27 Feb 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Feb 2009; Mike Frysinger <vapier@gentoo.org> +noflushd-2.7.5.ebuild:
-  Version bump #260206 by Cheng Renquan.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> noflushd-2.7.3.ebuild,
-  noflushd-2.7.4.ebuild:
-  Use newinitd and newconfd (#174266)
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/noflushd.rc6:
+  [QA] Remove executable bit from files, bug 550434.
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*noflushd-2.7.3 (06 Mar 2005)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org> +metadata.xml,
-  +files/noflushd.confd, +files/noflushd.rc6, +noflushd-2.6.3.ebuild,
-  +noflushd-2.7.3.ebuild, +noflushd-2.7.4.ebuild:
-  Moved from sys-apps/noflushd to sys-block/noflushd.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Dec 2004; Dylan Carlson <absinthe@gentoo.org> noflushd-2.7.3.ebuild:
-  Stable on amd64.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*noflushd-2.7.4 (13 Dec 2004)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Dec 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.6.3.ebuild,
-  noflushd-2.7.2.ebuild, noflushd-2.7.3.ebuild, +noflushd-2.7.4.ebuild,
-  noflushd-2.7.ebuild:
-  Version bumped.
+  Bug: https://bugs.gentoo.org/552720
 
-  27 Nov 2004; Michele Noberasco <s4t4n@gentoo.org> noflushd-2.7.3.ebuild:
-  Stable for x86 (had this up and running forever now ;-)
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  noflushd-2.7.2.ebuild, noflushd-2.7.3.ebuild:
-  Masked noflushd-2.7.3.ebuild stable for ppc
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  noflushd-2.7.2.ebuild:
-  Masked noflushd-2.7.2.ebuild stable for ppc
-
-  30 Jun 2004; Aron Griffis <agriffis@gentoo.org> noflushd-2.6.3.ebuild,
-  noflushd-2.7.2.ebuild, noflushd-2.7.3.ebuild, noflushd-2.7.ebuild:
-  sync IUSE (missing), glibc -> libc
-
-*noflushd-2.7.3 (13 Apr 2004)
-
-  13 Apr 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.7.3.ebuild:
-  Version bumped. Closes 47731
-
-  11 Apr 2004; David Holm <dholm@gentoo.org> noflushd-2.7.2.ebuild:
-  Added to ~ppc.
-
-*noflushd-2.7.2 (10 Apr 2004)
-
-  10 Apr 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.7.2.ebuild:
-  Version bumped. Closes 46792
-
-*noflushd-2.7.2 (10 Apr 2004)
-
-  10 Apr 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.7.2.ebuild:
-  Version bumped. Closes 46792
-
-*noflushd-2.7 (27 Jan 2004)
-
-  27 Jan 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.7.ebuild:
-  Version bumped. Closes 39484
-
-  27 Jan 2004; Martin Holzer <mholzer@gentoo.org> noflushd-2.4-r3.ebuild,
-  noflushd-2.4-r6.ebuild, noflushd-2.6.3.ebuild:
-  adding RESTRICT=nomirror
-
-*noflushd-2.6.3 (15 Jul 2002)
-
-  13 Sep 2002; Donny Davies <woodchip@gentoo.org> noflushd-2.6.3.ebuild :
-  sys-devel/ld.so is deprecated; #6476.
-
-  21 Jul 2002; Mark Guertin <gerk@gentoo.org> :
-  updated keywords (-ppc)
-
-  15 Jul 2002; Maik Schreiber <blizzy@gentoo.org> :
-  New version, closes bug #4577.
-
-*noflushd-2.4-r3.ebuild (14 July 2002)
-
-  16 Apr 2003; Stefan Jones <cretin@gentoo.org> :
-  remove sys-devel/ld.so dep.
-
-  14 Jul 2002; phoen][x <phoenix@gentoo.org> noflushd-2.4-r3.ebuild :
-  Added LICENSE, KEYWORDS, SLOT.
-
-*noflushd-2.4-r6 (1 Feb 2002)
-
-  16 Apr 2003; Stefan Jones <cretin@gentoo.org> :
-  remove sys-devel/ld.so dep.
-
-  14 Jul 2002; phoen][x <phoenix@gentoo.org> noflushd-2.4-r6.ebuild :
-  Added LICENSE, KEYWORDS, SLOT.

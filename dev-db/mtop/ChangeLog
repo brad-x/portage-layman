@@ -1,56 +1,57 @@
 # ChangeLog for dev-db/mtop
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mtop/ChangeLog,v 1.14 2015/06/09 13:12:59 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*mtop-0.6.6-r3 (09 Aug 2015)
 
-*mtop-0.6.6-r3 (08 May 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mtop-0.6.6-globalstatusfix.patch, +metadata.xml,
+  +mtop-0.6.6-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  08 May 2014; Brian Evans <grknight@gentoo.org> +mtop-0.6.6-r3.ebuild,
-  -mtop-0.6.6-r2.ebuild:
-  Revision bump, replace broken ebuild that defined src_prepare twice and  other
-  cleanup
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*mtop-0.6.6-r2 (29 Aug 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  29 Aug 2013; Ian Delaney <idella4@gentoo.org> +mtop-0.6.6-r2.ebuild,
-  -mtop-0.6.6-r1.ebuild, -mtop-0.6.6.ebuild:
-  revbump -> EAPI 5, remove old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 May 2013; Patrick Lauer <patrick@gentoo.org> mtop-0.6.6-r1.ebuild:
-  Cleanups
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mtop-0.6.6-r1 (31 Jan 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Jan 2010; Robin H. Johnson <robbat2@gentoo.org> +mtop-0.6.6-r1.ebuild,
-  +files/mtop-0.6.6-globalstatusfix.patch:
-  Bug #296186: Revbump with fix to use SHOW GLOBAL STATUS for QPS count,
-  like similar patch in mytop. Upstream no longer maintains mtop, you should
-  probably move to mytop instead.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Feb 2006; <mcumming@gentoo.org> mtop-0.6.6.ebuild:
-  Virtual for perl-core dep
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Dec 2005; <mcumming@gentoo.org> mtop-0.6.6.ebuild:
-  Migrating libnet to perl-core
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  28 Nov 2005; <mcumming@gentoo.org> mtop-0.6.6.ebuild:
-  Switched from perl-module to perl-app eclass
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Oct 2004; David Holm <dholm@gentoo.org> mtop-0.6.6.ebuild:
-  Added to ~ppc.
-
-  09 Oct 2004; Simon Stelling <blubb@gentoo.org> mtop-0.6.6.ebuild:
-  added ~amd64
-
-  15 Sep 2004; Thomas Matthijs <axxo@gentoo.org> mtop-0.6.6.ebuild:
-  fixed cvs header
-
-*mtop-0.6.6 (13 Sep 2004)
-
-  13 Sep 2004; Robin H. Johnson <robbat2@gentoo.org> +mtop-0.6.6.ebuild:
-  Bug #7684. Ebuild submitted by Minati jean michel <magnet@suidzer0.org>.

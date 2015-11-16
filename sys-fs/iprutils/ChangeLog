@@ -1,221 +1,92 @@
 # ChangeLog for sys-fs/iprutils
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/iprutils/ChangeLog,v 1.46 2015/07/23 19:56:33 pacho Exp $
+# (auto-generated from git log)
 
-  23 Jul 2015; Pacho Ramos <pacho@gentoo.org> iprutils-2.4.7.ebuild:
-  ppc stable wrt bug #551236
+*iprutils-2.4.8-r1 (09 Aug 2015)
+*iprutils-2.4.7 (09 Aug 2015)
+*iprutils-2.3.18 (09 Aug 2015)
+*iprutils-2.3.13 (09 Aug 2015)
+*iprutils-2.3.9 (09 Aug 2015)
 
-*iprutils-2.4.8-r1 (21 Jun 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/iprdump,
+  +files/iprdump-r1, +files/iprinit, +files/iprinit-r1, +files/iprupdate,
+  +files/iprupdate-r1, +files/iprutils-2.4.7-tinfo.patch,
+  +files/iprutils-2.4.8-tinfo.patch, +iprutils-2.3.9.ebuild,
+  +iprutils-2.3.13.ebuild, +iprutils-2.3.18.ebuild, +iprutils-2.4.7.ebuild,
+  +iprutils-2.4.8-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Jun 2015; Jeroen Roovers <jer@gentoo.org> -iprutils-2.4.8.ebuild,
-  +iprutils-2.4.8-r1.ebuild:
-  Install bash-completion script in the proper place.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*iprutils-2.4.8 (20 Jun 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Jun 2015; Jeroen Roovers <jer@gentoo.org> +iprutils-2.4.8.ebuild,
-  +files/iprutils-2.4.8-tinfo.patch:
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/iprdump, files/iprdump-r1,
+  files/iprinit, files/iprinit-r1, files/iprupdate, files/iprupdate-r1:
+  [QA] Remove executable bit from files, bug 550434.
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  20 Sep 2015; Jeroen Roovers <jer@gentoo.org> iprutils-2.4.7.ebuild:
+  Stable for PPC64 (bug #551236).
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
+
+  20 Sep 2015; Jeroen Roovers <jer@gentoo.org> -iprutils-2.3.9.ebuild,
+  -iprutils-2.3.13.ebuild, -iprutils-2.3.18.ebuild:
+  Old (bug #377703).
+
+  Package-Manager: portage-2.2.20.1
+
+*iprutils-2.4.9 (28 Oct 2015)
+
+  28 Oct 2015; Jeroen Roovers <jer@gentoo.org> +iprutils-2.4.9.ebuild:
   Version bump.
 
-  04 Jun 2015; Jeroen Roovers <jer@gentoo.org> iprutils-2.4.7.ebuild,
-  +files/iprdump-r1, +files/iprinit-r1, +files/iprupdate-r1:
-  Fix init.d scripts.
+  Package-Manager: portage-2.2.23
 
-*iprutils-2.4.7 (04 Jun 2015)
+  28 Oct 2015; Jeroen Roovers <jer@gentoo.org> iprutils-2.4.9.ebuild:
+  Set sub-SLOT.
 
-  04 Jun 2015; Jeroen Roovers <jer@gentoo.org> +iprutils-2.4.7.ebuild,
-  +files/iprutils-2.4.7-tinfo.patch, files/iprupdate:
-  Version bump (bug #532488). Fix a bashism (bug #526268). Fix building against
-  sys-libs/ncurses[tinfo] (bug #457530). Add USE=static-libs.
+  Package-Manager: portage-2.2.23
 
-*iprutils-2.3.18 (25 Dec 2014)
-
-  25 Dec 2014; Sergey Popov <pinkbyte@gentoo.org> -iprutils-2.3.0.ebuild,
-  +iprutils-2.3.18.ebuild:
-  Version bump, respect compiler, CFLAGS and LDFLAGS, wrt bug #377757. Drop old
-  version
-
-  04 Nov 2014; Mikle Kolyada <zlogene@gentoo.org> iprutils-2.3.0.ebuild,
-  iprutils-2.3.13.ebuild, iprutils-2.3.9.ebuild:
-  QA: drop LICENSE from dodoc
-
-  21 Jul 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #88306
-
-*iprutils-2.3.13 (27 Feb 2013)
-
-  27 Feb 2013; Brent Baude <ranger@gentoo.org> -iprutils-2.2.18.ebuild,
-  -iprutils-2.2.19.ebuild, iprutils-2.3.9.ebuild, +iprutils-2.3.13.ebuild:
-  Removed 2.2 series, stablized 2.3.9, and added 2.3.13
-
-  21 Jan 2013; Samuli Suominen <ssuominen@gentoo.org> iprutils-2.2.18.ebuild,
-  iprutils-2.2.19.ebuild, iprutils-2.3.0.ebuild, iprutils-2.3.9.ebuild:
-  Remove sys-apps/hotplug dependency from || () in favour of virtual/udev wrt
-  #145809
-
-  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> iprutils-2.2.18.ebuild,
-  iprutils-2.2.19.ebuild, iprutils-2.3.0.ebuild, iprutils-2.3.9.ebuild:
-  Use virtual/udev instead of sys-fs/udev wrt #444398
-
-*iprutils-2.3.9 (22 Apr 2012)
-
-  22 Apr 2012; Brent Baude <ranger@gentoo.org> +iprutils-2.3.9.ebuild:
-  Adding iprutils-2.3.9 for ~ppc/~ppc64
-
-  02 Nov 2010; Brent Baude <ranger@gentoo.org> -iprutils-2.2.11.ebuild,
-  -iprutils-2.2.13.ebuild:
-  Removing -2.2.11 and -2.2.13
-
-*iprutils-2.3.0 (02 Nov 2010)
-
-  02 Nov 2010; Brent Baude <ranger@gentoo.org> +iprutils-2.3.0.ebuild:
-  Adding iprutils-2.3.0
-
-  22 Mar 2010; Brent Baude <ranger@gentoo.org> iprutils-2.2.19.ebuild:
-  Marking iprutils-2.2.19 ppc and ppc64 stable to fix build failure with
-  current headers
-
-*iprutils-2.2.19 (22 Mar 2010)
-
-  22 Mar 2010; Brent Baude <ranger@gentoo.org> +iprutils-2.2.19.ebuild:
-  Adding iprutils-2.2.19
-
-  18 Jan 2010; Brent Baude <ranger@gentoo.org> -iprutils-2.2.3.ebuild,
-  -iprutils-2.2.8.ebuild, -iprutils-2.2.9.ebuild, iprutils-2.2.13.ebuild:
-  Stable 2.2.13
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> iprutils-2.2.3.ebuild,
-  iprutils-2.2.8.ebuild, iprutils-2.2.9.ebuild, iprutils-2.2.11.ebuild,
-  iprutils-2.2.13.ebuild:
-  Remove virtual/libc
-
-*iprutils-2.2.13 (03 Apr 2009)
-
-  03 Apr 2009; Brent Baude <ranger@gentoo.org> iprutils-2.2.11.ebuild,
-  +iprutils-2.2.13.ebuild:
-  Adding iprutils-2.2.13 and stablizing 2.2.13
-
-*iprutils-2.2.11 (20 Oct 2008)
-
-  20 Oct 2008; Brent Baude <ranger@gentoo.org> +iprutils-2.2.11.ebuild:
-  Adding iprutils-2.2.11
-
-  20 Oct 2008; Brent Baude <ranger@gentoo.org> iprutils-2.2.9.ebuild:
-  Marking iprutils-2.2.9 ppc and ppc64 stable
-
-*iprutils-2.2.9 (21 Apr 2008)
-
-  21 Apr 2008; Brent Baude <ranger@gentoo.org> iprutils-2.2.8.ebuild,
-  +iprutils-2.2.9.ebuild:
-  Marking iprutils-2.2.8 stable and adding an ebuild for 2.2.9
-
-  21 Feb 2008; Brent Baude <ranger@gentoo.org> -iprutils-2.2.0.ebuild:
-  Removing old ebuilds
-
-  14 Feb 2008; Brent Baude <ranger@gentoo.org> metadata.xml:
-  Updating metadata
-
-  14 Feb 2008; Brent Baude <ranger@gentoo.org> ChangeLog:
-  Removed iprutils-2.0.15.8.ebuild
-
-*iprutils-2.2.8 (05 Jan 2008)
-
-  05 Jan 2008; Brent Baude <ranger@gentoo.org> iprutils-2.2.3.ebuild,
-  +iprutils-2.2.8.ebuild:
-  Adding -2.2.8 new ebuild
-
-  05 Jan 2008; Brent Baude <ranger@gentoo.org> iprutils-2.2.3.ebuild:
-  Marking -2.2.3 ppc and ppc64 stable
-
-  28 Oct 2007; Christian Heim <phreak@gentoo.org> iprutils-2.0.15.8.ebuild,
-  iprutils-2.2.0.ebuild, iprutils-2.2.2.ebuild, iprutils-2.2.3.ebuild:
-  Include virtual/logger in RDEPEND, as the initscript already specifies 'need
-  logger'.
-
-  08 May 2007; Brent Baude <ranger@gentoo.org> iprutils-2.2.0.ebuild,
-  iprutils-2.2.2.ebuild, iprutils-2.2.3.ebuild:
-  Incorporating fix for udev foo, stablize 2.2.2.
-
-  28 Apr 2007; Sven Wegener <swegener@gentoo.org> iprutils-2.0.15.8.ebuild,
-  iprutils-2.2.2.ebuild:
-  Fix *initd, *confd and *envd calls (#173884, #174266)
-
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> iprutils-2.2.0.ebuild,
-  iprutils-2.2.3.ebuild:
-  Use newinitd
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-*iprutils-2.2.3 (23 Jan 2007)
-
-  23 Jan 2007; Brent Baude <ranger@gentoo.org> +iprutils-2.2.3.ebuild:
-  Added ebuild for 2.2.3
-
-*iprutils-2.2.2 (18 Sep 2006)
-
-  18 Sep 2006; Brent Baude <ranger@gentoo.org> iprutils-2.2.0.ebuild,
-  +iprutils-2.2.2.ebuild:
-  Marked iprutils-2.2.0 ppc/ppc64 stable and added 2.2.2 as ~ for both arches.
-  I also cleaned out older versions of iprutils such as iprutils-2.0.15.3-r1,
-  iprutils-2.0.13*
-
-*iprutils-2.2.0 (15 Aug 2006)
-
-  15 Aug 2006; Brent Baude <ranger@gentoo.org> +iprutils-2.2.0.ebuild:
-  Introducing iprutils-2.2.0 ebuild
-
-  27 Mar 2006; Brent Baude <ranger@gentoo.org> iprutils-2.0.15.8.ebuild:
-  Marking iprutils-2.0.15.8 ppc & ppc64 stable
-
-*iprutils-2.0.15.8 (25 Feb 2006)
-
-  25 Feb 2006; Brent Baude <ranger@gentoo.org> +iprutils-2.0.15.8.ebuild:
-  Adding iprutils-2.0.15.8.ebuild
-
-  25 Jan 2006; Brent Baude <ranger@gentoo.org> iprutils-2.0.15.3-r1.ebuild:
-  Marking iprutils-2.0.15.3-r1 ppc stable for 32bit userland goodness
-
-  03 Nov 2005; Brent Baude <ranger@gentoo.org> iprutils-2.0.15.3-r1.ebuild:
-  Marking iprutils-2.0.15.3-r1 ~ppc for 32bit ppc64 userlands
-
-  14 Sep 2005; Brent Baude <ranger@gentoo.org> iprutils-2.0.15.3-r1.ebuild:
-  marking iprutils-2.0.15.3-r1 stable for ppc64
-
-  25 Aug 2005; Brent Baude <ranger@gentoo.org> iprutils-2.0.15.3-r1.ebuild:
-  Adding a dependancy for hotplug to iprutils-2.0.15.3-r1 so that the
-  microcode update utility will work.
-
-*iprutils-2.0.15.3-r1 (22 Aug 2005)
-
-  22 Aug 2005; Brent Baude <ranger@gentoo.org> +files/iprdump,
-  +files/iprinit, +files/iprupdate, +iprutils-2.0.15.3-r1.ebuild:
-  Adding a new iprutils ebuild called - iprutils-2.0.15.3-r1.ebuild. Changes
-  include referencing a new iprdd version, depping sysfsutils-1.3, and the
-  addition of 3 init.d scripts.
-
-  16 Aug 2005; Brent Baude <ranger@gentoo.org> iprutils-2.0.13.7-r2.ebuild:
-  Added ~ppc to iprutils which had applied to ppc64 before only, but with the
-  32bit userlands, we'll need to stablize for ppc as well.
-
-  16 Aug 2005; Brent Baude <ranger@gentoo.org> iprutils-2.0.13.7-r2.ebuild:
-  iprutils-2.0.13.7-r2.ebuild
-
-*iprutils-2.0.13.7-r2 (12 Aug 2005)
-
-  12 Aug 2005; Brent Baude <ranger@gentoo.org> +iprutils-2.0.13.7-r2.ebuild:
-  Adding iprutils-2.0.13.7-r2 which deps sysfs-utils-1.30. Marking as ~ppc64
-  as well because sysfs-utils is ~ for all archs.
-
-  26 May 2005; Sven Wegener <swegener@gentoo.org> metadata.xml:
-  Herd name is 'ppc64' not 'gentoo-ppc64'
-
-  09 Mar 2005; Sven Wegener <swegener@gentoo.org>
-  iprutils-2.0.13.7-r1.ebuild:
-  Fixed invalid atoms in *DEPEND.
-
-  06 Mar 2005; Tom Gall <tgall@gentoo.org> +iprutils-2.0.13.7-r1,
-  +ChangeLog, +metadata.xml:
-  Initial version
-
-*iprutils-2.0.13.7-r1 (06 Mar 2005)

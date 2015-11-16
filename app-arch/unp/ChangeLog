@@ -1,126 +1,58 @@
 # ChangeLog for app-arch/unp
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/unp/ChangeLog,v 1.33 2014/11/14 15:18:38 hanno Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*unp-2.0_pre7_p1 (14 Nov 2014)
+*unp-2.0_pre7_p1 (09 Aug 2015)
+*unp-2.0_pre7 (09 Aug 2015)
 
-  14 Nov 2014; <hanno@gentoo.org> unp-2.0_pre7.ebuild, +unp-2.0_pre7_p1.ebuild,
-  +files/unp-2.0_pre7_p1-remove-deprecated-have.diff:
-  Bump, fix version issues with bash 4.3 (#526234), remove deprecated bash
-  completion command (#526236).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/unp-2.0_pre7_p1-remove-deprecated-have.diff, +metadata.xml,
+  +unp-2.0_pre7.ebuild, +unp-2.0_pre7_p1.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Aug 2014; Hanno Boeck <hanno@gentoo.org> -unp-1.0.15-r1.ebuild,
-  -unp-1.0.15-r2.ebuild, -unp-2.0_pre5.ebuild,
-  -files/unp-1.0.15-7z-lzma-xz.diff, -files/unp-1.0.15-lzma-7z.patch:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> unp-2.0_pre7.ebuild:
-  x86 stable wrt bug #396767
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> unp-2.0_pre7.ebuild:
-  Stable for amd64, wrt bug #396767
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*unp-2.0_pre7 (16 Oct 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Oct 2011; Hanno Boeck <hanno@gentoo.org> +unp-2.0_pre7.ebuild:
-  Version bump, port to bash-completion-r1, add ~arm keyword.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*unp-2.0_pre5 (21 Oct 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Oct 2010; Hanno Boeck <hanno@gentoo.org> +unp-2.0_pre5.ebuild:
-  Version bump, nls and bash-completion support, no more patches needed.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org> unp-1.0.15-r2.ebuild:
-  Transfer Prefix keywords
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*unp-1.0.15-r2 (23 Dec 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Dec 2009; Hanno Boeck <hanno@gentoo.org> +unp-1.0.15-r2.ebuild,
-  +files/unp-1.0.15-7z-lzma-xz.diff:
-  Also support .tar.xz.
-
-  27 Aug 2009; Christian Faulhammer <fauli@gentoo.org> unp-1.0.15-r1.ebuild:
-  stable x86, bug 280067
-
-  03 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> unp-1.0.15-r1.ebuild:
-  Install manpage and ucat wrt #280067, Comment #2.
-
-  03 Aug 2009; Tiago Cunha <tcunha@gentoo.org> unp-1.0.15-r1.ebuild:
-  stable amd64, bug 280067
-
-*unp-1.0.15-r1 (12 Jan 2009)
-
-  12 Jan 2009; Hanno Boeck <hanno@gentoo.org>
-  +files/unp-1.0.15-lzma-7z.patch, +unp-1.0.15-r1.ebuild:
-  Support lzma and 7z, patch from http://bugs.debian.org/492369.
-
-*unp-1.0.15 (09 Oct 2008)
-
-  09 Oct 2008; Hanno Boeck <hanno@gentoo.org> +unp-1.0.15.ebuild:
-  Version bump.
-
-  27 Dec 2007; Peter Weller <welp@gentoo.org> unp-1.0.14.ebuild:
-  Stable on amd64; bug 203106
-
-  27 Dec 2007; Dawid Węgliński <cla@gentoo.org> unp-1.0.14.ebuild:
-  Stable on x86 for security bug #203106
-
-*unp-1.0.14 (27 Dec 2007)
-
-  27 Dec 2007; Hanno Boeck <hanno@gentoo.org> +unp-1.0.14.ebuild:
-  Version bump.
-
-  26 Dec 2007; Markus Meier <maekke@gentoo.org> unp-1.0.13.ebuild:
-  x86 stable, security bug #203106
-
-  26 Dec 2007; Peter Weller <welp@gentoo.org> unp-1.0.13.ebuild:
-  Stable on amd64; bug 203106
-
-*unp-1.0.13 (23 Dec 2007)
-
-  23 Dec 2007; Hanno Boeck <hanno@gentoo.org> +unp-1.0.13.ebuild:
-  Version bump, security issue (escaping of filenames).
-
-  31 Jul 2007; Christoph Mende <angelos@gentoo.org> unp-1.0.10.ebuild:
-  Stable on amd64 wrt bug #187240
-
-  09 Mar 2007; Christian Faulhammer <opfer@gentoo.org> unp-1.0.10.ebuild:
-  stable x86; bug 170042
-
-  02 Mar 2007; <genstef@gentoo.org> unp-1.0.9.ebuild, unp-1.0.10.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  22 Sep 2006; <blubb@gentoo.org> unp-1.0.10.ebuild:
-  marked ~amd64
-
-  16 Sep 2005; Fabian Groffen <grobian@gentoo.org> unp-1.0.10.ebuild:
-  Marking ~ppc-macos (bug #105869)
-
-*unp-1.0.10 (13 Mar 2005)
-
-  13 Mar 2005; Hanno Boeck <hanno@gentoo.org> +unp-1.0.10.ebuild:
-  Version bump.
-
-  14 Mar 2004; David Holm <dholm@gentoo.org> unp-1.0.9.ebuild:
-  Added to ~ppc.
-
-  12 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> :
-  Don't assign default to S; header fix
-
-  12 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> unp-1.0.8.ebuild,
-  unp-1.0.9.ebuild:
-  Don't assign default to S; header fix
-
-*unp-1.0.9 (11 Mar 2004)
-
-  11 Mar 2004; Hanno Boeck <hanno@gentoo.org> unp-1.0.9.ebuild:
-  Version bump.
-
-*unp-1.0.8 (27 Nov 2003)
-
-  27 Nov 2003; Hanno Boeck <hanno@gentoo.org> unp-1.0.8.ebuild:
-  Added unp, a generic unpacking script.
+  Bug: https://bugs.gentoo.org/552720
 

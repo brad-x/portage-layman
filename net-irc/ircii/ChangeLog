@@ -1,149 +1,58 @@
 # ChangeLog for net-irc/ircii
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ircii/ChangeLog,v 1.38 2012/05/09 13:23:29 grobian Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  09 May 2012; Fabian Groffen <grobian@gentoo.org> ircii-20111115.ebuild:
-  Drop failing (flag-o-matic not inherited) append-libs, it is no longer
-  necessary
+*ircii-20111115 (09 Aug 2015)
+*ircii-20110228 (09 Aug 2015)
 
-  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ircii-20111115.ebuild:
-  marked x86 per bug 404821
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/ircii-20110228-glibc.patch, +ircii-20110228.ebuild,
+  +ircii-20111115.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ircii-20111115.ebuild:
-  Stable for amd64, wrt bug #404821
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Feb 2012; Nathan Phillip Brink <binki@gentoo.org> -ircii-20060725.ebuild:
-  Drop old ircii-20060725 as bug #392771 is closed.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> ircii-20060725.ebuild,
-  ircii-20110228.ebuild, ircii-20111115.ebuild:
-  Drop sparc keywords
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ircii-20110228.ebuild:
-  Stable for AMD64, wrt bug #392771
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ircii-20110228.ebuild:
-  x86 stable wrt bug #392771
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20110228.ebuild,
-  ircii-20111115.ebuild:
-  Ensure that ${CHOST}-gcc is called instead of `gcc', fixing bug #393109 by
-  ago.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20060725.ebuild:
-  Address bug #247987 by adding blocker on net-irc/irc-client to
-  ircii-20060725. Add missing expansion quoting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ircii-20111115 (02 Dec 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> +ircii-20111115.ebuild:
-  Bump to ircii-20111115, which was released to address the glibc
-  incompatibility.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jun 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20110228.ebuild:
-  Import modifications necessary for prefix from prefix-overlay, add some
-  prefix keywords.
-
-*ircii-20110228 (13 May 2011)
-
-  13 May 2011; Nathan Phillip Brink <binki@gentoo.org>
-  +ircii-20110228.ebuild, +files/ircii-20110228-glibc.patch:
-  Bump to ircii-20110228 with patch allowing compilation on glibc systems.
-
-  28 Jul 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  ircii-20060725.ebuild:
-  Use emake -j1 for install.
-
-  19 Mar 2007; Raúl Porcel <armin76@gentoo.org> -ircii-20040820.ebuild:
-  old
-
-  19 Mar 2007; Peter Weller <welp@gentoo.org> ircii-20060725.ebuild:
-  Stable on amd64 wrt bug 171418
-
-  19 Mar 2007; Fabian Groffen <grobian@gentoo.org> ircii-20040820.ebuild,
-  ircii-20060725.ebuild:
-  Dropped ppc-macos, see you in prefix
-
-  19 Mar 2007; Gustavo Zacarias <gustavoz@gentoo.org> ircii-20060725.ebuild:
-  Stable on sparc wrt #171418
-
-  19 Mar 2007; Raúl Porcel <armin76@gentoo.org> ircii-20060725.ebuild:
-  x86 stable wrt bug 171418
-
-*ircii-20060725 (17 Feb 2007)
-
-  17 Feb 2007; Raúl Porcel <armin76@gentoo.org> +ircii-20060725.ebuild:
-  version bump, bug 166947
-
-  22 Aug 2006; Jason Wever <weeve@gentoo.org> ircii-20040820.ebuild:
-  Stable on SPARC.
-
-  09 Mar 2005; Lina Pezzella <j4rg0n@gentoo.org> ircii-20040820.ebuild:
-  Stable ppc-macos
-
-  09 Feb 2005; Lina Pezzella <j4rg0n@gentoo.org> ircii-20040820.ebuild:
-  Unstable ppc-macos
-
-  13 Nov 2004; Sven Wegener <swegener@gentoo.org> -ircii-20030709-r2.ebuild,
-  ircii-20040820.ebuild:
-  Removed old ebuild.
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org> ircii-20040820.ebuild:
-  Stable on amd64.
-
-  01 Oct 2004; Sven Wegener <swegener@gentoo.org> -ircii-20040216.ebuild,
-  ircii-20040820.ebuild:
-  Marked stable on x86. Removed old ebuild.
-
-*ircii-20040820 (24 Aug 2004)
-
-  24 Aug 2004; Sven Wegener <swegener@gentoo.org> ircii-20040216.ebuild,
-  +ircii-20040820.ebuild:
-  Version bump and SRC_URI update.
-
-  09 Jul 2004; Sven Wegener <swegener@gentoo.org> ircii-20030709-r2.ebuild:
-  Updated SRC_URI.
-
-*ircii-20040216 (08 Jul 2004)
-
-  08 Jul 2004; Sven Wegener <swegener@gentoo.org> +ircii-20040216.ebuild:
-  Version bump.
-
-  08 Jul 2004; Sven Wegener <swegener@gentoo.org> metadata.xml,
-  -ircii-20030709-r1.ebuild, -ircii-20030709.ebuild:
-  Removed older ebuilds and assigned to the net-irc herd.
-
-  29 May 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  ircii-20030709-r2.ebuild:
-  Masked ircii-20030709-r2.ebuild testing for ppc
-
-  29 Jan 2004; Chuck Short <zul@gentoo.org> ircii-20030709-r1.ebuild,
-  ircii-20030709-r2.ebuild, ircii-20030709.ebuild:
-  Header clean ups.
-
-  04 Nov 2003; Chuck Short <zul@gentoo.org> ircii-20030709-r2.ebuild:
-  Marked stable on x86 and amd64.
-
-  28 Oct 2003; Todd Sunderlin <todd@gentoo.org> ircii-20030709-r2.ebuild:
-  added ~sparc keyword
-
-  01 Oct 2003; Chuck Short <zul@gentoo.org> ircii-20030709-r1.ebuild,
-  ircii-20030709-r2.ebuild, ircii-20030709.ebuild:
-  Added ~amd64 to keywords.
-
-*ircii-20030709-r2 (13 Sep 2003)
-
-  13 Sep 2003; Mamoru KOMACHI <usata@gentoo.org> ircii-20030709-r2.ebuild:
-  Fixed mandir.  Thanks to splite <splite-gentoo@sigint.cs.purdue.edu>
-  for reporting the bug in #28551
-
-*ircii-20030709-r1 (31 Jul 2003)
-
-  31 Jul 2003; Greg Fitzgerald <gregf@gentoo.org> ircii-20030709-r1.ebuild:
-  Fixed depends, added einstall. This closes bug #25348.
-
-*ircii-20030709 (22 Jul 2003)
-
-  22 Jul 2003; Greg Fitzgerald <gregf@gentoo.org> ircii-20030709.ebuild:
-  Initial Release
+  Bug: https://bugs.gentoo.org/552720
 

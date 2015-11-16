@@ -1,84 +1,58 @@
 # ChangeLog for gnustep-apps/addresses
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/addresses/ChangeLog,v 1.19 2012/09/23 08:13:49 phajdan.jr Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> addresses-0.4.8.ebuild:
-  x86 stable wrt bug #433289
+*addresses-0.4.8 (09 Aug 2015)
+*addresses-0.4.7 (09 Aug 2015)
 
-  09 Sep 2012; Anthony G. Basile <blueness@gentoo.org> addresses-0.4.8.ebuild:
-  Stable ppc, bug #433289
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +addresses-0.4.7.ebuild,
+  +addresses-0.4.8.ebuild, +files/addresses-0.4.7-as-needed.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> addresses-0.4.8.ebuild:
-  Stable for amd64, wrt bug #433289
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*addresses-0.4.8 (25 Jul 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org> +addresses-0.4.8.ebuild:
-  Version bump, clean ebuild
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Dec 2008; Bernard Cafarelli <voyageur@gentoo.org>
-  +files/addresses-0.4.7-as-needed.patch, addresses-0.4.7.ebuild:
-  Fix compilation with --as-needed, bug #250169
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Nov 2007; Steve Dibb <beandog@gentoo.org> addresses-0.4.7.ebuild:
-  amd64 stable, bug 195990
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Nov 2007; Bernard Cafarelli <voyageur@gentoo.org>
-  -files/address-user-root.patch, -files/nonflattened.patch,
-  -addresses-0.4.6-r1.ebuild:
-  Remove old version
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Oct 2007; nixnut <nixnut@gentoo.org> addresses-0.4.7.ebuild:
-  Stable on ppc wrt bug 195990
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Oct 2007; Christian Faulhammer <opfer@gentoo.org>
-  addresses-0.4.7.ebuild:
-  stable x86, bug 195990
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*addresses-0.4.7 (10 Sep 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  10 Sep 2007; Bernard Cafarelli <voyageur@gentoo.org>
-  +addresses-0.4.7.ebuild:
-  Version bump from the GNUstep overlay
-
-  22 Aug 2007; Roy Marples <uberlord@gentoo.org> addresses-0.4.6-r1.ebuild:
-  Keyworded ~x86-fbsd, #183467 thanks to Nathan Smith.
-
-  18 Aug 2007; Christoph Mende <angelos@gentoo.org>
-  addresses-0.4.6-r1.ebuild:
-  Added ~amd64 wrt bug #170433
-
-  11 Jun 2007; Bernard Cafarelli <voyageur@gentoo.org>
-  -addresses-0.4.6.ebuild:
-  Remove old ebuild
-
-  06 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  07 Aug 2005; Michael Hanselmann <hansmi@gentoo.org>
-  addresses-0.4.6-r1.ebuild:
-  Stable on ppc.
-
-  10 Jun 2005; Armando Di Cianno <fafhrd@gentoo.org>
-  addresses-0.4.6-r1.ebuild:
-  updates (and stabilization of Addresses.app) of GNUMail related GNUstep ebuilds
-
-*addresses-0.4.6-r1 (11 Nov 2004)
-
-  11 Nov 2004; Armando Di Cianno <fafhrd@gentoo.org>
-  +files/address-user-root.patch, +files/nonflattened.patch,
-  +addresses-0.4.6-r1.ebuild, addresses-0.4.6.ebuild:
-  Mass Update: gnustep.eclass revamped to allow configurable root install;
-  gnustep-base/libs/apps updated to utilize new gnustep.eclass (only versions
-  bumped where files would change); some KEYWORDS were accidentally dropped
-  between version bumps of packages -- this has been resolved; windowmaker
-  correctly supports gnustep now
-
-*addresses-0.4.6 (14 Oct 2004)
-
-  14 Oct 2004; David Holm <dholm@gentoo.org> addresses-0.4.6.ebuild:
-  Added to ~ppc.
-
-  09 Sep 2004; Armando Di Cianno <fafhrd@gentoo.org> :
-  Added package
+  Bug: https://bugs.gentoo.org/552720
 

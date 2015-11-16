@@ -1,55 +1,56 @@
 # ChangeLog for app-emacs/doxymacs
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/doxymacs/ChangeLog,v 1.12 2015/06/09 10:58:49 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*doxymacs-1.8.0-r3 (09 Aug 2015)
 
-  07 Jun 2014; Ulrich Müller <ulm@gentoo.org> doxymacs-1.8.0-r3.ebuild:
-  Remove redundant NEED_EMACS assignment.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +doxymacs-1.8.0-r3.ebuild, +files/50doxymacs-gentoo.el, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  17 Feb 2014; Ulrich Müller <ulm@gentoo.org> doxymacs-1.8.0-r3.ebuild:
-  Update ebuild to EAPI 5. Specify LICENSE more precisely.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jun 2009; Ulrich Mueller <ulm@gentoo.org> -doxymacs-1.8.0-r2.ebuild:
-  Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jun 2009; Markus Meier <maekke@gentoo.org> doxymacs-1.8.0-r3.ebuild:
-  amd64 stable, bug #272462
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
-  doxymacs-1.8.0-r3.ebuild:
-  stable x86, bug 272462
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*doxymacs-1.8.0-r3 (02 Mar 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2009; Ulrich Mueller <ulm@gentoo.org> doxymacs-1.8.0-r2.ebuild,
-  +doxymacs-1.8.0-r3.ebuild:
-  Append "-Wno-error" to CFLAGS, bug 260874. Remove --with-datadir configure
-  option since it has no effect. Define DESTDIR for installation.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Apr 2008; Christian Faulhammer <opfer@gentoo.org>
-  doxymacs-1.8.0-r2.ebuild:
-  stable x86/amd64
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*doxymacs-1.8.0-r2 (04 Jul 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jul 2007; Ulrich Mueller <ulm@gentoo.org> files/50doxymacs-gentoo.el,
-  -doxymacs-1.8.0.ebuild, -doxymacs-1.8.0-r1.ebuild,
-  +doxymacs-1.8.0-r2.ebuild:
-  Make proper use of autoloads in sitefile, fixes bug #184175.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*doxymacs-1.8.0-r1 (04 Jul 2007)
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  files/50doxymacs-gentoo.el, +doxymacs-1.8.0-r1.ebuild:
-  don't create autoloads as they are not sufficient; instead load doxymacs
-  when a C mode is entered; kill the font-lock in the site-init; fixes bug
-  184175, reported by Anders Bach Nielsen <abachn@daimi.au.dk>
-
-*doxymacs-1.8.0 (02 Jul 2007)
-
-  02 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  +files/50doxymacs-gentoo.el, +metadata.xml, +doxymacs-1.8.0.ebuild:
-  new ebuild for bug 110083; taken from Sunrise; thanks to Ciprian Ciubotariu
-  <cheepeero@gmx.net> and Christian Schlotter <again@gmx.de>: massaged a bit

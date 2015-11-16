@@ -1,160 +1,57 @@
 # ChangeLog for games-rpg/daimonin-client
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/daimonin-client/ChangeLog,v 1.32 2015/03/01 16:22:25 tupone Exp $
+# (auto-generated from git log)
 
-  01 Mar 2015; Tupone Alfredo <tupone@gentoo.org>
-  daimonin-client-0.10.5.ebuild:
-  EAPI 5
+*daimonin-client-0.10.5 (09 Aug 2015)
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> daimonin-client-0.10.5.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +daimonin-client-0.10.5.ebuild, +files/daimonin-client-0.10.5-datadir.patch,
+  +files/daimonin-client-0.10.5-nozlib.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  15 Jan 2011; Markus Meier <maekke@gentoo.org> daimonin-client-0.10.5.ebuild:
-  x86 stable, bug #350774
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Jan 2011; Brent Baude <ranger@gentoo.org>
-  daimonin-client-0.10.5.ebuild:
-  Marking daimonin-client-0.10.5 ppc for bug 350774
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jan 2011; Markos Chandras <hwoarang@gentoo.org>
-  daimonin-client-0.10.5.ebuild:
-  Stable on amd64 wrt bug #350774
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*daimonin-client-0.10.5 (01 Dec 2010)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Dec 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +daimonin-client-0.10.5.ebuild,
-  +files/daimonin-client-0.10.5-datadir.patch,
-  +files/daimonin-client-0.10.5-nozlib.patch, metadata.xml:
-  version bump - ebuild submitted by Simon in bug #338055
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Oct 2010; Brent Baude <ranger@gentoo.org>
-  daimonin-client-0.9.7.1-r1.ebuild:
-  stable ppc, bug 317687
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 May 2010; Markus Meier <maekke@gentoo.org>
-  daimonin-client-0.9.7.1-r1.ebuild:
-  x86 stable, bug #317687
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Mar 2010; Tupone Alfredo <tupone@gentoo.org>
-  daimonin-client-0.9.7.1-r1.ebuild:
-  Remove local zlib include files
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*daimonin-client-0.9.7.1-r1 (26 Mar 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Mar 2010; Tupone Alfredo <tupone@gentoo.org>
-  +daimonin-client-0.9.7.1-r1.ebuild,
-  +files/daimonin-client-0.9.7.1-nozlib.patch:
-  Unbundle zlib. Bug #310849 by flameeyes@gentoo.org
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Jan 2010; Joseph Jezak <josejx@gentoo.org>
-  daimonin-client-0.9.7.1.ebuild:
-  Marked ppc stable for bug #294332.
-
-  26 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
-  daimonin-client-0.9.7.1.ebuild:
-  stable x86, bug 294332
-
-*daimonin-client-0.9.7.1 (13 Jan 2009)
-
-  13 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +daimonin-client-0.9.7.1.ebuild:
-  version bump
-
-  13 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  daimonin-client-0.9.7.ebuild:
-  EAPI=2; add use-based deps (bug #247458)
-
-*daimonin-client-0.9.7 (29 May 2007)
-
-  29 May 2007; Tristan Heaven <nyhm@gentoo.org>
-  -files/0.96.7_beta3-gentoo-paths.patch,
-  -files/daimonin-client-0.96.7_beta3-64bits.patch,
-  +daimonin-client-0.9.7.ebuild, -daimonin-client-0.96.7_beta3.ebuild:
-  Version bump
-
-  01 Feb 2007; Simon Stelling <blubb@gentoo.org>
-  daimonin-client-0.96.7_beta3.ebuild:
-  de-keyword for amd64 per bug 91950
-
-*daimonin-client-0.96.7_beta3 (16 Aug 2006)
-
-  16 Aug 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/daimonin-client-0.96.7_beta3-64bits.patch,
-  +files/0.96.7_beta3-gentoo-paths.patch,
-  +daimonin-client-0.96.7_beta3.ebuild:
-  version bump (bug #132367)
-
-  31 Mar 2006; <Tupone@gentoo.org> daimonin-client-0.95b-r2.ebuild,
-  daimonin-client-0.96.6_beta3.ebuild:
-  Removing unused USE="X", bug #117640 by pclouds
-
-  24 Mar 2006; <Tupone@gentoo.org>
-  +files/daimonin-client-0.96.6_beta3-64bits.patch,
-  daimonin-client-0.96.6_beta3.ebuild:
-  Fixing bug #91950, die while loading. Thanks Daren Hayward for report 
-  and Raymond Lewis Rebbeck for solution
-
-  13 Mar 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  daimonin-client-0.95b-r2.ebuild, daimonin-client-0.96.6_beta3.ebuild:
-  X is implicit
-
-  26 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  daimonin-client-0.95b-r2.ebuild:
-  Making games last on inherit line.
-
-  22 Jan 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  daimonin-client-0.95b-r2.ebuild, daimonin-client-0.96.6_beta3.ebuild:
-  Setting virtual/x11 DEPEND based on X USE flag and closing bug #77826.
-
-*daimonin-client-0.96.6_beta3 (29 Dec 2004)
-
-  29 Dec 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  -daimonin-client-0.96.5_beta3-r1.ebuild,
-  -daimonin-client-0.96.5_beta3.ebuild, +daimonin-client-0.96.6_beta3.ebuild,
-  -daimonin-client-0.96_beta2.ebuild:
-  version bump (bug #74979); clean old ebuilds
-
-*daimonin-client-0.96.5_beta3-r1 (29 Nov 2004)
-
-  29 Nov 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  +daimonin-client-0.96.5_beta3-r1.ebuild:
-  minor version bump
-
-*daimonin-client-0.96.5_beta3 (31 Aug 2004)
-
-  31 Aug 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/0.96.5_beta3-gentoo-paths.patch,
-  +daimonin-client-0.96.5_beta3.ebuild:
-  version bump
-
-*daimonin-client-0.96_beta2 (29 Jun 2004)
-
-  29 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  +daimonin-client-0.96_beta2.ebuild, -daimonin-client-0.96a_beta2.ebuild:
-  Renamed ebuild to work around a portage bug (#17172)
-
-*daimonin-client-0.96a_beta2 (29 Jun 2004)
-
-  29 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/0.96a_beta2-gentoo-paths.patch, +daimonin-client-0.96a_beta2.ebuild:
-  version bump (bug #52180) - ebuild and patch thanks to Alexander Sandbu
-
-  16 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  daimonin-client-0.95b.ebuild:
-  clean older ebuild
-
-  27 May 2004; Danny van Dyk <kugelfang@gentoo.org>
-  daimonin-client-0.95b-r2.ebuild:
-  Marked ~amd64.
-
-*daimonin-client-0.95b-r2 (15 Feb 2004)
-
-  15 Feb 2004; David Holm <dholm@gentoo.org> daimonin-client-0.95b-r2.ebuild:
-  Versionbump and placed in ~ppc.
-
-*daimonin-client-0.95b (18 Oct 2003)
-
-  18 Oct 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

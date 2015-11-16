@@ -1,103 +1,70 @@
 # ChangeLog for dev-scheme/guile-gnome-platform
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-scheme/guile-gnome-platform/ChangeLog,v 1.21 2013/02/02 12:33:14 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  02 Feb 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup up due #154183
+*guile-gnome-platform-2.16.2 (09 Aug 2015)
+*guile-gnome-platform-2.16.1-r1 (09 Aug 2015)
+*guile-gnome-platform-2.16.1 (09 Aug 2015)
 
-  27 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/2.15.92-add-atk-overrides.patch,
+  +files/2.15.92-add-cairo-fix-from-bzr.patch,
+  +files/2.16.1-conflicting-types.patch, +files/2.16.1-gcc45.patch,
+  +files/2.16.1-gdk-color.patch, +files/2.16.1-glib-single-include.patch,
+  +guile-gnome-platform-2.16.1.ebuild, +guile-gnome-platform-2.16.1-r1.ebuild,
+  +guile-gnome-platform-2.16.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   guile-gnome-platform-2.16.1.ebuild, guile-gnome-platform-2.16.1-r1.ebuild,
   guile-gnome-platform-2.16.2.ebuild:
-  Drop sparc keywords
+  Use https for most gnu.org URLs
 
-*guile-gnome-platform-2.16.2 (26 Jul 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Jul 2012; Justin Lecher <jlec@gentoo.org>
-  +guile-gnome-platform-2.16.2.ebuild:
-  Version Bump, #427468
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Jul 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/2.16.1-glib-single-include.patch,
-  guile-gnome-platform-2.16.1-r1.ebuild, guile-gnome-platform-2.16.1.ebuild:
-  Let it compile against glib-2.32
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild, guile-gnome-platform-2.16.1-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Bug: https://bugs.gentoo.org/552720
 
-*guile-gnome-platform-2.16.1-r1 (14 Feb 2012)
-
-  14 Feb 2012; Justin Lecher <jlec@gentoo.org> +files/2.16.1-gdk-color.patch,
-  +guile-gnome-platform-2.16.1-r1.ebuild:
-  Add patch for gdk-color handling, thanks gregory benison; move to EAPI=4 and
-  autotools-utils.eclass, handle static-libs
-
-  12 Feb 2012; Justin Lecher <jlec@gentoo.org>
-  -guile-gnome-platform-2.15.92.ebuild:
-  Drop old
-
-  29 Mar 2011; Christoph Mende <angelos@gentoo.org>
-  guile-gnome-platform-2.15.92.ebuild, guile-gnome-platform-2.16.1.ebuild:
-  Fixed slot deps
-
-  01 Jul 2010; Tomas Touceda <chiiph@gentoo.org> +files/2.16.1-gcc45.patch,
-  guile-gnome-platform-2.16.1.ebuild:
-  Add patch for gcc-4.5 wrt bug 317747, and port to EAPI 3
-
-  27 Jun 2010; <nixnut@gentoo.org> guile-gnome-platform-2.16.1.ebuild:
-  ppc stable #317159
-
-  24 May 2010; Pacho Ramos <pacho@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild:
-  stable amd64, bug 317159
-
-  17 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild:
-  x86 stable wrt bug #317159
-
-  11 Dec 2009; Ulrich Mueller <ulm@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild:
-  Doesn't build with parallel make, bug 288235.
-
-  10 Dec 2009; Ulrich Mueller <ulm@gentoo.org>
-  +files/2.16.1-conflicting-types.patch, guile-gnome-platform-2.16.1.ebuild:
-  Fix conflicting types issue with GTK+ 2.18. Patch from Rafael G. Martins
-  <rafael@rafaelmartins.com> in bug 293655. Proxy commit for
-  Tomás Touceda (chiiph).
-
-  17 Jul 2009; Marijn Schouten <hkBst@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild:
-  disable -Werror to fix bug 277158
-
-  01 Jun 2009; Ferris McCormick <fmccor@gentoo.org>
-  guile-gnome-platform-2.16.1.ebuild:
-  Add ~sparc for testing, part of Bug #272046.
-
-  05 Jul 2008; Samuli Suominen <drac@gentoo.org>
-  -guile-gnome-platform-2.15.95.ebuild:
-  Remove the broken version I introduced, use 2.15.92 or 2.16.1.
-
-*guile-gnome-platform-2.16.1 (03 Jul 2008)
-
-  03 Jul 2008; Marijn Schouten <hkBst@gentoo.org>
-  +guile-gnome-platform-2.16.1.ebuild:
-  bump
-
-*guile-gnome-platform-2.15.95 (25 Nov 2007)
-
-  25 Nov 2007; Samuli Suominen <drac@gentoo.org>
-  +guile-gnome-platform-2.15.95.ebuild:
-  Version bump.
-
-  08 Oct 2007; Denis Dupeyron <calchan@gentoo.org>
-  guile-gnome-platform-2.15.92.ebuild:
-  Added --disable-Werror option to econf.
-
-*guile-gnome-platform-2.15.92 (06 Jun 2007)
-
-  06 Jun 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  +files/2.15.92-add-atk-overrides.patch,
-  +files/2.15.92-add-cairo-fix-from-bzr.patch, +metadata.xml,
-  +guile-gnome-platform-2.15.92.ebuild:
-  Add Guile Scheme code that wraps the GNOME developer platform. The cairo fix
-  is from upstream bzr, but the atk fix hasn't yet made its way upstream.

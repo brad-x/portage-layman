@@ -1,87 +1,59 @@
 # ChangeLog for app-i18n/xcin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/xcin/ChangeLog,v 1.21 2011/11/20 23:40:31 matsuu Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*xcin-2.5.3_pre3-r3 (20 Nov 2011)
+*xcin-2.5.3_pre3-r3 (09 Aug 2015)
+*xcin-2.5.3_pre3-r2 (09 Aug 2015)
 
-  20 Nov 2011; MATSUU Takuto <matsuu@gentoo.org> +xcin-2.5.3_pre3-r3.ebuild,
-  +files/xcin-2.5.3_pre3-ldflags.patch, +files/xcin-2.5.3_pre3-make.patch:
-  Fixed dodoc issue, bug #374811. Respect LDFLAGS, bug #334849. Clean up.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xcin-2.5.3_pre3-glibc-2.10.patch,
+  +files/xcin-2.5.3_pre3-ldflags.patch, +files/xcin-2.5.3_pre3-make.patch,
+  +metadata.xml, +xcin-2.5.3_pre3-r2.ebuild, +xcin-2.5.3_pre3-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  29 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  xcin-2.5.3_pre3-r2.ebuild, +files/xcin-2.5.3_pre3-glibc-2.10.patch:
-  Fix building with GLIBC 2.10+ wrt #298015.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 May 2008; nixnut <nixnut@gentoo.org> xcin-2.5.3_pre3-r2.ebuild:
-  Stable on ppc wrt bug 148096
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 May 2008; Markus Meier <maekke@gentoo.org> xcin-2.5.3_pre3-r2.ebuild:
-  x86 stable, bug #148096
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*xcin-2.5.3_pre3-r2 (30 Apr 2008)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 Apr 2008; Samuli Suominen <drac@gentoo.org> -xcin-2.5.2.3.ebuild,
-  -xcin-2.5.3_pre2.ebuild, +xcin-2.5.3_pre3-r2.ebuild:
-  Version bump wrt #219349, closing also #159660. Commit for treecleaners to
-  avoid removing; thanks to Peter Alfredsen.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 May 2006; Diego Pettenò <flameeyes@gentoo.org>
-  xcin-2.5.3_pre3-r1.ebuild:
-  Fix xcinrc installation, bug #132341 thanks to Chris Gianelloni (wolf31o2).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Apr 2005; Michael Hanselmann <hansmi@gentoo.org>
-  xcin-2.5.3_pre3-r1.ebuild:
-  Stable on ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Mar 2005; Michael Hanselmann <hansmi@gentoo.org>
-  xcin-2.5.3_pre3-r1.ebuild:
-  Added to ~ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Mar 2005; Mamoru KOMACHI <usata@gentoo.org> -xcin-2.5.3_pre3.ebuild,
-  xcin-2.5.3_pre3-r1.ebuild:
-  Stable on x86.
+  Bug: https://bugs.gentoo.org/552720
 
-*xcin-2.5.3_pre3-r1 (10 Feb 2005)
-
-  10 Feb 2005; Mamoru KOMACHI <usata@gentoo.org> +xcin-2.5.3_pre3-r1.ebuild:
-  Changed xcin library path. (to not install files under X11 distribution's
-  directory)
-
-*xcin-2.5.3_pre3 (22 Jun 2004)
-
-  22 Jun 2004; Mamoru KOMACHI <usata@gentoo.org>
-  +files/xcin-chewing.diff, +xcin-2.5.3_pre3.ebuild:
-  Applied libchewing patch. Special thanks to Palatis <palatis@gentoo.org.tw>
-  and Benny Chuang <bennyc@gentoo.org>, closing bug #52133
-
-  03 May 2004; David Holm <dholm@gentoo.org> xcin-2.5.3_pre2.ebuild:
-  Added to ~ppc.
-
-  04 Nov 2003; Alastair Tse <liquidx@gentoo.org> xcin-2.5.3_pre2.ebuild,
-  files/xcin-2.5.3_pre2-db3.patch:
-  added db-3 patch from Palatis <palatis@gentoo.org.tw> (#32655)
-
-  23 May 2003; Alastair Tse <liquidx@gentoo.org> files/gentoo-xcinrc:
-  fix wrong xcin path in xcinrc
-
-*xcin-2.5.3_pre2 (11 Oct 2002)
-
-  11 Oct 2002; Stuart Bouyer <stubear@gentoo.org> ChangeLog,
-  xcin-2.5.3_pre2.ebuild :
-
-  Initial ebuild submitted by Lloyd Huang <lloyd@coventive.com>
-  Now has support for libtabe.
-
-*xcin-2.5.2.3 (1 Aug 2002)
-
-  20 Oct 2002; Calum Selkirk <cselkirk@gentoo.org> xcin-2.5.2.3.ebuild :
-
-  Added ppc to KEYWORDS.
-
-  27 Jul 2002; Stuart Bouyer <stubear@gentoo.org> xcin-2.5.2.3.ebuild:
-
-  Initial ebuild of XCIN, currently doesnt have bimsphone module or libtabe
-  support until I build and test a db2 ebuild. 

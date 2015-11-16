@@ -1,128 +1,56 @@
 # ChangeLog for games-action/descent3
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/descent3/ChangeLog,v 1.35 2015/06/01 22:05:44 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  01 Jun 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  descent3-1.4.0b-r2.ebuild:
-  clean up app-emulation/emul-linux which has been removed
+*descent3-1.4.0b-r2 (09 Aug 2015)
 
-  07 Sep 2014; Ulrich Müller <ulm@gentoo.org> -descent3-1.4.0b-r1.ebuild:
-  Remove old, bug 517932.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +descent3-1.4.0b-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*descent3-1.4.0b-r2 (27 Jun 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Jun 2014; Michał Górny <mgorny@gentoo.org> +descent3-1.4.0b-r2.ebuild:
-  Support multilib packages in dependencies. Update/fix dependencies.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Aug 2013; Patrick Lauer <patrick@gentoo.org> descent3-1.4.0b-r1.ebuild:
-  Whitespace / syntax fix
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> descent3-1.4.0b-r1.ebuild:
-  Move to new unpacker eclass for unpack_makeself.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> descent3-1.4.0b-r1.ebuild:
-  Migrate to cdrom.eclass, bug 398809.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Dec 2011; Mike Frysinger <vapier@gentoo.org> descent3-1.4.0b-r1.ebuild:
-  The games.eclass has dropped GAMES_CHECK_LICENSE support (since portage now
-  has ACCEPT_LICENSE), so drop it here too.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Jun 2008; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
-  Removing myself as maintainer.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Mar 2008; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Fix quoting.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Sep 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Make sure we RDEPEND on sys-libs/lib-compat-loki for all arches.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Sep 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Changed linking of lib-compat-loki libsmpeg to be used on both amd64 and
-  x86, instead of just x86. Closing bug #191610.
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Mar 2007; Marius Mauch <genone@gentoo.org> descent3-1.4.0b-r1.ebuild:
-  Replacing einfo with elog
-
-  24 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Moved cdrom_get_cds to src_unpack since binary packages don't require the
-  original media to install as well as some general cleanup.
-
-  13 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Removing virtual/x11 from dependencies.
-
-  13 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Moved games_pkg_setup to the beginning of pkg_setup.
-
-  31 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Changing nostrip to strip.
-
-  20 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Marking stable on amd64.
-
-  11 Feb 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Added sys-libs/glibc to RDEPEND.
-
-  10 Jan 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b-r1.ebuild:
-  Forgot to add libSDL to RDEPEND for x86.
-
-  10 Jan 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  -descent3-1.4.0b.ebuild, descent3-1.4.0b-r1.ebuild:
-  Added modular X dependencies and removing older revisions.
-
-*descent3-1.4.0b-r1 (12 Nov 2005)
-
-  12 Nov 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  +descent3-1.4.0b-r1.ebuild:
-  Added initial support for amd64.
-
-  21 Oct 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b.ebuild:
-  Added addition dir variable to games_make_wrapper for bug #109793.
-
-  06 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b.ebuild:
-  Updated to use lokigames mirrors.
-
-  24 Aug 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b.ebuild:
-  Changed descent3 in SRC_URI to PN variable.
-
-  09 Jun 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b.ebuild:
-  Added eutils to inherit.
-
-  09 Jun 2005; Chris Gianelloni <wolf31o2@gentoo.org> -files/descent3,
-  descent3-1.4.0b.ebuild:
-  Updated to use newer functions added since this ebuild was created.
-
-  05 Mar 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  descent3-1.4.0b.ebuild:
-  Changing /opt/descent3 to dir variable and closing bug #84157.
-
-  03 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org> descent3-1.4.0b.ebuild:
-  fix use invocation
-
-  04 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> descent3-1.4.0b.ebuild:
-  Fixed crash with 2.6 and closing bug #38862.
-
-  19 Mar 2004; Chris Gianelloni <wolf31o2@gentoo.org> descent3-1.4.0b.ebuild:
-  Added -p to mkdir.  Closing bug #43427.
-
-  15 Feb 2004; Chris Gianelloni <wolf31o2@gentoo.org> descent3-1.4.0b.ebuild:
-  Updated to use new cdrom_get_cds routine in eutils.eclass.
-
-*descent3-1.4.0b (28 Jul 2003)
-
-  28 Jul 2003; Chris Gianelloni <wolf31o2@gentoo.org> descent3-1.4.0b.ebuild,
-  files/descent3:
-  Initial import.  Ebuild by me.

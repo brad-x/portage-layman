@@ -1,98 +1,72 @@
 # ChangeLog for app-i18n/imsettings
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/imsettings/ChangeLog,v 1.19 2015/04/20 19:23:06 mrueg Exp $
+# (auto-generated from git log)
 
-  20 Apr 2015; Manuel Rüger <mrueg@gentoo.org>
-  -files/imsettings-1.2.2-gtk.patch, -files/imsettings-1.2.8.1-glib32.patch,
-  -imsettings-1.2.4.ebuild, -imsettings-1.2.5.ebuild, -imsettings-1.2.6.ebuild,
-  -imsettings-1.2.8.1.ebuild:
-  Remove old.
+*imsettings-1.6.8 (09 Aug 2015)
+*imsettings-1.5.0 (09 Aug 2015)
 
-  07 Feb 2015; Naohiro Aota <naota@gentoo.org> imsettings-1.5.0.ebuild:
-  Fix SRC_URI and libgxim dependency. #521840
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/imsettings-1.5.0-gir-scanner.patch, +imsettings-1.5.0.ebuild,
+  +imsettings-1.6.8.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*imsettings-1.6.8 (07 Feb 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Feb 2015; Naohiro Aota <naota@gentoo.org> +imsettings-1.6.8.ebuild:
-  version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jan 2014; Naohiro Aota <naota@gentoo.org>
-  +files/imsettings-1.5.0-gir-scanner.patch, imsettings-1.5.0.ebuild:
-  Add a patch to deal with latest gir-scanner. #485800
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*imsettings-1.5.0 (04 May 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 May 2013; Naohiro Aota <naota@gentoo.org> +imsettings-1.5.0.ebuild,
-  metadata.xml:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> imsettings-1.2.4.ebuild,
-  imsettings-1.2.5.ebuild, imsettings-1.2.6.ebuild, imsettings-1.2.8.1.ebuild:
-  Move Qt dependencies to the new category
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Jun 2012; Jeff Horelick <jdhore@gentoo.org> imsettings-1.2.8.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*imsettings-1.2.8.1 (31 May 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> imsettings-1.5.0.ebuild,
+  imsettings-1.6.8.ebuild:
+  Use https by default
 
-  31 May 2012; Naohiro Aota <naota@gentoo.org>
-  +files/imsettings-1.2.8.1-glib32.patch, +imsettings-1.2.8.1.ebuild,
-  -imsettings-1.0.0.ebuild, -imsettings-1.0.1.ebuild, -imsettings-1.2.1.ebuild,
-  -imsettings-1.2.2.ebuild, imsettings-1.2.4.ebuild, imsettings-1.2.5.ebuild,
-  imsettings-1.2.6.ebuild:
-  Add patch to build on >=glib-2.32. Bump. #411239
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 May 2012; Kacper Kowalik <xarthisius@gentoo.org> imsettings-1.2.2.ebuild:
-  Add missing eutils.eclass for epatch
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> imsettings-1.0.0.ebuild,
-  imsettings-1.0.1.ebuild, imsettings-1.2.1.ebuild, imsettings-1.2.2.ebuild,
-  imsettings-1.2.4.ebuild, imsettings-1.2.5.ebuild, imsettings-1.2.6.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Nov 2011; Naohiro Aota <naota@gentoo.org> imsettings-1.0.0.ebuild,
-  imsettings-1.0.1.ebuild, imsettings-1.2.1.ebuild, imsettings-1.2.2.ebuild,
-  imsettings-1.2.4.ebuild, imsettings-1.2.5.ebuild, imsettings-1.2.6.ebuild:
-  Update HOMEPAGE address.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*imsettings-1.2.6 (28 Nov 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Nov 2011; Naohiro Aota <naota@gentoo.org> +imsettings-1.2.6.ebuild:
-  Version bumped. Bug #391803
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-*imsettings-1.2.5 (24 Nov 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Nov 2011; Naohiro Aota <naota@gentoo.org> +imsettings-1.2.5.ebuild:
-  Version bump. Bug #389233
-
-*imsettings-1.2.4 (09 Aug 2011)
-
-  09 Aug 2011; MATSUU Takuto <matsuu@gentoo.org> +imsettings-1.2.4.ebuild:
-  Version bumped.
-
-*imsettings-1.2.2 (07 May 2011)
-
-  07 May 2011; MATSUU Takuto <matsuu@gentoo.org> +imsettings-1.2.2.ebuild,
-  +files/imsettings-1.2.2-gtk.patch:
-  Version bumped.
-
-*imsettings-1.2.1 (06 Apr 2011)
-
-  06 Apr 2011; MATSUU Takuto <matsuu@gentoo.org> +imsettings-1.2.1.ebuild:
-  Version bumped.
-
-*imsettings-1.0.1 (01 Feb 2011)
-
-  01 Feb 2011; MATSUU Takuto <matsuu@gentoo.org> +imsettings-1.0.1.ebuild:
-  Version bumped.
-
-  31 Jan 2011; Samuli Suominen <ssuominen@gentoo.org> imsettings-1.0.0.ebuild,
-  metadata.xml:
-  Prevent automagic linking to libxfconf-0 and rename USE="xfce" to
-  USE="xfconf" wrt #353117.
-
-*imsettings-1.0.0 (08 Jan 2011)
-
-  08 Jan 2011; MATSUU Takuto <matsuu@gentoo.org> +imsettings-1.0.0.ebuild,
-  +metadata.xml:
-  Initial import.

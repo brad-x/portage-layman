@@ -1,163 +1,68 @@
 # ChangeLog for dev-ruby/eventmachine
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/eventmachine/ChangeLog,v 1.35 2015/08/07 02:02:33 mrueg Exp $
+# (auto-generated from git log)
 
-*eventmachine-1.0.8 (07 Aug 2015)
+*eventmachine-1.0.8 (09 Aug 2015)
+*eventmachine-1.0.7 (09 Aug 2015)
+*eventmachine-1.0.3-r2 (09 Aug 2015)
+*eventmachine-1.0.3-r1 (09 Aug 2015)
 
-  07 Aug 2015; Manuel Rüger <mrueg@gentoo.org> +eventmachine-1.0.8.ebuild:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +eventmachine-1.0.3-r1.ebuild, +eventmachine-1.0.3-r2.ebuild,
+  +eventmachine-1.0.7.ebuild, +eventmachine-1.0.8.ebuild,
+  +files/eventmachine-0.12.10-gentoo.patch,
+  +files/eventmachine-0.12.10-https-test.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> eventmachine-1.0.7.ebuild:
-  ...and also add the slot to the built-time dependency of openssl.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> eventmachine-1.0.7.ebuild:
-  Fix openssl slot to be the one that can be compiled against.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jul 2015; Hans de Graaff <graaff@gentoo.org> eventmachine-1.0.7.ebuild:
-  Avoid tests requiring a network connection, fixing bug 342029. Fix openssl
-  slot dependency.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*eventmachine-1.0.7 (10 Jun 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Jun 2015; Manuel Rüger <mrueg@gentoo.org> +eventmachine-1.0.7.ebuild:
-  Version bump. Add ruby22.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  09 Jun 2015; Manuel Rüger <mrueg@gentoo.org> -eventmachine-0.12.10-r2.ebuild:
-  Remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Jun 2015; Agostino Sarubbo <ago@gentoo.org> eventmachine-1.0.3-r1.ebuild:
-  Stable for x86, wrt bug #551420
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Jun 2015; Agostino Sarubbo <ago@gentoo.org> eventmachine-1.0.3-r1.ebuild:
-  Stable for amd64, wrt bug #551420
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*eventmachine-1.0.3-r2 (07 Jun 2015)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Jun 2015; Hans de Graaff <graaff@gentoo.org> eventmachine-1.0.3-r1.ebuild,
-  +eventmachine-1.0.3-r2.ebuild:
-  Create stable candidate.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> eventmachine-0.12.10-r2.ebuild,
-  eventmachine-1.0.3-r1.ebuild:
-  Remove trailing '.' from DESCRIPTION.
+  03 Oct 2015; Hans de Graaff <graaff@gentoo.org>
+  eventmachine-1.0.3-r1.ebuild, eventmachine-1.0.3-r2.ebuild:
+  fix openssl dependency
 
-  09 May 2014; Hans de Graaff <graaff@gentoo.org> eventmachine-1.0.3-r1.ebuild:
-  Add ruby21.
+  Package-Manager: portage-2.2.20.1
 
-  05 Apr 2014; Manuel Rüger <mrueg@gentoo.org> eventmachine-0.12.10-r2.ebuild,
-  eventmachine-1.0.3-r1.ebuild:
-  Remove ree18 and ruby18 target.
-
-  22 Dec 2013; Anthony G. Basile <blueness@gentoo.org>
-  eventmachine-1.0.3-r1.ebuild:
-  Keyword ~ppc64, bug #465948
-
-  20 Nov 2013; Manuel Rüger <mrueg@gentoo.org> -eventmachine-1.0.0.ebuild,
-  -eventmachine-1.0.3.ebuild:
-  Cleanup old.
-
-*eventmachine-1.0.3-r1 (25 Oct 2013)
-
-  25 Oct 2013; Hans de Graaff <graaff@gentoo.org>
-  +eventmachine-1.0.3-r1.ebuild:
-  Add ruby20. Drop ppc64 due to updated yard dependency, bug 465948.
-
-*eventmachine-1.0.3 (02 May 2013)
-
-  02 May 2013; Hans de Graaff <graaff@gentoo.org> +eventmachine-1.0.3.ebuild:
-  Version bump.
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> eventmachine-0.12.10-r2.ebuild:
-  Stable for x86, wrt bug #448672
-
-  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> eventmachine-0.12.10-r2.ebuild:
-  Stable for amd64, wrt bug #448672
-
-*eventmachine-1.0.0 (24 Nov 2012)
-
-  24 Nov 2012; Hans de Graaff <graaff@gentoo.org> +eventmachine-1.0.0.ebuild:
-  Version bump. Ebuild partly based on version by Michel Boaventura in the ruby
-  overlay.
-
-  11 Dec 2011; Hans de Graaff <graaff@gentoo.org>
-  eventmachine-0.12.10-r2.ebuild:
-  Run tests directly so that we can ensure the new code is tested. Found while
-  bootstrapping ruby19.
-
-  27 Dec 2010; Fabian Groffen <grobian@gentoo.org>
-  eventmachine-0.12.10-r2.ebuild:
-  Added Prefix keywords
-
-  08 Aug 2010; Hans de Graaff <graaff@gentoo.org>
-  eventmachine-0.12.10-r2.ebuild,
-  +files/eventmachine-0.12.10-https-test.patch:
-  Fix failing test, bug 299782.
-
-  08 Aug 2010; Hans de Graaff <graaff@gentoo.org>
-  -eventmachine-0.12.10.ebuild, -eventmachine-0.12.10-r1.ebuild:
-  Remove old versions.
-
-  24 May 2010; Alex Legler <a3li@gentoo.org> eventmachine-0.12.10-r2.ebuild:
-  Add REE18 support
-
-  26 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  eventmachine-0.12.10-r2.ebuild, +files/eventmachine-0.12.10-gentoo.patch:
-  Add a patch to fix a few more problems in eventmachine, such as bug
-  #317281.
-
-*eventmachine-0.12.10-r2 (19 Apr 2010)
-
-  19 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  +eventmachine-0.12.10-r2.ebuild:
-  Add OpenSSL to dependencies, use a trick yo build in parallel, install
-  examples unconditionally, document why jruby is not listed.
-
-*eventmachine-0.12.10-r1 (27 Dec 2009)
-
-  27 Dec 2009; Alex Legler <a3li@gentoo.org>
-  +eventmachine-0.12.10-r1.ebuild:
-  Revision bump, migration to -fakegem, license update, description update
-
-  09 Dec 2009; Hans de Graaff <graaff@gentoo.org>
-  -eventmachine-0.12.8.ebuild:
-  Remove old version.
-
-*eventmachine-0.12.10 (19 Nov 2009)
-
-  19 Nov 2009; Hans de Graaff <graaff@gentoo.org>
-  +eventmachine-0.12.10.ebuild:
-  Version bump.
-
-  22 Aug 2009; Hans de Graaff <graaff@gentoo.org>
-  -eventmachine-0.12.6.ebuild:
-  Remove old version.
-
-*eventmachine-0.12.8 (10 Jun 2009)
-
-  10 Jun 2009; Hans de Graaff <graaff@gentoo.org>
-  +eventmachine-0.12.8.ebuild:
-  Version bump.
-
-  14 Apr 2009; Hans de Graaff <graaff@gentoo.org>
-  -eventmachine-0.12.0.ebuild, -eventmachine-0.12.2.ebuild:
-  Remove old versions.
-
-*eventmachine-0.12.6 (13 Mar 2009)
-
-  13 Mar 2009; Hans de Graaff <graaff@gentoo.org>
-  +eventmachine-0.12.6.ebuild:
-  Version bump
-
-*eventmachine-0.12.2 (30 Nov 2008)
-
-  30 Nov 2008; Hans de Graaff <graaff@gentoo.org>
-  +eventmachine-0.12.2.ebuild:
-  Version bump. Thanks to Jochen Schalanda and Sergio D. Rodríguez Inclan for
-  providing initial versions and feedback in bug 198501.
-
-*eventmachine-0.12.0 (16 Jun 2008)
-
-  16 Jun 2008; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +eventmachine-0.12.0.ebuild:
-  Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-  Dependancy of www-servers/thin.

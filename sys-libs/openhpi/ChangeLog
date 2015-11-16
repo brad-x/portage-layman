@@ -1,48 +1,58 @@
 # ChangeLog for sys-libs/openhpi
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/openhpi/ChangeLog,v 1.10 2015/07/22 11:54:24 mrueg Exp $
+# (auto-generated from git log)
 
-  22 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -openhpi-2.0.3.ebuild,
-  -openhpi-2.10.1.ebuild:
-  Remove old.
+*openhpi-3.0.0 (09 Aug 2015)
+*openhpi-2.12.0 (09 Aug 2015)
 
-  12 Mar 2014; Patrick Lauer <patrick@gentoo.org> openhpi-2.0.3.ebuild,
-  openhpi-2.10.1.ebuild, openhpi-2.12.0.ebuild:
-  Shorten description for improved repoman happy
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/openhpi-confd,
+  +files/openhpi-initd, +metadata.xml, +openhpi-2.12.0.ebuild,
+  +openhpi-3.0.0.ebuild:
+  proj/gentoo: Initial commit
 
-*openhpi-3.0.0 (25 Jul 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Jul 2012; Pacho Ramos <pacho@gentoo.org> +openhpi-3.0.0.ebuild:
-  Version bump, with a shorter description (to make repoman happier), it builds
-  (#322215), glib-2.32 compatible (#423683 by flameeyes), fixed LICENSE (#426164
-  by Ian Stakenvicius).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> openhpi-2.0.3.ebuild:
-  Remove virtual/libc
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> openhpi-2.12.0.ebuild:
-  Fix building with GCC 4.4+ by removing -Werror wrt #277765.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*openhpi-2.12.0 (28 Jun 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Jun 2009; Patrick Lauer <patrick@gentoo.org> +openhpi-2.12.0.ebuild:
-  Bump to 2.12.0. Fixes #251740 #261099
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*openhpi-2.10.1 (01 Nov 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> +files/openhpi-confd,
-  +files/openhpi-initd, +openhpi-2.10.1.ebuild:
-  Version bump, per bug #199024. Thanks to Tais M. Hansen
-  <tais.hansen@osd.dk> for scripts.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 May 2005; Sven Wegener <swegener@gentoo.org> openhpi-2.0.3.ebuild:
-  Removed trailing * from <, <=, >= and > dependencies.
+  Bug: https://bugs.gentoo.org/552720
 
-*openhpi-2.0.3 (25 Mar 2005)
-
-  25 Mar 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +openhpi-2.0.3.ebuild:
-  Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.

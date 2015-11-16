@@ -1,186 +1,95 @@
 # ChangeLog for app-text/bibus
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/bibus/ChangeLog,v 1.42 2015/08/06 09:59:17 ago Exp $
+# (auto-generated from git log)
 
-  06 Aug 2015; Agostino Sarubbo <ago@gentoo.org> bibus-1.5.2-r1.ebuild:
-  Stable for amd64, wrt bug #529412
+*bibus-1.5.2-r1 (09 Aug 2015)
+*bibus-1.5.2 (09 Aug 2015)
+*bibus-1.5.1 (09 Aug 2015)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bibus-1.5.1.ebuild,
+  +bibus-1.5.2.ebuild, +bibus-1.5.2-r1.ebuild,
+  +files/bibus-1.5.0-install.patch, +files/bibus-1.5.2-install.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> bibus-1.5.2-r1.ebuild:
-  Remove old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Feb 2015; Andreas K. Huettel <dilfridge@gentoo.org> bibus-1.5.1.ebuild,
-  bibus-1.5.2.ebuild, bibus-1.5.2-r1.ebuild:
-  Drop ppc keyword
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Apr 2014; Patrick Lauer <patrick@gentoo.org> bibus-1.5.1.ebuild:
-  QA: Dropping ppc stable keyword as libreoffice dropped it. #506294
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*bibus-1.5.2-r1 (03 Feb 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Feb 2014; Justin Lecher <jlec@gentoo.org> +bibus-1.5.2-r1.ebuild:
-  Use python-r1.eclass
+  12 Aug 2015; Agostino Sarubbo <ago@gentoo.org> bibus-1.5.2-r1.ebuild:
+  1.5.2-r1: x86 stable wrt bug #529412
 
-  15 Oct 2013; Justin Lecher <jlec@gentoo.org> bibus-1.5.1.ebuild,
-  bibus-1.5.2.ebuild, -files/bibus-1.5.0-pysqlite.patch:
-  Drop obsolete patch, #452128
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  27 May 2013; Justin Lecher <jlec@gentoo.org> bibus-1.5.1.ebuild,
-  bibus-1.5.2.ebuild, metadata.xml:
-  Drop OO frmo deps, #471282
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jan 2013; Michał Górny <mgorny@gentoo.org> bibus-1.5.1.ebuild,
-  bibus-1.5.2.ebuild:
-  Request built-in Python sqlite3 support rather than pysqlite package.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bibus-1.5.2 (28 Apr 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Apr 2012; Justin Lecher <jlec@gentoo.org> bibus-1.5.1.ebuild,
-  +bibus-1.5.2.ebuild, +files/bibus-1.5.2-install.patch, metadata.xml:
-  Version Bump including detection of libreoffice, #394537 thanks Bjoern
-  Olausson; multi py ABI installation
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
-  -files/bibus-1.4.3.1-install.patch:
-  Remove unneeded files. Requested by Arfrever
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  01 Jul 2011; Markos Chandras <hwoarang@gentoo.org> -bibus-1.4.3.1.ebuild:
-  Remove old ebuilds. Requested by Arfrever
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Jun 2011; Brent Baude <ranger@gentoo.org> bibus-1.5.1.ebuild:
-  Marking bibus-1.5.1 ppc for bug 331235
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> -bibus-1.5.1.ebuild,
+  -bibus-1.5.2.ebuild, -files/bibus-1.5.0-install.patch:
+  Drop old
 
-  25 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bibus-1.4.3.1.ebuild:
-  Fix deprecation warnings.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Apr 2011; Sébastien Fabbro <bicatali@gentoo.org> bibus-1.5.1.ebuild:
-  Changed from virtual/ooo back to use source openoffice or libreoffice because
-  of bug #288232
+*bibus-1.5.2-r2 (22 Oct 2015)
 
-  07 Apr 2011; Sébastien Fabbro <bicatali@gentoo.org> bibus-1.5.1.ebuild:
-  Now depends on virtual/ooo
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> -bibus-1.5.2-r1.ebuild,
+  +bibus-1.5.2-r2.ebuild, +files/bibus-1.5.2-bibus.cfg.patch:
+  Fix for gentoo specific paths and fix for lo-4
 
-  04 Nov 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  -bibus-1.4.3.2-r1.ebuild, -files/bibus-1.4.3.2-install.1.patch,
-  -files/bibus-1.4.3-install.patch, -bibus-1.5.0.ebuild:
-  Drop old. Fixes bug 344185
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=485396
 
-  13 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bibus-1.5.1.ebuild:
-  Require app-office/openoffice until bug #288232 is fixed.
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=562214
 
-  07 Aug 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> bibus-1.5.1.ebuild:
-  x86 stable wrt bug #331235
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Aug 2010; Markos Chandras <hwoarang@gentoo.org> bibus-1.5.1.ebuild:
-  Stable on amd64 wrt bug #331235
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> bibus-1.5.2-r2.ebuild:
+  Drop deprecated usage of parallel python eclass functions
 
-  31 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bibus-1.5.1.ebuild:
-  Don't install .pyc / .pyo files.
+  Python eclasses dropped parallel execution support some while ago.
+  python_parallel_foreach_impl was an alias for python_foreach_impl for some
+  time already.
 
-*bibus-1.5.1 (30 Jun 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Jun 2010; Justin Lecher <jlec@gentoo.org> +bibus-1.5.1.ebuild:
-  Version Bump
-
-  04 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bibus-1.5.0.ebuild:
-  Use Python 2.
-
-  04 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  bibus-1.4.3.2-r1.ebuild, bibus-1.5.0.ebuild:
-  Delete calls to deprecated python_version().
-
-  19 Feb 2010; Markus Dittrich <markusle@gentoo.org> bibus-1.5.0.ebuild:
-  Changed required version of wxPython to >2.8 (fixes bug #304661).
-
-  12 Nov 2009; Markus Dittrich <markusle@gentoo.org> -bibus-1.5_rc1.ebuild,
-  -files/bibus-1.5_rc1-install.patch:
-  Removed broken version (see bug #290481).
-
-*bibus-1.5.0 (12 Nov 2009)
-
-  12 Nov 2009; Markus Dittrich <markusle@gentoo.org> +bibus-1.5.0.ebuild,
-  +files/bibus-1.5.0-install.patch, +files/bibus-1.5.0-pysqlite.patch:
-  Version bump.
-
-  16 Sep 2009; Markus Dittrich <markusle@gentoo.org> bibus-1.5_rc1.ebuild:
-  Made sqlite mandatory with the option to also install mysql 
-  (see bug #284229).
-
-  09 Sep 2009; Markus Dittrich <markusle@gentoo.org> -bibus-1.4.3.2.ebuild,
-  -files/bibus-1.4.3.2-install.patch:
-  Removed old version.
-
-*bibus-1.5_rc1 (09 Sep 2009)
-
-  09 Sep 2009; Markus Dittrich <markusle@gentoo.org> +bibus-1.5_rc1.ebuild,
-  +files/bibus-1.5_rc1-install.patch:
-  Version bump (see bug #284048).
-
-*bibus-1.4.3.2-r1 (01 Sep 2009)
-
-  01 Sep 2009; Markus Dittrich <markusle@gentoo.org> -bibus-1.4.3.ebuild,
-  +bibus-1.4.3.2-r1.ebuild, +files/bibus-1.4.3.2-install.1.patch:
-  Removed hard coded python paths (fixes bug #259722). Got rid of
-  old ebuild.
-
-  26 Feb 2009; Joseph Jezak <josejx@gentoo.org> bibus-1.4.3.1.ebuild:
-  Marked ppc stable for bug #250823.
-
-*bibus-1.4.3.2 (15 Feb 2009)
-
-  15 Feb 2009; Patrick Lauer <patrick@gentoo.org>
-  +files/bibus-1.4.3.2-install.patch, +bibus-1.4.3.2.ebuild:
-  Bump to 1.4.3.2, with fixes from Attila Toth. Closes #254395
-
-  15 Feb 2009; Markus Meier <maekke@gentoo.org> bibus-1.4.3.1.ebuild:
-  amd64/x86 stable, bug #250823
-
-*bibus-1.4.3.1 (12 Nov 2008)
-
-  12 Nov 2008; Markus Dittrich <markusle@gentoo.org>
-  -files/bibus-1.4.0_rc2-install.patch ,
-  -bibus-1.4.0_rc2.ebuild, -bibus-1.2.0.ebuild
-  +files/bibus-1.4.3.1-install.patch, +bibus-1.4.3.1.ebuild:
-  Version bump for openoffice-3 compatibility (see bug #246443). 
-  Thanks much to Attila Tóth for his help and patches.
-
-  29 May 2008; Ali Polatel <hawking@gentoo.org> bibus-1.2.0.ebuild,
-  bibus-1.4.0_rc2.ebuild, bibus-1.4.3.ebuild:
-  python_mod_{cleanup,optimize} are ROOT aware.
-
-*bibus-1.4.3 (22 May 2008)
-
-  22 May 2008; Markus Dittrich <markusle@gentoo.org>
-  +files/bibus-1.4.3-install.patch, +bibus-1.4.3.ebuild:
-  Version bump and added fixed desktop entry file (fixes bugs #223173 and
-  #168037). Thanks much to Attila Tóth <atoth@atoth.sote.hu> for his
-  patches.
-
-*bibus-1.4.0_rc2 (08 Feb 2008)
-
-  08 Feb 2008; Markus Dittrich <markusle@gentoo.org>
-  +files/bibus-1.4.0_rc2-install.patch, +bibus-1.4.0_rc2.ebuild:
-  Version bump (fixes bug #179074). Thanks much to Attila Tóth  
-  <atoth@atoth.sote.hu> for his ebuild and patches.
-
-  22 Sep 2007; Wulf C. Krueger <philantrop@gentoo.org> bibus-1.2.0.ebuild:
-  Keyworded ~amd64 as per bug 185872.
-
-  11 Dec 2006; Donnie Berkholz <dberkholz@gentoo.org>; bibus-1.2.0.ebuild:
-  Keyword ~ppc.
-
-  17 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
-  Slide into sci herd.
-
-*bibus-1.2.0 (17 Oct 2006)
-
-  17 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
-  +bibus-1.2.0.ebuild:
-  New package: Bibliographic and reference management software, integrates
-  with OO.o and MS Word.

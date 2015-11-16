@@ -1,104 +1,56 @@
 # ChangeLog for app-misc/ompload
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ompload/ChangeLog,v 1.23 2012/03/06 10:29:38 xmw Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  06 Mar 2012; Michael Weber <xmw@gentoo.org> ompload-20101220.ebuild:
-  Change DESCRIPTION to match HOMEPAGE (bug 405163)
+*ompload-20101220 (09 Aug 2015)
 
-  27 Jul 2011; Michael Weber <xmw@gentoo.org> -files/ompload-226-url.patch,
-  -ompload-20100909.ebuild:
-  Drop old version
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +ompload-20101220.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Apr 2011; Christian Faulhammer <fauli@gentoo.org>
-  ompload-20101220.ebuild:
-  x86 stable per bug 359269
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Mar 2011; Markos Chandras <hwoarang@gentoo.org> ompload-20101220.ebuild:
-  Stable on amd64 wrt bug #359269
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Mar 2011; Michael Weber <xmw@gentoo.org> ompload-20101220.ebuild:
-  ppc/sparc stable (bug 359269)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Feb 2011; Michael Weber <xmw@gentoo.org> ompload-20101220.ebuild:
-  Added ~ppc per request on bug 354169
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ompload-20101220 (18 Feb 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Feb 2011; Michael Weber <xmw@gentoo.org> -ompload-226.ebuild,
-  -ompload-226-r1.ebuild, +ompload-20101220.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Feb 2011; Raúl Porcel <armin76@gentoo.org> ompload-226.ebuild,
-  ompload-226-r1.ebuild, ompload-20100909.ebuild:
-  Add ~sparc wrt #354169
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Nov 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  ompload-20100909.ebuild:
-  x86 stable wrt bug #342823
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  ompload-20100909.ebuild:
-  Stable on amd64 wrt bug #342823
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  ompload-226-r1.ebuild:
-  stable x86, bug 287413
-
-  21 Sep 2010; Markos Chandras <hwoarang@gentoo.org> ompload-226-r1.ebuild:
-  Stable on amd64 wrt bug #287413
-
-*ompload-20100909 (12 Sep 2010)
-
-  12 Sep 2010; Michael Weber <xmw@gentoo.org> -ompload-20090121.ebuild,
-  -ompload-20090517.ebuild, +ompload-20100909.ebuild:
-  Drop old unstable versions with wrong url, add new fixed git version (bug
-  #336859, thanks to John Tsolox <tsolox@gmail.com>).
-
-*ompload-226-r1 (12 Sep 2010)
-
-  12 Sep 2010; Michael Weber <xmw@gentoo.org> +ompload-226-r1.ebuild,
-  +files/ompload-226-url.patch, metadata.xml:
-  Taking maintainer-ship. Revbump to fix upload url (bug 336859 thanks to
-  John Tsolox <tsolox@gmail.com> for the hint).
-
-  02 Jun 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove omp from metadata.xml (#147119)
-
-*ompload-20090517 (13 Jul 2009)
-
-  13 Jul 2009; <omp@gentoo.org> -ompload-268.ebuild,
-  +ompload-20090517.ebuild:
-  Version bump; remove older version.
-
-*ompload-20090121 (17 Mar 2009)
-
-  17 Mar 2009; David Shakaryan <omp@gentoo.org> +ompload-20090121.ebuild:
-  Version bump.
-
-*ompload-268 (03 Oct 2008)
-
-  03 Oct 2008; David Shakaryan <omp@gentoo.org> -ompload-214.ebuild,
-  +ompload-268.ebuild:
-  Version bump; remove older version.
-
-  16 Jul 2008; Alexis Ballier <aballier@gentoo.org> ompload-226.ebuild:
-  keyword ~x86-fbsd, thanks to Davide Italiano <dav_it@gentoo.org>, bug
-  #231904
-
-  23 Apr 2008; Raúl Porcel <armin76@gentoo.org> ompload-226.ebuild:
-  x86 stable wrt #208908
-
-  22 Apr 2008; <welp@gentoo.org> ompload-226.ebuild:
-  Stable on amd64; bug 208908
-
-*ompload-226 (05 Nov 2007)
-
-  05 Nov 2007; David Shakaryan <omp@gentoo.org> +ompload-226.ebuild:
-  Version bump.
-
-*ompload-214 (25 Sep 2007)
-
-  25 Sep 2007; David Shakaryan <omp@gentoo.org> +metadata.xml,
-  +ompload-214.ebuild:
-  Initial ebuild.
+  Bug: https://bugs.gentoo.org/552720
 

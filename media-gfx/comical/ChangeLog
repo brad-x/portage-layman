@@ -1,83 +1,57 @@
 # ChangeLog for media-gfx/comical
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/comical/ChangeLog,v 1.21 2014/11/04 12:26:30 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  04 Nov 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #131845
+*comical-0.8-r3 (09 Aug 2015)
 
-  18 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -comical-0.8-r2.ebuild:
-  old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +comical-0.8-r3.ebuild,
+  +files/comical-0.8-syslibs.patch, +files/comical-0.8-wxGTK-2.8.patch,
+  +files/comical.desktop, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> comical-0.8-r3.ebuild:
-  Stable for amd64, wrt bug #421375
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> comical-0.8-r3.ebuild:
-  marked x86 per bug 421375
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*comical-0.8-r3 (16 Jun 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +comical-0.8-r3.ebuild,
-  +files/comical-0.8-syslibs.patch, files/comical.desktop:
-  Ensure x11-libs/wxGTK has USE="X" enabled wrt #407267 and use system
-  libminizip and libunrar wrt #407269 by Piotr Szymaniak. Remove redudant
-  Comment= from desktop entry. Use CXX and CXXFLAGS instead of CC and CFLAGS
-  for g++. Stop using LDFLAGS for passing libraries and use LDLIBS instead.
-  Install 128x128 icon to hicolor directory and run icon cache update.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Oct 2010; Ryan Hill <dirtyepic@gentoo.org> -comical-0.8.ebuild,
-  -comical-0.8-r1.ebuild:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Oct 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  comical-0.8-r2.ebuild:
-  x86 stable wrt bug #340467
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Oct 2010; Markos Chandras <hwoarang@gentoo.org> comical-0.8-r2.ebuild:
-  Stable on amd64 wrt bug #340467
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*comical-0.8-r2 (05 Sep 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Sep 2010; Ryan Hill <dirtyepic@gentoo.org> +comical-0.8-r2.ebuild,
-  +files/comical-0.8-wxGTK-2.8.patch:
-  Migrate to wxGTK-2.8.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Dec 2009; Markus Meier <maekke@gentoo.org> files/comical.desktop:
-  fix .desktop as pointed out by ssuominen
+  Bug: https://bugs.gentoo.org/552720
 
-*comical-0.8-r1 (16 Dec 2009)
-
-  16 Dec 2009; Markus Meier <maekke@gentoo.org> +comical-0.8-r1.ebuild,
-  +files/comical.desktop:
-  add .desktop file by Jared in bug #295611; general ebuild improvements
-
-  25 Nov 2009; Markus Meier <maekke@gentoo.org> comical-0.8.ebuild:
-  amd64 stable, bug #286321
-
-  27 Sep 2009; Markus Meier <maekke@gentoo.org> comical-0.8.ebuild:
-  assign RDEPEND
-
-  22 May 2008; Markus Meier <maekke@gentoo.org> comical-0.8.ebuild:
-  remove unneeded COPYING
-
-  13 Oct 2007; Ryan Hill <dirtyepic@gentoo.org> comical-0.8.ebuild:
-  Lock wxGTK to 2.6.
-
-  08 Apr 2007; Marcelo Goes <vanquirius@gentoo.org> comical-0.8.ebuild:
-  Add missing IUSE.
-
-  02 Feb 2007; Steve Dibb <beandog@gentoo.org> comical-0.8.ebuild:
-  Add ~amd64, bug 164245
-
-  08 Jan 2007; Javier Villavicencio <the_paya@gentoo.org>
-  comical-0.8.ebuild:
-  Stable on x86.
-
-  17 Sep 2006; Javier Villavicencio <the_paya@gentoo.org>
-  comical-0.8.ebuild:
-  Added ~x86-fbsd keyword.
-
-*comical-0.8 (18 Jul 2006)
-
-  18 Jul 2006; Javier Villavicencio <the_paya@gentoo.org> +metadata.xml,
-  +comical-0.8.ebuild:
-  Add comical ebuild. Thanks to Graeme Humphries and Daniel Lin. in bug #42899

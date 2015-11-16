@@ -1,180 +1,94 @@
 # ChangeLog for dev-java/qdox
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/qdox/ChangeLog,v 1.51 2015/08/07 23:30:38 sping Exp $
+# (auto-generated from git log)
 
-  07 Aug 2015; Sebastian Pipping <sping@gentoo.org> qdox-1.6.3.ebuild,
-  qdox-1.12-r1.ebuild, qdox-1.12.1.ebuild:
-  Fix homepage (exists but has HTTP auth)
+*qdox-1.12.1 (09 Aug 2015)
+*qdox-1.12-r1 (09 Aug 2015)
+*qdox-1.6.3 (09 Aug 2015)
 
-*qdox-1.12.1 (07 Aug 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +qdox-1.6.3.ebuild, +qdox-1.12-r1.ebuild, +qdox-1.12.1.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Aug 2015; Sebastian Pipping <sping@gentoo.org> +qdox-1.12.1.ebuild:
-  Bump to 1.12.1 (bug #503918)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Aug 2015; Sebastian Pipping <sping@gentoo.org> qdox-1.12-r1.ebuild:
-  Fix file removal path for USE=-test (bug #503918, reported by Andreas
-  Sturmlechner)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jul 2015; James Le Cuirot <chewi@gentoo.org> qdox-1.6.3.ebuild:
-  Drop java on ia64.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Feb 2015; Patrice Clement <monsieurp@gentoo.org> qdox-1.12-r1.ebuild:
-  Revert previous commit (SLOT change). Discussed with and signed off by mgorny.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Feb 2015; Michał Górny <mgorny@gentoo.org> qdox-1.12-r1.ebuild:
-  Fix jflex dependency following slot change.
+  09 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Updating remote-id in metadata.xml
 
-  17 Jun 2014; Manuel Rüger <mrueg@gentoo.org> -qdox-1.12.ebuild:
-  NM: Cleanup superseeded ebuilds.
+  Package-Manager: portage-2.2.20
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org> qdox-1.12-r1.ebuild:
-  Stable for ppc64, wrt bug #476958
+*qdox-1.12-r2 (13 Aug 2015)
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org> qdox-1.12-r1.ebuild:
-  Stable for ppc, wrt bug #476958
+  13 Aug 2015; Patrice Clement <monsieurp@gentoo.org> +qdox-1.12-r2.ebuild:
+  Update jflex dependency. Fixes bug 557292.
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org> qdox-1.12-r1.ebuild:
-  Stable for x86, wrt bug #476958
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org> qdox-1.12-r1.ebuild:
-  Stable for amd64, wrt bug #476958
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> qdox-1.6.3.ebuild:
-  Marked *-macos
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> qdox-1.12-r1.ebuild:
-  Marked *-macos
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> qdox-1.6.3.ebuild:
-  Marked *-macos
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org> qdox-1.12-r1.ebuild:
-  Marked *-macos
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org> qdox-1.12-r1.ebuild:
-  keyword ~amd64-fbsd
+  Bug: https://bugs.gentoo.org/552720
 
-*qdox-1.12-r1 (17 Jun 2013)
+*qdox-1.12.1-r1 (02 Nov 2015)
 
-  17 Jun 2013; Tom Wijsman <TomWij@gentoo.org> +qdox-1.12-r1.ebuild:
-  Revision bump; fixed junit dependency to be test USE flag conditional, fixed
-  tests, EAPI 5. Reported by Patrick Lauer. Fixes bug #473536.
+  02 Nov 2015; James Le Cuirot <chewi@gentoo.org> +files/jflex-1.6.1.patch,
+  +qdox-1.12.1-r1.ebuild:
+  Make build work against jflex 1.6.1
 
-  14 Jun 2013; Alexis Ballier <aballier@gentoo.org> qdox-1.6.3.ebuild:
-  keyword ~amd64-fbsd
+  This allows the ~arm keyword to be added. The ~ppc64 keyword has had
+  to be temporarily dropped due to javacup needing Java 7.
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  Package-Manager: portage-2.2.20.1
 
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org> qdox-1.6.3.ebuild:
-  adding ~arm
+  02 Nov 2015; James Le Cuirot <chewi@gentoo.org> -qdox-1.12-r2.ebuild,
+  -qdox-1.12.1.ebuild:
+  Remove old
 
-  10 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qdox-1.12.ebuild:
-  Add ~ppc, wrt bug #401145
+  This drops ~ppc64 back to 1.12-r1. Sorry about that but the versions
+  inbetween won't work against jflex 1.6.1. This situation will be
+  remedied shortly. It is only a build time issue so should not affect
+  existing installations.
 
-  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> qdox-1.6.3.ebuild:
-  Add back ia64 love #349020 by Dennis Schridde.
+  Package-Manager: portage-2.2.20.1
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qdox-1.12.ebuild:
-  x86 stable wrt bug #391993
-
-  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org> qdox-1.12.ebuild:
-  Stable for amd64, wrt bug #391993
-
-  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> qdox-1.6.3.ebuild:
-  Drop ia64 support #345433
-
-  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qdox-1.12.ebuild:
-  Add ~amd64, wrt bug #389383
-
-*qdox-1.12 (08 May 2011)
-
-  08 May 2011; <elvanor@gentoo.org> +qdox-1.12.ebuild:
-  Bump to 1.12. New slot, not sure if needed.
-
-  23 Jan 2010; Alexis Ballier <aballier@gentoo.org> qdox-1.6.3.ebuild:
-  keyword ~x86-fbsd and fix find call to be bsd-compatible
-
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org> qdox-1.6.3.ebuild:
-  Transfer Prefix keywords
-
-  10 Sep 2008; Brent Baude <ranger@gentoo.org> qdox-1.6.3.ebuild:
-  Marking qdox-1.6.3 ppc64 as dep to bug 235747
-
-  16 Jan 2008; Raúl Porcel <armin76@gentoo.org> qdox-1.6.3.ebuild:
-  Add ~ia64 wrt #129773
-
-  12 Jan 2008; Brent Baude <ranger@gentoo.org> qdox-1.6.3.ebuild:
-  Marking qdox-1.6.3 ~ppc64 for bug 129773
-
-  15 Nov 2007; Petteri Räty <betelgeuse@gentoo.org> metadata.xml,
-  qdox-1.6.3.ebuild:
-  Move the too long DESCRIPTION to metadata.xml and quote variables.
-
-  15 Nov 2007; Petteri Räty <betelgeuse@gentoo.org> -qdox-20050104.ebuild,
-  -qdox-20050104-r1.ebuild:
-  Delete old ebuilds so that ~arch users get 1.6.3 version too.
-
-  02 Nov 2007; William L. Thomson Jr. <wltjr@gentoo.org> qdox-1.6.3.ebuild,
-  qdox-20050104.ebuild:
-  amd64 stable, bug #196849.
-
-  24 Oct 2007; Markus Meier <maekke@gentoo.org> qdox-1.6.3.ebuild,
-  qdox-20050104.ebuild:
-  x86 for 1.6.3, ~x86 for 20050104 (new versioning scheme), bug #196849
-
-  24 Oct 2007; Krzysiek Pawlik <nelchael@gentoo.org> qdox-1.6.3.ebuild,
-  qdox-20050104.ebuild:
-  1.6.3 stable on ppc, bug #196849.
-
-  08 Sep 2007; nixnut <nixnut@gentoo.org> qdox-1.6.3.ebuild:
-  Added ~ppc wrt bug 187981
-
-  21 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org> qdox-1.6.3.ebuild:
-  ~amd64, bug #187981. Bogus stable commit, nothing committed but changelog :(
-
-  21 Aug 2007; William L. Thomson Jr. <wltjr@gentoo.org> ChangeLog:
-  amd64 stable, bug #187981.
-
-*qdox-1.6.3 (04 Aug 2007)
-
-  04 Aug 2007; Miroslav Šulc <fordfrog@gentoo.org> +qdox-1.6.3.ebuild:
-  Version bump. Versioning scheme of qdox has changed.
-
-  13 May 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  qdox-20050104-r1.ebuild:
-  Fix building qdox.
-
-  20 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  qdox-20050104-r1.ebuild:
-  Add ant-core to RDEPEND.
-
-  20 Dec 2006; Petteri Räty <betelgeuse@gentoo.org>
-  qdox-20050104-r1.ebuild:
-  Made the ebuild call java-pkg_getjars with the proper argument format so
-  emerging it with JAVA_PKG_STRICT works again.
-
-  06 Aug 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  qdox-20050104-r1.ebuild:
-  Added classpath rewriting.
-
-*qdox-20050104-r1 (05 Aug 2006)
-
-  05 Aug 2006; Joshua Nichols <nichoj@gentoo.org> +qdox-20050104-r1.ebuild:
-  Revision bump to support new Java system
-
-  04 May 2005; Jan Brinkmann <luckyduck@gentoo.org> qdox-20050104.ebuild:
-  stable on amd64, ppc and x86
-
-  15 Apr 2005; Jan Brinkmann <luckyduck@gentoo.org> qdox-20050104.ebuild:
-  added ~ppc to KEYWORDS
-
-  24 Mar 2005; Jan Brinkmann <luckyduck@gentoo.org> qdox-20050104.ebuild:
-  generall cleanup, added support for the source useflag and removed unnecessary
-  jmock dependency, fixes #85317
-
-*qdox-20050104 (04 Jan 2005)
-
-  04 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> +metadata.xml,
-  +qdox-20050104.ebuild:
-  Initial import. Ebuild provides by /me. Dependency of #63290.

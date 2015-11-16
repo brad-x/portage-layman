@@ -1,107 +1,82 @@
 # ChangeLog for dev-ml/core_kernel
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/core_kernel/ChangeLog,v 1.19 2015/07/13 18:12:46 aballier Exp $
+# (auto-generated from git log)
 
-*core_kernel-112.35.00 (13 Jul 2015)
+*core_kernel-112.35.00 (09 Aug 2015)
+*core_kernel-112.24.00 (09 Aug 2015)
+*core_kernel-112.17.00 (09 Aug 2015)
+*core_kernel-112.06.02 (09 Aug 2015)
 
-  13 Jul 2015; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.35.00.ebuild:
-  version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +core_kernel-112.06.02.ebuild, +core_kernel-112.17.00.ebuild,
+  +core_kernel-112.24.00.ebuild, +core_kernel-112.35.00.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*core_kernel-112.24.00 (18 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Mar 2015; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.24.00.ebuild:
-  version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*core_kernel-112.17.00 (20 Feb 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Feb 2015; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.17.00.ebuild:
-  version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Feb 2015; Alexis Ballier <aballier@gentoo.org>
-  -core_kernel-109.35.01.ebuild, -core_kernel-109.38.00.ebuild,
-  -core_kernel-109.60.00.ebuild, -core_kernel-110.01.00.ebuild,
-  -core_kernel-111.28.00.ebuild, -core_kernel-112.01.00.ebuild,
-  -core_kernel-112.06.00.ebuild:
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> core_kernel-112.06.02.ebuild,
+  metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  04 Sep 2015; Alexis Ballier <aballier@gentoo.org>
+  -core_kernel-112.06.02.ebuild, -core_kernel-112.17.00.ebuild,
+  -core_kernel-112.24.00.ebuild:
   remove old
 
-  14 Feb 2015; Alexis Ballier <aballier@gentoo.org>
-  core_kernel-112.06.02.ebuild:
-  add missing dep on custom_printf, bug #539912
+  Package-Manager: portage-2.2.20.1
 
-*core_kernel-112.06.02 (29 Jan 2015)
+  04 Sep 2015; Alexis Ballier <aballier@gentoo.org>
+  core_kernel-112.35.00.ebuild:
+  add missing dep on dev-ml/custom_printf. Bug #559196.
 
-  29 Jan 2015; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.06.02.ebuild:
-  version bump
+  Package-Manager: portage-2.2.20.1
 
-*core_kernel-112.06.00 (22 Dec 2014)
+*core_kernel-113.00.00 (19 Sep 2015)
 
-  22 Dec 2014; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.06.00.ebuild:
-  version bump
+  19 Sep 2015; Alexis Ballier <aballier@gentoo.org>
+  +core_kernel-113.00.00.ebuild:
+  bump to 113.00.00
 
-*core_kernel-112.01.00 (01 Dec 2014)
+  Package-Manager: portage-2.2.20.1
 
-  01 Dec 2014; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-112.01.00.ebuild:
-  version bump
-
-  28 Nov 2014; Alexis Ballier <aballier@gentoo.org>
-  core_kernel-111.28.00.ebuild:
-  update deps for ocaml 4.02
-
-  28 Nov 2014; Alexis Ballier <aballier@gentoo.org>
-  core_kernel-111.28.00.ebuild:
-  add missing pa_test dep, bug #530950
-
-*core_kernel-111.28.00 (10 Nov 2014)
-
-  10 Nov 2014; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-111.28.00.ebuild:
-  version bump
-
-*core_kernel-110.01.00 (13 Feb 2014)
-
-  13 Feb 2014; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-110.01.00.ebuild:
-  version bump
-
-  19 Jan 2014; Mikle Kolyada <zlogene@gentoo.org> core_kernel-109.60.00.ebuild:
-  whitespace
-
-*core_kernel-109.60.00 (19 Jan 2014)
-
-  19 Jan 2014; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-109.60.00.ebuild:
-  version bump
-
-*core_kernel-109.38.00 (19 Aug 2013)
-
-  19 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-109.38.00.ebuild:
-  version bump
-
-  19 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  -core_kernel-109.27.00.ebuild, -core_kernel-109.34.00.ebuild:
-  remove old
-
-*core_kernel-109.35.01 (01 Aug 2013)
-
-  01 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-109.35.01.ebuild:
-  version bump
-
-*core_kernel-109.34.00 (22 Jul 2013)
-
-  22 Jul 2013; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-109.34.00.ebuild:
-  version bump
-
-*core_kernel-109.27.00 (10 Jun 2013)
-
-  10 Jun 2013; Alexis Ballier <aballier@gentoo.org>
-  +core_kernel-109.27.00.ebuild, +metadata.xml:
-  Initial import, ebuild by me

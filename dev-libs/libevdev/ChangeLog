@@ -1,110 +1,86 @@
 # ChangeLog for dev-libs/libevdev
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libevdev/ChangeLog,v 1.27 2015/07/04 10:05:28 mrueg Exp $
+# (auto-generated from git log)
 
-*libevdev-1.4.3 (04 Jul 2015)
+*libevdev-1.4.3 (09 Aug 2015)
+*libevdev-1.4 (09 Aug 2015)
+*libevdev-1.3 (09 Aug 2015)
 
-  04 Jul 2015; Manuel Rüger <mrueg@gentoo.org> +libevdev-1.4.3.ebuild:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libevdev-1.3.ebuild,
+  +libevdev-1.4.ebuild, +libevdev-1.4.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> libevdev-1.3.ebuild,
-  libevdev-1.4.ebuild:
-  Drop old Python implementations
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*libevdev-1.4 (27 Mar 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Mar 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +libevdev-1.4.ebuild, -libevdev-0.6-r1.ebuild, -libevdev-0.6.ebuild,
-  -libevdev-1.2.1.ebuild:
-  Version bump. Remove old.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Mar 2015; Markus Meier <maekke@gentoo.org> libevdev-1.3.ebuild:
-  arm stable, bug #530652
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Mar 2015; Jeroen Roovers <jer@gentoo.org> libevdev-1.3.ebuild:
-  Stable for HPPA (bug #530652).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2015; Yixun Lan <dlan@gentoo.org> libevdev-1.3.ebuild:
-  add arm64 support, tested on A53 board
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for alpha, wrt bug #530652
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for sparc, wrt bug #530652
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for ia64, wrt bug #530652
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for ppc64, wrt bug #530652
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for ppc, wrt bug #530652
+*libevdev-1.4.4 (11 Sep 2015)
 
-  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for x86, wrt bug #530652
+  11 Sep 2015; Manuel Rüger <mrueg@gentoo.org> +libevdev-1.4.4.ebuild:
+  Version bump
 
-  18 Feb 2015; Agostino Sarubbo <ago@gentoo.org> libevdev-1.3.ebuild:
-  Stable for amd64, wrt bug #530652
+  Package-Manager: portage-2.2.20.1
 
-  25 Jan 2015; Raúl Porcel <armin76@gentoo.org> libevdev-0.6.ebuild,
-  libevdev-0.6-r1.ebuild, libevdev-1.2.1.ebuild, libevdev-1.3.ebuild:
-  Add ~sparc/~sh wrt #487944
+  29 Oct 2015; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libevdev-1.4.4.ebuild:
+  declare python-3 compatibility
 
-*libevdev-1.3 (04 Nov 2014)
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=553110
 
-  04 Nov 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +libevdev-1.3.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
 
-  28 Sep 2014; Anthony G. Basile <blueness@gentoo.org> libevdev-0.6-r1.ebuild,
-  libevdev-0.6.ebuild, libevdev-1.2.1.ebuild:
-  Keyword ~ppc64, bug #487944
+*libevdev-1.4.5 (15 Nov 2015)
 
-  15 Jun 2014; Akinori Hattori <hattya@gentoo.org> libevdev-0.6-r1.ebuild,
-  libevdev-0.6.ebuild, libevdev-1.2.1.ebuild:
-  keyword ~ia64 wrt bug #487944
+  15 Nov 2015; Manuel Rüger <manuel@rueg.eu> +libevdev-1.4.5.ebuild:
+  Version bump
 
-*libevdev-1.2.1 (16 May 2014)
+  Package-Manager: portage-2.2.24
 
-  16 May 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +libevdev-1.2.1.ebuild:
-  Version bump, bug #506742.
+  15 Nov 2015; Manuel Rüger <manuel@rueg.eu> -libevdev-1.4.ebuild,
+  -libevdev-1.4.3.ebuild:
+  Remove old
 
-*libevdev-0.6-r1 (11 Jan 2014)
+  Package-Manager: portage-2.2.24
 
-  11 Jan 2014; Michał Górny <mgorny@gentoo.org> +libevdev-0.6-r1.ebuild:
-  Backport the python-any-r1 conversion from x11 overlay.
-
-  03 Jan 2014; Matt Turner <mattst88@gentoo.org> libevdev-0.6.ebuild:
-  Restrict tests, since they need to be run as root.
-
-*libevdev-0.6 (30 Dec 2013)
-
-  30 Dec 2013; Matt Turner <mattst88@gentoo.org> +libevdev-0.6.ebuild,
-  -libevdev-0.4.ebuild:
-  Version bump to 0.6, bug 493420.
-
-  04 Nov 2013; Matt Turner <mattst88@gentoo.org> libevdev-0.4.ebuild:
-  Added ~alpha, bug 487944.
-
-  01 Nov 2013; Markos Chandras <hwoarang@gentoo.org> libevdev-0.4.ebuild:
-  Add ~mips. Bug #487944
-
-  01 Nov 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  libevdev-0.4.ebuild:
-  Keyword ~arm and ~x86, bug #487944.
-
-  16 Oct 2013; Jeroen Roovers <jer@gentoo.org> libevdev-0.4.ebuild:
-  Marked ~hppa (bug #487944).
-
-  14 Oct 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  libevdev-0.4.ebuild:
-  Keyword ~ppc.
-
-*libevdev-0.4 (13 Oct 2013)
-
-  13 Oct 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +libevdev-0.4.ebuild, +metadata.xml:
-  New ebuild for bug #485114, thanks to Iván Atienza and Stanisław Halik.

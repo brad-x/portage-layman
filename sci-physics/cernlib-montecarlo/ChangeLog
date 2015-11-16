@@ -1,125 +1,58 @@
 # ChangeLog for sci-physics/cernlib-montecarlo
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib-montecarlo/ChangeLog,v 1.27 2015/08/01 19:02:20 bircoph Exp $
+# (auto-generated from git log)
 
-  01 Aug 2015; Andrew Savchenko <bircoph@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild, cernlib-montecarlo-2006-r4.ebuild:
-  Fix sandbox issue with generated TeX fonts. See bug 555936.
+*cernlib-montecarlo-2006-r4 (09 Aug 2015)
+*cernlib-montecarlo-2006-r3 (09 Aug 2015)
 
-*cernlib-montecarlo-2006-r4 (01 Aug 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +cernlib-montecarlo-2006-r3.ebuild, +cernlib-montecarlo-2006-r4.ebuild,
+  +files/cernlib-montecarlo-2006-noherwig.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  01 Aug 2015; Andrew Savchenko <bircoph@gentoo.org>
-  +cernlib-montecarlo-2006-r4.ebuild:
-  Update Debian patchset.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jun 2015; Andrew Savchenko <bircoph@gentoo.org>
-  -cernlib-montecarlo-2006-r2.ebuild:
-  Remove old, wrt bug 478628.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Jun 2015; Agostino Sarubbo <ago@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild:
-  Stable for x86, wrt bug #550568
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 May 2015; Agostino Sarubbo <ago@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild:
-  Stable for amd64, wrt bug #550568
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 May 2015; Andrew Savchenko <bircoph@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild, cernlib-montecarlo-2006-r3.ebuild:
-  Update homepage.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Sep 2013; Justin Lecher <jlec@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild, metadata.xml:
-  Add missing usage of fortran-2.eclass
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild:
-  Respect user toolchain (bug #468192)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jan 2013; Sébastien Fabbro <bicatali@gentoo.org>
-  cernlib-montecarlo-2006-r3.ebuild, metadata.xml:
-  Keyworded amd64-linux and x86-linux
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Oct 2012; Ulrich Müller <ulm@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild, cernlib-montecarlo-2006-r3.ebuild:
-  Update dependency after package move from x11-libs/openmotif to
-  x11-libs/motif.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Oct 2012; Justin Lecher <jlec@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild, cernlib-montecarlo-2006-r3.ebuild,
-  metadata.xml:
-  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
-  updated fortran-2.eclass
+  Bug: https://bugs.gentoo.org/552720
 
-*cernlib-montecarlo-2006-r3 (21 Jul 2011)
-
-  21 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  +cernlib-montecarlo-2006-r3.ebuild:
-  New debian patch set. Switch to EAPI4
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  Add dependency on virtual/fortran
-
-  21 Jun 2011; Justin Lecher <jlec@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  Added fortran-2.eclass support
-
-  10 Oct 2010; Ulrich Mueller <ulm@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  Fix openmotif dependency.
-
-  24 Aug 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  -files/cernlib-montecarlo-2006-noherwig.pach,
-  +files/cernlib-montecarlo-2006-noherwig.patch:
-  Fixed syntax error in patch name, closing bug #333397, thanks Stefano
-  Takekawa
-
-  04 Dec 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  Re-changing to old style patching at least until patch-2.6 is not buggy
-  and masked. Also now install doc in proper directory, bug #295172
-
-  26 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  Fixing patch application with more recent versions
-
-  25 Nov 2009; Markus Meier <maekke@gentoo.org>
-  cernlib-montecarlo-2006-r2.ebuild:
-  amd64/x86 stable, bug #294441
-
-  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  -cernlib-montecarlo-2006-r1.ebuild:
-  Removed old
-
-*cernlib-montecarlo-2006-r2 (17 Apr 2009)
-
-  17 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/cernlib-montecarlo-2006-noherwig.pach, metadata.xml,
-  -cernlib-montecarlo-2006.ebuild, +cernlib-montecarlo-2006-r2.ebuild:
-  New use flag to trigger external herwig library
-
-  05 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
-  cernlib-montecarlo-2006.ebuild:
-  change dependency from virtual/tetex to virtual/latex-base for all ebuilds
-
-  29 Jun 2008; Torsten Veller <tove@gentoo.org>
-  cernlib-montecarlo-2006.ebuild, cernlib-montecarlo-2006-r1.ebuild:
-  Add missing die: || "..." -> || die "..."
-
-  27 Jun 2008; Ulrich Mueller <ulm@gentoo.org>
-  cernlib-montecarlo-2006.ebuild, cernlib-montecarlo-2006-r1.ebuild:
-  Change dependency from virtual/motif to x11-libs/openmotif, bug 224749.
-
-*cernlib-montecarlo-2006-r1 (11 Mar 2008)
-
-  11 Mar 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  +cernlib-montecarlo-2006-r1.ebuild:
-  New series of patches from Debian, more compatible with gfortran and better
-  tests. Much ebuild cleaning.
-
-*cernlib-montecarlo-2006 (24 Aug 2007)
-
-  24 Aug 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +cernlib-montecarlo-2006.ebuild:
-  Initial import.

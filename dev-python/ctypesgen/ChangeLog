@@ -1,91 +1,127 @@
 # ChangeLog for dev-python/ctypesgen
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ctypesgen/ChangeLog,v 1.28 2015/04/08 08:05:06 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> ctypesgen-0_p72-r1.ebuild:
-  Drop old Python implementations
+*ctypesgen-0_p72-r1 (09 Aug 2015)
+*ctypesgen-0_p72 (09 Aug 2015)
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> ctypesgen-0_p72-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +ctypesgen-0_p72.ebuild,
+  +ctypesgen-0_p72-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*ctypesgen-0_p72-r1 (18 Feb 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Feb 2013; Michał Górny <mgorny@gentoo.org> +ctypesgen-0_p72-r1.ebuild:
-  Migrate to distutils-r1. Fix and enable tests.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 May 2012; Alexis Ballier <aballier@gentoo.org> ctypesgen-0_p72.ebuild:
-  keyword ~amd64-fbsd
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Feb 2012; Marien Zwart <marienz@gentoo.org> ctypesgen-0_p72.ebuild:
-  Unrestrict pypy, see bug #403833. Thanks to Arfrever on IRC for reporting.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> ctypesgen-0_p72.ebuild:
-  Restricting pypy #403833
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Dec 2010; Matt Turner <mattst88@gentoo.org> ctypesgen-0_p72.ebuild:
-  Added ~mips, bug 263337
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Aug 2010; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
-  The python herd will take this.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Aug 2010; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Remove arfrever.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ctypesgen-0_p72.ebuild,
+  ctypesgen-0_p72-r1.ebuild:
+  Enable https for all google URIs
 
-  28 Apr 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  ctypesgen-0_p72.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jul 2009; Brent Baude <ranger@gentoo.org> ctypesgen-0_p72.ebuild:
-  Marking ctypesgen-0_p72 ppc for bug 273304
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Jun 2009; Brent Baude <ranger@gentoo.org> ctypesgen-0_p72.ebuild:
-  Marking ctypesgen-0_p72 ppc64 for bug 273304
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Jun 2009; Alexis Ballier <aballier@gentoo.org> ctypesgen-0_p72.ebuild:
-  keyword ~x86-fbsd, bug #263337
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Jun 2009; Raúl Porcel <armin76@gentoo.org> ctypesgen-0_p72.ebuild:
-  alpha/arm/ia64/s390/sh/sparc stable wrt #273304
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org> ctypesgen-0_p72.ebuild,
+  ctypesgen-0_p72-r1.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  11 Jun 2009; Markus Meier <maekke@gentoo.org> ctypesgen-0_p72.ebuild:
-  amd64 stable, bug #273304
+  Package-Manager: portage-2.2.20.1
 
-  10 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
-  ctypesgen-0_p72.ebuild:
-  stable x86, bug 273304
+  05 Sep 2015; Mikle Kolyada <zlogene@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  amd64 stable wrt bug #559292
 
-  09 Jun 2009; Jeroen Roovers <jer@gentoo.org> ctypesgen-0_p72.ebuild:
-  Stable for HPPA (bug #273304).
+  Package-Manager: portage-2.2.20.1
 
-  10 Apr 2009; Raúl Porcel <armin76@gentoo.org> ctypesgen-0_p72.ebuild:
-  Add ~arm/~s390/~sh wrt #263337
+  06 Sep 2015; Jeroen Roovers <jer@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  Stable for HPPA PPC64 (bug #559292).
 
-  04 Apr 2009; Brent Baude <ranger@gentoo.org> ctypesgen-0_p72.ebuild:
-  Marking ctypesgen-0_p72 ~ppc64 for bug 263337
+  Package-Manager: portage-2.2.20.1
 
-  02 Apr 2009; Ferris McCormick <fmccor@gentoo.org> ctypesgen-0_p72.ebuild:
-  Keyword ~sparc, bug #263337.
+  06 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  ppc stable wrt bug #559292
 
-  26 Mar 2009; Stefan Briesenick <sbriesen@gentoo.org>
-  ctypesgen-0_p72.ebuild:
-  added ~x86 keyword
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  25 Mar 2009; Joseph Jezak <josejx@gentoo.org> ctypesgen-0_p72.ebuild:
-  Marked ~ppc for bug #263337.
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  23 Mar 2009; Jeroen Roovers <jer@gentoo.org> ctypesgen-0_p72.ebuild:
-  Marked ~hppa (bug #263337).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Mar 2009; Tobias Klausmann <klausman@gentoo.org>
-  ctypesgen-0_p72.ebuild:
-  Keyworded on alpha, bug #263337
+  14 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
+  ctypesgen-0_p72-r1.ebuild:
+  add alpha keyword
 
-  22 Mar 2009; Tobias Klausmann <klausman@gentoo.org>
-  ctypesgen-0_p72.ebuild:
-  Stable on alpha, bug #263337
+  Gentoo-Bug: 559292
 
-*ctypesgen-0_p72 (22 Mar 2009)
+  Package-Manager: portage-2.2.20.1
 
-  22 Mar 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +metadata.xml, +ctypesgen-0_p72.ebuild:
-  New package. Initial ebuild by me.
+  20 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  x86 stable wrt bug #559292
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
+
+  21 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  sparc stable wrt bug #559292
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="sparc"
+
+  24 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  ia64 stable wrt bug #559292
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ia64"
+
+  01 Oct 2015; Markus Meier <maekke@gentoo.org> ctypesgen-0_p72-r1.ebuild:
+  arm stable, bug #559292
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="arm"
+
+  02 Oct 2015; Manuel Rüger <mrueg@gentoo.org> -ctypesgen-0_p72.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.22
+

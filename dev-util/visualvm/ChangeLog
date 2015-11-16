@@ -1,53 +1,61 @@
 # ChangeLog for dev-util/visualvm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/visualvm/ChangeLog,v 1.8 2015/02/09 10:03:20 fordfrog Exp $
+# (auto-generated from git log)
 
-*visualvm-1.3.8-r1 (09 Feb 2015)
+*visualvm-1.3.8-r1 (09 Aug 2015)
 
-  09 Feb 2015; Miroslav Šulc <fordfrog@gentoo.org> -visualvm-1.3.8.ebuild,
-  +visualvm-1.3.8-r1.ebuild:
-  fixed dependencies (bug #539422)
-
-*visualvm-1.3.8 (05 Feb 2015)
-
-  05 Feb 2015; Miroslav Šulc <fordfrog@gentoo.org> -visualvm-1.3.3-r1.ebuild,
-  -visualvm-1.3.3-r2.ebuild, -visualvm-1.3.3-r8.ebuild,
-  -visualvm-1.3.3-r9.ebuild, +visualvm-1.3.8.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/netbeans-platform-version.patch,
   +files/org-netbeans-modules-profiler-kit.xml,
   +files/org-netbeans-modules-profiler-nbimpl.xml,
   +files/org-netbeans-modules-profiler-options.xml,
   +files/org-netbeans-modules-profiler-oql-language.xml, +files/visualvm.conf,
-  +files/visualvm.sh:
-  version bump, removed obsolete broken ebuilds
+  +files/visualvm.sh, +metadata.xml, +visualvm-1.3.8-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> visualvm-1.3.3-r1.ebuild,
-  visualvm-1.3.3-r2.ebuild, visualvm-1.3.3-r8.ebuild, visualvm-1.3.3-r9.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Oct 2012; Ralph Sennhauser <sera@gentoo.org> metadata.xml:
-  Drop Andrew John Hughes as maintainer as discussed with him in #gentoo-java
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> visualvm-1.3.3-r1.ebuild,
-  visualvm-1.3.3-r8.ebuild:
-  Add missing inheritance of eutils.eclass
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*visualvm-1.3.3-r9 (01 May 2012)
-*visualvm-1.3.3-r2 (01 May 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 May 2012; Ralph Sennhauser <sera@gentoo.org> +visualvm-1.3.3-r2.ebuild,
-  +visualvm-1.3.3-r9.ebuild:
-  Add missing eutils to inherit.
-  Bump netbeans deps to :7.1 and only depend on required subset. #397843
-  Fix bogous DESTDIR for prefix.
-  Don't call die in subshells.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Jan 2012; Miroslav Šulc <fordfrog@gentoo.org>
-  +files/netbeans-platform-version.patch:
-  Added missing patch file (bug #397965)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*visualvm-1.3.3-r8 (26 Dec 2011)
-*visualvm-1.3.3-r1 (26 Dec 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +visualvm-1.3.3-r1.ebuild,
-  +visualvm-1.3.3-r8.ebuild, +metadata.xml:
-  Copied ebuilds from java-overlay
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

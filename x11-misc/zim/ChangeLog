@@ -1,153 +1,85 @@
 # ChangeLog for x11-misc/zim
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/zim/ChangeLog,v 1.28 2015/08/03 20:32:43 sping Exp $
+# (auto-generated from git log)
 
-*zim-0.63 (03 Aug 2015)
+*zim-0.63 (09 Aug 2015)
+*zim-0.62 (09 Aug 2015)
+*zim-0.61 (09 Aug 2015)
 
-  03 Aug 2015; Sebastian Pipping <sping@gentoo.org> +zim-0.63.ebuild:
-  Bump to 0.63 (bug #556332)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/zim-0.60-remove-ubuntu-theme.patch, +files/zim-0.62-desktop.patch,
+  +metadata.xml, +zim-0.61.ebuild, +zim-0.62.ebuild, +zim-0.63.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Aug 2015; Sebastian Pipping <sping@gentoo.org> zim-0.61.ebuild,
-  zim-0.62.ebuild:
-  Fix license according to README.txt (bug #556334)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> zim-0.61.ebuild:
-  Drop old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Jan 2015; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Update longdescription with upstream blurb (bug #535718 by Jonas Stein).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*zim-0.62 (04 Oct 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Oct 2014; Jeroen Roovers <jer@gentoo.org> -zim-0.60.ebuild,
-  +zim-0.62.ebuild, +files/zim-0.62-desktop.patch:
-  Version bump.
+  10 Aug 2015; Sebastian Pipping <sping@gentoo.org> zim-0.63.ebuild:
+  Add pygobject dependency (bug #556332)
 
-*zim-0.61 (28 Aug 2014)
+  Signed-off-by: Sebastian Pipping <sping@gentoo.org>
 
-  28 Aug 2014; Jeroen Roovers <jer@gentoo.org> -zim-0.56.ebuild,
-  -zim-0.57.ebuild, +zim-0.61.ebuild, files/zim-0.60-remove-ubuntu-theme.patch:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*zim-0.60 (31 May 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 May 2013; Michael Weber <xmw@gentoo.org>
-  +files/zim-0.60-remove-ubuntu-theme.patch, +zim-0.60.ebuild:
-  Version bump (bug 459612, thanks Alastair Murray and poncho)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*zim-0.57 (13 Dec 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Dec 2012; Jeroen Roovers <jer@gentoo.org> -zim-0.54.ebuild,
-  -zim-0.55.ebuild, +zim-0.57.ebuild:
-  Version bump by poncho (bug #447098).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*zim-0.56 (07 Jun 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Jun 2012; Michael Weber <xmw@gentoo.org> +zim-0.56.ebuild:
-  Version bump (bug 410783 reported by bdouxx)
+*zim-0.64 (29 Oct 2015)
 
-*zim-0.55 (04 Jun 2012)
+  29 Oct 2015; Jeroen Roovers <jer@gentoo.org> -zim-0.61.ebuild,
+  -zim-0.62.ebuild, +zim-0.64.ebuild:
+  Version bump (bug #564356 by Jonas Stein).
 
-  04 Jun 2012; Michael Weber <xmw@gentoo.org> +zim-0.55.ebuild,
-  -zim-0.53.ebuild:
-  Version bump (bug 406589, thanks Samuel BAUER)
+  Package-Manager: portage-2.2.23
 
-  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> zim-0.53.ebuild,
-  zim-0.54.ebuild, metadata.xml:
-  Move EAPI assignment to top of ebuild, bug 411875. Remove unused screenshot
-  local USE flag from metadata.
+*zim-0.65 (02 Nov 2015)
 
-*zim-0.54 (29 Jan 2012)
+  02 Nov 2015; Sebastian Pipping <sping@gentoo.org> +zim-0.65.ebuild:
+  0.65 (bug #564728)
 
-  29 Jan 2012; Michael Weber <xmw@gentoo.org> -zim-0.52.ebuild,
-  +zim-0.54.ebuild:
-  Version bump, remove old version
+  Package-Manager: portage-2.2.23
 
-  19 Nov 2011; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Wrap long lines and fix whitespace.
+  03 Nov 2015; Jeroen Roovers <jer@gentoo.org> -files/zim-0.62-desktop.patch,
+  -zim-0.63.ebuild, -zim-0.64.ebuild:
+  Old.
 
-*zim-0.53 (17 Nov 2011)
+  Package-Manager: portage-2.2.23
 
-  17 Nov 2011; Michael Weber <xmw@gentoo.org> -zim-0.28.ebuild,
-  -files/zim-0.28-disable-updates.patch, -zim-0.46.ebuild,
-  -files/zim-0.46-disable-updates.patch, -zim-0.47.ebuild, +zim-0.53.ebuild:
-  Version bump (thanks to Alastair Murray for the report bug 390773), drop use
-  flags, remove old versions.
-
-  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> zim-0.46.ebuild:
-  Depend on correct slot of pygobject.
-
-*zim-0.52 (30 May 2011)
-
-  30 May 2011; Michael Weber <xmw@gentoo.org> +zim-0.52.ebuild:
-  Version bump, thanks to Alastair Murray for his report on bug 368971
-
-  02 Mar 2011; Kevin McCarthy <signals@gentoo.org> zim-0.28.ebuild,
-  zim-0.46.ebuild:
-  Slotted gtk+ depend and EAPI=2 bump to support it.
-
-*zim-0.47 (15 Jun 2010)
-
-  15 Jun 2010; Kacper Kowalik <xarthisius@gentoo.org> +zim-0.47.ebuild:
-  Version bump.
-
-  15 Jun 2010; Markos Chandras <hwoarang@gentoo.org> zim-0.46.ebuild:
-  Fixing testsuite wrt bug #323073
-
-*zim-0.46 (28 May 2010)
-
-  28 May 2010; Markos Chandras <hwoarang@gentoo.org> +zim-0.46.ebuild,
-  +files/zim-0.46-disable-updates.patch:
-  Version bump. Fixes bug #304419. Thanks to Mat <jackdachef@gmail.com> for
-  the ebuild and to Arfrever for the ebuild review
-
-  10 Aug 2009; Torsten Veller <tove@gentoo.org> zim-0.28.ebuild:
-  Depend on the virtual of Test-Harness
-
-*zim-0.28 (21 Jul 2009)
-
-  21 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> +zim-0.28.ebuild,
-  +files/zim-0.28-disable-updates.patch:
-  Version bump.
-
-  03 Jun 2009; Samuli Suominen <ssuominen@gentoo.org> zim-0.27.ebuild:
-  Missing virtual/perl-Module-Build depend wrt #253340.
-
-  16 Jan 2009; Ben de Groot <yngwin@gentoo.org> zim-0.27.ebuild:
-  Updating homepage and SRC_URI, as noted by Todd Partridge in bug 255187.
-
-  27 Dec 2008; Santiago M. Mola <coldwind@gentoo.org>
-  -files/zim-0.20-disable-update-desktop-database.patch, -zim-0.23.ebuild:
-  Remove old.
-
-*zim-0.27 (29 Nov 2008)
-
-  29 Nov 2008; <ssuominen@gentoo.org> +files/zim-0.27-disable-updates.patch,
-  +zim-0.27.ebuild:
-  Version bump for bug 226143, thanks to René Neumann and Ilya Kashirin.
-
-*zim-0.23 (25 Apr 2008)
-
-  25 Apr 2008; Samuli Suominen <drac@gentoo.org> -zim-0.17.ebuild,
-  +zim-0.23.ebuild:
-  Version bump for bug 209112, thanks to René Neumann.
-
-*zim-0.20 (27 Sep 2007)
-
-  27 Sep 2007; Samuli Suominen <drac@gentoo.org>
-  +files/zim-0.20-disable-update-desktop-database.patch, +zim-0.20.ebuild:
-  Version bump wrt #188714, thanks to Chris Mayo for reporting.
-
-*zim-0.17 (27 Feb 2007)
-
-  27 Feb 2007; Steev Klimaszewski <steev@gentoo.org> -zim-0.16.ebuild,
-  +zim-0.17.ebuild:
-  New upstream release, fix perl dependencies, add ~amd64 keyword, closes bug
-  #168005 (Thanks to Balint Dobai-Pataky <dpblnt@gmail.com> for reporting) and
-  also closes bug #157683 (Thanks to Jakub Moc <jakub@gentoo.org> for reporting)
-
-*zim-0.16 (10 Sep 2006)
-
-  10 Sep 2006; Steev Klimaszewski <steev@gentoo.org> +Changelog,
-  +metadata.xml, +zim-0.16.ebuild:
-  Initial import.  Finally closes bug #112957

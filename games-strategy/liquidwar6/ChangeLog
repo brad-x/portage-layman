@@ -1,61 +1,64 @@
 # ChangeLog for games-strategy/liquidwar6
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/liquidwar6/ChangeLog,v 1.11 2015/01/26 17:41:27 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  26 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org>
+*liquidwar6-0.4.3681 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/liquidwar6-0.4.3681-check-headers.patch,
   +files/liquidwar6-0.4.3681-ldconfig.patch,
-  +files/liquidwar6-0.4.3681-paths.patch,
-  -files/liquidwar6-0.0.13_beta-ldconfig.patch,
-  -files/liquidwar6-0.0.13_beta-libpng-1.6.patch,
-  -files/liquidwar6-0.0.13_beta-paths.patch,
-  -files/liquidwar6-0.2.3551-ldconfig.patch,
-  -files/liquidwar6-0.2.3551-paths.patch, -liquidwar6-0.0.13_beta.ebuild,
-  -liquidwar6-0.2.3551.ebuild, liquidwar6-0.4.3681.ebuild:
-  clean old; tidy patching
+  +files/liquidwar6-0.4.3681-paths.patch, +liquidwar6-0.4.3681.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Nov 2014; Mike Frysinger <vapier@gentoo.org> liquidwar6-0.2.3551.ebuild,
-  liquidwar6-0.4.3681.ebuild:
-  Depend on libltdl rather than libtool by default #528294 by Pacho Ramos.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Oct 2014; Agostino Sarubbo <ago@gentoo.org> liquidwar6-0.4.3681.ebuild:
-  Stable for amd64, wrt bug #518252
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  liquidwar6-0.4.3681.ebuild:
-  x86 stable wrt bug #518252
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jun 2014; Julian Ospald <hasufell@gentoo.org> liquidwar6-0.4.3681.ebuild,
-  +files/liquidwar6-0.4.3681-check-headers.patch:
-  fix build which was broken by multilib madness
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> liquidwar6-0.0.13_beta.ebuild,
-  liquidwar6-0.2.3551.ebuild, liquidwar6-0.4.3681.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*liquidwar6-0.4.3681 (27 Mar 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Mar 2014; Julian Ospald <hasufell@gentoo.org> +liquidwar6-0.4.3681.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> liquidwar6-0.4.3681.ebuild:
+  Use https for most gnu.org URLs
 
-*liquidwar6-0.2.3551 (08 Jan 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Jan 2014; Julian Ospald <hasufell@gentoo.org> +liquidwar6-0.2.3551.ebuild,
-  +files/liquidwar6-0.2.3551-ldconfig.patch,
-  +files/liquidwar6-0.2.3551-paths.patch:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Sep 2013; Julian Ospald <hasufell@gentoo.org>
-  liquidwar6-0.0.13_beta.ebuild:
-  prune libtool files
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*liquidwar6-0.0.13_beta (30 Sep 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Sep 2013; Julian Ospald <hasufell@gentoo.org>
-  +liquidwar6-0.0.13_beta.ebuild, +files/liquidwar6-0.0.13_beta-ldconfig.patch,
-  +files/liquidwar6-0.0.13_beta-libpng-1.6.patch,
-  +files/liquidwar6-0.0.13_beta-paths.patch, +metadata.xml:
-  initial import wrt #388441 based on Samuel Bauers ebuilds

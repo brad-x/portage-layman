@@ -1,59 +1,62 @@
 # ChangeLog for x11-misc/winswitch
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/winswitch/ChangeLog,v 1.12 2014/06/10 02:28:34 floppym Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Jun 2014; Mike Gilbert <floppym@gentoo.org> -winswitch-0.12.18.ebuild:
-  Remove old.
+*winswitch-0.12.18-r1 (09 Aug 2015)
 
-  26 Apr 2014; Pacho Ramos <pacho@gentoo.org> winswitch-0.12.18-r1.ebuild:
-  Adapt to latest pygobject don't providing python2.6 support
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/winswitch-0.12.18-PIL.patch, +metadata.xml,
+  +winswitch-0.12.18-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  06 Apr 2014; Gilles Dartiguelongue <eva@gentoo.org> winswitch-0.12.18.ebuild,
-  winswitch-0.12.18-r1.ebuild:
-  Pin gst-python to 0.10 slot.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org>
-  winswitch-0.12.18-r1.ebuild:
-  Keyword amd64-linux ~x86-linux
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Aug 2013; Michał Górny <mgorny@gentoo.org> winswitch-0.12.18.ebuild,
-  winswitch-0.12.18-r1.ebuild:
-  Move dev-python/twisted to dev-python/twisted-core.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Jun 2013; Michael Weber <xmw@gentoo.org> files/winswitch-0.12.18-PIL.patch:
-  Add upstream ticket
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*winswitch-0.12.18-r1 (17 Jun 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jun 2013; Michael Weber <xmw@gentoo.org>
-  +files/winswitch-0.12.18-PIL.patch, +winswitch-0.12.18-r1.ebuild,
-  -winswitch-0.12.17.ebuild, metadata.xml:
-  distutils-r1 migration, PIL fixes (bug 471564)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*winswitch-0.12.18 (05 Jan 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Jan 2013; Michael Weber <xmw@gentoo.org> -winswitch-0.12.14.ebuild,
-  -winswitch-0.12.16.ebuild, +winswitch-0.12.18.ebuild:
-  Version bump (thanks euscan), drop old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*winswitch-0.12.17 (15 Oct 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Oct 2012; Michael Weber <xmw@gentoo.org> +winswitch-0.12.17.ebuild:
-  Version bump (euscan)
+  Bug: https://bugs.gentoo.org/552720
 
-*winswitch-0.12.16 (06 Oct 2012)
+  10 Nov 2015; Justin Lecher <jlec@gentoo.org> winswitch-0.12.18-r1.ebuild:
+  Convert from virtual/python-imaging to plain dev-python/pillow
 
-  06 Oct 2012; Michael Weber <xmw@gentoo.org> -winswitch-0.12.13.ebuild,
-  winswitch-0.12.14.ebuild, +winswitch-0.12.16.ebuild:
-  Version bump (euscan), drop old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*winswitch-0.12.14 (22 Jun 2012)
-
-  22 Jun 2012; Michael Weber <xmw@gentoo.org> +winswitch-0.12.14.ebuild:
-  Version bump (thanks euscan).
-
-*winswitch-0.12.13 (22 May 2012)
-
-  22 May 2012; Michael Weber <xmw@gentoo.org> +winswitch-0.12.13.ebuild,
-  +metadata.xml:
-  Initial import (bug 353662)

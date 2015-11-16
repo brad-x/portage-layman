@@ -1,227 +1,71 @@
 # ChangeLog for x11-wm/evilwm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/evilwm/ChangeLog,v 1.58 2015/03/20 09:00:41 jlec Exp $
+# (auto-generated from git log)
 
-  20 Mar 2015; Justin Lecher <jlec@gentoo.org> files/evilwm.desktop:
-  Fix desktop file
+*evilwm-1.1.0 (09 Aug 2015)
+*evilwm-1.0.1 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> evilwm-1.0.1.ebuild,
-  evilwm-1.1.0.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +evilwm-1.0.1.ebuild,
+  +evilwm-1.1.0.ebuild, +files/evilwm.desktop, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Oct 2013; Pacho Ramos <pacho@gentoo.org> -evilwm-1.1.0_pre8.ebuild,
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*evilwm-1.1.1 (04 Sep 2015)
+
+  04 Sep 2015; Tony Vroon <chainsaw@gentoo.org> +evilwm-1.1.1.ebuild,
   metadata.xml:
-  Cleanup due desktop-wm removal
+  Version bump to 1.1.1; ebuild by Jaco Kroon who is taking up (proxy)
+  maintainership.
 
-  23 Dec 2012; Ulrich Müller <ulm@gentoo.org> evilwm-1.0.1.ebuild,
-  evilwm-1.1.0_pre8.ebuild, evilwm-1.1.0.ebuild:
-  Fix LICENSE, see README file, bug 446798.
+  Package-Manager: portage-2.2.20.1
 
-*evilwm-1.1.0 (13 Aug 2011)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  13 Aug 2011; Michael Weber <xmw@gentoo.org> +evilwm-1.1.0.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 Aug 2010; Jonathan Callen <abcd@gentoo.org> evilwm-1.0.1.ebuild,
-  evilwm-1.1.0_pre8.ebuild:
-  Transfer prefix keywords, switch to EAPI=3, use "exec" in
-  /etc/X11/Sessions/evilwm
-
-  06 Jul 2010; Samuli Suominen <ssuominen@gentoo.org>
-  evilwm-1.1.0_pre8.ebuild:
-  Don't keyword this prerelease yet wrt #323879.
-
-*evilwm-1.1.0_pre8 (13 Jun 2010)
-
-  13 Jun 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +evilwm-1.1.0_pre8.ebuild:
-  Version bump wrt #317357 by Rasmus Thystrup Karstensen.
-
-  05 Jan 2010; Tiago Cunha <tcunha@gentoo.org> evilwm-1.0.1.ebuild:
-  stable sparc, bug 285141
-
-  01 Jan 2010; Tobias Klausmann <klausman@gentoo.org> evilwm-1.0.1.ebuild:
-  Stable on alpha, bug #285141
-
-  29 Dec 2009; Joseph Jezak <josejx@gentoo.org> evilwm-1.0.1.ebuild:
-  Marked ppc stable for bug #285141.
-
-  28 Dec 2009; Markus Meier <maekke@gentoo.org> evilwm-1.0.1.ebuild:
-  amd64/x86 stable, bug #285141
-
-*evilwm-1.0.1 (23 Sep 2009)
-
-  23 Sep 2009; Jeroen Roovers <jer@gentoo.org> +evilwm-1.0.1.ebuild:
-  Version bump.
-
-  18 Jul 2008; Alexis Ballier <aballier@gentoo.org> evilwm-1.0.0.ebuild:
-  keyword ~x86-fbsd thanks to Davide Italiano <dav_it@gentoo.org>, bug
-  #231713
-
-  03 Feb 2008; Torsten Veller <tove@gentoo.org> -evilwm-0.99.25.ebuild:
-  Cleaning. ppc-macos users will find it in prefix
-
-  21 Dec 2007; nixnut <nixnut@gentoo.org> evilwm-1.0.0.ebuild:
-  Stable on ppc wrt bug 202703
-
-  19 Dec 2007; Raúl Porcel <armin76@gentoo.org> evilwm-1.0.0.ebuild:
-  alpha/sparc/x86 stable wrt #202703
-
-  18 Dec 2007; Doug Klima <cardoe@gentoo.org> evilwm-1.0.0.ebuild:
-  amd64 stable wrt bug #202703
-
-  22 Jul 2007; David Shakaryan <omp@gentoo.org> evilwm-0.99.25.ebuild:
-  Remove virtual/x11 from dependencies.
-
-*evilwm-1.0.0 (29 Jun 2007)
-
-  29 Jun 2007; Torsten Veller <tove@gentoo.org> -evilwm-0.99.17.ebuild,
-  +evilwm-1.0.0.ebuild:
-  Version bump. Removed old ebuild
-
-  18 Aug 2006; Luis Medinas <metalgod@gentoo.org> evilwm-0.99.25.ebuild:
-  Stable on amd64. Bug #142610.
-
-  09 Aug 2006; Thomas Cort <tcort@gentoo.org> evilwm-0.99.25.ebuild:
-  Stable on alpha wrt Bug #142610.
-
-  05 Aug 2006; Michael Hanselmann <hansmi@gentoo.org> evilwm-0.99.25.ebuild:
-  Stable on ppc.
-
-  04 Aug 2006; Gustavo Zacarias <gustavoz@gentoo.org> evilwm-0.99.25.ebuild:
-  Stable on sparc wrt #142610
-
-  04 Aug 2006; Torsten Veller <tove@gentoo.org> evilwm-0.99.25.ebuild:
-  Stable on x86 (#142610). Thanks to Christian Faulhammer for testing.
-
-*evilwm-0.99.25 (15 Jun 2006)
-
-  15 Jun 2006; Torsten Veller <tove@gentoo.org> -evilwm-0.99.23.ebuild,
-  +evilwm-0.99.25.ebuild:
-  Version bump.
-
-*evilwm-0.99.23 (11 Feb 2006)
-
-  11 Feb 2006; Torsten Veller <tove@gentoo.org> -evilwm-0.99.21.ebuild,
-  -evilwm-0.99.22.ebuild, +evilwm-0.99.23.ebuild:
-  Version bump. Removed old versions.
-
-*evilwm-0.99.22 (31 Jan 2006)
-
-  31 Jan 2006; Torsten Veller <tove@gentoo.org> +files/evilwm.desktop,
-  -evilwm-0.99.4.ebuild, -evilwm-0.99.14.ebuild, evilwm-0.99.17.ebuild,
-  -evilwm-0.99.18.ebuild, +evilwm-0.99.22.ebuild:
-  Version bump. Added desktop file. Removed old versions.
-
-*evilwm-0.99.21 (22 Jan 2006)
-
-  22 Jan 2006; Torsten Veller <tove@gentoo.org> +evilwm-0.99.21.ebuild:
-  Version bump. Removes dependency on motif.
-
-  24 Dec 2005; Doug Goldstein <cardoe@gentoo.org> evilwm-0.99.18.ebuild:
-  adding modular X depends
-
-  13 Jul 2005; Kito <kito@gentoo.org> evilwm-0.99.18.ebuild:
-  ~ppc-macos keywords, fix motif includes closes 58845
-
-*evilwm-0.99.18 (18 Jun 2005)
-
-  18 Jun 2005; Mamoru KOMACHI <usata@gentoo.org> +evilwm-0.99.18.ebuild:
-  Version bumped. This closes bug #95302.
-
-  08 May 2005; Herbie Hopkins <herbs@gentoo.org> evilwm-0.99.17.ebuild:
-  Stable on amd64.
-
-  28 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  06 Sep 2004; Rob Holland <tigger@gentoo.org> evilwm-0.99.17.ebuild:
-  Provide a more sensible default font.
-
-  07 Jul 2004; Bryan Østergaard <kloeri@gentoo.org> evilwm-0.99.17.ebuild:
-  Stable on alpha.
-
-  28 Jun 2004; Aron Griffis <agriffis@gentoo.org> evilwm-0.99.4.ebuild:
-  glibc -> libc
-
-  27 Jun 2004; Aron Griffis <agriffis@gentoo.org> evilwm-0.99.14.ebuild,
-  evilwm-0.99.17.ebuild:
-  QA - fix use invocation
-
-  26 Jun 2004; Danny van Dyk <kugelfang@gentoo.org> evilwm-0.99.17.ebuild:
-  Marked ~amd64.
-
-  26 Feb 2004; Sven Blumenstein <bazik@gentoo.org> evilwm-0.99.17.ebuild:
-  Stable on sparc!
-
-  11 Jan 2004; Heinrich Wendel <lanius@gentoo.org> evilwm-0.99.14.ebuild,
-  evilwm-0.99.17.ebuild:
-  fixed motif dep
-
-  09 Jan 2004; Jason A Mobarak <aether@gentoo.org> evilwm-0.99.16.ebuild,
-  evilwm-0.99.17.ebuild:
-  Removed 0.99.16, moved 0.99.17 to x86.
-
-  05 Jan 2004; Jason Wever <weeve@gentoo.org> evilwm-0.99.14.ebuild:
-  Marked stable on sparc.
-
-  28 Nov 2003; Mike Gardiner <obz@gentoo.org> evilwm-0.99.14.ebuild,
-  evilwm-0.99.16.ebuild, evilwm-0.99.17.ebuild, evilwm-0.99.4.ebuild:
-  IUSE added to all ebuilds (motif or '' as appropriate)
-
-*evilwm-0.99.17 (04 Nov 2003)
-
-  04 Nov 2003; Brandon Hale <tseng@gentoo.org> evilwm-0.99.17.ebuild,
-  metadata.xml:
-  Version bump, adding metadata.xml
-
-*evilwm-0.99.16 (18 Sep 2003)
-
-  18 Sep 2003; Seemant Kulleen <seemant@gentoo.org> evilwm-0.99.16.ebuild:
-  version bump
-
-  09 Feb 2003; Aron Griffis <agriffis@gentoo.org> evilwm-0.99.14.ebuild :
-  Add ~alpha to KEYWORDS
-
-*evilwm-0.99.14 (09 Feb 2003)
-
-  09 Mar 2003; Aron Griffis <agriffis@gentoo.org> evilwm-0.99.14.ebuild:
-  Mark stable on alpha
-
-  09 Feb 2003; Seemant Kulleen <seemant@gentoo.org> evilwm-0.99.14.ebuild
-  files/digest-evilwm-0.99.14 :
-
-  Version bump.
-
-*evilwm-0.99.11 (23 Nov 2002)
-
-  09 Feb 2003; Seemant Kulleen <seemant@gentoo.org> evilwm-0.99.11.ebuild :
-
-  Made virtual/motif a USE flag based DEPEND, and did sed-fu to make it
-  optional in the makefile.  Closes bug #15356 by: Pierre-Olivier Bouchard
-  <petecoolrulez@hotmail.com>. Moved to x86 profile
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-  23 Nov 2002; Sascha Schwabbauer <cybersystem@gentoo.org> evilwm-0.99.11.ebuild :
-
-  Added ~ppc to keywords.
-
-*evilwm-0.99.11 (12 Nov 2002)
-
-  12 Nov 2002; Brad Cowan <bcowan@gentoo.org> evilwm-0.99.11.ebuild,
-  files/digest-evilwm-0.99.11 :
-
-  Version bump.
-
-*evilwm-0.99.4 (28 Jul 2002)
-
-  28 Jul 2002; Daniel Ahlberg <aliz@gentoo.org> evilwm-0.99.4.ebuild :
-
-  Version bump.
-
-*evilwm-0.3.11 (14 April 2002)
-
-  14 April 2002; Bart Verwilst <verwilst@gentoo.org> Changelog :
-
-  Initial ebuild, added to Portage (added SLOT)

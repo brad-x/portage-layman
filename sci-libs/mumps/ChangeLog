@@ -1,56 +1,56 @@
 # ChangeLog for sci-libs/mumps
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/mumps/ChangeLog,v 1.3 2015/03/06 09:56:13 bircoph Exp $
+# (auto-generated from git log)
 
-*mumps-4.10.0-r1 (06 Mar 2015)
+*mumps-4.10.0-r1 (09 Aug 2015)
 
-  06 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> -mumps-4.10.0.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mumps-4.10.0-r1.ebuild:
-  Revbump on second thought, since run-time problem is fixed.
+  proj/gentoo: Initial commit
 
-  06 Mar 2015; Andrew Savchenko <bircoph@gentoo.org> mumps-4.10.0.ebuild:
-  mumps is not compatible with >=scotch-6, see bug 541830.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Jan 2014; Sébastien Fabbro <bicatali@gentoo.org> +mumps-4.10.0.ebuild,
-  +metadata.xml:
-  Initial import in main tree
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Jun 2013; Justin Bronder <jsbronder@gentoo.org> mumps-4.10.0-r2.ebuild:
-  Don't let openmpi override malloc, works around sandbox issue in #462602
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*mumps-4.10.0-r2 (11 Dec 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> +mumps-4.10.0-r2.ebuild,
-  -mumps-4.10.0-r1.ebuild, metadata.xml:
-  sci-libs/mumps: Install libpord, force -j1 on makefile because of random
-  parallel build failures, separate dummy sequential mpi library from the common
-  mumps library
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0-r1.ebuild:
-  sci-libs/mumps: Merge dummy sequential mpi into sequential mumps
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0.ebuild:
-  sci-libs/mumps: fix underlinking for sequential library
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0.ebuild:
-  sci-libs/mumps: Shared library fixes and prefix love
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0.ebuild:
-  sci-libs/mumps: prefix love
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0.ebuild,
-  metadata.xml:
-  Fixed for sequential (non mpi) libraries
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> mumps-4.10.0.ebuild:
-  Only allow earlier parmetis versions
-
-  12 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> +mumps-4.10.0.ebuild,
-  +metadata.xml:
-  metis-mpi is now parmetis
-
-*mumps-4.10.0 (01 Jun 2011)
-
-  01 Jun 2011; Sébastien Fabbro <bicatali@gentoo.org> +mumps-4.10.0.ebuild,
-  +metadata.xml:
-  Initial import

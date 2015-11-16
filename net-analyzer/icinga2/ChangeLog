@@ -1,208 +1,137 @@
 # ChangeLog for net-analyzer/icinga2
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga2/ChangeLog,v 1.43 2015/08/06 15:30:34 ago Exp $
+# (auto-generated from git log)
 
-  06 Aug 2015; Agostino Sarubbo <ago@gentoo.org> icinga2-2.3.5.ebuild:
-  Stable for x86, wrt bug #554282
+*icinga2-9999 (09 Aug 2015)
+*icinga2-2.3.8 (09 Aug 2015)
+*icinga2-2.3.7 (09 Aug 2015)
+*icinga2-2.3.6 (09 Aug 2015)
+*icinga2-2.3.5 (09 Aug 2015)
 
-  06 Aug 2015; Agostino Sarubbo <ago@gentoo.org> icinga2-2.3.5.ebuild:
-  Stable for amd64, wrt bug #554282
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/icinga2.confd,
+  +files/icinga2.initd, +icinga2-2.3.5.ebuild, +icinga2-2.3.6.ebuild,
+  +icinga2-2.3.7.ebuild, +icinga2-2.3.8.ebuild, +icinga2-9999.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*icinga2-2.3.8 (20 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.8.ebuild:
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> icinga2-2.3.5.ebuild,
+  icinga2-2.3.6.ebuild, icinga2-2.3.7.ebuild, icinga2-2.3.8.ebuild,
+  icinga2-9999.ebuild:
+  Use https by default
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*icinga2-2.3.9 (26 Aug 2015)
+
+  26 Aug 2015; Matthew Thode <mthode@mthode.org> +icinga2-2.3.9.ebuild:
   bup
 
-*icinga2-2.3.7 (16 Jul 2015)
+  Package-Manager: portage-2.2.20.1
 
-  16 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.7.ebuild:
+  02 Sep 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-2.3.9.ebuild:
+  cleaner minimal usage
+
+  Package-Manager: portage-2.2.20.1
+
+*icinga2-2.3.10 (05 Sep 2015)
+
+  05 Sep 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +icinga2-2.3.10.ebuild:
   bup
 
-  15 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> files/icinga2.confd:
-  adding an option to conf.d for bug 554132
+  Package-Manager: portage-2.2.20.1
 
-*icinga2-2.3.6 (09 Jul 2015)
+*icinga2-2.3.10-r1 (08 Sep 2015)
 
-  09 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.6.ebuild,
-  -icinga2-2.3.3.ebuild, -icinga2-2.3.4.ebuild, icinga2-9999.ebuild:
-  more bups
+  08 Sep 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +icinga2-2.3.10-r1.ebuild:
+  fixing the glaring bug
 
-*icinga2-2.3.5 (17 Jun 2015)
+  Package-Manager: portage-2.2.20.1
 
-  17 Jun 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.5.ebuild:
+  28 Sep 2015; Agostino Sarubbo <ago@gentoo.org> icinga2-2.3.10-r1.ebuild:
+  amd64 stable wrt bug #561584
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
+
+  28 Sep 2015; Mikle Kolyada <zlogene@gentoo.org> icinga2-2.3.10-r1.ebuild:
+  x86 stable wrt bug #561584
+
+  Package-Manager: portage-2.2.20.1
+
+  28 Sep 2015; Matthew Thode <mthode@mthode.org> -icinga2-2.3.5.ebuild,
+  -icinga2-2.3.6.ebuild, -icinga2-2.3.7.ebuild, -icinga2-2.3.8.ebuild,
+  -icinga2-2.3.9.ebuild, -icinga2-2.3.10.ebuild, icinga2-9999.ebuild:
+  cleaning up non-stable and updating git ebuild
+
+  29 Sep 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-9999.ebuild:
+  remasking 9999 for bug 561802
+
+  Package-Manager: portage-2.2.20.1
+
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*icinga2-2.3.11 (19 Oct 2015)
+
+  19 Oct 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +icinga2-2.3.11.ebuild:
   bup
 
-  03 May 2015; Matthew Thode <prometheanfire@gentoo.org> files/icinga2.initd:
-  fixing reload in init script bug 548302
+  Package-Manager: portage-2.2.20.1
 
-*icinga2-2.3.4 (22 Apr 2015)
+  19 Oct 2015; Matthew Thode <prometheanfire@gentoo.org>
+  icinga2-2.3.11.ebuild, icinga2-9999.ebuild:
+  fixing missing quotes
 
-  22 Apr 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.4.ebuild:
-  bup
+  Package-Manager: portage-2.2.20.1
 
-*icinga2-2.3.3 (27 Mar 2015)
-
-  27 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.3.ebuild,
-  -icinga2-2.2.1-r2.ebuild, -icinga2-2.2.3-r1.ebuild, -icinga2-2.2.4.ebuild,
-  -icinga2-2.3.2-r1.ebuild, -icinga2-2.3.2.ebuild, icinga2-9999.ebuild:
-  bup
-
-*icinga2-2.3.2-r1 (25 Mar 2015)
-
-  25 Mar 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.3.2-r1.ebuild:
-  adding minimal use flag bug 543484
-
-  13 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-9999.ebuild:
-  fixing fowners for 9999
-
-  13 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> files/icinga2.initd,
-  icinga2-2.3.2.ebuild:
-  fixing reload in init script
-
-*icinga2-2.3.2 (13 Mar 2015)
-
-  13 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.2.ebuild,
-  -icinga2-2.3.0.ebuild:
-  bumping to 2.3.2
-
-  11 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-9999.ebuild:
-  really sign
-
-  11 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-9999.ebuild:
-  signing
-
-*icinga2-9999 (11 Mar 2015)
-
-  11 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-9999.ebuild:
-  adding 9999 version
-
-  11 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> icinga2-2.3.0.ebuild:
-  signing
-
-*icinga2-2.3.0 (11 Mar 2015)
-
-  11 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.3.0.ebuild,
-  files/icinga2.initd:
-  bup
-
-*icinga2-2.2.4 (03 Mar 2015)
-
-  03 Mar 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.2.4.ebuild:
-  bump of icinga2 and allowing monitoring-plugins to be used bug 541162
-
-  14 Feb 2015; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Remove short <longdescription>.
-
-*icinga2-2.2.3-r1 (29 Jan 2015)
-
-  29 Jan 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.2.3-r1.ebuild, -icinga2-2.2.3.ebuild:
-  removing python from depends and use, as it's not needed in icinga2-2.2
-
-*icinga2-2.2.3 (13 Jan 2015)
-
-  13 Jan 2015; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.2.3.ebuild,
-  -files/icinga2-2.1.0-create_var_cache.patch,
-  -files/icinga2-2.2.1-create_var_cache.patch, -icinga2-2.0.2.ebuild,
-  -icinga2-2.1.0-r3.ebuild, files/icinga2.initd, icinga2-2.2.1-r2.ebuild:
-  updating ebuild and fixing init file
-
-  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> icinga2-2.0.2.ebuild,
-  icinga2-2.1.0-r3.ebuild, icinga2-2.2.1-r2.ebuild:
-  Rename virtual/postgresql to dev-db/postgresql
-
-  14 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> files/icinga2.initd:
-  final fix for the init I hope
-
-*icinga2-2.2.1-r2 (14 Dec 2014)
-
-  14 Dec 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +files/icinga2-2.2.1-create_var_cache.patch, +icinga2-2.2.1-r2.ebuild,
-  -icinga2-2.2.1-r1.ebuild, files/icinga2.confd, files/icinga2.initd:
-  fixing init script, thanks Feandil :D bug 532582
-
-  12 Dec 2014; Matthew Thode <prometheanfire@gentoo.org>
-  icinga2-2.2.1-r1.ebuild:
-  the Manifest needed updating
-
-  12 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> files/icinga2.confd,
-  files/icinga2.initd:
-  fixing init script for bug 532314
-
-*icinga2-2.2.1-r1 (11 Dec 2014)
-
-  11 Dec 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.2.1-r1.ebuild, -icinga2-2.2.1.ebuild:
-  the init script is for icinga2, not icinga... bug 532116
-
-  10 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> icinga2-2.2.1.ebuild:
-  fixing sql schema source location
-
-  10 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> icinga2-2.2.1.ebuild:
-  fixing the usage of postgres and mysql
-
-  09 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> icinga2-2.2.1.ebuild:
-  fixing the group ownership stuff
-
-*icinga2-2.2.1 (09 Dec 2014)
-
-  09 Dec 2014; Matthew Thode <prometheanfire@gentoo.org> +files/icinga2.confd,
-  +files/icinga2.initd, +icinga2-2.2.1.ebuild:
-  multiple fixes :D bug 528962 and bug 528946  fixing bugs 528962 528946 Thanks
-  florian for the init scripts
-
-  03 Nov 2014; Aaron W. Swenson <titanofold@gentoo.org> icinga2-2.0.2.ebuild,
-  icinga2-2.1.0-r3.ebuild:
-  Update PostgreSQL dependencies and/or checks to virtual/postgresql.
-
-*icinga2-2.1.0-r3 (01 Sep 2014)
-
-  01 Sep 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +files/icinga2-2.1.0-create_var_cache.patch, +icinga2-2.1.0-r3.ebuild,
-  -icinga2-2.1.0-r2.ebuild, metadata.xml:
-  another bump from feandil
-
-*icinga2-2.1.0-r2 (30 Aug 2014)
-
-  30 Aug 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.1.0-r2.ebuild, -icinga2-2.1.0-r1.ebuild:
-  more correcting of deps
-
-  30 Aug 2014; Matthew Thode <prometheanfire@gentoo.org> metadata.xml:
-  updating manifest
-
-*icinga2-2.1.0-r1 (30 Aug 2014)
-
-  30 Aug 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.1.0-r1.ebuild, -icinga2-2.1.0.ebuild:
-  fixing python dep
-
-*icinga2-2.1.0 (30 Aug 2014)
-
-  30 Aug 2014; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.1.0.ebuild,
-  -icinga2-2.0.1.ebuild:
-  bup
-
-*icinga2-2.0.2 (22 Aug 2014)
-
-  22 Aug 2014; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.0.2.ebuild,
-  -icinga2-2.0.0.ebuild:
-  bup
-
-*icinga2-2.0.1 (17 Jul 2014)
-
-  17 Jul 2014; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.0.1.ebuild:
-  bup
-
-*icinga2-2.0.0 (16 Jun 2014)
-
-  16 Jun 2014; Matthew Thode <prometheanfire@gentoo.org> +icinga2-2.0.0.ebuild,
-  -icinga2-2.0.0_beta2.ebuild:
-  BUP!
-
-*icinga2-2.0.0_beta2 (15 Jun 2014)
-
-  15 Jun 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga2-2.0.0_beta2.ebuild, +metadata.xml:
-  adding icinga2

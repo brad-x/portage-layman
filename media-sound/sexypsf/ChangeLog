@@ -1,95 +1,63 @@
 # ChangeLog for media-sound/sexypsf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sexypsf/ChangeLog,v 1.25 2011/07/20 16:31:31 pacho Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #81177
+*sexypsf-0.4.7 (09 Aug 2015)
 
-  24 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> sexypsf-0.4.7.ebuild:
-  amd64 stable
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sexypsf-0.4.7-misc.patch, +metadata.xml, +sexypsf-0.4.7.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Feb 2007; Harald van Dĳk <truedfx@gentoo.org>
-  files/sexypsf-0.4.7-misc.patch:
-  Use CFLAGS when linking
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Jan 2007; Harald van Dĳk <truedfx@gentoo.org>
-  -files/sexypsf-0.4.5-gentoo.patch, -files/sexypsf-0.4.6-gentoo.patch,
-  -files/sexypsf-0.4.6-xmms.patch:
-  Clean up old unused files
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Nov 2006; Harald van Dĳk <truedfx@gentoo.org> -sexypsf-0.4.5.ebuild,
-  -sexypsf-0.4.6.ebuild:
-  Remove older versions
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Nov 2006; Christian Faulhammer <opfer@gentoo.org> sexypsf-0.4.7.ebuild:
-  stabled x86, bug #153356
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  31 Oct 2006; Luca Barbato <lu_zero@gentoo.org> sexypsf-0.4.7.ebuild:
-  Bigendian fix for oss and cleanup, goodbye xmms
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Aug 2006; Luca Barbato <lu_zero@gentoo.org> sexypsf-0.4.7.ebuild:
-  Make it properly work on bigendian
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org> files/digest-sexypsf-0.4.5,
-  files/digest-sexypsf-0.4.6, files/digest-sexypsf-0.4.7, Manifest:
-  Fixing SHA256 digest, pass four
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Feb 2006; Harald van Dĳk <truedfx@gentoo.org>
-  files/sexypsf-0.4.7-misc.patch, sexypsf-0.4.7.ebuild:
-  Remove bmp support as beep-media-player is going away
-  Get rid of a bunch of warnings
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Jan 2006; Harald van Dĳk <truedfx@gentoo.org> sexypsf-0.4.7.ebuild:
-  Fix parallel build issue (bug #119240)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Nov 2005; Danny van Dyk <kugelfang@gentoo.org> sexypsf-0.4.7.ebuild:
-  This works on amd64 as of version 0.4.7, marked accordingly.
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Nov 2005; Harald van Dĳk <truedfx@gentoo.org>
-  files/sexypsf-0.4.7-misc.patch:
-  Even more potential 64-bit issues
+*sexypsf-0.4.8 (25 Aug 2015)
 
-  06 Nov 2005; Harald van Dĳk <truedfx@gentoo.org>
-  files/sexypsf-0.4.7-misc.patch, sexypsf-0.4.7.ebuild:
-  Add bmp support
+  25 Aug 2015; Alexis Ballier <aballier@gentoo.org> +sexypsf-0.4.8.ebuild:
+  bump to 0.4.8
 
-  02 Nov 2005; Harald van Dĳk <truedfx@gentoo.org>
-  files/sexypsf-0.4.7-misc.patch:
-  Some more 64-bit problems
-
-*sexypsf-0.4.7 (26 Oct 2005)
-
-  26 Oct 2005; Harald van Dĳk <truedfx@gentoo.org>
-  +files/sexypsf-0.4.7-misc.patch, metadata.xml, +sexypsf-0.4.7.ebuild:
-  Version bump plus gcc4 and 64bit fixes
-  And marking myself as maintainer
-
-  07 Aug 2005; Michael Hanselmann <hansmi@gentoo.org> sexypsf-0.4.6.ebuild:
-  Stable on ppc.
-
-  18 Dec 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  sexypsf-0.4.6.ebuild:
-  Stable x86.
-
-*sexypsf-0.4.6 (07 Oct 2004)
-
-  07 Oct 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  +files/sexypsf-0.4.6-gentoo.patch, +files/sexypsf-0.4.6-xmms.patch,
-  +sexypsf-0.4.6.ebuild:
-  Version bump.
-
-  19 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> sexypsf-0.4.5.ebuild:
-  -sparc -amd64
-
-  29 Apr 2004; Jeremy Huddleston <eradicator@gentoo.org> sexypsf-0.4.5.ebuild:
-  Stable x86.
-
-  01 Apr 2004; David Holm <dholm@gentoo.org> sexypsf-0.4.5.ebuild:
-  Added to ~ppc.
-
-*sexypsf-0.4.5 (30 Mar 2004)
-
-  30 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> sexypsf-0.4.5.ebuild,
-  files/sexypsf-0.4.5-gentoo.patch:
-  Initial version.  Player and xmms plugin for playstation music files.
+  Package-Manager: portage-2.2.20.1
 

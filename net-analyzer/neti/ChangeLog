@@ -1,88 +1,57 @@
 # ChangeLog for net-analyzer/neti
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/neti/ChangeLog,v 1.21 2014/07/14 22:27:20 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*neti-2.0-r1 (14 Jul 2014)
+*neti-2.0-r1 (09 Aug 2015)
+*neti-2.0 (09 Aug 2015)
 
-  14 Jul 2014; Jeroen Roovers <jer@gentoo.org> +neti-2.0-r1.ebuild:
-  EAPI bump. Lots of cleaning up.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/neti-init2,
+  +metadata.xml, +neti-2.0.ebuild, +neti-2.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Remove empty tag. Remove useless maintainer tag.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #34534
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> neti-2.0.ebuild:
-  Remove virtual/libc
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Sep 2007; Markus Ullmann <jokey@gentoo.org> -files/neti-init,
-  -neti-1.01-r2.ebuild:
-  Cleanup
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Apr 2007; Sven Wegener <swegener@gentoo.org> neti-1.01-r2.ebuild:
-  Fix *initd, *confd and *envd calls (#173884, #174266)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Apr 2007; Torsten Veller <tove@gentoo.org> neti-2.0.ebuild:
-  Use newinitd
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Apr 2007; Markus Ullmann <jokey@gentoo.org> neti-2.0.ebuild:
-  Add missing dep wrt bug 172681
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Mar 2007; Raúl Porcel <armin76@gentoo.org> neti-2.0.ebuild:
-  x86 stable
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Jul 2006; Daniel Black <dragonheart@gentoo.org> -neti-1.01-r1.ebuild,
-  neti-1.01-r2.ebuild:
-  remove 1.01-r1 in preparation for ethereal -> wireshark move. Stable x86
-  neti-1.01-r2 as only simple change from running ethereal ->wireshark in
-  script occured.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*neti-1.01-r2 (20 Jul 2006)
-
-  20 Jul 2006; Daniel Black <dragonheart@gentoo.org> +files/neti-init2,
-  +neti-1.01-r2.ebuild, +neti-2.0.ebuild:
-  wireshark version of 1.01
-
-*neti-2.0 (20 Jul 2006)
-
-  20 Jul 2006; Daniel Black <dragonheart@gentoo.org> +files/neti-init2,
-  +neti-2.0.ebuild:
-  version bump
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org> files/digest-neti-1.01-r1,
-  Manifest:
-  Fixing SHA256 digest, pass four
-
-  15 Feb 2006; Markus Ullmann <jokey@gentoo.org> neti-1.01-r1.ebuild:
-  Removing virtual/libpcap wrt bug #117898
-
-*neti-1.01-r1 (29 Apr 2005)
-
-  29 Apr 2005; Daniel Black <dragonheart@gentoo.org> files/neti-init,
-  -neti-1.01.ebuild, +neti-1.01-r1.ebuild:
-  Corrected init scripts as per bug #90415. Thanks to Marco Morales
-  <soulN0SPAMse@gmail.com>
-
-  30 Jan 2005; Daniel Black <dragonheart@gentoo.org> neti-1.01.ebuild:
-  Change to virtual/libpcap dependancy
-
-  28 Jul 2004; Daniel Black <dragonheart@gentoo.org> neti-1.01.ebuild:
-  Marked x86 stable
-
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> neti-1.01.ebuild:
-  change virtual/glibc to virtual/libc
-
-  23 Jun 2004; David Holm <dholm@gentoo.org> neti-1.01.ebuild:
-  Added to ~ppc.
-
-  23 Jun 2004; Daniel Black <dragonheart@gentoo.org> neti-1.01.ebuild:
-  ~x86 keyword
-
-*neti-1.01 (21 Jun 2004)
-
-  21 Jun 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  +files/neti-init, +neti-1.01.ebuild:
-  Initial import thanks to Ben Thomasmail <ben@smallercircle.com> Dylan
-  Vanderhoof <llarian@llarian.net> in bug #49220
+  Bug: https://bugs.gentoo.org/552720
 

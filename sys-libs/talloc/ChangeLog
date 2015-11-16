@@ -1,318 +1,79 @@
 # ChangeLog for sys-libs/talloc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/talloc/ChangeLog,v 1.81 2015/08/07 07:31:04 polynomial-c Exp $
+# (auto-generated from git log)
 
-*talloc-2.1.3 (07 Aug 2015)
+*talloc-2.1.3 (09 Aug 2015)
+*talloc-2.1.2 (09 Aug 2015)
+*talloc-2.1.0-r1 (09 Aug 2015)
 
-  07 Aug 2015; Lars Wendler <polynomial-c@gentoo.org> -talloc-2.1.1.ebuild,
-  +talloc-2.1.3.ebuild:
-  Version bump. Removed old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +talloc-2.1.0-r1.ebuild, +talloc-2.1.2.ebuild, +talloc-2.1.3.ebuild:
+  proj/gentoo: Initial commit
 
-  05 May 2015; Patrick Lauer <patrick@gentoo.org> talloc-2.1.0-r1.ebuild,
-  talloc-2.1.1.ebuild, talloc-2.1.2.ebuild:
-  Adjust license #548254
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> talloc-2.1.0-r1.ebuild,
-  talloc-2.1.1.ebuild, talloc-2.1.2.ebuild:
-  Drop old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*talloc-2.1.2 (12 Mar 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Mar 2015; Lars Wendler <polynomial-c@gentoo.org> -talloc-2.0.8.ebuild,
-  -talloc-2.0.8-r1.ebuild, -talloc-2.1.0.ebuild, +talloc-2.1.2.ebuild:
-  Version bump. Removed old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Oct 2014; Markus Meier <maekke@gentoo.org> talloc-2.1.0-r1.ebuild:
-  arm stable, bug #512012
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Oct 2014; Markus Meier <maekke@gentoo.org> talloc-2.0.8-r1.ebuild:
-  arm stable, bug #512012
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Sep 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for sparc, wrt bug #512012
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Aug 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for alpha, wrt bug #512012
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for ia64, wrt bug #512012
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Aug 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for ppc64, wrt bug #512012
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Aug 2014; Jeroen Roovers <jer@gentoo.org> talloc-2.1.0-r1.ebuild:
-  Stable for HPPA (bug #512012).
+*talloc-2.1.4 (17 Oct 2015)
 
-  28 Jul 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for ppc, wrt bug #512012
+  17 Oct 2015; Lars Wendler <polynomial-c@gentoo.org> +talloc-2.1.4.ebuild:
+  Bump to version 2.1.4
 
-  23 Jul 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for x86, wrt bug #512012
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  22 Jul 2014; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.1.0-r1.ebuild:
-  Stable for amd64, wrt bug #512912
+  17 Oct 2015; Lars Wendler <polynomial-c@gentoo.org> -talloc-2.1.2.ebuild:
+  Removed old.
 
-  10 Jun 2014; Mike Frysinger <vapier@gentoo.org> talloc-2.0.8-r1.ebuild,
-  talloc-2.0.8.ebuild, talloc-2.1.0-r1.ebuild, talloc-2.1.0.ebuild,
-  talloc-2.1.1.ebuild:
-  Add arm64/m68k love.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-*talloc-2.1.1 (23 May 2014)
+  28 Oct 2015; Justin Lecher <jlec@gentoo.org> talloc-2.1.0-r1.ebuild,
+  talloc-2.1.3.ebuild, talloc-2.1.4.ebuild:
+  Fix for prefix
 
-  23 May 2014; Lars Wendler <polynomial-c@gentoo.org> +talloc-2.1.1.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*talloc-2.1.0-r1 (14 May 2014)
-
-  14 May 2014; Michał Górny <mgorny@gentoo.org> +talloc-2.1.0-r1.ebuild:
-  Enable multilib support, bug #491222. Clean up Python deps.
-
-  11 Mar 2014; Patrick Lauer <patrick@gentoo.org> talloc-2.1.0.ebuild:
-  Add gettext dep #503820
-
-  02 Feb 2014; Victor Ostorga <vostorga@gentoo.org> talloc-2.1.0.ebuild:
-  Reverting commit on talloc-2.1.0 , because emul-linux-x86-baselibs still
-  provides talloc. Check bug #491222 for multilib patch
-
-  01 Feb 2014; Victor Ostorga <vostorga@gentoo.org> talloc-2.1.0.ebuild:
-  Adding multilib support, bug #491222 , patch thanks to Kenneth Graunke
-  <kenneth@whitecape.org>
-
-  11 Dec 2013; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  talloc-2.0.8.ebuild, talloc-2.1.0.ebuild:
-  Add python use flag to IUSE defaults - completely fix bug 489472. Non-
-  maintainer commit acknowledged by Patrick (bonsaikitten).
-
-*talloc-2.1.0 (13 Sep 2013)
-
-  13 Sep 2013; Lars Wendler <polynomial-c@gentoo.org> -talloc-2.0.7.ebuild,
-  +talloc-2.1.0.ebuild:
-  Version bump. Removed old.
-
-  06 Sep 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for sparc, wrt bug #466710
-
-  05 Sep 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for ppc64, wrt bug #466710
-
-  05 Sep 2013; Mike Frysinger <vapier@gentoo.org> talloc-2.0.8.ebuild:
-  Mark s390/sh stable #466710.
-
-  01 Sep 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for alpha, wrt bug #466710
-
-  29 Aug 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for ia64, wrt bug #466710
-
-  26 Aug 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for ppc, wrt bug #466710
-
-  25 Aug 2013; Markus Meier <maekke@gentoo.org> talloc-2.0.8.ebuild,
-  talloc-2.0.8-r1.ebuild:
-  stabilize correct version for bug #478260
-
-  25 Aug 2013; Markus Meier <maekke@gentoo.org> talloc-2.0.8-r1.ebuild:
-  arm stable, bug #478260
-
-  24 Aug 2013; Jeroen Roovers <jer@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for HPPA (bug #466710).
-
-  07 Aug 2013; Lars Wendler <polynomial-c@gentoo.org> metadata.xml:
-  Removed unused local USE flag description.
-
-  07 Aug 2013; Lars Wendler <polynomial-c@gentoo.org> -talloc-1.3.0.ebuild,
-  -talloc-1.3.1.ebuild, -talloc-2.0.0.ebuild, -talloc-2.0.0-r1.ebuild,
-  -talloc-2.0.1.ebuild, -talloc-2.0.1-r1.ebuild, -talloc-2.0.1-r2.ebuild,
-  -talloc-2.0.5.ebuild, -files/talloc-2.0.0-without-doc.patch,
-  -files/talloc-2.0.1-respect-ldflags.patch:
-  Removed old versions.
-
-*talloc-2.0.8-r1 (30 Jun 2013)
-
-  30 Jun 2013; Justin Lecher <jlec@gentoo.org> +talloc-2.0.8-r1.ebuild,
-  metadata.xml:
-  Bump to new python eclass
-
-  23 Apr 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for x86, wrt bug #466710
-
-  23 Apr 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
-  Stable for amd64, wrt bug #466710
-
-  06 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for sh, wrt bug #458712
-
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for sparc, wrt bug #458712
-
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for s390, wrt bug #458712
-
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for ia64, wrt bug #458712
-
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for alpha, wrt bug #458712
-
-  03 Mar 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for arm, wrt bug #458712
-
-  25 Feb 2013; Zac Medico <zmedico@gentoo.org> talloc-2.0.8.ebuild:
-  Add ~arm-linux keyword.
-
-*talloc-2.0.8 (05 Dec 2012)
-
-  05 Dec 2012; Patrick Lauer <patrick@gentoo.org> +talloc-2.0.8.ebuild:
-  Bump
-
-  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for HPPA (bug #432754).
-
-  25 Nov 2012; Anthony G. Basile <blueness@gentoo.org> talloc-2.0.7.ebuild:
-  stable ppc ppc64, bug #444686
-
-  06 Jul 2012; Jeff Horelick <jdhore@gentoo.org> talloc-2.0.7.ebuild:
-  marked x86 per bug 417113
-
-  12 May 2012; Alexis Ballier <aballier@gentoo.org> talloc-2.0.7.ebuild:
-  keyword ~amd64-fbsd
-
-  07 Mar 2012; Patrick Lauer <patrick@gentoo.org> talloc-2.0.5.ebuild:
-  Restrict py3 #354587
-
-  07 Mar 2012; Patrick Lauer <patrick@gentoo.org> talloc-2.0.7.ebuild:
-  Restrict py3 #354587
-
-  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.7.ebuild:
-  Stable for amd64, wrt bug #405617
-
-*talloc-2.0.1-r2 (18 Dec 2011)
-
-  18 Dec 2011; Mike Gilbert <floppym@gentoo.org> +talloc-2.0.1-r2.ebuild:
-  Install missing SONAME symlink. Resolves bug 394787.
-
-  18 Oct 2011; VÃ­ctor Ostorga <vostorga@gentoo.org> talloc-2.0.7.ebuild:
-  Adding block on <sys-libs/talloc-2.0.5 to DEPEND, bug 387509
-
-*talloc-2.0.7 (27 Sep 2011)
-
-  27 Sep 2011; VÃ­ctor Ostorga <vostorga@gentoo.org> +talloc-2.0.7.ebuild:
-  Version bump to 2.0.7
-
-  27 Aug 2011; Fabian Groffen <grobian@gentoo.org> talloc-2.0.5.ebuild:
-  Fix install_names on Darwin, working around tremendously broken
-  waf-buildsystem, bug #374455, keyworded ~x64-macos
-
-  17 Aug 2011; ChÃ­-Thanh Christopher Nguyá»n <chithanh@gentoo.org>
-  talloc-2.0.5.ebuild:
-  keyword ~sparc-solaris
-
-  07 Jul 2011; Alexis Ballier <aballier@gentoo.org> talloc-2.0.5.ebuild:
-  keyword ~x86-fbsd
-
-  02 Jun 2011; VÃ­ctor Ostorga <vostorga@gentoo.org> talloc-2.0.5.ebuild:
-  Adding dependency dev-lang/python[threads] bug 363071
-
-  16 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> talloc-2.0.5.ebuild:
-  Stop unnecessarily forcing Python 2.6.
-
-  15 Mar 2011; VÃ­ctor Ostorga <vostorga@gentoo.org> talloc-2.0.5.ebuild:
-  Fixing collision with /usr/lib/libtalloc.so.2 bug #351608 setting python
-  2.6 as runtime python bug #354587 #357269
-
-  01 Mar 2011; Jonathan Callen <abcd@gentoo.org> talloc-2.0.5.ebuild:
-  Add ~amd64-linux/~x86-linux keywords
-
-*talloc-2.0.5 (13 Jan 2011)
-
-  13 Jan 2011; TomÃ¡Å¡ ChvÃ¡tal <scarabeus@gentoo.org> +talloc-2.0.5.ebuild:
-  Add new talloc version. NOTE: doc xsl file is fetched from net rather than
-  using the system one, this needs to be fixed.
-
-  27 Sep 2010; Mart Raudsepp <leio@gentoo.org> talloc-2.0.1-r1.ebuild:
-  Marked ~mips for bug #285952
-
-  12 Aug 2010; Joseph Jezak <josejx@gentoo.org> talloc-2.0.1-r1.ebuild:
-  Marked ppc/ppc64 stable for bug #300158.
-
-  17 Jun 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  talloc-2.0.1-r1.ebuild, +files/talloc-2.0.1-respect-ldflags.patch:
-  Respect LDFLAGS. Fixes bug 323497. Thanks Andreis Vinogradovs
-  <spamslepnoga@inbox.ru> for report.
-
-  05 Jun 2010; RaÃºl Porcel <armin76@gentoo.org> talloc-2.0.1-r1.ebuild:
-  alpha/arm/ia64/s390/sh/sparc stable wrt #300158
-
-  19 May 2010; Jeroen Roovers <jer@gentoo.org> talloc-2.0.1-r1.ebuild:
-  Stable for HPPA (bug #300158).
-
-  18 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  talloc-2.0.1-r1.ebuild:
-  x86 stable wrt bug #300158
-
-  03 May 2010; Olivier CrÃªte <tester@gentoo.org> ChangeLog:
-  amd64 stable, bug #300158
-
-*talloc-2.0.1-r1 (03 Apr 2010)
-
-  03 Apr 2010; Tiziano MÃ¼ller <dev-zero@gentoo.org>
-  +talloc-2.0.1-r1.ebuild, metadata.xml:
-  Fixed: unnecessary inherit, swig dependency, documentation install,
-  static-libs building.
-
-*talloc-2.0.1 (26 Jan 2010)
-
-  26 Jan 2010; Patrick Lauer <patrick@gentoo.org> +talloc-2.0.1.ebuild:
-  Bump
-
-  06 Dec 2009; Diego E. PettenÃ² <flameeyes@gentoo.org>
-  talloc-2.0.0-r1.ebuild:
-  Block older samba (to force uninstall).
-
-  30 Nov 2009; RaÃºl Porcel <armin76@gentoo.org> talloc-2.0.0-r1.ebuild:
-  Add ~arm/~ia64/~s390/~sh/~sparc wrt #285952
-
-  29 Nov 2009; Tobias Klausmann <klausman@gentoo.org>
-  talloc-2.0.0-r1.ebuild:
-  Keyworded on alpha, bug #285952
-
-  08 Nov 2009; Joseph Jezak <josejx@gentoo.org> talloc-2.0.0-r1.ebuild:
-  Marked ~ppc for bug #285952.
-
-  04 Nov 2009; Patrick Lauer <patrick@gentoo.org> talloc-1.3.0.ebuild,
-  talloc-1.3.1.ebuild, talloc-2.0.0.ebuild, talloc-2.0.0-r1.ebuild:
-  Small dep fix
-
-  23 Oct 2009; Patrick Lauer <patrick@gentoo.org> talloc-1.3.0.ebuild,
-  talloc-1.3.1.ebuild:
-  Fixing 1.3 ebuilds too
-
-*talloc-2.0.0-r1 (23 Oct 2009)
-
-  23 Oct 2009; Patrick Lauer <patrick@gentoo.org> +talloc-2.0.0-r1.ebuild,
-  +files/talloc-2.0.0-without-doc.patch:
-  Ebuild cleanups thanks to pva, bug #288536, making docs optional #290193,
-  thanks to Andrew Church for the patch
-
-  11 Oct 2009; Petteri RÃ¤ty <betelgeuse@gentoo.org> talloc-2.0.0.ebuild:
-  Block <net-fs/samba-libs-3.4 for bug #288545.
-
-  09 Oct 2009; Patrick Lauer <patrick@gentoo.org> talloc-1.3.0.ebuild,
-  talloc-1.3.1.ebuild, talloc-2.0.0.ebuild:
-  Improve description
-
-*talloc-2.0.0 (09 Oct 2009)
-*talloc-1.3.1 (09 Oct 2009)
-*talloc-1.3.0 (09 Oct 2009)
-
-  09 Oct 2009; Patrick Lauer <patrick@gentoo.org> +talloc-1.3.0.ebuild,
-  +talloc-1.3.1.ebuild, +talloc-2.0.0.ebuild, +metadata.xml:
-  Initial commit. Ebuilds based on those provided by Marcel Greter in
-  #231273

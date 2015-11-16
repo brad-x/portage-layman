@@ -1,107 +1,61 @@
 # ChangeLog for x11-libs/xvba-video
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/xvba-video/ChangeLog,v 1.22 2015/04/08 17:28:02 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> xvba-video-0.8.0-r3.ebuild,
-  xvba-video-9999.ebuild:
-  Drop old Python implementations
+*xvba-video-9999 (09 Aug 2015)
+*xvba-video-0.8.0-r3 (09 Aug 2015)
 
-  02 Dec 2014; Pacho Ramos <pacho@gentoo.org> -xvba-video-0.8.0-r1.ebuild,
-  -xvba-video-0.8.0-r2.ebuild, xvba-video-0.8.0-r3.ebuild:
-  amd64/x86 stable, bug #526058; drop old (including versions with brokoken
-  deps)
-
-*xvba-video-0.8.0-r3 (21 Jul 2014)
-
-  21 Jul 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  +files/xvba-video-0.8.0-assert-hw_image_hooks_glx.patch,
-  +xvba-video-0.8.0-r3.ebuild, xvba-video-0.8.0-r1.ebuild,
-  xvba-video-9999.ebuild:
-  Adjust libva dependencies in the stable ebuild, bug #517394. Apply patch to
-  avoid triggering an assert in xvba_image.c, bug #499290.
-
-  18 Jun 2014; Michał Górny <mgorny@gentoo.org> xvba-video-0.8.0-r2.ebuild,
-  xvba-video-9999.ebuild:
-  Update dependencies to require guaranteed EAPI=5 or multilib ebuilds, bug
-  #513718.
-
-  03 Mar 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/xvba-video-0.8.0-VAEncH264VUIBufferType.patch,
-  xvba-video-0.8.0-r2.ebuild:
-  Apply patch to build against recent x11-libs/libva, bug #503136. Require
-  x11-drivers/ati-drivers for building, too.
+  +files/xvba-video-0.8.0-assert-hw_image_hooks_glx.patch,
+  +files/xvba-video-fix-mesa-gl.h.patch,
+  +files/xvba-video-fix-out-of-source-builds.patch, +metadata.xml,
+  +xvba-video-0.8.0-r3.ebuild, +xvba-video-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Feb 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  xvba-video-0.8.0-r2.ebuild, xvba-video-9999.ebuild:
-  Fix build failure with automake-1.13.1, bug #469208.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*xvba-video-0.8.0-r2 (01 Feb 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Feb 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +files/xvba-video-fix-out-of-source-builds.patch, +xvba-video-0.8.0-r2.ebuild,
-  xvba-video-9999.ebuild:
-  revbump ebuilds to support multilib-build, changes reviewed by aballier
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> xvba-video-0.8.0-r1.ebuild,
-  xvba-video-9999.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Mar 2013; Tomáš Chvátal <scarabeus@gentoo.org> -xvba-video-0.8.0.ebuild,
-  xvba-video-0.8.0-r1.ebuild, xvba-video-9999.ebuild:
-  Stabilise 0.8.0-r1 as it works even with older libva. Drop older binary-only
-  release.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Feb 2013; Tomáš Chvátal <scarabeus@gentoo.org>
-  +files/xvba-video-fix-mesa-gl.h.patch, xvba-video-0.8.0-r1.ebuild,
-  xvba-video-9999.ebuild:
-  Fix broken build with mesa gl.h. Resolves bug#450098.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Feb 2013; Tomáš Chvátal <scarabeus@gentoo.org> xvba-video-0.8.0-r1.ebuild,
-  xvba-video-9999.ebuild:
-  Fix bug#453036 by using python-any-r1 eclass.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Dec 2012; Ulrich Müller <ulm@gentoo.org> xvba-video-0.8.0.ebuild,
-  xvba-video-0.8.0-r1.ebuild, xvba-video-9999.ebuild:
-  Specify LICENSE more precisely, bug 446688.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> xvba-video-0.8.0-r1.ebuild,
-  xvba-video-9999.ebuild:
-  Fix description.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*xvba-video-0.8.0-r1 (23 Nov 2012)
-*xvba-video-9999 (23 Nov 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> +xvba-video-0.8.0-r1.ebuild,
-  +xvba-video-9999.ebuild, -xvba-video-0.7.8.ebuild:
-  Add gpled source compiled version and its live ebuild (it uses different name
-  in git so lets wait for next release with renaming).
-
-  27 Dec 2011; Markus Meier <maekke@gentoo.org> xvba-video-0.8.0.ebuild:
-  x86 stable, bug #394393
-
-  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xvba-video-0.8.0.ebuild:
-  Stable for AMD64, wrt bug #394393
-
-*xvba-video-0.8.0 (28 Aug 2011)
-
-  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  +xvba-video-0.8.0.ebuild:
-  Version bump to latest.
-
-  23 Jun 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xvba-video-0.7.8.ebuild:
-  x86 stable wrt security bug #365273
-
-  23 Jun 2011; Markos Chandras <hwoarang@gentoo.org> xvba-video-0.7.8.ebuild:
-  Stable on amd64 wrt bug #372333
-
-  26 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> xvba-video-0.7.8.ebuild:
-  Rather keep fdo as homepage as it contains better desc.
-
-  26 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> xvba-video-0.7.8.ebuild:
-  Update Desc and homepage
-
-*xvba-video-0.7.8 (26 Apr 2011)
-
-  26 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  +xvba-video-0.7.8.ebuild, +metadata.xml:
-  Initial commit for xvba-video fglrx driver for libva. Per bug #325033.

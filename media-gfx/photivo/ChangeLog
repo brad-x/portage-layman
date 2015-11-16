@@ -1,46 +1,74 @@
 # ChangeLog for media-gfx/photivo
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/photivo/ChangeLog,v 1.9 2014/10/19 19:50:03 blueness Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Oct 2014; Anthony G. Basile <blueness@gentoo.org>
+*photivo-9999 (09 Aug 2015)
+*photivo-0_pre20131115 (09 Aug 2015)
+*photivo-0_pre20121212 (09 Aug 2015)
+*photivo-0_pre20121006 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +photivo-0_pre20121006.ebuild, +photivo-0_pre20121212.ebuild,
+  +photivo-0_pre20131115.ebuild, +photivo-9999.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  photivo-0_pre20121006.ebuild, photivo-0_pre20121212.ebuild,
   photivo-0_pre20131115.ebuild:
-  Fix compile error, bug #521204
+  Use https by default
 
-  17 Dec 2013; Markos Chandras <hwoarang@gentoo.org> photivo-9999.ebuild:
-  Drop EHG_REVISION so it can be overridden by command line. Bug #494474 by
-  Alexander Stein <alexander.stein@informatik.tu-chemnitz.de>
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*photivo-0_pre20131115 (17 Nov 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Nov 2013; Markos Chandras <hwoarang@gentoo.org>
-  +photivo-0_pre20131115.ebuild:
-  Version bump thanks to Marios Andreopoulos <opensource@andmarios.com>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Enable https for all google URIs
 
-  01 Aug 2013; Samuli Suominen <ssuominen@gentoo.org> photivo-9999.ebuild:
-  Fix libjpeg.so.62 dependency.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Mar 2013; Markos Chandras <hwoarang@gentoo.org> photivo-9999.ebuild:
-  Fix sed pattern. Thanks to Alexander Stein <alexander.stein@informatik.tu-
-  chemnitz.de>. Bug #460732
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*photivo-0_pre20121212 (07 Mar 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Mar 2013; Markos Chandras <hwoarang@gentoo.org>
-  +photivo-0_pre20121212.ebuild, photivo-9999.ebuild:
-  Version bump. Bug #460590. Thanks to Marios Andreopoulos for the ebuild and
-  Alexander Stein for the patch
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org>
-  photivo-0_pre20121006.ebuild, photivo-9999.ebuild:
-  Move Qt dependencies to the new category
+  21 Sep 2015; Ian Delaney <idella4@gentoo.org> photivo-9999.ebuild:
+  fix location of header file in live ebuild
 
-  27 Dec 2012; Christoph Junghans <ottxor@gentoo.org> photivo-9999.ebuild:
-  mercurial.eclass respects  now
+  patch by wraeth submitted via, and closes, bug #560120
 
-*photivo-0_pre20121006 (09 Dec 2012)
-*photivo-9999 (09 Dec 2012)
+  Package-Manager: portage-2.2.20.1
 
-  09 Dec 2012; Markos Chandras <hwoarang@gentoo.org> +metadata.xml,
-  +photivo-0_pre20121006.ebuild, +photivo-9999.ebuild:
-  Initial commit for photivo. Move live ebuild from qt overlay. Bug #347707.
-  Thanks to Marios Andreopoulos <opensource@andmarios.com>

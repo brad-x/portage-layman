@@ -1,83 +1,56 @@
 # ChangeLog for games-fps/ut2004-bonuspack-ece
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2004-bonuspack-ece/ChangeLog,v 1.16 2009/10/10 23:58:30 nyhm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Oct 2009; Tristan Heaven <nyhm@gentoo.org>
-  ut2004-bonuspack-ece-1-r3.ebuild:
-  EAPI=2; remove dedicated and opengl USE flags; let games-mods.eclass
-  handle install
+*ut2004-bonuspack-ece-1-r3 (09 Aug 2015)
 
-  28 Jul 2008; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
-  Removing myself from metadata.xml since I am retiring from the project.
-
-  10 Jan 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  -ut2004-bonuspack-ece-1-r2.ebuild, ut2004-bonuspack-ece-1-r3.ebuild:
-  Stable on amd64/x86 and removing older versions.
-
-*ut2004-bonuspack-ece-1-r3 (07 Nov 2006)
-
-  07 Nov 2006; Chris Gianelloni <wolf31o2@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +ut2004-bonuspack-ece-1-r3.ebuild:
-  Added new revision for testing which uses the brand-spankin-new
-  games-mods.eclass to reduce ebuild code.
+  proj/gentoo: Initial commit
 
-  26 Sep 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1-r2.ebuild:
-  Remove dependency on ut2004 since this causes circular dependencies. Closing
-  bug #149024.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1-r2.ebuild:
-  Fixed unpacking and closing bug #129883.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  -ut2004-bonuspack-ece-1.ebuild:
-  Removing older ebuilds so I don't mistakenly remove the wrong one again.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1-r2.ebuild:
-  Marking stable on amd64 and x86 to keep users from having to downgrade to an
-  older version of the ebuild.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*ut2004-bonuspack-ece-1-r2 (13 Apr 2006)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  -ut2004-bonuspack-ece-1-r1.ebuild, +ut2004-bonuspack-ece-1-r2.ebuild:
-  I have forced a revision bump here since this package will now *always*
-  install the ECE content. I'm sure some users are going to hate me for this,
-  but it had to be done. Closing bug #97726.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1-r1.ebuild:
-  Marking stable on amd64/x86 to bring in new Mega bonuspack and to close bug
-  #129373.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1.ebuild, ut2004-bonuspack-ece-1-r1.ebuild:
-  Changed nomirror to mirror and nostrip to strip.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1.ebuild, ut2004-bonuspack-ece-1-r1.ebuild:
-  Removed unnecessary pkg_postinst.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*ut2004-bonuspack-ece-1-r1 (14 Mar 2006)
-
-  14 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1.ebuild, +ut2004-bonuspack-ece-1-r1.ebuild:
-  Added new ebuild using the megapack distfile. Ebuild by Paul Bredbury
-  <brebs@sent.com>. Closing bug #116334.
-
-  30 Aug 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1.ebuild:
-  Changed to match new 3dgamers mirrors structure in thirdpartymirrors.
-
-  16 May 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  ut2004-bonuspack-ece-1.ebuild:
-  Marking stable on x86/amd64.
-
-*ut2004-bonuspack-ece-1 (22 Feb 2005)
-
-  22 Feb 2005; Chris Gianelloni <wolf31o2@gentoo.org> +metadata.xml,
-  +ut2004-bonuspack-ece-1.ebuild:
-  Initial import of new broken-up ut2004 install.
+  Bug: https://bugs.gentoo.org/552720
 

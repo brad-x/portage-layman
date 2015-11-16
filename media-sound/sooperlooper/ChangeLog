@@ -1,120 +1,67 @@
 # ChangeLog for media-sound/sooperlooper
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sooperlooper/ChangeLog,v 1.22 2012/09/07 22:26:07 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  07 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Remove redundant maintainer from metadata.
+*sooperlooper-1.6.18 (09 Aug 2015)
+*sooperlooper-1.6.17 (09 Aug 2015)
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> sooperlooper-1.6.17.ebuild,
-  sooperlooper-1.6.18.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sooperlooper-1.6.5-cxxflags.patch, +metadata.xml,
+  +sooperlooper-1.6.17.ebuild, +sooperlooper-1.6.18.ebuild:
+  proj/gentoo: Initial commit
 
-  24 Oct 2011; Tim Harder <radhermit@gentoo.org>
-  -files/sooperlooper-1.6.10-asneeded.patch, -sooperlooper-1.6.13_p2.ebuild,
-  -files/sooperlooper-1.6.13_p2-const.patch, -sooperlooper-1.6.14.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*sooperlooper-1.6.18 (24 Oct 2011)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Oct 2011; Tim Harder <radhermit@gentoo.org> +sooperlooper-1.6.18.ebuild:
-  Version bump.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*sooperlooper-1.6.17 (09 Jun 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jun 2011; Tim Harder <radhermit@gentoo.org> +sooperlooper-1.6.17.ebuild:
-  Version bump. Update to EAPI 4 and make sure CXXFLAGS are respected
-  everywhere.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*sooperlooper-1.6.14 (08 Jan 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Jan 2010; Patrick Lauer <patrick@gentoo.org>
-  +sooperlooper-1.6.14.ebuild:
-  Bump for #299814
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*sooperlooper-1.6.13_p2 (19 Jul 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +sooperlooper-1.6.13_p2.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*sooperlooper-1.6.10 (02 Sep 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Sep 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/sooperlooper-1.6.10-asneeded.patch, +sooperlooper-1.6.10.ebuild:
-  version bump
+*sooperlooper-1.7.3 (25 Oct 2015)
 
-*sooperlooper-1.6.5 (11 Jul 2008)
+  25 Oct 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/sooperlooper-1.7.3-sigc++-2.5.patch,
+  +files/sooperlooper-1.7.3-wx3.0.patch, +sooperlooper-1.7.3.ebuild:
+  Version bump and support wxGTK:3.0 (#563432)
 
-  11 Jul 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/sooperlooper-1.6.5-asneeded.patch,
-  +files/sooperlooper-1.6.5-cxxflags.patch,
-  +files/sooperlooper-1.6.5-rubberband12.patch, +sooperlooper-1.6.5.ebuild:
-  version bump, port to rubberband 1.2 api, dont ignore cxxflags, fix build
-  with asneeded, use wx 2.8
-
-  15 May 2008; Markus Rothe <corsair@gentoo.org> sooperlooper-1.6.3.ebuild:
-  Added ~ppc; bug #215033
-
-*sooperlooper-1.6.3 (28 Apr 2008)
-
-  28 Apr 2008; Samuli Suominen <drac@gentoo.org>
-  -files/sooperlooper-1.6.2-asneeded.patch,
-  -files/sooperlooper-1.6.2-gcc43.patch, -sooperlooper-1.6.2.ebuild,
-  +sooperlooper-1.6.3.ebuild:
-  Version bump to patch free version, upstream applied both -Wl,--as-needed
-  and GCC 4.3 fix.
-
-  28 Apr 2008; Samuli Suominen <drac@gentoo.org>
-  +files/sooperlooper-1.6.2-gcc43.patch, sooperlooper-1.6.2.ebuild:
-  GCC 4.3 fix wrt #219542, thanks to Peter Alfredsen.
-
-*sooperlooper-1.6.2 (27 Mar 2008)
-
-  27 Mar 2008; Samuli Suominen <drac@gentoo.org>
-  +files/sooperlooper-1.6.2-asneeded.patch, +sooperlooper-1.6.2.ebuild:
-  Version bump wrt #212570, thanks to Arne Babenhauserheide for reporting.
-  Upstream seems to have 1.6.3 also available, but they forgot to upload
-  source package.
-
-  27 Jul 2007; Alexis Ballier <aballier@gentoo.org>
-  +files/sooperlooper-1.1.0-asneeded.patch, sooperlooper-1.1.0.ebuild:
-  fix build with asneeded, bug #186817
-
-  27 Jul 2007; Samuli Suominen <drac@gentoo.org> sooperlooper-1.1.0.ebuild:
-  Stop using upstream optimization flags and respect users. Install bundled
-  documentation. Move epatch from src_compile to src_unpack.
-
-  14 May 2007; Ryan Hill <dirtyepic@gentoo.org> -sooperlooper-1.0.8c.ebuild:
-  Remove old.
-
-  07 May 2007; Ryan Hill <dirtyepic@gentoo.org>
-  +files/sooperlooper-1.1.0-amd64.patch, sooperlooper-1.0.8c.ebuild,
-  sooperlooper-1.1.0.ebuild:
-  Add patch for build failure on amd64 (bug #176751).
-
-*sooperlooper-1.1.0 (30 Apr 2007)
-
-  30 Apr 2007; Ryan Hill <dirtyepic@gentoo.org> -sooperlooper-1.0.3.ebuild,
-  sooperlooper-1.0.8c.ebuild, +sooperlooper-1.1.0.ebuild:
-  Version bump. Fix wxwidgets usage to work with upcoming changes. Remove
-  ancient versions.
-
-*sooperlooper-1.0.8c (28 Jan 2007)
-
-  28 Jan 2007; Ryan Hill <dirtyepic@gentoo.org> +sooperlooper-1.0.8c.ebuild:
-  Version bump and fix wxwidgets usage.
-
-  16 Feb 2006; Diego Pettenò <flameeyes@gentoo.org>
-  sooperlooper-1.0.3.ebuild:
-  Shorten description.
-
-  25 Jul 2005; David Holm <dholm@gentoo.org> sooperlooper-1.0.3.ebuild:
-  Added to ~ppc.
-
-*sooperlooper-1.0.3 (03 May 2005)
-
-  03 May 2005; Frank van de Pol <fvdpol@gentoo.org>
-  +sooperlooper-1.0.3.ebuild:
-  New ebuild for Sooperlooper. Submitted by Gerald Berger <gerry.berger@aon.at>
-  Closes bug#89422.
+  Package-Manager: portage-2.2.23
 

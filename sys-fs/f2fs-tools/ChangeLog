@@ -1,64 +1,106 @@
 # ChangeLog for sys-fs/f2fs-tools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/f2fs-tools/ChangeLog,v 1.15 2015/03/07 15:56:52 blueness Exp $
+# (auto-generated from git log)
 
-*f2fs-tools-1.4.0 (07 Mar 2015)
-*f2fs-tools-1.4.1 (07 Mar 2015)
+*f2fs-tools-1.4.1 (09 Aug 2015)
+*f2fs-tools-1.4.0 (09 Aug 2015)
+*f2fs-tools-1.3.0 (09 Aug 2015)
+*f2fs-tools-1.2.0 (09 Aug 2015)
+*f2fs-tools-1.1.0-r1 (09 Aug 2015)
 
-  07 Mar 2015; Anthony G. Basile <blueness@gentoo.org> +f2fs-tools-1.4.0.ebuild,
-  +f2fs-tools-1.4.1.ebuild:
-  Version bumps.  Bug #523420.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +f2fs-tools-1.1.0-r1.ebuild, +f2fs-tools-1.2.0.ebuild,
+  +f2fs-tools-1.3.0.ebuild, +f2fs-tools-1.4.0.ebuild,
+  +f2fs-tools-1.4.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*f2fs-tools-1.3.0 (15 Mar 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  15 Mar 2014; Anthony G. Basile <blueness@gentoo.org> +f2fs-tools-1.3.0.ebuild:
-  Version bump, bug #504676
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*f2fs-tools-1.2.0 (30 Jan 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Jan 2014; Anthony G. Basile <blueness@gentoo.org> +f2fs-tools-1.2.0.ebuild:
-  Version bump, bug #499614
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Sep 2013; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Stable for ppc64, wrt bug #481916
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> f2fs-tools-1.1.0-r1.ebuild,
+  f2fs-tools-1.2.0.ebuild, f2fs-tools-1.3.0.ebuild, f2fs-tools-1.4.0.ebuild,
+  f2fs-tools-1.4.1.ebuild, metadata.xml:
+  Use https by default
 
-  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Stable for arm, wrt bug #481916
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Aug 2013; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Stable for x86, wrt bug #481916
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Aug 2013; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Stable for ppc, wrt bug #481916
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> f2fs-tools-1.1.0-r1.ebuild,
+  f2fs-tools-1.2.0.ebuild, f2fs-tools-1.3.0.ebuild, f2fs-tools-1.4.0.ebuild,
+  f2fs-tools-1.4.1.ebuild:
+  Use https for kernel.org and redhat.com
 
-  23 Aug 2013; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Stable for amd64, wrt bug #481916
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Aug 2013; Anthony G. Basile <blueness@gentoo.org>
-  f2fs-tools-1.1.0-r1.ebuild:
-  Keyword ~ppc64
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Aug 2013; Patrick Lauer <patrick@gentoo.org> f2fs-tools-1.1.0-r1.ebuild:
-  Whitespace
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*f2fs-tools-1.1.0-r1 (15 Aug 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Aug 2013; Anthony G. Basile <blueness@gentoo.org>
-  +f2fs-tools-1.1.0-r1.ebuild, -f2fs-tools-1.1.0.ebuild:
-  Restore econf for bug #481110
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.4.1.ebuild:
+  amd64 stable wrt bug #555874
 
-  23 Jul 2013; Vicente Olivert Riera <vincent@gentoo.org>
-  f2fs-tools-1.1.0.ebuild:
-  added ppc keyword, bug #473474
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  05 Jun 2013; Mike Frysinger <vapier@gentoo.org> f2fs-tools-1.1.0.ebuild:
-  Delete unused code, add proper HOMEPAGE, and punt unneeded econf call.
+  20 Sep 2015; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.4.1.ebuild:
+  x86 stable wrt bug #555874
 
-  02 Apr 2013; Anthony G. Basile <blueness@gentoo.org> f2fs-tools-1.1.0.ebuild:
-  Keyword ~arm ~x86, bug #464178
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*f2fs-tools-1.1.0 (24 Feb 2013)
+  22 Sep 2015; Jeroen Roovers <jer@gentoo.org> f2fs-tools-1.4.1.ebuild:
+  Stable for PPC64 (bug #555874).
 
-  24 Feb 2013; Anthony G. Basile <blueness@gentoo.org>
-  +f2fs-tools-1.1.0.ebuild, +metadata.xml:
-  Initial commit, bug #458872
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --ignore-arches
+
+  22 Sep 2015; Agostino Sarubbo <ago@gentoo.org> f2fs-tools-1.4.1.ebuild:
+  ppc stable wrt bug #555874
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
+
+  27 Sep 2015; Markus Meier <maekke@gentoo.org> f2fs-tools-1.4.1.ebuild:
+  arm stable, bug #555874
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="arm"
+
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

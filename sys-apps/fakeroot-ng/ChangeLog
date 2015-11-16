@@ -1,61 +1,60 @@
 # ChangeLog for sys-apps/fakeroot-ng
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/fakeroot-ng/ChangeLog,v 1.15 2015/04/07 14:45:17 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*fakeroot-ng-0.18-r1 (30 May 2014)
+*fakeroot-ng-0.18-r1 (09 Aug 2015)
+*fakeroot-ng-0.18 (09 Aug 2015)
+*fakeroot-ng-0.17 (09 Aug 2015)
 
-  30 May 2014; Sven Vermeulen <swift@gentoo.org> +fakeroot-ng-0.18-r1.ebuild,
-  +files/fakeroot-ng-gcc-4.8.2.patch:
-  Fix x86 build failure with gcc 4.8.2, thanks to Martin Väth for the patch and
-  Anthoine Bourgeios as maintainer for the ebuild (bug #492896)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +fakeroot-ng-0.17.ebuild,
+  +fakeroot-ng-0.18.ebuild, +fakeroot-ng-0.18-r1.ebuild,
+  +files/fakeroot-ng-gcc-4.8.2.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*fakeroot-ng-0.18 (27 Nov 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Nov 2013; Justin Lecher <jlec@gentoo.org> +fakeroot-ng-0.18.ebuild,
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> fakeroot-ng-0.17.ebuild,
   metadata.xml:
-  Version Bump
+  Use https by default
 
-  02 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #328951
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
-  Drop maintainership
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -fakeroot-ng-0.14.ebuild,
-  -fakeroot-ng-0.15.ebuild:
-  old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> fakeroot-ng-0.17.ebuild,
-  -files/fakeroot-ng-0.17-gcc47.patch:
-  Move patch to mirrors because it's 47 KiB
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> fakeroot-ng-0.17.ebuild,
-  +files/fakeroot-ng-0.17-gcc47.patch:
-  Fix building with sys-devel/gcc >= 4.7.0 wrt #422905
-
-  21 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
-  Add proxy maintainership
-
-*fakeroot-ng-0.17 (27 Jul 2009)
-
-  27 Jul 2009; Michał Januszewski <spock@gentoo.org>
-  +fakeroot-ng-0.17.ebuild:
-  Version bump.
-
-*fakeroot-ng-0.15 (27 May 2009)
-
-  27 May 2009; Michał Januszewski <spock@gentoo.org>
-  +fakeroot-ng-0.15.ebuild:
-  Version bump.
-
-*fakeroot-ng-0.14 (06 Oct 2008)
-
-  25 Oct 2008; Pieter Van den Abeele <pvdabeel@gentoo.org> fakeroot-ng-0.14.ebuild:
-  Keyworded ~ppc. Closes bug #243392
-
-  06 Oct 2008; Michał Januszewski <spock@gentoo.org> +metadata.xml,
-  +fakeroot-ng-0.14.ebuild:
-  Initial commit.

@@ -1,59 +1,62 @@
 # ChangeLog for dev-java/skinlf
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/skinlf/ChangeLog,v 1.12 2014/03/08 17:23:12 tomwij Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*skinlf-6.7-r1 (08 Mar 2014)
+*skinlf-6.7-r1 (09 Aug 2015)
 
-  08 Mar 2014; Tom Wijsman <TomWij@gentoo.org> +skinlf-6.7-r1.ebuild,
-  -skinlf-6.7.ebuild:
-  Revision bump. EAPI 5.
-
-  30 Dec 2012; Ulrich Müller <ulm@gentoo.org> skinlf-6.7.ebuild:
-  Fix LICENSE, see LICENSE file, bug 447610.
-
-  25 Sep 2011; Vlastimil Babka <caster@gentoo.org> skinlf-6.7.ebuild:
-  Pin laf-plugin slot.
-
-  03 Aug 2007; Petteri Räty <betelgeuse@gentoo.org>
-  -skinlf-1.2.12-r1.ebuild:
-  Remove old version.
-
-*skinlf-6.7 (28 Apr 2007)
-
-  28 Apr 2007; Vlastimil Babka <caster@gentoo.org>
-  +files/skinlf-6.7-build.xml, +files/skinlf-6.7-common.xml,
-  +files/skinlf-6.7-image-utils-without-jimi.patch, +skinlf-6.7.ebuild:
-  Version bump, migrated to generation-2 java eclasses.
-
-  01 Apr 2007; Petteri Räty <betelgeuse@gentoo.org> -skinlf-1.2.12.ebuild:
-  Remove gen 1 ebuild.
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  30 Nov 2006; Vlastimil Babka <caster@gentoo.org> skinlf-1.2.12.ebuild,
-  skinlf-1.2.12-r1.ebuild:
-  Update xerces dep for upcoming 2.6 slotmove.
-
-  19 Mar 2006; Mark Loeser <halcy0n@gentoo.org> skinlf-1.2.12.ebuild,
-  skinlf-1.2.12-r1.ebuild:
-  Add DEPEND on app-arch/unzip
-
-  01 Feb 2006; Patrick McLean <chutzpah@gentoo.org> skinlf-1.2.12-r1.ebuild:
-  Added ~amd64 keyword (bug #120087).
-
-*skinlf-1.2.12-r1 (24 Jan 2006)
-
-  24 Jan 2006; Matthias Schwarzott <zzam@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/skinlf-1.2.12-build.xml, +files/skinlf-1.2.12-common-devjavanet.xml,
+  +files/skinlf-1.2.12-common.xml,
   +files/skinlf-1.2.12-image-utils-without-jimi.patch,
-  +skinlf-1.2.12-r1.ebuild:
-  patch to work without fetch-restricted sun-jimi
+  +files/skinlf-1.2.12-image-utils.patch, +files/skinlf-6.7-build.xml,
+  +files/skinlf-6.7-common.xml,
+  +files/skinlf-6.7-image-utils-without-jimi.patch, +metadata.xml,
+  +skinlf-6.7-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*skinlf-1.2.12 (22 Jan 2006)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jan 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +files/skinlf-1.2.12-build.xml, +files/skinlf-1.2.12-common.xml,
-  +files/skinlf-1.2.12-common-devjavanet.xml,
-  +files/skinlf-1.2.12-image-utils.patch, +metadata.xml,
-  +skinlf-1.2.12.ebuild:
-  Initial import of ebuild written by me
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

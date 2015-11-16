@@ -1,52 +1,57 @@
 # ChangeLog for app-emacs/bongo
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/bongo/ChangeLog,v 1.10 2014/06/07 10:36:05 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  07 Jun 2014; Ulrich Müller <ulm@gentoo.org> bongo-20110621.ebuild:
-  Remove redundant NEED_EMACS assignment.
+*bongo-20110621 (09 Aug 2015)
 
-  07 Mar 2014; Ulrich Müller <ulm@gentoo.org> bongo-20110621.ebuild:
-  Remove taglib support, owing to outdated (ruby18) ruby-taglib, bug 492562.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bongo-20110621.ebuild,
+  +files/50bongo-gentoo.el, +files/bongo-20070619-fix-require.patch,
+  +files/bongo-20110621-texinfo-5.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 Feb 2014; Ulrich Müller <ulm@gentoo.org> -bongo-20090713.ebuild:
-  Remove old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*bongo-20110621 (05 Apr 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Apr 2013; Ulrich Müller <ulm@gentoo.org> -bongo-20070619-r2.ebuild,
-  bongo-20090713.ebuild, +bongo-20110621.ebuild,
-  +files/bongo-20110621-texinfo-5.patch:
-  Version bump. Fix build failure with texinfo-5.1, bug 464678. Remove old.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*bongo-20090713 (16 Oct 2009)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Oct 2009; Ulrich Mueller <ulm@gentoo.org> bongo-20070619-r2.ebuild,
-  +bongo-20090713.ebuild:
-  Version bump. Renamed distfile for bongo-mplayer.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Oct 2009; Ulrich Mueller <ulm@gentoo.org> bongo-20070619-r2.ebuild:
-  Define ELISP_TEXINFO and use eclass default for src_compile.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bongo-20070619-r2 (05 Jul 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Jul 2009; Ulrich Mueller <ulm@gentoo.org> -bongo-20070619-r1.ebuild,
-  +bongo-20070619-r2.ebuild:
-  Install tree-from-tags.rb; add optional dependency on dev-ruby/ruby-taglib.
-  Remove old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jan 2009; Ulrich Mueller <ulm@gentoo.org> bongo-20070619-r1.ebuild:
-  Add optional support for MPlayer, bug 253476.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*bongo-20070619-r1 (15 Nov 2008)
-
-  15 Nov 2008; Ulrich Mueller <ulm@gentoo.org> files/50bongo-gentoo.el,
-  -bongo-20070619.ebuild, +bongo-20070619-r1.ebuild:
-  Test if image-load-path exists in site-init file, fixes bug 246888.
-
-*bongo-20070619 (08 Aug 2008)
-
-  08 Aug 2008; Ulrich Mueller <ulm@gentoo.org> +files/50bongo-gentoo.el,
-  +files/bongo-20070619-fix-require.patch, +metadata.xml,
-  +bongo-20070619.ebuild:
-  Initial import, bug 228723, from Emacs overlay. Ebuild contributed by me.
+  Bug: https://bugs.gentoo.org/552720
 

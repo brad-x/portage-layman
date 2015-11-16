@@ -1,120 +1,56 @@
 # ChangeLog for x11-libs/neXtaw
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/neXtaw/ChangeLog,v 1.37 2012/05/09 15:06:34 aballier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  09 May 2012; Alexis Ballier <aballier@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  keyword ~amd64-fbsd
+*neXtaw-0.15.1-r1 (09 Aug 2015)
 
-  15 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  neXtaw-0.15.1-r1.ebuild:
-  Transfer Prefix keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +neXtaw-0.15.1-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  neXtaw-0.15.1-r1.ebuild:
-  Drop virtual/x11 references.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove mkennedy from metadata.xml due to retirement.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Feb 2007; Fabian Groffen <grobian@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Dec 2006; Michael Sterrett <mr_bones_@gentoo.org> -neXtaw-0.12.ebuild,
-  -neXtaw-0.15.1.ebuild:
-  clean old, non-modX ebuilds
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Oct 2006; Diego Pettenò <flameeyes@gentoo.org>
-  neXtaw-0.15.1-r1.ebuild:
-  Add ~x86-fbsd keyword.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Oct 2006; Guy Martin <gmsoft@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Stable on hppa.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Sep 2006; Bryan Østergaard <kloeri@gentoo.org>
-  neXtaw-0.15.1-r1.ebuild:
-  Stable on ia64.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Sep 2006; Thomas Cort <tcort@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Stable on alpha wrt Bug #115045.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Aug 2006; <blubb@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  stable on amd64
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Aug 2006; Markus Rothe <corsair@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Stable on ppc64; bug #115045
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Jul 2006; Jason Wever <weeve@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Stable on SPARC wrt bug #115045.
-
-  21 Jul 2006; Joshua Jackson <tsunam@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Stable x86; bug #115045
-
-  16 Jul 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  neXtaw-0.15.1-r1.ebuild:
-  ppc stable, bug #115045
-
-  24 Jan 2006; Matthew Kennedy <mkennedy@gentoo.org> +metadata.xml:
-  Added metadata.xml.
-
-  24 Jan 2006; Patrick McLean <chutzpah@gentoo.org> neXtaw-0.15.1-r1.ebuild:
-  Fixed up dependencies for modular X.
-
-  18 Dec 2005; Markus Rothe <corsair@gentoo.org> neXtaw-0.15.1.ebuild:
-  Stable on ppc64
-
-  18 Oct 2005; Aron Griffis <agriffis@gentoo.org> neXtaw-0.15.1.ebuild:
-  Mark 0.15.1 stable on alpha
-
-  02 Oct 2005; Michael Hanselmann <hansmi@gentoo.org> neXtaw-0.15.1.ebuild:
-  Stable on ppc.
-
-  02 Oct 2005; Aron Griffis <agriffis@gentoo.org> neXtaw-0.15.1.ebuild:
-  Mark 0.15.1 stable on ia64
-
-  29 Sep 2005; Gustavo Zacarias <gustavoz@gentoo.org> neXtaw-0.15.1.ebuild:
-  Stable on sparc
-
-  29 Sep 2005; Mamoru KOMACHI <usata@gentoo.org> neXtaw-0.15.1.ebuild:
-  Stable on x86.
-
-*neXtaw-0.15.1-r1 (29 Sep 2005)
-
-  29 Sep 2005; Mamoru KOMACHI <usata@gentoo.org> neXtaw-0.12.ebuild,
-  neXtaw-0.15.1.ebuild, +neXtaw-0.15.1-r1.ebuild:
-  Changed installation path from /usr/X11R6 to /usr; bug #90796.
-
-  29 Mar 2005; Guy Martin <gmsoft@gentoo.org> neXtaw-0.12.ebuild,
-  neXtaw-0.15.1.ebuild:
-  Added some hppa keywords.
-
-*neXtaw-0.15.1 (19 Nov 2004)
-
-  19 Nov 2004; Mamoru KOMACHI <usata@gentoo.org> +neXtaw-0.15.1.ebuild:
-  Version bumped for ppc-macos.
-
-  20 Jul 2004; Tom Gall <tgall@gentoo.org> neXtaw-0.12.ebuild:
-  stable on ppc64, bug #57174
-
-  17 Apr 2004; Daniel Ahlberg <aliz@gentoo.org> neXtaw-0.12.ebuild:
-  Removed S, added IUSE.
-
-  10 Apr 2004; Martin Holzer <mholzer@gentoo.org> neXtaw-0.12.ebuild:
-  changing depend to virtual/x11. closes 47370
-
-  23 Mar 2004; Martin Holzer <mholzer@gentoo.org> neXtaw-0.12.ebuild:
-  fixing depend qa issue. see 45343.
-
-  13 Mar 2004; David Holm <dholm@gentoo.org> neXtaw-0.12.ebuild:
-  Added to ~ppc.
-
-  16 Feb 2004; Aron Griffis <agriffis@gentoo.org> neXtaw-0.12.ebuild:
-  stable on alpha and ia64
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*neXtaw-0.12 (11 Aug 2002)
-
-  11 Aug; Matthew Kennedy <mkennedy@gentoo.org> ChangeLog,
-  neXtaw-0.12.ebuild, files/digest-neXtaw-0.12 :
-
-  Initial support added for the neXtaw Athena widget set.

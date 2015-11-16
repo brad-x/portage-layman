@@ -1,69 +1,81 @@
 # ChangeLog for dev-python/suds
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/suds/ChangeLog,v 1.18 2015/07/25 18:54:34 prometheanfire Exp $
+# (auto-generated from git log)
 
-  25 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> suds-0.6-r1.ebuild:
-  fixing building without docs
+*suds-0.6-r1 (09 Aug 2015)
+*suds-0.6 (09 Aug 2015)
+*suds-0.4-r1 (09 Aug 2015)
 
-*suds-0.6-r1 (25 Jul 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +suds-0.4-r1.ebuild, +suds-0.6.ebuild, +suds-0.6-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +suds-0.6-r1.ebuild:
-  adding tests/doc stuff from bug 498022
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*suds-0.6 (24 Jul 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jul 2015; Matthew Thode <prometheanfire@gentoo.org> +suds-0.6.ebuild:
-  converting to suds-jurko as the source as upstream is dead
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -suds-0.4.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Jul 2015; Mikle Kolyada <zlogene@gentoo.org> suds-0.4-r1.ebuild:
-  x86 stable wrt bug #554114
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> suds-0.4-r1.ebuild:
+  Use https by default
 
-  07 Jul 2015; Mikle Kolyada <zlogene@gentoo.org> suds-0.4-r1.ebuild:
-  amd64 stable wrt bug #554114
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> suds-0.4-r1.ebuild:
-  Drop old Python implementations
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> suds-0.6.ebuild,
+  suds-0.6-r1.ebuild:
+  Use https by default
 
-  04 Oct 2013; Michał Górny <mgorny@gentoo.org> suds-0.4-r1.ebuild:
-  Fix the distutils-r1 conversion.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*suds-0.4-r1 (12 Sep 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Sep 2013; Matthew Thode <prometheanfire@gentoo.org> +suds-0.4-r1.ebuild:
-  distutils-r1 support
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org> suds-0.4.ebuild:
-  Keyword amd64-linux and x86-linux
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #151880
+  24 Aug 2015; Agostino Sarubbo <ago@gentoo.org> suds-0.6-r1.ebuild:
+  amd64 stable wrt bug #558448
 
-  06 May 2011; Thomas Kahle <tomka@gentoo.org> suds-0.4.ebuild:
-  x86 stable per bug 361883
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  05 Apr 2011; Christoph Mende <angelos@gentoo.org> suds-0.4.ebuild:
-  Stable on amd64 wrt bug #361883
+  24 Aug 2015; Agostino Sarubbo <ago@gentoo.org> suds-0.6-r1.ebuild:
+  x86 stable wrt bug #558448
 
-  04 Apr 2011; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
-  Set herd to python.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*suds-0.4 (20 Sep 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +suds-0.4.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Jun 2010; Patrick Lauer <patrick@gentoo.org> suds-0.3.9.ebuild:
-  Adding ~amd64 keyword
+  Bug: https://bugs.gentoo.org/552720
 
-  30 May 2010; Cédric Krier <cedk@gentoo.org> suds-0.3.9.ebuild:
-  Add doc use flag
-
-*suds-0.3.9 (30 May 2010)
-
-  30 May 2010; Cédric Krier <cedk@gentoo.org> +suds-0.3.9.ebuild,
-  +metadata.xml:
-  New build for bug #309099

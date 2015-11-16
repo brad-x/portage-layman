@@ -1,94 +1,77 @@
 # ChangeLog for kde-misc/semantik
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/semantik/ChangeLog,v 1.19 2015/05/09 18:46:08 kensington Exp $
+# (auto-generated from git log)
 
-*semantik-0.9.4-r1 (09 May 2015)
+*semantik-0.9.4-r1 (09 Aug 2015)
+*semantik-0.9.4 (09 Aug 2015)
+*semantik-0.9.3 (09 Aug 2015)
 
-  09 May 2015; Michael Palimaka <kensington@gentoo.org>
-  +semantik-0.9.4-r1.ebuild:
-  Remove old symlink and injected LDFLAGS wrt bug #548870.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/semantik-0.9.0-wscript_ldconfig.patch, +metadata.xml,
+  +semantik-0.9.3.ebuild, +semantik-0.9.4.ebuild, +semantik-0.9.4-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*semantik-0.9.4 (03 May 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 May 2015; Manuel Rüger <mrueg@gentoo.org> +semantik-0.9.4.ebuild,
-  -semantik-0.9.1.ebuild:
-  Version bump. Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> semantik-0.9.1.ebuild:
-  Drop old Python implementations
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*semantik-0.9.3 (19 Nov 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Nov 2014; Manuel Rüger <mrueg@gentoo.org> +semantik-0.9.3.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Oct 2014; Michael Palimaka <kensington@gentoo.org>
-  -files/semantik-0.8.3-wscript_ldconfig.patch, -semantik-0.8.4.ebuild,
-  -semantik-0.9.0.ebuild:
-  Remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> semantik-0.8.4.ebuild,
-  semantik-0.9.0.ebuild, semantik-0.9.1.ebuild:
-  Remove trailing '.' from DESCRIPTION.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*semantik-0.9.1 (18 Jan 2014)
+  24 Aug 2015; Michael Palimaka <kensington@gentoo.org>
+  semantik-0.9.4-r1.ebuild:
+  explicitly export src_prepare.
 
-  18 Jan 2014; Manuel Rüger <mrueg@gentoo.org> +semantik-0.9.1.ebuild:
-  Version bump.
+  The removal of the base.eclass inherit from waf-utils.eclass resulted in
+  src_prepare no longer being exported. This caused a sandbox violation due
+  to a patch no longer being applied.
 
-*semantik-0.9.0 (22 Dec 2013)
+  Gentoo-bug: 558514
 
-  22 Dec 2013; Manuel Rüger <mrueg@gentoo.org>
-  +files/semantik-0.9.0-wscript_ldconfig.patch, +semantik-0.9.0.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
 
-  10 Sep 2013; Manuel Rüger <mrueg@gentoo.org> -semantik-0.8.3.ebuild:
-  Cleanup old.
+  24 Aug 2015; Michael Palimaka <kensington@gentoo.org>
+  -semantik-0.9.3.ebuild, -semantik-0.9.4.ebuild:
+  remove old.
 
-*semantik-0.8.4 (19 Aug 2013)
+  Package-Manager: portage-2.2.20.1
 
-  19 Aug 2013; Michael Palimaka <kensington@gentoo.org> +semantik-0.8.4.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> semantik-0.8.3.ebuild:
-  Move Qt dependencies to the new category
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Dec 2012; Michael Palimaka <kensington@gentoo.org>
-  -files/semantik-0.7.3_p20091013-wscript_ldconfig.patch,
-  -files/semantik-0.7.3_p20091013-wscript_libstr.patch,
-  -semantik-0.7.3_p20091013.ebuild:
-  Remove old.
+  Bug: https://bugs.gentoo.org/552720
 
-*semantik-0.8.3 (24 Oct 2012)
-
-  24 Oct 2012; Michael Palimaka <kensington@gentoo.org>
-  +files/semantik-0.8.3-wscript_ldconfig.patch, +semantik-0.8.3.ebuild:
-  Version bump, wrt bug #435484. Thanks to Pavlos Ratis <dastergon@gmail.com>.
-
-  25 Jul 2012; Michael Palimaka <kensington@gentoo.org>
-  semantik-0.7.3_p20091013.ebuild:
-  Fix test phase failure. Respect CXXFLAGS wrt bug #427950.
-
-  21 Jul 2012; Johannes Huber <johu@gentoo.org> semantik-0.7.3_p20091013.ebuild:
-  Move from SLOT 0 to 4.
-
-  15 Jul 2012; Michael Palimaka <kensington@gentoo.org>
-  semantik-0.7.3_p20091013.ebuild:
-  Add missing slot dependencies on Qt.
-
-  13 Jul 2011; Marc Schiffbauer <mschiff@gentoo.org>
-  semantik-0.7.3_p20091013.ebuild,
-  +files/semantik-0.7.3_p20091013-wscript_libstr.patch:
-  Fix bug #372379. Ocaml only provides str.a instead of libstr.a
-
-  13 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org>
-  semantik-0.7.3_p20091013.ebuild:
-  Fixed license
-
-*semantik-0.7.3_p20091013 (13 Jun 2011)
-
-  13 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org>
-  +semantik-0.7.3_p20091013.ebuild,
-  +files/semantik-0.7.3_p20091013-wscript_ldconfig.patch, +metadata.xml:
-  New package, bug 185523. Thanks to Harry.TX, Julien Cynober, and all the
-  other people who contributed.

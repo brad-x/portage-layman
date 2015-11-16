@@ -1,63 +1,62 @@
 # ChangeLog for dev-python/buildutils
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/buildutils/ChangeLog,v 1.15 2015/04/08 08:05:12 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> buildutils-0.3-r1.ebuild:
-  Drop old Python implementations
+*buildutils-0.3-r1 (09 Aug 2015)
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> buildutils-0.3-r1.ebuild:
-  x86 stable, bug 540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +buildutils-0.3-r1.ebuild, +files/buildutils-0.3-pudge_addcommand.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> buildutils-0.3-r1.ebuild:
-  amd64 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> buildutils-0.3-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> buildutils-0.3-r1.ebuild:
-  Add support for the new PyPy slotting.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Oct 2013; Fabian Groffen <grobian@gentoo.org> buildutils-0.3-r1.ebuild:
-  Marked ~x64-macos, bug #487670
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*buildutils-0.3-r1 (05 Jun 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> buildutils-0.3-r1.ebuild:
+  Use https by default
 
-  05 Jun 2013; Ian Delaney <idella4@gentoo.org> +buildutils-0.3-r1.ebuild,
-  -buildutils-0.3.ebuild:
-  revbump, migrate -> distutils-r1, remove old, add test phase
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Apr 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  buildutils-0.3.ebuild:
-  Fix building of documentation (bug #300788).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Oct 2009; Fabian Groffen <grobian@gentoo.org> buildutils-0.3.ebuild:
-  Merge from Prefix
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  buildutils-0.3.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*buildutils-0.3 (05 Apr 2008)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Apr 2008; Ali Polatel <hawking@gentoo.org>
-  +files/buildutils-0.3-pudge_addcommand.patch, -buildutils-0.1.2.ebuild,
-  +buildutils-0.3.ebuild:
-  Version bump. Dropped old version and removed useless test use flag.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Jul 2007; Tiziano Müller <dev-zero@gentoo.org>
-  buildutils-0.1.2.ebuild:
-  Removed tests since none available
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org>
-  buildutils-0.1.2.ebuild:
-  Removed use_setuptools sed.
-
-  27 Feb 2007; Tiziano Müller <dev-zero@gentoo.org>
-  buildutils-0.1.2.ebuild:
-  Cleanup.
-
-*buildutils-0.1.2 (07 Jan 2007)
-
-  07 Jan 2007; Tiziano Müller <dev-zero@gentoo.org> +metadata.xml,
-  +buildutils-0.1.2.ebuild:
-  New ebuild for bug #155366, thanks to Brad Walker.

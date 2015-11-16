@@ -1,59 +1,60 @@
 # ChangeLog for dev-lisp/gentoo-init
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/gentoo-init/ChangeLog,v 1.16 2015/05/23 15:15:30 pacho Exp $
+# (auto-generated from git log)
 
-  23 May 2015; Pacho Ramos <pacho@gentoo.org> gentoo-init-1.0.ebuild:
-  x86 stable wrt bug #511170
+*gentoo-init-1.0 (09 Aug 2015)
+*gentoo-init-0.1 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> gentoo-init-0.1.ebuild,
-  gentoo-init-1.0.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gentoo-init-1.lisp, +files/gentoo-init.lisp,
+  +files/source-registry.conf, +gentoo-init-0.1.ebuild,
+  +gentoo-init-1.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Jul 2014; Patrick Lauer <patrick@gentoo.org> gentoo-init-1.0.ebuild:
-  Stable on amd64 #511170
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gentoo-init-1.0 (14 Dec 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Dec 2012; Andrey Grozin <grozin@gentoo.org> +gentoo-init-1.0.ebuild,
-  +files/gentoo-init-1.lisp, +files/source-registry.conf:
-  From the lisp overlay
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Apr 2012; Jesus Rivero <neurogeek@gentoo.org> gentoo-init-0.1.ebuild:
-  Changed DEPEND to depend on dev-lisp/asdf-binary-locations instead of
-  dev-lisp/cl-asdf-binary-locations
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Jan 2009; Raúl Porcel <armin76@gentoo.org> gentoo-init-0.1.ebuild:
-  alpha/ia64 stable wrt #246074
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> gentoo-init-0.1.ebuild,
+  gentoo-init-1.0.ebuild, metadata.xml:
+  Use https by default
 
-  07 Jul 2008; Raúl Porcel <armin76@gentoo.org> gentoo-init-0.1.ebuild:
-  Add ~alpha/~ia64 wrt #229217
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Apr 2008; Brent Baude <ranger@gentoo.org> gentoo-init-0.1.ebuild:
-  stable ppc, bug 217700
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Apr 2008; Ferris McCormick <fmccor@gentoo.org> gentoo-init-0.1.ebuild:
-  Sparc stable, required by Bug #218706.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Apr 2008; Markus Meier <maekke@gentoo.org> gentoo-init-0.1.ebuild:
-  x86 stable, bug #217700
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Apr 2008; Markus Rothe <corsair@gentoo.org> gentoo-init-0.1.ebuild:
-  Stable on ppc64; bug #217700
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Dec 2007; Samuli Suominen <drac@gentoo.org> gentoo-init-0.1.ebuild:
-  amd64 stable wrt #201216
-
-  20 Nov 2007; Markus Rothe <corsair@gentoo.org> gentoo-init-0.1.ebuild:
-  Added ~ppc64; bug #199368
-
-  26 Jul 2007; Marijn Schouten <hkBst@gentoo.org> gentoo-init-0.1.ebuild:
-  fix URL, bug 186719
-
-  09 Nov 2006; Matthew Kennedy <mkennedy@gentoo.org> +metadata.xml:
-  Added metadata.xml.
-
-*gentoo-init-0.1 (09 Nov 2006)
-
-  09 Nov 2006; Matthew Kennedy <mkennedy@gentoo.org>
-  +files/gentoo-init.lisp, +gentoo-init-0.1.ebuild:
-  Initial port.  Ebuild contributed by Matthew Kennedy <mkennedy@gentoo.org>.

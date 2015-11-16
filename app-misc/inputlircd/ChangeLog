@@ -1,70 +1,64 @@
 # ChangeLog for app-misc/inputlircd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/inputlircd/ChangeLog,v 1.18 2010/05/22 11:49:09 tove Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 May 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove genstef from metadata.xml (#66339)
+*inputlircd-0.0.1_pre15 (09 Aug 2015)
+*inputlircd-0.0.1_pre11-r1 (09 Aug 2015)
+*inputlircd-0.0.1_pre11 (09 Aug 2015)
 
-*inputlircd-0.0.1_pre15 (16 Nov 2009)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/inputlircd.conf,
+  +files/inputlircd.init, +files/inputlircd.init.2,
+  +inputlircd-0.0.1_pre11.ebuild, +inputlircd-0.0.1_pre11-r1.ebuild,
+  +inputlircd-0.0.1_pre15.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  16 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
-  inputlircd-0.0.1_pre11-r1.ebuild, +inputlircd-0.0.1_pre15.ebuild:
-  Version bumped.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  16 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
-  inputlircd-0.0.1_pre11-r1.ebuild:
-  Respect CC, CFLAGS and LDFLAGS, Bug #243650.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*inputlircd-0.0.1_pre11-r1 (16 Nov 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild, +inputlircd-0.0.1_pre11-r1.ebuild,
-  +files/inputlircd.init.2:
-  Add provide lirc to init-script.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 May 2007; Matthias Schwarzott <zzam@gentoo.org> metadata.xml:
-  Added to herd media-tv.
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/inputlircd.init,
+  files/inputlircd.init.2:
+  [QA] Remove executable bit from files, bug 550434.
 
-  14 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
-  add <herd>no-herd</herd>
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Jan 2007; Bryan Østergaard <kloeri@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Stable on Alpha.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jan 2007; Bryan Østergaard <kloeri@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Stable on IA64.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Sep 2006; Michael Hanselmann <hansmi@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Stable on ppc.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Sep 2006; <blubb@gentoo.org> inputlircd-0.0.1_pre11.ebuild:
-  stable on amd64
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  07 Sep 2006; Markus Rothe <corsair@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Stable on ppc64; bug #146725
-
-  07 Sep 2006; Matthias Schwarzott <zzam@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Stable on x86.
-
-  03 Sep 2006; <blubb@gentoo.org> ChangeLog:
-  added ~amd64
-
-  02 Sep 2006; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  mark ~ppc (Bug #145967)
-
-  02 Sep 2006; Markus Rothe <corsair@gentoo.org>
-  inputlircd-0.0.1_pre11.ebuild:
-  Added ~ppc64; bug #145967
-
-*inputlircd-0.0.1_pre11 (27 Jul 2006)
-
-  27 Jul 2006; Stefan Schweizer <genstef@gentoo.org> +files/inputlircd.conf,
-  +files/inputlircd.init, +metadata.xml, +inputlircd-0.0.1_pre11.ebuild:
-  New ebuild, bug 131788
+  Bug: https://bugs.gentoo.org/552720
 

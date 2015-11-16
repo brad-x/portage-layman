@@ -1,91 +1,59 @@
 # ChangeLog for net-mail/checkpassword
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/checkpassword/ChangeLog,v 1.26 2013/01/01 20:41:28 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  01 Jan 2013; Ulrich Müller <ulm@gentoo.org> checkpassword-0.90-r2.ebuild,
-  checkpassword-0.90-r3.ebuild:
-  Fix LICENSE, add mirror and bindist restrictions, bug 444424.
+*checkpassword-0.90-r3 (09 Aug 2015)
+*checkpassword-0.90-r2 (09 Aug 2015)
 
-  11 Jul 2011; Alexis Ballier <aballier@gentoo.org>
-  checkpassword-0.90-r3.ebuild:
-  keyword ~x86-fbsd
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +checkpassword-0.90-r2.ebuild, +checkpassword-0.90-r3.ebuild,
+  +files/0.90-errno.patch, +files/0.90-exit.patch, +files/0.90-head-1.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Feb 2011; Mart Raudsepp <leio@gentoo.org> checkpassword-0.90-r2.ebuild:
-  Drop to ~mips
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Oct 2008; Robin H. Johnson <robbat2@gentoo.org>
-  checkpassword-0.90-r2.ebuild, checkpassword-0.90-r3.ebuild:
-  Fix bug #241040.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*checkpassword-0.90-r3 (06 Apr 2008)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Apr 2008; Benedikt Böhm <hollow@gentoo.org> +files/0.90-exit.patch,
-  +checkpassword-0.90-r3.ebuild:
-  use new qmail.eclass; ebuild cleanup
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Oct 2006; Michael Hanselmann <hansmi@gentoo.org>
-  checkpassword-0.90-r2.ebuild:
-  Stable on ppc64.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Aug 2006; Markus Rothe <corsair@gentoo.org>
-  checkpassword-0.90-r2.ebuild:
-  Added ~ppc64
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*checkpassword-0.90-r2 (13 Dec 2005)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Dec 2005; Robin H. Johnson <robbat2@gentoo.org>
-  -checkpassword-0.90-r1.ebuild, +checkpassword-0.90-r2.ebuild:
-  Bug #101052, pic abuses fixed with bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 May 2005; Andrej Kacian <ticho@gentoo.org>
-  checkpassword-0.90-r1.ebuild:
-  Inherit toolchain-funcs.eclass instead of gcc.eclass. Bug #92745.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Jul 2004; Robin H. Johnson <robbat2@gentoo.org>
-  checkpassword-0.90-r1.ebuild:
-  USE cleanup.
+  Bug: https://bugs.gentoo.org/552720
 
-  28 May 2004; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
-  Update metadata.xml.
-
-  10 Apr 2004; Joshua Kinard <kumba@gentoo.org> checkpassword-0.90-r1.ebuild:
-  Marked stable on mips.
-
-  08 Mar 2004; Jon Portnoy <avenj@gentoo.org> checkpassword-0.90-r1.ebuild :
-  Stable on AMD64.
-
-  22 Feb 2004; Aron Griffis <agriffis@gentoo.org>
-  checkpassword-0.90-r1.ebuild:
-  Remove arm keywords
-
-  18 Feb 2004; Aron Griffis <agriffis@gentoo.org>
-  checkpassword-0.90-r1.ebuild:
-  stable on ia64
-
-  28 Jan 2004; Jon Portnoy <avenj@gentoo.org> checkpassword-0.90-r1.ebuild :
-  AMD64 keywords.
-
-*checkpassword-0.90-r1 (05 Mar 2003)
-
-  03 Sep 2003; Mike Frysinger <vapier@gentoo.org> :
-  Add head -1 patch.
-
-  13 May 2003; Robin Johnson <robbat2@gentoo.org> checkpassword-0.90-r1.ebuild:
-  Fixed DESCRIPTION and HOMEPAGE, added more docs to install list.
-  Fix gcc/$CC bug, make sure CFLAGS are used as well.
-
-  16 Mar 2003; Will Woods <wwoods@gentoo.org> checkpassword-0.90-r1.ebuild:
-  Added alpha to KEYWORDS
-
-  05 Mar 2003; Mike Frysinger <vapier@gentoo.org> :
-  Version bumped to fix glibc errno issue (#16267) #16801.
-
-*checkpassword-0.90 (1 Feb 2002)
-
-  1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
-  
-  Added initial ChangeLog which should be updated whenever the package is
-  updated in any way. This changelog is targetted to users. This means that the
-  comments should well explained and written in clean English. The details about
-  writing correct changelogs are explained in the skel.ChangeLog file which you
-  can find in the root directory of the portage repository.

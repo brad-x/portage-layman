@@ -1,76 +1,58 @@
 # ChangeLog for sci-calculators/gonvert
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/gonvert/ChangeLog,v 1.15 2015/04/08 18:21:38 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> gonvert-0.2.32.ebuild:
-  Drop old Python implementations
+*gonvert-0.2.32 (09 Aug 2015)
+*gonvert-0.2.25 (09 Aug 2015)
 
-  29 May 2013; Justin Lecher <jlec@gentoo.org> gonvert-0.2.32.ebuild:
-  Fix usage of new python r1 eclasses (missing PYTHON_REQUIRED_USE)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.2.23-paths.patch, +gonvert-0.2.25.ebuild, +gonvert-0.2.32.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*gonvert-0.2.32 (12 Mar 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Mar 2013; Justin Lecher <jlec@gentoo.org> +gonvert-0.2.32.ebuild,
-  metadata.xml:
-  Version Bump; fix for new python eclasses
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -files/0.2.12-about.patch,
-  -files/0.2.15-glade.patch, -files/0.2.19-paths.patch,
-  -gonvert-0.2.15-r1.ebuild, -gonvert-0.2.19.ebuild, -gonvert-0.2.23.ebuild,
-  gonvert-0.2.25.ebuild:
-  keyword amd64-linux, x86-linux, removed old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*gonvert-0.2.25 (06 Aug 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +gonvert-0.2.25.ebuild,
-  metadata.xml:
-  Bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> gonvert-0.2.15-r1.ebuild,
-  gonvert-0.2.19.ebuild, gonvert-0.2.23.ebuild:
-  Correct Slots for gtk 3 introduction to tree
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*gonvert-0.2.23 (02 May 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 May 2010; <chainsaw@gentoo.org> +files/0.2.23-paths.patch,
-  +gonvert-0.2.23.ebuild:
-  Version bump, as requested by "Hitachi" in bug #315451.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*gonvert-0.2.19 (14 Sep 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Sep 2007; Tony Vroon <chainsaw@gentoo.org> +files/0.2.19-paths.patch,
-  +gonvert-0.2.19.ebuild:
-  Version bump, as requested by Arfrever Frehtes Taifersar Arahesis
-  <Arfrever.FTA@GMail.Com> in bug #191891.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  06 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -gonvert-0.2.12.ebuild:
-  QA: Removed unused versions.
-
-*gonvert-0.2.15-r1 (30 Apr 2006)
-
-  30 Apr 2006; Tony Vroon <chainsaw@gentoo.org> +files/0.2.15-glade.patch,
-  -gonvert-0.2.15.ebuild, +gonvert-0.2.15-r1.ebuild:
-  Patch from Markus Dittrich <markusle@gentoo.org> closes bug #127604
-  (glade-related traceback). Revision bump as this does not cause a compile
-  failure on affected systems. Added ~ppc keyword.
-
-*gonvert-0.2.15 (15 Jan 2006)
-
-  15 Jan 2006; Marcus D. Hanwell <cryos@gentoo.org> +gonvert-0.2.15.ebuild:
-  Version bump, bug 116712.
-
-  24 Dec 2005; Mark Loeser <halcy0n@gentoo.org> gonvert-0.2.12.ebuild:
-  Adding ~x86
-
-  24 Dec 2005; <chainsaw@gentoo.org> gonvert-0.2.12.ebuild:
-  No longer necessary to die on USE="-gnome" with pygtk-2.8.2 and up.
-
-*gonvert-0.2.12 (24 Dec 2005)
-
-  24 Dec 2005; <chainsaw@gentoo.org> +files/0.2.12-about.patch,
-  +metadata.xml, +gonvert-0.2.12.ebuild:
-  Initial commit, closes bug #62492 by Marius Konitzer. Ebuild by Yaakov S
-  <yselkowitz@hotmail.com>.

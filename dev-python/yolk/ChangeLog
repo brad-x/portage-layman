@@ -1,99 +1,61 @@
 # ChangeLog for dev-python/yolk
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/yolk/ChangeLog,v 1.23 2015/06/04 10:12:31 jlec Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+*yolk-0.4.3-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> yolk-0.4.3-r1.ebuild:
-  Drop old Python implementations
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/yolk-0.4.1_entry_map.patch, +metadata.xml, +yolk-0.4.3-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Mar 2015; Pacho Ramos <pacho@gentoo.org> yolk-0.4.3-r1.ebuild:
-  x86 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> yolk-0.4.3-r1.ebuild:
-  amd64 stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> yolk-0.4.3-r1.ebuild:
-  Add support for the new PyPy slotting.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Jan 2014; Patrick Lauer <patrick@gentoo.org> -yolk-0.4.1-r1.ebuild,
-  -yolk-0.4.3.ebuild:
-  Remove old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> yolk-0.4.3-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> yolk-0.4.3-r1.ebuild:
+  Use https by default
 
-*yolk-0.4.3-r1 (15 Mar 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Mar 2013; Ian Delaney <idella4@gentoo.org> +yolk-0.4.3-r1.ebuild:
-  revbump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Mar 2012; Mike Gilbert <floppym@gentoo.org> yolk-0.4.3.ebuild:
-  Use EAPI=4. Don't inherit unused eclass. Fix dependencies. Patch by Arfrever.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*yolk-0.4.3 (09 Mar 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +yolk-0.4.3.ebuild:
-  Bump for 405605
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> -yolk-0.4.1.ebuild:
-  Removed older version
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*yolk-0.4.1-r1 (20 Jul 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> +yolk-0.4.1-r1.ebuild,
-  +files/yolk-0.4.1_entry_map.patch:
-  Added patch to fix bug #335335 --entry-map crashes.
-
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #28480
-
-  30 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  yolk-0.4.1.ebuild:
-  Set SUPPORT_PYTHON_ABIS.
-
-  24 Apr 2009; Patrick Lauer <patrick@gentoo.org> -yolk-0.3.0.ebuild:
-  Remove old
-
-*yolk-0.4.1 (15 Feb 2009)
-
-  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> +yolk-0.4.1.ebuild:
-  Bump to 0.4.1
-
-*yolk-0.3.0 (17 Jul 2007)
-
-  17 Jul 2007; Rob Cakebread <pythonhead@gentoo.org> -yolk-0.2.0.ebuild,
-  +yolk-0.3.0.ebuild:
-  Version bump. Removed obsolete version.
-
-*yolk-0.2.0 (07 Jul 2007)
-
-  07 Jul 2007; Rob Cakebread <pythonhead@gentoo.org> -yolk-0.1.0.ebuild,
-  +yolk-0.2.0.ebuild:
-  Version bump, dropped obsolete version.
-
-  23 Jun 2007; Lukasz Strzygowski <lucass@gentoo.org> yolk-0.1.0.ebuild:
-  Fixed deps, moved NEED_PYTHON before inherit.
-
-  02 Jun 2007; Christoph Mende <angelos@gentoo.org> yolk-0.1.0.ebuild:
-  Added ~amd64 wrt bug 179059
-
-*yolk-0.1.0 (18 May 2007)
-
-  18 May 2007; Rob Cakebread <pythonhead@gentoo.org>
-  -files/yolk-0.0.7-bad-egg.patch, -yolk-0.0.7-r1.ebuild,
-  +yolk-0.1.0.ebuild:
-  Version bump, removed old version.
-
-*yolk-0.0.7-r1 (23 Apr 2007)
-
-  23 Apr 2007; Rob Cakebread <pythonhead@gentoo.org>
-  +files/yolk-0.0.7-bad-egg.patch, +yolk-0.0.7-r1.ebuild:
-  Patch to skip corrupt eggs. Removed previous version.
-
-*yolk-0.0.7 (23 Apr 2007)
-
-  23 Apr 2007; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
-  +yolk-0.0.7.ebuild:
-  Initial commit.

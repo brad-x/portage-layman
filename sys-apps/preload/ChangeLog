@@ -1,155 +1,68 @@
 # ChangeLog for sys-apps/preload
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/preload/ChangeLog,v 1.27 2015/07/21 21:33:18 mrueg Exp $
+# (auto-generated from git log)
 
-  21 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -preload-0.6.4-r2.ebuild:
-  Remove old.
+*preload-0.6.4-r3 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> preload-0.6.4-r2.ebuild,
-  preload-0.6.4-r3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> preload-0.6.4-r3.ebuild:
-  Stable for x86, wrt bug #441516
-
-  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> preload-0.6.4-r3.ebuild:
-  Stable for amd64, wrt bug #441516
-
-*preload-0.6.4-r3 (14 Sep 2012)
-
-  14 Sep 2012; Pacho Ramos <pacho@gentoo.org> +files/preload-0.6.4.init.in-r2,
-  +preload-0.6.4-r3.ebuild:
-  Execute ionice properly, bug #430988 by Krzysztof Magusiak.
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> preload-0.6.4-r2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  27 Feb 2011; Markos Chandras <hwoarang@gentoo.org> preload-0.6.4-r2.ebuild:
-  Stable on amd64 wrt bug #356309
-
-  26 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  preload-0.6.4-r2.ebuild:
-  x86 stable wrt bug #356309
-
-  23 Feb 2011; Pacho Ramos <pacho@gentoo.org> preload-0.6.4-r2.ebuild:
-  Also needs dev-util/pkgconfig.
-
-  23 Feb 2011; Pacho Ramos <pacho@gentoo.org> -preload-0.6.4-r1.ebuild,
-  preload-0.6.4-r2.ebuild:
-  Set dev-libs/glib as DEPEND and RDEPEND, DEPEND on help2man also (bug
-  #355965), use eapi3. Remove old.
-
-  17 Sep 2010; Pacho Ramos <pacho@gentoo.org>
-  files/preload-0.6.4-use-help2man-as-usual.patch:
-  Fix help2man patch (bug #337771 by Flameeyes).
-
-*preload-0.6.4-r2 (07 Sep 2010)
-
-  07 Sep 2010; Pacho Ramos <pacho@gentoo.org> +preload-0.6.4-r2.ebuild,
-  +files/preload-0.6.4.init.in-r1:
-  Revision bump to fix race condition (bug #299140 by Ambroz Bizjak) and
-  make it POSIX compliant (bug #310511 by Michał Górny), thanks a lot to
-  Michał for providing the new init.d script.
-
-  06 Sep 2010; Pacho Ramos <pacho@gentoo.org> preload-0.6.4-r1.ebuild,
-  +files/preload-0.6.4-use-help2man-as-usual.patch,
-  +files/preload-0.6.4-use-make-dependencies.patch:
-  Apply Flameeyes' patches to fix parallel compilation (bug #244966 by
-  Jeremy Olexa). Also use 'elog' instead of 'einfo' and drop old 'eerror'
-  message. Move to EAPI 2.
-
-  29 Mar 2010; Pacho Ramos <pacho@gentoo.org> files/00-patch-configure.diff:
-  00-patch-configure.diff modified to install docs under /usr/share/doc/,
-  fixing bug 298191. Thanks to Diego for reporting.
-
-  29 Mar 2010; Pacho Ramos <pacho@gentoo.org> preload-0.6.4-r1.ebuild,
-  metadata.xml:
-  Taking its maintainership. Make repoman happier quoting some variables.
-
-  28 Mar 2010; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
-  Drop myself from metadata, add maintainer-needed
-
-  20 May 2009; Jeremy Olexa <darkside@gentoo.org> -preload-0.6.4.ebuild:
-  remove old
-
-*preload-0.6.4-r1 (20 May 2009)
-
-  20 May 2009; Jeremy Olexa <darkside@gentoo.org>
-  -files/preload-0.6.3-conf.patch, +files/00-patch-configure.diff,
-  -files/preload-0.6.3-forking-children.patch,
-  +files/0002-Create-short-overlapping-io-bursts.patch,
-  -files/preload-0.6.3-nice-segfault.patch,
-  -files/preload-0.6.3-overlapping-io-bursts.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/00-patch-configure.diff,
   +files/0001-Early-restart-of-forking-readahead-children.patch,
-  +files/preload-0.6.4.init.in,
+  +files/0002-Create-short-overlapping-io-bursts.patch,
   +files/0003-Fix-wait_for_children-loop.patch,
   +files/02-patch-preload_conf.diff, +files/02-patch-preload_sysconfig.diff,
-  -files/conf.d-preload, -files/init.d-preload, -preload-0.6.3-r5.ebuild,
-  +preload-0.6.4-r1.ebuild:
-  Misc fixes, bug 267538 - imported from Kai Krakow's overlay
+  +files/preload-0.6.4-use-help2man-as-usual.patch,
+  +files/preload-0.6.4-use-make-dependencies.patch,
+  +files/preload-0.6.4.init.in, +files/preload-0.6.4.init.in-r1,
+  +files/preload-0.6.4.init.in-r2, +metadata.xml, +preload-0.6.4-r3.ebuild:
+  proj/gentoo: Initial commit
 
-*preload-0.6.4 (07 May 2009)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 May 2009; Jeremy Olexa <darkside@gentoo.org> +preload-0.6.4.ebuild:
-  version bump, bug 267538
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Oct 2008; Jeremy Olexa <darkside@gentoo.org> files/init.d-preload:
-  sys-apps/preload - fix another bashisms. bug #244491
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*preload-0.6.3-r5 (28 Oct 2008)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Oct 2008; Jeremy Olexa <darkside@gentoo.org> files/conf.d-preload,
-  files/init.d-preload, -preload-0.6.3-r4.ebuild, +preload-0.6.3-r5.ebuild:
-  sys-apps/preload - final init script fixing to capture the pid properly as
-  reported in bug #243832 (thanks for the help Kai). Version bump so people
-  get a working (so I think) init script. Removing bashisms, as reported in
-  bug #244491 is also fixed with this commit (thanks to Davide Pesavento).
-  Hey, 2 bugs in one!
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/preload-0.6.4.init.in-r1,
+  files/preload-0.6.4.init.in-r2:
+  [QA] Remove executable bit from files, bug 550434.
 
-*preload-0.6.3-r4 (24 Oct 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Oct 2008; Jeremy Olexa <darkside@gentoo.org>
-  +files/preload-0.6.3-forking-children.patch,
-  +files/preload-0.6.3-nice-segfault.patch,
-  +files/preload-0.6.3-overlapping-io-bursts.patch, files/conf.d-preload,
-  files/init.d-preload, -preload-0.6.3-r1.ebuild, -preload-0.6.3-r3.ebuild,
-  +preload-0.6.3-r4.ebuild:
-  init script now supports ionice'ing. New patches to improve/optimize
-  behavior. Thanks to Kai Krakow for patches and hints. Downgraded ebuild to
-  eapi-0 to allow people to get these important chagnes
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*preload-0.6.3-r3 (23 Oct 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Oct 2008; Jeremy Olexa <darkside@gentoo.org> files/conf.d-preload,
-  files/init.d-preload, -preload-0.6.3-r2.ebuild, +preload-0.6.3-r3.ebuild:
-  Remove restart() block from init script. It doesn't do anything on openrc
-  (bug #241884) and it causes warnings on baselayout-1 (bug #242578) due to
-  poor implementation on my part. We really don't need a restart because a
-  stop/start is just as good. Also modify init/conf scripts to better handle
-  'default' values.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*preload-0.6.3-r2 (20 Oct 2008)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Oct 2008; Jeremy Olexa <darkside@gentoo.org>
-  +files/preload-0.6.3-conf.patch, files/conf.d-preload,
-  +preload-0.6.3-r2.ebuild:
-  sys-apps/preload add patch by Pacho Ramos to include files in /opt or /lib32
-  to be preloaded, bug #242580. One minor conf file tweak.
+  Bug: https://bugs.gentoo.org/552720
 
-*preload-0.6.3-r1 (20 Oct 2008)
-
-  20 Oct 2008; Jeremy Olexa <darkside@gentoo.org> files/conf.d-preload,
-  files/init.d-preload, -preload-0.6.3.ebuild, +preload-0.6.3-r1.ebuild:
-  Minor bump for sys-apps/preload to improve init/conf scripts and remove
-  unused etc file
-
-  19 Oct 2008; Dawid Węgliński <cla@gentoo.org> preload-0.6.3.ebuild:
-  Add ~x86 keyword (bug #242554)
-
-*preload-0.6.3 (18 Oct 2008)
-
-  18 Oct 2008; Jeremy Olexa <darkside@gentoo.org> +files/conf.d-preload,
-  +files/init.d-preload, +metadata.xml, +preload-0.6.3.ebuild:
-  Initial import, ebuild based off the work by robert.zhangle in the Gentoo
-  China overlay. preload is an adaptive readahead deamon that is very non
-  resource intensive and a very 'smart' app.

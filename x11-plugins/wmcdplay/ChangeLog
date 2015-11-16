@@ -1,44 +1,60 @@
 # ChangeLog for x11-plugins/wmcdplay
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmcdplay/ChangeLog,v 1.11 2015/03/20 07:56:51 jlec Exp $
+# (auto-generated from git log)
 
-  20 Mar 2015; Justin Lecher <jlec@gentoo.org> files/wmcdplay.desktop:
-  Fix desktop file
+*wmcdplay-1.1 (09 Aug 2015)
+*wmcdplay-1.0_beta1 (09 Aug 2015)
 
-*wmcdplay-1.1 (12 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/wmcdplay-ComplexProgramTargetNoMan.patch, +files/wmcdplay-c++.patch,
+  +files/wmcdplay-xpmdir.patch, +files/wmcdplay.desktop, +metadata.xml,
+  +wmcdplay-1.0_beta1.ebuild, +wmcdplay-1.1.ebuild:
+  proj/gentoo: Initial commit
 
-  12 Jan 2015; Bernard Cafarelli <voyageur@gentoo.org> +wmcdplay-1.1.ebuild,
-  files/wmcdplay.desktop:
-  Version bump with new homepage, ebuild cleanup, update desktop file
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Sep 2012; Justin Lecher <jlec@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Use domenu instead insinto + doins to install .desktop files
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Aug 2010; Michele Noberasco <s4t4n@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Honour LDFLAGS. Closes bug #335376.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
-  wmcdplay-1.0_beta1.ebuild:
-  Fix HOMEPAGE and SRC_URI wrt #297028.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  wmcdplay-1.0_beta1.ebuild:
-  Drop virtual/x11 references.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  wmcdplay-1.0_beta1.ebuild, wmcdplay-1.1.ebuild:
+  Use https by default
 
-  16 Oct 2006; Michele Noberasco <s4t4n@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Added missing imake dependancy, Closes bug #150641.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  wmcdplay-1.0_beta1.ebuild:
-  Fixed DEPEND for modular X.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Sep 2004; Michele Noberasco <s4t4n@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Stable for x86.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Jul 2004; David Holm <dholm@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Added to ~ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*wmcdplay-1.0_beta1 (17 Jul 2004)
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Jul 2004; Michele Noberasco <s4t4n@gentoo.org> wmcdplay-1.0_beta1.ebuild:
-  Initial import. Thanks to Przemyslaw Maciag. Closes #54550.

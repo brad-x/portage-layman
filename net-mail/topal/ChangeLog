@@ -1,69 +1,56 @@
 # ChangeLog for net-mail/topal
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/topal/ChangeLog,v 1.18 2015/06/30 03:59:18 idella4 Exp $
+# (auto-generated from git log)
 
-  30 Jun 2015; Ian Delaney <idella4@gentoo.org> metadata.xml:
-  Remove proxy maintainer and the proxy-maint herd from metadata wrt bug #553282
+*topal-75 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> topal-75.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/75-Makefile.patch,
+  +metadata.xml, +topal-75.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Feb 2013; Eray Aslan <eras@gentoo.org> -files/64-Makefile.patch,
-  -files/72-Makefile.patch, -topal-64.ebuild, -topal-72.ebuild:
-  Remove old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> topal-75.ebuild:
-  Stable for ppc, wrt bug #457438
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> topal-75.ebuild:
-  Stable for x86, wrt bug #457438
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> topal-75.ebuild:
-  Stable for amd64, wrt bug #457438
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*topal-75 (15 Oct 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Oct 2012; Eray Aslan <eras@gentoo.org> +files/75-Makefile.patch,
-  +topal-75.ebuild:
-  Version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Jun 2012; Michael Weber <xmw@gentoo.org> topal-72.ebuild:
-  ppc stable (bug 317971)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Oct 2011; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove tove from metadata.xml
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Aug 2011; Markos Chandras <hwoarang@gentoo.org> topal-72.ebuild:
-  Stable on amd64 wrt bug #317971
+  Bug: https://bugs.gentoo.org/552720
 
-  20 Aug 2011; Thomas Kahle <tomka@gentoo.org> topal-72.ebuild:
-  x86 stable per bug 379983
-
-  09 Sep 2010; Torsten Veller <tove@gentoo.org> files/72-Makefile.patch,
-  metadata.xml:
-  Fix LDFLAGS and co-maintainer's email address (#336192)
-
-*topal-72 (05 Mar 2010)
-
-  05 Mar 2010; Torsten Veller <tove@gentoo.org> files/64-Makefile.patch,
-  +topal-72.ebuild, +files/72-Makefile.patch:
-  Version bump. Thanks to Peter Gantner (#306981)
-
-  07 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> topal-64.ebuild:
-  Keywording for ppc, bug 267299
-
-  15 May 2009; Markus Meier <maekke@gentoo.org> topal-64.ebuild:
-  add ~amd64, bug #267299
-
-  26 Apr 2009; Torsten Veller <tove@gentoo.org> topal-64.ebuild:
-  Use virtual/ada instead of virtual/gnat (#267299)
-
-*topal-64 (24 Apr 2009)
-
-  24 Apr 2009; Torsten Veller <tove@gentoo.org> +files/64-Makefile.patch,
-  +metadata.xml, +topal-64.ebuild:
-  Initial commit. Thanks to Sascha Lucas, Peter Gantner and Nils Schlupp
-  (#215881)

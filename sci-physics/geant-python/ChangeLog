@@ -1,58 +1,60 @@
 # ChangeLog for sci-physics/geant-python
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant-python/ChangeLog,v 1.12 2015/04/08 18:23:27 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> geant-python-4.10.00.ebuild,
-  geant-python-4.9.6_p02.ebuild:
-  Drop old Python implementations
+*geant-python-4.10.00 (09 Aug 2015)
+*geant-python-4.9.6_p02 (09 Aug 2015)
 
-*geant-python-4.10.00 (20 Dec 2013)
-
-  20 Dec 2013; Benda Xu <heroxbd@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/geant-python-4.10.0-config.patch,
-  +files/geant-python-4.10.0-polycone.patch, +geant-python-4.10.00.ebuild:
-  version bump
+  +files/geant-python-4.10.0-polycone.patch,
+  +files/geant-python-4.9.5-visverbose.patch, +geant-python-4.9.6_p02.ebuild,
+  +geant-python-4.10.00.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> geant-python-4.9.6_p02.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jul 2013; Sébastien Fabbro <bicatali@gentoo.org>
-  geant-python-4.9.6_p02.ebuild:
-  Include missing eutils eclass
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*geant-python-4.9.6_p02 (06 Jun 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org>
-  +geant-python-4.9.6_p02.ebuild, -files/geant-python-4.9.5-build.patch,
-  -files/geant-python-4.9.5-vis-fix.patch, -geant-python-4.9.5.ebuild,
-  -geant-python-4.9.5_p02.ebuild, metadata.xml:
-  Version bump. Switch to EAPI5 and python-r1. Respect flags and compiler, turn
-  compilation verbose. Remove old versions which do not build anymore, and
-  closing bug #472466
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*geant-python-4.9.5_p02 (12 May 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 May 2013; Patrick Lauer <patrick@gentoo.org>
-  +geant-python-4.9.5_p02.ebuild, -geant-python-4.9.5_p01.ebuild:
-  [QA] Bump to match sci-physics/geant versions
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Jul 2012; Benda Xu <heroxbd@gentoo.org> geant-python-4.9.5.ebuild:
-  replace sed hacks with configure provided libdir
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 May 2012; Benda Xu <heroxbd@gentoo.org>
-  +files/geant-python-4.9.5-vis-fix.patch, geant-python-4.9.5.ebuild:
-  fix VisManager c++ signature mismatch, upstream http://bugzilla-
-  geant4.kek.jp/show_bug.cgi?id=1318
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 May 2012; Benda Xu <heroxbd@gentoo.org> +geant-python-4.9.5.ebuild
-  geant-python-4.9.5_p01.ebuild:
-  add version 4.9.5 for 4.9.5_p01 cannot function correctly, upstream bug
-  http://bugzilla-geant4.kek.jp/show_bug.cgi?id=1317; add example USE flag.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*geant-python-4.9.5_p01 (20 May 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  20 May 2012; Benda Xu <heroxbd@gentoo.org>
-  +files/geant-python-4.9.5-build.patch,
-  +files/geant-python-4.9.5-visverbose.patch, +geant-python-4.9.5_p01.ebuild,
-  +metadata.xml:
-  initial commit

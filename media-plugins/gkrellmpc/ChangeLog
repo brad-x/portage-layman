@@ -1,70 +1,67 @@
 # ChangeLog for media-plugins/gkrellmpc
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gkrellmpc/ChangeLog,v 1.16 2012/07/20 12:32:01 angelos Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  20 Jul 2012; Christoph Mende <angelos@gentoo.org>
-  +files/gkrellmpc-0.1_beta10-mt.patch, gkrellmpc-0.1_beta10.ebuild:
-  Add missing patch
+*gkrellmpc-0.1_beta10 (09 Aug 2015)
+*gkrellmpc-0.1_beta9-r1 (09 Aug 2015)
 
-*gkrellmpc-0.1_beta10 (20 Jul 2012)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gkrellmpc-0.1_beta10-mt.patch, +files/gkrellmpc-0.1_beta9-mt.patch,
+  +gkrellmpc-0.1_beta9-r1.ebuild, +gkrellmpc-0.1_beta10.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  20 Jul 2012; Christoph Mende <angelos@gentoo.org>
-  +gkrellmpc-0.1_beta10.ebuild:
-  Version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Apr 2012; Bernard Cafarelli <voyageur@gentoo.org>
-  -gkrellmpc-0.1_beta9.ebuild, gkrellmpc-0.1_beta9-r1.ebuild:
-  Depend on gkrellm[X], thanks Piotr Szymaniak in bug #408641. Remove old
-  version
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Oct 2009; Markus Meier <maekke@gentoo.org>
-  gkrellmpc-0.1_beta9-r1.ebuild:
-  amd64/x86 stable, bug #286820
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
-  gkrellmpc-0.1_beta9-r1.ebuild:
-  RESTRICT test because it will open gkrellm in X11 display wrt #286820.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  gkrellmpc-0.1_beta9-r1.ebuild:
-  Apply threads patch only if USE threads is used wrt #276970.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
-  gkrellmpc-0.1_beta9.ebuild, gkrellmpc-0.1_beta9-r1.ebuild:
-  Missing gkrellm dep wrt #277585.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*gkrellmpc-0.1_beta9-r1 (11 May 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 May 2009; Samuli Suominen <ssuominen@gentoo.org>
-  gkrellmpc-0.1_beta9.ebuild, +gkrellmpc-0.1_beta9-r1.ebuild,
-  +files/gkrellmpc-0.1_beta9-mt.patch:
-  Use separate thread to init connection patch by dimonb wrt #264986.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> gkrellmpc-0.1_beta9-r1.ebuild,
+  gkrellmpc-0.1_beta10.ebuild:
+  Use https by default
 
-  30 May 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Andrej Kacian (Ticho) from metadata.xml (as per #59986).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Mar 2007; Jim Ramsay <lack@gentoo.org> gkrellmpc-0.1_beta9.ebuild:
-  Updated to use new gkrellm-plugin eclass
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 May 2005; Sven Wegener <swegener@gentoo.org> metadata.xml:
-  Herd name is 'sound' not 'media-sound'
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 May 2005; Andrej Kacian <ticho@gentoo.org> gkrellmpc-0.1_beta9.ebuild:
-  Added ~amd64 keyword. Bug #92813, by Nuno Alexandre <ikaro at fluxbox org>.
+  Bug: https://bugs.gentoo.org/552720
 
-  06 May 2005; Sven Wegener <swegener@gentoo.org>
-  gkrellmpc-0.1_beta9.ebuild:
-  Removed * postfix from <, <=, >= and > dependencies.
-
-  27 Apr 2005; Andrej Kacian <ticho@gentoo.org> gkrellmpc-0.1_beta9.ebuild:
-  Stable on x86. Updated HOMEPAGE.
-
-*gkrellmpc-0.1_beta9 (05 Jan 2005)
-
-  05 Jan 2005; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
-  +gkrellmpc-0.1_beta9.ebuild:
-  Initial import, ebuild submitted by Mina Naguib <webmaster@topfx.com>.
-  Closes #74960.

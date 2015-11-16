@@ -1,94 +1,60 @@
 # ChangeLog for media-plugins/vdr-skinenigmang
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-skinenigmang/ChangeLog,v 1.16 2014/02/23 20:58:57 hd_brummy Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  23 Feb 2014; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-skinenigmang-0.1.1.ebuild:
-  cleanup old, depended on vdr-plugin.eclass
+*vdr-skinenigmang-0.1.2_p20130302 (09 Aug 2015)
+*vdr-skinenigmang-0.1.2_p20120618 (09 Aug 2015)
+*vdr-skinenigmang-0.1.2 (09 Aug 2015)
 
-*vdr-skinenigmang-0.1.2_p20130302 (22 Apr 2013)
-
-  22 Apr 2013; Joerg Bornkessel <hd_brummy@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/rc-addon.sh,
+  +files/vdr-1.7.27.diff, +metadata.xml, +vdr-skinenigmang-0.1.2.ebuild,
+  +vdr-skinenigmang-0.1.2_p20120618.ebuild,
   +vdr-skinenigmang-0.1.2_p20130302.ebuild:
-  new snapshot, compilefix for imagemagick-6.8.4.9
+  proj/gentoo: Initial commit
 
-  03 Oct 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-skinenigmang-0.1.2_p20120618.ebuild:
-  fixed checksumerrors on every dl from hg server, moved distfile to another
-  wepspace
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*vdr-skinenigmang-0.1.2_p20120618 (27 Sep 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Sep 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-skinenigmang-0.1.2_p20120618.ebuild:
-  git snapshot 20120618, thix fix problems in osd area, reported bey
-  johns@vdr-portal.de
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*vdr-skinenigmang-0.1.2 (29 Apr 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-skinenigmang-0.1.2.ebuild:
-  bump; migrated to vdr-plugin-2.eclass
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-skinenigmang-0.1.1.ebuild, +files/vdr-1.7.27.diff:
-  eapi=4; compilefix >=vdr-1.7.27
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Jan 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-skinenigmang-0.0.6.ebuild, -vdr-skinenigmang-0.1.0.ebuild,
-  -vdr-skinenigmang-0.1.0-r1.ebuild, vdr-skinenigmang-0.1.1.ebuild,
-  -files/imagemagick-6.4.x.diff:
-  cleanup, stable x86
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*vdr-skinenigmang-0.1.1 (08 Apr 2010)
-*vdr-skinenigmang-0.1.0-r1 (08 Apr 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Apr 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-skinenigmang-0.1.0.ebuild, +vdr-skinenigmang-0.1.0-r1.ebuild,
-  +vdr-skinenigmang-0.1.1.ebuild:
-  0.1.0 stable x86; version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Apr 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-skinenigmang-0.1.0.ebuild:
-  add cxx to use-depend for newer imagemagick use-flags changes
-
-*vdr-skinenigmang-0.1.0 (28 Apr 2009)
-
-  28 Apr 2009; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-skinenigmang-0.0.3.ebuild, -vdr-skinenigmang-0.0.4.ebuild,
-  -vdr-skinenigmang-0.0.5.ebuild, vdr-skinenigmang-0.0.6,
-  +vdr-skinenigmang-0.1.0.ebuild:
-  cleanup; stable x86; version bump
-
-  04 Aug 2008; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/imagemagick-6.4.x.diff, vdr-skinenigmang-0.0.6.ebuild:
-  fix for new imagemagick include dir struct
-
-*vdr-skinenigmang-0.0.6 (09 Mar 2008)
-
-  09 Mar 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-skinenigmang-0.0.3.ebuild, vdr-skinenigmang-0.0.4.ebuild,
-  +vdr-skinenigmang-0.0.6.ebuild:
-  Version bumped. Add hack to disable bad makefile gettext check.
-
-*vdr-skinenigmang-0.0.5 (29 Dec 2007)
-
-  29 Dec 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-skinenigmang-0.0.5.ebuild:
-  version bump
-
-  17 Apr 2007; Matthias Schwarzott <zzam@gentoo.org> files/rc-addon.sh:
-  Removed bash specific stuff.
-
-*vdr-skinenigmang-0.0.4 (02 Apr 2007)
-
-  02 Apr 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-skinenigmang-0.0.4.ebuild:
-  version bump
-
-*vdr-skinenigmang-0.0.3 (06 Mar 2007)
-
-  06 Mar 2007; Joerg Bornkessel <hd_brummy@gentoo.org> +files/rc-addon.sh,
-  +metadata.xml, +vdr-skinenigmang-0.0.3.ebuild:
-  initial ebuild
+  Bug: https://bugs.gentoo.org/552720
 

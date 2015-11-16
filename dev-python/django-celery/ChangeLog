@@ -1,111 +1,69 @@
 # ChangeLog for dev-python/django-celery
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django-celery/ChangeLog,v 1.23 2015/03/08 23:44:02 pacho Exp $
+# (auto-generated from git log)
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> django-celery-3.1.16.ebuild:
-  x86 stable, bug 540290
+*django-celery-3.1.16 (09 Aug 2015)
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> django-celery-3.1.16.ebuild:
-  amd64 stable, bug 540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +django-celery-3.1.16.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Oct 2014; Ian Delaney <idella4@gentoo.org> -django-celery-3.1.10.ebuild,
-  -django-celery-3.1.15.ebuild, -django-celery-3.1.9.ebuild:
-  rm old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*django-celery-3.1.16 (29 Sep 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  29 Sep 2014; Ian Delaney <idella4@gentoo.org> +django-celery-3.1.16.ebuild:
-  bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*django-celery-3.1.15 (21 Sep 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Sep 2014; Ian Delaney <idella4@gentoo.org> +django-celery-3.1.15.ebuild:
-  bump; add py3.4, upgrade deps, test phase
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> django-celery-3.1.10.ebuild,
-  django-celery-3.1.9.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*django-celery-3.1.10 (11 Apr 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Apr 2014; Ian Delaney <idella4@gentoo.org> +django-celery-3.1.10.ebuild,
-  -django-celery-3.0.17-r1.ebuild, -django-celery-3.0.21.ebuild,
-  django-celery-3.1.9.ebuild:
-  bump; update dep celery to both 3.1 versions
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*django-celery-3.1.9 (09 Apr 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Apr 2014; Ian Delaney <idella4@gentoo.org> +django-celery-3.1.9.ebuild:
-  bump; add py3 support, update deps, test phase, initially masked until
-  unmasking of celery-3.1.10
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Mar 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer as talked with him (#398377)
+  27 Oct 2015; Ian Delaney <idella4@gentoo.org> django-celery-3.1.16.ebuild,
+  +files/django-celery-3.1.16-py3-test-failures.patch:
+  patch to fix broken tests
 
-*django-celery-3.0.21 (10 Aug 2013)
+  patch from upstream submitted via the gentoo bug and runtested
+  by 'wraeth', drop py3.3 support, add missed PYTHON_REQ_USE value
+  for sqlite, set required bordering to django subsequent to
+  runtesting, fixes the gentoo bug
 
-  10 Aug 2013; Patrick Lauer <patrick@gentoo.org> +django-celery-3.0.21.ebuild:
-  Bump
+  Gentoo bug: #564250
 
-  22 Jul 2013; Michał Górny <mgorny@gentoo.org> -django-celery-3.0.17.ebuild:
-  Drop the old version using long-deprecated python-distutils-ng.eclass.
+  Package-Manager: portage-2.2.23
 
-  21 May 2013; Ian Delaney <idella4@gentoo.org> django-celery-3.0.17-r1.ebuild:
-  issue resolved, test phase re-set
-
-  20 May 2013; Ian Delaney <idella4@gentoo.org> django-celery-3.0.17-r1.ebuild:
-  correction to test phase
-
-*django-celery-3.0.17-r1 (19 May 2013)
-
-  19 May 2013; Ian Delaney <idella4@gentoo.org> +django-celery-3.0.17-r1.ebuild,
-  -django-celery-3.0.10.ebuild, -django-celery-3.0.11.ebuild,
-  -django-celery-3.0.9.ebuild:
-  drop old, migrate -> distutils-r1, add IUSE doc, examples
-
-*django-celery-3.0.17 (04 Apr 2013)
-
-  04 Apr 2013; Patrick Lauer <patrick@gentoo.org> +django-celery-3.0.17.ebuild:
-  Bump
-
-  06 Jan 2013; Michał Górny <mgorny@gentoo.org> django-celery-3.0.10.ebuild,
-  django-celery-3.0.11.ebuild:
-  Use virtual/python-unittest2.
-
-*django-celery-3.0.11 (25 Oct 2012)
-
-  25 Oct 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-3.0.11.ebuild:
-  Bump to 3.0.11.
-
-*django-celery-3.0.10 (28 Sep 2012)
-
-  28 Sep 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-3.0.10.ebuild,
-  -django-celery-3.0.4.ebuild:
-  Bump to 3.0.10.
-
-*django-celery-3.0.9 (31 Aug 2012)
-
-  31 Aug 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-3.0.9.ebuild:
-  Bump to 3.0.9.
-
-  14 Aug 2012; Corentin Chary <iksaif@gentoo.org> -django-celery-2.5.5.ebuild:
-  Remove old version.
-
-*django-celery-3.0.4 (29 Jul 2012)
-
-  29 Jul 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-3.0.4.ebuild,
-  -django-celery-3.0.1.ebuild:
-  Bump to 3.0.4.
-
-*django-celery-3.0.1 (17 Jul 2012)
-
-  17 Jul 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-3.0.1.ebuild,
-  metadata.xml:
-  Bump to 3.0.1.
-
-*django-celery-2.5.5 (30 May 2012)
-
-  30 May 2012; Corentin Chary <iksaif@gentoo.org> +django-celery-2.5.5.ebuild,
-  +metadata.xml:
-  New ebuild for celery. Closes bug #342043.

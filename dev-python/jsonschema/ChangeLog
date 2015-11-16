@@ -1,86 +1,108 @@
 # ChangeLog for dev-python/jsonschema
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/jsonschema/ChangeLog,v 1.21 2015/07/18 17:10:27 blueness Exp $
+# (auto-generated from git log)
 
-  18 Jul 2015; Anthony G. Basile <blueness@gentoo.org> jsonschema-2.3.0.ebuild,
+*jsonschema-2.4.0 (09 Aug 2015)
+*jsonschema-2.3.0 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +jsonschema-2.3.0.ebuild,
+  +jsonschema-2.4.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> jsonschema-2.3.0.ebuild,
   jsonschema-2.4.0.ebuild:
-  Keyword ~ppc ~ppc64.  Bug #541628.
+  Use https by default
 
-  21 Jun 2015; Markus Meier <maekke@gentoo.org> jsonschema-2.4.0.ebuild:
-  add ~arm, bug #541628
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> jsonschema-2.3.0.ebuild:
-  Drop old Python implementations
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*jsonschema-2.4.0 (28 Feb 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Feb 2015; Justin Lecher <jlec@gentoo.org> +jsonschema-2.4.0.ebuild,
-  -jsonschema-0.8.0.ebuild, metadata.xml:
-  Version Bump; drop old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Feb 2015; Pacho Ramos <pacho@gentoo.org> jsonschema-2.3.0.ebuild:
-  x86 stable, bug #540532
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Feb 2015; Agostino Sarubbo <ago@gentoo.org> jsonschema-2.3.0.ebuild:
-  Stable for amd64, wrt bug #540532
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> jsonschema-2.3.0.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+*jsonschema-2.5.1 (02 Sep 2015)
 
-*jsonschema-0.8.0 (03 Apr 2014)
+  02 Sep 2015; Justin Lecher <jlec@gentoo.org> +jsonschema-2.5.1.ebuild:
+  Version Bump
 
-  03 Apr 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +jsonschema-0.8.0.ebuild:
-  readding jsonschema-0.8.0, because it's still needed
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Apr 2014; Patrick McLean <chutzpah@gentoo.org> -jsonschema-0.7.ebuild,
-  -jsonschema-0.8.0.ebuild, -jsonschema-1.3.0.ebuild, -jsonschema-2.0.0.ebuild,
-  jsonschema-2.3.0.ebuild:
-  Add python3_4 support. Clean out old versions.
+  05 Sep 2015; Patrice Clement <monsieurp@gentoo.org> jsonschema-2.5.1.ebuild:
+  Keyword for ppc+ppc. Fixes bug 559404.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> jsonschema-2.0.0.ebuild,
-  jsonschema-2.3.0.ebuild:
-  Add support for the new PyPy slotting.
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org> jsonschema-2.3.0.ebuild:
-  Keyword amd64-linux and x86-linux
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-*jsonschema-2.3.0 (14 Nov 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Nov 2013; Patrick McLean <chutzpah@gentoo.org> +jsonschema-2.3.0.ebuild:
-  Version bump.
+*jsonschema-2.5.1-r1 (09 Sep 2015)
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> jsonschema-2.0.0.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  09 Sep 2015; Patrick McLean <chutzpah@gentoo.org>
+  +jsonschema-2.5.1-r1.ebuild:
+  Revision bump, make functools32 dependency conditional on python2
 
-*jsonschema-2.0.0 (27 May 2013)
+  Package-Manager: portage-2.2.20.1
 
-  27 May 2013; Mike Gilbert <floppym@gentoo.org> +jsonschema-2.0.0.ebuild:
-  Version bump. Add a test phase and several python impls.
+  29 Sep 2015; Markus Meier <maekke@gentoo.org> jsonschema-2.5.1-r1.ebuild:
+  add ~arm, bug #559404
 
-*jsonschema-1.3.0 (01 May 2013)
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="arm"
 
-  01 May 2013; Patrick McLean <chutz@gentoo.org> +jsonschema-1.3.0.ebuild:
-  Version bump.
+  10 Oct 2015; Markus Meier <maekke@gentoo.org> jsonschema-2.4.0.ebuild:
+  arm stable, bug #554868
 
-  17 Jan 2013; Matthew Thode <prometheanfire@gentoo.org>
-  jsonschema-0.8.0.ebuild:
-  adding ~x86 to jsonschema-0.8.0 as I have tested it
+  Package-Manager: portage-2.2.22
+  RepoMan-Options: --include-arches="arm"
 
-*jsonschema-0.8.0 (16 Jan 2013)
+  21 Oct 2015; Justin Lecher <jlec@gentoo.org> jsonschema-2.5.1-r1.ebuild:
+  Add python3.5 support
 
-  16 Jan 2013; Patrick McLean <chutzpah@gentoo.org> +jsonschema-0.8.0.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Dec 2012; Michał Górny <mgorny@gentoo.org> jsonschema-0.7.ebuild:
-  Bump to EAPI=5 to make Paludis happy, bug #447524.
-
-*jsonschema-0.7 (08 Nov 2012)
-
-  08 Nov 2012; Patrick McLean <chutzpah@gentoo.org> +jsonschema-0.7.ebuild,
-  +metadata.xml:
-  New package, a JSON schema validator for Python

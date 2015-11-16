@@ -1,78 +1,68 @@
 # ChangeLog for www-servers/gatling
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/gatling/ChangeLog,v 1.15 2015/03/28 23:05:16 mrueg Exp $
+# (auto-generated from git log)
 
-  28 Mar 2015; Manuel Rüger <mrueg@gentoo.org> -gatling-0.12-r1.ebuild,
-  -gatling-0.12.ebuild:
-  Remove old.
+*gatling-0.13 (09 Aug 2015)
+*gatling-0.12-r2 (09 Aug 2015)
 
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> gatling-0.12-r1.ebuild,
-  gatling-0.12-r2.ebuild, gatling-0.12.ebuild, gatling-0.13.ebuild:
-  Inherit the user eclass for enewuser/etc...
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gatling-0.12-FLAGS.patch, +files/gatling-0.12-compile.patch,
+  +files/gatling-0.13-compile.patch, +files/gatling.confd,
+  +files/gatling.initd, +files/gatling.initd-2, +gatling-0.12-r2.ebuild,
+  +gatling-0.13.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Jun 2013; Sebastian Pipping <sping@gentoo.org> gatling-0.13.ebuild:
-  Use ${ROOT} to fix cross compilation (bug #472096)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*gatling-0.13 (05 Nov 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Nov 2012; Patrick Lauer <patrick@gentoo.org>
-  +files/gatling-0.13-compile.patch, +gatling-0.13.ebuild:
-  Bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Apr 2012; Sebastian Pipping <sping@gentoo.org> gatling-0.12-r2.ebuild,
-  +files/gatling-0.12-compile.patch:
-  Unbreak diet mode (bug #314115)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*gatling-0.12-r2 (22 Mar 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Mar 2012; Patrick Lauer <patrick@gentoo.org> +files/gatling.initd-2,
-  +gatling-0.12-r2.ebuild, -files/gentoo-vars.patch:
-  Init script fixes for #409245
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*gatling-0.12-r1 (10 Mar 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Mar 2012; Sebastian Pipping <sping@gentoo.org> +gatling-0.12-r1.ebuild,
-  metadata.xml:
-  Fix compilation on amd64, make dietlibc optional (bug #314115), allow
-  optional SSL
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Aug 2010; Patrick Lauer <patrick@gentoo.org> gatling-0.12.ebuild:
-  Fixing init.d install quoting so it actually does something. Thanks to
-  Sebastian Lechte for noticing the problem. Fixes #332453
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Jun 2010; Patrick Lauer <patrick@gentoo.org> -gatling-0.9.ebuild,
-  -gatling-0.11.ebuild, -gatling-0.11-r1.ebuild:
-  Remove old
+  Bug: https://bugs.gentoo.org/552720
 
-  30 May 2010; Víctor Ostorga <vostorga@gentoo.org> gatling-0.12.ebuild,
-  +files/gatling-0.12-FLAGS.patch:
-  Respecting LDFLAGS, fixing pre-stripped files bug #314111
+*gatling-0.13-r1 (12 Oct 2015)
 
-*gatling-0.12 (03 May 2010)
+  12 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  +gatling-0.13-r1.ebuild:
+  add libressl support
 
-  03 May 2010; Patrick Lauer <patrick@gentoo.org> +gatling-0.12.ebuild:
-  Bump
+  Package-Manager: portage-2.2.20.1
 
-  04 Nov 2009; Patrick Lauer <patrick@gentoo.org> gatling-0.9.ebuild,
-  gatling-0.11.ebuild, gatling-0.11-r1.ebuild:
-  Small dep fix for #291796
-
-*gatling-0.11-r1 (18 Aug 2009)
-
-  18 Aug 2009; Patrick Lauer <patrick@gentoo.org> +gatling-0.11-r1.ebuild,
-  +files/gatling.confd, +files/gatling.initd:
-  Adding init script support, fixes #272564. Thanks to Fernando V.
-
-*gatling-0.11 (15 Aug 2009)
-
-  15 Aug 2009; Víctor Ostorga <vostorga@gentoo.org> +gatling-0.11.ebuild,
-  metadata.xml:
-  Version bump to 0.11
-  Adding myself to metadata.xml
-
-  01 May 2009; Patrick Lauer <patrick@gentoo.org> ChangeLog:
-  Initial import from sunrise.
-
-  12 May 2008; Maximilian Gaß <mxey@cloudconnected.org +gatling-0.9.ebuild,
-  +files/gentoo-vars.patch, +metadata.xml:
-  New Ebuild for bug 221841

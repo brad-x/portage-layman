@@ -1,31 +1,66 @@
 # ChangeLog for net-print/dymo-cups-drivers
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/dymo-cups-drivers/ChangeLog,v 1.6 2012/12/31 02:37:14 flameeyes Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  31 Dec 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  dymo-cups-drivers-1.4.0.ebuild:
-  Re-add still needed cxxflags patch.
+*dymo-cups-drivers-1.4.0 (09 Aug 2015)
+*dymo-cups-drivers-1.2.0 (09 Aug 2015)
 
-*dymo-cups-drivers-1.4.0 (31 Dec 2012)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +dymo-cups-drivers-1.2.0.ebuild, +dymo-cups-drivers-1.4.0.ebuild,
+  +files/dymo-cups-drivers-1.2.0+gcc-4.6.patch,
+  +files/dymo-cups-drivers-1.2.0-cxxflags.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  31 Dec 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +dymo-cups-drivers-1.4.0.ebuild:
-  Version bump. Thanks to Soren Harward in bug #445728.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
-  +files/dymo-cups-drivers-1.2.0-cxxflags.patch, dymo-cups-drivers-1.2.0.ebuild:
-  Add a patch to respect CXXFLAGS; slightly simplify ebuild.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Nov 2011; Markus Meier <maekke@gentoo.org> dymo-cups-drivers-1.2.0.ebuild:
-  add ~x86, bug #390175
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  dymo-cups-drivers-1.2.0.ebuild, +files/dymo-cups-drivers-1.2.0+gcc-4.6.patch:
-  Add patch to build with GCC 4.6; add missing cppunit dependency for tests,
-  but also restrict tests until they are sorted out.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*dymo-cups-drivers-1.2.0 (13 Jul 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Jul 2011; Diego E. Pettenò <flameeyes@gentoo.org>
-  +dymo-cups-drivers-1.2.0.ebuild, +metadata.xml:
-  Initial import of the Dymo SDK for Linux (actually, mostly the CUPS drivers).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  17 Oct 2015; Manuel Rüger <mrueg@gentoo.org>
+  -dymo-cups-drivers-1.2.0.ebuild,
+  -files/dymo-cups-drivers-1.2.0+gcc-4.6.patch:
+  Remove old
+
+  Package-Manager: portage-2.2.23
+

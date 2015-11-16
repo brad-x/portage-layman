@@ -1,70 +1,72 @@
 # ChangeLog for dev-python/progressbar
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/progressbar/ChangeLog,v 1.20 2015/04/08 08:05:09 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> progressbar-2.3-r1.ebuild:
-  Drop old Python implementations
+*progressbar-2.3-r1 (09 Aug 2015)
 
-  26 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -progressbar-2.3.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/progressbar-2.3-python3.3.patch, +metadata.xml,
+  +progressbar-2.3-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Nov 2014; Pacho Ramos <pacho@gentoo.org> progressbar-2.3-r1.ebuild:
-  Support python 3.4
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> progressbar-2.3-r1.ebuild:
-  Add support for the new PyPy slotting.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Mar 2014; Agostino Sarubbo <ago@gentoo.org> progressbar-2.3-r1.ebuild:
-  Stable for ppc, wrt bug #493778
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Mar 2014; Johannes Huber <johu@gentoo.org> progressbar-2.3-r1.ebuild:
-  x86 stable, bug #493778
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Mar 2014; Pacho Ramos <pacho@gentoo.org> progressbar-2.3-r1.ebuild:
-  amd64 stable, bug #493778
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> progressbar-2.3-r1.ebuild:
+  Use https by default
 
-  13 Oct 2013; Mike Gilbert <floppym@gentoo.org>
-  +files/progressbar-2.3-python3.3.patch, progressbar-2.3-r1.ebuild:
-  Fix build with python3.3, bug 438666.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> progressbar-2.3-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 May 2013; Sergey Popov <pinkbyte@gentoo.org> progressbar-2.3-r1.ebuild:
-  Add ~arm keyword, wrt bug #470770
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Apr 2013; Justin Lecher <jlec@gentoo.org> progressbar-2.3-r1.ebuild,
-  metadata.xml:
-  Keyword for ~-linux, tested by me
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*progressbar-2.3-r1 (10 Feb 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> progressbar-2.3-r1.ebuild:
+  Enable https for all google URIs
 
-  10 Feb 2013; Mike Gilbert <floppym@gentoo.org> +progressbar-2.3-r1.ebuild:
-  Convert to distutils-r1.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> progressbar-2.3.ebuild:
-  Restricting python 3.3
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> progressbar-2.3-r1.ebuild:
+  Convert URIs for googlecode.com to https
 
-  14 Jun 2012; Michael Weber <xmw@gentoo.org> progressbar-2.3.ebuild:
-  ppc stable (bug 403759)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> progressbar-2.3.ebuild:
-  marked x86 per bug 403759
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Feb 2012; Patrick Lauer <patrick@gentoo.org> progressbar-2.3.ebuild:
-  Restricting jython
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> progressbar-2.3.ebuild:
-  Stable for amd64, wrt bug #403759
+  Bug: https://bugs.gentoo.org/552720
 
-  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> progressbar-2.3.ebuild:
-  Marked ~ppc wrt #370739
-
-  26 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> progressbar-2.3.ebuild:
-  HOMEPAGE fix
-
-*progressbar-2.3 (30 May 2011)
-
-  30 May 2011; Tim Harder <radhermit@gentoo.org> +progressbar-2.3.ebuild,
-  +metadata.xml:
-  Initial import from sunrise thanks to Mike Gilbert (bug #350022).

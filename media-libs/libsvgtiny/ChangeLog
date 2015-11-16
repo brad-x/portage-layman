@@ -1,73 +1,60 @@
 # ChangeLog for media-libs/libsvgtiny
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libsvgtiny/ChangeLog,v 1.16 2015/06/09 22:05:05 xmw Exp $
+# (auto-generated from git log)
 
-*libsvgtiny-0.1.3-r1 (09 Jun 2015)
+*libsvgtiny-0.1.3-r1 (09 Aug 2015)
+*libsvgtiny-0.1.2 (09 Aug 2015)
 
-  09 Jun 2015; Michael Weber <xmw@gentoo.org> +libsvgtiny-0.1.3-r1.ebuild,
-  -libsvgtiny-0.1.3.ebuild:
-  Revbump for multilib fix.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libsvgtiny-0.1.2-glibc2.20.patch,
+  +files/libsvgtiny-0.1.3-glibc2.20.patch,
+  +files/libsvgtiny-0.1.3-parallel-build.patch, +libsvgtiny-0.1.2.ebuild,
+  +libsvgtiny-0.1.3-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  28 Mar 2015; Patrick Lauer <patrick@gentoo.org> libsvgtiny-0.1.3.ebuild:
-  Whitespace
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Mar 2015; Michael Weber <xmw@gentoo.org>
-  +files/libsvgtiny-0.1.3-parallel-build.patch, libsvgtiny-0.1.3.ebuild:
-  Fix parallel build.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Mar 2015; Michael Weber <xmw@gentoo.org> libsvgtiny-0.1.3.ebuild:
-  Fix dep versions
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Mar 2015; Michael Weber <xmw@gentoo.org> -libsvgtiny-0.0.2.ebuild,
-  -libsvgtiny-0.1.0.ebuild:
-  Drop old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*libsvgtiny-0.1.3 (21 Mar 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Mar 2015; Michael Weber <xmw@gentoo.org>
-  +files/libsvgtiny-0.1.3-glibc2.20.patch, +libsvgtiny-0.1.3.ebuild:
-  Version bump (bug 543846).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*libsvgtiny-0.1.2 (15 Nov 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  15 Nov 2014; Michael Weber <xmw@gentoo.org>
-  +files/libsvgtiny-0.1.2-glibc2.20.patch, +libsvgtiny-0.1.2.ebuild:
-  Version bump, glibc-2.20 issue, new build system version
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Jan 2014; Fabian Groffen <grobian@gentoo.org> libsvgtiny-0.1.0.ebuild:
-  Marked ~m68k-mint, bug #494512
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Jun 2013; Michael Weber <xmw@gentoo.org> libsvgtiny-0.1.0.ebuild:
-  Migrate to netsurf.eclass
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Jun 2013; Julian Ospald <hasufell@gentoo.org> libsvgtiny-0.1.0.ebuild:
-  fix build failure caused by missing useflag xml in net-libs/libdom
-
-*libsvgtiny-0.1.0 (17 Jun 2013)
-
-  17 Jun 2013; Michael Weber <xmw@gentoo.org> +libsvgtiny-0.1.0.ebuild,
-  -libsvgtiny-9999.ebuild:
-  Version bump (bug 470720), multilib build, preparations for netsurf eclass.
-
-  28 Feb 2013; Michael Weber <xmw@gentoo.org> libsvgtiny-0.0.2.ebuild:
-  netsurf eclass preparation.
-
-  18 Jul 2012; Michael Weber <xmw@gentoo.org>
-  -libsvgtiny-0.0.2_pre20120629.ebuild:
-  drop old
-
-*libsvgtiny-0.0.2 (18 Jul 2012)
-
-  18 Jul 2012; Michael Weber <xmw@gentoo.org> +libsvgtiny-0.0.2.ebuild:
-  Version bump to netsurf-2.9 tarball
-
-  18 Jul 2012; Michael Weber <xmw@gentoo.org>
-  libsvgtiny-0.0.2_pre20120629.ebuild, libsvgtiny-9999.ebuild:
-  Fix HOMEPAGE, thanks Nikoli
-
-*libsvgtiny-9999 (18 Jul 2012)
-*libsvgtiny-0.0.2_pre20120629 (18 Jul 2012)
-
-  18 Jul 2012; Michael Weber <xmw@gentoo.org>
-  +libsvgtiny-0.0.2_pre20120629.ebuild, +libsvgtiny-9999.ebuild, +metadata.xml:
-  Initial import

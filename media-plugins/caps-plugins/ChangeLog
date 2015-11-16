@@ -1,184 +1,61 @@
 # ChangeLog for media-plugins/caps-plugins
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/caps-plugins/ChangeLog,v 1.42 2014/08/10 12:56:41 nativemad Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Andreas Schuerch <nativemad@gentoo.org>
-  caps-plugins-0.9.15.ebuild:
-  x86 stable, see bug 495754
+*caps-plugins-0.9.15 (09 Aug 2015)
+*caps-plugins-0.9.10 (09 Aug 2015)
+*caps-plugins-0.4.5-r2 (09 Aug 2015)
+*caps-plugins-0.4.5-r1 (09 Aug 2015)
 
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org> caps-plugins-0.9.15.ebuild:
-  amd64 stable, bug #495754
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +caps-plugins-0.4.5-r1.ebuild, +caps-plugins-0.4.5-r2.ebuild,
+  +caps-plugins-0.9.10.ebuild, +caps-plugins-0.9.15.ebuild,
+  +files/caps-plugins-0.4.5-double-free-corruption.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Oct 2013; Michał Górny <mgorny@gentoo.org> caps-plugins-0.4.5-r2.ebuild:
-  Fix mistaken debug commit.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Oct 2013; Michał Górny <mgorny@gentoo.org> caps-plugins-0.4.5-r2.ebuild,
-  caps-plugins-0.9.10.ebuild, caps-plugins-0.9.15.ebuild:
-  Explicitly call einstalldocs in multilib_src_install_all() to accomodate bug
-  #483304.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*caps-plugins-0.9.15 (26 Aug 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.9.15.ebuild:
-  version bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*caps-plugins-0.9.10 (13 Aug 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Aug 2013; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.9.10.ebuild:
-  version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*caps-plugins-0.4.5-r2 (27 Jun 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.4.5-r2.ebuild:
-  go multilib
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org> -caps-plugins-0.4.4.ebuild,
-  -caps-plugins-0.4.5.ebuild:
-  remove old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Mar 2013; Agostino Sarubbo <ago@gentoo.org> caps-plugins-0.4.5-r1.ebuild:
-  Stable for x86, wrt bug #457382
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Mar 2013; Agostino Sarubbo <ago@gentoo.org> caps-plugins-0.4.5-r1.ebuild:
-  Stable for amd64, wrt bug #457382
-
-*caps-plugins-0.4.5-r1 (27 Nov 2012)
-
-  27 Nov 2012; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.4.5-r1.ebuild,
-  +files/caps-plugins-0.4.5-double-free-corruption.patch:
-  Fix double free by Vinycius Maia, bug #418241
-
-  26 Nov 2012; Alexis Ballier <aballier@gentoo.org> caps-plugins-0.4.4.ebuild,
-  caps-plugins-0.4.5.ebuild, metadata.xml:
-  shorten description and use longdescription, by Dustin Polke, bug #356821
-
-  26 Nov 2012; Alexis Ballier <aballier@gentoo.org> -caps-plugins-0.4.2.ebuild:
-  remove old
-
-*caps-plugins-0.4.5 (03 Apr 2011)
-
-  03 Apr 2011; Alexis Ballier <aballier@gentoo.org> +caps-plugins-0.4.5.ebuild:
-  version bump
-
-  03 Mar 2011; Thomas Kahle <tomka@gentoo.org> caps-plugins-0.4.4.ebuild:
-  x86 stable per bug 353695
-
-  27 Feb 2011; Markos Chandras <hwoarang@gentoo.org> caps-plugins-0.4.4.ebuild:
-  Stable on amd64 wrt bug #353695
-
-  27 Feb 2011; Alexis Ballier <aballier@gentoo.org> caps-plugins-0.4.4.ebuild:
-  use cxxflags with g++, add missing die's
-
-  14 Nov 2009; Alexis Ballier <aballier@gentoo.org>
-  -files/caps-plugins-0.1.10-fpic.patch, -caps-plugins-0.3.0-r1.ebuild,
-  -caps-plugins-0.4.0.ebuild:
-  remove old
-
-*caps-plugins-0.4.4 (14 Nov 2009)
-
-  14 Nov 2009; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.4.4.ebuild:
-  version bump
-
-  04 Oct 2008; Markus Meier <maekke@gentoo.org> caps-plugins-0.4.2.ebuild:
-  amd64/x86 stable, bug #239067
-
-  29 Sep 2008; Alexis Ballier <aballier@gentoo.org>
-  files/caps-plugins-0.1.10-fpic.patch:
-  fixup broken patch, bug #239035
-
-*caps-plugins-0.4.2 (20 Apr 2008)
-
-  20 Apr 2008; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.4.2.ebuild:
-  version bump
-
-  20 Apr 2008; Alexis Ballier <aballier@gentoo.org> metadata.xml:
-  handle to proaudio herd
-
-  20 Apr 2008; Alexis Ballier <aballier@gentoo.org>
-  -caps-plugins-0.2.1-r1.ebuild, -caps-plugins-0.2.3.ebuild,
-  -caps-plugins-0.3.0.ebuild:
-  remove old
-
-*caps-plugins-0.4.0 (18 Jun 2007)
-
-  18 Jun 2007; Alexis Ballier <aballier@gentoo.org>
-  +caps-plugins-0.4.0.ebuild:
-  Version bump, multilib strict fix, use tc-getCXX to get g++
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  01 Nov 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  caps-plugins-0.3.0-r1.ebuild:
-  Stable on amd64/x86 wrt bug #110488.
-
-*caps-plugins-0.3.0 (13 Jan 2006)
-
-  13 Jan 2006; Frank van de Pol <fvdpol@gentoo.org>
-  +caps-plugins-0.3.0.ebuild:
-  version bump to 0.3.0
-
-*caps-plugins-0.2.3 (10 Oct 2005)
-
-  10 Oct 2005; Frank van de Pol <fvdpol@gentoo.org>
-  +caps-plugins-0.2.3.ebuild:
-  Version bump to 0.2.3.
-
-  24 Aug 2005; Diego Pettenò <flameeyes@gentoo.org>
-  caps-plugins-0.2.1-r1.ebuild:
-  epatch does not need die.
-
-  25 May 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  -caps-plugins-0.1.5.ebuild, -caps-plugins-0.1.10.ebuild,
-  -caps-plugins-0.2.1.ebuild, caps-plugins-0.2.1-r1.ebuild:
-  0.2.1-r1 stable on x86 and amd64, some cleanup
-
-*caps-plugins-0.2.1-r1 (26 Apr 2005)
-
-  26 Apr 2005; Frank van de Pol <fvdpol@gentoo.org>
-  +caps-plugins-0.2.1-r1.ebuild:
-  Fix ladspa plugin installation. Thanks to Sean Bolton <smbolton@jps.net>.
-  Closes bug #83980
-
-  19 Apr 2005; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove retired developer from metadata.xml.
-
-*caps-plugins-0.2.1 (29 Mar 2005)
-
-  29 Mar 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  +caps-plugins-0.2.1.ebuild:
-  new upstream version, fixes #83980
-
-  01 Sep 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  caps-plugins-0.1.10.ebuild:
-  Stable amd64.
-
-  13 Jul 2004; Tom Martin <slarti@gentoo.org> caps-plugins-0.1.10.ebuild:
-  Fixed epatch to use ${PN}.
-
-  06 Jul 2004; Tom Martin <slarti@gentoo.org> caps-plugins-0.1.10.ebuild,
-  +files/caps-plugins-0.1.10-fpic.patch:
-  Added ~amd64 keyword and fixed Makefile to use fPIC, closing bug 51670, thanks
-  to Stefan Briesenick <sbriesen@gmx.de> for reporting. Edited ebuild to use
-  dolib.so rather than insinto. Weird CFLAGS also filtered out from Makefile.
-
-  20 Apr 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  caps-plugins-0.1.10.ebuild, caps-plugins-0.1.5.ebuild:
-  Added IUSE.
-
-  08 Apr 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  caps-plugins-0.1.10.ebuild:
-  Stable x86.
-
-*caps-plugins-0.1.5 (05 Mar 2004)
-*caps-plugins-0.1.10 (05 Mar 2004)
-
-  05 Mar 2004; <torbenh@gentoo.org> caps-plugins-0.1.10.ebuild,
-  caps-plugins-0.1.5.ebuild, metadata.xml:
-  Initial Import.

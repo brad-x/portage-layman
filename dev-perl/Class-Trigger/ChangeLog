@@ -1,201 +1,56 @@
 # ChangeLog for dev-perl/Class-Trigger
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Trigger/ChangeLog,v 1.52 2014/08/22 20:41:29 axs Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*Class-Trigger-0.140.0-r1 (22 Aug 2014)
+*Class-Trigger-0.140.0-r1 (09 Aug 2015)
 
-  22 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +Class-Trigger-0.140.0-r1.ebuild, -Class-Trigger-0.140.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +Class-Trigger-0.140.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Nov 2013; Sergey Popov <pinkbyte@gentoo.org> Class-Trigger-0.140.0.ebuild:
-  Add ~arm and ~mips keywords
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Class-Trigger-0.140.0.ebuild:
-  Marked ~ppc-aix, bug #432288
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Class-Trigger-0.13.ebuild:
-  Cleanup
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Mar 2012; Raúl Porcel <armin76@gentoo.org> Class-Trigger-0.13.ebuild,
-  Class-Trigger-0.140.0.ebuild:
-  Drop ia64/sparc keywords
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  Class-Trigger-0.140.0.ebuild:
-  x86 stable wrt bug #400055
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Mar 2012; Brent Baude <ranger@gentoo.org> Class-Trigger-0.140.0.ebuild:
-  Marking Class-Trigger-0.140.0 ppc64 for bug 400055
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Mar 2012; Brent Baude <ranger@gentoo.org> Class-Trigger-0.140.0.ebuild:
-  Marking Class-Trigger-0.140.0 ppc for bug 400055
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
-  Class-Trigger-0.140.0.ebuild:
-  Stable on alpha, bug #400055
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Class-Trigger-0.140.0.ebuild:
-  Stable for amd64, wrt bug #400055
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-Trigger-0.14.ebuild:
-  Cleanup
-
-*Class-Trigger-0.140.0 (01 Sep 2011)
-
-  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Class-Trigger-0.140.0.ebuild:
-  Change version scheme
-
-  24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Class-Trigger-0.14.ebuild:
-  Marked ~x86-solaris, bug #296509
-
-  27 Jan 2011; Brent Baude <ranger@gentoo.org> Class-Trigger-0.13.ebuild:
-  Marking Class-Trigger-0.13 ppc stable for bug 346403
-
-  05 Dec 2010; Raúl Porcel <armin76@gentoo.org> Class-Trigger-0.13.ebuild:
-  alpha stable
-
-  09 Jan 2010; Fabian Groffen <grobian@gentoo.org>
-  Class-Trigger-0.14.ebuild:
-  Transfer Prefix keywords
-
-*Class-Trigger-0.14 (12 Oct 2009)
-
-  12 Oct 2009; Torsten Veller <tove@gentoo.org> +Class-Trigger-0.14.ebuild:
-  Version bump
-
-  06 May 2009; Torsten Veller <tove@gentoo.org> -Class-Trigger-0.10.ebuild,
-  -Class-Trigger-0.11.ebuild:
-  Cleanup
-
-  03 May 2009; Brent Baude <ranger@gentoo.org> Class-Trigger-0.13.ebuild:
-  stable ppc64, bug 268281
-
-  02 May 2009; Thomas Anderson <gentoofan23@gentoo.org>
-  Class-Trigger-0.13.ebuild:
-  stable amd64, bug 268281
-
-  13 Jun 2008; Raúl Porcel <armin76@gentoo.org> Class-Trigger-0.13.ebuild:
-  ia64/sparc/x86 stable
-
-*Class-Trigger-0.13 (29 Apr 2008)
-
-  29 Apr 2008; Yuval Yaari <yuval@gentoo.org> +Class-Trigger-0.13.ebuild:
-  Version bump
-
-  05 Jan 2008; Raúl Porcel <armin76@gentoo.org> Class-Trigger-0.11.ebuild:
-  Add ~alpha wrt #204036
-
-  05 Jul 2007; Tom Gall <tgall@gentoo.org> Class-Trigger-0.11.ebuild:
-  stable on ppc64
-
-  05 Jul 2007; Raúl Porcel <armin76@gentoo.org> Class-Trigger-0.11.ebuild:
-  ia64/x86 stable
-
-  10 Apr 2007; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.11.ebuild:
-  sparc stable
-
-  08 Apr 2007; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.11.ebuild:
-  Marking amd64 stable
-
-*Class-Trigger-0.11 (09 Mar 2007)
-
-  09 Mar 2007; Michael Cummings <mcummings@gentoo.org>
-  +Class-Trigger-0.11.ebuild:
-  Version bump
-
-  15 Jan 2007; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.10.ebuild:
-  Ebuild maintenance
-
-  07 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  -Class-Trigger-0.08.ebuild, -Class-Trigger-0.09.ebuild:
-  Wee bit of cleanup
-
-  07 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.10.ebuild:
-  Marking amd64 stable
-
-  05 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.08.ebuild, Class-Trigger-0.09.ebuild,
-  Class-Trigger-0.10.ebuild:
-  Adding perl dep; fixed DEPEND
-
-  10 Jul 2006; Aron Griffis <agriffis@gentoo.org> Class-Trigger-0.10.ebuild:
-  Mark 0.10 stable on ia64
-
-  04 Jul 2006; Christian Hartmann <ian@gentoo.org>
-  Class-Trigger-0.08.ebuild, Class-Trigger-0.09.ebuild,
-  Class-Trigger-0.10.ebuild:
-  Fixed RDEPEND wrt bug #134781
-
-  30 Mar 2006; Aron Griffis <agriffis@gentoo.org> Class-Trigger-0.10.ebuild:
-  Mark 0.10 ~ia64
-
-  13 Feb 2006; <mcumming@gentoo.org> Class-Trigger-0.08.ebuild,
-  Class-Trigger-0.09.ebuild, Class-Trigger-0.10.ebuild:
-  Virtual for perl-core dep
-
-  21 Jan 2006; Markus Rothe <corsair@gentoo.org> Class-Trigger-0.10.ebuild:
-  Stable on ppc64
-
-  13 Jan 2006; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.10.ebuild:
-  Marking stable sparc x86
-
-*Class-Trigger-0.10 (12 Nov 2005)
-
-  12 Nov 2005; Michael Cummings <mcummings@gentoo.org>
-  +Class-Trigger-0.10.ebuild:
-  Version bump upstream
-
-  23 Sep 2005; Markus Rothe <corsair@gentoo.org> Class-Trigger-0.08.ebuild,
-  Class-Trigger-0.09.ebuild:
-  Stable on ppc64 (bug #101114)/added ~ppc64 to 0.09
-
-  05 Sep 2005; Brent Baude <ranger@gentoo.org> Class-Trigger-0.08.ebuild:
-  marking Class-Trigger-0.08 ~ppc64 in support of Bug 101114
-
-  03 Aug 2005; Chris White <chriswhite@gentoo.org>
-  Class-Trigger-0.09.ebuild:
-  Marked ~ppc.
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.09.ebuild:
-  dev-perl/Test-Simple => perl-core/Test-Simple migration
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.08.ebuild:
-  dev-perl/Test-Simple => perl-core/Test-Simple migration
-
-*Class-Trigger-0.09 (24 Apr 2005)
-
-  24 Apr 2005; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.08.ebuild, +Class-Trigger-0.09.ebuild:
-  mirror; bump
-
-  30 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> Class-Trigger-0.08.ebuild:
-  added ~amd64 to KEYWORDS.
-
-  12 Jan 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  Class-Trigger-0.08.ebuild:
-  Stable on sparc
-
-  06 May 2004; Ciaran McCreesh <ciaranm@gentoo.org> Class-Trigger-0.08.ebuild:
-  Added ~sparc, #50265
-
-  02 May 2004; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.08.ebuild:
-  Missing dep for IO-stringy added.
-
-*Class-Trigger-0.08 (31 Mar 2004)
-
-  31 Mar 2004; Michael Cummings <mcummings@gentoo.org>
-  Class-Trigger-0.08.ebuild, metadata.xml:
-  dep for class-dbi

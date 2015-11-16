@@ -1,100 +1,57 @@
 # ChangeLog for app-editors/jext
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jext/ChangeLog,v 1.27 2015/07/05 17:05:52 monsieurp Exp $
+# (auto-generated from git log)
 
-  05 Jul 2015; Patrice Clement <monsieurp@gentoo.org> jext-5.0-r2.ebuild:
-  Update DESCRIPTION and HOMEPAGE. Fix bug 553964.
+*jext-5.0-r2 (09 Aug 2015)
 
-  03 Jul 2015; Patrice Clement <monsieurp@gentoo.org> -jext-5.0-r1.ebuild,
-  -jext-5.0.ebuild:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/jext-5.0-enum-as-keyword.patch, +files/jext-pre, +jext-5.0-r2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jul 2015; Patrice Clement <monsieurp@gentoo.org> jext-5.0-r2.ebuild:
-  Stable for amd64+x86.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*jext-5.0-r2 (03 Jul 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jul 2015; Patrice Clement <monsieurp@gentoo.org>
-  +files/jext-5.0-enum-as-keyword.patch, +jext-5.0-r2.ebuild:
-  Add patch to get the package to compile with jdk-1.8. Update dev-java/jython
-  dependency to :2.7. Fix bug 552452.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*jext-5.0-r1 (05 Apr 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Apr 2015; Patrice Clement <monsieurp@gentoo.org> +jext-5.0-r1.ebuild,
-  jext-5.0.ebuild:
-  EAPI 5 bump wrt bug 543906.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Jan 2011; Miroslav Šulc <fordfrog@gentoo.org> -files/jext-gentoo.sh:
-  Removed unused file, bug #340571 (thanks to jalan <jalanpalmer@gmail.com>)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Jul 2009; Alistair Bush <ali_bush@gentoo.org> -jext-3.2_pre3-r1.ebuild:
-  Cleanup old version.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*jext-5.0 (11 Jun 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Jun 2009; Vlastimil Babka <caster@gentoo.org> +jext-5.0.ebuild,
-  +files/jext-pre:
-  Version bump, adpated from java-experimental.
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Jan 2009; Alistair Bush <ali_bush@gentoo.org> jext-3.2_pre3-r1.ebuild:
-  Fixed incorrect LICENSE. see #252951
-
-  11 Feb 2007; Vlastimil Babka <caster@gentoo.org> -jext-3.2_pre3.ebuild:
-  Cleanup.
-
-  11 Feb 2007; nixnut <nixnut@gentoo.org> jext-3.2_pre3-r1.ebuild:
-  Stable on ppc wrt bug 166257
-
-  11 Feb 2007; Christian Faulhammer <opfer@gentoo.org>
-  jext-3.2_pre3-r1.ebuild:
-  stable x86; bug #166257
-
-  13 Oct 2006; Vlastimil Babka <caster@gentoo.org> jext-3.2_pre3.ebuild:
-  Fixed jython dependency, solves bug #151160.
-
-  05 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org> jext-3.2_pre3.ebuild,
-  jext-3.2_pre3-r1.ebuild:
-  Dropping sparc keywords, see #96229
-
-*jext-3.2_pre3-r1 (31 Jul 2006)
-
-  31 Jul 2006; Joshua Nichols <nichoj@gentoo.org> +jext-3.2_pre3-r1.ebuild:
-  Revision bump to support new Java system.
-
-  14 Sep 2005; <dang@gentoo.org> jext-3.2_pre3.ebuild:
-  Marked ~amd64
-
-  16 Oct 2004; Thomas Matthijs <axxo@gentoo.org> jext-3.2_pre3.ebuild:
-  use java-pkg_dohtml instead of dohtml to also install the package-list in
-  case of api docs: #50740
-
-  05 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  jext-3.2_pre3.ebuild:
-  Masked jext-3.2_pre3.ebuild stable for ppc
-
-  12 Sep 2004; Thomas Matthijs <axxo@gentoo.org> jext-3.2_pre3.ebuild:
-  ebuild cleanups
-
-  30 Jul 2004; Karl Trygve Kalleberg <karltk@gentoo.org> jext-3.2_pre3.ebuild:
-  Moved dev-java/jython to dev-java/jython-bin.
-
-  19 Jun 2004; Jason Wever <weeve@gentoo.org> jext-3.2_pre3.ebuild:
-  Stable on sparc.
-
-  01 Jun 2004; Aron Griffis <agriffis@gentoo.org> jext-3.2_pre3.ebuild:
-  Fix use invocation
-
-*jext-3.2_pre3 (23 May 2003)
-
-  23 May 2003; Todd Berman <tberman@gentoo.org> jext-3.2_pre3.ebuild,
-  files/jext-gentoo.sh:
-  Moved, Fixed Bug #12072
-
-*jext-3.2_pre3 (29 Apr 2003)
-
-  29 Apr 2003; Todd Berman <tberman@gentoo.org> jext-3.2_pre3.ebuild:
-  Initial Import.

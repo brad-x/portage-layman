@@ -1,160 +1,71 @@
 # ChangeLog for dev-java/xml-xmlbeans
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xml-xmlbeans/ChangeLog,v 1.37 2015/07/11 09:22:56 chewi Exp $
+# (auto-generated from git log)
 
-  11 Jul 2015; James Le Cuirot <chewi@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217-r1.ebuild,
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Drop java on ia64.
+*xml-xmlbeans-2.6.0 (09 Aug 2015)
+*xml-xmlbeans-1.0.4_pre20041217-r1 (09 Aug 2015)
+*xml-xmlbeans-1.0.4_pre20041217 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> xml-xmlbeans-2.6.0.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xml-xmlbeans-2.6.0-jam.patch,
+  +files/xml-xmlbeans-2.6.0-piccolo.patch,
+  +files/xml-xmlbeans-2.6.0-remove-jamsupport.patch,
+  +files/xml-xmlbeans-gentoo.patch, +metadata.xml,
+  +xml-xmlbeans-1.0.4_pre20041217.ebuild,
+  +xml-xmlbeans-1.0.4_pre20041217-r1.ebuild, +xml-xmlbeans-2.6.0.ebuild:
+  proj/gentoo: Initial commit
 
-*xml-xmlbeans-2.6.0 (17 Sep 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Sep 2013; Tom Wijsman <TomWij@gentoo.org>
-  +files/xml-xmlbeans-2.6.0-jam.patch, +files/xml-xmlbeans-2.6.0-piccolo.patch,
-  +files/xml-xmlbeans-2.6.0-remove-jamsupport.patch, +xml-xmlbeans-2.6.0.ebuild:
-  Version bump to 2.6.0, imported from dmol overlay; made additional adjustments
-  like adding missing dependencies and simplifying maintenance. Fixes bug
-  #173129. Thanks to Kim, Arfrever, Karsten, dmol and Java herd for helping.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Jul 2013; Fabian Groffen <grobian@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217-r1.ebuild:
-  Marked ~x64-macos, bug #435528
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Feb 2013; Rick Farina <zerochaos@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217-r1.ebuild,
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  adding ~arm
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*xml-xmlbeans-1.0.4_pre20041217-r1 (13 Jan 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Jan 2013; Ralph Sennhauser <sera@gentoo.org>
-  +xml-xmlbeans-1.0.4_pre20041217-r1.ebuild:
-  Don't leak jre into DEPND, may confuse vm switching code. #432904
-  EAPI bump, use slot deps and java_prepare.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 Apr 2012; Mike Frysinger <vapier@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Add back ia64 love #349020 by Dennis Schridde.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Drop ia64 support #345433
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Apr 2010; Fabian Groffen <grobian@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Marked ~sparc-solaris ~x86-solaris, bug #314093
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Transfer Prefix keywords
+  Bug: https://bugs.gentoo.org/552720
 
-  23 May 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Add ~x86-fbsd keyword. Bug #176906.
+  11 Nov 2015; Patrice Clement <monsieurp@gentoo.org>
+  +files/xml-xmlbeans-2.6.0-SchemaCompiler.java.patch,
+  xml-xmlbeans-2.6.0.ebuild:
+  Add a patch to get compilation to work with Java 8.
 
-  09 May 2007; Raúl Porcel <armin76@gentoo.org>
-  xml-xmlbeans-1.0.4_pre20041217.ebuild:
-  Add ~ia64 wrt #160813
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*xml-xmlbeans-1.0.4_pre20041217 (09 May 2007)
-
-  09 May 2007; Vlastimil Babka <caster@gentoo.org>
-  +xml-xmlbeans-1.0.4_pre20041217.ebuild, -xml-xmlbeans-20041217-r1.ebuild:
-  Change version to one that will allow future bump. Will seems like a
-  downgrade, that's fine.
-
-  25 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  Add dev-java/ant-core to RDEPEND.
-
-  25 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  -xml-xmlbeans-20041217.ebuild:
-  Remove generation 1 ebuild.
-
-  15 Apr 2007; Markus Rothe <corsair@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  Stable on ppc64
-
-  06 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  Mark stable on amd64 wrt bug #173559.
-
-  06 Apr 2007; nixnut <nixnut@gentoo.org> xml-xmlbeans-20041217-r1.ebuild:
-  Stable on ppc wrt bug 173559
-
-  06 Apr 2007; Christian Faulhammer <opfer@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  filter jikes and stable x86, bug 173559
-
-  14 Feb 2007; Markus Rothe <corsair@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  Added ~ppc64
-
-  21 Jan 2007; Diego Pettenò <flameeyes@gentoo.org>
-  xml-xmlbeans-20041217-r1.ebuild:
-  Add ~x86-fbsd keyword (see the various bugs for netbeans 5.5-r2).
-
-*xml-xmlbeans-20041217-r1 (26 Dec 2006)
-
-  26 Dec 2006; Petteri Räty <betelgeuse@gentoo.org>
-  +xml-xmlbeans-20041217-r1.ebuild:
-  Migrated to generation 2.
-
-  05 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Dropping sparc keywords, see #96229
-
-  11 Mar 2006; Michael Hanselmann <hansmi@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Stable on ppc.
-
-  11 Sep 2005; Thomas Matthijs <axxo@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Disable junit #100895
-
-  22 Aug 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Stable on sparc
-
-  20 Jul 2005; Gustavo Zacarias <gustavoz@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Gimme ~sparc
-
-  09 Jul 2005; Thomas Matthijs <axxo@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  fix deps
-
-  12 Jun 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  Updated dev-java/jaxen dependency.
-
-  16 May 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  stable on amd64 and x86, added ~ppc to KEYWORDS
-
-  16 Mar 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  xml-xmlbeans now makes use of java-pkg_dosrc
-
-  10 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  finally fixed the junit dependency nightmare. fixes #77097.
-
-  08 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org>
-  xml-xmlbeans-20041217.ebuild:
-  updated ant dependency because junit needs ant-tasks. fixes #77097.
-
-  03 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> xml-xmlbeans-20041217.ebuild:
-  Updated junit dependency and added source useflag. Fixes #75906
-
-  24 Dec 2004; Thomas Matthijs <axxo@gentoo.org>
-  files/xml-xmlbeans-gentoo.patch, xml-xmlbeans-20041217.ebuild:
-  fix #75528
-
-*xml-xmlbeans-20041217 (19 Dec 2004)
-
-  19 Dec 2004; Karl Trygve Kalleberg <karltk@gentoo.org> xml-xmlbeans-20041217.ebuild:
-  Initial import. Ebuild submitted by the wunderbar Jan Brinkmann 
-  <lucky@the-luckyduck.de>. Fixes #74818.

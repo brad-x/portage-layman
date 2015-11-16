@@ -1,130 +1,56 @@
 # ChangeLog for dev-lang/blassic
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/blassic/ChangeLog,v 1.34 2015/02/06 13:42:34 ago Exp $
+# (auto-generated from git log)
 
-  06 Feb 2015; Agostino Sarubbo <ago@gentoo.org> blassic-0.10.2.ebuild:
-  Stable for amd64, wrt bug #539084
+*blassic-0.10.2 (09 Aug 2015)
 
-  10 Nov 2014; Jeroen Roovers <jer@gentoo.org> blassic-0.10.2.ebuild,
-  +files/blassic-0.10.2-tinfo.patch:
-  Fix building against sys-libs/ncurses[tinfo] (bug #527112).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +blassic-0.10.2.ebuild,
+  +files/blassic-0.10.2-tinfo.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Jul 2014; Michael Sterrett <mr_bones_@gentoo.org> blassic-0.10.2.ebuild:
-  EAPI=5; simplify
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Nov 2012; Agostino Sarubbo <ago@gentoo.org> blassic-0.10.2.ebuild:
-  Add ~amd64, wrt bug #440676
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Mar 2010; Jeroen Roovers <jer@gentoo.org> blassic-0.10.2.ebuild:
-  Stable for HPPA (bug #306667).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  blassic-0.10.2.ebuild:
-  x86 stable wrt bug #306667
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Feb 2010; nixnut <nixnut@gentoo.org> blassic-0.10.2.ebuild:
-  ppc stable #306667
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  blassic-0.10.2.ebuild:
-  Transfer Prefix keywords
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*blassic-0.10.2 (24 Apr 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +blassic-0.10.2.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Dec 2008; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/blassic-0.10.0-gcc43.patch, blassic-0.10.0.ebuild:
-  add patch to enable building with gcc43 submitted by Yaroslav Gorbunov via bug
-  #250832
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Jan 2008; Fabian Groffen <grobian@gentoo.org> blassic-0.10.0.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Mar 2007; Michael Sterrett <mr_bones_@gentoo.org>
-  blassic-0.10.0.ebuild:
-  dump virtual/x11
-
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  12 Mar 2006; Aron Griffis <agriffis@gentoo.org> blassic-0.10.0.ebuild:
-  Add deps for modular X
-
-  30 Oct 2005; Fabian Groffen <grobian@gentoo.org> blassic-0.10.0.ebuild:
-  Marked ~ppc-macos (bug #110815)
-
-  24 Mar 2005; Michael Sterrett <mr_bones_@gentoo.org> -blassic-0.5.4.ebuild,
-  -blassic-0.8.1.ebuild:
-  clean out old versions
-
-  21 Mar 2005; Guy Martin <gmsoft@gentoo.org> blassic-0.10.0.ebuild:
-  Stable on hppa.
-
-  17 Mar 2005; Joseph Jezak <josejx@gentoo.org> blassic-0.10.0.ebuild:
-  Marked ppc for bug #84754.
-
-  10 Mar 2005; Michael Sterrett <mr_bones_@gentoo.org> blassic-0.10.0.ebuild:
-  Stable for x86
-
-*blassic-0.10.0 (12 Feb 2005)
-
-  12 Feb 2005; Michael Sterrett <mr_bones_@gentoo.org> +blassic-0.10.0.ebuild:
-  version bump (bug #81760)
-
-  24 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org> -blassic-0.7.2.ebuild,
-  -blassic-0.8.0.ebuild:
-  clean out older ebuilds
-
-  20 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org> blassic-0.5.4.ebuild:
-  IUSE; tidy
-
-  16 Apr 2004; Guy Martin <gmsoft@gentoo.org> blassic-0.8.1.ebuild:
-  Marked stable on hppa.
-
-*blassic-0.8.1 (09 Feb 2004)
-
-  09 Feb 2004; Michael Sterrett <mr_bones_@gentoo.org> blassic-0.5.4.ebuild,
-  blassic-0.7.2.ebuild, blassic-0.8.1.ebuild:
-  version bump
-
-*blassic-0.8.0 (22 Jan 2004)
-
-  22 Jan 2004; Michael Sterrett <mr_bones_@gentoo.org> blassic-0.8.0.ebuild:
-  version bump
-
-  22 Jan 2003; Guy Martin <gmsoft@gentoo.org> blassic-0.7.2.ebuild :
-  Marked stable on hppa.
-
-  28 Sep 2003; Michael Sterrett <msterret@gentoo.org> blassic-0.7.2.ebuild:
-  mark stable for x86
-
-  22 Sep 2003; <paul@gentoo.org> metadata.xml:
-  Fix metadata.xml
-
-*blassic-0.7.2 (21 Sep 2003)
-
-  21 Sep 2003; Michael Sterrett <msterret@gentoo.org> blassic-0.7.2.ebuild:
-  version bump
-
-*blassic-0.7.1 (07 Sep 2003)
-
-  07 Sep 2003; Michael Sterrett <msterret@gentoo.org> blassic-0.7.1.ebuild:
-  version bump
-
-*blassic-0.7.0 (28 Aug 2003)
-
-  28 Aug 2003; Michael Sterrett <msterret@gentoo.org> blassic-0.7.0.ebuild:
-  version bump
-
-*blassic-0.6.1 (22 Aug 2003)
-
-  22 Aug 2003; Michael Sterrett <msterret@gentoo.org> blassic-0.6.1.ebuild:
-  version bump
-
-*blassic-0.5.4 (31 Jul 2003)
-
-  31 Jul 2003; Ryan Phillips <rphillips@gentoo.org> blassic-0.5.4.ebuild :
-  Package created by Ivan-Benjamin Garcia Tora. Fixes #20860

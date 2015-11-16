@@ -1,96 +1,105 @@
 # ChangeLog for dev-java/java-service-wrapper
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-service-wrapper/ChangeLog,v 1.17 2014/09/05 22:34:15 jauhien Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*java-service-wrapper-3.5.25 (05 Sep 2014)
+*java-service-wrapper-3.5.25 (09 Aug 2015)
+*java-service-wrapper-3.5.14-r1 (09 Aug 2015)
+*java-service-wrapper-3.5.14 (09 Aug 2015)
+*java-service-wrapper-3.3.3 (09 Aug 2015)
+*java-service-wrapper-3.3.1 (09 Aug 2015)
+*java-service-wrapper-3.2.3 (09 Aug 2015)
 
-  05 Sep 2014; Jauhien Piatlicki <jauhien@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/java-service-wrapper-3.2.3-build.xml.patch,
+  +files/java-service-wrapper-3.3.1-as-needed.patch,
+  +files/java-service-wrapper-3.5.14-as-needed.patch,
+  +files/java-service-wrapper-3.5.14-gentoo-wrapper-defaults.patch,
   +files/java-service-wrapper-3.5.25-as-needed.patch,
   +files/java-service-wrapper-3.5.25-gentoo-wrapper-defaults.patch,
   +files/java-service-wrapper-3.5.25-testsuite.patch,
-  +java-service-wrapper-3.5.25.ebuild:
-  version bump, closing bug #517730
+  +java-service-wrapper-3.2.3.ebuild, +java-service-wrapper-3.3.1.ebuild,
+  +java-service-wrapper-3.3.3.ebuild, +java-service-wrapper-3.5.14.ebuild,
+  +java-service-wrapper-3.5.14-r1.ebuild, +java-service-wrapper-3.5.25.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  java-service-wrapper-3.2.3.ebuild, java-service-wrapper-3.3.1.ebuild,
-  java-service-wrapper-3.3.3.ebuild, java-service-wrapper-3.5.14-r1.ebuild,
-  java-service-wrapper-3.5.14.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Jul 2012; Agostino Sarubbo <ago@gentoo.org>
-  java-service-wrapper-3.5.14-r1.ebuild:
-  Stable for amd64, wrt bug #425628
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Jul 2012; Johannes Huber <johu@gentoo.org>
-  java-service-wrapper-3.5.14-r1.ebuild:
-  Stable for x86, wrt bug #425628
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 May 2012; Ralph Sennhauser <sera@gentoo.org>
-  java-service-wrapper-3.5.14-r1.ebuild:
-  Don't try to install nonexistent docs. #415703
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*java-service-wrapper-3.5.14-r1 (03 May 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 May 2012; Ralph Sennhauser <sera@gentoo.org>
-  +java-service-wrapper-3.5.14-r1.ebuild,
-  +files/java-service-wrapper-3.5.14-gentoo-wrapper-defaults.patch:
-  Don't resolve symlinks to run-java-tool. #414027
-  Drop base.eclass, bump EAPI and use java_prepare.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Apr 2012; Alistair Bush <ali_bush@gentoo.org>
-  java-service-wrapper-3.5.14.ebuild:
-  Fix doc install
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*java-service-wrapper-3.5.14 (18 Apr 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Apr 2012; Alistair Bush <ali_bush@gentoo.org>
-  +java-service-wrapper-3.5.14.ebuild,
-  +files/java-service-wrapper-3.5.14-as-needed.patch, metadata.xml:
-  version bump and remove myself as maintainer, java herd should maintain.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Jan 2010; Ulrich Mueller <ulm@gentoo.org>
-  java-service-wrapper-3.2.3.ebuild:
-  License is identical with MIT.
+  Bug: https://bugs.gentoo.org/552720
 
-*java-service-wrapper-3.3.3 (25 Feb 2009)
+  28 Aug 2015; Manuel Rüger <mrueg@gentoo.org>
+  -java-service-wrapper-3.2.3.ebuild, -java-service-wrapper-3.3.1.ebuild,
+  -java-service-wrapper-3.3.3.ebuild, -java-service-wrapper-3.5.14.ebuild:
+  Remove old
 
-  25 Feb 2009; Petteri Räty <betelgeuse@gentoo.org>
-  +java-service-wrapper-3.3.3.ebuild:
-  Version bump. Generate javadoc manually because build.xml does not support
-  it and they aren't bundled in upstream binaries either. Fixes bug #260249.
+  Package-Manager: portage-2.2.20.1
 
-  16 Nov 2008; Serkan Kaba <serkan@gentoo.org>
-  java-service-wrapper-3.3.1.ebuild:
-  Add comment about upstream report.
+*java-service-wrapper-3.5.25-r1 (16 Oct 2015)
 
-  16 Nov 2008; Serkan Kaba <serkan@gentoo.org>
-  +files/java-service-wrapper-3.3.1-as-needed.patch,
-  java-service-wrapper-3.3.1.ebuild:
-  Add fix for --as-needed reported in bug #247050. Thanks to Diego Pettenò
-  <flameeyes@gentoo.org> for report and help.
+  16 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  +java-service-wrapper-3.5.25-r1.ebuild:
+  Call ejavadoc wrapper instead of javadoc. Stick patches in PATCHES array.
 
-  07 Sep 2008; Alistair Bush <ali_bush@gentoo.org>
-  +java-service-wrapper-3.3.1.ebuild:
-  Bump to 3.3.1. See #236856. Thanks a lot to tommy@gentoo.org
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  06 Sep 2008; Alistair Bush <ali_bush@gentoo.org>
-  -java-service-wrapper-3.3.1.ebuild:
-  Remove 3.3.1 over questions of licencing.
+  16 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  java-service-wrapper-3.5.25-r1.ebuild:
+  Stable for amd64. Stable for x86 using the ALLARCHES policy.
 
-*java-service-wrapper-3.3.1 (06 Sep 2008)
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  06 Sep 2008; Alistair Bush <ali_bush@gentoo.org>
-  +java-service-wrapper-3.3.1.ebuild:
-  Bump to 3.3.1. See #236856. Thanks a lot to tommy@gentoo.org
+  16 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/java-service-wrapper-3.2.3-build.xml.patch,
+  -files/java-service-wrapper-3.3.1-as-needed.patch,
+  -files/java-service-wrapper-3.5.14-as-needed.patch,
+  -files/java-service-wrapper-3.5.14-gentoo-wrapper-defaults.patch,
+  -java-service-wrapper-3.5.14-r1.ebuild, -java-service-wrapper-3.5.25.ebuild:
+  Clean up old.
 
-  27 Feb 2008; Alistair Bush <ali_bush@gentoo.org>
-  java-service-wrapper-3.2.3.ebuild:
-  Fixed build issues on x86 thanks to Tommy[D] <tommy100@gmx.de>.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-*java-service-wrapper-3.2.3 (25 Feb 2008)
-
-  25 Feb 2008; Alistair Bush <ali_bush@gentoo.org>
-  +files/java-service-wrapper-3.2.3-build.xml.patch, +metadata.xml,
-  +java-service-wrapper-3.2.3.ebuild:
-  Initial ebuild in tree, based on work done by caster and Betelgeuse in java
-  overlays.

@@ -1,114 +1,57 @@
 # ChangeLog for www-apps/dotproject
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/dotproject/ChangeLog,v 1.12 2013/01/03 12:41:25 elvanor Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*dotproject-2.1.7-r1 (03 Jan 2013)
+*dotproject-2.1.7-r1 (09 Aug 2015)
 
-  03 Jan 2013; <elvanor@gentoo.org> -dotproject-2.1.2-r1.ebuild,
-  +dotproject-2.1.7-r1.ebuild, +files/dotproject-2.1.7-pear-date.patch:
-  Added a patch to work with system PEAR/Date. Removed old ebuild no longer
-  compatible with stable PHP.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +dotproject-2.1.7-r1.ebuild, +files/dotproject-2.1.7-pear-date.patch,
+  +files/install-en.txt, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*dotproject-2.1.7 (02 Jan 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Jan 2013; <elvanor@gentoo.org> +dotproject-2.1.7.ebuild:
-  Bump to version 2.1.7. Previous version is not compatible with PHP 5.4.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Feb 2010; Samuli Suominen <ssuominen@gentoo.org>
-  dotproject-2.1.2-r1.ebuild:
-  Fix poppler depend.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Mar 2009; Peter Alfredsen <loki_val@gentoo.org>
-  dotproject-2.1.2-r1.ebuild:
-  Update dependencies w.r.t. bug 264230, fully-split-out poppler transition.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*dotproject-2.1.2-r1 (26 Jan 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Jan 2009; Peter Volkov <pva@gentoo.org> -dotproject-2.1.2.ebuild,
-  +dotproject-2.1.2-r1.ebuild:
-  Added patch from upstream developer Matthew Dirks to fix security issues
-  reported in bug #236518. Thank Robert Buchholz for report.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*dotproject-2.1.2 (02 Oct 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Oct 2008; wrobel@gentoo.org files/install-en.txt,
-  -dotproject-2.1.1.ebuild, +dotproject-2.1.2.ebuild:
-  Updated to dotproject-2.1.2 (#239017).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Apr 2008; wrobel@gentoo.org files/install-en.txt:
-  Fixed link to install instructions. Bug #218908.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Feb 2008; Benedikt Böhm <hollow@gentoo.org> dotproject-2.1.1.ebuild:
-  ebuild cleanup wrt #208584
-
-*dotproject-2.1.1 (05 Dec 2007)
-
-  05 Dec 2007; Gunnar Wrobel <wrobel@gentoo.org> -dotproject-2.1.ebuild,
-  +dotproject-2.1.1.ebuild:
-  -m Added dotproject-2.1.1 to the tree. Includes security fixes: Removed
-  dotproject-2.1 from the tree (#201333).
-
-  16 Oct 2007; <wrobel@gentoo.org> dotproject-2.1.ebuild:
-  Added app-text poppler dependency (see #189203).
-
-*dotproject-2.1 (16 Oct 2007)
-
-  16 Oct 2007; <wrobel@gentoo.org> +files/install-en.txt, +metadata.xml,
-  +dotproject-2.1.ebuild:
-  Bumped to dotproject-2.1 (fixes #196065) and moved over to www-apps.
-
-  15 Jul 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Assigning to web-apps, as beu is being retired (#66608).
-
-  01 Mar 2007; Renat Lumpau <rl03@gentoo.org> dotproject-2.0.4.ebuild:
-  Cleanup wrt bug #159781
-
-  23 Nov 2006; Francesco Riosa <vivo@gentoo.org> dotproject-2.0.4.ebuild:
-  dev-db/mysql => virtual/mysql
-
-  27 Jul 2006; Stuart Herbert <stuart@gentoo.org> -dotproject-2.0.3.ebuild:
-  Removed old, vulnerable version from the tree.
-
-*dotproject-2.0.4 (27 Jul 2006)
-
-  27 Jul 2006; Stuart Herbert <stuart@gentoo.org> +dotproject-2.0.4.ebuild:
-  Version bump; fixes bug 138118
-
-*dotproject-2.0.3 (11 Jun 2006)
-
-  11 Jun 2006; Stuart Herbert <stuart@gentoo.org> +dotproject-2.0.3.ebuild:
-  Version bump; addresses security bug 135650
-
-  26 Oct 2005; Renat Lumpau <rl03@gentoo.org> dotproject-2.0.1.ebuild:
-  Fixed typo for bug #110526.
-
-*dotproject-2.0.1 (25 Oct 2005)
-
-  25 Oct 2005; Renat Lumpau <rl03@gentoo.org> +files/install-en.txt,
-  +dotproject-2.0.1.ebuild:
-  Version bump per bug #88004.
-
-  25 Jul 2005; Simon Stelling <blubb@gentoo.org> dotproject-1.0.2.ebuild:
-  added ~amd64 keyword
-
-  27 May 2005; Jason Wever <weeve@gentoo.org> dotproject-1.0.2.ebuild:
-  Added ~sparc keyword wrt bug #93799.
-
-  04 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  dotproject-1.0.2.ebuild:
-  Masked dotproject-1.0.2.ebuild stable for ppc
-
-  16 Jul 2004; David Holm <dholm@gentoo.org> dotproject-1.0.2.ebuild:
-  Added to ~ppc.
-
-  15 Jul 2004; Rob Holland <tigger@ereet.co.uk> dotproject-1.0.2.ebuild:
-  Updated the description and keywords. Closes #57100. Thanks to
-  jesse@boldandbusted.com for pointing out the blunder ;)
-
-*dotproject-1.0.2 (11 Jul 2004)
-
-  11 Jul 2004; Stuart Herbert <stuart@gentoo.org> +metadata.xml,
-  +files/1.0.2/install-en.txt, +files/1.0.2/postinstall.sh,
-  +dotproject-1.0.2.ebuild:
-  Initial import
+  Bug: https://bugs.gentoo.org/552720
 

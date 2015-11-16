@@ -1,96 +1,58 @@
 # ChangeLog for net-proxy/sshproxy
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/sshproxy/ChangeLog,v 1.19 2015/03/27 08:17:06 idella4 Exp $
+# (auto-generated from git log)
 
-*sshproxy-0.6.0_beta2-r2 (27 Mar 2015)
+*sshproxy-0.6.0_beta2-r2 (09 Aug 2015)
 
-  27 Mar 2015; Ian Delaney <idella4@gentoo.org> +sshproxy-0.6.0_beta2-r2.ebuild,
-  -sshproxy-0.6.0_beta2-r1.ebuild:
-  revbump; conversion -> distutils-r1, rm old ebuild
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sshproxy-0.6.0_beta2-rename-wrappers.patch, +files/sshproxy.ini,
+  +files/sshproxyd.confd, +files/sshproxyd.initd, +metadata.xml,
+  +sshproxy-0.6.0_beta2-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Jan 2015; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Reassign and cleanup as discussed at https://www.mail-archive.com/gentoo-
-  dev@lists.gentoo.org/msg66357.html
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Jan 2014; Mike Frysinger <vapier@gentoo.org>
-  sshproxy-0.6.0_beta2-r1.ebuild:
-  Inherit the user eclass for enewuser/etc...
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Mar 2013; Tom Wijsman <TomWij@gentoo.org> sshproxy-0.6.0_beta2-r1.ebuild:
-  EAPI 5. Removed paramiko version check, fixes bug #453786 reported by
-  flameeyes.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  sshproxy-0.6.0_beta2-r1.ebuild:
-  Use Python 2 (bug #315879).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Jan 2011; Kacper Kowalik <xarthisius@gentoo.org>
-  sshproxy-0.6.0_beta2-r1.ebuild:
-  x11-misc/pssh moved to net-misc/
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Feb 2010; Peter Volkov <pva@gentoo.org> -sshproxy-0.6.0_beta2.ebuild:
-  Dropped old. It used epatch but failed to inherit eutils.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*sshproxy-0.6.0_beta2-r1 (23 Jul 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Jul 2009; Alin Năstac <mrness@gentoo.org>
-  +files/sshproxy-0.6.0_beta2-rename-wrappers.patch, -sshproxy-0.5.0.ebuild,
-  +sshproxy-0.6.0_beta2-r1.ebuild:
-  Avoid conflicts with net-misc/putty and x11-terms/pssh by renaming pscp and
-  pssh scripts (#248193 and #278794).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Dec 2008; Alin Năstac <mrness@gentoo.org> sshproxy-0.5.0.ebuild,
-  -sshproxy-0.6.0_beta1.ebuild, sshproxy-0.6.0_beta2.ebuild:
-  Add !net-misc/putty dependency atom (#248193).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
+  Bug: https://bugs.gentoo.org/552720
 
-*sshproxy-0.6.0_beta2 (29 Jan 2008)
-
-  29 Jan 2008; Alin Năstac <mrness@gentoo.org>
-  -sshproxy-0.6.0_beta0.ebuild, +sshproxy-0.6.0_beta2.ebuild:
-  Version bump (#207866).
-
-*sshproxy-0.6.0_beta1 (27 Dec 2007)
-
-  27 Dec 2007; Alin Năstac <mrness@gentoo.org>
-  +sshproxy-0.6.0_beta1.ebuild:
-  Version bump (#203168).
-
-*sshproxy-0.6.0_beta0 (11 Dec 2007)
-
-  11 Dec 2007; Alin Năstac <mrness@gentoo.org> files/sshproxy.ini,
-  files/sshproxyd.initd, +sshproxy-0.6.0_beta0.ebuild:
-  Version bump (#201816).
-
-  04 Nov 2007; Alin Năstac <mrness@gentoo.org> sshproxy-0.5.0.ebuild:
-  Remove useless pkg_setup call from pkg_preinst.
-
-  17 Jan 2007; Alin Năstac <mrness@gentoo.org> -sshproxy-0.4.4.ebuild:
-  Remove obsolete version.
-
-*sshproxy-0.5.0 (28 Sep 2006)
-
-  28 Sep 2006; Alin Nastac <mrness@gentoo.org> +files/sshproxy.ini,
-  +files/sshproxyd.confd, files/sshproxyd.initd, -sshproxy-0.4.3.ebuild,
-  +sshproxy-0.5.0.ebuild:
-  Version bump (#147921).
-
-*sshproxy-0.4.4 (25 Aug 2006)
-
-  25 Aug 2006; Alin Nastac <mrness@gentoo.org> -sshproxy-0.4.2.ebuild,
-  +sshproxy-0.4.4.ebuild:
-  Version bump (#141415).
-
-*sshproxy-0.4.3 (15 Jul 2006)
-
-  15 Jul 2006; Alin Nastac <mrness@gentoo.org> +sshproxy-0.4.3.ebuild:
-  Version bump (#140416).
-
-*sshproxy-0.4.2 (03 Jul 2006)
-
-  03 Jul 2006; Alin Nastac <mrness@gentoo.org> +files/sshproxyd.initd,
-  +metadata.xml, +sshproxy-0.4.2.ebuild:
-  Initial import from bug #138058, thanks to David Guerizec
-  <david@guerizec.net> which is also the author of sshproxy.

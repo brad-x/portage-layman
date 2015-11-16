@@ -1,196 +1,103 @@
 # ChangeLog for net-wireless/blueman
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/blueman/ChangeLog,v 1.39 2015/08/08 16:16:09 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Aug 2015; Michał Górny <mgorny@gentoo.org> blueman-2.0.ebuild,
-  blueman-9999.ebuild:
-  Add additional deps and kernel checks for USE=network. Bug #487378.
+*blueman-9999 (09 Aug 2015)
+*blueman-2.0 (09 Aug 2015)
+*blueman-1.98_p20150105 (09 Aug 2015)
+*blueman-1.23-r2 (09 Aug 2015)
 
-  08 Aug 2015; Michał Górny <mgorny@gentoo.org> -blueman-1.23-r1.ebuild,
-  -blueman-1.23.ebuild, -blueman-1.23_p20140717-r1.ebuild,
-  -files/blueman-1.23_p20140717-set-codeset-for-gettext-to-UTF-8-always.patch,
-  blueman-1.23-r2.ebuild, blueman-1.98_p20150105.ebuild:
-  Clean up old. Update HOMEPAGE in the remaining ebuilds.
-
-*blueman-2.0 (08 Aug 2015)
-
-  08 Aug 2015; Michał Górny <mgorny@gentoo.org> +blueman-2.0.ebuild,
-  +files/blueman-2.0-set-codeset-for-gettext-to-UTF-8-always.patch,
-  blueman-9999.ebuild:
-  Version bump with schema install fix to the live ebuild.
-
-  08 Aug 2015; Michał Górny <mgorny@gentoo.org> blueman-9999.ebuild:
-  Fix USE=appindicator and deps for USE=pulseaudio.
-
-  08 Aug 2015; Michał Górny <mgorny@gentoo.org>
-  -files/blueman-9999-plugins-conf-file.patch, blueman-9999.ebuild,
-  files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch,
-  metadata.xml:
-  Update and clean up the live ebuild and patches.
-
-  04 Apr 2015; Michał Górny <mgorny@gentoo.org> blueman-9999.ebuild:
-  Sync -9999. Remove conf file path patch and GConf magic, GSettings are used
-  for config now. Pass proper --docdir.
-
-  03 Mar 2015; Michał Górny <mgorny@gentoo.org>
-  files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
-  Fix accidental retab.
-
-  01 Mar 2015; Michał Górny <mgorny@gentoo.org>
-  files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
-  Update the codeset patch for -9999.
-
-  05 Jan 2015;  Rick Farina<zerochaos@gentoo.org> 
-  -blueman-1.21-r1.ebuild, blueman-1.23-r1.ebuild,
-  blueman-1.23-r2.ebuild, blueman-1.23.ebuild,
-  blueman-1.23_p20140717-r1.ebuild, blueman-9999.ebuild:
-  remove some repoman warnings and an old version
-
-*blueman-1.98_p20150105 (05 Jan 2015)
-
-  05 Jan 2015;  Rick Farina <zerochaos@gentoo.org> 
-  +blueman-1.98_p20150105.ebuild,
-  +files/blueman-1.98_p20150105-set-codeset-for-gettext-to-UTF-8-always.patch,
-  metadata.xml:
-  new snapshot
-
-  07 Dec 2014; Maxim Koltsov <maksbotan@gentoo.org>
-  blueman-1.23_p20140717-r1.ebuild:
-  Depend on pygobject slot 3 unconditionally, bug #523482. Depend on gnome-icon-
-  theme until release with fix, bug #455320 and duplicates.
-
-  24 Nov 2014; Rick Farina <zerochaos@gentoo.org>
-  +files/blueman-1.23_p20140717-set-codeset-for-gettext-to-UTF-8-always.patch,
-  blueman-1.23_p20140717-r1.ebuild:
-  reintroduce old patch for blueman 20140717 snapshot
-
-  20 Nov 2014; Michał Górny <mgorny@gentoo.org>
-  files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
-  Fix the patch to use space- or tab-indentation matching particular input file.
-
-  20 Nov 2014; Michał Górny <mgorny@gentoo.org>
-  files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
-  Update the -9999 patch.
-
-  14 Aug 2014; Rick Farina <zerochaos@gentoo.org> blueman-9999.ebuild:
-  remove blocker, upstream doesn't use their own icons anymore
-
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> blueman-1.21-r1.ebuild,
-  blueman-1.23-r1.ebuild, blueman-1.23-r2.ebuild, blueman-1.23.ebuild,
-  blueman-1.23_p20140717-r1.ebuild, blueman-9999.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
-
-  04 Aug 2014; Rick Farina <zerochaos@gentoo.org>
-  blueman-1.23_p20140717-r1.ebuild, blueman-9999.ebuild:
-  adding temp blocker for bug 518992
-
-*blueman-1.23_p20140717-r1 (01 Aug 2014)
-
-  01 Aug 2014; Michał Górny <mgorny@gentoo.org>
-  +blueman-1.23_p20140717-r1.ebuild, -blueman-1.23_p20140717.ebuild,
-  blueman-9999.ebuild:
-  Update deps from configure.ac. Switch to python-single-r1. Add missing ||die.
-
-*blueman-1.23_p20140717 (01 Aug 2014)
-
-  01 Aug 2014; Rick Farina <zerochaos@gentoo.org>
-  +blueman-1.23_p20140717.ebuild:
-  adding snapshot of git for bluez-5 support, been using it for weeks and
-  working well
-
-  12 May 2014; Rick Farina <zerochaos@gentoo.org> blueman-9999.ebuild:
-  upstream merged the bluez5 branch into master
-
-*blueman-9999 (05 May 2014)
-
-  05 May 2014; Rick Farina <zerochaos@gentoo.org> +blueman-9999.ebuild,
-  +files/blueman-9999-plugins-conf-file.patch,
-  +files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
-  initial commit of 9999 ebuild with bluez5 support, if we like it, we can
-  snapshot
-
-  18 Feb 2014; Michał Górny <mgorny@gentoo.org> blueman-1.21-r1.ebuild,
-  blueman-1.23-r1.ebuild, blueman-1.23-r2.ebuild, blueman-1.23.ebuild:
-  Require <bluez-5 since blueman does not support the new APIs.
-
-  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop mobile herd as talked in gentoo-dev ML
-
-*blueman-1.23-r2 (20 Jun 2012)
-
-  20 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> +blueman-1.23-r2.ebuild,
-  blueman-1.23-r1.ebuild:
-  Convert shebangs to make sure python2.7 is used and set dependency to
-  python-2.7 since it does not work with python-2.6 (bug #421631).
-
-*blueman-1.23-r1 (19 Jun 2012)
-
-  19 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> +blueman-1.23-r1.ebuild,
-  +files/blueman-1.23-set-codeset-for-gettext-to-UTF-8-always.patch:
-  Fix segfault with non-UTF-8 locale (bug #414871).
-
-*blueman-1.23 (13 Jun 2012)
-
-  13 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> +blueman-1.23.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +blueman-1.23-r2.ebuild,
+  +blueman-1.98_p20150105.ebuild, +blueman-2.0.ebuild, +blueman-9999.ebuild,
   +files/blueman-1.23-fix-broken-status-icon.patch,
-  +files/blueman-1.23-plugins-conf-file.patch, metadata.xml:
-  Version bump (bug #386575, thanks to Leho Kraav for the hint for the broken
-  status icon), also fixes bug #337947 by depending on the hicolor-icon-theme
-  package, bug #351647 based on the patch by Vince C. and modified by me and bug
-  #392241 by now using the gconf USE flag instead of gnome.
+  +files/blueman-1.23-plugins-conf-file.patch,
+  +files/blueman-1.23-set-codeset-for-gettext-to-UTF-8-always.patch,
+  +files/blueman-1.98_p20150105-set-codeset-for-gettext-to-UTF-8-always.patch,
+  +files/blueman-2.0-set-codeset-for-gettext-to-UTF-8-always.patch,
+  +files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> blueman-1.21-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
-  blueman-1.21-r1.ebuild:
-  Depend on correct slot of pygobject.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> blueman-1.21-r1.ebuild:
-  Remove sys-apps/hal support wrt #313389.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 Oct 2010; Samuli Suominen <ssuominen@gentoo.org>
-  blueman-1.21-r1.ebuild:
-  Enable sys-auth/polkit support wrt #340084.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  08 Jun 2010; Tiziano Müller <dev-zero@gentoo.org> blueman-1.21.ebuild,
-  blueman-1.21-r1.ebuild:
-  Re-added dropped ~ppc keyword.
+  09 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Updating remote-id in metadata.xml
 
-*blueman-1.21-r1 (08 Jun 2010)
+  Package-Manager: portage-2.2.20
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Jun 2010; Tiziano Müller <dev-zero@gentoo.org>
-  +blueman-1.21-r1.ebuild:
-  Update icon cache in pkg_postinst/postrm (bug #321921).
+  13 Aug 2015; Michał Górny <mgorny@gentoo.org> blueman-9999.ebuild,
+  -files/blueman-9999-set-codeset-for-gettext-to-UTF-8-always.patch:
+  9999: remove the codeset patch thas has been merged upstream
 
-*blueman-1.21 (11 May 2010)
+  Package-Manager: portage-2.2.20
 
-  11 May 2010; Tiziano Müller <dev-zero@gentoo.org> +blueman-1.21.ebuild:
-  Version bump (bug #289902). Also solves bug #274085 (stripping bogus
-  line), bug #274894 (drop dep on notification-daemon completely,
-  automatically pulled in via notify-python), bug #283721 (solved by
-  upstream), bug #315893 (use get_python_sitedir), bug #316507 (added
-  --disable-static and rm *.la file), bug #285907 (solved by upstream).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  25 Apr 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  blueman-1.02.ebuild, blueman-1.10.ebuild:
-  Delete calls to deprecated python_version().
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> blueman-1.10.ebuild:
-  Keywording for ppc, bug 270737
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*blueman-1.10 (23 Apr 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Apr 2009; Tiziano Müller <dev-zero@gentoo.org> +blueman-1.10.ebuild:
-  Version bump (bug #266901).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Mar 2009; Tiziano Müller <dev-zero@gentoo.org> blueman-1.02.ebuild:
-  Added gnome USE flag for gconf-python dependency. Added
-  pkg_postrm/postinst functions calling mod_python_optimize/cleanup and
-  setting python_need_rebuild.
+  Bug: https://bugs.gentoo.org/552720
 
-*blueman-1.02 (01 Mar 2009)
+  12 Sep 2015; Zero_Chaos <zerochaos@gentoo.org>
+  -blueman-1.98_p20150105.ebuild, metadata.xml:
+  remove broken 1.98 (missing patch and obsolete)
 
-  01 Mar 2009; Tiziano Müller <dev-zero@gentoo.org> +metadata.xml,
-  +blueman-1.02.ebuild:
-  Initial commit for bug #214554. Ebuild written from scratch by me.
+  Package-Manager: portage-2.2.20.1
+
+*blueman-2.0-r1 (04 Oct 2015)
+
+  04 Oct 2015; Pacho Ramos <pacho@gentoo.org> +blueman-2.0-r1.ebuild:
+  gnome-bluetooth blocker is no longer needed as the colliding file was fixed
+  by upstream
+
+  Package-Manager: portage-2.2.22
+
+  27 Oct 2015; Pacho Ramos <pacho@gentoo.org> blueman-2.0-r1.ebuild:
+  ppc rekeyword, bug #557044
+
+  Package-Manager: portage-2.2.23
+
+  27 Oct 2015; Pacho Ramos <pacho@gentoo.org> -blueman-1.23-r2.ebuild,
+  -blueman-2.0.ebuild, metadata.xml:
+  Drop old, bug #564264
+
+  Package-Manager: portage-2.2.23
+

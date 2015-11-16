@@ -1,37 +1,63 @@
 # ChangeLog for sys-process/unixtop
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/unixtop/ChangeLog,v 1.6 2015/07/22 20:33:57 mrueg Exp $
+# (auto-generated from git log)
 
-  22 Jul 2015; Manuel Rüger <mrueg@gentoo.org> -unixtop-3.8_beta1-r1.ebuild,
-  -unixtop-3.8_beta1-r2.ebuild:
-  Remove old.
+*unixtop-3.8_beta1-r3 (09 Aug 2015)
 
-  14 Jan 2014; Fabian Groffen <grobian@gentoo.org> unixtop-3.8_beta1-r3.ebuild:
-  Marked ~amd64-linux, bug #350964
-
-*unixtop-3.8_beta1-r3 (09 May 2012)
-
-  09 May 2012; Fabian Groffen <grobian@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/unixtop-3.8_beta1-high-threadid-crash.patch,
   +files/unixtop-3.8_beta1-memleak-fix-v2.patch,
-  +files/unixtop-3.8_beta1-percent-cpu.patch, +unixtop-3.8_beta1-r3.ebuild:
-  Revbump for some patches from Oracle/OpenIndiana
-
-*unixtop-3.8_beta1-r2 (25 Jan 2010)
-
-  25 Jan 2010; Fabian Groffen <grobian@gentoo.org>
-  +unixtop-3.8_beta1-r2.ebuild,
-  +files/unixtop-3.8_beta1-high-threadid-crash.patch:
-  Add patch for top crashing when high thread-id's are involved, thanks
-  calculuspenguin for the pointer in bug #302142
-
-  15 Jan 2010; Ulrich Mueller <ulm@gentoo.org> unixtop-3.8_beta1-r1.ebuild:
-  LICENSE is identical with BSD, bug 301123.
-
-*unixtop-3.8_beta1-r1 (05 Apr 2009)
-
-  05 Apr 2009; Fabian Groffen <grobian@gentoo.org>
   +files/unixtop-3.8_beta1-memleak-fix.patch,
-  +files/unixtop-3.8_beta1-renice-segfault.patch, metadata.xml,
-  -unixtop-3.8_beta1.ebuild, +unixtop-3.8_beta1-r1.ebuild:
-  Bump for two patches from OpenSolaris folks to fix a memleak and a
-  segfault
+  +files/unixtop-3.8_beta1-ncurses.patch,
+  +files/unixtop-3.8_beta1-no-AX-macros.patch,
+  +files/unixtop-3.8_beta1-percent-cpu.patch,
+  +files/unixtop-3.8_beta1-renice-segfault.patch, +metadata.xml,
+  +unixtop-3.8_beta1-r3.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

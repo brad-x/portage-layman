@@ -1,190 +1,57 @@
 # ChangeLog for games-simulation/searchandrescue
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/searchandrescue/ChangeLog,v 1.42 2014/02/08 16:25:56 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  08 Feb 2014; Michael Sterrett <mr_bones_@gentoo.org>
-  searchandrescue-1.5.0.ebuild:
-  Fix building on non-x86_32 platforms (bug #430448)
+*searchandrescue-1.5.0 (09 Aug 2015)
 
-  08 Feb 2014; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/searchandrescue-1.4.0-build.patch, -searchandrescue-1.4.0.ebuild:
-  old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/searchandrescue-1.5.0-build.patch, +metadata.xml,
+  +searchandrescue-1.5.0.ebuild:
+  proj/gentoo: Initial commit
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> searchandrescue-1.5.0.ebuild:
-  Stable for x86, wrt bug #485126
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Sep 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  searchandrescue-1.5.0.ebuild:
-  no need to cd
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Sep 2013; Chema Alonso <nimiux@gentoo.org> searchandrescue-1.5.0.ebuild:
-  Stable for amd64 wrt bug #485126
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*searchandrescue-1.5.0 (23 Jan 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/searchandrescue-1.5.0-build.patch, +searchandrescue-1.5.0.ebuild,
-  files/searchandrescue-1.4.0-build.patch:
-  version bump (bug #452266)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/searchandrescue-1.3.0-build.patch, -searchandrescue-1.1.0.ebuild,
-  -searchandrescue-1.3.0.ebuild:
-  old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
-  searchandrescue-1.4.0.ebuild:
-  Stable on amd64 wrt bug #385909
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  searchandrescue-1.4.0.ebuild:
-  x86 stable wrt bug #385909
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*searchandrescue-1.4.0 (14 Aug 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Aug 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-1.4.0.ebuild, +files/searchandrescue-1.4.0-build.patch:
-  version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  26 May 2011; Markus Meier <maekke@gentoo.org> searchandrescue-1.3.0.ebuild:
-  x86 stable, bug #366401
-
-  11 May 2011; Markos Chandras <hwoarang@gentoo.org>
-  searchandrescue-1.3.0.ebuild:
-  Stable on amd64 wrt bug #366401
-
-*searchandrescue-1.3.0 (07 Apr 2011)
-
-  07 Apr 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-1.3.0.ebuild, +files/searchandrescue-1.3.0-build.patch:
-  version bump
-
-*searchandrescue-1.2.0 (09 Mar 2011)
-
-  09 Mar 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-1.2.0.ebuild:
-  version bump
-
-  08 Nov 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  -searchandrescue-0.8.2-r1.ebuild,
-  -files/searchandrescue-0.8.2-gcc33.patch,
-  -files/searchandrescue-0.8.2-gcc41.patch,
-  -files/searchandrescue-0.8.2-gcc412.patch,
-  -files/searchandrescue-0.8.2-gcc441.patch,
-  -files/searchandrescue-0.8.2-makejs.patch:
-  clean old version and files (drops ppc to ~)
-
-  22 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  searchandrescue-1.1.0.ebuild:
-  stable x86, bug 341413
-
-  20 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  searchandrescue-1.1.0.ebuild:
-  Stable on amd64 wrt bug #341413
-
-*searchandrescue-1.1.0 (16 Sep 2010)
-
-  16 Sep 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-1.1.0.ebuild:
-  version bump
-
-  01 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  searchandrescue-1.0.0.ebuild:
-  Stable on amd64 wrt bug #328337
-
-  17 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
-  searchandrescue-1.0.0.ebuild:
-  stable x86, bug 328337
-
-*searchandrescue-1.0.0 (14 Jun 2010)
-
-  14 Jun 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-1.0.0.ebuild:
-  version bump
-
-  27 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  searchandrescue-0.8.4.ebuild:
-  x86 stable wrt bug #315915
-
-*searchandrescue-0.8.4 (18 Mar 2010)
-
-  18 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-0.8.4.ebuild:
-  version bump
-
-*searchandrescue-0.8.3 (10 Mar 2010)
-
-  10 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +searchandrescue-0.8.3.ebuild:
-  version bump
-
-  04 Sep 2009; Tupone Alfredo <tupone@gentoo.org>
-  +files/searchandrescue-0.8.2-makejs.patch,
-  searchandrescue-0.8.2-r1.ebuild:
-  Enable parallel compilation
-
-  04 Sep 2009; Tupone Alfredo <tupone@gentoo.org>
-  +files/searchandrescue-0.8.2-gcc441.patch,
-  searchandrescue-0.8.2-r1.ebuild:
-  Fix build with gcc-4.4.1 Bug #283451 by Steffen Schaumburg
-
-  18 Mar 2009; Brent Baude <ranger@gentoo.org>
-  searchandrescue-0.8.2-r1.ebuild:
-  stable ppc, bug 259259
-
-  22 Feb 2009; Raúl Porcel <armin76@gentoo.org>
-  searchandrescue-0.8.2-r1.ebuild:
-  x86 stable wrt #259259
-
-  16 Feb 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  searchandrescue-0.8.2-r1.ebuild:
-  EAPI=2
-
-*searchandrescue-0.8.2-r1 (31 May 2007)
-
-  31 May 2007; Tupone Alfredo <tupone@gentoo.org>
-  +files/searchandrescue-0.8.2-gcc412.patch,
-  +searchandrescue-0.8.2-r1.ebuild:
-  Added menu entry. Bug #160248 by Pacho Ramos
-  Fixed compilation error & warnings with gcc-4.1.2
-
-  06 Dec 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  searchandrescue-0.8.2.ebuild:
-  Remove old virtual/x11 dependency.
-
-  25 Oct 2006; <tupone@gentoo.org> searchandrescue-0.8.2.ebuild:
-  Added ~amd64 keyword. Bug #139731 by Will Briggs
-
-  08 Apr 2006; <Tupone@gentoo.org> +files/searchandrescue-0.8.2-gcc41.patch,
-  searchandrescue-0.8.2.ebuild:
-  Fixing compilation on gcc-4.1.
-  Patches not sent upstream, unable to contact it
-
-  22 Feb 2006; <Tupone@gentoo.org> searchandrescue-0.8.2.ebuild:
-  Modular X dependency fix
-
-  13 Oct 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  -searchandrescue-0.8.1.ebuild:
-  clean older ebuild
-
-  26 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  searchandrescue-0.8.1.ebuild, searchandrescue-0.8.2.ebuild:
-  Making games last on inherit line.
-
-*searchandrescue-0.8.2 (13 May 2005)
-
-  13 May 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/searchandrescue-0.8.2-gcc33.patch, +searchandrescue-0.8.2.ebuild:
-  version bump (bug #82393)
-
-  03 Jun 2004; Aron Griffis <agriffis@gentoo.org>
-  searchandrescue-0.8.1.ebuild:
-  Fix use invocation
-
-  11 Feb 2004; David Holm <dholm@gentoo.org> searchandrescue-0.8.1.ebuild:
-  Added to ~ppc.
-
-*searchandrescue-0.8.1 (30 Jul 2003)
-
-  30 Jul 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

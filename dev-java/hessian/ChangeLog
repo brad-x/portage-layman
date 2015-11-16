@@ -1,128 +1,67 @@
 # ChangeLog for dev-java/hessian
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/hessian/ChangeLog,v 1.25 2015/07/15 12:45:28 monsieurp Exp $
+# (auto-generated from git log)
 
-  15 Jul 2015; Patrice Clement <monsieurp@gentoo.org> -hessian-3.0.20.ebuild,
-  -hessian-3.0.8-r5.ebuild, -hessian-3.1.6.ebuild:
-  Remove old. Fix bug 554962.
+*hessian-4.0.3 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> hessian-3.0.20.ebuild,
-  hessian-3.0.8-r5.ebuild, hessian-3.1.6.ebuild, hessian-4.0.3.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/3.0.8-java5.patch,
+  +files/build-3.0.8.xml, +files/build.xml-3.0.20, +files/build.xml-3.1.6,
+  +files/build.xml-4.0.3, +hessian-4.0.3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> hessian-4.0.3.ebuild:
-  x86 stable wrt bug #393943
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Dec 2011; Agostino Sarubbo <ago@gentoo.org> hessian-4.0.3.ebuild:
-  Stable for AMD64, wrt bug #393943
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*hessian-4.0.3 (03 Apr 2010)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Apr 2010; Krzysztof Pawlik <nelchael@gentoo.org>
-  +files/build.xml-4.0.3, +hessian-4.0.3.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Jun 2009; Vlastimil Babka <caster@gentoo.org> -hessian-3.0.8-r3.ebuild:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Jun 2008; Krzysiek Pawlik <nelchael@gentoo.org> hessian-3.0.20.ebuild,
-  hessian-3.1.6.ebuild:
-  Add ~ppc keyword.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 Jun 2008; Krzysiek Pawlik <nelchael@gentoo.org> hessian-3.1.6.ebuild:
-  Fix slot for hessian-3.1.6.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*hessian-3.1.6 (12 Jun 2008)
-*hessian-3.0.20 (12 Jun 2008)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Jun 2008; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/build.xml-3.0.20, +files/build.xml-3.1.6, +hessian-3.0.20.ebuild,
-  +hessian-3.1.6.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 May 2008; Kenneth Prugh <ken69267@gentoo.org> hessian-3.0.8-r5.ebuild:
-  amd64 stable, bug #219650
+  Bug: https://bugs.gentoo.org/552720
 
-  02 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  hessian-3.0.8-r5.ebuild:
-  stable x86, bug 219650
+*hessian-4.0.37 (02 Oct 2015)
 
-  02 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  hessian-3.0.8-r5.ebuild:
-  correct header
+  02 Oct 2015; Patrice Clement <monsieurp@gentoo.org>
+  -files/3.0.8-java5.patch, -files/build-3.0.8.xml, -files/build.xml-3.0.20,
+  -files/build.xml-3.1.6, +hessian-4.0.37.ebuild:
+  EAPI 5 bump. Version bump.
 
-  02 May 2008; Christian Faulhammer <opfer@gentoo.org>
-  hessian-3.0.8-r5.ebuild:
-  filter jikes
+  Package-Manager: portage-2.2.18
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
-  14 Feb 2008; Petteri Räty <betelgeuse@gentoo.org> files/build-3.0.8.xml,
-  hessian-3.0.8-r5.ebuild:
-  Ebuild cleanup and fix bug #210060.
-
-*hessian-3.0.8-r5 (14 Feb 2008)
-
-  14 Feb 2008; William L. Thomson Jr. <wltjr@gentoo.org>
-  -hessian-3.0.8-r4.ebuild, +hessian-3.0.8-r5.ebuild:
-  Switched to java-virtuals/servlet-api and set EAPI=1. Removed previous
-  revision.
-
-  01 Nov 2007; Petteri Räty <betelgeuse@gentoo.org>
-  -files/build-2.1.12.xml, -hessian-2.1.12-r2.ebuild:
-  Move 2.1 slot ebuild to java overlay as nothing in the main tree needs it.
-
-  16 Jan 2007; Petteri Räty <betelgeuse@gentoo.org>
-  -hessian-2.1.12-r1.ebuild, hessian-2.1.12-r2.ebuild,
-  -hessian-3.0.8-r2.ebuild, hessian-3.0.8-r3.ebuild,
-  hessian-3.0.8-r4.ebuild:
-  Shortened DESCRIPTION and removed unused revisions.
-
-*hessian-3.0.8-r4 (16 Jan 2007)
-
-  16 Jan 2007; Petteri Räty <betelgeuse@gentoo.org +hessian-3.0.8-r4.ebuild:
-  Fix to compile with 1.5.
-
-  28 Nov 2006; Joshua Nichols <nichoj@gentoo.org> hessian-3.0.8-r3.ebuild:
-  Stabilized on amd64 (see bug #155622).
-
-  23 Nov 2006; Christian Faulhammer <opfer@gentoo.org>
-  hessian-3.0.8-r3.ebuild:
-  stable x86, bug #155622
-
-  02 Aug 2006; Joshua Nichols <nichoj@gentoo.org> hessian-3.0.8-r3.ebuild:
-  Fixed call to java-pkg_dosrc so it doesn't generate a bogus error, to fix
-  bug #141480
-
-*hessian-3.0.8-r3 (23 Jul 2006)
-*hessian-2.1.12-r2 (23 Jul 2006)
-
-  23 Jul 2006; Joshua Nichols <jnichols@gentoo.org>
-  +hessian-2.1.12-r2.ebuild, +hessian-3.0.8-r3.ebuild:
-  Revision bump to use new Java system.
-
-  30 Nov 2005; <nichoj@gentoo.org> hessian-2.1.12-r1.ebuild,
-  hessian-3.0.8-r2.ebuild:
-  Added ~amd64 keyword (bug #110369).
-
-*hessian-3.0.8-r2 (23 Oct 2005)
-
-  23 Oct 2005; Petteri Räty <betelgeuse@gentoo.org>
-  -hessian-3.0.8-r1.ebuild, +hessian-3.0.8-r2.ebuild:
-  Separated caucho-services from 3.0.8 to dev-java/caucho-services.
-
-*hessian-3.0.8-r1 (22 Oct 2005)
-*hessian-2.1.12-r1 (22 Oct 2005)
-
-  22 Oct 2005; Petteri Räty <betelgeuse@gentoo.org> -hessian-2.1.12.ebuild,
-  +hessian-2.1.12-r1.ebuild, -hessian-3.0.8.ebuild,
-  +hessian-3.0.8-r1.ebuild:
-  Removed com.caucho.services to a separate package from 2.1.12 and 3.0.8 does
-  not install bundled burlap any more.
-
-*hessian-3.0.8 (21 Oct 2005)
-*hessian-2.1.12 (21 Oct 2005)
-
-  21 Oct 2005; Petteri Räty <betelgeuse@gentoo.org>
-  +files/build-2.1.12.xml, +files/build-3.0.8.xml, +metadata.xml,
-  +hessian-2.1.12.ebuild, +hessian-3.0.8.ebuild:
-  Initial addition. Ebuilds contributed by Josh Nichols 
-  <nichoj@alum.rpi.edu>. Fixes bug 97007.

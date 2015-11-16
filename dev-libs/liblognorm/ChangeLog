@@ -1,149 +1,102 @@
 # ChangeLog for dev-libs/liblognorm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/liblognorm/ChangeLog,v 1.36 2015/05/31 10:55:47 maekke Exp $
+# (auto-generated from git log)
 
-  31 May 2015; Markus Meier <maekke@gentoo.org> liblognorm-1.1.0.ebuild:
-  arm stable, bug #544208
+*liblognorm-1.1.0 (09 Aug 2015)
+*liblognorm-1.0.1 (09 Aug 2015)
+*liblognorm-0.3.7 (09 Aug 2015)
+*liblognorm-0.3.6 (09 Aug 2015)
 
-  30 Mar 2015; Jeroen Roovers <jer@gentoo.org> liblognorm-1.1.0.ebuild:
-  Stable for HPPA (bug #544208).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/liblognorm-1.1.0-fix-enable-docs.patch, +files/respect_CFLAGS.patch,
+  +liblognorm-0.3.6.ebuild, +liblognorm-0.3.7.ebuild,
+  +liblognorm-1.0.1.ebuild, +liblognorm-1.1.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Mar 2015; Agostino Sarubbo <ago@gentoo.org> liblognorm-1.1.0.ebuild:
-  Stable for x86, wrt bug #544208
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Mar 2015; Agostino Sarubbo <ago@gentoo.org> liblognorm-1.1.0.ebuild:
-  Stable for amd64, wrt bug #544208
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*liblognorm-1.1.0 (23 Feb 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Feb 2015; Ultrabug <ultrabug@gentoo.org> +liblognorm-1.1.0.ebuild,
-  +files/liblognorm-1.1.0-fix-enable-docs.patch:
-  version bump fix #536778 by Thomas D.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Oct 2014; Agostino Sarubbo <ago@gentoo.org> liblognorm-1.0.1.ebuild:
-  Stable for x86, wrt bug #524290
+*liblognorm-1.1.2 (18 Aug 2015)
 
-  05 Oct 2014; Agostino Sarubbo <ago@gentoo.org> liblognorm-1.0.1.ebuild:
-  Stable for amd64, wrt bug #524290
+  18 Aug 2015; Lars Wendler <polynomial-c@gentoo.org>
+  +liblognorm-1.1.2.ebuild:
+  Version bump.
 
-  01 Oct 2014; Jeroen Roovers <jer@gentoo.org> liblognorm-1.0.1.ebuild:
-  Stable for HPPA (bug #524058).
+  Thanks to Whissi for providing the ebuild and to Ultrabug for
+  kindly permitting the commit.
 
-  30 Sep 2014; Lars Wendler <polynomial-c@gentoo.org> liblognorm-1.0.1.ebuild:
-  Readded CFLAGS patch.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-*liblognorm-1.0.1 (30 Sep 2014)
+*liblognorm-1.1.1 (21 Aug 2015)
 
-  30 Sep 2014; Lars Wendler <polynomial-c@gentoo.org>
-  -liblognorm-0.3.2-r1.ebuild, -liblognorm-0.3.3.ebuild,
-  -liblognorm-0.3.4.ebuild, -liblognorm-0.3.5.ebuild,
-  -liblognorm-0.3.6-r1.ebuild, +liblognorm-1.0.1.ebuild,
-  -files/do-not-include-private-in-public-headers.patch:
-  Non-maintainer commit! Version bump to add needed dependency for
-  app-admin/rsyslog security bump (bug #524058). Removed very old versions.
+  21 Aug 2015; Lars Wendler <polynomial-c@gentoo.org>
+  +liblognorm-1.1.1.ebuild:
+  Added version 1.1.1
 
-*liblognorm-0.3.7 (30 Jun 2014)
+  (Version 1.1.2 is broken and needs to be masked)
 
-  30 Jun 2014; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.7.ebuild:
-  Bump to 0.3.7, thanks to slepnoga
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  31 Mar 2014; Jeroen Roovers <jer@gentoo.org> +liblognorm-0.3.6.ebuild,
-  files/respect_CFLAGS.patch:
-  Fix patch. Reinstate latest stable (bug #505224).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*liblognorm-0.3.6-r1 (20 Mar 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Mar 2014; Maxim Koltsov <maksbotan@gentoo.org> +files/respect_CFLAGS.patch,
-  +liblognorm-0.3.6-r1.ebuild, -liblognorm-0.3.6.ebuild:
-  Respect CFLAGS, bug #472310, thanks to slepnoga.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> liblognorm-0.3.6.ebuild:
-  Stable for amd64, wrt bug #470398
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> liblognorm-0.3.6.ebuild:
-  Stable for x86, wrt bug #470398
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  08 Jun 2013; Jeroen Roovers <jer@gentoo.org> liblognorm-0.3.6.ebuild:
-  Stable for HPPA (bug #472564).
+  Bug: https://bugs.gentoo.org/552720
 
-*liblognorm-0.3.6 (07 Apr 2013)
+*liblognorm-1.1.2-r1 (09 Oct 2015)
 
-  07 Apr 2013; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.6.ebuild:
-  Bump to 0.3.6 thanks to slepnoga
+  09 Oct 2015; Lars Wendler <polynomial-c@gentoo.org>
+  +files/liblognorm-1.1.2-issue_135.patch, +liblognorm-1.1.2-r1.ebuild:
+  Revbump to remove semi-broken pcre functionality
 
-  17 Feb 2013; Agostino Sarubbo <ago@gentoo.org> liblognorm-0.3.5.ebuild:
-  Stable for x86, wrt bug #456542
+  and add an upstream patch.
 
-  12 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> liblognorm-0.3.5.ebuild:
-  Stable on amd64, wrt bug #456542
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-*liblognorm-0.3.5 (24 Oct 2012)
+  09 Oct 2015; Lars Wendler <polynomial-c@gentoo.org>
+  -liblognorm-1.1.2.ebuild:
+  Removed old.
 
-  24 Oct 2012; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.5.ebuild:
-  Bump to 0.3.5, thanks to slepnoga
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  23 Jul 2012; Markus Meier <maekke@gentoo.org> liblognorm-0.3.4.ebuild:
-  add ~arm, bug #425526
-
-  12 Jul 2012; Jeroen Roovers <jer@gentoo.org> liblognorm-0.3.4.ebuild:
-  Marked ~hppa (bug #425526).
-
-  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> liblognorm-0.3.4.ebuild:
-  x86 stable wrt bug #418759
-
-  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> liblognorm-0.3.4.ebuild:
-  Stable for amd64, wrt bug #418759
-
-  01 Jun 2012; Ultrabug <ultrabug@gentoo.org> liblognorm-0.3.4.ebuild:
-  Fix typo on src_compile call
-
-*liblognorm-0.3.4 (23 Apr 2012)
-
-  23 Apr 2012; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.4.ebuild:
-  Bump to 0.3.4, thanks to slepnoga
-
-  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  liblognorm-0.3.2-r1.ebuild:
-  x86 stable wrt bug #402163
-
-*liblognorm-0.3.3 (24 Feb 2012)
-
-  24 Feb 2012; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.3.ebuild,
-  -liblognorm-0.3.1.ebuild, -liblognorm-0.3.2.ebuild:
-  Bump to 0.3.3, thanks to slepnoga
-
-  07 Feb 2012; Maxim Koltsov <maksbotan@gentoo.org> liblognorm-0.3.2-r1.ebuild,
-  +files/do-not-include-private-in-public-headers.patch:
-  Import upstream patch for missing header, fixes bugs alike #402255. Thanks to 
-  slepnoga.
-
-  05 Feb 2012; Agostino Sarubbo <ago@gentoo.org> liblognorm-0.3.2-r1.ebuild:
-  Stable for amd64, wrt bug #402163
-
-  04 Feb 2012; Maxim Koltsov <maksbotan@gentoo.org> metadata.xml:
-  Fix maintainer's email in metadata
-
-*liblognorm-0.3.2-r1 (01 Dec 2011)
-
-  01 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org>
-  +liblognorm-0.3.2-r1.ebuild:
-  Fix usage of autotools-utils.eclass, bug 392095. Thanks to mgorny and
-  slepnoga
-
-*liblognorm-0.3.2 (26 Nov 2011)
-
-  26 Nov 2011; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.2.ebuild:
-  Bumped to 0.3.2. Thanks to slepnoga
-
-  18 Sep 2011; Michał Górny <mgorny@gentoo.org> liblognorm-0.3.1.ebuild,
-  metadata.xml:
-  Fix implicit $(use_enable debug). Fix invalid herd.
-
-  30 Aug 2011; Maxim Koltsov <maksbotan@gentoo.org> liblognorm-0.3.1.ebuild:
-  Fix typo in DESCRIPTION variable name
-
-*liblognorm-0.3.1 (29 Aug 2011)
-
-  29 Aug 2011; Maxim Koltsov <maksbotan@gentoo.org> +liblognorm-0.3.1.ebuild,
-  +metadata.xml:
-  Copy dev-libs/liblognorm from rion-overlay, thanks to slepnoga. Bug 348698

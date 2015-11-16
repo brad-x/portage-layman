@@ -1,103 +1,58 @@
 # ChangeLog for games-arcade/sdl-sopwith
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/sdl-sopwith/ChangeLog,v 1.23 2013/05/13 03:49:13 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  13 May 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  sdl-sopwith-1.7.5-r1.ebuild:
-  tidy
+*sdl-sopwith-1.7.5-r1 (09 Aug 2015)
 
-  28 Feb 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  sdl-sopwith-1.7.5-r1.ebuild:
-  respect AR (bug #458586)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sdl-sopwith-1.7.5-nogtk.patch,
+  +files/sdl-sopwith-1.7.5-video-fix.patch, +metadata.xml,
+  +sdl-sopwith-1.7.5-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  28 Feb 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/sdl-sopwith-1.7.4-nogtk.patch, -sdl-sopwith-1.7.4.ebuild,
-  -sdl-sopwith-1.7.5.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Feb 2013; Agostino Sarubbo <ago@gentoo.org> sdl-sopwith-1.7.5-r1.ebuild:
-  Stable for x86, wrt bug #458504
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> sdl-sopwith-1.7.5-r1.ebuild:
-  Stable for ppc, wrt bug #458504
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> sdl-sopwith-1.7.5-r1.ebuild:
-  Minor QA fixes, stable on amd64, wrt bug #458504
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*sdl-sopwith-1.7.5-r1 (21 Feb 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> +sdl-sopwith-1.7.5-r1.ebuild,
-  +files/sdl-sopwith-1.7.5-video-fix.patch:
-  Revision bump: add fix for segfault issue during video device detection,
-  discovered in bug #458504
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*sdl-sopwith-1.7.5 (21 Jan 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/sdl-sopwith-1.7.5-nogtk.patch, +sdl-sopwith-1.7.5.ebuild,
-  files/sdl-sopwith-1.7.4-nogtk.patch:
-  version bump (bug #453118)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Mar 2012; Tupone Alfredo <tupone@gentoo.org> sdl-sopwith-1.7.4.ebuild,
-  +files/sdl-sopwith-1.7.4-nogtk.patch:
-  Removing gtk usage from configure. Fix bug #409111 by Piotr Szymaniak
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Oct 2010; Brent Baude <ranger@gentoo.org> sdl-sopwith-1.7.4.ebuild:
-  stable ppc, bug 340447
+  Bug: https://bugs.gentoo.org/552720
 
-  13 Oct 2010; Markus Meier <maekke@gentoo.org> sdl-sopwith-1.7.4.ebuild:
-  x86 stable, bug #340447
-
-*sdl-sopwith-1.7.4 (08 Sep 2010)
-
-  08 Sep 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +sdl-sopwith-1.7.4.ebuild:
-  version bump
-
-  12 Aug 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  sdl-sopwith-1.7.3.ebuild:
-  x86 stable wrt bug #332325
-
-*sdl-sopwith-1.7.3 (07 Jul 2010)
-
-  07 Jul 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +sdl-sopwith-1.7.3.ebuild:
-  version bump
-
-*sdl-sopwith-1.7.2 (03 Jun 2010)
-
-  03 Jun 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +sdl-sopwith-1.7.2.ebuild:
-  version bump
-
-  24 Apr 2007; Timothy Redaelli <drizzt@gentoo.org>
-  sdl-sopwith-1.7.1.ebuild:
-  Add ~x86-fbsd keyword.
-  Thanks to Nathan Smith for reporting wrt bug #175779
-
-  24 Apr 2006; <Tupone@gentoo.org> +files/sdl-sopwith-1.7.1-gcc41.patch,
-  sdl-sopwith-1.7.1.ebuild:
-  Fix for gcc-4.1
-
-  17 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org>
-  sdl-sopwith-1.7.1.ebuild:
-  Reverting DEPEND and RDEPEND to orginal state. Bug #48117 should have rather
-  been only about the gdk-pixbuf not being needed.
-
-  17 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org>
-  sdl-sopwith-1.7.1.ebuild:
-  Swapping DEPEND and RDEPEND.
-
-  17 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org>
-  sdl-sopwith-1.7.1.ebuild:
-  Fixing DEPEND and RDEPEND and closing bug #48117.
-
-  17 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org>
-  sdl-sopwith-1.7.1.ebuild:
-  Removing gdk-pixbuf from DEPEND and closing bug #48117.
-
-*sdl-sopwith-1.7.1 (29 Nov 2003)
-
-  29 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org> metadata.xml,
-  sdl-sopwith-1.7.1.ebuild:
-  initial commit; ebulid supplied by Jonathan Hitchcock via bug 34723 (modified)

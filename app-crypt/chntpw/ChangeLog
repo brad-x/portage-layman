@@ -1,98 +1,57 @@
 # ChangeLog for app-crypt/chntpw
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/chntpw/ChangeLog,v 1.22 2015/03/16 16:48:43 alonbl Exp $
+# (auto-generated from git log)
 
-*chntpw-140201 (16 Mar 2015)
+*chntpw-140201 (09 Aug 2015)
+*chntpw-110511 (09 Aug 2015)
 
-  16 Mar 2015; Alon Bar-Lev <alonbl@gentoo.org> +chntpw-140201.ebuild,
-  -chntpw-100627.ebuild:
-  Version bump, bug#543520, thanks to Bob Wya. Cleanup
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +chntpw-110511.ebuild,
+  +chntpw-140201.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  02 Jun 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #328951
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Mar 2012; Tim Harder <radhermit@gentoo.org> chntpw-110511.ebuild:
-  Update to EAPI 4, only build static binaries when the static use flag is set,
-  and add dependency on openssl[static-libs] for static builds (fixes bug
-  #402629).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*chntpw-110511 (16 May 2011)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 May 2011; Dane Smith <c1pher@gentoo.org> +chntpw-110511.ebuild:
-  Version bump to 110511 wrt bug 367267.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Apr 2011; Dane Smith <c1pher@gentoo.org> metadata.xml:
-  Updated metadata to reflect me as the new maintainer. Added to the 
-  crypto herd as well.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*chntpw-100627 (13 Jul 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Jul 2010; Samuli Suominen <ssuominen@gentoo.org> +chntpw-100627.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Oct 2009; Robin H. Johnson <robbat2@gentoo.org> chntpw-080526.ebuild:
-  Keyword for ~amd64.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Dec 2008; Christoph Mende <angelos@gentoo.org> chntpw-080526.ebuild:
-  QA: Respect CC (bug 243538)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*chntpw-080526 (29 Jun 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  29 Jun 2008; Jeremy Olexa <darkside@gentoo.org>
-  -chntpw-0.99.4.20070923.ebuild, +chntpw-080526.ebuild:
-  Version bump and remove old. bug #226371. Change version name to match what
-  upstream calls it.
-
-  10 Jan 2008; Alon Bar-Lev <alonbl@gentoo.org>
-  -files/chntpw-0.99.3.20040818-gcc4.diff:
-  Cleanup
-
-  10 Jan 2008; Alon Bar-Lev <alonbl@gentoo.org>
-  -chntpw-0.99.3.20040818.ebuild, -chntpw-0.99.4.20070409.ebuild,
-  chntpw-0.99.4.20070923.ebuild:
-  Add unzip dependency, bug#205158, thanks to yahya, cleanup
-
-  15 Nov 2007; Alon Bar-Lev <alonbl@gentoo.org> metadata.xml:
-  Assign to maintainer-needed@gentoo.org, bug#185411.
-
-*chntpw-0.99.4.20070923 (28 Sep 2007)
-
-  28 Sep 2007; Alon Bar-Lev <alonbl@gentoo.org>
-  +chntpw-0.99.4.20070923.ebuild:
-  Version bump
-
-*chntpw-0.99.4.20070409 (14 Jul 2007)
-
-  14 Jul 2007; Alon Bar-Lev <alonbl@gentoo.org>
-  -chntpw-0.99.3.20070409.ebuild, +chntpw-0.99.4.20070409.ebuild:
-  Fix versioning bug#185183 (again)
-
-*chntpw-0.99.3.20070409 (13 Jul 2007)
-
-  13 Jul 2007; Alon Bar-Lev <alonbl@gentoo.org> metadata.xml,
-  +chntpw-0.99.3.20070409.ebuild:
-  Version bump, bug#185183, thanks to Matthias Vill
-
-  08 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  09 Apr 2005; Marcelo Goes <vanquirius@gentoo.org>
-  +files/chntpw-0.99.3.20040818-gcc4.diff, chntpw-0.99.3.20040818.ebuild:
-  Adding gcc4 patch from Debian.
-
-  07 Jan 2005; Robin H. Johnson <robbat2@gentoo.org>
-  chntpw-0.99.3.20040818.ebuild:
-  Bug #69831.
-
-  04 Nov 2004; Daniel Black <dragonheart@gentoo.org>
-  chntpw-0.99.3.20040818.ebuild:
-  added app-arch/zip dependancy as per bug #69831
-
-  14 Oct 2004; David Holm <dholm@gentoo.org> chntpw-0.99.3.20040818.ebuild:
-  Added to ~ppc.
-
-*chntpw-0.99.3.20040818 (19 Sep 2004)
-
-  19 Sep 2004; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
-  +chntpw-0.99.3.20040818.ebuild:
-  Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.

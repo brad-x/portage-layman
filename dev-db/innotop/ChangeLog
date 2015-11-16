@@ -1,53 +1,80 @@
 # ChangeLog for dev-db/innotop
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/innotop/ChangeLog,v 1.10 2014/10/21 20:20:54 grknight Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*innotop-1.9.1 (21 Oct 2014)
+*innotop-1.9.1 (09 Aug 2015)
+*innotop-1.9.0-r1 (09 Aug 2015)
 
-  21 Oct 2014; Brian Evans <grknight@gentoo.org> +innotop-1.9.1.ebuild:
-  Version bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +innotop-1.9.0-r1.ebuild,
+  +innotop-1.9.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*innotop-1.9.0-r1 (29 Aug 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Aug 2013; Ian Delaney <idella4@gentoo.org> +innotop-1.9.0-r1.ebuild,
-  -innotop-1.4.0.ebuild, -innotop-1.6.0.ebuild, -innotop-1.7.2.ebuild,
-  -innotop-1.9.0.ebuild:
-  revbump -> EAPI 5, add invocation of test, remove old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*innotop-1.9.0 (18 Jan 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Jan 2013; Robin H. Johnson <robbat2@gentoo.org> +innotop-1.9.0.ebuild:
-  Bug #422521: bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*innotop-1.7.2 (31 Jan 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Jan 2010; Robin H. Johnson <robbat2@gentoo.org> +innotop-1.7.2.ebuild:
-  Bug #297056: version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Nov 2008; Torsten Veller <tove@gentoo.org> innotop-1.4.0.ebuild,
-  innotop-1.6.0.ebuild:
-  New virtuals: Term-ANSIColor
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*innotop-1.6.0 (14 Nov 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> innotop-1.9.0-r1.ebuild,
+  innotop-1.9.1.ebuild:
+  Enable https for all google URIs
 
-  14 Nov 2008; Robin H. Johnson <robbat2@gentoo.org> +innotop-1.6.0.ebuild:
-  Bug #177977, version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove vivo from metadata.xml due to retirement.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> innotop-1.9.0-r1.ebuild,
+  innotop-1.9.1.ebuild:
+  Convert URIs for googlecode.com to https
 
-*innotop-1.4.0 (04 Mar 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Mar 2007; Francesco Riosa <vivo@gentoo.org> -innotop-0.1.160.ebuild,
-  +innotop-1.4.0.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*innotop-0.1.160 (15 Nov 2006)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Nov 2006; Francesco Riosa <vivo@gentoo.org> -innotop-0.1.154.ebuild,
-  +innotop-0.1.160.ebuild:
-  version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Nov 2006; Francesco Riosa <vivo@gentoo.org> +innotop-0.1.154.ebuild:
-  Initial commit, "Xaprb" alias "Baron Schwartz" alias upstream has been kindly
-  enough to provide the ebuild, added it to the tree, fixing bug #147600.
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org> innotop-1.9.0-r1.ebuild,
+  innotop-1.9.1.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
+
+  Package-Manager: portage-2.2.20.1
+
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

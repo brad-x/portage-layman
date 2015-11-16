@@ -1,83 +1,57 @@
 # ChangeLog for sci-calculators/tilp2
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tilp2/ChangeLog,v 1.12 2013/07/12 16:51:56 bicatali Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*tilp2-1.17-r1 (12 Jul 2013)
+*tilp2-1.17-r1 (09 Aug 2015)
+*tilp2-1.16-r1 (09 Aug 2015)
 
-  12 Jul 2013; Sébastien Fabbro <bicatali@gentoo.org> +tilp2-1.17-r1.ebuild,
-  -tilp2-1.17.ebuild:
-  Build in source, fixing bug #476642
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +tilp2-1.16-r1.ebuild, +tilp2-1.17-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*tilp2-1.17 (09 Jul 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jul 2013; Sébastien Fabbro <bicatali@gentoo.org> +tilp2-1.17.ebuild:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*tilp2-1.16-r1 (29 Nov 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Nov 2012; Justin Lecher <jlec@gentoo.org> -tilp2-1.16.ebuild,
-  +tilp2-1.16-r1.ebuild, metadata.xml:
-  Call default phase function for src_install, #445101
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -tilp2-1.14.ebuild,
-  tilp2-1.16.ebuild:
-  keyword amd64-linux, x86-linux
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> tilp2-1.14.ebuild,
-  tilp2-1.16.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*tilp2-1.16 (19 Feb 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> +tilp2-1.16.ebuild,
-  -tilp2-1.12.ebuild:
-  Version bump, fixes bug #379703 by Michael (kensington)
-  <gentoo@scribeofthenile.com>. Drop old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*tilp2-1.14 (15 Mar 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Mar 2011; Sébastien Fabbro <bicatali@gentoo.org> +tilp2-1.14.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Mar 2011; Justin Lecher <jlec@gentoo.org> tilp2-1.12.ebuild:
-  Correct Slots for gtk 3 introduction to tree
-
-  11 Nov 2009; Samuli Suominen <ssuominen@gentoo.org> tilp2-1.12.ebuild:
-  Remove kde-base/kdelibs:3.5 support.
-
-  24 Mar 2009; Joseph Jezak <josejx@gentoo.org> tilp2-1.12.ebuild:
-  Marked ~ppc for bug #263593.
-
-*tilp2-1.12 (24 Mar 2009)
-
-  24 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org> +tilp2-1.12.ebuild:
-  Version bump
-
-*tilp2-1.11 (03 Feb 2009)
-
-  03 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
-  +tilp2-1.11.ebuild:
-  Initial import from sunrise, thanks to Christian Helbling and all
-  contributors in bug #146028
-
-  03 May 2008; Christian Helbling <helch@gmx.ch> -tilp2-1.10.ebuild,
-  +tilp2-1.11.ebuild:
-  version bump
-
-  18 Jan 2008; Christian Helbling <helch@gmx.ch> tilp2-1.10.ebuild:
-  changing SRC_URI back to sf mirrors
-
-  17 Jan 2008; Christian Helbling <helch@gmx.ch> -tilp2-1.07.ebuild,
-  +tilp2-1.10.ebuild:
-  Version bump
-
-  22 Sep 2007; Christian Helbling <helch@gmx.ch> -tilp2-1.03.ebuild,
-  +tilp2-1.07.ebuild:
-  version bump
-
-  15 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com> tilp2-1.03.ebuild:
-  removed trailing blank line
-
-  15 Jun 2007; Christian Helbling <helch@gmx.ch> +tilp2-1.03.ebuild,
-  +metadata.xml:
-  New ebuild for bug 109220 thanks to Henning Schild

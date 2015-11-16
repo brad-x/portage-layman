@@ -1,86 +1,89 @@
 # ChangeLog for net-misc/badvpn
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/badvpn/ChangeLog,v 1.20 2014/11/25 23:27:08 hasufell Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+*badvpn-1.999.129 (09 Aug 2015)
+*badvpn-1.999.128 (09 Aug 2015)
+*badvpn-1.999.127 (09 Aug 2015)
+*badvpn-1.999.126 (09 Aug 2015)
+*badvpn-1.999.123-r3 (09 Aug 2015)
 
-  29 Aug 2014; Chema Alonso <nimiux@gentoo.org> badvpn-1.999.129.ebuild:
-  Stable for amd64 wrt bug #518248
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +badvpn-1.999.123-r3.ebuild, +badvpn-1.999.126.ebuild,
+  +badvpn-1.999.127.ebuild, +badvpn-1.999.128.ebuild,
+  +badvpn-1.999.129.ebuild, +files/badvpn-1.999.127-ncd.init,
+  +files/badvpn-ncd.conf, +files/badvpn-ncd.init, +files/badvpn-ncd.service,
+  +files/badvpn-server.conf, +files/badvpn-server.init, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> badvpn-1.999.129.ebuild:
-  x86 stable wrt bug #518248
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*badvpn-1.999.129 (20 Mar 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Mar 2014; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.129.ebuild,
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+*badvpn-1.999.130 (19 Aug 2015)
+
+  19 Aug 2015; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.130.ebuild,
   metadata.xml:
-  version bump wrt #505184
+  version bump to 1.3.0
 
-*badvpn-1.999.128 (21 Nov 2013)
+  Further changes:
+  * rm ambrop as proxy-maintainer as requested
+  * rm explicit epatch_user, because cmake-utils_src_prepare already does
+    that
+  * rm obsolete openssl dep on ncd USE flag
+  * fix openssl SLOTs to :0
 
-  21 Nov 2013; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.128.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Jun 2013; Agostino Sarubbo <ago@gentoo.org> badvpn-1.999.127.ebuild:
-  Stable for arm, wrt bug #474404
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> badvpn-1.999.127.ebuild:
-  Stable for amd64, wrt bug #474404
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> badvpn-1.999.127.ebuild:
-  Stable for x86, wrt bug #474404
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> badvpn-1.999.123-r3.ebuild,
+  badvpn-1.999.126.ebuild, badvpn-1.999.127.ebuild, badvpn-1.999.128.ebuild:
+  Enable https for all google URIs
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*badvpn-1.999.127 (21 Feb 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> badvpn-1.999.123-r3.ebuild,
+  badvpn-1.999.126.ebuild, badvpn-1.999.127.ebuild, badvpn-1.999.128.ebuild:
+  Convert URIs for googlecode.com to https
 
-  21 Feb 2013; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.127.ebuild,
-  +files/badvpn-1.999.127-ncd.init, +files/badvpn-ncd.service:
-  version bump by Ambroz Bizjak wrt #454476
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*badvpn-1.999.126 (26 Dec 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Dec 2012; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.126.ebuild:
-  version bump by Ambroz Bizjak wrt #448226
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  11 Dec 2012; Ian Stakenvicius <axs@gentoo.org> badvpn-1.999.123-r3.ebuild:
-  virtualize udev dependency
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Oct 2012; <ago@gentoo.org> badvpn-1.999.123-r3.ebuild:
-  Stable for amd64, wrt bug #435912
-
-  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  badvpn-1.999.123-r3.ebuild:
-  x86 stable wrt bug #435912
-
-*badvpn-1.999.123-r3 (22 Sep 2012)
-
-  22 Sep 2012; William Hubbs <williamh@gentoo.org> +badvpn-1.999.123-r3.ebuild,
-  -badvpn-1.999.123-r2.ebuild, files/badvpn-ncd.init, files/badvpn-server.init:
-  Fix init scripts to use logger if syslogging is enabled.
-
-*badvpn-1.999.123-r2 (23 Aug 2012)
-
-  23 Aug 2012; William Hubbs <williamh@gentoo.org> -badvpn-1.999.123-r1.ebuild,
-  +badvpn-1.999.123-r2.ebuild, files/badvpn-ncd.init, files/badvpn-server.init:
-  My initial rewrite of the init scripts broke them for stable OpenRc
-  users, so this fixes that issue.
-
-  19 Aug 2012; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  add williamh as maintainer
-
-*badvpn-1.999.123-r1 (19 Aug 2012)
-
-  19 Aug 2012; Julian Ospald <hasufell@gentoo.org> -badvpn-1.999.123.ebuild,
-  +badvpn-1.999.123-r1.ebuild, files/badvpn-ncd.conf, files/badvpn-ncd.init,
-  files/badvpn-server.conf, files/badvpn-server.init:
-  make init scripts posix compliant wrt #431792 thanks to William Hubbs
-
-*badvpn-1.999.123 (13 Aug 2012)
-
-  13 Aug 2012; Julian Ospald <hasufell@gentoo.org> +badvpn-1.999.123.ebuild,
-  +files/badvpn-ncd.conf, +files/badvpn-ncd.init, +files/badvpn-server.conf,
-  +files/badvpn-server.init, +metadata.xml:
-  initial commit with Ambroz Bizjak

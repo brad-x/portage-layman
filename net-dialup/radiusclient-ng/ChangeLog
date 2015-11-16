@@ -1,117 +1,57 @@
 # ChangeLog for net-dialup/radiusclient-ng
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/radiusclient-ng/ChangeLog,v 1.25 2015/01/27 10:08:26 pinkbyte Exp $
+# (auto-generated from git log)
 
-  27 Jan 2015; Sergey Popov <pinkbyte@gentoo.org>
-  -radiusclient-ng-0.5.6.ebuild, radiusclient-ng-0.5.6-r1.ebuild:
-  Adjust HOMEPAGE and SRC_URI, wrt bug #537770. Drop old revision
+*radiusclient-ng-0.5.6-r1 (09 Aug 2015)
 
-  03 Mar 2014; Pacho Ramos <pacho@gentoo.org> radiusclient-ng-0.5.6-r1.ebuild:
-  amd64 stable, bug #495836
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/radiusclient-ng-0.5.6-cross-compile.patch, +metadata.xml,
+  +radiusclient-ng-0.5.6-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  24 Feb 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  radiusclient-ng-0.5.6-r1.ebuild:
-  x86 stable wrt bug #495836
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*radiusclient-ng-0.5.6-r1 (11 Nov 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Nov 2013; Sergey Popov <pinkbyte@gentoo.org>
-  +radiusclient-ng-0.5.6-r1.ebuild,
-  +files/radiusclient-ng-0.5.6-cross-compile.patch:
-  Revision bump: EAPI 5, autotools-utils eclass, add fix for cross compilation
-  wrt bug #373365, thanks to Bertrand Jacquin <beber AT meleeweb.net>
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Mar 2009; Alin Năstac <mrness@gentoo.org>
-  radiusclient-ng-0.5.6.ebuild:
-  Add net-dialup/freeradius-client blocking atom (#234098).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Dec 2008; Alin Năstac <mrness@gentoo.org>
-  radiusclient-ng-0.5.6.ebuild:
-  Add net-dialup/radiusclient blocking dependency atom (#247950).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2008; Peter Volkov <pva@gentoo.org> radiusclient-ng-0.5.6.ebuild:
-  Use berlios mirror://, bug #218657, thank Gilles Dartiguelongue for
-  report.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jan 2008; Alin Năstac <mrness@gentoo.org>
-  -radiusclient-ng-0.5.5.1.ebuild:
-  Remove old version.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Nov 2007; Samuli Suominen <drac@gentoo.org>
-  radiusclient-ng-0.5.6.ebuild:
-  amd64 stable wrt #198942
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Nov 2007; Dawid Węgliński <cla@gentoo.org>
-  radiusclient-ng-0.5.6.ebuild:
-  Stable on x86 (bug #198942)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Nov 2007; Alin Năstac <mrness@gentoo.org>
-  -files/radiusclient-ng-0.5.2-destdir.patch,
-  -files/radiusclient-ng-0.5.2-implicit-decl.patch,
-  -radiusclient-ng-0.5.2.ebuild, radiusclient-ng-0.5.6.ebuild:
-  Remove obsolete version.
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Sep 2007; Christoph Mende <angelos@gentoo.org>
-  radiusclient-ng-0.5.5.1.ebuild:
-  Stable on amd64 wrt bug #185736
-
-*radiusclient-ng-0.5.6 (25 Aug 2007)
-
-  25 Aug 2007; Alin Năstac <mrness@gentoo.org>
-  +radiusclient-ng-0.5.6.ebuild:
-  Version bump.
-
-  24 Jul 2007; Christian Faulhammer <opfer@gentoo.org>
-  radiusclient-ng-0.5.5.1.ebuild:
-  stable x86, bug 185736
-
-*radiusclient-ng-0.5.5.1 (15 Apr 2007)
-
-  15 Apr 2007; Alin Năstac <mrness@gentoo.org>
-  +files/radiusclient-ng-0.5.2-implicit-decl.patch,
-  radiusclient-ng-0.5.2.ebuild, +radiusclient-ng-0.5.5.1.ebuild:
-  Fix QA implicit declaration warning. Stable on amd64. Version bump.
-
-  23 Sep 2006; Alin Nastac <mrness@gentoo.org>
-  -files/pkgsysconfdir-install.patch, -radiusclient-ng-0.5.1.ebuild:
-  Remove obsolete version.
-
-  14 May 2006; Alin Nastac <mrness@gentoo.org> radiusclient-ng-0.5.2.ebuild:
-  Stable on x86.
-
-*radiusclient-ng-0.5.2 (16 Mar 2006)
-
-  16 Mar 2006; Alin Nastac <mrness@gentoo.org>
-  +files/radiusclient-ng-0.5.2-destdir.patch, radiusclient-ng-0.5.1.ebuild,
-  +radiusclient-ng-0.5.2.ebuild:
-  Remove virtual/libc dependency. Version bump.
-
-  27 Dec 2005; Alin Nastac <mrness@gentoo.org>
-  -radiusclient-ng-0.5.0.ebuild:
-  Remove obsolete version.
-
-  04 Oct 2005; Alin Nastac <mrness@gentoo.org> radiusclient-ng-0.5.1.ebuild:
-  Stable on x86.
-
-  12 Sep 2005; Luis Medinas <metalgod@gentoo.org>
-  radiusclient-ng-0.5.1.ebuild:
-  Added ~amd64 keyword.
-
-*radiusclient-ng-0.5.1 (03 Aug 2005)
-
-  03 Aug 2005; Alin Nastac <mrness@gentoo.org> radiusclient-ng-0.5.0.ebuild,
-  +radiusclient-ng-0.5.1.ebuild:
-  Stable on x86. Version bump.
-
-  15 Jun 2005; David Holm <dholm@gentoo.org> radiusclient-ng-0.5.0.ebuild:
-  Added to ~ppc.
-
-  14 Jun 2005; Jason Wever <weeve@gentoo.org> radiusclient-ng-0.5.0.ebuild:
-  Added ~sparc keyword.
-
-*radiusclient-ng-0.5.0 (22 May 2005)
-
-  22 May 2005; Alin Nastac <mrness@gentoo.org>
-  +files/pkgsysconfdir-install.patch, +metadata.xml,
-  +radiusclient-ng-0.5.0.ebuild:
-  Initial import from bug #78386.

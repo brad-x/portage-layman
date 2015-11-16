@@ -1,123 +1,58 @@
 # ChangeLog for dev-ada/xmlada
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ada/xmlada/ChangeLog,v 1.28 2009/08/29 21:49:37 flameeyes Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  29 Aug 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  xmlada-2.2.0-r1.ebuild:
-  Use -j1 for install (bug #283160).
+*xmlada-2.2.0-r1 (09 Aug 2015)
+*xmlada-2.2.0 (09 Aug 2015)
+*xmlada-1.0-r4 (09 Aug 2015)
 
-  06 May 2008; George Shapovalov <george@gentoo.org> xmlada-2.2.0.ebuild,
-  xmlada-2.2.0-r1.ebuild:
-  changed DEPEND for texlive transition
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +xmlada-1.0-r4.ebuild, +xmlada-2.2.0.ebuild, +xmlada-2.2.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*xmlada-2.2.0-r1 (14 Dec 2007)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Dec 2007; George Shapovalov <george@gentoo.org>
-  +xmlada-2.2.0-r1.ebuild:
-  transitioned xmlada to use unified layout (common bin/ for Ada libs, etc)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Sep 2007; George Shapovalov <george@gentoo.org> xmlada-1.0-r4.ebuild:
-  adjusted ebuild to follow eclass reorg, gnat_src_unpack was factored out
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Jan 2007; Marius Mauch <genone@gentoo.org> xmlada-0.7.1-r2.ebuild,
-  xmlada-1.0.ebuild:
-  Replacing einfo with elog
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 Nov 2006; George Shapovalov <george@gentoo.org> xmlada-2.2.0.ebuild:
-  AdaCore does not allow undisturbed download (registration is required), and,
-  at least once, silently updated the source. Mirrored to avoid trouble
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*xmlada-2.2.0 (16 Nov 2006)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Nov 2006; George Shapovalov <george@gentoo.org> +xmlada-2.2.0.ebuild:
-  new version (by AdaCore)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Nov 2006; George Shapovalov <george@gentoo.org> -xmlada-1.0-r1.ebuild,
-  -xmlada-1.0-r2.ebuild, -xmlada-1.0-r3.ebuild, xmlada-1.0-r4.ebuild:
-  removed pkg_postinst (in the eclass for a while) and pulled intermediate
-  (broken) -r's
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Jun 2006; George Shapovalov <george@gentoo.org> +xmlada-1.0-r4.ebuild:
-  added LDPATH as per discussion in #111340
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Jun 2006; George Shapovalov <george@gentoo.org> -xmlada-1.0-r4.ebuild:
-  removed LD_RUN_PATH as it is not to be used (#111340)
+  Bug: https://bugs.gentoo.org/552720
 
-*xmlada-1.0-r4 (02 Jun 2006)
-
-  02 Jun 2006; George Shapovalov <george@gentoo.org> +xmlada-1.0-r4.ebuild:
-  added LD_RUN_PATH to generated config
-
-*xmlada-1.0-r3 (25 May 2006)
-
-  25 May 2006; George Shapovalov <george@gentoo.org> +xmlada-1.0-r3.ebuild:
-  fixed env settings (#111340). Thanks to Max Reznik for spotting the problem
-
-*xmlada-1.0-r2 (16 May 2006)
-
-  16 May 2006; George Shapovalov <george@gentoo.org> +xmlada-1.0-r2.ebuild:
-  fixed broken Makefile logic (#111340) - shared libs are now installed under proper
-  names and symlinked as they should. Revbump, as this is affects the result.
-
-*xmlada-1.0-r1 (15 May 2006)
-
-  15 May 2006; George Shapovalov <george@gentoo.org> +xmlada-1.0-r1.ebuild:
-  updated xmlada to use new gnat.eclass, including support for new split gnat
-  compilers..
-
-  13 May 2006; George Shapovalov <george@gentoo.org> xmlada-0.7.1-r2.ebuild,
-  xmlada-1.0.ebuild:
-  removed inherit gnat until adapted for new eclass
-
-  01 May 2005; Michael Hanselmann <hansmi@gentoo.org>
-  xmlada-0.7.1-r2.ebuild:
-  Stable on ppc.
-
-  29 Jun 2004; Aron Griffis <agriffis@gentoo.org> xmlada-0.7.1-r2.ebuild,
-  xmlada-1.0.ebuild:
-  add sed-4 dep
-
-*xmlada-1.0 (16 Nov 2003)
-
-  16 Nov 2003; David Holm <dholm@gentoo.org> xmlada-1.0.ebuild:
-  New version of XmlAda.
-
-  28 Oct 2003; David Holm <dholm@gentoo.org> xmlada-0.7.1-r2.ebuild:
-  Added to ADA_INCLUDE_PATH and ADA_OBJECTS_PATH.
-
-  06 Oct 2003; David Holm <dholm@gentoo.org> xmlada-0.7.1-r1.ebuild,
-  xmlada-0.7.1-r2.ebuild, xmlada-0.7.1.ebuild:
-  Moved to stable on x86.
-
-  18 Sep 2003; David Holm <dholm@gentoo.org> xmlada-0.7.1-r2.ebuild:
-  Added to ~ppc.
-
-  18 Aug 2003; David Holm <dholm@gentoo.org> metadata.xml:
-  Added metadata.xml.
-
-*xmlada-0.7.1-r2 (13 Aug 2003)
-
-  13 Aug 2003; David Holm <dholm@gentoo.org> xmlada-0.7.1-r2.ebuild:
-  A small update, this version symlinks the shared libraries into /usr/lib so
-  that applications using the library will be able to find it. This closes my
-  own bug #26207.
-
-  23 Jul 2003; George Shapovalov <george@gentoo.org> xmlada-0.7.1-r1.ebuild :
-  few adjustments suggested in #12081 to make it GNAE compliant, now for real
-
-*xmlada-0.7.1-r1 (22 Nov 2002)
-
-  22 Jul 2003; George Shapovalov <george@gentoo.org> xmlada-0.7.1-r1.ebuild :
-  made few changes to where the library gets installed, to bring it into 
-  compliance with GNAE.
-
-*xmlada-0.7.1 (20 Nov 2002)
-
-  21 Jul 2003; George Shapovalov <george@gentoo.org> xmlada-0.7.1.ebuild :
-  cleaned-up and added to the tree (#12081)
-  "This new library provides Ada95 XML support."
-
-  20 Nov 2002; Alexis Muller <Alexis.Muller@lifl.fr> xmlada-0.7.1.ebuild, files/xmlada-0.7.1-gentoo.diff :
-
-  First realase of XmlAda ebuild and ChangeLog.
-  Patch to upgrade the stack size from 64 elements to 128.

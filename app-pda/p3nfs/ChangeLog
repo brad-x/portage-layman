@@ -1,98 +1,58 @@
 # ChangeLog for app-pda/p3nfs
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/p3nfs/ChangeLog,v 1.23 2014/04/10 02:43:09 patrick Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Apr 2014; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Fix metadata.xml after mobile-phone herd dissolution
+*p3nfs-5.19-r3 (09 Aug 2015)
+*p3nfs-5.19-r2 (09 Aug 2015)
 
-*p3nfs-5.19-r3 (09 Apr 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/p3nfs-5.19-set-default-tty.patch, +metadata.xml,
+  +p3nfs-5.19-r2.ebuild, +p3nfs-5.19-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Apr 2014; Sergey Popov <pinkbyte@gentoo.org> +p3nfs-5.19-r3.ebuild:
-  Revision bump: EAPI 5, epatch_user, some cleanups
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Apr 2014; Sergey Popov <pinkbyte@gentoo.org> p3nfs-5.19-r2.ebuild,
-  +files/p3nfs-5.19-set-default-tty.patch:
-  Fix building on systems without serial interfaces, wrt bug #314971, fix minor
-  QA issues
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*p3nfs-5.19-r2 (12 Dec 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Dec 2009; Alin Năstac <mrness@gentoo.org> -p3nfs-5.19-r1.ebuild,
-  +p3nfs-5.19-r2.ebuild:
-  Install entire documentation in /usr/share/doc/${PF} (#295124).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*p3nfs-5.19-r1 (16 Aug 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Aug 2009; Alin Năstac <mrness@gentoo.org> -p3nfs-5.19.ebuild,
-  +p3nfs-5.19-r1.ebuild:
-  Migrate to EAPI 2. Extend portmap dependency atom (#280931) and move it from
-  DEPEND to RDEPEND.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jun 2008; Alin Năstac <mrness@gentoo.org> p3nfs-5.19.ebuild:
-  Drop bindnow flags (#226961). Fix type punned QA notices.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Jan 2007; Marius Mauch <genone@gentoo.org> p3nfs-5.19.ebuild:
-  Replacing einfo with elog
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Jun 2006; Alin Nastac <mrness@gentoo.org>
-  -files/p3nfs-5.18-fix-defines.patch, -p3nfs-5.18-r1.ebuild:
-  Remove obsolete version.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 May 2006; Jon Hood <squinky86@gentoo.org> p3nfs-5.19.ebuild:
-  Add ~amd64, #108311.
-
-  13 Apr 2006; Alin Nastac <mrness@gentoo.org> p3nfs-5.19.ebuild:
-  Stable on x86.
-
-*p3nfs-5.19 (27 Feb 2006)
-
-  27 Feb 2006; Alin Nastac <mrness@gentoo.org> +p3nfs-5.19.ebuild:
-  Version bump.
-
-  25 Dec 2005; Diego Pettenò <flameeyes@gentoo.org> p3nfs-5.18-r1.ebuild:
-  Use bindnow-flags function instead of -Wl,-z,now.
-
-  07 Oct 2005; Michele Noberasco <s4t4n@gentoo.org> p3nfs-5.18-r1.ebuild:
-  Stable for x86.
-  -p3nfs-5.18.ebuild:
-  Wiped out older release.
-
-*p3nfs-5.18-r1 (29 Sep 2005)
-
-  29 Sep 2005; Michele Noberasco <s4t4n@gentoo.org> +p3nfs-5.18-r1.ebuild:
-  Revision bump, with patch to fix bug #89537. Also added some magic
-  to make it honour Gentoo CFLAGS. Assigned to mobile-phone herd.
-
-  08 Jul 2005; <brix@gentoo.org> metadata.xml:
-  Removed myself from metadata.xml as I no longer have a supported Symbian
-  device.
-
-  02 Jul 2005; <brix@gentoo.org> -p3nfs-5.16.ebuild, -p3nfs-5.17a.ebuild:
-  Pruned old ebuilds.
-
-  27 Jun 2005; <brix@gentoo.org> p3nfs-5.18.ebuild:
-  Stable on x86.
-
-  09 Jun 2005; <brix@gentoo.org> p3nfs-5.17a.ebuild:
-  Stable on x86.
-
-*p3nfs-5.18 (01 Jun 2005)
-
-  01 Jun 2005; <brix@gentoo.org> +p3nfs-5.18.ebuild:
-  Version bump, fixes bug #94520.
-
-  15 May 2005; <brix@gentoo.org> p3nfs-5.16.ebuild:
-  Stable on x86.
-
-*p3nfs-5.17a (03 May 2005)
-
-  03 May 2005; <brix@gentoo.org> +p3nfs-5.17a.ebuild:
-  Version bump.
-
-*p3nfs-5.16 (15 Apr 2005)
-
-  15 Apr 2005; <brix@gentoo.org> +metadata.xml, +p3nfs-5.16.ebuild:
-  Initial import. Fixes bug #37010.

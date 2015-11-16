@@ -1,96 +1,65 @@
 # ChangeLog for sci-mathematics/fann
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/fann/ChangeLog,v 1.18 2012/05/08 18:18:55 bicatali Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*fann-2.2.0 (08 May 2012)
+*fann-2.2.0 (09 Aug 2015)
+*fann-2.1.0_beta-r1 (09 Aug 2015)
 
-  08 May 2012; Sébastien Fabbro <bicatali@gentoo.org> -fann-2.0.0.ebuild,
-  -fann-2.1.0_beta.ebuild, fann-2.1.0_beta-r1.ebuild, +fann-2.2.0.ebuild,
-  +files/fann-2.2.0-examples.patch:
-  Version bump. Optimize python module only when python is selected (bug
-  #356975)
-
-  25 Feb 2012; Patrick Lauer <patrick@gentoo.org> fann-2.0.0.ebuild,
-  fann-2.1.0_beta-r1.ebuild, fann-2.1.0_beta.ebuild:
-  Restricting python
-
-*fann-2.1.0_beta-r1 (14 Mar 2011)
-
-  14 Mar 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  +fann-2.1.0_beta-r1.ebuild, +files/fann-2.1.0_beta-pythonlink.patch,
-  +files/fann-2.1.0_beta-sizecheck.patch, +files/fann-2.1.0_beta-valist.patch:
-  Added a couple patches from Debian/Upstream
-
-  23 Dec 2010; Justin Lecher <jlec@gentoo.org> -files/fann-1.2.0-r1.patch,
-  -files/fann-1.2.0-setup.py, fann-2.0.0.ebuild, fann-2.1.0_beta.ebuild:
-  Verify and potentially improve Python-related code, #316231; removed old
-  patches
-
-  04 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  fann-2.1.0_beta.ebuild:
-  Delete call to deprecated python_version().
-
-  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org> -fann-1.2.0.ebuild,
-  -fann-1.2.0-r1.ebuild, fann-2.1.0_beta.ebuild,
-  +files/fann-2.1.0_beta-asneeded.patch:
-  Cleaned and fixed for as-needed
-
-*fann-2.1.0_beta (23 May 2008)
-
-  23 May 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +fann-2.1.0_beta-r1.ebuild, +fann-2.2.0.ebuild,
+  +files/fann-2.0.0-benchmark.patch,
+  +files/fann-2.0.0-shared-libs-gentoo.patch,
+  +files/fann-2.1.0_beta-asneeded.patch,
   +files/fann-2.1.0_beta-benchmark.patch,
-  +files/fann-2.1.0_beta-examples.patch,
-  +files/fann-2.1.0_beta-python.patch, metadata.xml,
-  +fann-2.1.0_beta.ebuild:
-  Version bump, beta recommended by upstream, closing bug #199785.
+  +files/fann-2.1.0_beta-examples.patch, +files/fann-2.1.0_beta-python.patch,
+  +files/fann-2.1.0_beta-pythonlink.patch,
+  +files/fann-2.1.0_beta-sizecheck.patch, +files/fann-2.1.0_beta-valist.patch,
+  +files/fann-2.2.0-examples.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 May 2008; Markus Dittrich <markusle@gentoo.org> fann-1.2.0.ebuild,
-  fann-1.2.0-r1.ebuild, fann-2.0.0.ebuild:
-  Removed runtime dependencies on dev-lang/swig (see bug #221495).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Mar 2008; Christian Heim <phreak@gentoo.org> fann-1.2.0.ebuild,
-  fann-1.2.0-r1.ebuild, fann-2.0.0.ebuild:
-  Fixing the minor syntax errors. Adding some style.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Mar 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing Christian Andreetta (satya, #48841) from metadata.xml.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Jun 2007; Joseph Jezak <josejx@gentoo.org> fann-2.0.0.ebuild:
-  Marked ~ppc for bug #182739.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Feb 2007; Steve Dibb <beandog@gentoo.org> fann-2.0.0.ebuild:
-  add ~amd64, bug 168225
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*fann-2.0.0 (28 Oct 2006)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Oct 2006; Markus Dittrich <markusle@gentoo.org>
-  +files/fann-2.0.0-shared-libs-gentoo.patch, 
-  +files/fann-2.0.0-benchmark.patch, +fann-2.0.0.ebuild:
-  Version bump (this fixes bug #82918).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Aug 2005; Christian Andreetta <satya@gentoo.org> fann-1.2.0.ebuild,
-  fann-1.2.0-r1.ebuild:
-  'cp -pPR' instead of 'cp -a' required by Darwin and BSD (bug #103487)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*fann-1.2.0-r1 (04 Jan 2005)
-
-  04 Jan 2005; Christian Andreetta <satya@gentoo.org>
-  +files/fann-1.2.0-r1.patch, +fann-1.2.0-r1.ebuild:
-  python bindings patch by Martin Renold.
-  (http://old.homeip.net/martin/fann-python-bindings.patch)
-
-*fann-1.2.0 (28 Dec 2004)
-
-  28 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +files/fann-1.2.0-setup.py, +fann-1.2.0.ebuild:
-  Moved from app-sci/fann to sci-mathematics/fann.
-
-*fann-1.2.0 (04 Dec 2004)
-
-  04 Dec 2004; Christian Andreetta <satya@gentoo.org> +metadata.xml,
-  +files/fann-1.2.0-setup.py, +fann-1.2.0.ebuild:
-  initial ebuild
+  Bug: https://bugs.gentoo.org/552720
 

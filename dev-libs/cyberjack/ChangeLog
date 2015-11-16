@@ -1,186 +1,62 @@
 # ChangeLog for dev-libs/cyberjack
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyberjack/ChangeLog,v 1.39 2014/02/13 22:27:59 idl0r Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  13 Feb 2014; Christian Ruppert <idl0r@gentoo.org> metadata.xml:
-  xmllint
+*cyberjack-3.99.5_p05 (09 Aug 2015)
+*cyberjack-3.99.5_p03-r1 (09 Aug 2015)
 
-*cyberjack-3.99.5_p05 (13 Feb 2014)
-
-  13 Feb 2014; Christian Ruppert <idl0r@gentoo.org>
-  +cyberjack-3.99.5_p05.ebuild, +files/cyberjack-3.99.5_p05-install.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +cyberjack-3.99.5_p03-r1.ebuild, +cyberjack-3.99.5_p05.ebuild,
+  +files/cyberjack-3.99.5_p03-gcc47.patch,
+  +files/cyberjack-3.99.5_p05-install.patch,
   +files/cyberjack-3.99.5_p05-manpages.patch,
-  +files/cyberjack-3.99.5_p05-returnvalue.patch, +files/cyberjack-r1.rules:
-  Version bump, bug 494690
+  +files/cyberjack-3.99.5_p05-returnvalue.patch, +files/cyberjack-r1.rules,
+  +files/cyberjack.rules, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Aug 2013; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p03-r1.ebuild:
-  Punt unnecessary double slash wrt #479572 by Jonas Stein
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Aug 2013; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p03-r1.ebuild:
-  Rename USE="kernel_linux" to USE="udev" for eg. mdev users.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Aug 2013; Samuli Suominen <ssuominen@gentoo.org>
-  -cyberjack-3.99.5_p03.ebuild:
-  old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> cyberjack-3.99.5_p03-r1.ebuild:
-  Stable for x86, wrt bug #447478
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> cyberjack-3.99.5_p03-r1.ebuild:
-  Stable for amd64, wrt bug #447478
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p03.ebuild, cyberjack-3.99.5_p03-r1.ebuild:
-  Use virtual/udev instead of sys-fs/udev wrt #444398
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*cyberjack-3.99.5_p03-r1 (12 Aug 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
-  +cyberjack-3.99.5_p03-r1.ebuild, +files/cyberjack-3.99.5_p03-gcc47.patch:
-  Query udev.pc pkg-config file for correct udevdir. Fix building with
-  sys-devel/gcc >= 4.7 wrt #423757 by Diego Elio Pettenò.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> cyberjack-3.99.5_p03.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
-  -files/cyberjack-3.3.2-udev.patch, -cyberjack-3.3.5-r2.ebuild,
-  -cyberjack-3.99.5_p02-r1.ebuild, -files/cyberjack.rules-r1,
-  -files/cyberjack.sh, metadata.xml:
-  old
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  cyberjack-3.99.5_p03.ebuild:
-  x86 stable wrt bug #408441
-
-  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p03.ebuild:
-  Display a warning if kernel option USB_SERIAL_CYBERJACK is missing, see:
-  http://forums.gentoo.org/viewtopic-p-6990566.html
-
-  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> cyberjack-3.99.5_p03.ebuild:
-  Stable for amd64, wrt bug #408441
-
-  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p02-r1.ebuild:
-  amd64/x86 stable
-
-*cyberjack-3.99.5_p03 (23 Jan 2012)
-
-  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
-  +cyberjack-3.99.5_p03.ebuild:
-  Version bump by "der bastler" from Gentoo Forums.
-
-  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
-  -cyberjack-3.99.5_p02.ebuild:
-  old
-
-*cyberjack-3.99.5_p02-r1 (30 Oct 2011)
-
-  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +cyberjack-3.99.5_p02-r1.ebuild, +files/cyberjack.rules:
-  Install 92-cyberjack.rules (keeping numbering scheme consistent with ccid)
-  for udev wrt #388329, thanks to Christoph Brill and Diego Elio Pettenò.
-
-  13 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.99.5_p02.ebuild:
-  Fix building with recent pcsc-lite by renaming FEATURE_MCT_READERDIRECT with
-  FEATURE_MCT_READER_DIRECT in ifd/ifd.cpp wrt
-  http://ludovicrousseau.blogspot.com/2011/06/new-version-of-pcsc-lite-173.html
-
-  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  cyberjack-3.3.5-r2.ebuild:
-  x86 stable wrt bug #353128
-
-  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> cyberjack-3.3.5-r2.ebuild:
-  Stable on amd64 wrt bug #353128
-
-  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.3.5-r2.ebuild:
-  Remove sys-fs/sysfsutils depend also from old version wrt #377683.
-
-*cyberjack-3.99.5_p02 (05 Aug 2011)
-
-  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +cyberjack-3.99.5_p02.ebuild:
-  Version bump wrt #365553 and remove sys-fs/sysfsutils depend wrt #377683 by
-  Anthony Basile.
-
-*cyberjack-3.3.5-r2 (25 Jul 2010)
-
-  25 Jul 2010; Wolfram Schlich <wschlich@gentoo.org>
-  -cyberjack-3.3.5-r1.ebuild, +cyberjack-3.3.5-r2.ebuild:
-  this time really fix udev rules
-
-*cyberjack-3.3.5-r1 (14 Jul 2010)
-
-  14 Jul 2010; Wolfram Schlich <wschlich@gentoo.org> -files/cyberjack.rules,
-  +files/cyberjack.rules-r1, -cyberjack-3.3.5.ebuild,
-  +cyberjack-3.3.5-r1.ebuild:
-  fix udev rules
-
-  19 May 2010; Samuli Suominen <ssuominen@gentoo.org>
-  cyberjack-3.3.5.ebuild:
-  Fix libusb depend to virtual/libusb:1 wrt #320507 by Oliver Schwabedissen.
-
-*cyberjack-3.3.5 (18 May 2010)
-
-  18 May 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +cyberjack-3.3.5.ebuild:
-  Version bump wrt #314081 by Peter Gantner.
-
-*cyberjack-3.3.2 (19 Nov 2009)
-
-  19 Nov 2009; Wolfram Schlich <wschlich@gentoo.org>
-  -files/91-cyberjack.rules, -cyberjack-2.0.13.ebuild,
-  -files/cyberjack-2.0.13-build.patch, -files/cyberjack-2.0.13-qa.patch,
-  -files/cyberjack-2.0.13-udev.patch, -cyberjack-2.0.14_beta1.ebuild,
-  -cyberjack-3.0.4.ebuild, -files/cyberjack-3.0.4-udev.patch,
-  +cyberjack-3.3.2.ebuild, +files/cyberjack-3.3.2-nohal.patch,
-  +files/cyberjack-3.3.2-nopcsc.patch, +files/cyberjack-3.3.2-udev.patch:
-  version bump, removed old versions. also fixes bug #227539.
-
-  16 May 2009; Robin H. Johnson <robbat2@gentoo.org>
-  cyberjack-2.0.13.ebuild, cyberjack-2.0.14_beta1.ebuild,
-  cyberjack-3.0.4.ebuild:
-  Migration to virtual/libusb. Verified by code inspection.
-
-  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
-
-  18 May 2008; Samuli Suominen <drac@gentoo.org> cyberjack-2.0.13.ebuild,
-  cyberjack-2.0.14_beta1.ebuild, cyberjack-3.0.4.ebuild:
-  Move pkgconfig to DEPEND.
-
-*cyberjack-3.0.4 (20 Sep 2007)
-
-  20 Sep 2007; Wolfram Schlich <wschlich@gentoo.org>
-  +files/cyberjack-3.0.4-udev.patch, +files/cyberjack.rules,
-  +cyberjack-3.0.4.ebuild:
-  version bump
-
-*cyberjack-2.0.14_beta1 (18 Mar 2007)
-
-  18 Mar 2007; Wolfram Schlich <wschlich@gentoo.org>
-  +cyberjack-2.0.14_beta1.ebuild:
-  version bump
-
-  03 Mar 2007; Marius Mauch <genone@gentoo.org> cyberjack-2.0.13.ebuild:
-  Replacing einfo with elog
-
-  17 Feb 2007; Wolfram Schlich <wschlich@gentoo.org> files/cyberjack.sh:
-  add hack for >=dev-libs/libusb-0.1.12 to udev script
-
-  17 Feb 2007; Wolfram Schlich <wschlich@gentoo.org>
-  cyberjack-2.0.13.ebuild:
-  fix pcsc-lite usbdropdir stuff
-
-*cyberjack-2.0.13 (12 Feb 2007)
-
-  12 Feb 2007; Wolfram Schlich <wschlich@gentoo.org>
-  +files/cyberjack-2.0.13-build.patch, +files/cyberjack-2.0.13-udev.patch,
-  +files/91-cyberjack.rules, +files/cyberjack-2.0.13-qa.patch,
-  +files/cyberjack.sh, +cyberjack-2.0.13.ebuild:
-  initial import wrt bug #62919

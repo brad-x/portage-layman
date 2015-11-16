@@ -1,92 +1,63 @@
 # ChangeLog for net-im/skypetab-ng
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/skypetab-ng/ChangeLog,v 1.17 2015/06/14 17:29:40 ulm Exp $
+# (auto-generated from git log)
 
-  14 Jun 2015; Ulrich Müller <ulm@gentoo.org> skypetab-ng-0.5.2.ebuild,
+*skypetab-ng-9999 (09 Aug 2015)
+*skypetab-ng-0.5.2 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +skypetab-ng-0.5.2.ebuild, +skypetab-ng-9999.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> skypetab-ng-0.5.2.ebuild,
   skypetab-ng-9999.ebuild:
-  [QA] Remove emul-linux-x86-* from dependencies.
+  Use https by default
 
-  07 Apr 2015; Sergei Trofimovich <slyfox@gentoo.org> skypetab-ng-0.5.2.ebuild,
-  skypetab-ng-9999.ebuild:
-  Added missing 'qmake' depend and QtCore depend (bug #545346 by redneb).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Apr 2015; Sergei Trofimovich <slyfox@gentoo.org> skypetab-ng-9999.ebuild:
-  Update multilib deps in live ebuild.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  14 Mar 2015; Michał Górny <mgorny@gentoo.org> -skypetab-ng-0.5.1.ebuild:
-  Drop old versions that require emul-linux-x86 packages.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Nov 2014; Pacho Ramos <pacho@gentoo.org> skypetab-ng-0.5.2.ebuild:
-  Update multilib deps
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> skypetab-ng-0.5.1.ebuild,
-  skypetab-ng-0.5.2.ebuild, skypetab-ng-9999.ebuild:
-  Remove trailing '.' from DESCRIPTION.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> skypetab-ng-0.5.1.ebuild,
-  skypetab-ng-0.5.2.ebuild, skypetab-ng-9999.ebuild:
-  Move Qt dependencies to the new category
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*skypetab-ng-0.5.2 (11 Dec 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org> +skypetab-ng-0.5.2.ebuild:
-  Version bump.
-
-*skypetab-ng-0.5.1 (03 Dec 2012)
-
-  03 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org> +skypetab-ng-0.5.1.ebuild,
-  -files/skypetab-ng-0.5.0-fix-multiwindows.patch, -skypetab-ng-0.5.0-r1.ebuild,
-  -skypetab-ng-0.5.0.ebuild, skypetab-ng-9999.ebuild:
-  Version bump (skype-4.1 compatible). Fixes bug #445786 by Rion.
-
-  26 Jul 2012; Johannes Huber <johu@gentoo.org> skypetab-ng-0.5.0-r1.ebuild,
-  skypetab-ng-0.5.0.ebuild, skypetab-ng-9999.ebuild:
-  Add missing slot dependencies on Qt.
-
-*skypetab-ng-0.5.0-r1 (24 Jul 2012)
-
-  24 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +files/skypetab-ng-0.5.0-fix-multiwindows.patch, +skypetab-ng-0.5.0-r1.ebuild,
-  -skypetab-ng-0.4.11.ebuild:
-  Picked upstream patch to disable multiwindow mode. Thanks to Ulya Fokanova who
-  noticed the problem.
-
-*skypetab-ng-0.5.0 (26 Jun 2012)
-
-  26 Jun 2012; Sergei Trofimovich <slyfox@gentoo.org> +skypetab-ng-0.5.0.ebuild,
-  -skypetab-ng-0.4.9_pre20120325.ebuild:
-  Version bump requested by Manuel Rüger in bug #423569.
-
-*skypetab-ng-0.4.11 (09 Jun 2012)
-
-  09 Jun 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +skypetab-ng-0.4.11.ebuild, -skypetab-ng-0.4.9_pre20111124-r1.ebuild,
-  skypetab-ng-9999.ebuild:
-  Version bump (request by Manuel Rüger in #420317). Removed old.
-
-*skypetab-ng-0.4.9_pre20120325 (25 Mar 2012)
-
-  25 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +skypetab-ng-0.4.9_pre20120325.ebuild:
-  Update snapshot. Includes minimize by click requested by barul in bug #408197.
-
-*skypetab-ng-0.4.9_pre20111124-r1 (14 Mar 2012)
-
-  14 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  +skypetab-ng-0.4.9_pre20111124-r1.ebuild,
-  -skypetab-ng-0.4.9_pre20111124.ebuild:
-  Require dynamically linked skype against qt as we are hijacking it. Fixed by
-  hasufell (bug #407819).
-
-  14 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
-  skypetab-ng-0.4.9_pre20111124.ebuild, skypetab-ng-9999.ebuild:
-  Require dynamically linked skype against qt as we are hijacking it. Fixed by
-  hasufell (bug #407819).
-
-*skypetab-ng-9999 (11 Feb 2012)
-*skypetab-ng-0.4.9_pre20111124 (11 Feb 2012)
-
-  11 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org> +metadata.xml,
-  +skypetab-ng-0.4.9_pre20111124.ebuild, +skypetab-ng-9999.ebuild:
-  Initial version. An LD_PRELOAD library to make your skype single-windowed
-  application. Handly for tiled WM users.

@@ -1,54 +1,80 @@
 # ChangeLog for dev-util/ticpp
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/ticpp/ChangeLog,v 1.13 2013/05/11 13:56:33 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  11 May 2013; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20120423.ebuild,
-  ticpp-9999.ebuild:
-  fix premake slot
+*ticpp-9999 (09 Aug 2015)
+*ticpp-0_p20120423 (09 Aug 2015)
 
-  09 Mar 2013; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20120423.ebuild,
-  ticpp-9999.ebuild:
-  Eapi 5
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +ticpp-0_p20120423.ebuild, +ticpp-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  03 Jan 2013; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20120423.ebuild:
-  Add ~ppc, wrt bug #449956
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -ticpp-0_p20100924.ebuild,
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
   ticpp-0_p20120423.ebuild:
-  Stable for amd64/x86, removed old
+  Use https by default
 
-  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20100924.ebuild,
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ticpp-0_p20120423.ebuild,
+  ticpp-9999.ebuild:
+  Enable https for all google URIs
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ticpp-9999.ebuild:
+  Convert URIs for googlecode.com to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
   ticpp-0_p20120423.ebuild, ticpp-9999.ebuild:
-  Change license to MIT
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ticpp-9999.ebuild:
-  Port recent changes to 9999
+  Package-Manager: portage-2.2.20.1
 
-*ticpp-0_p20120423 (17 Jun 2012)
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> +ticpp-0_p20120423.ebuild:
-  Add new snapshot, wrt to bug #412081
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> metadata.xml:
-  Take maintainership
-
-  21 May 2012; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20100924.ebuild:
-  Stable for amd64, wrt bug #415777
-
-  21 May 2012; Jeff Horelick <jdhore@gentoo.org> ticpp-0_p20100924.ebuild:
-  marked x86 per bug 415777
-
-  07 May 2012; Agostino Sarubbo <ago@gentoo.org> ticpp-0_p20100924.ebuild:
-  Add ~x86
-
-  01 Jul 2011; Markos Chandras <hwoarang@gentoo.org> ticpp-0_p20100924.ebuild:
-  Fix premake dependencies. Bug #372731. Thanks to Piotr Szymaniak
-  <szarpaj@grubelek.pl>
-
-*ticpp-9999 (22 Feb 2011)
-*ticpp-0_p20100924 (22 Feb 2011)
-
-  22 Feb 2011; Markos Chandras <hwoarang@gentoo.org> +ticpp-0_p20100924.ebuild,
-  +ticpp-9999.ebuild, +metadata.xml:
-  Moved from sunrise. Initial ebuild from Patrick Zimmermann (moHiJ)
-  <patrick@zakweb.de>. Bug #169802

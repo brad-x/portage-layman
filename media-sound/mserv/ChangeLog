@@ -1,89 +1,58 @@
 # ChangeLog for media-sound/mserv
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mserv/ChangeLog,v 1.26 2012/06/09 23:11:58 zmedico Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  09 Jun 2012; Zac Medico <zmedico@gentoo.org> mserv-0.35-r1.ebuild:
-  inherit user for enewgroup and enewuser
+*mserv-0.35-r1 (09 Aug 2015)
 
-  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> mserv-0.35-r1.ebuild:
-  Fold extra -G argument to enewuser into existing <groups> argument to
-  enewuser as enewuser takes care of splitting into -g/-G for us.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/mserv-0.35-acl,
+  +files/mserv-0.35-confd, +files/mserv-0.35-config, +files/mserv-0.35-initd,
+  +files/mserv-0.35-mservplay.patch, +files/mserv-0.35-paths.patch,
+  +files/mserv-0.35-webacl, +metadata.xml, +mserv-0.35-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  02 Feb 2008; Benedikt Böhm <hollow@gentoo.org> mserv-0.35-r1.ebuild:
-  use depend.apache eclass wrt #208033
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Jul 2007; Christian Heim <phreak@gentoo.org> mserv-0.35-r1.ebuild:
-  Fixing the DEPEND/RDEPEND for the move of net-www/apache to
-  www-servers/apache (#78622).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Jun 2007; Alexis Ballier <aballier@gentoo.org> -mserv-0.35.ebuild:
-  remove version using obsolete webapp-apache eclass, bug #182129
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Feb 2007; Steve Dibb <beandog@gentoo.org> mserv-0.35-r1.ebuild:
-  amd64 stable, bug 134758
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jan 2007; Christian Faulhammer <opfer@gentoo.org> mserv-0.35-r1.ebuild:
-  stable x86, bug #134758
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org> mserv-0.35.ebuild,
-  mserv-0.35-r1.ebuild:
-  Convert to use elog.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Jan 2007; Ryan Hill <dirtyepic@gentoo.org> mserv-0.35-r1.ebuild:
-  Fix ebuild permission and path problems for bug #134758.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 May 2006; Jason Wever <weeve@gentoo.org> mserv-0.35-r1.ebuild:
-  Stable on SPARC wrt bug #134758.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 May 2006; <tcort@gentoo.org> mserv-0.35-r1.ebuild:
-  Removed COPYING from dodoc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  08 Mar 2006; Diego Pettenò <flameeyes@gentoo.org> mserv-0.35-r1.ebuild:
-  Fix last version to use vorbis useflag instead of oggvorbis.
-
-  07 Mar 2006; Diego Pettenò <flameeyes@gentoo.org> mserv-0.35.ebuild,
-  mserv-0.35-r1.ebuild:
-  Drop virtual/libc dependency. Respect CC and LDFLAGS.
-
-*mserv-0.35-r1 (10 Jan 2006)
-
-  10 Jan 2006; Renat Lumpau <rl03@gentoo.org> +mserv-0.35-r1.ebuild:
-  Updated for webapp.eclass wrt bug #58378.
-
-  24 Aug 2005; Diego Pettenò <flameeyes@gentoo.org> mserv-0.35.ebuild:
-  Use newconfd/newinitd.
-
-  23 Aug 2005; Diego Pettenò <flameeyes@gentoo.org> mserv-0.35.ebuild:
-  Use -1 instead of /bin/false on enewuser call. Removed || die where not needed.
-
-  25 Jul 2005; David Holm <dholm@gentoo.org> mserv-0.35.ebuild:
-  Added to ~ppc.
-
-  28 May 2005; Jan Brinkmann <luckyduck@gentoo.org> mserv-0.35.ebuild:
-  Dont make use of the deprecated oggvorbis useflag any longer, see #94254.
-
-  15 Sep 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  Stable amd64, sparc.
-
-  19 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  Added to ~sparc ~amd64
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  virtual/glibc -> virtual/libc
-
-  14 Apr 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  Stable x86.  Removed apache2 from IUSE.
-
-  22 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  Using keepdir to fix bug #45361.
-
-  11 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> mserv-0.35.ebuild:
-  ebuild cleanup.
-
-*mserv-0.35 (10 Mar 2004)
-
-  10 Mar 2004; Jeremy Huddleston <eradicator@gentoo.org> metadata.xml,
-  mserv-0.35.ebuild:
-  mserv is a jukebox server. Ebuild submitted by Stephen Martin
-  <steve@deadlylaser.com> in bug #27902.
+  Bug: https://bugs.gentoo.org/552720
 

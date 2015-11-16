@@ -1,98 +1,56 @@
 # ChangeLog for x11-wm/matchbox
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/matchbox/ChangeLog,v 1.29 2015/03/29 13:27:23 pacho Exp $
+# (auto-generated from git log)
 
-  29 Mar 2015; Pacho Ramos <pacho@gentoo.org> matchbox-1.0.ebuild:
-  x11-misc/matchbox-panel-manager will be removed (#514832)
+*matchbox-1.0 (09 Aug 2015)
 
-  22 Dec 2012; Ulrich Müller <ulm@gentoo.org> matchbox-1.0.ebuild:
-  Fix LICENSE, metapackage that doesn't install any files, bug 446802.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +matchbox-1.0.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -matchbox-0.7.1.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Jun 2012; Michael Weber <xmw@gentoo.org> matchbox-1.0.ebuild:
-  ppc stable (bug 309407)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Mar 2012; Thomas Kahle <tomka@gentoo.org> matchbox-1.0.ebuild:
-  marked x86 per bug 309407
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #112268
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> matchbox-1.0.ebuild:
-  Stable for amd64, wrt bug #309407
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  08 Nov 2010; Samuli Suominen <ssuominen@gentoo.org> matchbox-0.7.1.ebuild:
-  Use virtual/jpeg wrt #327487.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> matchbox-0.7.1.ebuild:
-  Replace -Wl,--no-as-needed with function from flag-o-matic eclass.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Mar 2009; <solar@gentoo.org> matchbox-0.7.1.ebuild,
-  matchbox-1.0.ebuild:
-  keyword ~amd64
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  13 Jul 2008; Joseph Jezak <josejx@gentoo.org> matchbox-1.0.ebuild:
-  Marked ~ppc for bug #211803.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Feb 2008; Yuri Vasilevski <yvasilev@gentoo.org> matchbox-0.7.1.ebuild,
-  matchbox-1.0.ebuild:
-  Updated HOMEPAGE and SRC_URI to it's new location
-  http://matchbox-project.org/ (Bug #211244).
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Feb 2008; <yvasilev@gentoo.org> matchbox-0.7.1.ebuild:
-  Added -Wl,--no-as-needed to LDFLAGS to fix Bug #203150:
-  x11-wm/matchbox-0.7.1: undefined reference to XShm* w/ --as-needed
-
-  26 Sep 2007; Jeroen Roovers <jer@gentoo.org> matchbox-1.0.ebuild:
-  Marked ~hppa too.
-
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  matchbox-0.7.1.ebuild:
-  Drop virtual/x11 references.
-
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> matchbox-0.7.1.ebuild:
-  (QA) RESTRICT clean up.
-
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  07 Aug 2006; <yvasilev@gentoo.org> matchbox-1.0.ebuild:
-  Added ~arm keyword.
-
-  19 Jun 2006; <yvasilev@gentoo.org> matchbox-1.0.ebuild:
-  Removed xine USE flag until x11-plugins/matchbox-desktop-xine is ready, bug
-  #137057.
-
-*matchbox-1.0 (04 Jun 2006)
-
-  04 Jun 2006; <yvasilev@gentoo.org> metadata.xml, +matchbox-1.0.ebuild:
-  Version dump to become a meta package for the Matchbox desktop.
-
-  11 Feb 2006; Krzysiek Pawlik <nelchael@gentoo.org> metadata.xml:
-  Moved to desktop-wm.
-
-  31 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> matchbox-0.7.1.ebuild:
-  Fixed DEPEND for modular X.
-
-  31 Oct 2005; Krzysiek Pawlik <nelchael@gentoo.org> matchbox-0.7.1.ebuild:
-  Fixed dodoc not to install COPYING and INSTALL.
-
-  01 Jul 2005; Joseph Jezak <josejx@gentoo.org> matchbox-0.7.1.ebuild:
-  Marked ppc stable for bug #97644.
-
-  12 Jun 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  matchbox-0.7.1.ebuild:
-  fix HOMEPAGE (bug #92701)
-
-  10 May 2005; David Holm <dholm@gentoo.org> matchbox-0.7.1.ebuild:
-  Added to ~ppc.
-
-  11 Apr 2004; Markus Nigbur <pyrania@gentoo.org> matchbox-0.7.1.ebuild:
-  Marked stable.
-
-*matchbox-0.7.1 (16 Dec 2003)
-
-  16 Dec 2003; Ian Leitch <port001@gentoo.org> matchbox-0.7.1.ebuild:
-  Initial commit, thanks to Rene Wagner <reenoo@gmx.de>. #29009

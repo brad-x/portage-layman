@@ -1,52 +1,57 @@
 # ChangeLog for dev-perl/MusicBrainz-DiscID
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/MusicBrainz-DiscID/ChangeLog,v 1.11 2015/06/13 22:28:41 dilfridge Exp $
+# (auto-generated from git log)
 
-  13 Jun 2015; Andreas K. Huettel <dilfridge@gentoo.org>
-  MusicBrainz-DiscID-0.30.0-r1.ebuild:
-  Module::Build is no longer part of core Perl and has been moved to dev-perl
+*MusicBrainz-DiscID-0.30.0-r1 (09 Aug 2015)
 
-  25 Mar 2015; Patrice Clement <monsieurp@gentoo.org>
-  MusicBrainz-DiscID-0.30.0-r1.ebuild:
-  Remove useless test via PERL_RM_FILES. Fix bug 526260.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +MusicBrainz-DiscID-0.30.0-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Mar 2015; Patrice Clement <monsieurp@gentoo.org>
-  MusicBrainz-DiscID-0.30.0-r1.ebuild:
-  Remove bad character in DiscID.pm for tests to pass. Fix bug 526260.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*MusicBrainz-DiscID-0.30.0-r1 (23 Aug 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +MusicBrainz-DiscID-0.30.0-r1.ebuild, -MusicBrainz-DiscID-0.30.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
-  MusicBrainz-DiscID-0.30.0.ebuild:
-  ppc64 stable wrt #421795
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Aug 2012; Michael Weber <xmw@gentoo.org> MusicBrainz-DiscID-0.30.0.ebuild:
-  ppc stable (bug 421795).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  MusicBrainz-DiscID-0.30.0-r1.ebuild, metadata.xml:
+  Use https by default
 
-*MusicBrainz-DiscID-0.30.0 (24 Jun 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org>
-  -MusicBrainz-DiscID-0.03.ebuild, +MusicBrainz-DiscID-0.30.0.ebuild:
-  Change version scheme. Fix pod encoding (#422901)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
-  MusicBrainz-DiscID-0.03.ebuild:
-  marked x86 per bug 421795
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
-  MusicBrainz-DiscID-0.03.ebuild:
-  Stable for amd64, wrt bug #421795
+  Bug: https://bugs.gentoo.org/552720
 
-*MusicBrainz-DiscID-0.03 (10 May 2012)
-
-  10 May 2012; Samuli Suominen <ssuominen@gentoo.org>
-  +MusicBrainz-DiscID-0.03.ebuild:
-  Initial commit as a prerequisite for bug 415319.

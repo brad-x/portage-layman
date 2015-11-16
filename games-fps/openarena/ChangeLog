@@ -1,123 +1,58 @@
 # ChangeLog for games-fps/openarena
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/openarena/ChangeLog,v 1.27 2015/01/31 06:38:58 tupone Exp $
+# (auto-generated from git log)
 
-  30 Jan 2015; Tupone Alfredo <tupone@gentoo.org> openarena-0.8.8.ebuild:
-  EAPI 5
+*openarena-0.8.8 (09 Aug 2015)
 
-  31 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/openarena-0.8.5-bots-strcpy-fix.patch,
-  -files/openarena-0.8.5-makefile.patch,
-  -files/openarena-0.8.5-unbundling.patch, -openarena-0.8.5.ebuild:
-  old
-
-  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> openarena-0.8.8.ebuild:
-  marked x86 per bug 422123
-
-  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> openarena-0.8.8.ebuild:
-  Stable for amd64, wrt bug #422123
-
-*openarena-0.8.8 (18 May 2012)
-
-  18 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +openarena-0.8.8.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/openarena-0.8.8-makefile.patch,
-  +files/openarena-0.8.8-unbundling.patch:
-  version bump (bug #306617) with patches from hasufell
+  +files/openarena-0.8.8-unbundling.patch, +metadata.xml,
+  +openarena-0.8.8.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> openarena-0.8.5.ebuild:
-  sed patch to build against newer zlib (bug #384395)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  26 Feb 2011; Kevin McCarthy <signals@gentoo.org> openarena-0.8.5.ebuild:
-  Updated depends from media-libs/jpeg to virtual/jpeg
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  openarena-0.8.5.ebuild:
-  stable x86, bug 341415
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Oct 2010; Markos Chandras <hwoarang@gentoo.org> openarena-0.8.5.ebuild:
-  Stable on amd64 wrt bug #341415
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*openarena-0.8.5 (09 Sep 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  09 Sep 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +openarena-0.8.5.ebuild, +files/openarena-0.8.5-bots-strcpy-fix.patch,
-  +files/openarena-0.8.5-makefile.patch,
-  +files/openarena-0.8.5-unbundling.patch:
-  version bump with work from Cesar Garcia in bug #306617
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  23 May 2010; Pacho Ramos <pacho@gentoo.org> openarena-0.8.1-r1.ebuild:
-  stable amd64, bug 315299
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 May 2010; Tupone Alfredo <tupone@gentoo.org> openarena-0.8.1-r1.ebuild,
-  files/openarena-0.8.1-makefile.patch:
-  Fix build with gcc-4.5. Bug #318495 by flameeyes@gentoo.org
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  openarena-0.8.1-r1.ebuild:
-  x86 stable wrt bug #315299
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Mar 2010; Tupone Alfredo <tupone@gentoo.org> openarena-0.8.1-r1.ebuild,
-  files/openarena-0.8.1-makefile.patch,
-  files/openarena-0.8.1-unbundling.patch:
-  Fixing CFLAGS and LDFLAGS issues raised on bug #255453 by Zeev Tarantov
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Mar 2010; Tupone Alfredo <tupone@gentoo.org>
-  files/openarena-0.8.1-makefile.patch:
-  Fix usage of vm for amd64 arch. Bug #255453 by Zeev Tarantov
-
-  10 Mar 2010; Tupone Alfredo <tupone@gentoo.org> openarena-0.8.1-r1.ebuild,
-  +files/openarena-0.8.1-unbundling.patch,
-  -files/openarena-0.8.1-zlib.patch:
-  Unbundle media-libs/jpeg. Bug #255453 by flameeyes@gentoo.org
-
-*openarena-0.8.1-r1 (06 Mar 2010)
-
-  06 Mar 2010; Tupone Alfredo <tupone@gentoo.org>
-  +openarena-0.8.1-r1.ebuild, files/openarena-0.8.1-makefile.patch,
-  +files/openarena-0.8.1-zlib.patch:
-  Unbundling speex and zlib. Partially fix bug #255453 by
-  flameeyes@gentoo.org
-
-  12 Oct 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  openarena-0.8.1.ebuild:
-  more SDL use flags (bug #288709)
-
-  10 Jun 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  openarena-0.8.1.ebuild:
-  add use dep for libsdl[joystick] (bug #273618)
-
-  03 Jun 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  openarena-0.8.1.ebuild:
-  use libopenal.so by default instead of libopenal.so.0 (bug #272192)
-
-  28 May 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  openarena-0.8.1.ebuild:
-  needs -fno-strict-aliasing for proper function - reported by Cesar Garcia (bug
-  #268851)
-
-*openarena-0.8.1 (07 Jan 2009)
-
-  07 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/openarena-0.8.1-makefile.patch, +openarena-0.8.1.ebuild:
-  version bump with ebuild submitted by scarabeus (bug #245759)
-
-  05 Jun 2008; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
-  Removing myself as maintainer.
-
-  29 Feb 2008; Carsten Lohrke <carlo@gentoo.org> openarena-0.7.1.ebuild:
-  Remove icon extension from desktop entry to match Icon Theme Specification.
-
-  10 Nov 2007; Chris Gianelloni <wolf31o2@gentoo.org> +metadata.xml:
-  Adding metadata.xml so Mr_Bones_ will quit brow beating me. I'm sorry, sir.
-  It won't happen, again. *grin*
-
-  07 Nov 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  openarena-0.7.1.ebuild:
-  Changed SRC_URI to A in pkg_nofetch so we don't get the full URI output.
-
-*openarena-0.7.1 (07 Nov 2007)
-
-  07 Nov 2007; Chris Gianelloni <wolf31o2@gentoo.org> +files/openarena.xpm,
-  +openarena-0.7.1.ebuild:
-  Initial import. Ebuild by Paul Bredbury <brebs@sent.com> and modified by me.
-  Icon provided by Rémy Dupont <rem11_1999@yahoo.fr>. Closing bug #144705.

@@ -1,184 +1,142 @@
 # ChangeLog for dev-python/ply
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ply/ChangeLog,v 1.50 2015/08/06 14:41:06 klausman Exp $
+# (auto-generated from git log)
 
-  06 Aug 2015; Tobias Klausmann <klausman@gentoo.org> ply-3.6-r1.ebuild:
-  Stable on alpha, bug 556428
+*ply-3.6-r1 (09 Aug 2015)
+*ply-3.4-r1 (09 Aug 2015)
 
-  02 Aug 2015; Pacho Ramos <pacho@gentoo.org> ply-3.4-r1.ebuild:
-  sparc stable wrt bug #530294
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/3.6-lextab-None.patch, +files/3.6-picklefile-IOError.patch,
+  +metadata.xml, +ply-3.4-r1.ebuild, +ply-3.6-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Jul 2015; Tobias Klausmann <klausman@gentoo.org> ply-3.4-r1.ebuild:
-  Stable on alpha, bug 530294
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*ply-3.6-r1 (17 May 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 May 2015; Mike Gilbert <floppym@gentoo.org> +files/3.6-lextab-None.patch,
-  +files/3.6-picklefile-IOError.patch, +ply-3.6-r1.ebuild, -ply-3.6.ebuild:
-  Resolve chromium build issues, bug 549328.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*ply-3.6 (11 May 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 May 2015; Patrick Lauer <patrick@gentoo.org> +ply-3.6.ebuild:
-  Bump
+  16 Aug 2015; Mikle Kolyada <zlogene@gentoo.org> ply-3.6-r1.ebuild:
+  ia64 stable wrt bug #556428
 
-  04 Apr 2015; Mike Frysinger <vapier@gentoo.org> ply-3.4-r1.ebuild:
-  Mark arm64/ia64/m68k/s390/sh stable.
+  Package-Manager: portage-2.2.20.1
 
-  01 Apr 2015; Tobias Klausmann <klausman@gentoo.org> ply-3.4-r1.ebuild:
-  Keyworded on alpha, bug 503094
+  21 Aug 2015; Markus Meier <maekke@gentoo.org> ply-3.6-r1.ebuild:
+  arm stable, bug #556428
 
-  05 Mar 2015; Manuel Rüger <mrueg@gentoo.org> -ply-3.4.ebuild:
-  Remove old.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="arm"
 
-  02 Mar 2015; Yixun Lan <dlan@gentoo.org> ply-3.4-r1.ebuild:
-  add arm64 support, tested on A53 board
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ply-3.4-r1.ebuild,
+  ply-3.6-r1.ebuild:
+  Use https by default
 
-  07 Feb 2015; Agostino Sarubbo <ago@gentoo.org> ply-3.4-r1.ebuild:
-  Stable for ppc, wrt bug #530592
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Dec 2014; Pacho Ramos <pacho@gentoo.org> ply-3.4-r1.ebuild:
-  Set only one RESTRICT and add a reference to relevant bug report
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Dec 2014; Markus Meier <maekke@gentoo.org> ply-3.4-r1.ebuild:
-  arm stable, bug #530592
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Dec 2014; Ian Delaney <idella4@gentoo.org> ply-3.4-r1.ebuild:
-  tests retricted, closes bug #458648, finally
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Dec 2014; Jeroen Roovers <jer@gentoo.org> ply-3.4-r1.ebuild:
-  Stable for HPPA (bug #530294).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Dec 2014; Agostino Sarubbo <ago@gentoo.org> ply-3.4-r1.ebuild:
-  Stable for ppc64, wrt bug #530592
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Dec 2014; Ian Delaney <idella4@gentoo.org> ply-3.4-r1.ebuild:
-  clean old impls
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Oct 2014; Fabian Groffen <grobian@gentoo.org> ply-3.4-r1.ebuild:
-  Added Prefix keywords, bug #503094
+  25 Aug 2015; Jeroen Roovers <jer@gentoo.org> ply-3.6-r1.ebuild:
+  Stable for HPPA PPC64 (bug #556428).
 
-  13 Sep 2014; Patrick Lauer <patrick@gentoo.org> ply-3.4-r1.ebuild:
-  Restrict tests until they have a chance of not failing
+  Package-Manager: portage-2.2.20.1
 
-  02 Apr 2014; Tim Harder <radhermit@gentoo.org> ply-3.4-r1.ebuild:
-  Add python3_4 support.
+  06 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ply-3.6-r1.ebuild:
+  ppc stable wrt bug #556428
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> ply-3.4-r1.ebuild:
-  Add support for the new PyPy slotting.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ppc"
 
-  22 Mar 2014; Markos Chandras <hwoarang@gentoo.org> ply-3.4-r1.ebuild:
-  Add ~mips. Bug #503094
+  20 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ply-3.6-r1.ebuild:
+  x86 stable wrt bug #556428
 
-  04 Mar 2014; Naohiro Aota <naota@gentoo.org> ply-3.4-r1.ebuild:
-  Add ~x86-fbsd wrt bug #503094
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-  03 Mar 2014; Jeroen Roovers <jer@gentoo.org> ply-3.4-r1.ebuild:
-  Marked ~hppa (bug #503094).
+  24 Sep 2015; Agostino Sarubbo <ago@gentoo.org> ply-3.6-r1.ebuild:
+  amd64 stable wrt bug #556428
 
-  07 Dec 2013; Pacho Ramos <pacho@gentoo.org> ply-3.4-r1.ebuild:
-  x86 stable, bug #488738
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  29 Nov 2013; Pacho Ramos <pacho@gentoo.org> ply-3.4-r1.ebuild:
-  amd64 stable, bug #488738
+*ply-3.8 (10 Oct 2015)
 
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> ply-3.4-r1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
+  10 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml, +ply-3.8.ebuild:
+  Version Bump
 
-  23 May 2013; Patrick Lauer <patrick@gentoo.org> ply-3.4.ebuild:
-  Fixing dependency, thanks to amesists for the hint
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 May 2013; Mike Gilbert <floppym@gentoo.org> ply-3.4-r1.ebuild,
-  ply-3.4.ebuild:
-  Depend on setuptools, thanks to Arfrever.
+*ply-3.8-r1 (11 Oct 2015)
 
-*ply-3.4-r1 (21 Feb 2013)
+  11 Oct 2015; Justin Lecher <jlec@gentoo.org> +ply-3.8-r1.ebuild:
+  Add python3.5 support
 
-  21 Feb 2013; Michał Górny <mgorny@gentoo.org> +ply-3.4-r1.ebuild:
-  Migrate to distutils-r1.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> ply-3.4.ebuild:
-  Add ~ppc64, wrt bug #412329
+  14 Oct 2015; Michał Górny <mgorny@gentoo.org> ply-3.8.ebuild,
+  -ply-3.8-r1.ebuild:
+  dev-python/*: Restore keywords and un-revbump for py3.5
 
-  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> ply-3.4.ebuild:
-  Keyword amd64-linux and x86-linux
+  Restore keywords that were removed unnecessarily, and collapse
+  unnecessary revbumps on packages with added python3.5 support.
 
-  27 Jun 2012; Markus Meier <maekke@gentoo.org> ply-3.4.ebuild:
-  add ~arm, bug #412329
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-  14 Jun 2012; Michael Weber <xmw@gentoo.org> ply-3.4.ebuild:
-  ppc stable (bug 403759)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ply-3.4.ebuild:
-  marked x86 per bug 403759
+  18 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> ply-3.6-r1.ebuild,
+  ply-3.8.ebuild:
+  Add ~sparc keyword wrt bug #560894
 
-  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> ply-3.4.ebuild:
-  Test fix for #408145
+  Package-Manager: portage-2.2.20.1
 
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ply-3.4.ebuild:
-  Stable for amd64, wrt bug #403759
+  03 Nov 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  metadata.xml: Correct broken text in ja longdescriptions
 
-*ply-3.4 (18 Feb 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -ply-3.3.ebuild, +ply-3.4.ebuild:
-  Version bump. Fixed support for Python 3 in ply.cpp (bug #343641). Fixed
-  tests with Python 3.2 (bug #343753).
+  03 Nov 2015; Guilherme Amadio <amadio@gentoo.org> metadata.xml:
+  metadata.xml: Correct text in ja longdescriptions
 
-  16 Aug 2010; Dirkjan Ochtman <djc@gentoo.org> ply-3.3.ebuild:
-  Update license (see homepage; bug 333025).
+  Signed-off-by: Guilherme Amadio <amadio@gentoo.org>
 
-*ply-3.3 (07 Sep 2009)
-
-  07 Sep 2009; Patrick Lauer <patrick@gentoo.org> +ply-3.3.ebuild:
-  Bump
-
-*ply-3.2 (29 Aug 2009)
-
-  30 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -ply-2.3.ebuild, +ply-3.2.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-*ply-2.5 (01 Jul 2009)
-
-  01 Jul 2009; Patrick Lauer <patrick@gentoo.org> +ply-2.5.ebuild:
-  Bump to 2.5. Small fixes to remove deprecation warnings. Tests fail
-  because of a path mismatch although the results would be valid.
-
-  03 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org> -ply-2.2.ebuild:
-  Dropped old version.
-
-*ply-2.3 (24 Feb 2007)
-
-  24 Feb 2007; Lukasz Strzygowski <lucass@gentoo.org> +ply-2.3.ebuild:
-  Version bump (bug #168243).
-
-*ply-2.2 (06 Jan 2007)
-
-  06 Jan 2007; Tiziano Müller <dev-zero@gentoo.org> -ply-1.5.ebuild,
-  -ply-1.6.ebuild, +ply-2.2.ebuild:
-  Version bump, bug #147202. Dropped old versions.
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> ply-1.6.ebuild:
-  Mark 1.6 ~ia64
-
-*ply-1.6 (16 Mar 2006)
-
-  16 Mar 2006; Lukasz Strzygowski <lucass@gentoo.org> metadata.xml,
-  ply-1.5.ebuild, +ply-1.6.ebuild:
-  Version bump, fixed SRC_URI and HOMEPAGE (bug #109585). Removed trailing
-  whitespaces from metadata.
-
-  19 Nov 2005; Chris White <chriswhite@gentoo.org> metadata.xml:
-  Added japanese metadata.xml translation thanks to Yoshino-san.
-
-  02 Sep 2004; Travis Tilley <lv@gentoo.org> ply-1.5.ebuild:
-  added ~amd64 keyword
-
-  28 Jun 2004; David Holm <dholm@gentoo.org> ply-1.5.ebuild:
-  Added to ~ppc.
-
-*ply-1.5 (27 Jun 2004)
-
-  27 Jun 2004; Lukasz Strzygowski <lucass@gentoo.org> +ply-1.5.ebuild:
-  Initial commit. Thanks to Yann Ramin in bug #49932.

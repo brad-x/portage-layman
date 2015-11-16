@@ -5,6 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{3,4,5} )
+PYTHON_REQ_USE="threads(+)"
 
 DOC_PV=0.15.1
 
@@ -39,7 +40,7 @@ DEPEND="${CDEPEND}
 	"
 
 RDEPEND="${CDEPEND}
-	virtual/python-imaging[${PYTHON_USEDEP}]"
+	dev-python/pillow[${PYTHON_USEDEP}]"
 
 DOCS=( HACKING.rst.txt THANKS.txt )
 

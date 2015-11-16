@@ -1,115 +1,77 @@
 # ChangeLog for dev-python/hacking
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/hacking/ChangeLog,v 1.25 2015/06/27 12:34:59 maekke Exp $
+# (auto-generated from git log)
 
-  27 Jun 2015; Markus Meier <maekke@gentoo.org> hacking-0.10.2.ebuild:
-  add ~arm, bug #549232
+*hacking-0.10.2 (09 Aug 2015)
+*hacking-0.10.1 (09 Aug 2015)
+*hacking-0.9.6 (09 Aug 2015)
+*hacking-0.9.5 (09 Aug 2015)
+*hacking-0.9.2 (09 Aug 2015)
+*hacking-0.8.1 (09 Aug 2015)
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +hacking-0.8.1.ebuild,
+  +hacking-0.9.2.ebuild, +hacking-0.9.5.ebuild, +hacking-0.9.6.ebuild,
+  +hacking-0.10.1.ebuild, +hacking-0.10.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*hacking-0.9.6 (20 May 2015)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 May 2015; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.9.6.ebuild:
-  bup
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*hacking-0.10.2 (20 May 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 May 2015; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.10.2.ebuild:
-  bup
+  09 Aug 2015; Tobias Klausmann <klausman@gentoo.org> hacking-0.9.5.ebuild:
+  add ~alpha keyword
 
-  17 May 2015; Matthew Thode <prometheanfire@gentoo.org> hacking-0.10.1.ebuild:
-  relaxing deps for 549694
+  Gentoo-Bug: 549232
 
-  17 May 2015; Jeroen Roovers <jer@gentoo.org> hacking-0.9.5.ebuild,
-  hacking-0.10.1.ebuild:
-  Mark ~hppa (bug #549232).
+  Package-Manager: portage-2.2.20
 
-  16 May 2015; Jeroen Roovers <jer@gentoo.org> hacking-0.9.5.ebuild,
-  hacking-0.10.1.ebuild:
-  Mark ~ppc64 (bug #549232).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*hacking-0.9.5 (12 May 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 May 2015; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.9.5.ebuild:
-  bup
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> hacking-0.10.1.ebuild,
-  hacking-0.8.1.ebuild, hacking-0.9.2.ebuild:
-  x86 stable, bug 540290
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> hacking-0.10.1.ebuild,
-  hacking-0.8.1.ebuild, hacking-0.9.2.ebuild:
-  amd64 stable, bug 540290
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*hacking-0.10.1 (16 Feb 2015)
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Feb 2015; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.10.1.ebuild:
-  new hacking, we'll see how it likes a diferent flake8 though...
+  15 Oct 2015; Justin Lecher <jlec@gentoo.org> hacking-0.10.2.ebuild:
+  Keyword under ALLARCHES policy
 
-  24 Nov 2014; Pacho Ramos <pacho@gentoo.org> hacking-0.9.2.ebuild:
-  Support python 3.4
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=549232
 
-  01 Aug 2014; Matthew Thode <prometheanfire@gentoo.org> -hacking-0.5.6.ebuild,
-  -hacking-0.7.2-r1.ebuild, -hacking-0.8.0-r1.ebuild, -hacking-0.8.0.ebuild:
-  out with the old and, well, that's about it really
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*hacking-0.9.2 (07 Jul 2014)
-
-  07 Jul 2014; Ian Delaney <idella4@gentoo.org> +hacking-0.9.2.ebuild:
-  update deps, add missed IUSE doc, update DEPs accirdingly, add 'fix' to error
-  in conf.py re oslo-sphinx, update test phase
-
-*hacking-0.8.1 (19 Apr 2014)
-
-  19 Apr 2014; Ian Delaney <idella4@gentoo.org> +hacking-0.8.1.ebuild:
-  bump; upstream have dropped py3.2 support and added py3.3 support
-
-*hacking-0.5.6 (30 Mar 2014)
-
-  30 Mar 2014; Michał Górny <mgorny@gentoo.org> +hacking-0.5.6.ebuild:
-  Restore old (without py2.6 though) since it is required by OpenStack packages.
-
-  30 Mar 2014; Michał Górny <mgorny@gentoo.org> -hacking-0.5.6.ebuild:
-  Drop old since it requires dev-python/pbr w/ py2.6 support that was removed.
-
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org> hacking-0.7.2-r1.ebuild,
-  hacking-0.8.0-r1.ebuild:
-  Keyword ~amd64-linux ~x86-linux
-
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org> hacking-0.8.0-r1.ebuild:
-  Keyword amd64-linux and x86-linux
-
-*hacking-0.7.2-r1 (02 Jan 2014)
-*hacking-0.8.0-r1 (02 Jan 2014)
-
-  02 Jan 2014; Ian Delaney <idella4@gentoo.org> +hacking-0.7.2-r1.ebuild,
-  +hacking-0.8.0-r1.ebuild, -hacking-0.7.2.ebuild:
-  revbumps; 0.7.2-r1; add 1 missing test dep, tidy up, both; Add py3.2 support,
-  upgrade test phase with upstream bug added for fails under py3, remove only
-  old 0.7.2 for now
-
-  02 Jan 2014; Ian Delaney <idella4@gentoo.org> hacking-0.8.0.ebuild:
-  correct 1 char white space
-
-*hacking-0.8.0 (02 Jan 2014)
-
-  02 Jan 2014; Ian Delaney <idella4@gentoo.org> +hacking-0.8.0.ebuild,
-  metadata.xml:
-  Add herd, version bump; add USE doc, doc build, install, update all deps, test
-  phase
-
-*hacking-0.7.2 (25 Oct 2013)
-
-  25 Oct 2013; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.7.2.ebuild,
-  hacking-0.5.6.ebuild:
-  bump of hacking, also, test support
-
-*hacking-0.5.6 (13 Aug 2013)
-
-  13 Aug 2013; Matthew Thode <prometheanfire@gentoo.org> +hacking-0.5.6.ebuild,
-  +metadata.xml:
-  adding hacking as it is needed for testing support for sys-cluster/swift

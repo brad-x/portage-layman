@@ -1,50 +1,58 @@
 # ChangeLog for games-board/gnono
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/gnono/ChangeLog,v 1.16 2014/03/19 02:20:51 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Mar 2014; Michael Sterrett <mr_bones_@gentoo.org> gnono-1.9.1.ebuild:
-  EAPI=5
+*gnono-1.9.1 (09 Aug 2015)
 
-  21 Oct 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/gnono-1.9.1-glib-single-include.patch, gnono-1.9.1.ebuild:
-  Let it compile with glib-2.32, bug #438418 by Flameeyes.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gnono-1.9.1-gentoo.patch,
+  +files/gnono-1.9.1-glib-single-include.patch, +gnono-1.9.1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Nov 2009; Markus Meier <maekke@gentoo.org> gnono-1.9.1.ebuild:
-  amd64/x86 stable, bug #294145
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Nov 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  files/gnono-1.9.1-gentoo.patch:
-  reroll patch for bug #206306
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Mar 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  files/gnono-1.9.1-gentoo.patch:
-  remove -Werror (bug #260897)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org> gnono-1.9.1.ebuild:
-  EAPI=2
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Mar 2008; Rémi Cardona <remi@gentoo.org> gnono-1.9.1.ebuild:
-  update ebuild to new gnome2 eclass (see bug #155993)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Jun 2007; Tristan Heaven <nyhm@gentoo.org> gnono-1.9.1.ebuild:
-  Add ~x86 keyword
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*gnono-1.9.1 (30 May 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 May 2007; Tupone Alfredo <tupone@gentoo.org>
-  +files/gnono-1.9.1-gentoo.patch, +metadata.xml, +gnono-1.9.1.ebuild:
-  Version bump to 1.9.1 Bug #158261 by Serkan Kaba
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> gnono-0.0.3.ebuild:
-  Stable on ppc.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Dec 2004; Joseph Jezak <josejx@gentoo.org> gnono-0.0.3.ebuild:
-  Marked ~ppc.
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Nov 2004; Chris Gianelloni <wolf31o2@gentoo.org> gnono-0.0.3.ebuild:
-  Added ~amd64 KEYWORD and closing bug #69770.
-
-*gnono-0.0.3 (12 Dec 2002)
-
-  12 Dec 2002; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Rigo Ketelings <rigo@home.nl>.

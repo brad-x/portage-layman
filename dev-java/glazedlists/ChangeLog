@@ -1,110 +1,59 @@
 # ChangeLog for dev-java/glazedlists
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/glazedlists/ChangeLog,v 1.26 2015/05/27 11:15:33 ago Exp $
+# (auto-generated from git log)
 
-  27 May 2015; Agostino Sarubbo <ago@gentoo.org> glazedlists-1.8.0.ebuild:
-  Stable for x86, wrt bug #549378
+*glazedlists-1.8.0 (09 Aug 2015)
+*glazedlists-1.7.0-r1 (09 Aug 2015)
 
-  27 May 2015; Agostino Sarubbo <ago@gentoo.org> glazedlists-1.8.0.ebuild:
-  Stable for amd64, wrt bug #549378
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/glazedlists-1.7.0-build.xml.patch,
+  +files/glazedlists-1.8.0-build.xml.patch, +glazedlists-1.7.0-r1.ebuild,
+  +glazedlists-1.8.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Mar 2014; Nicolas Bock <nicolasbock@gentoo.org> glazedlists-1.8.0.ebuild:
-  dev-java/glazedlists-1.8.0: Adding ~x86 keyword.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Mar 2014; Nicolas Bock <nicolasbock@gentoo.org> glazedlists-1.8.0.ebuild:
-  dev-java/glazedlists-1.8.0: Updated home page.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*glazedlists-1.8.0 (18 Mar 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Mar 2014; Nicolas Bock <nicolasbock@gentoo.org>
-  +files/glazedlists-1.8.0-build.xml.patch, +glazedlists-1.8.0.ebuild:
-  dev-java/glazedlists-1.8.0: Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 May 2010; Vlastimil Babka <caster@gentoo.org>
-  -glazedlists-1.5.0.ebuild, -files/glazedlists-1.5.0-build.xml.patch,
-  -files/glazedlists-1.5.0-tests.patch, -glazedlists-1.7.0.ebuild,
-  metadata.xml:
-  Remove old.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 May 2010; Kenneth Prugh <ken69267@gentoo.org>
-  glazedlists-1.7.0-r1.ebuild:
-  amd64 stable, bug #304697
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 May 2010; Joseph Jezak <josejx@gentoo.org> glazedlists-1.7.0-r1.ebuild:
-  Marked ppc stable for bug #304697.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  glazedlists-1.7.0-r1.ebuild:
-  x86 stable wrt bug #304697
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Feb 2010; Vlastimil Babka <caster@gentoo.org> metadata.xml:
-  Add local java5 flag description.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*glazedlists-1.7.0-r1 (10 Feb 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Feb 2010; Vlastimil Babka <caster@gentoo.org>
-  +glazedlists-1.7.0-r1.ebuild:
-  Revbump to remove java5 flag and make it unconditional.
-
-  04 Apr 2009; Markus Meier <maekke@gentoo.org> glazedlists-1.7.0.ebuild:
-  amd64/x86 stable, bug #263647
-
-  09 Nov 2008; Vlastimil Babka <caster@gentoo.org> glazedlists-1.7.0.ebuild:
-  Add back missing DESCRIPTION, thanks mr_bones.
-
-*glazedlists-1.7.0 (11 Oct 2008)
-
-  11 Oct 2008; Vlastimil Babka <caster@gentoo.org>
-  +files/glazedlists-1.7.0-build.xml.patch, +glazedlists-1.7.0.ebuild:
-  Version bump, bug #198101. Only minimal version with java5 support for
-  now, to allow bumping jabref. Some extensions supported by ebuild in
-  java-experimental overlay. Thanks to Bernhard Frauendienst
-  <gentoo@obeliks.de>.
-
-  03 Aug 2007; Petteri Räty <betelgeuse@gentoo.org>
-  glazedlists-1.5.0.ebuild:
-  Remove monolithic ant support as split ant is stable now.
-
-  14 Apr 2007; Petteri Räty <betelgeuse@gentoo.org>
-  glazedlists-1.5.0.ebuild:
-  JAVA_PKG_STRICT cleanups and migrate to splitted ant.
-
-  02 Mar 2007; nixnut <nixnut@gentoo.org> glazedlists-1.5.0.ebuild:
-  Stable on ppc wrt bug 154366
-
-  28 Feb 2007; Simon Stelling <blubb@gentoo.org> glazedlists-1.5.0.ebuild:
-  stable on amd64; bug 154366
-
-  26 Jan 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  glazedlists-1.5.0.ebuild:
-  Added ~ppc.
-
-  25 Jan 2007; William L. Thomson Jr. <wltjr@gentoo.org>
-  glazedlists-1.5.0.ebuild:
-  Added ~amd64 keyword
-
-  29 Dec 2006; Christian Faulhammer <opfer@gentoo.org> glazedlists-1.5.0.ebuild:
-  stable on x86, bug #154336
-
-  29 Nov 2006; Vlastimil Babka <caster@gentoo.org>
-  +files/glazedlists-1.5.0-tests.patch, -glazedlists-0.9.6.ebuild,
-  glazedlists-1.5.0.ebuild:
-  Fix building of testcases with -source 1.4, correct ant dependency for
-  USE=test and add --build-only for junit jar-from. Test still restricted
-  because it fails headless. Remove 0.9.6 as nothing uses it.
-
-*glazedlists-1.5.0 (28 Oct 2006)
-
-  28 Oct 2006; Vlastimil Babka <caster@gentoo.org>
-  +files/glazedlists-1.5.0-build.xml.patch, +glazedlists-1.5.0.ebuild:
-  Version bump as dependency of new jabref, bug #122085.There are sources for
-  both 1.4 and 1.5 jdk, this uses 1.4 for now.
-
-  16 Jul 2005; Thomas Matthijs <axxo@gentoo.org> glazedlists-0.9.6.ebuild:
-  disable junit, needs X
-
-*glazedlists-0.9.6 (20 Apr 2005)
-
-  20 Apr 2005; Chris Aniszczyk <zx@gentoo.org> +glazedlists-0.9.6.ebuild:
-  Initial Import. Closes #70136
-  Thanks to Eddy Mulyono <eddymulyono@mail.com> for initial ebuild.

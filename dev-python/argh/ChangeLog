@@ -1,125 +1,66 @@
 # ChangeLog for dev-python/argh
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/argh/ChangeLog,v 1.28 2015/04/08 08:05:29 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> argh-0.25.0.ebuild:
-  Drop old Python implementations
+*argh-0.26.1 (09 Aug 2015)
+*argh-0.26.0 (09 Aug 2015)
+*argh-0.25.0 (09 Aug 2015)
 
-  28 Feb 2015; Markus Meier <maekke@gentoo.org> argh-0.26.1.ebuild:
-  add ~arm, bug #539730
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +argh-0.25.0.ebuild,
+  +argh-0.26.0.ebuild, +argh-0.26.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> argh-0.26.1.ebuild:
-  Stable for x86, wrt bug #535310
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  22 Jan 2015; Agostino Sarubbo <ago@gentoo.org> argh-0.26.1.ebuild:
-  Stable for amd64, wrt bug #535310
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*argh-0.26.1 (31 Oct 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  31 Oct 2014; Patrick Lauer <patrick@gentoo.org> +argh-0.26.1.ebuild:
-  Bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*argh-0.26.0 (31 Oct 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Oct 2014; Ian Delaney <idella4@gentoo.org> +argh-0.26.0.ebuild,
-  -argh-0.23.0-r1.ebuild, -argh-0.23.1.ebuild, -argh-0.23.2.ebuild,
-  -argh-0.23.3.ebuild, -argh-0.24.1.ebuild:
-  bump, remove old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Oct 2014; Agostino Sarubbo <ago@gentoo.org> argh-0.25.0.ebuild:
-  Stable for amd64, wrt bug #518240
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> argh-0.25.0.ebuild:
-  x86 stable wrt bug #518240
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Jul 2014; Ian Delaney <idella4@gentoo.org> argh-0.25.0.ebuild:
-  drop py2.6 pypy2_0 add py3.4
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*argh-0.25.0 (14 Jul 2014)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Jul 2014; Patrick Lauer <patrick@gentoo.org> +argh-0.25.0.ebuild:
-  Bump
+  15 Oct 2015; Justin Lecher <jlec@gentoo.org> argh-0.26.1.ebuild:
+  Keyword under ALLARCHES policy
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> argh-0.23.0-r1.ebuild,
-  argh-0.23.1.ebuild, argh-0.23.2.ebuild, argh-0.23.3.ebuild,
-  argh-0.24.1.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=539730
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> argh-0.23.0-r1.ebuild,
-  argh-0.23.1.ebuild, argh-0.23.2.ebuild, argh-0.23.3.ebuild,
-  argh-0.24.1.ebuild:
-  Add support for the new PyPy slotting.
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*argh-0.24.1 (07 Jan 2014)
-
-  07 Jan 2014; Patrick Lauer <patrick@gentoo.org> +argh-0.24.1.ebuild:
-  Bump
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> argh-0.23.0-r1.ebuild,
-  argh-0.23.1.ebuild, argh-0.23.2.ebuild, argh-0.23.3.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-*argh-0.23.3 (02 Sep 2013)
-
-  02 Sep 2013; Patrick Lauer <patrick@gentoo.org> +argh-0.23.3.ebuild:
-  Bump
-
-*argh-0.23.2 (13 Jun 2013)
-
-  13 Jun 2013; Patrick Lauer <patrick@gentoo.org> +argh-0.23.2.ebuild:
-  Bump
-
-  18 Mar 2013; Kacper Kowalik <xarthisius@gentoo.org> -argh-0.15.1.ebuild,
-  -argh-0.16.0.ebuild, -argh-0.17.2.ebuild:
-  drop old
-
-*argh-0.23.1 (18 Mar 2013)
-
-  18 Mar 2013; Kacper Kowalik <xarthisius@gentoo.org> +argh-0.23.1.ebuild,
-  -argh-0.21.1.ebuild, -argh-0.22.0.ebuild, -argh-0.23.0.ebuild,
-  -files/argh-0.17.2-setup.py.patch:
-  Version bump, add missing test dependency on dev-python/mock, drop old
-
-  12 Feb 2013; Michał Górny <mgorny@gentoo.org> argh-0.23.0-r1.ebuild:
-  Make test failures fatal.
-
-*argh-0.23.0-r1 (12 Feb 2013)
-
-  12 Feb 2013; Michał Górny <mgorny@gentoo.org> +argh-0.23.0-r1.ebuild:
-  Migrate to distutils-r1. Enable tests.
-
-*argh-0.23.0 (08 Feb 2013)
-
-  08 Feb 2013; Patrick Lauer <patrick@gentoo.org> +argh-0.23.0.ebuild:
-  Bump
-
-*argh-0.22.0 (22 Jan 2013)
-
-  22 Jan 2013; Patrick Lauer <patrick@gentoo.org> +argh-0.22.0.ebuild:
-  Bump
-
-*argh-0.21.1 (11 Jan 2013)
-
-  11 Jan 2013; Patrick Lauer <patrick@gentoo.org> +argh-0.21.1.ebuild:
-  Bump for #451252
-
-  05 Jan 2013; Mike Gilbert <floppym@gentoo.org>
-  +files/argh-0.17.2-setup.py.patch, argh-0.17.2.ebuild:
-  Fix UnicodeDecodeError in setup.py. Bug 448728 by flameeyes.
-
-*argh-0.17.2 (29 Nov 2012)
-
-  29 Nov 2012; Patrick Lauer <patrick@gentoo.org> +argh-0.17.2.ebuild:
-  Bump
-
-*argh-0.16.0 (29 Oct 2012)
-
-  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> +argh-0.16.0.ebuild:
-  Bump
-
-*argh-0.15.1 (27 Aug 2012)
-
-  27 Aug 2012; Patrick Lauer <patrick@gentoo.org> +argh-0.15.1.ebuild,
-  +metadata.xml:
-  Initial import, ebuild by me

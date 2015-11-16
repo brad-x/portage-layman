@@ -1,63 +1,57 @@
 # ChangeLog for dev-libs/xml-security-c
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xml-security-c/ChangeLog,v 1.7 2015/04/02 19:27:51 pinkbyte Exp $
+# (auto-generated from git log)
 
-*xml-security-c-1.7.3 (02 Apr 2015)
+*xml-security-c-1.7.3 (09 Aug 2015)
 
-  02 Apr 2015; Sergey Popov <pinkbyte@gentoo.org> -xml-security-c-1.6.1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/1.6.1-nss-compilation-fix.patch, +metadata.xml,
   +xml-security-c-1.7.3.ebuild:
-  Version bump, drop old, wrt bugs #454706 and #474992
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  xml-security-c-1.6.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> xml-security-c-1.6.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Oct 2011; Tiziano Müller <dev-zero@gentoo.org>
-  -files/1.5.1-parallel_build.patch, -xml-security-c-1.5.1.ebuild,
-  -files/1.5.1-xalan-c-1.11-compat.patch:
-  Dropped vulnerable versions (bug #386359).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*xml-security-c-1.6.1 (04 Aug 2011)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Aug 2011; Tiziano Müller <dev-zero@gentoo.org>
-  +files/1.6.1-nss-compilation-fix.patch, +xml-security-c-1.6.1.ebuild,
-  metadata.xml:
-  Version bump (seems to fix bug #356041), use apache-mirror, added USE-flag to
-  use dev-libs/nss, use EAPI-4.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Jul 2009; Tiziano Müller <dev-zero@gentoo.org>
-  xml-security-c-1.5.1.ebuild, +files/1.5.1-xalan-c-1.11-compat.patch:
-  Added patch to fix compilation problems with Xalan-C-1.11
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*xml-security-c-1.5.1 (24 Jul 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jul 2009; Tiziano Müller <dev-zero@gentoo.org>
-  +files/1.5.1-parallel_build.patch, +xml-security-c-1.5.1.ebuild,
-  +metadata.xml:
-  Moved to the tree.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Jul 2009; Tiziano Müller <dev-zero@gentoo.org>
-  +files/1.5.1-parallel_build.patch, -xml-security-c-1.5.0.ebuild,
-  +xml-security-c-1.5.1.ebuild, -files/CVE-2009-0217-fix.patch:
-  Version bump, includes the fix for the CVE. Fixed dependency (xml-security-c
-  is supposed to _not_ need xerces-c-2 anymore).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  16 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
-  xml-security-c-1.5.0.ebuild, +files/CVE-2009-0217-fix.patch:
-  Security fix for CVE-2009-0217
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Jul 2009; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
-  -xml-security-c-1.4.0.ebuild, +xml-security-c-1.5.0.ebuild:
-  Version bump
-
-  30 Dec 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
-  xml-security-c-1.4.0.ebuild:
-  works only with =dev-libs/xerces-c-2* and =dev-libs/xalan-c-1.10*
-
-  22 Oct 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de>
-  +xml-security-c-1.4.0.ebuild, +metadata.xml:
-  New ebuild wrt bug 202952. Thanks to original bug authors and chithead,
-  scarabeus, pva and tommy for help polishing.

@@ -1,107 +1,56 @@
 # ChangeLog for xfce-extra/xfce4-volumed
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-volumed/ChangeLog,v 1.24 2015/08/05 10:47:49 perfinion Exp $
+# (auto-generated from git log)
 
-  05 Aug 2015; Jason Zaman <perfinion@gentoo.org> metadata.xml:
-  Replace herd with xfce@g.o
+*xfce4-volumed-0.1.13 (09 Aug 2015)
 
-  29 Oct 2013; Anthony G. Basile <blueness@gentoo.org>
-  xfce4-volumed-0.1.13.ebuild:
-  Keyword ~arm
-
-  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-volumed-0.1.13.ebuild:
-  EAPI5
-
-  01 Jul 2012; Christoph Mende <angelos@gentoo.org>
-  xfce4-volumed-0.1.13.ebuild:
-  Depend on dev-libs/keybinder:0 wrt #423919
-
-  05 May 2012; Michał Górny <mgorny@gentoo.org> xfce4-volumed-0.1.13.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  19 May 2011; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-volumed-0.1.13.ebuild:
-  USE="alsa oss" to avoid pulling gst-plugins-meta without option to avoid it.
-
-  22 Mar 2011; Thomas Kahle <tomka@gentoo.org> xfce4-volumed-0.1.13.ebuild:
-  x86 stable per bug 358407
-
-  13 Mar 2011; Markos Chandras <hwoarang@gentoo.org>
-  xfce4-volumed-0.1.13.ebuild:
-  Stable on amd64 wrt bug #358407
-
-*xfce4-volumed-0.1.13 (03 Mar 2011)
-
-  03 Mar 2011; Christoph Mende <angelos@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +xfce4-volumed-0.1.13.ebuild:
-  Version bump
+  proj/gentoo: Initial commit
 
-*xfce4-volumed-0.1.11 (29 Jan 2011)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Jan 2011; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.11.ebuild,
-  +files/xfce4-volumed-0.1.11-libnotify-0.7.patch:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*xfce4-volumed-0.1.10 (02 Nov 2010)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Nov 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.10.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*xfce4-volumed-0.1.9 (30 Sep 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Sep 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.9.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  12 May 2010; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-volumed-0.1.8.ebuild:
-  Missing media-plugins/gst-plugins-meta (which in turn will pull in
-  gst-plugins-alsa) RDEPEND wrt #317285 by Benedikt Sauer.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2010; Christian Faulhammer <fauli@gentoo.org>
-  xfce4-volumed-0.1.8.ebuild:
-  stable x86, bug 305657
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Feb 2010; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-volumed-0.1.8.ebuild:
-  amd64 stable wrt #305657
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*xfce4-volumed-0.1.8 (21 Nov 2009)
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Nov 2009; Christoph Mende <angelos@gentoo.org>
-  +xfce4-volumed-0.1.8.ebuild:
-  Version bump
-
-*xfce4-volumed-0.1.7 (12 Nov 2009)
-
-  12 Nov 2009; Christoph Mende <angelos@gentoo.org>
-  +xfce4-volumed-0.1.7.ebuild:
-  Version bump (bug #292624)
-
-*xfce4-volumed-0.1.6 (28 Oct 2009)
-
-  28 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.6.ebuild:
-  Version bump.
-
-*xfce4-volumed-0.1.5 (28 Oct 2009)
-
-  28 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.5.ebuild, +files/xfce4-volumed-0.1.5-libnotify.patch:
-  Version bump.
-
-  03 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
-  xfce4-volumed-0.1.4.ebuild:
-  amd64 stable
-
-  30 Sep 2009; Alex Legler <a3li@gentoo.org> xfce4-volumed-0.1.4.ebuild:
-  Keywording ~x86.
-
-*xfce4-volumed-0.1.4 (06 Sep 2009)
-
-  06 Sep 2009; Samuli Suominen <ssuominen@gentoo.org>
-  +xfce4-volumed-0.1.4.ebuild:
-  Initial commit wrt #283808, thanks to Jeremy Olexa for reporting.

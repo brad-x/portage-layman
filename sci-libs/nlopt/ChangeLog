@@ -1,114 +1,59 @@
 # ChangeLog for sci-libs/nlopt
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/nlopt/ChangeLog,v 1.25 2015/08/03 23:12:03 mrueg Exp $
+# (auto-generated from git log)
 
-  03 Aug 2015; Manuel Rüger <mrueg@gentoo.org> -nlopt-2.3-r1.ebuild,
-  -nlopt-2.3-r2.ebuild:
-  Remove old.
+*nlopt-2.4.2 (09 Aug 2015)
+*nlopt-2.2.4 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> nlopt-2.4.2.ebuild:
-  Drop old Python implementations
-
-*nlopt-2.4.2 (09 Jun 2014)
-
-  09 Jun 2014; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-2.4.2.ebuild,
-  metadata.xml:
-  Version bump. Worked out some kind of multibuild for both C and C++ libraries
-
-  24 Apr 2013; Justin Lecher <jlec@gentoo.org> nlopt-2.2.4.ebuild,
-  nlopt-2.3-r1.ebuild, nlopt-2.3-r2.ebuild, metadata.xml:
-  Fix deprecated macro usage, #466988
-
-  04 Mar 2013; Sébastien Fabbro <bicatali@gentoo.org> nlopt-2.3-r2.ebuild:
-  Remove pure C++ tests when testing C library, bug #460284
-
-*nlopt-2.3-r2 (03 Mar 2013)
-
-  03 Mar 2013; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-2.3-r2.ebuild:
-  Allow C and C++ libraries to be simultaneously installed
-
-*nlopt-2.3-r1 (03 Aug 2012)
-
-  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nlopt-2.2.4-fix-nlopt_hpp-location.patch,
   +files/nlopt-2.3-as-needed.patch, +files/nlopt-2.3-pkgconfig.patch,
-  +nlopt-2.3-r1.ebuild, -nlopt-2.3.ebuild:
-  Fixed for as-needed, fixed pkg-config file when cxx is enabled, introduce
-  testing, restrict python-3, use autotools-utils all the way
+  +metadata.xml, +nlopt-2.2.4.ebuild, +nlopt-2.4.2.ebuild:
+  proj/gentoo: Initial commit
 
-*nlopt-2.3 (03 Aug 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-2.3.ebuild,
-  metadata.xml:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> nlopt-2.2.4.ebuild:
-  keyword amd64-linux and x86-linux
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Apr 2012; Justin Lecher <jlec@gentoo.org> nlopt-2.2.4.ebuild:
-  Correct handling of PYABI things, #405255
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Apr 2012; Justin Lecher <jlec@gentoo.org> nlopt-2.2.4.ebuild,
-  metadata.xml:
-  Disable build of matlab plugin per default, #410211
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nlopt-2.2.4.ebuild:
-  x86 stable wrt bug #386953
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Feb 2012; Patrick Lauer <patrick@gentoo.org> nlopt-2.2.4.ebuild:
-  Restricting pypy and jython
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> nlopt-2.2.4.ebuild,
-  +files/nlopt-2.2.4-fix-nlopt_hpp-location.patch:
-  Fixed directory location for swig generated pfiles, thanks Dustin Polke, bug
-  #402513
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org> nlopt-2.2.4.ebuild:
-  Stable for amd64, wrt bug #386953
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  20 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> nlopt-2.2.4.ebuild:
-  Switched to autotools-utils
+  Bug: https://bugs.gentoo.org/552720
 
-*nlopt-2.2.4 (28 Jul 2011)
-
-  28 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> -nlopt-2.2.1.ebuild,
-  -nlopt-2.2.3.ebuild, +nlopt-2.2.4.ebuild:
-  Version bump
-
-*nlopt-2.2.3 (09 Jun 2011)
-
-  09 Jun 2011; Sébastien Fabbro <bicatali@gentoo.org> -nlopt-1.2.ebuild,
-  -nlopt-2.2.ebuild, +nlopt-2.2.3.ebuild:
-  Version bump
-
-  02 Dec 2010; Justin Lecher <jlec@gentoo.org> nlopt-2.2.ebuild,
-  nlopt-2.2.1.ebuild:
-  Restrict Py 3.*
-
-*nlopt-2.2.1 (27 Sep 2010)
-
-  27 Sep 2010; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-2.2.1.ebuild:
-  Version bump
-
-  10 Aug 2010; Sébastien Fabbro <bicatali@gentoo.org> nlopt-2.2.ebuild:
-  Fixed for guile and multiple python, bug #331347
-
-*nlopt-2.2 (20 Jul 2010)
-
-  20 Jul 2010; Sébastien Fabbro <bicatali@gentoo.org> -nlopt-1.0.1.ebuild,
-  -files/nlopt-1.0.1-qsort.patch, +nlopt-2.2.ebuild, metadata.xml:
-  Version bump. Adds python and guile bindings as well as algorithms.
-  Switched to EAPI3, added support for multiple python
-
-  24 Nov 2009; Markus Dittrich <markusle@gentoo.org> nlopt-1.2.ebuild:
-  Added missing configure switch for octave use flag.
-
-*nlopt-1.2 (20 Nov 2009)
-
-  20 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-1.2.ebuild:
-  Version bump, thanks Jean-Francis Roy for his contribution
-
-*nlopt-1.0.1 (10 Jul 2009)
-
-  10 Jul 2009; Sébastien Fabbro <bicatali@gentoo.org> +nlopt-1.0.1.ebuild,
-  +files/nlopt-1.0.1-qsort.patch, +metadata.xml:
-  Initial import

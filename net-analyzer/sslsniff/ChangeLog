@@ -1,47 +1,59 @@
 # ChangeLog for net-analyzer/sslsniff
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/sslsniff/ChangeLog,v 1.10 2015/05/24 00:57:19 mrueg Exp $
+# (auto-generated from git log)
 
-  24 May 2015; Manuel Rüger <mrueg@gentoo.org> -sslsniff-0.6.ebuild:
-  Remove old.
+*sslsniff-0.8-r1 (09 Aug 2015)
 
-  03 Nov 2013; Matthew Thode <prometheanfire@gentoo.org> metadata.xml:
-  adding myself to the list of maintainers
-
-  16 Sep 2013; Rick Farina <zerochaos@gentoo.org> sslsniff-0.8-r1.ebuild:
-  fix subslot dep on boost
-
-  07 Dec 2012; Jeroen Roovers <jer@gentoo.org> sslsniff-0.8-r1.ebuild,
-  +files/sslsniff-0.8-underlinking.patch:
-  Fix underlinking against openssl/boost (bug #370105).
-
-  07 Dec 2012; Rick Farina <zerochaos@gentoo.org> sslsniff-0.6.ebuild,
-  sslsniff-0.8-r1.ebuild:
-  RDEPEND should have been equal to DEPEND, missed fix when that was no longer
-  implicit
-
-  31 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> -sslsniff-0.8.ebuild:
-  Remove version that requires a specific boost version.
-
-*sslsniff-0.8-r1 (28 Aug 2012)
-
-  28 Aug 2012; Rick Farina <zerochaos@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sslsniff-0.6-asneeded.patch,
   +files/sslsniff-0.8-fix-compatibility-with-boost-1.47-and-higher.patch,
-  +sslsniff-0.8-r1.ebuild, metadata.xml, sslsniff-0.8.ebuild:
-  fix for bug #378629 from debian
+  +files/sslsniff-0.8-underlinking.patch, +metadata.xml,
+  +sslsniff-0.8-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*sslsniff-0.8 (02 Oct 2011)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> +sslsniff-0.8.ebuild:
-  Bug 385301, version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Dec 2009; Samuli Suominen <ssuominen@gentoo.org> sslsniff-0.6.ebuild,
-  +files/sslsniff-0.6-asneeded.patch:
-  Fix building with -Wl,--as-needed wrt #294885 by Kacper Kowalik.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*sslsniff-0.6 (01 Oct 2009)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Oct 2009; Robin H. Johnson <robbat2@gentoo.org> +sslsniff-0.6.ebuild,
-  +metadata.xml:
-  Initial commit, ebuild by Robin H. Johnson <robbat2@gentoo.org>. *waves hi
-  to ioerror*.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

@@ -1,154 +1,61 @@
 # ChangeLog for games-fps/duke3d
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/duke3d/ChangeLog,v 1.38 2013/11/14 21:54:35 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  14 Nov 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20040817-r2.ebuild:
-  tidy
+*duke3d-20040817-r2 (09 Aug 2015)
 
-  29 Mar 2013; Julian Ospald <hasufell@gentoo.org> duke3d-20040817-r2.ebuild:
-  use unpack_zip from unpacker.eclass instead of unzip
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +duke3d-20040817-r2.ebuild, +files/20040817-credits.patch,
+  +files/20040817-duke3d-makefile-opts.patch, +files/20040817-endian.patch,
+  +files/20040817-gcc34.patch, +files/20040817-gcc4.patch,
+  +files/duke3d-20040817-as-needed.patch, +files/duke3d-20040817-gcc4.patch,
+  +files/duke3d-20040817-ldflags.patch, +files/duke3d-20040817-noinline.patch,
+  +files/duke3d.cfg, +files/network.cfg, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Oct 2010; Tupone Alfredo <tupone@gentoo.org> duke3d-20040817-r2.ebuild,
-  +files/duke3d-20040817-ldflags.patch:
-  Respect LDFLAGS. Bug #336000 by flameeyes@gentoo.org
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Jan 2010; Jeroen Roovers <jer@gentoo.org> duke3d-20040817-r2.ebuild:
-  Stable for HPPA (bug #286423).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Nov 2009; Markus Meier <maekke@gentoo.org> duke3d-20040817-r2.ebuild:
-  x86 stable, bug #286423
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Nov 2009; Mounir Lamouri <volkmar@gentoo.org>
-  duke3d-20040817-r2.ebuild:
-  Stable for ppc, bug 286423
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Feb 2009; Alfredo Tupone <tupone@gentoo.org>
-  files/duke3d-20040817-as-needed.patch, duke3d-20040817-r1.ebuild:
-  Fix --as-neede bug #247356 by flameeyes@gentoo.org
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Feb 2009; Alfredo Tupone <tupone@gentoo.org>
-  +files/duke3d-20040817-noinline.patch, duke3d-20040817-r1.ebuild,
-  duke3d-20040817-r2.ebuild:
-  Fix compilation with gcc-4.3 and -O2. Bug #26968 by butters@opengames.net
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20040817-r2.ebuild:
-  EAPI=2; add use-based dep
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Feb 2008; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/duke3d-20040817-as-needed.patch, duke3d-20040817-r2.ebuild:
-  add patch for --as-needed support from Harald van Dijk (bug #211679)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jan 2008; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20040817-r2.ebuild:
-  strip flags for bug #203969
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*duke3d-20040817-r2 (02 Jul 2007)
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Jul 2007; <tupone@gentoo.org> +duke3d-20040817-r2.ebuild:
-  Adding demo. Bug #161684 by Paul Bredbury
-
-  12 Mar 2007; Marius Mauch <genone@gentoo.org> duke3d-20040817.ebuild,
-  duke3d-20040817-r1.ebuild:
-  Replacing einfo with elog
-
-  07 Mar 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  duke3d-20040817.ebuild, duke3d-20040817-r1.ebuild:
-  Change all instances of [ to [[.
-
-  24 Dec 2006; <tupone@gentoo.org> duke3d-20040817-r1.ebuild:
-  Test for perl build with ithreads use flags. Bug #80999 by Alan Grimes
-
-*duke3d-20040817-r1 (30 Aug 2006)
-
-  30 Aug 2006; <tupone@gentoo.org> +files/duke3d-20040817-gcc4.patch,
-  +duke3d-20040817-r1.ebuild:
-  Give more info on how to install files, Bug #115923 by Ivan Yosifov
-  Duke3d fix for gcc-4, Bug #122290 by Patrizio Bassi and Bug #134693 by Joël
-  network.cfg installed as network.cfg.template, Bug #116521 by Ivan Yosifov
-  No more hang at menu, Bug #140441 by FieldySnuts
-
-  05 Mar 2006; Tony Vroon <chainsaw@gentoo.org> +files/20040817-gcc4.patch,
-  duke3d-20040817.ebuild:
-  Patch by Mark Loeser <halcy0n@gentoo.org> allows compilation on GCC 4.0/4.1
-  to complete. Closes bug #122290. Unfortunately portability is not improved.
-
-  28 Jan 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20040817.ebuild:
-  X is implicit (bug #120615)
-
-  23 Jun 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20040817.ebuild:
-  don't use asm for hardened (bug #96696)
-
-  28 Mar 2005; Guy Martin <gmsoft@gentoo.org> duke3d-20040817.ebuild:
-  OMG ! This thing runs on hppa !
-
-  05 Dec 2004; Michael Sterrett <mr_bones_@gentoo.org> duke3d-20040817.ebuild:
-  fix build with USE=-opengl (bug #73391); tidy
-
-  26 Aug 2004; Mike Frysinger <vapier@gentoo.org> duke3d-20040817.ebuild
-  +files/20040817-endian.patch:
-  Add a patch to fix running on big endian systems #61529 by Maciej J. Woloszyk.
-
-  22 Aug 2004; Tony Vroon <chainsaw@gentoo.org> +files/20040817-gcc34.patch,
-  duke3d-20040817.ebuild:
-  Fix compilation on GCC 3.4
-
-*duke3d-20040817 (18 Aug 2004)
-
-  18 Aug 2004; Mike Frysinger <vapier@gentoo.org>
-  +files/20040817-credits.patch, +files/20040817-duke3d-makefile-opts.patch,
-  -files/duke3d, +duke3d-20040817.ebuild:
-  Version bump #60578.
-
-  07 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20030817-r1.ebuild:
-  use_ft() isn't used
-
-  20 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20030817-r1.ebuild, files/20030817-credits.patch:
-  patch to add info text and empty credits screen from Ondrej Jombik via bug
-  #46094
-
-  18 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20030817-r1.ebuild:
-  use games_make_wrapper; tidy; fix use_tf() and use_ft()
-
-  10 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20030817-r1.ebuild:
-  don't rdepend on sed; error check sed; use flag tidy
-
-  28 Nov 2003; David Holm <dholm@gentoo.org> duke3d-20030817-r1.ebuild:
-  nasm is only available on x86 and timidity-eawpatches is only available on
-  ~ppc, so moving duke3d back to keep repoman happy.
-
-  26 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org>
-  duke3d-20030817-r1.ebuild:
-  depend on dev-lang/nasm (bug 34451)
-
-  01 Nov 2003; David Holm <dholm@gentoo.org> duke3d-20030817-r1.ebuild:
-  Added to ~ppc.
-
-*duke3d-20030817-r1 (18 Sep 2003)
-
-  18 Sep 2003; Mike Frysinger <vapier@gentoo.org> :
-  Disabled physfs since for some reason it can't read saved games #28151.
-  Also add a sample network.cfg file.
-
-*duke3d-20030817 (17 Aug 2003)
-
-  18 Sep 2003; Mike Frysinger <vapier@gentoo.org> :
-  Fixed building issue #28726, added a default duke3d.cfg file,
-  and added timidity to DEPEND so users get midi music.
-
-  25 Aug 2003; Michael Sterrett <msterret@gentoo.org> duke3d-20030817.ebuild:
-  added flag-o-matic; DEPEND on sed >= 4; filter -O3 down to -O2 for bug 26968;
-  add a couple of error messages
-
-  18 Aug 2003; Chris Gianelloni <wolf31o2@gentoo.org> duke3d-20030817.ebuild:
-  Fixing dependency.  Closing bug #26855
-
-  17 Aug 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by me.

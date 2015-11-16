@@ -1,81 +1,56 @@
 # ChangeLog for games-puzzle/zaz
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/zaz/ChangeLog,v 1.19 2014/06/13 15:50:01 mr_bones_ Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  13 Jun 2014; Michael Sterrett <mr_bones_@gentoo.org> zaz-1.0.0.ebuild:
-  EAPI=5; fix build (bug #510432)
+*zaz-1.0.0 (09 Aug 2015)
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> zaz-1.0.0.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/zaz-1.0.0-build.patch, +metadata.xml, +zaz-1.0.0.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Feb 2013; Ulrich Müller <ulm@gentoo.org> zaz-1.0.0.ebuild:
-  Move Creative Commons licenses to shorter names.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> zaz-1.0.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Oct 2010; Markus Meier <maekke@gentoo.org> zaz-1.0.0.ebuild:
-  x86 stable, bug #339146
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Sep 2010; Samuli Suominen <ssuominen@gentoo.org> zaz-1.0.0.ebuild:
-  amd64 stable wrt #339146
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Sep 2010; Samuli Suominen <ssuominen@gentoo.org> zaz-1.0.0.ebuild:
-  Replace po/Makefile.in.in with a system copy wrt #336119 by Barrie
-  Backhurst.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*zaz-1.0.0 (04 Sep 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Sep 2010; Michael Sterrett <mr_bones_@gentoo.org> +zaz-1.0.0.ebuild,
-  +files/zaz-1.0.0-build.patch:
-  version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Jul 2010; Christian Faulhammer <fauli@gentoo.org> zaz-0.7.0.ebuild:
-  stable x86, bug 325367
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Jun 2010; Christoph Mende <angelos@gentoo.org> zaz-0.7.0.ebuild:
-  Stable on amd64 wrt bug #325367
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*zaz-0.7.0 (25 May 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  25 May 2010; Michael Sterrett <mr_bones_@gentoo.org> +zaz-0.7.0.ebuild,
-  +files/zaz-0.7.0-build.patch:
-  version bump (bug #319527)
-
-  23 May 2010; Pacho Ramos <pacho@gentoo.org> zaz-0.3.3.ebuild:
-  stable amd64, bug 311261
-
-  03 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> zaz-0.3.3.ebuild:
-  x86 stable wrt bug #311261
-
-*zaz-0.3.3 (23 Feb 2010)
-
-  23 Feb 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/zaz-0.2.9-build.patch, +zaz-0.3.3.ebuild,
-  +files/zaz-0.3.3-build.patch:
-  version bump
-
-  16 Nov 2009; Markus Meier <maekke@gentoo.org> zaz-0.3.0.ebuild:
-  amd64/x86 stable, bug #292591
-
-*zaz-0.3.0 (08 Oct 2009)
-
-  08 Oct 2009; Michael Sterrett <mr_bones_@gentoo.org> +zaz-0.3.0.ebuild,
-  +files/zaz-0.3.0-build.patch:
-  version bump
-
-*zaz-0.2.9 (03 Sep 2009)
-
-  03 Sep 2009; Michael Sterrett <mr_bones_@gentoo.org> +zaz-0.2.9.ebuild,
-  +files/zaz-0.2.9-build.patch:
-  version bump
-
-  27 Aug 2009; Tristan Heaven <nyhm@gentoo.org> zaz-0.2.8.ebuild:
-  Add ~amd64 keyword
-
-*zaz-0.2.8 (26 Aug 2009)
-
-  26 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org> +zaz-0.2.8.ebuild,
-  +files/zaz-0.2.8-build.patch, +metadata.xml:
-  Initial commit (bug #282349)

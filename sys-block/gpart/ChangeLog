@@ -1,54 +1,61 @@
 # ChangeLog for sys-block/gpart
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/gpart/ChangeLog,v 1.9 2010/03/29 06:40:53 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  29 Mar 2010; Jeroen Roovers <jer@gentoo.org> gpart-0.1h-r2.ebuild:
-  Stable for HPPA (bug #308135).
+*gpart-0.1h-r2 (09 Aug 2015)
+*gpart-0.1h-r1 (09 Aug 2015)
 
-  21 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> gpart-0.1h-r2.ebuild:
-  x86 stable wrt bug #308135
-
-  18 Mar 2010; Markos Chandras <hwoarang@gentoo.org> gpart-0.1h-r2.ebuild:
-  Stable on amd64 wrt bug #308135
-
-*gpart-0.1h-r2 (19 Dec 2009)
-
-  19 Dec 2009; <hwoarang@gentoo.org> +gpart-0.1h-r2.ebuild,
-  +files/gpart-0.1h-l64seek.patch, +files/gpart-0.1h-openmode.patch:
-  Apply amd64 patches. Thanks to Fabio Rossi <rossi.f@inwind.it>. Fixes bug
-  #293955
-
-  03 Mar 2007; Mike Frysinger <vapier@gentoo.org>
-  +files/gpart-0.1h-no-_syscall.patch, gpart-0.1h-r1.ebuild:
-  Use syscall() rather than _syscall#() #163800 by Peter Ruskin.
-
-  28 Jan 2006; Diego Pettenò <flameeyes@gentoo.org> gpart-0.1h-r1.ebuild:
-  Move to -amd64 as per bug #120741 waiting for a solution.
-
-  05 May 2005; Michael Hanselmann <hansmi@gentoo.org> gpart-0.1h-r1.ebuild:
-  Added to ~hppa.
-
-*gpart-0.1h-r1 (06 Mar 2005)
-
-  06 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org> +metadata.xml,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/gpart-0.1h-PIC.patch, +files/gpart-0.1h-errno.patch,
-  +files/gpart-0.1h-ntfs.patch, +files/gpart-0.1h-vfat.patch,
-  +gpart-0.1h-r1.ebuild:
-  Moved from sys-apps/gpart to sys-block/gpart.
+  +files/gpart-0.1h-l64seek.patch, +files/gpart-0.1h-no-_syscall.patch,
+  +files/gpart-0.1h-ntfs.patch, +files/gpart-0.1h-openmode.patch,
+  +files/gpart-0.1h-vfat.patch, +gpart-0.1h-r1.ebuild, +gpart-0.1h-r2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*gpart-0.1h-r1 (11 Feb 2005)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Feb 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/gpart-0.1h-errno.patch, +files/gpart-0.1h-ntfs.patch,
-  +files/gpart-0.1h-vfat.patch, +files/gpart-0.1h-PIC.patch:
-  Add fix from reiserfs for #49732 by Brice Arnould.  Grab patches from Debian
-  to fix NTFS building #49878 by Hans-Christian Armingeon.  Fix building with 
-  hardened (PIC) #43440 by John Davis.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*gpart-0.1h (09 Feb 2003)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Apr 2003; Stefan Jones <cretin@gentoo.org> gpart-0.1h.ebuild gpart-0.1h-errno.diff :
-  Added errno patch to fix compile on nwer glibc, bug #19302
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Feb 2003: Seth Chandler <sethbc@gentoo.org> gpart-0.1h.ebuild:
-  added gpart to portage...
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

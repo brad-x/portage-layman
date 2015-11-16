@@ -1,68 +1,97 @@
 # ChangeLog for app-emulation/spice-vdagent
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice-vdagent/ChangeLog,v 1.13 2014/11/02 08:03:31 swift Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  02 Nov 2014; Sven Vermeulen <swift@gentoo.org> spice-vdagent-0.10.1.ebuild,
-  spice-vdagent-0.12.0.ebuild, spice-vdagent-0.8.1-r1.ebuild:
-  Remove sec-policy/selinux-* dependency from DEPEND but keep in RDEPEND (bug
-  #527698)
+*spice-vdagent-0.12.0 (09 Aug 2015)
+*spice-vdagent-0.10.1 (09 Aug 2015)
+*spice-vdagent-0.8.1-r1 (09 Aug 2015)
 
-  06 Aug 2014; Patrick Lauer <patrick@gentoo.org> spice-vdagent-0.10.1.ebuild,
-  spice-vdagent-0.12.0.ebuild, spice-vdagent-0.8.1-r1.ebuild:
-  Make description more repoman-happy
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/spice-vdagent.confd, +files/spice-vdagent.confd-2,
+  +files/spice-vdagent.initd, +files/spice-vdagent.initd-2, +metadata.xml,
+  +spice-vdagent-0.8.1-r1.ebuild, +spice-vdagent-0.10.1.ebuild,
+  +spice-vdagent-0.12.0.ebuild:
+  proj/gentoo: Initial commit
 
-  18 May 2014; Sven Vermeulen <swift@gentoo.org> spice-vdagent-0.10.1.ebuild,
-  spice-vdagent-0.12.0.ebuild, spice-vdagent-0.8.1-r1.ebuild:
-  Fix bug #441908 - Add USE=selinux dependency to selinux-vdagent
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*spice-vdagent-0.12.0 (04 Oct 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Oct 2012; Doug Goldstein <cardoe@gentoo.org> +spice-vdagent-0.12.0.ebuild:
-  Version bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Oct 2012; Doug Goldstein <cardoe@gentoo.org> spice-vdagent-0.10.1.ebuild:
-  Fix up to use console-kit correctly. bug #431890
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Aug 2012; Doug Goldstein <cardoe@gentoo.org> spice-vdagent-0.10.1.ebuild:
-  Add missing depends. bug #431964
+*spice-vdagent-0.16.0 (14 Aug 2015)
 
-  19 Aug 2012; Johannes Huber <johu@gentoo.org> spice-vdagent-0.10.1.ebuild:
-  Add ~x86 wrt bug #431854.
+  14 Aug 2015; Matthias Maier <tamiko@gentoo.org>
+  +spice-vdagent-0.16.0.ebuild:
+  version bump to 0.16.0 (bug #554320)
 
-*spice-vdagent-0.10.1 (07 Jul 2012)
+  This version bump also addresses
 
-  07 Jul 2012; Doug Goldstein <cardoe@gentoo.org> -spice-vdagent-0.8.0.ebuild,
-  -spice-vdagent-0.8.1.ebuild, +spice-vdagent-0.10.1.ebuild,
-  +files/spice-vdagent.confd-2, +files/spice-vdagent.initd-2:
-  Version bump. Check for CONFIG_VIRTIO_CONSOLE since its necessary. Check if
-  we should use /dev/uinput or /dev/input/uinput on startup. bug #378833
+   - update dependency on app-emulation/spice-protocol
+   - install systemd unit files
+   - support for systemd session-info support via systemd use flag, bug
+  #485334
+   - remove keepdir /var/run, bug #453042
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> spice-vdagent-0.8.0.ebuild,
-  spice-vdagent-0.8.1.ebuild, spice-vdagent-0.8.1-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Gentoo-Bug: 453042
+  Gentoo-Bug: 485334
+  Gentoo-Bug: 554320
 
-  05 Nov 2011; Robin H. Johnson <robbat2@gentoo.org>
-  spice-vdagent-0.8.0.ebuild, spice-vdagent-0.8.1.ebuild,
-  spice-vdagent-0.8.1-r1.ebuild:
-  Fix CONFIG_CHECK usage to be non-fatal, this package does not build kernel
-  modules. Verified good build with no kernel sources or kernel config
-  available.
+  Package-Manager: portage-2.2.20.1
 
-*spice-vdagent-0.8.1-r1 (15 Aug 2011)
+  14 Aug 2015; Matthias Maier <tamiko@gentoo.org>
+  -spice-vdagent-0.8.1-r1.ebuild, -spice-vdagent-0.10.1.ebuild:
+  drop old versions 0.8.1-r1, 0.10.1
 
-  15 Aug 2011; Jeroen Roovers <jer@gentoo.org> +spice-vdagent-0.8.1-r1.ebuild,
-  files/spice-vdagent.initd:
-  Fix init.d script thanks to Chris Mayo (bug #378833).
+  Package-Manager: portage-2.2.20.1
 
-*spice-vdagent-0.8.1 (25 Jul 2011)
+  22 Aug 2015; Matthias Maier <tamiko@gentoo.org> spice-vdagent-0.16.0.ebuild:
+  install unit file with USE=systemd (bug #557954)
 
-  25 Jul 2011; Tiziano Müller <dev-zero@gentoo.org>
-  +spice-vdagent-0.8.1.ebuild, files/spice-vdagent.initd:
-  Version bump (bug #376269).
+  Fix a typo that prevented installation of the systemd unit file in case of
+  USE=systemd
 
-*spice-vdagent-0.8.0 (11 May 2011)
+  Bug: 557954
 
-  11 May 2011; Tiziano Müller <dev-zero@gentoo.org>
-  +spice-vdagent-0.8.0.ebuild, +files/spice-vdagent.confd,
-  +files/spice-vdagent.initd, +metadata.xml:
-  Initial commit, ebuild written by me.
+  Package-Manager: portage-2.2.20.1
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

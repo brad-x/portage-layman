@@ -1,158 +1,74 @@
 # ChangeLog for net-libs/libsrtp
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libsrtp/ChangeLog,v 1.39 2015/04/11 18:13:52 phajdan.jr Exp $
+# (auto-generated from git log)
 
-*libsrtp-1.5.2-r1 (11 Apr 2015)
+*libsrtp-1.5.2-r1 (09 Aug 2015)
+*libsrtp-1.5.2 (09 Aug 2015)
+*libsrtp-1.4.4_p20121108-r1 (09 Aug 2015)
+*libsrtp-1.4.4_p20121108 (09 Aug 2015)
+*libsrtp-1.4.4-r2 (09 Aug 2015)
+*libsrtp-1.4.4-r1 (09 Aug 2015)
 
-  11 Apr 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  +libsrtp-1.5.2-r1.ebuild, +files/libsrtp-1.5.2-bindir.patch,
-  +files/libsrtp-1.5.2-fix-make-install.patch:
-  Improve the ebuild, bug #544538 and patches by Nikoli.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libsrtp-1.4.4-invalid-index.patch, +files/libsrtp-1.4.4-shared.patch,
+  +files/libsrtp-1.4.4_p20121108-shared.patch,
+  +files/libsrtp-1.5.2-bindir.patch,
+  +files/libsrtp-1.5.2-fix-make-install.patch,
+  +files/libsrtp-CVE-2013-2139.diff, +files/libsrtp-pcap-automagic-r0.patch,
+  +libsrtp-1.4.4-r1.ebuild, +libsrtp-1.4.4-r2.ebuild,
+  +libsrtp-1.4.4_p20121108.ebuild, +libsrtp-1.4.4_p20121108-r1.ebuild,
+  +libsrtp-1.5.2.ebuild, +libsrtp-1.5.2-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libsrtp-1.5.2 (25 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Mar 2015; Pawel Hajdan jr <phajdan.jr@gentoo.org> +libsrtp-1.5.2.ebuild,
-  +files/libsrtp-pcap-automagic-r0.patch, metadata.xml:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Oct 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due voip herd removal:
-  http://article.gmane.org/gmane.linux.gentoo.devel/88434
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for ia64, wrt bug #472302
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for alpha, wrt bug #472302
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> libsrtp-1.4.4_p20121108.ebuild,
+  libsrtp-1.4.4_p20121108-r1.ebuild, metadata.xml:
+  Use https by default
 
-  23 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for ppc64, wrt bug #472302
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  14 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for ppc, wrt bug #472302
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for x86, wrt bug #472302
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  libsrtp-1.4.4_p20121108-r1.ebuild:
-  Stable for amd64, wrt bug #472302
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*libsrtp-1.4.4_p20121108-r1 (13 Oct 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  13 Oct 2013; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  +libsrtp-1.4.4_p20121108-r1.ebuild, +files/libsrtp-CVE-2013-2139.diff:
-  Version bump for security bug #472302 .
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  01 Oct 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> metadata.xml:
-  Add chainsaw to maintainers.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for ppc64, wrt bug #456874
-
-  23 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for alpha, wrt bug #456874
-
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for ppc, wrt bug #456874
-
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for ia64, wrt bug #456874
-
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for x86, wrt bug #456874
-
-  22 Feb 2013; Agostino Sarubbo <ago@gentoo.org> libsrtp-1.4.4_p20121108.ebuild:
-  Stable for amd64, wrt bug #456874
-
-  13 Feb 2013; Mike Gilbert <floppym@gentoo.org> metadata.xml:
-  Add chromium herd to metadata, bug 438756.
-
-  16 Dec 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due retirement, #260683
-
-  15 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  libsrtp-1.4.4_p20121108.ebuild:
-  Keyword ~arm.
-
-*libsrtp-1.4.4_p20121108 (10 Nov 2012)
-
-  10 Nov 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  +libsrtp-1.4.4_p20121108.ebuild, +files/libsrtp-1.4.4_p20121108-shared.patch:
-  Version bump, bug #438756.
-
-  06 Sep 2012; Tony Vroon <chainsaw@gentoo.org> libsrtp-1.4.4-r2.ebuild:
-  Not using a patchset any longer. But yes, should have removed it from
-  SRC_URI. Closes bug #434160 by Kacper "Xarthisius" Kowalik.
-
-*libsrtp-1.4.4-r2 (06 Sep 2012)
-
-  06 Sep 2012; Tony Vroon <chainsaw@gentoo.org> +libsrtp-1.4.4-r2.ebuild,
-  +files/libsrtp-1.4.4-invalid-index.patch:
-  Make compilation & installation of static libraries optional, closes bug
-  #378763 by Agostino "ago" Sarubbo. Patch scavenged by Matthias Nagl from
-  upstream tracker resolves a crash caused by an invalid index, closes bug
-  #409013.
-
-  20 May 2012; Mark Loeser <halcy0n@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  Stable for ppc64; bug #397617
-
-  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Set herd as primary maintainer as talked with volkmar.
-
-  29 Aug 2011; Fabian Groffen <grobian@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  Marked ~x64-macos
-
-  19 Jun 2010; Raúl Porcel <armin76@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  alpha/ia64 stable wrt #320719
-
-  21 Mar 2010; Fabian Groffen <grobian@gentoo.org> libsrtp-1.4.4-r1.ebuild,
-  files/libsrtp-1.4.4-shared.patch:
-  Add fixes for Darwin, marked ~ppc-macos and ~x86-macos, bug #310203
-
-  08 Jul 2009; Markus Meier <maekke@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  amd64 stable, bug #259172
-
-  03 Jul 2009; Mounir Lamouri <volkmar@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  stable ppc, bug 259172
-
-  02 Jul 2009; Christian Faulhammer <fauli@gentoo.org>
-  libsrtp-1.4.4-r1.ebuild:
-  stable x86, bug 259172
-
-  26 Jun 2009; Alexis Ballier <aballier@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  keyword ~x86-fbsd
-
-  25 Apr 2009; Raúl Porcel <armin76@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  Add ~ia64/-sparc wrt #266193
-
-  23 Apr 2009; Markus Meier <maekke@gentoo.org> libsrtp-1.4.4-r1:
-  add ~amd64, bug #266193
-
-  20 Apr 2009; Jeroen Roovers <jer@gentoo.org> libsrtp-1.4.4-r1:
-  Marked ~hppa (bug #266193).
-
-  18 Apr 2009; Tobias Klausmann <klausman@gentoo.org>
-  libsrtp-1.4.4-r1.ebuild:
-  Keyworded on alpha, bug #266193
-
-  15 Apr 2009; Brent Baude <ranger@gentoo.org> libsrtp-1.4.4-r1.ebuild:
-  Marking libsrtp-1.4.4-r1 ~ppc64 for bug 266193
-
-*libsrtp-1.4.4-r1 (15 Apr 2009)
-
-  15 Apr 2009; Mounir Lamouri <volkmar@gentoo.org>
-  +files/libsrtp-1.4.4-shared.patch, -libsrtp-1.4.4.ebuild,
-  +libsrtp-1.4.4-r1.ebuild:
-	Adding shared lib generation with loki_val patch. Thanks also to solar.
-
-*libsrtp-1.4.4 (14 Apr 2009)
-
-  14 Apr 2009; Mounir Lamouri <volkmar@gentoo.org> +metadata.xml,
-  +libsrtp-1.4.4.ebuild:
-  Initial commit. See bug 257835

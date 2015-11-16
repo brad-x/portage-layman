@@ -1,184 +1,57 @@
 # ChangeLog for sci-libs/liborigin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/liborigin/ChangeLog,v 1.37 2015/08/03 07:07:04 jlec Exp $
+# (auto-generated from git log)
 
-  03 Aug 2015; Justin Lecher <jlec@gentoo.org>
-  -files/liborigin-20080225-makefile.patch,
-  -files/liborigin-20100420-build-parsers.patch,
-  -files/liborigin-20100420-gcc45.patch, -files/liborigin-20100630-gcc45.patch,
-  -liborigin-20100903.ebuild:
-  Drop old
+*liborigin-20110829 (09 Aug 2015)
 
-  02 Aug 2015; Agostino Sarubbo <ago@gentoo.org> liborigin-20110829.ebuild:
-  Stable for x86, wrt bug #553132
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +liborigin-20110829.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> liborigin-20110829.ebuild:
-  Stable for amd64, wrt bug #553132
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Jun 2015; Justin Lecher <jlec@gentoo.org> -liborigin-20110323.ebuild,
-  liborigin-20110829.ebuild:
-  Drop old; Bump EAPI
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> liborigin-20100903.ebuild,
-  liborigin-20110323.ebuild, liborigin-20110829.ebuild:
-  Move Qt dependencies to the new category
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  30 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
-  liborigin-20110829.ebuild:
-  Berlios is going away :|
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*liborigin-20110829 (01 Sep 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> liborigin-20110829.ebuild,
+  metadata.xml:
+  Use https by default
 
-  01 Sep 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  -liborigin-20100913.ebuild, -liborigin-20110221.ebuild,
-  +liborigin-20110829.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*liborigin-20110323 (07 Aug 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org>
-  +liborigin-20110323.ebuild:
-  Version bump, switch to EAPI4
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*liborigin-20110221 (05 Mar 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Mar 2011; Justin Lecher <jlec@gentoo.org> -liborigin-20100420.ebuild,
-  -liborigin-20100630.ebuild, +liborigin-20110221.ebuild:
-  Version Bump
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  liborigin-20100903.ebuild:
-  Stable on amd64 wrt bug #335673
-
-  20 Oct 2010; Christian Faulhammer <fauli@gentoo.org>
-  liborigin-20100903.ebuild:
-  stable x86, bug 335673
-
-  18 Oct 2010; Justin Lecher <jlec@gentoo.org> +liborigin-20100630.ebuild:
-  Readded liborigin-20100630.ebuild
-
-*liborigin-20100913 (18 Oct 2010)
-
-  18 Oct 2010; Justin Lecher <jlec@gentoo.org>
-  -liborigin-20080225-r1.ebuild, -liborigin-20090406.ebuild,
-  -liborigin-20100630.ebuild, +liborigin-20100913.ebuild:
-  Version Bump, removed old
-
-  12 Oct 2010; Justin Lecher <jlec@gentoo.org> liborigin-20100903.ebuild:
-  Move to qt4-r2.eclass
-
-*liborigin-20100903 (03 Sep 2010)
-
-  03 Sep 2010; Justin Lecher <jlec@gentoo.org> +liborigin-20100903.ebuild:
-  Version Bump
-
-  12 Jul 2010; Markos Chandras <hwoarang@gentoo.org>
-  liborigin-20100420.ebuild:
-  Stable on amd64 wrt bug #321205
-
-  10 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
-  liborigin-20100420.ebuild:
-  stable x86, bug 321205
-
-*liborigin-20100630 (30 Jun 2010)
-
-  30 Jun 2010; Justin Lecher <jlec@gentoo.org>
-  files/liborigin-20100420-build-parsers.patch, +liborigin-20100630.ebuild,
-  +files/liborigin-20100630-gcc45.patch:
-  Version Bump
-
-  05 May 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  liborigin-20100420.ebuild, +files/liborigin-20100420-gcc45.patch:
-  Fixed for gcc-4.5, thanks Xarthisius, bug #318575
-
-  26 Apr 2010; Markus Meier <maekke@gentoo.org> liborigin-20090406.ebuild:
-  amd64/x86 stable, bug #314037
-
-*liborigin-20100420 (23 Apr 2010)
-
-  23 Apr 2010; Peter Volkov <pva@gentoo.org> +liborigin-20100420.ebuild,
-  +files/liborigin-20100420-build-parsers.patch:
-  Version bump.
-
-  23 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  liborigin-20080225-r1.ebuild, liborigin-20090406.ebuild:
-  Removed ppc64, wrongly keyworded (dev-cpp/tree was not)
-
-  23 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  liborigin-20090406.ebuild:
-  Removed Qt libraries from run time dependencies. Unfortunately compiling
-  still need them until upstream change the build system
-
-*liborigin-20080225-r1 (16 Apr 2009)
-
-  16 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/liborigin-20080225-makefile.patch, -liborigin-20080225.ebuild,
-  +liborigin-20080225-r1.ebuild:
-  Bunch of QA fixes, removed tree.hh now in main tree
-
-*liborigin-20090406 (14 Apr 2009)
-
-  14 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  -liborigin-20071119.ebuild, -liborigin-20090326.ebuild,
-  +liborigin-20090406.ebuild:
-  Version bump
-
-*liborigin-20090326 (07 Apr 2009)
-
-  07 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +liborigin-20090326.ebuild:
-  Version and slot bump
-
-  15 Mar 2008; Markus Rothe <corsair@gentoo.org> liborigin-20080225.ebuild:
-  Added ~ppc64
-
-*liborigin-20080225 (06 Mar 2008)
-
-  06 Mar 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  -liborigin-20070529.ebuild, -liborigin-20070821.ebuild,
-  -liborigin-20070926.ebuild, +liborigin-20080225.ebuild:
-  Version bump and removed older ones
-
-*liborigin-20071119 (28 Nov 2007)
-
-  28 Nov 2007; Sébastien Fabbro <bicatali@gentoo.org>
-  +liborigin-20071119.ebuild:
-  Version bump
-
-*liborigin-20070926 (04 Nov 2007)
-
-  04 Nov 2007; Sébastien Fabbro <bicatali@gentoo.org>
-  +liborigin-20070926.ebuild:
-  Version bump.
-
-  14 Oct 2007; Jeff Gardner <je_fro@gentoo.org> liborigin-20070821.ebuild:
-  Added 3 get_libdir commands to Makefile.LINUX so multilib works.
-
-*liborigin-20070821 (20 Sep 2007)
-
-  20 Sep 2007; Sébastien Fabbro <bicatali@gentoo.org>
-  -liborigin-20070115.ebuild, +liborigin-20070821.ebuild:
-  Version bump.
-
-*liborigin-20070529 (01 Aug 2007)
-
-  01 Aug 2007; Sébastien Fabbro <bicatali@gentoo.org>
-  -liborigin-20060616.ebuild, +liborigin-20070529.ebuild:
-  Version bump
-
-  06 May 2007; Carsten Lohrke <carlo@gentoo.org> liborigin-20070115.ebuild:
-  Update Labplot blocker.
-
-*liborigin-20070115 (23 Apr 2007)
-
-  23 Apr 2007; Sébastien Fabbro <bicatali@gentoo.org>
-  +liborigin-20070115.ebuild:
-  Version bump. Thanks for nonno.cicala@libero.it for and george for their work. 
-  Closing bug #151806.
-
-*liborigin-20060616 (07 Nov 2006)
-
-  07 Nov 2006; George Shapovalov <george@gentoo.org>
-  +liborigin-20060616.ebuild:
-  first commit. This is the library necessary for qtiplot, new version of
-  which (0.8.8) should be upcoming soon.

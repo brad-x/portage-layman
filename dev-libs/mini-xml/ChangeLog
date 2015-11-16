@@ -1,146 +1,57 @@
 # ChangeLog for dev-libs/mini-xml
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/mini-xml/ChangeLog,v 1.36 2014/08/13 09:35:55 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  13 Aug 2014; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.8.ebuild:
-  Stable for ppc, wrt bug #502724
+*mini-xml-2.8 (09 Aug 2015)
+*mini-xml-2.7-r1 (09 Aug 2015)
 
-  14 Jun 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> mini-xml-2.8.ebuild:
-  x86 stable wrt bug #502724
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +mini-xml-2.7-r1.ebuild, +mini-xml-2.8.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Mar 2014; Chema Alonso <nimiux@gentoo.org> mini-xml-2.8.ebuild:
-  Stable for amd64 wrt bug #502724
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Feb 2014; Steev Klimaszewski <steev@gentoo.org> mini-xml-2.8.ebuild:
-  Add ~arm keyword. Tested by aholler on armv5
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*mini-xml-2.8 (20 Jan 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Jan 2014; Lars Wendler <polynomial-c@gentoo.org> +mini-xml-2.8.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Dec 2013; Andreas K. Huettel <dilfridge@gentoo.org>
-  -mini-xml-2.2.1.ebuild, -files/mini-xml-2.2.1-nostrip-flags.patch,
-  -mini-xml-2.6.ebuild, -mini-xml-2.7.ebuild:
-  Remove old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Dec 2013; Andreas K. Huettel <dilfridge@gentoo.org>
-  mini-xml-2.7-r1.ebuild:
-  Update SRC_URI
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Dec 2013; Andreas K. Huettel <dilfridge@gentoo.org> mini-xml-2.2.1.ebuild,
-  mini-xml-2.6.ebuild, mini-xml-2.7.ebuild:
-  Update HOMEPAGE
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Mar 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7-r1.ebuild:
-  Stable for ppc, wrt bug #463038
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Mar 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7-r1.ebuild:
-  Stable for x86, wrt bug #463038
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Mar 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7-r1.ebuild:
-  Stable for amd64, wrt bug #463038
+  Bug: https://bugs.gentoo.org/552720
 
-*mini-xml-2.7-r1 (18 Feb 2013)
-
-  18 Feb 2013; Markos Chandras <hwoarang@gentoo.org> +mini-xml-2.7-r1.ebuild:
-  Add static-libs useflag. Bug #457730. Thanks to Rüpel <ruepel@gmx.li>
-
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7.ebuild:
-  Stable for x86, wrt bug #456548
-
-  15 Feb 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7.ebuild:
-  Stable for amd64, wrt bug #456548
-
-  14 Feb 2013; Agostino Sarubbo <ago@gentoo.org> mini-xml-2.7.ebuild:
-  Stable for ppc, wrt bug #456548
-
-*mini-xml-2.7 (11 Dec 2012)
-
-  11 Dec 2012; Markos Chandras <hwoarang@gentoo.org> +mini-xml-2.7.ebuild,
-  metadata.xml:
-  Version bump. Bug #446348. Add Rüpel <ruepel@gmx.li> as proxy-maintainer
-
-  18 Jul 2012; Justin Lecher <jlec@gentoo.org> mini-xml-2.2.1.ebuild,
-  +files/mini-xml-2.2.1-nostrip-flags.patch, mini-xml-2.6.ebuild, metadata.xml:
-  Don't prestrip, #426696; handle static-lisb, docs...
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> mini-xml-2.6.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  23 Apr 2012; Michał Górny <mgorny@gentoo.org> mini-xml-2.2.1.ebuild:
-  Use mirror:// in SRC_URI.
-
-  03 Mar 2010; Markos Chandras <hwoarang@gentoo.org> mini-xml-2.6.ebuild:
-  Respect CFLAGS/LDFLGAS wrt bug #306165 thanks to Doktor Notor
-  <notordoktor@gmail.com>. EAPI2fy it
-
-*mini-xml-2.6 (03 Oct 2009)
-
-  03 Oct 2009; Víctor Ostorga <vostorga@gentoo.org> -mini-xml-2.4.ebuild,
-  -mini-xml-2.5.ebuild, +mini-xml-2.6.ebuild:
-  Cleaning out old ~arch ebuilds
-  Fixing repoman warnings
-  Fixing pkg-config typo in mxml.pc.in, bug 287295
-  Adding optional threads support, bug 287300
-  Bump to 2.6, bug 287312
-
-  29 Jun 2008; Torsten Veller <tove@gentoo.org> mini-xml-2.5.ebuild:
-  Add missing die: || "..." -> || die "..."
-
-*mini-xml-2.5 (22 Jun 2008)
-
-  22 Jun 2008; Jeremy Olexa <darkside@gentoo.org> +mini-xml-2.5.ebuild:
-  Version bump. Bug #213861. Also, fixed to not execute/compile testsuite by
-  default. Use FEATURES=test to run testsuite
-
-  21 Mar 2008; Vlastimil Babka <caster@gentoo.org> mini-xml-2.4.ebuild:
-  Add missing unpack commands for Flameeyes, bug #214128.
-
-  18 Mar 2008; Diego Pettenò <flameeyes@gentoo.org> mini-xml-2.4.ebuild:
-  Run eautoconf during unpack phase. Closes bug #207492.
-
-  08 Jan 2008; Carsten Lohrke <carlo@gentoo.org> mini-xml-2.4.ebuild:
-  Remove superfluous test use flag.
-
-*mini-xml-2.4 (08 Jan 2008)
-
-  08 Jan 2008; Carsten Lohrke <carlo@gentoo.org> +mini-xml-2.4.ebuild:
-  Version bump.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  06 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -mini-xml-2.0.0.ebuild,
-  -mini-xml-2.2.0.ebuild:
-  QA: Removed unused versions.
-
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org> mini-xml-2.0.0.ebuild,
-  mini-xml-2.2.0.ebuild, mini-xml-2.2.1.ebuild:
-  Remove inherit for gnuconfig as it's not used anyway.
-
-*mini-xml-2.2.1 (18 May 2005)
-
-  18 May 2005; Eric Shattow <jnc@gentoo.org> +mini-xml-2.2.1.ebuild:
-  Version Bump.
-
-*mini-xml-2.2.0 (17 May 2005)
-
-  17 May 2005; Eric Shattow <jnc@gentoo.org> +mini-xml-2.2.0.ebuild:
-  Version Bump.
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> mini-xml-2.0.0.ebuild:
-  Stable on ppc.
-
-  18 Dec 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  mini-xml-2.0.0.ebuild:
-  Stable amd64, x86.
-
-*mini-xml-2.0.0 (17 Oct 2004)
-
-  17 Oct 2004; David Holm <dholm@gentoo.org> mini-xml-2.0.0.ebuild:
-  Added to ~ppc.
-
-  29 Sep 2004; Frank van de Pol <fvdpol@gentoo.org> :
-  Mini-xml library used by ZynAddSubFX. Ebuild submitted by Eric Shattow
-  <shadow@serverart.org> in bug #58214.

@@ -1,52 +1,66 @@
 # ChangeLog for dev-games/newton
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/newton/ChangeLog,v 1.12 2015/04/21 17:45:08 pacho Exp $
+# (auto-generated from git log)
 
-  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> newton-2.36.ebuild:
-  x86 stable wrt bug #542752
+*newton-2.36 (09 Aug 2015)
 
-  07 Feb 2015; Michael Sterrett <mr_bones_@gentoo.org> newton-2.36.ebuild:
-  EAPI=5
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/CMakeLists.txt,
+  +metadata.xml, +newton-2.36.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/newton-1.53-glut.patch, -newton-1.53.ebuild, -newton-2.00.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 May 2014; Michael Palimaka <kensington@gentoo.org> newton-1.53.ebuild:
-  Specify protocol in HOMEPAGE.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*newton-2.36 (10 Jul 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +files/CMakeLists.txt,
-  +newton-2.36.ebuild:
-  version bump with work from Alan Smithee (bug #368317)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> newton-1.53.ebuild,
-  newton-2.00.ebuild:
-  Remove virtual/glu where already virtual/opengl is stated.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> newton-1.53.ebuild,
-  newton-2.00.ebuild:
-  virtual/glut -> media-libs/glut
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*newton-2.00 (08 Apr 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Apr 2010; Michael Sterrett <mr_bones_@gentoo.org> +newton-2.00.ebuild:
-  version bump - ebuild submitted by Christoph Brill (egore) via bug #270142
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> newton-2.36.ebuild:
+  Enable https for all google URIs
 
-  08 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org> newton-1.53.ebuild:
-  EAPI=2; update HOMEPAGE
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  24 Jul 2007; Tristan Heaven <nyhm@gentoo.org>
-  +files/newton-1.53-glut.patch, newton-1.53.ebuild:
-  Compile fix by Michael Schreckenbauer, bug #178204
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> newton-2.36.ebuild:
+  Convert URIs for googlecode.com to https
 
-  22 Jul 2007; Hans de Graaff <graaff@gentoo.org> newton-1.53.ebuild:
-  Drop virtual/x11 references.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*newton-1.53 (06 Sep 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Sep 2006; Chris Gianelloni <wolf31o2@gentoo.org> +metadata.xml,
-  +newton-1.53.ebuild:
-  Initial import. Original ebuild by Christoph Brill <egore@gmx.de> and edited
-  by me. Closing bug #100889.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

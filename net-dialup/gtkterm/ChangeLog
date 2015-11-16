@@ -1,108 +1,57 @@
 # ChangeLog for net-dialup/gtkterm
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/gtkterm/ChangeLog,v 1.29 2015/03/28 23:55:52 mrueg Exp $
+# (auto-generated from git log)
 
-  28 Mar 2015; Manuel Rüger <mrueg@gentoo.org> -gtkterm-0.99.5-r1.ebuild:
-  Remove old.
+*gtkterm-0.99.7_rc1 (09 Aug 2015)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> gtkterm-0.99.5-r1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/gtkterm-0.99.7_rc1-configure.patch, +files/ru.po,
+  +gtkterm-0.99.7_rc1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  09 Aug 2014; Agostino Sarubbo <ago@gentoo.org> gtkterm-0.99.5-r1.ebuild,
-  gtkterm-0.99.7_rc1.ebuild:
-  Stable for ppc, wrt bug #452824
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Aug 2014; Raúl Porcel <armin76@gentoo.org> gtkterm-0.99.5-r1.ebuild,
-  gtkterm-0.99.7_rc1.ebuild:
-  Drop sparc keyword
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Jul 2014; Pacho Ramos <pacho@gentoo.org> gtkterm-0.99.7_rc1.ebuild:
-  amd64/x86 stable, bug #452824
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Mar 2014; Yixun Lan <dlan@gentoo.org> gtkterm-0.99.7_rc1.ebuild:
-  fix autoconf compile err, bug #483346
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Oct 2012; Pacho Ramos <pacho@gentoo.org> gtkterm-0.99.7_rc1.ebuild:
-  Install desktop entry also, bug #346703 by Miguel R. Caudevilla.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*gtkterm-0.99.7_rc1 (06 Oct 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Oct 2012; Pacho Ramos <pacho@gentoo.org>
-  +files/gtkterm-0.99.7_rc1-configure.patch, +gtkterm-0.99.7_rc1.ebuild:
-  Version bump, also fixes compilation with current vte (#406105 by Xake).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkterm-0.99.5-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> gtkterm-0.99.5-r1.ebuild:
-  Use SLOT dependencies for x11-libs/gtk+ and x11-libs/vte.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 May 2007; Marius Mauch <genone@gentoo.org> gtkterm-0.99.5-r1.ebuild:
-  Replacing einfo with elog
+  Bug: https://bugs.gentoo.org/552720
 
-*gtkterm-0.99.5-r1 (14 Mar 2007)
-
-  14 Mar 2007; Alin Năstac <mrness@gentoo.org> +files/ru.po,
-  -gtkterm-0.99.5.ebuild, +gtkterm-0.99.5-r1.ebuild:
-  Add nls support and Russian translation, thanks to Alexander Shiyan <shc at
-  milas dot spb dot ru> (#170823).
-
-  24 Oct 2006; Alin Nastac <mrness@gentoo.org> gtkterm-0.99.5.ebuild:
-  Add dev-util/pkgconfig to DEPEND (#152534).
-
-  26 Jun 2006; Simon Stelling <blubb@gentoo.org> gtkterm-0.99.5.ebuild:
-  stable on amd64
-
-  12 Mar 2006; Alin Nastac <mrness@gentoo.org> -gtkterm-0.99.4.ebuild,
-  gtkterm-0.99.5.ebuild:
-  Remove obsolete version.
-
-  02 Jan 2006; Michael Hanselmann <hansmi@gentoo.org> gtkterm-0.99.5.ebuild:
-  Stable on ppc.
-
-  26 Dec 2005; Jason Wever <weeve@gentoo.org> gtkterm-0.99.5.ebuild:
-  Stablize the right one on SPARC wrt bug #115640 :)
-
-  26 Dec 2005; Jason Wever <weeve@gentoo.org> gtkterm-0.99.4.ebuild:
-  Stable on SPARC wrt bug #115640.
-
-  26 Dec 2005; Alin Nastac <mrness@gentoo.org> gtkterm-0.99.5.ebuild:
-  Stable on x86.
-
-*gtkterm-0.99.5 (26 Nov 2005)
-
-  26 Nov 2005; Alin Nastac <mrness@gentoo.org> -gtkterm-0.99.3.ebuild,
-  +gtkterm-0.99.5.ebuild:
-  Remove old version. Version bump (#113446).
-
-  07 Aug 2005; Michael Hanselmann <hansmi@gentoo.org> gtkterm-0.99.4.ebuild:
-  Stable on ppc.
-
-  16 Jun 2005; Alin Nastac <mrness@gentoo.org> metadata.xml,
-  gtkterm-0.99.4.ebuild:
-  Stable on x86.
-
-  28 Feb 2005; Alex Howells <astinus@gentoo.org> gtkterm-0.99.3.ebuild,
-  gtkterm-0.99.4.ebuild:
-  Adding keywords ~amd64 to both versions currently in the tree, as per the
-  request in bug 83388.
-
-*gtkterm-0.99.4 (20 Nov 2004)
-
-  20 Nov 2004; Alin Nastac <mrness@gentoo.org> gtkterm-0.99.3.ebuild,
-  +gtkterm-0.99.4.ebuild:
-  Added 0.99.4. Marked 0.99.3 stable on x86.
-
-  04 Oct 2004; David Holm <dholm@gentoo.org> gtkterm-0.99.3.ebuild:
-  Added to ~ppc.
-
-  16 Apr 2004; Jason Wever <weeve@gentoo.org> gtkterm-0.99.3.ebuild:
-  Added ~sparc keyword.
-
-  19 Nov 2003; Heinrich Wendel <lanius@gentoo.org> metadata.xml:
-  metadata
-
-*gtkterm-0.99.3 (09 Jul 2003)
-
-  09 Jul 2003; Martin Holzer <mholzer@gentoo.org> gtkterm-0.99.3.ebuild:
-  Initial ebuild submitted by Zach Bagnall <yem@y3m.net> in #23735.

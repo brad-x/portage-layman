@@ -1,111 +1,58 @@
 # ChangeLog for sci-mathematics/geomview
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/geomview/ChangeLog,v 1.22 2015/06/04 14:29:28 pacho Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Pacho Ramos <pacho@gentoo.org> geomview-1.9.5.ebuild:
-  virtual/glu is needed (#514548)
+*geomview-1.9.5 (09 Aug 2015)
 
-  07 Nov 2014; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneeded useflag descriptions from metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/50geomview-gentoo.el, +files/gvcl-mode.el, +geomview-1.9.5.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  06 Nov 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  -geomview-1.9.4.ebuild:
-  Drop old EAPI=1 version
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*geomview-1.9.5 (25 Mar 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Mar 2014; Andrey Grozin <grozin@gentoo.org> +geomview-1.9.5.ebuild,
-  files/gvcl-mode.el,metadata.xnl:
-  Version bump, thanks to Claus-Justus Heine <himself@claus-justus-heine.de>,
-  #504372
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Nov 2013; Michael Sterrett <mr_bones_@gentoo.org> geomview-1.9.4.ebuild:
-  drop gsview which is gtk+:1 only from the list of choices
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> geomview-1.9.4.ebuild:
-  Update dependency after package move from x11-libs/openmotif to
-  x11-libs/motif.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> geomview-1.9.5.ebuild,
+  metadata.xml:
+  Use https by default
 
-  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, #24135.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Jan 2012; Justin Lecher <jlec@gentoo.org> -geomview-1.9.2.ebuild,
-  geomview-1.9.4.ebuild, -files/geomview.png:
-  Mirror binary file and remove it from FILESDIR, #370879; add missing dies;
-  resorted ebuild, dropped old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> geomview-1.9.2.ebuild,
-  geomview-1.9.4.ebuild:
-  Fix openmotif dependency. Change EAPI to 1.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> geomview-1.9.2.ebuild,
-  geomview-1.9.4.ebuild:
-  Remove kde-base/kpdf depend wrt security #290470.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
+  Bug: https://bugs.gentoo.org/552720
 
-  27 Jun 2008; Ulrich Mueller <ulm@gentoo.org> geomview-1.9.2.ebuild,
-  geomview-1.9.4.ebuild:
-  Change dependency from virtual/motif to x11-libs/openmotif, bug 224749.
-
-  18 Dec 2007; Markus Dittrich <markusle@gentoo.org>
-  +files/50geomview-gentoo.el, geomview-1.9.2.ebuild, geomview-1.9.4.ebuild,
-  -geomview-1.8.1-r3.ebuild, -geomview-1.8.2_rc9.ebuild,
-  -files/geomview-1.8.1-configure.diff, files/geomview-1.8.1-stdiostream.diff:
-  Updated emacs support and removed old versions (fixes bug #194543).
-
-*geomview-1.9.4 (25 Sep 2007)
-
-  25 Sep 2007; Markus Dittrich <markusle@gentoo.org> +geomview-1.9.4.ebuild:
-  Version bump (see bug #193722).
-
-  09 Jul 2007; Steve Arnold <nerdboy@gentoo.org> geomview-1.9.2.ebuild:
-  removed extra postinst
-
-  09 Jul 2007; Steve Arnold <nerdboy@gentoo.org> geomview-1.9.2.ebuild:
-  updated desktop entry and added calls to desktop_database_update
-
-*geomview-1.9.2 (06 Jul 2007)
-
-  06 Jul 2007; Steve Arnold <nerdboy@gentoo.org> +files/geomview.png,
-  +files/gvcl-mode.el, +geomview-1.9.2.ebuild:
-  overdue version bump and feature additions (modified ebuild from user,
-  but I admit to finding it on my hard drive and I have no idea where it
-  originally came from)
-
-*geomview-1.8.2_rc9 (04 Apr 2007)
-
-  04 Apr 2007; Steve Arnold <nerdboy@gentoo.org> +geomview-1.8.2_rc9.ebuild:
-  Added latest official release (closes bug #165003).  Tested and keyworded
-  for ~amd64.  Based on ebuild by Marcus Bannerman <m.bannerman _at_ gmail.com>
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-*geomview-1.8.1-r3 (28 Dec 2004)
-
-  28 Dec 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
-  +files/geomview-1.8.1-configure.diff,
-  +files/geomview-1.8.1-stdiostream.diff, +geomview-1.8.1-r3.ebuild:
-  Moved from app-sci/geomview to sci-mathematics/geomview.
-
-  25 Jun 2004; George Shapovalov <george@gentoo.org> geomview-1.8.1-r3.ebuild:
-  removed RDEPEND=DEPEND line (deprecated for a while now)
-
-  20 Apr 2004; Patrick Kursawe <phosphan@gentoo.org> geomview-1.8.1-r3.ebuild:
-  Some people seem to have problems with GL headers, adding -DGL_GLEXT_LEGACY to
-  CFLAGS. See bug #44896.
-
-  19 Apr 2004; Patrick Kursawe <phosphan@gentoo.org> geomview-1.8.1-r3.ebuild:
-  moved to epatch
-
-  19 Apr 2004; Patrick Kursawe <phosphan@gentoo.org> geomview-1.8.1-r3.ebuild:
-  Removed S, added IUSE
-
-*geomview-1.8.1-r3 (04 Mar 2004)
-
-  04 Mar 2004; <nerdboy@gentoo.org> geomview-1.8.1-r3.ebuild, metadata.xml:
-  new user-contributed ebuild (a group effort even) by David Hyunjin Lim,
-  with contributions from Cliff Yapp (I added the keywords and cleaned up
-  the syntax a bit)

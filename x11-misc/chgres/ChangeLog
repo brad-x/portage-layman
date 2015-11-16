@@ -1,66 +1,57 @@
 # ChangeLog for x11-misc/chgres
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/chgres/ChangeLog,v 1.19 2011/12/19 17:43:31 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  19 Dec 2011; Tim Harder <radhermit@gentoo.org> -chgres-0.1.ebuild:
-  Remove old.
+*chgres-0.1-r1 (09 Aug 2015)
 
-  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> chgres-0.1-r1.ebuild:
-  Stable for AMD64, wrt bug #392815
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +chgres-0.1-r1.ebuild,
+  +files/chgres-0.1-flags.patch, +files/chgres-0.1-includes.patch,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> chgres-0.1-r1.ebuild:
-  x86 stable wrt bug #392815
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Dec 2011; Tim Harder <radhermit@gentoo.org> chgres-0.1-r1.ebuild:
-  Update to EAPI 4.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Sep 2010; Jeroen Roovers <jer@gentoo.org> files/chgres-0.1-flags.patch,
-  files/chgres-0.1-includes.patch:
-  Clean up patches.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*chgres-0.1-r1 (17 Sep 2010)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Sep 2010; Jeroen Roovers <jer@gentoo.org> +chgres-0.1-r1.ebuild,
-  +files/chgres-0.1-flags.patch, +files/chgres-0.1-includes.patch:
-  Respect LDFLAGS (bug #337183), CC, CFLAGS. Use pkg-config for LIBS and
-  INCLUDES. Fix includes.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Jul 2008; Santiago M. Mola <coldwind@gentoo.org> chgres-0.1.ebuild:
-  amd64 stable
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 May 2008; Santiago M. Mola <coldwind@gentoo.org> chgres-0.1.ebuild:
-  added ~amd64 keyword
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Oct 2006; David Shakaryan <omp@gentoo.org> chgres-0.1.ebuild:
-  Remove monolithic X from dependencies.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> chgres-0.1.ebuild:
-  Fixed DEPEND for modular X.
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Jul 2005; David Holm <dholm@gentoo.org> chgres-0.1.ebuild:
-  Added to ~ppc.
-
-  05 Sep 2004; Sven Wegener <swegener@gentoo.org> :
-  Fixed ChangeLog header.
-
-  13 Jun 2004; Donnie Berkholz <spyderous@gentoo.org>; chgres-0.1.ebuild:
-  Change x11-base/xfree dependency to virtual/x11 (#52153).
-
-  03 Nov 2003; Abhishek Amit <abhishek@gentoo.org> metadata.xml:
-  Added metadata.xml
-
-  24 Mar 2003; Patrick Kursawe <phosphan@gentoo.org> chgres-0.1.ebuild :
-  marked as stable for x86
-
-  17 Mar 2003; Patrick Kursawe <phosphan@gentoo.org> chgres-0.1.ebuild :
-  Where are my manners? Forgot the headers and the ~ *blush*
-
-*chgres-0.1 (17 Mar 2003)
-
-  17 Mar 2003; Patrick Kursawe <phosphan@gentoo.org> chgres-0.1.ebuild
-  files/digest-chgres-0.1 ChangeLog :
-  Initial import. Ebuild submitted by Henrik Johansson 
-  <henrik_johansson@home.se>. This closes bug #16371.

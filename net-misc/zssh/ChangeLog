@@ -1,74 +1,56 @@
 # ChangeLog for net-misc/zssh
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/zssh/ChangeLog,v 1.22 2015/05/22 06:08:32 pinkbyte Exp $
+# (auto-generated from git log)
 
-  22 May 2015; Sergey Popov <pinkbyte@gentoo.org> zssh-1.5c-r1.ebuild:
-  Add missing dependency on sys-libs/ncurses when USE='readline', fix linking
-  with ncurses[tinfo], bug #527036. Add slot for sys-libs/readline dependency
+*zssh-1.5c-r1 (09 Aug 2015)
 
-  06 Jun 2013; Sergey Popov <pinkbyte@gentoo.org> -zssh-1.5c.ebuild:
-  Drop old revision
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/zssh-1.5a-gentoo-include.diff, +metadata.xml, +zssh-1.5c-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  06 Jun 2013; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
-  Reassigning due to Zlogene became Gentoo developer, remove proxy maintainers
-  herd
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Mar 2013; Agostino Sarubbo <ago@gentoo.org> zssh-1.5c-r1.ebuild:
-  Stable for sparc, wrt bug #462902
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  30 Mar 2013; Agostino Sarubbo <ago@gentoo.org> zssh-1.5c-r1.ebuild:
-  Stable for x86, wrt bug #462902
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> zssh-1.5c-r1.ebuild:
-  Stable on amd64, wrt bug #462902
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*zssh-1.5c-r1 (18 Mar 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Mar 2013; Sergey Popov <pinkbyte@gentoo.org> +zssh-1.5c-r1.ebuild,
-  metadata.xml:
-  Revision bump: EAPI 5, epatch_user, respect CC, AR and RANLIB. Package will
-  be maintained by Mikle Kolyada through proxy maintainers, wrt bug #462094
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 May 2011; Michael Weber <xmw@gentoo.org> zssh-1.5c.ebuild:
-  added ~amd64 keyword (bug 363001, thanks to Agostino Sarubbo for testing)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> zssh-1.5c.ebuild:
-  Mark ~ppc wrt #346269. Thanks to XU Benda <heroxbd@gmail.com> for the
-  report and testing.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  21 Apr 2008; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Fix up metadata.xml. If there's no maintainer for the package, the metadata
-  also needs to contain m-needed@g.o.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Jan 2008; Raúl Porcel <armin76@gentoo.org>
-  -files/zssh-1.5a-gentoo-termcap.diff, -zssh-1.5a.ebuild, zssh-1.5c.ebuild:
-  sparc/x86 stable, remove old
+  Bug: https://bugs.gentoo.org/552720
 
-  11 May 2007; Thilo Bangert <bangert@gentoo.org> +metadata.xml:
-  add metadata.xml
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*zssh-1.5c (12 Jan 2007)
-
-  12 Jan 2007; Charlie Shepherd <masterdriverz@gentoo.org>
-  +zssh-1.5c.ebuild:
-  Bump to zssh-1.5c; thanks to Andreas Bleischwitz; bug 160933
-
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> zssh-1.5a.ebuild:
-  change virtual/glibc to virtual/libc
-
-  03 Mar 2004; Seemant Kulleen <seemant@gentoo.org> zssh-1.5a.ebuild:
-  moved to stable x86, at the behest of: Petter <tt@linux.nu> in bug #43451, and
-  he thinks he's rough around the edges, but he's not
-
-*zssh-1.5a (20 Sep 2002)
-
-  23 Dec 2002; Christian Birchinger <joker@gentoo.org> :     
-  Removed sparc64 keyword.
-
-  20 Sep 2002; phoen][x <phoenix@gentoo.org> ChangeLog, zssh-1.5a.ebuild,
-  files/digest-zssh-1.5a :
-  Initial import. Ebuild contributed by Uwe Ohse <uwe-gentoo@ohse.de>.
-  This closes bug #8140.

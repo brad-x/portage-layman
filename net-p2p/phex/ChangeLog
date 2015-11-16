@@ -1,86 +1,57 @@
 # ChangeLog for net-p2p/phex
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/phex/ChangeLog,v 1.17 2014/06/18 19:22:46 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  18 Jun 2014; Manuel Rüger <mrueg@gentoo.org> -phex-3.2.0.102.ebuild:
-  NM: Cleanup superseded ebuilds.
+*phex-3.2.0.102-r1 (09 Aug 2015)
 
-  10 Jul 2010; Stanislav Ochotnicky <sochotnicky@gentoo.org>
-  files/0001-Remove-MacOS-GUI-references.patch, phex-3.2.0.102-r1.ebuild:
-  Move file removal from patch to ebuild to prevent failure on some systems
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0001-Remove-MacOS-GUI-references.patch, +files/phex-3.0.0.99.sh,
+  +metadata.xml, +phex-3.2.0.102-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*phex-3.2.0.102-r1 (18 Jun 2010)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Jun 2010; Stanislav Ochotnicky <sochotnicky@gentoo.org>
-  +files/0001-Remove-MacOS-GUI-references.patch, +phex-3.2.0.102-r1.ebuild:
-  Remove MacOS GUI related calls (#298698)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Jan 2008; Petteri Räty <betelgeuse@gentoo.org> phex-3.2.0.102.ebuild:
-  Migrate to EAPI=1 slot deps.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Jan 2008; Petteri Räty <betelgeuse@gentoo.org> -phex-3.0.0.99.ebuild:
-  Remove old version.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*phex-3.2.0.102 (15 Jan 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Jan 2008; Vlastimil Babka <caster@gentoo.org> metadata.xml,
-  +phex-3.2.0.102.ebuild:
-  Version bump, bug #185634. Build from source, most bundled deps removed, few
-  that we don't have package for are left - bug #176739. Added java herd to
-  metadata.xml.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Jul 2007; Petteri Räty <betelgeuse@gentoo.org> phex-3.0.0.99.ebuild:
-  Change RDEPEND from >=dev-java/jgoodies-looks-1.3.2 to >=2.0 because this
-  uses the 2.0 slot.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*phex-3.0.0.99 (12 Jan 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 Jan 2007; Raúl Porcel <armin76@gentoo.org> -files/phex-2.6.4.89.sh,
-  -files/phex-2.8.2.92.sh, +files/phex-3.0.0.99.sh, -files/phex.sh,
-  -phex-2.0.0.76.ebuild, -phex-2.6.0.87.ebuild, -phex-2.8.2.92.ebuild,
-  +phex-3.0.0.99.ebuild:
-  Remove broken ebuilds, version bump, fix bug 119416
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  09 Dec 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  -phex-2.1.2.79.ebuild, -phex-2.1.4.80.ebuild, -phex-2.6.4.89.ebuild:
-  clean out some ebuilds
+  Bug: https://bugs.gentoo.org/552720
 
-*phex-2.8.2.92 (17 Jan 2006)
-
-  17 Jan 2006; Karol Wojtaszek <sekretarz@gentoo.org>
-  +files/phex-2.8.2.92.sh, +phex-2.8.2.92.ebuild:
-  Version bump, bug #111812 by Roel Brook <Rainmaker526@hotmail.com>. Added
-  ~amd64 keyword
-
-*phex-2.6.4.89 (26 Sep 2005)
-
-  26 Sep 2005; <mkay@gentoo.org> +files/phex-2.6.4.89.sh,
-  +phex-2.6.4.89.ebuild:
-  Version bump to 2.6.4.89
-
-*phex-2.6.0.87 (28 Jul 2005)
-
-  28 Jul 2005; <sekretarz@gentoo.org> +phex-2.6.0.87.ebuild:
-  Version bump, bug #96135. Moved phex wrapper to /usr/bin
-
-*phex-2.1.4.80 (13 Oct 2004)
-
-  13 Oct 2004; Jon Hood <squinky86@gentoo.org> +phex-2.1.4.80.ebuild:
-  Version bump.
-
-*phex-2.1.2.79 (17 Sep 2004)
-
-  17 Sep 2004; Jon Hood <squinky86@gentoo.org> +phex-2.1.2.79.ebuild:
-  Version bump.
-
-  22 Aug 2004; Jon Hood <squinky86@gentoo.org> phex-2.0.0.76.ebuild:
-  Stable on x86.
-
-  22 Jul 2004; David Holm <dholm@gentoo.org> phex-2.0.0.76.ebuild:
-  Added to ~ppc.
-
-*phex-2.0.0.76 (22 Jul 2004)
-
-  22 Jul 2004; Jon Hood <squinky86@gentoo.org> +metadata.xml,
-  +phex-2.0.0.76.ebuild, +files/phex.sh:
-  Initial commit.

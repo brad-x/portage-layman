@@ -5,6 +5,7 @@
 EAPI=5
 
 PYTHON_COMPAT=( python2_7 python3_{3,4,5} pypy pypy3 )
+PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1
 
@@ -36,9 +37,6 @@ PATCHES=(
 	"${FILESDIR}"/${P}-twisted-backport1.patch
 	"${FILESDIR}"/${P}-twisted-backport2.patch
 )
-
-# https://github.com/testing-cabal/testtools/issues/156
-RESTRICT=test
 
 python_compile_all() {
 	use doc && emake -C doc html

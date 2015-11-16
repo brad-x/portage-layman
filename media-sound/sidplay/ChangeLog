@@ -1,87 +1,57 @@
 # ChangeLog for media-sound/sidplay
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sidplay/ChangeLog,v 1.25 2012/05/05 08:50:38 mgorny Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> sidplay-2.0.9.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+*sidplay-2.0.9 (09 Aug 2015)
 
-  27 Feb 2011; Christian Faulhammer <fauli@gentoo.org> sidplay-2.0.9.ebuild:
-  stable x86, security bug 354061
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/sidplay-2.0.9-gcc43.patch, +files/sidplay-2.0.9-gcc44.patch,
+  +metadata.xml, +sidplay-2.0.9.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Feb 2011; Tobias Klausmann <klausman@gentoo.org> sidplay-2.0.9.ebuild:
-  Stable on alpha, bug #354061
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Feb 2011; Brent Baude <ranger@gentoo.org> sidplay-2.0.9.ebuild:
-  Marking sidplay-2.0.9 ppc for bug 354061
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Feb 2011; Markos Chandras <hwoarang@gentoo.org> sidplay-2.0.9.ebuild:
-  Stable on amd64 wrt bug #354061
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  10 Oct 2010; Tobias Klausmann <klausman@gentoo.org> sidplay-2.0.9.ebuild:
-  Keyworded on alpha, bug #326767
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> sidplay-2.0.9.ebuild,
-  +files/sidplay-2.0.9-gcc44.patch:
-  Fix building with glibc-2.10+ wrt #272602, thanks to Martin Väth and
-  Diego E. Pettenò.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 May 2009; Jeroen Roovers <jer@gentoo.org> sidplay-2.0.9.ebuild:
-  Marked ~hppa too.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Dec 2008; Alexis Ballier <aballier@gentoo.org> sidplay-2.0.9.ebuild:
-  quote D
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Dec 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/sidplay-2.0.9-gcc43.patch, sidplay-2.0.9.ebuild:
-  Fix build with gcc 4.3 by fixing configure checks; autreconfing it
-  requires to rewrite many parts of the build system if we want it to work
-  with eg libtool 2... closes bug #251251
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Jul 2007; Samuli Suominen <drac@gentoo.org> sidplay-2.0.9.ebuild:
-  Remove RESTRICT as it's not required. Old policy for not mirroring files
-  from sourceforge mirrors.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org> sidplay-2.0.9.ebuild:
-  (QA) RESTRICT clean up.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  29 Oct 2006; Diego Pettenò <flameeyes@gentoo.org> sidplay-2.0.9.ebuild:
-  Fix typo, thanks to Patrick Lauer in bug #153364.
-
-  15 Feb 2006; Diego Pettenò <flameeyes@gentoo.org> sidplay-2.0.9.ebuild:
-  pkgconfig is not an RDEPEND.
-
-  04 Oct 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  sidplay-2.0.9.ebuild:
-  Adding pkgconfig to DEPEND to close bug #66300.
-
-  03 Sep 2004; Jeremy Huddleston <eradicator@gentoo.org> sidplay-2.0.9.ebuild:
-  Stable amd64, sparc, x86.
-
-*sidplay-2.0.9 (03 Jul 2004)
-
-  03 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> metadata.xml,
-  -sidplay-2.0.8.ebuild, +sidplay-2.0.9.ebuild:
-  Version bump.  Removing broken version.  Added ~amd64.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org> sidplay-2.0.8.ebuild:
-  virtual/glibc -> virtual/libc
-
-  12 Apr 2004; Jason Wever <weeve@gentoo.org> sidplay-2.0.8.ebuild:
-  Added ~sparc keyword.
-
-  19 Mar 2004; David Holm <dholm@gentoo.org> sidplay-2.0.8.ebuild:
-  Added to ~ppc.
-
-*sidplay-2.0.8 (07 Oct 2003)
-
-  07 Oct 2003; Hanno Boeck <hanno@gentoo.org> sidplay-2.0.8.ebuild:
-  Add release version, mask out old cvs-version.
-
-*sidplay-2.0.8.20021111 (11 Nov 2002)
-
-  11 Nov 2002; Hanno Boeck <hanno@gentoo.org> sidplay-2.0.8.20021111.ebuild :
-  Added CVS-version of sidplay.
-  Current release-version is unuseable, it doesn't compile in GCC 3.x.

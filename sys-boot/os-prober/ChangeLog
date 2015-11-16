@@ -1,110 +1,100 @@
 # ChangeLog for sys-boot/os-prober
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/os-prober/ChangeLog,v 1.23 2015/06/28 09:11:43 zlogene Exp $
+# (auto-generated from git log)
 
-  28 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> os-prober-1.65.ebuild:
-  x86 stable wrt bug #536146
+*os-prober-1.65 (09 Aug 2015)
+*os-prober-1.62 (09 Aug 2015)
+*os-prober-1.57-r1 (09 Aug 2015)
+*os-prober-1.53 (09 Aug 2015)
 
-  27 Jun 2015; Agostino Sarubbo <ago@gentoo.org> os-prober-1.65.ebuild:
-  Stable for amd64, wrt bug #536146
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +os-prober-1.53.ebuild, +os-prober-1.57-r1.ebuild, +os-prober-1.62.ebuild,
+  +os-prober-1.65.ebuild:
+  proj/gentoo: Initial commit
 
-*os-prober-1.65 (29 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Mar 2015; Manuel Rüger <mrueg@gentoo.org> +os-prober-1.65.ebuild,
-  -os-prober-1.56.ebuild, -os-prober-1.57.ebuild:
-  Version bump. Fixes bug #528038. Remove old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Jul 2013; Jonathan Callen <jcallen@gentoo.org> metadata.xml:
-  Update metadata.xml to reflect new email address
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*os-prober-1.62 (18 Jul 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  18 Jul 2013;  <maks@gentoo.org> +os-prober-1.62.ebuild:
-  Bump to 1.62, adding support for EFI. Thanks to Ben Kohler, bug #477312.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*os-prober-1.57-r1 (07 Apr 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Apr 2013; Jonathan Callen <abcd@gentoo.org> +os-prober-1.57-r1.ebuild:
-  Replace calls to grub-mount with grub2-mount, as we rename it in Gentoo (to
-  allow parallel installation of grub:0)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*os-prober-1.57 (05 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> +os-prober-1.57.ebuild:
-  Version bump, wrt bug #415617
+  Bug: https://bugs.gentoo.org/552720
 
-*os-prober-1.56 (14 Oct 2012)
+*os-prober-1.66 (31 Aug 2015)
 
-  14 Oct 2012; Jonathan Callen <abcd@gentoo.org> +os-prober-1.56.ebuild:
-  Update to latest upstream, use upstream's installation directories
-
-*os-prober-1.53 (29 Jun 2012)
-
-  29 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -os-prober-1.47.ebuild,
-  -os-prober-1.51.ebuild, +os-prober-1.53.ebuild:
-  Version bump to version from wheezy. Drop older and stable the
-  to-be-stable-debian version.
-
-*os-prober-1.51 (30 Mar 2012)
-
-  30 Mar 2012; Mike Gilbert <floppym@gentoo.org> +os-prober-1.51.ebuild:
-  Version bump.
-
-  14 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> os-prober-1.47.ebuild:
-  Stable on amd64 and x86, works fine and usefull for grub2.
-
-  26 May 2011; Jonathan Callen <abcd@gentoo.org> os-prober-1.47.ebuild:
-  Fix unpacking (upstream changed the top-level dir *again*)
-
-*os-prober-1.47 (26 May 2011)
-
-  26 May 2011; Jonathan Callen <abcd@gentoo.org> -os-prober-1.46.ebuild,
-  +os-prober-1.47.ebuild:
-  Bump to new upstream version, remove old.
-
-  07 May 2011; Jonathan Callen <abcd@gentoo.org> os-prober-1.46.ebuild:
-  udev now installs to /lib/udev, so remove sed adjusting its path
-
-*os-prober-1.46 (05 May 2011)
-
-  05 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> -os-prober-1.35.ebuild,
-  -files/os-prober-1.35-multilib.patch, -os-prober-1.36.ebuild,
-  -os-prober-1.38.ebuild, -os-prober-1.39.ebuild, -os-prober-1.44.ebuild,
-  +os-prober-1.46.ebuild:
-  Version bump to latest. Drop older.
-
-  16 Apr 2011; Jonathan Callen <abcd@gentoo.org> os-prober-1.44.ebuild:
-  Fix build (upstream changed where the tarball unpacks)
-
-*os-prober-1.44 (16 Apr 2011)
-
-  16 Apr 2011; Jonathan Callen <abcd@gentoo.org> +os-prober-1.44.ebuild:
-  Version bump, bump EAPI
-
-*os-prober-1.39 (26 Jul 2010)
-
-  26 Jul 2010; Fabio Erculiani <lxnay@gentoo.org> +os-prober-1.39.ebuild:
+  31 Aug 2015; Manuel Rüger <mrueg@gentoo.org> +os-prober-1.66.ebuild:
   Version bump
 
-*os-prober-1.38 (04 Jun 2010)
+  Package-Manager: portage-2.2.20.1
 
-  04 Jun 2010; Steve Dibb <beandog@gentoo.org> +os-prober-1.38.ebuild:
+  31 Aug 2015; Manuel Rüger <mrueg@gentoo.org> -os-prober-1.53.ebuild,
+  -os-prober-1.57-r1.ebuild, -os-prober-1.62.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.20.1
+
+*os-prober-1.67 (05 Oct 2015)
+
+  05 Oct 2015; Manuel Rüger <mrueg@gentoo.org> +os-prober-1.67.ebuild:
   Version bump
 
-*os-prober-1.36 (06 Mar 2010)
+  Package-Manager: portage-2.2.22
 
-  06 Mar 2010; Jonathan Callen <abcd@gentoo.org> +os-prober-1.36.ebuild,
-  metadata.xml:
-  Version bump; update metadata.xml
+*os-prober-1.68 (15 Oct 2015)
 
-  15 Dec 2009; Jonathan Callen <abcd@gentoo.org> os-prober-1.35.ebuild:
-  Add elog about NTFS to postinst
+  15 Oct 2015; Manuel Rüger <mrueg@gentoo.org> +os-prober-1.68.ebuild:
+  Version bump
 
-*os-prober-1.35 (15 Dec 2009)
+  Package-Manager: portage-2.2.23
 
-  15 Dec 2009; Jonathan Callen <abcd@gentoo.org> +os-prober-1.35.ebuild,
-  +files/os-prober-1.35-multilib.patch, +metadata.xml:
-  New ebuild. Thanks to Wizzelby <wizzleby@gmail.com> for initial ebuild.
+*os-prober-1.70 (07 Nov 2015)
+
+  07 Nov 2015; Manuel Rüger <mrueg@gentoo.org> +os-prober-1.70.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.24
+
+  07 Nov 2015; Manuel Rüger <mrueg@gentoo.org> -os-prober-1.66.ebuild,
+  -os-prober-1.67.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.24
+

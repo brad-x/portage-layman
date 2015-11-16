@@ -1,132 +1,61 @@
 # ChangeLog for games-engines/exult
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-engines/exult/ChangeLog,v 1.34 2015/01/09 02:57:14 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  09 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org> -exult-1.2.ebuild,
-  -files/exult-1.2-64bits.patch, -files/exult-1.2-gcc41.patch,
-  -files/exult-1.2-gcc43.patch, -files/exult-1.2-gcc44.patch,
-  -files/exult-1.2-libpng14.patch, -files/exult-1.2-libpng15.patch,
-  -files/exult-1.2-x11link.patch:
-  remove old and broken 'stable' version since it is not recommended for use by
-  upstream
+*exult-9999 (09 Aug 2015)
 
-*exult-9999 (09 Jan 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +exult-9999.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  09 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org> +exult-9999.ebuild:
-  add live version of ebuild which is recommended for use by upstream.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Jan 2015; Michael Sterrett <mr_bones_@gentoo.org> -exult-1.4.9_rc1.ebuild,
-  -files/exult-1.4.9_rc1-desktop.patch:
-  clean known-broken version that upstream has removed
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> exult-1.2.ebuild,
-  exult-1.4.9_rc1.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org> exult-1.4.9_rc1.ebuild:
-  autotools eclass isn't used
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> exult-1.2.ebuild,
-  +files/exult-1.2-libpng15.patch:
-  Fix building with libpng15 wrt #380145 by Diego Elio Pettenò
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*exult-1.4.9_rc1 (20 Jan 2011)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jan 2011; Michael Sterrett <mr_bones_@gentoo.org>
-  +exult-1.4.9_rc1.ebuild, +files/exult-1.4.9_rc1-desktop.patch:
-  Add masked rc release for testing
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 May 2010; Samuli Suominen <ssuominen@gentoo.org> exult-1.2.ebuild,
-  +files/exult-1.2-libpng14.patch:
-  Fix building with libpng14 wrt #320113 by Diego E. Pettenò.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  fix desktop entry issues reported by desktop-file-validate
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Feb 2010; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  Add use-deps for libsdl
+  Bug: https://bugs.gentoo.org/552720
 
-  27 Jul 2009; Tristan Heaven <nyhm@gentoo.org> exult-1.2.ebuild,
-  +files/exult-1.2-gcc44.patch:
-  Fix building with gcc-4.4, bug #273506
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  24 Feb 2009; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  Add timidity use-based dep for bug #203104
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  EAPI=2; add workaround mentioned by Rafał Mużyło in bug #239373
-
-  15 Aug 2008; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  add digital sound install as well (bug #224655 with patch from Tomáš
-  Chvátal)
-
-  01 May 2008; Tristan Heaven <nyhm@gentoo.org>
-  +files/exult-1.2-gcc43.patch, exult-1.2.ebuild:
-  Fix building with gcc-4.3
-
-  29 Jan 2008; Tristan Heaven <nyhm@gentoo.org> exult-1.2.ebuild:
-  Don't specify compression type in doc elog, bug #169772
-
-  05 Jan 2007; Tristan Heaven <nyhm@gentoo.org> exult-1.2.ebuild:
-  Set WANT_AUTOCONF and WANT_AUTOMAKE
-
-  25 Oct 2006; <tupone@gentoo.org> +files/exult-1.2-64bits.patch,
-  exult-1.2.ebuild:
-  Fix for 64 bits CPU. Bug #146049 by Tiago Sousa
-
-  16 Oct 2006; Simon Stelling <blubb@gentoo.org> exult-1.2.ebuild:
-  remove useless use flags; bug 151640
-
-  08 Oct 2006; <tupone@gentoo.org> +files/exult-1.2-x11link.patch,
-  exult-1.2.ebuild:
-  Fix linking with -lX11. Bug #143626 by koenigrollo@gmx.net
-
-  05 May 2006; <Tupone@gentoo.org> +files/exult-1.2-gcc41.patch,
-  exult-1.2.ebuild:
-  Fix for gcc-4.1
-
-  06 Oct 2005; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  expand filename before passing to unpack (bug #107532); tidy
-
-  06 May 2005; Sven Wegener <swegener@gentoo.org> exult-1.2.ebuild:
-  Removed * postfix from <, <=, >= and > dependencies.
-
-  17 Feb 2005; Michael Sterrett <mr_bones_@gentoo.org> exult-1.2.ebuild:
-  need app-arch/unzip to unpack
-
-  21 Dec 2004; Dylan Carlson <absinthe@gentoo.org> exult-1.2.ebuild:
-  Keywords ~amd64.
-
-  16 Jul 2004; Michael Sterrett <mr_bones_@gentoo.org> -exult-1.00.ebuild,
-  -exult-1.1.10_rc2.ebuild:
-  Clean older ebuilds
-
-*exult-1.2 (29 Jun 2004)
-
-  29 Jun 2004; Michael Sterrett <mr_bones_@gentoo.org> +exult-1.2.ebuild:
-  version bump
-
-  20 Apr 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  exult-1.1.10_rc2.ebuild:
-  add depend on >=media-libs/sdl-mixer-1.2.4 (bug #48469); tidy
-
-  09 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  exult-1.1.10_rc2.ebuild:
-  fix bug #44185 - fails on parallel make; spelling fixes
-
-*exult-1.1.10_rc2 (05 Mar 2004)
-
-  05 Mar 2004; Mike Frysinger <vapier@gentoo.org> :
-  Version bump to try to fix #43608 and to fix compiling with gcc-3.3.
-
-*exult-1.00 (12 Dec 2002)
-
-  26 Dec 2003; Jason Wever <weeve@gentoo.org> exult-1.00.ebuild:
-  Changed sparc keyword to ~sparc as timidity++ dependency had NO sparc keywords.
-
-  22 Dec 2002; Christian Birchinger <joker@gentoo.org> :
-  Removed sparc64 keyword.
-
-  12 Dec 2002; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Mathias Menzel-Nielsen <spam@matzsoft.de>.

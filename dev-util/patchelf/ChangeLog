@@ -1,74 +1,56 @@
 # ChangeLog for dev-util/patchelf
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/patchelf/ChangeLog,v 1.16 2015/07/29 08:04:07 jlec Exp $
+# (auto-generated from git log)
 
-  29 Jul 2015; Justin Lecher <jlec@gentoo.org> +files/patchelf-0.8-dash.patch,
-  patchelf-0.8.ebuild:
-  Backport patch for /bin/sh -> dash, bug #555360
+*patchelf-0.8 (09 Aug 2015)
 
-  24 Jun 2015; Agostino Sarubbo <ago@gentoo.org> patchelf-0.8.ebuild:
-  Stable for ppc, wrt bug #537940
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/patchelf-0.8-dash.patch, +metadata.xml, +patchelf-0.8.ebuild:
+  proj/gentoo: Initial commit
 
-  22 May 2015; James Le Cuirot <chewi@gentoo.org> patchelf-0.8.ebuild:
-  ~ppc keyword.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Mar 2015; Zac Medico <zmedico@gentoo.org>
-  -files/patchelf-0.6-test-build.patch:
-  Remove unused patch since 0.6 was removed for bug 455454.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jan 2015; Justin Lecher <jlec@gentoo.org> -patchelf-0.6.ebuild,
-  -patchelf-0.6-r1.ebuild:
-  Drop old, obsoletes #455454
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> patchelf-0.8.ebuild:
-  Stable for x86, wrt bug #532850
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Dec 2014; Agostino Sarubbo <ago@gentoo.org> patchelf-0.8.ebuild:
-  Stable for amd64, wrt bug #532850
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*patchelf-0.8 (01 May 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 May 2014; Justin Lecher <jlec@gentoo.org> patchelf-0.6.ebuild,
-  patchelf-0.6-r1.ebuild, +patchelf-0.8.ebuild:
-  Verison Bump, #509244
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Mar 2013; Justin Lecher <jlec@gentoo.org>
-  files/patchelf-0.6-test-build.patch:
-  Enhance the patch for as-needed problems
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Mar 2013; Justin Lecher <jlec@gentoo.org>
-  files/patchelf-0.6-test-build.patch:
-  Fix linking of test, #455454
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*patchelf-0.6-r1 (04 Feb 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  04 Feb 2013; Justin Lecher <jlec@gentoo.org> +patchelf-0.6-r1.ebuild,
-  +files/patchelf-0.6-test-build.patch:
-  Use system header, thanks fedora; respect CC, CFLAGS and LDFLAGS in test
-  binaries
-
-  30 Jan 2013; Justin Lecher <jlec@gentoo.org> -patchelf-0.5.ebuild,
-  metadata.xml:
-  Drop old
-
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> patchelf-0.6.ebuild:
-  Stable for x86, wrt bug #454620
-
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> patchelf-0.6.ebuild:
-  Stable for amd64, wrt bug #454620
-
-*patchelf-0.6 (11 Nov 2011)
-
-  11 Nov 2011; Justin Lecher <jlec@gentoo.org> patchelf-0.5.ebuild,
-  +patchelf-0.6.ebuild, metadata.xml:
-  Version Bump and move to EAPI=4
-
-  30 Nov 2010; Justin Lecher <jlec@gentoo.org> +patchelf-0.5.ebuild,
-  +metadata.xml:
-  New package (copied from app-admin/patchelf)
-
-*patchelf-0.5 (14 Nov 2010)
-
-  14 Nov 2010; Justin Lecher <jlec@gentoo.org> +patchelf-0.5.ebuild,
-  +metadata.xml:
-  New addition

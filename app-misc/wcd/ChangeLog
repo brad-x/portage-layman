@@ -1,139 +1,66 @@
 # ChangeLog for app-misc/wcd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/wcd/ChangeLog,v 1.36 2015/07/29 06:55:05 jlec Exp $
+# (auto-generated from git log)
 
-  29 Jul 2015; Justin Lecher <jlec@gentoo.org> -files/wcd-5.2.6-wchar.patch,
-  -wcd-5.2.6.ebuild:
-  Drop old
+*wcd-5.2.7 (09 Aug 2015)
 
-  17 Jul 2015; Markus Meier <maekke@gentoo.org> wcd-5.2.7.ebuild:
-  arm stable, bug #552810
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/wcd-5.2.5-gentoo.patch, +metadata.xml, +wcd-5.2.7.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Jun 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.7.ebuild:
-  Stable for x86, wrt bug #552810
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Jun 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.7.ebuild:
-  Stable for amd64, wrt bug #552810
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 May 2015; Justin Lecher <jlec@gentoo.org> -files/wcd-5.2.4-gentoo.patch:
-  Drop old patches
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 May 2015; Justin Lecher <jlec@gentoo.org> -wcd-5.2.4.ebuild:
-  Drop old
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 May 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.6.ebuild:
-  Stable for x86, wrt bug #549882
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 May 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.6.ebuild:
-  Stable for amd64, wrt bug #549882
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*wcd-5.2.7 (19 May 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 May 2015; Justin Lecher <jlec@gentoo.org> +wcd-5.2.7.ebuild:
-  Version Bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Jan 2015; Justin Lecher <jlec@gentoo.org> -wcd-5.2.5.ebuild:
-  Drop old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Jan 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.5.ebuild:
-  Stable for x86, wrt bug #534884
+  Bug: https://bugs.gentoo.org/552720
 
-*wcd-5.2.6 (21 Jan 2015)
+*wcd-5.3.0 (24 Sep 2015)
 
-  21 Jan 2015; Justin Lecher <jlec@gentoo.org> +wcd-5.2.6.ebuild,
-  +files/wcd-5.2.6-wchar.patch:
-  Version Bump
+  24 Sep 2015; Lars Wendler <polynomial-c@gentoo.org> +wcd-5.3.0.ebuild:
+  Bump to version 5.3.0
 
-  09 Jan 2015; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.5.ebuild:
-  Stable for amd64, wrt bug #534884
+  Permission kindly granted by jlec.
 
-*wcd-5.2.5 (14 Jun 2014)
+  Package-Manager: portage-2.2.21
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
-  14 Jun 2014; Justin Lecher <jlec@gentoo.org> +wcd-5.2.5.ebuild,
-  -files/wcd-5.2.3-gentoo.patch, +files/wcd-5.2.5-gentoo.patch:
-  Version Bump
-
-  24 Dec 2013; Justin Lecher <jlec@gentoo.org> -wcd-5.2.3-r1.ebuild:
-  Drop old
-
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.4.ebuild:
-  Stable for x86, wrt bug #491932
-
-  22 Dec 2013; Pacho Ramos <pacho@gentoo.org> wcd-5.2.4.ebuild:
-  amd64 stable, bug #491932
-
-*wcd-5.2.4 (06 Sep 2013)
-
-  06 Sep 2013; Lars Wendler <polynomial-c@gentoo.org> +wcd-5.2.4.ebuild,
-  -files/5.1.4-gentoo.patch, -files/wcd-5.2.1-gentoo.patch,
-  +files/wcd-5.2.4-gentoo.patch:
-  Non-maintainer commit: Version bump. Removed old files.
-
-  20 May 2013; Justin Lecher <jlec@gentoo.org> -wcd-5.2.1-r1.ebuild:
-  Drop old
-
-  20 May 2013; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.3-r1.ebuild:
-  Stable for x86, wrt bug #461066
-
-  16 May 2013; Agostino Sarubbo <ago@gentoo.org> wcd-5.2.3-r1.ebuild:
-  Stable for amd64, wrt bug #461066
-
-  03 Feb 2013; Justin Lecher <jlec@gentoo.org> -wcd-5.1.4.ebuild:
-  Drop old
-
-  03 Feb 2013; Jeff Horelick <jdhore@gentoo.org> wcd-5.2.1-r1.ebuild:
-  x86 stable wrt bug #454204
-
-  02 Feb 2013; Justin Lecher <jlec@gentoo.org> wcd-5.2.1-r1.ebuild:
-  Fix $S, #455154
-
-*wcd-5.2.1-r1 (02 Feb 2013)
-
-  02 Feb 2013; Justin Lecher <jlec@gentoo.org> -wcd-5.2.1.ebuild,
-  +wcd-5.2.1-r1.ebuild:
-  Backport changes
-
-*wcd-5.2.3-r1 (02 Feb 2013)
-
-  02 Feb 2013; Justin Lecher <jlec@gentoo.org> -wcd-5.2.3.ebuild,
-  +wcd-5.2.3-r1.ebuild:
-  Import debian style of installation which is upstream; installs missing
-  profile script
-
-  29 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> wcd-5.2.3.ebuild:
-  Keyword ~arm
-
-  27 Jan 2013; Justin Lecher <jlec@gentoo.org> wcd-5.2.1.ebuild,
-  wcd-5.2.3.ebuild:
-  Always use ncurses
-
-  26 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> wcd-5.2.1.ebuild:
-  Stable on amd64, wrt bug #454204
-
-  26 Jan 2013; Justin Lecher <jlec@gentoo.org> wcd-5.2.1.ebuild,
-  wcd-5.2.3.ebuild:
-  Add missing dep
-
-*wcd-5.2.3 (26 Jan 2013)
-
-  26 Jan 2013; Justin Lecher <jlec@gentoo.org> +wcd-5.2.3.ebuild,
-  +files/wcd-5.2.3-gentoo.patch, metadata.xml:
-  Version Bump
-
-*wcd-5.2.1 (13 Mar 2012)
-
-  13 Mar 2012; Justin Lecher <jlec@gentoo.org> wcd-5.1.4.ebuild,
-  +wcd-5.2.1.ebuild, +files/wcd-5.2.1-gentoo.patch:
-  Version Bump
-
-  02 Nov 2011; Justin Lecher <jlec@gentoo.org> wcd-5.1.4.ebuild, metadata.xml:
-  Added missing build dep, #389227
-
-  03 Mar 2011; Justin Lecher <jlec@gentoo.org> files/5.1.4-gentoo.patch:
-  Install in correct location not in /usr/local
-
-*wcd-5.1.4 (03 Mar 2011)
-
-  03 Mar 2011; Justin Lecher <jlec@gentoo.org> +files/5.1.4-gentoo.patch,
-  +wcd-5.1.4.ebuild, +metadata.xml:
-  New addition, written by me

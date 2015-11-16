@@ -1,140 +1,69 @@
 # ChangeLog for dev-python/pudb
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pudb/ChangeLog,v 1.27 2015/06/01 07:36:07 patrick Exp $
+# (auto-generated from git log)
 
-*pudb-2015.3 (01 Jun 2015)
+*pudb-2015.3 (09 Aug 2015)
+*pudb-2015.2 (09 Aug 2015)
+*pudb-2015.1 (09 Aug 2015)
+*pudb-2014.1 (09 Aug 2015)
+*pudb-2013.5.1 (09 Aug 2015)
+*pudb-2013.3.6 (09 Aug 2015)
 
-  01 Jun 2015; Patrick Lauer <patrick@gentoo.org> +pudb-2015.3.ebuild:
-  Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pudb-2013.3.6.ebuild, +pudb-2013.5.1.ebuild, +pudb-2014.1.ebuild,
+  +pudb-2015.1.ebuild, +pudb-2015.2.ebuild, +pudb-2015.3.ebuild:
+  proj/gentoo: Initial commit
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> pudb-2013.3.6.ebuild,
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pudb-2013.3.6.ebuild,
   pudb-2013.5.1.ebuild, pudb-2014.1.ebuild, pudb-2015.1.ebuild,
-  pudb-2015.2.ebuild:
-  Drop old Python implementations
+  pudb-2015.2.ebuild, pudb-2015.3.ebuild:
+  Use https by default
 
-*pudb-2015.2 (28 Feb 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Feb 2015; Patrick Lauer <patrick@gentoo.org> +pudb-2015.2.ebuild:
-  Bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*pudb-2015.1 (30 Jan 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Jan 2015; Patrick Lauer <patrick@gentoo.org> +pudb-2015.1.ebuild:
-  Bump #538016
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Apr 2014; Tim Harder <radhermit@gentoo.org> pudb-2014.1.ebuild:
-  Add python3_4 support.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*pudb-2014.1 (13 Mar 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Mar 2014; Tim Harder <radhermit@gentoo.org> +pudb-2014.1.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Jan 2014; Tim Harder <radhermit@gentoo.org> -pudb-2012.3-r1.ebuild,
-  -pudb-2013.1.ebuild, -pudb-2013.2.ebuild, -pudb-2013.3.2.ebuild,
-  -pudb-2013.3.3.ebuild, -pudb-2013.3.4.ebuild:
-  Remove old.
-
-*pudb-2013.5.1 (25 Jan 2014)
-
-  25 Jan 2014; Tim Harder <radhermit@gentoo.org> +pudb-2013.5.1.ebuild:
-  Version bump.
-
-*pudb-2013.3.6 (12 Sep 2013)
-
-  12 Sep 2013; Patrick Lauer <patrick@gentoo.org> +pudb-2013.3.6.ebuild:
-  Bump
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> pudb-2012.3-r1.ebuild,
-  pudb-2013.1.ebuild, pudb-2013.2.ebuild, pudb-2013.3.2.ebuild,
-  pudb-2013.3.3.ebuild, pudb-2013.3.4.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-*pudb-2013.3.4 (22 Jul 2013)
-
-  22 Jul 2013; Patrick Lauer <patrick@gentoo.org> +pudb-2013.3.4.ebuild:
-  Bump
-
-*pudb-2013.3.3 (08 Jul 2013)
-
-  08 Jul 2013; Patrick Lauer <patrick@gentoo.org> +pudb-2013.3.3.ebuild:
-  Bump
-
-*pudb-2013.3.2 (19 Jun 2013)
-
-  19 Jun 2013; Patrick Lauer <patrick@gentoo.org> +pudb-2013.3.2.ebuild:
-  Bump
-
-*pudb-2013.2 (01 Jun 2013)
-
-  01 Jun 2013; Tim Harder <radhermit@gentoo.org> +pudb-2013.2.ebuild:
-  Version bump.
-
-*pudb-2013.1 (18 Mar 2013)
-
-  18 Mar 2013; Kacper Kowalik <xarthisius@gentoo.org> +pudb-2013.1.ebuild,
-  -pudb-0.92.15.ebuild, -pudb-2011.3.ebuild, -pudb-2012.1.ebuild,
-  -pudb-2012.2.1.ebuild, -pudb-2012.3.ebuild:
-  Version bump, fix deps, drop old
-
-*pudb-2012.3-r1 (08 Mar 2013)
-
-  08 Mar 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +pudb-2012.3-r1.ebuild:
-  updating pudb-2012.3 to eapi5 and distutils-r1
-
-*pudb-2012.3 (09 Oct 2012)
-
-  09 Oct 2012; Patrick Lauer <patrick@gentoo.org> +pudb-2012.3.ebuild:
-  Bump
-
-*pudb-2012.2.1 (28 Jun 2012)
-
-  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +pudb-2012.2.1.ebuild:
-  Bump
-
-*pudb-2012.1 (20 Feb 2012)
-
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> +pudb-2012.1.ebuild:
-  Bump for 404549
-
-  11 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> -pudb-0.92.14.ebuild:
-  Remove old version.
-
-*pudb-2011.3 (11 Oct 2011)
-
-  11 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +pudb-2011.3.ebuild:
-  Version bump to 2011.3.
-
-*pudb-0.92.15 (17 Jan 2010)
-
-  17 Jan 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +pudb-0.92.15.ebuild:
-  Version bump.
-
-*pudb-0.92.14 (21 Dec 2009)
-
-  21 Dec 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -pudb-0.92.12.ebuild, +pudb-0.92.14.ebuild:
-  Version bump.
-
-*pudb-0.92.13 (30 Oct 2009)
-
-  30 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -pudb-0.92.3.ebuild, +pudb-0.92.13.ebuild:
-  Version bump.
-
-  11 Oct 2009; Fabian Groffen <grobian@gentoo.org> pudb-0.92.12.ebuild:
-  Merge from Prefix
-
-*pudb-0.92.12 (13 Sep 2009)
-
-  13 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +pudb-0.92.12.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-*pudb-0.92.3 (03 Jul 2009)
-
-  03 Jul 2009; Andrey Grozin <grozin@gentoo.org> +pudb-0.92.3.ebuild,
-  +metadata.xml:
-  Initial import

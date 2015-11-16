@@ -1,101 +1,77 @@
 # ChangeLog for sci-mathematics/isabelle
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/isabelle/ChangeLog,v 1.14 2015/04/17 14:41:21 gienah Exp $
+# (auto-generated from git log)
 
-*isabelle-2013-r2 (17 Apr 2015)
-*isabelle-2013.2-r1 (17 Apr 2015)
+*isabelle-2013.2-r1 (09 Aug 2015)
+*isabelle-2013-r2 (09 Aug 2015)
+*isabelle-2012-r1 (09 Aug 2015)
+*isabelle-2011.1-r2 (09 Aug 2015)
+*isabelle-2011.1 (09 Aug 2015)
 
-  17 Apr 2015; Mark Wright <gienah@gentoo.org> +isabelle-2013-r2.ebuild,
-  +isabelle-2013.2-r1.ebuild, -isabelle-2013-r1.ebuild, -isabelle-2013.2.ebuild,
-  files/isabelle-2013-classpath.patch, files/isabelle-2013.2-classpath.patch:
-  Slot scala
-
-  25 Mar 2015; Mark Wright <gienah@gentoo.org> isabelle-2011.1-r2.ebuild,
-  isabelle-2012-r1.ebuild, isabelle-2013-r1.ebuild, isabelle-2013.2.ebuild:
-  Fix Bug 542710 - sci-mathematics/isabelle-2013.2 - Couldn't download
-  'Isabelle2013-2.tar.gz'. Aborting. Thanks to Toralf Forster for reporting,
-  Thomas Kahle for finding the missing download file.
-
-*isabelle-2013.2 (25 Jan 2015)
-
-  25 Jan 2015; Mark Wright <gienah@gentoo.org>
-  +files/isabelle-2013.2-HOL-Predicate_Compile_Examples.patch,
-  +files/isabelle-2013.2-classpath.patch, +isabelle-2013.2.ebuild,
-  isabelle-2013-r1.ebuild:
-  Bump isabelle to 2013.2. Fix Bug 536324 - sci-mathematics/isabelle: Slot
-  dependencies for java packages. Add upper range dependency <dev-
-  lang/scala-2.11.1 to 2013-r1.
-
-*isabelle-2012-r1 (07 Jan 2014)
-*isabelle-2013-r1 (07 Jan 2014)
-*isabelle-2011.1-r2 (07 Jan 2014)
-
-  07 Jan 2014; Tom Wijsman <TomWij@gentoo.org> +isabelle-2011.1-r2.ebuild,
-  +isabelle-2012-r1.ebuild, +isabelle-2013-r1.ebuild,
-  -isabelle-2011.1-r1.ebuild, -isabelle-2012.ebuild, -isabelle-2013.ebuild:
-  [QA] Change !use by ! use such that it negates the USE flag instead of
-  expanding history. Revision bump to ensure users get the fix accordingly.
-
-  01 Sep 2013; Zac Medico <zmedico@gentoo.org> isabelle-2013.ebuild:
-  Fix SRC_URI and HOMEPAGE (case-sensitive).
-
-*isabelle-2013 (31 Aug 2013)
-
-  31 Aug 2013; Mark Wright <gienah@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/isabelle-2011.1-gentoo-settings.patch,
+  +files/isabelle-2011.1-graphbrowser.patch,
+  +files/isabelle-2011.1-libsha1.patch,
+  +files/isabelle-2011.1-proofgeneral-gentoo-path.patch,
+  +files/isabelle-2011.1-reverse-line-editor-order.patch,
+  +files/isabelle-2012-gentoo-settings.patch,
+  +files/isabelle-2012-graphbrowser.patch, +files/isabelle-2012-libsha1.patch,
+  +files/isabelle-2012-redundant-equations-in-function-definitions-error.patch
+  , +files/isabelle-2012-reverse-line-editor-order.patch,
+  +files/isabelle-2012-signal-handling.patch,
   +files/isabelle-2013-HOL-Predicate_Compile_Examples.patch,
   +files/isabelle-2013-classpath.patch,
-  +files/isabelle-2013-gentoo-settings.patch, +isabelle-2013.ebuild:
-  Bump isabelle to 2013, fixes bug 468344
+  +files/isabelle-2013-gentoo-settings.patch,
+  +files/isabelle-2013.2-HOL-Predicate_Compile_Examples.patch,
+  +files/isabelle-2013.2-classpath.patch, +isabelle-2011.1.ebuild,
+  +isabelle-2011.1-r2.ebuild, +isabelle-2012-r1.ebuild,
+  +isabelle-2013-r2.ebuild, +isabelle-2013.2-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 May 2013; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Fix XML.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Dec 2012; Mark Wright <gienah@gentoo.org> isabelle-2011.1-r1.ebuild,
-  isabelle-2012.ebuild:
-  EAPI=5 with subslot depends to automatically rebuild isabelle when polyml is
-  updated. It is necessary to remove any non-existing directories from
-  /etc/isabelle/components, as otherwise isabelle getenv ISABELLE_HOME fails,
-  which causes reverse dependent packages of sci-mathematics/isabelle to fail.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Sep 2012; Mark Wright <gienah@gentoo.org> isabelle-2011.1-r1.ebuild,
-  isabelle-2012.ebuild:
-  isabelle doc requires a symlink
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jun 2012; Mark Wright <gienah@gentoo.org>
-  +files/isabelle-2012-redundant-equations-in-function-definitions-error.patch,
-  +files/isabelle-2012-signal-handling.patch, isabelle-2012.ebuild:
-  Patch signal handling:
-  http://article.gmane.org/gmane.science.mathematics.logic.isabelle.devel/2732
-  Change "Ignoring redundant equation" warning to an error to avoid proofs being
-  undertaken on the basis of a mistaken definition:
-  http://article.gmane.org/gmane.science.mathematics.logic.isabelle.devel/2780
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*isabelle-2012 (30 May 2012)
-*isabelle-2011.1-r1 (30 May 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> isabelle-2012-r1.ebuild,
+  isabelle-2013.2-r1.ebuild, metadata.xml:
+  Use https by default
 
-  30 May 2012; Mark Wright <gienah@gentoo.org> +isabelle-2011.1-r1.ebuild,
-  +files/isabelle-2011.1-gentoo-settings.patch,
-  +files/isabelle-2011.1-reverse-line-editor-order.patch,
-  +isabelle-2012.ebuild, +files/isabelle-2012-gentoo-settings.patch,
-  +files/isabelle-2012-graphbrowser.patch,
-  +files/isabelle-2012-reverse-line-editor-order.patch, metadata.xml:
-  Bump to 2011.1-r1 and 2012. Add jedit use flag to build Isabelle/jEdit Prover
-  IDE (PIDE) (2012 only, requires dev-lang/scala), ledit and readline use flags
-  for the preferred tty line editor. Add dev-perl/libwww-perl dep. Add doc-src
-  directory with use=doc (2012) as doc-src stuff is required when building doc
-  some isabelle add on packages (sci-mathematics/haskabelle).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Jan 2012; Mark Wright <gienah@gentoo.org> isabelle-2011.1.ebuild,
-  metadata.xml:
-  Fix bug #400961, thanks to Mr. Anderson for report and fix.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Jan 2012; Mark Wright <gienah@gentoo.org> isabelle-2011.1.ebuild:
-  Thanks to few_ and xarthisius for reviewing, remove pdf use flag, add || die
-  to cd/pushd and tests. Require polyml with -portable.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*isabelle-2011.1 (08 Jan 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  08 Jan 2012; Mark Wright <gienah@gentoo.org> +isabelle-2011.1.ebuild,
-  +files/isabelle-2011.1-graphbrowser.patch,
-  +files/isabelle-2011.1-proofgeneral-gentoo-path.patch, +metadata.xml:
-  New ebuild, thanks Mr. Anderson for earlier version, fixes #397995
+  Bug: https://bugs.gentoo.org/552720
+

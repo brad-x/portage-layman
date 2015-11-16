@@ -1,96 +1,57 @@
 # ChangeLog for app-xemacs/calendar
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-xemacs/calendar/ChangeLog,v 1.30 2014/08/10 18:44:16 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> calendar-1.32.ebuild,
-  calendar-1.38.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*calendar-1.38 (09 Aug 2015)
+*calendar-1.32 (09 Aug 2015)
 
-  22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> calendar-1.38.ebuild:
-  ppc64 stable wrt #369897
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +calendar-1.32.ebuild,
+  +calendar-1.38.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  03 Jul 2011; Markos Chandras <hwoarang@gentoo.org> calendar-1.38.ebuild:
-  Stable on amd64 wrt bug #369897
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jun 2011; Brent Baude <ranger@gentoo.org> calendar-1.38.ebuild:
-  Marking calendar-1.38 ppc stable for bug 369897
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Jun 2011; Raúl Porcel <armin76@gentoo.org> calendar-1.38.ebuild:
-  alpha/sparc stable wrt #369897
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Jun 2011; Thomas Kahle <tomka@gentoo.org> calendar-1.38.ebuild:
-  x86 stable per bug 369897
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*calendar-1.38 (22 Feb 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Feb 2009; Hans de Graaff <graaff@gentoo.org> +calendar-1.38.ebuild:
-  Version bump with bug fixes and enhancements.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Feb 2009; Christian Faulhammer <fauli@gentoo.org>
-  -calendar-1.30.ebuild:
-  clean up
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Mar 2008; Hans de Graaff <graaff@gentoo.org> metadata.xml:
-  A herd should not be listed as maintainer
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Nov 2007; Hans de Graaff <graaff@gentoo.org> calendar-1.32.ebuild:
-  Marked amd64 stable per kingtaco's email to -core
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Oct 2007; Raúl Porcel <armin76@gentoo.org> calendar-1.32.ebuild:
-  alpha/sparc stable wrt #197046
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Oct 2007; Markus Rothe <corsair@gentoo.org> calendar-1.32.ebuild:
-  Stable on ppc64; bug #197046
-
-  26 Oct 2007; Christian Faulhammer <opfer@gentoo.org> calendar-1.32.ebuild:
-  stable x86, bug 197046
-
-  26 Oct 2007; nixnut <nixnut@gentoo.org> calendar-1.32.ebuild:
-  Stable on ppc wrt bug 197046
-
-  21 Oct 2007; Hans de Graaff <graaff@gentoo.org> -calendar-1.19.ebuild:
-  Remove old version
-
-  03 Jun 2007; Hans de Graaff <graaff@gentoo.org> calendar-1.30.ebuild:
-  Stable on amd64, ppc, ppc64, sparc, x86 as per #175560
-
-  30 May 2007; Raúl Porcel <armin76@gentoo.org> calendar-1.30.ebuild:
-  alpha stable wrt #175560
-
-*calendar-1.32 (05 May 2007)
-
-  05 May 2007; Hans de Graaff <graaff@gentoo.org> -calendar-1.23.ebuild,
-  +calendar-1.32.ebuild:
-  Version bump: bug fixes.
-  Remove older version.
-
-*calendar-1.30 (22 Dec 2006)
-
-  22 Dec 2006; Hans de Graaff <graaff@gentoo.org> +calendar-1.30.ebuild:
-  Version bump with significant new functionality.
-
-*calendar-1.23 (11 Nov 2006)
-
-  11 Nov 2006; Hans de Graaff <graaff@gentoo.org> +metadata.xml,
-  +calendar-1.23.ebuild:
-  Version bump; add metadata.xml.
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> calendar-1.19.ebuild:
-  Stable on ppc.
-
-  16 Dec 2004; Markus Rothe <corsair@gentoo.org> calendar-1.19.ebuild:
-  Stable on ppc64
-
-  01 Nov 2004; Markus Rothe <corsair@gentoo.org> calendar-1.19.ebuild:
-  Marked ~ppc64; bug #67097
-
-  02 Oct 2003; Aron Griffis <agriffis@gentoo.org> calendar-1.19.ebuild:
-  Stable on alpha
-
-*calendar-1.19 (16 Dec 2002)
-
-  22 Feb 2003;  <rendhalver@gentoo.org> calendar-1.19.ebuild :
-  Add ~alpha to KEYWORDS
-
-  16 Dec 2002; Rendhalver [Peter Brown] <rendhalver@gentoo.org> :
-  Initial import.

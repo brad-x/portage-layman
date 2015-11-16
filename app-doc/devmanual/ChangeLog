@@ -1,66 +1,67 @@
 # ChangeLog for app-doc/devmanual
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/devmanual/ChangeLog,v 1.15 2015/04/25 16:08:42 floppym Exp $
+# (auto-generated from git log)
 
-  25 Apr 2015; Mike Gilbert <floppym@gentoo.org> devmanual-0_pre20141116.ebuild,
+*devmanual-9999 (09 Aug 2015)
+*devmanual-0_pre20141116 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +devmanual-0_pre20141116.ebuild, +devmanual-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> devmanual-0_pre20141116.ebuild,
+  metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> devmanual-0_pre20141116.ebuild,
   devmanual-9999.ebuild:
-  Replace links pointing at git.overlays.gentoo.org.
+  Use https by default
 
-  21 Dec 2014; Markos Chandras <hwoarang@gentoo.org> devmanual-9999.ebuild:
-  Drop keywords from live ebuild now that the mask has been lifted
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Nov 2014; Markos Chandras <hwoarang@gentoo.org>
-  -devmanual-0_pre20130309.ebuild, -devmanual-0_pre20131109.ebuild:
-  remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*devmanual-0_pre20141116 (16 Nov 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Nov 2014; Markos Chandras <hwoarang@gentoo.org>
-  +devmanual-0_pre20141116.ebuild:
-  Version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Nov 2013; Markos Chandras <hwoarang@gentoo.org>
-  devmanual-0_pre20130309.ebuild, devmanual-0_pre20131109.ebuild,
-  devmanual-9999.ebuild:
-  Amend imagemagick dependencies
+  Bug: https://bugs.gentoo.org/552720
 
-*devmanual-0_pre20131109 (09 Nov 2013)
-
-  09 Nov 2013; Markos Chandras <hwoarang@gentoo.org>
-  +devmanual-0_pre20131109.ebuild:
-  Version bump
-
-  20 Oct 2013; Fabian Groffen <grobian@gentoo.org>
-  devmanual-0_pre20130309.ebuild:
-  Marked ~x64-macos, bug #486818
-
-  29 Mar 2013; Markos Chandras <hwoarang@gentoo.org>
-  devmanual-0_pre20130309.ebuild, devmanual-9999.ebuild:
-  export XDG_CONFIG_HOME to workaround sandbox problems. Bug #463380
-
-*devmanual-0_pre20130309 (09 Mar 2013)
-
-  09 Mar 2013; Markos Chandras <hwoarang@gentoo.org>
-  +devmanual-0_pre20130309.ebuild, devmanual-9999.ebuild:
-  Add snapshot ebuild per #460084
-
-  26 Feb 2013; Markos Chandras <hwoarang@gentoo.org> devmanual-9999.ebuild:
-  Typo
-
-  14 Feb 2013; Pacho Ramos <pacho@gentoo.org> devmanual-9999.ebuild:
-  Don't show elog messages always (#457596)
-
-  07 Feb 2013; Ulrich Müller <ulm@gentoo.org> devmanual-9999.ebuild:
-  Move Creative Commons licenses to shorter names.
-
-  22 Jan 2013; Markos Chandras <hwoarang@gentoo.org> devmanual-9999.ebuild:
-  Add note about eclass documentation
-
-  21 Jan 2013; Markos Chandras <hwoarang@gentoo.org> devmanual-9999.ebuild:
-  Fix installation patch for html docs
-
-*devmanual-9999 (19 Jan 2013)
-
-  19 Jan 2013; Markos Chandras <hwoarang@gentoo.org> +devmanual-9999.ebuild,
-  +metadata.xml:
-  Add live ebuild for offline use of the Gentoo Development Guide. Bug #447170

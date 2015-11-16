@@ -1,123 +1,57 @@
 # ChangeLog for x11-misc/xdialog
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xdialog/ChangeLog,v 1.32 2014/09/03 08:04:18 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  03 Sep 2014; Jeroen Roovers <jer@gentoo.org> xdialog-2.3.1.ebuild:
-  Depend on dev-libs/glib:2 (bug #522012).
+*xdialog-2.3.1 (09 Aug 2015)
 
-  13 May 2012; Julian Ospald <hasufell@gentoo.org> xdialog-2.3.1.ebuild:
-  fix homepage and src_uri wrt #415637
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xdialog-2.3.1-install.patch, +files/xdialog-2.3.1-no-strip.patch,
+  +metadata.xml, +xdialog-2.3.1.ebuild:
+  proj/gentoo: Initial commit
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xdialog-2.3.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Jul 2010; Samuli Suominen <ssuominen@gentoo.org> xdialog-2.3.1.ebuild,
-  +files/xdialog-2.3.1-install.patch:
-  Fix "make install" with latest coreutils wrt #327353 by Michael M. Tung.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Feb 2009; Krzysiek Pawlik <nelchael@gentoo.org>
-  -xdialog-2.2.1-r1.ebuild:
-  Remove old version.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Feb 2009; Brent Baude <ranger@gentoo.org> xdialog-2.3.1.ebuild:
-  stable ppc, bug 258579
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Feb 2009; Markus Meier <maekke@gentoo.org> xdialog-2.3.1.ebuild:
-  amd64/x86 stable, bug #258579
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  11 Feb 2009; Tobias Klausmann <klausman@gentoo.org> xdialog-2.3.1.ebuild:
-  Stable on alpha, bug #258579
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Feb 2009; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/xdialog-2.3.1-no-strip.patch, xdialog-2.3.1.ebuild:
-  Fix bug #252101: no pre-stripping of binaries, fixed configure.in to
-  recognize only GTK+2.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Jan 2008; David Shakaryan <omp@gentoo.org> xdialog-2.2.1-r1.ebuild,
-  xdialog-2.3.1.ebuild:
-  Add dev-util/pkgconfig to DEPEND. (bug #204585)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*xdialog-2.3.1 (14 Apr 2007)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Apr 2007; Samuli Suominen <drac@gentoo.org> -xdialog-2.1.1.ebuild,
-  +xdialog-2.3.1.ebuild:
-  Version bump. Remove old version.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Feb 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  xdialog-2.2.1-r1.ebuild:
-  Stable on alpha wrt bug #159836.
-
-  09 Jan 2007; Chris Gianelloni <wolf31o2@gentoo.org>
-  xdialog-2.2.1-r1.ebuild:
-  Added ~alpha for bug #159836.
-
-  09 Jan 2007; nixnut <nixnut@gentoo.org> xdialog-2.2.1-r1.ebuild:
-  Stable on ppc wrt bug 159836
-
-  09 Jan 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  xdialog-2.2.1-r1.ebuild:
-  Stable on x86, see bug #159836.
-
-  08 Jan 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  xdialog-2.2.1-r1.ebuild:
-  Add missing GTK+ to RDEPEND, see bug #159836.
-
-  03 Jan 2007; Steve Dibb <beandog@gentoo.org> xdialog-2.1.1.ebuild,
-  xdialog-2.2.1-r1.ebuild:
-  amd64 stable, bug 158085
-
-  28 Oct 2006; David Shakaryan <omp@gentoo.org> -xdialog-2.2.1.ebuild:
-  Remove older version.
-
-*xdialog-2.2.1-r1 (01 Jul 2006)
-
-  01 Jul 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +xdialog-2.2.1-r1.ebuild:
-  Revision bump to use GTK+ 2.
-
-*xdialog-2.2.1 (13 May 2006)
-
-  13 May 2006; Krzysiek Pawlik <nelchael@gentoo.org> +xdialog-2.2.1.ebuild:
-  Version bump, see bug #133147.
-
-  16 Mar 2006; Jeroen Roovers <jer@gentoo.org> xdialog-2.1.1.ebuild:
-  Marked ~hppa (because it works!)
-
-  21 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> xdialog-2.1.1.ebuild:
-  Fixed DEPEND for modular X.
-
-  04 Jul 2005; Jonathan Smith <smithj@gentoo.org> +metadata.xml:
-  added metadata
-
-  08 Sep 2004; Michael Sterrett <mr_bones_@gentoo.org> xdialog-2.1.1.ebuild:
-  clean up doc install; tidy
-
-  08 Sep 2004; Michael Sterrett <mr_bones_@gentoo.org> -xdialog-2.0.6.ebuild:
-  clean older ebuild
-
-  07 Sep 2004; <blubb@gentoo.org> xdialog-2.1.1.ebuild:
-  added ~amd64 keyword
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  xdialog-2.1.1.ebuild:
-  Masked xdialog-2.1.1.ebuild stable for ppc
-
-  07 Mar 2004; David Holm <dholm@gentoo.org> xdialog-2.1.1.ebuild:
-  Added to ~ppc.
-
-*xdialog-2.1.1 (06 Mar 2004)
-
-  06 Mar 2004; Markus Nigbur <pyrania@gentoo.org> xdialog-2.1.1.ebuild:
-  Version bump.
-
-*xdialog-2.0.6 (25 Oct 2002)
-
-  25 Oct 2002; Seemant Kulleen <seemant@gentoo.org> xdialog-2.0.6.ebuild
-  ChangeLog files/xdialog-2.0.6 :
-
-  Package submission by the following people:
-  sesc@gmx.net (Sebastian Schoeps) in bug #7477
-  khindenburg@cherrynebula.net (Kurt V. Hindenburg) in bug #8585
-  myself in bug #661.
-
-  Xdialog is a GTK based drop-in replacement for cdialog.

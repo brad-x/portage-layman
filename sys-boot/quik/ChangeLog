@@ -1,97 +1,56 @@
 # ChangeLog for sys-boot/quik
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/quik/ChangeLog,v 1.14 2011/04/10 14:22:23 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Apr 2011; Ulrich Mueller <ulm@gentoo.org> quik-2.1.6.ebuild:
-  Don't PROVIDE virtual/bootloader, bug 359971.
+*quik-2.1.6 (09 Aug 2015)
 
-  10 Feb 2010; Joseph Jezak <josejx@gentoo.org> quik-2.1.6.ebuild,
-  files/headers.patch:
-  Added fix for bug #247659, cleaned up ebuild.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/headers.patch,
+  +files/md-fix.diff, +metadata.xml, +quik-2.1.6.ebuild:
+  proj/gentoo: Initial commit
 
-  11 May 2008; Samuli Suominen <drac@gentoo.org> quik-2.1.6.ebuild:
-  Move rpm2targz to DEPEND wrt #220213.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Dec 2006; Joseph Jezak <josejx@gentoo.org> +files/headers.patch,
-  quik-2.1.6.ebuild:
-  Added patch to fix compiling with newer kernel headers.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Nov 2006; Joseph Jezak <josejx@gentoo.org> quik-2.1.6.ebuild:
-  Marked ppc stable.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*quik-2.1.6 (26 May 2005)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 May 2005; Joseph Jezak <josejx@gentoo.org>
-  -files/quik-2.0.1.0-fclose-bug.patch, -files/quik-2.0.1.0-gcc-321.patch,
-  +files/md-fix.diff, -quik-2.0.1.0-r1.ebuild, -quik-2.0.1.0-r2.ebuild,
-  -quik-2.0.1.0-r3.ebuild, -quik-2.0.1k.ebuild, +quik-2.1.6.ebuild:
-  Added latest version and removed old versions.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 May 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  quik-2.0.1.0-r1.ebuild, quik-2.0.1.0-r2.ebuild, quik-2.0.1.0-r3.ebuild,
-  quik-2.0.1k.ebuild:
-  set HOMEPAGE to something clickable
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Nov 2004; Daniel Black <dragonheart@gentoo.org> quik-2.0.1.0-r1.ebuild,
-  quik-2.0.1.0-r2.ebuild, quik-2.0.1.0-r3.ebuild, quik-2.0.1k.ebuild:
-  Changed to use $(tc-getCC) as per bug 70113. Thanks spanky
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  quik-2.0.1.0-r1.ebuild, quik-2.0.1.0-r2.ebuild, quik-2.0.1.0-r3.ebuild,
-  quik-2.0.1k.ebuild:
-  virtual/glibc -> virtual/libc
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> quik-2.0.1k.ebuild:
-  Add inherit toolchain-funcs eutils
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*quik-2.0.1.0-r3 (08 Dec 2003)
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Dec 2003; Seemant Kulleen <seemant@gentoo.org> metadata.xml,
-  quik-2.0.1.0-r1.ebuild, quik-2.0.1.0-r2.ebuild, quik-2.0.1.0-r3.ebuild,
-  quik-2.0.1k.ebuild, files/quik-2.0.1.0-fclose-bug.patch,
-  files/quik-2.0.1.0-gcc-321.patch:
-  moved from sys-apps to sys-boot
-
-*quik-2.0.1k (10 Jun 2003)
-
-  10 Jun 2003; Graham Forest <vladimir@gentoo.org> Manifest,
-  quik-2.0.1k.ebuild:
-  Added 2.0.1k, which uses completely different patches. It's currently
-  package.masked, due to needing testing, but it should compile on gcc 3.x now
-
-*quik-2.0.1.0-r3 (04 Feb 2003)
-
-  24 Feb 2003; Nicholas Wourms <dragon@gentoo.org> quik-2.0.1.0-r3.ebuild :
-  This is definitely not for mips.
-
-  04 Feb 2003; Jon Nall <nall@gentoo.org> files/quik-2.0.1.0-fclose-bug.patch :
-  fixed patch to avoid SIGSEGV. this closes bug #14817
-
-*quik-2.0.1.0-r2 (28 Jan 2003)
-  
-  24 Feb 2003; Nicholas Wourms <dragon@gentoo.org> quik-2.0.1.0-r2.ebuild :
-  This is definitely not for mips.
-
-  28 Jan 2003; Jon Nall <nall@gentoo.org> quik-2.0.1.0-r2.ebuild :
-  fixed to work with gcc-3.2.1 (fixed gentoo bug #14655)
-  
-*quik-2.0.1.0-r1 (24 Apr 2002)
-
-  24 Feb 2003; Nicholas Wourms <dragon@gentoo.org> quik-2.0.1.0-r1.ebuild :
-  This is definitely not for mips.
-
-  06 Jan 2003; Seemant Kulleen <seemant@gentoo.org> quik-2.0.1.0-r1.ebuild :
-
-  PROVIDE=virtual/bootloader
-
-  29 Sep 2002; Donny Davies <woodchip@gentoo.org> quik-2.0.1.0-r1.ebuild :
-  Now uses mount-boot eclass, #7903.
-
-  24 Sep 2002; Owen Stampflee <owen@gentoo.org> quik-2.0.1.0-r1.ebuild :
-  Fixed some linker wackiness on GCC 3.2 systems.
-
-  14 Jul 2002; phoen][x <phoenix@gentoo.org> quik-2.0.1.0-r1.ebuild :
-  Added LICENSE, SLOT.
-
-Wed Apr 24 10:34:56 2002 CEST; pvdabeel <pvdabeel@gentoo.org> all:
-This is an initial .ebuild for quik-2.0.1.0-r1 for ppc machines.

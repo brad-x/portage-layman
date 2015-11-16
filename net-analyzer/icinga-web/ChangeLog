@@ -1,118 +1,67 @@
 # ChangeLog for net-analyzer/icinga-web
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/icinga-web/ChangeLog,v 1.20 2014/10/16 23:34:09 prometheanfire Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*icinga-web-1.11.2 (16 Oct 2014)
+*icinga-web-1.11.2 (09 Aug 2015)
+*icinga-web-1.10.1 (09 Aug 2015)
+*icinga-web-1.10.0-r1 (09 Aug 2015)
+*icinga-web-1.10.0 (09 Aug 2015)
+*icinga-web-1.9.1-r1 (09 Aug 2015)
 
-  16 Oct 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.11.2.ebuild:
-  bup and fixing bug 525570
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +icinga-web-1.9.1-r1.ebuild, +icinga-web-1.10.0.ebuild,
+  +icinga-web-1.10.0-r1.ebuild, +icinga-web-1.10.1.ebuild,
+  +icinga-web-1.11.2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*icinga-web-1.10.1 (19 Feb 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Feb 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.10.1.ebuild:
-  just an update
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*icinga-web-1.10.0-r1 (18 Feb 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 Feb 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.10.0-r1.ebuild:
-  'fix' for bug 483138
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  23 Dec 2013; Matthew Thode <prometheanfire@gentoo.org>
-  icinga-web-1.10.0.ebuild:
-  trying to fix bug 493902
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  23 Dec 2013; Matthew Thode <prometheanfire@gentoo.org>
-  icinga-web-1.10.0.ebuild:
-  workaround upstreams make install issues...
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*icinga-web-1.10.0 (11 Nov 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Nov 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.10.0.ebuild:
-  update of icinga-web
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*icinga-web-1.9.1-r1 (12 Sep 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.9.1-r1.ebuild, -icinga-web-1.9.0.ebuild,
-  -icinga-web-1.9.1.ebuild:
-  fix for a parallel make issue
+  Bug: https://bugs.gentoo.org/552720
 
-*icinga-web-1.9.1 (10 Sep 2013)
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
 
-  10 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.9.1.ebuild:
-  updating icinga from 1.9.0 to 1.9.1 and bumped the eapi as well
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Jul 2013; Patrick Lauer <patrick@gentoo.org> -icinga-web-1.7.2.ebuild,
-  -icinga-web-1.8.1.ebuild, -icinga-web-1.8.2.ebuild, -icinga-web-1.8.3.ebuild:
-  QA: Punt old versions with unsatisfiable php deps
-
-  15 May 2013; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-  icinga-web-1.9.0.ebuild:
-  [net-analyzer/icinga-web-1.9.0] Update dev-lang/php dep as the xsl use flag
-  was renamed to xslt.
-
-*icinga-web-1.9.0 (09 May 2013)
-
-  09 May 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.9.0.ebuild:
-  icinga-web up to 1.9.0 now
-
-*icinga-web-1.8.3 (01 Apr 2013)
-
-  01 Apr 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.8.3.ebuild:
-  bump of net-analyzer/icinga-web to 1.8.3
-
-*icinga-web-1.8.2 (12 Feb 2013)
-
-  12 Feb 2013; Matthew Thode <prometheanfire@gentoo.org>
-  -icinga-web-1.8.0.ebuild, +icinga-web-1.8.2.ebuild:
-  just bumping icinga-web for a new release
-
-*icinga-web-1.8.1 (07 Dec 2012)
-
-  07 Dec 2012; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.8.1.ebuild:
-  updating icinga-web to 1.8.1
-
-*icinga-web-1.8.0 (19 Nov 2012)
-
-  19 Nov 2012; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.8.0.ebuild:
-  adding icinga-web-1.8.0 for bug 439430
-
-  19 Aug 2012; Matthew Thode <prometheanfire@gentoo.org> Manifest:
-  looks like the md5 on the tarball changed...
-
-*icinga-web-1.7.2 (17 Aug 2012)
-
-  17 Aug 2012; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.7.2.ebuild:
-  update to 1.7.2 to get rid of need to patch for compression and fix crontab
-  for bug #431762
-
-  22 Jul 2012; Christian Ruppert <idl0r@gentoo.org> icinga-web-1.7.1-r1.ebuild:
-  Add missing inherits
-
-*icinga-web-1.7.1-r1 (22 Jul 2012)
-
-  22 Jul 2012; Christian Ruppert <idl0r@gentoo.org> -icinga-web-1.7.1.ebuild,
-  +icinga-web-1.7.1-r1.ebuild:
-  Use apache's IfDefine so that icinga-web is not enabled by default
-
-*icinga-web-1.7.1 (16 Jul 2012)
-
-  16 Jul 2012; Matthew Thode <prometheanfire@gentoo.org>
-  +icinga-web-1.7.1.ebuild, +files/icinga-web-1.7.1-disable-compression.patch:
-  New ebuild for icinga-web. Ebuild written by Thomas Oettli, submitted by me.
-  bug #332369
-
-*icinga-web-1.6.1-r1 (27 Feb 2012)
-
-  27 Feb 2012; mthode <mthode@gentoo.org> +icinga-web-1.6.1-r1.ebuild:
-  initial add and test of icinga-web

@@ -1,75 +1,56 @@
 # ChangeLog for app-accessibility/edbrowse
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/edbrowse/ChangeLog,v 1.12 2014/09/29 10:20:27 teiresias Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*edbrowse-3.5.1 (29 Sep 2014)
+*edbrowse-3.5.1 (09 Aug 2015)
 
-  29 Sep 2014; Christopher Brannon <teiresias@gentoo.org>
-  -edbrowse-3.4.7.ebuild, -edbrowse-3.4.8.ebuild, -edbrowse-3.4.9.ebuild,
-  +edbrowse-3.5.1.ebuild, -files/edbrowse-3.4.7-fix-makefile.patch,
-  +files/edbrowse-3.5.1-implicit-decl.patch:
-  New upstream version, 3.5.1. Also, remove old versions.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +edbrowse-3.5.1.ebuild,
+  +files/edbrowse-3.5.1-implicit-decl.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*edbrowse-3.4.9 (11 Aug 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 Aug 2013; Patrick Lauer <patrick@gentoo.org> +edbrowse-3.4.9.ebuild:
-  Bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  09 Aug 2013; Ian Stakenvicius <axs@gentoo.org> edbrowse-3.4.8.ebuild:
-  Adjusted deps for dev-lang/spidermonkey to ensure SLOT=0
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  19 Jun 2012; Ian Stakenvicius <axs@gentoo.org> edbrowse-3.4.8.ebuild:
-  added support for spidermonkey-1.8.7, relates to bug 422169
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*edbrowse-3.4.8 (15 Nov 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Nov 2011; Ian Stakenvicius <axs@gentoo.org> edbrowse-3.4.7.ebuild,
-  +edbrowse-3.4.8.ebuild:
-  adding new version that supports spidermonkey-1.8.5 and fixing deps of
-  current version, bug# 376979
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #353756
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  16 May 2011; Christopher Brannon <cbrannon@gentoo.org> edbrowse-3.4.7.ebuild:
-  Added ~amd64 keyword.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  This package builds and runs on amd64.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*edbrowse-3.4.7 (11 Apr 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Apr 2011; Christopher Brannon <cbrannon@gentoo.org>
-  -edbrowse-3.4.6.ebuild, -files/edbrowse-3.4.6-fix-makefile.patch,
-  -files/edbrowse-3.4.6-fix-off-by-one.patch, +edbrowse-3.4.7.ebuild,
-  +files/edbrowse-3.4.7-fix-makefile.patch:
-  Add latest version to the tree, remove the older unstable version.
-
-  3.4.7 is here.
-  3.4.6 was never stabilized.
-  It had flaws, like the use of memcpy on overlapping regions.
-  No need to keep it in the tree.
-
-  28 Mar 2011; Christopher Brannon <cbrannon@gentoo.org>
-  edbrowse-3.4.6.ebuild, files/edbrowse-3.4.6-fix-makefile.patch,
-  metadata.xml:
-  * Make it possible to build with either dev-lang/spidermonkey-1.7.x or
-  dev-lang/spidermonkey-1.9.x (fixes bug #359035).
-  * I am now upstream for this package. HOMEPAGE and SRC_URI were changed
-  accordingly.
-  * Change maintainer to myself (after discussion with WilliamH).
-
-  16 Mar 2011; William Hubbs <williamh@gentoo.org> edbrowse-3.4.6.ebuild:
-  fix dependency on dev-lang/spidermonkey for #359035.
-  Thanks to Chris Brannon.
-
-*edbrowse-3.4.6 (23 Feb 2011)
-
-  23 Feb 2011; William Hubbs <williamh@gentoo.org> +edbrowse-3.4.6.ebuild,
-  +files/edbrowse-3.4.6-fix-makefile.patch,
-  +files/edbrowse-3.4.6-fix-off-by-one.patch, +metadata.xml:
-  Initial commit for edbrowse, a line editor, web browser and email
-  client using the ed user interface.
-  This was added to app-accessibility due to it mostly being used by blind
-  users. 
-  Thanks to Chris Brannon <chris@the-brannons.com> for the submission.
-  This closes #350183.

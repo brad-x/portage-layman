@@ -1,134 +1,66 @@
 # ChangeLog for games-strategy/wargus
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/wargus/ChangeLog,v 1.30 2015/04/09 16:54:51 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  09 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/wargus-2.2.5.5-libpng.patch, -wargus-2.2.5.5.ebuild:
-  old
+*wargus-2.2.7 (09 Aug 2015)
 
-  09 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org> wargus-2.2.7.ebuild:
-  mark stable
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +wargus-2.2.7.ebuild:
+  proj/gentoo: Initial commit
 
-  12 Mar 2015; Michael Sterrett <mr_bones_@gentoo.org> wargus-2.2.7.ebuild:
-  EAPI=5
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jan 2013; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/wargus-2.2.6-build.patch, -files/wargus-2.2.6-underlinking.patch,
-  -wargus-2.2.6-r2.ebuild:
-  old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*wargus-2.2.7 (19 Oct 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Oct 2012; Julian Ospald <hasufell@gentoo.org> +wargus-2.2.7.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Jun 2012; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  set myself as maintainer
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  02 Jun 2012; Julian Ospald <hasufell@gentoo.org> wargus-2.2.6-r2.ebuild:
-  bump to EAPI=4
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Jun 2012; Julian Ospald <hasufell@gentoo.org>
-  files/wargus-2.2.6-underlinking.patch:
-  improve style of patch (merged from upstream)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> wargus-2.2.7.ebuild:
+  Convert all URIs for launchpad.net from http to https
 
-  01 Jun 2012; Julian Ospald <hasufell@gentoo.org> wargus-2.2.5.5.ebuild:
-  block games-strategy/wargus-data for wargus-2.2.5.5
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*wargus-2.2.6-r2 (01 Jun 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Jun 2012; Julian Ospald <hasufell@gentoo.org> -wargus-2.2.6-r1.ebuild,
-  +wargus-2.2.6-r2.ebuild, +files/wargus-2.2.6-underlinking.patch:
-  revbump, fix underlinking, split wargus-data and fix sandbox violation wrt
-  #418051 and #419143
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*wargus-2.2.6-r1 (28 May 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  28 May 2012; Julian Ospald <hasufell@gentoo.org> -wargus-2.2.6.ebuild,
-  +wargus-2.2.6-r1.ebuild:
-  revbump: force users to update, cause cdparanoia was missing from DEPEND, but
-  wartool does not return an error code when failing (hence some sound files
-  could be missing)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  27 May 2012; Julian Ospald <hasufell@gentoo.org> wargus-2.2.6.ebuild:
-  clean up SRC_URI (icon is included in tarball)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 May 2012; Julian Ospald <hasufell@gentoo.org> wargus-2.2.6.ebuild:
-  fix desktop file
-
-*wargus-2.2.6 (27 May 2012)
-
-  27 May 2012; Julian Ospald <hasufell@gentoo.org> +wargus-2.2.6.ebuild,
-  +files/wargus-2.2.6-build.patch:
-  version bump wrt #396203
-
-  17 May 2012; Michael Sterrett <mr_bones_@gentoo.org> wargus-2.2.5.5.ebuild:
-  Add media-video/ffmpeg2theora dep (bug #416425)
-
-  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> wargus-2.2.5.5.ebuild:
-  Migrate to cdrom.eclass, bug 398809.
-
-  21 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org> wargus-2.2.5.5.ebuild,
-  +files/wargus-2.2.5.5-libpng.patch:
-  patch to build against newer libpng from jannis (bug #395501)
-
-*wargus-2.2.5.5 (29 Nov 2010)
-
-  29 Nov 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +wargus-2.2.5.5.ebuild:
-  version bump - ebuild updates from Ruediger Gad via bug #346873
-
-  19 Jul 2010; Joseph Jezak <josejx@gentoo.org> wargus-2.2.4.ebuild:
-  Marked ~ppc for bug #315543.
-
-  22 May 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove genstef from metadata.xml (#66339)
-
-  20 Apr 2007; Tristan Heaven <nyhm@gentoo.org> wargus-2.2.4.ebuild:
-  Fix install script, bug #174937
-
-*wargus-2.2.4 (10 Apr 2007)
-
-  10 Apr 2007; Tristan Heaven <nyhm@gentoo.org> -wargus-2.2.3.ebuild,
-  +wargus-2.2.4.ebuild:
-  Version bump
-
-*wargus-2.2.3 (05 Mar 2007)
-
-  05 Mar 2007; Michael Sterrett <mr_bones_@gentoo.org> +wargus-2.2.3.ebuild:
-  version bump
-
-  20 Feb 2007; Simon Stelling <blubb@gentoo.org> wargus-2.1-r1.ebuild:
-  keyword ~amd64; bug 164914
-
-  24 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org> wargus-2.1-r1.ebuild:
-  Moved cdrom_get_cds to src_unpack since binary packages don't require the
-  original media to install.
-
-  17 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org> wargus-2.1-r1.ebuild:
-  Moved games_pkg_setup to beginning of pkg_setup.
-
-  08 Jan 2006; Stefan Schweizer <genstef@gentoo.org>
-  -files/wargus-2.1-ai.patch, wargus-2.1-r1.ebuild:
-  Move the ai-patch to the mirrors because it has a cvs Id tag and thus breaks
-  in gentoo cvs, thanks to Anton Romanov <theli@ukr.net> in bug 118221
-
-*wargus-2.1-r1 (06 Jan 2006)
-
-  06 Jan 2006; Stefan Schweizer <genstef@gentoo.org> +wargus-2.1-r1.ebuild:
-  Add desktop link and icon derived from wargus.sourceforge.net/images/wargus.png
-
-*wargus-2.1 (06 Jan 2006)
-
-  06 Jan 2006; Stefan Schweizer <genstef@gentoo.org>
-  +files/wargus-2.1-ai.patch, +files/wargus-2.1-aitransporter.patch,
-  +files/wargus-2.1-humanbasespell.patch, +metadata.xml, +wargus-2.1.ebuild:
-  New ebuild thanks to Martti Rannanjärvi <mrannanj@iki.fi>, Russell Smith
-  <mr-russ@pws.com.au>, Giacomo Perale <ghepeu@virgilio.it>, Jacob Gemmell
-  <dante333@gci.net>, Mr. Bones. <mr_bones_@gentoo.org>, Hinrik Örn Sigurðsson
-  <flanders@simnet.is>, Chris Gianelloni <wolf31o2@gentoo.org>, Wescott
-  <wescott2003@hotmail.com> and Florian Manschwetus
-  <FlorianManschwetus@gmx.de>

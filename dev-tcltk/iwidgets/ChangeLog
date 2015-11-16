@@ -1,93 +1,57 @@
 # ChangeLog for dev-tcltk/iwidgets
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/iwidgets/ChangeLog,v 1.25 2015/06/09 17:50:57 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*iwidgets-4.0.1-r3 (09 Aug 2015)
+*iwidgets-4.0.1 (09 Aug 2015)
 
-  19 Jan 2013; Ulrich Müller <ulm@gentoo.org> iwidgets-4.0.1.ebuild,
-  iwidgets-4.0.1-r3.ebuild:
-  Fix LICENSE, bug 452920.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/4.0.1-path.patch,
+  +iwidgets-4.0.1.ebuild, +iwidgets-4.0.1-r3.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Dec 2011; Justin Lecher <jlec@gentoo.org> iwidgets-4.0.1.ebuild,
-  iwidgets-4.0.1-r3.ebuild, metadata.xml:
-  Fix for real multilib without symlink lib -> /usr/lib64, #392947; ebuild
-  cleaning
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*iwidgets-4.0.1-r3 (23 Jun 2011)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Jun 2011; Justin Lecher <jlec@gentoo.org> files/4.0.1-path.patch,
-  -iwidgets-4.0.1-r2.ebuild, +iwidgets-4.0.1-r3.ebuild:
-  Don't install in /usr/usr #372587
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Dec 2010; Justin Lecher <jlec@gentoo.org> +files/4.0.1-path.patch,
-  iwidgets-4.0.1-r2.ebuild:
-  Keep LFS layout, #295836
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Apr 2010; Diego E. Pettenò <flameeyes@gentoo.org>
-  iwidgets-4.0.1-r2.ebuild:
-  Fix obvious thinko in demos install.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  29 Mar 2010; Justin Lecher <jlec@gentoo.org> iwidgets-4.0.1-r2.ebuild:
-  Keyworded for ~x86-linux ~amd64-linux, EAPI=3 port
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*iwidgets-4.0.1-r2 (08 Aug 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Aug 2009; Federico Ferri <mescalinum@gentoo.org>
-  -iwidgets-4.0.1-r1.ebuild, +iwidgets-4.0.1-r2.ebuild:
-  cleanup & bug 247184
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Jun 2007; MATSUU Takuto <matsuu@gentoo.org> iwidgets-4.0.1-r1.ebuild:
-  Fixed parallel make install issue, bug #177088.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*iwidgets-4.0.1-r1 (30 Apr 2007)
+  Bug: https://bugs.gentoo.org/552720
 
-  30 Apr 2007; MATSUU Takuto <matsuu@gentoo.org> iwidgets-4.0.1.ebuild,
-  +iwidgets-4.0.1-r1.ebuild:
-  Fixed bug #115470.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-  05 Nov 2006; Bryan Østergaard <kloeri@gentoo.org> iwidgets-4.0.1.ebuild:
-  Add ~alpha keyword.
-
-  14 Sep 2006; Danny van Dyk <kugelfang@gentoo.org> iwidgets-4.0.1.ebuild:
-  Added DEPEND on >=dev-tcltk/itk-3.3-r1 as suggested in bug #115177. Dropped
-  alpha keyword on behalf of kloeri.
-
-  21 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> iwidgets-4.0.1.ebuild:
-  Stable on ppc.
-
-  31 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org> iwidgets-4.0.1.ebuild:
-  Stable on amd64.
-
-  10 Oct 2004; Bryan Østergaard <kloeri@gentoo.org> iwidgets-4.0.1.ebuild:
-  Stable on alpha.
-
-  09 Jul 2004; Bryan Østergaard <kloeri@gentoo.org> iwidgets-4.0.1.ebuild:
-  Add ~alpha keyword.
-
-  25 Apr 2004; Jon Hood <squinky86@gentoo.org> iwidgets-4.0.1.ebuild:
-  added "die".
-
-  22 Apr 2004; Danny van Dyk <kugelfang@gentoo.org> iwidgets-4.0.1.ebuild:
-  marked ~amd64
-
-  14 Apr 2004; Daniel Ahlberg <aliz@gentoo.org> iwidgets-4.0.1.ebuild:
-  Added IUSE=
-
-  04 Apr 2004; Chris Aniszczyk <zx@gentoo.org> iwidgets-4.0.1.ebuild,
-  metadata.xml:
-  Clean up. Added missing metadata.xml
-
-  24 Mar 2004; Jason Wever <weeve@gentoo.org> iwidgets-4.0.1.ebuild:
-  Stable on sparc.
-
-*iwidgets-4.0.1 (28 Oct 2003)
-
-  28 Oct 2003; Robin H. Johnson <robbat2@gentoo.org> iwidgets-4.0.1.ebuild:
-  add new ebuild as it's a PDEPEND for the new itcl

@@ -1,75 +1,57 @@
 # ChangeLog for app-text/xindy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xindy/ChangeLog,v 1.19 2011/10/05 19:21:01 aballier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> xindy-2.4.ebuild:
-  remove ptex dep as it is going away
+*xindy-2.4 (09 Aug 2015)
 
-  11 Sep 2011; Tim Harder <radhermit@gentoo.org> -xindy-2.3.ebuild,
-  -files/xindy-2.3-clisp-2.48.patch:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/xindy-2.4-configure.patch, +files/xindy-2.4-locale.patch,
+  +metadata.xml, +xindy-2.4.ebuild:
+  proj/gentoo: Initial commit
 
-  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> xindy-2.4.ebuild:
-  ppc stable wrt #356789
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Mar 2011; Raúl Porcel <armin76@gentoo.org> xindy-2.4.ebuild:
-  ia64 stable wrt #356789
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Mar 2011; Tobias Klausmann <klausman@gentoo.org> xindy-2.4.ebuild:
-  Stable on alpha, bug #356789
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Mar 2011; Thomas Kahle <tomka@gentoo.org> xindy-2.4.ebuild:
-  x86 stable per bug 356789
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Feb 2011; Markos Chandras <hwoarang@gentoo.org> xindy-2.4.ebuild:
-  Stable on amd64 wrt bug #356789
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  09 Feb 2011; Tim Harder <radhermit@gentoo.org> xindy-2.4.ebuild,
-  +files/xindy-2.4-locale.patch:
-  Apply patch for a locale related compile failure (bug #340008).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*xindy-2.4 (29 Sep 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Sep 2010; Tim Harder <radhermit@gentoo.org> +xindy-2.4.ebuild,
-  +files/xindy-2.4-configure.patch:
-  Version bump (bug #281677). Update to EAPI=3, fix configure script issue,
-  and remove extra external clisp setup as the build system defaults to
-  using it properly.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  24 Apr 2010; Alexis Ballier <aballier@gentoo.org> xindy-2.3.ebuild,
-  +files/xindy-2.3-clisp-2.48.patch:
-  fix build with clisp-2.48, by Semen Cirit, bug #281271
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 May 2009; Ulrich Mueller <ulm@gentoo.org> xindy-2.3.ebuild:
-  Remove app-text/tetex from dependencies, bug 227443.
-
-  17 Jan 2009; nixnut <nixnut@gentoo.org> xindy-2.3.ebuild:
-  ppc stable #254063
-
-  11 Jan 2009; Markus Meier <maekke@gentoo.org> xindy-2.3.ebuild:
-  amd64 stable, bug #254063
-
-  10 Jan 2009; Raúl Porcel <armin76@gentoo.org> xindy-2.3.ebuild:
-  alpha/ia64/x86 stable wrt #254063
-
-  04 Oct 2008; Brent Baude <ranger@gentoo.org> xindy-2.3.ebuild:
-  Marking xindy-2.3 ~ppc for bug 237202
-
-  07 Jul 2008; Raúl Porcel <armin76@gentoo.org> xindy-2.3.ebuild:
-  Add ~alpha/~ia64 wrt #229217
-
-  23 May 2008; Markus Meier <maekke@gentoo.org> xindy-2.3.ebuild:
-  add ~x86, bug #223323
-
-  19 May 2008; Alexis Ballier <aballier@gentoo.org> xindy-2.3.ebuild:
-  We need some cyrillic fonts too, thanks to Philipp Riegger
-  <stoile@anderedomain.de> for reporting in bug #222785
-
-*xindy-2.3 (17 May 2008)
-
-  17 May 2008; Alexis Ballier <aballier@gentoo.org> +metadata.xml,
-  +xindy-2.3.ebuild:
-  Initial import, thanks to Gour and other people involved in bug #71531 and
-  also thanks to people in #gentoo-lisp for help with having it to work with
-  external clisp
+  Bug: https://bugs.gentoo.org/552720
 

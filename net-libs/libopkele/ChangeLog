@@ -1,46 +1,58 @@
 # ChangeLog for net-libs/libopkele
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libopkele/ChangeLog,v 1.9 2014/05/26 05:25:48 polynomial-c Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*libopkele-2.0.4-r1 (26 May 2014)
+*libopkele-2.0.4-r1 (09 Aug 2015)
 
-  26 May 2014; Lars Wendler <polynomial-c@gentoo.org> -libopkele-2.0.4.ebuild,
-  +libopkele-2.0.4-r1.ebuild, -files/libopkele-0.3.2-asneeded.patch,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/libopkele-2.0.4-gcc471.patch,
-  +files/libopkele-2.0.4-missing_includes.patch:
-  non-maintainer commit: Added several compile fixes from upstream.
+  +files/libopkele-2.0.4-missing_includes.patch, +libopkele-2.0.4-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> -libopkele-0.3.2.ebuild,
-  -libopkele-2.0.3.ebuild, metadata.xml:
-  Drop apache herd as discussed in http://www.gossamer-
-  threads.com/lists/gentoo/dev/262834 , drop old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*libopkele-2.0.4 (12 Oct 2012)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Oct 2012; Patrick Lauer <patrick@gentoo.org> +libopkele-2.0.4.ebuild:
-  Bump
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libopkele-0.3.2.ebuild,
-  libopkele-2.0.3.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Sep 2009; Benedikt Böhm <hollow@gentoo.org> libopkele-2.0.3.ebuild:
-  fix #286162
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*libopkele-2.0.3 (17 Sep 2009)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  17 Sep 2009; Benedikt Böhm <hollow@gentoo.org> +libopkele-2.0.3.ebuild:
-  version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 May 2008; Samuli Suominen <drac@gentoo.org>
-  +files/libopkele-0.3.2-asneeded.patch, libopkele-0.3.2.ebuild:
-  Fix configure with asneeded wrt #222639, thanks to Michael Krelin.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 May 2008; Samuli Suominen <drac@gentoo.org> libopkele-0.3.2.ebuild:
-  Move pkgconfig to DEPEND.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*libopkele-0.3.2 (22 Mar 2008)
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Mar 2008; Benedikt Böhm <hollow@gentoo.org> +metadata.xml,
-  +libopkele-0.3.2.ebuild:
-  initial ebuild wrt #209573

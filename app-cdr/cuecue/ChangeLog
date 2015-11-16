@@ -1,48 +1,56 @@
 # ChangeLog for app-cdr/cuecue
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cuecue/ChangeLog,v 1.12 2014/08/10 02:14:18 patrick Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Patrick Lauer <patrick@gentoo.org> cuecue-0.2.2-r1.ebuild:
-  Fix description for more repoman happy
+*cuecue-0.2.2-r1 (09 Aug 2015)
 
-  21 Jul 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #92799
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +cuecue-0.2.2-r1.ebuild,
+  +files/cuecue-0.2.2-flac113.diff, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  20 Oct 2011; Stefan Briesenick <sbriesen@gentoo.org> cuecue-0.2.2-r1.ebuild:
-  bump to EAPI=4, solving bug #378519.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Mar 2009; Steve Dibb <beandog@gentoo.org> cuecue-0.2.2-r1.ebuild:
-  Enable vorbis by default, bug 254745
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Oct 2008; Stefan Briesenick <sbriesen@gentoo.org>
-  cuecue-0.2.2-r1.ebuild:
-  added check/abort on no selected format via USE flags, solving bug
-  #239954.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jun 2008; Samuli Suominen <drac@gentoo.org> cuecue-0.2.2-r1.ebuild:
-  Don't modify (sed) configure* but instead pass CFLAGS to emake.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  02 May 2008; Stefan Briesenick <sbriesen@gentoo.org>
-  cuecue-0.2.2-r1.ebuild:
-  mirror://berlios
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Jan 2008; Samuli Suominen <drac@gentoo.org> -cuecue-0.2.2.ebuild:
-  Remove old version.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*cuecue-0.2.2-r1 (27 Feb 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Feb 2007; Stefan Briesenick <sbriesen@gentoo.org>
-  +files/cuecue-0.2.2-flac113.diff, +cuecue-0.2.2-r1.ebuild:
-  adding flac 1.1.3 compatibility patch (see bug #157706).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Oct 2006; Diego Pettenò <flameeyes@gentoo.org> cuecue-0.2.2.ebuild:
-  Depend on 1.1.2 version of flac, as the 1.1.3 version changes API.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 Jun 2006; Stefan Briesenick <sbriesen@gentoo.org> cuecue-0.2.2.ebuild:
-  fixing dependencies, solving bug #137781.
+  Bug: https://bugs.gentoo.org/552720
 
-*cuecue-0.2.2 (28 Feb 2006)
-
-  28 Feb 2006; Stefan Briesenick <sbriesen@gentoo.org> +metadata.xml,
-  +cuecue-0.2.2.ebuild:
-  initial commit, solving bug #87000.

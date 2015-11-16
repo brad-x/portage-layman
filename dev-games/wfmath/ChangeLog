@@ -1,109 +1,56 @@
 # ChangeLog for dev-games/wfmath
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/wfmath/ChangeLog,v 1.27 2015/06/09 13:28:19 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*wfmath-1.0.1 (09 Aug 2015)
 
-  31 Dec 2012; Michael Sterrett <mr_bones_@gentoo.org>
-  -files/wfmath-0.3.11-gcc47.patch, -wfmath-0.3.11.ebuild:
-  old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +wfmath-1.0.1.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Dec 2012; Jeff Horelick <jdhore@gentoo.org> wfmath-1.0.1.ebuild:
-  marked x86 per bug 447162
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Dec 2012; Agostino Sarubbo <ago@gentoo.org> wfmath-1.0.1.ebuild:
-  Stable for amd64, wrt bug #447162
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  01 Dec 2012; Michael Sterrett <mr_bones_@gentoo.org> -wfmath-1.0.0.ebuild:
-  old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*wfmath-1.0.1 (12 Nov 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> +wfmath-1.0.1.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Oct 2012; Tupone Alfredo <tupone@gentoo.org> -wfmath-0.3.10.ebuild,
-  wfmath-0.3.11.ebuild, +files/wfmath-0.3.11-gcc47.patch, wfmath-1.0.0.ebuild:
-  Remove old affected by Bug #362731 from Diego
-  Migrating to EAPI 4 the 1.0.0 version
-  Fix build with gcc-4.7 Bug #425706 by Diego
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*wfmath-1.0.0 (10 Jul 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  10 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +wfmath-1.0.0.ebuild:
-  version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> wfmath-0.3.11.ebuild:
-  x86 stable wrt bug #389263
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Nov 2011; Tony Vroon <chainsaw@gentoo.org> wfmath-0.3.11.ebuild:
-  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
-  Lazkani & Ian "idella4" Delaney in bug #389263.
+  Bug: https://bugs.gentoo.org/552720
 
-*wfmath-0.3.11 (26 Sep 2011)
-
-  26 Sep 2011; Tupone Alfredo <tupone@gentoo.org> +wfmath-0.3.11.ebuild:
-  Version bump to 0.3.11 Bug #383413 by Mr. Anderson
-
-  16 Jan 2011; Michael Sterrett <mr_bones_@gentoo.org> wfmath-0.3.10.ebuild:
-  add static-libs support
-
-  06 Dec 2010; Alfredo Tupone <tupone@gentoo.org> wfmath-0.3.10.ebuild:
-  Remove not strictly needed dependency on media-libs/atlas-c++
-  Bug #347776 by Mr. Anderson
-
-  13 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> wfmath-0.3.10.ebuild:
-  x86 stable wrt bug #313535
-
-  09 Apr 2010; Markos Chandras <hwoarang@gentoo.org> wfmath-0.3.10.ebuild:
-  Stable on amd64 wrt bug #313535
-
-*wfmath-0.3.10 (07 Mar 2010)
-
-  07 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  +wfmath-0.3.10.ebuild:
-  version bump (bug #308167)
-
-  02 Jan 2010; Markus Meier <maekke@gentoo.org> wfmath-0.3.9.ebuild:
-  amd64 stable, bug #297122
-
-  31 Dec 2009; Christian Faulhammer <fauli@gentoo.org> wfmath-0.3.9.ebuild:
-  stable x86, bug 297122
-
-  31 Dec 2009; Tupone Alfredo <tupone@gentoo.org> wfmath-0.3.9.ebuild:
-  Fixing build with USE=doc. Bug #297122
-
-*wfmath-0.3.9 (05 Jun 2009)
-
-  05 Jun 2009; Alfredo Tupone <tupone@gentoo.org> +wfmath-0.3.9.ebuild:
-  Version bump to 0.3.9
-
-  11 Jan 2009; Markus Meier <maekke@gentoo.org> wfmath-0.3.8.ebuild:
-  amd64/x86 stable, bug #254107
-
-*wfmath-0.3.8 (20 Nov 2008)
-
-  20 Nov 2008; Alfredo Tupone <tupone@gentoo.org> +wfmath-0.3.8.ebuild:
-  Version bump to 0.3.8
-
-  20 Aug 2008; Markus Meier <maekke@gentoo.org> wfmath-0.3.7.ebuild:
-  amd64/x86 stable, bug #235167
-
-*wfmath-0.3.7 (03 Dec 2007)
-
-  03 Dec 2007; Tupone Alfredo <tupone@gentoo.org> +wfmath-0.3.7.ebuild:
-  Version bump
-
-*wfmath-0.3.6 (21 Jul 2007)
-
-  21 Jul 2007; Tristan Heaven <nyhm@gentoo.org> +wfmath-0.3.6.ebuild:
-  Version bump
-
-  07 May 2007; Tupone Alfredo <tupone@gentoo.org> wfmath-0.3.5.ebuild:
-  Added ~amd64 keyword
-
-*wfmath-0.3.5 (01 Feb 2007)
-
-  01 Feb 2007; <tupone@gentoo.org> +metadata.xml, +wfmath-0.3.5.ebuild:
-  Initial ebuild, version 0.3.6 Bug #58213 by Boris Smus

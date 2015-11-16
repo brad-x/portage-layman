@@ -1,71 +1,67 @@
 # ChangeLog for media-sound/squeezeslave
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/squeezeslave/ChangeLog,v 1.14 2015/02/06 14:24:50 aballier Exp $
+# (auto-generated from git log)
 
-  06 Feb 2015; Alexis Ballier <aballier@gentoo.org>
-  squeezeslave-1.1_p381.ebuild, +files/squeezeslave-1.1_p381-ffmpeg2.patch:
-  fix build with ffmpeg2, patch by Rick Moritz in bug #481062 with some extra
-  changes by me for ffmpeg 2.4+
+*squeezeslave-1.1_p381 (09 Aug 2015)
+*squeezeslave-1.1_p365 (09 Aug 2015)
 
-  24 Nov 2012; Tim Harder <radhermit@gentoo.org> -squeezeslave-1.1_p312.ebuild,
-  -squeezeslave-1.1_p350.ebuild, -files/squeezeslave-1.1_p309-ffmpeg.patch,
-  -files/squeezeslave.confd, -files/squeezeslave.initd:
-  Remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/squeezeslave-1.1_p350-tremor-headers.patch,
+  +files/squeezeslave-1.1_p381-ffmpeg2.patch, +files/squeezeslave.confd-r1,
+  +files/squeezeslave.initd-r1, +metadata.xml, +squeezeslave-1.1_p365.ebuild,
+  +squeezeslave-1.1_p381.ebuild:
+  proj/gentoo: Initial commit
 
-*squeezeslave-1.1_p381 (24 Nov 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Nov 2012; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p381.ebuild:
-  Version bump.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*squeezeslave-1.1_p365 (16 Jul 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  16 Jul 2012; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p365.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  30 Jun 2012; Tim Harder <radhermit@gentoo.org> squeezeslave-1.1_p350.ebuild,
-  +files/squeezeslave.confd-r1, +files/squeezeslave.initd-r1:
-  Update init script to change squeezeboxserver references to
-  logitechmediaserver.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  squeezeslave-1.1_p365.ebuild, squeezeslave-1.1_p381.ebuild:
+  Use https by default
 
-*squeezeslave-1.1_p350 (30 Jun 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Jun 2012; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p350.ebuild,
-  +files/squeezeslave-1.1_p350-tremor-headers.patch, metadata.xml:
-  Version bump. Add tremor use flag.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 May 2012; Michał Górny <mgorny@gentoo.org> squeezeslave-1.1_p309.ebuild,
-  squeezeslave-1.1_p312.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> squeezeslave-1.1_p365.ebuild,
+  squeezeslave-1.1_p381.ebuild:
+  Convert URIs for googlecode.com to https
 
-  15 Jan 2012; Tim Harder <radhermit@gentoo.org> -squeezeslave-1.1_p286.ebuild,
-  -files/squeezeslave-1.1_p262-ffmpeg.patch:
-  Remove old.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*squeezeslave-1.1_p312 (15 Jan 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Jan 2012; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p312.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Dec 2011; Tim Harder <radhermit@gentoo.org> -squeezeslave-1.1_p262.ebuild:
-  Remove old.
-
-*squeezeslave-1.1_p309 (04 Dec 2011)
-
-  04 Dec 2011; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p309.ebuild,
-  +files/squeezeslave-1.1_p309-ffmpeg.patch, files/squeezeslave.initd:
-  Version bump to new snapshot. Simplify init script using baselayout-2
-  enhancements.
-
-*squeezeslave-1.1_p286 (19 Oct 2011)
-
-  19 Oct 2011; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p286.ebuild,
-  metadata.xml:
-  Version bump to new snapshot with zones support.
-
-*squeezeslave-1.1_p262 (09 Aug 2011)
-
-  09 Aug 2011; Tim Harder <radhermit@gentoo.org> +squeezeslave-1.1_p262.ebuild,
-  +files/squeezeslave-1.1_p262-ffmpeg.patch, +files/squeezeslave.confd,
-  +files/squeezeslave.initd, +metadata.xml:
-  Initial import (bug #337587).
+  Bug: https://bugs.gentoo.org/552720
 

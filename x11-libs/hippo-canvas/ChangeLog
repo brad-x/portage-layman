@@ -1,90 +1,57 @@
 # ChangeLog for x11-libs/hippo-canvas
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/hippo-canvas/ChangeLog,v 1.15 2015/04/08 17:28:02 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> hippo-canvas-0.3.0-r2.ebuild:
-  Drop old Python implementations
+*hippo-canvas-0.3.0-r2 (09 Aug 2015)
 
-  29 Jan 2015; Pacho Ramos <pacho@gentoo.org> -hippo-canvas-0.3.0-r1.ebuild:
-  drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/hippo-canvas-python-override.patch, +hippo-canvas-0.3.0-r2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  29 Jan 2015; Pacho Ramos <pacho@gentoo.org> hippo-canvas-0.3.0-r2.ebuild:
-  x86 stable, bug #530040
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Dec 2014; Agostino Sarubbo <ago@gentoo.org> hippo-canvas-0.3.0-r2.ebuild:
-  Stable for amd64, wrt bug #530040
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*hippo-canvas-0.3.0-r2 (21 Nov 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Nov 2014; Pacho Ramos <pacho@gentoo.org> +hippo-canvas-0.3.0-r2.ebuild:
-  Use new python eclasses, bump EAPI and comply with gnome2.eclass policies
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  16 Feb 2014; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due #200380
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2013; <elvanor@gentoo.org> -hippo-canvas-0.3.0.ebuild,
-  hippo-canvas-0.3.0-r1.ebuild:
-  Bug #448962.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> hippo-canvas-0.3.0.ebuild,
-  hippo-canvas-0.3.0-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  29 Mar 2011; Christoph Mende <angelos@gentoo.org> hippo-canvas-0.3.0.ebuild,
-  hippo-canvas-0.3.0-r1.ebuild:
-  Fix gtk+ slot deps
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 May 2010; Jean-Noël Rivasseau <elvanor@gentoo.org>
-  hippo-canvas-0.3.0-r1.ebuild:
-  Improvements for #316993.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 May 2010; Pacho Ramos <pacho@gentoo.org> hippo-canvas-0.3.0-r1.ebuild:
-  stable amd64, bug 292066
+  Bug: https://bugs.gentoo.org/552720
 
-  10 May 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  hippo-canvas-0.3.0-r1.ebuild:
-  x86 stable wrt bug #292066
-
-*hippo-canvas-0.3.0-r1 (13 Apr 2010)
-
-  13 Apr 2010; Jean-Noël Rivasseau <elvanor@gentoo.org>
-  hippo-canvas-0.3.0.ebuild, +hippo-canvas-0.3.0-r1.ebuild,
-  +files/hippo-canvas-python-override.patch:
-  Fix for #299334 as well QA issues (#292066).
-
-  02 Mar 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  hippo-canvas-0.3.0.ebuild:
-  x86 stable wrt bug #292066
-
-*hippo-canvas-0.3.0 (06 Oct 2009)
-
-  06 Oct 2009; Jean-Noël Rivasseau <elvanor@gentoo.org>
-  +hippo-canvas-0.3.0.ebuild, +metadata.xml:
-  Bumped to version 3 and added to the tree. Closing bug #190836. Credits
-  for the ebuild go to 
-  Alexandre Rostovtsev <tetromino@gmail.com>.
-
-  29 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
-  -hippo-canvas-0.2.30.ebuild, +hippo-canvas-0.2.31.ebuild:
-  Version bump.
-
-  04 Apr 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
-  -hippo-canvas-0.2.25.ebuild, +hippo-canvas-0.2.30.ebuild:
-  Version bump.
-
-  04 Feb 2008; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
-  -files/hippo-canvas-0.2.23-use-python.patch, -hippo-canvas-0.2.23.ebuild,
-  +hippo-canvas-0.2.25.ebuild:
-  Version bump. Re-enabling USE=doc because eautoreconf is no longer needed.
-
-  05 Sep 2007; Jakub Moc <jakub@gentoo.org> hippo-canvas-0.2.23.ebuild:
-  Get rid of unwanted debug USE flag
-
-  04 Sep 2007; Jakub Moc <jakub@gentoo.org> hippo-canvas-0.2.23.ebuild:
-  Use gnome2 eclass properly, clean up ebuild, remove USE=doc until
-  eautoreconf does not fail without gtk-doc installed
-
-  02 Sep 2007; Alexandre Rostovtsev (tetromino) <tetromino@gmail.com>
-  +files/hippo-canvas-0.2.23-use-python.patch, +metadata.xml,
-  +hippo-canvas-0.2.23.ebuild:
-  New ebuild for bug 190836

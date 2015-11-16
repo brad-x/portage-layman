@@ -1,160 +1,88 @@
 # ChangeLog for dev-python/networkx
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/networkx/ChangeLog,v 1.36 2015/08/04 10:54:59 patrick Exp $
+# (auto-generated from git log)
 
-*networkx-1.10 (04 Aug 2015)
+*networkx-1.10 (09 Aug 2015)
+*networkx-1.9.1 (09 Aug 2015)
 
-  04 Aug 2015; Patrick Lauer <patrick@gentoo.org> +networkx-1.10.ebuild:
-  Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +networkx-1.9.1.ebuild, +networkx-1.10.ebuild:
+  proj/gentoo: Initial commit
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> networkx-1.9.1.ebuild:
-  x86 stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> networkx-1.9.1.ebuild:
-  ppc stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> networkx-1.9.1.ebuild:
-  amd64 stable, bug 540290
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Dec 2014; Ian Delaney <idella4@gentoo.org> -networkx-1.6-r1.ebuild,
-  -networkx-1.7-r2.ebuild, -networkx-1.8.1.ebuild, -networkx-1.9.ebuild,
-  networkx-1.9.1.ebuild:
-  clean old impl, rm old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Nov 2014; Justin Lecher <jlec@gentoo.org> networkx-1.9.1.ebuild,
-  metadata.xml:
-  Some Prefix love
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*networkx-1.9.1 (07 Oct 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Oct 2014; Ian Delaney <idella4@gentoo.org> +networkx-1.9.1.ebuild:
-  bump; extend HOMPAGE with github repo, tidy to deps syntax
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Aug 2014; Anthony G. Basile <blueness@gentoo.org> networkx-1.9.ebuild:
-  Keyword ~ppc, bug #517086
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*networkx-1.9 (14 Jul 2014)
+  Bug: https://bugs.gentoo.org/552720
 
-  14 Jul 2014; Ian Delaney <idella4@gentoo.org> +networkx-1.9.ebuild:
-  bump; drop py2.6 add py3.4, upgrade deps, doc build
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> networkx-1.10.ebuild:
+  Add python3 support for pygraphviz
 
-  11 Feb 2014; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
-  networkx-1.8.1.ebuild:
-  Added python-3.2 compat
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  30 Jan 2014; Justin Lecher <jlec@gentoo.org> networkx-1.8.1.ebuild:
-  Add Python 3 support, pygraphviz is optional but preferred
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> networkx-1.10.ebuild:
+  Revert "dev-python/networkx: Add python3 support for pygraphviz"
 
-  22 Oct 2013; Fabian Groffen <grobian@gentoo.org> networkx-1.8.1.ebuild:
-  Marked ~x64-macos, bug #487670
+  This reverts commit 346ac11877ac71834311d6c7d1bdba4e18cce89d.
 
-  12 Sep 2013; Michał Górny <mgorny@gentoo.org> networkx-1.6-r1.ebuild,
-  networkx-1.7-r2.ebuild, networkx-1.8.1.ebuild:
-  Replace virtual/pyparsing dep with dev-python/pyparsing. The split versions
-  were removed and all in-tree versions support all impls now.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*networkx-1.8.1 (02 Sep 2013)
+*networkx-1.10-r1 (07 Sep 2015)
 
-  02 Sep 2013; Patrick Lauer <patrick@gentoo.org> +networkx-1.8.1.ebuild:
-  Bump
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> +networkx-1.10-r1.ebuild:
+  Drop ppc due to missing KEYWORD in revdep
 
-*networkx-1.6-r1 (18 Aug 2013)
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=559838
 
-  18 Aug 2013; Michał Górny <mgorny@gentoo.org> +networkx-1.6-r1.ebuild,
-  -networkx-1.6.ebuild, -networkx-1.7-r1.ebuild, -networkx-1.7.ebuild:
-  Backport the distutils-r1 conversion to 1.6. Drop redundant ebuilds.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Aug 2013; Michał Górny <mgorny@gentoo.org> networkx-1.7-r2.ebuild:
-  Add the test phase.
+  14 Oct 2015; Justin Lecher <jlec@gentoo.org> networkx-1.10-r1.ebuild:
+  Rekeyword according to old KEYWORDS
 
-  18 Aug 2013; Michał Górny <mgorny@gentoo.org> networkx-1.7-r2.ebuild:
-  Improve the distutils-r1 ebuild. Install docs into /usr/share/doc/${PF}.
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=559838
 
-*networkx-1.7-r2 (26 Apr 2013)
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Apr 2013; Justin Lecher <jlec@gentoo.org> +networkx-1.7-r2.ebuild,
-  metadata.xml:
-  Move to distutils-r1.eclass
-
-  31 Dec 2012; Michał Górny <mgorny@gentoo.org> networkx-1.6.ebuild,
-  networkx-1.7-r1.ebuild, networkx-1.7.ebuild:
-  Use virtual/pyparsing.
-
-*networkx-1.7-r1 (04 Nov 2012)
-
-  04 Nov 2012; Ian Delaney <idella4@gentoo.org> +networkx-1.7-r1.ebuild:
-  Dependencies added for testsuite, rev bumped
-
-*networkx-1.7 (19 Jul 2012)
-
-  19 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> +networkx-1.7.ebuild,
-  -networkx-1.5.ebuild:
-  Version bump
-
-*networkx-1.6 (17 Dec 2011)
-
-  17 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> -networkx-1.3.ebuild,
-  -networkx-1.4.ebuild, +networkx-1.6.ebuild:
-  Version bump. Thanks Ian Delaney.
-
-  31 Oct 2011; Markos Chandras <hwoarang@gentoo.org> networkx-1.5.ebuild:
-  Add CVS header.
-
-*networkx-1.5 (28 Jul 2011)
-
-  28 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> +networkx-1.5.ebuild:
-  Version bump. Test and doc flag by Matsui Tetsushi, bug #372483
-
-*networkx-1.4 (29 Jan 2011)
-
-  29 Jan 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -networkx-1.2.ebuild, +networkx-1.4.ebuild:
-  Version bump.
-
-  19 Dec 2010; Sébastien Fabbro <bicatali@gentoo.org> networkx-1.2.ebuild:
-  Backport 1.3 prefix changes, thanks cshwan
-
-  10 Nov 2010; Fabian Groffen <grobian@gentoo.org> networkx-1.3.ebuild:
-  Marked ~x86-linux, ~ppc-macos, bug #342001
-
-*networkx-1.3 (22 Sep 2010)
-
-  22 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -files/networkx-0.99-setup.py.patch, -networkx-1.1.ebuild,
-  +networkx-1.3.ebuild:
-  Version bump.
-
-*networkx-1.2 (24 Aug 2010)
-
-  24 Aug 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  -networkx-1.0.1.ebuild, +networkx-1.2.ebuild:
-  Version bump, closing bug #332825, thanks Francois Bissey for his testing
-
-  01 Jun 2010; Joseph Jezak <josejx@gentoo.org> networkx-1.0.1.ebuild,
-  networkx-1.1.ebuild:
-  Marked ~ppc for bug #317225.
-
-*networkx-1.1 (28 Apr 2010)
-
-  28 Apr 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  -networkx-0.99.ebuild, +networkx-1.1.ebuild:
-  Version bump
-
-*networkx-1.0.1 (15 Jan 2010)
-
-  15 Jan 2010; Sébastien Fabbro <bicatali@gentoo.org>
-  +networkx-1.0.1.ebuild:
-  Version bump
-
-  19 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> networkx-0.99.ebuild:
-  Added dependendcies for the examples, closing bug #276075
-
-*networkx-0.99 (28 Feb 2009)
-
-  28 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/networkx-0.99-setup.py.patch, +metadata.xml, +networkx-0.99.ebuild:
-  Initial import, see bug #120794. Thanks ibm, Marek and Tim Cera for their
-  contributions

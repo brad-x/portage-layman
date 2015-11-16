@@ -1,93 +1,58 @@
 # ChangeLog for dev-haskell/uuagc
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/uuagc/ChangeLog,v 1.24 2015/08/01 11:53:29 slyfox Exp $
+# (auto-generated from git log)
 
-*uuagc-0.9.52.1 (01 Aug 2015)
+*uuagc-0.9.52.1 (09 Aug 2015)
+*uuagc-0.9.24 (09 Aug 2015)
 
-  01 Aug 2015; Sergei Trofimovich <slyfox@gentoo.org> +uuagc-0.9.52.1.ebuild,
-  metadata.xml:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/uuagc-0.9.24-ghc-7.8.patch, +metadata.xml, +uuagc-0.9.24.ebuild,
+  +uuagc-0.9.52.1.ebuild:
+  proj/gentoo: Initial commit
 
-  05 May 2015; Sergei Trofimovich <slyfox@gentoo.org>
-  +files/uuagc-0.9.24-ghc-7.8.patch, uuagc-0.9.24.ebuild:
-  Fix build failure against modern ghc (bug #423949 by Diego Elio Pettenò and by
-  Toralf Förster)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Jun 2013; Sergei Trofimovich <slyfox@gentoo.org>
-  -files/uuagc-0.9.1-split-base.patch, -uuagc-0.9.1.ebuild, -uuagc-0.9.5.ebuild:
-  Drop old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> uuagc-0.9.24.ebuild:
-  move dev-haskell/uuagc/uuagc-0.9.24.ebuild ebuild to mirror://hackage
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Jun 2012; Sergei Trofimovich <slyfox@gentoo.org> uuagc-0.9.24.ebuild:
-  ppc/ppc64/sparc stable (bug #396869)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> uuagc-0.9.24.ebuild:
-  x86 stable wrt bug #396869
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Jan 2012; Agostino Sarubbo <ago@gentoo.org> uuagc-0.9.24.ebuild:
-  Stable for amd64, wrt bug #396869
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org>
-  +files/uuagc-0.9.1-split-base.patch, uuagc-0.9.1.ebuild:
-  Fix build failure against modern ghc. Fixes bug #257888 by Laszlo Papp and
-  others.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Jul 2010; Sergei Trofimovich <slyfox@gentoo.org> uuagc-0.9.5.ebuild:
-  Fixed bug #227517 (missing dev-haskell/mtl dep). Thanks to Evil Compile
-  Person <bugs@dev.gentooexperimental.org> for the report and thanks to
-  Sebastian Magrí <sebasmagri@gmail.com> for the fix. Restored ~ppc64 for
-  newer versions.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*uuagc-0.9.24 (14 Jun 2010)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jun 2010; Lennart Kolmodin <kolmodin@gentoo.org> +uuagc-0.9.24.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-*uuagc-0.9.5 (13 Dec 2007)
-
-  13 Dec 2007; Duncan Coutts <dcoutts@gentoo.org> +uuagc-0.9.5.ebuild:
-  New version.
-
-  31 Oct 2007; Duncan Coutts <dcoutts@gentoo.org> uuagc-0.9.1.ebuild:
-  Drop virtual/ghc in favour of dev-lang/ghc
-
-  12 Nov 2006; Matti Bickel <mabi@gentoo.org> uuagc-0.9.1.ebuild:
-  Stable on ppc
-
-  05 Oct 2006; Chris Parrott <cparrott@gentoo.org> uuagc-0.9.1.ebuild:
-  marked stable for amd64 (bug 144678)
-
-  04 Oct 2006; Joshua Jackson <tsunam@gentoo.org> uuagc-0.9.1.ebuild:
-  Stable x86; bug #144678
-
-  30 Sep 2006; Stephanie Lockwood-Childs <wormo@gentoo.org>
-  uuagc-0.9.1.ebuild:
-  mark ~ppc (related to Bug #144678, though not specifically requested...)
-
-  25 Aug 2006; Ferris McCormick <fmccor@gentoo.org> uuagc-0.9.1.ebuild:
-  Stable on sparc --- Bug #144678 --- no problems.
-
-  24 Aug 2006; Markus Rothe <corsair@gentoo.org> uuagc-0.9.1.ebuild:
-  Stable on ppc64; bug #144678
-
-  27 Apr 2006; Marien Zwart <marienz@gentoo.org> Manifest:
-  Fixing SHA256 digest, pass four
-
-  01 Mar 2006; Markus Rothe <corsair@gentoo.org> uuagc-0.9.1.ebuild:
-  Added ~ppc64; bug #124469
-
-  27 Feb 2006; Duncan Coutts <dcoutts@gentoo.org> uuagc-0.9.1.ebuild:
-  Add ~sparc to KEYWORDS
-
-  16 Feb 2006; <dcoutts@gentoo.org> uuagc-0.9.1.ebuild:
-  Add "bin" to CABAL_FEATURES in preparation for pending eclass updates.
-
-  13 Feb 2006; <dcoutts@gentoo.org> uuagc-0.9.1.ebuild:
-  dded ~amd64 to KEYWORDS
-
-*uuagc-0.9.1 (14 Dec 2005)
-
-  14 Dec 2005; <dcoutts@gentoo.org> +metadata.xml, +uuagc-0.9.1.ebuild:
-  Initial import.

@@ -1,211 +1,88 @@
 # ChangeLog for dev-python/pyquery
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyquery/ChangeLog,v 1.60 2015/08/06 16:09:45 klausman Exp $
+# (auto-generated from git log)
 
-  06 Aug 2015; Tobias Klausmann <klausman@gentoo.org> pyquery-1.2.9.ebuild:
-  Stable on alpha, bug 530572
+*pyquery-1.2.9-r1 (09 Aug 2015)
+*pyquery-1.2.9 (09 Aug 2015)
+*pyquery-1.2.8 (09 Aug 2015)
+*pyquery-1.2.4 (09 Aug 2015)
 
-  02 Aug 2015; Pacho Ramos <pacho@gentoo.org> pyquery-1.2.9.ebuild:
-  sparc stable wrt bug #530572
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pyquery-1.2.4.ebuild, +pyquery-1.2.8.ebuild, +pyquery-1.2.9.ebuild,
+  +pyquery-1.2.9-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Jul 2015; Tobias Klausmann <klausman@gentoo.org> pyquery-1.2.9.ebuild:
-  Keyworded on alpha, bug 525246
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 May 2015; Markus Meier <maekke@gentoo.org> pyquery-1.2.9.ebuild:
-  arm stable, bug #530572
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*pyquery-1.2.9-r1 (19 Mar 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Mar 2015; Patrick Lauer <patrick@gentoo.org> +pyquery-1.2.9-r1.ebuild:
-  Bump for missing test dep
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> pyquery-1.2.4.ebuild:
+  Use https by default
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> pyquery-1.2.9.ebuild:
-  x86 stable, bug 540290
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> pyquery-1.2.9.ebuild:
-  ppc stable, bug 540290
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> pyquery-1.2.9.ebuild:
-  ppc64 stable, bug 540290
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> pyquery-1.2.9.ebuild:
-  amd64 stable, bug 540290
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Dec 2014; Ian Delaney <idella4@gentoo.org> -pyquery-1.1.1.ebuild,
-  -pyquery-1.2.1-r1.ebuild, -pyquery-1.2.1.ebuild, pyquery-1.2.4.ebuild,
-  pyquery-1.2.8.ebuild:
-  clean old impls, rm old
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Nov 2014; Ian Delaney <idella4@gentoo.org> pyquery-1.2.9.ebuild:
-  clean old python impl
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Oct 2014; Markus Meier <maekke@gentoo.org> pyquery-1.2.9.ebuild:
-  add ~arm, bug #525246
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Oct 2014; Anthony G. Basile <blueness@gentoo.org> pyquery-1.2.9.ebuild:
-  Keyworded ~ppc and ~ppc64, bug #525246
+  25 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  -pyquery-1.2.4.ebuild, pyquery-1.2.8.ebuild, pyquery-1.2.9.ebuild,
+  pyquery-1.2.9-r1.ebuild:
+  Drop optional dep to optfeature
 
-  13 Oct 2014; Jeroen Roovers <jer@gentoo.org> pyquery-1.2.9.ebuild:
-  Marked ~hppa (bug #525246).
+  Package-Manager: portage-2.2.21
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pyquery-1.2.9 (13 Oct 2014)
+*pyquery-1.2.4 (25 Sep 2015)
 
-  13 Oct 2014; Ian Delaney <idella4@gentoo.org> +pyquery-1.2.9.ebuild:
-  bump; drop all those keywords to all add py3.4 support due to their absence in
-  recent release of webtest, update test phase
+  25 Sep 2015; Justin Lecher <jlec@gentoo.org> +pyquery-1.2.4.ebuild:
+  Add dropped version back
 
-  18 Jun 2014; Tobias Klausmann <klausman@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable on alpha, bug #450174
+  Package-Manager: portage-2.2.22
+  RepoMan-Options: --force
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*pyquery-1.2.8 (20 Apr 2014)
+  14 Oct 2015; Justin Lecher <jlec@gentoo.org> pyquery-1.2.4.ebuild:
+  Drop usage of USE=beautifulsoup3
 
-  20 Apr 2014; Ian Delaney <idella4@gentoo.org> +pyquery-1.2.8.ebuild:
-  bump; drop py26 py3.2 support, upgrade deps, test phase, closes Bug #507548
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Jan 2014; Markus Meier <maekke@gentoo.org> pyquery-1.2.4.ebuild:
-  arm stable, bug #450174
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for sparc, wrt bug #450174
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for sh, wrt bug #450174
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for s390, wrt bug #450174
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for ppc, wrt bug #450174
-
-  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for ia64, wrt bug #450174
-
-  01 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for x86, wrt bug #450174
-
-  01 Sep 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.2.4.ebuild:
-  Stable for amd64, wrt bug #450174
-
-  01 Sep 2013; Mike Gilbert <floppym@gentoo.org> pyquery-1.2.4.ebuild:
-  Call distutils-r1_python_prepare_all.
-
-  06 Jun 2013; Mike Gilbert <floppym@gentoo.org> metadata.xml,
-  pyquery-1.2.4.ebuild:
-  Fixup dependencies per Arfrever's suggestions.
-
-  03 Jun 2013; Patrick Lauer <patrick@gentoo.org> pyquery-1.2.4.ebuild:
-  Add test dep on beautifulsoup
-
-  24 May 2013; Maxim Koltsov <maksbotan@gentoo.org> pyquery-1.2.4.ebuild:
-  Enable python 3.3 in pyquery-1.2.4, request by Nikolaj Sjujskij
-
-  27 Mar 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.1.1.ebuild:
-  Stable for ppc64, wrt bug #456616
-
-  26 Mar 2013; Agostino Sarubbo <ago@gentoo.org> pyquery-1.1.1.ebuild:
-  Stable for ppc, wrt bug #456616
-
-  16 Mar 2013; Ian Delaney <idella4@gentoo.org> pyquery-1.2.4.ebuild:
-  correct docs, fixes Bug #461776
-
-  13 Mar 2013; Ian Delaney <idella4@gentoo.org> -pyquery-0.6.1.ebuild,
-  -pyquery-1.0.ebuild:
-  drop old
-
-*pyquery-1.2.4 (13 Mar 2013)
-
-  13 Mar 2013; Ian Delaney <idella4@gentoo.org> +pyquery-1.2.4.ebuild:
-  bump
-
-*pyquery-1.2.1-r1 (15 Feb 2013)
-
-  15 Feb 2013; Michał Górny <mgorny@gentoo.org> +pyquery-1.2.1-r1.ebuild:
-  Migrate to distutils-r1.
-
-  13 Oct 2012; Raúl Porcel <armin76@gentoo.org> pyquery-0.6.1.ebuild,
-  pyquery-1.0.ebuild, pyquery-1.1.1.ebuild, pyquery-1.2.1.ebuild:
-  ia64/s390/sh/sparc stable wrt #427546
-
-  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pyquery-1.1.1.ebuild:
-  Stable arm, bug #427546
-
-  31 Jul 2012; Anthony G. Basile <blueness@gentoo.org> pyquery-1.2.1.ebuild:
-  Keyword ~ppc bug #416099
-
-  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> pyquery-1.2.1.ebuild:
-  Add ~alpha/~sparc wrt #416099
-
-  24 Jul 2012; Anthony G. Basile <blueness@gentoo.org> pyquery-1.1.1.ebuild,
-  pyquery-1.2.1.ebuild:
-  Keyword ~ppc64
-
-  27 Jun 2012; Markus Meier <maekke@gentoo.org> pyquery-1.2.1.ebuild:
-  add ~arm, bug #416099
-
-  27 May 2012; Naohiro Aota <naota@gentoo.org> pyquery-1.2.1.ebuild:
-  Add ~x86-fbsd. #416099
-
-  18 May 2012; Agostino Sarubbo <ago@gentoo.org> pyquery-1.1.1.ebuild:
-  Stable for amd64, wrt bug #415779
-
-  18 May 2012; Jeff Horelick <jdhore@gentoo.org> pyquery-1.1.1.ebuild:
-  marked x86 per bug 415783
-
-  16 May 2012; Jeroen Roovers <jer@gentoo.org> pyquery-1.2.1.ebuild:
-  Marked ~hppa (bug #416099).
-
-*pyquery-1.2.1 (15 May 2012)
-
-  15 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +pyquery-1.2.1.ebuild:
-  Version bump
-
-  16 Apr 2012; Jeroen Roovers <jer@gentoo.org> pyquery-1.1.1.ebuild:
-  Marked ~hppa (bug #411761).
-
-  02 Apr 2012; Naohiro Aota <naota@gentoo.org> pyquery-1.1.1.ebuild:
-  Add ~x86-fbsd
-
-  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> pyquery-1.0.ebuild,
-  pyquery-1.1.1.ebuild:
-  Add ~sparc wrt #383195
-
-  25 Feb 2012; Patrick Lauer <patrick@gentoo.org> pyquery-1.0.ebuild,
-  pyquery-1.1.1.ebuild:
-  Fixing accidental double asterisk
-
-  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> pyquery-0.6.1.ebuild,
-  pyquery-1.0.ebuild, pyquery-1.1.1.ebuild:
-  Fixing pypy restricts to actually work
-
-*pyquery-1.1.1 (08 Feb 2012)
-
-  08 Feb 2012; Patrick Lauer <patrick@gentoo.org> +pyquery-1.1.1.ebuild:
-  Bump for #401979
-
-  01 Feb 2012; Brent Baude <ranger@gentoo.org> pyquery-1.0.ebuild:
-  Marking pyquery-1.0 ~ppc for bug 383195
-
-  19 Jan 2012; Tobias Klausmann <klausman@gentoo.org> pyquery-1.0.ebuild:
-  Keyworded on alpha, bug #383195
-
-  20 Sep 2011; Mike Gilbert <floppym@gentoo.org> pyquery-1.0.ebuild:
-  Fix RESTRICT_PYTHON_ABIS. Patch by Arfrever.
-
-  19 Sep 2011; Markus Meier <maekke@gentoo.org> pyquery-1.0.ebuild:
-  add ~arm, bug #383195
-
-  16 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> pyquery-1.0.ebuild:
-  Restrict 2.4, jython, pypy, allow 3.x (thanks Arfrever).
-
-*pyquery-1.0 (13 Sep 2011)
-
-  13 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +pyquery-1.0.ebuild:
-  Version bump to 1.0.
-
-*pyquery-0.6.1 (19 Oct 2010)
-
-  19 Oct 2010; Samuli Suominen <ssuominen@gentoo.org> +pyquery-0.6.1.ebuild:
-  Initial commit wrt #339489 by Stefan Talpalaru.

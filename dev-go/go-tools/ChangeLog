@@ -1,65 +1,117 @@
 # ChangeLog for dev-go/go-tools
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-go/go-tools/ChangeLog,v 1.14 2015/08/05 20:38:06 williamh Exp $
+# (auto-generated from git log)
 
-  05 Aug 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
-  add golang-vcs-snapshot support to the live ebuild
+*go-tools-9999 (09 Aug 2015)
+*go-tools-0_pre20150606 (09 Aug 2015)
 
-  06 Jul 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
-  add slot dependency on go-net
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +go-tools-0_pre20150606.ebuild, +go-tools-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*go-tools-0_pre20150606 (01 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Jul 2015; William Hubbs <williamh@gentoo.org>
-  +go-tools-0_pre20150606.ebuild, -go-tools-1.4.2_p20150520-r1.ebuild,
-  -go-tools-1.4.2_p20150602.ebuild, -go-tools-1.4.2_p20150606.ebuild:
-  Move latest snapshot to a pre-release of version 0
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  26 Jun 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
-  Make live ebuild copyable as future snapshots
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*go-tools-1.4.2_p20150606 (09 Jun 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jun 2015; Zac Medico <zmedico@gentoo.org> +go-tools-1.4.2_p20150606.ebuild,
-  -go-tools-1.4.2_p20150520.ebuild, go-tools-9999.ebuild:
-  Add 1.4.2_p20150606 snapshot with timestamp preservation for bug 551486.
+*go-tools-0_pre20150805 (10 Aug 2015)
 
-*go-tools-1.4.2_p20150602 (03 Jun 2015)
+  10 Aug 2015; Zac Medico <zmedico@gentoo.org> +go-tools-0_pre20150805.ebuild:
+  0_pre20150805 version bump
 
-  03 Jun 2015; Zac Medico <zmedico@gentoo.org> +go-tools-1.4.2_p20150602.ebuild:
-  Add 1.4.2_p20150602 snapshot.
+  Package-Manager: portage-2.2.20
 
-*go-tools-1.4.2_p20150520-r1 (03 Jun 2015)
+  10 Aug 2015; William Hubbs <williamh@gentoo.org>
+  -go-tools-0_pre20150606.ebuild:
+  remove old snapshot
 
-  03 Jun 2015; Zac Medico <zmedico@gentoo.org>
-  +go-tools-1.4.2_p20150520-r1.ebuild, go-tools-9999.ebuild:
-  Add favicon to the godoc web interface (bug 551030).
+  23 Aug 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
+  fix live ebuild for go-1.5 and newer
 
-  28 May 2015; Zac Medico <zmedico@gentoo.org> go-tools-1.4.2_p20150520.ebuild,
-  go-tools-9999.ebuild:
-  Change /usr/bin/go from a symlink to a hardlink.
+  In Go 1.5, cover and vet have moved back to the main Go repository, so
+  the ones in this package are deprecated.
 
-  24 May 2015; Zac Medico <zmedico@gentoo.org> go-tools-1.4.2_p20150520.ebuild,
-  go-tools-9999.ebuild:
-  Fix it to install godoc.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 May 2015; Zac Medico <zmedico@gentoo.org> go-tools-1.4.2_p20150520.ebuild,
-  go-tools-9999.ebuild:
-  Disable broken tests.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 May 2015; Zac Medico <zmedico@gentoo.org> go-tools-1.4.2_p20150520.ebuild:
-  Remove unused git-r3 inherit.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*go-tools-1.4.2_p20150520 (21 May 2015)
+*go-tools-0_pre20150823 (24 Aug 2015)
 
-  21 May 2015; Zac Medico <zmedico@gentoo.org> +go-tools-1.4.2_p20150520.ebuild:
-  Add 1.4.2_p20150520 snapshot.
+  24 Aug 2015; William Hubbs <williamh@gentoo.org>
+  +go-tools-0_pre20150823.ebuild:
+  Add new snapshot
 
-  21 May 2015; Zac Medico <zmedico@gentoo.org> go-tools-9999.ebuild:
-  Add src_test.
+  24 Aug 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
+  sync live ebuild
 
-*go-tools-9999 (18 May 2015)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 May 2015; Zac Medico <zmedico@gentoo.org> +go-tools-9999.ebuild,
-  +metadata.xml:
-  Add go-tools.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*go-tools-0_pre20150823-r1 (26 Aug 2015)
+
+  26 Aug 2015; Zac Medico <zmedico@gentoo.org> -go-tools-0_pre20150823.ebuild,
+  +go-tools-0_pre20150823-r1.ebuild:
+  revbump to 0_pre20150823-r1, fixing file collisions for bug 558818
+
+  Package-Manager: portage-2.2.20.1
+
+  27 Aug 2015; William Hubbs <williamh@gentoo.org>
+  go-tools-0_pre20150823-r1.ebuild:
+  fix removal of cover and vet
+
+  Since binaries are being installed in $GOROOT/bin, we need to remove
+  cover and vet from there for newer versions of go instead of from
+  removing them from /usr/bin.
+
+  This fixes bug #558882.
+
+  27 Aug 2015; William Hubbs <williamh@gentoo.org> go-tools-9999.ebuild:
+  sync live ebuild
+
+  Package-Manager: portage-2.2.20.1
+
+*go-tools-0_pre20150902 (08 Sep 2015)
+
+  08 Sep 2015; William Hubbs <williamh@gentoo.org>
+  +go-tools-0_pre20150902.ebuild:
+  new snapshot
+
+  11 Sep 2015; Zac Medico <zmedico@gentoo.org> go-tools-0_pre20150902.ebuild:
+  fix tests and src_prepare failure for 0_pre20150902
+
+  Package-Manager: portage-2.2.20.1
+

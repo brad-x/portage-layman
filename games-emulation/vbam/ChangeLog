@@ -1,141 +1,88 @@
 # ChangeLog for games-emulation/vbam
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/vbam/ChangeLog,v 1.30 2015/07/16 00:20:53 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  16 Jul 2015; Michael Sterrett <mr_bones_@gentoo.org> vbam-1.8.0.1228.ebuild,
+*vbam-9999 (09 Aug 2015)
+*vbam-1.8.0.1228 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/vbam-1.8.0.1228-ffmpeg2.patch, +files/vbam-1.8.0.1228-header.patch,
+  +metadata.xml, +vbam-1.8.0.1228.ebuild, +vbam-9999.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  vbam-1.8.0.1228.ebuild:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  29 Aug 2015; Tim Harder <radhermit@gentoo.org> vbam-9999.ebuild:
+  update repo and libsfml dep for live ebuild
+
+*vbam-2.0.0_pre1507 (29 Aug 2015)
+
+  29 Aug 2015; Tim Harder <radhermit@gentoo.org> +vbam-2.0.0_pre1507.ebuild,
   vbam-9999.ebuild:
-  update HOMEPAGE
+  version bump to new snapshot
 
-  13 Jun 2015; Michael Sterrett <mr_bones_@gentoo.org> vbam-1.8.0.1228.ebuild,
-  vbam-9999.ebuild:
-  doesn't work with libav (bug #525394)
+  Also merge the live and snapshot ebuilds.
 
-  27 May 2015; Michael Sterrett <mr_bones_@gentoo.org> vbam-9999.ebuild:
-  tidy; update man page install
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  21 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org> vbam-1.8.0.1228.ebuild,
-  vbam-9999.ebuild:
-  call subversion eclass functions
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Mar 2015; Tim Harder <radhermit@gentoo.org> metadata.xml:
-  Drop myself as maintainer.
+  05 Nov 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/vbam-2.0.0_pre1507-man.patch, vbam-2.0.0_pre1507.ebuild:
+  touchups; better libsdl use deps; add mmx use flag support
 
-  03 Aug 2014; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1228.ebuild,
-  vbam-9999.ebuild:
-  Restrict libsfml version dep.
+  Package-Manager: portage-2.2.20.1
 
-  03 Aug 2014; Tim Harder <radhermit@gentoo.org> -vbam-1.8.0.1149.ebuild,
-  -vbam-1.8.0.1197.ebuild, -files/vbam-1.8.0.1149-desktop.patch,
-  -files/vbam-1.8.0.1197-desktop.patch, -files/vbam-1.8.0.1197-libav-9.patch:
-  Remove old.
+  10 Nov 2015; Michael Sterrett <mr_bones_@gentoo.org>
+  vbam-2.0.0_pre1507.ebuild:
+  drop attempt at enabling mmx support since it doesn't work on amd64 (bug
+  #564980)
 
-  04 May 2014; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1228.ebuild,
-  +files/vbam-1.8.0.1228-ffmpeg2.patch:
-  Fix build with =media-video/ffmpeg-2* (bug #476496, patch by aballier).
+  Package-Manager: portage-2.2.20.1
 
-*vbam-1.8.0.1228 (05 Feb 2014)
-
-  05 Feb 2014; Tim Harder <radhermit@gentoo.org> +vbam-1.8.0.1228.ebuild,
-  vbam-9999.ebuild, +files/vbam-1.8.0.1228-header.patch:
-  Version bump.
-
-*vbam-1.8.0.1197 (15 Jun 2013)
-
-  15 Jun 2013; Tim Harder <radhermit@gentoo.org> +vbam-1.8.0.1197.ebuild,
-  +files/vbam-1.8.0.1197-desktop.patch, +files/vbam-1.8.0.1197-libav-9.patch:
-  Version bump, fix build with newer versions of libav/ffmpeg (bug #466854).
-
-  15 Jun 2013; Tim Harder <radhermit@gentoo.org> -vbam-1.8.0.1090.ebuild,
-  -files/vbam-1.8.0.1009-zlib-1.2.6.patch, -files/vbam-1.8.0.1090-ffmpeg.patch:
-  Remove old.
-
-  15 Jun 2013; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1149.ebuild,
-  vbam-9999.ebuild:
-  Add imagemagick/graphicsmagick build dep when wxwidgets support is enabled
-  (bug #465492).
-
-  25 Jan 2013; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1149.ebuild,
-  vbam-9999.ebuild:
-  Inherit gnome2-utils and fdo-mime eclasses.
-
-  18 Jan 2013; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1149.ebuild,
-  vbam-9999.ebuild:
-  Update live ebuild and call games_pkg_(pre|post)inst functions.
-
-*vbam-1.8.0.1149 (18 Jan 2013)
-
-  18 Jan 2013; Tim Harder <radhermit@gentoo.org> +vbam-1.8.0.1149.ebuild,
-  +files/vbam-1.8.0.1149-desktop.patch:
-  Version bump (fixes bug #443270).
-
-  09 Sep 2012; Tim Harder <radhermit@gentoo.org> -vbam-1.8.0.1009-r1.ebuild,
-  -files/vbam-1.8.0.1009-desktop.patch, -files/vbam-1.8.0.1009-no-nls.patch:
-  Remove old.
-
-  09 Sep 2012; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1090.ebuild,
-  vbam-9999.ebuild:
-  Add virtual/glu dep.
-
-*vbam-9999 (08 Sep 2012)
-
-  08 Sep 2012; Tim Harder <radhermit@gentoo.org> +vbam-9999.ebuild:
-  Add live ebuild.
-
-  31 Jul 2012; Julian Ospald <hasufell@gentoo.org> vbam-1.8.0.1009-r1.ebuild,
-  vbam-1.8.0.1090.ebuild:
-  make build output verbose
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> vbam-1.8.0.1009-r1.ebuild,
-  vbam-1.8.0.1090.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-*vbam-1.8.0.1090 (18 Feb 2012)
-
-  18 Feb 2012; Tim Harder <radhermit@gentoo.org> +vbam-1.8.0.1090.ebuild,
-  +files/vbam-1.8.0.1090-ffmpeg.patch:
-  Version bump to new snapshot.
-
-  18 Feb 2012; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1009-r1.ebuild,
-  +files/vbam-1.8.0.1009-zlib-1.2.6.patch:
-  Fix compile issue with zlib-1.2.6 (bug #403485).
-
-  21 Sep 2011; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1009-r1.ebuild:
-  Fix build issue with the latest zlib macro issues thanks to vapier (bug
-  #383627).
-
-  17 Jun 2011; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1009-r1.ebuild,
-  +files/vbam-1.8.0.1009-no-nls.patch:
-  Fix build when nls is disabled thanks to Jonathan Callen (bug #372099).
-
-  09 Jun 2011; Tim Harder <radhermit@gentoo.org> vbam-1.8.0.1009-r1.ebuild:
-  Explicitly inherit the eutils eclass.
-
-*vbam-1.8.0.1009-r1 (09 Jun 2011)
-
-  09 Jun 2011; Tim Harder <radhermit@gentoo.org> -vbam-1.8.0.1009.ebuild,
-  +vbam-1.8.0.1009-r1.ebuild, +files/vbam-1.8.0.1009-desktop.patch:
-  Revision bump and remove old. Fix desktop and icon install locations (bug
-  #362259) and only install them when the gtk frontend is enabled.
-
-  04 May 2011; Tristan Heaven <nyhm@gentoo.org> vbam-1.8.0.1009.ebuild:
-  Call games_pkg_setup; add virtual/libintl rdep
-
-*vbam-1.8.0.1009 (04 Mar 2011)
-
-  04 Mar 2011; Tim Harder <radhermit@gentoo.org> -vbam-1.8.0_p20110206.ebuild,
-  -files/vbam-1.8.0_p20110206-cflags.patch,
-  -files/vbam-1.8.0_p20110206-disable-asm.patch, +vbam-1.8.0.1009.ebuild,
-  metadata.xml:
-  Version bump to new snapshot and remove old. Add nls and link USE flags,
-  remove unnecessary libglademm dependency, use x86 assembly scalers and core,
-  and add to games herd.
-
-  09 Feb 2011; Tim Harder <radhermit@gentoo.org> vbam-1.8.0_p20110206.ebuild:
-  Minor fixes as suggested by Mr_Bones and ssuominen.
-
-*vbam-1.8.0_p20110206 (09 Feb 2011)
-
-  09 Feb 2011; Tim Harder <radhermit@gentoo.org> +vbam-1.8.0_p20110206.ebuild,
-  +files/vbam-1.8.0_p20110206-cflags.patch,
-  +files/vbam-1.8.0_p20110206-disable-asm.patch, +metadata.xml:
-  Initial import (bug #254480). Ebuild by me.

@@ -1,109 +1,69 @@
 # ChangeLog for media-video/istanbul
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/istanbul/ChangeLog,v 1.24 2015/03/15 13:41:53 pacho Exp $
+# (auto-generated from git log)
 
-  15 Mar 2015; Pacho Ramos <pacho@gentoo.org>
-  istanbul-0.2.2.1_pre20120909.ebuild:
-  x86 stable, bug 534012
+*istanbul-0.2.2.1_pre20120909 (09 Aug 2015)
+*istanbul-0.2.2 (09 Aug 2015)
 
-  14 Mar 2015; Pacho Ramos <pacho@gentoo.org>
-  istanbul-0.2.2.1_pre20120909.ebuild:
-  amd64 stable, bug 534012
-
-  28 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org> istanbul-0.2.2.ebuild,
-  istanbul-0.2.2.1_pre20120909.ebuild:
-  Add missing vorbis and libpng gstreamer dependencies, bug #403533.
-
-*istanbul-0.2.2.1_pre20120909 (29 Nov 2012)
-
-  29 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
-  istanbul-0.2.2.ebuild, +istanbul-0.2.2.1_pre20120909.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/istanbul-0.2.2-desktop-file.patch,
   +files/istanbul-0.2.2-dir-overwrite.patch,
   +files/istanbul-0.2.2-fix-grab-xid.patch,
   +files/istanbul-0.2.2-fix-preview-window.patch,
-  +files/istanbul-0.2.2-noalsa.patch:
-  Fix build failure with recent automake (bug #407683, thanks to Helmut
-  Jarausch et al.) Add git snapshot containing numerous serious bug fixes, and
-  some further fixes from the Debian patchset.
+  +files/istanbul-0.2.2-macro-typo.patch, +files/istanbul-0.2.2-noalsa.patch,
+  +istanbul-0.2.2.ebuild, +istanbul-0.2.2.1_pre20120909.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org> istanbul-0.2.2.ebuild:
-  Pin gstreamer dependencies to slot 0.10.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> istanbul-0.2.2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  istanbul-0.2.2.ebuild:
-  Use Python 2 (bug #313991).
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Feb 2011; Gilles Dartiguelongue <eva@gentoo.org> -istanbul-0.2.1.ebuild:
-  Clean up old revision.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Jun 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  istanbul-0.2.1.ebuild, istanbul-0.2.2.ebuild:
-  Delete deprecation warnings.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  istanbul-0.2.2.1_pre20120909.ebuild, metadata.xml:
+  Use https by default
 
-  27 Jul 2009; Gilles Dartiguelongue <eva@gentoo.org>
-  +files/istanbul-0.2.2-macro-typo.patch, istanbul-0.2.2.ebuild:
-  Fix aclocal failure, bug #218917. Move to EAPI=2, move to split python
-  bindings, bug #108479. Add missing pkgconfig to DEPEND. Use new python
-  eclass functions in postinst.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 May 2008; Ali Polatel <hawking@gentoo.org> istanbul-0.2.0-r1.ebuild,
-  istanbul-0.2.1.ebuild, istanbul-0.2.2.ebuild:
-  python_mod_optimize is ROOT aware. Remove redundant python_version from
-  pkg_postrm.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  27 Nov 2007; Matthias Schwarzott <zzam@gentoo.org>
-  istanbul-0.2.0-r1.ebuild, istanbul-0.2.1.ebuild, istanbul-0.2.2.ebuild:
-  Fixed quoting.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> istanbul-0.2.2.ebuild,
+  istanbul-0.2.2.1_pre20120909.ebuild:
+  Convert URIs for gnome.org and kde.org to https
 
-  01 Sep 2007; Samuli Suominen <drac@gentoo.org> istanbul-0.2.2.ebuild:
-  Add USE encode check for libtheora wrt #168989.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*istanbul-0.2.2 (23 Feb 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Feb 2007; Zaheer Abbas Merali <zaheerm@gentoo.org>
-  +istanbul-0.2.2.ebuild:
-  version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Jan 2007; Saleem Abdulrasool <compnerd@gentoo.org>
-  istanbul-0.2.0.ebuild, istanbul-0.2.0-r1.ebuild, istanbul-0.2.1.ebuild:
-  Fix gconf depatom
+  Bug: https://bugs.gentoo.org/552720
 
-*istanbul-0.2.1 (28 Jul 2006)
-
-  28 Jul 2006; Zaheer Abbas Merali <zaheerm@gentoo.org>
-  +istanbul-0.2.1.ebuild:
-  version bump
-
-  25 Jul 2006; Zaheer Abbas Merali <zaheerm@gentoo.org>
-  istanbul-0.2.0-r1.ebuild:
-  add build dep on new version of intltool
-
-  21 Jul 2006; Zaheer Abbas Merali <zaheerm@gentoo.org>
-  istanbul-0.2.0-r1.ebuild:
-  addpredict on /root/.gnome2
-
-  18 Jul 2006; Zaheer Abbas Merali <zaheerm@gentoo.org>
-  istanbul-0.2.0-r1.ebuild:
-  fix plugin deps
-
-  18 Jul 2006; John N. Laliberte <allanonjl@gentoo.org>
-  istanbul-0.2.0-r1.ebuild:
-  add intltoolize line, fixes #140906
-
-*istanbul-0.2.0-r1 (17 Jul 2006)
-
-  17 Jul 2006; John N. Laliberte <allanonjl@gentoo.org>
-  +istanbul-0.2.0-r1.ebuild:
-  disable py compiling, use python eclass instead.
-
-  15 Jul 2006; <zaheerm@gentoo.org> istanbul-0.2.0.ebuild:
-  add description and iuse
-
-*istanbul-0.2.0 (13 Jul 2006)
-
-  13 Jul 2006; <zaheerm@gentoo.org> +metadata.xml, +istanbul-0.2.0.ebuild:
-  Initial Ebuild

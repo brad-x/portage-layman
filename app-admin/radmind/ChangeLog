@@ -1,87 +1,58 @@
 # ChangeLog for app-admin/radmind
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/radmind/ChangeLog,v 1.21 2015/06/09 08:44:41 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*radmind-1.14.1 (09 Aug 2015)
 
-  29 May 2015; Manuel Rüger <mrueg@gentoo.org> radmind-1.14.1.ebuild:
-  Fix repoman warning.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/radmind-1.14.0-parallel-make.patch,
+  +files/radmind-1.7.0-gentoo.patch, +files/radmind-1.7.1-dnssd.patch,
+  +metadata.xml, +radmind-1.14.1.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Jul 2014; Jeroen Roovers <jer@gentoo.org> -radmind-1.7.1-r1.ebuild,
-  -radmind-1.13.0.ebuild, -radmind-1.14.0.ebuild:
-  Old.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Nov 2013; Patrick Lauer <patrick@gentoo.org> radmind-1.13.0.ebuild,
-  radmind-1.7.1-r1.ebuild:
-  Harmonize description, make repoman happier
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Dec 2012; Ulrich Müller <ulm@gentoo.org> radmind-1.7.1-r1.ebuild,
-  radmind-1.13.0.ebuild, radmind-1.14.0.ebuild, radmind-1.14.1.ebuild:
-  Fix LICENSE, HPND according to COPYRIGHT file in tarball. Bug 444334.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> radmind-1.14.1.ebuild:
-  x86 stable wrt bug #399907
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*radmind-1.14.1 (16 Aug 2011)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Aug 2011; Jeroen Roovers <jer@gentoo.org> +radmind-1.14.1.ebuild:
-  Version bump.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> radmind-1.14.0.ebuild:
-  We still need dev-libs/openssl. 8-)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*radmind-1.14.0 (05 Aug 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> +radmind-1.14.0.ebuild,
-  +files/radmind-1.14.0-parallel-make.patch, metadata.xml:
-  Version bump. Remove IUSE=ssl as it will not compile without SSL anyway. Fix
-  parallel make issue properly (bug #239862). Shorten DESCRIPTION and put the
-  long one in metadata.xml.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*radmind-1.13.0 (03 Jun 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Jun 2010; Patrick Lauer <patrick@gentoo.org> +radmind-1.13.0.ebuild:
-  Bump
-
-  02 Jun 2010; Patrick Lauer <patrick@gentoo.org> radmind-1.7.1-r1.ebuild:
-  Adding ~amd64 keyword
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> radmind-1.7.1-r1.ebuild:
-  Remove virtual/libc
-
-  03 Aug 2009; Diego E. Pettenò <flameeyes@gentoo.org>
-  radmind-1.7.1-r1.ebuild:
-  Use -j1 for make (bug #239862).
-
-  02 Jun 2007; Markus Ullmann <jokey@gentoo.org> -radmind-1.7.1.ebuild:
-  Drop old
-
-  20 Mar 2007; Raúl Porcel <armin76@gentoo.org> radmind-1.7.1-r1.ebuild:
-  x86 stable
-
-*radmind-1.7.1-r1 (10 Feb 2007)
-
-  10 Feb 2007; Cedric Krier <cedk@gentoo.org>
-  +files/radmind-1.7.1-dnssd.patch, +radmind-1.7.1-r1.ebuild:
-  Add patch to remove dnssd for bug #166155
-
-  03 Feb 2007; Marcelo Goes <vanquirius@gentoo.org> radmind-1.7.1.ebuild:
-  Do not set RDEPEND=DEPEND.
-
-  03 Feb 2007; Markus Ullmann <jokey@gentoo.org> -radmind-1.7.0.ebuild:
-  Cleanup
-
-  03 Feb 2007; Markus Ullmann <jokey@gentoo.org> radmind-1.7.1.ebuild:
-  Stable on x86
-
-*radmind-1.7.1 (30 Jan 2007)
-
-  30 Jan 2007; Marcelo Goes <vanquirius@gentoo.org> +radmind-1.7.1.ebuild:
-  1.7.1 version bump.
-
-*radmind-1.7.0 (09 Oct 2006)
-
-  09 Oct 2006; Markus Ullmann <jokey@gentoo.org>
-  +files/radmind-1.7.0-gentoo.patch, +metadata.xml, +radmind-1.7.0.ebuild:
-  Initial commit wrt bug #77567 thanks to Martin Vuk for providing an ebuild

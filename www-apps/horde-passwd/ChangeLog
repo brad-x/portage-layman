@@ -1,150 +1,57 @@
 # ChangeLog for www-apps/horde-passwd
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-passwd/ChangeLog,v 1.34 2012/08/22 15:27:38 a3li Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Aug 2012; Alex Legler <a3li@gentoo.org> metadata.xml:
-  removing from metadata
+*horde-passwd-3.1.3 (09 Aug 2015)
 
-  22 Oct 2010; Alex Legler <a3li@gentoo.org> -horde-passwd-3.1.1.ebuild,
-  -horde-passwd-3.1.2.ebuild:
-  cleanup
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/horde-passwd-3.0-no-clear-password.patch, +horde-passwd-3.1.3.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  22 Oct 2010; Jeroen Roovers <jer@gentoo.org> horde-passwd-3.1.3.ebuild:
-  Stable for HPPA (bug #333207).
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Oct 2010; Brent Baude <ranger@gentoo.org> horde-passwd-3.1.3.ebuild:
-  Marking horde-passwd-3.1.3 ppc for bug 333207
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Sep 2010; Raúl Porcel <armin76@gentoo.org> horde-passwd-3.1.3.ebuild:
-  alpha/sparc stable wrt #333207
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Aug 2010; Markus Meier <maekke@gentoo.org> horde-passwd-3.1.3.ebuild:
-  x86 stable, bug #333207
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
-  horde-passwd-3.1.3.ebuild:
-  Stable on amd64 wrt bug #333207
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*horde-passwd-3.1.3 (27 Jul 2010)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Jul 2010; Alex Legler <a3li@gentoo.org> +horde-passwd-3.1.3.ebuild:
-  Version bump, closes bug 297738
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*horde-passwd-3.1.2 (06 Jan 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Jan 2010; Alex Legler <a3li@gentoo.org> +horde-passwd-3.1.2.ebuild,
-  metadata.xml:
-  Version bump (bug 297738), take over maintenance
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Sep 2009; Alex Legler <a3li@gentoo.org> -horde-passwd-3.0.ebuild,
-  -horde-passwd-3.0.1.ebuild:
-  Non-maintainer commit: Removing vulnerable ebuilds, GLSA 200909-14.
+  Bug: https://bugs.gentoo.org/552720
 
-  29 Aug 2009; nixnut <nixnut@gentoo.org> horde-passwd-3.1.1.ebuild:
-  ppc stable #277294
-
-  25 Aug 2009; Raúl Porcel <armin76@gentoo.org> horde-passwd-3.1.1.ebuild:
-  sparc stable wrt #277294
-
-  25 Aug 2009; Jeroen Roovers <jer@gentoo.org> horde-passwd-3.1.1.ebuild:
-  Stable for HPPA (bug #277294).
-
-  25 Aug 2009; Tobias Klausmann <klausman@gentoo.org>
-  horde-passwd-3.1.1.ebuild:
-  Stable on alpha, bug #277294
-
-  25 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
-  horde-passwd-3.1.1.ebuild:
-  stable x86, security bug 277294
-
-  24 Aug 2009; Steve Dibb <beandog@gentoo.org> horde-passwd-3.1.1.ebuild:
-  amd64 stable, bug 277294
-
-*horde-passwd-3.1.1 (24 Aug 2009)
-
-  24 Aug 2009; Alex Legler <a3li@gentoo.org> +horde-passwd-3.1.1.ebuild:
-  Non-maintainer commit: Version bump for security bug 277294.
-
-  23 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
-  add GLEP 56 USE flag desc from use.local.desc
-
-  07 Aug 2008; wrobel@gentoo.org metadata.xml:
-  Updated maintainer.
-
-  31 May 2008; Mike Frysinger <vapier@gentoo.org> horde-passwd-3.0.1.ebuild:
-  Depend on either horde or horde-groupware or horde-webmail as pointed out by
-  Robin Bankhead #217326.
-
-  12 Jul 2007; Gustavo Zacarias <gustavoz@gentoo.org>
-  horde-passwd-3.0.1.ebuild:
-  Stable on sparc
-
-*horde-passwd-3.0.1 (05 May 2007)
-
-  05 May 2007; Mike Frysinger <vapier@gentoo.org>
-  +horde-passwd-3.0.1.ebuild:
-  Version bump.
-
-  22 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  04 Apr 2006; <blubb@gentoo.org> horde-passwd-3.0.ebuild:
-  stable on amd64 wrt bug 126435
-
-  31 Mar 2006; Jose Luis Rivero <yoswink@gentoo.org>
-  horde-passwd-3.0.ebuild:
-  Stable on alpha wrt bug #126435
-
-  28 Mar 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  horde-passwd-3.0.ebuild:
-  Stable on hppa wrt security #126435
-
-  28 Mar 2006; Mark Loeser <halcy0n@gentoo.org> horde-passwd-3.0.ebuild:
-  Stable on x86; bug #126435
-
-  25 Mar 2006; Joseph Jezak <josejx@gentoo.org> horde-passwd-3.0.ebuild:
-  Marked ppc stable for bug #126435.
-
-  20 Mar 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  horde-passwd-3.0.ebuild:
-  Stable on sparc wrt security #126435
-
-*horde-passwd-3.0 (14 Oct 2005)
-
-  14 Oct 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/horde-passwd-3.0-no-clear-password.patch, +horde-passwd-3.0.ebuild:
-  Version bump #109171 by Christoph Gysin.
-
-*horde-passwd-2.2.2 (26 Apr 2005)
-
-  26 Apr 2005; Mike Frysinger <vapier@gentoo.org>
-  +horde-passwd-2.2.2.ebuild:
-  Version bump for security #90365.
-
-  05 Sep 2004; Sven Wegener <swegener@gentoo.org> :
-  Fixed ChangeLog header.
-
-  15 Aug 2004; Stuart Herbert <stuart@gentoo.org> horde-passwd-2.2.1.ebuild,
-  horde-passwd-2.2.ebuild:
-  Deps updated to reflect net-www split
-
-*horde-passwd-2.2 (15 Aug 2004)
-
-  15 Aug 2004; Stuart Herbert <stuart@gentoo.org> +metadata.xml,
-  +files/2.2.1-crypt-support.patch, +files/2.2.1-example-backend-setup.patch,
-  +files/2.2.1-main.php-typo.patch, +files/2.2.1-no-clear-password.patch,
-  +horde-passwd-2.2.1.ebuild, +horde-passwd-2.2.ebuild:
-  Moved from net-www/horde-passwd to www-apps/horde-passwd.
-
-*horde-passwd-2.2.1 (10 Aug 2004)
-
-  10 Aug 2004; Mike Frysinger <vapier@gentoo.org>
-  +files/2.2.1-crypt-support.patch, +files/2.2.1-example-backend-setup.patch,
-  +files/2.2.1-main.php-typo.patch, +files/2.2.1-no-clear-password.patch,
-  +horde-passwd-2.2.1.ebuild:
-  Version bump with a bunch of cvs fixes #56010 by Mario Vazquez.
-
-*horde-passwd-2.2 (26 Jan 2004)
-
-  26 Jan 2004; Mike Frysinger <vapier@gentoo.org> :
-  Initial ebuild made by me.

@@ -1,78 +1,56 @@
 # ChangeLog for sci-mathematics/jags
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/jags/ChangeLog,v 1.17 2013/12/24 14:54:10 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  24 Dec 2013; Justin Lecher <jlec@gentoo.org> -jags-3.3.0.ebuild,
-  metadata.xml:
-  Drop old
+*jags-3.4.0 (09 Aug 2015)
 
-  24 Dec 2013; Agostino Sarubbo <ago@gentoo.org> jags-3.4.0.ebuild:
-  Stable for x86, wrt bug #487024
-
-  14 Oct 2013; Tony Vroon <chainsaw@gentoo.org> jags-3.4.0.ebuild:
-  Quote variable and mark stable on AMD64, as per arch tester report by Elijah
-  "Armageddon" El Lazkani in bug #487024.
-
-*jags-3.4.0 (04 Sep 2013)
-
-  04 Sep 2013; Sébastien Fabbro <bicatali@gentoo.org> +jags-3.4.0.ebuild:
-  Version bump
-
-  12 Aug 2013; Sébastien Fabbro <bicatali@gentoo.org> jags-3.3.0.ebuild,
-  metadata.xml:
-  Fix homepage and build directory
-
-  21 Feb 2013; Justin Lecher <jlec@gentoo.org> -jags-3.2.0.ebuild,
-  jags-3.3.0.ebuild, metadata.xml:
-  Use tc-getPKG_CONFIG from toolchain-funcs.eclass instead of plain pkg-config;
-  drop old
-
-  01 Dec 2012; Thomas Kahle <tomka@gentoo.org> jags-3.3.0.ebuild:
-  marked x86 per bug 444058
-
-  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> jags-3.3.0.ebuild:
-  Stable for amd64, wrt bug #444058
-
-*jags-3.3.0 (15 Oct 2012)
-
-  15 Oct 2012; Thomas Kahle <tomka@gentoo.org> +jags-3.3.0.ebuild:
-  Bump to 3.3.0 per bug 436942.
-
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> jags-3.2.0.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  10 Feb 2012; Agostino Sarubbo <ago@gentoo.org> jags-3.2.0.ebuild:
-  Stable for amd64, wrt bug #402953
-
-  10 Feb 2012; Thomas Kahle <tomka@gentoo.org> jags-3.2.0.ebuild:
-  added missing dep for doc USE-flag, x86 stable per bug 402953
-
-*jags-3.2.0 (04 Jan 2012)
-
-  04 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -jags-2.2.0.ebuild,
-  -jags-3.0.0.ebuild, -jags-3.1.0.ebuild, +jags-3.2.0.ebuild:
-  Version bump. Remove old.
-
-*jags-3.1.0 (04 Sep 2011)
-
-  04 Sep 2011; Sébastien Fabbro <bicatali@gentoo.org> +jags-3.1.0.ebuild:
-  Version bump
-
-*jags-3.0.0 (06 Aug 2011)
-
-  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +jags-3.0.0.ebuild:
-  Version bump
-
-  25 Feb 2011; Fabian Groffen <grobian@gentoo.org> jags-2.2.0.ebuild:
-  Marked ~amd64-linux and ~x86-linux, bug #355983
-
-  12 Feb 2011; Thomas Kahle <tomka@gentoo.org> +jags-2.2.0.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +jags-3.4.0.ebuild,
   +metadata.xml:
-  Imported from science overlay, fixes bug 317741.
+  proj/gentoo: Initial commit
 
-*jags-2.2.0 (04 Dec 2010)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Dec 2010; Sébastien Fabbro <bicatali@gentoo.org> +jags-2.2.0.ebuild,
-  +metadata.xml:
-  Initial import. Modififed ebuild from originally submitted by Xavier
-  Fernández i Marín, bug #317741
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

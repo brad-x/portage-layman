@@ -1,120 +1,60 @@
 # ChangeLog for net-dialup/globespan-adsl
-# Copyright 2000-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/globespan-adsl/ChangeLog,v 1.29 2014/08/10 20:55:36 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
-  globespan-adsl-0.11-r1.ebuild, globespan-adsl-0.12.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*globespan-adsl-0.12 (09 Aug 2015)
+*globespan-adsl-0.11-r1 (09 Aug 2015)
 
-  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, #24135.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/globespan-adsl-0.11-pagesize.patch,
+  +files/globespan-adsl-0.11-synch.patch,
+  +files/globespan-adsl-0.12-pagesize.patch, +globespan-adsl-0.11-r1.ebuild,
+  +globespan-adsl-0.12.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Mar 2008; Chris Gianelloni <wolf31o2@gentoo.org>
-  globespan-adsl-0.11-r1.ebuild, globespan-adsl-0.12.ebuild:
-  Added an explicit dev-lang/perl, since several scripts are perl scripts.
-  This helps Release Engineering to determine what can be pruned from the
-  InstallCD media.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Jan 2008; Alin Năstac <mrness@gentoo.org> -globespan-adsl-0.10.ebuild,
-  -globespan-adsl-0.11.ebuild:
-  Remove old versions.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Nov 2007; Samuli Suominen <drac@gentoo.org>
-  +files/globespan-adsl-0.11-pagesize.patch, globespan-adsl-0.11-r1.ebuild,
-  globespan-adsl-0.12.ebuild:
-  Mark 0.12 explicitely -amd64 wrt #200194 and move stable keyword to 0.11-r1
-  with a backported patch, thanks to Jakub Moc and Sandro Bonazzola.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Nov 2007; Samuli Suominen <drac@gentoo.org> globespan-adsl-0.12.ebuild:
-  amd64 stable wrt #195539
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Oct 2007; Christian Faulhammer <opfer@gentoo.org>
-  globespan-adsl-0.12.ebuild:
-  stable x86, bug 195539
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*globespan-adsl-0.12 (25 Aug 2007)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  25 Aug 2007; Alin Năstac <mrness@gentoo.org>
-  +files/globespan-adsl-0.12-pagesize.patch, +globespan-adsl-0.12.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*globespan-adsl-0.11-r1 (19 May 2007)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 May 2007; Alin Năstac <mrness@gentoo.org>
-  +files/globespan-adsl-0.11-synch.patch, +globespan-adsl-0.11-r1.ebuild:
-  Add upstream patch for supporting kernels newer than 2.6.17 (#177553).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 May 2007; Marius Mauch <genone@gentoo.org> globespan-adsl-0.10.ebuild,
-  globespan-adsl-0.11.ebuild:
-  Replacing einfo with elog
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Oct 2006; Alin Nastac <mrness@gentoo.org> globespan-adsl-0.10.ebuild,
-  globespan-adsl-0.11.ebuild:
-  Replace deprecated tcltk USE flag with tk (#17808).
-
-  12 Mar 2006; Alin Nastac <mrness@gentoo.org> globespan-adsl-0.10.ebuild,
-  -globespan-adsl-0.11_beta1.ebuild, globespan-adsl-0.11.ebuild:
-  Remove old beta version. Quote $S and $D.
-
-*globespan-adsl-0.11 (27 Oct 2005)
-
-  27 Oct 2005; <gothgirl@gentoo.org> +globespan-adsl-0.11.ebuild:
-  version bump
-
-*globespan-adsl-0.11_beta1 (17 Sep 2005)
-
-  17 Sep 2005; Alin Nastac <mrness@gentoo.org>
-  +globespan-adsl-0.11_beta1.ebuild:
-  Version bump (#101428).
-
-  17 Sep 2005; Ciaran McCreesh <ciaranm@gentoo.org>
-  globespan-adsl-0.10.ebuild:
-  Converted to UTF-8, fixed encoding screwups
-
-  15 Jun 2005; Alin Nastac <mrness@gentoo.org> -globespan-adsl-0.9.ebuild:
-  Remove old version.
-
-  14 Apr 2005; Alin Nastac <mrness@gentoo.org> globespan-adsl-0.10.ebuild:
-  Stable on x86
-
-  14 Feb 2005; Danny van Dyk <kugelfang@gentoo.org>
-  globespan-adsl-0.10.ebuild:
-  Marked ~amd64.
-
-  06 Feb 2005; Alin Nastac <mrness@gentoo.org> globespan-adsl-0.10.ebuild,
-  -globespan-adsl-0.8-r1.ebuild, globespan-adsl-0.9.ebuild:
-  Remove old ebuild and fix compile-time access violation error.
-
-*globespan-adsl-0.10 (17 Nov 2004)
-
-  17 Nov 2004; Alin Nastac <mrness@gentoo.org> +globespan-adsl-0.10.ebuild:
-  Version bump.
-
-  17 Nov 2004; Alin Nastac <mrness@gentoo.org> globespan-adsl-0.9.ebuild:
-  Marked stable on x86.
-
-*globespan-adsl-0.9 (22 May 2004)
-
-  22 May 2004; Steve Arnold <nerdboy@gentoo.org> globespan-adsl-0.9.ebuild:
-  new version, modified from an ebuild submitted by Matteo Settenvini
-  <msettenvini@tin.it>
-
-  19 Mar 2004; Heinrich Wendel <lanius@gentoo.org>
-  globespan-adsl-0.8-r1.ebuild:
-  fix depend
-
-  12 Jan 2004; <nerdboy@gentoo.org> metadata.xml:
-  updated metadata and fixed bogus email address
-
-*globespan-adsl-0.8-r1 (12 Dec 2003)
-
-  12 Dec 2003; <nerdboy@gentoo.org> globespan-adsl-0.8-r1.ebuild:
-  fixed borked packagename variable and bumped x86
-
-  19 Nov 2003; Heinrich Wendel <lanius@gentoo.org> metadata.xml:
-  metadata.xml
-
-*globespan-adsl-0.8 (10 Nov 2003)
-
-  10 Nov 2003; <nerdboy@gentoo.org> globespan-adsl-0.8.ebuild:
-  new user-submitted ebuild (from Stephane Loeuillet again :)

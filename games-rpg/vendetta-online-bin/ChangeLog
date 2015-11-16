@@ -1,93 +1,59 @@
 # ChangeLog for games-rpg/vendetta-online-bin
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/vendetta-online-bin/ChangeLog,v 1.13 2015/03/26 17:37:24 mr_bones_ Exp $
+# (auto-generated from git log)
 
-  26 Mar 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  -vendetta-online-bin-1.8.82.ebuild:
-  old
+*vendetta-online-bin-1.8.296 (09 Aug 2015)
 
-  25 Mar 2015; Agostino Sarubbo <ago@gentoo.org>
-  vendetta-online-bin-1.8.296.ebuild:
-  Stable for x86, wrt bug #542946
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/vendetta,
+  +metadata.xml, +vendetta-online-bin-1.8.296.ebuild:
+  proj/gentoo: Initial commit
 
-  12 Mar 2015; Agostino Sarubbo <ago@gentoo.org>
-  vendetta-online-bin-1.8.296.ebuild:
-  Stable for amd64, wrt bug #542946
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*vendetta-online-bin-1.8.296 (04 Jul 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  04 Jul 2014; Julian Ospald <hasufell@gentoo.org>
-  +vendetta-online-bin-1.8.296.ebuild:
-  version bump wrt #514470
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  08 Feb 2012; Mike Frysinger <vapier@gentoo.org>
-  vendetta-online-bin-1.8.82.ebuild:
-  Move to new unpacker eclass for unpack_makeself.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Jul 2010; Michael Sterrett <mr_bones_@gentoo.org>
-  vendetta-online-bin-1.8.82.ebuild:
-  stable for x86, bug 316439
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/vendetta:
+  [QA] Remove executable bit from files, bug 550434.
 
-  25 May 2010; Pacho Ramos <pacho@gentoo.org>
-  vendetta-online-bin-1.8.82.ebuild:
-  stable amd64, bug 316439
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Apr 2010; Tristan Heaven <nyhm@gentoo.org>
-  vendetta-online-bin-1.8.82.ebuild:
-  Update SRC_URI
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*vendetta-online-bin-1.8.82 (13 Aug 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Aug 2009; Tristan Heaven <nyhm@gentoo.org>
-  -vendetta-online-bin-1.8.49.ebuild, +vendetta-online-bin-1.8.82.ebuild:
-  Version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*vendetta-online-bin-1.8.49 (23 Dec 2008)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Dec 2008; Tristan Heaven <nyhm@gentoo.org>
-  -vendetta-online-bin-1.8.21.ebuild, +vendetta-online-bin-1.8.49.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-*vendetta-online-bin-1.8.21 (27 Aug 2008)
-
-  27 Aug 2008; Tristan Heaven <nyhm@gentoo.org> +files/vendetta,
-  -vendetta-online-bin-1-r2.ebuild, +vendetta-online-bin-1.8.21.ebuild:
-  Version bump, bug #235418
-
-  28 Jul 2007; Chris Gianelloni <wolf31o2@gentoo.org> +metadata.xml,
-  +vendetta-online-bin-1-r2.ebuild:
-  Moved from games-fps for bug #184918.
-
-*vendetta-online-bin-1-r2 (15 Jan 2007)
-
-  15 Jan 2007; Tristan Heaven <nyhm@gentoo.org>
-  -vendetta-online-bin-1-r1.ebuild, +vendetta-online-bin-1-r2.ebuild:
-  Bump, bug #162007
-
-*vendetta-online-bin-1-r1 (08 Jan 2007)
-
-  08 Jan 2007; Tristan Heaven <nyhm@gentoo.org>
-  -vendetta-online-bin-1.ebuild, +vendetta-online-bin-1-r1.ebuild:
-  New revision for the amd64 installer and digest fix, bug #160817
-
-  19 Sep 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  vendetta-online-bin-1.ebuild:
-  Adding strip to RESTRICT for bug #137819.
-
-  31 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  vendetta-online-bin-1.ebuild:
-  Changed nomirror to mirror.
-
-  22 Mar 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  vendetta-online-bin-1.ebuild:
-  X is implicit
-
-  06 Sep 2005; Herbie Hopkins <herbs@gentoo.org>
-  vendetta-online-bin-1.ebuild:
-  Fix amd64 depend.
-
-*vendetta-online-bin-1 (30 Nov 2004)
-
-  30 Nov 2004; Joshua Charles Campbell <warpzero@gentoo.org> vendetta-online-bin1.ebuild:
-  initial commit, ebuild submitted by yoosty69@netzero.net and 
-  Roguelazer@gmail.com

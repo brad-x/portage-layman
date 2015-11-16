@@ -1,90 +1,58 @@
 # ChangeLog for app-editors/bvi
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/bvi/ChangeLog,v 1.27 2015/06/09 09:48:10 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*bvi-1.4.0_alpha (09 Aug 2015)
+*bvi-1.3.2-r2 (09 Aug 2015)
 
-  26 Mar 2014; Richard Yao <ryao@gentoo.org> bvi-1.3.2-r2.ebuild,
-  bvi-1.4.0_alpha.ebuild:
-  DESTDIR should use ${D}, not ${ED}
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +bvi-1.3.2-r2.ebuild,
+  +bvi-1.4.0_alpha.ebuild, +files/bvi-1.3.2-fix-buffer-overflow.patch,
+  +files/bvi-1.3.2-tinfo.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Dec 2013; Johannes Huber <johu@gentoo.org> bvi-1.3.2-r2.ebuild:
-  x86 stable, bug #457228
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Aug 2013; Richard Yao <ryao@gentoo.org> bvi-1.4.0_alpha.ebuild:
-  Use ED instead of D in src_install
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bvi-1.4.0_alpha (27 Aug 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Aug 2013; Richard Yao <ryao@gentoo.org> +bvi-1.4.0_alpha.ebuild,
-  -bvi-1.3.2-r1.ebuild, -bvi-1.3.2.ebuild:
-  Version bump to 1.4.0alpha; Remove obsolete ebuilds
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Aug 2013; Agostino Sarubbo <ago@gentoo.org> bvi-1.3.2-r2.ebuild:
-  Stable for ppc, wrt bug #457228
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Aug 2013; Richard Yao <ryao@gentoo.org> bvi-1.3.2-r2.ebuild:
-  Stabilize app-editors/bvi-1.3.2-r2 on amd64
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bvi-1.3.2-r2 (21 Aug 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Aug 2013; Richard Yao <ryao@gentoo.org> +bvi-1.3.2-r2.ebuild,
-  +files/bvi-1.3.2-tinfo.patch:
-  Fix build failure with ncurses[tinfo], bug #459770
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*bvi-1.3.2-r1 (04 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Jan 2013; Richard Yao <ryao@gentoo.org> +bvi-1.3.2-r1.ebuild,
-  +files/bvi-1.3.2-fix-buffer-overflow.patch, bvi-1.3.2.ebuild, metadata.xml:
-  Take over maintainership and fix buffer overflow, bug #450064
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Apr 2010; Jonathan Callen <abcd@gentoo.org> bvi-1.3.2.ebuild:
-  Bump to EAPI=3, add prefix keywords
-
-  26 Jan 2008; Fabian Groffen <grobian@gentoo.org> bvi-1.3.2.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  05 Jan 2007; Danny van Dyk <kugelfang@gentoo.org> -bvi-1.3.1.ebuild:
-  QA: Removed unused versions.
-
-  25 Oct 2006; Joshua Jackson <tsunam@gentoo.org> bvi-1.3.2.ebuild:
-  Stable x86; bug #152229
-
-  22 Oct 2006; Danny van Dyk <kugelfang@gentoo.org> bvi-1.3.2.ebuild:
-  Applied patch from bug #152229. Marked stable on amd64.
-
-  21 Oct 2006; Gysbert Wassenaar <nixnut@gentoo.org> bvi-1.3.2.ebuild:
-  Stable on ppc wrt bug 152229
-
-  20 Sep 2005; Kito <kito@gentoo.org> bvi-1.3.2.ebuild:
-  ~ppc-macos. Closes Bug 106574
-
-  21 Apr 2005; Simon Stelling <blubb@gentoo.org> bvi-1.3.1.ebuild:
-  stable on amd64
-
-*bvi-1.3.2 (25 Dec 2004)
-
-  25 Dec 2004; Aaron Walker <ka0ttic@gentoo.org> +bvi-1.3.2.ebuild:
-  Version bump; closes bug 75603.
-
-  05 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org> bvi-1.3.1.ebuild:
-  Masked bvi-1.3.1.ebuild stable for ppc
-
-  07 Jun 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  bvi-1.3.1.ebuild:
-  QA - IUSE fix
-
-  03 May 2004; David Holm <dholm@gentoo.org> bvi-1.3.1.ebuild:
-  Added to ~ppc.
-
-  25 Apr 2004; Aron Griffis <agriffis@gentoo.org> bvi-1.3.1.ebuild:
-  Add die following econf for bug 48950
-
-  31 Mar 2004; Daniel Ahlberg <aliz@gentoo.org> bvi-1.3.1.ebuild:
-  Adding amd64 keyword, closing #46276.
-
-*bvi-1.3.1 (14 Nov 2002)
-
-  14 Nov 2002; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by myself per request at #10683.

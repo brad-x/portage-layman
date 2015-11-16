@@ -1,66 +1,79 @@
 # ChangeLog for net-firewall/ufw-frontends
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw-frontends/ChangeLog,v 1.13 2015/06/04 19:04:47 kensington Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Michael Palimaka <kensington@gentoo.org>
+*ufw-frontends-0.3.2-r3 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/org.gentoo.pkexec.ufw-gtk.policy,
+  +files/ufw-frontends-0.3.2-no-log-crash.patch, +metadata.xml,
+  +ufw-frontends-0.3.2-r3.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ufw-frontends-0.3.2-r3.ebuild:
+  Enable https for all google URIs
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ufw-frontends-0.3.2-r3.ebuild:
+  Convert URIs for googlecode.com to https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
   ufw-frontends-0.3.2-r3.ebuild:
-  Move various kde-base packages to kde-apps.
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> ufw-frontends-0.3.2-r3.ebuild:
-  Drop old Python implementations
+  Package-Manager: portage-2.2.20.1
 
-*ufw-frontends-0.3.2-r3 (17 Jul 2014)
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  17 Jul 2014; Yixun Lan <dlan@gentoo.org> -ufw-frontends-0.3.2-r1.ebuild,
-  -ufw-frontends-0.3.2-r2.ebuild, +ufw-frontends-0.3.2-r3.ebuild:
-  follow-up with bug 506390, c5, thanks SN (Enlik)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*ufw-frontends-0.3.2-r2 (29 Mar 2014)
-
-  29 Mar 2014; Markos Chandras <hwoarang@gentoo.org>
-  +ufw-frontends-0.3.2-r2.ebuild,
-  +files/ufw-frontends-0.3.2-no-log-crash.patch:
-  Revbump with upstream patch to fix crash when no log file is found. Thanks to
-  Sławomir Nizio <slawomir.nizio@sabayon.org>
-
-  16 Feb 2014; Markos Chandras <hwoarang@gentoo.org>
-  -ufw-frontends-0.3.2.ebuild:
-  Remove old ebuild for real this time
-
-*ufw-frontends-0.3.2-r1 (15 Feb 2014)
-
-  15 Feb 2014; Markos Chandras <hwoarang@gentoo.org>
-  +files/org.gentoo.pkexec.ufw-gtk.policy, +ufw-frontends-0.3.2-r1.ebuild,
-  metadata.xml:
-  Apply patch to move away from gksu and switch to distutils-r1. Remove old
-  ebuild. Patch by Sławomir Nizio <slawomir.nizio@sabayon.org>. Bug #486450
-
-  16 Feb 2013; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due bug #96436
-
-  07 Feb 2013; Ulrich Müller <ulm@gentoo.org> ufw-frontends-0.3.2.ebuild:
-  Move Creative Commons licenses to shorter names.
-
-  24 Sep 2012; Ian Whyman <thev00d00@gentoo.org> -ufw-frontends-0.3.1.ebuild:
-  Drop old ready for new UFW
-
-*ufw-frontends-0.3.2 (13 Jun 2012)
-
-  13 Jun 2012; Ian Whyman <thev00d00@gentoo.org> -ufw-frontends-0.2.0.ebuild,
-  +ufw-frontends-0.3.2.ebuild:
-  Version bump and tidy old version, thanks to Sławomir Nizio
-
-  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
-  ufw-frontends-0.2.0.ebuild, ufw-frontends-0.3.1.ebuild:
-  Depend on correct slot of pygobject.
-
-*ufw-frontends-0.3.1 (13 Sep 2011)
-
-  13 Sep 2011; Peter Volkov <pva@gentoo.org> +ufw-frontends-0.3.1.ebuild:
-  Version bump, thank Sławomir Nizio for this job.
-
-*ufw-frontends-0.2.0 (28 Jul 2011)
-
-  28 Jul 2011; Peter Volkov <pva@gentoo.org> +ufw-frontends-0.2.0.ebuild,
-  +metadata.xml:
-  Initial import, bug #264912, thank Sławomir Nizio for this job.

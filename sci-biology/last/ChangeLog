@@ -1,110 +1,66 @@
 # ChangeLog for sci-biology/last
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/last/ChangeLog,v 1.27 2015/04/08 18:20:42 mgorny Exp $
+# (auto-generated from git log)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> last-299.ebuild:
-  Drop old Python implementations
+*last-299 (09 Aug 2015)
+*last-230 (09 Aug 2015)
 
-  11 Aug 2013; Justin Lecher <jlec@gentoo.org> -last-146.ebuild,
-  -last-162-r1.ebuild, -last-184.ebuild, -last-192.ebuild:
-  Drop old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/162-gcc46.patch,
+  +files/162-ldflags.patch, +last-230.ebuild, +last-299.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> last-230.ebuild:
-  Stable for x86, wrt bug #477140
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Jul 2013; Chema Alonso <nimiux@gentoo.org> last-230.ebuild:
-  Stable for amd64 wrt bug #477140
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*last-299 (17 Jul 2013)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Jul 2013; Justin Lecher <jlec@gentoo.org> +last-299.ebuild:
-  Version Bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Mar 2013; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop Andrey as maintainer so that bugs get assigned to sci-biology directly
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*last-230 (20 Jun 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  20 Jun 2012; Justin Lecher <jlec@gentoo.org> +last-230.ebuild:
-  Version Bump, allows to compile with gcc-4.7, #422573
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*last-192 (10 Feb 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  10 Feb 2012; Justin Lecher <jlec@gentoo.org> +last-192.ebuild:
-  Version Bump, #402941
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> last-162-r1.ebuild:
-  Stable for AMD64, wrt bug #391545
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> last-162-r1.ebuild:
-  x86 stable wrt bug #391545
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> last-299.ebuild:
+  Drop deprecated usage of parallel python eclass functions
 
-  23 Nov 2011; Justin Lecher <jlec@gentoo.org> -last-162.ebuild,
-  last-184.ebuild:
-  Dropped old, respect LDFLAGS
+  Python eclasses dropped parallel execution support some while ago.
+  python_parallel_foreach_impl was an alias for python_foreach_impl for some
+  time already.
 
-*last-184 (25 Sep 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Sep 2011; Andrey Kislyuk <weaver@gentoo.org> +last-184.ebuild:
-  Version bump
-
-  25 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/162-gcc46.patch,
-  last-162.ebuild, last-162-r1.ebuild:
-  Fix for gcc-4.6, #3624783
-
-*last-162-r1 (08 Apr 2011)
-
-  08 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/162-ldflags.patch,
-  +last-162-r1.ebuild:
-  Install lastex, #362525
-
-  02 Apr 2011; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
-  drop old
-
-*last-162 (02 Apr 2011)
-
-  02 Apr 2011; Andrey Kislyuk <weaver@gentoo.org> +last-162.ebuild:
-  Version bump
-
-  11 Feb 2011; Markos Chandras <hwoarang@gentoo.org> last-146.ebuild:
-  Stable on amd64 wrt bug #353567
-
-  07 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> last-146.ebuild:
-  x86 stable wrt bug #353567
-
-*last-146 (29 Nov 2010)
-
-  29 Nov 2010; Andrey Kislyuk <weaver@gentoo.org> +last-146.ebuild:
-  Version bump
-
-*last-128-r1 (15 Sep 2010)
-
-  15 Sep 2010; Kacper Kowalik <xarthisius@gentoo.org> -last-103.ebuild,
-  -last-128.ebuild, +last-128-r1.ebuild:
-  Respect CXX,CXXFLAGS,LDFLAGS wrt bug 337525. Thanks to Diego for the
-  report. Drop old.
-
-*last-128 (15 Jul 2010)
-
-  15 Jul 2010; Andrey Kislyuk <weaver@gentoo.org> +last-128.ebuild:
-  Version bump
-
-*last-103 (07 May 2010)
-
-  07 May 2010; Andrey Kislyuk <weaver@gentoo.org> +last-103.ebuild:
-  Version bump
-
-  05 Apr 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> last-96.ebuild:
-  x86 stable wrt bug #311831
-
-  29 Mar 2010; Pacho Ramos <pacho@gentoo.org> last-96.ebuild:
-  amd64 stable, bug 311831
-
-  09 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> last-96.ebuild:
-  Add unzip dependency
-
-*last-96 (09 Feb 2010)
-
-  09 Feb 2010; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
-  +last-96.ebuild:
-  New package, ebuild written by me

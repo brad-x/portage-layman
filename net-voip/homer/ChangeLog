@@ -1,84 +1,61 @@
 # ChangeLog for net-voip/homer
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/homer/ChangeLog,v 1.18 2015/04/01 11:09:11 idella4 Exp $
+# (auto-generated from git log)
 
-  01 Apr 2015; Ian Delaney <idella4@gentoo.org> -homer-0.24.1.ebuild,
-  -homer-0.25.ebuild:
-  rm old by selection of proxy maintainer from Bug #543138
+*homer-9999 (09 Aug 2015)
+*homer-0.25-r1 (09 Aug 2015)
+*homer-0.24.1-r1 (09 Aug 2015)
 
-  01 Apr 2015; Ian Delaney <idella4@gentoo.org> homer-0.25-r1.ebuild:
-  substitute broken patch (-ffmpeg-avstream.patch) with a sed statement in place
-  of patch supplied by maintainer in Bug #543138, fixes said bug
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/homer-0.24.1-libav-9.patch, +files/homer-0.25-ffmpeg-avstream.patch,
+  +homer-0.24.1-r1.ebuild, +homer-0.25-r1.ebuild, +homer-9999.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  22 Dec 2014; Markos Chandras <hwoarang@gentoo.org>
-  +files/homer-0.25-ffmpeg-avstream.patch, homer-0.25-r1.ebuild:
-  Fix building against latest ffmpeg. Bug #516290. Thanks to Marcel Pennewiß
-  <gentoo@pennewiss.de>
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> homer-0.24.1-r1.ebuild,
-  homer-0.24.1.ebuild, homer-0.25-r1.ebuild, homer-0.25.ebuild,
-  homer-9999.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 May 2014; Ulrich Müller <ulm@gentoo.org> homer-0.24.1.ebuild,
-  homer-0.24.1-r1.ebuild, homer-0.25.ebuild, homer-0.25-r1.ebuild,
-  homer-9999.ebuild:
-  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
-  "sound", bug 357661.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Jan 2014; Agostino Sarubbo <ago@gentoo.org> homer-0.25-r1.ebuild:
-  Stable for x86, wrt bug #495904
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org> homer-0.25-r1.ebuild:
-  amd64 stable, bug #495904
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> homer-0.25-r1.ebuild,
+  metadata.xml:
+  Use https by default
 
-  13 Aug 2013; Markos Chandras <hwoarang@gentoo.org> homer-0.25-r1.ebuild:
-  Fix URL for ffmpeg2 patch thanks to Marcel Pennewiß <marcel@pennewiss.de>
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*homer-0.24.1-r1 (12 Aug 2013)
-*homer-0.25-r1 (12 Aug 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Aug 2013; Markos Chandras <hwoarang@gentoo.org> +homer-0.24.1-r1.ebuild,
-  +homer-0.25-r1.ebuild, homer-9999.ebuild:
-  Add patch for ffmpeg2 support. Bug #476536. Also use subslots for x264 dep.
-  Bug #476076. Thanks to Marcel Pennewiß <gentoo@pennewiss.de> for the patches
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Aug 2013; Alexis Ballier <aballier@gentoo.org> homer-0.24.1.ebuild,
-  homer-0.25.ebuild, homer-9999.ebuild:
-  depend on ffmpeg:0
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> homer-0.24.1.ebuild,
-  homer-0.25.ebuild, homer-9999.ebuild:
-  Respect CXX. Thanks to Marcel Pennewiß <gentoo@pennewiss.de>. Bug #459846
+  Bug: https://bugs.gentoo.org/552720
 
-*homer-0.25 (03 Mar 2013)
-
-  03 Mar 2013; Markos Chandras <hwoarang@gentoo.org> +homer-0.25.ebuild,
-  homer-9999.ebuild:
-  Version bump. #459606. Thanks to Marcel Pennewiß <gentoo@pennewiss.de>
-
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> homer-0.24.1.ebuild,
-  homer-9999.ebuild:
-  Move Qt dependencies to the new category
-
-  01 Mar 2013; Agostino Sarubbo <ago@gentoo.org> homer-0.24.1.ebuild:
-  Stable for x86, wrt bug #459608
-
-  01 Mar 2013; Agostino Sarubbo <ago@gentoo.org> homer-0.24.1.ebuild:
-  Stable for amd64, wrt bug #459608
-
-  17 Feb 2013; Markos Chandras <hwoarang@gentoo.org> homer-9999.ebuild:
-  Add pulseaudio dependency. Bug #458002
-
-  17 Jan 2013; Markos Chandras <hwoarang@gentoo.org>
-  +files/homer-0.24.1-libav-9.patch, homer-0.24.1.ebuild:
-  Add upstream patch to fix building against libav-9. Bug #448718. Thanks to
-  Marcel Pennewiß <gentoo@pennewiss.de>
-
-*homer-9999 (23 Dec 2012)
-*homer-0.24.1 (23 Dec 2012)
-
-  23 Dec 2012; Markos Chandras <hwoarang@gentoo.org> +homer-0.24.1.ebuild,
-  +homer-9999.ebuild, +metadata.xml:
-  Initial commit of the homer application. Bug #411977. Thanks to Marcel
-  Pennewiß <gentoo@pennewiss.de> who will maintain it

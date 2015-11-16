@@ -1,144 +1,76 @@
 # ChangeLog for media-plugins/vdr-remote
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-remote/ChangeLog,v 1.30 2015/04/12 13:02:24 hd_brummy Exp $
+# (auto-generated from git log)
 
-*vdr-remote-0.6.0 (12 Apr 2015)
+*vdr-remote-0.6.0 (09 Aug 2015)
+*vdr-remote-0.5.0-r1 (09 Aug 2015)
+*vdr-remote-0.5.0 (09 Aug 2015)
 
-  12 Apr 2015; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-remote-0.6.0.ebuild:
-  bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/confd,
+  +files/rc-addon.sh, +metadata.xml, +vdr-remote-0.5.0.ebuild,
+  +vdr-remote-0.5.0-r1.ebuild, +vdr-remote-0.6.0.ebuild:
+  proj/gentoo: Initial commit
 
-*vdr-remote-0.5.0-r1 (23 Jan 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Jan 2015; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-remote-0.5.0-r1.ebuild:
-  add user vdr to group input for full access to remote control
-  devices(systemd)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  31 Aug 2014; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-remote-0.4.0-r2.ebuild:
-  cleanup old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  02 Jan 2014; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-remote-0.5.0.ebuild:
-  stable amd64 x86, wrt bug 495770
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*vdr-remote-0.5.0 (31 Mar 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  31 Mar 2013; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-remote-0.5.0.ebuild:
-  bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 May 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-remote-0.4.0-r2.ebuild:
-  eapi=4; vdr-plugin-2.eclass
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  17 Jan 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -vdr-remote-0.3.8.ebuild, -files/vdr-remote-0.3.8-uint64.diff,
-  -vdr-remote-0.3.9.ebuild, -vdr-remote-0.4.0.ebuild,
-  vdr-remote-0.4.0-r2.ebuild:
-  cleanup, minor ebuild fixes, stable amd64
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Nov 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  vdr-remote-0.4.0-r2.ebuild:
-  stable x86
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Jul 2010; Daniel Pielmeier <billie@gentoo.org>
-  vdr-remote-0.4.0-r2.ebuild:
-  Use linux-info eclass as it defines the kernel_is function.
+  Bug: https://bugs.gentoo.org/552720
 
-*vdr-remote-0.4.0-r2 (27 Jul 2010)
+*vdr-remote-0.7.0 (27 Sep 2015)
 
-  27 Jul 2010; Daniel Pielmeier <billie@gentoo.org>
-  -vdr-remote-0.4.0-r1.ebuild, +vdr-remote-0.4.0-r2.ebuild:
-  Fix inheritance order to actually install the plugin.
+  27 Sep 2015; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -vdr-remote-0.5.0.ebuild, -vdr-remote-0.5.0-r1.ebuild,
+  vdr-remote-0.6.0.ebuild, +vdr-remote-0.7.0.ebuild:
+  cleanup; stable amd64 x86; bump
 
-*vdr-remote-0.4.0-r1 (25 Jul 2010)
+  Package-Manager: portage-2.2.20.1
 
-  25 Jul 2010; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-remote-0.4.0-r1.ebuild:
-  fix permission for /proc/av7110_ir , bug #328719
+*vdr-remote-0.6.0-r1 (10 Oct 2015)
 
-  28 Apr 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.4.0.ebuild:
-  Marked stable on x86.
+  10 Oct 2015; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-remote-0.6.0-r1.ebuild:
+  expand vdr version depends, reported by Sebastion on bug #562428
 
-  28 Apr 2008; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.8.ebuild:
-  Fixed quoting.
-
-  24 Apr 2008; Raúl Porcel <armin76@gentoo.org>
-  -files/digest-vdr-remote-0.4.0:
-  Remove digests
-
-*vdr-remote-0.4.0 (17 Mar 2008)
-
-  17 Mar 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +vdr-remote-0.4.0.ebuild:
-  Version bumped.
-
-  24 May 2007; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.9.ebuild:
-  Marked stable on x86.
-
-  17 Apr 2007; Matthias Schwarzott <zzam@gentoo.org> files/rc-addon.sh:
-  Removed bash specific stuff.
-
-*vdr-remote-0.3.9 (06 Mar 2007)
-
-  06 Mar 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +vdr-remote-0.3.9.ebuild:
-  version bump; thx to D.Pielmeier on bug #168558
-
-  03 Dec 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +files/vdr-remote-0.3.8-uint64.diff, vdr-remote-0.3.8.ebuild:
-  Added patch to compile also with vdr-1.4.4_p1
-
-  18 Nov 2006; Matthias Schwarzott <zzam@gentoo.org>
-  -vdr-remote-0.3.7.ebuild, vdr-remote-0.3.8.ebuild:
-  Cleanup of old ebuilds.
-
-  26 Oct 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.8.ebuild:
-  Marked stable on x86.
-
-*vdr-remote-0.3.8 (14 Sep 2006)
-
-  14 Sep 2006; Matthias Schwarzott <zzam@gentoo.org>
-  +vdr-remote-0.3.8.ebuild:
-  Version bumped.
-
-  01 Aug 2006; Matthias Schwarzott <zzam@gentoo.org> metadata.xml,
-  -vdr-remote-0.3.6.ebuild:
-  Removed old version. Assigned package to VDR-Project.
-
-  23 Jun 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.7.ebuild:
-  Marked stable on x86.
-
-*vdr-remote-0.3.7 (23 May 2006)
-
-  23 May 2006; Joerg Bornkessel <hd_brummy@gentoo.org> metadata.xml,
-  +vdr-remote-0.3.7.ebuild:
-  version bump; add me as 2nd maintainer
-
-  15 May 2006; Matthias Schwarzott <zzam@gentoo.org> files/rc-addon.sh:
-  Avoid error of non existing file /proc/av7110_ir
-
-  17 Apr 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.6.ebuild:
-  Marked stable on x86
-
-  21 Mar 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.6.ebuild:
-  changed depend - also compiles with vdr-1.2.6
-
-  05 Mar 2006; Matthias Schwarzott <zzam@gentoo.org>
-  vdr-remote-0.3.6.ebuild:
-  removed nomirror
-
-*vdr-remote-0.3.6 (04 Mar 2006)
-
-  04 Mar 2006; Matthias Schwarzott <zzam@gentoo.org> +files/confd,
-  +files/rc-addon.sh, +metadata.xml, +vdr-remote-0.3.6.ebuild:
-  imported ebuild from gentoo.de
+  Package-Manager: portage-2.2.20.1
 

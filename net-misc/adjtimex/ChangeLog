@@ -1,135 +1,57 @@
 # ChangeLog for net-misc/adjtimex
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/adjtimex/ChangeLog,v 1.32 2015/04/26 23:01:48 mrueg Exp $
+# (auto-generated from git log)
 
-  26 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -adjtimex-1.20-r3.ebuild,
-  -adjtimex-1.29.ebuild, -files/adjtimex-1.16-pic.patch,
-  -files/adjtimex-1.20-fix-syscall.patch, -files/adjtimex-1.20-gentoo-utc.patch,
-  -files/adjtimex-1.29-gentoo-utc.patch, adjtimex-1.29-r1.ebuild:
-  Remove old.
+*adjtimex-1.29-r1 (09 Aug 2015)
 
-  10 Aug 2013; Agostino Sarubbo <ago@gentoo.org> adjtimex-1.29-r1.ebuild:
-  Stable for ppc, wrt bug #470558
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +adjtimex-1.29-r1.ebuild,
+  +files/adjtimex-1.29-r1-gentoo-utc.patch, +files/adjtimex.init,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> adjtimex-1.29-r1.ebuild:
-  Stable for x86, wrt bug #470558
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  30 Jul 2013; Agostino Sarubbo <ago@gentoo.org> adjtimex-1.29-r1.ebuild:
-  Stable for alpha, wrt bug #470558
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Jul 2013; Chema Alonso <nimiux@gentoo.org> adjtimex-1.29-r1.ebuild:
-  Stable for amd64 wrt bug #470558
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*adjtimex-1.29-r1 (07 Apr 2013)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Apr 2013; Robin H. Johnson <robbat2@gentoo.org> +adjtimex-1.29-r1.ebuild,
-  +files/adjtimex-1.29-r1-gentoo-utc.patch:
-  BL2 support per bug #395839.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Aug 2010; Jeroen Roovers <jer@gentoo.org> adjtimex-1.29.ebuild:
-  Remove commented patch calls.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*adjtimex-1.29 (26 Aug 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Aug 2010; Jeroen Roovers <jer@gentoo.org> +adjtimex-1.29.ebuild,
-  +files/adjtimex-1.29-gentoo-utc.patch:
-  Version bump. Respect LDFLAGS (bug #334677). Respect CC.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Mar 2010; Robin H. Johnson <robbat2@gentoo.org> -adjtimex-1.16.ebuild,
-  -adjtimex-1.16-r1.ebuild, -adjtimex-1.20.ebuild, -adjtimex-1.20-r1.ebuild,
-  -adjtimex-1.20-r2.ebuild, adjtimex-1.20-r3.ebuild:
-  Remove old versions and QA cleanup.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*adjtimex-1.20-r3 (25 Mar 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Mar 2010; Robin H. Johnson <robbat2@gentoo.org>
-  +adjtimex-1.20-r3.ebuild, files/adjtimex.init:
-  Straight bump to fix bug in init.d script of /usr/bin call without 'need
-  localmount', so startup failed sometimes.
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> adjtimex-1.16.ebuild,
-  adjtimex-1.16-r1.ebuild, adjtimex-1.20.ebuild, adjtimex-1.20-r1.ebuild,
-  adjtimex-1.20-r2.ebuild:
-  Remove virtual/libc
-
-  14 Sep 2008; Robin H. Johnson <robbat2@gentoo.org> files/adjtimex.init:
-  adjtimex init should run before ntp starts up, so that the tick/freq is
-  set.
-
-  28 Apr 2007; Sven Wegener <swegener@gentoo.org> adjtimex-1.16.ebuild,
-  adjtimex-1.16-r1.ebuild, adjtimex-1.20.ebuild, adjtimex-1.20-r1.ebuild,
-  adjtimex-1.20-r2.ebuild:
-  Fix *initd, *confd and *envd calls (#17388, #174266)
-
-  07 Apr 2007; Christian Faulhammer <opfer@gentoo.org>
-  adjtimex-1.20-r2.ebuild:
-  stable amd64, bug 169819
-
-  04 Apr 2007; Fernando J. Pereda <ferdy@gentoo.org>
-  adjtimex-1.20-r2.ebuild:
-  Stable on alpha as per bug #169819
-
-  09 Mar 2007; nixnut <nixnut@gentoo.org> adjtimex-1.20-r2.ebuild:
-  Stable on ppc wrt bug 169819
-
-  07 Mar 2007; Raúl Porcel <armin76@gentoo.org> adjtimex-1.20-r2.ebuild:
-  x86 stable wrt bug 169819, thanks to Ticho
-
-*adjtimex-1.20-r2 (07 Mar 2007)
-
-  07 Mar 2007; Robin H. Johnson <robbat2@gentoo.org>
-  +files/adjtimex-1.20-fix-syscall.patch, +adjtimex-1.20-r2.ebuild:
-  Fix for _syscall usage, bug #162525.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*adjtimex-1.20-r1 (26 Mar 2006)
-
-  26 Mar 2006; Robin H. Johnson <robbat2@gentoo.org>
-  +files/adjtimex-1.20-gentoo-utc.patch, files/adjtimex.init,
-  +adjtimex-1.20-r1.ebuild:
-  Bump debian patch version. Bug #98934, use --utc where needed.
-
-*adjtimex-1.20 (03 Dec 2005)
-
-  03 Dec 2005; Robin H. Johnson <robbat2@gentoo.org> +adjtimex-1.20.ebuild:
-  Bug #107247, version bump.
-
-  18 Oct 2005; Aron Griffis <agriffis@gentoo.org> adjtimex-1.16-r1.ebuild:
-  Mark 1.16-r1 stable on alpha
-
-  26 Sep 2005; Robin H. Johnson <robbat2@gentoo.org>
-  adjtimex-1.16-r1.ebuild:
-  Stable on x86, 431 days in ~x86.
-
-  19 Jan 2005; Jan Brinkmann <luckyduck@gentoo.org> adjtimex-1.16-r1.ebuild:
-  added ~amd64 to KEYWORDS.
-
-  07 Jan 2005; Robin H. Johnson <robbat2@gentoo.org>
-  +files/adjtimex-1.16-pic.patch:
-  bug #70342, patch by solar for hardened to work right.
-
-  05 Dec 2004; Bryan Østergaard <kloeri@gentoo.org>
-  adjtimex-1.16-r1.ebuild:
-  ~alpha keyword, bug 73267.
-
-  01 Aug 2004; David Holm <dholm@gentoo.org> adjtimex-1.16-r1.ebuild:
-  Added to ~ppc.
-
-*adjtimex-1.16-r1 (22 Jul 2004)
-
-  22 Jul 2004; Robin H. Johnson <robbat2@gentoo.org> adjtimex-1.16-r1.ebuild:
-  fix #57952.
-
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> adjtimex-1.16.ebuild:
-  change virtual/glibc to virtual/libc
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> adjtimex-1.16.ebuild:
-  Add inherit eutils
-
-*adjtimex-1.16 (05 Jan 2004)
-
-  05 Jan 2004; Robin H. Johnson <robbat2@gentoo.org> adjtimex-1.16.ebuild,
-  files/adjtimex.init:
-  initial commit, ebuild by robbat2@gentoo.org, solves bug #8459

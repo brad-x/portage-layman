@@ -1,89 +1,68 @@
 # ChangeLog for dev-libs/libRocket
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libRocket/ChangeLog,v 1.18 2015/05/27 11:14:39 ago Exp $
+# (auto-generated from git log)
 
-  27 May 2015; Agostino Sarubbo <ago@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild:
-  Stable for x86, wrt bug #549430
+*libRocket-9999 (09 Aug 2015)
+*libRocket-1.3.0.0 (09 Aug 2015)
+*libRocket-1.2.1_p20130110-r1 (09 Aug 2015)
+*libRocket-1.2.1_p20130110 (09 Aug 2015)
 
-  21 May 2015; Agostino Sarubbo <ago@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild:
-  Stable for amd64, wrt bug #549430
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libRocket-1.2.1-build.patch, +files/libRocket-1.3.0.0-build.patch,
+  +libRocket-1.2.1_p20130110.ebuild, +libRocket-1.2.1_p20130110-r1.ebuild,
+  +libRocket-1.3.0.0.ebuild, +libRocket-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 May 2015; Michael Sterrett <mr_bones_@gentoo.org> -libRocket-1.2.1.ebuild:
-  old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> libRocket-1.2.1.ebuild,
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-1.2.1_p20130110.ebuild,
-  libRocket-1.3.0.0.ebuild, libRocket-9999.ebuild:
-  Drop old Python implementations
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*libRocket-1.3.0.0 (20 Jul 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Jul 2014; Julian Ospald <hasufell@gentoo.org> +libRocket-1.3.0.0.ebuild,
-  +files/libRocket-1.3.0.0-build.patch:
-  version bump, add SUBSLOT (SONAME)
-
-  18 Jun 2014; Michał Górny <mgorny@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-9999.ebuild:
-  Update dependencies to require guaranteed EAPI=5 or multilib ebuilds, bug
-  #513718.
-
-  11 Jun 2014; Julian Ospald <hasufell@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-9999.ebuild:
-  fix build wrt #512956
-
-  28 Apr 2014; Michał Górny <mgorny@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-9999.ebuild:
-  Replace multilib_build_binaries with multilib_is_native_abi. The two are
-  equivalent now, and the team has decided to use the old name as being less
-  confusing.
-
-  04 Jan 2014; Michał Górny <mgorny@gentoo.org>
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-9999.ebuild:
-  Replace the explicit ABI==DEFAULT_ABI check with multilib_build_binaries
-  eclass function.
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> libRocket-1.2.1.ebuild,
-  libRocket-1.2.1_p20130110-r1.ebuild, libRocket-1.2.1_p20130110.ebuild,
-  libRocket-9999.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-  30 Jun 2013; Agostino Sarubbo <ago@gentoo.org>
-  libRocket-1.2.1_p20130110.ebuild:
-  Stable for x86, wrt bug #474438
-
-  30 Jun 2013; Agostino Sarubbo <ago@gentoo.org>
-  libRocket-1.2.1_p20130110.ebuild:
-  Stable for amd64, wrt bug #474438
-
-  25 Jun 2013; Julian Ospald <hasufell@gentoo.org>
-  libRocket-1.2.1_p20130110.ebuild:
-  fix deps
-
-  29 May 2013; Julian Ospald <hasufell@gentoo.org> libRocket-1.2.1.ebuild,
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
   libRocket-1.2.1_p20130110.ebuild, libRocket-1.2.1_p20130110-r1.ebuild,
-  libRocket-9999.ebuild:
-  update REQUIRED_USE to include PYTHON_REQUIRED_USE
+  metadata.xml:
+  Use https by default
 
-*libRocket-1.2.1_p20130110-r1 (05 May 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 May 2013; Julian Ospald <hasufell@gentoo.org>
-  +libRocket-1.2.1_p20130110-r1.ebuild, libRocket-9999.ebuild:
-  add multilib support, update live ebuild
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Jan 2013; Julian Ospald <hasufell@gentoo.org> libRocket-1.2.1.ebuild,
-  libRocket-1.2.1_p20130110.ebuild, libRocket-9999.ebuild:
-  fix deps
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*libRocket-9999 (18 Jan 2013)
-*libRocket-1.2.1_p20130110 (18 Jan 2013)
-*libRocket-1.2.1 (18 Jan 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Jan 2013; Julian Ospald <hasufell@gentoo.org> +libRocket-1.2.1.ebuild,
-  +libRocket-1.2.1_p20130110.ebuild, +files/libRocket-1.2.1-build.patch,
-  +libRocket-9999.ebuild, +metadata.xml:
-  initial import
+  Bug: https://bugs.gentoo.org/552720
+
+  16 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

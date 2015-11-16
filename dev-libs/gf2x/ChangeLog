@@ -1,69 +1,57 @@
 # ChangeLog for dev-libs/gf2x
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gf2x/ChangeLog,v 1.18 2012/12/28 01:23:16 tomka Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*gf2x-1.1 (28 Dec 2012)
+*gf2x-1.1 (09 Aug 2015)
+*gf2x-1.0-r1 (09 Aug 2015)
 
-  28 Dec 2012; Thomas Kahle <tomka@gentoo.org> +gf2x-1.1.ebuild, metadata.xml:
-  Bump to 1.1 and fix metadata per bug 448920
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +gf2x-1.0-r1.ebuild,
+  +gf2x-1.1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  01 Mar 2012; Justin Lecher <jlec@gentoo.org> -gf2x-0.9.5.ebuild,
-  -gf2x-1.0.ebuild:
-  Dropped old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Feb 2012; Brent Baude <ranger@gentoo.org> gf2x-1.0-r1.ebuild:
-  Marking gf2x-1.0-r1 ppc for bug 400009
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gf2x-1.0-r1.ebuild:
-  x86 stable wrt bug #400009
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gf2x-1.0-r1.ebuild:
-  Stable for amd64, wrt bug #400009
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Jan 2012; Justin Lecher <jlec@gentoo.org> gf2x-1.0-r1.ebuild:
-  Add support for static-libs, #400777
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Jan 2012; Justin Lecher <jlec@gentoo.org> gf2x-1.0-r1.ebuild,
-  metadata.xml:
-  EAPI BUMP to 4, drop src_install as it is handled by default function, rename
-  $PID to PACKAGEID
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*gf2x-1.0-r1 (08 Jul 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Jul 2011; Thomas Kahle <tomka@gentoo.org> +gf2x-1.0-r1.ebuild:
-  Adding Francois Bissey's fix for bug 366945 
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*gf2x-1.0 (14 May 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 May 2011; Thomas Kahle <tomka@gentoo.org> -gf2x-0.3.1.ebuild,
-  -files/gf2x-0.3.1-shared.patch, +gf2x-1.0.ebuild:
-  bump to 1.0 (bug #366947), remove old
+  Bug: https://bugs.gentoo.org/552720
 
-  24 Dec 2010; Fabian Groffen <grobian@gentoo.org> gf2x-0.9.5.ebuild:
-  Marked ~x86-linux, ~amd64-linux and ~ppc-macos, bug #341989
-
-  09 Feb 2010; Pacho Ramos <pacho@gentoo.org> gf2x-0.9.5.ebuild:
-  amd64 stable, bug 300655
-
-  19 Jan 2010; nixnut <nixnut@gentoo.org> gf2x-0.9.5.ebuild:
-  ppc stable #300655
-
-  15 Jan 2010; Christian Faulhammer <fauli@gentoo.org> gf2x-0.9.5.ebuild:
-  stable x86, bug 300655
-
-  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> gf2x-0.9.5.ebuild:
-  Marked ~ppc for bug #294338.
-
-*gf2x-0.9.5 (10 Aug 2009)
-
-  10 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> +gf2x-0.9.5.ebuild:
-  Version bump, using real packaging system
-
-  10 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> gf2x-0.3.1.ebuild:
-  Add include files.
-
-*gf2x-0.3.1 (10 Aug 2009)
-
-  10 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> +gf2x-0.3.1.ebuild,
-  +files/gf2x-0.3.1-shared.patch, +metadata.xml:
-  Initial import

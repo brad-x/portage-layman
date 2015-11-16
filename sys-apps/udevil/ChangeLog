@@ -1,170 +1,72 @@
 # ChangeLog for sys-apps/udevil
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/udevil/ChangeLog,v 1.39 2015/06/20 05:31:55 zlg Exp $
+# (auto-generated from git log)
 
-*udevil-0.4.4-r1 (20 Jun 2015)
+*udevil-0.4.4-r1 (09 Aug 2015)
+*udevil-0.4.4 (09 Aug 2015)
+*udevil-0.4.3 (09 Aug 2015)
+*udevil-0.4.1 (09 Aug 2015)
 
-  20 Jun 2015; Daniel Campbell <zlg@gentoo.org> +udevil-0.4.4-r1.ebuild,
-  +files/udevil-0.4.4-stat.patch:
-  Revbump wrt bug #552072
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/udevil-0.4.1-automake-1.13.patch, +files/udevil-0.4.1-flags.patch,
+  +files/udevil-0.4.3-flags.patch, +files/udevil-0.4.4-stat.patch,
+  +metadata.xml, +udevil-0.4.1.ebuild, +udevil-0.4.3.ebuild,
+  +udevil-0.4.4.ebuild, +udevil-0.4.4-r1.ebuild:
+  proj/gentoo: Initial commit
 
-*udevil-0.4.4 (14 Jun 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  14 Jun 2015; Daniel Campbell <zlg@gentoo.org> +udevil-0.4.4.ebuild:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Jun 2015; Daniel Campbell <zlg@gentoo.org> metadata.xml:
-  Add myself to metadata.xml; proxy-maint seems unreachable
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  25 Nov 2014; Julian Ospald <hasufell@gentoo.org> metadata.xml:
-  drop maintainership
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Feb 2014; Agostino Sarubbo <ago@gentoo.org> udevil-0.4.3.ebuild:
-  Stable for x86, wrt bug #499826
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  udevil-0.4.1.ebuild:
+  Use https by default
 
-  11 Feb 2014; Chema Alonso <nimiux@gentoo.org> udevil-0.4.3.ebuild:
-  Stable for amd64 wrt bug #499826
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*udevil-0.4.3 (14 Dec 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Dec 2013; Julian Ospald <hasufell@gentoo.org> +udevil-0.4.3.ebuild,
-  +files/udevil-0.4.3-flags.patch:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> udevil-0.4.1.ebuild,
+  udevil-0.4.3.ebuild, udevil-0.4.4.ebuild, udevil-0.4.4-r1.ebuild:
+  Use https by default
 
-  28 Sep 2013; Patrick Lauer <patrick@gentoo.org> metadata.xml:
-  Remove unneeded useflag description from metadata.xml
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Sep 2013; Julian Ospald <hasufell@gentoo.org>
-  -files/udevil-0.3.6-flags.patch, -files/udevil-0.4.0-flags.patch,
-  -udevil-0.3.6.ebuild, -udevil-0.4.0.ebuild:
-  remove old
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  12 Aug 2013; Julian Ospald <hasufell@gentoo.org> udevil-0.4.1.ebuild:
-  remove systemd useflag wrt #465596
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  14 May 2013; Agostino Sarubbo <ago@gentoo.org> udevil-0.4.1.ebuild:
-  Stable for x86, wrt bug #469748
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 May 2013; Agostino Sarubbo <ago@gentoo.org> udevil-0.4.1.ebuild:
-  Stable for amd64, wrt bug #469748
+  Bug: https://bugs.gentoo.org/552720
 
-  27 Apr 2013; Julian Ospald <hasufell@gentoo.org> udevil-0.4.1.ebuild,
-  +files/udevil-0.4.1-automake-1.13.patch:
-  fix automake-1.13 build
-
-*udevil-0.4.1 (17 Mar 2013)
-
-  17 Mar 2013; Julian Ospald <hasufell@gentoo.org> +udevil-0.4.1.ebuild,
-  +files/udevil-0.4.1-flags.patch:
-  version bump
-
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
-
-  14 Feb 2013; Julian Ospald <hasufell@gentoo.org> -udevil-0.3.3-r1.ebuild,
-  -files/udevil-0.3.3-flags.patch, -udevil-0.3.4.ebuild,
-  -files/udevil-0.3.4-flags.patch, -udevil-0.3.5.ebuild,
-  -files/udevil-0.3.5-flags.patch:
-  remove old
-
-*udevil-0.4.0 (14 Feb 2013)
-
-  14 Feb 2013; Julian Ospald <hasufell@gentoo.org> +udevil-0.4.0.ebuild,
-  +files/udevil-0.4.0-flags.patch:
-  version bump
-
-  26 Dec 2012; Jeff Horelick <jdhore@gentoo.org> udevil-0.3.6.ebuild:
-  marked x86 per bug 448034
-
-  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> udevil-0.3.6.ebuild:
-  Stable for amd64, wrt bug #448034
-
-*udevil-0.3.6 (17 Dec 2012)
-
-  17 Dec 2012; Julian Ospald <hasufell@gentoo.org>
-  -files/udevil-0.2.8-flags.patch, -udevil-0.3.1.ebuild, -udevil-0.3.2.ebuild,
-  +udevil-0.3.6.ebuild, +files/udevil-0.3.6-flags.patch:
-  version bump, remove old
-
-  29 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> udevil-0.3.1.ebuild,
-  udevil-0.3.2.ebuild, udevil-0.3.3-r1.ebuild, udevil-0.3.4.ebuild,
-  udevil-0.3.5.ebuild:
-  Use virtual/udev instead of sys-fs/udev wrt #444398
-
-*udevil-0.3.5 (25 Nov 2012)
-
-  25 Nov 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.5.ebuild,
-  +files/udevil-0.3.5-flags.patch:
-  version bump
-
-  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> udevil-0.3.3-r1.ebuild:
-  Stable for x86, wrt bug #439416
-
-  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org> udevil-0.3.3-r1.ebuild:
-  Stable on amd64 wrt bug #439416
-
-  22 Oct 2012; Julian Ospald <hasufell@gentoo.org>
-  +files/udevil-0.3.4-flags.patch:
-  add missing patch wrt #439238
-
-*udevil-0.3.4 (21 Oct 2012)
-
-  21 Oct 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.4.ebuild:
-  version bump
-
-*udevil-0.3.3-r1 (07 Oct 2012)
-
-  07 Oct 2012; Julian Ospald <hasufell@gentoo.org> -udevil-0.3.3.ebuild,
-  +udevil-0.3.3-r1.ebuild, +files/udevil-0.3.3-flags.patch:
-  leave -Bsymbolic-functions untouched
-
-*udevil-0.3.3 (23 Sep 2012)
-
-  23 Sep 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.3.ebuild:
-  version bump
-
-  27 Aug 2012; Johannes Huber <johu@gentoo.org> udevil-0.3.1.ebuild:
-  Stable for x86, wrt bug #432752
-
-  26 Aug 2012; Agostino Sarubbo <ago@gentoo.org> udevil-0.3.1.ebuild:
-  Stable for amd64, wrt bug #432752
-
-  26 Aug 2012; Julian Ospald <hasufell@gentoo.org> -udevil-0.2.8.ebuild,
-  -udevil-0.2.9.ebuild, -udevil-0.3.0.ebuild, udevil-0.3.1.ebuild,
-  udevil-0.3.2.ebuild:
-  add missing glib dependency, remove old
-
-*udevil-0.3.2 (15 Aug 2012)
-
-  15 Aug 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.2.ebuild:
-  version bump
-
-*udevil-0.3.1 (25 Jul 2012)
-
-  25 Jul 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.1.ebuild:
-  version bump
-
-  21 Jul 2012; Julian Ospald <hasufell@gentoo.org> udevil-0.3.0.ebuild:
-  fix bug 427424
-
-*udevil-0.3.0 (13 Jul 2012)
-
-  13 Jul 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.3.0.ebuild:
-  version bump
-
-*udevil-0.2.9 (29 Jun 2012)
-
-  29 Jun 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.2.9.ebuild:
-  version bump by Elijah El Lazkani
-
-  29 Jun 2012; Julian Ospald <hasufell@gentoo.org> udevil-0.2.8.ebuild:
-  https -> http
-
-  17 Jun 2012; Julian Ospald <hasufell@gentoo.org> udevil-0.2.8.ebuild:
-  remove virtual/libc and fix --with-setfacl-prog
-
-*udevil-0.2.8 (17 Jun 2012)
-
-  17 Jun 2012; Julian Ospald <hasufell@gentoo.org> +udevil-0.2.8.ebuild,
-  +files/udevil-0.2.8-flags.patch, +metadata.xml:
-  initial import with Elijah El Lazkani

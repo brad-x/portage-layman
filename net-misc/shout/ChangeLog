@@ -1,66 +1,58 @@
 # ChangeLog for net-misc/shout
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/shout/ChangeLog,v 1.17 2011/05/07 17:12:16 angelos Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  07 May 2011; Christoph Mende <angelos@gentoo.org> shout-0.8.0-r2.ebuild,
-  +files/shout-0.8.0-overflow.patch:
-  Fix possible overflows (bug #337527)
+*shout-0.8.0-r2 (09 Aug 2015)
 
-  19 Dec 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/implicitdecls.patch, +files/ldflags.patch, shout-0.8.0-r2.ebuild:
-  use econf, dont build with -ansi as it uses non ansi stuff, bug #241000,
-  honour ldflags and cc, fix implicit declarations warnings
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/implicitdecls.patch, +files/ldflags.patch,
+  +files/shout-0.8.0-overflow.patch, +files/variables.diff, +metadata.xml,
+  +shout-0.8.0-r2.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  11 May 2006; Thomas Cort <tcort@gentoo.org> shout-0.8.0-r2.ebuild:
-  Stable on alpha.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  02 Apr 2006; Thomas Cort <tcort@gentoo.org> shout-0.8.0-r2.ebuild:
-  added ~alpha wrt bug #99314
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  06 Nov 2004; Chris White <chriswhite@gentoo.org> shout-0.8.0-r2.ebuild:
-  Changed http://www.icecast.org to http://icecast.org for the SRC_URI per bug
-  #70069.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*shout-0.8.0-r2 (05 Sep 2004)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Sep 2004; Jeremy Huddleston <eradicator@gentoo.org> +metadata.xml,
-  files/variables.diff, -shout-0.8.0-r1.ebuild, +shout-0.8.0-r2.ebuild,
-  -shout-0.8.0.ebuild:
-  Added metadata.xml. Fixed some install problems thanks to Alexander Gretencord
-  <arutha@gmx.de> in bug #57389.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  08 Aug 2004; Bryan Østergaard <kloeri@gentoo.org> shout-0.8.0-r1.ebuild,
-  shout-0.8.0.ebuild:
-  Fix compilation failure caused by upstream packaging a .o file.. Bugfix by
-  Olaf Freyer <aaron@cs.tu-berlin.de>
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> shout-0.8.0-r1.ebuild,
-  shout-0.8.0.ebuild:
-  change virtual/glibc to virtual/libc, add IUSE
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-*shout-0.8.0-r1 (23 Jul 2002)
+  Bug: https://bugs.gentoo.org/552720
 
-  23 Jul 2002; Nick Hadaway <raker@gentoo.org>
-  shout-0.8.0-r1.ebuild, files/digest-shout-0.8.0-r1, files/variables.diff :
-
-  Made shout FHS compliant.
-
-*shout-0.8.0 (1 Feb 2002)
-
-  09 Jul 2002; phoen][x <phoenix@gentoo.org> shout-0.8.0.ebuild :
-  Added KEYWORDS, LICENSE, SLOT.
-
-  1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :  
-  Added initial ChangeLog which should be updated whenever the package is
-  updated in any way. This changelog is targetted to users. This means that the
-  comments should well explained and written in clean English. The details about
-  writing correct changelogs are explained in the skel.ChangeLog file which you
-  can find in the root directory of the portage repository.

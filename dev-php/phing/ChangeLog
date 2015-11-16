@@ -1,119 +1,57 @@
 # ChangeLog for dev-php/phing
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/phing/ChangeLog,v 1.16 2015/05/04 15:25:01 grknight Exp $
+# (auto-generated from git log)
 
-*phing-2.10.1 (04 May 2015)
+*phing-2.10.1 (09 Aug 2015)
+*phing-2.8.2 (09 Aug 2015)
 
-  04 May 2015; Brian Evans <grknight@gentoo.org> +phing-2.10.1.ebuild:
-  Version bump; Fix cli USE dep on dev-lang/php wrt bug 538064
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +phing-2.8.2.ebuild, +phing-2.10.1.ebuild:
+  proj/gentoo: Initial commit
 
-  30 Apr 2015; Brian Evans <grknight@gentoo.org> -phing-2.4.9.ebuild,
-  -phing-2.6.1.ebuild:
-  Drop old
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*phing-2.8.2 (10 Oct 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Oct 2014; Brian Evans <grknight@gentoo.org> +phing-2.8.2.ebuild:
-  Version bump and use phar archive wrt bug 489244
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*phing-2.6.1 (04 Jan 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Jan 2014; Matti Bickel <mabi@gentoo.org> +phing-2.6.1.ebuild:
-  version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Aug 2013; Patrick Lauer <patrick@gentoo.org> -phing-2.4.5.ebuild:
-  QA: Punt version with broken deps
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  15 May 2013; Ole Markus With <olemarkus@gentoo.org> phing-2.4.9.ebuild:
-  Fix phing dependency on php's xsl extension
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  03 Jul 2012; Matti Bickel <mabi@gentoo.org> phing-2.4.5.ebuild,
-  phing-2.4.9.ebuild:
-  depend.php function calls are superflous in this case
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*phing-2.4.9 (02 Feb 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +phing-2.4.9.ebuild:
-  Version bump
+  Bug: https://bugs.gentoo.org/552720
 
-*phing-2.4.5 (06 Mar 2011)
-
-  06 Mar 2011; <olemarkus@gentoo.org> -phing-2.4.1.ebuild, +phing-2.4.5.ebuild:
-  Version bump
-
-  14 Jun 2010; <mabi@gentoo.org> -phing-2.2.0.ebuild, -phing-2.3.0.ebuild,
-  -phing-2.3.3.ebuild, phing-2.4.1.ebuild:
-  remove old, drop package.mask'ed creole dependency
-
-*phing-2.4.1 (29 May 2010)
-
-  29 May 2010; <mabi@gentoo.org> +phing-2.4.1.ebuild:
-  version bump
-
-*phing-2.3.3 (01 Jan 2010)
-
-  01 Jan 2010; Ben de Groot <yngwin@gentoo.org> +phing-2.3.3.ebuild:
-  Version bump, fixes bug 256069. Thanks to Michael Dehler for the updated
-  ebuild.
-
-*phing-2.3.0 (15 Nov 2007)
-
-  15 Nov 2007; Markus Ullmann <jokey@gentoo.org> +phing-2.3.0.ebuild:
-  Version bump from project overlay
-
-  14 Nov 2007; Jakub Moc <jakub@gentoo.org> +phing-2.3.0.ebuild:
-  Version bump, Bug 199140
-
-  18 Mar 2007; Luca Longinotti <chtekk@gentoo.org> phing-2.2.0.ebuild:
-  Fix DEPs.
-
-  18 Mar 2007; Luca Longinotti <chtekk@gentoo.org> phing-2.2.0.ebuild:
-  Cleanup.
-
-  25 Sep 2006; Luca Longinotti <chtekk@gentoo.org> phing-2.2.0.ebuild:
-  Fix missing http:// in SRC_URI, thanks to ferringb.
-
-  20 Sep 2006; Sebastian Bergmann <sebastian@gentoo.org>
-  -phing-2.1.1.ebuild:
-  Clean out old version.
-
-*phing-2.2.0 (19 Sep 2006)
-
-  19 Sep 2006; Sebastian Bergmann <sebastian@gentoo.org>
-  +phing-2.2.0.ebuild:
-  Version bump.
-
-  18 Aug 2006; Luca Longinotti <chtekk@gentoo.org> metadata.xml,
-  phing-2.1.1.ebuild:
-  Fix needed USE flags.
-
-*phing-2.1.1 (04 Jan 2006)
-
-  04 Jan 2006; Sebastian Bergmann <sebastian@gentoo.org>
-  -phing-2.1.0.ebuild, +phing-2.1.1.ebuild:
-  Version bump.
-
-  01 Jan 2006; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
-  +phing-2.1.0.ebuild:
-  Moved from dev-php/phing to dev-php5/phing.
-
-  12 Oct 2005; Gustavo Felisberto <humpback@gentoo.org>; phing-2.1.0.ebuild:
-  Added ~amd64 to KEYWORDS
-
-  10 Sep 2005; Sebastian Bergmann <sebastian@gentoo.org> phing-2.1.0.ebuild:
-  Use new PEAR eclass.
-
-  10 Sep 2005; Sebastian Bergmann <sebastian@gentoo.org> phing-2.1.0.ebuild:
-  Fix (R)DEPEND, KEYWORDS.
-
-*phing-2.1.0 (14 Jul 2005)
-
-  14 Jul 2005; Sebastian Bergmann <sebastian@gentoo.org>
-  -phing-2.0.0.ebuild, +phing-2.1.0.ebuild:
-  Version bump.
-
-*phing-2.0.0 (15 Mar 2005)
-
-  15 Mar 2005; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
-  +phing-2.0.0.ebuild:
-  New ebuild.

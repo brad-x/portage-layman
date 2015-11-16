@@ -1,103 +1,68 @@
 # ChangeLog for x11-plugins/wmacpi
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmacpi/ChangeLog,v 1.27 2015/01/12 10:34:11 voyageur Exp $
+# (auto-generated from git log)
 
-*wmacpi-2.3 (12 Jan 2015)
+*wmacpi-2.3 (09 Aug 2015)
+*wmacpi-2.2_rc1 (09 Aug 2015)
+*wmacpi-1.34 (09 Aug 2015)
 
-  12 Jan 2015; Bernard Cafarelli <voyageur@gentoo.org> -wmacpi-2.2.ebuild,
-  +wmacpi-2.3.ebuild, -files/wmacpi-2.2-makefile.patch,
-  +files/wmacpi-2.3-makefile.patch:
-  Version bump, mostly packaging cleanup over previous version
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/1.34-acpi.patch,
+  +files/1.34-apm.patch, +files/2.1rc1-nodeps.patch,
+  +files/2.1rc1-windowed.patch, +files/wmacpi-2.2_rc1-makefile.patch,
+  +files/wmacpi-2.3-makefile.patch, +metadata.xml, +wmacpi-1.34.ebuild,
+  +wmacpi-2.2_rc1.ebuild, +wmacpi-2.3.ebuild:
+  proj/gentoo: Initial commit
 
-  05 Nov 2014; Bernard Cafarelli <voyageur@gentoo.org> wmacpi-2.2.ebuild:
-  Host tarball on my devspace, bug #527610
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*wmacpi-2.2 (10 Oct 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  10 Oct 2014; Bernard Cafarelli <voyageur@gentoo.org> +wmacpi-2.2.ebuild,
-  +files/wmacpi-2.2-makefile.patch:
-  Version bump with new homepage, update makefile patch
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Jun 2008; Markus Meier <maekke@gentoo.org> wmacpi-2.2_rc1.ebuild:
-  x86 stable, bug #229545
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Jun 2008; Santiago M. Mola <coldwind@gentoo.org> wmacpi-2.2_rc1.ebuild:
-  amd64 stable wrt bug #229545
+  23 Aug 2015; Bernard Cafarelli <voyageur@gentoo.org> wmacpi-1.34.ebuild,
+  wmacpi-2.2_rc1.ebuild, wmacpi-2.3.ebuild:
+  fix compilation with new libdockapp
 
-*wmacpi-2.2_rc1 (01 Feb 2008)
+  Package-Manager: portage-2.2.20.1
 
-  01 Feb 2008; Michele Noberasco <s4t4n@gentoo.org> wmacpi-2.2_rc1.ebuild:
-  Version bump, plus fixes for crosscompile, LDFLAGS, etc. Closes bug #207916.
-  wmacpi-1.99_p7.ebuild:
-  Wiped out older version.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
+  wmacpi-2.3.ebuild:
+  Use https by default
 
-  04 Mar 2007; Piotr Jaroszyński <peper@gentoo.org> wmacpi-1.99_p7.ebuild,
-  wmacpi-2.1_rc1.ebuild:
-  Fix incomplete sys-apps/acpi -> sys-power/acpi move.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  07 Feb 2006; Simon Stelling <blubb@gentoo.org> wmacpi-2.1_rc1.ebuild:
-  stable on amd64
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> wmacpi-1.34.ebuild,
-  wmacpi-1.99_p7.ebuild, wmacpi-2.1_rc1.ebuild:
-  Fixed DEPEND for modular X, see bug #118297.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Aug 2005; Michele Noberasco <s4t4n@gentoo.org> wmacpi-2.1_rc1.ebuild:
-  Stable for x86.
+  Bug: https://bugs.gentoo.org/552720
 
-*wmacpi-2.1_rc1 (25 Jan 2005)
-
-  25 Jan 2005; Michele Noberasco <s4t4n@gentoo.org> wmacpi-2.1_rc1.ebuild:
-  Version bump, plus patch that adds support for windowed mode.
-  Closes #76885, submitted (and patches provided) by Jochen Eisinger
-  <jochen.eisinger@gmx.de>
-  wmacpi-1.34.ebuild, wmacpi-1.99_p7.ebuild:
-  Update copyright headers...
-
-  01 Nov 2004; Gustavo Zacarias <gustavoz@gentoo.org> wmacpi-1.34.ebuild,
-  wmacpi-1.99_p7.ebuild:
-  Keyworded -sparc... no ACPI, move along
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org> wmacpi-1.99_p7.ebuild:
-  Stable on amd64.
-
-*wmacpi-1.99_p7 (20 Aug 2004)
-
-  20 Aug 2004; Michele Noberasco <s4t4n@gentoo.org> wmacpi-1.99_p7.ebuild:
-  Version bump. Add DEPEND on x11-libs/libdockapp, change acpi and acpi.1
-  names to acpi-batt-status and acpi-batt-status.1 to fix #60685.
-  Marking it stable for x86.
-  wmacpi-1.99_p6.ebuild, files/digest-wmacpi-1.99_p6:
-  Remove older version...
-
-  04 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>:
-  No more apm support, therefore -ppc
-
-*wmacpi-1.99_p6 (13 Aug 2004)
-
-  13 Aug 2004; Michele Noberasco <s4t4n@gentoo.org> wmacpi-1.99_p6.ebuild:
-  Version bump. This version only supports acpi, so all apm related
-  stuff was removed from ebuild... Closes #60237.
-
-  23 Jun 2004; Aron Griffis <agriffis@gentoo.org> wmacpi-1.34.ebuild:
-  QA - fix use invocation
-
-*wmacpi-1.34 (23 Feb 2003)
-
-  04 Sep 2003; Mike Frysinger <vapier@gentoo.org> :
-  Added patches to remove apm/acpi parts ... this way only support for
-  one is include at a time #27685.
-
-  25 Jun 2003; Mike Frysinger <vapier@gentoo.org> :
-  Unmasked because older version is broke with newer kernels #22973.
-
-  23 Feb 2003; Mike Frysinger <vapier@gentoo.org> :
-  Version bump for #15967.
-
-*wmacpi-1.21 (22 Nov 2002)
-
-  22 Nov 2002; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by David Spreen <netzwurm@debian.org>.

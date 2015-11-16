@@ -1,92 +1,66 @@
 # ChangeLog for app-accessibility/espeakup
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/espeakup/ChangeLog,v 1.23 2013/10/10 22:39:12 williamh Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Oct 2013; William Hubbs <williamh@gentoo.org> espeakup-0.71.ebuild,
-  espeakup-9999.ebuild:
-  Bump to eapi 5 to allow use dependencies can be added for espeak. This is
-  important enough that I am making this change directly to a stable ebuild as
-  well. Otherwise, it is possible to have espeakup be unable to speak which
-  breaks accessibility.
+*espeakup-9999 (09 Aug 2015)
+*espeakup-0.71 (09 Aug 2015)
 
-  25 Jun 2011; William Hubbs <williamh@gentoo.org> espeakup-9999.ebuild:
-  migrate to git-2 eclass.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +espeakup-0.71.ebuild,
+  +espeakup-9999.ebuild, +files/espeakup.confd, +files/espeakup.rc,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  16 May 2011; Diego E. Pettenò <flameeyes@gentoo.org> espeakup-0.71.ebuild,
-  espeakup-9999.ebuild:
-  Fix error message setting.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Apr 2011; William Hubbs <williamh@gentoo.org> espeakup-0.71.ebuild,
-  espeakup-9999.ebuild:
-  Check for CONFIG_SPEAKUP and CONFIG_SPEAKUP_SYNTH_SOFT for bug #365105.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 Jan 2011; William Hubbs <williamh@gentoo.org> espeakup-0.71.ebuild,
-  espeakup-9999.ebuild:
-  Fix RDEPEND since speakup is part of linux-2.6.37 or later.
-  We want to favor the speakup built into the kernel for
-  virtual/linux-sources >= 2.6.37 and still work with older kernels.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Oct 2009; William Hubbs <williamh@gentoo.org> espeakup-0.71.ebuild,
-  espeakup-9999.ebuild:
-  changed some echo commands to elogs.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Sep 2009; William Hubbs <williamh@gentoo.org> espeakup-9999.ebuild:
-  Updated prefix setting in the live ebuild.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Aug 2009; William Hubbs <williamh@gentoo.org> -espeakup-0.60.ebuild:
-  removed old version
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Aug 2009; Jeremy Olexa <darkside@gentoo.org> ChangeLog:
-  amd64 stable, bug 278689
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jul 2009; William Hubbs <williamh@gentoo.org> espeakup-0.71.ebuild:
-  stable x86
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> espeakup-9999.ebuild:
+  Use https by default
 
-*espeakup-9999 (22 Jul 2009)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Jul 2009; William Hubbs <williamh@gentoo.org> +espeakup-9999.ebuild:
-  added live ebuild for testing
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*espeakup-0.71 (31 May 2009)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 May 2009; William Hubbs <williamh@gentoo.org> +espeakup-0.71.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  23 Apr 2009; Markus Meier <maekke@gentoo.org> espeakup-0.60:
-  amd64 stable, bug #266586
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Apr 2009; William Hubbs <williamh@gentoo.org> espeakup-0.60:
-  Stable on x86.
-
-  01 Apr 2009; William Hubbs <williamh@gentoo.org> metadata.xml:
-  Took over maintainership due to dmwaters retiring.
-
-*espeakup-0.60 (09 Mar 2009)
-
-  09 Mar 2009; William Hubbs <williamh@gentoo.org> +files/espeakup.confd,
-  files/espeakup.rc, -espeakup-0.4.ebuild, -espeakup-0.51.ebuild,
-  +espeakup-0.60.ebuild:
-  Version bump and removed old versions.
-
-*espeakup-0.51 (11 Feb 2009)
-
-  11 Feb 2009; William Hubbs <williamh@gentoo.org> +espeakup-0.51.ebuild:
-  Version bump.
-
-  23 Oct 2008; William Hubbs <williamh@gentoo.org> -espeakup-0.2.ebuild:
-  Removed old version.
-
-*espeakup-0.4 (23 Oct 2008)
-
-  23 Oct 2008; William Hubbs <williamh@gentoo.org> +espeakup-0.4.ebuild:
-  Version bump.
-
-  11 Sep 2008; Deedra Waters <dmwaters@gentoo.org> metadata.xml,
-  espeakup-0.2.ebuild:
-  Added ~amd64 keyword, and took over maintainer at williamh's request.
-
-*espeakup-0.2 (02 Sep 2008)
-
-  02 Sep 2008; William Hubbs <williamh@gentoo.org> +files/espeakup.rc,
-  +metadata.xml, +espeakup-0.2.ebuild:
-  Initial commit.

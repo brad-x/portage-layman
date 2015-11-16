@@ -1,81 +1,57 @@
 # ChangeLog for app-misc/irtrans-irserver
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/irtrans-irserver/ChangeLog,v 1.12 2015/07/12 04:25:57 idella4 Exp $
+# (auto-generated from git log)
 
-  12 Jul 2015; Ian Delaney <idella4@gentoo.org>
-  -files/irtrans-irserver-6.03.08-arm-1.patch,
-  -files/irtrans-irserver-6.03.09-arm-1.patch, -irtrans-irserver-6.03.08.ebuild,
-  -irtrans-irserver-6.03.09.ebuild:
-  rm old wrt Bug #360945
+*irtrans-irserver-6.09.04 (09 Aug 2015)
 
-*irtrans-irserver-6.09.04 (26 Jun 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/irtrans-server.confd, +files/irtrans-server.initd,
+  +irtrans-irserver-6.09.04.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  26 Jun 2015; Ian Delaney <idella4@gentoo.org>
-  +irtrans-irserver-6.09.04.ebuild, metadata.xml:
-  bump; ebuild submitted by proxy maintainer via bug #360945, EAPI advanced to 5
-  with minor tidies to match, new IUSE flag 'mono' added to metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Mar 2013; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
-  Add proxy-maintainers to metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*irtrans-irserver-6.03.09 (29 Mar 2011)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  29 Mar 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +irtrans-irserver-6.03.09.ebuild,
-  +files/irtrans-irserver-6.03.09-arm-1.patch:
-  version bump, bug 360945
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Feb 2011; Joerg Bornkessel <hd_brummy@gentoo.org> metadata.xml:
-  mail address fixed
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  02 Feb 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  irtrans-irserver-6.03.08.ebuild:
-  removed unneeded virtual/libc
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*irtrans-irserver-6.03.08 (02 Feb 2011)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Feb 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
-  -files/irtrans-irserver-5.9.01-missing-include.diff,
-  -irtrans-irserver-5.9.04.ebuild, -irtrans-irserver-5.9.07.ebuild,
-  -files/irtrans-irserver-5.11.08-arm_remotes-1.patch,
-  -irtrans-irserver-5.11.10.ebuild, -irtrans-irserver-5.12.08.ebuild,
-  +irtrans-irserver-6.03.08.ebuild,
-  +files/irtrans-irserver-6.03.08-arm-1.patch, metadata.xml:
-  clean up; version bump bug #235146; fixed bug #3335973; set to valid email
-  adresse; fix bigfile in filesdir bug #248959
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*irtrans-irserver-5.12.08 (05 Jan 2009)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  05 Jan 2009; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +irtrans-irserver-5.12.08.ebuild:
-  versions bump; thanks to P.Kosunen for pointing per mail
+  Bug: https://bugs.gentoo.org/552720
 
-*irtrans-irserver-5.11.10 (10 Aug 2008)
-
-  10 Aug 2008; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/irtrans-irserver-5.11.08-arm_remotes-1.patch,
-  +irtrans-irserver-5.11.10.ebuild:
-  version bump, includes now arm support; thanks to M.Fetka on #232227
-
-*irtrans-irserver-5.9.07 (06 Dec 2007)
-
-  06 Dec 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  files/irtrans-server.initd, -irtrans-irserver-5.9.01.ebuild,
-  irtrans-irserver-5.9.04.ebuild, +irtrans-irserver-5.9.07.ebuild:
-  version bump, updated initscrit with provide lirc, tanks to M.Fetka on
-  #200224 ; clean up; fix quoting warnings to make repoman happy
-
-*irtrans-irserver-5.9.04 (26 Aug 2007)
-
-  26 Aug 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +irtrans-irserver-5.9.04.ebuild:
-  version bump, thanks to M.Fetka on bug 190278
-
-*irtrans-irserver-5.9.01 (16 Aug 2007)
-
-  16 Aug 2007; Joerg Bornkessel <hd_brummy@gentoo.org>
-  +files/irtrans-irserver-5.9.01-missing-include.diff,
-  +files/irtrans-server.confd, +files/irtrans-server.initd, +metadata.xml,
-  +irtrans-irserver-5.9.01.ebuild:
-  initial ebuild, thanks to M.Fetka ( proxied Maintainer ) and C.Heuchober on
-  bug #167434

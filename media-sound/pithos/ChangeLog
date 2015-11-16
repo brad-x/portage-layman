@@ -1,49 +1,68 @@
 # ChangeLog for media-sound/pithos
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pithos/ChangeLog,v 1.10 2015/06/26 17:28:21 chutzpah Exp $
+# (auto-generated from git log)
 
-*pithos-1.1.1 (26 Jun 2015)
+*pithos-9999 (09 Aug 2015)
+*pithos-1.1.1 (09 Aug 2015)
+*pithos-1.0.1 (09 Aug 2015)
 
-  26 Jun 2015; Patrick McLean <chutzpah@gentoo.org> +pithos-1.1.1.ebuild,
-  -pithos-1.0.0.ebuild, pithos-9999.ebuild:
-  Version bump, remove old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/pithos-1.0.0-icons.patch, +metadata.xml, +pithos-1.0.1.ebuild,
+  +pithos-1.1.1.ebuild, +pithos-9999.ebuild:
+  proj/gentoo: Initial commit
 
-  11 Mar 2015; Michał Górny <mgorny@gentoo.org> pithos-1.0.0.ebuild,
-  pithos-1.0.1.ebuild, pithos-9999.ebuild:
-  Add missing gstreamer[introspection] dep,
-  https://bugs.funtoo.org/browse/FL-2170.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Nov 2014; Pacho Ramos <pacho@gentoo.org> pithos-1.0.1.ebuild,
-  pithos-9999.ebuild:
-  Support python 3.4
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*pithos-1.0.1 (14 Oct 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Oct 2014; Patrick McLean <chutzpah@gentoo.org> +pithos-1.0.1.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*pithos-1.0.0 (22 Sep 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Sep 2014; Patrick McLean <chutzpah@gentoo.org> +pithos-1.0.0.ebuild,
-  +pithos-9999.ebuild, -pithos-20130710.ebuild, -pithos-20130808.ebuild,
-  -pithos-99999999.ebuild, +files/pithos-1.0.0-icons.patch,
-  -files/pithos-20130808-detect-datadir.patch,
-  -files/pithos-20130808-dont-notify-volume.patch,
-  -files/pithos-detect-datadir.patch, -files/setup.py, metadata.xml:
-  Version bump to 1.0.0, remove all older (probably semi-broken) versions to
-  avoid version number confusion.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*pithos-99999999 (11 Jul 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  11 Jul 2013; Patrick McLean <chutz@gentoo.org> -pithos-9999.ebuild,
-  +pithos-99999999.ebuild:
-  Rename pithos-9999 to pithos-99999999 so the live will have a higher version
-  that the release.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*pithos-20130710 (10 Jul 2013)
-*pithos-9999 (10 Jul 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  10 Jul 2013; Patrick McLean <chutz@gentoo.org> +pithos-9999.ebuild,
-  +pithos-20130710.ebuild, +files/pithos-detect-datadir.patch, +files/setup.py,
-  +metadata.xml:
-  Initial import.
+  Bug: https://bugs.gentoo.org/552720
+
+  11 Sep 2015; Justin Lecher <jlec@gentoo.org> pithos-1.0.1.ebuild,
+  pithos-1.1.1.ebuild, pithos-9999.ebuild:
+  Drop unncessary die
+
+  Fix build <> run time dep confusion
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

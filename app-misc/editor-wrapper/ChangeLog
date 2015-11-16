@@ -1,135 +1,57 @@
 # ChangeLog for app-misc/editor-wrapper
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/editor-wrapper/ChangeLog,v 1.22 2014/01/18 03:03:10 vapier Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  18 Jan 2014; Mike Frysinger <vapier@gentoo.org> editor-wrapper-4.ebuild:
-  Add arm64 love.
+*editor-wrapper-4 (09 Aug 2015)
 
-  08 Nov 2013; Michael Haubenwallner <haubi@gentoo.org>
-  editor-wrapper-4.ebuild:
-  keyword ~ppc-aix
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +editor-wrapper-4.ebuild,
+  +files/editor-wrapper-4.sh, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  17 Feb 2013; Zac Medico <zmedico@gentoo.org> editor-wrapper-4.ebuild:
-  Add ~arm-linux keyword.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  05 Aug 2012; Fabian Groffen <grobian@gentoo.org> editor-wrapper-4.ebuild:
-  Marked ~x86-freebsd
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 Jul 2012; Richard Yao <ryao@gentoo.org> editor-wrapper-4.ebuild:
-  Keyword ~x64-freebsd, Bug #424836
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  04 Jun 2012; Fabian Groffen <grobian@gentoo.org> editor-wrapper-4.ebuild:
-  Marked ~{amd64,x86}-linux, bug #418129
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  04 Jun 2012; Fabian Groffen <grobian@gentoo.org> editor-wrapper-4.ebuild:
-  Marked ~m68k-mint, bug #418389
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> editor-wrapper-4.ebuild,
+  metadata.xml:
+  Use https by default
 
-  28 May 2012; Fabian Groffen <grobian@gentoo.org> editor-wrapper-4.ebuild:
-  Fix wrapper for Prefix usage, marked *-macos and *-solaris
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  27 Apr 2012; Fabian Groffen <grobian@gentoo.org> editor-wrapper-4.ebuild:
-  Marked ~sparc-solaris
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> editor-wrapper-4.ebuild:
-  keyword ~amd64-fbsd
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  29 Dec 2011; Ulrich Mueller <ulm@gentoo.org> -editor-wrapper-2.ebuild,
-  -files/editor-wrapper-2.sh, -editor-wrapper-3.ebuild,
-  -files/editor-wrapper-3.sh, editor-wrapper-4.ebuild:
-  Remove old. Drop backwards compatibility symlink.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> editor-wrapper-4.ebuild:
-  Stable for ppc/ppc64; bug #379095
+  Bug: https://bugs.gentoo.org/552720
 
-  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> editor-wrapper-4.ebuild:
-  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #379095
-
-  28 Aug 2011; Markus Meier <maekke@gentoo.org> editor-wrapper-4.ebuild:
-  arm stable, bug #379095
-
-  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> editor-wrapper-4.ebuild:
-  Stable for HPPA (bug #379095).
-
-  23 Aug 2011; Markos Chandras <hwoarang@gentoo.org> editor-wrapper-4.ebuild:
-  Stable on amd64 wrt bug #379095
-
-*editor-wrapper-4 (22 Aug 2011)
-
-  22 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +editor-wrapper-4.ebuild,
-  +files/editor-wrapper-4.sh:
-  Version bump, fixes bug 380285.
-
-  21 Aug 2011; nixnut <nixnut@gentoo.org> editor-wrapper-3.ebuild:
-  ppc stable 379743
-
-  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> editor-wrapper-3.ebuild:
-  x86 stable wrt bug #379095
-
-  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> editor-wrapper-3.ebuild:
-  Stable on amd64 wrt bug #379095
-
-*editor-wrapper-3 (11 Aug 2011)
-
-  11 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +editor-wrapper-3.ebuild,
-  +files/editor-wrapper-3.sh:
-  Version bump, adding wrapper for PAGER.
-
-*editor-wrapper-2 (11 Aug 2011)
-
-  11 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +editor-wrapper-2.ebuild,
-  +files/editor-wrapper-2.sh, +metadata.xml:
-  Package moved from app-editors/gentoo-editor to app-misc/editor-wrapper.
-
-  25 Jun 2010; Peter Volkov <pva@gentoo.org> gentoo-editor-2.ebuild:
-  ~mips keyworded, bug #293985
-
-  25 Jun 2010; Alexis Ballier <aballier@gentoo.org> gentoo-editor-2.ebuild:
-  keyword ~sparc-fbsd
-
-  01 Feb 2010; Markos Chandras <hwoarang@gentoo.org> gentoo-editor-2.ebuild:
-  Stable on amd64 wrt bug #301313
-
-  26 Jan 2010; Jeroen Roovers <jer@gentoo.org> gentoo-editor-2.ebuild:
-  Stable for HPPA (bug #301313).
-
-  23 Jan 2010; Brent Baude <ranger@gentoo.org> gentoo-editor-2.ebuild:
-  stable ppc, bug 301313
-
-  19 Jan 2010; Raúl Porcel <armin76@gentoo.org> gentoo-editor-2.ebuild:
-  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #301313
-
-  19 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  gentoo-editor-2.ebuild:
-  stable x86, bug 301313
-
-  18 Jan 2010; Brent Baude <ranger@gentoo.org> gentoo-editor-2.ebuild:
-  stable ppc64, bug 301313
-
-  20 Dec 2009; Raúl Porcel <armin76@gentoo.org> gentoo-editor-2.ebuild:
-  Add ~alpha/~arm/~ia64/~m68k/~s390/~sh/~sparc wrt #293985
-
-  09 Dec 2009; Brent Baude <ranger@gentoo.org> gentoo-editor-2.ebuild:
-  Marking gentoo-editor-2 ~ppc64 for bug 293985
-
-  30 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> gentoo-editor-2.ebuild:
-  Keywording for ppc, bug 293985
-
-  25 Nov 2009; Jeroen Roovers <jer@gentoo.org> gentoo-editor-2.ebuild:
-  Marked ~hppa (bug #293985).
-
-*gentoo-editor-2 (24 Nov 2009)
-
-  24 Nov 2009; Ulrich Mueller <ulm@gentoo.org> -gentoo-editor-1.ebuild,
-  -files/gentoo-editor-1.sh, +gentoo-editor-2.ebuild,
-  +files/gentoo-editor-2.sh:
-  Pass arguments to editor transparently.
-
-  24 Nov 2009; Alexis Ballier <aballier@gentoo.org> gentoo-editor-1.ebuild:
-  keyword ~x86-fbsd, bug #293985
-
-*gentoo-editor-1 (21 Nov 2009)
-
-  21 Nov 2009; Ulrich Mueller <ulm@gentoo.org> +gentoo-editor-1.ebuild,
-  +files/gentoo-editor-1.sh, +metadata.xml:
-  Initial import, bug 286017. gentoo-editor script by Diego Pettenò, with
-  modifications by me.

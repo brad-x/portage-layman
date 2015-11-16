@@ -1,115 +1,57 @@
 # ChangeLog for app-misc/sl
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/sl/ChangeLog,v 1.33 2012/12/27 11:45:26 kensington Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  27 Dec 2012; Michael Palimaka <kensington@gentoo.org> -files/Makefile.patch,
-  -sl-3.03-r1.ebuild, -sl-3.03-r2.ebuild:
-  Remove old.
+*sl-3.03-r3 (09 Aug 2015)
 
-  27 Dec 2012; Raúl Porcel <armin76@gentoo.org> sl-3.03-r3.ebuild:
-  alpha/sparc stable wrt #443784
-
-  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> sl-3.03-r3.ebuild:
-  Stable for ppc64, wrt bug #443874
-
-  29 Nov 2012; Brent Baude <ranger@gentoo.org> sl-3.03-r3.ebuild:
-  Marking sl-3.03-r3 ppc for bug 443784
-
-  29 Nov 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
-  Adopt sl. Choo Choo!
-
-  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> sl-3.03-r3.ebuild:
-  Stable for x86, wrt bug #443784
-
-  20 Nov 2012; Jeroen Roovers <jer@gentoo.org> sl-3.03-r3.ebuild:
-  Stable for HPPA (bug #443784).
-
-  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> sl-3.03-r3.ebuild:
-  Stable for amd64, wrt bug #443784
-
-*sl-3.03-r3 (18 Oct 2012)
-
-  18 Oct 2012; Michael Palimaka <kensington@gentoo.org> +files/Makefile,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/Makefile,
+  +files/fix_compilation.patch, +files/sl-3.03-gentoo.diff, +metadata.xml,
   +sl-3.03-r3.ebuild:
-  Add vanilla USE flag to toggle original behaviour, wrt bug #225159. Update
-  HOMEPAGE.
+  proj/gentoo: Initial commit
 
-*sl-3.03-r2 (18 Oct 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  18 Oct 2012; Michael Palimaka <kensington@gentoo.org> +sl-3.03-r2.ebuild:
-  Fix breakage with patch-2.7, wrt bug #435702. Migrate to EAPI 4.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org> -sl-3.03.ebuild:
-  old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Jan 2011; Kacper Kowalik <xarthisius@gentoo.org> sl-3.03-r1.ebuild:
-  ppc64 stable wrt #345923
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Jan 2011; Brent Baude <ranger@gentoo.org> sl-3.03-r1.ebuild:
-  stable ppc, bug 345923
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Dec 2010; Raúl Porcel <armin76@gentoo.org> sl-3.03-r1.ebuild:
-  alpha/sparc stable wrt #345923
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  26 Nov 2010; Jeroen Roovers <jer@gentoo.org> sl-3.03-r1.ebuild:
-  Stable for HPPA (bug #345923).
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Nov 2010; Markos Chandras <hwoarang@gentoo.org> sl-3.03-r1.ebuild:
-  Stable on amd64 wrt bug #345923
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Nov 2010; Thomas Kahle <tomka@gentoo.org> sl-3.03-r1.ebuild:
-  x86 stable per bug 345923
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*sl-3.03-r1 (09 Aug 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  09 Aug 2010; Christian Ruppert <idl0r@gentoo.org> +sl-3.03-r1.ebuild,
-  +files/Makefile.patch, +files/fix_compilation.patch:
-  Revision bump. Add Makefile patch to allow the use of the Makefile. Add
-  patch to fix compiler warnings. Fix HOMEPAGE. Use EAPI 3, some QA fixes
-  and clean up. Thanks to Diego E. 'Flameeyes' Pettenò
-  <flameeyes@gentoo.org> for the calloc hint.
-
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org> sl-3.03.ebuild:
-  Transfer Prefix keywords
-
-  18 Jul 2008; Alexis Ballier <aballier@gentoo.org> sl-3.03.ebuild:
-  keyword ~x86-fbsd thanks to Henning Schild <henning@wh9.tu-dresden.de>,
-  bug #198318
-
-  25 Dec 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Removing usata from metadata.xml as per #22931. Assigning to maintainer-needed.
-
-  27 Jul 2007; Fabian Groffen <grobian@gentoo.org> sl-3.03.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  14 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
-  add <herd>no-herd</herd>
-
-  30 Dec 2006; Mamoru KOMACHI <usata@gentoo.org> sl-3.03.ebuild:
-  Ebuild cleanup. Thanks to flameeyes; bug #158688.
-
-  12 May 2005; Guy Martin <gmsoft@gentoo.org> sl-3.03.ebuild:
-  Stable on hppa.
-
-  02 Feb 2005; Jan Brinkmann <luckyduck@gentoo.org> sl-3.03.ebuild:
-  added ~amd64 to KEYWORDS. fixes #80447
-
-  13 Dec 2004; Jason Wever <weeve@gentoo.org> sl-3.03.ebuild:
-  Stable on sparc.
-
-  17 Jul 2004; Tom Gall <tgall@gentoo.org> sl-3.03.ebuild:
-  stable on ppc64, bug #55683
-
-  01 Jun 2004; Aron Griffis <agriffis@gentoo.org> sl-3.03.ebuild:
-  Fix use invocation
-
-*sl-3.03 (07 Sep 2003)
-
-  27 Sep 2003; Mamoru KOMACHI <usata@gentoo.org> sl-3.03.ebuild:
-  Marked as stable on x86 and alpha
-
-  07 Sep 2003; Mamoru KOMACHI <usata@gentoo.org> sl-3.03.ebuild,
-  files/sl-3.03-gentoo.diff:
-  Initial import.  Ebuild submitted by YAMAKURA Makoto <yakina@gentoo.org>
-  at GentooJP BugTrack.  Special thanks to Tomoaki Okayama
-  <okayama@sodan.ecc.u-tokyo.ac.jp> for the contribution of English manpage.

@@ -1,204 +1,80 @@
 # ChangeLog for sys-fs/aufs-headers
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs-headers/ChangeLog,v 1.34 2015/04/20 07:48:22 jlec Exp $
+# (auto-generated from git log)
 
-*aufs-headers-3.19_p20150420 (20 Apr 2015)
+*aufs-headers-4.0_p20150420 (09 Aug 2015)
+*aufs-headers-3.19_p20150420 (09 Aug 2015)
+*aufs-headers-3.19_p20150323 (09 Aug 2015)
 
-  20 Apr 2015; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.19_p20150420.ebuild:
-  Version Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +aufs-headers-3.19_p20150323.ebuild, +aufs-headers-3.19_p20150420.ebuild,
+  +aufs-headers-4.0_p20150420.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*aufs-headers-4.0_p20150420 (20 Apr 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  20 Apr 2015; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-4.0_p20150420.ebuild, -aufs-headers-3.12_p20140114.ebuild,
-  -aufs-headers-3.16_p20141006.ebuild, -aufs-headers-3.18_p20150112.ebuild,
-  -aufs-headers-3.18_p20150126.ebuild:
-  Version Bump; drop old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*aufs-headers-3.19_p20150323 (23 Mar 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Mar 2015; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.19_p20150323.ebuild:
-  Bump to latest aufs
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Mar 2015; Justin Lecher <jlec@gentoo.org>
-  -aufs-headers-3.11_p20130915.ebuild, -aufs-headers-3.13_p20140420.ebuild,
-  -aufs-headers-3.15_p20140630.ebuild, -aufs-headers-3.15_p20140707.ebuild,
-  -aufs-headers-3.15_p20140721.ebuild, -aufs-headers-3.15_p20140728.ebuild,
-  -aufs-headers-3.15_p20140804.ebuild, -aufs-headers-3.16_p20140811.ebuild,
-  -aufs-headers-3.16_p20140818.ebuild:
-  Clean old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org>
+  aufs-headers-3.19_p20150323.ebuild, aufs-headers-3.19_p20150420.ebuild,
+  aufs-headers-4.0_p20150420.ebuild, metadata.xml:
+  Use https by default
 
-  21 Mar 2015; Andreas Schuerch <nativemad@gentoo.org>
-  aufs-headers-3.12_p20140114.ebuild:
-  x86 stable, see bug 504082
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*aufs-headers-3.18_p20150126 (25 Jan 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  25 Jan 2015; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.18_p20150126.ebuild:
-  Bump to latest aufs3
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*aufs-headers-3.18_p20150112 (12 Jan 2015)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 Jan 2015; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.18_p20150112.ebuild:
-  Bump to latest aufs3
+  Bug: https://bugs.gentoo.org/552720
 
-*aufs-headers-3.16_p20141006 (06 Oct 2014)
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org>
+  aufs-headers-4.0_p20150420.ebuild:
+  amd64 stable wrt bug #556646
 
-  06 Oct 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.16_p20141006.ebuild:
-  Version Bump
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-*aufs-headers-3.16_p20140818 (21 Aug 2014)
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org>
+  aufs-headers-4.0_p20150420.ebuild:
+  x86 stable wrt bug #556646
 
-  21 Aug 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.16_p20140818.ebuild:
-  Version Bump
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*aufs-headers-3.16_p20140811 (10 Aug 2014)
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
 
-  10 Aug 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.16_p20140811.ebuild:
-  Bump to latest aufs3
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*aufs-headers-3.15_p20140804 (10 Aug 2014)
-
-  10 Aug 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.15_p20140804.ebuild:
-  Bump to latest aufs3
-
-*aufs-headers-3.15_p20140728 (27 Jul 2014)
-
-  27 Jul 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.15_p20140728.ebuild:
-  Version Bump
-
-*aufs-headers-3.15_p20140721 (21 Jul 2014)
-
-  21 Jul 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.15_p20140721.ebuild:
-  Bump to latest aufs3 release
-
-*aufs-headers-3.15_p20140707 (06 Jul 2014)
-
-  06 Jul 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.15_p20140707.ebuild:
-  Bump to latest aufs3
-
-*aufs-headers-3.15_p20140630 (30 Jun 2014)
-
-  30 Jun 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.15_p20140630.ebuild:
-  Latest release
-
-  24 May 2014; Markos Chandras <hwoarang@gentoo.org>
-  aufs-headers-3.12_p20140114.ebuild:
-  Stable on amd64 wrt bug #504082
-
-*aufs-headers-3.13_p20140420 (24 Apr 2014)
-
-  24 Apr 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.13_p20140420.ebuild:
-  Version Bump
-
-  14 Jan 2014; Agostino Sarubbo <ago@gentoo.org>
-  aufs-headers-3.11_p20130915.ebuild:
-  Stable for x86, wrt bug #491638
-
-*aufs-headers-3.12_p20140114 (13 Jan 2014)
-
-  13 Jan 2014; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.12_p20140114.ebuild:
-  Version Bump
-
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org>
-  aufs-headers-3.11_p20130915.ebuild:
-  amd64 stable, bug #491638
-
-  19 Nov 2013; Justin Lecher <jlec@gentoo.org>
-  -aufs-headers-3.2_p20130821.ebuild, -aufs-headers-3.2_p20130826.ebuild,
-  -aufs-headers-3.2_p20130915.ebuild, -aufs-headers-3.10_p20130807.ebuild,
-  -aufs-headers-3.10_p20130821.ebuild, -aufs-headers-3.10_p20130826.ebuild:
-  Drop old
-
-  20 Sep 2013; Justin Lecher <jlec@gentoo.org>
-  aufs-headers-3.2_p20130821.ebuild, aufs-headers-3.2_p20130826.ebuild,
-  aufs-headers-3.2_p20130915.ebuild, aufs-headers-3.10_p20130807.ebuild,
-  aufs-headers-3.10_p20130821.ebuild, aufs-headers-3.10_p20130826.ebuild,
-  aufs-headers-3.11_p20130915.ebuild:
-  Convert to doheader
-
-*aufs-headers-3.11_p20130915 (17 Sep 2013)
-*aufs-headers-3.2_p20130915 (17 Sep 2013)
-
-  17 Sep 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.2_p20130915.ebuild, +aufs-headers-3.11_p20130915.ebuild:
-  Bump to latest aufs3 release
-
-*aufs-headers-3.10_p20130826 (26 Aug 2013)
-*aufs-headers-3.2_p20130826 (26 Aug 2013)
-
-  26 Aug 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.2_p20130826.ebuild, +aufs-headers-3.10_p20130826.ebuild:
-  Version Bump
-
-*aufs-headers-3.10_p20130821 (21 Aug 2013)
-*aufs-headers-3.2_p20130821 (21 Aug 2013)
-
-  21 Aug 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.2_p20130821.ebuild, -aufs-headers-3.8_p20130318.ebuild,
-  -aufs-headers-3.8_p20130325.ebuild, -aufs-headers-3.8_p20130401.ebuild,
-  -aufs-headers-3.8_p20130422-r1.ebuild, -aufs-headers-3.10_p20130722.ebuild,
-  +aufs-headers-3.10_p20130821.ebuild:
-  Add latest version drop old
-
-*aufs-headers-3.10_p20130807 (07 Aug 2013)
-
-  07 Aug 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.10_p20130807.ebuild:
-  Latest release
-
-*aufs-headers-3.10_p20130722 (22 Jul 2013)
-
-  22 Jul 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.10_p20130722.ebuild:
-  Version Bump
-
-*aufs-headers-3.8_p20130422-r1 (27 Apr 2013)
-
-  27 Apr 2013; Justin Lecher <jlec@gentoo.org>
-  -aufs-headers-3.8_p20130422.ebuild, +aufs-headers-3.8_p20130422-r1.ebuild:
-  Fix version replacement
-
-*aufs-headers-3.8_p20130422 (27 Apr 2013)
-
-  27 Apr 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.8_p20130422.ebuild:
-  Bump to latest aufs3 release
-
-*aufs-headers-3.8_p20130401 (02 Apr 2013)
-
-  02 Apr 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.8_p20130401.ebuild:
-  Version Bump
-
-*aufs-headers-3.8_p20130325 (30 Mar 2013)
-
-  30 Mar 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.8_p20130325.ebuild:
-  Version Bump
-
-*aufs-headers-3.8_p20130318 (15 Mar 2013)
-
-  15 Mar 2013; Justin Lecher <jlec@gentoo.org>
-  +aufs-headers-3.8_p20130318.ebuild, -aufs-headers-3.8.0.ebuild:
-  Version Bump
-
-*aufs-headers-3.8.0 (10 Mar 2013)
-
-  10 Mar 2013; Justin Lecher <jlec@gentoo.org> +aufs-headers-3.8.0.ebuild,
-  +metadata.xml:
-  Added new package

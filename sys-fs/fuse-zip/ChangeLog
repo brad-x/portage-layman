@@ -1,47 +1,84 @@
 # ChangeLog for sys-fs/fuse-zip
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/fuse-zip/ChangeLog,v 1.7 2014/10/20 01:38:32 zmedico Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*fuse-zip-0.4.0 (20 Oct 2014)
+*fuse-zip-0.4.0 (09 Aug 2015)
+*fuse-zip-0.3.0 (09 Aug 2015)
+*fuse-zip-0.2.13 (09 Aug 2015)
+*fuse-zip-0.2.12 (09 Aug 2015)
 
-  20 Oct 2014; Zac Medico <zmedico@gentoo.org> +fuse-zip-0.4.0.ebuild:
-  0.4.0 version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/fuse-zip-0.2.13-as-needed.patch, +files/libzip-fix-0.10.patch,
+  +fuse-zip-0.2.12.ebuild, +fuse-zip-0.2.13.ebuild, +fuse-zip-0.3.0.ebuild,
+  +fuse-zip-0.4.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*fuse-zip-0.3.0 (13 Aug 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Aug 2013; Markos Chandras <hwoarang@gentoo.org> +fuse-zip-0.3.0.ebuild:
-  Version bump
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Oct 2011; Markos Chandras <hwoarang@gentoo.org> fuse-zip-0.2.13.ebuild,
-  +files/libzip-fix-0.10.patch:
-  Fix building with new gcc and libzip. Bug #364747. Thanks to Billy Holmes
-  <billy@gonoph.net>
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Dec 2010; Markos Chandras <hwoarang@gentoo.org> fuse-zip-0.2.13.ebuild:
-  Fix parallel build warnings. Thanks to Diego Elio Pettenò
-  <flameeyes@gentoo.org>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*fuse-zip-0.2.13 (07 Dec 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Dec 2010; Markos Chandras <hwoarang@gentoo.org> +fuse-zip-0.2.13.ebuild,
-  +files/fuse-zip-0.2.13-as-needed.patch:
-  Version bump. Fix as-needed linking problems
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  28 Aug 2010; Markos Chandras <hwoarang@gentoo.org> fuse-zip-0.2.12.ebuild:
-  Restrict tests per bug #335027
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*fuse-zip-0.2.12 (05 Jun 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> fuse-zip-0.2.12.ebuild,
+  fuse-zip-0.2.13.ebuild, fuse-zip-0.3.0.ebuild, fuse-zip-0.4.0.ebuild:
+  Enable https for all google URIs
 
-  05 Jun 2010; Markos Chandras <hwoarang@gentoo.org>
-  +fuse-zip-0.2.12.ebuild, +metadata.xml:
-  Moved from sunrise overlay. Fixes bug #241202. Thanks to Marcin Miroslaw
-  <bug@mejor.pl> for the sunrise ebuild
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2010; Marcin Miroslaw <bug@mejor.pl> -fuse-zip-0.2.8.ebuild,
-  +fuse-zip-0.2.12.ebuild:
-  Bump to 0.2.12
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> fuse-zip-0.2.12.ebuild,
+  fuse-zip-0.2.13.ebuild, fuse-zip-0.3.0.ebuild, fuse-zip-0.4.0.ebuild:
+  Convert URIs for googlecode.com to https
 
-  22 Nov 2009; Marcin Miroslaw <bug@mejor.pl> +fuse-zip-0.2.8.ebuild,
-  +metadata.xml:
-  Initial commit, bug #241202. Thanks to Sergey Dryabzhinsky for proposal of
-  ebuild.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org> fuse-zip-0.2.12.ebuild,
+  fuse-zip-0.2.13.ebuild, fuse-zip-0.3.0.ebuild, fuse-zip-0.4.0.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
+
+  Package-Manager: portage-2.2.20.1
+
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

@@ -1,128 +1,56 @@
 # ChangeLog for net-analyzer/netwag
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/netwag/ChangeLog,v 1.31 2015/06/04 19:04:40 kensington Exp $
+# (auto-generated from git log)
 
-  04 Jun 2015; Michael Palimaka <kensington@gentoo.org> netwag-5.39.0.ebuild:
-  Move various kde-base packages to kde-apps.
+*netwag-5.39.0 (09 Aug 2015)
 
-  14 Jul 2014; Jeroen Roovers <jer@gentoo.org> netwag-5.39.0.ebuild:
-  EAPI bump. Use dohtml.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +netwag-5.39.0.ebuild:
+  proj/gentoo: Initial commit
 
-  01 Feb 2013; Jeroen Roovers <jer@gentoo.org> netwag-5.39.0.ebuild:
-  /usr/bin/eterm changed to /usr/bin/Eterm.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Jan 2013; Jeroen Roovers <jer@gentoo.org> -netwag-5.38.0.ebuild:
-  Old.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Jan 2013; Andreas Schuerch <nativemad@gentoo.org> netwag-5.39.0.ebuild:
-  x86 stable, see bug 440202
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Sep 2012; Rick Farina <zerochaos@gentoo.org> netwag-5.39.0.ebuild:
-  reorder deps so konsole isn't default (not everyone uses kde)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> netwag-5.39.0.ebuild:
-  Clean up.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*netwag-5.39.0 (09 Jul 2012)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> +netwag-5.39.0.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  02 Mar 2011; Jeroen Roovers <jer@gentoo.org> netwag-5.38.0.ebuild:
-  Readd old homepage.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2011; Tim Harder <radhermit@gentoo.org> netwag-5.38.0.ebuild:
-  Update HOMEPAGE and SRC_URI (bug #357019).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Dec 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> netwag-5.38.0.ebuild:
-  x86 stable wrt bug #348338
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Oct 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> netwag-5.36.0.ebuild:
-  x86 stable wrt bug #341081
-
-*netwag-5.38.0 (15 Oct 2010)
-
-  15 Oct 2010; Jeroen Roovers <jer@gentoo.org> +netwag-5.38.0.ebuild:
-  Version bump. Update license. Unconditionally install certain docs.
-
-*netwag-5.36.0 (22 Nov 2009)
-
-  22 Nov 2009; Jeroen Roovers <jer@gentoo.org> +netwag-5.36.0.ebuild,
-  metadata.xml:
-  Version bump. Run genemake in src_configure. Update number of tools. Run
-  genemake through sh. Use emake to install. Marked ~hppa too.
-
-  16 Apr 2007; <welp@gentoo.org> netwag-5.33.0.ebuild:
-  Keyworded ~amd64
-
-  15 Apr 2007; Marcelo Goes <vanquirius@gentoo.org> -netwag-5.28.0.ebuild,
-  -netwag-5.31.0.ebuild, -netwag-5.32.0.ebuild:
-  Remove old ebuilds.
-
-  20 Mar 2007; Raúl Porcel <armin76@gentoo.org> netwag-5.33.0.ebuild:
-  x86 stable
-
-  20 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  31 Oct 2006; Markus Ullmann <jokey@gentoo.org> netwag-5.28.0.ebuild,
-  netwag-5.31.0.ebuild, netwag-5.32.0.ebuild, netwag-5.33.0.ebuild:
-  Fixing deps wrt bug #153254
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org> files/digest-netwag-5.28.0,
-  files/digest-netwag-5.31.0, files/digest-netwag-5.32.0,
-  files/digest-netwag-5.33.0, Manifest:
-  Fixing SHA256 digest, pass four
-
-*netwag-5.33.0 (23 Feb 2006)
-
-  23 Feb 2006; Daniel Black <dragonheart@gentoo.org> +netwag-5.33.0.ebuild:
-  version bump
-
-*netwag-5.32.0 (11 Dec 2005)
-
-  11 Dec 2005; Marcelo Goes <vanquirius@gentoo.org> +netwag-5.32.0.ebuild:
-  5.32.0 version bump.
-
-  15 Oct 2005; Daniel Black <dragonheart@gentoo.org> -netwag-5.29.0.ebuild,
-  -netwag-5.30.0.ebuild, +netwag-5.31.0.ebuild:
-  version bump - old version removal
-
-*netwag-5.31.0 (15 Oct 2005)
-
-  15 Oct 2005; Daniel Black <dragonheart@gentoo.org> -netwag-5.29.0.ebuild,
-  -netwag-5.30.0.ebuild, +netwag-5.31.0.ebuild:
-  version bump and old version cleanout
-
-  09 Oct 2005; <mkay@gentoo.org> netwag-5.28.0.ebuild, netwag-5.29.0.ebuild,
-  netwag-5.30.0.ebuild:
-  dev-lang/tk moved from RDEPEND to DEPEND and dev-lang/tcl reomoved from
-  dependencies (tk depends on it anyway). closing bug #108114
-
-  19 Jul 2005; David Holm <dholm@gentoo.org> netwag-5.30.0.ebuild:
-  Added to ~ppc.
-
-*netwag-5.30.0 (17 Jun 2005)
-
-  17 Jun 2005; Marcelo Goes <vanquirius@gentoo.org> +netwag-5.30.0.ebuild:
-  Version bump.
-
-  01 Apr 2005; Marcelo Goes <vanquirius@gentoo.org> netwag-5.29.0.ebuild:
-  Added NOTE in ebuild header about netwib, netwox and netwag.
-
-*netwag-5.29.0 (30 Mar 2005)
-
-  30 Mar 2005; Aaron Walker <ka0ttic@gentoo.org> +netwag-5.29.0.ebuild:
-  Version bump for bug 87208.
-
-  25 Feb 2005; Aaron Walker <ka0ttic@gentoo.org> netwag-5.28.0.ebuild:
-  Marked stable on x86.
-
-  13 Jan 2005; Sven Wegener <swegener@gentoo.org> :
-  Added missing digest entries.
-
-*netwag-5.28.0 (13 Jan 2005)
-
-  13 Jan 2005; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
-  +netwag-5.28.0.ebuild:
-  initial import

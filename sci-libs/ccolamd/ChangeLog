@@ -1,148 +1,57 @@
 # ChangeLog for sci-libs/ccolamd
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ccolamd/ChangeLog,v 1.42 2015/06/21 11:29:51 jlec Exp $
+# (auto-generated from git log)
 
-  21 Jun 2015; Justin Lecher <jlec@gentoo.org> -ccolamd-2.7.3.ebuild,
+*ccolamd-2.8.0 (09 Aug 2015)
+
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +ccolamd-2.8.0.ebuild,
+  +files/ccolamd-2.7.1-autotools.patch, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> ccolamd-2.8.0.ebuild,
   metadata.xml:
-  Clean old
+  Use https by default
 
-  13 May 2015; Jack Morgan <jmorgan@gentoo.org> ccolamd-2.8.0.ebuild:
-  ppc64 stable wrt bug #534642
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  13 May 2015; Jack Morgan <jmorgan@gentoo.org> ccolamd-2.8.0.ebuild:
-  sparc stable wrt bug #534642
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Apr 2015; Pacho Ramos <pacho@gentoo.org> ccolamd-2.8.0.ebuild:
-  x86 stable wrt bug #534642
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Mar 2015; Agostino Sarubbo <ago@gentoo.org> ccolamd-2.8.0.ebuild:
-  Stable for ppc, wrt bug #534642
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  22 Feb 2015; Matt Turner <mattst88@gentoo.org> ccolamd-2.7.3.ebuild,
-  ccolamd-2.8.0.ebuild:
-  Drop alpha keyword.
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Jan 2015; Agostino Sarubbo <ago@gentoo.org> ccolamd-2.8.0.ebuild:
-  Stable for amd64, wrt bug #534642
-
-  13 Jan 2015; Jeroen Roovers <jer@gentoo.org> ccolamd-2.8.0.ebuild:
-  Stable for HPPA (bug #534642).
-
-  04 Mar 2014; Vicente Olivert Riera <vincent@gentoo.org> ccolamd-2.8.0.ebuild:
-  Add ~mips keyword.
-
-  18 Jul 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  ccolamd-2.8.0.ebuild:
-  Keyword ~arm.
-
-  24 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org> -ccolamd-2.7.1.ebuild,
-  -ccolamd-2.7.4.ebuild, ccolamd-2.8.0.ebuild:
-  Switch to EAPI5 and new tar ball
-
-*ccolamd-2.8.0 (12 Nov 2012)
-
-  12 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +ccolamd-2.8.0.ebuild,
-  metadata.xml:
-  Version bump
-
-  15 Oct 2012;  <naota@gentoo.org> ccolamd-2.7.4.ebuild:
-  Add ~x86-fbsd.
-
-  30 May 2012; Alexis Ballier <aballier@gentoo.org> ccolamd-2.7.4.ebuild:
-  keyword ~amd64-fbsd
-
-  08 Mar 2012; Brent Baude <ranger@gentoo.org> ccolamd-2.7.3.ebuild:
-  Marking ccolamd-2.7.3 ppc64 for bug 393945
-
-  01 Mar 2012; Brent Baude <ranger@gentoo.org> ccolamd-2.7.3.ebuild:
-  Marking ccolamd-2.7.3 ppc for bug 393945
-
-  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> ccolamd-2.7.3.ebuild:
-  alpha/sparc stable wrt #393945
-
-  24 Jan 2012; Justin Lecher <jlec@gentoo.org> ccolamd-2.7.3.ebuild,
-  ccolamd-2.7.4.ebuild:
-  Add missing AUTOTOOLS_AUTORECONF, #400631
-
-*ccolamd-2.7.4 (20 Jan 2012)
-
-  20 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
-  files/ccolamd-2.7.1-autotools.patch, +ccolamd-2.7.4.ebuild:
-  Version bump
-
-  19 Jan 2012; Justin Lecher <jlec@gentoo.org>
-  files/ccolamd-2.7.1-autotools.patch, ccolamd-2.7.3.ebuild:
-  Don't run elibtoolize twice, #399299; build out off source fixed
-
-  23 Dec 2011; Jeroen Roovers <jer@gentoo.org> ccolamd-2.7.3.ebuild:
-  Stable for HPPA (bug #393945).
-
-  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ccolamd-2.7.3.ebuild:
-  x86 stable wrt bug #393945
-
-  17 Dec 2011; Justin Lecher <jlec@gentoo.org> ccolamd-2.7.3.ebuild:
-  DOCS needs to be an array, #395045
-
-  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ccolamd-2.7.3.ebuild:
-  Stable for AMD64, wrt bug #393945
-
-  16 Dec 2011; Justin Lecher <jlec@gentoo.org> ccolamd-2.7.3.ebuild:
-  Moved to autotools-utils.eclass in order to handle .a/.la correctly
-
-  26 Jun 2011; Justin Lecher <jlec@gentoo.org> ccolamd-2.7.1.ebuild,
-  ccolamd-2.7.3.ebuild, metadata.xml:
-  Defined RDEPEND, bumped EAPI
-
-*ccolamd-2.7.3 (23 Feb 2011)
-
-  23 Feb 2011; Sébastien Fabbro <bicatali@gentoo.org> +ccolamd-2.7.3.ebuild:
-  Bump
-
-  25 Dec 2010; Sébastien Fabbro <bicatali@gentoo.org> ccolamd-2.7.1.ebuild:
-  Added static-libs flag
-
-  09 Jul 2010; Samuli Suominen <ssuominen@gentoo.org> ccolamd-2.7.1.ebuild:
-  ppc64 stable wrt #318649
-
-  02 Jan 2010; Christian Faulhammer <fauli@gentoo.org> ccolamd-2.7.1.ebuild:
-  Transfer Prefix keywords
-
-  12 Oct 2009; Jeroen Roovers <jer@gentoo.org> ccolamd-2.7.1.ebuild:
-  Stable for HPPA (bug #245707).
-
-  17 May 2009; nixnut <nixnut@gentoo.org> ccolamd-2.7.1.ebuild:
-  ppc stable #245707
-
-  20 Apr 2009; Markus Meier <maekke@gentoo.org> ccolamd-2.7.1:
-  x86 stable, bug #245707
-
-  27 Mar 2009; Ferris McCormick <fmccor@gentoo.org> ccolamd-2.7.1.ebuild:
-  Sparc stable, preparation for bug #245707.
-
-  23 Mar 2009; Jeremy Olexa <darkside@gentoo.org> ccolamd-2.7.1.ebuild:
-  amd64 stable, bug 245707
-
-  08 Feb 2009; Tobias Klausmann <klausman@gentoo.org> ccolamd-2.7.1.ebuild:
-  Stable on alpha, bug #245707
-
-  22 May 2008; Justin Bronder <jsbronder@gentoo.org> ccolamd-2.7.1.ebuild:
-  Adding ~ppc (#215839)
-
-  15 Apr 2008; Jeroen Roovers <jer@gentoo.org> ccolamd-2.7.1.ebuild:
-  Marked ~hppa (bug #215839).
-
-  12 Apr 2008; Raúl Porcel <armin76@gentoo.org> ccolamd-2.7.1.ebuild:
-  Add ~sparc wrt #215839
-
-  07 Apr 2008; Tobias Klausmann <klausman@gentoo.org> ccolamd-2.7.1.ebuild:
-  Keyworded on alpha, bug #215839
-
-  07 Apr 2008; Markus Rothe <corsair@gentoo.org> ccolamd-2.7.1.ebuild:
-  Added ~ppc64; bug #215839
-
-*ccolamd-2.7.1 (05 Feb 2008)
-
-  05 Feb 2008; Sébastien Fabbro <bicatali@gentoo.org>
-  +files/ccolamd-2.7.1-autotools.patch, +metadata.xml,
-  +ccolamd-2.7.1.ebuild:
-  Initial import. Thanks to Justin Bronder for his work, see bug #173900

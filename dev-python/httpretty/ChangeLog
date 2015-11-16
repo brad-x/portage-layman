@@ -1,58 +1,94 @@
 # ChangeLog for dev-python/httpretty
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/httpretty/ChangeLog,v 1.12 2015/07/30 00:27:54 prometheanfire Exp $
+# (auto-generated from git log)
 
-*httpretty-0.8.10 (30 Jul 2015)
+*httpretty-0.8.10 (09 Aug 2015)
+*httpretty-0.8.0-r1 (09 Aug 2015)
+*httpretty-0.8.0 (09 Aug 2015)
+*httpretty-0.7.1 (09 Aug 2015)
+*httpretty-0.7.0 (09 Aug 2015)
 
-  30 Jul 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +httpretty-0.8.10.ebuild:
-  adding for python-ironicclient
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/httpretty-0.7.0-deps.patch, +httpretty-0.7.0.ebuild,
+  +httpretty-0.7.1.ebuild, +httpretty-0.8.0.ebuild,
+  +httpretty-0.8.0-r1.ebuild, +httpretty-0.8.10.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*httpretty-0.8.0-r1 (17 Mar 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Mar 2015; Ian Delaney <idella4@gentoo.org> +httpretty-0.8.0-r1.ebuild:
-  revbump; correction to new dep ipdb, remove removal of tests folder and whole
-  python_prepare_all phase, set DISTUTILS_IN_SOURCE_BUILD to manage rogue
-  testsuite, cite new bug filed upstream, re-write test phase to match, all wrt
-  Bug 532106
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 Mar 2015; Pacho Ramos <pacho@gentoo.org> httpretty-0.8.0.ebuild:
-  x86 stable, bug 540290
+  21 Aug 2015; Agostino Sarubbo <ago@gentoo.org> httpretty-0.8.10.ebuild:
+  0.8.10-r0: amd64 stable wrt bug #558112
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> httpretty-0.8.0.ebuild:
-  amd64 stable, bug 540290
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  10 Dec 2014; Patrick Lauer <patrick@gentoo.org> httpretty-0.8.0.ebuild:
-  Add py3.4 support
+  21 Aug 2015; Agostino Sarubbo <ago@gentoo.org> httpretty-0.8.10.ebuild:
+  0.8.10-r0: x86 stable wrt bug #558112
 
-  25 Feb 2014; Tomáš Chvátal <scarabeus@gentoo.org> httpretty-0.8.0.ebuild:
-  Works with py3.3 so enable it.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
 
-*httpretty-0.8.0 (17 Feb 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> httpretty-0.7.0.ebuild,
+  httpretty-0.7.1.ebuild, httpretty-0.8.0.ebuild, httpretty-0.8.0-r1.ebuild,
+  httpretty-0.8.10.ebuild:
+  Use https by default
 
-  17 Feb 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +httpretty-0.8.0.ebuild:
-  updating for a dep of a dep of a dep for a cve...
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*httpretty-0.7.1 (06 Jan 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Jan 2014; Ian Delaney <idella4@gentoo.org> +httpretty-0.7.1.ebuild,
-  httpretty-0.7.0.ebuild:
-  correction to -0.7.0 deps, update to test phase, bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Dec 2013; Ian Delaney <idella4@gentoo.org> httpretty-0.7.0.ebuild:
-  minor & ineffectual update to test phase sourced from upstream
-  /HTTPretty/issues/125
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*httpretty-0.7.0 (02 Dec 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  02 Dec 2013; Ian Delaney <idella4@gentoo.org>
-  +files/httpretty-0.7.0-deps.patch, +httpretty-0.7.0.ebuild, +metadata.xml:
-  new dep of openstack client package python-keystoneclient, ebuild prepared by
-  me
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*httpretty-0.8.6 (15 Oct 2015)
+
+  15 Oct 2015; Matthew Thode <prometheanfire@gentoo.org>
+  +httpretty-0.8.6.ebuild:
+  adding older needed version for oslo-policy
+
+  Package-Manager: portage-2.2.20.1
+
+  22 Oct 2015; Justin Lecher <jlec@gentoo.org> httpretty-0.7.0.ebuild:
+  Drop deprecated usage of DISTUTILS_NO_PARALLEL_BUILD
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

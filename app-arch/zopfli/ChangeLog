@@ -1,72 +1,59 @@
 # ChangeLog for app-arch/zopfli
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/zopfli/ChangeLog,v 1.13 2015/06/05 12:02:12 jlec Exp $
+# (auto-generated from git log)
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> zopfli-1.0.0_p20140705.ebuild,
-  zopfli-1.0.0_p20141006.ebuild:
-  Add missing eclass
+*zopfli-1.0.0_p20141006 (09 Aug 2015)
+*zopfli-1.0.0_p20140705 (09 Aug 2015)
+*zopfli-1.0.0 (09 Aug 2015)
 
-  05 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +zopfli-1.0.0.ebuild, +zopfli-1.0.0_p20140705.ebuild,
+  +zopfli-1.0.0_p20141006.ebuild:
+  proj/gentoo: Initial commit
 
-*zopfli-1.0.0_p20141006 (10 Oct 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  10 Oct 2014; Yixun Lan <dlan@gentoo.org> +zopfli-1.0.0_p20141006.ebuild:
-  bump as maintainer request, bug 524766
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Aug 2014; Sergey Popov <pinkbyte@gentoo.org>
-  -zopfli-1.0.0_p20131216.ebuild, -zopfli-1.0.0_p20140623.ebuild:
-  Drop old versions
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Aug 2014; Sergey Popov <pinkbyte@gentoo.org>
-  zopfli-1.0.0_p20140705.ebuild:
-  Stable on amd64 and x86, wrt bug #519910
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  10 Aug 2014; Patrick Lauer <patrick@gentoo.org> zopfli-1.0.0.ebuild,
-  zopfli-1.0.0_p20140623.ebuild:
-  Fix description for more repoman happy
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*zopfli-1.0.0_p20140705 (10 Jul 2014)
-*zopfli-1.0.0_p20140623 (10 Jul 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  10 Jul 2014; Yixun Lan <dlan@gentoo.org> -zopfli-1.0.0_p20130508-r1.ebuild,
-  +zopfli-1.0.0_p20140623.ebuild, +zopfli-1.0.0_p20140705.ebuild:
-  version bump, bug 516468, proxy for Alex Xu (Hello71)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  19 Feb 2014; Sergey Popov <pinkbyte@gentoo.org>
-  zopfli-1.0.0_p20131216.ebuild:
-  Stable on x86, wrt bug #498280
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  16 Jan 2014; Vicente Olivert Riera <vincent@gentoo.org>
-  zopfli-1.0.0_p20131216.ebuild:
-  amd64 stable, bug #498280
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*zopfli-1.0.0_p20131216 (16 Dec 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Dec 2013; Sergey Popov <pinkbyte@gentoo.org>
-  +zopfli-1.0.0_p20131216.ebuild:
-  New upstream snapshot, wrt bug #492608: epatch_user, simplify ebuild cause
-  fixes went directly into buildsystem. Thanks to Alex Xu <alex_y_xu AT
-  yahoo.ca> for fixes
-
-  06 Nov 2013; Sergey Popov <pinkbyte@gentoo.org> zopfli-1.0.0.ebuild,
-  zopfli-1.0.0_p20130508-r1.ebuild:
-  Add ~x86 keyword, wrt bug #490274, thanks to Myckel Habets <myckel AT
-  sdf.lonestar.org>
-
-*zopfli-1.0.0_p20130508-r1 (23 Sep 2013)
-
-  23 Sep 2013; Tom Wijsman <TomWij@gentoo.org>
-  +zopfli-1.0.0_p20130508-r1.ebuild, -zopfli-1.0.0_p20130508.ebuild:
-  Revision bump. Redistributed tarball for 1.0.0_p20130508 version as upstream
-  generates a different unique commit tarball on every download. Discovered by
-  Alex Xu.
-
-*zopfli-1.0.0_p20130508 (18 Sep 2013)
-*zopfli-1.0.0 (18 Sep 2013)
-
-  18 Sep 2013; Tom Wijsman <TomWij@gentoo.org> +metadata.xml,
-  +zopfli-1.0.0.ebuild, +zopfli-1.0.0_p20130508.ebuild:
-  New ebuild for app-arch/zopfli, a compression library programmed in C to
-  perform very good, but slow, deflate or zlib compression. Proxied commit for
-  Alex Xu, which will proxy maintain this package; fixes bug #481492.

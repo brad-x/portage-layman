@@ -1,34 +1,57 @@
 # ChangeLog for app-emacs/bm
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/bm/ChangeLog,v 1.8 2014/03/24 18:52:43 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  24 Mar 2014; Ulrich Müller <ulm@gentoo.org> -bm-1.32.ebuild:
-  Remove old.
+*bm-1.32_p20140214 (09 Aug 2015)
 
-  24 Mar 2014; Agostino Sarubbo <ago@gentoo.org> bm-1.32_p20140214.ebuild:
-  Stable for x86, wrt bug #505448
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +bm-1.32_p20140214.ebuild, +files/50bm-gentoo.el, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Mar 2014; Agostino Sarubbo <ago@gentoo.org> bm-1.32_p20140214.ebuild:
-  Stable for amd64, wrt bug #505448
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*bm-1.32_p20140214 (20 Feb 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Feb 2014; Ulrich Müller <ulm@gentoo.org> +bm-1.32_p20140214.ebuild:
-  Version bump. Snapshot of upstream repository.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Jun 2008; Ulrich Mueller <ulm@gentoo.org> bm-1.32.ebuild:
-  Do not assign SIMPLE_ELISP since elisp.eclass now detects this case
-  automatically.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 Mar 2008; Christian Faulhammer <opfer@gentoo.org> bm-1.32.ebuild:
-  stable x86/amd64, bug 214225
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> bm-1.32_p20140214.ebuild,
+  metadata.xml:
+  Use https by default
 
-  02 Jan 2008; Ulrich Mueller <ulm@gentoo.org> bm-1.32.ebuild:
-  Add ~amd64 keyword.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*bm-1.32 (13 Oct 2007)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Oct 2007; Ulrich Mueller <ulm@gentoo.org> +files/50bm-gentoo.el,
-  +metadata.xml, +bm-1.32.ebuild:
-  Initial import. Ebuild contributed by MATSUYAMA Tomohiro
-  <matsuyama@ariel-networks.com>, bug #194210.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+

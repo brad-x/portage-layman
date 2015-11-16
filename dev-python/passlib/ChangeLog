@@ -1,58 +1,81 @@
 # ChangeLog for dev-python/passlib
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/passlib/ChangeLog,v 1.14 2015/06/03 20:43:42 jlec Exp $
+# (auto-generated from git log)
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+*passlib-1.6.2 (09 Aug 2015)
+*passlib-1.6.1-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> passlib-1.6.1-r1.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +passlib-1.6.1-r1.ebuild, +passlib-1.6.2.ebuild:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+*passlib-1.6.5 (10 Aug 2015)
+
+  10 Aug 2015; Ian Delaney <idella4@gentoo.org> passlib-1.6.1-r1.ebuild,
+  passlib-1.6.2.ebuild, +passlib-1.6.5.ebuild:
+  bump; update HOMEPAGE, test phase
+
+  Package-Manager: portage-2.2.20
+
+  10 Aug 2015; Julian Ospald <hasufell@gentoo.org> passlib-1.6.1-r1.ebuild,
+  passlib-1.6.2.ebuild, passlib-1.6.5.ebuild:
+  Convert CVS style headers back to git style headers
+
+  16 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Updating remote-id in metadata.xml
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> passlib-1.6.1-r1.ebuild,
   passlib-1.6.2.ebuild:
-  Drop old Python implementations
+  Enable https for all google URIs
 
-  29 Jul 2014; Sergey Popov <pinkbyte@gentoo.org> passlib-1.6.2.ebuild:
-  Stable on amd64 and x86, wrt bug #517870
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> passlib-1.6.2.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  12 May 2014; Ian Delaney <idella4@gentoo.org> passlib-1.6.2.ebuild:
-  drop py2.6 pypy2_0 add py3.4 support
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> passlib-1.6.1-r1.ebuild,
-  passlib-1.6.2.ebuild:
-  Add support for the new PyPy slotting.
+  Bug: https://bugs.gentoo.org/552720
 
-*passlib-1.6.2 (06 Jan 2014)
-
-  06 Jan 2014; Ian Delaney <idella4@gentoo.org> +passlib-1.6.2.ebuild,
-  metadata.xml:
-  bump; intro new dep bcrypt, test phase
-
-  04 Jan 2014; Mike Gilbert <floppym@gentoo.org> passlib-1.6.1-r1.ebuild:
-  Drop py-bcrypt dep.
-
-*passlib-1.6.1-r1 (18 Nov 2013)
-
-  18 Nov 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +passlib-1.6.1-r1.ebuild, -passlib-1.6.1.ebuild:
-  py-bcrypt added as a dep
-
-  17 Nov 2013; Matthew Thode <prometheanfire@gentoo.org> passlib-1.6.1.ebuild:
-  adding python 3.2 and 3.3 support for bug 487904
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> passlib-1.6.1.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-  12 Feb 2013; Michał Górny <mgorny@gentoo.org> metadata.xml,
-  passlib-1.6.1.ebuild:
-  Migrate to distutils-r1. Clean up a bit.
-
-  01 Jan 2013; Matthew Thode <prometheanfire@gentoo.org> passlib-1.6.1.ebuild:
-  refactor into distutils-r1 and eapi5
-
-*passlib-1.6.1 (28 Nov 2012)
-
-  28 Nov 2012; Matthew Thode <prometheanfire@gentoo.org> +passlib-1.6.1.ebuild,
-  +metadata.xml:
-  adding as it is needed for keystone

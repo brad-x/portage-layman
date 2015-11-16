@@ -1,118 +1,59 @@
 # ChangeLog for dev-python/python-swiftclient
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-swiftclient/ChangeLog,v 1.22 2015/07/08 20:49:27 zlogene Exp $
+# (auto-generated from git log)
 
-  08 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  python-swiftclient-2.2.0-r1.ebuild:
-  x86 stable wrt bug #554114
+*python-swiftclient-2.2.0-r1 (09 Aug 2015)
+*python-swiftclient-2.1.0 (09 Aug 2015)
+*python-swiftclient-2.0.3 (09 Aug 2015)
 
-  07 Jul 2015; Mikle Kolyada <zlogene@gentoo.org>
-  python-swiftclient-2.2.0-r1.ebuild:
-  amd64 stable wrt bug #554114
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +python-swiftclient-2.0.3.ebuild, +python-swiftclient-2.1.0.ebuild,
+  +python-swiftclient-2.2.0-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  03 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add pypi to remote-id in metadata.xml
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  12 May 2015; Matthew Thode <prometheanfire@gentoo.org>
-  python-swiftclient-2.2.0-r1.ebuild:
-  adding py34 support, tested through tox
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*python-swiftclient-2.2.0-r1 (01 Apr 2015)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  01 Apr 2015; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-2.2.0-r1.ebuild, -python-swiftclient-2.2.0.ebuild:
-  swiftclient supports py3.3
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*python-swiftclient-2.2.0 (22 Jul 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Jul 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-2.2.0.ebuild:
-  bup
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*python-swiftclient-2.1.0 (08 Jul 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Jul 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-2.1.0.ebuild, -python-swiftclient-1.9.0.ebuild:
-  removing bad versions for bug 491368 CVE-2013-6396 and bumping to 2.1.0
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Apr 2014; Matthew Thode <prometheanfire@gentoo.org>
-  -python-swiftclient-1.3.0.ebuild, -python-swiftclient-1.5.0.ebuild,
-  -python-swiftclient-1.6.0.ebuild, -python-swiftclient-1.8.0.ebuild:
-  updating the clients
+  Bug: https://bugs.gentoo.org/552720
 
-*python-swiftclient-2.0.3 (19 Apr 2014)
-
-  19 Apr 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-2.0.3.ebuild, -python-swiftclient-2.0.2.ebuild:
-  fixing pbr deps
-
-*python-swiftclient-1.9.0 (30 Mar 2014)
-
-  30 Mar 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-1.9.0.ebuild:
-  bup
-
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org>
-  python-swiftclient-2.0.2.ebuild:
-  Keyword ~amd64-linux ~x86-linux
-
-  19 Mar 2014; Sébastien Fabbro <bicatali@gentoo.org>
-  python-swiftclient-2.0.2.ebuild:
-  Keyword ~amd64-linux ~x86-linux
-
-*python-swiftclient-2.0.2 (17 Feb 2014)
-
-  17 Feb 2014; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-2.0.2.ebuild:
-  fix for CVE-2013-6396 (still needs to be backported to pre 2 (for grizzly
-  support)
-
-  28 Nov 2013; Ian Delaney <idella4@gentoo.org> python-swiftclient-1.8.0.ebuild:
-  update test phase
-
-*python-swiftclient-1.8.0 (15 Nov 2013)
-
-  15 Nov 2013; Ian Delaney <idella4@gentoo.org>
-  +python-swiftclient-1.8.0.ebuild, metadata.xml,
-  python-swiftclient-1.6.0.ebuild:
-  metadata; add openstack herd, python-swiftclient-1.6.0; reset HOMEPAGE to
-  launchpad site, add IUSE doc with dep, doc build & install, update test phase,
-  bump
-
-*python-swiftclient-1.6.0 (17 Sep 2013)
-
-  17 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-1.6.0.ebuild:
-  updating python-swiftclient to 1.6.0
-
-  20 Aug 2013; Matthew Thode <prometheanfire@gentoo.org>
-  python-swiftclient-1.5.0.ebuild:
-  yay manifest
-
-*python-swiftclient-1.5.0 (11 Aug 2013)
-
-  11 Aug 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-1.5.0.ebuild, -python-swiftclient-1.2.0-r1.ebuild:
-  updating swiftclient to 1.5.0
-
-*python-swiftclient-1.3.0 (11 Mar 2013)
-
-  11 Mar 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-1.3.0.ebuild:
-  just a bump of python-swiftclient to 1.3.0
-
-*python-swiftclient-1.2.0-r1 (11 Jan 2013)
-
-  11 Jan 2013; Matthew Thode <prometheanfire@gentoo.org>
-  -python-swiftclient-1.2.0.ebuild, +python-swiftclient-1.2.0-r1.ebuild:
-  updating ebuilds to support more []
-
-*python-swiftclient-1.2.0 (02 Jan 2013)
-
-  02 Jan 2013; Matthew Thode <prometheanfire@gentoo.org>
-  +python-swiftclient-1.2.0.ebuild, +metadata.xml:
-  initial commit of dev-python/python-swiftclient for soon to exist
-  sys-cluster/swift

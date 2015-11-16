@@ -1,122 +1,61 @@
 # ChangeLog for dev-util/catfish
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catfish/ChangeLog,v 1.27 2014/12/29 08:21:03 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  29 Dec 2014; Jeroen Roovers <jer@gentoo.org> -catfish-1.0.2.ebuild,
-  -catfish-1.2.1.ebuild:
-  Old.
+*catfish-1.2.2 (09 Aug 2015)
 
-  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> catfish-1.2.2.ebuild:
-  Stable for x86, wrt bug #530986
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +catfish-1.2.2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Dec 2014; Agostino Sarubbo <ago@gentoo.org> catfish-1.2.2.ebuild:
-  Stable for amd64, wrt bug #530986
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Nov 2014; Pacho Ramos <pacho@gentoo.org> catfish-1.2.2.ebuild:
-  Support python 3.4
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  18 Nov 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org> catfish-1.0.2.ebuild,
-  catfish-1.2.1.ebuild, catfish-1.2.2.ebuild:
-  added missing PYTHON_REQUIRED_USE as is necessary for proper python-single-r1
-  implementation
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*catfish-1.2.2 (25 Sep 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  25 Sep 2014; Jeroen Roovers <jer@gentoo.org> +catfish-1.2.2.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  24 Aug 2014; Jeroen Roovers <jer@gentoo.org> catfish-1.0.2.ebuild,
-  catfish-1.2.1.ebuild:
-  Add x11-libs/gtk+:3[introspection] dependency (bug #520732 by Paweł
-  Stankowski).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*catfish-1.2.1 (23 Aug 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Aug 2014; Jeroen Roovers <jer@gentoo.org> -catfish-1.0.3.ebuild,
-  +catfish-1.2.1.ebuild:
-  Version bump.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> catfish-1.2.2.ebuild:
+  Convert all URIs for launchpad.net from http to https
 
-*catfish-1.0.3 (21 Aug 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Aug 2014; Jeroen Roovers <jer@gentoo.org> catfish-1.0.2.ebuild,
-  +catfish-1.0.3.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  03 Aug 2014; Samuli Suominen <ssuominen@gentoo.org> -catfish-0.6.4.ebuild:
-  old
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Aug 2014; Agostino Sarubbo <ago@gentoo.org> catfish-1.0.2.ebuild:
-  Stable for x86, wrt bug #502536
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Aug 2014; Agostino Sarubbo <ago@gentoo.org> catfish-1.0.2.ebuild:
-  Stable for amd64, wrt bug #502536
-
-  28 Jul 2014; Samuli Suominen <ssuominen@gentoo.org> -catfish-0.6.3.ebuild:
-  old
-
-*catfish-1.0.2 (28 Jul 2014)
-
-  28 Jul 2014; Samuli Suominen <ssuominen@gentoo.org> +catfish-1.0.2.ebuild:
-  Version bump wrt security #502536 by Agostino Sarubbo. Pull in virtual
-  /freedesktop-icon-theme, at least for gnome-mime-* icons that are present in
-  gnome-icon-theme, faenza-icon-theme, and other full ones wrt #518294 by Paweł
-  Stankowski. Remove support for Python 3.2 as obsolete.
-
-  13 Oct 2013; Pacho Ramos <pacho@gentoo.org> catfish-0.6.4.ebuild:
-  Also compatible with python3_3
-
-  18 Aug 2013; Agostino Sarubbo <ago@gentoo.org> catfish-0.6.4.ebuild:
-  Stable for x86, wrt bug #479886
-
-  07 Aug 2013; Agostino Sarubbo <ago@gentoo.org> catfish-0.6.4.ebuild:
-  Stable for amd64, wrt bug #479886
-
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> catfish-0.6.3.ebuild:
-  Stable for amd64, wrt bug #472248
-
-  25 Jun 2013; Agostino Sarubbo <ago@gentoo.org> catfish-0.6.3.ebuild:
-  Stable for x86, wrt bug #472248
-
-*catfish-0.6.4 (04 Jun 2013)
-
-  04 Jun 2013; Samuli Suominen <ssuominen@gentoo.org> +catfish-0.6.4.ebuild:
-  Version bump.
-
-  27 Apr 2013; Samuli Suominen <ssuominen@gentoo.org> catfish-0.6.3.ebuild:
-  Include python3_2 in PYTHON_COMPAT (thanks to mgorny)
-
-  27 Apr 2013; Samuli Suominen <ssuominen@gentoo.org> -catfish-0.3.2.ebuild,
-  -catfish-0.3.2-r1.ebuild, -catfish-0.4.0.2.ebuild,
-  -files/catfish-0.3.2-fix_gtkiconload.patch,
-  -files/catfish-0.3.2-fix_tracker_backend.patch, -files/catfish-gentoo.patch,
-  -files/catfish-gentoo.patch-r1:
-  old
-
-*catfish-0.6.3 (27 Apr 2013)
-
-  27 Apr 2013; Samuli Suominen <ssuominen@gentoo.org> +catfish-0.6.3.ebuild:
-  Version bump wrt #466856 by Christian Tietz
-
-*catfish-0.4.0.2 (05 Oct 2012)
-
-  05 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> +catfish-0.4.0.2.ebuild,
-  +files/catfish-gentoo.patch-r1:
-  Version bump.
-
-*catfish-0.3.2-r1 (02 Aug 2012)
-
-  02 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +catfish-0.3.2-r1.ebuild,
-  +files/catfish-0.3.2-fix_gtkiconload.patch,
-  +files/catfish-0.3.2-fix_tracker_backend.patch:
-  Import 30Fix_tracker_backend.dpatch (and 40Fix_gtkiconload.dpatch) from
-  Debian in order to be compatible with current app-misc/tracker wrt #429382 by
-  Kai Wüstermann
-
-  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> catfish-0.3.2.ebuild:
-  Inherit multilib.
-
-*catfish-0.3.2 (14 Jan 2012)
-
-  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +catfish-0.3.2.ebuild,
-  +files/catfish-gentoo.patch:
-  Initial commit wrt #161730 by Wojciech Myrda (and others)

@@ -1,108 +1,56 @@
 # ChangeLog for dev-python/tpg
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/tpg/ChangeLog,v 1.27 2015/04/14 12:51:37 ago Exp $
+# (auto-generated from git log)
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> tpg-3.2.2-r1.ebuild:
-  Stable for ia64, wrt bug #540290
+*tpg-3.2.2-r1 (09 Aug 2015)
 
-  08 Apr 2015; Michał Górny <mgorny@gentoo.org> tpg-3.2.2-r1.ebuild:
-  Drop old Python implementations
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +tpg-3.2.2-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  09 Mar 2015; Pacho Ramos <pacho@gentoo.org> tpg-3.2.2-r1.ebuild:
-  x86 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> tpg-3.2.2-r1.ebuild:
-  ppc stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> tpg-3.2.2-r1.ebuild:
-  amd64 stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  23 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -tpg-3.2.2.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  25 Nov 2014; Pacho Ramos <pacho@gentoo.org> tpg-3.2.2-r1.ebuild:
-  Support python 3.4
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*tpg-3.2.2-r1 (30 Mar 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  30 Mar 2014; Ian Delaney <idella4@gentoo.org> +tpg-3.2.2-r1.ebuild,
-  -tpg-3.1.2.ebuild, -tpg-3.1.4.ebuild, -tpg-3.2.1.ebuild:
-  revbump; conversion -> distutils-r1 eclass, Add py3 support, fixes Bug #497508
-  by jarausch
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*tpg-3.2.2 (08 Jan 2014)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Jan 2014; Patrick Lauer <patrick@gentoo.org> +tpg-3.2.2.ebuild:
-  Bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*tpg-3.2.1 (06 Jun 2012)
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Jun 2012; Patrick Lauer <patrick@gentoo.org> +tpg-3.2.1.ebuild:
-  Bump for #419791
-
-*tpg-3.1.4 (09 Mar 2012)
-
-  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +tpg-3.1.4.ebuild:
-  Bump
-
-  26 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  tpg-3.1.2.ebuild:
-  Fix dependencies. Set SUPPORT_PYTHON_ABIS.
-
-  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -tpg-3.1.1.ebuild:
-  Remove old
-
-*tpg-3.1.2 (15 Feb 2009)
-
-  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> +tpg-3.1.2.ebuild:
-  Bump to 3.1.2
-
-*tpg-3.1.1 (09 Jul 2007)
-
-  09 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org> -tpg-3.0.5.ebuild,
-  -tpg-3.0.6.ebuild, -tpg-3.1.0.ebuild, +tpg-3.1.1.ebuild:
-  Version bump: cleanup, marked ~amd64, added src_test. Dropped old versions.
-
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
-
-*tpg-3.1.0 (15 Aug 2006)
-
-  15 Aug 2006; Carsten Lohrke <carlo@gentoo.org> +tpg-3.1.0.ebuild:
-  Version bump.
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> tpg-3.0.6.ebuild:
-  Mark 3.0.6 ~ia64
-
-*tpg-3.0.6 (22 Feb 2006)
-
-  22 Feb 2006; Carsten Lohrke <carlo@gentoo.org> -tpg-3.0.2.ebuild,
-  -tpg-3.0.3.ebuild, -tpg-3.0.4.ebuild, +tpg-3.0.6.ebuild:
-  Version bump.
-
-*tpg-3.0.5 (25 Apr 2005)
-
-  25 Apr 2005; Carsten Lohrke <carlo@gentoo.org> +tpg-3.0.5.ebuild:
-  version bump
-
-  31 Dec 2004; Ciaran McCreesh <ciaranm@gentoo.org> :
-  Change encoding to UTF-8 for GLEP 31 compliance
-
-*tpg-3.0.4 (07 Dec 2004)
-
-  07 Dec 2004; Carsten Lohrke <carlo@gentoo.org> +tpg-3.0.4.ebuild:
-  version bump
-
-*tpg-3.0.3 (14 Oct 2004)
-
-  14 Oct 2004; Carsten Lohrke <carlo@gentoo.org> +tpg-3.0.3.ebuild:
-  version bump
-
-  02 May 2004; David Holm <dholm@gentoo.org> tpg-3.0.2.ebuild:
-  Added to ~ppc.
-
-*tpg-3.0.2 (02 May 2004)
-
-  02 May 2004; Bryan Østergaard <kloeri@gentoo.org> +metadata.xml,
-  +tpg-3.0.2.ebuild:
-  Initial import, bug #48538.

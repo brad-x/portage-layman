@@ -1,155 +1,66 @@
 # ChangeLog for dev-python/chameleon
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/chameleon/ChangeLog,v 1.31 2015/02/28 08:03:27 patrick Exp $
+# (auto-generated from git log)
 
-*chameleon-2.22 (28 Feb 2015)
+*chameleon-2.22 (09 Aug 2015)
+*chameleon-2.20 (09 Aug 2015)
+*chameleon-2.19 (09 Aug 2015)
+*chameleon-2.16 (09 Aug 2015)
 
-  28 Feb 2015; Patrick Lauer <patrick@gentoo.org> +chameleon-2.22.ebuild:
-  Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +chameleon-2.16.ebuild,
+  +chameleon-2.19.ebuild, +chameleon-2.20.ebuild, +chameleon-2.22.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*chameleon-2.20 (21 Jan 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Jan 2015; Ian Delaney <idella4@gentoo.org> +chameleon-2.20.ebuild,
-  -chameleon-2.18.ebuild:
-  bump, rm old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*chameleon-2.19 (11 Jan 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Jan 2015; Ian Delaney <idella4@gentoo.org> +chameleon-2.19.ebuild:
-  bump
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> chameleon-2.16.ebuild:
-  Stable for x86, wrt bug #531866
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> chameleon-2.16.ebuild,
+  chameleon-2.19.ebuild, chameleon-2.20.ebuild, chameleon-2.22.ebuild:
+  Use https by default
 
-  27 Dec 2014; Agostino Sarubbo <ago@gentoo.org> chameleon-2.16.ebuild:
-  Stable for amd64, wrt bug #531866
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*chameleon-2.18 (07 Dec 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Dec 2014; Ian Delaney <idella4@gentoo.org> +chameleon-2.18.ebuild,
-  -chameleon-2.10.ebuild, -chameleon-2.11-r1.ebuild, -chameleon-2.11.ebuild,
-  -chameleon-2.12.ebuild, -chameleon-2.13.ebuild, -chameleon-2.14.ebuild,
-  -chameleon-2.15.ebuild, -chameleon-2.8.3-r1.ebuild, -chameleon-2.9.2.ebuild,
-  chameleon-2.16.ebuild:
-  bump; clean old python impl, rm old
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*chameleon-2.16 (26 May 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  26 May 2014; Patrick Lauer <patrick@gentoo.org> +chameleon-2.16.ebuild:
-  Bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*chameleon-2.15 (02 May 2014)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 May 2014; Ian Delaney <idella4@gentoo.org> +chameleon-2.15.ebuild:
-  bump; drop pypy2_0 add py3.4 support
+  Bug: https://bugs.gentoo.org/552720
 
-  31 Mar 2014; Michał Górny <mgorny@gentoo.org> chameleon-2.11-r1.ebuild,
-  chameleon-2.12.ebuild, chameleon-2.13.ebuild, chameleon-2.14.ebuild:
-  Add support for the new PyPy slotting.
-
-*chameleon-2.14 (03 Dec 2013)
-
-  03 Dec 2013; Patrick Lauer <patrick@gentoo.org> +chameleon-2.14.ebuild:
-  Bump
-
-*chameleon-2.13 (28 Oct 2013)
-
-  28 Oct 2013; Patrick Lauer <patrick@gentoo.org> +chameleon-2.13.ebuild:
-  Bump
-
-*chameleon-2.12 (02 Sep 2013)
-
-  02 Sep 2013; Patrick Lauer <patrick@gentoo.org> +chameleon-2.12.ebuild:
-  Bump
-
-  26 Aug 2013; Michał Górny <mgorny@gentoo.org> chameleon-2.11-r1.ebuild:
-  Clean up. Remove MANIFEST update since the issue needed to be hacked around in
-  the eclass anyway.
-
-*chameleon-2.11-r1 (17 Aug 2013)
-
-  17 Aug 2013; Michał Górny <mgorny@gentoo.org> +chameleon-2.11-r1.ebuild:
-  Convert to distutils-r1.
-
-*chameleon-2.11 (29 Nov 2012)
-
-  29 Nov 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.11.ebuild:
-  Bump
-
-*chameleon-2.10 (29 Oct 2012)
-
-  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.10.ebuild:
-  Bump
-
-*chameleon-2.9.2 (28 Jun 2012)
-
-  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.9.2.ebuild:
-  Bump
-
-  20 May 2012; Mike Gilbert <floppym@gentoo.org> chameleon-2.8.3-r1.ebuild:
-  Replace py26.py with a stub for python 2.5.
-
-*chameleon-2.8.3-r1 (20 May 2012)
-
-  20 May 2012; Mike Gilbert <floppym@gentoo.org> +chameleon-2.8.3-r1.ebuild,
-  -chameleon-2.8.2.ebuild, -chameleon-2.8.3.ebuild:
-  Package works with all supported versions of python.
-
-*chameleon-2.8.3 (20 May 2012)
-
-  20 May 2012; Mike Gilbert <floppym@gentoo.org> +chameleon-2.8.3.ebuild:
-  Version bump.
-
-  23 Apr 2012; Patrick Lauer <patrick@gentoo.org> -chameleon-2.2-r1.ebuild,
-  -chameleon-2.4.3.ebuild, -chameleon-2.6.1.ebuild, -chameleon-2.7.0.ebuild,
-  -chameleon-2.7.3.ebuild:
-  Remove old
-
-*chameleon-2.8.2 (11 Apr 2012)
-
-  11 Apr 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.8.2.ebuild:
-  Bump for #410791
-
-*chameleon-2.7.3 (09 Mar 2012)
-
-  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.7.3.ebuild:
-  Bump for 404163
-
-*chameleon-2.7.0 (07 Feb 2012)
-
-  07 Feb 2012; Patrick Lauer <patrick@gentoo.org> +chameleon-2.7.0.ebuild:
-  Bump for #402429
-
-*chameleon-2.6.1 (30 Dec 2011)
-
-  30 Dec 2011; Patrick Lauer <patrick@gentoo.org> +chameleon-2.6.1.ebuild:
-  Bump for #393593
-
-*chameleon-2.4.3 (14 Sep 2011)
-
-  14 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +chameleon-2.4.3.ebuild:
-  Version bump to 2.4.3.
-
-  14 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> chameleon-2.2-r1.ebuild:
-  Add PyPI homepage.
-
-  30 Jul 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
-  chameleon-2.2-r1.ebuild:
-  Added setuptools dependency.
-
-  30 Jul 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
-  chameleon-2.2-r1.ebuild:
-  Re-added missing USE flag: test
-
-*chameleon-2.2-r1 (30 Jul 2011)
-
-  30 Jul 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
-  -chameleon-2.2.ebuild, +chameleon-2.2-r1.ebuild:
-  Improved test handling. Removed tests dependencies, they are just needed for
-  benchmarks, that we don't support for now.
-
-*chameleon-2.2 (29 Jul 2011)
-
-  29 Jul 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
-  +chameleon-2.2.ebuild, +metadata.xml:
-  Initial version. Thanks to Jan Matějka (bug #361629).

@@ -1,44 +1,70 @@
 # ChangeLog for mail-filter/libdkim
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/libdkim/ChangeLog,v 1.9 2014/08/10 21:16:12 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> libdkim-1.0.21-r1.ebuild,
-  libdkim-1.0.21-r2.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*libdkim-1.0.21-r2 (09 Aug 2015)
+*libdkim-1.0.21-r1 (09 Aug 2015)
 
-  03 Mar 2014; Pacho Ramos <pacho@gentoo.org> libdkim-1.0.21-r2.ebuild:
-  amd64 stable, bug #495686
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/debianize/Makefile.in, +files/debianize/aclocal.m4,
+  +files/debianize/configure.ac, +files/debianize/libdkim.pc.in,
+  +files/debianize/libdkim.ver, +files/libdkim-extra-options.patch,
+  +files/patches/fix_warnings.patch, +files/patches/series,
+  +files/patches/strtok_r.patch, +libdkim-1.0.21-r1.ebuild,
+  +libdkim-1.0.21-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Feb 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  libdkim-1.0.21-r2.ebuild:
-  x86 stable wrt bug #495686
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*libdkim-1.0.21-r2 (03 Aug 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Aug 2013; Sergey Popov <pinkbyte@gentoo.org> +libdkim-1.0.21-r2.ebuild,
-  files/debianize/configure.ac:
-  Revision bump: EAPI 5, respect AR wrt bug #476770. Do not build static libs
-  unconditionally, wrt bug #476772. Utilize libtool for supress QA warnings
-  about missing buildsystem options
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> libdkim-1.0.21-r1.ebuild:
-  Stable for x86, wrt bug #476748
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Jul 2013; Agostino Sarubbo <ago@gentoo.org> libdkim-1.0.21-r1.ebuild:
-  Stable for amd64, wrt bug #476748
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> metadata.xml:
-  add herd and description to metadata.xml
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> metadata.xml:
-  fixing maintainer in metadata
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*libdkim-1.0.21-r1 (31 Aug 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 Aug 2012; Alexander Vershilov <qnikst@gentoo.org>
-  +libdkim-1.0.21-r1.ebuild, +files/debianize/Makefile.in,
-  +files/debianize/aclocal.m4, +files/debianize/configure.ac,
-  +files/debianize/libdkim.pc.in, +files/debianize/libdkim.ver,
-  +files/libdkim-extra-options.patch, +files/patches/fix_warnings.patch,
-  +files/patches/series, +files/patches/strtok_r.patch, +metadata.xml:
-  libdkim-1.0.21-r1 from rion overlay, thanks to slepnoga #262919
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*libdkim-1.0.21-r3 (11 Oct 2015)
+
+  11 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  +libdkim-1.0.21-r3.ebuild:
+  add libressl support
+
+  Package-Manager: portage-2.2.20.1
+

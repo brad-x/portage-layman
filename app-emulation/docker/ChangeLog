@@ -1,283 +1,123 @@
 # ChangeLog for app-emulation/docker
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/docker/ChangeLog,v 1.58 2015/08/07 04:53:18 vapier Exp $
+# (auto-generated from git log)
 
-  07 Aug 2015; Mike Frysinger <vapier@gentoo.org> docker-1.7.1.ebuild:
-  Make UTS_NS check non-fatal too #555434 by Deniss Gaplevsky.
+*docker-1.7.1 (09 Aug 2015)
+*docker-1.6.2 (09 Aug 2015)
+*docker-1.6.1 (09 Aug 2015)
 
-  28 Jul 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.7.1.ebuild:
-  Make kernel checks non fatal. Thanks to Tianon <admwiggin@gmail.com> for the
-  patch. Fixes #555434 by Deniss Gaplevsky  <slim@inbox.lv>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +docker-1.6.1.ebuild,
+  +docker-1.6.2.ebuild, +docker-1.7.1.ebuild,
+  +files/7179-add-audit_write-cap.patch, +files/docker-r2.confd,
+  +files/docker-r2.initd, +files/docker-r3.confd, +files/docker-r3.initd,
+  +files/docker.initd, +files/docker.service, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*docker-1.7.1 (24 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 Jul 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.7.1.ebuild,
-  -docker-1.7.0-r1.ebuild, -docker-1.7.0.ebuild:
-  Version bump, grabbed from tianon's docker overlay. Fixes #554306. Drop old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*docker-1.7.0-r1 (07 Jul 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Jul 2015; William Hubbs <williamh@gentoo.org> +docker-1.7.0-r1.ebuild:
-  add slot dependency on dev-lang/go, approved by all maintainers
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  05 Jul 2015; Manuel Rüger <mrueg@gentoo.org> docker-1.6.2.ebuild,
-  docker-1.7.0.ebuild:
-  [QA] Install zsh-completion unconditionally.
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/docker-r2.initd,
+  files/docker-r3.initd, files/docker.initd:
+  [QA] Remove executable bit from files, bug 550434.
 
-*docker-1.7.0 (04 Jul 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> +docker-1.7.0.ebuild,
-  files/docker-r2.confd, files/docker.initd, metadata.xml:
-  add version 1.7.0  * from tianon's docker-overlay * fixes bug #553708
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*docker-1.6.2 (04 Jul 2015)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> +docker-1.6.2.ebuild,
-  +files/7179-add-audit_write-cap.patch, +files/docker-r3.confd,
-  +files/docker-r3.initd, +files/docker.initd, files/docker-r2.confd,
-  files/docker-r2.initd, files/docker.service:
-  add version 1.6.2  fixes bug #553706
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  04 Jul 2015; Alex Brandt <alunduil@gentoo.org> metadata.xml:
-  add alunduil to maintainers
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jun 2015; Manuel Rüger <mrueg@gentoo.org> docker-1.6.1.ebuild:
-  Install zsh-completions unconditionally.
+  Bug: https://bugs.gentoo.org/552720
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> docker-1.6.1.ebuild:
-  Add missing eclass
+  25 Aug 2015; William Hubbs <williamh@gentoo.org> metadata.xml:
+  add myself as a maintainer
 
-  07 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Add github to remote-id in metadata.xml
+  This was approved by both alunduil and xarthisius.
 
-  08 May 2015; Kacper Kowalik <xarthisius@gentoo.org> -docker-1.5.0.ebuild:
-  drop old wrt #548884
+*docker-1.8.1 (25 Aug 2015)
 
-*docker-1.6.1 (08 May 2015)
+  25 Aug 2015; William Hubbs <williamh@gentoo.org> +docker-1.8.1.ebuild:
+  version bump for 1.8.1
 
-  08 May 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.6.1.ebuild,
-  -docker-1.6.0.ebuild:
-  Version bump, drop old wrt #548884
+  This is for bug #557972.
 
-  04 May 2015; Justin Lecher <jlec@gentoo.org> docker-1.6.0.ebuild:
-  Add missing dependency on aufs4, thanks jbergstroem for the report
+*docker-9999 (25 Aug 2015)
 
-  29 Apr 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.6.0.ebuild:
-  Drop ~CFS_BANDWIDTH as it's not yet used by 1.6.0, add warning message for
-  CONFIG_MEMCG_SWAP_ENABLED. Thanks to Thomas Capricelli for the report
+  25 Aug 2015; William Hubbs <williamh@gentoo.org> +docker-9999.ebuild:
+  add live ebuild
 
-*docker-1.6.0 (28 Apr 2015)
+  27 Aug 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.8.1.ebuild,
+  +files/15404-fix-go14_15.patch:
+  Apply upstream patch fixing issue with go>=1.4. Fixes #558344
 
-  28 Apr 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.6.0.ebuild:
-  Version bump, grabbed from tianon's docker overlay. Fixes #547316
+  Package-Manager: portage-2.2.20
 
-  14 Mar 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.5.0.ebuild:
-  Check if CPUSETS are enabled in kernel wrt bug #536546 by Dirk Best <mail
-  @dirk-best.de>. Thanks to Tianon <admwiggin@gmail.com> for reporting and
-  fixing it upstream
+  19 Sep 2015; Agostino Sarubbo <ago@gentoo.org> docker-1.7.1.ebuild:
+  amd64 stable wrt bug #550894
 
-  03 Mar 2015; Kacper Kowalik <xarthisius@gentoo.org> docker-1.5.0.ebuild,
-  metadata.xml:
-  Port changes from Tianon's overlay. Fixes bug #541742 by Thomas Capricelli
-  <orzel@freehackers.org>
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  19 Feb 2015; Patrick Lauer <patrick@gentoo.org> -docker-1.3.3-r1.ebuild,
-  -docker-1.4.1.ebuild:
-  Remove old versions with unsatisfiable dependencies
+*docker-1.8.2 (28 Sep 2015)
 
-  15 Feb 2015; Patrick Lauer <patrick@gentoo.org> docker-1.3.3-r1.ebuild,
-  docker-1.4.1.ebuild, docker-1.5.0.ebuild:
-  Make kernel checks nonfatal to allow building (binpkgs etc.)
+  28 Sep 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.8.2.ebuild:
+  Version bump for 1.8.2. Ebuild ported from Tianon's overlay
 
-*docker-1.5.0 (11 Feb 2015)
+  Package-Manager: portage-2.2.20
 
-  11 Feb 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.5.0.ebuild:
-  Version bump, grabbed from tianon's docker overlay
+  29 Sep 2015; Justin Lecher <jlec@gentoo.org> docker-1.8.2.ebuild:
+  Apply compat patch for go-1.5
 
-*docker-1.4.1 (23 Dec 2014)
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=558344
 
-  23 Dec 2014; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.4.1.ebuild,
-  -docker-1.4.0.ebuild:
-  Version bump, drop old
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*docker-1.3.3-r1 (16 Dec 2014)
+  29 Sep 2015; Justin Lecher <jlec@gentoo.org> docker-1.6.2.ebuild,
+  docker-1.7.1.ebuild, docker-1.8.2.ebuild, docker-9999.ebuild:
+  Inherit eutils.eclass for epatch_user
 
-  16 Dec 2014; Alex Brandt <alunduil@gentoo.org> +docker-1.3.3-r1.ebuild:
-  add version 1.3.3-r1 from tianon's docker overlay
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  Version 1.4.0 of docker has a nasty bug when using volumes that are bind
-  mounts.  Thus, I've added 1.3.3-r1 until 1.4.1 is released and fixes this
-  issue, or longer that's OK too.
+*docker-1.9.0 (03 Nov 2015)
 
-*docker-1.4.0 (12 Dec 2014)
+  03 Nov 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.9.0.ebuild:
+  version bump to 1.9.0.  Ebuild ported from Tianon's overlay
 
-  12 Dec 2014; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.4.0.ebuild,
-  -docker-1.3.2.ebuild:
-  Version bump, drop vulnerable versions wrt #532344
+  Package-Manager: portage-2.2.20
 
-  26 Nov 2014; Kacper Kowalik <xarthisius@gentoo.org> docker-1.3.2.ebuild:
-  Update with ebuild from Tianon's overlay
-
-  26 Nov 2014; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
-  Add myself as co-maintainer
-
-*docker-1.3.2 (26 Nov 2014)
-
-  26 Nov 2014; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.3.2.ebuild,
-  -docker-1.3.1.ebuild:
-  Version bump, drop old wrt bug #530518
-
-  19 Nov 2014; Yixun Lan <dlan@gentoo.org> -docker-1.0.0.ebuild,
-  -docker-1.0.1.ebuild, -docker-1.1.0.ebuild, -docker-1.2.0.ebuild:
-  clean vulnerable versions due to security bug 529670, proxy for maintainer
-
-*docker-1.3.1 (31 Oct 2014)
-
-  31 Oct 2014; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.3.1.ebuild:
-  1.3.1 version bump
-
-*docker-1.2.0 (09 Sep 2014)
-
-  09 Sep 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-1.2.0.ebuild:
-  1.2.0 version bump
-
-  06 Aug 2014; Patrick Lauer <patrick@gentoo.org> docker-1.0.0.ebuild,
-  docker-1.0.1.ebuild, docker-1.1.0.ebuild:
-  Make description more repoman-happy
-
-  04 Jul 2014; Greg Kroah-Hartman <gregkh@gentoo.org> -docker-0.10.0.ebuild,
-  -docker-0.11.1.ebuild, -docker-0.7.1-r1.ebuild, -docker-0.7.1.ebuild,
-  -docker-0.7.2.ebuild, -docker-0.7.3.ebuild, -docker-0.7.4.ebuild,
-  -docker-0.7.5.ebuild, -docker-0.7.6.ebuild, -docker-0.8.0.ebuild,
-  -docker-0.8.1.ebuild, -docker-0.9.0.ebuild, -docker-0.9.1.ebuild:
-  remove obsolete ebuilds
-
-*docker-1.1.0 (04 Jul 2014)
-
-  04 Jul 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-1.1.0.ebuild:
-  1.1.0 update
-
-*docker-1.0.1 (29 Jun 2014)
-
-  29 Jun 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-1.0.1.ebuild:
-  1.0.1 version bump
-
-  25 Jun 2014; Patrick Lauer <patrick@gentoo.org> -docker-0.7.0.ebuild:
-  Remove ebuild that fetches from live git
-
-*docker-1.0.0 (09 Jun 2014)
-
-  09 Jun 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-1.0.0.ebuild:
-  1.0.0 release
-
-  03 Jun 2014; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Add proxy-maint herd.
-
-*docker-0.11.1 (09 May 2014)
-
-  09 May 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.11.1.ebuild,
-  metadata.xml:
-  0.11.1 version bump
-
-*docker-0.10.0 (09 Apr 2014)
-
-  09 Apr 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.10.0.ebuild:
-  0.10.0 bump
-
-*docker-0.9.1 (26 Mar 2014)
-
-  26 Mar 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.9.1.ebuild:
-  0.9.1 bump
-
-*docker-0.9.0 (11 Mar 2014)
-
-  11 Mar 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.9.0.ebuild,
-  metadata.xml:
-  0.9.0 version bump
-
-*docker-0.8.1 (21 Feb 2014)
-
-  21 Feb 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.8.1.ebuild:
-  0.8.1 bump
-
-*docker-0.8.0 (05 Feb 2014)
-
-  05 Feb 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.8.0.ebuild,
-  metadata.xml:
-  0.8.0 bump
-
-*docker-0.7.6 (16 Jan 2014)
-
-  16 Jan 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.6.ebuild:
-  0.7.6 version bump
-
-  10 Jan 2014; Greg Kroah-Hartman <gregkh@gentoo.org> -docker-0.6.3-r1.ebuild,
-  -docker-0.6.3.ebuild, -docker-0.6.5.ebuild, -docker-0.6.6.ebuild,
-  -docker-0.6.7.ebuild:
-  remove 0.6.* versions
-
-*docker-0.7.5 (10 Jan 2014)
-
-  10 Jan 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.5.ebuild:
-  0.7.5 bump
-
-*docker-0.7.4 (10 Jan 2014)
-
-  10 Jan 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.4.ebuild:
-  0.7.4 bump
-
-*docker-0.7.3 (04 Jan 2014)
-
-  04 Jan 2014; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.3.ebuild:
-  0.7.3 version bump
-
-  31 Dec 2013; Tom Wijsman <TomWij@gentoo.org> -files/docker.initd,
-  metadata.xml:
-  [QA] Remove unused files. Added proxy-maintainers to metadata.xml due to non-
-  gorg e-mail address.
-
-*docker-0.7.2 (17 Dec 2013)
-*docker-0.7.1-r1 (17 Dec 2013)
-
-  17 Dec 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.1-r1.ebuild,
-  +docker-0.7.2.ebuild:
-  0.7.1-rc1 and 0.7.2 version bump
-
-*docker-0.7.1 (10 Dec 2013)
-
-  10 Dec 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.1.ebuild:
-  0.7.1 bump
-
-*docker-0.7.0 (26 Nov 2013)
-
-  26 Nov 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.7.0.ebuild,
-  metadata.xml:
-  add 0.7.0 release
-
-*docker-0.6.7 (23 Nov 2013)
-
-  23 Nov 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.6.7.ebuild:
-  0.6.7 version bump
-
-*docker-0.6.6 (11 Nov 2013)
-
-  11 Nov 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.6.6.ebuild:
-  0.6.6 version bump
-
-*docker-0.6.5 (31 Oct 2013)
-
-  31 Oct 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.6.5.ebuild:
-  version bump to 0.6.5
-
-*docker-0.6.3-r1 (05 Oct 2013)
-
-  05 Oct 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.6.3-r1.ebuild:
-  add dependancy on app-arch/xz-utils as it is needed
-
-*docker-0.6.3 (25 Sep 2013)
-
-  25 Sep 2013; Greg Kroah-Hartman <gregkh@gentoo.org> +docker-0.6.3.ebuild,
-  +files/docker-r2.confd, +files/docker-r2.initd, +files/docker.initd,
-  +files/docker.service, +metadata.xml:
-  initial docker ebuild taken (with permission) from git@github.com:tianon
-  /docker-overlay.git

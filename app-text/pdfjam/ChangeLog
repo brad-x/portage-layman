@@ -1,170 +1,56 @@
 # ChangeLog for app-text/pdfjam
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pdfjam/ChangeLog,v 1.49 2015/05/23 12:35:40 mrueg Exp $
+# (auto-generated from git log)
 
-  23 May 2015; Manuel Rüger <mrueg@gentoo.org>
-  -files/pdfjam-1.20-security.patch, -pdfjam-1.20-r1.ebuild,
-  -pdfjam-1.20.ebuild, -pdfjam-1.21.ebuild, -pdfjam-2.01.ebuild,
-  -pdfjam-2.05.ebuild:
-  Remove old.
+*pdfjam-2.08 (09 Aug 2015)
 
-  25 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for sh, wrt bug #449298
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +pdfjam-2.08.ebuild:
+  proj/gentoo: Initial commit
 
-  22 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for s390, wrt bug #449298
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for sparc, wrt bug #449298
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for arm, wrt bug #449298
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for alpha, wrt bug #449298
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  19 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for ia64, wrt bug #449298
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for ppc64, wrt bug #449298
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  18 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for ppc, wrt bug #449298
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for x86, wrt bug #449298
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Apr 2013; Agostino Sarubbo <ago@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for amd64, wrt bug #449298
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Apr 2013; Jeroen Roovers <jer@gentoo.org> pdfjam-2.08.ebuild:
-  Stable for HPPA (bug #449298).
+  Bug: https://bugs.gentoo.org/552720
 
-  09 May 2012; Alexis Ballier <aballier@gentoo.org> pdfjam-2.08.ebuild:
-  keyword ~amd64-fbsd
-
-  02 Nov 2011; Alexis Ballier <aballier@gentoo.org> pdfjam-2.08.ebuild:
-  keyword ~x86-fbsd
-
-  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> pdfjam-2.05.ebuild:
-  Stable for HPPA (bug #355085).
-
-  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> pdfjam-2.05.ebuild:
-  alpha/ia64/s390/sh/sparc stable wrt #355085
-
-  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> pdfjam-2.05.ebuild,
-  pdfjam-2.08.ebuild:
-  Transferred Prefix keywords
-
-  14 Aug 2011; Markus Meier <maekke@gentoo.org> pdfjam-2.05.ebuild:
-  arm stable, bug #355085
-
-  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> pdfjam-2.05.ebuild:
-  ppc/ppc64 stable wrt #355085
-
-  30 Jun 2011; Brent Baude <ranger@gentoo.org> pdfjam-2.05.ebuild:
-  Marking pdfjam-2.05 ppc for bug 334399
-
-  27 Feb 2011; Raúl Porcel <armin76@gentoo.org> pdfjam-2.05.ebuild,
-  pdfjam-2.08.ebuild:
-  Add ~alpha/~ia64/~s390/~sh/~sparc wrt #342513
-
-*pdfjam-2.08 (26 Dec 2010)
-
-  26 Dec 2010; Alexis Ballier <aballier@gentoo.org> +pdfjam-2.08.ebuild:
-  version bump
-
-  12 Nov 2010; Jeroen Roovers <jer@gentoo.org> pdfjam-2.05.ebuild:
-  Marked ~hppa (bug #342513).
-
-  01 Nov 2010; Markus Meier <maekke@gentoo.org> pdfjam-2.05.ebuild:
-  add ~arm, bug #342513
-
-  25 Oct 2010; Markos Chandras <hwoarang@gentoo.org> pdfjam-2.05.ebuild:
-  Stable on amd64 wrt bug #334399
-
-  25 Oct 2010; Christian Faulhammer <fauli@gentoo.org> pdfjam-2.05.ebuild:
-  stable x86, bug 334399
-
-*pdfjam-2.05 (29 Apr 2010)
-
-  29 Apr 2010; Alexis Ballier <aballier@gentoo.org> +pdfjam-2.05.ebuild:
-  version bump, by August Hörandl <hoea@gmx.at>, bug #316831
-
-*pdfjam-2.01 (13 Apr 2010)
-
-  13 Apr 2010; Alexis Ballier <aballier@gentoo.org> +pdfjam-2.01.ebuild:
-  version bump, by Gian <news.gdc@nurfuerspam.de>, bug #314867
-
-  20 Jan 2009; Alexis Ballier <aballier@gentoo.org> pdfjam-1.20.ebuild,
-  pdfjam-1.20-r1.ebuild:
-  assign RDEPEND to DEPEND
-
-*pdfjam-1.21 (20 Jan 2009)
-
-  20 Jan 2009; Alexis Ballier <aballier@gentoo.org> +pdfjam-1.21.ebuild:
-  version bump, security fixes merged upstream
-
-  18 Jan 2009; Tobias Scherbaum <dertobi123@gentoo.org>
-  pdfjam-1.20-r1.ebuild:
-  ppc stable, bug #252734
-
-  15 Jan 2009; Markus Meier <maekke@gentoo.org> pdfjam-1.20-r1.ebuild:
-  amd64/x86 stable, bug #252734
-
-*pdfjam-1.20-r1 (15 Jan 2009)
-
-  15 Jan 2009; Alexis Ballier <aballier@gentoo.org>
-  +files/pdfjam-1.20-security.patch, +pdfjam-1.20-r1.ebuild:
-  Security fixes by Martin Väth for bug #252734
-
-  10 Jun 2008; Alexis Ballier <aballier@gentoo.org> -pdfjam-1.10.ebuild:
-  remove old
-
-  10 Jun 2008; Alexis Ballier <aballier@gentoo.org> pdfjam-1.20.ebuild:
-  depend on latex-base instead of tetex, bug #225315
-
-  13 Aug 2007; Markus Rothe <corsair@gentoo.org> pdfjam-1.20.ebuild:
-  Added ~ppc64
-
-  12 Mar 2007; Alexandre Buisse <nattfodd@gentoo.org> metadata.xml:
-  Replaced text-markup by tex as maintaining herd (text-markup split).
-
-  05 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
-
-  24 Dec 2005; Michael Hanselmann <hansmi@gentoo.org> pdfjam-1.20.ebuild:
-  Stable on ppc.
-
-  10 Dec 2005; Simon Stelling <blubb@gentoo.org> pdfjam-1.20.ebuild:
-  stable on amd64
-
-  03 Dec 2005; Chris White <chriswhite@gentoo.org> pdfjam-1.20.ebuild:
-  x86 stable for bug #114328.
-
-  24 Apr 2005; Michael Hanselmann <hansmi@gentoo.org> pdfjam-1.10.ebuild:
-  Stable on ppc.
-
-  21 Apr 2005; Simon Stelling <blubb@gentoo.org> pdfjam-1.10.ebuild:
-  stable on amd64
-
-*pdfjam-1.20 (21 Feb 2005)
-
-  21 Feb 2005; Mamoru KOMACHI <usata@gentoo.org> +pdfjam-1.20.ebuild:
-  Version bumped; bug #82688. Thanks to Till Maas <opensource@gmx.net> for
-  fixing manpages.
-
-  27 Nov 2004; <pclouds@gentoo.org> pdfjam-1.10.ebuild,+metadata.xml:
-  Marked 1.10 stable on x86. Added missing metadata.xml
-
-  06 Sep 2004; Danny van Dyk <kugelfang@gentoo.org> pdfjam-1.10.ebuild:
-  Marked ~amd64.
-
-  03 Aug 2004; David Holm <dholm@gentoo.org> pdfjam-1.10.ebuild:
-  Added to ~ppc.
-
-*pdfjam-1.10 (30 Jul 2004)
-
-  30 Jul 2004; <pclouds@gentoo.org> +pdfjam-1.10.ebuild:
-  new ebuild, submitted by Dominic Battre <dominic.battre@gmx.de> on bug 57567

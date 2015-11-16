@@ -1,110 +1,59 @@
 # ChangeLog for net-analyzer/nsat
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nsat/ChangeLog,v 1.29 2014/09/16 05:50:32 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  16 Sep 2014; Jeroen Roovers <jer@gentoo.org> -nsat-1.5.ebuild:
-  Old.
+*nsat-1.5-r3 (09 Aug 2015)
 
-  02 Aug 2014; Raúl Porcel <armin76@gentoo.org> nsat-1.5.ebuild,
-  nsat-1.5-r3.ebuild:
-  Drop sparc keywords
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/nsat-1.5-amd64-compat.patch, +files/nsat-1.5-configure.patch,
+  +files/nsat-1.5-lvalue-gcc4.patch, +files/nsat-1.5-misc.patch,
+  +files/nsat-1.5-strip.patch, +files/nsat-1.5-va_list.patch, +metadata.xml,
+  +nsat-1.5-r3.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Jul 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> nsat-1.5-r3.ebuild:
-  x86 stable wrt bug #516450
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Jul 2014; Jeroen Roovers <jer@gentoo.org> files/nsat-1.5-va_list.patch:
-  Improve efficiency somewhat.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*nsat-1.5-r3 (06 Jul 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  06 Jul 2014; Jeroen Roovers <jer@gentoo.org> -nsat-1.5-r1.ebuild,
-  -nsat-1.5-r2.ebuild, +nsat-1.5-r3.ebuild, +files/nsat-1.5-va_list.patch:
-  Fix a segmentation fault with the -n option.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*nsat-1.5-r2 (05 Jul 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jul 2014; Jeroen Roovers <jer@gentoo.org> +nsat-1.5-r2.ebuild,
-  files/nsat-1.5-amd64-compat.patch, files/nsat-1.5-configure.patch,
-  files/nsat-1.5-lvalue-gcc4.patch, +files/nsat-1.5-misc.patch,
-  files/nsat-1.5-strip.patch:
-  Use dev-libs/libmix instead of bundled libmix++. Fix parallel make issues.
-  Combine sed scripts into patch. Clean up patches.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Jul 2014; Jeroen Roovers <jer@gentoo.org> nsat-1.5-r1.ebuild:
-  Export CC. Make CC calls verbose. Drop -O3.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Jun 2014; Jeroen Roovers <jer@gentoo.org> nsat-1.5-r1.ebuild:
-  Clean up.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> nsat-1.5-r1.ebuild:
-  Respect LDFLAGS wrt bug #335951
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> nsat-1.5-r1.ebuild:
-  Bump ebuild's EAPI to 2, add some QA fixes wrt bug #335951
+  Bug: https://bugs.gentoo.org/552720
 
-  26 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> nsat-1.5-r1.ebuild:
-  Make amd64-compatibility patch applies only on amd64 systems
-
-*nsat-1.5-r1 (25 Sep 2012)
-
-  25 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +nsat-1.5-r1.ebuild,
-  +files/nsat-1.5-amd64-compat.patch:
-  New revision with amd64 keyword and compatibility patch for it, wrt bug
-  #389767. Thanks to Andrew Savchenko for provided patch
-
-  15 Jan 2009; Jeroen Roovers <jer@gentoo.org> nsat-1.5.ebuild:
-  Oops. Use eautoreconf, not eautoconf (bug #226585 again).
-
-  15 Jan 2009; Jeroen Roovers <jer@gentoo.org>
-  files/nsat-1.5-configure.patch, +files/nsat-1.5-strip.patch,
-  nsat-1.5.ebuild:
-  Clean up configure patch. Do not strip (bug #251981). Do not call autoconf
-  directly (bug #226585).
-
-  22 Jul 2007; <pva@gentoo.org> nsat-1.5.ebuild:
-  Removed virtual/x11 dependency.
-
-  20 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  01 May 2006; Jason Wever <weeve@gentoo.org> nsat-1.5.ebuild:
-  Stable on SPARC.
-
-  19 Apr 2006; Marcelo Goes <vanquirius@gentoo.org>
-  +files/nsat-1.5-lvalue-gcc4.patch, nsat-1.5.ebuild:
-  Add patch to fix lvalue error when compiling with gcc4. Fixes bug 128204,
-  thanks to Robert Marmorstein <rmmarm at wm dot edu>. Also, do not install
-  LICENSE.
-
-  15 Feb 2006; Markus Ullmann <jokey@gentoo.org> nsat-1.5.ebuild:
-  Removing virtual/libpcap wrt bug #117898
-
-  22 Jan 2006; Peter Volkov <pva@gentoo.org> nsat-1.5.ebuild:
-  Modular X dependencies are fixed.
-
-  19 Jul 2005; David Holm <dholm@gentoo.org> nsat-1.5.ebuild:
-  Added to ~ppc.
-
-  29 Jan 2005; Daniel Black <dragonheart@gentoo.org> nsat-1.5.ebuild:
-  changed net-libs/libpcap depend to virtual/libcap
-
-  13 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml:
-  Added metadata
-
-  27 Apr 2004; Aron Griffis <agriffis@gentoo.org> nsat-1.5.ebuild:
-  Add inherit eutils
-
-  28 Oct 2003; Daniel Ahlberg <aliz@gentoo.org> nsat-1.5.ebuild :
-  DEPEND fixes, sed fixes and sparc keyword from #31244.
-  Remove 1.43 ebuild so that 1.5 is latest.
-  Fix CFLAGS.
-
-*nsat-1.5 (07 Jan 2003)
-
-  07 Jan 2003; Daniel Ahlberg <aliz@gentoo.org> nsat-1.5.ebuild :
-  Version bump. Found by Kemal Akman <ka@leogic.com> in #13327.
-
-*nsat-1.43 (17 Dec 2002)
-
-  17 Dec 2002; Daniel Ahlberg <aliz@gentoo.org> :
-  Initial import. Ebuild contributed by Kemal Akman <ka@leogic.com> in #11367.

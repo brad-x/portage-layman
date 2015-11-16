@@ -1,128 +1,64 @@
 # ChangeLog for net-irc/smuxi
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/smuxi/ChangeLog,v 1.28 2015/07/10 07:25:04 patrick Exp $
+# (auto-generated from git log)
 
-*smuxi-0.11.1 (10 Jul 2015)
+*smuxi-0.11.1 (09 Aug 2015)
+*smuxi-0.8.11 (09 Aug 2015)
+*smuxi-0.8.10.1 (09 Aug 2015)
 
-  10 Jul 2015; Patrick Lauer <patrick@gentoo.org> +smuxi-0.11.1.ebuild:
-  Bump
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +smuxi-0.8.10.1.ebuild, +smuxi-0.8.11.ebuild, +smuxi-0.11.1.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> smuxi-0.8.10.1.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*smuxi-0.8.11 (07 Jul 2013)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Jul 2013; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.11.ebuild,
-  -files/smuxi-0.8-release-build.patch, -files/smuxi-0.8-visibility.patch,
-  -smuxi-0.8.9.1.ebuild:
-  Version bump, drop old.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> smuxi-0.8.10.1.ebuild:
-  x86 stable wrt bug #435202
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  27 Oct 2012; Pacho Ramos <pacho@gentoo.org> smuxi-0.8.10.1.ebuild:
-  Drop buggy gconf dependency, bug #437724 by René 'Necoro' Neumann.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> smuxi-0.8.10.1.ebuild:
-  Stable for amd64, wrt bug #435202
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*smuxi-0.8.10.1 (14 Sep 2012)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  14 Sep 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.10.1.ebuild,
-  -smuxi-0.8.9.2.ebuild:
-  Version bump, drop old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*smuxi-0.8.9.2 (30 Jun 2012)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.9.2.ebuild:
-  Version bump.
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -smuxi-0.8.ebuild:
-  Remove old as requested by Pacho Ramos, <pacho@gentoo.org>
+  18 Sep 2015; Christoph Mende <angelos@gentoo.org> smuxi-0.8.10.1.ebuild,
+  smuxi-0.8.11.ebuild, smuxi-0.11.1.ebuild:
+  fix dependency on dbus-sharp{,-glib}
 
-  22 May 2012; Agostino Sarubbo <ago@gentoo.org> smuxi-0.8.9.1.ebuild:
-  Stable for amd64, wrt bug #407701
+  Package-Manager: portage-2.2.20.1
 
-  03 May 2012; Jeff Horelick <jdhore@gentoo.org> smuxi-0.8.ebuild,
-  smuxi-0.8.9.1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
-
-  09 Apr 2012; Markus Meier <maekke@gentoo.org> smuxi-0.8.9.1.ebuild:
-  x86 stable, bug #407701
-
-*smuxi-0.8.9.1 (08 Jan 2012)
-
-  08 Jan 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.9.1.ebuild,
-  -smuxi-0.7.2.1.ebuild:
-  Version bump, remove old.
-
-  11 Apr 2011; Christoph Mende <angelos@gentoo.org> smuxi-0.8.ebuild,
-  +files/smuxi-0.8-release-build.patch, +files/smuxi-0.8-visibility.patch:
-  Fixed building against mono-2.10 with patches from Arch (bug #362623)
-
-  29 Jan 2011; Markos Chandras <hwoarang@gentoo.org> smuxi-0.8.ebuild:
-  Stable on amd64 wrt bug #352808
-
-  29 Jan 2011; Christian Faulhammer <fauli@gentoo.org> smuxi-0.8.ebuild:
-  stable x86, bug 352808
-
-*smuxi-0.8 (05 Oct 2010)
-
-  05 Oct 2010; Pacho Ramos <pacho@gentoo.org>
-  -files/smuxi-0.6.3-infinite-loop.patch, -files/smuxi-0.6.3-mono-2.2.patch,
-  -smuxi-0.7.1-r1.ebuild, -files/smuxi-0.7.1-mono26.patch,
-  +smuxi-0.8.ebuild:
-  Version bump with some UI improvements (bug #339830 by Thomas Kahle),
-  remove old.
-
-  23 Sep 2010; Markos Chandras <hwoarang@gentoo.org> smuxi-0.7.2.1.ebuild:
-  Stable on amd64 wrt bug #336851
-
-  12 Sep 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> smuxi-0.7.2.1.ebuild:
-  x86 stable wrt bug #336851
-
-*smuxi-0.7.2.1 (24 Jul 2010)
-
-  24 Jul 2010; Pacho Ramos <pacho@gentoo.org> -smuxi-0.6.3.ebuild,
-  +smuxi-0.7.2.1.ebuild:
-  Version bump with lots of bugfixes and some new features. Remove old.
-
-  11 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
-  smuxi-0.7.1-r1.ebuild:
-  stable x86, bug 327281
-
-  09 Jul 2010; Pacho Ramos <pacho@gentoo.org> smuxi-0.7.1-r1.ebuild:
-  stable amd64, bug 327281
-
-*smuxi-0.7.1-r1 (03 Jul 2010)
-
-  03 Jul 2010; Pacho Ramos <pacho@gentoo.org> -smuxi-0.6.4.ebuild,
-  -smuxi-0.7.1.ebuild, +smuxi-0.7.1-r1.ebuild,
-  +files/smuxi-0.7.1-mono26.patch:
-  Revision bump fixing building against mono-2.6 (bug #310735 by Diego and
-  Steev) and allowing to build only server (bug #293952 by Ayron Jungren).
-  Remove old testing.
-
-*smuxi-0.7.1 (21 Feb 2010)
-
-  21 Feb 2010; Patrick Lauer <patrick@gentoo.org> +smuxi-0.7.1.ebuild:
-  Bump for #303359
-
-  21 Oct 2009; Markus Meier <maekke@gentoo.org> smuxi-0.6.3.ebuild:
-  amd64/x86 stable, bug #286874
-
-*smuxi-0.6.4 (29 Aug 2009)
-
-  29 Aug 2009; Peter Alfredsen <loki_val@gentoo.org> +smuxi-0.6.4.ebuild:
-  Bump
-
-  05 Apr 2009; Peter Alfredsen <loki_val@gentoo.org>
-  +files/smuxi-0.6.3-infinite-loop.patch, smuxi-0.6.3.ebuild:
-  Fix bug 259434, smuxi enters an infinite loop when compiling on
-  milli-second-precision FSes, suchs as tmpfs or XFS.
-
-*smuxi-0.6.3 (31 Jan 2009)
-
-  31 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
-  +files/smuxi-0.6.3-mono-2.2.patch, +metadata.xml, +smuxi-0.6.3.ebuild:
-  Initial commit. Ebuild by me.

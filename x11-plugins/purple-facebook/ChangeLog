@@ -1,46 +1,75 @@
 # ChangeLog for x11-plugins/purple-facebook
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-facebook/ChangeLog,v 1.6 2015/07/28 22:43:19 chainsaw Exp $
+# (auto-generated from git log)
 
-*purple-facebook-20150728 (28 Jul 2015)
+*purple-facebook-20150728 (09 Aug 2015)
+*purple-facebook-20150727 (09 Aug 2015)
 
-  28 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  +purple-facebook-20150728.ebuild:
-  Now handles authentication failures properly.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +purple-facebook-20150727.ebuild, +purple-facebook-20150728.ebuild:
+  proj/gentoo: Initial commit
 
-*purple-facebook-20150727 (27 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  27 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  -purple-facebook-20150715.ebuild, -purple-facebook-20150718.ebuild,
-  +purple-facebook-20150727.ebuild:
-  Version bump, now implements marking threads as read, opening new group chats
-  as incoming messages arrive and improves error detection & freeing of
-  resources. Add missing json-glib dependency as pointed out by Dan Goodliffe
-  in bug #555020.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*purple-facebook-20150718 (20 Jul 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  20 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  +purple-facebook-20150718.ebuild:
-  Fixes a memory leak and streamlines the build system.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*purple-facebook-20150715 (20 Jul 2015)
+*purple-facebook-20150806 (11 Aug 2015)
+*purple-facebook-20150731 (11 Aug 2015)
 
-  20 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  -purple-facebook-20150713.ebuild, +purple-facebook-20150715.ebuild:
-  Now bundles SSL certificates that were missing before. Removing previous
-  version as restricting Pidgin USE-flags was only ever a workaround.
+  11 Aug 2015; Tony Vroon <chainsaw@gentoo.org>
+  +purple-facebook-20150731.ebuild, +purple-facebook-20150806.ebuild:
+  New releases 27833e4fcb1f (July 31) & 9e3520d6ec49 (August 6).
 
-  15 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  purple-facebook-20150713.ebuild:
-  Require GNUTLS to be disabled in Pidgin to work around a certificate issue,
-  upstream issue report #13. As agreed with upstream developer.
+  Package-Manager: portage-2.2.20
 
-*purple-facebook-20150713 (15 Jul 2015)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  15 Jul 2015; Tony Vroon <chainsaw@gentoo.org>
-  +purple-facebook-20150713.ebuild, +metadata.xml:
-  Initial commit, ebuild by me with tweaks by Jason "perfinion" Zaman. This
-  plugin by James Geboski uses the newly released Messenger API instead of the
-  now removed XMPP option.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*purple-facebook-20150827 (01 Sep 2015)
+
+  01 Sep 2015; Tony Vroon <chainsaw@gentoo.org>
+  -purple-facebook-20150727.ebuild, -purple-facebook-20150728.ebuild,
+  -purple-facebook-20150731.ebuild, +purple-facebook-20150827.ebuild:
+  Version bump, containing significant bug fixes. Remove older builds.
+
+  Package-Manager: portage-2.2.20.1
 

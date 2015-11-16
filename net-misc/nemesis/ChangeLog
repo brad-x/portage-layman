@@ -1,75 +1,60 @@
 # ChangeLog for net-misc/nemesis
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nemesis/ChangeLog,v 1.22 2012/12/11 09:17:07 ulm Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  11 Dec 2012; Ulrich Müller <ulm@gentoo.org> nemesis-1.4.ebuild,
-  nemesis-1.4-r1.ebuild:
-  Fix LICENSE, 3-clause BSD according to LICENSE file, bug 446542. Thanks to
-  rainbow <rainbow@irh.it>.
+*nemesis-1.4-r1 (09 Aug 2015)
+*nemesis-1.4 (09 Aug 2015)
 
-  14 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -nemesis-1.4_beta3.ebuild:
-  Remove old
-
-  14 Jun 2012; Agostino Sarubbo <ago@gentoo.org> nemesis-1.4.ebuild:
-  stable for amd64
-
-  03 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
-  Fix metadata typo.
-
-*nemesis-1.4-r1 (23 Mar 2012)
-
-  23 Mar 2012; Markos Chandras <hwoarang@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/1.4-libnet-1.0.patch, +files/1.4_beta3-libnet-1.0.patch,
   +files/nemesis-1.4-fileio.patch, +files/nemesis-1.4-libnet-1.0.patch,
-  +files/nemesis-1.4-prototcp.patch, +nemesis-1.4-r1.ebuild, metadata.xml:
-  Revbump. Multiple fixes. EAPI4. Bug #408023. Thanks to rainbow
-  <rainbow@irh.it>
+  +files/nemesis-1.4-prototcp.patch, +metadata.xml, +nemesis-1.4.ebuild,
+  +nemesis-1.4-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  25 Jan 2008; Raúl Porcel <armin76@gentoo.org> nemesis-1.4.ebuild:
-  alpha/sparc/x86 stable
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Feb 2007; Jason Wever <weeve@gentoo.org> +files/1.4-libnet-1.0.patch:
-  Add in patch, fixes bug #165255.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*nemesis-1.4 (03 Feb 2007)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  03 Feb 2007; Jason Wever <weeve@gentoo.org> +nemesis-1.4.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  20 Feb 2006; Markus Ullmann <jokey@gentoo.org> nemesis-1.4_beta3.ebuild:
-  Removing virtual/libpcap wrt bug #117898
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Jan 2005; Daniel Black <dragonheart@gentoo.org> nemesis-1.4_beta3.ebuild:
-  Transition dependancy from net-libs/libpcap to virtual/libpcap
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> nemesis-1.4_beta3.ebuild:
-  change virtual/glibc to virtual/libc
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Jun 2004; Daniel Black <dragonheart@gentoo.org> nemesis-1.4_beta3.ebuild:
-  QA - IUSE
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  06 May 2004; Daniel Black <dragonheart@gentoo.org>
-  -files/nemesis-1.32-gentoo.diff, -nemesis-1.32.ebuild:
-  Removed old version to fix bug #50070 - thanks to James Cook
-  <james.cook@utoronto.ca>
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*nemesis-1.4_beta3 (21 Aug 2003)
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Aug 2003; Mike Frysinger <vapier@gentoo.org> :
-  Patch to compile against SLOT-ed libnet-1.0.x #17772 + version bump.
-
-*nemesis-1.32 (23 Apr 2002)
-
-  25 Mar 2003; Aron Griffis <agriffis@gentoo.org> nemesis-1.32.ebuild:
-  Add ~alpha to KEYWORDS
-
-  07 Mar 2003; Martin Holzer <mholzer@gentoo.org> nemesis-1.32.ebuild :
-  Corrected Homepage. Fixed Depend to libnet-1.0*. Closes #17017.
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
-
-  08 Jul 2002; phoen][x <phoenix@gentoo.org> nemesis-1.32.ebuild :
-  Added KEYWORDS, LICENSE, SLOT.
-
-  23 Apr 2002; Donny Davies <woodchip@gentoo.org> :  
-  Initial package, thanks goto Alexander Gretencord <arutha@gmx.de>
-  for the contribution.  Thanks Alexander! ;)

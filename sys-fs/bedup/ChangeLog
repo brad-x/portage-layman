@@ -1,50 +1,71 @@
 # ChangeLog for sys-fs/bedup
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/bedup/ChangeLog,v 1.11 2015/04/06 16:53:14 mgorny Exp $
+# (auto-generated from git log)
 
-*bedup-0.9.0_p20140413-r1 (06 Apr 2015)
+*bedup-9999 (09 Aug 2015)
+*bedup-0.9.0_p20140413-r1 (09 Aug 2015)
 
-  06 Apr 2015; Michał Górny <mgorny@gentoo.org>
-  +bedup-0.9.0_p20140413-r1.ebuild, -bedup-0.9.0_p20140413.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +bedup-0.9.0_p20140413-r1.ebuild, +bedup-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*bedup-0.10.0 (30 Oct 2015)
+
+  30 Oct 2015; Michał Górny <mgorny@gentoo.org> +bedup-0.10.0.ebuild,
   bedup-9999.ebuild:
-  Restrict alembic to < 0.7.
+  version bump to 0.10.0, #564368
 
-  06 Sep 2014; Michał Górny <mgorny@gentoo.org> bedup-0.9.0_p20140413.ebuild,
-  bedup-9999.ebuild:
-  Enable python3.4, and disable python3.2 since alembic no longer supports it.
+  Major changes (from release notes):
+  * Require Python 3 (3.3 and newer) -> solves recursion issues
+  * Require a UTF-8 terminal and locale
+  * Increase robustness against bad encodings, bad data on disk,
+  non-checksummed extents, stale file handles, unusual labels
 
-  06 Jul 2014; Michał Górny <mgorny@gentoo.org> bedup-0.9.0_p20140413.ebuild,
-  bedup-9999.ebuild:
-  Clean up obsolete dependencies on virtual/python-argparse and virtual/python-
-  unittest2 (those packages were only required for <=python-2.6).
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=564368
 
-  21 May 2014; Michał Górny <mgorny@gentoo.org> bedup-0.9.0_p20140413.ebuild,
-  bedup-9999.ebuild:
-  Require sqlalchemy >= 0.8.2, bug #510910.
-
-  09 May 2014; Jeroen Roovers <jer@gentoo.org> bedup-0.9.0_p20140413.ebuild:
-  Whitespace.
-
-*bedup-0.9.0_p20140413 (08 May 2014)
-
-  08 May 2014; Michał Górny <mgorny@gentoo.org> +bedup-0.9.0_p20140413.ebuild:
-  Bump to a recent snapshot.
-
-  08 May 2014; Michał Górny <mgorny@gentoo.org> bedup-9999.ebuild:
-  Add a slot operator on dev-python/cffi dep (bug #506552).
-
-  29 Mar 2014; Michał Górny <mgorny@gentoo.org> bedup-9999.ebuild:
-  Use git-r3.
-
-  29 Mar 2014; Michał Górny <mgorny@gentoo.org> bedup-9999.ebuild:
-  Update the dependencies. btrfs-progs w/ headers are in tree already, and old
-  pycparser was removed.
-
-  13 Oct 2013; Pacho Ramos <pacho@gentoo.org> bedup-9999.ebuild:
-  Also compatible with python3_3
-
-*bedup-9999 (15 Jul 2013)
-
-  15 Jul 2013; Michał Górny <mgorny@gentoo.org> +bedup-9999.ebuild,
-  +metadata.xml:
-  Introduce bedup, a btrfs deduplication tool.

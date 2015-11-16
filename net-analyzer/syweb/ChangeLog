@@ -1,54 +1,57 @@
 # ChangeLog for net-analyzer/syweb
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/syweb/ChangeLog,v 1.8 2014/07/17 16:02:41 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Jul 2014; Jeroen Roovers <jer@gentoo.org> -syweb-0.64.ebuild,
-  syweb-0.65.ebuild:
-  Quotes.
+*syweb-0.65 (09 Aug 2015)
 
-*syweb-0.65 (26 Aug 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/postinstall-en.txt, +files/reconfig, +metadata.xml,
+  +syweb-0.65.ebuild:
+  proj/gentoo: Initial commit
 
-  26 Aug 2013; Sergey Popov <pinkbyte@gentoo.org> +syweb-0.65.ebuild:
-  Version bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Jul 2012; Matti Bickel <mabi@gentoo.org> -syweb-0.59.ebuild,
-  syweb-0.64.ebuild:
-  remove unneeded depend.php, also remove old version with permission from jer
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*syweb-0.64 (17 Apr 2012)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Apr 2012; Jeroen Roovers <jer@gentoo.org> +syweb-0.64.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*syweb-0.59 (01 Dec 2009)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Dec 2009; Tiago Cunha <tcunha@gentoo.org> -syweb-0.58-r1.ebuild,
-  +syweb-0.59.ebuild, files/postinstall-en.txt, +files/reconfig,
-  -files/syweb-class_lexer.inc.patch, -files/syweb-setup.inc.patch,
-  -files/syweb-total_firewall.layout.patch:
-  - Version bump.
-  - Remove old.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*syweb-0.58-r1 (13 Dec 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Dec 2008; Tiago Cunha <tcunha@gentoo.org> +files/postinstall-en.txt,
-  files/syweb-setup.inc.patch, -syweb-0.58.ebuild, +syweb-0.58-r1.ebuild:
-  Revision bump:
-  - Keep the layouts directory to avoid it being removed by a package manager
-  if it's empty.
-  - The cache directory shouldn't be reached by browsers, thus move it to
-  hostroot. While there, change setup.inc.patch accordingly.
-  - Use a file to display post-install instructions by using the function
-  webapp_postinst_txt provided by the webapp eclass instead of using elog.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 Nov 2008; Tiago Cunha <tcunha@gentoo.org> metadata.xml:
-  Update my email address. Thanks pva
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*syweb-0.58 (19 Aug 2008)
-
-  19 Aug 2008; Peter Volkov <pva@gentoo.org>
-  +files/syweb-class_lexer.inc.patch, +files/syweb-setup.inc.patch,
-  +files/syweb-total_firewall.layout.patch, +metadata.xml,
-  +syweb-0.58.ebuild:
-  Initial import. Separated out from symon.
+  Bug: https://bugs.gentoo.org/552720
 

@@ -1,111 +1,76 @@
 # ChangeLog for dev-util/mingw64-runtime
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mingw64-runtime/ChangeLog,v 1.20 2015/05/05 11:39:40 alonbl Exp $
+# (auto-generated from git log)
 
-*mingw64-runtime-4.0.1 (05 May 2015)
+*mingw64-runtime-4.0.1 (09 Aug 2015)
+*mingw64-runtime-3.2.0-r1 (09 Aug 2015)
+*mingw64-runtime-3.1.0 (09 Aug 2015)
+*mingw64-runtime-3.0.0 (09 Aug 2015)
+*mingw64-runtime-2.0.8 (09 Aug 2015)
 
-  05 May 2015; Alon Bar-Lev <alonbl@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/mingw64-runtime-4.0.1-build.patch,
-  +files/mingw64-runtime-4.0.1-winpthreads.patch, +mingw64-runtime-4.0.1.ebuild,
-  metadata.xml:
-  Version bump, bug#543954
+  +files/mingw64-runtime-4.0.1-winpthreads.patch, +metadata.xml,
+  +mingw64-runtime-2.0.8.ebuild, +mingw64-runtime-3.0.0.ebuild,
+  +mingw64-runtime-3.1.0.ebuild, +mingw64-runtime-3.2.0-r1.ebuild,
+  +mingw64-runtime-4.0.1.ebuild:
+  proj/gentoo: Initial commit
 
-  27 Feb 2015; Mike Frysinger <vapier@gentoo.org> mingw64-runtime-2.0.8.ebuild,
-  mingw64-runtime-3.0.0.ebuild, mingw64-runtime-3.1.0.ebuild,
-  mingw64-runtime-3.2.0-r1.ebuild:
-  Use more readable CTARGET setup logic.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Sep 2014; Alon Bar-Lev <alonbl@gentoo.org> -mingw64-runtime-2.0.1.ebuild,
-  -mingw64-runtime-2.0.7.ebuild:
-  Cleanup old
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*mingw64-runtime-3.2.0-r1 (09 Sep 2014)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Sep 2014; Alon Bar-Lev <alonbl@gentoo.org>
-  +mingw64-runtime-3.2.0-r1.ebuild, -mingw64-runtime-3.2.0.ebuild:
-  upstream tarball reenroll, bug#522066
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*mingw64-runtime-3.2.0 (03 Sep 2014)
+*mingw64-runtime-4.0.4 (14 Aug 2015)
 
-  03 Sep 2014; Alon Bar-Lev <alonbl@gentoo.org> +mingw64-runtime-3.2.0.ebuild:
-  Version bump, bug#521876
+  14 Aug 2015; Alon Bar-Lev <alonbl@gentoo.org> +mingw64-runtime-4.0.4.ebuild:
+  version bump
 
-*mingw64-runtime-3.1.0 (10 Jan 2014)
+  Package-Manager: portage-2.2.20.1
 
-  10 Jan 2014; Alon Bar-Lev <alonbl@gentoo.org> +mingw64-runtime-3.1.0.ebuild:
-  Version bump
+  14 Aug 2015; Alon Bar-Lev <alonbl@gentoo.org> -mingw64-runtime-2.0.8.ebuild:
+  cleanup
 
-  13 Oct 2013; Alon Bar-Lev <alonbl@gentoo.org> metadata.xml,
-  mingw64-runtime-3.0.0.ebuild:
-  remove tools USE, bug#487032
+  Package-Manager: portage-2.2.20.1
 
-*mingw64-runtime-3.0.0 (30 Sep 2013)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  30 Sep 2013; Alon Bar-Lev <alonbl@gentoo.org> +mingw64-runtime-3.0.0.ebuild,
-  metadata.xml:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*mingw64-runtime-2.0.8 (20 Jun 2013)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Jun 2013; Luca Barbato <lu_zero@gentoo.org> +mingw64-runtime-2.0.8.ebuild:
-  Version bump.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*mingw64-runtime-2.0.7 (18 Feb 2013)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  18 Feb 2013; Mike Frysinger <vapier@gentoo.org> +mingw64-runtime-2.0.7.ebuild:
-  Version bump #457684 by Dennis Schridde.
+  Bug: https://bugs.gentoo.org/552720
 
-  06 Jun 2012; Mike Frysinger <vapier@gentoo.org> mingw64-runtime-2.0.1.ebuild:
-  Always provide mingw symlink in sysroot for gcc #419601 by Alon Bar-Lev.
-
-*mingw64-runtime-2.0.1 (12 Mar 2012)
-
-  12 Mar 2012; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-2.0.1.ebuild, -mingw64-runtime-20100730.ebuild,
-  -mingw64-runtime-20101003.ebuild, -mingw64-runtime-20110523.ebuild:
-  Version bump #388263 by Sven & Alon Bar-Lev.
-
-*mingw64-runtime-20110523 (14 Jul 2011)
-
-  14 Jul 2011; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20110523.ebuild:
-  Version bump.
-
-*mingw64-runtime-20101003 (19 Nov 2010)
-
-  19 Nov 2010; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20101003.ebuild:
-  Version bump.
-
-*mingw64-runtime-20100730 (14 Aug 2010)
-
-  14 Aug 2010; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20100730.ebuild:
-  Version bump #332053 by Alon Bar-Lev.
-
-*mingw64-runtime-20100604 (22 Jun 2010)
-
-  22 Jun 2010; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20100604.ebuild:
-  Version bump #323583 by Alon Bar-Lev.
-
-  12 Jan 2010; Mike Frysinger <vapier@gentoo.org>
-  mingw64-runtime-20091222.ebuild:
-  Drop dir changing to fix patch application #300719 by Thomas Axelsson.
-
-  24 Dec 2009; Mike Frysinger <vapier@gentoo.org>
-  mingw64-runtime-20091222.ebuild,
-  +files/mingw64-runtime-20091222-mm_shuffle_ps-x86.patch:
-  Add fix from upstream for 32bit toolchains #298087 by Alon Bar-Lev.
-
-*mingw64-runtime-20091222 (22 Dec 2009)
-
-  22 Dec 2009; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20091222.ebuild:
-  Version bump #297819 by Alon Bar-Lev.
-
-*mingw64-runtime-20090419 (09 Dec 2009)
-
-  09 Dec 2009; Mike Frysinger <vapier@gentoo.org>
-  +mingw64-runtime-20090419.ebuild, +metadata.xml:
-  Initial ebuild based on mingw-runtime by Suertreus #271197.

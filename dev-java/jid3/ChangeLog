@@ -1,52 +1,57 @@
 # ChangeLog for dev-java/jid3
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jid3/ChangeLog,v 1.12 2015/08/01 21:40:04 mrueg Exp $
+# (auto-generated from git log)
 
-  01 Aug 2015; Manuel Rüger <mrueg@gentoo.org> -jid3-0.46-r1.ebuild:
-  Remove old.
+*jid3-0.46-r2 (09 Aug 2015)
 
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> jid3-0.46-r2.ebuild:
-  Stable for x86, wrt bug #535082
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/0.46-javadoc.patch, +files/0.46-tests-and-unicode.patch,
+  +files/0.46-tests.patch, +jid3-0.46-r2.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  27 Mar 2015; Agostino Sarubbo <ago@gentoo.org> jid3-0.46-r2.ebuild:
-  Stable for amd64, wrt bug #535082
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*jid3-0.46-r2 (19 Feb 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  19 Feb 2014; Tom Wijsman <TomWij@gentoo.org> +jid3-0.46-r2.ebuild:
-  Revision bump. EAPI 5. Remove test? from RDEPEND. Further style fixes and
-  cleanup of ebuild.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  12 Jun 2008; Serkan Kaba <serkan@gentoo.org> -jid3-0.46.ebuild:
-  Remove old revision which has failing tests with several JVM's. See bug
-  #220245 for more info.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Jun 2008; Christian Faulhammer <opfer@gentoo.org> jid3-0.46-r1.ebuild:
-  stable x86, bug 225647
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  10 Jun 2008; Kenneth Prugh <ken69267@gentoo.org> jid3-0.46-r1.ebuild:
-  amd64 stable, bug #225647
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*jid3-0.46-r1 (28 May 2008)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 May 2008; Serkan Kaba <serkan@gentoo.org>
-  +files/0.46-tests-and-unicode.patch, +jid3-0.46-r1.ebuild:
-  Revbump to fix the tests. Fixes bug #220245. Thanks to Jose Quinteiro
-  <gentoo@quinteiro.com> for the patch.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  09 May 2008; Christian Faulhammer <opfer@gentoo.org> jid3-0.46.ebuild:
-  stable x86, bug 220191
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  19 Mar 2008; Vlastimil Babka <caster@gentoo.org> jid3-0.46.ebuild:
-  Add ~amd64.
+  Bug: https://bugs.gentoo.org/552720
 
-  10 Jan 2008; Vlastimil Babka <caster@gentoo.org> jid3-0.46.ebuild:
-  Restrict junit dependency.
-
-*jid3-0.46 (06 May 2007)
-
-  06 May 2007; Petteri Räty <betelgeuse@gentoo.org>
-  +files/0.46-javadoc.patch, +files/0.46-tests.patch, +metadata.xml,
-  +jid3-0.46.ebuild:
-  Initial addition. Fixes bug #173993. Thanks to Serkan Kaba
-  <serkan_kaba@yahoo.com> for the initial ebuild.

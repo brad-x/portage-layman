@@ -1,53 +1,56 @@
 # ChangeLog for net-irc/irssi-xmpp
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi-xmpp/ChangeLog,v 1.11 2012/12/22 19:10:05 xarthisius Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Dec 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
-  Drop myself from metadata.xml
+*irssi-xmpp-0.52 (09 Aug 2015)
 
-  14 Dec 2012; Agostino Sarubbo <ago@gentoo.org> irssi-xmpp-0.52.ebuild:
-  Stable for x86, wrt bug #440864
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +irssi-xmpp-0.52.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Dec 2012; Agostino Sarubbo <ago@gentoo.org> irssi-xmpp-0.52.ebuild:
-  Stable for amd64, wrt bug #440864
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Oct 2012; Agostino Sarubbo <ago@gentoo.org> irssi-xmpp-0.52.ebuild:
-  Restore loudmouth[debug] wrt #392613
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  28 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
-  -files/irssi-xmpp-0.51-build_system.patch,
-  -files/irssi-xmpp-0.51-implicit_conversion.patch, -irssi-xmpp-0.51.ebuild:
-  Remove old
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*irssi-xmpp-0.52 (12 Mar 2012)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  12 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org> +irssi-xmpp-0.52.ebuild:
-  Version bump
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> irssi-xmpp-0.51.ebuild:
-  Don't depend on loudmouth with debug enabled wrt bug 392613 by Adrian
-  <adrian@planetcoding.net>
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*irssi-xmpp-0.51 (05 Sep 2010)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  05 Sep 2010; Kacper Kowalik <xarthisius@gentoo.org>
-  -irssi-xmpp-0.50.ebuild, +irssi-xmpp-0.51.ebuild,
-  +files/irssi-xmpp-0.51-build_system.patch,
-  +files/irssi-xmpp-0.51-implicit_conversion.patch, metadata.xml:
-  Version bump wrt bug 322991. Fix building with --as-needed wrt bug 334861,
-  fix parallel build, fix implicit function conversions that resulted in
-  SIGSEGV on amd64. Fix docs wrt bug 322355. Remove old. Claim ownership
-  with Tobias' blessing.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  15 Dec 2009; Peter Volkov <pva@gentoo.org> metadata.xml:
-  metadata.xml: added required herd tag.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Nov 2009; Tobias Scherbaum <dertobi123@gentoo.org>
-  irssi-xmpp-0.50.ebuild:
-  Add ~amd64
+  Bug: https://bugs.gentoo.org/552720
 
-*irssi-xmpp-0.50 (03 Nov 2009)
-
-  03 Nov 2009; Tobias Scherbaum <dertobi123@gentoo.org>
-  +irssi-xmpp-0.50.ebuild, +metadata.xml:
-  Initial import, ebuild by Tim Weber (#291577)

@@ -1,146 +1,56 @@
 # ChangeLog for games-fps/legends
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/legends/ChangeLog,v 1.34 2015/06/14 19:44:55 ulm Exp $
+# (auto-generated from git log)
 
-  14 Jun 2015; Ulrich Müller <ulm@gentoo.org> legends-0.4.1.43-r1.ebuild:
-  [QA] Remove emul-linux-x86-* from dependencies.
+*legends-0.4.1.43-r1 (09 Aug 2015)
 
-  24 Apr 2015; Michael Sterrett <mr_bones_@gentoo.org> -legends-0.4.1.43.ebuild:
-  old
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/legends,
+  +files/legends-ded, +legends-0.4.1.43-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  21 Apr 2015; Pacho Ramos <pacho@gentoo.org> legends-0.4.1.43-r1.ebuild:
-  x86 stable wrt bug #546072
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  19 Apr 2015; Agostino Sarubbo <ago@gentoo.org> legends-0.4.1.43-r1.ebuild:
-  Stable for amd64, wrt bug #546072
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Jul 2014; Michael Sterrett <mr_bones_@gentoo.org>
-  legends-0.4.1.43-r1.ebuild:
-  add QA_FLAGS_IGNORED
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*legends-0.4.1.43-r1 (07 Jul 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  07 Jul 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
-  +legends-0.4.1.43-r1.ebuild:
-  Bumped EAPi to 5, re-keyworded for amd64, adjusted deps for gx86-multilib,
-  added missing deps and dropped indirect deps
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  21 Apr 2013; Ulrich Müller <ulm@gentoo.org> legends-0.4.1.43.ebuild:
-  Fix LICENSE, see ReadMe_legals.txt, bug 466066.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> legends-0.4.1.43.ebuild:
-  Move to new unpacker eclass for unpack_makeself.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Feb 2009; Raúl Porcel <armin76@gentoo.org> legends-0.4.1.43.ebuild:
-  x86 stable wrt #257854
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Dec 2008; Jeremy Olexa <darkside@gentoo.org> legends-0.4.1.42.ebuild,
-  legends-0.4.1.43.ebuild:
-  revert ~amd64 keyword due to bug 168388
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Dec 2007; <solar@gentoo.org> legends-0.4.1.42.ebuild,
-  legends-0.4.1.43.ebuild:
-  - binary packages that are linked with libc.so.6 need to use sys-libs/glibc
-  in RDEPEND
+  Bug: https://bugs.gentoo.org/552720
 
-*legends-0.4.1.43 (17 Sep 2007)
-
-  17 Sep 2007; Michael Sterrett <mr_bones_@gentoo.org>
-  +legends-0.4.1.43.ebuild:
-  version bump
-
-  12 Mar 2007; Marius Mauch <genone@gentoo.org> legends-0.4.1.40.ebuild:
-  Replacing einfo with elog
-
-*legends-0.4.1.42 (25 Feb 2007)
-
-  25 Feb 2007; Michael Sterrett <mr_bones_@gentoo.org>
-  +legends-0.4.1.42.ebuild:
-  version bump - ebuild submitted by Paul Bredbury via bug #168059
-
-  05 Dec 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  legends-0.4.1.40.ebuild:
-  Removing old virtual/x11 dependency.
-
-  15 Sep 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  legends-0.4.1.40.ebuild:
-  Change hard-coded /opt to GAMES_PREFIX_OPT.
-
-*legends-0.4.1.40 (27 Jun 2006)
-
-  27 Jun 2006; Michael Sterrett <mr_bones_@gentoo.org>
-  +legends-0.4.1.40.ebuild:
-  version bump
-
-  11 May 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  legends-0.4.1.39.ebuild:
-  Remove an extra echo line.
-
-  20 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  legends-0.4.1.39.ebuild, -legends-0.4.1c.ebuild:
-  Marking stable on x86 because of bug #128264 and removing the older version.
-
-*legends-0.4.1.39 (20 Apr 2006)
-
-  20 Apr 2006; Chris Gianelloni <wolf31o2@gentoo.org>
-  +legends-0.4.1.39.ebuild:
-  Version bump and closing bug #128183.
-
-  31 Mar 2006; Chris Gianelloni <wolf31o2@gentoo.org> legends-0.4.1c.ebuild:
-  Changed nomirror to mirror.
-
-  09 Sep 2005; Chris Gianelloni <wolf31o2@gentoo.org>
-  -legends-0.4.1b.ebuild, legends-0.4.1c.ebuild:
-  Added icon for bug #85583 and cleaning up older ebuilds.
-
-  02 Jul 2005; Herbie Hopkins <herbs@gentoo.org> legends-0.4.1c.ebuild:
-  Marked ~amd64 wrt bug #97701.
-
-  02 Jul 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  legends-0.4.1c.ebuild:
-  fix src_uri for bug #97631
-
-*legends-0.4.1c (16 May 2005)
-
-  16 May 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  +legends-0.4.1c.ebuild:
-  version bump
-
-  04 Dec 2004; Michael Sterrett <mr_bones_@gentoo.org> -legends-0.3.6.ebuild,
-  -legends-0.4.0.ebuild:
-  clean old
-
-  04 Dec 2004; Chris Gianelloni <wolf31o2@gentoo.org> legends-0.3.6.ebuild,
-  legends-0.4.0.ebuild, legends-0.4.1b.ebuild:
-  Changed HOMEPAGE and closing bug #73354.
-
-*legends-0.4.1b (01 Jul 2004)
-
-  01 Jul 2004; Michael Sterrett <mr_bones_@gentoo.org> +legends-0.4.1b.ebuild:
-  Version bump (bug #46987)
-
-  03 Jun 2004; Aron Griffis <agriffis@gentoo.org> legends-0.3.6.ebuild,
-  legends-0.4.0.ebuild:
-  Fix use invocation
-
-*legends-0.4.0 (10 Feb 2004)
-
-  10 Feb 2004; Michael Sterrett <mr_bones_@gentoo.org> legends-0.4.0.ebuild,
-  files/legends:
-  version bump; changes from Kristiaan Lenaerts and Donnie Berkholz via bugs
-  #40862 and #40838
-
-*legends-0.3.6 (13 Dec 2003)
-
-  13 Dec 2003; Michael Sterrett <mr_bones_@gentoo.org> legends-0.3.6.ebuild:
-  version bump (bug 35236)
-
-*legends-0.3.0 (21 Nov 2003)
-
-  21 Nov 2003; Michael Sterrett <mr_bones_@gentoo.org> legends-0.3.0.ebuild:
-  version bump; ebuild patch by Donnie Berkholz via bug 32504
-
-*legends-0.2.2b (26 Sep 2003)
-
-  26 Sep 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Keith Constable <kccricket@mindless.com> #29489.

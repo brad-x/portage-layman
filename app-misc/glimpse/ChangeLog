@@ -1,119 +1,58 @@
 # ChangeLog for app-misc/glimpse
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/glimpse/ChangeLog,v 1.33 2013/02/04 08:11:41 patrick Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*glimpse-4.18.6 (04 Feb 2013)
+*glimpse-4.18.6 (09 Aug 2015)
+*glimpse-4.18.5 (09 Aug 2015)
 
-  04 Feb 2013; Patrick Lauer <patrick@gentoo.org> +glimpse-4.18.6.ebuild:
-  Bump for #451704, cleanup
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/glimpse-4.18.5-makefile.patch, +glimpse-4.18.5.ebuild,
+  +glimpse-4.18.6.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Aug 2010; Markos Chandras <hwoarang@gentoo.org> glimpse-4.18.5.ebuild,
-  +files/glimpse-4.18.5-makefile.patch:
-  Patch from Dane Smith <smithdanea@gmail.com> to fix LDFLAGS and parallel
-  build issues. Bug #332463
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
-  glimpse-4.18.5.ebuild:
-  Transfer Prefix keywords
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  11 Jan 2008; Fabian Groffen <grobian@gentoo.org> glimpse-4.18.5.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  15 Jul 2007; Christian Heim <phreak@gentoo.org> metadata.xml:
-  Assigning app-misc/glimpse to m-needed, as beu is being retired (#66608).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Apr 2007; Samuli Suominen <drac@gentoo.org> -files/4.18.0-gcc3.patch,
-  glimpse-4.17.4.ebuild, -glimpse-4.18.0.ebuild:
-  Remove old version and leave mips with broken one.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  06 Feb 2007; Simon Stelling <blubb@gentoo.org> glimpse-4.18.5.ebuild:
-  stable on amd64
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Dec 2006; Elfyn McBratney <beu@gentoo.org> glimpse-4.17.4.ebuild,
-  glimpse-4.18.0.ebuild, glimpse-4.18.5.ebuild:
-  Kill redundant *DEPEND on virtual/libc.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  21 Oct 2006; Tobias Scherbaum <dertobi123@gentoo.org>
-  glimpse-4.18.5.ebuild:
-  ppc stable
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Oct 2006; Bryan Østergaard <kloeri@gentoo.org> glimpse-4.18.5.ebuild:
-  Stable on Alpha.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Oct 2006; Gustavo Zacarias <gustavoz@gentoo.org> glimpse-4.18.5.ebuild:
-  Stable on sparc
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Oct 2006; Bryan Østergaard <kloeri@gentoo.org> glimpse-4.18.5.ebuild:
-  Stable on ia64.
-
-  11 Oct 2006; Markus Rothe <corsair@gentoo.org> glimpse-4.18.5.ebuild:
-  Added ~ppc64; bug #150627
-
-  11 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org> glimpse-4.18.5.ebuild:
-  Adding fix for man directory from Bo Ørsted Andresen <bo.andresen@zlin.dk>
-  in bug #150627.
-
-  11 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org> glimpse-4.18.5.ebuild:
-  Stable on x86 wrt bug #150627.
-
-*glimpse-4.18.5 (25 Jun 2006)
-
-  25 Jun 2006; Fabian Groffen <grobian@gentoo.org> +glimpse-4.18.5.ebuild:
-  Version bump and marked ~ppc-macos (~bug #105876)
-
-  21 Nov 2004; Daniel Black <dragonheart@gentoo.org> glimpse-4.17.4.ebuild,
-  glimpse-4.18.0.ebuild:
-  License correction
-
-*glimpse-4.18.0 (21 Nov 2004)
-
-  21 Nov 2004; Daniel Black <dragonheart@gentoo.org> +files/4.18.0-gcc3.patch,
-  -glimpse-4.15-r1.ebuild, -files/4.15-errno.patch, glimpse-4.17.4.ebuild, 
-  +glimpse-4.18.0.ebuild:
-  version bump and cleanout. app-text/agrep conflict noted as this package 
-  installs /usr/bin/agrep as well. Noted in bug #71795 by lukenshiro@ngi.it
-
-  05 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  glimpse-4.15-r1.ebuild:
-  Masked glimpse-4.15-r1.ebuild stable for ppc
-
-  12 Jun 2004; Daniel Black <dragonheart@gentoo.org> glimpse-4.15-r1.ebuild,
-  glimpse-4.17.4.ebuild, +metadata.xml:
-  Added RDEPEND=!dev-libs/tre due to both providing /usr/bin/agrep. Thanks to
-  John Hampton in bug #53250
-
-*glimpse-4.17.4 (06 Dec 2003)
-
-  21 Apr 2004; Mike Frysinger <vapier@gentoo.org> :
-  Add gcc-3.x patch #42970 by Joe Khoobyar.  Also cleanup ebuild so that
-  the package uses user's CFLAGS.
-
-  16 Feb 2004; Aron Griffis <agriffis@gentoo.org> glimpse-4.15-r1.ebuild,
-  glimpse-4.17.4.ebuild:
-  add alpha and ia64 keywords
-
-  08 Jan 2004; Heinrich Wendel <lanius@gentoo.org> glimpse-4.17.4.ebuild:
-  added iuse=static
-
-  06 Dec 2003; Heinrich Wendel <lanius@gentoo.org> glimpse-4.17.4.ebuild:
-  bump
-
-  05 Dec 2003; Jason Wever <weeve@gentoo.org> glimpse-4.15-r1.ebuild:
-  Marked stable on sparc to fix broken dependencies.
-
-  16 Nov 2003; Brad House <brad_mssw@gentoo.org> glimpse-4.15-r1.ebuild:
-  mark stable on amd64
-
-*glimpse-4.15-r1 (26 Feb 2003)
-
-  26 Feb 2003; Mike Frysinger <vapier@gentoo.org> :
-  small patch to fix glibc errno issues (#16267).
-
-*glimpse-4.15 (9 Feb 2002)
-
-  22 Feb 2003; Nicholas Wourms <dragon@gentoo.org> glimpse-4.15.ebuild :
-  Added the mips keyword to the ebuild.  Make the build even tidier prior to
-  configuration. Fix manpage installation.  Clean up ChangeLog.
-
-  9 Feb 2002; mikepolniak <mikpolniak@adelphia.net> glimpse-4.15.ebuild :
-  Glimpse is a indexing and query system.  Initial import.

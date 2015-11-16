@@ -1,60 +1,63 @@
 # ChangeLog for media-tv/dvbstream
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/dvbstream/ChangeLog,v 1.12 2015/04/29 20:32:24 mrueg Exp $
+# (auto-generated from git log)
 
-  29 Apr 2015; Manuel Rüger <mrueg@gentoo.org> -dvbstream-0.5.ebuild,
-  -dvbstream-0.7_pre20080302-r1.ebuild, -dvbstream-0.7_pre20080302.ebuild:
-  Remove old.
+*dvbstream-0.7_pre20080516 (09 Aug 2015)
 
-  29 Apr 2012; Thomas Kahle <tomka@gentoo.org>
-  dvbstream-0.7_pre20080516.ebuild:
-  marked x86 per bug 287116
-
-  15 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org> dvbstream-0.5.ebuild,
-  dvbstream-0.7_pre20080302.ebuild, dvbstream-0.7_pre20080302-r1.ebuild,
-  dvbstream-0.7_pre20080516.ebuild:
-  move media-tv to virtual/linuxtv-dvb-headers, bug #403929
-
-*dvbstream-0.7_pre20080516 (16 May 2008)
-
-  16 May 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +files/dvbstream-0.7_pre20080516-update.diff,
-  +dvbstream-0.7_pre20080516.ebuild:
-  Updated to newer snapshot that should fix a segfault, Bug #211168.
-
-*dvbstream-0.7_pre20080302-r1 (16 May 2008)
-
-  16 May 2008; Matthias Schwarzott <zzam@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +dvbstream-0.7_pre20080516.ebuild,
   +files/dvbstream-0.7_pre20080302-telnet-port-switch.diff,
-  +dvbstream-0.7_pre20080302-r1.ebuild:
-  Added switch to set telnet port number to be able to use more than one
-  instance at a time, Bug #200816.
+  +files/dvbstream-0.7_pre20080516-update.diff, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*dvbstream-0.7_pre20080302 (02 Mar 2008)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  02 Mar 2008; Matthias Schwarzott <zzam@gentoo.org>
-  +dvbstream-0.7_pre20080302.ebuild:
-  Added snapshot ebuild as it seems upstream will not do a release in long time.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  27 Nov 2007; Matthias Schwarzott <zzam@gentoo.org> dvbstream-0.5.ebuild:
-  Fixed quoting.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  18 May 2007; Matthias Schwarzott <zzam@gentoo.org> metadata.xml:
-  Make it media-tv herd assigned only.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  13 Mar 2007; Matthias Schwarzott <zzam@gentoo.org> dvbstream-0.5.ebuild:
-  Marked stable on x86.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Apr 2006; Matthias Schwarzott <zzam@gentoo.org> dvbstream-0.5.ebuild:
-  Corrected installation of dvbtune binary, See bug #131641, Thanks to Per
-  <gupe275@hotmail.com> for reporting.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*dvbstream-0.5 (28 Apr 2006)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  28 Apr 2006; Matthias Schwarzott <zzam@gentoo.org> +metadata.xml,
-  +dvbstream-0.5.ebuild:
-  Initial import of ebuild. See bug #48742. Based on ebuild from Ben De luca
-  <bedel@allmail.net>.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=sourceforge
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

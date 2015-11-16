@@ -1,91 +1,59 @@
 # ChangeLog for net-libs/libmrss
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libmrss/ChangeLog,v 1.22 2012/05/31 15:48:34 radhermit Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  31 May 2012; Tim Harder <radhermit@gentoo.org> -libmrss-0.17.1.ebuild,
-  -libmrss-0.18.0.ebuild:
-  Remove old.
+*libmrss-0.19.2 (09 Aug 2015)
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libmrss-0.17.1.ebuild,
-  libmrss-0.18.0.ebuild, libmrss-0.19.2.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libmrss-0.19.2.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libmrss-0.19.2.ebuild:
-  x86 stable wrt bug #397157
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  06 Feb 2012; Brent Baude <ranger@gentoo.org> libmrss-0.19.2.ebuild:
-  Marking libmrss-0.19.2 ppc for bug 397157
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libmrss-0.19.2.ebuild:
-  Stable for amd64, wrt bug #397157
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Drop maintainer due retirement, bug #158470
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Sep 2011; Tim Harder <radhermit@gentoo.org> libmrss-0.19.2.ebuild:
-  Update to EAPI 4, add static-libs use flag, and drop currently unused php use
-  flag.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  26 Sep 2011; Tim Harder <radhermit@gentoo.org> libmrss-0.17.1.ebuild,
-  libmrss-0.18.0.ebuild, libmrss-0.19.2.ebuild:
-  Update HOMEPAGE and SRC_URI.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*libmrss-0.19.2 (09 Jun 2009)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  09 Jun 2009; Tiziano Müller <dev-zero@gentoo.org> +libmrss-0.19.2.ebuild:
-  Version bump (including eapi-2 transition, bug #245074).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Sep 2008; Markus Rothe <corsair@gentoo.org> libmrss-0.18.0.ebuild:
-  Stable on ppc
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Dec 2007; Andrej Kacian <ticho@gentoo.org> libmrss-0.18.0.ebuild:
-  Stable on x86.
+  Bug: https://bugs.gentoo.org/552720
 
-  08 Aug 2007; Robert Buchholz <rbu@gentoo.org> libmrss-0.17.1.ebuild:
-  Fixed dependancy for 0.17.1 (bug #185871)
-
-*libmrss-0.18.0 (14 Jul 2007)
-
-  14 Jul 2007; Robert Buchholz <rbu@gentoo.org> -libmrss-0.17.2.ebuild,
-  +libmrss-0.18.0.ebuild:
-  Version bump
-
-  17 Jun 2007; Christoph Mende <angelos@gentoo.org> libmrss-0.17.1.ebuild:
-  Stable on amd64 wrt bug 177184
-
-  08 May 2007; Markus Ullmann <jokey@gentoo.org> libmrss-0.17.1.ebuild:
-  Stable wrt bug #177184
-
-*libmrss-0.17.2 (05 May 2007)
-
-  05 May 2007; Robert Buchholz <rbu@gentoo.org> -libmrss-0.17.ebuild,
-  +libmrss-0.17.2.ebuild:
-  Version bump
-
-  10 Apr 2007; Robert Buchholz <rbu@gentoo.org> libmrss-0.17.ebuild,
-  libmrss-0.17.1.ebuild:
-  LICENSE corrected to LGPL
-
-*libmrss-0.17.1 (03 Apr 2007)
-
-  03 Apr 2007; Robert Buchholz <rbu@gentoo.org> -libmrss-0.16.ebuild,
-  +libmrss-0.17.1.ebuild:
-  version bump fixing memory leaks and datetime formats
-
-  15 Mar 2007; Robert Buchholz <rbu@gentoo.org> libmrss-0.17.ebuild:
-  keyworded ~amd64
-
-  18 Feb 2007; Matti Bickel <mabi@gentoo.org> libmrss-0.17.ebuild:
-  keyworded ~ppc (bug #164125)
-
-*libmrss-0.17 (15 Feb 2007)
-
-  15 Feb 2007; Robert Buchholz <rbu@gentoo.org> +libmrss-0.17.ebuild:
-  Version bump
-
-*libmrss-0.16 (13 Jan 2007)
-
-  13 Jan 2007; Robert Buchholz <rbu@gentoo.org> +metadata.xml,
-  +libmrss-0.16.ebuild:
-  Added to the tree. Thanks to Adrian Fruehwirth in bug #128259
+  05 Nov 2015; Mike Frysinger <vapier@gentoo.org> libmrss-0.19.2.ebuild:
+  net-libs/{libmrss,libnxml}: add arm/mips love
 

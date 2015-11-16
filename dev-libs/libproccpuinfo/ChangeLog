@@ -1,112 +1,56 @@
 # ChangeLog for dev-libs/libproccpuinfo
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libproccpuinfo/ChangeLog,v 1.25 2012/06/02 09:47:36 scarabeus Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  02 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
-  -libproccpuinfo-0.0.7.ebuild, libproccpuinfo-0.0.8.ebuild:
-  Stable on amd64 and x86. Fix license to be what webpage says. Remove older.
+*libproccpuinfo-0.0.8 (09 Aug 2015)
 
-  02 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> libproccpuinfo-0.0.8.ebuild:
-  Bump to eapi4 and cleanup a little.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +libproccpuinfo-0.0.8.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  11 Jul 2011; Matt Turner <mattst88@gentoo.org> libproccpuinfo-0.0.8.ebuild:
-  Added ~mips
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 May 2011; Matt Turner <mattst88@gentoo.org>
-  libproccpuinfo-0.0.8.ebuild:
-  stable for alpha.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*libproccpuinfo-0.0.8 (09 Nov 2009)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  09 Nov 2009; Víctor Ostorga <vostorga@gentoo.org>
-  +libproccpuinfo-0.0.8.ebuild:
-  Version bump to 0.0.8 bug #252941
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  29 Nov 2008; Jeroen Roovers <jer@gentoo.org> libproccpuinfo-0.0.7.ebuild:
-  But do set RDEPEND (bug #221325 comment #2), thanks to Arfrever Frehtes
-  Taifersar Arahesis.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Nov 2008; Jeroen Roovers <jer@gentoo.org>
-  -libproccpuinfo-0.0.6.1.ebuild, libproccpuinfo-0.0.7.ebuild:
-  Remove old. Do not RDEPEND on sys-devel/flex (bug #221325).
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Oct 2008; Jeroen Roovers <jer@gentoo.org> libproccpuinfo-0.0.7.ebuild:
-  Marked ~hppa too.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 Aug 2008; Raúl Porcel <armin76@gentoo.org>
-  libproccpuinfo-0.0.7.ebuild:
-  alpha stable wrt #236132
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 Aug 2008; Markus Meier <maekke@gentoo.org> libproccpuinfo-0.0.7.ebuild:
-  x86 stable, bug #236132
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  31 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
-  libproccpuinfo-0.0.7.ebuild:
-  stable amd64, bug 236132
-
-  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
-  Add USE flag description to metadata wrt GLEP 56.
-
-  11 Jun 2008; Jeremy Olexa <darkside@gentoo.org>
-  libproccpuinfo-0.0.7.ebuild:
-  QA issue, fix multilib check. Thanks to Sandro Bonazzola for the patch and
-  ATs for testing
-
-*libproccpuinfo-0.0.7 (13 Apr 2008)
-
-  13 Apr 2008; Benedikt Böhm <hollow@gentoo.org>
-  libproccpuinfo-0.0.6.1.ebuild, +libproccpuinfo-0.0.7.ebuild:
-  version bump; fix #204385, #216218
-
-  19 Mar 2007; Bryan Østergaard <kloeri@gentoo.org> metadata.xml:
-  Remove tcort from metadata.xml due to retirement.
-
-  04 Sep 2006; Saleem Abdulrasool <compnerd@gentoo.org>
-  libproccpuinfo-0.0.6.1.ebuild:
-  stable on x86 (bug #146200)
-
-  04 Sep 2006; Thomas Cort <tcort@gentoo.org> -libproccpuinfo-0.0.4.ebuild,
-  -libproccpuinfo-0.0.5.ebuild:
-  Clean up old versions.
-
-  31 Aug 2006; Thomas Cort <tcort@gentoo.org> libproccpuinfo-0.0.6.1.ebuild:
-  Stable on alpha and amd64.
-
-  15 Aug 2006; Thomas Cort <tcort@gentoo.org> libproccpuinfo-0.0.5.ebuild:
-  Stable on alpha and amd64.
-
-*libproccpuinfo-0.0.6.1 (26 Jul 2006)
-
-  26 Jul 2006; Thomas Cort <tcort@gentoo.org>
-  +libproccpuinfo-0.0.6.1.ebuild:
-  Version bump to 0.0.6.1.
-
-*libproccpuinfo-0.0.5 (22 Jun 2006)
-
-  22 Jun 2006; Thomas Cort <tcort@gentoo.org> -libproccpuinfo-0.0.3.ebuild,
-  +libproccpuinfo-0.0.5.ebuild:
-  Version bump to 0.0.5
-
-*libproccpuinfo-0.0.4 (20 Jun 2006)
-
-  20 Jun 2006; Thomas Cort <tcort@gentoo.org> -libproccpuinfo-0.0.2.ebuild,
-  +libproccpuinfo-0.0.4.ebuild:
-  Version bump to 0.0.4.
-
-*libproccpuinfo-0.0.3 (18 Jun 2006)
-
-  18 Jun 2006; Thomas Cort <tcort@gentoo.org> +libproccpuinfo-0.0.3.ebuild:
-  Version bump to 0.0.3.
-
-*libproccpuinfo-0.0.2 (17 Jun 2006)
-
-  17 Jun 2006; Thomas Cort <tcort@gentoo.org> -libproccpuinfo-0.0.1.ebuild,
-  +libproccpuinfo-0.0.2.ebuild:
-  Version bump to 0.0.2.
-
-*libproccpuinfo-0.0.1 (17 Jun 2006)
-
-  17 Jun 2006; Thomas Cort <tcort@gentoo.org> +metadata.xml,
-  +libproccpuinfo-0.0.1.ebuild:
-  Initial Commit.
+  Bug: https://bugs.gentoo.org/552720
 

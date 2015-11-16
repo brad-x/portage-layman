@@ -1,114 +1,57 @@
 # ChangeLog for net-analyzer/traceroute-nanog
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/traceroute-nanog/ChangeLog,v 1.24 2014/07/17 22:44:16 jer Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  17 Jul 2014; Jeroen Roovers <jer@gentoo.org>
-  traceroute-nanog-6.4.2-r1.ebuild, metadata.xml:
-  EAPI bump. Remove short <longdescription>.
+*traceroute-nanog-6.4.2-r1 (09 Aug 2015)
 
-  13 Apr 2012; Jeroen Roovers <jer@gentoo.org>
-  -traceroute-nanog-6.3.10-r1.ebuild, traceroute-nanog-6.4.2-r1.ebuild:
-  Fix SRC_URI now that Debian has stopped supporting this package, by Marcin
-  Mirosław (bug #411841).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +traceroute-nanog-6.4.2-r1.ebuild:
+  proj/gentoo: Initial commit
 
-  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml,
   traceroute-nanog-6.4.2-r1.ebuild:
-  x86 stable wrt bug #393815
+  Use https by default
 
-  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
-  traceroute-nanog-6.4.2-r1.ebuild:
-  Stable for AMD64, wrt bug #393815
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  07 Jul 2010; Jeroen Roovers <jer@gentoo.org>
-  traceroute-nanog-6.4.2-r1.ebuild:
-  Remove unneeded version mangling.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*traceroute-nanog-6.4.2-r1 (07 Jul 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jul 2010; Jeroen Roovers <jer@gentoo.org>
-  -traceroute-nanog-6.4.2.ebuild, +traceroute-nanog-6.4.2-r1.ebuild:
-  Respect LDFLAGS. Add a define to please the compiler. Install
-  traceroute-nanog.genuine.8 thanks to Olivier Huber (bug #327227).
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  06 Jul 2010; Jeroen Roovers <jer@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  Move old source files from mirror://debian to mirror://gentoo (bug
-  #327089).
-
-*traceroute-nanog-6.4.2 (06 Jul 2010)
-
-  06 Jul 2010; Jeroen Roovers <jer@gentoo.org>
-  +traceroute-nanog-6.4.2.ebuild:
-  Version bump by Karsten Elfenbein (bug #327089).
-
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  Remove virtual/libc
-
-  31 Jul 2009; <chainsaw@gentoo.org> traceroute-nanog-6.3.10-r1.ebuild:
-  Marked stable on AMD64 as requested by Mike Nerone. Quoted two variables;
-  package tested by AMD64 AT Chad A. Simmons in
-  http://bugs.gentoo.org/show_bug.cgi?id=279519#c1
-
-  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  (QA) RESTRICT clean up.
-
-  20 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  27 Mar 2006; Markus Ullmann <jokey@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  Fixed small manpage issue wrt bug #125610 -- thanks to Marcin D. Mikielewicz
-  for the patch
-
-  17 Nov 2005; Homer Parker <hparker@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  Marked ~amd64.
-
-  15 May 2005; Marcelo Goes <vanquirius@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild, -traceroute-nanog-6.3.10.ebuild,
-  -traceroute-nanog-6.3.9.ebuild:
-  Marked 6.3.10-r1 x86 stable and got rid of old ebuilds, since files seem to
-  have vanished from Debian mirrors - seems more reasonable than uploading old
-  patches to our own mirrors.
-
-  15 May 2005; Marcelo Goes <vanquirius@gentoo.org>
-  traceroute-nanog-6.3.10.ebuild, traceroute-nanog-6.3.9.ebuild:
-  Use toolchain-funcs.eclass instead of gcc.eclass. See bug 92745.
-
-  02 Apr 2005; Lars Weiler <pylon@gentoo.org>
-  traceroute-nanog-6.3.10-r1.ebuild:
-  Added ~ppc.
-
-*traceroute-nanog-6.3.10-r1 (18 Feb 2005)
-
-  18 Feb 2005; Aaron Walker <ka0ttic@gentoo.org>
-  +traceroute-nanog-6.3.10-r1.ebuild:
-  Revision bump; update debian patchlevel for bug 82321.
-
-  31 Jan 2005; Aaron Walker <ka0ttic@gentoo.org>
-  traceroute-nanog-6.3.10.ebuild:
-  Marked stable on x86.
-
-*traceroute-nanog-6.3.10 (08 Nov 2004)
-
-  08 Nov 2004; Eldad Zack <eldad@gentoo.org> +traceroute-nanog-6.3.10.ebuild:
-  Version bump.
-
-  10 Aug 2004; Eldad Zack <eldad@gentoo.org> traceroute-nanog-6.3.9.ebuild:
-  stable on x86
-
-  14 Jul 2004; Eldad Zack <eldad@gentoo.org> traceroute-nanog-6.3.9.ebuild:
-  virtual/glibc -> virtual/libc
-
-  10 Jul 2004; Eldad Zack <eldad@gentoo.org> traceroute-nanog-6.3.9.ebuild:
-  Changed to mirror://debian
-
-*traceroute-nanog-6.3.9 (04 Jul 2004)
-
-  04 Jul 2004; Eldad Zack <eldad@gentoo.org> +metadata.xml,
-  +traceroute-nanog-6.3.9.ebuild:
-  Initial ebuild. Closes #44528. Thanks to Dylan Vanderhoof
-  <llarian@llarian.net>.
+  Bug: https://bugs.gentoo.org/552720
 

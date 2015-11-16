@@ -1,110 +1,56 @@
 # ChangeLog for net-im/gg-transport
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gg-transport/ChangeLog,v 1.25 2014/08/05 18:34:20 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  05 Aug 2014; Manuel Rüger <mrueg@gentoo.org> gg-transport-2.2.4.ebuild:
-  Remove trailing '.' from DESCRIPTION.
+*gg-transport-2.2.4 (09 Aug 2015)
 
-  16 Dec 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
-  Cleanup due retirement, #95685
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/jggtrans-2.2.2-r1,
+  +files/jggtrans-2.2.4, +gg-transport-2.2.4.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gg-transport-2.2.4.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Apr 2012; Michał Górny <mgorny@gentoo.org> gg-transport-2.2.4.ebuild:
-  Use mirror://github.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org>
-  -gg-transport-2.2.2-r1.ebuild:
-  Remove old version.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  gg-transport-2.2.4.ebuild:
-  x86 stable wrt bug #404175
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  17 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.4.ebuild:
-  Add missing dev-libs/expat to RDEPEND, use emake, die if sed fails.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> gg-transport-2.2.4.ebuild:
-  Stable for amd64, wrt bug #404175
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  16 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild, gg-transport-2.2.4.ebuild:
-  Update home page and download URI.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*gg-transport-2.2.4 (17 Apr 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  17 Apr 2010; Krzysztof Pawlik <nelchael@gentoo.org> +files/jggtrans-2.2.4,
-  +gg-transport-2.2.4.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  12 May 2008; Krzysiek Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Fix RDEPEND.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 May 2008; Krzysiek Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Add missing dependency: dev-util/pkgconfig, see bug #205504.
-
-  10 Nov 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Fix variable quoting.
-
-  12 Jun 2007; Krzysiek Pawlik <nelchael@gentoo.org>
-  files/jggtrans-2.2.2-r1, gg-transport-2.2.2-r1.ebuild:
-  Remove dependency on jabberd.
-
-  24 Oct 2006; Krzysiek Pawlik <nelchael@gentoo.org> -files/jggtrans,
-  -gg-transport-2.2.1.ebuild:
-  Remove old version.
-
-  24 Oct 2006; Daniel Gryniewicz <dang@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Marked ~amd64 for bug #133480
-
-  23 Oct 2006; Andrej Kacian <ticho@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Stable on x86, bug #152543.
-
-  04 Oct 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.2-r1.ebuild:
-  Fix header.
-
-*gg-transport-2.2.2-r1 (04 Oct 2006)
-
-  04 Oct 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  -files/jggtrans-2.2.1-r1, -files/jggtrans-2.2.2, +files/jggtrans-2.2.2-r1,
-  -gg-transport-2.2.1-r1.ebuild, -gg-transport-2.2.2.ebuild,
-  +gg-transport-2.2.2-r1.ebuild:
-  Updated ebuild to fix several bugs about default config.
-
-*gg-transport-2.2.2 (20 Sep 2006)
-
-  20 Sep 2006; Krzysiek Pawlik <nelchael@gentoo.org> +files/jggtrans-2.2.2,
-  +gg-transport-2.2.2.ebuild:
-  Version bump, see bug #140609.
-
-*gg-transport-2.2.1-r1 (20 Sep 2006)
-
-  20 Sep 2006; Krzysiek Pawlik <nelchael@gentoo.org>
-  +files/jggtrans-2.2.1-r1, metadata.xml, +gg-transport-2.2.1-r1.ebuild:
-  Version 2.2.1-r1 uses better init.d script by Lars Strojny
-  <lars@strojny.net>, see bug #125148.
-
-  27 Apr 2006; Alec Warner <antarus@gentoo.org>
-  files/digest-gg-transport-2.2.1, Manifest:
-  Fixing SHA256 digest, pass four
-
-  22 Mar 2006; Hanno Boeck <hanno@gentoo.org> gg-transport-2.2.1.ebuild:
-  Change description from GG to Gadu-Gadu.
-
-  18 Nov 2005; Krzysiek Pawlik <nelchael@gentoo.org>
-  gg-transport-2.2.1.ebuild:
-  Stable on x86. Ebuild cleanup.
-
-*gg-transport-2.2.1 (24 Aug 2005)
-
-  24 Aug 2005; Gustavo Felisberto <humpback@gentoo.org>; +files/jggtrans,
-  +gg-transport-2.2.1.ebuild:
-  Initial import of Gadu transport. Credits to Krzysiek Pawlik in bug #99335.

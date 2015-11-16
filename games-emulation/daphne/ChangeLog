@@ -1,86 +1,59 @@
 # ChangeLog for games-emulation/daphne
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/daphne/ChangeLog,v 1.21 2015/03/24 17:27:46 ago Exp $
+# (auto-generated from git log)
 
-  24 Mar 2015; Agostino Sarubbo <ago@gentoo.org> daphne-1.0.ebuild:
-  Stable for amd64, wrt bug #544084
+*daphne-1.0 (09 Aug 2015)
 
-  19 Feb 2015; Patrick Lauer <patrick@gentoo.org> daphne-1.0.ebuild:
-  Whitespace
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +daphne-1.0.ebuild,
+  +files/daphne-1.0-gcc43.patch, +files/daphne-1.0-ldflags.patch,
+  +files/daphne-1.0-system-lmpeg2.patch, +files/daphne-1.0-typefix.patch,
+  +files/daphne-1.0-underlink.patch, +files/daphne-1.0-vorbisfilefix.patch,
+  +files/daphne-1.0-zlib.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  19 Feb 2015; Michael Sterrett <mr_bones_@gentoo.org>
-  +files/daphne-1.0-system-lmpeg2.patch, daphne-1.0.ebuild,
-  files/daphne-1.0-typefix.patch, files/daphne-1.0-vorbisfilefix.patch:
-  tidy; use system libmpeg2 with patch from arttuv69 (bug #258332); improve deps
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jan 2015; Tupone Alfredo <tupone@gentoo.org> daphne-1.0.ebuild:
-  EAPI 5
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  21 Sep 2011; Tupone Alfredo <tupone@gentoo.org> daphne-1.0.ebuild,
-  +files/daphne-1.0-underlink.patch, +files/daphne-1.0-zlib.patch:
-  Fix underlink. Bug #379489 by Diego Elio Pettenò
-  Build with sys-libs/zlib-1.2.5.1-r1 
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Oct 2010; Tupone Alfredo <tupone@gentoo.org> daphne-1.0.ebuild,
-  +files/daphne-1.0-ldflags.patch:
-  Respect LDFLAGS. Bug #337184 by flameeyes@gentoo.org
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  21 Nov 2009; Markus Meier <maekke@gentoo.org> daphne-1.0.ebuild:
-  x86 stable, bug #288963
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  19 Jan 2009; Alfredo Tupone <tupone@gentoo.org>
-  +files/daphne-1.0-gcc43.patch, daphne-1.0.ebuild:
-  Fix gcc-4.3 build bug #251127 by flameeyes@gentoo.org
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Dec 2008; Christian Birchinger <joker@gentoo.org> daphne-1.0.ebuild:
-  Changed MMX defines and exports for x86
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*daphne-1.0 (19 Sep 2008)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  19 Sep 2008; Christian Birchinger <joker@gentoo.org>
-  +files/daphne-1.0-typefix.patch, +files/daphne-1.0-vorbisfilefix.patch,
-  +daphne-1.0.ebuild:
-  Version bump. This version includes support for amd64 and contains a fix to
-  work with recent libvorbis 1.2.x releases.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*daphne-0.99.7 (28 Dec 2006)
+  Bug: https://bugs.gentoo.org/552720
 
-  28 Dec 2006; Tristan Heaven <nyhm@gentoo.org>
-  +files/daphne-0.99.7-exec-stack.patch, +files/daphne-0.99.7-gcc41.patch,
-  +daphne-0.99.7.ebuild:
-  Version bump, bug #119982
-
-  28 Aug 2006; <tupone@gentoo.org> +files/daphne-0.99.6-gcc41.patch,
-  daphne-0.99.6-r2.ebuild:
-  Fix compilation on gcc-4.1
-
-  10 Jul 2005; Michael Sterrett <mr_bones_@gentoo.org>
-  daphne-0.99.6-r2.ebuild:
-  use user CFLAGS instead (bug #96403)
-
-  07 Aug 2004; Michael Sterrett <mr_bones_@gentoo.org>
-  daphne-0.99.6-r2.ebuild:
-  filter flags before they're placed in the Makefile; error check sed; tidy
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  daphne-0.99.6-r2.ebuild:
-  virtual/glibc -> virtual/libc
-
-  19 Apr 2004; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml,
-  daphne-0.99.6-r2.ebuild:
-  Added IUSE and metadata.xml to package.
-
-*daphne-0.99.6-r2 (04 Nov 2003)
-
-  04 Nov 2003; Mike Frysinger <vapier@gentoo.org> :
-  Update patch to resolve #32586.
-
-*daphne-0.99.6-r1 (30 Oct 2003)
-
-  30 Oct 2003; Mike Frysinger <vapier@gentoo.org> :
-  Fix stupid path bug i made #32314.
-
-*daphne-0.99.6 (15 Jul 2003)
-
-  15 Jul 2003; Mike Frysinger <vapier@gentoo.org> :
-  Initial import.  Ebuild submitted by Andrea Cerrito <cerrito@centromultimediale.it> #18807.

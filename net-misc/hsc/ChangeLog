@@ -1,79 +1,58 @@
 # ChangeLog for net-misc/hsc
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/hsc/ChangeLog,v 1.18 2010/01/01 16:11:34 ssuominen Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  01 Jan 2010; Samuli Suominen <ssuominen@gentoo.org> hsc-1.0b.ebuild:
-  amd64 stable wrt #289441
+*hsc-1.0b (09 Aug 2015)
 
-  01 Jan 2010; Christian Faulhammer <fauli@gentoo.org> hsc-1.0b.ebuild:
-  stable x86, bug 289441
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/hsc-1.0b-cflags.patch, +files/hsc-1.0b-glibc-2.10.patch,
+  +files/hsc-1.0b-nostrip.patch, +files/hsc-1.0b-parmake.patch,
+  +hsc-1.0b.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> hsc-0.935.ebuild,
-  hsc-0.999.ebuild:
-  Remove virtual/libc
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  09 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> hsc-1.0b.ebuild,
-  +files/hsc-1.0b-glibc-2.10.patch:
-  Fix building with GLIBC 2.10+ wrt #279083.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Jun 2009; Diego E. Pettenò <flameeyes@gentoo.org> -hsc-0.929.ebuild,
-  -files/Makefile.hsc-0.929.patch.gz, -files/Makefile.hsc-0.931.patch.bz2:
-  Remove old version, and with that two binary files from CVS. Note that one
-  of the two was left unused.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Oct 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/hsc-1.0b-parmake.patch, hsc-1.0b.ebuild:
-  fix parallel make issue, bug #240936
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*hsc-1.0b (27 Jan 2008)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  27 Jan 2008; Alexis Ballier <aballier@gentoo.org>
-  +files/hsc-1.0b-cflags.patch, +files/hsc-1.0b-nostrip.patch,
-  +hsc-1.0b.ebuild:
-  version bump, bug #140242
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
-  Regenerate digest in Manifest2 format.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*hsc-0.999 (22 Sep 2005)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Sep 2005; Matthieu Sozeau <mattam@gentoo.org> -hsc-0.931.ebuild,
-  hsc-0.935.ebuild, +hsc-0.999.ebuild:
-  Add latest version, mark 935 stable on x86, remove unused version.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  25 Mar 2005; Danny van Dyk <kugelfang@gentoo.org> hsc-0.935.ebuild:
-  Marked ~amd64.
-
-  30 Aug 2004; David Holm <dholm@gentoo.org> hsc-0.935.ebuild:
-  Added to ~ppc.
-
-*hsc-0.935 (18 Aug 2004)
-
-  18 Aug 2004; Matthieu Sozeau <mattam@gentoo.org> hsc-0.935.ebuild:
-  Add hsc-0.935, thanks to Daniel Armyr <daniel.armyr@home.se> for the ebuild
-  (bug #59861)
-
-  01 Jul 2004; Jon Hood <squinky86@gentoo.org> hsc-0.929.ebuild,
-  hsc-0.931.ebuild:
-  change virtual/glibc to virtual/libc
-
-*hsc-0.931 (11 Dec 2003)
-
-  11 Dec 2003; George Shapovalov <george@gentoo.org> hsc-931.ebuild, files/Makefile.hsc-0.931.patch.bz2 :
-  new version
-
-*hsc-0.929 (20 Jun 2003)
-
-  20 Jun 2003; George Shapovalov <george@gentoo.org> hsc-0.929.ebuild, files/Makefile.hsc-0.929.patch :
-  initial release (#18855)
-  HSC is an HTML preprocessor using standard ML syntax.
-  Ebuild submitted by Daniel Armyr
-
-  24 04 2003; Daniel Armyr <daniel.armyr@home.se> hsc-0.929.ebuild,
-  Makefile.hsc-0.929.patch: Ebuild will now compile under any revision number.
-  Added installation of all examples refered to in the docs.
-
-  06 04 2003; Daniel Armyr <daniel.armyr@home.se> hsc-0.929.ebuild,
-  Makefile.hsc-0.929.patch: Submitted the ebuild. 
-
+  Bug: https://bugs.gentoo.org/552720
 

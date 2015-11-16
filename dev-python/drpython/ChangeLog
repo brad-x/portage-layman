@@ -1,125 +1,56 @@
 # ChangeLog for dev-python/drpython
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/drpython/ChangeLog,v 1.26 2015/06/09 15:13:09 jlec Exp $
+# (auto-generated from git log)
 
-  09 Jun 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Updating remote-id in metadata.xml
+*drpython-3.11.4 (09 Aug 2015)
 
-  14 Apr 2015; Agostino Sarubbo <ago@gentoo.org> drpython-3.11.4.ebuild:
-  Stable for ia64, wrt bug #540290
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +drpython-3.11.4.ebuild,
+  +files/drpython-165-wxversion.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  08 Mar 2015; Pacho Ramos <pacho@gentoo.org> drpython-3.11.4.ebuild:
-  x86 stable, bug 540290
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Mar 2015; Pacho Ramos <pacho@gentoo.org> drpython-3.11.4.ebuild:
-  ppc stable, bug 540290
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  06 Mar 2015; Pacho Ramos <pacho@gentoo.org> drpython-3.11.4.ebuild:
-  amd64 stable, bug 540290
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Jan 2015; Manuel Rüger <mrueg@gentoo.org> -drpython-3.11.3.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*drpython-3.11.4 (04 May 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 May 2014; Ian Delaney <idella4@gentoo.org> +drpython-3.11.4.ebuild,
-  files/drpython-165-wxversion.patch:
-  bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  24 Feb 2012; Patrick Lauer <patrick@gentoo.org> drpython-3.11.3.ebuild:
-  Restricting python
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*drpython-3.11.3 (08 Dec 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  08 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  -drpython-3.11.1.ebuild, +drpython-3.11.3.ebuild:
-  Version bump.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*drpython-3.11.1 (16 Apr 2010)
+  Bug: https://bugs.gentoo.org/552720
 
-  16 Apr 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  +drpython-3.11.1.ebuild:
-  Version bump. Set SUPPORT_PYTHON_ABIS.
-
-*drpython-165-r2 (24 Feb 2008)
-
-  24 Feb 2008; Tiziano Müller <dev-zero@gentoo.org>
-  +files/drpython-165-tabswitch.patch, -drpython-165-r1.ebuild,
-  +drpython-165-r2.ebuild:
-  Added patch to fix broken copy/paste when switching tabs using the keyboard
-  shortcut (bug #210298, thanks to Jon White).
-
-*drpython-165-r1 (04 Dec 2007)
-
-  04 Dec 2007; Ali Polatel <hawking@gentoo.org>
-  -files/drpython.py-3.10.12.patch, -files/drpython.py-3.10.13.patch,
-  +files/drpython-165-wxversion.patch, -drpython-164.ebuild,
-  -drpython-165.ebuild, +drpython-165-r1.ebuild:
-  Revbump. Added patch to prevent running against other SLOTs of wxpython,
-  #201158. Drop old.
-
-*drpython-165 (20 Nov 2007)
-
-  20 Nov 2007; Ali Polatel <hawking@gentoo.org> +drpython-165.ebuild:
-  version bump.
-
-  03 Oct 2007; Ryan Hill <dirtyepic@gentoo.org> drpython-164.ebuild:
-  Lock wxpython dependency.  Fix quoting.
-
-  04 Mar 2007; Lukasz Strzygowski <lucass@gentoo.org> drpython-164.ebuild:
-  Replaced einfo with elog in pkg_postinst.
-
-*drpython-164 (14 Feb 2007)
-
-  14 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> -drpython-163.ebuild,
-  +drpython-164.ebuild:
-  Version bump.
-
-*drpython-163 (11 Jan 2007)
-
-  11 Jan 2007; Tiziano Müller <dev-zero@gentoo.org>
-  -drpython-3.10.12.ebuild, -drpython-3.10.13.ebuild, +drpython-163.ebuild:
-  Version bump. Dropped old versions.
-
-  01 Apr 2006; Aron Griffis <agriffis@gentoo.org> drpython-3.10.13.ebuild:
-  Mark 3.10.13 ~ia64
-
-  19 Nov 2005; Chris White <chriswhite@gentoo.org> metadata.xml:
-  Added japanese metadata.xml translation thanks to Yoshino-san.
-
-  09 Aug 2005; Luis Medinas <metalgod@gentoo.org> drpython-3.10.13.ebuild:
-  Added ~amd64 keywords. Closes bug #98439 .
-
-  12 Jul 2005; David Holm <dholm@gentoo.org> drpython-3.10.13.ebuild:
-  Added to ~ppc.
-
-  20 May 2005; Rob Cakebread <pythonhead@gentoo.org>
-  drpython-3.10.13.ebuild:
-  setup.py only seems to work with python-2.4. Manually copy some files. bug#
-  91290
-
-*drpython-3.10.13 (04 May 2005)
-
-  04 May 2005; Rob Cakebread <pythonhead@gentoo.org>
-  +files/drpython.py-3.10.13.patch, +drpython-3.10.13.ebuild:
-  Version bump.
-
-*drpython-3.10.12 (02 May 2005)
-
-  02 May 2005; Rob Cakebread <pythonhead@gentoo.org>
-  -files/drpython.py-3.6.10.patch, -files/drpython.py-3.10.6.patch,
-  +files/drpython.py-3.10.12.patch, -drpython-3.6.10.ebuild,
-  -drpython-3.10.6.ebuild, +drpython-3.10.12.ebuild:
-  Version bump. Removed old masked versions.
-
-*drpython-3.10.6 (19 Feb 2005)
-
-  19 Feb 2005; Radoslaw Stachowiak <radek@gentoo.org>
-  +files/drpython.py-3.10.6.patch, +drpython-3.10.6.ebuild:
-  Newest version.
-
-*drpython-3.6.10 (14 Nov 2004)
-
-  14 Nov 2004; Lukasz Strzygowski <lucass@gentoo.org> +metadata.xml,
-  +files/drpython.py-3.6.10.patch, +drpython-3.6.10.ebuild:
-  Initial import. Closing #55370. Thanks for help to Rob Cakebread.

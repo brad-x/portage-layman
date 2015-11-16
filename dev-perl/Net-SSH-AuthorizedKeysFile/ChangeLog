@@ -1,87 +1,58 @@
 # ChangeLog for dev-perl/Net-SSH-AuthorizedKeysFile
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-SSH-AuthorizedKeysFile/ChangeLog,v 1.16 2015/02/03 17:44:04 robbat2 Exp $
+# (auto-generated from git log)
 
-*Net-SSH-AuthorizedKeysFile-0.170.0 (03 Feb 2015)
+*Net-SSH-AuthorizedKeysFile-0.170.0 (09 Aug 2015)
+*Net-SSH-AuthorizedKeysFile-0.160.0-r1 (09 Aug 2015)
 
-  03 Feb 2015; Robin H. Johnson <robbat2@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.170.0.ebuild:
-  Commit direct to stable, modifies a single regex to add match for Ed25519
-  keytype; needed for production gitolite.
-
-*Net-SSH-AuthorizedKeysFile-0.160.0-r1 (23 Aug 2014)
-
-  23 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +Net-SSH-AuthorizedKeysFile-0.160.0-r1.ebuild,
-  -Net-SSH-AuthorizedKeysFile-0.160.0.ebuild:
-  bumped EAPI to 5; committed directly to stable as no other changes present and
-  revbump helps stable systems to keep from dieing on perl-5.18 upgrade
+  +Net-SSH-AuthorizedKeysFile-0.170.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  31 Mar 2012; Torsten Veller <tove@gentoo.org>
-  -Net-SSH-AuthorizedKeysFile-0.13.ebuild,
-  -Net-SSH-AuthorizedKeysFile-0.150.0.ebuild:
-  Cleanup
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  Net-SSH-AuthorizedKeysFile-0.160.0.ebuild:
-  x86 stable wrt bug #400185
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
-  Net-SSH-AuthorizedKeysFile-0.160.0.ebuild:
-  Stable for amd64, wrt bug #400185
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*Net-SSH-AuthorizedKeysFile-0.160.0 (01 Feb 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  01 Feb 2012; Torsten Veller <tove@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.160.0.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org>
-  -Net-SSH-AuthorizedKeysFile-0.140.ebuild,
-  -Net-SSH-AuthorizedKeysFile-0.150.ebuild:
-  Cleanup
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*Net-SSH-AuthorizedKeysFile-0.150.0 (29 Aug 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  29 Aug 2011; Torsten Veller <tove@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.150.0.ebuild:
-  Change version scheme
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*Net-SSH-AuthorizedKeysFile-0.150 (17 Feb 2011)
+  Bug: https://bugs.gentoo.org/552720
 
-  17 Feb 2011; Torsten Veller <tove@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.150.ebuild:
-  Version bump
-
-*Net-SSH-AuthorizedKeysFile-0.140 (12 Jan 2011)
-
-  12 Jan 2011; Torsten Veller <tove@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.140.ebuild:
-  Version bump
-
-  01 Nov 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
-  Net-SSH-AuthorizedKeysFile-0.13.ebuild:
-  x86 stable wrt bug #342765
-
-  27 Oct 2010; Markos Chandras <hwoarang@gentoo.org>
-  Net-SSH-AuthorizedKeysFile-0.13.ebuild:
-  Stable on amd64 wrt bug #342765
-
-  11 Jun 2010; Torsten Veller <tove@gentoo.org>
-  -Net-SSH-AuthorizedKeysFile-0.12.ebuild:
-  Cleanup
-
-*Net-SSH-AuthorizedKeysFile-0.13 (29 Apr 2010)
-
-  29 Apr 2010; Torsten Veller <tove@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.13.ebuild:
-  Version bump
-
-*Net-SSH-AuthorizedKeysFile-0.12 (14 Apr 2010)
-
-  14 Apr 2010; Christian Ruppert <idl0r@gentoo.org>
-  +Net-SSH-AuthorizedKeysFile-0.12.ebuild, +metadata.xml:
-  New ebuild dev-perl/Net-SSH-AuthorizedKeysFile.

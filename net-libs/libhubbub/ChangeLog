@@ -1,54 +1,59 @@
 # ChangeLog for net-libs/libhubbub
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libhubbub/ChangeLog,v 1.11 2015/06/09 22:03:39 xmw Exp $
+# (auto-generated from git log)
 
-*libhubbub-0.3.1-r1 (09 Jun 2015)
+*libhubbub-0.3.1-r1 (09 Aug 2015)
+*libhubbub-0.3.0-r1 (09 Aug 2015)
 
-  09 Jun 2015; Michael Weber <xmw@gentoo.org> +libhubbub-0.3.1-r1.ebuild,
-  -libhubbub-0.3.1.ebuild:
-  Revbump for multilib fix.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/libhubbub-0.3.0-glibc2.20.patch,
+  +files/libhubbub-0.3.1-glibc2.20.patch, +libhubbub-0.3.0-r1.ebuild,
+  +libhubbub-0.3.1-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*libhubbub-0.3.1 (21 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  21 Mar 2015; Michael Weber <xmw@gentoo.org>
-  +files/libhubbub-0.3.1-glibc2.20.patch, +libhubbub-0.3.1.ebuild,
-  -files/libhubbub-0.2.0-error.patch, -libhubbub-0.2.0.ebuild,
-  -libhubbub-0.3.0.ebuild:
-  Version bump (bug 543846).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  15 Nov 2014; Michael Weber <xmw@gentoo.org> libhubbub-0.3.0-r1.ebuild:
-  tighten dependencies
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*libhubbub-0.3.0-r1 (15 Nov 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  15 Nov 2014; Michael Weber <xmw@gentoo.org>
-  +files/libhubbub-0.3.0-glibc2.20.patch, +libhubbub-0.3.0-r1.ebuild:
-  Switch to new buildsystem version, fix glibc2.20 issue (bug 528768).
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Nov 2014; Sergei Trofimovich <slyfox@gentoo.org> libhubbub-0.3.0.ebuild:
-  Drop -Werror (fix for glibc-2.20), bug #528768 by w0rm.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-*libhubbub-0.3.0 (06 Nov 2014)
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  06 Nov 2014; Michael Weber <xmw@gentoo.org> +libhubbub-0.3.0.ebuild:
-  Version bump
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  18 Jun 2014; Michał Górny <mgorny@gentoo.org> libhubbub-0.2.0.ebuild:
-  Update dependencies to require guaranteed EAPI=5 or multilib ebuilds, bug
-  #513718.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  17 Jun 2014; Michał Górny <mgorny@gentoo.org> libhubbub-0.2.0.ebuild:
-  Update the deps to support tests on non-native ABIs since json-c is multilib
-  nowadays.
+  Bug: https://bugs.gentoo.org/552720
 
-  05 Jan 2014; Fabian Groffen <grobian@gentoo.org> libhubbub-0.2.0.ebuild:
-  Marked ~m68k-mint, bug #494512
-
-  23 Jun 2013; Michael Weber <xmw@gentoo.org> libhubbub-0.2.0.ebuild:
-  Migrate to netsurf.eclass
-
-*libhubbub-0.2.0 (17 Jun 2013)
-
-  17 Jun 2013; Michael Weber <xmw@gentoo.org>
-  +files/libhubbub-0.2.0-error.patch, +libhubbub-0.2.0.ebuild, +metadata.xml:
-  Version bump (bug 470720), multilib build, preparations for netsurf eclass.

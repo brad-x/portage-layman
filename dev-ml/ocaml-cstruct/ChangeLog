@@ -1,0 +1,45 @@
+# ChangeLog for dev-ml/ocaml-cstruct
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*ocaml-cstruct-1.7.0 (17 Oct 2015)
+
+  17 Oct 2015; Matthew Brewer <tomboy64@sina.cn> +metadata.xml,
+  +ocaml-cstruct-1.7.0.ebuild:
+  new ebuild
+
+  - needed as a transitive dependency of Libre S3 1.1 (net-misc/libres3)
+  - explicit support for MirageOS is not enabled
+
+  known issue: dev-ml/ocaml-cstruct-1.7.0 fails to build with USE=doc (
+  https://github.com/mirage/ocaml-cstruct/issues/73 )
+
+*ocaml-cstruct-1.7.0-r1 (17 Oct 2015)
+
+  17 Oct 2015; Matthew Brewer <tomboy64@sina.cn> -ocaml-cstruct-1.7.0.ebuild,
+  +ocaml-cstruct-1.7.0-r1.ebuild:
+  revbump
+
+  changed SLOT="0" to SLOT="0/${PV}" to make := actually useful
+
+*ocaml-cstruct-1.7.0-r2 (17 Oct 2015)
+
+  17 Oct 2015; Alexis Ballier <aballier@gentoo.org>
+  -ocaml-cstruct-1.7.0-r1.ebuild, +ocaml-cstruct-1.7.0-r2.ebuild:
+  revbump
+
+  sets +camlp4 since ocaml-pcap needs it
+
+*ocaml-cstruct-1.7.0-r3 (18 Oct 2015)
+
+  18 Oct 2015; Matthew Brewer <tomboy64@sina.cn>
+  -ocaml-cstruct-1.7.0-r2.ebuild, +ocaml-cstruct-1.7.0-r3.ebuild:
+  revbump: enable lwt per default
+
+  enable lwt support per default as it's required for Libre S3
+
+  21 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Update remote-ids
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

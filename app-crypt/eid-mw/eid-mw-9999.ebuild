@@ -13,14 +13,14 @@ if [[ ${PV} == "9999" ]] ; then
 	SRC_URI=""
 else
 	MY_P="${P}-v${PV}"
-	SRC_URI="http://eid.belgium.be/en/binaries/${MY_P}.tar_tcm406-270730.gz -> ${MY_P}.tar.gz"
+	SRC_URI="https://downloads.services.belgium.be/eid/${MY_P}.tar.gz"
 	KEYWORDS="~x86 ~amd64 ~arm"
 	S="${WORKDIR}/${MY_P}"
 fi
 
 SLOT="0"
 LICENSE="LGPL-3"
-DESCRIPTION="Belgian Electronic Identity Card middleware supplied by the Belgian Federal Government"
+DESCRIPTION="Electronic Identity Card middleware supplied by the Belgian Federal Government"
 
 HOMEPAGE="http://eid.belgium.be"
 
@@ -39,7 +39,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-	use gtk || epatch "${FILESDIR}"/gtk_not_required_${PV}.patch
+	use gtk || epatch "${FILESDIR}"/gtk_not_required_9999.patch
 
 	if [[ ${PV} == "9999" ]] ; then
 		# Only in current git. Hopefully, in next release.

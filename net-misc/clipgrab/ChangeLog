@@ -1,111 +1,59 @@
 # ChangeLog for net-misc/clipgrab
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/clipgrab/ChangeLog,v 1.21 2015/05/23 09:42:27 xmw Exp $
+# (auto-generated from git log)
 
-*clipgrab-3.4.11 (23 May 2015)
+*clipgrab-3.4.11 (09 Aug 2015)
+*clipgrab-3.4.9-r1 (09 Aug 2015)
 
-  23 May 2015; Michael Weber <xmw@gentoo.org> +clipgrab-3.4.11.ebuild:
-  Version bump (thanks  Sergey S. Starikoff, bug 549654).
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +clipgrab-3.4.9-r1.ebuild, +clipgrab-3.4.11.ebuild,
+  +files/clipgrab-3.2.0.10-obey.patch, +files/clipgrab-3.2.1.0-obey.patch,
+  +files/clipgrab-3.4.2-obey.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*clipgrab-3.4.9-r1 (17 Mar 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Mar 2015; Michael Weber <xmw@gentoo.org> +clipgrab-3.4.9-r1.ebuild,
-  -clipgrab-3.4.9.ebuild:
-  Works with libav (bug 543330, thanks Sergey S. Starikoff).
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*clipgrab-3.4.9 (26 Feb 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  26 Feb 2015; Michael Weber <xmw@gentoo.org> +clipgrab-3.4.9.ebuild,
-  -clipgrab-3.2.0.11.ebuild, -clipgrab-3.2.1.0.ebuild, -clipgrab-3.4.2.ebuild:
-  Version bump (bug 541314).
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*clipgrab-3.4.2 (05 Jun 2014)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  05 Jun 2014; Michael Weber <xmw@gentoo.org> +clipgrab-3.4.2.ebuild,
-  +files/clipgrab-3.4.2-obey.patch:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Aug 2013; Alexis Ballier <aballier@gentoo.org> clipgrab-3.2.0.11.ebuild,
-  clipgrab-3.2.1.0.ebuild:
-  depend on ffmpeg:0
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*clipgrab-3.2.1.0 (23 Jun 2013)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  23 Jun 2013; Michael Weber <xmw@gentoo.org> +clipgrab-3.2.1.0.ebuild,
-  +files/clipgrab-3.2.1.0-obey.patch, -clipgrab-3.2.0.10.ebuild,
-  -clipgrab-3.2.0.9.ebuild, -files/3.2.0.6-obey.patch, clipgrab-3.2.0.11.ebuild:
-  Version bump, revert to media-libs/ffmpeg (bug 474368 by Nikoli), drop old.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-*clipgrab-3.2.0.11 (21 Apr 2013)
+  Bug: https://bugs.gentoo.org/552720
 
-  21 Apr 2013; Michael Weber <xmw@gentoo.org> +clipgrab-3.2.0.11.ebuild:
-  Version bump
-
-  02 Mar 2013; Markos Chandras <hwoarang@gentoo.org> clipgrab-3.2.0.10.ebuild,
-  clipgrab-3.2.0.9.ebuild:
-  Move Qt dependencies to the new category
-
-*clipgrab-3.2.0.10 (14 Jan 2013)
-
-  14 Jan 2013; Michael Weber <xmw@gentoo.org> -files/3.2.0.6-qrc.patch,
-  -clipgrab-3.2.0.6.ebuild, +clipgrab-3.2.0.10.ebuild,
-  +files/clipgrab-3.2.0.10-obey.patch:
-  Version bump (thanks euscan), drop old
-
-*clipgrab-3.2.0.9 (06 Oct 2012)
-
-  06 Oct 2012; Michael Weber <xmw@gentoo.org> +clipgrab-3.2.0.9.ebuild:
-  Version bump (euscan)
-
-*clipgrab-3.1.3.0 (19 Dec 2011)
-
-  19 Dec 2011; Michael Weber <xmw@gentoo.org> +clipgrab-3.1.3.0.ebuild:
-  Version bump
-
-  12 Nov 2011; Michael Weber <xmw@gentoo.org> clipgrab-3.1.0.2.ebuild:
-  dropping ~sparc
-
-  12 Nov 2011; Michael Weber <xmw@gentoo.org> clipgrab-3.1.0.2.ebuild:
-  Change dep to x11-libs/qt-webkit:4 (thanks to Mithodin, bug 379269)
-
-*clipgrab-3.1.0.2 (12 Nov 2011)
-
-  12 Nov 2011; Michael Weber <xmw@gentoo.org> -clipgrab-3.1.0.1.ebuild,
-  +clipgrab-3.1.0.2.ebuild, metadata.xml:
-  Version bump, thanks to Hans (bug 387233). Taking maint.
-
-  04 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  -clipgrab-2.0_beta2.ebuild, clipgrab-3.1.0.1.ebuild:
-  Add sparc keyword to latest (i missed it previously). Drop the stable since
-  it does not work at all so it is better to have no stable than broken stable.
-
-*clipgrab-3.1.0.1 (01 Apr 2011)
-
-  01 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
-  -clipgrab-2.0_beta2-r1.ebuild, +clipgrab-3.1.0.1.ebuild, +files/obey.patch:
-  Version bump to fix virutal/ffmpeg dependency. Fixes bug #289636 and #292029.
-
-  02 Jun 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove bluebird from metadata.xml (#223101)
-
-*clipgrab-2.0_beta2-r1 (21 Jun 2009)
-
-  21 Jun 2009; Pielmeier Daniel <billie@gentoo.org>
-  +clipgrab-2.0_beta2-r1.ebuild:
-  Revision bump. Adding desktop entry.
-
-  13 Feb 2009; Ben de Groot <yngwin@gentoo.org> clipgrab-2.0_beta2:
-  Fix Qt dependency
-
-  04 Oct 2008; Markus Meier <maekke@gentoo.org> clipgrab-2.0_beta2.ebuild:
-  x86 stable, bug #239430
-
-  03 Oct 2008; Friedrich Oslage <bluebird@gentoo.org>
-  clipgrab-2.0_beta2.ebuild:
-  Stable on sparc, bug #239430
-
-*clipgrab-2.0_beta2 (31 Aug 2008)
-
-  31 Aug 2008; Friedrich Oslage <bluebird@gentoo.org> +metadata.xml,
-  +clipgrab-2.0_beta2.ebuild:
-  Initial commit, ebuild by me.

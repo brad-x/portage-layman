@@ -1,83 +1,66 @@
 # ChangeLog for sys-fs/mp3fs
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mp3fs/ChangeLog,v 1.25 2014/12/28 10:10:45 ago Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  28 Dec 2014; Agostino Sarubbo <ago@gentoo.org> mp3fs-0.91.ebuild:
-  Stable for x86, wrt bug #532452
+*mp3fs-0.91 (09 Aug 2015)
+*mp3fs-0.32 (09 Aug 2015)
 
-  27 Dec 2014; Agostino Sarubbo <ago@gentoo.org> mp3fs-0.91.ebuild:
-  Stable for amd64, wrt bug #532452
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +mp3fs-0.32.ebuild, +mp3fs-0.91.ebuild:
+  proj/gentoo: Initial commit
 
-*mp3fs-0.91 (13 Oct 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  13 Oct 2014; Matthias Maier <tamiko@gentoo.org> +mp3fs-0.91.ebuild,
-  -files/mp3fs-0.13-automake-ldadd.patch:
-  version bump; remove obsolete files
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  13 Oct 2014; Matthias Maier <tamiko@gentoo.org> -mp3fs-0.30.ebuild,
-  -mp3fs-0.31.ebuild, metadata.xml, mp3fs-0.32.ebuild:
-  take over maintainership; drop old; fix SRC_URI
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Aug 2012; Johannes Huber <johu@gentoo.org> mp3fs-0.32.ebuild:
-  Stable for x86, wrt bug #429216
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mp3fs-0.32.ebuild:
-  Stable for amd64, wrt bug #429216
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mp3fs-0.31.ebuild:
-  marked x86 per bug 422215
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mp3fs-0.31.ebuild:
-  Stable for amd64, wrt bug #422215
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mp3fs-0.32 (19 Jun 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> mp3fs-0.32.ebuild,
+  mp3fs-0.91.ebuild:
+  Use https by default
 
-  19 Jun 2012; Michael Weber <xmw@gentoo.org> +mp3fs-0.32.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  06 Apr 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
-  Grabing package, remove old version.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*mp3fs-0.31 (20 Mar 2012)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  20 Mar 2012; Sebastian Pipping <sping@gentoo.org> +mp3fs-0.31.ebuild:
-  Bump to 0.31, looks trivial
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mp3fs-0.30.ebuild:
-  Stable for AMD64, wrt bug #392781
+  Bug: https://bugs.gentoo.org/552720
 
-  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mp3fs-0.30.ebuild:
-  x86 stable wrt bug #392781
-
-  20 Jul 2011; Pacho Ramos <pacho@gentoo.org> -mp3fs-0.13.ebuild, metadata.xml:
-  Drop maintainer due retirement, bug #34534; remove old.
-
-  12 Feb 2011; Markos Chandras <hwoarang@gentoo.org> mp3fs-0.21.ebuild:
-  Stable on amd64 wrt bug #353561
-
-  09 Feb 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mp3fs-0.21.ebuild:
-  x86 stable wrt bug #353561
-
-*mp3fs-0.30 (05 Feb 2011)
-
-  05 Feb 2011; Mike Frysinger <vapier@gentoo.org> +mp3fs-0.30.ebuild:
-  Version bump.
-
-*mp3fs-0.21 (05 Sep 2010)
-
-  05 Sep 2010; Daniel Black <dragonheart@gentoo.org> -mp3fs-0.11.ebuild,
-  -mp3fs-0.12.ebuild, +mp3fs-0.21.ebuild:
-  version bump
-
-*mp3fs-0.13 (03 Jan 2009)
-
-  03 Jan 2009; Daniel Black <dragonheart@gentoo.org>
-  +files/mp3fs-0.13-automake-ldadd.patch, mp3fs-0.12.ebuild,
-  +mp3fs-0.13.ebuild:
-  version bump and fix dependencies as per bug #253432 thanks to Tomas Eriksson
-
-*mp3fs-0.12 (01 Apr 2008)
-
-  01 Apr 2008; Daniel Black <dragonheart@gentoo.org> -mp3fs-0.10.ebuild,
-  +mp3fs-0.12.ebuild:
-  version bump

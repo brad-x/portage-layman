@@ -1,57 +1,59 @@
 # ChangeLog for app-arch/engrampa
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/engrampa/ChangeLog,v 1.13 2015/07/13 20:43:51 np-hardass Exp $
+# (auto-generated from git log)
 
-  13 Jul 2015; NP-Hardass <NP-Hardass@gentoo.org>
-  +files/engrampa-1.8.0-caja-schema-fix.patch,
-  -files/engrampa-1.8.1-caja-schema-fix.patch:
-  Rename engrampa patch file
+*engrampa-1.8.1-r1 (09 Aug 2015)
+*engrampa-1.8.0-r1 (09 Aug 2015)
+*engrampa-1.8.0 (09 Aug 2015)
 
-  13 Jul 2015; NP-Hardass <NP-Hardass@gentoo.org>
-  +files/engrampa-1.8.1-caja-schema-fix.patch:
-  Add missing filesdir, thanks to angry_vincent
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +engrampa-1.8.0.ebuild,
+  +engrampa-1.8.0-r1.ebuild, +engrampa-1.8.1-r1.ebuild,
+  +files/engrampa-1.8.0-caja-schema-fix.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  13 Jul 2015; NP-Hardass <NP-Hardass@gentoo.org> metadata.xml:
-  Fix typo in metadata.xml
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Jul 2015; Patrick Lauer <patrick@gentoo.org> engrampa-1.8.0.ebuild:
-  Fix header
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*engrampa-1.8.0-r1 (11 Jul 2015)
-*engrampa-1.8.1-r1 (11 Jul 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Jul 2015; NP-Hardass <NP-Hardass@gentoo.org> +engrampa-1.8.0-r1.ebuild,
-  +engrampa-1.8.1-r1.ebuild, -engrampa-1.8.0.ebuild, -engrampa-1.8.1.ebuild:
-  Deprecate 1.6 and restore caja USE flag functionality, resolving bug #538218
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  11 Jul 2015; NP-Hardass <NP-Hardass@gentoo.org> metadata.xml:
-  Update metadata.xml with mate herd
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*engrampa-1.8.1 (09 Dec 2014)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Dec 2014; Matthias Maier <tamiko@gentoo.org> +engrampa-1.8.1.ebuild:
-  version bump
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  18 Jul 2014; Tom Wijsman <TomWij@gentoo.org> engrampa-1.8.0.ebuild,
-  metadata.xml:
-  USE=-caja fails to build without Caja, temporarily adjust the dependencies to
-  unbreak that. Corrected the metadata.xml description. Bug #517018, reported by
-  Dmitry (sema19689).
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  07 Jul 2014; Tom Wijsman <TomWij@gentoo.org> engrampa-1.8.0.ebuild:
-  Add missing itstool dependency; fixes bug #515770, reported by Patrick Lauer.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Jul 2014; Pacho Ramos <pacho@gentoo.org> engrampa-1.8.0.ebuild:
-  x86 stable, bug 513714
+  Bug: https://bugs.gentoo.org/552720
 
-  02 Jul 2014; Pacho Ramos <pacho@gentoo.org> engrampa-1.8.0.ebuild:
-  amd64 stable, bug 513714
-
-  07 Jun 2014; Agostino Sarubbo <ago@gentoo.org> engrampa-1.8.0.ebuild:
-  Add ~x86, wrt bug #508072
-
-*engrampa-1.8.0 (27 Apr 2014)
-
-  27 Apr 2014; Tom Wijsman <TomWij@gentoo.org> +engrampa-1.8.0.ebuild,
-  +metadata.xml:
-  Version bump to 1.8.0, continuation of app-arch/mate-file-archiver.

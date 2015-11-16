@@ -1,139 +1,74 @@
 # ChangeLog for sys-apps/dog
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/dog/ChangeLog,v 1.40 2012/06/10 12:55:01 jlec Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Jun 2012; Justin Lecher <jlec@gentoo.org> metadata.xml:
-  Drop redundant maintainer
+*dog-1.7-r4 (09 Aug 2015)
 
-  06 Jan 2011; Justin Lecher <jlec@gentoo.org> -dog-1.7-r3.ebuild,
-  dog-1.7-r4.ebuild:
-  Some Clean up
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +dog-1.7-r4.ebuild,
+  +files/1.7-manpage-touchup.patch, +files/dog-1.7-64bit-goodness.patch,
+  +files/dog-1.7-check-ctime.diff, +files/dog-1.7-strfry.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  05 Dec 2010; Raúl Porcel <armin76@gentoo.org> dog-1.7-r4.ebuild:
-  alpha/sparc stable wrt #342147
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  23 Oct 2010; Mark Loeser <halcy0n@gentoo.org> dog-1.7-r4.ebuild:
-  Stable for ppc/ppc64; bug #342147
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  23 Oct 2010; Dane Smith <c1pher@gentoo.org> dog-1.7-r4.ebuild:
-  Stable x86 wrt bug 342147.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Oct 2010; Markos Chandras <hwoarang@gentoo.org> dog-1.7-r4.ebuild:
-  Stable on amd64 wrt bug #342147
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*dog-1.7-r4 (18 Sep 2010)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  18 Sep 2010; Justin Lecher <jlec@gentoo.org> +dog-1.7-r4.ebuild:
-  Respecting LDFLAGS, 335390
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  21 May 2010; Jeremy Olexa <darkside@gentoo.org> dog-1.7-r3.ebuild:
-  Import Gentoo Prefix changes, add keywords. No EAPI bump needed.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Aug 2009; Jeremy Olexa <darkside@gentoo.org> -dog-1.7-r2.ebuild:
-  remove old
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> dog-1.7-r4.ebuild:
+  Use https by default
 
-  04 Jun 2009; Tobias Klausmann <klausman@gentoo.org> dog-1.7-r3.ebuild:
-  Stable on alpha, bug #269496
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jun 2009; Jeremy Olexa <darkside@gentoo.org> dog-1.7-r3.ebuild:
-  Update HOMEPAGE and SRC_URI, upstream disappeared, bug 270835
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  31 May 2009; Brent Baude <ranger@gentoo.org> dog-1.7-r3.ebuild:
-  stable ppc64, bug 269496
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  31 May 2009; nixnut <nixnut@gentoo.org> dog-1.7-r3.ebuild:
-  ppc stable #269496
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  24 May 2009; Markus Meier <maekke@gentoo.org> dog-1.7-r3.ebuild:
-  amd64 stable, bug #269496
+  Bug: https://bugs.gentoo.org/552720
 
-  22 May 2009; Ferris McCormick <fmccor@gentoo.org> dog-1.7-r3.ebuild:
-  Sparc stable, Bug #269496.
+*dog-1.7-r5 (21 Oct 2015)
 
-  22 May 2009; Christian Faulhammer <fauli@gentoo.org> dog-1.7-r3.ebuild:
-  stable x86, bug 269496
+  21 Oct 2015; Patrice Clement <monsieurp@gentoo.org> +dog-1.7-r5.ebuild:
+  EAPI 5 bump. Add -lnsl flag to list of flags to get compilation to work on
+  sparc. Fixes bug 406527.
 
-*dog-1.7-r3 (10 Apr 2009)
-
-  10 Apr 2009; Jeremy Olexa <darkside@gentoo.org>
-  +files/dog-1.7-strfry.patch, +dog-1.7-r3.ebuild:
-  Fix strfry issue if len = 0. bug 251675, patch by bob5972
-
-  04 Feb 2008; Fabian Groffen <grobian@gentoo.org> dog-1.7-r1.ebuild,
-  dog-1.7-r2.ebuild:
-  Dropped ppc-macos keyword, see you in prefix
-
-  24 Feb 2007; Ryan Hill <dirtyepic@gentoo.org> ChangeLog:
-  Regen for Manifest2 - Bug #165195
-
-  04 Feb 2007; Ryan Hill <dirtyepic@gentoo.org> metadata.xml:
-  Removed ka0ttic from metadata.
-
-  19 Aug 2005; Michael Hanselmann <hansmi@gentoo.org> dog-1.7-r2.ebuild:
-  Stable on ppc.
-
-  10 Aug 2005; Ciaran McCreesh <ciaranm@gentoo.org> dog-1.7-r1.ebuild,
-  dog-1.7-r2.ebuild:
-  Fix sed to work if the compiler path includes slashes, bug #102025
-
-  10 Aug 2005; Luis Medinas <metalgod@gentoo.org> dog-1.7-r2.ebuild:
-  Marked Stable on AMD64.
-
-  28 Jul 2005; Aaron Walker <ka0ttic@gentoo.org> dog-1.7-r2.ebuild:
-  Added ~mips.
-
-  19 Jul 2005; Bryan Østergaard <kloeri@gentoo.org> dog-1.7-r2.ebuild:
-  Stable on alpha.
-
-  07 Jul 2005; Markus Rothe <corsair@gentoo.org> dog-1.7-r2.ebuild:
-  Stable on ppc64
-
-  28 Jun 2005; Gustavo Zacarias <gustavoz@gentoo.org> dog-1.7-r2.ebuild:
-  Stable on sparc
-
-  28 Jun 2005; Aaron Walker <ka0ttic@gentoo.org> -dog-1.7.ebuild,
-  dog-1.7-r2.ebuild:
-  1.7 stable on x86; tidy old ebuild.
-
-*dog-1.7-r1 (13 May 2005)
-
-  13 May 2005; Aaron Walker <ka0ttic@gentoo.org>
-  +files/dog-1.7-check-ctime.diff, +dog-1.7-r1.ebuild:
-  Revision bump; added patch to fix missing check on ctime return value (was
-  using strcpy(buf, ctime(...))). Also use socklen_t over int as it should be
-  (fixes gcc-4 warning as well).
-
-  28 Mar 2005; Ciaran McCreesh <ciaranm@gentoo.org> metadata.xml:
-  Move from base-system to shell-tools
-
-  11 Feb 2005; Mike Frysinger <vapier@gentoo.org>
-  +files/1.7-manpage-touchup.patch, dog-1.7.ebuild:
-  Touchup -w example usage #69660.
-
-  03 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org> dog-1.7.ebuild:
-  Masked dog-1.7.ebuild stable for ppc
-
-  18 Aug 2004; Ciaran McCreesh <ciaranm@gentoo.org> dog-1.7.ebuild:
-  Added sparc, bug #60789
-
-  28 Jul 2004; Tom Gall <tgall@gentoo.org> dog-1.7.ebuild:
-  stable on ppc64, bug #58301
-
-  25 Jul 2004; Erik Swanson <erik_swanson@gentoo.org> dog-1.7.ebuild:
-  Added macos to KEYWORDS re bug #58307
-
-  01 Oct 2003; Tavis Ormandy <taviso@gentoo.org> dog-1.7.ebuild:
-  Stable on alpha
-
-  07 Jun 2003; <rac@gentoo.org> dog-1.7.ebuild:
-  Add sed-4 dependency because we use sed -i
-
-  05 Jun 2003; Tavis Ormandy <taviso@gentoo.org> dog-1.7.ebuild:
-  marking ~alpha, removing gcc hardcode if ccc is being used.
-
-*dog-1.7 (14 Mar 2003)
-
-  14 Mar 2003; <rac@gentoo.org> dog-1.7.ebuild:
-  Initial commit.  Ebuild submitted by Remco B. Brink <remco@opera.com>
-  in bug #16742.
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 

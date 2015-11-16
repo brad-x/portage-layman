@@ -1,33 +1,116 @@
 # ChangeLog for games-strategy/0ad
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/0ad/ChangeLog,v 1.5 2014/10/12 22:40:10 hasufell Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*0ad-0.0.17_alpha (12 Oct 2014)
+*0ad-0.0.17_alpha (09 Aug 2015)
+*0ad-0.0.16_alpha-r2 (09 Aug 2015)
 
-  12 Oct 2014; Julian Ospald <hasufell@gentoo.org> +0ad-0.0.17_alpha.ebuild,
-  +files/0ad-0.0.17_alpha-gentoo.patch, metadata.xml:
-  version bump wrt #525130
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +0ad-0.0.16_alpha-r2.ebuild, +0ad-0.0.17_alpha.ebuild,
+  +files/0ad-0.0.16_alpha-gcc-4.9.patch, +files/0ad-0.0.16_alpha-gentoo.patch,
+  +files/0ad-0.0.17_alpha-gentoo.patch, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  12 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
-  0ad-0.0.16_alpha-r2.ebuild:
-  Add subslot dependency on dev-libs/icu
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*0ad-0.0.16_alpha-r2 (17 Jun 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  17 Jun 2014; Julian Ospald <hasufell@gentoo.org> -0ad-0.0.16_alpha-r1.ebuild,
-  +0ad-0.0.16_alpha-r2.ebuild, +files/0ad-0.0.16_alpha-gcc-4.9.patch:
-  add patch that fixes UD, fix HOMEPAGE
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-*0ad-0.0.16_alpha-r1 (22 May 2014)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  22 May 2014; Julian Ospald <hasufell@gentoo.org> -0ad-0.0.16_alpha.ebuild,
-  +0ad-0.0.16_alpha-r1.ebuild, metadata.xml:
-  restrict broken tests wrt #511006, add lobby USE flag, rm obsolete fam USE
-  flag, install ActorEditor binary for +editor
+*0ad-0.0.18_alpha (14 Aug 2015)
 
-*0ad-0.0.16_alpha (21 May 2014)
+  14 Aug 2015; Julian Ospald <hasufell@gentoo.org> +0ad-0.0.18_alpha.ebuild,
+  +files/0ad-0.0.18_alpha-gentoo.patch:
+  version bump to 0.0.18_alpha
 
-  21 May 2014; Julian Ospald <hasufell@gentoo.org> +0ad-0.0.16_alpha.ebuild,
-  +files/0ad-0.0.16_alpha-gentoo.patch, +metadata.xml:
-  initial import wrt #278541
+  14 Aug 2015; Julian Ospald <hasufell@gentoo.org>
+  -0ad-0.0.16_alpha-r2.ebuild, -0ad-0.0.17_alpha.ebuild,
+  -files/0ad-0.0.16_alpha-gcc-4.9.patch, -files/0ad-0.0.16_alpha-gentoo.patch,
+  -files/0ad-0.0.17_alpha-gentoo.patch:
+  rm old
+
+*0ad-0.0.18_alpha-r1 (20 Aug 2015)
+
+  20 Aug 2015; Julian Ospald <hasufell@gentoo.org> -0ad-0.0.18_alpha.ebuild,
+  +0ad-0.0.18_alpha-r1.ebuild:
+  add missing dependency on dev-libs/nspr
+
+  We need this dep, because we don't use the system spidermonkey
+  anymore.
+
+  Reported-by: Toralf Förster
+  Gentoo-Bug: 558276
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*0ad-0.0.18_alpha-r2 (15 Sep 2015)
+
+  15 Sep 2015; Julian Ospald <hasufell@gentoo.org>
+  -0ad-0.0.18_alpha-r1.ebuild, +0ad-0.0.18_alpha-r2.ebuild:
+  revbump to fix missing python DEPEND
+
+  Gentoo-Bug: 560542
+
+  02 Oct 2015; Lars Wendler <polynomial-c@gentoo.org>
+  0ad-0.0.18_alpha-r2.ebuild, +files/0ad-0.0.18_alpha-miniupnpc14.patch:
+  Added an upstream patch for new miniupnpc API.
+
+  Package-Manager: portage-2.2.22
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*0ad-0.0.18_alpha-r3 (26 Oct 2015)
+
+  26 Oct 2015; Julian Ospald <hasufell@gentoo.org>
+  +0ad-0.0.18_alpha-r3.ebuild:
+  use x11-libs/wxGTK:3.0
+
+  Gentoo-Bug: 563328
+
+*0ad-0.0.18_alpha-r4 (26 Oct 2015)
+
+  26 Oct 2015; Julian Ospald <hasufell@gentoo.org>
+  +0ad-0.0.18_alpha-r4.ebuild:
+  fix virtual/jpeg SLOT
+
+  26 Oct 2015; Julian Ospald <hasufell@gentoo.org>
+  -0ad-0.0.18_alpha-r2.ebuild, -0ad-0.0.18_alpha-r3.ebuild:
+  rm old
 

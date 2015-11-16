@@ -1,101 +1,79 @@
 # ChangeLog for net-misc/sslh
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/sslh/ChangeLog,v 1.24 2015/07/09 07:26:53 vapier Exp $
+# (auto-generated from git log)
 
-  09 Jul 2015; Mike Frysinger <vapier@gentoo.org> sslh-1.17.ebuild:
-  Add arm/m68k/mips/s390/sh love.
+*sslh-1.17 (09 Aug 2015)
+*sslh-1.16 (09 Aug 2015)
+*sslh-1.15 (09 Aug 2015)
 
-*sslh-1.17 (10 Mar 2015)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +files/sslh.conf.d-2,
+  +files/sslh.init.d-2, +metadata.xml, +sslh-1.15.ebuild, +sslh-1.16.ebuild,
+  +sslh-1.17.ebuild:
+  proj/gentoo: Initial commit
 
-  10 Mar 2015; Michael Palimaka <kensington@gentoo.org> +sslh-1.17.ebuild:
-  Version bump.
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-*sslh-1.16 (14 Feb 2014)
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Feb 2014; Michael Palimaka <kensington@gentoo.org> +sslh-1.16.ebuild:
-  Version bump.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  22 Jan 2014; Michael Palimaka <kensington@gentoo.org> -sslh-1.14.ebuild:
-  Remove old.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Jan 2014; Agostino Sarubbo <ago@gentoo.org> sslh-1.15.ebuild:
-  Stable for x86, wrt bug #495890
+  09 Aug 2015; Ulrich Müller <ulm@gentoo.org> files/sslh.init.d-2:
+  [QA] Remove executable bit from files, bug 550434.
 
-  12 Jan 2014; Pacho Ramos <pacho@gentoo.org> sslh-1.15.ebuild:
-  amd64 stable, bug #495890
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*sslh-1.15 (31 Jul 2013)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  31 Jul 2013; Michael Palimaka <kensington@gentoo.org> +sslh-1.15.ebuild:
-  Version bump.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  01 Feb 2013; Michael Palimaka <kensington@gentoo.org> -sslh-1.13-r2.ebuild:
-  Remove old.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Jan 2013; Agostino Sarubbo <ago@gentoo.org> sslh-1.14.ebuild:
-  Stable for x86, wrt bug #454436
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  29 Jan 2013; Sergey Popov <pinkbyte@gentoo.org> sslh-1.14.ebuild:
-  Stable on amd64, wrt bug #454436
+  Bug: https://bugs.gentoo.org/552720
 
-*sslh-1.14 (22 Dec 2012)
+  19 Oct 2015; Agostino Sarubbo <ago@gentoo.org> sslh-1.17.ebuild:
+  amd64 stable wrt bug #562754
 
-  22 Dec 2012; Michael Palimaka <kensington@gentoo.org> +sslh-1.14.ebuild:
-  Version bump.
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
 
-  16 Aug 2012; Michael Palimaka <kensington@gentoo.org> -files/sslh.conf.d,
-  -files/sslh.init.d, -sslh-1.10.ebuild, -sslh-1.9.ebuild:
-  Remove old.
+  25 Oct 2015; Mikle Kolyada <zlogene@gentoo.org> sslh-1.17.ebuild:
+  x86 stable wrt bug #562754
 
-  15 Aug 2012; Johannes Huber <johu@gentoo.org> sslh-1.13-r2.ebuild:
-  Stable for x86, wrt bug #430300
+  Package-Manager: portage-2.2.20.1
 
-  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> sslh-1.13-r2.ebuild:
-  Stable for amd64, wrt bug #430300
+  25 Oct 2015; Michael Palimaka <kensington@gentoo.org> -sslh-1.15.ebuild,
+  -sslh-1.16.ebuild:
+  remove old
 
-*sslh-1.13-r2 (07 Aug 2012)
+  Package-Manager: portage-2.2.20.1
 
-  07 Aug 2012; Michael Palimaka <kensington@gentoo.org> +sslh-1.13-r2.ebuild,
-  -sslh-1.13-r1.ebuild:
-  Revision bump to install binaries into the correct location, which was
-  breaking the init script. Thanks to Agostino Sarubbo <ago@gentoo.org>.
-
-*sslh-1.13-r1 (11 Jul 2012)
-
-  11 Jul 2012; Michael Palimaka <kensington@gentoo.org> +sslh-1.13-r1.ebuild,
-  -sslh-1.13.ebuild, files/sslh.init.d-2:
-  Revision bump to fix issue with init script where the daemon is successfully
-  started, but is reported as failed. Thanks to Jamie Furtner <jamie@furtner.ca>
-  for the patch.
-
-*sslh-1.13 (06 Jul 2012)
-
-  06 Jul 2012; Michael Palimaka <kensington@gentoo.org> +files/sslh.conf.d-2,
-  +files/sslh.init.d-2, +sslh-1.13.ebuild, metadata.xml:
-  Version bump wrt bug #424685. Take over maintainership of package.
-
-  04 Jul 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
-  Set a maintainer.
-
-*sslh-1.10 (28 Nov 2011)
-
-  28 Nov 2011; Tim Harder <radhermit@gentoo.org> -sslh-1.7a.ebuild,
-  +sslh-1.10.ebuild:
-  Version bump and remove old.
-
-  05 Nov 2011; Mike Frysinger <vapier@gentoo.org> sslh-1.9.ebuild:
-  Stabilize for amd64/x86.
-
-*sslh-1.9 (11 Aug 2011)
-
-  11 Aug 2011; Tim Harder <radhermit@gentoo.org> +sslh-1.9.ebuild:
-  Version bump
-
-  01 May 2011; Mike Frysinger <vapier@gentoo.org> sslh-1.7a.ebuild:
-  Tweak USE=-tcpd build flag #365575 by El Goretto.
-
-*sslh-1.7a (05 Mar 2010)
-
-  05 Mar 2010; Mike Frysinger <vapier@gentoo.org> +sslh-1.7a.ebuild,
-  +files/sslh.conf.d, +files/sslh.init.d, +metadata.xml:
-  Initial ebuild by Jiri Tyr #251296 and cleaned up by me.

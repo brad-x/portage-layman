@@ -1,93 +1,69 @@
 # ChangeLog for x11-plugins/fsviewer
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/fsviewer/ChangeLog,v 1.26 2015/05/29 21:43:42 mrueg Exp $
+# (auto-generated from git log)
 
-  29 May 2015; Manuel Rüger <mrueg@gentoo.org>
-  -files/fsviewer-0.2.5-windowmaker.patch, -fsviewer-0.2.5.ebuild:
-  Remove old.
+*fsviewer-0.2.6 (09 Aug 2015)
 
-  02 Mar 2015; Agostino Sarubbo <ago@gentoo.org> fsviewer-0.2.6.ebuild:
-  Stable for ppc, wrt bug #507088
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/fsviewer-0.2.6-wmaker-0.95_support.patch, +fsviewer-0.2.6.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-  14 Jun 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> fsviewer-0.2.6.ebuild:
-  x86 stable wrt bug #507088
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  24 May 2014; Markos Chandras <hwoarang@gentoo.org> fsviewer-0.2.6.ebuild:
-  Stable on amd64 wrt bug #507088
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  07 Apr 2014; Samuli Suominen <ssuominen@gentoo.org> fsviewer-0.2.5.ebuild,
-  fsviewer-0.2.6.ebuild:
-  Use EAPI5 instead of EAPI1.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  11 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org> fsviewer-0.2.5.ebuild,
-  fsviewer-0.2.6.ebuild, +files/fsviewer-0.2.6-wmaker-0.95_support.patch:
-  Fix ~arch version to support new windowmaker
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> fsviewer-0.2.5.ebuild:
-  x11-libs/libPropList rename to x11-libs/libproplist
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  12 Nov 2011; Justin Lecher <jlec@gentoo.org> fsviewer-0.2.5.ebuild:
-  Corrected slotting for png and tiff
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  08 Nov 2010; Bernard Cafarelli <voyageur@gentoo.org>
-  fsviewer-0.2.5.ebuild:
-  Move to virtual/jpeg
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*fsviewer-0.2.6 (26 Jun 2010)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  26 Jun 2010; Samuli Suominen <ssuominen@gentoo.org>
-  +fsviewer-0.2.6.ebuild:
-  Version bump wrt #292835 by Mr. Anderson.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  03 Mar 2010; Samuli Suominen <ssuominen@gentoo.org> fsviewer-0.2.5.ebuild:
-  List media-libs/libpng only once in DEPEND wrt #258534.
+  Bug: https://bugs.gentoo.org/552720
 
-  22 Jul 2007; Donnie Berkholz <dberkholz@gentoo.org>;
-  fsviewer-0.2.5.ebuild:
-  Drop virtual/x11 references.
+*fsviewer-0.2.6-r1 (02 Sep 2015)
 
-  26 Jan 2006; Michele Noberasco <s4t4n@gentoo.org> fsviewer-0.2.5.ebuild:
-  Fixed DEPEND. Closes bug #150634.
-  -fsviewer-0.2.3e-r1.ebuild:
-  Wiped out previous release.
+  02 Sep 2015; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/fsviewer-0.2.6-configure.patch,
+  +files/fsviewer-0.2.6-fix_title_bar.patch, +fsviewer-0.2.6-r1.ebuild:
+  fix compilation, bug #558696
 
-  03 Sep 2006; Joshua Jackson <tsunam@gentoo.org> fsviewer-0.2.5.ebuild:
-  Stable x86; bug #144835
+  Also fix missing DSO for some libraries (libm, libX11, libXpm)
+  Also grab some fixes from http://repo.or.cz/w/fsviewer.git to fix title bar
 
-  26 Aug 2006; <nixnut@gentoo.org> fsviewer-0.2.5.ebuild:
-  Stable on ppc wrt bug #144835
+  Package-Manager: portage-2.2.20.1
 
-  23 Aug 2006; <malc@gentoo.org> fsviewer-0.2.5.ebuild:
-  Stable on amd64
-
-  22 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> metadata.xml:
-  Moved to desktop-dock.
-
-  22 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> fsviewer-0.2.5.ebuild:
-  Fixed DEPEND for modular X.
-
-*fsviewer-0.2.5 (22 Jun 2005)
-
-  22 Jun 2005; Jonathan Smith <smithj@gentoo.org>
-  +files/fsviewer-0.2.5-windowmaker.patch, +metadata.xml,
-  +fsviewer-0.2.5.ebuild:
-  added metadata and version bump which fixes #76865
-
-  28 Jun 2004; <augustus@gentoo.org> fsviewer-0.2.3e-r1.ebuild:
-  Marrked amd64.  First fsviewer tag for amd64.
-
-*fsviewer-0.2.3e-r1 (05 Jun 2003)
-
-  05 Jun 2003; robh <robh@gentoo.org> fsviewer-0.2.3e-r1.ebuild,
-  fsviewer-0.2.3e.ebuild:
-  fixed /usr/share/GNUstep sillyness.
-
-*fsviewer-0.2.3e (24 Oct 2002)
-
-  24 Oct 2002; Nick Hadaway <raker@gentoo.org> fsviewer-0.2.3e.ebuild,
-  files/digest-fsviewer-0.2.3e :
-  Initial ebuild in portage.
-
-*FSViewer.app-0.2.3d (24 Jul 2002)                                              
-  
-  24 Jul 2002; R.Wyrick <rob@wyrick.org> ChangeLog :

@@ -1,50 +1,103 @@
 # ChangeLog for net-p2p/bitcoin-cli
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/bitcoin-cli/ChangeLog,v 1.10 2015/07/17 22:16:07 blueness Exp $
+# (auto-generated from git log)
 
-*bitcoin-cli-0.11.0 (17 Jul 2015)
+*bitcoin-cli-9999 (09 Aug 2015)
+*bitcoin-cli-0.11.0 (09 Aug 2015)
+*bitcoin-cli-0.10.2 (09 Aug 2015)
+*bitcoin-cli-0.10.1 (09 Aug 2015)
+*bitcoin-cli-0.10.0-r1 (09 Aug 2015)
+*bitcoin-cli-0.9.3 (09 Aug 2015)
 
-  17 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  +bitcoin-cli-0.11.0.ebuild, metadata.xml:
-  Version bump.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +bitcoin-cli-0.9.3.ebuild, +bitcoin-cli-0.10.0-r1.ebuild,
+  +bitcoin-cli-0.10.1.ebuild, +bitcoin-cli-0.10.2.ebuild,
+  +bitcoin-cli-0.11.0.ebuild, +bitcoin-cli-9999.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*bitcoin-cli-0.10.2 (17 Jul 2015)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  17 Jul 2015; Anthony G. Basile <blueness@gentoo.org>
-  +bitcoin-cli-0.10.2.ebuild:
-  Add 0.10.2 version.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-*bitcoin-cli-0.10.1 (27 May 2015)
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  27 May 2015; Anthony G. Basile <blueness@gentoo.org>
-  +bitcoin-cli-0.10.1.ebuild:
-  Version bump.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Mar 2015; Anthony G. Basile <blueness@gentoo.org>
-  bitcoin-cli-0.10.0-r1.ebuild, bitcoin-cli-0.9.3.ebuild:
-  Update BITCOINCORE_LJR_DATE.  Keyword ~arm64 ~amd64-linux ~x86-linux
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-*bitcoin-cli-0.10.0-r1 (04 Mar 2015)
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  04 Mar 2015; Anthony G. Basile <blueness@gentoo.org>
-  +bitcoin-cli-0.10.0-r1.ebuild, -bitcoin-cli-0.10.0.ebuild,
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+  01 Oct 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Add missing remote-id type=github
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*bitcoin-cli-0.11.1 (23 Oct 2015)
+
+  23 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  +bitcoin-cli-0.11.1.ebuild:
+  bitcoincore: Bump to 0.11.1
+
+  Signed-off-by: Luke Dashjr <luke-jr+git@utopios.org>
+
+  23 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  bitcoin-cli-0.11.1.ebuild, bitcoin-cli-9999.ebuild:
+  bitcoincore 0.11.1 & 9999: hasufell's suggestions
+
+  23 Oct 2015; Julian Ospald <hasufell@gentoo.org> bitcoin-cli-0.11.1.ebuild,
   bitcoin-cli-9999.ebuild:
-  Dependency on leveldb is now handled by the eclass.
+  Revert "bitcoincore 0.11.1 & 9999: hasufell's suggestions"
 
-*bitcoin-cli-0.10.0 (23 Feb 2015)
+  This reverts commit 5be824adbd39361d273f6d7c08a15a5574ceec24.
 
-  23 Feb 2015; Anthony G. Basile <blueness@gentoo.org>
-  +bitcoin-cli-0.10.0.ebuild, bitcoin-cli-9999.ebuild:
-  Version bumps using bitcoincore.eclass
+  23 Oct 2015; Julian Ospald <hasufell@gentoo.org> -bitcoin-cli-0.11.1.ebuild:
+  Revert "bitcoincore: Bump to 0.11.1"
 
-  21 Nov 2014; Anthony G. Basile <blueness@gentoo.org> bitcoin-cli-9999.ebuild:
-  Update 9999
+  This reverts commit f0eac2dfbd1498bff1f03350c97d2d12e63e2711.
 
-*bitcoin-cli-9999 (13 Nov 2014)
+*bitcoin-cli-0.11.1 (23 Oct 2015)
 
-  13 Nov 2014; Anthony G. Basile <blueness@gentoo.org> +bitcoin-cli-9999.ebuild,
-  bitcoin-cli-0.9.3.ebuild:
-  Add -9999
+  23 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  +bitcoin-cli-0.11.1.ebuild:
+  bitcoincore: Bump to 0.11.1
 
-  10 Oct 2014; Anthony G. Basile <blueness@gentoo.org> bitcoin-cli-0.9.3.ebuild:
-  Fix dependancy on boost's version
+  Signed-off-by: Luke Dashjr <luke-jr+git@utopios.org>
+
+  23 Oct 2015; Anthony G. Basile <blueness@gentoo.org>
+  bitcoin-cli-0.11.1.ebuild, bitcoin-cli-9999.ebuild:
+  bitcoincore 0.11.1 & 9999: hasufell's suggestions
+

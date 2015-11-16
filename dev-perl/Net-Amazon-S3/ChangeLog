@@ -1,105 +1,57 @@
 # ChangeLog for dev-perl/Net-Amazon-S3
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-Amazon-S3/ChangeLog,v 1.23 2014/10/27 14:33:41 zlogene Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  27 Oct 2014; Mikle Kolyada <zlogene@gentoo.org> Net-Amazon-S3-0.560.0.ebuild,
-  Net-Amazon-S3-0.590.0.ebuild:
-  Bump to EAPI=5
+*Net-Amazon-S3-0.590.0 (09 Aug 2015)
+*Net-Amazon-S3-0.560.0 (09 Aug 2015)
 
-*Net-Amazon-S3-0.590.0 (25 Aug 2013)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +Net-Amazon-S3-0.560.0.ebuild, +Net-Amazon-S3-0.590.0.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-  25 Aug 2013; Patrick Lauer <patrick@gentoo.org> +Net-Amazon-S3-0.590.0.ebuild:
-  Bump
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  29 Jun 2013; Mikle Kolyada <zlogene@gentoo.org> Net-Amazon-S3-0.560.0.ebuild:
-  Remove dev-perl/Class-MOP dependency
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Update CPAN upstream info
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  21 Apr 2012; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.530.0.ebuild,
-  -Net-Amazon-S3-0.540.0.ebuild:
-  Cleanup
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-*Net-Amazon-S3-0.560.0 (13 Feb 2012)
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  13 Feb 2012; Torsten Veller <tove@gentoo.org> +Net-Amazon-S3-0.560.0.ebuild:
-  Version bump
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  09 Oct 2011; Torsten Veller <tove@gentoo.org> metadata.xml:
-  Remove tove from metadata.xml
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-*Net-Amazon-S3-0.540.0 (25 Sep 2011)
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  25 Sep 2011; Torsten Veller <tove@gentoo.org> +Net-Amazon-S3-0.540.0.ebuild:
-  Version bump
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.53.ebuild:
-  Cleanup
+  Bug: https://bugs.gentoo.org/552720
 
-*Net-Amazon-S3-0.530.0 (29 Aug 2011)
-
-  29 Aug 2011; Torsten Veller <tove@gentoo.org> +Net-Amazon-S3-0.530.0.ebuild:
-  Change version scheme
-
-  14 Apr 2011; Torsten Veller <tove@gentoo.org> Net-Amazon-S3-0.53.ebuild:
-  Class-MOP was merge with Moose-2
-
-  11 Jun 2010; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.52.ebuild:
-  Cleanup
-
-  31 May 2010; Torsten Veller <tove@gentoo.org> Net-Amazon-S3-0.53.ebuild:
-  Depend on DateTime-Format-HTTP and Digest-MD5-File (#322121). Thanks to
-  Michele Beltrame
-
-*Net-Amazon-S3-0.53 (23 Apr 2010)
-
-  23 Apr 2010; Robin H. Johnson <robbat2@gentoo.org>
-  +Net-Amazon-S3-0.53.ebuild:
-  Version bump via perl-bump experimental tool.
-
-  16 Jul 2009; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.50.ebuild,
-  -Net-Amazon-S3-0.51.ebuild:
-  Cleanup
-
-*Net-Amazon-S3-0.52 (03 Jul 2009)
-
-  03 Jul 2009; Torsten Veller <tove@gentoo.org> +Net-Amazon-S3-0.52.ebuild:
-  Version bump
-
-*Net-Amazon-S3-0.51 (09 Jun 2009)
-
-  09 Jun 2009; Torsten Veller <tove@gentoo.org> +Net-Amazon-S3-0.51.ebuild:
-  Version bump
-
-  13 Mar 2009; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.45.ebuild,
-  -Net-Amazon-S3-0.49.ebuild:
-  Cleanup
-
-*Net-Amazon-S3-0.50 (02 Mar 2009)
-
-  02 Mar 2009; Robin H. Johnson <robbat2@gentoo.org>
-  +Net-Amazon-S3-0.50.ebuild:
-  Version bump via perl-bump experimental tool.
-
-  15 Jan 2009; Torsten Veller <tove@gentoo.org> -Net-Amazon-S3-0.48.ebuild,
-  Net-Amazon-S3-0.49.ebuild:
-  Fix dependencies. Cleanup
-
-*Net-Amazon-S3-0.49 (13 Jan 2009)
-
-  13 Jan 2009; Robin H. Johnson <robbat2@gentoo.org>
-  +Net-Amazon-S3-0.49.ebuild:
-  Version bump via perl-bump experimental tool.
-
-*Net-Amazon-S3-0.48 (08 Dec 2008)
-
-  08 Dec 2008; Robin H. Johnson <robbat2@gentoo.org>
-  +Net-Amazon-S3-0.48.ebuild:
-  Version bump.
-
-*Net-Amazon-S3-0.45 (22 Aug 2008)
-
-  22 Aug 2008; Torsten Veller <tove@gentoo.org> +metadata.xml,
-  +Net-Amazon-S3-0.45.ebuild:
-  Initial commit. Based on ebuild by Michael Stringer in bug #220042

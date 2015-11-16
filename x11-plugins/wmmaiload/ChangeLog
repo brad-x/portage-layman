@@ -1,149 +1,58 @@
 # ChangeLog for x11-plugins/wmmaiload
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmmaiload/ChangeLog,v 1.38 2014/08/10 20:07:24 slyfox Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> wmmaiload-2.2.1-r1.ebuild,
-  wmmaiload-2.3.0.ebuild:
-  QA: drop trailing '.' from DESCRIPTION
+*wmmaiload-2.3.0 (09 Aug 2015)
+*wmmaiload-2.2.1-r1 (09 Aug 2015)
 
-*wmmaiload-2.3.0 (24 Apr 2014)
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/wmmaiload-2.2.1-checkthread.patch, +files/wmmaiload-2.2.1-gtk.patch,
+  +metadata.xml, +wmmaiload-2.2.1-r1.ebuild, +wmmaiload-2.3.0.ebuild:
+  proj/gentoo: Initial commit
 
-  24 Apr 2014; Bernard Cafarelli <voyageur@gentoo.org>
-  wmmaiload-2.2.1-r1.ebuild, +wmmaiload-2.3.0.ebuild:
-  Fix compilation with current openssl, version bump, fixes bug #507984
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  07 Apr 2014; Samuli Suominen <ssuominen@gentoo.org> wmmaiload-2.2.1-r1.ebuild:
-  Use EAPI5 instead of EAPI1.
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wmmaiload-2.2.1-r1.ebuild:
-  dev-util/pkgconfig -> virtual/pkgconfig
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  28 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
-  wmmaiload-2.2.1-r1.ebuild:
-  Fix slot-dep on gtk+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  31 Aug 2010; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-2.2.1-r1.ebuild,
-  files/wmmaiload-2.2.1-checkthread.patch:
-  Fixed nasty bug the wmmaiload compilation fails and a *binary version present in the tarball* is installed.
-  Fixes bug #334001.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Jun 2009; Tiago Cunha <tcunha@gentoo.org> wmmaiload-2.2.1-r1.ebuild:
-  stable sparc, bug 215651
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  22 Jan 2008; Samuli Suominen <drac@gentoo.org> -wmmaiload-1.0.2.ebuild,
-  -wmmaiload-2.2.1.ebuild:
-  Remove unused GTK+-1.2 versions.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  22 Jan 2008; Brent Baude <ranger@gentoo.org> wmmaiload-2.2.1-r1.ebuild:
-  Marking wmmaiload-2.2.1-r1 ~ppc64 for bug 205388
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  22 Jan 2008; Brent Baude <ranger@gentoo.org> wmmaiload-2.2.1-r1.ebuild:
-  Marking wmmaiload-2.2.1-r1 ppc for bug 205388
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  14 Jan 2008; Christian Faulhammer <opfer@gentoo.org>
-  wmmaiload-2.2.1-r1.ebuild:
-  stable x86, bug 205388
+  Bug: https://bugs.gentoo.org/552720
 
-*wmmaiload-2.2.1-r1 (12 Jan 2008)
-
-  12 Jan 2008; Samuli Suominen <drac@gentoo.org>
-  +files/wmmaiload-2.2.1-gtk.patch, +wmmaiload-2.2.1-r1.ebuild:
-  Use GTK+-2 and mark amd64 stable wrt #205388
-
-  12 Jan 2008; Santiago M. Mola <coldwind@gentoo.org>
-  wmmaiload-1.0.2.ebuild, wmmaiload-2.2.1.ebuild:
-  Add libXpm to DEPEND (#204541), depend on =x11-libs/gtk+-1*, misc QA fixes.
-
-  21 Feb 2007; Markus Ullmann <jokey@gentoo.org> ChangeLog:
-  Redigest for Manifest2
-
-  05 Aug 2006; Michael Hanselmann <hansmi@gentoo.org>
-  wmmaiload-2.2.1.ebuild:
-  Stable on ppc.
-
-  27 Jul 2006; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-2.2.1.ebuild:
-  Stable for x86.
-
-*wmmaiload-2.2.1 (13 Jun 2006)
-
-  13 Jun 2006; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-2.2.1.ebuild:
-  Version bump. Closes bug #136633.
-
-  31 Jan 2006; Krzysiek Pawlik <nelchael@gentoo.org> wmmaiload-1.0.2.ebuild:
-  Fixed DEPEND for modular X.
-
-  11 Apr 2005; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-1.0.1.ebuild:
-  Wiped out older version.
-
-  10 Apr 2005; Michael Hanselmann <hansmi@gentoo.org>
-  wmmaiload-1.0.2.ebuild:
-  Stable on ppc.
-
-  07 Apr 2005; Simon Stelling <blubb@gentoo.org> wmmaiload-1.0.2.ebuild:
-  stable on amd64
-
-  29 Jan 2005; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-1.0.2.ebuild:
-  Stable for x86. Fix copyright headers.
-  wmmaiload-1.0.1.ebuild:
-  Fix copyright headers.
-
-*wmmaiload-1.0.2 (06 Dec 2004)
-
-  06 Dec 2004; Michele Noberasco <s4t4n@gentoo.org> wmmaiload-1.0.2.ebuild:
-  Version bump. Closes #73386.
-  wmmaiload-1.0.1.ebuild:
-  Added gtk+ dependency as it is needed by wmmaiload-config.
-  wmmaiload-0.6.0.ebuild:
-  Wipe out older ebuild.
-
-  24 Nov 2004; Jason Wever <weeve@gentoo.org> wmmaiload-1.0.1.ebuild:
-  Added ~sparc keyword.
-
-  19 Oct 2004; Dylan Carlson <absinthe@gentoo.org> wmmaiload-1.0.1.ebuild:
-  Stable on amd64.
-
-  02 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  wmmaiload-0.6.0.ebuild, wmmaiload-1.0.1.ebuild:
-  Masked wmmaiload-1.0.1.ebuild stable for ppc
-
-  02 Sep 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
-  wmmaiload-0.6.0.ebuild:
-  Masked wmmaiload-0.6.0.ebuild stable for ppc
-
-  13 Jul 2004; Michele Noberasco <s4t4n@gentoo.org>; wmmaiload-1.0.1.ebuild:
-  Stable for x86.
-
-*wmmaiload-1.0.1 (04 Jul 2004)
-
-  04 Jul 2004; Michele Noberasco <s4t4n@gentoo.org>; wmmaiload-1.0.1.ebuild:
-  Version bump.
-  wmmaiload-0.10.0.ebuild:
-  Clean up old masked versions...
-
-  12 May 2004; Daniel Ahlberg <aliz@gentoo.org> wmmaiload-0.10.0.ebuild:
-  Removed S=.
-
-  13 Apr 2004; Don Seiler <rizzo@gentoo.org>; wmmaiload-0.10.0.ebuild,
-  wmmaiload-0.6.0.ebuild:
-  Changed dependency to virtual/x11 to work with x11-base/xorg-x11
-
-  22 Mar 2004; Don Seiler <rizzo@gentoo.org>; wmmaiload-0.10.0.ebuild:
-  Using dockapps.org mirror, as author's site seems to be down.
-
-*wmmaiload-0.10.0 (21 Mar 2004)
-
-  21 Mar 2004; Don Seiler <rizzo@gentoo.org>; wmmaiload-0.10.0.ebuild:
-  Version bump
-
-  13 Mar 2004; David Holm <dholm@gentoo.org> wmmaiload-0.6.0.ebuild:
-  Added to ~ppc.
-
-  12 Jun 2003; <msterret@gentoo.org> wmmaiload-0.6.0.ebuild:
-  add Header
-
-*wmmaiload-0.6.0 (29 Oct 2002)
-
-  29 Oct 2002; Brad Cowan <bcowan@gentoo.org> wmmaiload-0.6.0.ebuild,
-  ChangeLog, files/digest-wmmaiload-0.6.0 :
-  
-  Initial import thanks to Autobot.

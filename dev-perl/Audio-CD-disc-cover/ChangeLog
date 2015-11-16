@@ -1,102 +1,56 @@
 # ChangeLog for dev-perl/Audio-CD-disc-cover
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Audio-CD-disc-cover/ChangeLog,v 1.29 2014/12/07 13:24:56 zlogene Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  07 Dec 2014; Mikle Kolyada <zlogene@gentoo.org>
-  Audio-CD-disc-cover-0.05-r1.ebuild:
-  Drop dev-lang/perl dependency
+*Audio-CD-disc-cover-0.05-r1 (09 Aug 2015)
 
-  24 Apr 2014; Mikle Kolyada <zlogene@gentoo.org>
-  -Audio-CD-disc-cover-0.05.ebuild, Audio-CD-disc-cover-0.05-r1.ebuild:
-  alpha/amd64/ia64/ppc/sparc/x86 stable; Drop old.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +Audio-CD-disc-cover-0.05-r1.ebuild, +metadata.xml:
+  proj/gentoo: Initial commit
 
-*Audio-CD-disc-cover-0.05-r1 (25 Aug 2013)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  25 Aug 2013; Ian Delaney <idella4@gentoo.org>
-  +Audio-CD-disc-cover-0.05-r1.ebuild, Audio-CD-disc-cover-0.05.ebuild:
-  Change of tack; restore -0.05.ebuild to preserve stable version, -0.05-r1
-  becomes the EAPI bumped version
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  25 Aug 2013; Ian Delaney <idella4@gentoo.org> Audio-CD-disc-cover-0.05.ebuild:
-  bump -> EAPI 5
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  14 Aug 2009; Torsten Veller <tove@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Fix HOMEPAGE and SRC_URI
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  14 Jan 2007; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Ebuild maintenance
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  04 Aug 2006; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Adding perl dep; fixed DEPEND
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  03 Jul 2006; Christian Hartmann <ian@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Fixed RDEPEND wrt bug #134781; fixed DEPEND
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  13 Feb 2006; <mcumming@gentoo.org> Audio-CD-disc-cover-0.05.ebuild:
-  Virtual for perl-core dep
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  30 Dec 2005; <mcumming@gentoo.org> Audio-CD-disc-cover-0.05.ebuild:
-  Migrating libnet to perl-core
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  02 Oct 2005; Aron Griffis <agriffis@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Mark 0.05 stable on ia64
+  Bug: https://bugs.gentoo.org/552720
 
-  25 Aug 2005; Aron Griffis <agriffis@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  add ~ia64
-
-  20 Jul 2005; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Bug 99044 one more time, this time with a working SRC_URI - thanks Julien :)
-
-  19 Jul 2005; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Fixed HOMEPAGE
-
-  18 Jul 2005; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  Moving src to our mirrors - disappeared upstream for now, but still a dep for
-  other packages. Bug 99044
-
-  25 May 2005; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  dev-perl/MIME-Base64 => perl-core/MIME-Base64 migration
-
-  24 May 2005; Michael Cummings <mcummings@gentoo.org>
-  Audio-CD-disc-cover-0.05.ebuild:
-  dev-perl/Digest-MD5 => perl-core/Digest-MD5
-
-  07 Jun 2003; <rac@gentoo.org> Audio-CD-disc-cover-0.05.ebuild:
-  Add IUSE
-
-*Audio-CD-disc-cover-0.05 (07 May 2003)
-
-  07 May 2003; <rac@gentoo.org> Audio-CD-disc-cover-0.04-r1.ebuild,
-  Audio-CD-disc-cover-0.04-r1.ebuild, Audio-CD-disc-cover-0.04.ebuild,
-  Audio-CD-disc-cover-0.04.ebuild, Audio-CD-disc-cover-0.05.ebuild:
-  Version bump, cleanout, and upstream distfiles source move. Thanks to Felix
-  Kurth <felix@fkurth.de> in bug #12908.
-
-  06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
-  29 Oct 2002; Seemant Kulleen <seemant@gentoo.org> ChangeLog  :
-  forced version bump to install into correct locations
-
-*Audio-CD-disc-cover-0.04 (18 Jun 2002)
-
-  20 Sep 2002; Mike Frysinger <vapier@gentoo.org> :
-  Old HOMEPAGE has moved ...
-
-  30 Jul 2002; Calum Selkirk <cselkirk@gentoo.org> Audio-CD-disc-cover-0.04.ebuild:
-
-  Added ppc to KEYWORDS. Added RDEPEND.
-
-  18 Jun 2002; Arcady Genkin <agenkin@thpoon.com>
-	Audio-CD-disc-cover-0.04.ebuild:
-
-  Initial version by Felix Kurth <felix@fkurth.de>.

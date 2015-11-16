@@ -1,47 +1,79 @@
 # ChangeLog for net-libs/libnftnl
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnftnl/ChangeLog,v 1.9 2014/12/18 16:28:17 mrueg Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-*libnftnl-1.0.3 (18 Dec 2014)
+*libnftnl-1.0.3 (09 Aug 2015)
 
-  18 Dec 2014; Manuel Rüger <mrueg@gentoo.org> +libnftnl-1.0.3.ebuild,
-  -libnftnl-1.0.2.ebuild:
-  Version bump. Cleanup old.
-
-  24 Sep 2014; Manuel Rüger <mrueg@gentoo.org>
-  -files/libnftnl-1.0.0-91264d8.patch, -libnftnl-1.0.0-r2.ebuild:
-  Cleanup old.
-
-  26 Aug 2014; Manuel Rüger <mrueg@gentoo.org> libnftnl-1.0.2.ebuild:
-  Apply ebuild improvements suggested by dwfreed.
-
-  26 Aug 2014; Manuel Rüger <mrueg@gentoo.org> metadata.xml:
-  Add myself as maintainer. Acked by Chainsaw.
-
-*libnftnl-1.0.2 (25 Aug 2014)
-
-  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> +libnftnl-1.0.2.ebuild:
-  NMU: Version bump bug #518194.
-
-  01 Feb 2014; Steev Klimaszewski <steev@gentoo.org> libnftnl-1.0.0-r2.ebuild:
-  Add ~arm keyword. Tested by aholler on armv5
-
-*libnftnl-1.0.0-r2 (22 Jan 2014)
-
-  22 Jan 2014; Tony Vroon <chainsaw@gentoo.org> -libnftnl-1.0.0-r1.ebuild,
-  +libnftnl-1.0.0-r2.ebuild, +files/libnftnl-1.0.0-91264d8.patch:
-  My previous revert was unnecessary. This is an improved ebuild by dwfreed
-  which brings in an upstream patch and additional functionality.
-
-*libnftnl-1.0.0-r1 (20 Jan 2014)
-
-  20 Jan 2014; Tony Vroon <chainsaw@gentoo.org> -libnftnl-1.0.0.ebuild,
-  +libnftnl-1.0.0-r1.ebuild:
-  Let us actually install this shared library.
-
-*libnftnl-1.0.0 (20 Jan 2014)
-
-  20 Jan 2014; Tony Vroon <chainsaw@gentoo.org> +libnftnl-1.0.0.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +libnftnl-1.0.3.ebuild,
   +metadata.xml:
-  Initial commit, ebuild by me. Dependency of net-firewall/nftables, as
-  requested by Robin Kauffman in bug #498724.
+  proj/gentoo: Initial commit
+
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
+
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
+
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
+
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
+
+  Bug: https://bugs.gentoo.org/552720
+
+*libnftnl-1.0.4 (17 Sep 2015)
+
+  17 Sep 2015; Manuel Rüger <mrueg@gentoo.org> +libnftnl-1.0.4.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.20.1
+
+*libnftnl-1.0.5 (19 Sep 2015)
+
+  19 Sep 2015; Manuel Rüger <mrueg@gentoo.org> +libnftnl-1.0.5.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.20_p168
+
+  06 Oct 2015; Manuel Rüger <mrueg@gentoo.org> -libnftnl-1.0.3.ebuild,
+  -libnftnl-1.0.4.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.22
+
+  10 Oct 2015; Mike Frysinger <vapier@gentoo.org> libnftnl-1.0.5.ebuild:
+  inherit eutils for prune_libtool_files #562740
+

@@ -1,93 +1,56 @@
 # ChangeLog for media-fonts/shinonome
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/shinonome/ChangeLog,v 1.24 2007/07/22 07:15:34 dirtyepic Exp $
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
 
-  22 Jul 2007; Ryan Hill <dirtyepic@gentoo.org> -shinonome-0.9.10.ebuild,
-  shinonome-0.9.11.ebuild:
-  Remove virtual/x11, virtual/libc, and base system DEPENDs.  Drop old version.
+*shinonome-0.9.11 (09 Aug 2015)
 
-  18 Mar 2007; Simon Stelling <blubb@gentoo.org> shinonome-0.9.11.ebuild:
-  stable on amd64; bug 171063
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +shinonome-0.9.11.ebuild:
+  proj/gentoo: Initial commit
 
-  17 Mar 2007; nixnut <nixnut@gentoo.org> shinonome-0.9.11.ebuild:
-  Stable on ppc wrt bug 171063
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  12 Mar 2007; Raúl Porcel <armin76@gentoo.org> shinonome-0.9.11.ebuild:
-  x86 stable
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  22 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
-  Transition to Manifest2.
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  05 Jan 2007; Diego Pettenò <flameeyes@gentoo.org>
-  shinonome-0.9.10.ebuild:
-  Convert to use elog.
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  26 Nov 2006; Diego Pettenò <flameeyes@gentoo.org>
-  shinonome-0.9.11.ebuild:
-  Add ~x86-fbsd keyword, restrict binchecks and strip.
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  07 Sep 2006; Gustavo Zacarias <gustavoz@gentoo.org>
-  shinonome-0.9.11.ebuild:
-  Stable on sparc
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  11 Jul 2006; Aron Griffis <agriffis@gentoo.org> shinonome-0.9.11.ebuild:
-  Mark 0.9.11 stable on ia64
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  23 Mar 2006; Donnie Berkholz <spyderous@gentoo.org>;
-  -shinonome-0.9.8.ebuild, shinonome-0.9.10.ebuild:
-  Port to modular X.
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  11 Jan 2006; Robin H. Johnson <robbat2@gentoo.org>
-  shinonome-0.9.11.ebuild:
-  Fix DEPEND/RDEPEND for modular-X.
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  13 Sep 2005; Aron Griffis <agriffis@gentoo.org> shinonome-0.9.11.ebuild:
-  Mark 0.9.11 stable on alpha
+  Bug: https://bugs.gentoo.org/552720
 
-  15 Jul 2005; Diego Pettenò <flameeyes@gentoo.org>
-  shinonome-0.9.10.ebuild:
-  Stable on amd64.
-
-  12 Feb 2005; Yuta SATOH <nigoro@gentoo.org> shinonome-0.9.11.ebuild:
-  Stable on ppc64
-
-  20 Dec 2004; Yuta SATOH <nigoro@gentoo.org> shinonome-0.9.11.ebuild:
-  added ~ppc64
-
-*shinonome-0.9.11 (20 Oct 2004)
-
-  20 Oct 2004; Mamoru KOMACHI <usata@gentoo.org> +shinonome-0.9.11.ebuild:
-  Version bumped. Uses font.eclass.
-
-  29 Jul 2004; Danny van Dyk <kugelfang@gentoo.org> shinonome-0.9.10.ebuild:
-  Marked ~amd64.
-
-  01 Jul 2004; Jeremy Huddleston <eradicator@gentoo.org>
-  shinonome-0.9.10.ebuild, shinonome-0.9.8.ebuild:
-  virtual/glibc -> virtual/libc
-
-*shinonome-0.9.10 (27 Jul 2003)
-
-  25 Aug 2003; Mamoru KOMACHI <usata@gentoo.org> shinonome-0.9.10.ebuild:
-  Marked stable on ppc and sparc
-
-  09 Aug 2003; Mamoru KOMACHI <usata@gentoo.org> shinonome-0.9.10.ebuild:
-  Marked stable on x86 and alpha
-
-  27 Jul 2003; Mamoru KOMACHI <usata@gentoo.org> shinonome-0.9.10.ebuild:
-  Version bump, changed font directory to /usr/share/fonts/shinonome,
-  added ~alpha, ~sparc and ~ppc to KEYWORDS. This closes bug #21439
-
-  23 Jun 2003; Patrick Kursawe <phosphan@gentoo.org> :
-  moving from x11-misc to media-fonts
-
-*shinonome-0.9.8 (22 Aug 2002)
-
-  03 Mar 2003; Graham Forest <vladimir@gentoo.org> shinonome-0.9.8.ebuild:
-  Fixed small LICENSE problem
-
-  22 Aug 2002; Stuart Bouyer <stubear@gentoo.org> shinonome-0.9.8.ebuild,
-  ChangeLog:
-
-  First ebuild added, thanks to Atzm Watanabe <sitosito@p.chan.ne.jp> for
-  submitting the ebuild.

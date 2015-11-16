@@ -1,103 +1,76 @@
 # ChangeLog for sci-chemistry/openbabel-python
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel-python/ChangeLog,v 1.24 2015/06/28 11:21:54 zlogene Exp $
+# (auto-generated from git log)
 
-  28 Jun 2015; Mikle Kolyada <zlogene@gentoo.org> openbabel-python-2.3.2.ebuild:
-  x86 stable wrt bug #534618
+*openbabel-python-2.3.2 (09 Aug 2015)
 
-  05 May 2015; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Fix compilation problems, bug #547818
-
-  02 Mar 2015; Agostino Sarubbo <ago@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Stable for ppc, wrt bug #534618
-
-  31 Jan 2015; Agostino Sarubbo <ago@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Stable for amd64, wrt bug #534618
-
-  11 Jan 2015; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild,
-  +files/openbabel-python-2.3.2-swig-3.0.3.patch:
-  Fix for swig-3.0.3, #536180
-
-  11 Jan 2015; Jeroen Roovers <jer@gentoo.org>
-  -files/openbabel-python-2.3.0-py3_iterator.patch,
-  -files/openbabel-python-2.3.0-swig.patch,
-  -files/openbabel-python-2.3.0-system_openbabel.patch,
-  -files/openbabel-python-2.3.0-wrap_OBInternalCoord.patch,
-  -files/openbabel-python-2.3.1-system_openbabel.patch:
-  Old.
-
-  04 Jan 2015; Justin Lecher <jlec@gentoo.org> -openbabel-python-2.3.0.ebuild,
-  -openbabel-python-2.3.1.ebuild, openbabel-python-2.3.2.ebuild:
-  Drop old
-
-  27 Oct 2014; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Add support for py3_4
-
-  13 Oct 2013; Pacho Ramos <pacho@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Also compatible with python3_3
-
-  05 Sep 2013; Michał Górny <mgorny@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Clean up PYTHON_COMPAT from old implementations.
-
-  02 Jul 2013; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Exchange base_src_prepare() by cmake-utils_src_prepare(), #475520
-
-  29 May 2013; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Fix usage of new python r1 eclasses (missing PYTHON_REQUIRED_USE,
-  PYTHON_DEPS)
-
-  20 Feb 2013; Agostino Sarubbo <ago@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Add ~arm, wrt bug #455960
-
-  08 Feb 2013; Agostino Sarubbo <ago@gentoo.org> openbabel-python-2.3.2.ebuild:
-  Add ~ppc, wrt bug #455960
-
-  23 Dec 2012; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild,
-  metadata.xml:
-  Add proposed enhancements by mgorny, #448118
-
-*openbabel-python-2.3.2 (06 Dec 2012)
-
-  06 Dec 2012; Justin Lecher <jlec@gentoo.org> +openbabel-python-2.3.2.ebuild,
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
   +files/openbabel-python-2.3.2-bindings_only.patch,
-  +files/openbabel-python-2.3.2-testpybel.patch:
-  Version Bump prepared by Reinis Danne, #439434
+  +files/openbabel-python-2.3.2-swig-3.0.3.patch,
+  +files/openbabel-python-2.3.2-testpybel.patch, +metadata.xml,
+  +openbabel-python-2.3.2.ebuild:
+  proj/gentoo: Initial commit
 
-*openbabel-python-2.3.1 (04 Mar 2012)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  04 Mar 2012; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild,
-  +openbabel-python-2.3.1.ebuild,
-  +files/openbabel-python-2.3.1-system_openbabel.patch:
-  Import Version Bump from sci overlay prepared by Reinis Danne; restrict pypy
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  14 Sep 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild:
-  Corrected the right variable (DISTUTILS_SETUP_FILES) to an array, revert the
-  other (PYTHONMOD_NAME), thanks to Arfrever noticing the mistake
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
 
-  13 Sep 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild,
-  metadata.xml:
-  Python.eclass wants an array
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
 
-  09 May 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild:
-  Fix for Prefixed installation
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
 
-  28 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
-  openbabel-python-2.3.0.ebuild,
-  +files/openbabel-python-2.3.0-system_openbabel.patch:
-  Don't use cmake. Use system libopenbabel.
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
 
-  29 Mar 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild:
-  Depend on >=swig-2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  28 Mar 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild,
-  +files/openbabel-python-2.3.0-swig.patch:
-  Sane check for swig version,
-  https://sourceforge.net/tracker/?func=detail&aid=3253693&group_id=40728&atid=
-  428740
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-*openbabel-python-2.3.0 (26 Mar 2011)
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  26 Mar 2011; Justin Lecher <jlec@gentoo.org> +openbabel-python-2.3.0.ebuild,
-  +files/openbabel-python-2.3.0-py3_iterator.patch,
-  +files/openbabel-python-2.3.0-wrap_OBInternalCoord.patch, +metadata.xml:
-  Python Bindings for openbabel, writing by rei4dan
+  Bug: https://bugs.gentoo.org/552720
+
+  24 Sep 2015; Dion Moult <moult@gentoo.org> openbabel-python-2.3.2.ebuild:
+  profiles: mask sci-chemistry/babel for removal. Bug #552284
+
+  27 Oct 2015; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
+  Fix for gcc-5
+
+  convert mycmakeargs to be an array
+
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  11 Nov 2015; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.2.ebuild:
+  Adopt to ABIFLAGS change in python
+
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

@@ -1,60 +1,82 @@
 # ChangeLog for dev-java/hamcrest-generator
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/hamcrest-generator/ChangeLog,v 1.12 2015/07/20 21:29:54 chewi Exp $
+# (auto-generated from git log)
 
-  20 Jul 2015; James Le Cuirot <chewi@gentoo.org>
-  -files/hamcrest-1.2-no_source_in_jar.patch,
-  -files/hamcrest-generator-1.2-no_jarjar.patch, -hamcrest-generator-1.2.ebuild:
-  Drop unused version.
+*hamcrest-generator-1.3-r1 (09 Aug 2015)
+*hamcrest-generator-1.1 (09 Aug 2015)
 
-  11 Jul 2015; James Le Cuirot <chewi@gentoo.org> hamcrest-generator-1.1.ebuild,
-  hamcrest-generator-1.2.ebuild:
-  Drop java on ia64.
+  09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/1.1-build.xml.patch, +files/hamcrest-generator-1.3-no_jarjar.patch,
+  +hamcrest-generator-1.1.ebuild, +hamcrest-generator-1.3-r1.ebuild,
+  +metadata.xml:
+  proj/gentoo: Initial commit
 
-*hamcrest-generator-1.1 (28 Feb 2014)
+  This commit represents a new era for Gentoo:
+  Storing the gentoo-x86 tree in Git, as converted from CVS.
 
-  28 Feb 2014; Johann Schmitz <ercpe@gentoo.org> +files/1.1-build.xml.patch,
-  +hamcrest-generator-1.1.ebuild:
-  Backported ebuild to 1.1 (:0) as a dependency of jmock:2
+  This commit is the start of the NEW history.
+  Any historical data is intended to be grafted onto this point.
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
+  Creation process:
+  1. Take final CVS checkout snapshot
+  2. Remove ALL ChangeLog* files
+  3. Transform all Manifests to thin
+  4. Remove empty Manifests
+  5. Convert all stale $Header$/$Id$ CVS keywords to non-expanded Git $Id$
+  5.1. Do not touch files with -kb/-ko keyword flags.
+
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+  X-Thanks: Alec Warner <antarus@gentoo.org> - did the GSoC 2006 migration
+  tests
+  X-Thanks: Robin H. Johnson <robbat2@gentoo.org> - infra guy, herding this
+  project
+  X-Thanks: Nguyen Thai Ngoc Duy <pclouds@gentoo.org> - Former Gentoo
+  developer, wrote Git features for the migration
+  X-Thanks: Brian Harring <ferringb@gentoo.org> - wrote much python to improve
+  cvs2svn
+  X-Thanks: Rich Freeman <rich0@gentoo.org> - validation scripts
+  X-Thanks: Patrick Lauer <patrick@gentoo.org> - Gentoo dev, running new 2014
+  work in migration
+  X-Thanks: Michał Górny <mgorny@gentoo.org> - scripts, QA, nagging
+  X-Thanks: All of other Gentoo developers - many ideas and lots of paint on
+  the bikeshed
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Use https by default
+
+  Convert all URLs for sites supporting encrypted connections from http to
+  https
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> hamcrest-generator-1.1.ebuild,
   hamcrest-generator-1.3-r1.ebuild:
-  Stable for ppc64, wrt bug #476958
+  Enable https for all google URIs
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Aug 2015; Justin Lecher <jlec@gentoo.org> hamcrest-generator-1.1.ebuild,
   hamcrest-generator-1.3-r1.ebuild:
-  Stable for ppc, wrt bug #476958
+  Convert URIs for googlecode.com to https
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  hamcrest-generator-1.3-r1.ebuild:
-  Stable for x86, wrt bug #476958
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
-  20 Oct 2013; Agostino Sarubbo <ago@gentoo.org>
-  hamcrest-generator-1.3-r1.ebuild:
-  Stable for amd64, wrt bug #476958
+  24 Aug 2015; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Revert DOCTYPE SYSTEM https changes in metadata.xml
 
-  01 Sep 2013; Fabian Groffen <grobian@gentoo.org>
-  hamcrest-generator-1.3-r1.ebuild:
-  Marked *-macos
+  repoman does not yet accept the https version.
+  This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
-  27 Jun 2013; Alexis Ballier <aballier@gentoo.org>
-  hamcrest-generator-1.2.ebuild, hamcrest-generator-1.3-r1.ebuild:
-  keyword ~amd64-fbsd
+  Bug: https://bugs.gentoo.org/552720
 
-*hamcrest-generator-1.3-r1 (17 Jun 2013)
+  01 Sep 2015; Tobias Klausmann <klausman@gentoo.org>
+  hamcrest-generator-1.1.ebuild, hamcrest-generator-1.3-r1.ebuild:
+  Fixing HOMEPAGE move due to code.google.com shutdown
 
-  17 Jun 2013; Tom Wijsman <TomWij@gentoo.org>
-  +hamcrest-generator-1.3-r1.ebuild, -hamcrest-generator-1.3.ebuild:
-  Revision bump; depend on new qdox revision to break dependency cycle.
+  Package-Manager: portage-2.2.20.1
 
-*hamcrest-generator-1.3 (15 Jun 2013)
-*hamcrest-generator-1.2 (15 Jun 2013)
+  07 Sep 2015; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  ADd missing remote-id entries
 
-  15 Jun 2013; Tom Wijsman <TomWij@gentoo.org>
-  +files/hamcrest-1.2-no_source_in_jar.patch,
-  +files/hamcrest-generator-1.2-no_jarjar.patch,
-  +files/hamcrest-generator-1.3-no_jarjar.patch, +hamcrest-generator-1.2.ebuild,
-  +hamcrest-generator-1.3.ebuild, +metadata.xml:
-  Added dev-java/hamcrest-generator-{1.2,1.3} to the Portage tree, dependency of
-  hamcrest-core-{1.2,1.3} which is a dependency of the new junit. Fixes bug
-  #287760, contributed by Daniel Solano Gómez.
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
