@@ -30,6 +30,26 @@
 
 #--- END OF EXAMPLES ---
 
+# Michael Palimaka <kensington@gentoo.org> (18 Nov 2015)
+# Ebuilds unfinished work-in-progress. Dead upstream.
+# Masked for removal in 30 days. Bug #550234.
+app-pda/libopensync
+app-pda/libopensync-plugin-file
+app-pda/libopensync-plugin-gnokii
+app-pda/libopensync-plugin-gpe
+app-pda/libopensync-plugin-irmc
+app-pda/libopensync-plugin-moto
+app-pda/libopensync-plugin-palm
+app-pda/libopensync-plugin-python
+app-pda/libopensync-plugin-sunbird
+app-pda/libopensync-plugin-synce-rra
+app-pda/libopensync-plugin-syncml
+app-pda/libopensync-plugin-vformat
+app-pda/libsyncml
+app-pda/msynctool
+app-pda/multisync-gui
+app-pda/osynctool
+
 # Andreas K. Hüttel <dilfridge@gentoo.org> (13 Nov 2015)
 # dev-perl/Coro is incompatible with Perl 5.22 and there is no fix
 # in sight. Masking it and its reverse dependencies for removal in
@@ -68,13 +88,17 @@ sci-chemistry/pymol-apbs-plugin
 # Michał Górny <mgorny@gentoo.org> (11 Nov 2015)
 # Cleaned up Python versions masked for testing:
 # - python-config-X.Y compatibility removed,
+# - python[23] choice is now stored in config file rather than symlink,
+# - eselect-python reworked to reuse python-exec and wrap all execs,
 # - ABIFLAGS reintroduced for 3.3+.
 # Resulting API/ABI change can break reverse dependencies, especially
 # if upstream hardcodes paths or library names.
-=dev-lang/python-2.7.10-r3
-=dev-lang/python-3.3.5-r3
-=dev-lang/python-3.4.3-r3
-=dev-lang/python-3.5.0-r2
+=app-eselect/eselect-python-20151117
+=dev-lang/python-2.7.10-r4
+=dev-lang/python-3.3.5-r4
+=dev-lang/python-3.4.3-r4
+=dev-lang/python-3.5.0-r3
+=dev-lang/python-exec-2.1
 
 # Justin Lecher <jlec@gentoo.org> (10 Nov 2015)
 # Vulnerable package CVE-2014-{1932,1933}
@@ -91,129 +115,6 @@ virtual/python-imaging
 # Masked apache-2.4.17 due to broken REDIRECT_URL
 # behavior. See Gentoo bug #565348 for more details.
 =www-servers/apache-2.4.17
-
-# Pacho Ramos <pacho@gentoo.org> (09 Nov 2015)
-# GNOME 3.18 mask (#561326)
->=games-puzzle/gnome-sudoku-3.18
->=games-arcade/gnome-robots-3.18
->=games-puzzle/gnome-klotski-3.18
->=sys-apps/gnome-disk-utility-3.18
->=games-board/four-in-a-row-3.18
->=app-misc/bijiben-3.18
->=media-gfx/gnome-photos-3.18.2
->=media-sound/gnome-sound-recorder-3.18.2
->=gnome-extra/evolution-data-server-3.18.2
->=mail-client/evolution-3.18.2
->=gnome-extra/evolution-ews-3.18.2
->=app-text/gspell-0.1.1
->=games-puzzle/swell-foop-3.18.1
->=games-board/gnome-mines-3.18.2
->=games-arcade/gnome-nibbles-3.18.2
->=sci-geosciences/gnome-maps-3.18.2
->=gnome-extra/gnome-system-monitor-3.18.2
->=gnome-extra/gucharmap-3.18.2
->=app-accessibility/orca-3.18.2
->=gnome-extra/gnome-calculator-3.18.2
->=gnome-base/dconf-editor-3.18.2
->=media-gfx/eog-3.18.1
->=app-text/evince-3.18.2
->=dev-libs/libpeas-1.16
->=x11-libs/gtksourceview-3.18
->=app-editors/gedit-3.18.2
->=gnome-base/gnome-keyring-3.18.3
->=games-puzzle/gnome-taquin-3.18.2
->=games-board/iagno-3.18.2
->=net-misc/vinagre-3.18.2
->=app-editors/latexila-3.18.1
->=net-misc/vino-3.18.1
->=gnome-extra/gnome-tweak-tool-3.18.1
->=net-wireless/gnome-bluetooth-3.18.1
->=gnome-extra/gnome-documents-3.18.2
->=gnome-extra/gnome-getting-started-docs-3.18.2
->=x11-libs/vte-0.42.1
->=x11-terms/gnome-terminal-3.18.2
->=app-accessibility/at-spi2-core-2.18.2
->=dev-util/gdbus-codegen-2.46
->=dev-libs/glib-2.46.2
->=gnome-extra/gnome-contacts-3.18.1
->=gnome-base/gnome-desktop-3.18
->=net-libs/gnome-online-accounts-3.18.2.1
->=gnome-base/gnome-settings-daemon-3.18.2
->=gnome-base/gnome-control-center-3.18.2
->=gnome-base/gvfs-1.26.2
->=x11-libs/pango-1.38.1
->=x11-libs/gtk+-3.18.4
->=gnome-base/nautilus-3.18.2
->=dev-cpp/libxmlpp-2.40.1
->=dev-libs/libsigc++-2.6.2
->=net-libs/libsoup-2.52.2
->=media-video/totem-3.18.1
->=app-crypt/gcr-3.18.0
->=app-crypt/seahorse-3.18.0
->=app-dicts/gnome-dictionary-3.18.0
->=app-editors/gedit-plugins-3.18.0
->=app-editors/gedit-3.18
->=app-editors/ghex-3.18.0
->=app-misc/geoclue-2.4.0
->=app-misc/gnote-3.18.0
->=app-misc/tracker-1.6.0
->=gnome-extra/nautilus-tracker-tags-1.6.0
->=gnome-extra/yelp-xsl-3.18.1
->=app-text/yelp-tools-3.18.0
->=dev-libs/vala-common-0.30.0
->=dev-lang/vala-0.30.0
->=dev-libs/appstream-glib-0.5.3
->=dev-libs/gdl-3.18.0
->=dev-libs/gobject-introspection-common-1.46.0
->=dev-libs/gobject-introspection-1.46.0
->=dev-libs/libgweather-3.18.1
->=dev-python/pygobject-3.18.2
->=dev-util/anjuta-3.18.2
->=dev-util/devhelp-3.18.1
->=dev-util/gnome-devel-docs-3.18.1
->=games-board/gnome-chess-3.18.0
->=games-board/gnome-mahjongg-3.18.0
->=games-board/tali-3.18.0
->=games-puzzle/five-or-more-3.18.0
->=games-puzzle/gnome-tetravex-3.18.0
->=games-puzzle/lightsoff-3.18.0
->=games-puzzle/quadrapassel-3.18.0
->=gnome-base/gnome-common-3.18.0
->=gnome-base/gnome-session-3.18.1.2
->=gnome-base/gsettings-desktop-schemas-3.18.1
->=gnome-base/libgtop-2.32.0
->=gnome-extra/gnome-boxes-3.18.1
->=dev-libs/libgit2-glib-0.23.6
->=gnome-extra/gnome-builder-3.18.1
->=gnome-extra/gnome-calendar-3.18.1
->=gnome-extra/gnome-characters-3.18.1
->=gnome-extra/gnome-clocks-3.18.0
->=gnome-extra/gnome-color-manager-3.18.0
->=gnome-extra/gnome-logs-3.18.1
->=gnome-extra/gnome-power-manager-3.18.0
->=gnome-extra/gnome-user-docs-3.18.1
->=gnome-extra/gnome-user-share-3.18.0
->=gnome-extra/gnome-weather-3.18.1
->=gnome-extra/gtkhtml-4.10.0
->=gnome-extra/sushi-3.18.0
->=gnome-extra/yelp-3.18.1
->=gnome-extra/zenity-3.18.1.1
->=media-gfx/gnome-screenshot-3.18.0
->=media-libs/cogl-1.22.0
->=media-libs/clutter-1.24.2
->=media-libs/clutter-gtk-1.6.6
->=media-libs/grilo-0.2.14
->=media-plugins/grilo-plugins-0.2.16
->=media-sound/gnome-music-3.18.0
->=media-sound/sound-juicer-3.18.0
->=net-irc/polari-3.18.1
->=net-libs/glib-networking-2.46.1
->=net-misc/rygel-0.28.1
->=sci-geosciences/geocode-glib-3.18.0
->=sys-apps/baobab-3.18.1
->=x11-themes/adwaita-icon-theme-3.18.0
->=x11-themes/gnome-backgrounds-3.18.0
->=x11-themes/gnome-themes-standard-3.18.0
 
 # Pacho Ramos <pacho@gentoo.org> (09 Nov 2015)
 # Not properly installed, dead for ages, upstream
@@ -255,10 +156,6 @@ dev-perl/Parse-CPAN-Meta
 # Mask new versions of dev-php/pecl-yaml that only work with PHP-7+
 >=dev-php/pecl-yaml-2.0
 
-# Michael Orlitzky <mjo@gentoo.org> (05 Nov 2015)
-# Masked for testing: the ./configure handling was largely rewritten.
-=dev-lang/php-5.6.15-r3
-
 # Michał Górny <mgorny@gentoo.org> (30 Oct 2015)
 # Uses unsafe ioctls that could result in data corruption. Upstream
 # is working on replacing them in the wip/dedup-syscall branch.
@@ -294,11 +191,6 @@ dev-db/octopus
 # Breaking changes #563540
 =app-text/ghostscript-gpl-9.18
 
-# James Le Cuirot <chewi@gentoo.org> (19 Oct 2015)
-# Dead projects with no revdeps. Removal in 30 days.
-dev-java/commons-attributes
-dev-java/xjavadoc
-
 # Mike Frysinger <vapier@gentoo.org> (18 Oct 2015)
 # apache-2.4.17 includes support for http2 now.
 www-apache/mod_h2
@@ -328,16 +220,6 @@ dev-java/jakarta-jstl
 # 2015, bug 536852.
 # Masked for removal in 30 days.
 =dev-lang/ruby-1.9*
-
-# Patrice Clement <monsieurp@gentoo.org> (6 Oct 2015)
-# No update since 2008. Masked for removal in 30 days.
-# See bug #562370.
-dev-java/cos
-
-# Patrice Clement <monsieurp@gentoo.org> (6 Oct 2015)
-# Dead upstream. Masked for removal in 30 days.
-# See bug #562370.
-dev-java/commons-grant
 
 # Mike Pagano <mpagano@gentoo.org> (2 Oct 2015)
 # A regression in kernel 4.1.9 could lead to a system

@@ -1079,9 +1079,10 @@ unipatch() {
 			# https://bugs.gentoo.org/show_bug.cgi?id=507656                   #
 			####################################################################
 			if [[ ${PN} == "git-sources" ]] ; then
-				if [[ ${KV_MAJOR}${KV_PATCH} -ge 315 && ${RELEASETYPE} == -rc ]] ; then
+				if [[ ${KV_MAJOR} -gt 3 || ( ${KV_MAJOR} -eq 3 && ${KV_PATCH} -gt 15 ) &&
+					${RELEASETYPE} == -rc ]] ; then
 					ebegin "Applying ${i/*\//} (-p1)"
-					if [ $(patch -p1 --no-backup-if-mismatch -f < ${i} >> ${STDERR_T}) "$?" -eq 0 ]; then
+					if [ $(patch -p1 --no-backup-if-mismatch -f < ${i} >> ${STDERR_T}) "$?" -le 2 ]; then
 						eend 0
 						rm ${STDERR_T}
 						break

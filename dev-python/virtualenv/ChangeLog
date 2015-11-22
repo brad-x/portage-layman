@@ -144,3 +144,27 @@
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="sparc"
 
+  16 Nov 2015; Agostino Sarubbo <ago@gentoo.org> virtualenv-13.1.2.ebuild:
+  ia64 stable wrt bug #564588
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="ia64"
+
+  17 Nov 2015; Justin Lecher <jlec@gentoo.org> virtualenv-13.1.2.ebuild:
+  Remove unnecessary dependency on pip & setuptools
+
+  Bundled dev-python/{pip,setuptools,argparse,wheel} cannot be removed,
+  as we have a chicken and egg problem here. In the new virtualenv we
+  need those packages to install them.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=566022
+
+  Package-Manager: portage-2.2.23
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  19 Nov 2015; Agostino Sarubbo <ago@gentoo.org> virtualenv-13.1.2.ebuild:
+  alpha stable wrt bug #564588
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="alpha"
+

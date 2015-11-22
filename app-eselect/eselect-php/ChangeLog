@@ -79,3 +79,28 @@
 
   Package-Manager: portage-2.2.20.1
 
+*eselect-php-0.7.1-r5 (19 Nov 2015)
+
+  19 Nov 2015; Michael Orlitzky <mjo@gentoo.org> +eselect-php-0.7.1-r5.ebuild,
+  +files/php-fpm.init-r2:
+  new revision removing php-fpm init dependencies.
+
+  This new revision exists mainly to pull in a new version of the
+  php-fpm init script. Some minor ebuild cleanup was also done.
+
+  The first fix to the init script is to remove "need net" (bug
+  514872). The php-fpm daemon runs on 127.0.0.1 by default and should
+  not bring up any other interfaces. Users are encouraged to use
+  rc_need="net.eth0" or similar if they move the daemon to another
+  interface.
+
+  The second init script change removes the webserver dependencies (bug
+  471018). The web servers require php-fpm, not the other way around.
+
+  Finally, some other cosmetic changes were made to the init script.
+
+  Gentoo-Bug: 471018
+  Gentoo-Bug: 514872
+
+  Package-Manager: portage-2.2.20.1
+

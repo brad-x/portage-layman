@@ -63,3 +63,23 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*eselect-python-20151117 (17 Nov 2015)
+
+  17 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  +eselect-python-20151117.ebuild, eselect-python-99999999.ebuild:
+  Bump to 20151117
+
+  The new version no longer alters executable symlinks but instead
+  replaces all executables with python-exec wrappers, relying on changes
+  done in revbump of all dev-lang/python versions. Furthermore, the choice
+  of split python[23] interpreters is done in a config file rather than
+  through symlinks.
+
+  17 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  eselect-python-20151117.ebuild, eselect-python-99999999.ebuild:
+  Preserve previous python[23] selection
+
+  17 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  eselect-python-20151117.ebuild, eselect-python-99999999.ebuild:
+  Update blockers to match revbumped pythons
+

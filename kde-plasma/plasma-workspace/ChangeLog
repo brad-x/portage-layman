@@ -142,3 +142,24 @@
 
   Package-Manager: portage-2.2.24
 
+  12 Nov 2015; Michael Palimaka <kensington@gentoo.org>
+  +files/plasma-workspace-5.4.3-fix-drkonqi.patch:
+  add missing patch
+
+  Package-Manager: portage-2.2.24
+
+*plasma-workspace-5.4.3-r1 (19 Nov 2015)
+
+  19 Nov 2015; Michael Palimaka <kensington@gentoo.org>
+  +files/plasma-workspace-5.4.3-no-SUID-no-GUID.patch,
+  +plasma-workspace-5.4.3-r1.ebuild:
+  USE=pam, fix setuid, block kdebase-pam:4
+
+  SUID optional per kcheckpass/README, only required for shadow based login
+  setuid code in upstream cmake does not work, do it manually instead if
+  USE=-pam
+  Block kdebase-pam which sneakily sabotaged plasma-workspace in /etc/pam.d,
+  leading to broken screenlocker bugs like #564618
+
+  Package-Manager: portage-2.2.24
+

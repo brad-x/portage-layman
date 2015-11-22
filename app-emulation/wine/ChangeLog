@@ -217,3 +217,44 @@
 
   Package-Manager: portage-2.2.23
 
+*wine-1.7.54 (15 Nov 2015)
+
+  15 Nov 2015; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.7.54.ebuild,
+  wine-9999.ebuild:
+  Version bump to 1.7.54.  Drop default prelink flag.
+
+  Wine 1.7.54 adds a patch to use the system linker if possible before
+  attempting to use prelink.  As such, dropping default status for prelink.
+  Hardened users are unable to take advantage of this and may still want to
+  unmask and use the prelink flag, though this isn't well supported.
+
+  Package-Manager: portage-2.2.23
+
+*wine-1.7.54-r1 (15 Nov 2015)
+
+  15 Nov 2015; NP-Hardass <NP-Hardass@gentoo.org> -wine-1.7.54.ebuild,
+  +wine-1.7.54-r1.ebuild, wine-9999.ebuild:
+  Revbump 1.7.54. Fixes bug due to move of .desktop file
+
+  Thanks to karolherbst for reporting
+
+  Package-Manager: portage-2.2.23
+
+*wine-1.7.55 (16 Nov 2015)
+
+  16 Nov 2015; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.7.55.ebuild,
+  wine-9999.ebuild:
+  Version bump to 1.7.55.  Pulseaudio now mainstream.
+
+  Pulseaudio support has been merged upstream.  While this means that
+  patches from Wine Staging are no longer necessary, some users may still
+  want to keep the staging flag enabled for additional patches for pulseaudio.
+
+  Package-Manager: portage-2.2.23
+
+  17 Nov 2015; NP-Hardass <NP-Hardass@gentoo.org> wine-1.7.55.ebuild,
+  wine-9999.ebuild:
+  Resolve bug #566036
+
+  Package-Manager: portage-2.2.23
+

@@ -76,3 +76,19 @@
 
   Package-Manager: portage-2.2.20.1
 
+  18 Nov 2015; James Le Cuirot <chewi@gentoo.org>
+  javacup-0.11b_p20151001.ebuild:
+  Use installed javacup over bundled where possible
+
+  Fixes bug #565338.
+
+  Annoyingly javacup bundles an older version of itself that will break
+  jflex if that has already been built against this newer version
+  beforehand. Even more annoyingly, the binary download is built with
+  Java 8, which isn't much use to us. We therefore use any installed
+  javacup that is newer than the bundled version where possible. If this
+  approach turns out to be unworkable then we may just have to use the
+  bundled jflex for bootstrapping.
+
+  Package-Manager: portage-2.2.20.1
+

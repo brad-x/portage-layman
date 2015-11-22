@@ -103,3 +103,25 @@
   busybox-9999.ebuild, +files/busybox-1.24.1-unzip.patch:
   version bump #564246
 
+  13 Nov 2015; Mike Frysinger <vapier@gentoo.org> busybox-1.24.1.ebuild,
+  busybox-9999.ebuild:
+  move USE=static default to the profile #468580
+
+  Since busybox is pulled in via the linux profile (as we use it as the
+  rescue shell there), we should have the static USE flag set via the
+  profile too rather than the ebuild.  This way we apply it only to the
+  subset of profiles where it makes sense.
+
+  For the live ebuild, we also switch to REQUIRED_USE since package.use
+  is able to override make.defaults (which is where USE=pam is set).  We
+  can see how users react to this behavior before pulling it back into
+  the released versions.
+
+  16 Nov 2015; Ulrich Müller <ulm@gentoo.org> busybox-1.24.1.ebuild,
+  busybox-9999.ebuild:
+  QA] Trigger a rebuild of the broken Manifest.
+
+  Add a notice that license is really GPL-2 only.
+
+  Package-Manager: portage-2.2.24
+

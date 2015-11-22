@@ -235,7 +235,6 @@ app-admin/sagan:pcap - Add support for network packet capture via net-libs/libpc
 app-admin/sagan:smtp - Build witch SMTP (E-Mail) support
 app-admin/sagan:snort - Add support to interact with Snort IDE using net-analyzer/snortsam'
 app-admin/sagan-rules:lognorm - Install normalize rules support with dev-libs/liblognorm
-app-admin/salt:api - Enable support for salt-api.
 app-admin/salt:cherrypy - Enable support for using cherrypy.
 app-admin/salt:gnupg - Enable support for gnupg via python-gnupg.
 app-admin/salt:keyring - Enable support for keyrings via python-keyring.
@@ -563,7 +562,7 @@ app-emulation/ganeti:htools - Enable htools support
 app-emulation/ganeti:kvm - Enable KVM support
 app-emulation/ganeti:lxc - Enable Linux Countainers support
 app-emulation/ganeti:monitoring - Enable the ganeti monitoring daemon
-app-emulation/ganeti:multiple-users - Enable support for running VMs as different users.
+app-emulation/ganeti:multiple-users - Enable support for running VMs as different users
 app-emulation/ganeti:rbd - Enable rados block device support via sys-cluster/ceph
 app-emulation/ganeti:xen - Enable Xen support
 app-emulation/libguestfs:erlang - Build Erlang bindings
@@ -650,7 +649,6 @@ app-emulation/rkt:actool - Install the actool for ACI manipulation
 app-emulation/rkt:rkt_stage1_coreos - Download and use a prebuilt stage1.aci from CoreOS
 app-emulation/rkt:rkt_stage1_host - Assemble stage1.aci from host binaries
 app-emulation/rkt:rkt_stage1_src - Build the stage1.aci from source
-app-emulation/spice:client - Build the spicec client app (does not reduce dependencies at the moment).
 app-emulation/spice:smartcard - Enable smartcard remoting using app-emulation/libcacard
 app-emulation/spice-vdagent:consolekit - Use sys-auth/consolekit to determine the master vdagentd in case of multiple running vdagentds (highly recommended)
 app-emulation/uae:scsi - Enable the uaescsi.device
@@ -1081,7 +1079,6 @@ app-office/wps-office:sharedfonts - Preserve fonts from WPS
 app-pda/barry:boost - Enable boost support
 app-pda/barry:desktop - Install the GUI desktop control panel
 app-pda/barry:gui - Install the GUI backup tool
-app-pda/barry:opensync - Install the barry-sync plugin for OpenSync 0.22
 app-pda/gtkpod:clutter - Enable clutter support for displaying coverart
 app-pda/gtkpod:webkit - Enable webkit support for finding coverart
 app-pda/libopensync-plugin-irmc:irda - Enable infrared support
@@ -1089,7 +1086,6 @@ app-pda/libopensync-plugin-syncml:http - Enable http transports
 app-pda/libopensync-plugin-syncml:obex - Enable obex transports
 app-pda/libsyncml:http - Enable http transports
 app-pda/libsyncml:obex - Enable obex transports
-app-pda/synce-sync-engine:opensync - Enable OpenSync (app-pda/libopensync) python plug-in
 app-portage/conf-update:colordiff - Use colors when displaying diffs (app-misc/colordiff)
 app-portage/eix:debug - Build with upstream's CXXFLAGS/LDFLAGS for debugging support; not recommended for normal use.
 app-portage/eix:dep - Make DEP=true the default which enables support for {,R,P}DEPEND but requires roughly double disk and memory.
@@ -1715,7 +1711,6 @@ dev-java/gnu-classpath:gtk - Build with Gtk+ AWT peers
 dev-java/gnu-classpath:qt4 - Build with Qt4 AWT peers
 dev-java/gnu-classpath:xml - Build with native XML backend
 dev-java/ibm-jdk-bin:javacomm - Enable Java Communications API support
-dev-java/icedtea:awt - Install non-headless AWT libraries, needed by some GUIs (used to be X flag)
 dev-java/icedtea:cacao - Use the CACAO virtual machine rather than HotSpot.
 dev-java/icedtea:headless-awt - Don't install the X backend for AWT, needed by some GUIs (used to be X flag)
 dev-java/icedtea:infinality - Enable better font rendering using fontconfig.
@@ -2332,10 +2327,10 @@ dev-python/kazoo:gevent - Enable support for the gevent based handler
 dev-python/kombu:amqplib - Enable amqplib support
 dev-python/kombu:msgpack - Enables MessagePack (de)serializer for Python
 dev-python/kombu:sqs - Enables Amazon SQS transport module for Kombu
-dev-python/lxml:beautifulsoup3 - Enable support for Beautiful Soup 3
 dev-python/markdown:pygments - Enable fancy pygments support
 dev-python/matplotlib:excel - Pull dev-python/xlwt for the exceltools toolkit
-dev-python/matplotlib:gtk3 - Use x11-libs/gtk+:3 instead of x11-libs/gtk+:2
+dev-python/matplotlib:gtk2 - Enable x11-libs/gtk+:2 support
+dev-python/matplotlib:gtk3 - Enable x11-libs/gtk+:3 support
 dev-python/matplotlib:pyside - Qt support via dev-python/pyside
 dev-python/mpmath:matplotlib - Add support for dev-python/matplotlib
 dev-python/mwlib:server - Install the daemons required when using mwlib for generating PDFs on a MediaWiki instance.
@@ -2925,6 +2920,9 @@ games-emulation/mupen64plus-video-glide64mk2:hires - Support hi-resolution textu
 games-emulation/mupen64plus-video-rice:gles2 - Use GLES2 instead of OpenGL
 games-emulation/pcsxr:cdio - Use libcdio for CD support
 games-emulation/pcsxr:sdl - Use SDL sound backend (other parts of SDL are used unconditionally)
+games-emulation/sdlmame:arcade - Enable the Multiple Arcade Machine Emulator for arcade games support
+games-emulation/sdlmame:mess - Enable the Multi Emulator Super System for game system support
+games-emulation/sdlmame:tools - Build development tools shared between sdlmame and sdlmess
 games-emulation/snes9x:netplay - Enable playing ROMs over the network (not recommended)
 games-emulation/snes9x:xrandr - Enable support for the X xrandr extension
 games-emulation/vbam:link - Enable GBA linking functionality
@@ -3145,6 +3143,7 @@ gnome-base/gvfs:archive - Enables support for accessing files in archives transp
 gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
 gnome-base/gvfs:fuse - Enables fuse mount points in $HOME/.gvfs for legacy application access
 gnome-base/gvfs:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
+gnome-base/gvfs:google - Enables support for accessing Google accounts via dev-libs/libgdata
 gnome-base/gvfs:http - Enable the HTTP/DAV backend using net-libs/libsoup-gnome
 gnome-base/gvfs:libsecret - Enable app-crypt/libsecret support to store login credentials.
 gnome-base/gvfs:nfs - Enable NFS client support via net-fs/libnfs.
@@ -4936,8 +4935,10 @@ net-analyzer/icinga:plugins - Adds support for nagios plugins
 net-analyzer/icinga:web - Adds generic web interface support
 net-analyzer/icinga-web:pnp - Enables pnp4nagios integration
 net-analyzer/icinga2:classicui - Adds support for the old interface
+net-analyzer/icinga2:lto - Adds support for link time optimization
 net-analyzer/icinga2:nano-syntax - Adds support for syntax used in the nano editor
 net-analyzer/icinga2:plugins - Adds support for nagios plugins
+net-analyzer/icinga2:studio - Adds support for Icinga-studio
 net-analyzer/linkchecker:sqlite - Mozilla Bookmark parsing
 net-analyzer/metasploit:development - Install dependencies needed for metasploit and exploit development
 net-analyzer/metasploit:oracle - Enable restricted oracle modules which have additional deps
@@ -5573,10 +5574,8 @@ net-libs/daq:pcap - Build the PCAP data acquisition module.
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/gnome-online-accounts:gnome - Use gnome-base/gnome-control-center to set GNOME online accounts preferences
-net-libs/gnutls:bindist - Disallow building LZO support, because of a license incompatibility with dev-libs/lzo
 net-libs/gnutls:crywrap - Build the crywrap TLS proxy service
 net-libs/gnutls:dane - Build libgnutls-dane, implementing DNS-based Authentication of Named Entities. Requires net-dns/unbound
-net-libs/gnutls:nettle - Use dev-libs/nettle as crypto backend
 net-libs/gnutls:openssl - Build openssl compatibility libraries
 net-libs/gnutls:pkcs11 - Add support for PKCS#11 through app-crypt/p11-kit
 net-libs/gnutls:tools - Build extra tools
@@ -7774,6 +7773,7 @@ www-apps/viewvc:pygments - Add dev-python/pygments support for syntax highlighti
 www-apps/webdavcgi:rcs - Adds support for a revision controlled backend with RCS (dev-vcs/rcs)
 www-apps/wordpress:akismet - Installs Akismet comment spam plug-in
 www-apps/wordpress:themes - Installs themes (including default theme)
+www-client/chromium:gn - Use GN (generate ninja) instead of GYP for building
 www-client/chromium:gtk3 - Use gtk3 instead of gtk2
 www-client/chromium:hangouts - Enable support for Google Hangouts features such as screen sharing
 www-client/chromium:hidpi - Enable support for high-resolution screens (high dots per inch)

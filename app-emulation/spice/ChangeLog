@@ -72,3 +72,83 @@
 
   Package-Manager: portage-2.2.23
 
+  16 Nov 2015; Agostino Sarubbo <ago@gentoo.org> spice-0.12.6.ebuild:
+  amd64 stable wrt bug #562890
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
+
+  16 Nov 2015; Christian Affolter <christian.affolter@stepping-stone.ch>
+  spice-0.12.6.ebuild:
+  Added dev-python/six build dependency
+
+  Spice requires Six, the Python 2 and 3 compatibility library, otherwise
+  the build will fail with the following error:
+
+  [...]
+  make[4]: Entering directory '/var/tmp/portage/app-
+  emulation/spice-0.12.6/work/spice-0.12.6/spice-common/common'
+  /usr/bin/python2.7 /usr/lib64/spice-protocol/spice_codegen.py --generate-
+  demarshallers --client --include common/messages.h /usr/lib64/spice-
+  protocol/spice.proto generated_client_demarshallers.c >/dev/null
+  Traceback (most recent call last):
+    File "/usr/lib64/spice-protocol/spice_codegen.py", line 7, in <module>
+      from python_modules import spice_parser
+    File "/usr/lib64/spice-protocol/python_modules/spice_parser.py", line 1,
+  in <module>
+      import six
+  ImportError: No module named six
+  Makefile:794: recipe for target 'generated_client_demarshallers.c' failed
+  make[4]: *** [generated_client_demarshallers.c] Error 1
+  make[4]: Leaving directory '/var/tmp/portage/app-
+  emulation/spice-0.12.6/work/spice-0.12.6/spice-common/common'
+  Makefile:445: recipe for target 'all-recursive' failed
+  make[3]: *** [all-recursive] Error 1
+
+*spice-0.12.6-r1 (17 Nov 2015)
+
+  17 Nov 2015; Christian Affolter <christian.affolter@stepping-stone.ch>
+  -spice-0.12.6.ebuild, +spice-0.12.6-r1.ebuild:
+  Revbump to app-emulation/spice-0.12.6-r1
+
+  As requested by @monsieurp
+
+  18 Nov 2015; Agostino Sarubbo <ago@gentoo.org> spice-0.12.6-r1.ebuild:
+  x86 stable wrt bug #562890
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="x86"
+
+  18 Nov 2015; Matthias Maier <tamiko@gentoo.org> -files/spice-0.12.5-fix-asse
+  rt-in-mjpeg_encoder_adjust_params_to_bit_rate.patch,
+  -files/spice-0.12.5-fix-crash-when-clearing-surface-memory.patch,
+  -files/spice-0.12.5-server-dont-assert-on-invalid-client-message.patch,
+  -spice-0.12.5-r1.ebuild:
+  drop vulnerable (bug #562890, CVE-2015-{5260,5261})
+
+  Drop vulnerable version 0.12.5
+
+  Gentoo-Bug: 562890
+
+  Package-Manager: portage-2.2.24
+
+*spice-0.12.6-r2 (18 Nov 2015)
+
+  18 Nov 2015; Matthias Maier <tamiko@gentoo.org> metadata.xml,
+  -spice-0.12.6-r1.ebuild, +spice-0.12.6-r2.ebuild:
+  Maintenance, drop obsolete USE=client (bug #566086)
+
+  - The client spicec has been removed from app-emulation/spice in favor of
+    app-emulation/virt-viewer. Thus, remove the now obsolete keyword and
+    associated dependencies.
+
+  - Remove (already commented out) USE="static" left-overs. This ebuild does
+    not contain any executable any more for which "static" might have made
+    sense.
+
+  Revision bump and commit straigt to stable as this is purely a cosmetic
+  change.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Matthias Maier <tamiko@gentoo.org>
+
