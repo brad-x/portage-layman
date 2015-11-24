@@ -252,3 +252,14 @@
 
   Package-Manager: portage-2.2.24
 
+  22 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.8-gentoo-install.patch, files/cmake/clang-0001-Install-clang-
+  runtime-into-usr-lib-without-suffix-3.8.patch, llvm-9999.ebuild:
+  Update the patch and ebuild partially scan-* changes
+
+  Upstream has added installation rules for scan-build and scan-view,
+  and make them FHS-aware. This is mostly neat, except that scan-view
+  expects Python modules in /usr/share. The patch and ebuild is partially
+  updated to accomodate this. It will require at least cleaning up
+  /usr/share still.
+

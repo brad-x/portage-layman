@@ -665,3 +665,33 @@
 
   Package-Manager: portage-2.2.20.1
 
+*php-7.0.0_rc7-r1 (23 Nov 2015)
+*php-5.6.15-r4 (23 Nov 2015)
+
+  23 Nov 2015; Michael Orlitzky <mjo@gentoo.org> -php-5.6.15-r3.ebuild,
+  +php-5.6.15-r4.ebuild, -php-7.0.0_rc7.ebuild, +php-7.0.0_rc7-r1.ebuild:
+  revision the 5.6.x and 7.x series to use upstream php-fpm.conf.
+
+  There are a few changes batched together here.
+
+  The main purpose of the new revisions is to stop using our bundled
+  php-fpm.conf (from php-5.3) and switch to the one provided by
+  upstream. This is bug 559116. In the 5.6.x series, this is trivial: we
+  just install the php-fpm.conf from the tarball. But in 7.x, upstream
+  has split the FPM config into pieces. Their default "include" path
+  needed to be changed for our slotting, so that has been done with a
+  `sed` in src_prepare().  We then install the split "www.conf" config
+  file in the location that was enshrined with `sed`.
+
+  Next, the autotools-utils eclass was dropped. The functionality from
+  src_configure() was inlined. This is due to the deprecation of that
+  eclass; see,
+
+    https://blogs.gentoo.org/mgorny/2015/11/13/the-ultimate-guide-to-eapi-6/
+
+  Finally, the db-use eclass was dropped. It was no longer used.
+
+  Gentoo-Bug: 559116
+
+  Package-Manager: portage-2.2.20.1
+

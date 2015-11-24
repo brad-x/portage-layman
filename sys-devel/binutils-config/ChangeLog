@@ -105,3 +105,14 @@
   +binutils-config-5-r1.ebuild, files/binutils-config-5:
   clean out dwp binary too #562524
 
+*binutils-config-5-r2 (23 Nov 2015)
+
+  23 Nov 2015; Mike Frysinger <vapier@gentoo.org>
+  -binutils-config-5-r1.ebuild, +binutils-config-5-r2.ebuild,
+  files/binutils-config-5:
+  detect broken cross-compiler rpaths #562460
+
+  We've fixed newer cross-binutils builds to use the correct rpaths to find
+  their internal libs, but existing builds remain broken.  Add some logic to
+  detect & warn users, but also create the old symlinks so they keep working.
+

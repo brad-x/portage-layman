@@ -70,3 +70,26 @@
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="sparc"
 
+*pyflakes-1.0.0 (22 Nov 2015)
+
+  22 Nov 2015; Ian Delaney <idella4@gentoo.org>
+  +files/1.0.0-fix-pypy-tests.patch, -pyflakes-0.7.3.ebuild,
+  -pyflakes-0.9.2.ebuild, +pyflakes-1.0.0.ebuild:
+  bump -> vn. 1.0.0
+
+  Re-add pypy support which never needed dropping, drop py3.3
+  and py3.5 support, add patch committed upstream fixing
+  test failures under pypy.
+
+  Pull request: https://github.com/pyflakes/pyflakes/pull/50
+  Upstream Commit: https://github.com/jayvdb/pyflakes/commit/3088ffbd6256521e0
+  213b361bc2294c1e218e6fb
+
+  Package-Manager: portage-2.2.24
+
+  23 Nov 2015; Sean Vig <sean.v.775@gmail.com> pyflakes-1.0.0.ebuild:
+  Fix location of patch
+
+  24 Nov 2015; Justin Lecher <jlec@gentoo.org> pyflakes-1.0.0.ebuild:
+  Add python3_3 target to version 1.0.0
+

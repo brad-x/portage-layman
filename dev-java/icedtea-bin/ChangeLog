@@ -187,3 +187,15 @@
 
   Package-Manager: portage-2.2.20.1
 
+  22 Nov 2015; James Le Cuirot <chewi@gentoo.org> icedtea-bin-7.2.6.2.ebuild:
+  Add ~ppc64 keyword
+
+  This is a CACAO build rather than a HotSpot build because I have been
+  plagued by a race condition on timberdoodle. I am not keywording the
+  source icedtea-7 ebuild because of that and also because of memory
+  issues when building the docs. This is just a stopgap solution that
+  will allow us to remove Java 6 before we get icedtea-3 in the tree,
+  which seems to work better for ppc64.
+
+  Package-Manager: portage-2.2.25
+

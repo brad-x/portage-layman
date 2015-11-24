@@ -104,3 +104,21 @@
 
   Package-Manager: portage-2.2.20.1
 
+*eselect-php-0.7.1-r6 (23 Nov 2015)
+
+  23 Nov 2015; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.7.1-r5.ebuild,
+  +eselect-php-0.7.1-r6.ebuild, -files/php-fpm.init-r2,
+  +files/php-fpm.init-r3:
+  new revision fixing bugs 508712 and 545652.
+
+  Both the ebuild and the init script have been revisioned. The ebuild
+  was modified to depend on the apache2 mod_dir module (bug 545652), and
+  a configtest() command was added to the init script (bug 508712).
+
+  Thanks to Sebastian Pipping and Igor Filakhtov for the reports and fixes.
+
+  Gentoo-Bug: 508712
+  Gentoo-bug: 545652
+
+  Package-Manager: portage-2.2.20.1
+

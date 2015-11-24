@@ -179,3 +179,15 @@
 
   Package-Manager: portage-2.2.24
 
+  21 Nov 2015; Gilles Dartiguelongue <eva@gentoo.org> gvfs-1.26.2.ebuild:
+  add REQUIRED_USE for google USE flag
+
+  It requires gnome-online-account to be enabled and a version greater than
+  the one being required currently.
+  Do not modify the existing requirement so other users of gvfs do not have to
+  wait for Gnome 3.18 to be stable.
+  Remove default-enable on google USE flag, it is a new feature and can be
+  enabled via profile if needed for Gnome.
+
+  Package-Manager: portage-2.2.25
+

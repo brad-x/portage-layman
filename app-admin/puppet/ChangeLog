@@ -92,3 +92,24 @@
 
   Package-Manager: portage-2.2.20.1
 
+*puppet-4.2.2-r1 (21 Nov 2015)
+*puppet-4.2.1-r1 (21 Nov 2015)
+*puppet-4.1.0-r1 (21 Nov 2015)
+*puppet-4.0.0-r3 (21 Nov 2015)
+*puppet-3.7.4-r3 (21 Nov 2015)
+
+  21 Nov 2015; Hans de Graaff <graaff@gentoo.org> -puppet-3.7.4-r2.ebuild,
+  +puppet-3.7.4-r3.ebuild, -puppet-4.0.0-r2.ebuild, +puppet-4.0.0-r3.ebuild,
+  -puppet-4.1.0.ebuild, +puppet-4.1.0-r1.ebuild, -puppet-4.2.1.ebuild,
+  +puppet-4.2.1-r1.ebuild, -puppet-4.2.2.ebuild, +puppet-4.2.2-r1.ebuild:
+  fix dev-ruby/rgen dependencies
+
+  The code does feature detection so it does not concern itself with versions.
+  The feature detected was first introduced in 0.6.5, but the notice shown
+  when
+  the feature is not present mentions installing 0.7.0 or better. In any case
+  we
+  should not limit this dependency to exclude newer versions.
+
+  Package-Manager: portage-2.2.20.1
+

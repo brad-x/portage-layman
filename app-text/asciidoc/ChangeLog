@@ -151,3 +151,27 @@
 
   Signed-off-by: Marc Joliet <marcec@gmx.de>
 
+  20 Nov 2015; Marc Joliet <marcec@gmx.de> asciidoc-8.6.9-r2.ebuild,
+  asciidoc-9999.ebuild:
+  remove vim-syntax from IUSE
+
+  The vim-syntax USE flag is useless now, for the following reasons:
+
+  - The actions it controls have no effect, since the Makefile.in doesn't do
+    anything vim-related anymore, as mentioned in the CHANGELOG.
+  - Vim comes with its own syntax file since version 7.4, which is maintained
+  (by
+    AsciiDoc upstream, according to its header) and was last updated in 2014,
+    whereas the upstream syntax file has not been changed since 2013.
+
+  Gentoo-bug: 530808
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
+  20 Nov 2015; Marc Joliet <marcec@gmx.de> asciidoc-8.6.9-r2.ebuild:
+  8.6.9-r2: fix docompress call
+
+  Docompress should only be called when USE=examples.
+
+  Gentoo-bug: 555400
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
