@@ -73,3 +73,37 @@
 
   Package-Manager: portage-2.2.23
 
+  24 Nov 2015; Ian Delaney <idella4@gentoo.org> fwknop-2.6.7.ebuild:
+  enable out-of-source build
+
+*fwknop-2.6.7-r1 (24 Nov 2015)
+
+  24 Nov 2015; Ian Delaney <idella4@gentoo.org> +files/fwknopd.init-r1,
+  +fwknop-2.6.7-r1.ebuild:
+  revbump to fix depend() and update regexps in initscript
+
+  FWKNOPD_CONFIG file should be parsed only if it exists, which is not the
+  case if the user has not configured fwknopd yet. See Gentoo bug #565864.
+
+  Regexps that are used to parse FWKNOPD_CONFIG file now allow spaces
+  before statements in order to handle possible indentation properly.
+
+  Gentoo-Bug: 565864
+
+*fwknop-2.6.7-r2 (24 Nov 2015)
+
+  24 Nov 2015; Ian Delaney <idella4@gentoo.org> +fwknop-2.6.7-r2.ebuild:
+  revbump to 2.6.7-r2 in order to fix dependencies
+
+  Separate RDEPEND and DEPEND properly.
+
+  24 Nov 2015; Ian Delaney <idella4@gentoo.org> -files/fwknopd.init,
+  -fwknop-2.6.7.ebuild:
+  remove old
+
+  26 Nov 2015; Ilya Tumaykin <itumaykin@gmail.com> fwknop-2.6.7-r1.ebuild,
+  fwknop-2.6.7-r2.ebuild:
+  add GitHub repo to HOMEPAGE
+
+  As cipherdyne.org tends to be down sometimes.
+

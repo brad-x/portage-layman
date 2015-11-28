@@ -122,3 +122,21 @@
 
   Package-Manager: portage-2.2.20.1
 
+*eselect-php-0.7.1-r7 (24 Nov 2015)
+
+  24 Nov 2015; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.7.1-r6.ebuild,
+  +eselect-php-0.7.1-r7.ebuild, -files/php-fpm.init-r3,
+  +files/php-fpm.init-r4:
+  new revision to test config before FPM start/reload.
+
+  Now that we have a configtest() command for the php-fpm daemon, we
+  should run it before attempting to reload the daemon. This prevents
+  the (working) daemon from crashing if the new config has a typo in it.
+
+  Performing the same check before start() avoids a five-second wait if
+  there is an error in the config.
+
+  Gentoo-Bug: 487642
+
+  Package-Manager: portage-2.2.20.1
+

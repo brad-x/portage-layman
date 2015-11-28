@@ -129,3 +129,33 @@
   pypy-2.5.1.ebuild, pypy-2.6.0.ebuild, pypy-4.0.0.ebuild:
   Fix epython.py module first install
 
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  -files/2.3-21_all_distutils_c++.patch, -files/2.3.1-shared-lib.patch,
+  -pypy-2.4.0.ebuild, -pypy-2.5.1.ebuild:
+  Remove old
+
+*pypy-4.0.0-r1 (27 Nov 2015)
+*pypy-2.6.0-r1 (27 Nov 2015)
+
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  -files/1.9-scripts-location.patch, +files/4.0.0-gentoo-path.patch,
+  -pypy-2.6.0.ebuild, +pypy-2.6.0-r1.ebuild, -pypy-4.0.0.ebuild,
+  +pypy-4.0.0-r1.ebuild:
+  Apply full Gentoo path set, only for Gentoo sys.prefix
+
+  Override all default distutils.command.install paths for Gentoo rather
+  than just scriptdir. However, do that only when install_base equals
+  the default prefix in which PyPy is installed system-wide.
+
+  This fixes both issues resulting from lack of prefix override (like
+  installing data files in /usr/lib*/pypy), and from overeager prefix
+  overrides (like virtualenv installing scripts in /usr/bin).
+
+  Fixes: https://bugs.gentoo.org/462306
+  Fixes: https://bugs.gentoo.org/465546
+
+*pypy-4.0.1 (27 Nov 2015)
+
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org> +pypy-4.0.1.ebuild:
+  Bump to 4.0.1
+

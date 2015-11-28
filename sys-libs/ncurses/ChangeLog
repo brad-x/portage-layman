@@ -263,3 +263,14 @@
 
   Package-Manager: portage-2.2.22
 
+  24 Nov 2015; Mike Frysinger <vapier@gentoo.org> ncurses-6.0-r1.ebuild:
+  use the same has_version test #566008
+
+  The previous commit f5b7039a9bc8c63240340b947c80393e92e21afe added the
+  :0 slot qualifier to the first has_version test but not to the second.
+  This breaks when building ncurses-6.0:0 on a system that has SLOT=5
+  already installed.
+
+  24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  standardize various metadata.xml style
+

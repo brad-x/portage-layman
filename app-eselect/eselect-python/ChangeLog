@@ -83,3 +83,14 @@
   eselect-python-20151117.ebuild, eselect-python-99999999.ebuild:
   Update blockers to match revbumped pythons
 
+*eselect-python-20151117-r1 (25 Nov 2015)
+
+  25 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  -eselect-python-20151117.ebuild, +eselect-python-20151117-r1.ebuild,
+  eselect-python-99999999.ebuild:
+  Replace python{,2,3} symlinks with files
+
+  Copy python-exec script to /usr/bin/python{,2,3} rather than symlinking
+  it because a lot of Python scripts like to readlink(sys.executable) and
+  don't expect to find python-exec in there...
+

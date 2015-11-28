@@ -110,3 +110,33 @@
   pypy-bin-2.5.1-r1.ebuild, pypy-bin-2.6.0-r1.ebuild, pypy-bin-4.0.0.ebuild:
   dev-python/pypy*: Fix epython.py module first install
 
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  -files/2.3-21_all_distutils_c++.patch, -pypy-bin-2.4.0.ebuild,
+  -pypy-bin-2.5.1-r1.ebuild:
+  Remove old
+
+*pypy-bin-4.0.0-r1 (27 Nov 2015)
+*pypy-bin-2.6.0-r2 (27 Nov 2015)
+
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org>
+  -files/1.9-scripts-location.patch, +files/4.0.0-gentoo-path.patch,
+  -pypy-bin-2.6.0-r1.ebuild, +pypy-bin-2.6.0-r2.ebuild,
+  -pypy-bin-4.0.0.ebuild, +pypy-bin-4.0.0-r1.ebuild:
+  Apply full Gentoo path set, for Gentoo sys.prefix
+
+  Override all default distutils.command.install paths for Gentoo rather
+  than just scriptdir. However, do that only when install_base equals
+  the default prefix in which PyPy is installed system-wide.
+
+  This fixes both issues resulting from lack of prefix override (like
+  installing data files in /usr/lib*/pypy), and from overeager prefix
+  overrides (like virtualenv installing scripts in /usr/bin).
+
+  Fixes: https://bugs.gentoo.org/462306
+  Fixes: https://bugs.gentoo.org/465546
+
+*pypy-bin-4.0.1 (27 Nov 2015)
+
+  27 Nov 2015; Michał Górny <mgorny@gentoo.org> +pypy-bin-4.0.1.ebuild:
+  Bump to 4.0.1
+

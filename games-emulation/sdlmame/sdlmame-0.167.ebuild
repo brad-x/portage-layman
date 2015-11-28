@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python{2_7,3_4} )
+PYTHON_COMPAT=( python2_7 )
 inherit eutils python-any-r1 toolchain-funcs games
 
 MY_PV="${PV/.}"
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/mamedev/mame/releases/download/mame${MY_PV}/mame${MY
 
 LICENSE="XMAME"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="X alsa +arcade debug +mess opengl tools"
 REQUIRED_USE="|| ( arcade mess )
 		debug? ( X )"
