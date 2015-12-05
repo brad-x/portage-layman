@@ -195,3 +195,9 @@
   +files/bash-4.2-dev-fd-buffer-overflow.patch:
   backport /dev/fd fix to older versions #431850
 
+  02 Dec 2015; Mike Frysinger <vapier@gentoo.org> files/dot-bash_profile:
+  do not leave exit value non-zero in default profile script
+
+  If the .bashrc file does not exist, then the one line check in the profile
+  script leaves $? set to 1.  Use a full if statement to avoid that.
+

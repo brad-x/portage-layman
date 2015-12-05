@@ -179,3 +179,26 @@
 
   Package-Manager: portage-2.2.20.1
 
+*spl-0.6.5.3-r1 (03 Dec 2015)
+
+  03 Dec 2015; Richard Yao <ryao@gentoo.org> +spl-0.6.5.3-r1.ebuild:
+  sys-fs/zfs{,-kmod}: Partial stable /dev/zfs API + backports
+
+  This backports various fixes and also implements the partial /dev/zfs
+  stable API that I have developed at ClusterHQ over the past 14 months.
+  Ordinarily, I would not commit something like this until it has gone
+  upstream, but upstream wants review from people in the Illumos project
+  that prefer to see things like this in production before it reaches them
+  and it would have likely been deadlocked until I volunteered Gentoo.
+
+  I am confident that this is ready for production and I believe Gentoo
+  benefits from it enough to justify being the first production user.
+  Unless the API changes under review, situations where the kernel modules
+  and userland bits fall out of sync will no longer break the boot process
+  (excluding zfs-share and zfs-zed).  This was the longstanding blocker to
+  the ebuilds moving from ~arch to arch, so we could finally see that
+  happen around later this month / early next month.
+
+  Package-Manager: portage-2.2.20.1
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+

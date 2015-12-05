@@ -110,3 +110,61 @@
 
   Package-Manager: portage-2.2.24
 
+  29 Nov 2015; Ian Delaney <idella4@gentoo.org> -xen-tools-4.5.1-r3.ebuild,
+  -xen-tools-4.6.0-r1.ebuild:
+  clean old vns.: 4.5.1-r3, 4.6.0-r1
+
+  Package-Manager: portage-2.2.24
+
+*xen-tools-4.6.0-r3 (30 Nov 2015)
+*xen-tools-4.5.2-r1 (30 Nov 2015)
+
+  30 Nov 2015; Ian Delaney <idella4@gentoo.org> +xen-tools-4.5.2-r1.ebuild,
+  +xen-tools-4.6.0-r3.ebuild:
+  revbumps vns. 4.5.2-r1, 4.6.0-r3
+
+  security patches (2) added from XSA-162, initally set as embargoed
+  security patches, publicly released today wrt the gentoo bug
+
+  Gentoo bug: #566838
+
+  Package-Manager: portage-2.2.24
+
+  01 Dec 2015; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r1.ebuild:
+  amd64 stable wrt bug #566838
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
+
+  03 Dec 2015; Ian Delaney <idella4@gentoo.org> xen-tools-4.6.0-r3.ebuild:
+  add missed sec patches to vn. 4.6.0-r3
+
+  Already added to xen-4.5.2-r1, fixes gentoo bug.
+  Fix apparent typo re sec. patches in ebuild of 4.6.0-r3 only
+
+  Gentoo bug: #567190
+
+  Package-Manager: portage-2.2.24
+
+  03 Dec 2015; Ian Delaney <idella4@gentoo.org> -xen-tools-4.5.2.ebuild,
+  -xen-tools-4.6.0-r2.ebuild:
+  clean vulnerable versions wrt security bug #566838
+
+  Gentoo bug : #566838
+
+  Package-Manager: portage-2.2.24
+
+  04 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-tools-4.5.2-r1.ebuild,
+  xen-tools-4.6.0-r3.ebuild:
+  fix up bad dependency
+
+  markdown is only used when building the docs. I've confirmed this by
+  checking the makefiles.
+
+  04 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-tools-4.6.0-r3.ebuild:
+  drop udev usage
+
+  Xen 4.6.0 and newer no longer use or ship udev rules. The functionality
+  is implemented by running 'xl devd', which I'll add a script for on the
+  next bump.
+

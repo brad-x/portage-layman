@@ -125,3 +125,38 @@
 
   Package-Manager: portage-2.2.24
 
+  01 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/busybox-1.24.1-trylink-ldflags.patch:
+  fix builds w/LDFLAGS=-fuse-ld=gold #499712
+
+  02 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/busybox-1.24.1-unzip-regression.patch:
+  add upstream fix for unzip regression
+
+  02 Dec 2015; Agostino Sarubbo <ago@gentoo.org> busybox-1.24.1.ebuild:
+  amd64 stable wrt bug #564246
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
+
+  02 Dec 2015; Mike Gilbert <floppym@gentoo.org> busybox-1.24.1.ebuild:
+  Name patches explicitly
+
+  Globbing was ordering them differently depending on LC_COLLATE.
+
+  Bug: https://bugs.gentoo.org/567340
+
+  Package-Manager: portage-2.2.26_p3
+
+  04 Dec 2015; Jeroen Roovers <jer@gentoo.org> busybox-1.24.1.ebuild:
+  Stable for PPC64 (bug #564246).
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --ignore-arches
+
+  04 Dec 2015; Jeroen Roovers <jer@gentoo.org> busybox-1.24.1.ebuild:
+  Stable for HPPA (bug #564246).
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --ignore-arches
+

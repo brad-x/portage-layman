@@ -30,7 +30,6 @@ else
 		${SECURITY_PATCHSET_URI}
 		${GENTOO_PATCHSET_URI}
 		https://dev.gentoo.org/~idella4/distfiles/${PN}-security-patches.tar.gz"
-
 fi
 
 inherit mount-boot flag-o-matic python-any-r1 toolchain-funcs eutils ${live_eclass}
@@ -43,7 +42,7 @@ IUSE="custom-cflags debug efi flask xsm"
 
 DEPEND="${PYTHON_DEPS}
 	efi? ( >=sys-devel/binutils-2.22[multitarget] )
-	!efi? ( >=sys-devel/binutils-2.22[-multitarget] )"
+	!efi? ( >=sys-devel/binutils-2.22 )"
 RDEPEND=""
 PDEPEND="~app-emulation/xen-tools-${PV}"
 
@@ -153,6 +152,8 @@ src_configure() {
 		replace-flags -O3 -O2
 	else
 		unset CFLAGS
+		unset LDFLAGS
+		unset ASFLAGS
 	fi
 }
 

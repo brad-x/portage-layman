@@ -263,3 +263,30 @@
   updated to accomodate this. It will require at least cleaning up
   /usr/share still.
 
+*llvm-3.7.0-r3 (02 Dec 2015)
+
+  02 Dec 2015; Michał Górny <mgorny@gentoo.org>
+  +files/llvm-3.7-llvm-config.patch, +llvm-3.7.0-r3.ebuild, llvm-9999.ebuild:
+  Fix bogus flags and paths in llvm-config, #565358
+
+  Fix llvm-config to avoid bogus results. In particular:
+
+  1. Limit --cflags and --cxxflags to package-specific flags. Do not
+  output the whole flag-string used during the build. This fixes libclc
+  build issues when LLVM build flags were not tolerated by clang.
+
+  2. Fix library names and paths to use shared library suffix rather than
+  static library suffix, especially that we do not install static
+  libraries.
+
+  3. Wipe out --system-libs since they should not be required for dynamic
+  linking.
+
+  4. Ban --obj-root and --src-root when running outside source tree, since
+  we are not installing any sources and therefore their results would
+  always be bogus.
+
+  Based on patch provided by Steven Newbury.
+
+  Fixes: https://bugs.gentoo.org/565358
+

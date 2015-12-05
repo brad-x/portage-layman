@@ -92,3 +92,15 @@
 
   Package-Manager: portage-2.2.25
 
+  03 Dec 2015; Davide Pesavento <pesa@gentoo.org> PyQt5-5.5.ebuild,
+  PyQt5-5.5.1.ebuild:
+  add several missing REQUIRED_USE
+
+  Apparently configure.py does not list all these dependencies, and
+  does not check if they are satisfied at build time. But their lack
+  causes ImportErrors at runtime.
+
+  Gentoo-Bug: 567394
+
+  Package-Manager: portage-2.2.26
+

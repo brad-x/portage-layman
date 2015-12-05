@@ -56,3 +56,19 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*weka-3.6.12-r1 (29 Nov 2015)
+*weka-3.6.6-r2 (29 Nov 2015)
+
+  29 Nov 2015; Gokturk Yuksek <gokturk@binghamton.edu> metadata.xml,
+  +weka-3.6.6-r2.ebuild, +weka-3.6.12-r1.ebuild:
+  add missing rdep on libsvm and the use flag "svm" #565550
+
+  Weka only ships a wrapper class for the actual libsvm package. Add a use
+  flag named "svm" and pull in sci-libs/libsvm[java] for proper SVM support
+  when the use flag is enabled.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=565550
+  Upstream-URL: https://weka.wikispaces.com/LibSVM
+
+  Package-Manager: portage-2.2.20.1
+

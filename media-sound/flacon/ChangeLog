@@ -64,3 +64,35 @@
 
   Package-Manager: portage-2.2.24
 
+*flacon-1.2.0 (30 Nov 2015)
+
+  30 Nov 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/flacon-1.2.0-fix-corrupt-file-crash.patch,
+  +files/flacon-1.2.0-fix-disks-or-tracks-number-change-crash.patch,
+  +files/flacon-1.2.0-fix-qpainter-error.patch, +flacon-1.2.0.ebuild,
+  flacon-9999.ebuild, metadata.xml:
+  version bump to 1.2.0 wrt bug #547054, update live
+
+  Inherited from Nikoli.
+  List of changes in 1.2.0 compared to 1.0.0 by Nikoli:
+  - add Qt5 support
+  - add Opus output files support
+  - properly separate DEPEND and RDEPEND
+  - rename mp4 USE to aac for clarity, since mp4 is just a container while
+    aac is an actual encoding format that is used
+  - rename ogg USE to vorbis for clarity, since ogg is just a container
+    while vorbis is an actual encoding format that is used
+  - update USE descriptions to clarify which ones are used for input and
+    which ones are used for output
+  - remove ugly 9999 conditionals from ebuild as they make it hard to read
+  - remove defunct, rudimentary translations
+  - sync DESCRIPTION with upstream
+
+  Sync live ebuild with 1.2.0
+
+  Gentoo-Bug: 547054
+
+  30 Nov 2015; Ilya Tumaykin <itumaykin@gmail.com> -flacon-0.7.2.ebuild,
+  -flacon-0.8.0.ebuild, -flacon-0.9.4.ebuild:
+  remove old
+

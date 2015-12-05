@@ -73,3 +73,31 @@
   The configure script would blindly ignore $CC when cross-compiling.
   Add the upstream commit that deletes that insanity.
 
+*alsa-lib-1.1.0 (25 Nov 2015)
+
+  25 Nov 2015; Joe Konno <joe.konno@intel.com> +alsa-lib-1.1.0.ebuild:
+  version bump to 1.1.0
+
+  Bump to version 1.1.0. The cross-compile patch for 1.0.29 does not
+  appear to be needed, so not carrying it forward for 1.1.0. Mask all
+  architectures until deemed 'stable' by gentoo-sound team.
+
+  TODO: Version 1.1.0 does introduce the DSP Topology API. This is enabled
+  by default, though there is a configure flag to disable it. There are
+  kernel configuration and ABI version considerations to account for in
+  any future "topology" USE flag handlers-- I haven't sufficient expertise
+  to "do it right" at this time, or I would do so.
+
+  Rudimentary bench-testing performed on amd64 architecture.
+
+  ALSA Project Release notes at:
+      http://www.alsa-project.org/main/index.php/Changes_v1.0.29_v1.1.0
+
+  Package-Manager: Portage 2.2.20.1
+
+  v2: vapier: restored line 37, '# https://bugs.gentoo.org/509886';
+      rebased on 6d4b41d7904e ("app-emulation/docker-compose: move enum34
+      dependence")
+
+  Signed-off-by: Joe Konno <joe.konno@intel.com>
+

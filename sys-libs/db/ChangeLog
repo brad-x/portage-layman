@@ -102,3 +102,11 @@
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
 
+  28 Nov 2015; Mike Frysinger <vapier@gentoo.org> db-4.8.30-r2.ebuild,
+  db-5.3.28-r2.ebuild, db-6.0.30-r1.ebuild, db-6.0.35.ebuild,
+  db-6.1.26.ebuild:
+  move -Wl,--default-symver back after tc-ld-is-gold #566942
+
+  The GNU gold test will fail if given invalid linker flags, so make sure
+  we test for it before adding various linker flags (that assume bfd).
+

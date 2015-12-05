@@ -86,3 +86,31 @@
   The configure script would blindly ignore $CC when cross-compiling.
   Add the upstream commit that deletes that insanity.
 
+*alsa-utils-1.1.0 (25 Nov 2015)
+
+  25 Nov 2015; Joe Konno <joe.konno@intel.com> +alsa-utils-1.1.0.ebuild,
+  metadata.xml:
+  version bump to 1.1.0
+
+  Bump to version 1.1.0. The cross-compile patch from 1.0.29 does not
+  apply, nor does it appear necessary, so omitting from the 1.1.0 ebuild.
+  Masking all archs until gentoo-sound team deems it "stable".
+
+  Had to add a "bat" USE flag handler to 1.1.0. By default, the configure
+  script sets a hard requirement for the Basic Audio Tester (BAT) utility,
+  requiring FFTW3 (sci-libs/fftw). Let the user set the "bat" USE flag if
+  they require the BAT utility.
+
+  Rudimentary testing performed on amd64 architecture.
+
+  ALSA Project release notes at:
+      http://www.alsa-project.org/main/index.php/Changes_v1.0.29_v1.1.0
+
+  Package-Manager: Portage 2.2.20.1
+
+  v2: vapier: removed redundant argument for 'use_enable bat'; rebased on
+      6d4b41d7904e ("app-emulation/docker-compose: move enum34
+      dependence")
+
+  Signed-off-by: Joe Konno <joe.konno@intel.com>
+

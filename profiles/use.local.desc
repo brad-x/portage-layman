@@ -1246,6 +1246,7 @@ app-text/writerperfect:wpg - Add support for wpg format using app-text/libwpg
 app-text/writerperfect:wps - Add support for wps format using app-text/libwps
 app-text/wv:tools - Install optional utilities considered deprecated in favor of using AbiWord.
 app-text/xiphos:webkit - Use net-libs/webkit-gtk instead of gnome-extra/gtkhtml
+app-text/xmlto:text - Support conversion from XML to plain text
 app-text/yagf:cuneiform - Enable support for the app-text/cuneiform OCR engine.
 app-text/yagf:tesseract - Enable support for the app-text/tesseract OCR engine.
 app-text/zathura:magic - Use libmagic to determine mimetypes
@@ -1753,7 +1754,6 @@ dev-java/jython:readline - Use GNU readline instead of jline
 dev-java/jython:servletapi - Add optional support for servlet-api
 dev-java/log4j:javamail - Build the SMTPAppender
 dev-java/log4j:jms - Build the JMSAppender
-dev-java/log4j:jmx - Build org.apace.log4j.jmx
 dev-java/logback:tomcat - Builds Apache Tomcat support
 dev-java/lucene:contrib - Include extra functionality from contrib/
 dev-java/miglayout:swt - Add support for the SWT toolkit.
@@ -2762,6 +2762,7 @@ dev-util/suse-build:symlink - Provide compatibility symlinks with original openS
 dev-util/sysdig:modules - Build kernel modules needed for tracing local events. Disable this only if you intend to use sysdig purely to work with dumpfiles.
 dev-util/trace-cmd:udis86 - Enable support for dev-libs/udis86 disassembler library
 dev-util/universalindentgui:html - Add support for HTML files
+dev-util/weka:svm - Enable support for Support Vector Machines (SVM) through sci-libs/libsvm
 dev-vcs/bzr:sftp - Enable sftp support
 dev-vcs/bzr-gtk:gpg - Support signing with GnuPG.
 dev-vcs/bzr-gtk:nautilus - Integrate with Nautilus file manager
@@ -3430,16 +3431,18 @@ kde-plasma/plasma-workspace:qalculate - Enable Qalculate runner using sci-libs/l
 kde-plasma/plasma-workspace:systemmonitor - Enables the system monitor dialog for the Plasma workspace
 lxde-base/lxdm:consolekit - Enables support for authorization using consolekit
 lxde-base/lxdm:gtk3 - Use GTK+3 instead of 2
-lxqt-base/lxqt-meta:admin - Install app-admin/lxqt-admin
+lxqt-base/lxqt-meta:about - Install lxqt-base/lxqt-about
+lxqt-base/lxqt-meta:admin - Install lxqt-base/lxqt-admin
 lxqt-base/lxqt-meta:filemanager - Install x11-misc/pcmanfm-qt file manager
 lxqt-base/lxqt-meta:icons - Install an icon theme
 lxqt-base/lxqt-meta:lightdm - Install x11-misc/lightdm display manager
 lxqt-base/lxqt-meta:lximage - Install media-gfx/lximage-qt image viewer
 lxqt-base/lxqt-meta:minimal - Do not install x11-wm/openbox window manager
-lxqt-base/lxqt-meta:oxygen - Prefer kde-apps/oxygen-icons (default)
+lxqt-base/lxqt-meta:oxygen - Prefer kde-frameworks/oxygen-icons (default)
 lxqt-base/lxqt-meta:powermanagement - Install lxqt-base/lxqt-powermanagement package
 lxqt-base/lxqt-meta:sddm - Install x11-misc/sddm display manager
-lxqt-base/lxqt-meta:ssh-askpass - Install net-misc/lxqt-openssh-askpass user password prompt tool
+lxqt-base/lxqt-meta:ssh-askpass - Install lxqt-base/lxqt-openssh-askpass user password prompt tool
+lxqt-base/lxqt-meta:sudo - Install lxqt-base/lxqt-sudo
 lxqt-base/lxqt-panel:clock - Build clock plugin
 lxqt-base/lxqt-panel:colorpicker - Build colorpicker plugin
 lxqt-base/lxqt-panel:cpuload - Build cpuload plugin
@@ -3453,6 +3456,7 @@ lxqt-base/lxqt-panel:quicklaunch - Build quicklaunch plugin
 lxqt-base/lxqt-panel:screensaver - Build screensaver plugin
 lxqt-base/lxqt-panel:sensors - Build sensors plugin
 lxqt-base/lxqt-panel:showdesktop - Build showdesktop plugin
+lxqt-base/lxqt-panel:statusnotifier - Build statusnotifier plugin
 lxqt-base/lxqt-panel:sysstat - Build sysstat plugin
 lxqt-base/lxqt-panel:taskbar - Build taskbar plugin
 lxqt-base/lxqt-panel:teatime - Build teatime plugin
@@ -3913,6 +3917,7 @@ media-libs/libbdplus:aacs - Add support for decryption of AACS
 media-libs/libbluray:aacs - Add support for decryption of AACS
 media-libs/libbluray:bdplus - Use media-libs/libbdplus for BD+ decryption
 media-libs/libbluray:java - Add support for BD-J
+media-libs/libbluray:udf - Add UDF (Universal Disk Format) support
 media-libs/libbluray:utils - Install command-line utilities and examples
 media-libs/libcanberra:alsa - Enables ALSA sound driver.
 media-libs/libcanberra:gstreamer - Enables gstreamer sound driver. Not useful when alsa or pulseaudio is available.
@@ -4190,6 +4195,7 @@ media-sound/abcde:normalize - Add support for normalizing audio file volume leve
 media-sound/abcde:opus - Support opus encoding using opusenc
 media-sound/abcde:replaygain - Support for Replay Gain metadata, for relative volume adjustment
 media-sound/abcm2ps:pango - Use the pango library to render fonts with non-latin characters
+media-sound/alsa-utils:bat - install basic audio tester (BAT) util
 media-sound/alsa-utils:libsamplerate - install utils that use libsamplerate (e.g. alsaloop)
 media-sound/alsa-utils:ncurses - install utils that use ncurses (e.g. alsamixer)
 media-sound/alsaplayer:id3tag - Enables ID3 tagging with id3tag library
@@ -4292,9 +4298,10 @@ media-sound/easytag:opus - Enable support for media-libs/opus and media-libs/opu
 media-sound/ecasound:lv2 - Add support for Ladspa V2
 media-sound/ecasound:oil - Use dev-libs/liboil for inner loop optimizations
 media-sound/fapg:xspf - Enable support for saving XSPF playlists.
-media-sound/flacon:mac - Add support for Monkey's Audio files
+media-sound/flacon:mac - Add support for Monkey's Audio input files
+media-sound/flacon:opus - Add support for Opus output files
 media-sound/flacon:replaygain - Support for Replay Gain metadata, for relative volume adjustment
-media-sound/flacon:tta - Add support for True Audio encoding
+media-sound/flacon:tta - Add support for True Audio input files
 media-sound/forked-daapd:itunes - Enable support for iTunes library XML
 media-sound/forked-daapd:lastfm - Enable LastFM scrobbling support
 media-sound/forked-daapd:mpd - Enable streaming to mpd
@@ -4644,6 +4651,7 @@ media-video/ffmpeg:fdk - Use external fdk-aac library for AAC encoding
 media-video/ffmpeg:flite - Adds a text-to-speech filter based on app-accessibility/flite.
 media-video/ffmpeg:frei0r - Enable frei0r wrapping in libavfilter
 media-video/ffmpeg:fribidi - Enables fribidi support in the drawtext filter.
+media-video/ffmpeg:gcrypt - Enables gcrypt support: Needed for rtmp(t)e support if openssl, librtmp or gmp is not used.
 media-video/ffmpeg:gme - Enables support for media-libs/game-music-emu for playing various video game music formats.
 media-video/ffmpeg:gpl - Build GPL code. Should be enabled unless you require LGPL binaries.
 media-video/ffmpeg:hardcoded-tables - Use pre-calculated tables rather than calculating them on the fly.
@@ -5054,6 +5062,13 @@ net-analyzer/snort:side-channel - Enables Snort's the side channel.
 net-analyzer/snort:sourcefire - Enables Sourcefire specific build options, which include --enable-perfprofiling and --enable-ppm.
 net-analyzer/snort:targetbased - Enables support in snort for using a host attibute XML file (attribute_table.dtd). This file needs to be created by the user and should define the IP address, operating system, and services for all hosts on the monitored network. This is cumbersome, but can improve intrusion detection accuracy.
 net-analyzer/snort:zlib - Enables HTTP inspection of compressed web traffic. Requires dynamicplugin be enabled.
+net-analyzer/suricata:af-packet - Enable AF_PACKET support
+net-analyzer/suricata:control-socket - Enable unix socket
+net-analyzer/suricata:cuda - Enable NVIDIA Cuda computations support
+net-analyzer/suricata:luajit - Enable Luajit support
+net-analyzer/suricata:nflog - Enable libnetfilter_log support
+net-analyzer/suricata:nfqueue - Enable AF_PACKET support
+net-analyzer/suricata:rules - Enable AF_PACKET support
 net-analyzer/symon:perl - Enables a generic perl symux client
 net-analyzer/symon:symon - Enables the system monitor. Offers no functionality but monitoring and forwarding of measured data
 net-analyzer/symon:symux - Enables the multiplexer which stores incoming symon streams on disk in RRD (net-analyzer/rrdtool) files
@@ -6083,6 +6098,7 @@ net-misc/openvpn:polarssl - Use PolarSSL instead of OpenSSL
 net-misc/openvpn:socks - Enable socks support
 net-misc/openvswitch:monitor - Build the Python and GUI dependent monitor applications
 net-misc/openvswitch:pyside - Use dev-python/pyside instead of dev-python/PyQt4 for Python/Qt-bindings when building with USE=monitor.
+net-misc/owncloud-client:dolphin - Install the kde-apps/dolphin extension
 net-misc/owncloud-client:nautilus - Install the gnome-base/nautilus extension
 net-misc/owncloud-client:sftp - Enable sftp transfer support via net-libs/libssh
 net-misc/pavuk:hammer - Turn on chunky/hammer mode (DoS) in pavuk: when specified, pavuk will include features to stress test web sites using an ultrahigh performancereplay mechanism
@@ -6668,9 +6684,7 @@ sci-geosciences/gpsd:latency_timing - support latency timing information
 sci-geosciences/gpsd:ntp - Enable net-misc/ntp shared memory interface and PPS kernel support for GPS time
 sci-geosciences/gpsd:shm - export gpsd over shared memory
 sci-geosciences/gpsd:sockets - export gpsd over unix sockets
-sci-geosciences/grass:gdal - Use sci-libs/gdal for import and export of most external raster and vector map formats
 sci-geosciences/grass:geos - Use sci-libs/geos for v.buffer and adds extended options to the v.select module
-sci-geosciences/grass:gmath - Enable gmath wrapper for BLAS/Lapack (virtual/blas, virtual/lapack)
 sci-geosciences/grass:liblas - Include support for LAS and LAZ encoded LiDAR files through sci-geosciences/liblas
 sci-geosciences/grass:opencl - Enable OpenCL support
 sci-geosciences/gshhs:data - Add earth data with sci-geosciences/gshhs-data
@@ -7804,8 +7818,10 @@ www-client/dwb:gtk3 - Link against x11-libs/gtk+:3 instead of x11-libs/gtk+:2
 www-client/dwb:libsecret - Enable libsecret support to store login credentials
 www-client/elinks:bittorrent - Enable support for the BitTorrent protocol
 www-client/elinks:finger - Enable support for the finger protocol
+www-client/elinks:gc - Enable garbage collection support via dev-libs/boehm-gc
 www-client/elinks:gopher - Enable support for the gopher protocol
 www-client/elinks:mouse - Make elinks to grab all mouse events
+www-client/elinks:xml - Enable support for bookmarks via dev-libs/expat
 www-client/epiphany:nss - Import passwords from older gecko based www-client/epiphany keyring.
 www-client/firefox:bindist - Disable official Firefox branding (icons, name) which are not binary-redistributable according to upstream.
 www-client/firefox:custom-optimization - Fine-tune custom compiler optimizations (-Os, -O0, -O1, -O2, -O3)
