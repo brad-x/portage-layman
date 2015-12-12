@@ -54,3 +54,19 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*libplist-1.11-r1 (09 Dec 2015)
+
+  09 Dec 2015; Michał Górny <mgorny@gentoo.org> +libplist-1.11-r1.ebuild:
+  Switch to python-single-r1, disable py3
+
+  Replace the semi-broken Python support code in ebuild with
+  python-single-r1. The original code used python-r1 and rebuilt the whole
+  package (incl. C libraries) for each implementation, even when Python
+  support was explicitly disabled.
+
+  Furthermore, the used autoconf macros break with Python 3.2+. Therefore,
+  the Python 3 support has been disabled entirely until the relevant code
+  is fixed.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=567370
+

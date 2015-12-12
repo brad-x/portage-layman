@@ -203,3 +203,18 @@
   15 Nov 2015; Matt Turner <mattst88@gentoo.org> gcc-4.9.3.ebuild:
   alpha stable, bug 561844.
 
+  05 Dec 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.6.4.ebuild:
+  drop hardened support from 4.6
+
+  05 Dec 2015; Mike Frysinger <vapier@gentoo.org> gcc-4.4.7.ebuild,
+  gcc-4.5.4.ebuild, gcc-4.6.4.ebuild:
+  gcc: drop spec-env patch from non-hardened builds #528170
+
+  The GCC_SPEC env var is really only used by the hardened minispec
+  logic, so drop it from the ebuilds that no longer support hardened.
+
+*gcc-5.3.0 (05 Dec 2015)
+
+  05 Dec 2015; Mike Frysinger <vapier@gentoo.org> +gcc-5.3.0.ebuild:
+  version bump to 5.3.0
+

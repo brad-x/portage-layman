@@ -67,3 +67,17 @@
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  05 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  +files/libaio-0.3.110-link-stdlib.patch, libaio-0.3.110.ebuild:
+  link against stdlib to pull the fortified functions #558406
+
+  When '-fstack-protector-strong' is included in CFLAGS, the function
+  '__stack_chk_fail_local' needs to be pulled from libc. However,
+  upstream uses '-nostdlib' to avoid linking against any C library or
+  gcc libs. Remove '-nostdlib' and '-nostartfiles' to pull the required
+  symbols from libc.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=558406
+
+  Package-Manager: portage-2.2.20.1
+

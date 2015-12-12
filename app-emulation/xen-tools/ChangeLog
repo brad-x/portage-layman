@@ -168,3 +168,47 @@
   is implemented by running 'xl devd', which I'll add a script for on the
   next bump.
 
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-tools-4.6.0-r3.ebuild:
+  multiple clean ups
+
+  - switch to git from mercurial for live ebuild
+  - improve description
+  - add sub-slot to avoid ABI breaks when upgrading/downgrading
+  - update inherit line
+  - fix dependency on iproute2
+  - fix USE=-custom-cflags to not override some FLAGS
+  - fix up Python dependencies
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*xen-tools-4.6.0-r4 (09 Dec 2015)
+*xen-tools-4.5.2-r2 (09 Dec 2015)
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> +xen-tools-4.5.2-r2.ebuild,
+  +xen-tools-4.6.0-r4.ebuild:
+  revbumps -> vns. 4.5.2-r2, 4.6.0-r3 wrt sec. bugs
+
+  Addition of patches XSA-158 (#566844), XSA-{159,160} (#566842), fixing all
+  corresponding security issues, patches made avaialable for public release
+  as of yesterday (08/12). Patches compressed into my devspace then combined
+  with those of dlan insource. This format will do for now. Not to be
+  adjusted without prior discussion. All patches pass runtests
+
+  Gentoo bugs: #566842 #566844
+
+  Package-Manager: portage-2.2.24
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> -xen-tools-4.5.2-r1.ebuild,
+  -xen-tools-4.6.0-r3.ebuild:
+  clean vulnerable vns. wrt #566842 #566844
+
+  Package-Manager: portage-2.2.24
+
+*xen-tools-4.5.2-r1 (09 Dec 2015)
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> +xen-tools-4.5.2-r1.ebuild:
+  re-add xen-tools-4.5.2-r1.ebuild
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --force
+

@@ -290,3 +290,24 @@
 
   Fixes: https://bugs.gentoo.org/565358
 
+  05 Dec 2015; Michał Górny <mgorny@gentoo.org>
+  -files/clang-3.8-gentoo-install.patch, +files/llvm-3.8-llvm-config.patch,
+  llvm-9999.ebuild:
+  Update live ebuild, fix Python install
+
+  Update the patches and install procedure for git changes. Switch to
+  python-single-r1 as most of the Python components are now installed
+  by CMake.
+
+  05 Dec 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Set libomp as default OpenMP provider in -9999, #562990
+
+  Use libomp as default OpenMP provider rather than libgomp because the
+  support for the latter is unable to find omp.h without explicit -I, and
+  provides syntax checking only.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=562990
+
+  09 Dec 2015; Michał Górny <mgorny@gentoo.org> llvm-3.7.0-r3.ebuild:
+  Force python* for USE=test build
+

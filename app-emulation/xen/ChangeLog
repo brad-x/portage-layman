@@ -134,3 +134,90 @@
   build. LDFLAGS were being passed in which caused build failures with
   USE=-custom-cflags. Dependency on binutils was incorrect.
 
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  update inherit lines and use git-r3
+
+  Move the inherit lines back up near the top and switch to using git-r3
+  for the live version.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  delete x86 bits
+
+  x86 is not supported by this version of Xen and won't be supported going
+  forward so drop the x86 code.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  provide a sub-slot
+
+  Technically when switching between minor versions (e.g. 4.5 -> 4.6) you
+  need to rebuild anything that has linked against the Xen libraries due
+  to no promise of ABI stability between those versions. So expose a
+  sub-slot so packages can be rebuilt appropriately.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  don't install EFI bits with USE=-efi
+
+  Don't install the EFI bits if the user didn't want them.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  drop USE=xsm
+
+  USE=xsm does not make sense for us to package up. If the user wants XSM,
+  they'll always want Flask. If they're developing their own XSM module
+  they will not be using our packages for that.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  06 Dec 2015; Doug Goldstein <cardoe@gentoo.org> xen-4.6.0-r2.ebuild:
+  Revert "app-emulation/xen: provide a sub-slot"
+
+  This reverts commit 8a11081f495114c5ddfb54a8cef9285d6d7aa878. The
+  sub-slot needs to only be on app-emulation/xen-tools.
+
+*xen-4.6.0-r3 (09 Dec 2015)
+*xen-4.5.2-r2 (09 Dec 2015)
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> +xen-4.5.2-r2.ebuild,
+  +xen-4.6.0-r3.ebuild:
+  revbumps -> vns. 4.5.2-r2, 4.6.0-r3 wrt sec. bugs
+
+  Addition of patches XSA-158 (#566842), XSA-158 (#566844), fixing all
+  corresponding security issues, patches made avaialable for public release
+  as of yesterday (08/12). Patches compressed into my devspace then combined
+  with those of dlan insource. This format will do for now. Not to be
+  adjusted without prior discussion. All patches pass runtests.
+
+  Gentoo bugs: #566842 #566844
+
+  Package-Manager: portage-2.2.24
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> -xen-4.5.2-r1.ebuild,
+  xen-4.5.2-r2.ebuild, -xen-4.6.0-r2.ebuild, xen-4.6.0-r3.ebuild:
+  clean vulnerable vns. wrt #566842 #566844
+
+  Package-Manager: portage-2.2.24
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> xen-4.6.0-r3.ebuild:
+  Correct trivial typo in Comment, note errata in prior entry
+
+  Note: line 3 in previous commit re adding sec patches should read;
+  Addition of patches XSA-158 (#566844), XSA-{159,160} (#566842)
+
+  Package-Manager: portage-2.2.24
+
+*xen-4.5.2-r1 (09 Dec 2015)
+
+  09 Dec 2015; Ian Delaney <idella4@gentoo.org> +xen-4.5.2-r1.ebuild:
+  re-add xen-4.5.2-r1.ebuild
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --force
+

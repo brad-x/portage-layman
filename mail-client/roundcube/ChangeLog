@@ -83,3 +83,27 @@
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="arm"
 
+*roundcube-1.1.3 (09 Dec 2015)
+
+  09 Dec 2015; Aaron W. Swenson <titanofold@gentoo.org>
+  +files/POST-UPGRADE.txt, metadata.xml, +roundcube-1.1.3.ebuild:
+  Version bump, security, and bug fixes
+
+  Added two use flags controlling optional dependencies to support the
+  enigma and and sieverules plugins.
+
+  Added REQUIRED_USE as one of postgres, mysql, or sqlite must be
+  enabled. Rouncube requires a database to operate. As the ebuild uses
+  this now, removed the default enable on the mysql USE flag.
+
+  Added POST-UPGRADE.txt which is just a shortened version of the
+  UPGRADE text from upstream.
+
+  Dropped arm and ppc64 keywords as one dependency,
+  dev-php/PEAR-Net_LDAP2, currently lacks matching keywords for those
+  architectures.
+
+  Bug: 541172, 545096, 524192, 564476, 565204, 53284
+
+  Package-Manager: portage-2.2.20.1
+

@@ -55,3 +55,25 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*jabref-2.10-r4 (06 Dec 2015)
+
+  06 Dec 2015; James Le Cuirot <chewi@gentoo.org> +jabref-2.10-r4.ebuild:
+  Fix antlr dependency now that Java 8 is addressed
+
+  This really depends on ANTLR 2 and 3. The fix applied in bug #547934
+  was somewhat bogus as 4 wasn't being used at all except for its
+  bundled version of 3. It is a non-issue now that 3 has a workaround
+  for Java 8.
+
+  Even though 3.2 depends on 2, it is unusual for a third party to
+  depend on both. Upstream actually uses 3.4 so 3.5 would be a closer
+  match but using 3.2 means you won't pull in two different versions of
+  stringtemplate.
+
+  Package-Manager: portage-2.2.26
+
+  06 Dec 2015; James Le Cuirot <chewi@gentoo.org> -jabref-2.10-r3.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.26
+

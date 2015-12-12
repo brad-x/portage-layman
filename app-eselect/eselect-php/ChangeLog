@@ -140,3 +140,35 @@
 
   Package-Manager: portage-2.2.20.1
 
+*eselect-php-0.8.0 (07 Dec 2015)
+
+  07 Dec 2015; Michael Orlitzky <mjo@gentoo.org> +eselect-php-0.8.0.ebuild:
+  version bump with partial php-7.x support for apache2.
+
+  This new version adds the ability to switch the apache2 implementation
+  to php-7.x. This was missing earlier due to a library name change,
+  libphp5 -> libphp7. This partially addresses bug #552156, although
+  there is still some work to be done in the apache config file.
+
+  Upstream development has moved to a Gentoo-hosted git repository at
+  https://gitweb.gentoo.org/proj/eselect-php.git/
+
+  Gentoo-Bug: 552156
+
+  Package-Manager: portage-2.2.20.1
+
+*eselect-php-0.8.1 (11 Dec 2015)
+
+  11 Dec 2015; Michael Orlitzky <mjo@gentoo.org> +eselect-php-0.8.1.ebuild,
+  +files/70_mod_php.conf:
+  version bump adding v0.8.1.
+
+  This is another attempt at php-7.x support in apache2. This new
+  version is already masked for testing, which is good because it
+  requires some configuration changes to apache. Upgraders should
+  read the elogs.
+
+  Gentoo-Bug: 552156
+
+  Package-Manager: portage-2.2.20.1
+

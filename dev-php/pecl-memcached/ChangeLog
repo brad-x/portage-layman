@@ -60,3 +60,32 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+  07 Dec 2015; Agostino Sarubbo <ago@gentoo.org> pecl-memcached-2.2.0.ebuild:
+  amd64 stable wrt bug #559848
+
+  Package-Manager: portage-2.2.20.1
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*pecl-memcached-2.2.0-r1 (07 Dec 2015)
+
+  07 Dec 2015; Michael Orlitzky <mjo@gentoo.org>
+  +pecl-memcached-2.2.0-r1.ebuild:
+  revbump to fix incorrect DOCS.
+
+  The main reason for a revision bump is to update the DOCS string
+  (which pointed to a missing file). This is a prerequisite for fixing
+  the buggy eclass that allows junk in DOCS.
+
+  In the process, some other cleanup was done:
+
+    * Change from EAPI=4 to EAPI=5.
+    * Add ChangeLog and README.markdown as DOCS.
+    * Reorder the USE_PHP flags.
+    * Drop the base.eclass inherit (this was used to apply patches).
+    * Drop the custom src_prepare (used to call base.eclass to apply patches).
+    * Add an "any slot" dependency on dev-lang/php.
+    * Shorten the description a little to fit in 80 chars.
+
+  Package-Manager: portage-2.2.20.1
+

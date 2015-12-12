@@ -41,11 +41,12 @@ inherit toolchain-funcs
 # @DESCRIPTION:
 # All supported Python implementations, most preferred last.
 _PYTHON_ALL_IMPLS=(
-	jython2_5 jython2_7
-	pypy pypy3
-	python3_3 python3_4 python3_5
 	python2_7
+	python3_3 python3_4 python3_5
+	pypy pypy3
+	jython2_7
 )
+readonly _PYTHON_ALL_IMPLS
 
 # @FUNCTION: _python_impl_supported
 # @USAGE: <impl>
@@ -67,7 +68,7 @@ _python_impl_supported() {
 	# keep in sync with _PYTHON_ALL_IMPLS!
 	# (not using that list because inline patterns shall be faster)
 	case "${impl}" in
-		python2_7|python3_[345]|jython2_[57])
+		python2_7|python3_[345]|jython2_7)
 			return 0
 			;;
 		pypy1_[89]|pypy2_0|python2_[56]|python3_[12])
@@ -368,8 +369,6 @@ python_export() {
 						PYTHON_PKG_DEP='virtual/pypy:0=';;
 					pypy3)
 						PYTHON_PKG_DEP='virtual/pypy3:0=';;
-					jython2.5)
-						PYTHON_PKG_DEP='>=dev-java/jython-2.5.3-r2:2.5';;
 					jython2.7)
 						PYTHON_PKG_DEP='dev-java/jython:2.7';;
 					*)

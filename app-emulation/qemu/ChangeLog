@@ -243,3 +243,29 @@
   +files/qemu-2.5.0-cflags.patch, qemu-9999.ebuild:
   update cflags patch #565866
 
+  07 Dec 2015; Doug Goldstein <cardoe@gentoo.org> qemu-2.3.0-r5.ebuild,
+  qemu-2.3.0-r6.ebuild, qemu-2.3.1.ebuild, qemu-2.4.0-r1.ebuild,
+  qemu-2.4.0.1.ebuild, qemu-2.4.0.1-r1.ebuild, qemu-2.4.1.ebuild,
+  qemu-9999.ebuild:
+  utilize xen-tools sub-slot
+
+  app-emulation/xen-tools now exposes a sub-slot to help dependencies
+  rebuild when necessary.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*qemu-2.4.1-r1 (08 Dec 2015)
+
+  08 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/qemu-2.4.1-CVE-2015-7504.patch,
+  +files/qemu-2.4.1-CVE-2015-7512.patch,
+  +files/qemu-2.4.1-CVE-2015-8345.patch, +qemu-2.4.1-r1.ebuild:
+  add upstream security fixes #566792 #567144
+
+  08 Dec 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  qemu-9999.ebuild:
+  add USE=virgl for Virgil 3d GPU #566994
+
+  08 Dec 2015; Mike Frysinger <vapier@gentoo.org> qemu-9999.ebuild:
+  switch to new libcacard release #561814
+

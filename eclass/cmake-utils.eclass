@@ -257,7 +257,7 @@ comment_add_subdirectory() {
         fi
 
         if [[ -e "CMakeLists.txt" ]]; then
-                sed -e "/add_subdirectory[[:space:]]*([[:space:]]*${1//\//\\/}[[:space:]]*)/s/^/#DONOTCOMPILE /" \
+                sed -e "/add_subdirectory[[:space:]]*([[:space:]]*${1//\//\\/}[[:space:]]*)/I s/^/#DONOTCOMPILE /" \
                         -i CMakeLists.txt || die "failed to comment add_subdirectory(${1})"
         fi
 }
@@ -468,7 +468,7 @@ enable_cmake-utils_src_configure() {
 		if $(version_is_at_least 3.4.0 $(get_version_component_range 1-3 ${PV})) ; then
 			includes="<INCLUDES>"
 		fi
-	elif has_version \>=dev-util/cmake-3.4.0_rc1 ; then
+	elif ROOT=/ has_version \>=dev-util/cmake-3.4.0_rc1 ; then
 		includes="<INCLUDES>"
 	fi
 	cat > "${build_rules}" <<- _EOF_ || die

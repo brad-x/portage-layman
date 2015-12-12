@@ -80,3 +80,48 @@
 
   Package-Manager: portage-2.2.20.1
 
+*antlr-3.2 (05 Dec 2015)
+
+  05 Dec 2015; James Le Cuirot <chewi@gentoo.org> +antlr-3.2.ebuild,
+  +files/3.2-java-8.patch, +files/3.2-test-fixes.patch:
+  Version bump for SLOT 3, should fix #567560
+
+  I initially wanted to add 3.3 but despite it being less disruptive
+  than 3.4, I found compatibility issues with the revdeps. We will
+  hopefully never need 3.3.
+
+  This is a total rewrite from the previous version, which uses the new
+  simplified antlr-2 ebuild and adds a very large test suite that is
+  passing with a little patching.
+
+  Package-Manager: portage-2.2.26
+
+*antlr-3.5.2 (05 Dec 2015)
+
+  05 Dec 2015; James Le Cuirot <chewi@gentoo.org> +antlr-3.5.2.ebuild,
+  +files/3.5.2-test-fixes.patch:
+  Version bump into new SLOT 3.5
+
+  Primarily needed to unbundle ANTLR 4. This release seems to have more
+  in common with 4 than it does with 3.2, hence the new SLOT.
+
+  I have excluded the output=template feature to draw a firm dividing
+  line between 0/3 and 3.5/4 SLOTs, otherwise 4 would pull in 3 previous
+  versions!
+
+  Package-Manager: portage-2.2.26
+
+*antlr-4.5.1 (06 Dec 2015)
+
+  06 Dec 2015; James Le Cuirot <chewi@gentoo.org> +antlr-4.5.1.ebuild:
+  Version bump to 4.5.1 (closes bug #545384)
+
+  This is a rewrite as the 4.4 ebuild bundled a lot of prebuilt stuff
+  and didn't include any tests. gunit support has been dropped because
+  no one uses it and it is not worth the hassle.
+
+  Nothing in the tree truly needs at present this as the existing
+  dependencies are bogus but no doubt something will before long.
+
+  Package-Manager: portage-2.2.26
+
