@@ -71,3 +71,25 @@
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
 
+  12 Dec 2015; Mike Frysinger <vapier@gentoo.org> -memtest86+-5.01.ebuild:
+  sys-apps/memtest+: drop version 5.01
+
+  The 5.01-r1 version is used for ~arch and we'll want to stabilize that
+  when the day comes, so drop the 5.01 version to keep updates simple.
+
+  12 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  files/memtest86+-5.01-gcc-473.patch,
+  +files/memtest86+-5.01-io-extern-inline.patch,
+  +files/memtest86+-5.01-reboot-def.patch, memtest86+-5.01-r1.ebuild:
+  sys-apps/memtest+: fix building w/gcc-5 #548312
+
+  12 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/memtest86+-5.01-no-scp.patch, memtest86+-5.01-r1.ebuild:
+  sys-apps/memtest+: switch scp disable to a patch
+
+  This uses the Fedora one so it's a bit more clear we're on the same page.
+
+  12 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/memtest86+-5.01-no-clean.patch, memtest86+-5.01-r1.ebuild:
+  sys-apps/memtest+: fix parallel build errors #557890
+

@@ -112,3 +112,27 @@
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="sparc"
 
+*emacs-23.4-r14 (20 Dec 2015)
+*emacs-18.59-r11 (20 Dec 2015)
+
+  20 Dec 2015; Ulrich Müller <ulm@gentoo.org> +emacs-18.59-r11.ebuild,
+  +emacs-23.4-r14.ebuild:
+  Fixes for GCC 5.
+
+  Emacs 18.59: Use system malloc. This fixes hanging at runtime when
+  compiled with GCC 5.3. Fix a couple of compiler warnings.
+
+  Emacs 23.4: Fix jpeg version check to work with gcc >= 5.
+
+  Package-Manager: portage-2.2.26
+
+  21 Dec 2015; Patrick Lauer <patrick@gentoo.org> emacs-18.59-r11.ebuild:
+  Turn PATCHES into bash array
+
+  21 Dec 2015; Ulrich Müller <ulm@gentoo.org> emacs-18.59-r11.ebuild:
+  Revert "app-editors/emacs: Turn PATCHES into bash array"
+
+  This reverts commit 5b0d3bb4ec734650d84a7c56372e4fb12edc7d96.
+  Revert purely stylistic change. Non-array PATCHES is explicitly
+  allowed in EAPI default_src_prepare().
+

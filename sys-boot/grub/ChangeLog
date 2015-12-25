@@ -108,3 +108,103 @@
 
   Package-Manager: portage-2.2.24
 
+*grub-0.97-r16 (08 Dec 2015)
+
+  08 Dec 2015; Ian Stakenvicius <axs@gentoo.org> -grub-0.97-r15.ebuild,
+  +grub-0.97-r16.ebuild:
+  0 - Force -O0 to work around bugs 564890, 566638
+
+  Package-Manager: portage-2.2.24
+
+  12 Dec 2015; Mike Gilbert <floppym@gentoo.org> -grub-2.00_p5107-r2.ebuild,
+  -grub-2.02_beta2-r3.ebuild, -grub-2.02_beta2-r6.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.26_p26
+
+  12 Dec 2015; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r7.ebuild,
+  grub-9999-r1.ebuild:
+  Add slot for ncurses dep
+
+  Package-Manager: portage-2.2.26_p26
+
+*grub-0.97-r17 (15 Dec 2015)
+
+  15 Dec 2015; Ian Stakenvicius <axs@gentoo.org>
+  +files/grub-0.97-Add-esp-to-list-of-clobbered-registers.patch,
+  +grub-0.97-r17.ebuild:
+  0 - Properly fix misoptimization by -fcombine-stack-adjustmemts (gcc-4.9+)
+
+  GCC assumes that it can combine stacks from outer "grub_stage2()"
+  and inner trampoline "doit()" functions (optimisation -fcombine-stack-
+  adjustments).
+
+  But doit() function clobbers %esp in inline assebly statement as:
+
+    asm volatile ("movl %%esp, %0\n\tmovl %1, %%esp\n"
+                 : "=&r" (realstack) : "r" (simstack));
+
+  which tricks gcc into computing invalid local variable offsets from current
+  %esp value.
+
+  Fix by hinting gcc about %esp change in clobber list.
+
+  Thanks to slyfox for his debugging and patch!  This properly fixes bug
+  564890, allowing
+  for the -O0 hack to be removed.
+
+  Package-Manager: portage-2.2.24
+
+*grub-2.02_beta2-r8 (15 Dec 2015)
+
+  15 Dec 2015; Mike Gilbert <floppym@gentoo.org> +files/CVE-2015-8370.patch,
+  +grub-2.02_beta2-r8.ebuild:
+  Security bump for CVE-2015-8370
+
+  Bug: https://bugs.gentoo.org/568326
+
+  Package-Manager: portage-2.2.26_p32
+
+  17 Dec 2015; Agostino Sarubbo <ago@gentoo.org> grub-2.02_beta2-r8.ebuild:
+  amd64 stable wrt bug #568326
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Dec 2015; Agostino Sarubbo <ago@gentoo.org> grub-2.02_beta2-r8.ebuild:
+  x86 stable wrt bug #568326
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Dec 2015; Mike Gilbert <floppym@gentoo.org> -grub-2.02_beta2-r7.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.26_p32
+
+  18 Dec 2015; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r8.ebuild:
+  Add postinst warning about security bug
+
+  Package-Manager: portage-2.2.26_p32
+
+  18 Dec 2015; Mike Gilbert <floppym@gentoo.org> files/CVE-2015-8370.patch:
+  Replace patch for CVE-2015-8370
+
+  Use what actually got accepted upstream.
+
+  Package-Manager: portage-2.2.26_p32
+
+  18 Dec 2015; Ian Stakenvicius <axs@gentoo.org>
+  +files/grub-0.97-ncurses-pkgconfig.patch, grub-0.97-r17.ebuild:
+  0 - use pkg-config to determine ncurses libs, bug 550132
+
+  When ncurses is built with USE=tinfo, additional libs are needed due to
+  --as-needed
+  linking that are not included in the current AC_CHECK_LIB based config, nor
+  would
+  be easily detectable without pkg-config.
+
+  Package-Manager: portage-2.2.24
+

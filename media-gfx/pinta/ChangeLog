@@ -56,3 +56,47 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*pinta-1.6 (12 Dec 2015)
+
+  12 Dec 2015; Ian Delaney <idella4@gentoo.org> metadata.xml,
+  +pinta-1.6.ebuild:
+  add proxy maintainer (axelgenus), bump to 1.6
+
+  Substitute herd with proxy-maintainers project, ebuild by new maintainer
+  submitted via the gentoo bug and prepared with support via irc.
+  Ebuild sets dep upon <mono-4 (further preparation required for mono-4)
+  in a revbump
+
+  Gentoo bug: #559162
+
+  Package-Manager: portage-2.2.24
+
+  12 Dec 2015; Ian Delaney <idella4@gentoo.org> -pinta-1.5_pre20121118.ebuild:
+  rm vn. 1.5_pre20121118
+
+  Package-Manager: portage-2.2.24
+
+*pinta-1.6-r1 (13 Dec 2015)
+
+  13 Dec 2015; Ian Delaney <idella4@gentoo.org> +files/pinta-1.6-mono-4.patch,
+  +pinta-1.6-r1.ebuild:
+  rebump to vn. 1.6-r1
+
+  Patch "${P}-mono-4.patch" resolves compilation issues with Mono 4.0 and
+  above,
+  submitted by proxy maintainer vis the gentoo bug now set to FIXED
+
+  Gentoo bug: #559162
+
+  Package-Manager: portage-2.2.24
+
+*pinta-1.6-r2 (14 Dec 2015)
+
+  14 Dec 2015; Ian Delaney <idella4@gentoo.org> +pinta-1.6-r2.ebuild:
+  revbump to 1.6-r2, removed redundant dependencies
+
+  mono-addins with "gtk" USE flag is enough to pull in every Mono
+  library needed by Pinta
+
+  Package-Manager: portage-2.2.24
+

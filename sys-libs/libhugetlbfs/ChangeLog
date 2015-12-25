@@ -70,3 +70,36 @@
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
 
+*libhugetlbfs-2.19-r1 (12 Dec 2015)
+
+  12 Dec 2015; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +libhugetlbfs-2.19-r1.ebuild:
+  Fix perl module installation paths and perl dependency, see bug 554688
+  comment 7. Needs EAPI=5 bump.
+
+  Package-Manager: portage-2.2.26
+
+  14 Dec 2015; Mike Frysinger <vapier@gentoo.org> libhugetlbfs-2.19-r1.ebuild:
+  do not gzip manpages
+
+  We'll handle compressing of files ourselves, so don't waste time on it.
+
+  14 Dec 2015; Mike Frysinger <vapier@gentoo.org> libhugetlbfs-2.19-r1.ebuild:
+  control python usage during testing
+
+  The test code uses python, and only supports py2, so make sure the
+  ebuild expresses those requirements when the default is py3.
+
+  14 Dec 2015; Mike Frysinger <vapier@gentoo.org> libhugetlbfs-2.19-r1.ebuild:
+  fix D-vs-ED handling
+
+  14 Dec 2015; Mike Frysinger <vapier@gentoo.org> libhugetlbfs-2.19-r1.ebuild,
+  metadata.xml:
+  make perl support optional #554688
+
+*libhugetlbfs-2.20 (14 Dec 2015)
+
+  14 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/libhugetlbfs-2.20-noexec-stack.patch, +libhugetlbfs-2.20.ebuild:
+  version bump to 2.20
+

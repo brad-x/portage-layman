@@ -339,3 +339,37 @@
   +firefox-42.0-r2.ebuild:
   Fix misc crash issues via cairo, add musl support
 
+*firefox-43.0 (16 Dec 2015)
+*firefox-38.5.0 (16 Dec 2015)
+
+  16 Dec 2015; Ian Stakenvicius <axs@gentoo.org>
+  -files/firefox-38-dont-hardcode-libc-soname.patch,
+  -files/gentoo-default-prefs.js-2, +files/gentoo-hwaccel-prefs.js-1,
+  -firefox-38.2.0.ebuild, -firefox-38.3.0.ebuild, +firefox-38.5.0.ebuild,
+  -firefox-42.0-r2.ebuild, +firefox-43.0.ebuild, metadata.xml:
+  version bumps for security bug 568376, cleanup old
+
+  Package-Manager: portage-2.2.24
+
+  18 Dec 2015; Ian Stakenvicius <axs@gentoo.org> firefox-43.0.ebuild:
+  43.0: fix logic error in src_install causing death when USE=-hwaccel
+
+  Package-Manager: portage-2.2.24
+
+  23 Dec 2015; Ian Stakenvicius <axs@gentoo.org> firefox-38.4.0.ebuild,
+  firefox-38.5.0.ebuild, firefox-43.0.ebuild:
+  mozilla packages: migrate arm neon/softfp/hardfp config fixes to the eclass
+
+  The firefox ebuild received fixes for various arm configurations (neon,
+  hardfp/softfp)
+  but these fixes should also be applied to the other mozilla packages.  This
+  commit
+  removes them from firefox and adds them to mozconfig.
+
+  24 Dec 2015; Agostino Sarubbo <ago@gentoo.org> firefox-38.5.0.ebuild:
+  amd64 stable wrt bug #568376
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

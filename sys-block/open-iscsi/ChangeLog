@@ -100,3 +100,38 @@
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
 
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org> open-iscsi-2.0.873.ebuild:
+  do not use ROOT in src_install
+
+  We do not want to use ROOT to control where sbin progs are installed.
+  Switch to EPREFIX instead.
+
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org> open-iscsi-2.0.873.ebuild:
+  fix mishandling of MY_PV
+
+  The code to set up MY_PV was based on MY_PV which mean successive env
+  loads would generate an incorrect value.  Drop the loading of it (as
+  the default PV is what we want) and rename the var to MY_P as that is
+  what it actually represents.
+
+*open-iscsi-2.0.873-r1 (18 Dec 2015)
+
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/open-iscsi-2.0.873-memset.patch, +open-iscsi-2.0.873-r1.ebuild:
+  fix incorrect memset call
+
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  open-iscsi-2.0.873-r1.ebuild:
+  fix handling of user CPPFLAGS
+
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  open-iscsi-2.0.873-r1.ebuild:
+  build with LFS flags
+
+  This package uses a bunch of filesystem calls, but they default to 32bit,
+  so for 32bit systems, we end up not being able to support large files.
+
+  18 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  open-iscsi-2.0.873-r1.ebuild:
+  use the udev eclass to install rules
+

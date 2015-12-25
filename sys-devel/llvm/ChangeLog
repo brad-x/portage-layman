@@ -311,3 +311,31 @@
   09 Dec 2015; Michał Górny <mgorny@gentoo.org> llvm-3.7.0-r3.ebuild:
   Force python* for USE=test build
 
+  12 Dec 2015; Marco Leogrande <dark.knight.ita@gmail.com> llvm-9999.ebuild:
+  add BPF backend to compiled targets
+
+  As part of 3.7.* releases, LLVM has officially added support for the
+  BPF backend. This backend emits instructions in the eBPF language,
+  that is used in the homonymous Linux kernel virtual machine. Users of
+  LLVM can write a program in C and have it compiled directly into eBPF.
+
+  This commit adds support for compiling this backend unconditionally.
+
+  12 Dec 2015; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Reorder python_setup after epatch_user in -9999
+
+*llvm-3.7.0-r4 (13 Dec 2015)
+
+  13 Dec 2015; Michał Górny <mgorny@gentoo.org> +llvm-3.7.0-r4.ebuild:
+  Clean Python, enable libomp and BPF backend in 3.7
+
+  Backport some of the changes from -9999 as 3.7.0-r4. Remove multi-Python
+  support which was working only partially because of lldb, also fixing
+  byte-compilation of Python modules, #567550. Default to libomp instead
+  of semi-broken libgomp support, #562990. Enable BPF backend by default,
+  GitHub PR #450.
+
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=567550
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=562990
+  Fixes: https://github.com/gentoo/gentoo/pull/450
+

@@ -433,3 +433,47 @@
 
   Package-Manager: portage-2.2.26_p25
 
+*python-3.5.1 (13 Dec 2015)
+
+  13 Dec 2015; Mike Gilbert <floppym@gentoo.org> +python-3.5.1.ebuild:
+  Bump to 3.5.1
+
+  Package-Manager: portage-2.2.26_p27
+
+  15 Dec 2015; Mike Gilbert <floppym@gentoo.org> python-2.7.10-r1.ebuild,
+  python-3.3.5-r1.ebuild, python-3.4.3.ebuild:
+  Depend on ncurses slot 0 in stable ebuilds
+
+  Package-Manager: portage-2.2.26_p32
+
+*python-3.5.1-r1 (18 Dec 2015)
+*python-3.5.0-r5 (18 Dec 2015)
+*python-3.4.3-r6 (18 Dec 2015)
+*python-3.3.5-r6 (18 Dec 2015)
+*python-2.7.11-r1 (18 Dec 2015)
+*python-2.7.10-r5 (18 Dec 2015)
+
+  18 Dec 2015; Michał Górny <mgorny@gentoo.org> -python-2.7.10-r4.ebuild,
+  +python-2.7.10-r5.ebuild, -python-2.7.11.ebuild, +python-2.7.11-r1.ebuild,
+  -python-3.3.5-r5.ebuild, +python-3.3.5-r6.ebuild, -python-3.4.3-r5.ebuild,
+  +python-3.4.3-r6.ebuild, -python-3.5.0-r4.ebuild, +python-3.5.0-r5.ebuild,
+  -python-3.5.1.ebuild, +python-3.5.1-r1.ebuild:
+  Ensure python-config & .pc ABI symlinks, idle wrapping
+
+  Fix the pythonX.Y-config symlink creation to be only applied when
+  ABIFLAGS are not empty, and add additional python-X.Ym.pc symlink for
+  pkg-config. Make both official as they are created as part of regular
+  upstream 'make install' (but not 'make altinstall' used by Gentoo).
+
+  Install python-exec wrapping symlink for the idle executable when USE=tk
+  is enabled.
+
+*python-3.5.1-r2 (23 Dec 2015)
+*python-3.4.3-r7 (23 Dec 2015)
+*python-3.3.5-r7 (23 Dec 2015)
+
+  23 Dec 2015; Michał Górny <mgorny@gentoo.org> -python-3.3.5-r6.ebuild,
+  +python-3.3.5-r7.ebuild, -python-3.4.3-r6.ebuild, +python-3.4.3-r7.ebuild,
+  -python-3.5.1-r1.ebuild, +python-3.5.1-r2.ebuild:
+  Install a wrapper to fix python-config paths, #569506
+

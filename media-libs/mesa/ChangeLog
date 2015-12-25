@@ -269,3 +269,58 @@
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="ppc"
 
+*mesa-11.0.7 (11 Dec 2015)
+
+  11 Dec 2015; Manuel Rüger <mrueg@gentoo.org> +mesa-11.0.7.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.26
+
+  11 Dec 2015; Manuel Rüger <mrueg@gentoo.org> -mesa-11.0.4.ebuild,
+  -mesa-11.0.5.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.26
+
+*mesa-11.1.0 (15 Dec 2015)
+
+  15 Dec 2015; Manuel Rüger <mrueg@gentoo.org> +mesa-11.1.0.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.26
+
+  19 Dec 2015; Matt Turner <mattst88@gentoo.org> mesa-11.1.0.ebuild,
+  mesa-9999.ebuild:
+  Update libva dependency to >=1.6.0.
+
+  Bug: https://bugs.gentoo.org/568402
+
+  19 Dec 2015; Matt Turner <mattst88@gentoo.org> mesa-11.0.6.ebuild,
+  mesa-11.0.7.ebuild, mesa-11.1.0.ebuild, mesa-9999.ebuild:
+  Require llvm if using radeon+gallium.
+
+  The R300 driver requires llvm on x86/amd64. Also relax the requirement to be
+  x86/amd64-only for video_cards_r300.
+
+  Bug: https://bugs.gentoo.org/567848
+
+  19 Dec 2015; Matt Turner <mattst88@gentoo.org> mesa-11.0.6.ebuild,
+  mesa-11.0.7.ebuild, mesa-11.1.0.ebuild, mesa-9999.ebuild:
+  Add missing separators in configure arguments.
+
+  Bug: https://bugs.gentoo.org/568020
+
+  Package-Manager: portage-2.2.20.1
+
+  19 Dec 2015; Matt Turner <mattst88@gentoo.org> mesa-11.0.7.ebuild,
+  mesa-11.1.0.ebuild, mesa-9999.ebuild:
+  Drop libudev dependency with USE=gbm/dri3.
+
+  Bug: https://bugs.gentoo.org/567368
+
+  19 Dec 2015; Markus Meier <maekke@gentoo.org> mesa-11.0.6.ebuild:
+  arm stable, bug #559062
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="arm"
+

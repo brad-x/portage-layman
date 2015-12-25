@@ -154,3 +154,68 @@
 
   Package-Manager: portage-2.2.25
 
+*maxima-5.37.3-r2 (21 Dec 2015)
+
+  21 Dec 2015; Ulrich Müller <ulm@gentoo.org> +files/50maxima-gentoo-1.el,
+  +maxima-5.37.3-r2.ebuild:
+  Install imaxima.
+
+  With USE=emacs, install imaxima and byte-compile the elisp files.
+  This obsoletes app-emacs/imaxima, so block against it.
+  With USE=-emacs, remove any emacs files installed by the build system.
+
+  Bug: 448242
+
+  Package-Manager: portage-2.2.26
+
+  21 Dec 2015; Ulrich Müller <ulm@gentoo.org> +files/50maxima-gentoo-0.el,
+  -files/50maxima-gentoo.el, maxima-5.34.1.ebuild, maxima-5.37.3-r1.ebuild:
+  Rename emacs site-init file.
+
+  Use similar naming scheme as for the patch files.
+
+  Package-Manager: portage-2.2.26
+
+*maxima-5.37.3-r3 (23 Dec 2015)
+
+  23 Dec 2015; Ulrich Müller <ulm@gentoo.org> +files/emacs-0.patch,
+  +files/wish-2.patch, -maxima-5.37.3-r2.ebuild, +maxima-5.37.3-r3.ebuild:
+  Update Emacs support.
+
+  Consolidate "emacs" and "latex" USE flags. Remove the non-functional
+  "xemacs" flag. Add a configure option to disable Emacs support in the
+  upstream build system.
+
+  Bug: 448242
+
+  Package-Manager: portage-2.2.26
+
+  23 Dec 2015; Ulrich Müller <ulm@gentoo.org> maxima-5.37.3-r3.ebuild:
+  Fix ewarn on arm.
+
+  https://bugs.gentoo.org/show_bug.cgi?id=448242#c18
+
+  Package-Manager: portage-2.2.26
+
+  23 Dec 2015; Ulrich Müller <ulm@gentoo.org> maxima-5.37.3-r3.ebuild:
+  Fix typo in pkg_postrm.
+
+  Package-Manager: portage-2.2.26
+
+  23 Dec 2015; Andrey Grozin <grozin@gentoo.org> -files/wish-1.patch,
+  -maxima-5.37.3-r1.ebuild:
+  remove 5.37.3-r1
+
+  Package-Manager: portage-2.2.26
+
+*maxima-5.37.3-r4 (25 Dec 2015)
+
+  25 Dec 2015; Andrey Grozin <grozin@gentoo.org> -maxima-5.37.3-r3.ebuild,
+  +maxima-5.37.3-r4.ebuild:
+  linguas_de support
+
+  Thanks to Ulrich Müller <ulm@gentoo.org>
+  Bug: 569616
+
+  Package-Manager: portage-2.2.26
+

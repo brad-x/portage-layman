@@ -136,3 +136,40 @@
   23 Sep 2015; Lukáš Poláček <lukas@ksp.sk> -autojump-22.2.4-r2.ebuild:
   remove 22.2.4-r2
 
+*autojump-22.2.4-r4 (04 Dec 2015)
+
+  04 Dec 2015; Marc Joliet <marcec@gmx.de> +autojump-22.2.4-r4.ebuild,
+  +files/autojump-22.4.4-fix-__aj_error-typo.patch,
+  +files/autojump-22.4.4-fix-autojump.fish-bugs.patch:
+  revbump to add FISH support
+
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
+  04 Dec 2015; Marc Joliet <marcec@gmx.de> autojump-22.2.4-r4.ebuild:
+  22.2.4-r4: use python_replicate_script
+
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
+  04 Dec 2015; Marc Joliet <marcec@gmx.de> autojump-22.2.4-r4.ebuild:
+  22.2.4-r4: rm bundled argparse
+
+  Upstream only includes the bundled argparse module for Python 2.6 support.
+  Patch bin/autojump to use the built-in argparse module instead.
+
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
+  04 Dec 2015; Marc Joliet <marcec@gmx.de> autojump-22.2.4-r4.ebuild:
+  22.2.4-r4: convert einfo to elog
+
+  Convert the einfo message in src_install() to an elog message in
+  pkg_postinst(), which is a more fitting place for such a message.
+
+  Signed-off-by: Marc Joliet <marcec@gmx.de>
+
+  04 Dec 2015; Marc Joliet <marcec@gmx.de> autojump-22.2.4-r4.ebuild,
+  metadata.xml:
+  22.2.4-r4: python -> ipython
+
+  Rename the python USE flag to ipython, since it really controls IPython
+  support, and not general Python support.
+

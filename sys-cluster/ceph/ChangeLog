@@ -136,3 +136,23 @@
 
   Package-Manager: portage-2.2.24
 
+*ceph-9.2.0 (21 Dec 2015)
+
+  21 Dec 2015; Yixun Lan <dlan@gentoo.org> -ceph-0.94.4.ebuild,
+  -ceph-9.0.3.ebuild, +ceph-9.2.0.ebuild, ceph-10.0.0.ebuild,
+  ceph-9999.ebuild, files/README.gentoo, -files/ceph-0.87.1-glibc-2.20.patch,
+  -files/ceph-fix-gnustack.patch, -files/ceph-mds_at.service,
+  -files/ceph-mon_at.service, -files/ceph-osd_at.service, files/ceph.initd-r1:
+  bump to 9.2.0
+
+  add user/group: ceph
+   now sys-cluster/ceph run in normal user 'ceph' instead of 'root'
+
+  Package-Manager: portage-2.2.26
+
+  23 Dec 2015; Yixun Lan <dlan@gentoo.org> +files/ceph-mds_at.service,
+  +files/ceph-mon_at.service, +files/ceph-osd_at.service:
+  restore systemd unit files for 0.94.5
+
+  Package-Manager: portage-2.2.26
+

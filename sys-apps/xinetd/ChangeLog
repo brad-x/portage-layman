@@ -114,3 +114,16 @@
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
 
+  15 Dec 2015; Mike Frysinger <vapier@gentoo.org> xinetd-2.3.15-r2.ebuild:
+  mark 2.3.15-r2 arm64/m68k/s390/sh stable
+
+*xinetd-2.3.15-r3 (23 Dec 2015)
+
+  23 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  +files/xinetd-2.3.15-config.patch, +xinetd-2.3.15-r3.ebuild:
+  default to clearing active env
+
+  It's rare that we want the active shell environment to be passed down
+  to xinetd services, so default to clearing things.  If a service wants
+  an env var to be set, they can do so explicitly.
+

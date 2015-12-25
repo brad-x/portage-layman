@@ -109,3 +109,36 @@
 
   Package-Manager: portage-2.2.20.1
 
+*skey-1.1.5-r10 (12 Dec 2015)
+
+  12 Dec 2015; Ulrich Müller <ulm@gentoo.org> +skey-1.1.5-r10.ebuild:
+  Avoid out of bounds stack read.
+
+  Fix the extract() function not to access unnecessary array elements;
+  this avoids an out-of-bounds read when called from btoe() or etob().
+  Change the insert() function to use similar logic as extract().
+
+  Bug: 567608
+
+  Package-Manager: portage-2.2.26
+
+  12 Dec 2015; Ulrich Müller <ulm@gentoo.org> skey-1.1.5-r10.ebuild:
+  Unpack patches in WORKDIR instead of S.
+
+  Package-Manager: portage-2.2.26
+
+  13 Dec 2015; Pacho Ramos <pacho@gentoo.org> skey-1.1.5-r10.ebuild:
+  Use readme.gentoo-r1 instead for eapi6 support (#520094#c6)
+
+  Package-Manager: portage-2.2.26
+
+  21 Dec 2015; Patrick Lauer <patrick@gentoo.org> skey-1.1.5-r10.ebuild:
+  Turn PATCHES into bash array
+
+  21 Dec 2015; Ulrich Müller <ulm@gentoo.org> skey-1.1.5-r10.ebuild:
+  Revert "sys-auth/skey: Turn PATCHES into bash array"
+
+  This reverts commit 9c8c3a9e1b6a3d246c492f49393ea11f8a093f15.
+  Revert purely stylistic change. Non-array PATCHES is explicitly
+  allowed in EAPI default_src_prepare().
+

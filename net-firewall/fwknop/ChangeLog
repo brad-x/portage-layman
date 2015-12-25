@@ -107,3 +107,53 @@
 
   As cipherdyne.org tends to be down sometimes.
 
+  21 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> -fwknop-2.6.7-r1.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.24
+
+  21 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> +files/fwknopd.init,
+  -files/fwknopd.init-r1, fwknop-2.6.7-r2.ebuild:
+  drop obsolete initscript revision suffix
+
+  Package-Manager: portage-2.2.24
+
+  21 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> fwknop-2.6.7-r2.ebuild:
+  re-enable in-source build wrt bug 568958
+
+  Otherwise Python C extension fails to build because it links against fko
+  library built during src_compile stage. With out-of-source build this
+  library
+  resides in a separate directory from sources, thus it cannot be found during
+  Python module compilation by normal means.
+
+  This problem didn't catch my attention earlier because build failure is only
+  reproducible if there is no fko library installed in the system from a
+  previous
+  version of this package.
+
+  Gentoo-Bug: 568958
+
+  Package-Manager: portage-2.2.24
+
+  21 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> fwknop-2.6.7-r2.ebuild:
+  do not call distutils-r1_src_prepare
+
+  Firstly, this helps to avoid potential problems with double patching
+  because both autotools-utils_src_prepare and distutils-r1_src_prepare
+  try to apply patches from PATCHES variable and call epatch_user.
+
+  Secondly, fwknop's Python module does not need any special stuff that
+  distutils-r1_src_prepare does. On the contrary, without extra copying
+  of Python files, the build is happening the way it is supported and
+  expected by upstream.
+
+  Package-Manager: portage-2.2.24
+
+*fwknop-2.6.8 (24 Dec 2015)
+
+  24 Dec 2015; Ian Delaney <idella4@gentoo.org> +fwknop-2.6.8.ebuild:
+  version bump to 2.6.8
+
+  Package-Manager: portage-2.2.24
+

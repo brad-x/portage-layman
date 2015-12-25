@@ -55,3 +55,35 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  atari-fdisk-0.7.1.5.4.ebuild:
+  update to EAPI=5
+
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  atari-fdisk-0.7.1.5.4.ebuild,
+  +files/atari-fdisk-0.7.1.5.4-gcc-5-inline.patch,
+  +files/atari-fdisk-0.7.1.5.4-prompt-logic.patch:
+  fix builds w/gcc-5 #568732
+
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  atari-fdisk-0.7.1.5.4.ebuild:
+  stabilize 0.7.1.5.4 for everyone
+
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  -atari-fdisk-0.7.1.5.1.ebuild:
+  drop old 0.7.1.5.1
+
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  atari-fdisk-0.7.1.5.4.ebuild:
+  respect the users CC setting
+
+  19 Dec 2015; Mike Frysinger <vapier@gentoo.org>
+  atari-fdisk-0.7.1.5.4.ebuild:
+  drop most keywords
+
+  While the codebase compiles and does some basic operations fine across
+  other arches, it's really only been tested on m68k for serious work.
+  Newer gcc points out that the code assumes sizeof(long) == 4 in many
+  places.  Rather than try to fix this tool, just drop most arches and
+  leave behind m68k (where it matters) & x86 (for runtime testing).
+

@@ -306,3 +306,53 @@
 
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+*libvirt-1.2.21-r1 (22 Dec 2015)
+
+  22 Dec 2015; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.21.ebuild,
+  +libvirt-1.2.21-r1.ebuild:
+  security fix for 1.2.21 (CVE-2015-5313, bug #568870)
+
+  Apply fix for CVE-2015-5313 to 1.2.21:
+    A path-traversal flaw was found in the way the libvirt daemon handled
+    file-system names for storage volumes. A libvirt user with privileges to
+    create storage volumes and without privileges to create and modify
+    domains could possibly use this flaw to escalate their privileges.
+
+  Gentoo-Bug: 568870
+
+  Package-Manager: portage-2.2.26
+
+  22 Dec 2015; Matthias Maier <tamiko@gentoo.org> -libvirt-1.2.19-r1.ebuild,
+  -libvirt-1.2.20-r1.ebuild:
+  remove vuln. 1.2.(20|21) (CVE-2015-5313, bug #568870)
+
+      This is a cleanup for CVE-2015-5313 bug 568870.
+
+      Gentoo-Bugs: 568870
+
+  Package-Manager: portage-2.2.26
+
+  22 Dec 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.21-r1.ebuild:
+  amd64 stable wrt bug #568870
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  22 Dec 2015; Agostino Sarubbo <ago@gentoo.org> libvirt-1.2.21-r1.ebuild:
+  x86 stable wrt bug #568870
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  22 Dec 2015; Matthias Maier <tamiko@gentoo.org> -files/libvirtd.confd-r4,
+  -files/libvirtd.init-r14, -libvirt-1.2.18-r1.ebuild:
+  remove vulnerable 1.2.18 (CVE-2015-5313, bug #568870)
+
+  This is a cleanup for CVE-2015-5313 bug 568870.
+
+  Gentoo-Bugs: 568870
+
+  Package-Manager: portage-2.2.26
+
