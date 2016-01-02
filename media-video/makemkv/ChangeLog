@@ -71,3 +71,28 @@
 
   Package-Manager: portage-2.2.20.1
 
+*makemkv-1.9.8 (25 Dec 2015)
+
+  25 Dec 2015; James Le Cuirot <chewi@gentoo.org> -makemkv-1.9.7.ebuild,
+  +makemkv-1.9.8.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.26
+
+*makemkv-1.9.8-r1 (27 Dec 2015)
+
+  27 Dec 2015; James Le Cuirot <chewi@gentoo.org> +files/makemkv-qt4.patch,
+  +files/makemkv-qt5.patch, -makemkv-1.9.8.ebuild, +makemkv-1.9.8-r1.ebuild:
+  Add Qt5 support, closes bug #569768
+
+  Qt5 always trumps Qt4 if it is available. There are no configure
+  options or variables to control this and there is no publicly
+  available configure.ac either so we have to selectively patch the raw
+  configure script directly.
+
+  Also make a couple of simplifications. src_configure checked for a
+  configure script even though there is always one there now. I also
+  couldn't see any reason for having virtual/opengl as a dependency.
+
+  Package-Manager: portage-2.2.26
+

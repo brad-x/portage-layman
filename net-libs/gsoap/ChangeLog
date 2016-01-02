@@ -158,3 +158,52 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  27 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu> -gsoap-2.8.12.ebuild:
+  remove old and buggy version 2.8.12 #426990
+
+  Version 2.8.23 solves the bug and is already marked as stable.
+  No need to keep the old version 2.8.12 with an outstanding bug open.
+
+  Gentoo-Bug-URL: https://bugs.gentoo.org/show_bug.cgi?id=426990
+
+  Package-Manager: portage-2.2.24
+
+*gsoap-2.7.17-r1 (27 Dec 2015)
+
+  27 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  +gsoap-2.7.17-r1.ebuild:
+  bump version 2.7.17 to EAPI5
+
+  Main changes for the transition are fixing deps due to DEPEND!=RDEPEND,
+  removal of the '|| die' statements following calls to package manager
+  tools, and specifying the slot dependency on openssl.
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu> gsoap-2.7.17-r1.ebuild:
+  use prune_libtool_files instead of removing them manually
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu> gsoap-2.7.17-r1.ebuild,
+  gsoap-2.8.26.ebuild, gsoap-2.8.27.ebuild:
+  add missing '|| die' statements
+
+  Package-Manager: portage-2.2.24
+
+*gsoap-2.7.17-r2 (27 Dec 2015)
+
+  27 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  +files/gsoap-2.7-fix-missing-cookie-support.patch, +gsoap-2.7.17-r2.ebuild:
+  backport missing cookie support #340647
+
+  For <gsoap-2.8.24, successful compilation results in missing cookie
+  support due to undefined compilation flag. This is fixed in the later
+  versions by upstream. Backport it for gsoap-2.7.17.
+
+  Upstream-URL: https://sourceforge.net/p/gsoap2/code/85/tree//gsoap/Makefile.
+  am?diff=51af4d3f5fcbc945b53d89a4:84
+  Gentoo-Bug-URL: https://bugs.gentoo.org/show_bug.cgi?id=340647
+
+  Package-Manager: portage-2.2.24
+

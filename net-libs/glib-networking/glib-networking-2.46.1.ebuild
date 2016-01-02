@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -38,6 +38,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# Fix test build failure with USE=-smartcard
 	# https://bugzilla.gnome.org/show_bug.cgi?id=758134
+	# https://bugzilla.gnome.org/show_bug.cgi?id=728977
 	epatch "${FILESDIR}"/${PN}-2.40.1-unittests.patch
 
 	eautoreconf
@@ -65,4 +66,24 @@ multilib_src_test() {
 
 multilib_src_install() {
 	gnome2_src_install
+}
+
+pkg_postinst() {
+	gnome2_pkg_postinst
+
+	multilib_pkg_postinst() {
+		gnome2_giomodule_cache_update \
+			|| die "Update GIO modules cache failed (for ${ABI})"
+	}
+	multilib_foreach_abi multilib_pkg_postinst
+}
+
+pkg_postrm() {
+	gnome2_pkg_postrm
+
+	multilib_pkg_postrm() {
+		gnome2_giomodule_cache_update \
+			|| die "Update GIO modules cache failed (for ${ABI})"
+	}
+	multilib_foreach_abi multilib_pkg_postrm
 }

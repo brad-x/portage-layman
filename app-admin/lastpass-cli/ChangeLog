@@ -55,3 +55,49 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*lastpass-cli-0.6.0 (05 Nov 2015)
+
+  05 Nov 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  +lastpass-cli-0.6.0.ebuild:
+  bump to 0.6.0 #548088
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=548088
+
+  Package-Manager: portage-2.2.20.1
+
+  05 Nov 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  -lastpass-cli-0.3.0.ebuild, -lastpass-cli-0.5.0.ebuild:
+  remove old versions 0.3.0 and 0.5.0
+
+  Versions of lastpass-cli prior to 0.5.1 will fail with:
+  "Error: Peer certificate cannot be authenticated with given CA
+  certificates."
+  This is due to updated SHA-256 certificate.
+
+  See upstream commit 89d3b40
+
+  Package-Manager: portage-2.2.20.1
+
+*lastpass-cli-0.7.1 (23 Dec 2015)
+
+  23 Dec 2015; Gokturk Yuksek <gokturk@binghamton.edu>
+  +lastpass-cli-0.7.1.ebuild:
+  bump to version 0.7.1
+
+  Patching Makefile in src_prepare to disable stripping on install
+  isn't needed anymore. See upstream commit 17b5d40 for more info.
+
+  Package-Manager: portage-2.2.24
+
+  26 Dec 2015; Anthony G. Basile <blueness@gentoo.org>
+  lastpass-cli-0.6.0.ebuild:
+  add libressl support
+
+  Package-Manager: portage-2.2.24
+
+  26 Dec 2015; Anthony G. Basile <blueness@gentoo.org>
+  lastpass-cli-0.7.1.ebuild:
+  re-add libressl support
+
+  Package-Manager: portage-2.2.24
+

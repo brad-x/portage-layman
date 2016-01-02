@@ -1,5 +1,5 @@
 # ChangeLog for sys-boot/grub
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *grub-9999-r1 (09 Aug 2015)
@@ -205,6 +205,18 @@
   linking that are not included in the current AC_CHECK_LIB based config, nor
   would
   be easily detectable without pkg-config.
+
+  Package-Manager: portage-2.2.24
+
+*grub-2.02_beta2-r9 (01 Jan 2016)
+
+  01 Jan 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +files/grub-2.02_beta2-KERNEL_GLOBS.patch,
+  +files/grub-2.02_beta2-lvm2-raid1.patch, +grub-2.02_beta2-r9.ebuild:
+  backport LVM fix & configurable kernel globs
+
+  - Backport upstream LVM RAID1 fix
+  - GRUB_LINUX_KERNEL_GLOBS to tweak globs for finding kernels
 
   Package-Manager: portage-2.2.24
 

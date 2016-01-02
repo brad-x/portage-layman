@@ -1,5 +1,5 @@
 # ChangeLog for media-video/aegisub
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *aegisub-9999 (09 Aug 2015)
@@ -153,6 +153,84 @@
   This also fixes build with GCC-5.
 
   Gentoo-Bug: 568878
+
+  Package-Manager: portage-2.2.24
+
+  22 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> aegisub-3.2.2.ebuild,
+  aegisub-9999.ebuild:
+  drop useless slot operator on luajit dependency
+
+  dev-lang/luajit does not have sub-slots and we require SLOT 2 only.
+
+  Package-Manager: portage-2.2.24
+
+  25 Dec 2015; Agostino Sarubbo <ago@gentoo.org> aegisub-3.2.2.ebuild:
+  amd64 stable wrt bug #569102
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Dec 2015; Agostino Sarubbo <ago@gentoo.org> aegisub-3.2.2.ebuild:
+  x86 stable wrt bug #569102
+
+  Package-Manager: portage-2.2.24
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-3.2.2-add-missing-pthread-flags.patch,
+  files/aegisub-9999-add-missing-pthread-flags.patch:
+  adjust pthread patch wrt bug 568878
+
+  - Always append '-lpthread' to LIBS_PTHREAD since build system fails to
+    do so when needed.
+  - Add CFLAGS_PTHREAD to libaegisub build since it uses pthreads.
+  - Remove CFLAGS_PTHREAD from tools build since it does not use pthreads,
+    but only links with archive that includes pthread symbols.
+
+  Gentoo-Bug: 568878
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-3.2.2-unbundle-luajit.patch,
+  files/aegisub-9999-unbundle-luajit.patch:
+  adjust LIBS_LUA placement in luajit unbundle patch
+
+  LIBS_LUA (aka '-lluajit-5.x') is included in OBJ list in automation
+  build. This is why linking to luajit works properly.
+
+  However, the expected behaviour is to include LIBS_LUA in LIBS list.
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-3.2.2-respect-user-compiler-flags.patch:
+  remove clang-only options to avoid warnings on gcc
+
+  These options only suppress compilation warnings and do not alter
+  compilation itself, so it is safe to remove them.
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild,
+  -files/aegisub-9999-respect-user-compiler-flags.patch:
+  reuse patch for 3.2.2 in live ebuild
+
+  Package-Manager: portage-2.2.24
+
+  27 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> -aegisub-2.1.9.ebuild,
+  -aegisub-3.1.2.ebuild, -aegisub-3.1.3.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.24
+
+  01 Jan 2016; Ian Delaney <idella4@gentoo.org> aegisub-3.0.4.ebuild,
+  +files/aegisub-3.0.4-fix-install-with-empty-LINGUAS.patch:
+  fix installation of 3.0.4 with empty LINGUAS
+
+  3.2.2 and live are not affected.
 
   Package-Manager: portage-2.2.24
 

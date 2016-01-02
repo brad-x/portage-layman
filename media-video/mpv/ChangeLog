@@ -1,5 +1,5 @@
 # ChangeLog for media-video/mpv
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mpv-9999 (09 Aug 2015)
@@ -163,6 +163,405 @@
 
   26 Nov 2015; Ian Delaney <idella4@gentoo.org> metadata.xml:
   Add Coacher as co-maintainer to metadata
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  whitespace change to improve readability
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  use HTTPS links where possible
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  make more probable branch first
+
+  We have only one live ebuild and no less than one versioned ebuild.
+  Thus make the versioned case be the first to preserve the flow of
+  reading in most cases.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  rename WAF_V to WAF_PV to be in sync with Portage
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  make waf sources be appended to SRC_URI
+
+  This helps to avoid confusion that waf sources are the only ones being
+  fetched.
+
+  Suggested by mgorny in PR #511.
+
+  Also use a shorter fetch URL for waf sources.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  sort eclasses alphabetically
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  do USE checks in pkg_pretend
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  This is the proper place if we will need to die early (we will).
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  better wording in user messages
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  use elog for libav USE message
+
+  This way user is also informed after the build that he may lose some
+  functionality with libav.
+
+  Suggested by mgorny in PR #511.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  sort dependencies alphabetically
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  rename cdio USE to cdda
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  Local cdio USE has the same meaning for mpv as global cdda USE. It looks
+  like it was copied from mplayer ebuild where it made sense, because
+  mplayer could support both cdparanoia and cdio-paranoia at the time. On
+  the other hand, current mpv only supports cdio-paranoia.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  remove explicit dependency on libcdio
+
+  Upstream requires only libcdio-cdparanoia for CDDA support.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  fix libva dependency version wrt bug 565618
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  Gentoo-Bug: 565618
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  remove useless deps on x11-proto/*
+
+  These packages are pulled by the corresponding libs already.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  rename doc-pdf USE to doc
+
+  We have the standard way to enable documentation build in Gentoo and
+  this way is global doc USE.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  use COMMON_DEPEND for common dependencies
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  This makes DEPEND/RDEPEND setup simple and readable.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml,
+  mpv-9999.ebuild:
+  introduce missing archive USE
+
+  This USE enables archive support via libarchive.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  add missing libXdamage dep for OpenGL on X (GLX)
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  simplify mesa dependency
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  enable test support, masked on ~alpha for now
+
+  mpv has a small, but working test suite. It requires dev-util/cmocka,
+  which is missing ~alpha keyword atm. Thus a package USE mask is needed.
+
+  See bug 569558 for dev-util/cmocka KEYWORDREQ.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  tidy comments
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  adjust libsdl2 dependency
+
+  Similar idea was submitted by Vindex17 in PR #318.
+
+  Though libsdl2 is listed under audio outputs in configure script,
+  it actually handles both audio and video outputs. Thus video and sound
+  USE flags should be enabled for libsdl2. We also want X or wayland USE
+  flag enabled for libsdl2, so mpv can create a window to render in.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  sort use_enable statements as in configure script
+
+  This eases USE reviews during version bumps.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  explicitly disable unsupported options
+
+  Similar idea was submitted by Vindex17 in PR #318.
+
+  This includes static build and APIs from MacOS and Windows.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml,
+  mpv-9999.ebuild:
+  avoid uchardet automagic dep wrt bug 565646
+
+  Add missing uchardet USE flag to avoid automagic dependency on uchardet
+  wrt bug 565646.
+
+  Gentoo-Bug: 565646
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  clarify USE descriptions in metadata
+
+  enca and libguess are used only for subtitles charset discovery.
+  Minor wording improvements for vf-dlopen and jpeg USE flags.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  adjust required libdvread version from 4.1.3 to 4.1.0
+
+  The first libdvdread-4.x version that entered the tree was 4.1.3, so
+  from the Portage point of view this is ditto. However, mpv configure
+  script requires libdvdread '>=4.1.0'. Unless someone wants to include
+  this lengthy explanation why these two versions mismatch in the ebuild,
+  adjust libdvdread version in dependency.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  adjust required libass USE flags wrt bug 562394
+
+  mpv uses libass to render subtitles and enca to detect subtitle
+  encoding. For mpv to support enca, mpv does not need to have
+  libass[enca]. This helps to avoid problems with >=libass-0.13.0,
+  which dropped 'enca' USE.
+
+  Also enable harfbuzz USE to support subtitles for complex languages.
+
+  See [0] as a reference for both of the above.
+
+  [0]: https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst
+
+  Gentoo-Bug: 562394
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  comment on automagic VDPAU HW acceleration
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  explicitly enable audio input in Video4Linux streams
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  wayland supports rendering via EGL only
+
+  This is stated in Wayland docs and mpv configure script.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml,
+  mpv-9999.ebuild:
+  use more sane logic for opengl and egl USE flags
+
+  Currently 'opengl' USE stands for 'anything that draws using OpenGL
+  API', and 'egl' USE stands for 'EGL for X11'. Notice these are not
+  complementary.
+
+  Thus, for example, on Wayland one should use 'mpv[wayland,opengl,-egl]',
+  which is a bit counterintuitive, since Wayland (compositor) uses EGL
+  only. Also one cannot disable GLX support, but leave EGL on X11, because
+  of USE flags interdependencies.
+
+  Both X11 and Wayland use OpenGL API to do drawing, but historically the
+  first one was native OpenGL in X11 aka GLX and later came EGL in X11 and
+  Wayland. However, now there is a tendency to prefer EGL to not bind
+  oneself to X11.
+
+  There is no global 'egl' USE atm, but the logic of local 'egl' USEs
+  across the tree is 'not bind oneself to GLX'. On Linux there is no need
+  to repeat that drawing is done using OpenGL API even when EGL comes to
+  play.
+
+  Taking all of the above into account more sane and expected meaning
+  should be given to 'opengl' and 'egl' USE flags.
+
+  After this change 'opengl' USE stands for 'OpenGL in X11 aka GLX' and
+  'egl' USE stands for 'any EGL-based output'. Notice these are now
+  complementary.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  use ${PN} when not in links
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  indent IUSE contents for clarity
+
+  This helps to visualize what lines belong to IUSE variable.
+
+  Suggested by mgorny in PR #511.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  use simpler chmod call
+
+  Suggested by mgorny in PR #511.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  group iconv-dependent deps under iconv USE
+
+  Package-Manager: portage-2.2.24
+
+*mpv-0.11.0-r1 (28 Dec 2015)
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/mpv-fix-include-in-tests.patch, +mpv-0.11.0-r1.ebuild:
+  revbump 0.11.0 to receive recent live ebuild changes
+
+  This requires a small upstream patch to fix include in tests.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  update vaapi USE dependencies and configure options
+
+  VAAPI in mpv is now available for Wayland and for EGL and GLX on X11 as
+  opposed to GLX only before. A newer libva version is required, though.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  add compiler check when vaapi is enabled with egl
+
+  VAAPI + EGL combo requires Thread Local Storage C++11 feature or
+  GNU __thread extension. Add the corresponding check for sanity.
+
+  See also https://github.com/mpv-player/mpv/issues/2631
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  drop pvr USE as done upstream wrt bug 568018
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  Gentoo-Bug: 568018
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml,
+  mpv-9999.ebuild:
+  add support for EGL video output via GBM
+
+  This allows to use EGL on top of a DRM device bypassing window
+  server/compositor.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  enable egl USE by default
+
+  mesa dependency is already pulled by default since 'X' and 'opengl' USE
+  flags are enabled by default. All current mesa versions in tree already
+  have 'egl' USE enabled by default, so no extra adjustment is needed for
+  users.
+
+  Thus enabling it by default will give users a wider range of options.
+
+  Package-Manager: portage-2.2.24
+
+*mpv-0.14.0 (28 Dec 2015)
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/mpv-0.14.0-support-GNU-__thread.patch, +mpv-0.14.0.ebuild:
+  version bump to 0.14.0 wrt bug 564656
+
+  Gentoo-Bug: 564656
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  -files/mpv-0.3.11-libav-9.patch:
+  remove obsolete patch
+
+  This was originally submitted by Vindex17 in PR #318.
+
+  Package-Manager: portage-2.2.24
+
+  28 Dec 2015; Ilya Tumaykin <itumaykin@gmail.com>
+  -mpv-0.9.2_p20150824.ebuild, -mpv-0.11.0.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.24
+
+  01 Jan 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  add missing zsh-completion USE flag
+
+  Zsh completion is a separate feature from CLI player.
+  Thus it should be controlled by a separate 'zsh-completion' USE.
+
+  Make 'zsh-completion' USE require 'cli' USE, since completions
+  for a shared library are not useful.
 
   Package-Manager: portage-2.2.24
 

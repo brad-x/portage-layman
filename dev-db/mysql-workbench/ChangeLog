@@ -1,5 +1,5 @@
 # ChangeLog for dev-db/mysql-workbench
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mysql-workbench-6.3.4 (09 Aug 2015)
@@ -70,4 +70,29 @@
   Make sure boost has NLS support.
 
   Package-Manager: portage-2.2.20.1
+
+*mysql-workbench-6.3.4-r1 (29 Dec 2015)
+
+  29 Dec 2015; Pacho Ramos <pacho@gentoo.org>
+  +files/mysql-workbench-6.3.4-cxx11.patch, +mysql-workbench-6.3.4-r1.ebuild:
+  Fix building with latest glibmm/libsigc++ (#566668)
+
+  Package-Manager: portage-2.2.26
+
+  29 Dec 2015; Pacho Ramos <pacho@gentoo.org> mysql-workbench-6.3.4-r1.ebuild:
+  Set lua slot
+
+  Package-Manager: portage-2.2.26
+
+*mysql-workbench-6.3.4-r2 (02 Jan 2016)
+
+  02 Jan 2016; Hans de Graaff <graaff@gentoo.org>
+  +mysql-workbench-6.3.4-r2.ebuild:
+  use system antlr
+
+  Use dev-java/antlr for building rather than downloading
+  pre-built antlr files now that a compatible slot is
+  available.
+
+  Package-Manager: portage-2.2.24
 

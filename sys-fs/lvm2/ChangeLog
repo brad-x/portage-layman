@@ -180,3 +180,40 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*lvm2-2.02.116-r3 (28 Dec 2015)
+
+  28 Dec 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvmetad.initd-2.02.116-r3, +lvm2-2.02.116-r3.ebuild:
+  fix missing dir for lvmetad
+
+  lvmetad fails to start up due to /run/lvm not existing when it the
+  system needs it to start. This ensures the directory is created.
+
+  Gentoo-Bug: 521960
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  28 Dec 2015; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvm.rc-2.02.116-r3, lvm2-2.02.116-r3.ebuild:
+  conditionally depend on lvmetad
+
+  If the user has configured their system to be dependent on lvmetad in
+  /etc/lvm/lvm.conf then we need to depend on lvmetad starting up.
+  Otherwise it shouldn't be necessary and won't be started.
+
+  Gentoo-Bug: 503016
+  Gentoo-Bug: 525614
+  Gentoo-Bug: 554918
+  Gentoo-Bug: 565154
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  28 Dec 2015; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.116-r3.ebuild:
+  add missing dependency for USE=lvm2create_initrd
+
+  USE=lvm2create_initrd needs app-arch/cpio
+
+  Gentoo-Bug: 500308
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+

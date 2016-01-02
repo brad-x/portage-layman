@@ -70,3 +70,15 @@
 
   Package-Manager: portage-2.2.20.1
 
+*mysql-5.6-r7 (31 Dec 2015)
+
+  31 Dec 2015; Brian Evans <grknight@gentoo.org> +mysql-5.6-r7.ebuild:
+  Revbump to add PDEPEND wrt bug 556432
+
+  Moved virtual/libmysqlclient to PDEPEND to fix new installs
+  Portage sometimes would place the dependencies out of order
+  and this is an attempt to fix it so both virtuals can be
+  satisfied by the same package.
+
+  Package-Manager: portage-2.2.26
+

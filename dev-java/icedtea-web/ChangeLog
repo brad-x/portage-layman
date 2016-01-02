@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/icedtea-web
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *icedtea-web-1.5.1-r1 (09 Aug 2015)
@@ -67,4 +67,24 @@
   Add ~ppc64 keyword
 
   Package-Manager: portage-2.2.25
+
+*icedtea-web-1.6.1 (01 Jan 2016)
+
+  01 Jan 2016; James Le Cuirot <chewi@gentoo.org> +files/README.gentoo-r1,
+  +files/icedtea-web-1.6-javadoc.patch,
+  +files/icedtea-web-1.6-launchers.patch, +files/icedtea-web-1.6-no-hg.patch,
+  +files/icedtea-web-1.6-respect-ldflags.patch, +icedtea-web-1.6.1.ebuild:
+  Version bump, addressing many issues
+
+   * Bump to version 1.6.1 (#530860)
+   * Respect java-config's VM selection (#538144, #552640)
+   * Use new eselect-java that looks for itweb-javaws (#504678)
+   * Fix USE=doc under stricter Java 8 (#558718)
+   * Don't call hg because .hg directory is missing (#528268)
+
+  This version no longer relies on eselect java-nsplugin as it installs
+  the plugin directly under /usr/lib/nsbrowser/plugins. It blocks the
+  Oracle plugins because Firefox cannot disable them individually.
+
+  Package-Manager: portage-2.2.26
 

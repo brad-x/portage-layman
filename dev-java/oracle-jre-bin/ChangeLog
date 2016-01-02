@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/oracle-jre-bin
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *oracle-jre-bin-1.8.0.51 (09 Aug 2015)
@@ -128,4 +128,21 @@
   Remove vulnerable version wrt bug #563684
 
   Package-Manager: portage-2.2.20.1
+
+*oracle-jre-bin-1.8.0.66-r1 (01 Jan 2016)
+
+  01 Jan 2016; James Le Cuirot <chewi@gentoo.org> metadata.xml,
+  +oracle-jre-bin-1.8.0.66-r1.ebuild:
+  awt flag, nsplugin
+
+   * Change awt USE flag to !headless-awt
+   * Install nsplugin to /usr/lib/nsbrowser/plugins in line with
+     eselect-java and icedtea-web changes
+
+  Sorry for changing the X/awt flag again but icedtea upstream preferred
+  the term headless, which is technically more accurate than awt, so I
+  compromised and went with headless-awt. This isn't icedtea but
+  consistency is king and I may apply this flag to virtual/jre one day.
+
+  Package-Manager: portage-2.2.26
 

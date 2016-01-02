@@ -16,7 +16,7 @@ SRC_URI="http://www.claws-mail.org/download.php?file=releases/${P}.tar.xz"
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm hppa ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 IUSE="archive bogofilter calendar clamav dbus debug doc gdata gtk3 +imap ipv6 ldap +libcanberra +libindicate +libnotify networkmanager nntp +notification pda pdf perl +pgp python rss session sieve smime spamassassin spam-report spell +gnutls startup-notification valgrind webkit xface"
 REQUIRED_USE="libcanberra? ( notification )
@@ -77,8 +77,7 @@ COMMONDEPEND=">=sys-devel/gettext-0.12.1
 	calendar? ( >=net-misc/curl-7.9.7 )
 	pdf? ( app-text/poppler[cairo] )
 	spam-report? ( >=net-misc/curl-7.9.7 )
-	webkit? ( >=net-libs/webkit-gtk-1.0:2
-		>=net-libs/libsoup-gnome-2.26:2.4 )
+	webkit? ( >=net-libs/webkit-gtk-1.0:2 )
 "
 
 DEPEND="${PLUGINBLOCK}
@@ -100,6 +99,9 @@ RDEPEND="${COMMONDEPEND}
 	x11-misc/shared-mime-info"
 
 src_configure() {
+	# Don't use libsoup-gnome (bug #565924)
+	export HAVE_LIBSOUP_GNOME=no
+
 	local myeconfargs=(
 		$(use_enable debug crash-dialog)
 		$(use_enable valgrind valgrind)

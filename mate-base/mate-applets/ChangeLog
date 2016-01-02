@@ -56,3 +56,24 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+  30 Dec 2015; Amy Winston <amynka@gentoo.org> mate-applets-1.8.0-r1.ebuild,
+  mate-applets-1.8.1.ebuild:
+  don't run python_fix_shebang on a missing dir #567468
+
+  Ebuild tries to run python_fix_shebang on 'timer-applet/src' directory which
+  does not exist. This is likely a leftover from the 1.6 series ebuild [1].
+  Upstream removed the old timer-applet [2] and replaced it with a brand new
+  implementation written in C [3]. Remove 'timer-applet/src' from the list
+  of arguments for python_fix_shebang.
+
+  [1] https://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/mate-base/mate-
+  applets/mate-applets-1.6.2-r1.ebuild?hideattic=0&view=markup
+  [2] https://github.com/mate-desktop/mate-
+  applets/commit/103274c655d5eed254b552ed5cf19265cd8f98f2
+  [3] https://github.com/mate-desktop/mate-
+  applets/commit/9c4ef5136fed495e618610ba675a03de9efbe921
+
+  Gentoo-Bug-URL: https://bugs.gentoo.org/show_bug.cgi?id=567468
+
+  Package-Manager: portage-2.2.24
+
