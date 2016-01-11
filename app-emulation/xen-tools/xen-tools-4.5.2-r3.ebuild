@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -16,7 +16,7 @@ if [[ $PV == *9999 ]]; then
 	S="${WORKDIR}/${REPO}"
 	live_eclass="mercurial"
 else
-	KEYWORDS="~amd64 ~arm ~arm64 -x86"
+	KEYWORDS="amd64 ~arm ~arm64 x86"
 	UPSTREAM_VER=
 	SECURITY_VER=7
 	# vars set to reflect https://dev.gentoo.org/~idella4/
@@ -85,6 +85,8 @@ COMMON_DEPEND="
 
 DEPEND="${COMMON_DEPEND}
 	dev-python/lxml[${PYTHON_USEDEP}]
+	x86? ( sys-devel/dev86
+		sys-power/iasl )
 	pam? ( dev-python/pypam[${PYTHON_USEDEP}] )
 	hvm? ( media-libs/libsdl )
 	${PYTHON_DEPS}

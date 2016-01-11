@@ -1,5 +1,5 @@
 # ChangeLog for kde-apps/konsole
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *konsole-4.14.3 (09 Aug 2015)
@@ -124,4 +124,16 @@
   kde-apps: Drop KDE Applications 15.08.2
 
   Package-Manager: portage-2.2.24
+
+*konsole-4.14.3-r2 (04 Jan 2016)
+
+  04 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  +konsole-4.14.3-r2.ebuild:
+  Drop USE=minimal, RDEPEND on konsolepart instead
+
+  Make konsole install the binaries you'd expect from it again, even when
+  plasma profile is selected. Dropping minimal flag, the existing blocker in
+  konsole:5 continues to work. All conflicting files are now in konsole:4.
+
+  Package-Manager: portage-2.2.26
 

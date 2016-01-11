@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/vde
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *vde-2.3.2-r2 (09 Aug 2015)
@@ -66,5 +66,43 @@
 
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Jan 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  Added myself as co-maintainer
+
+  Added myself as co-maintainer due to prolonged inactivity of designated
+  proxy
+  maintainer.
+
+  Package-Manager: portage-2.2.26
+
+*vde-2.2.2-r1 (03 Jan 2016)
+
+  03 Jan 2016; Ian Delaney <idella4@gentoo.org> +files/vde-2.2.2-gcc53.patch,
+  +vde-2.2.2-r1.ebuild:
+  Fix for bug #543006
+
+  Added vde-2.2.2-gcc53.patch.  Starting with GCC 5, GCC uses Std. C semantics
+  for
+  inline kewords instead of non-compliant GNU C semantics.  This patch
+  corrects
+  the source with respect to the semantic difference.
+
+  Package-Manager: portage-2.2.26
+
+  03 Jan 2016; Ian Delaney <idella4@gentoo.org> -vde-2.3.1.ebuild,
+  -vde-2.3.2.ebuild, -vde-2.3.2-r1.ebuild:
+  rm old vns. 2.3.1, 2.3.2, and 2.3.2-r1
+
+  nominated by new proxy maintainer is direct discussion
+
+  Package-Manager: portage-2.2.26
+
+  06 Jan 2016; Agostino Sarubbo <ago@gentoo.org> vde-2.3.2-r2.ebuild:
+  x86 stable wrt bug #552926
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

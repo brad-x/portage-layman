@@ -1,5 +1,5 @@
 # ChangeLog for app-emulation/xen-tools
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *xen-tools-4.5.1-r3 (09 Aug 2015)
@@ -243,4 +243,44 @@
   xen-tools-4.5.2-r3.ebuild, xen-tools-4.6.0-r4.ebuild,
   xen-tools-4.6.0-r5.ebuild:
   Make use of new python_gen_impl_dep function
+
+  05 Jan 2016; Ian Delaney <idella4@gentoo.org> xen-tools-4.5.2-r3.ebuild,
+  xen-tools-4.6.0-r5.ebuild:
+  re-add keyword x86 to latest of vns. 4.2.5, 4.2.6
+
+  These should never have been set to -x86 in xen-tools because they support
+  xen guests of x86
+
+  Package-Manager: portage-2.2.26
+
+  05 Jan 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r3.ebuild,
+  xen-tools-4.6.0-r5.ebuild:
+  amd64 stable wrt bug #570932
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  05 Jan 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r3.ebuild,
+  xen-tools-4.6.0-r5.ebuild:
+  x86 stable wrt bug #570932
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jan 2016; Ian Delaney <idella4@gentoo.org> xen-tools-4.5.2-r3.ebuild,
+  xen-tools-4.6.0-r5.ebuild:
+  re-add deps to support x86 reported in #570974
+
+  Gentoo bug: #570974
+
+  Package-Manager: portage-2.2.26
+
+  07 Jan 2016; Doug Goldstein <cardoe@gentoo.org> -xen-tools-4.2.5-r10.ebuild,
+  -xen-tools-4.2.5-r11.ebuild:
+  remove unsupported 4.2.x series
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 

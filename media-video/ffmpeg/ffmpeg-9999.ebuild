@@ -391,6 +391,9 @@ multilib_src_configure() {
 		break
 	done
 
+	# LTO support, bug #566282
+	is-flagq "-flto*" && myconf+=( "--enable-lto" )
+
 	# Mandatory configuration
 	myconf=(
 		--enable-avfilter
@@ -424,7 +427,7 @@ multilib_src_configure() {
 		--cc="$(tc-getCC)" \
 		--cxx="$(tc-getCXX)" \
 		--ar="$(tc-getAR)" \
-		--optflags=" " \
+		--optflags="${CFLAGS}" \
 		$(use_enable static-libs static) \
 		"${myconf[@]}"
 	echo "${@}"

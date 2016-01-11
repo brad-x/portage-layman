@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/nss
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nss-3.19.2 (09 Aug 2015)
@@ -147,4 +147,16 @@
   sparc stable wrt bug #564834
 
   Package-Manager: portage-2.2.24
+
+  05 Jan 2016; Mike Frysinger <vapier@gentoo.org> nss-3.21.ebuild,
+  nss-3.21-r1.ebuild:
+  disable building w/-Werror #567158
+
+*nss-3.21-r2 (05 Jan 2016)
+
+  05 Jan 2016; Mike Frysinger <vapier@gentoo.org> +nss-3.21-r2.ebuild:
+  switch to prelink.conf.d files
+
+  Avoid polluting the global environment via env.d just for prelink masks
+  now that the current prelink versions support prelink.conf.d fragments.
 

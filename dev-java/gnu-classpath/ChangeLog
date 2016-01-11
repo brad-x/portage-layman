@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/gnu-classpath
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gnu-classpath-0.98-r3 (09 Aug 2015)
@@ -74,4 +74,21 @@
    * Actually install the docs.
 
   Package-Manager: portage-2.2.20.1
+
+*gnu-classpath-0.98-r5 (10 Jan 2016)
+
+  10 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  -gnu-classpath-0.98-r4.ebuild, +gnu-classpath-0.98-r5.ebuild:
+  Build with regular javac instead of ECJ
+
+  I believe GNU Classpath favoured ECJ because it was the only FOSS
+  compiler capable of building it at the time. OpenJDK is now preferable
+  and the statement in configure.ac that not using ECJ results in
+  com.sun.tools.javac not being included doesn't hold true.
+
+  The simplification is nice but this also avoids a race condition
+  occuring with ECJ on ppc. This is almost certainly a CACAO issue. See
+  http://icedtea.classpath.org/bugzilla/show_bug.cgi?id=2782.
+
+  Package-Manager: portage-2.2.26
 

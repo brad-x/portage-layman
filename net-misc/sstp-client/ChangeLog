@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/sstp-client
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sstp-client-1.0.9-r1 (09 Aug 2015)
@@ -53,4 +53,42 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*sstp-client-1.0.9-r2 (10 Jan 2016)
+
+  10 Jan 2016; Michael Everitt <m.j.everitt@iee.org>
+  +sstp-client-1.0.9-r2.ebuild:
+  Fix for bug #567912.
+
+  Fixes issue with net-misc/networkmanager-sstp, where connections are
+  wrongly written to /var/lib/run/sstpc and networkmanager-sstp is looking
+  in /run/sstpc. Adding --with-runtime-dir="/run/sstpc" to configure opts
+  solves this issue.
+  Inherit autotools, direct sed statement to makefile.am over Makefile.in.
+  Ack to Coacher for various fixes & testing.
+  Gentoo-Bug: 567912.
+
+  Reported-by: Stanislav Nikitin <pztrn@pztrn.name>
+  Acked-by: Michael Everitt <m.j.everitt@iee.org>
+
+  Package-Manager: portage-2.2.26
+
+*sstp-client-1.0.10 (10 Jan 2016)
+
+  10 Jan 2016; Michael Everitt <m.j.everitt@iee.org>
+  +sstp-client-1.0.10.ebuild:
+  Version bump to 1.0.10. Build fixes.
+
+  Inherit autotools, direct sed statement to makefile.am over Makefile.in.
+  Ack to Coacher for various fixes & testing.
+
+  Suggested-by: Stanislav Nikitin <pztrn@pztrn.name>
+  Acked-by: Michael Everitt <m.j.everitt@iee.org>
+
+  Package-Manager: portage-2.2.26
+
+  10 Jan 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  add user Michael 'veremit' Everitt proxy co-maintainer
+
+  Package-Manager: portage-2.2.26
 

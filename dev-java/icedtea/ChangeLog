@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/icedtea
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *icedtea-7.2.5.5 (09 Aug 2015)
@@ -161,6 +161,52 @@
 
   09 Dec 2015; James Le Cuirot <chewi@gentoo.org> -icedtea-7.2.6.2-r1.ebuild:
   Remove old
+
+  Package-Manager: portage-2.2.26
+
+*icedtea-7.2.6.3-r3 (03 Jan 2016)
+*icedtea-6.1.13.9-r2 (03 Jan 2016)
+
+  03 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  -files/6-cacao-dynmaxheap.patch, +files/6-cacao-pr-157.patch,
+  -files/7-cacao-dynmaxheap.patch, +files/7-cacao-pr-157.patch,
+  -icedtea-6.1.13.9-r1.ebuild, +icedtea-6.1.13.9-r2.ebuild,
+  -icedtea-7.2.6.3-r2.ebuild, +icedtea-7.2.6.3-r3.ebuild:
+  Allow newer icedtea-web and update CACAO patch
+
+  Although the previous dynamic max heap patch helped, there were still
+  major issues with the value being stored in a signed 32-bit int. The
+  patch series has been submitted upstream to both IcedTea and CACAO.
+
+  Package-Manager: portage-2.2.26
+
+  05 Jan 2016; James Le Cuirot <chewi@gentoo.org> icedtea-6.1.13.9-r2.ebuild,
+  icedtea-7.2.6.3-r3.ebuild:
+  Disable nsplugin by default to avoid conflicts
+
+  It's a dying technology that most people avoid for fear of security
+  vulnerabilities anyway.
+
+  Package-Manager: portage-2.2.26
+
+  07 Jan 2016; James Le Cuirot <chewi@gentoo.org> icedtea-6.1.13.9-r2.ebuild,
+  icedtea-7.2.6.3-r3.ebuild:
+  Disable webstart by default as well
+
+  It's not as dead as nsplugin but I imagine most people would rather
+  avoid the extra dependency on icedtea-web.
+
+  Package-Manager: portage-2.2.26
+
+*icedtea-7.2.6.3-r4 (07 Jan 2016)
+
+  07 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  +files/icedtea-bug-2781.patch, -icedtea-7.2.6.3-r3.ebuild,
+  +icedtea-7.2.6.3-r4.ebuild:
+  Patch against icedtea bug #2781
+
+  CACAO have now fixed this upstream and it will hopefully make it into
+  the next icedtea release.
 
   Package-Manager: portage-2.2.26
 

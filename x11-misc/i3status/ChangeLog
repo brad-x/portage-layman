@@ -1,5 +1,5 @@
 # ChangeLog for x11-misc/i3status
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *i3status-2.9 (09 Aug 2015)
@@ -55,4 +55,33 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*i3status-2.10 (03 Jan 2016)
+
+  03 Jan 2016; Kacper Kowalik <xarthisius@gentoo.org> +i3status-2.10.ebuild:
+  version bump to 2.10
+
+  Fixes bug 570628. Add support for pulseaudio.
+  Switches from libiw to libnl for wireless.
+
+  Reported-by: Jeroen Roovers <jer@gentoo.org>
+
+  Package-Manager: portage-2.2.20
+
+*i3status-2.10-r1 (06 Jan 2016)
+
+  06 Jan 2016; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/i3status-2.10-pulseaudio.patch, -i3status-2.10.ebuild,
+  +i3status-2.10-r1.ebuild:
+  make dependency on pulseaudio optional
+
+  Fixes bug #570786 and introduces the new USE flag
+  'pulseaudio'.
+
+  Reported-by: Michele Alzetta <michele@alzetta.org>
+
+  06 Jan 2016; Kacper Kowalik <xarthisius@gentoo.org> i3status-2.10-r1.ebuild:
+  syntax sugar
+
+  Package-Manager: portage-2.2.20
 

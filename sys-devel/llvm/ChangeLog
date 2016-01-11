@@ -1,5 +1,5 @@
 # ChangeLog for sys-devel/llvm
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *llvm-9999 (09 Aug 2015)
@@ -345,4 +345,44 @@
   +files/compiler-rt-3.7-msan-fix.patch, +files/llvm-3.7-msan-fix.patch,
   +llvm-3.7.0-r5.ebuild:
   Backport msan fix for 4.1+ kernels, bug #569894
+
+*llvm-3.7.1 (06 Jan 2016)
+
+  06 Jan 2016; Michał Górny <mgorny@gentoo.org> +llvm-3.7.1.ebuild:
+  sys-devel/{clang,llvm}: Bump to 3.7.1
+
+  07 Jan 2016; Michał Górny <mgorny@gentoo.org> -files/llvm-2.8-alignof.patch,
+  -files/llvm-2.8-darwin8.patch, -llvm-2.8-r2.ebuild:
+  Remove ancient 2.8 version
+
+  07 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  -files/llvm-2.9-Operator.h-c++0x.patch, -files/llvm-2.9-gcc4.7.patch,
+  -llvm-2.9-r2.ebuild:
+  Drop ancient 2.9 version
+
+  07 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  -files/llvm-3.0-PPCCompilationCallbackC_static.patch,
+  -files/llvm-3.0-gold_LTO_link.patch, -files/llvm-3.0-ocaml_install.patch,
+  -files/llvm-3.0-set_soname.patch, -llvm-3.0-r2.ebuild:
+  Remove ancient 3.0 version
+
+  07 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  -files/cl-patches/0001-r600-Add-some-intrinsic-definitions.patch, -files/cl-
+  patches/0002-r600-Add-get_global_size-and-get_local_size-intrinsi.patch,
+  -files/llvm-2.6-commandguide-nops.patch,
+  -files/llvm-3.1-ExecutionEngine_tests_xfail_arm.patch,
+  -files/llvm-3.1-docs-pod-markup-fixes.patch,
+  -files/llvm-3.1-fix_debug_line_info.patch,
+  -files/llvm-3.1-ivybridge_support.patch, -llvm-3.1-r2.ebuild:
+  Remove ancient 3.1 version
+
+  07 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  -files/llvm-3.0-PPC_macro.patch, -llvm-3.2.ebuild:
+  Remove ancient 3.2 version
+
+  09 Jan 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.5.2.ebuild,
+  llvm-3.6.2.ebuild, llvm-3.7.1.ebuild, llvm-9999.ebuild:
+  disable the use of xcrun on OSX, bug #568758
+
+  Package-Manager: portage-2.2.20-prefix
 

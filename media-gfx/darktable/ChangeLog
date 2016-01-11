@@ -1,5 +1,5 @@
 # ChangeLog for media-gfx/darktable
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *darktable-9999 (09 Aug 2015)
@@ -115,4 +115,25 @@
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*darktable-2.0.0 (07 Jan 2016)
+
+  07 Jan 2016; Markus Meier <maekke@gentoo.org> -darktable-2.0_rc3.ebuild,
+  +darktable-2.0.0.ebuild:
+  version bump to 2.0.0
+
+  drop USE=geo for now, since it requires >=sci-geosciences/osm-gps-map-1.0.0
+  which is not yet in tree
+  Bug: 569872
+
+  08 Jan 2016; Markus Meier <maekke@gentoo.org> darktable-2.0.0.ebuild:
+  add backward compat warning by karpi in bug #569872
+
+  Package-Manager: portage-2.2.26
+
+  08 Jan 2016; Markus Meier <maekke@gentoo.org> darktable-2.0.0.ebuild,
+  darktable-9999.ebuild:
+  fix colord dep by Marek Szuba in bug #567556
+
+  Package-Manager: portage-2.2.26
 

@@ -1,5 +1,5 @@
 # ChangeLog for app-eselect/eselect-php
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *eselect-php-0.7.1-r4 (09 Aug 2015)
@@ -178,4 +178,57 @@
   Version bump to add phpdbg support
 
   Package-Manager: portage-2.2.26
+
+*eselect-php-0.8.2-r1 (05 Jan 2016)
+
+  05 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.8.2.ebuild,
+  +eselect-php-0.8.2-r1.ebuild, +files/70_mod_php5.backcompat.conf:
+  new revision with backwards-compatible apache config.
+
+  If the user has an unmodified 70_mod_php5.conf, the previous revision
+  will allow that file to be removed. This can break PHP support in
+  Apache before the user notices that he needs to run eselect-php and
+  update his Apache -DPHP5 line.
+
+  In this revision we supply the latest copy of 70_mod_php5.conf for
+  backwards compatibility. There is now a notice at the top of that file
+  informing users to upgrade their configuration.
+
+  Package-Manager: portage-2.2.24
+
+  05 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.8.0.ebuild,
+  -eselect-php-0.8.1.ebuild:
+  remove old 0.8.x versions.
+
+  Package-Manager: portage-2.2.24
+
+*eselect-php-0.8.3 (08 Jan 2016)
+
+  08 Jan 2016; Michael Orlitzky <mjo@gentoo.org> +eselect-php-0.8.3.ebuild:
+  add version 0.8.3.
+
+  This new version will emit a warning if the old apache module
+  configuration file (70_mod_php5.conf) is in place. This, along with
+  the backwards-compatibility shim in 0.8.2-r1, hopefully fully
+  addresses the breakage seen on upgrades.
+
+  Gentoo-Bug: 569042
+
+  Package-Manager: portage-2.2.24
+
+*eselect-php-0.8.4 (09 Jan 2016)
+
+  09 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.8.3.ebuild,
+  +eselect-php-0.8.4.ebuild:
+  version bump 0.8.3 -> 0.8.4.
+
+  Package-Manager: portage-2.2.24
+
+*eselect-php-0.8.5 (09 Jan 2016)
+
+  09 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -eselect-php-0.8.4.ebuild,
+  +eselect-php-0.8.5.ebuild:
+  replace v0.8.4 with v0.8.5.
+
+  Package-Manager: portage-2.2.24
 

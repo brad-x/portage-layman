@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/glib
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *glib-2.44.1 (09 Aug 2015)
@@ -199,6 +199,31 @@
 
   26 Dec 2015; Ted Tanberry <ted.tanberry@gmail.com> glib-1.2.10-r6.ebuild:
   Add explicit -std=gnu89 to CFLAGS
+
+  Package-Manager: portage-2.2.26
+
+*glib-2.46.2-r1 (02 Jan 2016)
+
+  02 Jan 2016; Gilles Dartiguelongue <eva@gentoo.org> +glib-2.46.2-r1.ebuild:
+  multiple fixes
+
+  Own and update gschemas and gio modules cache files, bug #518422.
+  Fix IPv6 tests being always disabled, bug #508752.
+  Cleanup variables handled by eclass in src_test.
+  Disable all .desktop file related unittests when desktop-file-utils is
+  missing, bug #567484.
+
+  Package-Manager: portage-2.2.26
+
+  02 Jan 2016; Gilles Dartiguelongue <eva@gentoo.org> glib-2.46.2-r1.ebuild:
+  fix typo in REPLACED_BY_VERSION
+
+  Package-Manager: portage-2.2.26
+
+  04 Jan 2016; Gilles Dartiguelongue <eva@gentoo.org> glib-2.46.2-r1.ebuild:
+  add missing creation of gio modules dir, bug #570752
+
+  Thanks to Bertrand Jacquin for reporting.
 
   Package-Manager: portage-2.2.26
 

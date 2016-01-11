@@ -1,5 +1,5 @@
 # ChangeLog for sys-fs/lvm2
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *lvm2-2.02.116 (09 Aug 2015)
@@ -216,4 +216,19 @@
   Gentoo-Bug: 500308
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
   Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+*lvm2-2.02.116-r4 (05 Jan 2016)
+
+  05 Jan 2016; Doug Goldstein <cardoe@gentoo.org> -files/lvm.rc-2.02.116-r3,
+  +files/lvm.rc-2.02.116-r4, -lvm2-2.02.116-r3.ebuild,
+  +lvm2-2.02.116-r4.ebuild:
+  bump to fix lvmetad init script depend
+
+  In my previous bump I incorrectly left the hardcoded dependency on
+  lvmetad so the lvm script still always depended on lvmetad. This fixes
+  that and makes it truly dynamic and adds instructions so that people
+  can ensure their next boot works properly.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 

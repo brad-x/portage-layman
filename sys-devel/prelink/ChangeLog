@@ -1,5 +1,5 @@
 # ChangeLog for sys-devel/prelink
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *prelink-20130503 (09 Aug 2015)
@@ -76,4 +76,15 @@
   07 Nov 2015; Mike Frysinger <vapier@gentoo.org> -prelink-20110511.ebuild,
   -prelink-20111012.ebuild, -prelink-20120628.ebuild:
   drop old versions
+
+*prelink-20130503-r1 (05 Jan 2016)
+
+  05 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  -files/prelink-20061201-prelink-conf.patch, +prelink-20130503-r1.ebuild:
+  clean up files in /var
+
+  We don't need the state/log files to exist ahead of time (as the cronjob
+  will create them on demand), so punt them entirely to clean things up.
+
+  Also update to EAPI=5 while we're here, and punt an old unused patch.
 

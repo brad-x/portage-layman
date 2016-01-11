@@ -16,7 +16,7 @@ HOMEPAGE="https://mpv.io/"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="https://github.com/mpv-player/mpv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux"
 	DOCS=( RELEASE_NOTES )
 else
 	EGIT_REPO_URI="https://github.com/mpv-player/mpv.git"
@@ -56,7 +56,7 @@ REQUIRED_USE="
 "
 
 COMMON_DEPEND="
-	!libav? ( >=media-video/ffmpeg-2.4.0:0=[encode?,threads,vaapi?,vdpau?] )
+	!libav? ( >=media-video/ffmpeg-2.4:0=[encode?,threads,vaapi?,vdpau?] )
 	libav? ( >=media-video/libav-11:0=[encode?,threads,vaapi?,vdpau?] )
 	sys-libs/zlib
 	alsa? ( >=media-libs/alsa-lib-1.0.18 )
@@ -174,10 +174,10 @@ src_configure() {
 
 		--disable-libmpv-static
 		--disable-static-build
-		--disable-build-date	# Create reproducible build
 		--disable-optimize		# Do not add '-O2' to CFLAGS
 		--disable-debug-build	# Do not add '-g' to CFLAGS
 
+		$(use_enable doc html-build)
 		$(use_enable doc pdf-build)
 		$(use_enable vf-dlopen vf-dlopen-filters)
 		$(use_enable zsh-completion zsh-comp)
@@ -216,8 +216,6 @@ src_configure() {
 		$(use_enable openal)
 		$(use_enable alsa)
 		--disable-coreaudio
-		--disable-dsound
-		--disable-wasapi
 
 		# Video outputs
 		--disable-cocoa
@@ -261,6 +259,9 @@ src_configure() {
 	else
 		mywafargs+=(--disable-vaapi-x-egl)
 	fi
+
+	# Create reproducible non-live builds
+	[[ ${PV} != *9999* ]] && mywafargs+=(--disable-build-date)
 
 	waf-utils_src_configure "${mywafargs[@]}"
 }

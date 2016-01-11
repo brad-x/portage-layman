@@ -1,5 +1,5 @@
 # ChangeLog for x11-misc/alock
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *alock-94 (09 Aug 2015)
@@ -63,4 +63,27 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  10 Jan 2016; Daniel Campbell <zlg@gentoo.org> metadata.xml:
+  Take ownership of package
+
+  Added better upstream information as well
+
+  Package-Manager: portage-2.2.26
+
+*alock-94-r1 (10 Jan 2016)
+
+  10 Jan 2016; Daniel Campbell <zlg@gentoo.org> +alock-94-r1.ebuild,
+  +files/check-setuid.patch, +files/fix-aliasing.patch,
+  +files/no-xf86misc.patch, +files/tidy-printf.patch:
+  revbump to 94-r1
+
+  * Fix printf issue on compiling
+  * Remove dependency on libXxf86misc; it's deprecated
+  * Correct strict-aliasing error
+  * Correct handling of setuid() return value
+
+  Patches will be presented to upstream for review
+
+  Package-Manager: portage-2.2.26
 

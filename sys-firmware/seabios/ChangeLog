@@ -1,5 +1,5 @@
 # ChangeLog for sys-firmware/seabios
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *seabios-1.7.5-r1 (09 Aug 2015)
@@ -86,4 +86,18 @@
   14 Sep 2015; Mike Frysinger <vapier@gentoo.org>
   +files/seabios-1.8.2-fstack-check.patch, seabios-1.8.2.ebuild:
   add upstream fix for building on hardened systems #559980
+
+  04 Jan 2016; Mike Frysinger <vapier@gentoo.org> seabios-1.8.2.ebuild:
+  add keywords for everyone #570876
+
+  We invert the REQUIRED_USE logic so it forces USE=binary for all
+  non-x86 arches.  That way installing binaries works regardless of
+  the architecture.
+
+  04 Jan 2016; Mike Frysinger <vapier@gentoo.org> seabios-1.8.2.ebuild:
+  fix binary logic #570876#7
+
+  Previous commit here incorrectly nested the amd64 & x86 flags.
+
+  Reported-by: Mike Gilbert <floppym@gentoo.org>
 

@@ -1,5 +1,5 @@
 # ChangeLog for dev-lang/php
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *php-7.0.0_beta1 (09 Aug 2015)
@@ -734,4 +734,47 @@
   Version bump including phpdbg support
 
   Package-Manager: portage-2.2.26
+
+  07 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-7.0.0.ebuild:
+  remove php-7.0.0; use php-7.0.1 instead.
+
+  Package-Manager: portage-2.2.24
+
+  07 Jan 2016; Michael Orlitzky <mjo@gentoo.org> php-7.0.1.ebuild:
+  update the apache2 post-install notification about mod_php.
+
+  Newer versions of app-eselect/eselect-php require some apache
+  configuration changes. This configuration is mentioned in the
+  dev-lang/php pkg_postinst() phase, which isn't ideal, but is what it
+  is. Since php:7.0 requires the new eselect-php, the pkg_postinst() for
+  php:7.0 has been updated to reflect the configuration changes.
+
+  Thanks to Tomáš Mózes for pointing this out.
+
+  Gentoo-Bug: 552156
+
+  Package-Manager: portage-2.2.24
+
+*php-7.0.2 (07 Jan 2016)
+
+  07 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-7.0.1.ebuild,
+  +php-7.0.2.ebuild:
+  version bump 7.0.1 -> 7.0.2.
+
+  Package-Manager: portage-2.2.24
+
+*php-5.5.31 (09 Jan 2016)
+
+  09 Jan 2016; Michael Orlitzky <mjo@gentoo.org> +php-5.5.31.ebuild:
+  add version 5.5.31 as part of bug #571254.
+
+  Package-Manager: portage-2.2.24
+
+*php-5.6.17 (09 Jan 2016)
+
+  09 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.6.16.ebuild,
+  +php-5.6.17.ebuild:
+  replace v5.6.16 with v5.6.17 as part of bug #571254.
+
+  Package-Manager: portage-2.2.24
 

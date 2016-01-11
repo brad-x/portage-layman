@@ -1,5 +1,5 @@
 # ChangeLog for sys-cluster/nova
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nova-2015.1.9999 (09 Aug 2015)
@@ -266,4 +266,43 @@
   bug 569214
 
   Package-Manager: portage-2.2.24
+
+*nova-12.0.0-r1 (07 Jan 2016)
+
+  07 Jan 2016; Matthew Thode <prometheanfire@gentoo.org>
+  +files/cve-2015-7548-stable-liberty-0001.patch,
+  +files/cve-2015-7548-stable-liberty-0002.patch,
+  +files/cve-2015-7548-stable-liberty-0003.patch, +nova-12.0.0-r1.ebuild,
+  -nova-2015.1.1-r3.ebuild, -nova-2015.1.2.ebuild:
+  fixing CVE-2015-7548
+
+  Package-Manager: portage-2.2.26
+
+*nova-12.0.0-r2 (07 Jan 2016)
+
+  07 Jan 2016; Matthew Thode <prometheanfire@gentoo.org>
+  +files/cve-2015-7548-stable-liberty-0004.patch, -nova-12.0.0-r1.ebuild,
+  +nova-12.0.0-r2.ebuild:
+  fixing bug 571184 and bug 571198
+
+  Package-Manager: portage-2.2.26
+
+  08 Jan 2016; Agostino Sarubbo <ago@gentoo.org> nova-12.0.0-r2.ebuild:
+  amd64 stable wrt bug #571198
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jan 2016; Agostino Sarubbo <ago@gentoo.org> nova-12.0.0-r2.ebuild:
+  x86 stable wrt bug #571198
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jan 2016; Matthew Thode <prometheanfire@gentoo.org> -nova-12.0.0.ebuild:
+  removing insecure version for bug 571184 bug 571198 CVE-2015-7548
+
+  Package-Manager: portage-2.2.26
 

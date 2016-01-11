@@ -1,5 +1,5 @@
 # ChangeLog for app-text/ghostscript-gpl
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ghostscript-gpl-9.15-r1 (09 Aug 2015)
@@ -85,4 +85,18 @@
 
   Package-Manager: portage-2.2.23
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  07 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  ghostscript-gpl-9.15-r1.ebuild, ghostscript-gpl-9.18.ebuild:
+  fix pkg-config/endian handling for cross-compiles
+
+  08 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  ghostscript-gpl-9.15-r1.ebuild, ghostscript-gpl-9.18.ebuild:
+  fix zlib include path usage
+
+  The ghostscript-gpl-9.12-sys-zlib.patch attempts to change the include
+  path from the local copy in the src to the common includedir flag set
+  by configure flags.  This generally works for native builds, but breaks
+  when cross-compiling.  Drop the patch and set the zlib src dir to the
+  temp dir instead.
 
