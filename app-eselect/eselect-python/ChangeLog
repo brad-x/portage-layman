@@ -1,5 +1,5 @@
 # ChangeLog for app-eselect/eselect-python
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *eselect-python-99999999 (09 Aug 2015)
@@ -100,4 +100,15 @@
   -eselect-python-20151117-r1.ebuild, +eselect-python-20151117-r2.ebuild,
   eselect-python-99999999.ebuild:
   Install wrapper for 'idle'
+
+*eselect-python-20151117-r3 (11 Jan 2016)
+
+  11 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  +eselect-python-20151117-r3.ebuild:
+  Use C wrapper for python{,2,3}, #568974
+
+  Use python-exec2-c to wrap /usr/bin/python{,2,3}, rather than the Python
+  wrapper. This is both more correct, and fixes Prefix support since
+  non-Linux systems require programs referenced in shebangs to be real
+  executables rather than scripts.
 

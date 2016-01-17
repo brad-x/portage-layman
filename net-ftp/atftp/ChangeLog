@@ -1,5 +1,5 @@
 # ChangeLog for net-ftp/atftp
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *atftp-0.7-r3 (09 Aug 2015)
@@ -60,4 +60,23 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*atftp-0.7-r4 (13 Jan 2016)
+
+  13 Jan 2016; David Seifert <soap@gentoo.org> +atftp-0.7-r4.ebuild:
+  add -std=gnu89 to CFLAGS to restore pre-GCC5 semantics
+
+  Gentoo-Bug: 561720
+  Revbump to fix missing ':0=' slot operator on sys-libs/readline.
+
+  Package-Manager: portage-2.2.26
+
+*atftp-0.7-r5 (14 Jan 2016)
+
+  14 Jan 2016; David Seifert <soap@gentoo.org> -atftp-0.7-r4.ebuild,
+  +atftp-0.7-r5.ebuild, +files/atftp-0.7-CFLAGS.patch,
+  files/atftp-0.7-illreply.patch:
+  Add missing die, format patch for -p1, EAPI=6
+
+  Package-Manager: portage-2.2.26
 

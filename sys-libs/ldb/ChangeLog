@@ -153,3 +153,45 @@
   RepoMan-Options: --include-arches="sparc"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+*ldb-1.1.24-r1 (11 Jan 2016)
+
+  11 Jan 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/ldb-1.1.24-optional-python.patch, +ldb-1.1.24-r1.ebuild:
+  convert to multilib
+
+  multilib is needed to support samba-4
+
+  Package-Manager: portage-2.2.26
+
+  11 Jan 2016; Ian Stakenvicius <axs@gentoo.org> ldb-1.1.24-r1.ebuild:
+  remove --blddir configure option as it causes builds to break
+
+  Thanks to iamben for catching this.
+
+  Package-Manager: portage-2.2.26
+
+  12 Jan 2016; Jeroen Roovers <jer@gentoo.org> ldb-1.1.24.ebuild:
+  Stable for HPPA (bug #568432).
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --ignore-arches
+
+*ldb-1.1.24-r2 (12 Jan 2016)
+
+  12 Jan 2016; Ian Stakenvicius <axs@gentoo.org> -ldb-1.1.24-r1.ebuild,
+  +ldb-1.1.24-r2.ebuild:
+  resolve automagic header usage on libbsd by RDEPENDing on it
+
+  The lib/replace code configures and depends on bsd/* headers depending
+  solely on its
+  existence; as libbsd is a non-optional dep for samba-4.2 and newer anyways,
+  ensure
+  it is installed now with matching MULTILIB_USDEP on non-fbsd to avoid the
+  potential
+  headers mis-matches between bsd/*.h and other unistd.h or types.h on the
+  system.
+
+  This should address bug 571622.
+
+  Package-Manager: portage-2.2.26
+

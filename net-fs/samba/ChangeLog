@@ -290,3 +290,87 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*samba-4.2.7-r1 (11 Jan 2016)
+
+  11 Jan 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/samba-4.2.7-disable-python-for-altabi.patch, +samba-4.2.7-r1.ebuild:
+  convert to multilib
+
+  This is the first attempt at a multilib-capable samba.  The patch that
+  allows building samba
+  without a multilib-capable python is very large but only disables samba
+  objects that need
+  python; there are likely many other objects that can be disabled as well to
+  make the alt-ABI
+  build more efficient.
+
+  Package-Manager: portage-2.2.26
+
+*samba-4.3.3-r1 (11 Jan 2016)
+
+  11 Jan 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/samba-4.3.3-disable-python-for-altabi.patch, +samba-4.3.3-r1.ebuild:
+  4.3.3: convert to multilib
+
+  Same huge patch with a few necessary modifications.
+
+  Package-Manager: portage-2.2.26
+
+  12 Jan 2016; Victor Ostorga <vostorga@gentoo.org> -samba-4.1.22.ebuild:
+  Deleting 4.1 series, as right now focus is in >=4.2
+
+  Package-Manager: portage-2.2.24
+
+  12 Jan 2016; Victor Ostorga <vostorga@gentoo.org> -files/4.1/com_err.patch,
+  -files/4.1/samba4.confd, -files/4.1/samba4.initd-r1:
+  Cleaning up 4.1 files
+
+  Package-Manager: portage-2.2.24
+
+  12 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.3-r1.ebuild:
+  Minor formatting fixes.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*samba-4.3.4 (12 Jan 2016)
+
+  12 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> +samba-4.3.4.ebuild:
+  Bump to version 4.3.4
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  13 Jan 2016; Victor Ostorga <vostorga@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.4.ebuild:
+  Modifying subunit dep as multilib dependency
+
+  Package-Manager: portage-2.2.24
+
+  13 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> files/samba.conf:
+  Added /var/lock/samba to tmpfiles.d file (bug #571464).
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  13 Jan 2016; Victor Ostorga <vostorga@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.4.ebuild:
+  Fixing multilib dependency on ncurses
+
+  Package-Manager: portage-2.2.24
+
+  13 Jan 2016; Ian Stakenvicius <axs@gentoo.org>
+  -files/samba-4.2.7-disable-python-for-altabi.patch,
+  -files/samba-4.3.3-disable-python-for-altabi.patch, samba-4.2.7-r1.ebuild,
+  samba-4.3.3-r1.ebuild, samba-4.3.4.ebuild:
+  split up altabi patches and tarball them
+
+  Package-Manager: portage-2.2.26
+
+  14 Jan 2016; Victor Ostorga <vostorga@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.4.ebuild:
+  Fixing ldap multilib dependency bug 571634
+
+  Package-Manager: portage-2.2.24
+

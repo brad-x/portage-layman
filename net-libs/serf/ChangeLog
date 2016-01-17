@@ -1,5 +1,5 @@
 # ChangeLog for net-libs/serf
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *serf-1.3.8 (09 Aug 2015)
@@ -55,4 +55,17 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*serf-1.3.8-r1 (15 Jan 2016)
+
+  15 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/serf-1.3.8-openssl.patch, +files/serf-1.3.8-static-lib.patch,
+  +serf-1.3.8-r1.ebuild:
+  fix various cross-compile issues
+
+  - Use SYSROOT to locate helper config scripts to compile against.
+  - Drop OPENSSL var as it's useless.
+  - Respect AR/RANLIB settings.
+  - Make static libs optional.
+  - Pass settings to install phase too to avoid rebuilding things.
 

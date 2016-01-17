@@ -1,5 +1,5 @@
 # ChangeLog for net-print/cups
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *cups-9999 (09 Aug 2015)
@@ -94,4 +94,55 @@
   20 Nov 2015; Mike Frysinger <vapier@gentoo.org> cups-2.0.4.ebuild,
   cups-9999.ebuild:
   filters}: add arm64 love
+
+*cups-2.1.2 (12 Jan 2016)
+
+  12 Jan 2016; Matthias Maier <tamiko@gentoo.org> +cups-2.1.2.ebuild,
+  +files/cups-2.1.2-systemd-socket.patch:
+  version bump to 2.1.2, bug 568428
+
+  Gentoo-bugs: 568428
+
+  Package-Manager: portage-2.2.26
+
+  12 Jan 2016; Matthias Maier <tamiko@gentoo.org> cups-9999.ebuild:
+  ebuild maintenance; update live version
+
+  Package-Manager: portage-2.2.26
+
+*cups-2.1.2-r1 (12 Jan 2016)
+
+  12 Jan 2016; Matthias Maier <tamiko@gentoo.org> -cups-2.1.2.ebuild,
+  +cups-2.1.2-r1.ebuild, cups-9999.ebuild:
+  Properly rename systemd unit files to Gentoo naming
+
+  It turns out that the old patch for 2.0* is not enough any more. Now, the
+  renaming is directly done in the ebuild - patching the build system again
+  for every version bump is just too much maintenance work.
+
+  Package-Manager: portage-2.2.26
+
+  12 Jan 2016; Sven Wegener <swegener@gentoo.org> cups-2.1.2-r1.ebuild:
+  Fix build on non-systemd systems, bug #571680
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  12 Jan 2016; Sven Wegener <swegener@gentoo.org> cups-9999.ebuild:
+  Also apply non-systemd bugfix to live ebuild
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+*cups-2.1.2-r2 (12 Jan 2016)
+
+  12 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> -cups-2.1.2-r1.ebuild,
+  +cups-2.1.2-r2.ebuild:
+  Added epatch command so patches get applied.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  12 Jan 2016; Matthias Maier <tamiko@gentoo.org> cups-9999.ebuild:
+  also fix live-ebuild
+
+  Package-Manager: portage-2.2.26
 

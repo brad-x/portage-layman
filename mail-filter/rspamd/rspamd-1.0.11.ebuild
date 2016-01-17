@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/libpcre
+DEPEND="dev-libs/openssl
+		dev-libs/libpcre
 		dev-lang/luajit:2
 		dev-libs/libevent
 		dev-db/sqlite:3
@@ -45,8 +46,8 @@ src_install() {
 
 	dodir /var/lib/rspamd
 	dodir /var/log/rspamd
-	dodir /var/run/rspamd
-	fowners rspamd:rspamd /var/lib/rspamd /var/log/rspamd /var/run/rspamd
+
+	fowners rspamd:rspamd /var/lib/rspamd /var/log/rspamd
 
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/rspamd.logrotate" rspamd

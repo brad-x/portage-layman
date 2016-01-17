@@ -112,3 +112,21 @@
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  11 Jan 2016; Hans de Graaff <graaff@gentoo.org>
+  mysql-workbench-6.3.4-r2.ebuild:
+  remove antlr dependency, bug 570600
+
+  It turns out that this dependency is not actually needed and
+  we also don't need to download the antlr files as we did in
+  previous revisions. See bug 570600 for an analysis by Chewi.
+
+  Package-Manager: portage-2.2.26
+
+  12 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  mysql-workbench-6.3.4-r2.ebuild:
+  Remove unneeded virtual/jre dependency
+
+  graaff forgot to remove this in the last commit. See bug #570600.
+
+  Package-Manager: portage-2.2.26
+

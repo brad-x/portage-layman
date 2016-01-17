@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/openssh
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *openssh-6.9_p1-r2 (09 Aug 2015)
@@ -218,4 +218,60 @@
 
   15 Nov 2015; Matt Turner <mattst88@gentoo.org> openssh-7.1_p1-r2.ebuild:
   alpha stable, bug 555518.
+
+*openssh-7.1_p1-r3 (14 Jan 2016)
+
+  14 Jan 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/openssh-7.1_p1-CVE-2016-0777.patch, +openssh-7.1_p1-r3.ebuild:
+  Security bump for CVE-2016-0777 (bug #571892).
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  14 Jan 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/openssh-6.6.1_p1-x509-glue.patch,
+  -files/openssh-6.6.1_p1-x509-hpn14v5-glue.patch,
+  -files/openssh-6.7_p1-sctp-x509-glue.patch,
+  -files/openssh-6.7_p1-sshd-gssapi-multihomed.patch,
+  -files/openssh-6.7_p1-x509-glue.patch,
+  -files/openssh-6.7_p1-xmalloc-include.patch,
+  -files/openssh-6.8_p1-sctp-x509-glue.patch,
+  -files/openssh-6.8_p1-ssh-keygen-no-ssh1.patch,
+  -files/openssh-6.8_p1-sshd-gssapi-multihomed.patch,
+  -files/openssh-6.8_p1-teraterm-hpn-glue.patch,
+  -files/openssh-6.8_p1-teraterm.patch, -openssh-6.7_p1.ebuild,
+  -openssh-6.7_p1-r4.ebuild, -openssh-6.8_p1-r5.ebuild,
+  -openssh-6.9_p1-r1.ebuild, -openssh-6.9_p1-r2.ebuild,
+  -openssh-7.0_p1.ebuild, -openssh-7.1_p1.ebuild, -openssh-7.1_p1-r1.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  14 Jan 2016; Richard Freeman <rich0@gentoo.org> openssh-7.1_p1-r3.ebuild:
+  amd64 stable
+
+  Gentoo-bug: 571892
+
+  Package-Manager: portage-2.2.26
+
+  14 Jan 2016; Mike Frysinger <vapier@gentoo.org> openssh-7.1_p1-r2.ebuild,
+  openssh-7.1_p1-r3.ebuild:
+  fix patch failures when USE="-hpn X509"
+
+*openssh-7.1_p2 (14 Jan 2016)
+
+  14 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/openssh-7.1_p2-x509-hpn14v10-glue.patch, +openssh-7.1_p2.ebuild:
+  version bump to 7.1_p2 #571892
+
+  15 Jan 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.1_p2.ebuild:
+  7.1_p2: stable for alpha/amd64/arm/ia64/ppc/ppc64/s390/sh/sparc/x86 wrt bug
+  #571892
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Jan 2016; Mike Frysinger <vapier@gentoo.org> openssh-7.1_p2.ebuild:
+  mark 7.1_p2 arm64/hppa/m68k stable #571892
 

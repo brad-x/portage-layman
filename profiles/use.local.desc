@@ -21,6 +21,7 @@ app-accessibility/simon:sphinx - Build sphinx backend (pulls app-accessibility/j
 app-accessibility/speech-dispatcher:espeak - Adds support for espeak speech engine
 app-accessibility/speech-dispatcher:flite - Adds support for flite speech engine
 app-accessibility/speechd-el:brltty - brltty support
+app-admin/ansible:keyczar - Enable accelerated mode for old ssh clients/servers
 app-admin/bcfg2:cheetah - Include dev-python/cheetah support
 app-admin/bcfg2:genshi - Include dev-python/genshi support
 app-admin/bcfg2:server - Installs scripts to be used on the server-side of this app
@@ -316,6 +317,7 @@ app-arch/libzpaq:jit - Enable just-in-time compilation for faster compression (r
 app-arch/lz4:valgrind - Enable usage of dev-util/valgrind in tests
 app-arch/p7zip:rar - Enable support for non-free rar decoder
 app-arch/pbzip2:symlink - Install symlinks which override app-arch/bzip2 implementation
+app-arch/pigz:symlink - Install symlinks which override app-arch/gzip implementation
 app-arch/rar:all_sfx - Install all SFX (Self-Extracting) files rather than just the native format (allows creation of Windows EXEs on Linux ELF systems)
 app-arch/tar:minimal - just install `tar`
 app-arch/unzip:natspec - Use dev-libs/libnatspec to correctly decode non-ascii file names archived in Windows.
@@ -1080,6 +1082,7 @@ app-office/lyx:hunspell - Add support for spellchecking based on hunspell and re
 app-office/lyx:monolithic-build - This should speed up compilation significantly when you have enough RAM (> 600 MB)
 app-office/lyx:rcs - Add support for revision control via dev-vcs/rcs
 app-office/lyx:rtf - Add support for RTF import/export packages
+app-office/magicpoint:contrib - Install additional contributed scripts
 app-office/scribus:boost - Enable support for Boost based enhancement
 app-office/scribus:graphicsmagick - Add support for media-gfx/graphicsmagick
 app-office/scribus:hunspell - Enable support for spell checking with app-text/hunspell
@@ -1260,6 +1263,7 @@ app-text/xmlto:text - Support conversion from XML to plain text
 app-text/yagf:cuneiform - Enable support for the app-text/cuneiform OCR engine.
 app-text/yagf:tesseract - Enable support for the app-text/tesseract OCR engine.
 app-text/zathura:magic - Use libmagic to determine mimetypes
+app-text/zathura:synctex - Use libsynctex to get latex codeline from pdf
 app-text/zathura-meta:cb - Install plug-in for ComicBook support
 app-vim/gentoo-syntax:ignore-glep31 - Remove GLEP 31 (UTF-8 file encodings) settings
 app-vim/vim-latex:html - Install HTML documentation
@@ -1493,6 +1497,7 @@ dev-games/ogre:zip - support zip archives
 dev-games/openscenegraph:asio - Enable support for dev-cpp/asio library
 dev-games/openscenegraph:fox - Build examples using x11-libs/fox library
 dev-games/openscenegraph:gdal - Enable support for sci-libs/gdal library
+dev-games/openscenegraph:las - Enable support for geospatial data LAS LiDAR format using sci-geosciences/liblas
 dev-games/openscenegraph:openinventor - Build OpenInventor plugin
 dev-games/openscenegraph:osgapps - Build osg applications
 dev-games/openscenegraph:sdl2 - Use media-libs/libsdl2 additionally to media-libs/libsdl
@@ -1702,7 +1707,6 @@ dev-java/ant:regexp - Enable Apache Regexp Ant tasks
 dev-java/ant:resolver - Enable Apache Resolver Ant tasks
 dev-java/ant:testutil - Enable optional test util classes
 dev-java/antlr:gunit - gUnit is a "Unit Test" framework for ANTLR grammars
-dev-java/antlr:script - Install a script to run antlr
 dev-java/bcel:findbugs - Include performance patch for findbugs package.
 dev-java/commons-collections:test-framework - Install the test framework
 dev-java/commons-logging:avalon-framework - Add optional support for avalon-framework
@@ -2526,6 +2530,7 @@ dev-qt/qthelp:compat - Build the extra compatibility layer required by a few pac
 dev-qt/qthelp:exceptions - Add support for exceptions - like catching them inside the event loop (recommended by upstream)
 dev-qt/qtmultimedia:egl - Enable EGL integration
 dev-qt/qtmultimedia:exceptions - Add support for exceptions - like catching them inside the event loop (recommended by upstream)
+dev-qt/qtmultimedia:gles2 - Enable EGL/GLES2 integration
 dev-qt/qtmultimedia:gstreamer - Enable audio support via media-libs/gstreamer:1.0
 dev-qt/qtmultimedia:gstreamer010 - Enable audio support via media-libs/gstreamer:0.10
 dev-qt/qtmultimedia:qml - Build QML/QtQuick bindings and imports
@@ -3041,6 +3046,7 @@ games-puzzle/tiny-and-big:bundled-libs - Use the upstream provided bundled libra
 games-puzzle/xlogical:alt_gfx - Use alternate graphics which are closer to the original Amiga version
 games-roguelike/FTL:bundled-libs - Use bundled libraries.
 games-roguelike/angband:sound - Enable and install sounds
+games-roguelike/nethack:experimental - Enable experimental features (showscore and status_hilite)
 games-roguelike/stone-soup:luajit - Use dev-lang/luajit as scripting backend instead of dev-lang/lua.
 games-roguelike/stone-soup:ncurses - Enable for console (uses ncurses) based build. (can be enabled on top of tiles)
 games-roguelike/stone-soup:tiles - Enable for graphical (tiled) build. (can be enabled on top of ncurses)
@@ -4822,7 +4828,7 @@ media-video/ogmrip:srt - Support for SRT subtitle format
 media-video/parole:clutter - Compile in Clutter GTK+ support
 media-video/pgcedit:video - Add support for video preview
 media-video/qgifer:imagemagick - Use imagemagick for image operations
-media-video/qgifer:opencv3 - Use opencv-3.* for video operations instead opencv-2.*
+media-video/qgifer:opencv3 - Use media-libs/opencv:0/3.0 for video operations instead media-libs/opencv:0/2.4
 media-video/rtmpdump:gnutls - Use GnuTLS library instead of the default OpenSSL
 media-video/rtmpdump:polarssl - Use PolarSSL library instead of the default OpenSSL
 media-video/smplayer:autoshutdown - Enable the option to shutdown your computer after finishing the playlist. This requires dev-qt/qtdbus as dependency.
@@ -7545,6 +7551,7 @@ sys-fs/aufs4:nfs - Enable support for nfs export
 sys-fs/aufs4:pax_kernel - Apply patch needed for pax enabled kernels
 sys-fs/aufs4:ramfs - Enable initramfs/rootfs support
 sys-fs/btrfs-progs:convert - Build ext2 conversion utility (btrfs-convert)
+sys-fs/btrfs-progs:static - Build static binaries in addition to the dynamic ones
 sys-fs/cryptsetup:gcrypt - Use dev-libs/libgcrypt crypto backend
 sys-fs/cryptsetup:kernel - Use kernel crypto backend (mainly for embedded systems)
 sys-fs/cryptsetup:nettle - Use dev-libs/nettle crypto backend
