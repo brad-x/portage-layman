@@ -1,5 +1,5 @@
 # ChangeLog for app-arch/innoextract
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *innoextract-1.4 (09 Aug 2015)
@@ -78,4 +78,56 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/innoextract-1.4-cmake-3.5.patch, innoextract-1.4.ebuild,
+  innoextract-1.5.ebuild:
+  fix build with cmake 3.5
+
+  Closes: https://github.com/gentoo/gentoo/pull/1025
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Assign package to proxy maintainer project.
+
+  Package-Manager: portage-2.2.26
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> innoextract-1.4.ebuild,
+  innoextract-1.5.ebuild:
+  Gather patches in PATCHES array.
+
+  Package-Manager: portage-2.2.26
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> innoextract-1.4.ebuild,
+  innoextract-1.5.ebuild:
+  Fix Copyright.
+
+  Package-Manager: portage-2.2.26
+
+  11 Mar 2016; Patrice Clement <monsieurp@gentoo.org> innoextract-1.4.ebuild,
+  innoextract-1.5.ebuild:
+  don't apply patches twice
+
+  The PATCHES variable is already handled by base.eclass.
+
+  Gentoo-Bug: https://bugs.gentoo.org/577064
+  Closes: https://github.com/gentoo/gentoo/pull/1031
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*innoextract-1.6 (25 Mar 2016)
+
+  25 Mar 2016; Michael Palimaka <kensington@gentoo.org>
+  +innoextract-1.6.ebuild:
+  version bump (1.6)
 

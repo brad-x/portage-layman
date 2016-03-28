@@ -1,5 +1,5 @@
 # ChangeLog for net-p2p/amule
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *amule-2.3.1 (09 Aug 2015)
@@ -56,6 +56,31 @@
 
   Bug: https://bugs.gentoo.org/552720
 
+*amule-2.3.1-r1 (27 Oct 2015)
+
+  27 Oct 2015; Alexander Tsoy <alexander@tsoy.me> +amule-2.3.1-r1.ebuild:
+  EAPI 5 bump
+
+  27 Oct 2015; Alexander Tsoy <alexander@tsoy.me> amule-2.3.1-r1.ebuild:
+  depend on sys-libs/binutils-libs
+
+  Gentoo-Bug: 563976
+
+  27 Oct 2015; Alexander Tsoy <alexander@tsoy.me> amule-2.3.1-r1.ebuild:
+  enable verbose build log
+
+  Gentoo-Bug: 453356
+
+  27 Oct 2015; Alexander Tsoy <alexander@tsoy.me> files/amuled.initd,
+  files/amuleweb.initd:
+  update init script
+
+  - properly pass env variable to the daemon
+  - replace/remove deprecated start-stop-daemon options
+  - use portable shell
+
+  Gentoo-Bug: 420157
+
 *amule-2.3.1-r1 (07 Nov 2015)
 
   07 Nov 2015; Pacho Ramos <pacho@gentoo.org> +amule-2.3.1-r1.ebuild,
@@ -68,4 +93,15 @@
   Support wxGTK:3.0 (#465084)
 
   Package-Manager: portage-2.2.23
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
 

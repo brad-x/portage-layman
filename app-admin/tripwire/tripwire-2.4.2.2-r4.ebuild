@@ -12,14 +12,14 @@ SRC_URI="mirror://sourceforge/tripwire/tripwire-${PV}-src.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc x86 ~x86-fbsd"
 IUSE="libressl ssl static +tools"
 
 DEPEND="sys-devel/automake
 	sys-devel/autoconf
 	ssl? (
-		!libressl? ( dev-libs/openssl:0 )
-		libressl? ( dev-libs/libressl )
+		!libressl? ( dev-libs/openssl:0= )
+		libressl? ( dev-libs/libressl:0= )
 	)"
 RDEPEND="virtual/cron
 	virtual/mta

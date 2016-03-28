@@ -1,5 +1,5 @@
 # ChangeLog for xfce-base/xfce4-session
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *xfce4-session-4.12.1 (09 Aug 2015)
@@ -62,4 +62,23 @@
   sparc stable wrt bug #553500
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*xfce4-session-4.12.1-r1 (02 Feb 2016)
+
+  02 Feb 2016; Denis Dupeyron <calchan@gentoo.org>
+  +files/xfce4-session-4.12.1-light-locker_support_to_xflock4.patch,
+  +xfce4-session-4.12.1-r1.ebuild:
+  screensaver fixes
+
+  Add x11-misc/light-locker as one of the possible backends for locking
+  the screen. Add the corresponding command to the xflock4 script.
+
+  Remove gnome-extra/gnome-screensaver as one of the possible backends for
+  locking the screen. This silences repoman. Gnome 3 does not use it and
+  Gnome 2 no longer exists in portage, thus the package has disappeared.
+  Leave the corresponding command in the xflock4 script just in case some
+  of our users are still using gnome-screensaver from an overlay.
 

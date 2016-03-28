@@ -1,5 +1,5 @@
 # ChangeLog for dev-python/jsonschema
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *jsonschema-2.4.0 (09 Aug 2015)
@@ -105,4 +105,38 @@
 
   Package-Manager: portage-2.2.23
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  05 Feb 2016; Justin Lecher <jlec@gentoo.org> jsonschema-2.5.1-r1.ebuild:
+  Add pypy3 support
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  05 Feb 2016; Justin Lecher <jlec@gentoo.org> jsonschema-2.5.1-r1.ebuild:
+  Keyword under ALLARCHES policy
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*jsonschema-2.5.1-r2 (10 Feb 2016)
+
+  10 Feb 2016; Patrick McLean <chutzpah@gentoo.org>
+  +jsonschema-2.5.1-r2.ebuild:
+  Revision bump, make functools32 dep dependant on python2, again
+
+  Somehow this got dropped since last time made this change. Currently this
+  bombs out on python3 only systems since functools32 is <python3.2 only.
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Patrick McLean <chutzpah@gentoo.org> -jsonschema-2.5.1.ebuild,
+  -jsonschema-2.5.1-r1.ebuild:
+  Clean out old revisions of 2.5.1
+
+  Hopefully the dep fix won't be reverted again.
+
+  Package-Manager: portage-2.2.27
 

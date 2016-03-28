@@ -1,5 +1,5 @@
 # ChangeLog for dev-perl/Mail-IMAPClient
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *Mail-IMAPClient-3.350.0 (09 Aug 2015)
@@ -68,4 +68,42 @@
 
   Package-Manager: portage-2.2.20.1
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*Mail-IMAPClient-3.380.0 (27 Feb 2016)
+
+  27 Feb 2016; Kent Fredric <kentfredric@gmail.com>
+  +Mail-IMAPClient-3.380.0.ebuild, +files/3.38-makefilepl.patch, metadata.xml:
+  Bump to version 3.380.0
+
+  - Use EAPI6
+  - Patched to prune garbage checks and waits in Makefile.PL
+  - Nuked tests that require an IMAP server manually configured by way of
+  test.txt in root
+  - Dropped a few keywords:
+    - ~arm, ~ia64, ~ppc64, ~sparc is missing in Authen-NTLM
+
+  Package-Manager: portage-2.2.27
+
+  26 Mar 2016; Agostino Sarubbo <ago@gentoo.org>
+  Mail-IMAPClient-3.370.0.ebuild:
+  alpha/amd64/arm/ia64/ppc/sparc/x86 stable, (ALLARCHES policy) wrt bug
+  #578036
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -Mail-IMAPClient-3.350.0.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
 

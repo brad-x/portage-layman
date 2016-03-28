@@ -1,5 +1,5 @@
 # ChangeLog for dev-python/mccabe
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mccabe-0.3.1 (09 Aug 2015)
@@ -64,4 +64,84 @@
 
   24 Nov 2015; Justin Lecher <jlec@gentoo.org> mccabe-0.3.1.ebuild:
   Add python3_5 target
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  09 Feb 2016; Justin Lecher <jlec@gentoo.org> mccabe-0.2.1.ebuild:
+  Add python3.5 support
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*mccabe-0.4.0 (18 Feb 2016)
+
+  18 Feb 2016; Patrick Lauer <patrick@gentoo.org> +mccabe-0.4.0.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Patrick Lauer <patrick@gentoo.org> mccabe-0.4.0.ebuild:
+  pytest-runner is needed outside of tests #575112
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild,
+  metadata.xml:
+  use proper HOMEPAGE
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  remove unneeded pep8 dependency
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  use meaningful DESCRIPTION
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  require pytest-runner only for tests
+
+  Despite of what setup.py says pytest-runner is required for tests only.
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  require pytest instead of pytest-runner for tests
+
+  pytest-runner is needed when one wants to run tests like this:
+  `setup.py pytest'. Since we don't do this, we only need pytest.
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  use py.test to run tests
+
+  This way testsuite actually works on Python < 3.5
+  because pytest decorators are respected properly.
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mccabe-0.4.0.ebuild:
+  enable tests
+
+  Testsuite succeeds at least on Python 2.7 and 3.4.
+
+  Package-Manager: portage-2.2.27
+
+  20 Feb 2016; Ian Delaney <idella4@gentoo.org> mccabe-0.4.0.ebuild:
+  bump EAPI to 6 in vn. 0.4.0
+
+  ack by maintainer in person in #irc
+
+  Package-Manager: portage-2.2.26
 

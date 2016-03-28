@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/nanoxml
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nanoxml-2.2.3-r2 (09 Aug 2015)
@@ -58,4 +58,47 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> nanoxml-2.2.3-r2.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*nanoxml-2.2.3-r3 (04 Mar 2016)
+
+  04 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/nanoxml-2.2.3-enum.patch, +files/nanoxml-2.2.3-lite-enum.patch,
+  +nanoxml-2.2.3-r3.ebuild:
+  Housekeeping. EAPI 5 bump.
+
+  Package-Manager: portage-2.2.26
+
+  26 Mar 2016; Patrice Clement <monsieurp@gentoo.org> nanoxml-2.2.3-r3.ebuild:
+  Stable for amd64. Retroactively mark stable for the remaining arches using
+  the ALLARCHES policy.
+
+  Package-Manager: portage-2.2.26
+
+  26 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -nanoxml-2.2.3-r2.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.26
 

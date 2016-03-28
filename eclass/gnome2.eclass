@@ -91,6 +91,7 @@ gnome2_src_prepare() {
 	gnome2_disable_deprecation_warning
 
 	# Run libtoolize
+	# https://bugzilla.gnome.org/show_bug.cgi?id=655517
 	elibtoolize ${ELTCONF}
 }
 
@@ -153,6 +154,11 @@ gnome2_src_configure() {
 	# Pass --disable-schemas-compile when possible
 	if grep -q "disable-schemas-compile" "${ECONF_SOURCE:-.}"/configure; then
 		g2conf+=( --disable-schemas-compile )
+	fi
+
+	# Pass --disable-update-mimedb when possible
+	if grep -q "disable-update-mimedb" "${ECONF_SOURCE:-.}"/configure; then
+		g2conf+=( --disable-update-mimedb )
 	fi
 
 	# Pass --enable-compile-warnings=minimum as we don't want -Werror* flags, bug #471336

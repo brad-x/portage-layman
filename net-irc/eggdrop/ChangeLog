@@ -1,5 +1,5 @@
 # ChangeLog for net-irc/eggdrop
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *eggdrop-1.6.21-r1 (09 Aug 2015)
@@ -54,4 +54,42 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+  04 Mar 2016; Amy Winston <amynka@gentoo.org> eggdrop-1.6.21-r1.ebuild,
+  +files/eggdrop-1.6.21-fix-gcc5-remove-inline.patch:
+  fix compilation with gcc-5 #571004
+
+  Backport patch from https://github.com/eggheads/eggdrop/issues/123
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Amy Winston <amynka@gentoo.org> eggdrop-1.6.21-r1.ebuild,
+  +files/eggdrop-1.6.21-fix-memset.patch:
+  bump to EAPI=6, fix a QA warning
+
+  Add a patch to fix a compilation warning.
+  Taken from eggheads/eggdrop@7570148085cd33f12ba30897e27e6064c202f12b
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Amy Winston <amynka@gentoo.org> eggdrop-1.6.21-r1.ebuild:
+  fix a race condition in make, fixes #533490
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Amy Winston <amynka@gentoo.org> metadata.xml:
+  add myself as proxied maintainer
+
+  Package-Manager: portage-2.2.27
 

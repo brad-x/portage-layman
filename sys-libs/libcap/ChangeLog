@@ -1,5 +1,5 @@
 # ChangeLog for sys-libs/libcap
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libcap-2.24-r2 (09 Aug 2015)
@@ -129,4 +129,37 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libcap-2.25 (10 Feb 2016)
+
+  10 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/libcap-2.25-build-system-fixes.patch,
+  +files/libcap-2.25-ignore-RAISE_SETFCAP-install-failures.patch,
+  +libcap-2.25.ebuild:
+  Bump to version 2.25
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  29 Feb 2016; Steev Klimaszewski <steev@gentoo.org> libcap-2.24-r2.ebuild:
+  stable 2.24-r2 for arm64
+
+  Package-Manager: portage-2.2.27
 

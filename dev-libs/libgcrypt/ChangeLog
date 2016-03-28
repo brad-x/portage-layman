@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/libgcrypt
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libgcrypt-1.6.3-r3 (09 Aug 2015)
@@ -199,4 +199,171 @@
   Revert "dev-libs/libgcrypt: cleanup"
 
   This reverts commit f48968fb36cdd0c12591f7d66c4973e5c3c9e3b3.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libgcrypt-1.6.5 (09 Feb 2016)
+
+  09 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> +libgcrypt-1.6.5.ebuild:
+  Security version bump to 1.6.5
+
+  Bug: 574268
+
+  Package-Manager: portage-2.2.27
+
+*libgcrypt-1.5.4-r101 (10 Feb 2016)
+*libgcrypt-1.5.4-r2 (10 Feb 2016)
+
+  10 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  +files/libgcrypt-1.5.4-CVE-2015-7511.patch, +libgcrypt-1.5.4-r2.ebuild,
+  +libgcrypt-1.5.4-r101.ebuild:
+  Add backported 1.5-branch fix for CVE-2015-7511
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  -libgcrypt-1.5.4-r100.ebuild:
+  Remove vulnerable -r100 in unstable slot
+
+  Package-Manager: portage-2.2.27
+
+  11 Feb 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.4-r2.ebuild,
+  libgcrypt-1.6.5.ebuild:
+  amd64 stable wrt bug #574268
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  12 Feb 2016; Jeroen Roovers <jer@gentoo.org> libgcrypt-1.5.4-r2.ebuild,
+  libgcrypt-1.6.5.ebuild:
+  Stable for HPPA PPC64 (bug #574268).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+*libgcrypt-1.5.5 (25 Feb 2016)
+
+  25 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> +libgcrypt-1.5.5.ebuild:
+  Version bump of 0/11 to 1.5.5
+
+  This is a security fix release for
+    * Mitigate chosen cipher text attacks on ECDH with
+      Weierstrass curves.  [CVE-2015-7511] (already backported
+      to 1.5.4-r2)
+
+    * Use ciphertext blinding for Elgamal decryption.
+      [CVE-2014-3591]
+
+  the libgcrypt 1.5 branch is EOL for security fixes YE2016
+
+  Gentoo-Bug: 541564
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Steev Klimaszewski <steev@gentoo.org>
+  libgcrypt-1.6.3-r4.ebuild:
+  stable 1.6.3-r4 for arm64
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> libgcrypt-1.5.5.ebuild:
+  amd64 stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.5.ebuild:
+  x86 stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.4-r2.ebuild:
+  x86 stable wrt bug #574268
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> libgcrypt-1.6.5.ebuild:
+  1.6.5-r0: add alpha keyword
+
+  Gentoo-Bug: 574268
+
+  Package-Manager: portage-2.2.28
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org>
+  libgcrypt-1.5.4-r2.ebuild:
+  1.5.4-r2: add alpha keyword
+
+  Gentoo-Bug: 574268
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.5.ebuild:
+  ppc stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.6.5.ebuild:
+  ppc stable wrt bug #574268
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.5.ebuild:
+  ppc64 stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  18 Mar 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove the multilib project as co-maintainer
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.5.ebuild:
+  sparc stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.4-r2.ebuild:
+  sparc stable wrt bug #574268
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.5.ebuild:
+  ia64 stable wrt bug #575672
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.4-r2.ebuild,
+  libgcrypt-1.6.5.ebuild:
+  ia64 stable wrt bug #574268
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Mar 2016; Markus Meier <maekke@gentoo.org> libgcrypt-1.5.5.ebuild:
+  arm stable, bug #575672
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
 

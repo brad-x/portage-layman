@@ -292,3 +292,150 @@
 
   Package-Manager: portage-2.2.26
 
+*xen-tools-4.6.0-r7 (21 Jan 2016)
+*xen-tools-4.5.2-r4 (21 Jan 2016)
+
+  21 Jan 2016; Ian Delaney <idella4@gentoo.org> +xen-tools-4.5.2-r4.ebuild,
+  +xen-tools-4.6.0-r7.ebuild:
+  revbumps to vns. 4.5.2-r4 4.6.0-r7
+
+  wrt gentoo security bug. patches added; xsa 167-4.6, xsa168
+  Purging of led version to await stabilsation of revbumped vns.
+
+  Gentoo bug: #571556, #571552
+
+  Package-Manager: portage-2.2.26
+
+  22 Jan 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r4.ebuild,
+  xen-tools-4.6.0-r7.ebuild:
+  amd64 stable wrt bug #571552
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  22 Jan 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r4.ebuild,
+  xen-tools-4.6.0-r7.ebuild:
+  x86 stable wrt bug #571552
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*xen-tools-4.6.0-r8 (15 Feb 2016)
+
+  15 Feb 2016; Doug Goldstein <cardoe@gentoo.org> metadata.xml,
+  +xen-tools-4.6.0-r8.ebuild:
+  allow qemu-traditional to be disabled
+
+  Provide the ability for the qemu-traditional device model to be disabled.
+  This device model should not be used unless you have machines that are
+  depending on it (e.g. Windows domains).
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  16 Feb 2016; Doug Goldstein <cardoe@gentoo.org> xen-tools-4.6.0-r8.ebuild:
+  enable USE=qemu-traditional by default
+
+  To avoid breaking people, enable USE=qemu-traditional by default so that
+  xen-tools behaves like it has in the past.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*xen-tools-4.6.1 (18 Feb 2016)
+
+  18 Feb 2016; Yixun Lan <dlan@gentoo.org> files/gentoo-patches.conf,
+  +xen-tools-4.6.1.ebuild:
+  bump to 4.6.1, update ovmf-20151110
+
+  Package-Manager: portage-2.2.27
+
+  18 Feb 2016; Yixun Lan <dlan@gentoo.org> -xen-tools-4.5.2-r2.ebuild,
+  -xen-tools-4.5.2-r3.ebuild, -xen-tools-4.6.0-r4.ebuild,
+  -xen-tools-4.6.0-r5.ebuild, -xen-tools-4.6.0-r6.ebuild:
+  drop old versions
+
+  Package-Manager: portage-2.2.27
+
+  18 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org> xen-tools-4.6.1.ebuild:
+  Move ovmf move into conditional section
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Yixun Lan <dlan@gentoo.org> xen-tools-4.5.2-r4.ebuild,
+  xen-tools-4.6.1.ebuild:
+  correct patching ovmf logic
+
+  while bumping ovmf, I found current logic not
+  handling USE=ovmf enabled && ${OVMF_VER} is unset case
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Yixun Lan <dlan@gentoo.org> files/gentoo-patches.conf,
+  xen-tools-4.6.1.ebuild:
+  disable stackcheck in seabios
+
+  problem was seen in hardened system && using USE="-system-seabios"
+
+  Gentoo-bug: 569810
+
+  Package-Manager: portage-2.2.27
+
+*xen-tools-4.6.0-r9 (19 Feb 2016)
+*xen-tools-4.5.2-r5 (19 Feb 2016)
+
+  19 Feb 2016; Ian Delaney <idella4@gentoo.org> +xen-tools-4.5.2-r5.ebuild,
+  +xen-tools-4.6.0-r9.ebuild:
+  revbumps; 4.5.2-r5, 4.6.0-r9
+
+  add sec patches xsa170 wrt the security bug
+
+  Gentoo bug: #574012
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r5.ebuild,
+  xen-tools-4.6.0-r9.ebuild:
+  amd64 stable wrt bug #574012
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.5.2-r5.ebuild,
+  xen-tools-4.6.0-r9.ebuild:
+  x86 stable wrt bug #574012
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Ian Delaney <idella4@gentoo.org> -xen-tools-4.5.2-r4.ebuild,
+  -xen-tools-4.6.0-r7.ebuild, -xen-tools-4.6.0-r8.ebuild:
+  clean old vulnerable vns.
+
+  wrt the gentoo security bug
+
+  Gentoo bug: #574012
+
+  Package-Manager: portage-2.2.26
+

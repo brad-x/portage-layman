@@ -1,5 +1,5 @@
 # ChangeLog for app-editors/emacs
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *emacs-24.5 (09 Aug 2015)
@@ -135,4 +135,160 @@
   This reverts commit 5b0d3bb4ec734650d84a7c56372e4fb12edc7d96.
   Revert purely stylistic change. Non-array PATCHES is explicitly
   allowed in EAPI default_src_prepare().
+
+  17 Jan 2016; Ulrich Müller <ulm@gentoo.org> emacs-23.4-r14.ebuild,
+  emacs-24.4-r4.ebuild, emacs-24.5.ebuild, emacs-24.5-r1.ebuild:
+  Fixes for giflib-5.
+
+  Add slot operator to media-libs/giflib dependency throughout.
+  Updated patchset for emacs-23.4, fixes compilation with giflib-5.
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Split emacs herd and assign its packages to Emacs and GNU Emacs projects.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  31 Jan 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Update description of the "gtk3" flag.
+
+  Package-Manager: portage-2.2.27
+
+  01 Feb 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  amd64 stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  04 Feb 2016; Tobias Klausmann <klausman@gentoo.org> emacs-23.4-r14.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 573490
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Markus Meier <maekke@gentoo.org> emacs-23.4-r14.ebuild:
+  arm stable, bug #573490
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  13 Feb 2016; Jeroen Roovers <jer@gentoo.org> emacs-23.4-r14.ebuild:
+  Stable for HPPA (bug #573490).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  x86 stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> emacs-18.59-r11.ebuild:
+  amd64 stable wrt bug #573488
+
+  Package-Manager: portage-2.2.26
+
+  05 Mar 2016; Ulrich Müller <ulm@gentoo.org> emacs-24.5-r1.ebuild:
+  Enable SSL/TLS support with ssl instead of gnutls flag.
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> emacs-24.5-r1.ebuild:
+  amd64 stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-24.5-r1.ebuild:
+  x86 stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-18.59-r11.ebuild:
+  x86 stable wrt bug #573488
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-24.5-r1.ebuild:
+  ppc stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  ppc stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-24.5-r1.ebuild:
+  ppc64 stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  ppc64 stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-24.5-r1.ebuild:
+  sparc stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  sparc stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Ulrich Müller <ulm@gentoo.org> -emacs-18.59-r10.ebuild:
+  Remove old.
+
+  Package-Manager: portage-2.2.28
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-24.5-r1.ebuild:
+  ia64 stable wrt bug #576532
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r14.ebuild:
+  ia64 stable wrt bug #573490
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Ulrich Müller <ulm@gentoo.org> -emacs-23.4-r13.ebuild:
+  Remove old.
+
+  Package-Manager: portage-2.2.28
 

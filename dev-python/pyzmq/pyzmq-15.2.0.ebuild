@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~amd64 ~arm ~arm64 ~mips ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="doc examples test"
 
 PY2_USEDEP=$(python_gen_usedep python2_7)
@@ -25,6 +25,7 @@ RDEPEND="
 	dev-python/cffi:=[${PYTHON_USEDEP}]
 	dev-python/gevent[${PY2_USEDEP}]"
 DEPEND="${RDEPEND}
+	dev-python/cython[${PYTHON_USEDEP}]
 	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 	doc? (
 		>=dev-python/sphinx-1.3[${PYTHON_USEDEP}]
@@ -46,6 +47,7 @@ python_compile_all() {
 }
 
 python_compile() {
+	esetup.py cython --force
 	python_is_python3 || local -x CFLAGS="${CFLAGS} -fno-strict-aliasing"
 	distutils-r1_python_compile
 }

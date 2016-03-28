@@ -1,5 +1,5 @@
 # ChangeLog for net-analyzer/bwm-ng
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *bwm-ng-0.6-r1 (09 Aug 2015)
@@ -53,4 +53,46 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*bwm-ng-0.6.1 (24 Jan 2016)
+
+  24 Jan 2016; David Seifert <soap@gentoo.org> +bwm-ng-0.6.1.ebuild,
+  +files/bwm-ng-0.6.1-fix-buildsystem.patch:
+  Version bump to 0.6.1
+
+  Gentoo-Bug: 561718
+  * EAPI=6
+  * Fix ncurses underlinking issue
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove explicit notion of maintainer-needed, for GLEP 67
+
+  GLEP 67 removes the explicit notion of maintainer-needed@g.o being used
+  for packages lacking maintainers, in favor of assuming maintainer-needed
+  whenever the package has no maintainers.
+
+*bwm-ng-0.6.1-r1 (23 Feb 2016)
+
+  23 Feb 2016; David Seifert <soap@gentoo.org> -bwm-ng-0.6.1.ebuild,
+  +bwm-ng-0.6.1-r1.ebuild, files/bwm-ng-0.6.1-fix-buildsystem.patch:
+  Amend patch to include missing AC_DEFINE
+
+  Gentoo-Bug: 561718
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
 

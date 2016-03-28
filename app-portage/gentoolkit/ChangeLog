@@ -1,5 +1,5 @@
 # ChangeLog for app-portage/gentoolkit
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gentoolkit-9999 (09 Aug 2015)
@@ -101,4 +101,35 @@
   Bug: https://bugs.gentoo.org/568906
 
   Package-Manager: portage-2.2.26_p32
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*gentoolkit-0.3.1-r1 (12 Mar 2016)
+
+  12 Mar 2016; Mike Gilbert <floppym@gentoo.org> -gentoolkit-0.3.1.ebuild,
+  +gentoolkit-0.3.1-r1.ebuild, gentoolkit-9999.ebuild:
+  Create /var/cache/revdep-rebuild in pkg_postinst
+
+  This resolves a QA warning.
+
+  QA Notice: This ebuild installs into paths that should be created at
+  runtime.
+   To fix, simply do not install into these directories.  Instead, your
+  package
+   should create dirs on the fly at runtime as needed via init scripts/etc...
+
+    var/cache
+    var/cache/revdep-rebuild
+    var/cache/revdep-rebuild/.keep_app-portage_gentoolkit-0
+
+  We already install a tmpfiles entry to recreate the directory on boot.
+
+  Package-Manager: portage-2.2.28_p57
 

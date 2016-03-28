@@ -1,5 +1,5 @@
 # ChangeLog for media-tv/mythtv
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mythtv-0.27.5_p20150627 (09 Aug 2015)
@@ -211,5 +211,61 @@
   on for all versions less than 1.5.0. fixes #565628
 
   Gentoo-Bug: 565628
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  29 Jan 2016; Richard Freeman <rich0@gentoo.org>
+  mythtv-0.27.5_p20151025.ebuild:
+  Stable for amd64
+
+  Bug: 673250
+
+  Package-Manager: portage-2.2.26
+
+  24 Feb 2016; Doug Goldstein <cardoe@gentoo.org>
+  -mythtv-0.26.0_p20130922.ebuild, -mythtv-0.27.5_p20150627.ebuild,
+  -mythtv-0.27.5_p20150904-r1.ebuild, -mythtv-0.27.5_p20150904-r2.ebuild:
+  mythtv: remove older versions
+
+  Since the versions are all interdependent its easier to do in one big
+  tree commit.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  24 Feb 2016; Doug Goldstein <cardoe@gentoo.org> -files/libdir.patch:
+  remove unused file
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*mythtv-0.27.6_p20160318 (20 Mar 2016)
+
+  20 Mar 2016; Doug Goldstein <cardoe@gentoo.org>
+  +mythtv-0.27.6_p20160318.ebuild:
+  version bump
+
+  Bump to a 0.27.6 based version
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  20 Mar 2016; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.27.5_p20151025.ebuild, mythtv-0.27.6_p20160318.ebuild:
+  fix builds with USE=vaapi
+
+  USE=vaapi builds require x11-libs/libva built with USE=opengl. Thanks to
+  Daniel Frey <djqfrey@gmail.com> for tracking this down.
+
+  Gentoo-Bug: 573252
+
+  Package-Manager: portage-2.2.26
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 

@@ -263,3 +263,188 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  02 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  drop inactive proxy maintainer
+
+  After many pings there's no reply from him. See 8549f2c for reference.
+
+  Package-Manager: portage-2.2.27
+
+*aegisub-3.0.4-r1 (10 Feb 2016)
+
+  10 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> -aegisub-3.0.4.ebuild,
+  +aegisub-3.0.4-r1.ebuild,
+  files/aegisub-3.0.4-fix-install-with-empty-LINGUAS.patch,
+  files/aegisub-3.0.4-fix-lua-macro.patch,
+  files/aegisub-3.0.4-respect-user-compiler-flags.patch:
+  revbump to 3.0.4-r1 to restore -fno-strict-aliasing
+
+  Package-Manager: portage-2.2.27
+
+*aegisub-3.2.2-r1 (10 Feb 2016)
+
+  10 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> +aegisub-3.2.2-r1.ebuild,
+  aegisub-9999.ebuild, files/aegisub-3.2.2-add-missing-pthread-flags.patch,
+  files/aegisub-3.2.2-fix-lua-regexp.patch,
+  +files/aegisub-3.2.2-r1-respect-user-compiler-flags.patch,
+  files/aegisub-3.2.2-unbundle-luajit.patch:
+  revbump to 3.2.2-r1 to restore -fno-strict-aliasing
+
+  Also backport ff9648f and 9f158e9 changes from the live ebuild.
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-9999-add-missing-pthread-flags.patch,
+  files/aegisub-9999-unbundle-luajit.patch:
+  update 9999 patchset
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-3.2.2-add-missing-pthread-flags.patch,
+  files/aegisub-3.2.2-fix-lua-regexp.patch,
+  files/aegisub-3.2.2-r1-respect-user-compiler-flags.patch,
+  files/aegisub-3.2.2-respect-user-compiler-flags.patch,
+  files/aegisub-3.2.2-unbundle-luajit.patch,
+  files/aegisub-9999-add-missing-pthread-flags.patch,
+  files/aegisub-9999-unbundle-luajit.patch:
+  include links to upstream bugreports in patches
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild,
+  metadata.xml:
+  add uchardet USE to 9999
+
+  Package-Manager: portage-2.2.27
+
+  12 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-9999-add-missing-pthread-flags.patch:
+  update 9999 patchset
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  add bugs-to link to metadata
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  add maintainer description to metadata
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild:
+  remove obsolete RDEPEND version numbers from 9999
+
+  These versions were removed from tree in 2012.
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild:
+  remove unneeded wxGTK dep version number from 9999
+
+  wxGTK has SLOT=3.0 only in >=3.0.0 versions.
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild:
+  add missing libass subslot operator to 9999
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild,
+  -files/aegisub-9999-add-missing-pthread-flags.patch:
+  remove unneeded pthread-flags patch from 9999
+
+  Merged upstream.
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild,
+  -files/aegisub-9999-unbundle-luajit.patch:
+  remove unneeded unbundle-luajit patch from 9999
+
+  Mostly merged upstream. Upstream now supports building with system
+  luajit. There are still some problems left, see [1]. But it's already
+  a major improvement.
+
+  [1]: http://devel.aegisub.org/ticket/1904#comment:10
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-9999.ebuild:
+  adjust luajit dep to SLOT=2, i.e. >=2.0.0, in 9999
+
+  Upstream allows system luajit to be >=2.0.0.
+
+  Package-Manager: portage-2.2.27
+
+*aegisub-3.2.2_p20160306 (07 Mar 2016)
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  +aegisub-3.2.2_p20160306.ebuild, aegisub-9999.ebuild,
+  +files/aegisub-3.2.2_p20160306-fix-luajit-unbundling.patch,
+  +files/aegisub-3.2.2_p20160306-respect-user-compiler-flags.patch:
+  verbump to 3.2.2_p20160306
+
+  New snapshot release with most of our Gentoo patches merged upstream.
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> -aegisub-3.2.2-r1.ebuild,
+  -files/aegisub-3.2.2-r1-respect-user-compiler-flags.patch:
+  remove old
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  files/aegisub-3.0.4-fix-install-with-empty-LINGUAS.patch:
+  better wording in patch comment for 3.0.4
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-3.0.4-r1.ebuild:
+  remove obsolete RDEPEND version numbers from 3.0.4
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> aegisub-3.0.4-r1.ebuild:
+  add missing libass subslot operator to 3.0.4
+
+  Package-Manager: portage-2.2.27
+
+  10 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  aegisub-3.2.2_p20160306.ebuild, aegisub-9999.ebuild:
+  update comment re luabins
+
+  Package-Manager: portage-2.2.27
+
+  10 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  aegisub-3.2.2_p20160306.ebuild:
+  manually add git_version.h to 3.2.2_p20160306 wrt bug 576918
+
+  Gentoo-Bug: 576918
+  Closes: https://github.com/gentoo/gentoo/pull/1018
+
+  Package-Manager: portage-2.2.27
+
+  10 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  aegisub-3.2.2_p20160306.ebuild, aegisub-9999.ebuild:
+  copy config.rpath via autotools eclass in 3.2.2_p20160306, 9999
+
+  Replace a custom config.rpath hack with the legalized one from autotools
+  eclass. See also http://devel.aegisub.org/ticket/1914
+
+  Package-Manager: portage-2.2.27
+

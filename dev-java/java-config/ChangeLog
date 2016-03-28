@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/java-config
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *java-config-2.2.0 (09 Aug 2015)
@@ -60,4 +60,49 @@
 
   Package-Manager: portage-2.2.20.1
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> java-config-2.2.0.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*java-config-2.2.0-r1 (18 Feb 2016)
+
+  18 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  +java-config-2.2.0-r1.ebuild:
+  Remove java-config-wrapper dependency, EAPI bump
+
+  java-config-wrapper is very obsolete but we have relied on it because
+  it installs the java-config symlink. We don't have time to do a
+  java-config bump yet but we can easily install the symlink
+  here. Addresses bug #504124.
+
+  Package-Manager: portage-2.2.27
+
+*java-config-2.2.0-r2 (18 Feb 2016)
+
+  18 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -java-config-2.2.0-r1.ebuild, +java-config-2.2.0-r2.ebuild:
+  Deal with java-config-wrapper the right way
+
+  I'm a dumbass. 'nuff said.
+
+  Package-Manager: portage-2.2.27
+
+*java-config-2.2.0-r3 (21 Feb 2016)
+
+  21 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -java-config-2.2.0-r2.ebuild, +java-config-2.2.0-r3.ebuild:
+  Add Python 3.5, fix Python deps wrt bug #539802
+
+  Package-Manager: portage-2.2.27
 

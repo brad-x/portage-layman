@@ -226,3 +226,65 @@
   Package-Manager: portage-2.2.26
   RepoMan-Options: --include-arches="arm"
 
+  17 Jan 2016; Agostino Sarubbo <ago@gentoo.org> gdb-7.10.1.ebuild:
+  ppc stable wrt bug #570712
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  23 Jan 2016; Jeroen Roovers <jer@gentoo.org> gdb-7.10.1.ebuild:
+  Stable for HPPA PPC64 (bug #570712).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  13 Feb 2016; Mike Frysinger <vapier@gentoo.org> gdb-7.10-r1.ebuild,
+  gdb-7.10.1.ebuild, gdb-9999.ebuild:
+  force zlib w/newer versions
+
+  Upstream has moved to using zlib all the time, so update the deps and
+  configure flags to match.  Otherwise we'd end up using the local zlib.
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> gdb-7.10.1.ebuild,
+  gdb-9999.ebuild:
+  add python-3.5 #572464
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> gdb-7.10.1.ebuild:
+  mark 7.10.1 arm64/m68k/s390 stable
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> -gdb-7.8.2.ebuild,
+  -gdb-7.9.1.ebuild, -gdb-7.10-r1.ebuild:
+  move <7.10.1 versions to toolchain overlay
+
+*gdb-7.11 (24 Feb 2016)
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> +gdb-7.11.ebuild:
+  version bump to 7.11
+
+*gdb-7.9.1 (24 Feb 2016)
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> +gdb-7.9.1.ebuild,
+  gdb-7.10.1.ebuild, gdb-7.11.ebuild:
+  restore 7.9.1 for alpha, and move masking to the ebuild
+
+  We have per-ebuild KEYWORDS to track arch issues, so move it out of the
+  arch mask to keep things clear.
+

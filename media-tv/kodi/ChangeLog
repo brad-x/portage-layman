@@ -1,5 +1,5 @@
 # ChangeLog for media-tv/kodi
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *kodi-9999 (09 Aug 2015)
@@ -135,4 +135,70 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="x86"
+
+  22 Jan 2016; Michael Palimaka <kensington@gentoo.org> metadata.xml:
+  add video as a maintainer
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*kodi-16.0 (23 Feb 2016)
+
+  23 Feb 2016; Mike Frysinger <vapier@gentoo.org> +kodi-16.0.ebuild:
+  version bump to 16.0 #575314
+
+  23 Feb 2016; Mike Frysinger <vapier@gentoo.org> kodi-9999.ebuild:
+  sync live ebuild with latest upstream changes
+
+  23 Feb 2016; Mike Frysinger <vapier@gentoo.org> -kodi-15.1.ebuild:
+  drop old 15.1 ebuild
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> kodi-14.1.ebuild,
+  kodi-15.2.ebuild, kodi-16.0.ebuild, kodi-9999.ebuild:
+  disallow gles/vaapi together #464306
+
+  24 Feb 2016; Alexis Ballier <aballier@gentoo.org>
+  +files/kodi-16-ffmpeg3.patch, kodi-16.0.ebuild:
+  backport upstream fix to build with ffmpeg-3. Bug #574998
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Feb 2016; Mike Frysinger <vapier@gentoo.org> kodi-14.1.ebuild,
+  kodi-15.2.ebuild, kodi-16.0.ebuild, kodi-9999.ebuild:
+  fix logic error in vaapi/gles check #464306#14
+
+  02 Mar 2016; Mike Frysinger <vapier@gentoo.org> kodi-14.1.ebuild,
+  kodi-15.2.ebuild, kodi-16.0.ebuild, kodi-9999.ebuild:
+  require at least gles or opengl to be enabled #575626
+
+  02 Mar 2016; Mike Frysinger <vapier@gentoo.org> kodi-14.1.ebuild,
+  kodi-15.2.ebuild, kodi-16.0.ebuild, kodi-9999.ebuild:
+  switch HOMEPAGE to https #576244
+
+  02 Mar 2016; Mike Frysinger <vapier@gentoo.org> kodi-15.2.ebuild,
+  kodi-16.0.ebuild, kodi-9999.ebuild:
+  require >=yajl-2 in newer versions #576246
+
+  02 Mar 2016; Mike Frysinger <vapier@gentoo.org> kodi-9999.ebuild:
+  drop libdvdcss requirement to match upstream
+
+  See upstream:
+  https://github.com/xbmc/xbmc/commit/5138926fd8009f27613f2b08a8f0423be4a7779f
 

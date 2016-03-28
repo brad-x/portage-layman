@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-PYTHON_COMPAT=( python{2_7,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4,3_5} )
 PYTHON_REQ_USE='threads(+)'
 
 WAF_PV='1.8.12'
 
-inherit eutils fdo-mime gnome2-utils pax-utils python-any-r1 toolchain-funcs waf-utils
+inherit fdo-mime gnome2-utils pax-utils python-any-r1 toolchain-funcs waf-utils
 
 DESCRIPTION="Media player based on MPlayer and mplayer2"
 HOMEPAGE="https://mpv.io/"
@@ -23,30 +23,29 @@ else
 	inherit git-r3
 fi
 SRC_URI+=" https://waf.io/waf-${WAF_PV}"
-DOCS+=( README.md etc/example.conf etc/input.conf )
+DOCS+=( README.md )
 
 # See Copyright in source tarball and bug #506946. Waf is BSD, libmpv is ISC.
 LICENSE="GPL-2+ BSD ISC"
 SLOT="0"
-# Here 'opengl' stands for GLX, 'egl' stands for any EGL-based output
-IUSE="+alsa archive bluray cdda +cli doc drm dvb +dvd +egl +enca encode gbm
-	+iconv jack jpeg lcms +libass libav libcaca libguess libmpv lua luajit
-	openal +opengl oss pulseaudio raspberry-pi rubberband samba sdl selinux
-	test uchardet v4l vaapi vdpau vf-dlopen wayland +X xinerama +xscreensaver
-	xv zsh-completion"
+IUSE="aqua +alsa archive bluray cdda +cli coreaudio doc drm dvb +dvd +egl +enca
+	encode gbm +iconv jack jpeg lcms +libass libav libcaca libguess libmpv lua
+	luajit openal +opengl oss pulseaudio raspberry-pi rubberband samba -sdl
+	selinux test uchardet v4l vaapi vdpau vf-dlopen wayland +X xinerama
+	+xscreensaver +xv zsh-completion"
 
 REQUIRED_USE="
 	|| ( cli libmpv )
+	aqua? ( opengl )
 	egl? ( || ( gbm X wayland ) )
 	enca? ( iconv )
 	gbm? ( drm egl )
 	lcms? ( || ( opengl egl ) )
 	libguess? ( iconv )
 	luajit? ( lua )
-	opengl? ( X )
 	uchardet? ( iconv )
 	v4l? ( || ( alsa oss ) )
-	vaapi? ( || ( X wayland ) )
+	vaapi? ( || ( gbm X wayland ) )
 	vdpau? ( X )
 	wayland? ( egl )
 	xinerama? ( X )
@@ -76,7 +75,7 @@ COMMON_DEPEND="
 		libguess? ( >=app-i18n/libguess-1.0 )
 		uchardet? ( dev-libs/uchardet )
 	)
-	jack? ( media-sound/jack-audio-connection-kit )
+	jack? ( virtual/jack )
 	jpeg? ( virtual/jpeg:0 )
 	lcms? ( >=media-libs/lcms-2.6:2 )
 	libass? (
@@ -89,12 +88,13 @@ COMMON_DEPEND="
 		luajit? ( dev-lang/luajit:2 )
 	)
 	openal? ( >=media-libs/openal-1.13 )
+	opengl? ( !aqua? ( virtual/opengl ) )
 	pulseaudio? ( media-sound/pulseaudio )
 	rubberband? ( >=media-libs/rubberband-1.8.0 )
 	samba? ( net-fs/samba )
 	sdl? ( media-libs/libsdl2[sound,threads,video,X?,wayland?] )
 	v4l? ( media-libs/libv4l )
-	vaapi? ( >=x11-libs/libva-1.4.0[X?,wayland?] )
+	vaapi? ( >=x11-libs/libva-1.4.0[drm?,X?,wayland?] )
 	wayland? (
 		>=dev-libs/wayland-1.6.0
 		>=x11-libs/libxkbcommon-0.3.0
@@ -103,10 +103,7 @@ COMMON_DEPEND="
 		x11-libs/libX11
 		x11-libs/libXext
 		>=x11-libs/libXrandr-1.2.0
-		opengl? (
-			x11-libs/libXdamage
-			virtual/opengl
-		)
+		opengl? ( x11-libs/libXdamage )
 		vdpau? ( >=x11-libs/libvdpau-0.2 )
 		xinerama? ( x11-libs/libXinerama )
 		xscreensaver? ( x11-libs/libXScrnSaver )
@@ -129,39 +126,12 @@ pkg_pretend() {
 	if [[ ${MERGE_TYPE} != "binary" ]] && ! tc-has-tls && use vaapi && use egl; then
 		die "Your compiler lacks C++11 TLS support. Use GCC>=4.8.0 or Clang>=3.3."
 	fi
-
-	if ! use libass; then
-		ewarn "You have disabled the libass support."
-		ewarn "OSD and subtitles won't be available."
-	fi
-
-	if use openal; then
-		ewarn "You have enabled the openal audio output. Be warned that"
-		ewarn "this output is considered experimental by upstream."
-	fi
-
-	if use sdl; then
-		ewarn "You have enabled the sdl video and audio outputs. Note that"
-		ewarn "upstream provides these outputs for compatibility reasons only."
-		ewarn "You probably don't need them under the normal circumstances."
-	fi
-
-	if use libav; then
-		elog "You have enabled media-video/libav instead of media-video/ffmpeg."
-		elog "Upstream recommends media-video/ffmpeg, as some functionality"
-		elog "is not provided by media-video/libav."
-	fi
-
-	einfo "mpv optionally supports many different audio and video formats."
-	einfo "You will need to enable support for the desired formats in your"
-	einfo "libavcodec/libavformat provider:"
-	einfo "    media-video/ffmpeg or media-video/libav"
 }
 
 src_prepare() {
 	cp "${DISTDIR}/waf-${WAF_PV}" "${S}"/waf || die
 	chmod +x "${S}"/waf || die
-	epatch_user
+	default
 }
 
 src_configure() {
@@ -169,11 +139,12 @@ src_configure() {
 		--confdir="${EPREFIX}"/etc/${PN}
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 
-		--disable-gpl3		# Unclear license info. See Gentoo bug 571728.
+		--disable-gpl3			# Unclear license info. See Gentoo bug 571728.
 
 		$(usex cli '' '--disable-cplayer')
 		$(use_enable libmpv libmpv-shared)
 
+		# See deep down below for build-date
 		--disable-libmpv-static
 		--disable-static-build
 		--disable-optimize		# Do not add '-O2' to CFLAGS
@@ -205,7 +176,6 @@ src_configure() {
 		--disable-vapoursynth-lazy
 		$(use_enable archive libarchive)
 
-		--enable-libavfilter
 		--enable-libavdevice
 
 		# Audio outputs
@@ -216,11 +186,12 @@ src_configure() {
 		$(use_enable pulseaudio pulse)
 		$(use_enable jack)
 		$(use_enable openal)
+		--disable-opensles
 		$(use_enable alsa)
-		--disable-coreaudio
+		$(use_enable coreaudio)
 
 		# Video outputs
-		--disable-cocoa
+		$(use_enable aqua cocoa)
 		$(use_enable drm)
 		$(use_enable gbm)
 		$(use_enable wayland)
@@ -230,21 +201,25 @@ src_configure() {
 		$(use_enable xv)
 		$(use_enable xinerama)
 		$(use_enable X xrandr)
-		$(use_enable opengl gl-x11)
+		$(usex opengl "$(use_enable aqua gl-cocoa)" '--disable-gl-cocoa')
+		$(usex opengl "$(use_enable X gl-x11)" '--disable-gl-x11')
 		$(usex egl "$(use_enable X egl-x11)" '--disable-egl-x11')
 		$(usex egl "$(use_enable gbm egl-drm)" '--disable-egl-drm')
 		$(use_enable wayland gl-wayland)
 		$(use_enable vdpau)
 		$(usex vdpau "$(use_enable opengl vdpau-gl-x11)" '--disable-vdpau-gl-x11')
-		$(use_enable vaapi)		# See below for vaapi-x-egl
+		$(use_enable vaapi)		# See below for vaapi-glx, vaapi-x-egl
 		$(usex vaapi "$(use_enable X vaapi-x11)" '--disable-vaapi-x11')
 		$(usex vaapi "$(use_enable wayland vaapi-wayland)" '--disable-vaapi-wayland')
-		$(usex vaapi "$(use_enable opengl vaapi-glx)" '--disable-vaapi-glx')
+		$(usex vaapi "$(use_enable gbm vaapi-drm)" '--disable-vaapi-drm')
 		$(use_enable libcaca caca)
 		$(use_enable jpeg)
+		--disable-android
 		$(use_enable raspberry-pi rpi)
+		$(usex libmpv "$(use_enable opengl plain-gl)" '--disable-plain-gl')
 
 		# HWaccels
+		# Automagic Video Toolbox HW acceleration. See Gentoo bug 577332.
 		$(use_enable vaapi vaapi-hwaccel)
 		# Automagic VDPAU HW acceleration. See Gentoo bug 558870.
 
@@ -254,12 +229,16 @@ src_configure() {
 		$(use_enable v4l libv4l2)
 		$(use_enable v4l audio-input)
 		$(use_enable dvb dvbin)
+
+		# Miscellaneous features
+		--disable-apple-remote	# Needs testing first. See Gentoo bug 577332.
 	)
 
-	if use vaapi && use X && use egl; then
-		mywafargs+=(--enable-vaapi-x-egl)
-	else
-		mywafargs+=(--disable-vaapi-x-egl)
+	if use vaapi && use X; then
+		mywafargs+=(
+			$(use_enable opengl vaapi-glx)
+			$(use_enable egl vaapi-x-egl)
+		)
 	fi
 
 	# Create reproducible non-live builds

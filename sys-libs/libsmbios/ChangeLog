@@ -1,5 +1,5 @@
 # ChangeLog for sys-libs/libsmbios
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libsmbios-2.2.28 (09 Aug 2015)
@@ -55,4 +55,40 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  14 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> libsmbios-2.2.28.ebuild:
+  Added second SRC_URI for older releases.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*libsmbios-2.3.0 (14 Mar 2016)
+
+  14 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/libsmbios-2.3.0-doxygen_target.patch, +libsmbios-2.3.0.ebuild:
+  Bump to version 2.3.0
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*libsmbios-2.3.0-r1 (14 Mar 2016)
+
+  14 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> -libsmbios-2.3.0.ebuild,
+  +libsmbios-2.3.0-r1.ebuild:
+  Don't build yum-plugin ever (fixes bug #577402).
+
+  Use some more python scripts via python-exec wrapper.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  15 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  libsmbios-2.3.0-r1.ebuild:
+  Fixed installation with USE="-python" (bug #577474).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 

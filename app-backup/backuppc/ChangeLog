@@ -1,5 +1,5 @@
 # ChangeLog for app-backup/backuppc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *backuppc-3.3.0-r1 (09 Aug 2015)
@@ -67,4 +67,51 @@
 
   Package-Manager: portage-2.2.25
   RepoMan-Options: --include-arches="arm"
+
+*backuppc-3.3.1 (19 Jan 2016)
+
+  19 Jan 2016; Michael Orlitzky <mjo@gentoo.org> +backuppc-3.3.1.ebuild,
+  +files/99_backuppc.conf:
+  add version 3.3.1 (masked) with apache-2.4 support.
+
+  This new version adds apache-2.4 support to backuppc, but at the cost
+  of requiring www-apache/mpm_itk and a new mod_perl supporting
+  apache-2.4. The former is available and less onerous than the current
+  requirement of a separate web server. However, the only mod_perl
+  supporting apache-2.4 at the moment is masked, so the new version of
+  backuppc is masked as well.
+
+  The configuration for the new version should be more familiar to
+  users: it is enabled by passing -D BACKUPPC to apache2.
+
+  Gentoo-Bug: 532718
+  Gentoo-Bug: 541312
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+*backuppc-3.3.1-r1 (25 Jan 2016)
+
+  25 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -backuppc-3.3.1.ebuild,
+  +backuppc-3.3.1-r1.ebuild:
+  un-remove systemd service file in v3.3.1.
+
+  For some reason lost to time, I omitted the installation of the
+  systemd service file from backuppc-3.3.1.ebuild. Erik Zeek reported
+  the omission and provided a fix in bug 572818.
+
+  Gentoo-Bug: 572818
+  Reported-by: Erik Zeek
+
+  Package-Manager: portage-2.2.26
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
 

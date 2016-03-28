@@ -252,3 +252,62 @@
   Package-Manager: portage-2.2.24
   Signed-off-by: Richard Yao <ryao@gentoo.org>
 
+*zfs-0.6.5.3-r3 (16 Jan 2016)
+
+  16 Jan 2016; Richard Yao <ryao@gentoo.org> -zfs-0.6.5.3-r2.ebuild,
+  +zfs-0.6.5.3-r3.ebuild:
+  0.6.5.3-r3: Many fixes
+
+  Fixes regressions in the code from the proposed stable API branch.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*zfs-0.6.5.3-r4 (27 Jan 2016)
+
+  27 Jan 2016; Richard Yao <ryao@gentoo.org> +zfs-0.6.5.3-r4.ebuild:
+  0.6.5.3-r4: Regression fixes
+
+  Fixes additional regressions in the code from the proposed stable API
+  branch.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+*zfs-0.6.5.4-r1 (27 Jan 2016)
+*zfs-0.6.5.4 (27 Jan 2016)
+
+  27 Jan 2016; Richard Yao <ryao@gentoo.org> +zfs-0.6.5.4.ebuild,
+  +zfs-0.6.5.4-r1.ebuild:
+  0.6.5.4{,-r1}: Version Bump
+
+  The stable API patches from the 0.6.5.3-r4 ebuild. 0.6.5.4 has been commited
+  without any patches as an aid to users who do not want patches. However, it
+  is
+  left unkeyworded to be consistent with the sys-fs/zfs-kmod ebuild.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+*zfs-0.6.5.4-r2 (28 Jan 2016)
+*zfs-0.6.5.3-r5 (28 Jan 2016)
+
+  28 Jan 2016; Richard Yao <ryao@gentoo.org> +zfs-0.6.5.3-r5.ebuild,
+  +zfs-0.6.5.4-r2.ebuild:
+  0.6.5.3-r5,0.6.5.4-r2}: Regression fix
+
+  The fix for the `zfs send -R` / `zfs send -p` regression in 0.6.5.3-r4 and
+  0.6.5.4-r1 caused a regression where the internal get_numeric function
+  failed
+  to retrieve the case, version, utf8only and normalization properties. This
+  broke printing in `zfs get case,version,utf8only,normalization`, hid them in
+  `zfs get all` and broke mount.zfs on legacy mountpoints because it would try
+  to
+  lookup the version.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+

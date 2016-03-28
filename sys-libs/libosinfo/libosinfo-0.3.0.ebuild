@@ -17,7 +17,7 @@ SLOT="0"
 IUSE="+introspection +vala test"
 REQUIRED_USE="vala? ( introspection )"
 
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
 
 RDEPEND="
 	>=dev-libs/glib-2:2
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 	test? ( dev-libs/check )
 	vala? ( $(vala_depend) )
 "
+
+src_prepare() {
+	gnome2_src_prepare
+	use vala && vala_src_prepare
+}
 
 src_configure() {
 	gnome2_src_configure \

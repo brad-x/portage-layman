@@ -66,7 +66,7 @@ DEPEND="${RDEPEND}
 	!sys-devel/gcc[libffi]"
 RDEPEND+=" !build? ( app-misc/mime-types )
 	doc? ( dev-python/python-docs:${SLOT} )"
-PDEPEND=">=app-eselect/eselect-python-20151117-r1
+PDEPEND=">=app-eselect/eselect-python-20140125-r1
 	app-admin/python-updater"
 
 S="${WORKDIR}/${MY_P}"
@@ -104,6 +104,8 @@ src_prepare() {
 	epatch "${FILESDIR}/python-2.7.10-cross-compile-warn-test.patch"
 	epatch "${FILESDIR}/python-2.7.10-system-libffi.patch"
 
+	epatch_user
+
 	sed -i -e "s:@@GENTOO_LIBDIR@@:$(get_libdir):g" \
 		Lib/distutils/command/install.py \
 		Lib/distutils/sysconfig.py \
@@ -114,8 +116,6 @@ src_prepare() {
 		Modules/Setup.dist \
 		Modules/getpath.c \
 		setup.py || die "sed failed to replace @@GENTOO_LIBDIR@@"
-
-	epatch_user
 
 	eautoreconf
 }
@@ -354,10 +354,6 @@ pkg_preinst() {
 eselect_python_update() {
 	if [[ -z "$(eselect python show)" || ! -f "${EROOT}usr/bin/$(eselect python show)" ]]; then
 		eselect python update
-	fi
-
-	if [[ -z "$(eselect python show --python${PV%%.*})" || ! -f "${EROOT}usr/bin/$(eselect python show --python${PV%%.*})" ]]; then
-		eselect python update --python${PV%%.*}
 	fi
 }
 

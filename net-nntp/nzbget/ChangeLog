@@ -107,3 +107,54 @@
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  14 Feb 2016; Sven Wegener <swegener@gentoo.org> files/nzbget.initd:
+  Remove double -- from init script
+
+  Package-Manager: portage-2.2.26
+
+  20 Mar 2016; Louis Sautier <sautier.louis@gmail.com> metadata.xml:
+  add bugs-to to metadata
+
+  Package-Manager: portage-2.2.28
+
+*nzbget-17.0_pre1660 (24 Mar 2016)
+
+  24 Mar 2016; Louis Sautier <sautier.louis@gmail.com>
+  +files/nzbget-17.0_pre1660-add-missing-macro.patch,
+  +nzbget-17.0_pre1660.ebuild:
+  bump to 17.0_pre1660, EAPI=6
+
+  - add tests
+  - drop the dependency on libpar2 and libsigc++ as the package provides its
+    own modified libpar2 (see
+    https://github.com/nzbget/nzbget/commit/2e0ba0e3d10a63316670fad4dd1c052b75
+  83afe9)
+  - this versions requires a C++14-compatible compiler, add a pkg_pretend
+  check and a
+    missing macro
+
+  Package-Manager: portage-2.2.28
+
+  27 Mar 2016; Michael Palimaka <kensington@gentoo.org>
+  nzbget-17.0_pre1660.ebuild:
+  whitespace
+
+  Package-Manager: portage-2.2.28
+

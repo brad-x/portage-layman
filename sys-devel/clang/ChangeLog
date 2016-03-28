@@ -173,3 +173,46 @@
   -files/clang-3.1-gentoo-runtime-gcc-detection-v3.patch:
   Remove ancient 3.2 version
 
+  17 Jan 2016; Michał Górny <mgorny@gentoo.org> clang-3.7.1-r100.ebuild,
+  clang-9999-r100.ebuild:
+  Fix static-analyzer usedep, #572094
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*clang-3.8.0_rc1-r100 (27 Jan 2016)
+
+  27 Jan 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +clang-3.8.0_rc1-r100.ebuild:
+  sys-devel/llvm: add (masked) 3.8 release candidate for testing
+
+  Package-Manager: portage-2.2.27
+
+*clang-3.8.0_rc2-r100 (15 Feb 2016)
+
+  15 Feb 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  -clang-3.8.0_rc1-r100.ebuild, +clang-3.8.0_rc2-r100.ebuild:
+  sys-devel/llvm: release candidate bump
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Steev Klimaszewski <steev@gentoo.org> clang-3.7.1-r100.ebuild:
+  Keyword 3.7.1-r100 for ~arm64
+
+  Tested on Cortex-A53.  3.8 is still masked, so keyword not added to it.
+
+  Package-Manager: portage-2.2.27
+
+*clang-3.8.0-r100 (09 Mar 2016)
+
+  09 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  -clang-3.8.0_rc2-r100.ebuild, +clang-3.8.0-r100.ebuild:
+  sys-devel/{clang,llvm}: Bump to final 3.8.0
+
+  To do before unmask:
+  * some clang tests still fail (cannot find standard headers)
+  * lldb wants to install six.py
+  * test reverse dependencies
+
+  Package-Manager: portage-2.2.27
+

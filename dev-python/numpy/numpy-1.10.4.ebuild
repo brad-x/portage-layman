@@ -25,7 +25,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 # It appears the docs haven't been upgraded, still @ 1.8.1
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 ~arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc lapack test"
 
 RDEPEND="
@@ -109,15 +109,18 @@ python_prepare_all() {
 	sed -i -e '/f2py_exe/s: + os\.path.*$::' numpy/f2py/setup.py || die
 
 	# we don't have f2py-3.3
-#	sed \
-#		-e 's:test_f2py:_&:g' \
-#		-i numpy/tests/test_scripts.py || die
+	sed \
+		-e 's:test_f2py:_&:g' \
+		-i numpy/tests/test_scripts.py || die
 
 	distutils-r1_python_prepare_all
+	epatch_user
 }
 
 python_compile() {
-	distutils-r1_python_compile -j $(makeopts_jobs) ${NUMPY_FCONFIG}
+	distutils-r1_python_compile \
+		$(usex python_targets_python3_5 "" "-j $(makeopts_jobs)") \
+		${NUMPY_FCONFIG}
 }
 
 python_test() {

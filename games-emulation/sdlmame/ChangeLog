@@ -114,3 +114,39 @@
   RepoMan-Options: --include-arches="amd64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> sdlmame-0.168.ebuild:
+  x86 stable wrt bug #571336
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  18 Feb 2016; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/mame-0.139.ini.in, -files/sdlmame-0.144-makefile.patch,
+  -files/sdlmame-0.144-no-opengl.patch,
+  -files/sdlmame-0.148_p1-makefile.patch,
+  -files/sdlmame-0.148_p1-no-opengl.patch, -files/sdlmame-0.149-QA.patch,
+  -files/sdlmame-0.149-debugger-linking.patch,
+  -files/sdlmame-0.149-no-opengl.patch, -files/sdlmame-0.149-system-lua.patch,
+  -sdlmame-0.148_p1-r1.ebuild, -sdlmame-0.149.ebuild:
+  clean old; dropping support for ppc
+
+  Package-Manager: portage-2.2.26
+

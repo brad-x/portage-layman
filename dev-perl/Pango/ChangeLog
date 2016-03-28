@@ -1,5 +1,5 @@
 # ChangeLog for dev-perl/Pango
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *Pango-1.224.0 (09 Aug 2015)
@@ -62,4 +62,40 @@
 
   Package-Manager: portage-2.2.20.1
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> Pango-1.224.0-r1.ebuild:
+  stable for all wrt bug #576564
+
+  Package-Manager: portage-2.2.26
+
+*Pango-1.227.0 (14 Mar 2016)
+
+  14 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org> +Pango-1.227.0.ebuild:
+  Bump to version 1.227.0
+
+  - EAPI6
+  - Add support for testing under virtual-X11
+  - Add USE="examples"
+
+  NB: and gtk-perl X11 Test dependencies only pulled when both USE="test
+  -minimal" are set,
+  because "test" being set doesn't necessarily mean you want to pay the price
+  for the
+  heavy, optional extra stuff. ( And gtk-perl is a bit slow to install )
+
+  This way, you can continue using FEATURES="test", but you can save yourself
+  some effort
+  and still get good test coverage if you have USE="minimal" in your
+  environment
+
+  Package-Manager: portage-2.2.27
 

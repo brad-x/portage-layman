@@ -1,5 +1,5 @@
 # ChangeLog for sys-apps/coreutils
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *coreutils-8.24 (09 Aug 2015)
@@ -128,4 +128,33 @@
   add USE=hostname #128538
 
   This controls just the hostname program.
+
+  20 Jan 2016; Mike Frysinger <vapier@gentoo.org> coreutils-8.23.ebuild:
+  mark 8.23 arm64/m68k/s390/sh stable
+
+  20 Jan 2016; Mike Frysinger <vapier@gentoo.org> -coreutils-8.20.ebuild,
+  -coreutils-8.21.ebuild, -coreutils-8.22.ebuild, -coreutils-8.22-r1.ebuild:
+  drop old versions <8.23
+
+*coreutils-8.25 (20 Jan 2016)
+
+  20 Jan 2016; Mike Frysinger <vapier@gentoo.org> +coreutils-8.25.ebuild:
+  version bump to 8.25
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
 

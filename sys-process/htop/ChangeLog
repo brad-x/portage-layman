@@ -1,5 +1,5 @@
 # ChangeLog for sys-process/htop
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *htop-1.0.3 (09 Aug 2015)
@@ -78,4 +78,49 @@
   Remove unneeded python depends, bug 558108
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*htop-2.0.0 (11 Feb 2016)
+
+  11 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/htop-2.0.0-tinfo.patch, +htop-2.0.0.ebuild:
+  Bump to version 2.0.0 (bug #574424).
+
+  With kind permission from idl0r.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  16 Feb 2016; Steev Klimaszewski <steev@gentoo.org> htop-2.0.0.ebuild:
+  htop: add arm64 keyword
+
+  Package-Manager: portage-2.2.27
+
+*htop-2.0.0-r1 (16 Feb 2016)
+
+  16 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  +files/htop-2.0.0-commlen.patch, +htop-2.0.0-r1.ebuild:
+  do not crash on startup
+
+  Certain htoprc files trigger a crash at startup. Upstream's instruction
+  is to include this commit until a new version is released.
+
+  07 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> htop-2.0.0-r1.ebuild:
+  from version 2 onwards, FreeBSD is supported natively
+
+  07 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> -htop-2.0.0.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*htop-2.0.1 (08 Mar 2016)
+
+  08 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> +htop-2.0.1.ebuild:
+  Bump to version 2.0.1
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 

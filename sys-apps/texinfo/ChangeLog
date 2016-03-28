@@ -1,5 +1,5 @@
 # ChangeLog for sys-apps/texinfo
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *texinfo-6.0 (09 Aug 2015)
@@ -87,4 +87,52 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*texinfo-6.1 (07 Feb 2016)
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +texinfo-6.1.ebuild:
+  Bump to version 6.1
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/texinfo-4.13-accentenc-test.patch, -files/texinfo-4.13-docbook.patch,
+  -files/texinfo-4.13-texi2dvi-regexp-range.patch,
+  -files/texinfo-4.13-tinfo.patch, -files/texinfo-4.13-xz.patch,
+  -texinfo-4.13-r2.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*texinfo-4.13-r2 (07 Feb 2016)
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/texinfo-4.13-accentenc-test.patch, +files/texinfo-4.13-docbook.patch,
+  +files/texinfo-4.13-texi2dvi-regexp-range.patch,
+  +files/texinfo-4.13-tinfo.patch, +files/texinfo-4.13-xz.patch,
+  +texinfo-4.13-r2.ebuild:
+  Revert removal of old versions as it breaks packages.
+
+  This reverts commit 7257191494c950bc7f057ff321e63e2e821ec28c.
+
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 

@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/metadata-extractor
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *metadata-extractor-2.2.2-r4 (09 Aug 2015)
@@ -56,4 +56,42 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  metadata-extractor-2.2.2-r2.ebuild, metadata-extractor-2.2.2-r4.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*metadata-extractor-2.8.1 (18 Feb 2016)
+
+  18 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -files/metadata-extractor-2.2.2-buildfix.patch,
+  -metadata-extractor-2.2.2-r4.ebuild, +metadata-extractor-2.8.1.ebuild,
+  metadata.xml:
+  Version bump and java-pkg-simple rewrite
+
+  Patching build.xml was annoying. This version isn't limited to Java
+  6. Nothing currently requires it but it's well-maintained and looks
+  useful.
+
+  Package-Manager: portage-2.2.27
+
+  18 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -metadata-extractor-2.2.2-r2.ebuild:
+  Remove old
+
+  This drops the only stable version but nothing requires it and it's
+  blocking the removal of Java 6.
+
+  Package-Manager: portage-2.2.27
 

@@ -1,5 +1,5 @@
 # ChangeLog for www-client/netsurf
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *netsurf-3.3-r1 (09 Aug 2015)
@@ -93,4 +93,43 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*netsurf-3.4 (02 Mar 2016)
+
+  02 Mar 2016; Michael Weber <xmw@gentoo.org> +files/netsurf-3.4-CFLAGS.patch,
+  +files/netsurf-3.4-conditionally-include-image-headers.patch,
+  +files/netsurf-3.4-framebuffer-pkgconfig.patch, +netsurf-3.4.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.2.27
+
+  02 Mar 2016; Michael Weber <xmw@gentoo.org>
+  -files/netsurf-2.9-buildsystem.patch,
+  -files/netsurf-2.9-conditionally-include-image-headers.patch,
+  -files/netsurf-2.9-includes.patch, -files/netsurf-3.0-CFLAGS.patch,
+  -files/netsurf-3.2-CFLAGS.patch, -files/netsurf-3.2-glibc2.20.patch,
+  -files/netsurf-3.2-pdf-writer.patch, -netsurf-3.2-r1.ebuild:
+  Drop old, cleanup FILESDIR.
+
+  02 Mar 2016; Michael Weber <xmw@gentoo.org> netsurf-3.4.ebuild:
+  Add dev-perl/HTML-Parser to $DEPEND (thanks Anthony Parsons, bug 572920).
+
+  Package-Manager: portage-2.2.27
+
+  03 Mar 2016; Michael Weber <xmw@gentoo.org> metadata.xml,
+  netsurf-3.4.ebuild:
+  Enable duktape javascript engine.
+
+  Package-Manager: portage-2.2.27
 

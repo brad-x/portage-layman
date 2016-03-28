@@ -1,5 +1,5 @@
 # ChangeLog for mail-mta/exim
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *exim-4.86 (09 Aug 2015)
@@ -128,4 +128,100 @@
   bump to Exim 4.87 RC2
 
   Package-Manager: portage-2.2.20.1
+
+*exim-4.87_rc3 (18 Jan 2016)
+
+  18 Jan 2016; Fabian Groffen <grobian@gentoo.org> -exim-4.87_rc1.ebuild,
+  +exim-4.87_rc3.ebuild:
+  bump to Exim 4.87 RC3
+
+  Package-Manager: portage-2.2.26
+
+  19 Jan 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86-r2.ebuild,
+  exim-4.87_rc3.ebuild, metadata.xml:
+  add support for DANE by Michael Scholl, bug #572298
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  03 Feb 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86-r2.ebuild,
+  exim-4.87_rc3.ebuild, +files/exim-4.86-TMPDIR.patch:
+  add patch to avoid TMPDIR issues with distcc, bug #63420
+
+  Package-Manager: portage-2.2.20-prefix
+
+  18 Feb 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86-r2.ebuild,
+  exim-4.87_rc3.ebuild:
+  require openssl[-bindist], bug #556654
+
+  Package-Manager: portage-2.2.20-prefix
+
+  22 Feb 2016; Bertrand Jacquin <bertrand@jacquin.bzh> exim-4.86-r2.ebuild:
+  Add ~arm keyword
+
+  Tested on Scaleway C1
+
+  Package-Manager: portage-2.2.26
+
+*exim-4.87_rc5 (03 Mar 2016)
+*exim-4.86.2 (03 Mar 2016)
+*exim-4.85.2 (03 Mar 2016)
+*exim-4.84.2 (03 Mar 2016)
+
+  03 Mar 2016; Fabian Groffen <grobian@gentoo.org> +exim-4.84.2.ebuild,
+  +exim-4.85.2.ebuild, -exim-4.86.ebuild, -exim-4.86-r2.ebuild,
+  +exim-4.86.2.ebuild, -exim-4.87_rc2.ebuild, -exim-4.87_rc3.ebuild,
+  +exim-4.87_rc5.ebuild:
+  version bumps for CVE-2016-1531
+
+  Package-Manager: portage-2.2.26
+
+  04 Mar 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86.2.ebuild,
+  exim-4.87_rc5.ebuild, +files/exim-4.86.2-TMPDIR.patch:
+  fix TMPDIR patch for 4.86.2, drop for 4.87_rc5 as it's upstream, bug #576332
+
+  Package-Manager: portage-2.2.26
+
+  04 Mar 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86.2.ebuild:
+  add notice about new options for CVE-2016-1531
+
+  Package-Manager: portage-2.2.26
+
+  08 Mar 2016; Fabian Groffen <grobian@gentoo.org> exim-4.86.2.ebuild,
+  exim-4.87_rc5.ebuild:
+  always give environment because it is non-conditional
+
+  Package-Manager: portage-2.2.26
+
+*exim-4.87_rc6 (08 Mar 2016)
+
+  08 Mar 2016; Fabian Groffen <grobian@gentoo.org> -exim-4.87_rc5.ebuild,
+  +exim-4.87_rc6.ebuild:
+  version bump to 4.87 RC6
+
+  Package-Manager: portage-2.2.26
+
+  09 Mar 2016; Sergey Popov <pinkbyte@gentoo.org> exim-4.86.2.ebuild,
+  exim-4.87_rc6.ebuild:
+  add ~ppc keyword back
+
+  Gentoo-Bug: 563478
+
+  Package-Manager: portage-2.2.26
 

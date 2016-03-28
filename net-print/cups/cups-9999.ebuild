@@ -34,7 +34,7 @@ SLOT="0"
 IUSE="acl dbus debug java kerberos lprng-compat pam
 	python selinux +ssl static-libs systemd +threads usb X xinetd zeroconf"
 
-LANGS="ca cs de es fr it ja pt_BR ru"
+LANGS="ca cs de es fr it ja ru"
 for X in ${LANGS} ; do
 	IUSE="${IUSE} +linguas_${X}"
 done
@@ -76,11 +76,7 @@ RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-cups )
 "
 
-PDEPEND="
-	app-text/ghostscript-gpl[cups]
-	app-text/poppler[utils]
-	>=net-print/cups-filters-1.0.43
-"
+PDEPEND=">=net-print/cups-filters-1.0.43"
 
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -100,6 +96,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.0.2-rename-systemd-service-files.patch"
 	"${FILESDIR}/${PN}-2.1.2-systemd-socket.patch"
 	"${FILESDIR}/${PN}-2.0.1-xinetd-installation-fix.patch"
+	"${FILESDIR}/${PN}-2.0.3-cross-compile.patch"
 )
 
 MULTILIB_CHOST_TOOLS=(
@@ -203,6 +200,7 @@ multilib_src_configure() {
 		$(use_enable dbus) \
 		$(use_enable debug) \
 		$(use_enable debug debug-guards) \
+		$(use_enable debug debug-printfs) \
 		$(multilib_native_use_with java) \
 		$(use_enable kerberos gssapi) \
 		$(multilib_native_use_enable pam) \
@@ -290,7 +288,7 @@ multilib_src_install_all() {
 	keepdir /usr/libexec/cups/driver /usr/share/cups/{model,profiles} \
 		/var/log/cups /var/spool/cups/tmp
 
-	keepdir /etc/cups/{interfaces,ppd,ssl}
+	keepdir /etc/cups/{ppd,ssl}
 
 	use X || rm -r "${ED}"/usr/share/applications
 

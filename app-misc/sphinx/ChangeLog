@@ -1,5 +1,5 @@
 # ChangeLog for app-misc/sphinx
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sphinx-2.1.9 (09 Aug 2015)
@@ -88,4 +88,22 @@
   x86 stable wrt bug #563928
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Jan 2016; Hans de Graaff <graaff@gentoo.org> sphinx-2.2.10.ebuild:
+  enable id64 by default
+
+  This matches upstream and avoids deprecation messages about using 32bit ids.
+
+  Package-Manager: portage-2.2.26
 

@@ -112,3 +112,67 @@
   non-Linux systems require programs referenced in shebangs to be real
   executables rather than scripts.
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  eselect-python-99999999.ebuild:
+  Updated for wrappers' move to python-exec
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  eselect-python-99999999.ebuild:
+  Remove keepdir for unused directory
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  eselect-python-99999999.ebuild:
+  Do not update meaningless py2 preference
+
+  We no longer support more than one version of Python 2, so the Python2
+  preference is no longer meaningful and causes Python 2 to be preferred
+  over non-preferred versions of Python 3.
+
+*eselect-python-20160207 (07 Feb 2016)
+
+  07 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  +eselect-python-20160207.ebuild:
+  Major bump to 20160207
+
+  The new version supports >=dev-lang/python-exec-2.3 and the new
+  python-exec.conf configuration format.
+
+  23 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  eselect-python-99999999.ebuild:
+  Raise python-exec dep to 2.4.2 in live
+
+  Raise python-exec dependency in the live version to require at least
+  2.4.2 since the current live code requires working 'python-exec2c -l' to
+  obtain supported implementation list.
+
+*eselect-python-20160222 (25 Feb 2016)
+
+  25 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  +eselect-python-20160222.ebuild:
+  Bump to 20160222
+
+  25 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  -eselect-python-20151117-r3.ebuild, -eselect-python-20160207.ebuild:
+  Remove intermediate masked versions
+
+*eselect-python-20140125-r1 (28 Feb 2016)
+
+  28 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  +eselect-python-20140125-r1.ebuild,
+  +files/eselect-python-20140125-pythonX.Y-config.patch:
+  Support pythonX.Y-config in the old version
+
+  28 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  -eselect-python-20131210.ebuild, -eselect-python-20140115.ebuild,
+  -eselect-python-20140125.ebuild:
+  Remove old ~arch versions
+

@@ -1,5 +1,5 @@
 # ChangeLog for gnustep-base/gnustep-make
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gnustep-make-2.6.7 (09 Aug 2015)
@@ -63,4 +63,32 @@
   remove proxy-maintainers herd from metadata.xml
 
   Package-Manager: portage-2.2.20
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*gnustep-make-2.6.7-r1 (10 Mar 2016)
+
+  10 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +gnustep-make-2.6.7-r1.ebuild:
+  better message on missing objc support
+
+  Also update for EAPI6
+  Bug #561728 by Toralf Förster <toralf.foerster@gmx.de>
+
+  Package-Manager: portage-2.2.27
 

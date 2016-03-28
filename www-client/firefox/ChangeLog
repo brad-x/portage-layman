@@ -1,5 +1,5 @@
 # ChangeLog for www-client/firefox
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *firefox-39.0.3 (09 Aug 2015)
@@ -398,4 +398,256 @@
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="ppc"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*firefox-44.0 (29 Jan 2016)
+*firefox-38.6.0 (29 Jan 2016)
+
+  29 Jan 2016; Ian Stakenvicius <axs@gentoo.org> +firefox-38.6.0.ebuild,
+  +firefox-44.0.ebuild, metadata.xml:
+  version bumps, 38.6 and 44.0
+
+  Package-Manager: portage-2.2.26
+
+  29 Jan 2016; Ian Stakenvicius <axs@gentoo.org> -firefox-38.4.0.ebuild:
+  remove old and vulnerable 38.4
+
+  Package-Manager: portage-2.2.26
+
+  30 Jan 2016; Ian Stakenvicius <axs@gentoo.org> firefox-44.0.ebuild:
+  44.0: drop EGL use flag
+
+  EGL support in firefox-44 is non-optional, but it is also not the default GL
+  provider; this
+  flag could set EGL to be the default GL provider instead of GLX, but there
+  are both compile time
+  and link time issues with attempting to do this.  Removing the flag until
+  the build-time situation
+  has improved.
+
+  Bug: https://bugs.gentoo.org/571180
+
+  Package-Manager: portage-2.2.26
+
+  30 Jan 2016; Jeroen Roovers <jer@gentoo.org> firefox-38.6.0.ebuild:
+  Stable for HPPA (bug #573074).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  31 Jan 2016; Jeroen Roovers <jer@gentoo.org> firefox-38.6.0.ebuild:
+  Stable for PPC64 (bug #573074).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  31 Jan 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.6.0.ebuild:
+  amd64 stable wrt bug #573074
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  31 Jan 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.6.0.ebuild:
+  x86 stable wrt bug #573074
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*firefox-44.0.2 (14 Feb 2016)
+*firefox-38.6.1 (14 Feb 2016)
+
+  14 Feb 2016; Jory A. Pratt <anarchy@gentoo.org> +firefox-38.6.1.ebuild,
+  -firefox-43.0.ebuild, -firefox-44.0.ebuild, +firefox-44.0.2.ebuild:
+  bump esr and latest testing for security bug
+
+  15 Feb 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.6.1.ebuild:
+  amd64 stable wrt bug #574596
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Feb 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.6.1.ebuild:
+  x86 stable wrt bug #574596
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Feb 2016; Jeroen Roovers <jer@gentoo.org> firefox-38.6.1.ebuild:
+  Stable for HPPA (bug #574596).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  17 Feb 2016; Jeroen Roovers <jer@gentoo.org> firefox-38.6.1.ebuild:
+  Stable for PPC64 (bug #574596).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  17 Feb 2016; Ian Stakenvicius <axs@gentoo.org> firefox-44.0.2.ebuild:
+  44.0.2: bump nss dependency to >=3.21
+
+  Thanks to vthriller on github (sorry i botched the PR)
+
+  Package-Manager: portage-2.2.26
+
+  19 Feb 2016; Ian Stakenvicius <axs@gentoo.org> -firefox-38.6.0.ebuild:
+  drop old and vulnerable
+
+  Package-Manager: portage-2.2.26
+
+*firefox-38.7.0 (09 Mar 2016)
+
+  09 Mar 2016; Ian Stakenvicius <axs@gentoo.org> +firefox-38.7.0.ebuild:
+  bump to 38.7.0 for security bug 576862
+
+  Package-Manager: portage-2.2.26
+
+*firefox-45.0 (09 Mar 2016)
+
+  09 Mar 2016; Ian Stakenvicius <axs@gentoo.org> +firefox-45.0.ebuild:
+  bump to 45.0 for security, make ebuild and eclasses EAPI6
+
+  This is an initial pass of EAPI6 migration, the eclasses and ebuilds may be
+  ported further
+  in the future to take advantage of any missing EAPI6 functionality.
+
+  Bug: https://bugs.gentoo.org/576862
+
+  Package-Manager: portage-2.2.26
+
+  10 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> firefox-45.0.ebuild:
+  Fixed dependency on dev-libs/nspr (bug #576936).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  10 Mar 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.0.ebuild:
+  drop erroneously reintroduced egl USE flag.
+
+  This flag was reintroduced accidentally when migrating firefox-45.0 from
+  mozilla-overlay,
+  as it still fails at build time, this patch drops the flag again.
+
+  Bug: https://bugs.gentoo.org/571180
+
+  Package-Manager: portage-2.2.26
+
+  10 Mar 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.0.ebuild:
+  45: switch 'xemake' to 'virtx emake' for PGO builds, per EAPI6
+
+  Package-Manager: portage-2.2.26
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.7.0.ebuild:
+  amd64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.7.0.ebuild:
+  x86 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Mar 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.0.ebuild:
+  45.0: fix runtime crashes when built with USE=-jit
+
+  Addressed the issue by adding ppc{,64} and x86{,_64} specific platform
+  header
+  definitions to nonejit instead of using the MOZ_CRASH-enforcing stub.
+
+  Upstream bug: https://bugzilla.mozilla.org/1253216
+  Bug: http://bugs.gentoo.org/576922
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> firefox-38.6.1.ebuild:
+  38.6.1-r0: add alpha keyword
+
+  Gentoo-Bug: 574596
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Tobias Klausmann <klausman@gentoo.org> firefox-38.6.1.ebuild:
+  Drop accidental alpha stable keyword
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.6.1.ebuild:
+  ppc stable wrt bug #574596
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.7.0.ebuild:
+  ppc stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> firefox-38.7.0.ebuild:
+  ppc64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*firefox-45.0.1 (18 Mar 2016)
+*firefox-38.7.1 (18 Mar 2016)
+
+  18 Mar 2016; Ian Stakenvicius <axs@gentoo.org> -firefox-38.5.0.ebuild,
+  -firefox-38.6.1.ebuild, +firefox-38.7.1.ebuild, -firefox-44.0.2.ebuild,
+  -firefox-45.0.ebuild, +firefox-45.0.1.ebuild:
+  version bumps for security bug 576864, remove old
+
+  Version bumps firefox-38.7.1 and firefox-45.0.1 address the graphite2
+  vulnerabilities
+  by disabling the bundled graphite2 library.
+
+  Also addressed in firefox-45.0.1 is bug 577298.
+
+  Old/vulnerable versions 38.5, 38.6.1 and 44.0.2 have been dropped.
+
+  Package-Manager: portage-2.2.26
+
+  20 Mar 2016; Steev Klimaszewski <steev@gentoo.org> firefox-38.7.1.ebuild:
+  Add ~arm64 keyword
+
+  Currently, 45.x doesn't build on arm64, but 38 does, so we keyword it and
+  ignore
+  repoman's complaint that keywords are dropped.
+
+  Package-Manager: portage-2.2.28
+
+  22 Mar 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.0.1.ebuild:
+  specify SHELL on initial emake command in src_configure
+
+  Also added ~arm64 to KEYWORDS since its on 38.7.x
+
+  Bug: http://bugs.gentoo.org/577776
+
+  Package-Manager: portage-2.2.26
+
+  25 Mar 2016; Jeroen Roovers <jer@gentoo.org> firefox-38.7.0.ebuild:
+  Stable for HPPA (bug #576862).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
 

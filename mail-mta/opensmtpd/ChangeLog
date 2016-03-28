@@ -1,5 +1,5 @@
 # ChangeLog for mail-mta/opensmtpd
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *opensmtpd-5.7.1_p1-r1 (09 Aug 2015)
@@ -103,4 +103,30 @@
   add libressl support
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*opensmtpd-5.7.3_p2-r1 (18 Feb 2016)
+*opensmtpd-5.7.3_p2 (18 Feb 2016)
+
+  18 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  -opensmtpd-5.7.3_p1.ebuild, -opensmtpd-5.7.3_p1-r1.ebuild,
+  +opensmtpd-5.7.3_p2.ebuild, +opensmtpd-5.7.3_p2-r1.ebuild:
+  version bump
+
+*opensmtpd-5.7.3_p2-r2 (02 Mar 2016)
+
+  02 Mar 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  +files/opensmtpd-5.7.3p2-libressl-arc4random-circularity.patch,
+  -opensmtpd-5.7.3_p2-r1.ebuild, +opensmtpd-5.7.3_p2-r2.ebuild:
+  do not crash with libressl
 

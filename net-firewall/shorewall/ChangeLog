@@ -1,5 +1,5 @@
 # ChangeLog for net-firewall/shorewall
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *shorewall-4.6.11 (09 Aug 2015)
@@ -164,4 +164,138 @@
   files and macros I won't stabilize v5.0.1.1 so people going from v4.x to
   v5.x only
   have to update headers once.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  01 Feb 2016; Agostino Sarubbo <ago@gentoo.org> shorewall-5.0.2.1.ebuild:
+  amd64 stable wrt bug #573216
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*shorewall-5.0.4 (03 Feb 2016)
+
+  03 Feb 2016; Amy Winston <amynka@gentoo.org> +shorewall-5.0.4.ebuild:
+  5.0.4 version bump bug #573214. Whissi
+
+  Package-Manager: portage-2.2.26
+
+  03 Feb 2016; Amy Winston <amynka@gentoo.org> shorewall-4.6.10.1.ebuild,
+  shorewall-4.6.13.ebuild, shorewall-4.6.13.1.ebuild:
+  fix the description lenght
+
+  Package-Manager: portage-2.2.26
+
+  04 Feb 2016; Tobias Klausmann <klausman@gentoo.org>
+  shorewall-5.0.2.1.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 573216
+
+  Package-Manager: portage-2.2.27
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> shorewall-5.0.2.1.ebuild:
+  x86 stable wrt bug #573216
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Feb 2016; Jeroen Roovers <jer@gentoo.org> shorewall-5.0.2.1.ebuild:
+  Stable for HPPA (bug #573216).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  28 Feb 2016; Thomas D <whissi@whissi.de> metadata.xml:
+  metadata.xml updated
+
+  - longdescription added
+  - upstream information added
+
+  Package-Manager: portage-2.2.27
+
+*shorewall-5.0.5.1 (28 Feb 2016)
+
+  28 Feb 2016; Thomas D <whissi@whissi.de> +shorewall-5.0.5.1.ebuild:
+  Bumped to v5.0.5.1
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Thomas D <whissi@whissi.de>
+  -files/4.5.21.10-r1/shorewall-10-fix-ipset-support-detection.patch,
+  -files/4.5.21.10-r1/shorewall.confd, -files/4.5.21.10-r1/shorewall.initd,
+  -files/4.5.21.10-r1/shorewall.systemd, -files/4.5.21.10-r1/shorewallrc,
+  -files/4.5.21.9/shorewall.confd, -files/4.5.21.9/shorewall.initd,
+  -files/4.5.21.9/shorewall.systemd, -files/4.5.21.9/shorewallrc,
+  -shorewall-4.6.13.ebuild, -shorewall-4.6.13.1.ebuild:
+  Dropped old
+
+  Package-Manager: portage-2.2.27
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> shorewall-5.0.2.1.ebuild:
+  ppc/ppc64/sparc stable, (ALLARCHES policy) wrt bug #573216
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*shorewall-5.0.6.1 (15 Mar 2016)
+
+  15 Mar 2016; Ian Delaney <idella4@gentoo.org> +shorewall-5.0.6.1.ebuild:
+  Bumped to v5.0.6.1
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1055
+
+  15 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  -files/4.6/shorewall-init-01_remove-ipset-functionality-r1.patch,
+  -files/4.6/shorewall-init-01_remove-ipset-functionality.patch,
+  -files/4.6/shorewall-init.confd, -files/4.6/shorewall-init.initd,
+  -files/4.6/shorewall-init.readme, -files/4.6/shorewall-init.systemd,
+  -files/4.6/shorewall-init.systemd-r1, -files/4.6/shorewall-init.systemd-r2,
+  -files/4.6/shorewall-lite.confd, -files/4.6/shorewall-lite.initd,
+  -files/4.6/shorewall-lite.systemd, -files/4.6/shorewall-lite.systemd-r1,
+  -files/4.6/shorewall.confd, -files/4.6/shorewall.initd,
+  -files/4.6/shorewall.systemd, -files/4.6/shorewall.systemd-r1,
+  -files/4.6/shorewall6-lite.confd, -files/4.6/shorewall6-lite.initd,
+  -files/4.6/shorewall6-lite.systemd, -files/4.6/shorewall6-lite.systemd-r1,
+  -files/4.6/shorewall6.confd, -files/4.6/shorewall6.initd,
+  -files/4.6/shorewall6.systemd, -files/4.6/shorewall6.systemd-r1,
+  -files/4.6/shorewallrc, -shorewall-4.6.10.1.ebuild,
+  -shorewall-5.0.5.1.ebuild:
+  Dropped old
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1055
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> shorewall-5.0.4.ebuild:
+  alpha/amd64/hppa/ppc64/ppc/sparc/x86 stable, (ALLARCHES policy) wrt bug
+  #577440
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -shorewall-5.0.2.1.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1108
+
+*shorewall-5.0.6.2 (21 Mar 2016)
+
+  21 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -shorewall-5.0.6.1.ebuild, +shorewall-5.0.6.2.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1108
 

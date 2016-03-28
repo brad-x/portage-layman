@@ -15,7 +15,7 @@ HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 IUSE="X consolekit kernel_linux libnotify opengl pam systemd"
 
@@ -90,7 +90,7 @@ src_install() {
 
 	# Non PAM users will need this suid to read the password hashes.
 	# OpenPAM users will probably need this too when
-	# https://bugzilla.gnome.org/show_bug.cgi?id=370847
+	# http://bugzilla.gnome.org/show_bug.cgi?id=370847
 	# is fixed.
 	if ! use pam ; then
 		fperms u+s /usr/libexec/mate-screensaver-dialog

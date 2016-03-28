@@ -7,7 +7,7 @@ inherit kde4-meta-pkg
 
 DESCRIPTION="kdepim - merge this to pull in all kdepim-derived packages"
 HOMEPAGE+=" https://community.kde.org/KDE_PIM"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="nls"
 
 RDEPEND="
@@ -18,7 +18,10 @@ RDEPEND="
 	$(add_kdeapps_dep kabcclient '' ${PV})
 	$(add_kdeapps_dep kaddressbook '' ${PV})
 	$(add_kdeapps_dep kalarm '' ${PV})
-	$(add_kdeapps_dep kdepim-icons '' ${PV})
+	|| (
+		$(add_kdeapps_dep kdepim-icons)
+		>=kde-frameworks/oxygen-icons-5.19.0:5
+	)
 	$(add_kdeapps_dep kdepim-kresources '' ${PV})
 	$(add_kdeapps_dep kdepim-runtime '' ${PV})
 	$(add_kdeapps_dep kjots '' ${PV})

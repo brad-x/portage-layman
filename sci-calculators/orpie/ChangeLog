@@ -1,5 +1,5 @@
 # ChangeLog for sci-calculators/orpie
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *orpie-1.5.1-r1 (09 Aug 2015)
@@ -56,4 +56,41 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*orpie-1.5.2 (07 Feb 2016)
+
+  07 Feb 2016; David Seifert <soap@gentoo.org> files/orpie-1.5.1-nogsl.patch,
+  +files/orpie-1.5.2-nogsl.patch, +orpie-1.5.2.ebuild:
+  Version bump to 1.5.2
+
+  Gentoo-Bug: 532776
+  * EAPI=6
+  * Add missing dependency on dev-ml/camlp4 (thanks Quentin Minster)
+  * Amend patches for -p1
+
+  Package-Manager: portage-2.2.27
+
+*orpie-1.5.2-r1 (14 Feb 2016)
+
+  14 Feb 2016; David Seifert <soap@gentoo.org> +orpie-1.5.2-r1.ebuild:
+  Change dep from dev-ml/ocamlgsl to dev-ml/gsl-ocaml
+
+  Gentoo-Bug: 574564
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --force
+
+  14 Feb 2016; David Seifert <soap@gentoo.org> orpie-1.5.2-r1.ebuild:
+  Drop KEYWORDS until dev-ml/gsl-ocaml is keyworded
+
+  Package-Manager: portage-2.2.27
 

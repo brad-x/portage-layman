@@ -1,5 +1,5 @@
 # ChangeLog for media-sound/pulseaudio
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *pulseaudio-6.0 (09 Aug 2015)
@@ -202,4 +202,62 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="arm"
+
+*pulseaudio-8.0 (23 Jan 2016)
+
+  23 Jan 2016; Manuel Rüger <mrueg@gentoo.org> +pulseaudio-8.0.ebuild:
+  Version bump, drop readme.gentoo.eclass
+
+  Gentoo-Bug: 570382
+
+  Package-Manager: portage-2.2.27
+
+  23 Jan 2016; Pacho Ramos <pacho@gentoo.org> -pulseaudio-5.0-r4.ebuild,
+  -pulseaudio-5.0-r7.ebuild, -pulseaudio-6.0.ebuild, -pulseaudio-7.0.ebuild,
+  -pulseaudio-7.0-r1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.26
+
+  23 Jan 2016; Pacho Ramos <pacho@gentoo.org>
+  -files/pulseaudio-5.0-crash-udp.patch,
+  -files/pulseaudio-5.0-module-switch.patch,
+  -files/pulseaudio-5.0-zeroconf-crash-1.patch,
+  -files/pulseaudio-5.0-zeroconf-crash-2.patch,
+  -files/pulseaudio-5.0-zeroconf-crash-3.patch,
+  -files/svolume-fix_param_loading_undefined_beh.patch:
+  Drop old
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  21 Feb 2016; Pacho Ramos <pacho@gentoo.org> pulseaudio-8.0.ebuild:
+  amd64 stable, bug 566378
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="amd64"
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> pulseaudio-8.0.ebuild:
+  x86 stable wrt bug #566378
+
+  Package-Manager: portage-2.2.26
+
+  07 Mar 2016; Сухарик <suhr@i2pmail.org> pulseaudio-8.0.ebuild:
+  use virtual/jack
 

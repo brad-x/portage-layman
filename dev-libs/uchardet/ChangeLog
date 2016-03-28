@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/uchardet
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *uchardet-0.0.1 (09 Aug 2015)
@@ -63,4 +63,102 @@
   ADd missing remote-id entries
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Jan 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  metadata.xml: drop inactive proxy maintainer
+
+  Package-Manager: portage-2.2.26
+
+  25 Jan 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  add myself as a proxy-maintainer
+
+  As agreed upon with Ian Delaney (idella4).
+
+  Package-Manager: portage-2.2.27
+
+*uchardet-0.0.5 (25 Jan 2016)
+
+  25 Jan 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/uchardet-0.0.5-fix-ASCII-detection.patch,
+  +files/uchardet-0.0.5-use-proper-package-name.patch, +uchardet-0.0.5.ebuild:
+  verbump to 0.0.5 wrt bug 569110
+
+  List of changes:
+  - update SRC_URI to follow the upstream's migration
+    from googlecode to github wrt bug 569106;
+  - proper static-libs USE handling via configure option;
+  - add testing support to ebuild;
+  - drop unneeded empty DEPEND/RDEPEND;
+  - sync DESCRIPTION with upstream.
+
+  Gentoo-Bugs: 569106, 569110
+
+  Package-Manager: portage-2.2.27
+
+*uchardet-0.0.5-r1 (02 Feb 2016)
+
+  02 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/uchardet-0.0.5-fix-return-code-on-error.patch,
+  -uchardet-0.0.5.ebuild, +uchardet-0.0.5-r1.ebuild:
+  revbump to 0.0.5-r1 to fix return code on error
+
+  Package-Manager: portage-2.2.27
+
+  02 Feb 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  drop maintainer Rion from metadata
+
+  Package-Manager: portage-2.2.26
+
+  04 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> uchardet-0.0.5-r1.ebuild:
+  avoid using EAPI-6-deprecated function in src_prepare
+
+  cmake_comment_add_subdirectory is EAPI-6-compatible,
+  while comment_add_subdirectory is not.
+
+  Currently both these functions do the same and
+  this is a ditto change, thus no revbump.
+
+  Package-Manager: portage-2.2.27
+
+  06 Feb 2016; Jeroen Roovers <jer@gentoo.org> uchardet-0.0.5-r1.ebuild:
+  Mark ~hppa ~ppc64 (bug #569114).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  25 Feb 2016; Markus Meier <maekke@gentoo.org> uchardet-0.0.5-r1.ebuild:
+  add ~arm, bug #569114
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  04 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  remove obsolete maintainer description from metadata
+
+  I'm the only maintainer. It's obvious who should be assignee in bugs.
+
+  Package-Manager: portage-2.2.27
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> uchardet-0.0.5-r1.ebuild:
+  amd64 stable wrt bug #576714
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> uchardet-0.0.5-r1.ebuild:
+  x86 stable wrt bug #576714
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

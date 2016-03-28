@@ -1,5 +1,5 @@
 # ChangeLog for www-apache/mod_caucho
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mod_caucho-4.0.26-r1 (09 Aug 2015)
@@ -55,4 +55,42 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> mod_caucho-4.0.26.ebuild,
+  mod_caucho-4.0.26-r1.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*mod_caucho-4.0.47 (20 Feb 2016)
+
+  20 Feb 2016; James Le Cuirot <chewi@gentoo.org> +mod_caucho-4.0.47.ebuild:
+  Version bump to 4.0.47
+
+  This ebuild is a rewrite that builds with apxs manually as that is
+  easier. See the ebuild for details but the short version is that Java
+  isn't really needed.
+
+  Package-Manager: portage-2.2.27
+
+  20 Feb 2016; James Le Cuirot <chewi@gentoo.org> -mod_caucho-4.0.26.ebuild,
+  -mod_caucho-4.0.26-r1.ebuild:
+  Remove old
+
+  This drops the only stable version but there are no revdeps and we
+  need to clear this for the removal of Java 6. I recommend not marking
+  it stable again until someone has done more than just build it. I
+  don't use Resin or Apache and I'm not entirely confident that it would
+  work.
+
+  Package-Manager: portage-2.2.27
 

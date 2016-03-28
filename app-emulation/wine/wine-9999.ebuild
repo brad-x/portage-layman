@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,21 +22,19 @@ else
 	KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
 fi
 
-GV="2.40"
-MV="4.5.6"
+GV="2.44"
+MV="4.6.0"
 STAGING_P="wine-staging-${PV}"
 STAGING_DIR="${WORKDIR}/${STAGING_P}"
 WINE_GENTOO="wine-gentoo-2015.03.07"
-GST_P="wine-1.7.34-gstreamer-v5"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
 	gecko? (
-		abi_x86_32? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86.msi )
-		abi_x86_64? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
+		abi_x86_32? ( https://dl.winehq.org/wine/wine-gecko/${GV}/wine_gecko-${GV}-x86.msi )
+		abi_x86_64? ( https://dl.winehq.org/wine/wine-gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
 	)
-	mono? ( mirror://sourceforge/${PN}/Wine%20Mono/${MV}/wine-mono-${MV}.msi )
-	gstreamer? ( https://dev.gentoo.org/~tetromino/distfiles/${PN}/${GST_P}.patch.bz2 )
+	mono? ( https://dl.winehq.org/wine/wine-mono/${MV}/wine-mono-${MV}.msi )
 	https://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
 
 if [[ ${PV} == "9999" ]] ; then
@@ -52,11 +50,9 @@ IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fon
 REQUIRED_USE="|| ( abi_x86_32 abi_x86_64 )
 	test? ( abi_x86_32 )
 	elibc_glibc? ( threads )
-	mono? ( abi_x86_32 )
 	pipelight? ( staging )
 	s3tc? ( staging )
 	vaapi? ( staging )
-	?? ( gstreamer staging )
 	osmesa? ( opengl )" #286560
 
 # FIXME: the test suite is unsuitable for us; many tests require net access
@@ -72,8 +68,8 @@ COMMON_DEPEND="
 	gphoto2? ( media-libs/libgphoto2:=[${MULTILIB_USEDEP}] )
 	openal? ( media-libs/openal:=[${MULTILIB_USEDEP}] )
 	gstreamer? (
-		media-libs/gstreamer:0.10[${MULTILIB_USEDEP}]
-		media-libs/gst-plugins-base:0.10[${MULTILIB_USEDEP}]
+		media-libs/gstreamer:1.0[${MULTILIB_USEDEP}]
+		media-plugins/gst-plugins-meta:1.0[${MULTILIB_USEDEP}]
 	)
 	X? (
 		x11-libs/libXcursor[${MULTILIB_USEDEP}]
@@ -177,6 +173,19 @@ wine_build_environment_check() {
 			return 1
 		fi
 	fi
+	# bug #574044
+	if use abi_x86_64 && [[ $(gcc-major-version) = 5 && $(gcc-minor-version) = 3 ]]; then
+		einfo "Checking for gcc-5-3 stack realignment compiler bug ..."
+		# Compile in subshell to prevent "Aborted" message
+		if ! ( $(tc-getCC) -O2 -mincoming-stack-boundary=3 "${FILESDIR}"/pr69140.c -o "${T}"/pr69140 || false ) >/dev/null 2>&1; then
+			eerror "Wine cannot be built with this version of gcc-5.3"
+			eerror "due to compiler bugs; please re-emerge the latest gcc-5.3.x ebuild,"
+			eerror "or use gcc-config to select a different compiler version."
+			eerror "See https://bugs.gentoo.org/574044"
+			eerror
+			return 1
+		fi
+	fi
 
 	if use abi_x86_64 && [[ $(( $(gcc-major-version) * 100 + $(gcc-minor-version) )) -lt 404 ]]; then
 		eerror "You need gcc-4.4+ to build 64-bit wine"
@@ -204,9 +213,21 @@ src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
 		git-r3_src_unpack
 		if use staging; then
+			local WINE_COMMIT=${EGIT_VERSION}
+
 			EGIT_REPO_URI=${STAGING_EGIT_REPO_URI}
 			unset ${PN}_LIVE_REPO;
+			unset EGIT_COMMIT;
+
 			EGIT_CHECKOUT_DIR=${STAGING_DIR} git-r3_src_unpack
+
+			local STAGING_COMMIT=$("${STAGING_DIR}/patches/patchinstall.sh" --upstream-commit) || die
+
+			if [[ "${WINE_COMMIT}" != "${STAGING_COMMIT}" ]]; then
+				einfo "The current Staging patchset is not guaranteed to apply on this WINE commit."
+				einfo "If src_prepare fails, try emerging with the env var EGIT_COMMIT."
+				einfo "Example: EGIT_COMMIT=${STAGING_COMMIT} emerge -1 wine"
+			fi
 		fi
 	else
 		unpack ${P}.tar.bz2
@@ -214,7 +235,6 @@ src_unpack() {
 	fi
 
 	unpack "${WINE_GENTOO}.tar.bz2"
-	use gstreamer && unpack "${GST_P}.patch.bz2"
 
 	l10n_find_plocales_changes "${S}/po" "" ".po"
 }
@@ -223,34 +243,13 @@ src_prepare() {
 	local md5="$(md5sum server/protocol.def)"
 	local PATCHES=(
 		"${FILESDIR}"/${PN}-1.5.26-winegcc.patch #260726
-		"${FILESDIR}"/${PN}-1.4_rc2-multilib-portage.patch #395615
+		"${FILESDIR}"/${PN}-1.9.5-multilib-portage.patch #395615
 		"${FILESDIR}"/${PN}-1.7.12-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.6-memset-O3.patch #480508
 	)
-	if use gstreamer; then
-		# See http://bugs.winehq.org/show_bug.cgi?id=30557
-		ewarn "Applying experimental patch to fix GStreamer support. Note that"
-		ewarn "this patch has been reported to cause crashes in certain games."
-
-		# Wine-Staging 1.7.38 "ntdll: Fix race-condition when threads are killed
-		# during shutdown" patch and "Added patch to implement shared memory
-		# wineserver communication for various user32 functions" prevents the
-		# gstreamer patch from applying cleanly.
-		# So undo the staging patch, apply gstreamer, then re-apply rebased staging
-		# patch on top.
-		if use staging; then
-			PATCHES+=(
-				"${FILESDIR}/${PN}-1.7.39-gstreamer-v5-staging-pre.patch"
-				"${WORKDIR}/${GST_P}.patch"
-				"${FILESDIR}/${PN}-1.7.39-gstreamer-v5-staging-post.patch" )
-		else
-			PATCHES+=( "${WORKDIR}/${GST_P}.patch" )
-		fi
-	fi
 	if use staging; then
-		ewarn "Applying the unofficial Wine-Staging patchset which is unsupported"
-		ewarn "by Wine developers. Please don't report bugs to Wine bugzilla"
-		ewarn "unless you can reproduce them with USE=-staging"
+		ewarn "Applying the Wine-Staging patchset. Any bug reports to the"
+		ewarn "Wine bugzilla should explicitly state that staging was used."
 
 		local STAGING_EXCLUDE=""
 		use pipelight || STAGING_EXCLUDE="${STAGING_EXCLUDE} -W Pipelight"
@@ -318,7 +317,7 @@ multilib_src_configure() {
 		$(use_with oss)
 		$(use_with pcap)
 		$(use_with png)
-		$(use_with pulseaudio)
+		$(use_with pulseaudio pulse)
 		$(use_with threads pthread)
 		$(use_with scanner sane)
 		$(use_enable test tests)

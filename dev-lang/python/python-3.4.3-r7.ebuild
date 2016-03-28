@@ -53,7 +53,7 @@ DEPEND="${RDEPEND}
 	>=sys-devel/autoconf-2.65
 	!sys-devel/gcc[libffi]"
 RDEPEND+=" !build? ( app-misc/mime-types )"
-PDEPEND=">=app-eselect/eselect-python-20151117-r1
+PDEPEND=">=app-eselect/eselect-python-20140125-r1
 	app-admin/python-updater"
 
 S="${WORKDIR}/${MY_P}"
@@ -75,6 +75,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-3.4.3-ncurses-pkg-config.patch"
 	epatch "${FILESDIR}/${PN}-3.4-gcc-5.patch" #547626
 
+	epatch_user
+
 	sed -i -e "s:@@GENTOO_LIBDIR@@:$(get_libdir):g" \
 		Lib/distutils/command/install.py \
 		Lib/distutils/sysconfig.py \
@@ -85,8 +87,6 @@ src_prepare() {
 		Modules/Setup.dist \
 		Modules/getpath.c \
 		setup.py || die "sed failed to replace @@GENTOO_LIBDIR@@"
-
-	epatch_user
 
 	eautoreconf
 }

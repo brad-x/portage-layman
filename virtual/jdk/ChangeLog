@@ -73,3 +73,73 @@
 
   Package-Manager: portage-2.2.26
 
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> jdk-1.6.0-r2.ebuild,
+  jdk-1.7.0.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+*jdk-1.8.0-r1 (24 Jan 2016)
+*jdk-1.7.0-r1 (24 Jan 2016)
+
+  24 Jan 2016; James Le Cuirot <chewi@gentoo.org> +jdk-1.7.0-r1.ebuild,
+  -jdk-1.8.0.ebuild, +jdk-1.8.0-r1.ebuild:
+  It's 2016, let's use EAPI 6 and SLOT dependencies
+
+  Ignoring 1.6 because it's about to die.
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; James Le Cuirot <chewi@gentoo.org> jdk-1.8.0-r1.ebuild:
+  Add the upcoming icedtea(-bin):8 to 1.8
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org> jdk-1.8.0-r1.ebuild:
+  Remove icedtea, limit icedtea-bin to ~ppc64, bug #573042
+
+  Portage was complaining about the missing ebuilds instead of
+  suggesting a license change, which is bug #327177. Even after adding
+  the ebuilds, Portage suggested a keyword change in some cases, which
+  is bug #573500.
+
+  I don't really want to add icedtea:8 to the tree just yet so let's
+  remove this and limit icedtea-bin:8 to ~ppc64 to deal with the
+  remaining issue.
+
+  Package-Manager: portage-2.2.27
+
+*jdk-1.8.0-r2 (01 Mar 2016)
+
+  01 Mar 2016; James Le Cuirot <chewi@gentoo.org> -jdk-1.8.0-r1.ebuild,
+  +jdk-1.8.0-r2.ebuild:
+  icedtea-bin:8 now available for amd64, arm, x86
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; James Le Cuirot <chewi@gentoo.org> jdk-1.8.0-r2.ebuild:
+  1.8.0-r2 stable on ppc64 (tested by ago)
+
+  Package-Manager: portage-2.2.28
+
+  27 Mar 2016; James Le Cuirot <chewi@gentoo.org> jdk-1.7.0-r1.ebuild:
+  1.7.0-r1 stable on amd64, x86, drop ppc64
+
+  Java 7 on ppc64 never worked very well for us. We have Java 8 now.
+
+  Package-Manager: portage-2.2.28
+
+  27 Mar 2016; James Le Cuirot <chewi@gentoo.org> -jdk-1.7.0.ebuild:
+  Remove old 1.7.0
+
+  Package-Manager: portage-2.2.28
+

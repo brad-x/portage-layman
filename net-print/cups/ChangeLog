@@ -146,3 +146,64 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  06 Feb 2016; Mike Frysinger <vapier@gentoo.org> cups-2.0.3.ebuild,
+  cups-2.0.4.ebuild, cups-2.1.2-r2.ebuild, cups-9999.ebuild,
+  +files/cups-2.0.3-cross-compile.patch:
+  disable unused host tools for cross-compiling
+
+  06 Feb 2016; Mike Frysinger <vapier@gentoo.org> cups-2.0.3.ebuild,
+  cups-2.0.4.ebuild, cups-2.1.2-r2.ebuild, cups-9999.ebuild:
+  drop pt_BR locale
+
+  The source no longer supports this translation.
+
+*cups-2.1.3 (07 Feb 2016)
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +cups-2.1.3.ebuild,
+  files/cups-1.6.0-dont-compress-manpages.patch,
+  files/cups-1.6.0-fix-install-perms.patch, +files/cupsd.init.d-r2:
+  Bump to version 2.1.3
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*cups-2.1.3-r1 (11 Feb 2016)
+
+  11 Feb 2016; Mike Frysinger <vapier@gentoo.org> +cups-2.1.3-r1.ebuild,
+  cups-9999.ebuild:
+  filters}: consolidate dependencies into cups-filters #573970
+
+  Currently, the CUPS ebuild is specifying the required USE flags and
+  dependencies for ghostscript and poppler. However, these utilities are
+  only required by the cups-filters ebuild, not CUPS proper.
+
+  Let's move the dependencies to cups-filters and phase out those
+  dependencies in the CUPS ebuild.
+
+  15 Mar 2016; Mike Frysinger <vapier@gentoo.org> cups-2.0.3.ebuild,
+  cups-2.0.4.ebuild, cups-2.1.2-r2.ebuild, cups-2.1.3.ebuild,
+  cups-2.1.3-r1.ebuild, cups-9999.ebuild:
+  add debug printing for debug builds
+
+  25 Mar 2016; Mike Frysinger <vapier@gentoo.org> cups-9999.ebuild:
+  drop old interface dir
+
+  Interface scripts are no longer supported upstream for security reasons.
+

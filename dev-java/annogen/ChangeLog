@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/annogen
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *annogen-0.1.0 (09 Aug 2015)
@@ -83,4 +83,38 @@
 
   Package-Manager: portage-2.2.20.1
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> annogen-0.1.0-r2.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*annogen-0.1.0-r3 (18 Feb 2016)
+
+  18 Feb 2016; James Le Cuirot <chewi@gentoo.org> -annogen-0.1.0-r2.ebuild,
+  +annogen-0.1.0-r3.ebuild:
+  Drop jdk-with-com-sun dep, fix jdk/jre reversal
+
+  Straight to stable as it shouldn't affect the build and
+  jdk-with-com-sun really needs to go. It still can't just yet but at
+  least ppc64 is clear now.
+
+  Package-Manager: portage-2.2.27
 

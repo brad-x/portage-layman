@@ -1,5 +1,5 @@
 # ChangeLog for sys-process/criu
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *criu-1.6-r1 (09 Aug 2015)
@@ -87,4 +87,75 @@
   version bump to 1.8
 
   Package-Manager: portage-2.2.24
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*criu-2.0 (15 Mar 2016)
+
+  15 Mar 2016; Yixun Lan <dlan@gentoo.org> +criu-2.0.ebuild,
+  +files/2.0/criu-2.0-automagic-libbsd.patch, +files/2.0/criu-2.0-flags.patch,
+  +files/2.0/criu-2.0-makefile.patch:
+  version bump 2.0
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; Alexis Ballier <aballier@gentoo.org> criu-2.0.ebuild,
+  files/2.0/criu-2.0-makefile.patch:
+  Add python useflag and fix build with LDFLAGS not matching default.
+
+  Adapt makefile patch to use RAW_LDFLAGS for ld which we feed from ebuild.
+  Patch makefile to allow disabling python and make it optional with proper
+  deps, bug #576716.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Mar 2016; Alexis Ballier <aballier@gentoo.org> criu-2.0.ebuild:
+  add missing quotes aroud D
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Mar 2016; Alexis Ballier <aballier@gentoo.org> criu-2.0.ebuild:
+  add missing dep on libnl:3
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Mar 2016; Alexis Ballier <aballier@gentoo.org> criu-2.0.ebuild,
+  +files/2.0/criu-2.0-sysroot.patch:
+  inject SYSROOT into the makefiles for libnl3 cflags so that target include
+  dir is used instead of host.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  21 Mar 2016; Yixun Lan <dlan@gentoo.org> criu-2.0.ebuild,
+  files/2.0/criu-2.0-makefile.patch:
+  fix LIBDIR path, using $(get_libdir)
+
+  Package-Manager: portage-2.2.27
+
+*criu-2.0-r1 (21 Mar 2016)
+
+  21 Mar 2016; Yixun Lan <dlan@gentoo.org> -criu-2.0.ebuild,
+  +criu-2.0-r1.ebuild:
+  revision bump since libdir path changed
+
+  Package-Manager: portage-2.2.27
 

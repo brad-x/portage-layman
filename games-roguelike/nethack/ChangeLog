@@ -1,5 +1,5 @@
 # ChangeLog for games-roguelike/nethack
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nethack-3.4.3-r4 (09 Aug 2015)
@@ -105,4 +105,70 @@
   Thorough ebuild rewrite.
 
   Gentoo-Bug: 567762
+
+*nethack-3.6.0-r1 (13 Jan 2016)
+
+  13 Jan 2016; Luis Ressel <aranea@aixah.de> +nethack-3.6.0-r1.ebuild:
+  Store make options in variable
+
+  Also, drop LOCKDIR, it's unneccessary.
+
+  13 Jan 2016; Luis Ressel <aranea@aixah.de> metadata.xml,
+  nethack-3.6.0-r1.ebuild:
+  Add "experimental" USE flag
+
+  This toggles support for the showscore and status_hilite features
+  considered experimental by upstream.
+
+  13 Jan 2016; Luis Ressel <aranea@aixah.de> -files/dot.nethackrc,
+  +files/nethack-3.4.3-nethackrc, +files/nethack-3.6.0-nethackrc,
+  nethack-3.4.3-r5.ebuild, nethack-3.6.0.ebuild, nethack-3.6.0-r1.ebuild:
+  Improved nethackrc for 3.6
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  07 Feb 2016; Luis Ressel <aranea@aixah.de> -files/3.4.3-X-support.patch,
+  -files/3.4.3-bison.patch, -files/3.4.3-default-options.patch,
+  -files/3.4.3-gentoo-paths.patch, -files/3.4.3-macos.patch,
+  -files/nethack-3.4.3-gibc210.patch, -files/nethack-3.4.3-nethackrc,
+  -files/nethack-3.4.3-recover.patch, -nethack-3.4.3-r5.ebuild,
+  -nethack-3.6.0.ebuild:
+  Remove old versions
+
+*nethack-3.6.0-r2 (07 Feb 2016)
+
+  07 Feb 2016; Luis Ressel <aranea@aixah.de> +nethack-3.6.0-r2.ebuild:
+  Bump to EAPI 6
+
+  07 Feb 2016; Luis Ressel <aranea@aixah.de> nethack-3.6.0-r2.ebuild:
+  Remove migration code
+
+  Remove the migration logic handling updates from <3.4.3-r3. It's been in
+  place for over six months, that should be enough.
+
+  07 Feb 2016; Luis Ressel <aranea@aixah.de> metadata.xml:
+  Update metadata.xml
+
+  Use a more verbose maintainer <description>, as preferred by the
+  proxy-maint project.
+
+*nethack-3.6.0-r3 (12 Feb 2016)
+
+  12 Feb 2016; Luis Ressel <aranea@aixah.de>
+  +files/nethack-3.6.0-x11-color.patch, +nethack-3.6.0-r3.ebuild:
+  Fix map colors in x11 interface
+
+  Gentoo-Bug: 573598
+  X-Upstream-Commit: a41382d
+
+  12 Feb 2016; Luis Ressel <aranea@aixah.de> -nethack-3.6.0-r1.ebuild,
+  -nethack-3.6.0-r2.ebuild:
+  Remove old ebuilds
 

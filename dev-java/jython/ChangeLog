@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/jython
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *jython-2.7.0 (09 Aug 2015)
@@ -91,4 +91,59 @@
   12 Nov 2015; Michał Górny <mgorny@gentoo.org> jython-2.5.3-r3.ebuild,
   jython-2.7.0.ebuild:
   Fix epython.py module first install
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> jython-2.1-r11.ebuild,
+  jython-2.2.1-r1.ebuild, jython-2.2.1-r2.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> -jython-2.1-r11.ebuild,
+  -jython-2.2.1-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.26
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> jython-2.2.1-r2.ebuild:
+  Stable on ppc64 in accordance with ALLARCHES policy
+
+  Sorry for breaking the tree!
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  07 Feb 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/2.1-assert-SimpleCompiler.py.patch, -files/2.1-assert.patch,
+  -files/jython-2.2.1-build.patch, -files/jython-2.2.1-build.xml.patch,
+  -files/jython-2.5.2-build.xml.patch,
+  -files/jython-2.5.2-distutils_byte_compilation.patch,
+  -files/jython-2.5.2-sax-parser-class-not-found.patch,
+  -files/jython-2.5.2-sax-parser-fix.patch,
+  -files/python-2.5.5-distutils_byte_compilation.patch,
+  -jython-2.2.1-r2.ebuild, -jython-2.5.3-r3.ebuild:
+  Remove vulnerable versions. Fixes security bug 552452.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  14 Feb 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+  Package-Manager: portage-2.2.27
 

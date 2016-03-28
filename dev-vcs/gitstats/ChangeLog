@@ -66,3 +66,65 @@
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+  17 Mar 2016; Patrice Clement <monsieurp@gentoo.org> gitstats-9999.ebuild:
+  fix the live ebuild's repo URI, license, dependencies, docs
+
+  The following changes have been made:
+  - eapi bump to EAPI 6
+  - inherit git-r3 instead of the obsolete git-2
+  - fix EGIT_REPO_URI
+  - fix LICENSE
+    - the homepage has the following:
+      "Both the code and the web site are licensed under GPLv2/GPLv3."
+      So, use '|| ( GPL-2 GPL-3 )'
+    - there's a bunled javascript file 'sortable.js' which is licensed under
+  MIT
+  - add the missing build time dependency on perl
+  - install docs and manpage
+
+  Package-Manager: portage-2.2.26
+  Acked-by: Guilherme Amadio <amadio@gentoo.org>
+  Closes: https://github.com/gentoo/gentoo/pull/972
+
+  24 Mar 2016; NP-Hardass <NP-Hardass@gentoo.org> metadata.xml:
+  Update maintainers to metadata.xml
+
+  Package-Manager: portage-2.2.26
+
+*gitstats-0_pre20151223 (24 Mar 2016)
+
+  24 Mar 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +gitstats-0_pre20151223.ebuild, gitstats-9999.ebuild:
+  bump to snapshot 2015-12-23
+
+  Package-Manager: portage-2.2.26
+
+  24 Mar 2016; Guilherme Amadio <amadio@gentoo.org>
+  +files/gitstats-0_pre131024-filter-invalid-unicode.patch,
+  gitstats-0_pre131024.ebuild:
+  0_pre131024: fix bug #575946
+
+  Gentoo-bug: 575946
+  Reported-by: Martin Mokrejš
+
+  Package-Manager: portage-2.2.28
+

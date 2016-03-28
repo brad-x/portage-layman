@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/raspberrypi-userland
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *raspberrypi-userland-9999 (09 Aug 2015)
@@ -75,4 +75,33 @@
   part of the patch applied upstream
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*raspberrypi-userland-0_pre20160305 (08 Mar 2016)
+
+  08 Mar 2016; Miroslav Šulc <fordfrog@gentoo.org>
+  +files/92-local-vchiq-permissions.rules,
+  +raspberrypi-userland-0_pre20160305.ebuild:
+  version bump and fixed regular user access rights to vchiq when using udev
+
+  Package-Manager: portage-2.2.27
+
+*raspberrypi-userland-0_pre20160305-r1 (10 Mar 2016)
+
+  10 Mar 2016; Miroslav Šulc <fordfrog@gentoo.org>
+  files/04raspberrypi-userland, +files/bcm_host.pc, +files/egl.pc,
+  +files/glesv2.pc, +files/next-resource-handle.patch,
+  +files/wayland-wsys.patch, -raspberrypi-userland-0_pre20160305.ebuild,
+  +raspberrypi-userland-0_pre20160305-r1.ebuild:
+  bug fixes and improvements
+
+  fixed bug #539504: support for GLESv1
+  fixed bugs #499768 and #529424: added pkgconfig files and set environment
+  path to these files
+  fixed location of udev rules file
+  fixed bug #499768: added support for wayland from leio.git overlay
+
+  Package-Manager: portage-2.2.27
 

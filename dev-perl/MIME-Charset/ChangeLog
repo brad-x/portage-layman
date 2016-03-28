@@ -1,5 +1,5 @@
 # ChangeLog for dev-perl/MIME-Charset
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *MIME-Charset-1.9.3 (09 Aug 2015)
@@ -53,4 +53,37 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*MIME-Charset-1.12.0 (27 Feb 2016)
+
+  27 Feb 2016; Kent Fredric <kentfredric@gmail.com>
+  +MIME-Charset-1.12.0.ebuild, +files/1.012-makefilepl.patch:
+  Bump to 1.12.0
+
+  - use EAPI6
+  - Add LINGUAS="ja zh" as these are features exported by Makefile.PL
+    by default, and can be tripped into if people use a corresponding
+    encoding entry in https://metacpan.org/source/NEZUMI/MIME-
+  Charset-1.012/lib/MIME/Charset.pm#L223
+
+  - Drop x86 and ppc due to dev-perl/Encode-{EUCJPASCII,HanExtra}
+  - Potential explosions with CPAN + Module::AutoInstall nuked with
+  Makefile.PL patch
+
+  Package-Manager: portage-2.2.27
+
+  25 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  MIME-Charset-1.12.0.ebuild:
+  Keyword x86
+
+  Package-Manager: portage-2.2.28
 

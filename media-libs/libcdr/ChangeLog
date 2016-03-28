@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/libcdr
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libcdr-9999 (09 Aug 2015)
@@ -62,4 +62,46 @@
   27 Sep 2015; Andreas K. Huettel (dilfridge) <dilfridge@gentoo.org>
   metadata.xml:
   Rename openoffice herd to office herd in metadata
+
+  23 Jan 2016; Jeroen Roovers <jer@gentoo.org> libcdr-0.1.1.ebuild:
+  Stable for HPPA PPC64 (bug #568412).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libcdr-0.1.2 (16 Feb 2016)
+
+  16 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +libcdr-0.1.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.27
+
+  18 Feb 2016; Michał Górny <mgorny@gentoo.org> libcdr-9999.ebuild:
+  Sync KEYWORDS in the live ebuild
+
+  18 Feb 2016; Michał Górny <mgorny@gentoo.org> libcdr-0.1.2.ebuild,
+  libcdr-9999.ebuild:
+  Make test build optional, add dep on cppunit, #574932
+
+*libcdr-0.1.2-r1 (22 Feb 2016)
+
+  22 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/libcdr-0.1.1-boost-1.59.patch, libcdr-0.1.0.ebuild,
+  libcdr-0.1.1.ebuild, -libcdr-0.1.2.ebuild, +libcdr-0.1.2-r1.ebuild,
+  libcdr-9999.ebuild:
+  Fix build with boost-1.59 (bug 574120)
+
+  KEYWORDS: Dropped ppc (missing in librevenge)
+  Also drop base.eclass
+
+  Package-Manager: portage-2.2.27
 

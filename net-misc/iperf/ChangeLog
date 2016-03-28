@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/iperf
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *iperf-3.1_beta3 (09 Aug 2015)
@@ -66,4 +66,42 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  29 Jan 2016; Jason A. Donenfeld <zx2c4@gentoo.org> iperf-3.1_beta3.ebuild,
+  metadata.xml:
+  add sctp support
+
+  Package-Manager: portage-2.2.26
+
+*iperf-3.1.2 (16 Feb 2016)
+
+  16 Feb 2016; Jeroen Roovers <jer@gentoo.org> +files/iperf3.initd,
+  -iperf-3.1_beta3.ebuild, +iperf-3.1.2.ebuild:
+  Version bump.
+
+   Add init.d/conf.d scripts for iamben
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; Jeroen Roovers <jer@gentoo.org> iperf-2.0.5-r2.ebuild:
+  Drop unused base.eclass
+
+  Package-Manager: portage-2.2.27
 

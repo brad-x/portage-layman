@@ -72,3 +72,35 @@
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*musescore-2.0.2-r1 (01 Feb 2016)
+
+  01 Feb 2016; David Seifert <soap@gentoo.org>
+  +files/musescore-2.0.2-fix-buildsystem.patch, +musescore-2.0.2-r1.ebuild:
+  Add dev-qt/qtprintsupport dependency
+
+  Gentoo-Bug: 569046
+  * EAPI=6
+  * Add USE="mp3" and USE="jack" flags and make them optional
+  * Fixed QA warnings due to incorrect .desktop file
+  * Removed hard-coded CXXFLAGS
+  * Removed setting RELEASE/DEBUG build, use Gentoo build type
+
+  Package-Manager: portage-2.2.27
+

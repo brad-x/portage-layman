@@ -1,5 +1,5 @@
 # ChangeLog for sys-apps/sysvinit
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sysvinit-2.88-r7 (09 Aug 2015)
@@ -68,4 +68,55 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*sysvinit-2.88-r8 (01 Feb 2016)
+
+  01 Feb 2016; William Hubbs <williamh@gentoo.org> +files/inittab-2.88,
+  +sysvinit-2.88-r8.ebuild:
+  revision bump to 2.88-r8 for several bug fixes:
+
+  https://bugs.gentoo.org/show_bug.cgi?id=487384
+  https://bugs.gentoo.org/show_bug.cgi?id=506030
+  https://bugs.gentoo.org/show_bug.cgi?id=548826
+  https://bugs.gentoo.org/show_bug.cgi?id=573348
+
+*sysvinit-2.88-r9 (03 Feb 2016)
+
+  03 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> files/inittab-2.88,
+  -sysvinit-2.88-r8.ebuild, +sysvinit-2.88-r9.ebuild:
+  Revbump to fix bug #573668
+
+  Bumped to EAPI-5. Minor ebuild improvements.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  03 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -sysvinit-2.88-r4.ebuild, -sysvinit-2.88-r5.ebuild,
+  -sysvinit-2.88-r6.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  07 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/sysvinit-2.88-sysmacros.patch, sysvinit-2.88-r9.ebuild:
+  fix building w/newer glibc
 

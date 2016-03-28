@@ -18,19 +18,24 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 RDEPEND=""
-DEPEND="${REDEPEND}
+DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)"
 
-# https://github.com/SimonSapin/python-webencodings/issues/2
-RESTRICT=test
+PATCHES=(
+	"${FILESDIR}"/${P}-test-fix-backport.patch
+)
 
-python_test() {
+python_prepare_all(){
 	cat >> setup.cfg <<- EOF
 	[pytest]
 	python_files=test*.py
 	EOF
+	distutils-r1_python_prepare_all
+}
+
+python_test() {
 	py.test -v -v || die
 }

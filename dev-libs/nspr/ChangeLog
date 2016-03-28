@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/nspr
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nspr-4.10.8 (09 Aug 2015)
@@ -146,4 +146,122 @@
   sparc stable wrt bug #564834
 
   Package-Manager: portage-2.2.24
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*nspr-4.12 (29 Feb 2016)
+
+  29 Feb 2016; Ian Stakenvicius <axs@gentoo.org> +nspr-4.12.ebuild:
+  version bump to 4.12
+
+  Upstream release notes:
+  * added a PR_GetEnvSecure function, which attempts to detect if the program
+    is being executed with elevated privileges, and returns NULL if detected.
+    It is recommended to use this function in general purpose library code.
+
+  * fixed a memory allocation bug related to the PR_*printf functions
+
+  * exported API PR_DuplicateEnvironment, which had already been added in
+    NSPR 4.10.9
+
+  * added support for FreeBSD aarch64
+
+  * several minor correctness and compatibility fixes
+
+  Package-Manager: portage-2.2.26
+
+  29 Feb 2016; Ian Stakenvicius <axs@gentoo.org> -nspr-4.12.ebuild:
+  Revert "dev-libs/nspr: version bump to 4.12"
+
+  This reverts commit c3d074180d6f3aea7ab5304d2c19bb0b00a40978 since it
+  doesn't compile
+
+*nspr-4.12 (29 Feb 2016)
+
+  29 Feb 2016; Ian Stakenvicius <axs@gentoo.org> +nspr-4.12.ebuild:
+  re-committing version bump to 4.12
+
+  Upstream release notes:
+   * added a PR_GetEnvSecure function, which attempts to detect if the program
+     is being executed with elevated privileges, and returns NULL if detected.
+     It is recommended to use this function in general purpose library code.
+
+   * fixed a memory allocation bug related to the PR_*printf functions
+
+   * exported API PR_DuplicateEnvironment, which had already been added in
+     NSPR 4.10.9
+
+   * added support for FreeBSD aarch64
+
+   * several minor correctness and compatibility fixes
+
+  Package-Manager: portage-2.2.26
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  amd64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  x86 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> nspr-4.12.ebuild:
+  4.12-r0: add alpha keyword
+
+  Gentoo-Bug: 576862
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  ppc stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  ppc64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  18 Mar 2016; Markus Meier <maekke@gentoo.org> nspr-4.12.ebuild:
+  arm stable, bug #576862
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  19 Mar 2016; Jeroen Roovers <jer@gentoo.org> nspr-4.12.ebuild:
+  Stable for HPPA (bug #576862).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  sparc stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> nspr-4.12.ebuild:
+  ia64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

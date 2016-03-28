@@ -87,3 +87,58 @@
 
   Package-Manager: portage-2.2.26
 
+*kdebase-meta-15.08.3-r1 (17 Jan 2016)
+
+  17 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  +kdebase-meta-15.08.3-r1.ebuild, metadata.xml:
+  Add transitional package for Plasma 5 migration
+
+  Package-Manager: portage-2.2.26
+
+  17 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  kdebase-meta-4.14.3-r2.ebuild:
+  Dial back kde-wallpapers RDEPEND
+
+  There's now a transitional kde-wallpapers-15.08.3:4 ebuild, make sure
+  kdebase-meta is not pulling in slot 5 (ECM brings qtcore:5 dep) but
+  chooses the right slot 4 version.
+
+  Package-Manager: portage-2.2.26
+
+*kdebase-meta-15.08.3-r2 (19 Jan 2016)
+
+  19 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  +kdebase-meta-15.08.3-r2.ebuild:
+  RDEPEND on kdecore-meta, drop USE=display-manager
+
+  The same use flag is already part of plasma-meta, remove redundancy.
+
+  Package-Manager: portage-2.2.26
+
+  19 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  -kdebase-meta-15.08.3-r1.ebuild:
+  kde-apps/*meta: Drop old
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org>
+  kdebase-meta-4.14.3-r2.ebuild:
+  amd64 stable wrt bug #569742
+
+  Package-Manager: portage-2.2.26
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org>
+  kdebase-meta-4.14.3-r2.ebuild:
+  x86 stable wrt bug #569742
+
+  Package-Manager: portage-2.2.26
+

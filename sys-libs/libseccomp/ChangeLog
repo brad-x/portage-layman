@@ -1,5 +1,5 @@
 # ChangeLog for sys-libs/libseccomp
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libseccomp-2.2.0 (09 Aug 2015)
@@ -79,4 +79,41 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libseccomp-2.3.0 (29 Feb 2016)
+
+  29 Feb 2016; Mike Frysinger <vapier@gentoo.org> +libseccomp-2.3.0.ebuild:
+  version bump to 2.3.0
+
+  06 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libseccomp-2.2.3.ebuild:
+  amd64 stable wrt bug #576382
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libseccomp-2.2.3.ebuild:
+  x86 stable wrt bug #576382
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  23 Mar 2016; Mike Frysinger <vapier@gentoo.org> libseccomp-2.2.3.ebuild:
+  mark 2.2.3 arm/arm64 stable #576382
+
+  23 Mar 2016; Mike Frysinger <vapier@gentoo.org> -libseccomp-2.1.1.ebuild,
+  -libseccomp-2.2.0.ebuild:
+  drop old <2.2.3 versions
 

@@ -1,5 +1,5 @@
 # ChangeLog for sys-devel/autogen
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *autogen-5.18.4 (09 Aug 2015)
@@ -71,4 +71,72 @@
   23 Nov 2015; Mike Frysinger <vapier@gentoo.org> autogen-5.18.4.ebuild,
   +files/autogen-5.18.4-tmp-log.patch:
   fix use of hardcoded /tmp paths during build #563352
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  21 Feb 2016; Jeroen Roovers <jer@gentoo.org> autogen-5.18.4.ebuild:
+  Stable for HPPA PPC64 (bug #575068).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  21 Feb 2016; Markus Meier <maekke@gentoo.org> autogen-5.18.4.ebuild:
+  arm stable, bug #575068
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> autogen-5.18.4.ebuild:
+  amd64 stable wrt bug #570746
+
+  Package-Manager: portage-2.2.26
+
+  08 Mar 2016; Anthony G. Basile <blueness@gentoo.org> autogen-5.18.4.ebuild,
+  +files/autogen-5.18.4_fix_format.test_for_dash.patch:
+  fix tests with dash, bug #576674
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> autogen-5.18.4.ebuild:
+  x86 stable wrt bug #575068
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> autogen-5.18.4.ebuild:
+  ppc stable wrt bug #575068
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> autogen-5.18.4.ebuild:
+  sparc stable wrt bug #575068
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> autogen-5.18.4.ebuild:
+  ia64 stable wrt bug #575068
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

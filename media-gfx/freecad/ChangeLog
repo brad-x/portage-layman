@@ -1,5 +1,5 @@
 # ChangeLog for media-gfx/freecad
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *freecad-9999 (09 Aug 2015)
@@ -142,4 +142,45 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  20 Feb 2016; Michael Weber <xmw@gentoo.org> freecad-9999.ebuild:
+  Require >dev-cpp/eigen-3.2.2:3 (thanks Grégory Salvan, bug 575104).
+
+  Package-Manager: portage-2.2.27
+
+  20 Mar 2016; Michael Weber <xmw@gentoo.org>
+  -files/freecad-0.12.5284-boost148.patch,
+  -files/freecad-0.12.5284-cmake-2.8.12.patch,
+  -files/freecad-0.12.5284-gcc46.patch, -files/freecad-0.12.5284-glu.patch,
+  -files/freecad-0.12.5284-no-3rdParty.patch,
+  -files/freecad-0.12.5284-no-permissive.patch,
+  -files/freecad-0.12.5284-nodir.patch, -files/freecad-0.12.5284-nopivy.patch,
+  -files/freecad-0.12.5284-occ-6.5.5.patch,
+  -files/freecad-0.12.5284-occ-6.6.patch,
+  -files/freecad-0.12.5284-qt3support.patch,
+  -files/freecad-0.12.5284-removeoldswig.patch,
+  -files/freecad-0.12.5284-salomesmesh-occ-6.5.5.patch,
+  -files/freecad-0.13.1830-CMakefile.patch,
+  -files/freecad-0.13.1830-avoid-include-salome.patch,
+  -files/freecad-0.13.1830-cmake-2.8.12.patch,
+  -files/freecad-0.13.1830-no-machdist.patch,
+  -files/freecad-0.13.1830-occ-6.7.patch,
+  -files/freecad-0.13.1830-remove-qt3-support.patch,
+  -files/freecad-0.13.1830-startpage-links.patch,
+  -freecad-0.12.5284-r4.ebuild, -freecad-0.13.1830-r1.ebuild,
+  -freecad-0.14.3702-r1.ebuild:
+  drop old and unsecure versions (bug 526090).
+
+  Package-Manager: portage-2.2.28
 

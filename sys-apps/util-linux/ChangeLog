@@ -244,3 +244,30 @@
   util-linux-9999.ebuild:
   add USE=readline #571022
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  28 Feb 2016; Robin H. Johnson <robbat2@gentoo.org> util-linux-2.26.2.ebuild,
+  util-linux-2.27.ebuild, util-linux-2.27.1.ebuild, util-linux-9999.ebuild:
+  bug #575910 support USE=build to skip systemd dep during stage1.
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/util-linux-2.27.1-sysmacros.patch, util-linux-2.27.1.ebuild:
+  fix building w/newer glibc
+

@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/xml-xmlbeans
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *xml-xmlbeans-2.6.0 (09 Aug 2015)
@@ -68,4 +68,53 @@
 
   Package-Manager: portage-2.2.20.1
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  xml-xmlbeans-1.0.4_pre20041217.ebuild,
+  xml-xmlbeans-1.0.4_pre20041217-r1.ebuild, xml-xmlbeans-2.6.0.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  16 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -xml-xmlbeans-1.0.4_pre20041217.ebuild:
+  Remove old
+
+  This is the only stable version but SLOT 1, or perhaps even the whole
+  package, is about to go away. The only revdeps are older versions of
+  isabelle, which has never been stable.
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  xml-xmlbeans-1.0.4_pre20041217-r1.ebuild:
+  Drop ~arm and ~ppc64 keywords on SLOT 1
+
+  This SLOT will go away soon but dropping these keywords early allows
+  us to stabilise Java 8 on these architectures.
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  -files/xml-xmlbeans-gentoo.patch, -xml-xmlbeans-1.0.4_pre20041217-r1.ebuild:
+  Remove old, closes bug #542064
+
+  Package-Manager: portage-2.2.27
 

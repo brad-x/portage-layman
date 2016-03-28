@@ -230,3 +230,60 @@
   Package-Manager: portage-2.2.24
   Signed-off-by: Richard Yao <ryao@gentoo.org>
 
+*zfs-kmod-0.6.5.3-r3 (16 Jan 2016)
+
+  16 Jan 2016; Richard Yao <ryao@gentoo.org> -zfs-kmod-0.6.5.3-r2.ebuild,
+  +zfs-kmod-0.6.5.3-r3.ebuild:
+  0.6.5.3-r3: Many fixes
+
+  Fixes regressions in the code from the proposed stable API branch and an old
+  regression that caused `zpool create -m none -t ...` to fail to set the
+  mountpoint and certain other properties. That only occurred when the
+  ZFSOnLinux
+  specific -t argument is set.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*zfs-kmod-0.6.5.3-r4 (27 Jan 2016)
+
+  27 Jan 2016; Richard Yao <ryao@gentoo.org> -zfs-kmod-0.6.5.3-r3.ebuild,
+  +zfs-kmod-0.6.5.3-r4.ebuild:
+  0.6.5.3-r4: Regression fixes
+
+  Fixes additional regressions in the code from the proposed stable API
+  branch.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+*zfs-kmod-0.6.5.4-r1 (27 Jan 2016)
+*zfs-kmod-0.6.5.4 (27 Jan 2016)
+
+  27 Jan 2016; Richard Yao <ryao@gentoo.org> +zfs-kmod-0.6.5.4.ebuild,
+  +zfs-kmod-0.6.5.4-r1.ebuild:
+  0.6.5.4{,-r1}: Version Bump
+
+  The stable API patches from the 0.6.5.3-r4 ebuild and fix for the
+  temporary pool names have been carried forward in 0.6.5.4-r1. 0.6.5.4
+  has been commited without any patches as an aid to users who do not want
+  patches. However, it is left unkeyworded to ensure the upgrade path is
+  smooth.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+  09 Feb 2016; Jason Zaman <perfinion@gentoo.org> zfs-kmod-9999.ebuild:
+  9999: update kernel config reqs for grsec
+
+  The requirement that PAX_USERCOPY_SLABS be disabled has been fixed in master
+  for many releases now.
+
+  They are correct in the latest release ebuild but the live ebuild was
+  out of sync.
+
+  Package-Manager: portage-2.2.26
+

@@ -232,3 +232,114 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*lvm2-2.02.136-r1 (25 Jan 2016)
+*lvm2-2.02.116-r5 (25 Jan 2016)
+
+  25 Jan 2016; Marc Schiffbauer <mschiff@gentoo.org> files/clvmd.rc-2.02.39,
+  +lvm2-2.02.116-r5.ebuild, +lvm2-2.02.136-r1.ebuild, metadata.xml:
+  Add revbumps to fix #461564
+
+  Package-Manager: portage-2.2.26
+
+  26 Feb 2016; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  add myself to maintainers
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> lvm2-2.02.116-r4.ebuild:
+  amd64 stable wrt bug #575764
+
+  Package-Manager: portage-2.2.26
+
+*lvm2-2.02.145 (09 Mar 2016)
+*lvm2-2.02.139 (09 Mar 2016)
+
+  09 Mar 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvm2-2.02.139-dynamic-static-ldflags.patch, +lvm2-2.02.139.ebuild,
+  +lvm2-2.02.145.ebuild:
+  bump per bug #572352.
+
+  Package-Manager: portage-2.2.27
+
+*lvm2-2.02.145-r1 (10 Mar 2016)
+
+  10 Mar 2016; Robin H. Johnson <robbat2@gentoo.org>
+  files/lvm2-2.02.70-asneeded.patch, files/lvm2-2.02.99-locale-muck.patch,
+  +lvm2-2.02.145-r1.ebuild:
+  EAPI6 conversion from Lars Wendler (polynomial-c).
+
+  Package-Manager: portage-2.2.27
+
+*lvm2-2.02.145-r2 (15 Mar 2016)
+*lvm2-2.02.139-r1 (15 Mar 2016)
+*lvm2-2.02.136-r2 (15 Mar 2016)
+*lvm2-2.02.116-r6 (15 Mar 2016)
+
+  15 Mar 2016; Doug Goldstein <cardoe@gentoo.org> +files/lvm.rc-2.02.116-r6,
+  +lvm2-2.02.116-r6.ebuild, +lvm2-2.02.136-r2.ebuild,
+  +lvm2-2.02.139-r1.ebuild, +lvm2-2.02.145-r2.ebuild:
+  make depend() in lvm init script quiet
+
+  The depend() function makes a call to lvm which can produce output on
+  stderr which might seem concerning to some but is really just harmless.
+  We are checking to see if we need lvmetad to be able to start up properly.
+  At the same time make sure all possible versions receive updated init
+  scripts.
+
+  Gentoo-Bug: 577308
+  Gentoo-Bug: 573384
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  15 Mar 2016; Doug Goldstein <cardoe@gentoo.org> lvm2-2.02.136-r2.ebuild,
+  lvm2-2.02.139-r1.ebuild, lvm2-2.02.145-r2.ebuild:
+  fix issue building with USE=systemd
+
+  When building with USE=systemd, we need to pull it in since it is built
+  against.
+
+  Gentoo-Bug: 570788
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> lvm2-2.02.116-r4.ebuild:
+  ppc stable wrt bug #575764
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> lvm2-2.02.116-r4.ebuild:
+  ppc64 stable wrt bug #575764
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> lvm2-2.02.116-r4.ebuild:
+  ia64 stable wrt bug #575764
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Mar 2016; Markus Meier <maekke@gentoo.org> lvm2-2.02.116-r4.ebuild:
+  arm stable, bug #575764
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+

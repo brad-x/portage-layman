@@ -1,5 +1,5 @@
 # ChangeLog for virtual/mysql
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mysql-5.6-r6 (09 Aug 2015)
@@ -81,4 +81,38 @@
   satisfied by the same package.
 
   Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*mysql-5.6-r8 (09 Mar 2016)
+
+  09 Mar 2016; Brian Evans <grknight@gentoo.org> +mysql-5.6-r8.ebuild:
+  Revbump to fix dependencies
+
+  Move virtual/libmysqlclient PDEPEND to the providers
+  Remove the failed client-libs USE dependency
+  Add server USE as a requirement
+
+  Package-Manager: portage-2.2.27
+
+  21 Mar 2016; Brian Evans <grknight@gentoo.org> -mysql-5.6-r2.ebuild,
+  -mysql-5.6-r5.ebuild:
+  Drop old revisions wrt bug 577910
+
+  Package-Manager: portage-2.2.28
 

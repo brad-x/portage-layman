@@ -111,6 +111,7 @@ RDEPEND="${COMMON_DEPEND}
 DISTUTILS_IN_SOURCE_BUILD=1
 
 PATCHES=(
+	"${FILESDIR}"/${P}-sphinx-1.4.3-backport.patch
 	"${FILESDIR}"/${P}-test-fix-backport.patch
 	"${FILESDIR}"/${P}-test-fix-backport-2.patch
 	)

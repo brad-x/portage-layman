@@ -1,0 +1,22 @@
+# ChangeLog for dev-libs/libucl
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*libucl-0.7.3 (04 Feb 2016)
+
+  04 Feb 2016; Johan Bergström <bugs@bergstroem.nu> +libucl-0.7.3.ebuild,
+  +metadata.xml:
+  New package
+
+  Libucl is a configuration library parser
+  and a set of optional utilities.
+
+  08 Feb 2016; Johan Bergström <bugs@bergstroem.nu> libucl-0.7.3.ebuild:
+  dev-libs/{lib,}ucl: Avoid simultaneous installation
+
+  Both libraries opts to use /usr/{include,lib}/libucl* which
+  leads to a conflict. There unfortunately doesn't seem to be
+  a resolution upstream; dev-libs/ucl is 12 years old and
+  dev-libs/libucl has stated that no changes related to this
+  will occur.
+

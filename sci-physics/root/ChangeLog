@@ -1,5 +1,5 @@
 # ChangeLog for sci-physics/root
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *root-6.02.05-r2 (09 Aug 2015)
@@ -121,4 +121,33 @@
   PS: workaround with cat created a sandbox violation.
 
   Package-Manager: portage-2.2.25
+
+  16 Jan 2016; Andrew Savchenko <bircoph@gentoo.org> root-5.34.26.ebuild,
+  root-5.34.32.ebuild, root-6.02.05-r2.ebuild, root-6.04.06.ebuild:
+  fix compiler check
+
+  Previously compiler check was performed only against provided
+  clang++ version, which is wrong.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  16 Jan 2016; Andrew Savchenko <bircoph@gentoo.org> root-6.02.05-r2.ebuild,
+  root-6.04.06.ebuild:
+  refuse to build with gcc-5
+
+  ROOT-6 is not yet ready for gcc-5 due to lack of ABI tags support,
+  see bug 564306 and root issues 7285, 7319, 7654, 7721, 7818, 7895.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
 

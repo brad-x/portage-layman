@@ -65,3 +65,40 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*linuxsampler-2.0.0-r1 (12 Feb 2016)
+
+  12 Feb 2016; David Seifert <soap@gentoo.org>
+  +files/linuxsampler-2.0.0-nptl-hardened.patch,
+  +linuxsampler-2.0.0-r1.ebuild:
+  Fix undefined behaviour in NPTL test
+
+  Gentoo-Bug: 537516
+  * EAPI=6
+  * Replace PTHREAD_CANCEL_ASYNCHRONOUS, which is undefined behaviour
+    when used for a non-pure function
+
+  Package-Manager: portage-2.2.27
+
+*linuxsampler-2.0.0-r2 (13 Feb 2016)
+
+  13 Feb 2016; David Seifert <soap@gentoo.org>
+  +files/linuxsampler-2.0.0-lv2-automagic.patch,
+  -linuxsampler-2.0.0-r1.ebuild, +linuxsampler-2.0.0-r2.ebuild, metadata.xml:
+  Fixed automagic dependency on media-libs/lv2
+
+  Gentoo-Bug: 557010
+  * Added USE=lv2 flag, which pulls in media-libs/lv2 as dependency
+  * Fix configure.ac automagically enabling lv2 support
+  * Amend metadata.xml to reflect new USE flag
+
+  Package-Manager: portage-2.2.27
+

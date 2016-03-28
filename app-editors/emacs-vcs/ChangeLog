@@ -1,5 +1,5 @@
 # ChangeLog for app-editors/emacs-vcs
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *emacs-vcs-25.0.9999-r1 (09 Aug 2015)
@@ -130,4 +130,101 @@
   Add a snapshot of the fork point of master and emacs-25 branch.
 
   Package-Manager: portage-2.2.24
+
+  17 Jan 2016; Ulrich Müller <ulm@gentoo.org>
+  -emacs-vcs-25.0.50_pre20150523.ebuild,
+  -emacs-vcs-25.0.50_pre20150731.ebuild:
+  Remove old.
+
+  Package-Manager: portage-2.2.26
+
+  17 Jan 2016; Ulrich Müller <ulm@gentoo.org>
+  emacs-vcs-25.0.50_pre20151113.ebuild, emacs-vcs-25.0.9999-r2.ebuild,
+  emacs-vcs-25.1.9999.ebuild:
+  Fixes for giflib-5.
+
+  Add slot operator to media-libs/giflib dependency throughout.
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Split emacs herd and assign its packages to Emacs and GNU Emacs projects.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*emacs-vcs-25.0.90 (31 Jan 2016)
+
+  31 Jan 2016; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-25.0.90.ebuild,
+  emacs-vcs-25.0.9999-r2.ebuild, metadata.xml:
+  First pretest for Emacs 25.1.
+
+  Add new "xwidgets" USE flag. Drop hppa keyword because of the conditional
+  dependency on net-libs/webkit-gtk. Update description of the "gtk3" flag.
+
+  Package-Manager: portage-2.2.27
+
+  31 Jan 2016; Jeroen Roovers <jer@gentoo.org> emacs-vcs-25.0.90.ebuild:
+  Mark ~hppa (bug #573432).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  31 Jan 2016; Jeroen Roovers <jer@gentoo.org> emacs-vcs-25.0.9999-r2.ebuild:
+  Mark ~hppa (bug #573432).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+*emacs-vcs-25.1.50_pre20160130 (31 Jan 2016)
+
+  31 Jan 2016; Ulrich Müller <ulm@gentoo.org>
+  +emacs-vcs-25.1.50_pre20160130.ebuild:
+  New snapshot of master.
+
+  Last revision before merging of xwidget branch to master (via emacs-25).
+
+  Package-Manager: portage-2.2.27
+
+*emacs-vcs-25.1.9999-r1 (31 Jan 2016)
+
+  31 Jan 2016; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-25.1.9999.ebuild,
+  +emacs-vcs-25.1.9999-r1.ebuild:
+  Support xwidgets flag.
+
+  Package-Manager: portage-2.2.27
+
+  11 Feb 2016; Ulrich Müller <ulm@gentoo.org>
+  emacs-vcs-25.0.50_pre20151113.ebuild, emacs-vcs-25.0.90.ebuild,
+  emacs-vcs-25.0.9999-r2.ebuild, emacs-vcs-25.1.50_pre20160130.ebuild,
+  emacs-vcs-25.1.9999-r1.ebuild:
+  Don't store revision in system-configuration-options.
+
+  The git revision is stored by upstream in emacs-repository-version,
+  therefore this local hack is no longer needed.
+
+  Package-Manager: portage-2.2.27
+
+*emacs-vcs-25.0.92 (02 Mar 2016)
+
+  02 Mar 2016; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-25.0.92.ebuild:
+  New pretest version.
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; Ulrich Müller <ulm@gentoo.org>
+  emacs-vcs-25.0.50_pre20151113.ebuild, emacs-vcs-25.0.90.ebuild,
+  emacs-vcs-25.0.92.ebuild, emacs-vcs-25.0.9999-r2.ebuild,
+  emacs-vcs-25.1.50_pre20160130.ebuild, emacs-vcs-25.1.9999-r1.ebuild:
+  Enable SSL/TLS support with ssl instead of gnutls flag.
+
+  Package-Manager: portage-2.2.27
 

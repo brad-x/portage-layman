@@ -1,6 +1,36 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
+
+# Thomas D. <whissi@whissi.de> (19 Mar 2016), on behalf of
+# Ian Delaney <idella4@gentoo.org> (19 Mar 2016)
+# for the proxy-maintainers project
+# Unkeyworded deps, bug #564274
+app-admin/collectd collectd_plugins_gmond
+app-admin/collectd collectd_plugins_ipmi
+app-admin/collectd collectd_plugins_modbus
+app-admin/collectd collectd_plugins_oracle
+app-admin/collectd collectd_plugins_routeros
+app-admin/collectd collectd_plugins_sigrok
+app-admin/collectd collectd_plugins_tokyotyrant
+app-admin/collectd collectd_plugins_varnish
+app-admin/collectd collectd_plugins_virt
+
+# Markus Meier <maekke@gentoo.org> (02 Mar 2016)
+# unkeyworded deps for bug #573324
+sci-mathematics/flint ntl
+
+# Markus Meier <maekke@gentoo.org> (26 Feb 2016)
+# unmask scanner for net-print/hplip, bug #518456
+media-sound/moc timidity
+
+# Justin Lecher <jlec@gentoo.org> (22 Feb 2016)
+# Missing test deps keyword #575366
+dev-cpp/eigen test
+
+# James Le Cuirot <chewi@gentoo.org) (30 Jan 2016)
+# scrollview requires SWT, which is currently unsupported on ARM.
+app-text/tesseract scrollview
 
 # Michael Weber <xmw@gentoo.org> (09 Jan 2016)
 # no arm support in media-libs/glfw
@@ -39,17 +69,13 @@ app-portage/g-sorcery bson
 # media-libs/rubberband lacks arm keyword, bug 548446
 media-video/mpv rubberband
 
-# Patrick Lauer <patrick@gentoo.org> (20 Apr 2015)
-# kde-frameworks/*:5 not keyworded on arm
-net-irc/quassel qt5
-
 # Markos Chandras <hwoarang@gentoo.org> (18 Apr 2015)
 # samba-4 not keyworded on arm
 sys-auth/sssd samba
 
 # Markus Meier <maekke@gentoo.org> (03 Apr 2015)
 # Deps not yet stable or keyworded
-=media-libs/libsdl2-2.0.3-r200 fusionsound
+media-libs/libsdl2 fusionsound
 
 # Alexis Ballier <aballier@gentoo.org> (02 Apr 2015)
 # Needs ilmbase (openexr), which does not build and is masked on arm.
@@ -474,10 +500,6 @@ net-misc/mediatomb lastfm
 # Raúl Porcel <armin76@gentoo.org> (28 Mar 2010)
 # Needs kde-4 stable
 dev-vcs/subversion kde
-
-# Raúl Porcel <armin76@gentoo.org> (20 Jan 2010)
-# Needs mplayer
-kde-base/dolphin thumbnail
 
 # Markus Meier <maekke@gentoo.org> (27 Sep 2009)
 # mask media-gfx/imagemagick[autotrace] as autotrace is not keyworded

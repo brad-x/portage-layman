@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/openssl
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *openssl-1.0.2d (09 Aug 2015)
@@ -267,4 +267,207 @@
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Jan 2016; Mike Frysinger <vapier@gentoo.org> files/gentoo.config-1.0.2:
+  fix sparc builds (mostly 64-bit)
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*openssl-1.0.2f (29 Jan 2016)
+*openssl-1.0.1r (29 Jan 2016)
+
+  29 Jan 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/openssl-1.0.1r-x32.patch, +openssl-1.0.1r.ebuild,
+  +openssl-1.0.2f.ebuild:
+  Security bump to versions 1.0.1r and 1.0.2f (bug #572854).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  29 Jan 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/openssl-1.0.2-s_client-verify.patch,
+  -files/openssl-1.0.2a-malloc-typo.patch,
+  -files/openssl-1.0.2a-parallel-build.patch,
+  -files/openssl-1.0.2d-parallel-build.patch, -openssl-1.0.2a.ebuild,
+  -openssl-1.0.2b.ebuild, -openssl-1.0.2c.ebuild, -openssl-1.0.2d.ebuild,
+  -openssl-1.0.2d-r2.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  29 Jan 2016; Agostino Sarubbo <ago@gentoo.org> openssl-1.0.1r.ebuild,
+  openssl-1.0.2f.ebuild:
+  stable for alpha/amd64/arm/ia64/ppc/ppc64/s390/sh/sparc/x86 wrt security bug
+  #572854
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  30 Jan 2016; Jeroen Roovers <jer@gentoo.org> openssl-1.0.2f.ebuild:
+  Stable for HPPA (bug #572854).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  30 Jan 2016; Jeroen Roovers <jer@gentoo.org> openssl-1.0.1r.ebuild:
+  Stable for HPPA (bug #572854).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  02 Feb 2016; Mike Frysinger <vapier@gentoo.org> openssl-1.0.2f.ebuild:
+  mark 1.0.2f arm64/m68k stable
+
+*openssl-1.0.2f-r1 (09 Feb 2016)
+*openssl-1.0.2e-r1 (09 Feb 2016)
+
+  09 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  +files/openssl-1.0.2e-chacha20poly1305.patch, +openssl-1.0.2e-r1.ebuild,
+  +openssl-1.0.2f-r1.ebuild:
+  carry cloudflare's chacha20poly1305 patch
+
+  09 Feb 2016; Robin H. Johnson <robbat2@gentoo.org>
+  -files/openssl-1.0.2e-chacha20poly1305.patch, openssl-1.0.2e-r1.ebuild,
+  openssl-1.0.2f-r1.ebuild:
+  move large patch to mirrors.
+
+  Package-Manager: portage-2.2.27
+
+  09 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  -openssl-1.0.2e-r1.ebuild, -openssl-1.0.2f-r1.ebuild:
+  the team didn't like my chacha patch
+
+  26 Feb 2016; Doug Goldstein <cardoe@gentoo.org>
+  -files/openssl-1.0.0h-pkg-config.patch,
+  -files/openssl-1.0.1f-revert-alpha-perl-generation.patch,
+  -files/openssl-1.0.1m-ipv6.patch, -files/openssl-1.0.1m-x32.patch,
+  -files/openssl-1.0.1p-parallel-build.patch, -files/openssl-1.0.1r-x32.patch,
+  -openssl-1.0.1p.ebuild, -openssl-1.0.1r.ebuild, -openssl-1.0.2e.ebuild:
+  remove vulnerable versions
+
+  Due to multiple vulnerabilities remove outdated versions of OpenSSL.
+
+  Gentoo-Bug: 567476
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  26 Feb 2016; Doug Goldstein <cardoe@gentoo.org> -openssl-0.9.8z_p7.ebuild:
+  remove vulnerable version
+
+  Due to multiple vulnerabilities remove outdated version of OpenSSL.
+
+  Gentoo-Bug: 567476
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  26 Feb 2016; Doug Goldstein <cardoe@gentoo.org> -files/gentoo.config-1.0.1:
+  remove no longer necessary file
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*openssl-1.0.2g (01 Mar 2016)
+
+  01 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/openssl-1.0.2g-parallel-build.patch, +openssl-1.0.2g.ebuild:
+  Security bump to version 1.0.2g (bug #575548).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*openssl-1.0.2g-r1 (01 Mar 2016)
+
+  01 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> -openssl-1.0.2g.ebuild,
+  +openssl-1.0.2g-r1.ebuild:
+  Revbump to add subslot that reflects lack of SSLv2 (#575548).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*openssl-1.0.2g-r2 (03 Mar 2016)
+
+  03 Mar 2016; Doug Goldstein <cardoe@gentoo.org> -openssl-1.0.2g-r1.ebuild,
+  +openssl-1.0.2g-r2.ebuild:
+  re-enable SSLv2
+
+  Re-enable SSLv2 since disabling it changes the ABI without a SONAME change
+  causing a lot of breakage.
+
+  Gentoo-Bug: 576128
+  Gentoo-Bug: 575548
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  07 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  amd64 stable wrt bug #575548
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Mar 2016; Jeroen Roovers <jer@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  Stable for HPPA PPC64 (bug #575548).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  10 Mar 2016; Markus Meier <maekke@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  arm/x86 stable, bug #575548
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm x86"
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org>
+  openssl-1.0.2g-r2.ebuild:
+  1.0.2g-r2: add alpha keyword
+
+  Gentoo-Bug: 575548
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  ppc stable wrt bug #575548
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  sparc stable wrt bug #575548
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  ia64 stable wrt bug #575548
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  mark 1.0.2g-r2 arm64/m68k/s390/sh stable
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org> openssl-1.0.2g-r2.ebuild:
+  drop really old blockers
 

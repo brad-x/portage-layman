@@ -1,5 +1,5 @@
 # ChangeLog for dev-perl/Net-SSLeay
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *Net-SSLeay-1.650.0 (09 Aug 2015)
@@ -74,4 +74,44 @@
   add libressl support, bug 563570
 
   Package-Manager: portage-2.2.25
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*Net-SSLeay-1.720.0 (05 Mar 2016)
+
+  05 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +Net-SSLeay-1.720.0.ebuild:
+  Bump to version 1.720.0
+
+  - EAPI6
+  - Better DESCRIPTION
+  - Tests enabled
+    - Test deps added
+    - Bad tests nuked
+    - Tests minimalised where possible
+  - 'examples' now optionally installed
+
+  Upstream:
+  - Bug fixes mostly
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  Net-SSLeay-1.720.0.ebuild, +files/1.72-config-nettest-no.patch,
+  +files/1.72-config-nettest-yes.patch:
+  Fix tests re: Networking
+
+  1. Reduce clutter for people who aren't running tests, or
+  aren't running tests with DIST_OVERRIDE=~/network/
+
+  2. Enable network-tests if DIST_OVERRIDE=~/network/
+
+  Package-Manager: portage-2.2.27
 

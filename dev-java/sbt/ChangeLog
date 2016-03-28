@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/sbt
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sbt-0.13.8 (09 Aug 2015)
@@ -67,4 +67,50 @@
   Thanks to Toralf Forster for reporting.
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*sbt-0.13.10_rc2 (06 Feb 2016)
+
+  06 Feb 2016; Mark Wright <gienah@gentoo.org> +sbt-0.13.10_rc2.ebuild:
+  Bump to 0.13.10_rc2
+
+  Package-Manager: portage-2.2.27
+
+  06 Feb 2016; Mark Wright <gienah@gentoo.org> -sbt-0.13.8.ebuild:
+  Remove sbt-0.13.8
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=558142
+
+  Package-Manager: portage-2.2.27
+
+  13 Feb 2016; Mark Wright <gienah@gentoo.org> sbt-0.13.10_rc2.ebuild:
+  Thanks to angry_vincent for reporting, Chewi for fix: RDEPEND
+  >=virtual/jre-1.7
+
+  As the eclass does not like RDEPEND="|| ( virtual/jre:1.7 virtual/jre:1.8 )"
+
+  Package-Manager: portage-2.2.27
+
+*sbt-0.13.11 (23 Feb 2016)
+
+  23 Feb 2016; Mark Wright <gienah@gentoo.org> +sbt-0.13.11.ebuild:
+  Bump to 0.13.11, allow building with jdk 1.8.
+
+  Thanks to Christian Strahl for the bump request 562904 and Pavel Kozlov for
+  reporting 560810 requesting allowing building with jdk 1.8.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=562904
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=560810
+
+  Package-Manager: portage-2.2.27
 

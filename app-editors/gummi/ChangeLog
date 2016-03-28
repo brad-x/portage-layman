@@ -1,5 +1,5 @@
 # ChangeLog for app-editors/gummi
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gummi-9999 (09 Aug 2015)
@@ -59,4 +59,56 @@
   Bump EAPI, move upstream repository to git
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*gummi-0.6.6 (28 Feb 2016)
+
+  28 Feb 2016; Christian Tietz <christian.tietz@mailbox.org>
+  +gummi-0.6.6.ebuild, metadata.xml:
+  bump to 0.6.6
+
+  01 Mar 2016; Christian Tietz <christian.tietz@mailbox.org>
+  gummi-0.6.6.ebuild:
+  drop base.eclass and fix whitespace
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> gummi-0.6.6.ebuild:
+  amd64 stable wrt bug #562894
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> gummi-0.6.6.ebuild:
+  x86 stable wrt bug #562894
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Aaron Bauman <bman@gentoo.org> -gummi-0.6.5.ebuild:
+  app-editors/gummy: drop vulnerable versions per 562894.  Thanks to Christian
+  Tietz.
+
+  Package-Manager: portage-2.2.26
+
+  16 Mar 2016; Ian Delaney <idella4@gentoo.org> gummi-9999.ebuild:
+  bump live ebuild to EAPI 6
+
+  Closes: https://github.com/gentoo/gentoo/pull/1062
 

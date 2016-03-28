@@ -132,3 +132,99 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*vmware-workstation-11.1.3.3206955-r2 (18 Mar 2016)
+
+  18 Mar 2016; Andreas K. Huettel <dilfridge@gentoo.org>
+  +vmware-workstation-11.1.3.3206955-r2.ebuild:
+  Version bump
+
+  Imported from vmware overlay
+
+  18 Mar 2016; Andreas K. Huettel <dilfridge@gentoo.org>
+  -vmware-workstation-11.1.2.2780323-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
+
+*vmware-workstation-12.1.0.3272444-r1 (19 Mar 2016)
+
+  19 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org> +files/vmware-12.1.rc,
+  +files/vmware-server-12.1.rc, +vmware-workstation-12.1.0.3272444-r1.ebuild:
+  Major version bump. Imported from the vmware overlay.
+
+  Many thanks to
+  * Alex Xu <alex_y_xu@yahoo.ca>
+  * Billy DeVincentis <billydv1@verizon.net>
+  * Fabio Rossi <rossi.f@inwind.it>
+  * Evan Teran <evan.teran@gmail.com>
+  * Harris Landgarten <harrisl@lhjonline.com>
+  and to everyone else who helped on bug 559798.
+
+  Package-Manager: portage-2.2.27
+
+  19 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  vmware-workstation-12.1.0.3272444-r1.ebuild:
+  First generate config file, then install it ...
+
+  Package-Manager: portage-2.2.27
+
+*vmware-workstation-11.1.3.3206955-r3 (19 Mar 2016)
+*vmware-workstation-10.0.6.2700073-r1 (19 Mar 2016)
+
+  19 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -vmware-workstation-10.0.6.2700073.ebuild,
+  +vmware-workstation-10.0.6.2700073-r1.ebuild,
+  -vmware-workstation-11.1.3.3206955-r2.ebuild,
+  +vmware-workstation-11.1.3.3206955-r3.ebuild:
+  Fix libgcrypt dependencies, bug 567380
+
+  Package-Manager: portage-2.2.27
+
+*vmware-workstation-12.1.0.3272444-r2 (19 Mar 2016)
+
+  19 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -vmware-workstation-12.1.0.3272444-r1.ebuild,
+  +vmware-workstation-12.1.0.3272444-r2.ebuild:
+  Update systemd unit files
+
+  Package-Manager: portage-2.2.28
+
+  20 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  vmware-workstation-12.1.0.3272444-r2.ebuild:
+  Drop pulseaudio requirement after reports on bug 559798
+
+  Package-Manager: portage-2.2.27
+
+*vmware-workstation-11.1.3.3206955-r4 (20 Mar 2016)
+
+  20 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +vmware-workstation-11.1.3.3206955-r4.ebuild:
+  Fix symlinks, bug 558242
+
+  This isn't really clean; probably parts of the package still need
+  0.9.8... better than installing broken links though. More later.
+
+  Package-Manager: portage-2.2.27
+
+  20 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  vmware-workstation-11.1.3.3206955-r3.ebuild,
+  vmware-workstation-11.1.3.3206955-r4.ebuild,
+  vmware-workstation-12.1.0.3272444-r2.ebuild:
+  remove RESTRICT=preserve-libs, makes no sense
+
+  This restrict means that libraries from *this* package are not preserved.
+  We have the exact opposite problem, we want that this package does not
+  *cause*
+  other libraries to be preserved...
+
+  Package-Manager: portage-2.2.27
+

@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/silgraphite/${PN}/${P}.tgz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris"
+KEYWORDS="~s390"
 IUSE="perl test"
 
 RDEPEND="
@@ -48,7 +48,7 @@ src_prepare() {
 
 	# fix perl linking
 	if use perl; then
-		_check_build_dir init
+		_cmake_check_build_dir init
 		sed -i \
 			-e "s:@BUILD_DIR@:\"${CMAKE_BUILD_DIR}/src\":" \
 			contrib/perl/Build.PL || die

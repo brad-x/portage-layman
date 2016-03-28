@@ -1,5 +1,5 @@
 # ChangeLog for media-gfx/graphite2
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *graphite2-1.2.4-r1 (09 Aug 2015)
@@ -63,4 +63,165 @@
   27 Sep 2015; Andreas K. Huettel (dilfridge) <dilfridge@gentoo.org>
   metadata.xml:
   Rename openoffice herd to office herd in metadata
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  30 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  graphite2-1.2.1.ebuild, graphite2-1.2.4.ebuild, graphite2-1.2.4-r1.ebuild:
+  fix function call
+
+  The function was renamed in e4b034ec87ff80561b18d52ee07df66b04a50cab but
+  usage
+  was never checked for because it is supposed to be a private function.
+
+  Gentoo-bug: 573362
+
+  Package-Manager: portage-2.2.27
+
+*graphite2-1.3.5 (16 Feb 2016)
+
+  16 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/graphite2-1.3.5-includes-libs-perl.patch, +graphite2-1.3.5.ebuild:
+  Version bump, bug 574276
+
+  Package-Manager: portage-2.2.27
+
+*graphite2-1.3.5-r1 (26 Feb 2016)
+
+  26 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +graphite2-1.3.5-r1.ebuild:
+  Fix tests, mostly... bug 575250
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -graphite2-1.2.4.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  graphite2-1.2.1.ebuild:
+  Drop keywords
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  graphite2-1.3.5-r1.ebuild:
+  Remove the call to _cmake_check_build_dir, bug 573362
+
+  Package-Manager: portage-2.2.27
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.5.ebuild:
+  amd64 stable wrt bug #574276
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  graphite2-1.3.5.ebuild:
+  Restrict tests
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; Jeroen Roovers <jer@gentoo.org> graphite2-1.3.5.ebuild:
+  Stable for PPC64 (bug #574276).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  06 Mar 2016; Jeroen Roovers <jer@gentoo.org> graphite2-1.3.5.ebuild:
+  Stable for HPPA (bug #574276).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  07 Mar 2016; Jeroen Roovers <jer@gentoo.org> graphite2-1.3.5-r1.ebuild:
+  Mark ~hppa ~ppc64 (bug #575782).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  11 Mar 2016; Markus Meier <maekke@gentoo.org> graphite2-1.3.5.ebuild:
+  arm stable, bug #574276
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.5.ebuild:
+  x86 stable wrt bug #574276
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> graphite2-1.3.5.ebuild:
+  1.3.5-r0: add alpha keyword
+
+  Gentoo-Bug: 574276
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.5.ebuild:
+  ppc stable wrt bug #574276
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*graphite2-1.3.7 (18 Mar 2016)
+
+  18 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> +graphite2-1.3.7.ebuild:
+  Security bump to version 1.3.7
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.5.ebuild:
+  sparc stable wrt bug #574276
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.5.ebuild:
+  ia64 stable wrt bug #574276
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -graphite2-1.2.4-r1.ebuild, -graphite2-1.3.5-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
+
+  22 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.7.ebuild:
+  amd64 stable wrt bug #576864
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Mar 2016; Jeroen Roovers <jer@gentoo.org> graphite2-1.3.7.ebuild:
+  Stable for HPPA PPC64 (bug #576864).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  27 Mar 2016; Agostino Sarubbo <ago@gentoo.org> graphite2-1.3.7.ebuild:
+  ppc stable wrt bug #576864
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

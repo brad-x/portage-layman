@@ -135,3 +135,48 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  24 Jan 2016; Jeroen Roovers <jer@gentoo.org>
+  docbook-xsl-stylesheets-1.79.0.ebuild:
+  Stable for HPPA PPC64 (bug #568160).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove explicit notion of maintainer-needed, for GLEP 67
+
+  GLEP 67 removes the explicit notion of maintainer-needed@g.o being used
+  for packages lacking maintainers, in favor of assuming maintainer-needed
+  whenever the package has no maintainers.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+  29 Feb 2016; Steev Klimaszewski <steev@gentoo.org>
+  docbook-xsl-stylesheets-1.79.0.ebuild:
+  stable 1.79.0 for arm64
+
+  Package-Manager: portage-2.2.27
+
+*docbook-xsl-stylesheets-1.79.1-r1 (13 Mar 2016)
+
+  13 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  -docbook-xsl-stylesheets-1.79.1.ebuild,
+  +docbook-xsl-stylesheets-1.79.1-r1.ebuild:
+  Fix #575818 (Java), #536600 (Ruby)
+
+  Delete the unnecessary Java-related stuff and other tools as they
+  bloat the stage3 tarballs massively. Fixes bug #575818. A java USE
+  flag could be added but it's probably not worth the hassle.
+
+  Use the ruby-single eclass as suggested by graaff in bug #536600. I
+  was going to do dev-lang/ruby:* as suggested by pacho but ruby-single
+  seems like the correct thing to do and I don't want to go against the
+  Ruby team.
+
+  This also removes a useless find call.
+
+  Package-Manager: portage-2.2.28
+

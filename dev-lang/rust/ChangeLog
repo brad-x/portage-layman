@@ -83,3 +83,55 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  22 Mar 2016; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  change to Rust project
+
+  24 Mar 2016; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  fix metadata
+
+  Rust is a project and not a person.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*rust-1.7.0 (26 Mar 2016)
+
+  26 Mar 2016; Doug Goldstein <cardoe@gentoo.org> +rust-1.7.0.ebuild:
+  version bump
+
+  Based on the work of the Gentoo Rust overlay team's work. Includes
+  additional improvements such as:
+  - using the system LLVM by default
+  - updates for cross compile support
+  - using the latest stage0 bootstrap binary
+  - drop the custom postfix that Gentoo used
+  - provide a sub-slot for ABI so packages can rebuild
+  - EAPI=6
+  - misc cleanups
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  26 Mar 2016; Doug Goldstein <cardoe@gentoo.org> rust-1.7.0.ebuild:
+  fix llvm dependency
+
+  Technically prior to LLVM 3.7, Gentoo still supports static linking which
+  is what the Rust build does by default so LLVM is not a run-time depend.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*rust-1.8.0_beta20160323 (28 Mar 2016)
+
+  28 Mar 2016; Doug Goldstein <cardoe@gentoo.org>
+  +rust-1.8.0_beta20160323.ebuild:
+  initial beta version
+
+  Add an initial beta version that is un-KEYWORDed.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+

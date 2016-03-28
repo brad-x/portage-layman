@@ -22,7 +22,7 @@ if [[ -z ${PV%%*9999} ]]; then
 else
 	MY_P="${P/_/.}"
 	SRC_URI="mirror://sourceforge/gnuplot/${MY_P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~ppc-aix ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+	KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~ppc-aix ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 	inherit autotools
 fi
 
@@ -104,6 +104,14 @@ src_prepare() {
 
 	mv configure.in configure.ac || die
 	eautoreconf
+
+	# Make sure we don't mix build & host flags.
+	sed -i \
+		-e 's:@CPPFLAGS@:$(BUILD_CPPFLAGS):' \
+		-e 's:@CFLAGS@:$(BUILD_CFLAGS):' \
+		-e 's:@LDFLAGS@:$(BUILD_LDFLAGS):' \
+		-e 's:@CC@:$(CC_FOR_BUILD):' \
+		docs/Makefile.in || die
 }
 
 src_configure() {
@@ -117,6 +125,8 @@ src_configure() {
 	fi
 
 	tc-export CC CXX			#453174
+	tc-export_build_env BUILD_CC
+	export CC_FOR_BUILD=${BUILD_CC}
 
 	econf \
 		--without-pdf \

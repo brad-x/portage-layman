@@ -1,5 +1,5 @@
 # ChangeLog for app-misc/ca-certificates
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ca-certificates-20141019.3.19 (09 Aug 2015)
@@ -166,4 +166,133 @@
   22 Dec 2015; Mike Frysinger <vapier@gentoo.org>
   +ca-certificates-20151214.3.21.ebuild:
   version bump to 20151214.3.21 #568904
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  04 Feb 2016; Tobias Klausmann <klausman@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 561962
+
+  Package-Manager: portage-2.2.27
+
+*ca-certificates-20160104.3.21 (06 Feb 2016)
+
+  06 Feb 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +ca-certificates-20160104.3.21.ebuild:
+  bump.
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Markus Meier <maekke@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  arm stable, bug #561962
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  12 Feb 2016; Jeroen Roovers <jer@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  Stable for HPPA (bug #561962).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  13 Feb 2016; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  amd64 stable wrt bug #561962
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  x86 stable wrt bug #561962
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Feb 2016; Jeroen Roovers <jer@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  Stable for PPC64 (bug #561962).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  29 Feb 2016; Steev Klimaszewski <steev@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  stable 20151214.3.21 for arm64
+
+  Package-Manager: portage-2.2.27
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  ppc stable wrt bug #561962
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  sparc stable wrt bug #561962
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  ia64 stable wrt bug #561962
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild:
+  mark 20151214.3.21 m68k/s390/sh stable
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  -ca-certificates-20140927.3.17.2.ebuild,
+  -ca-certificates-20141019.3.17.4.ebuild,
+  -ca-certificates-20141019.3.19.ebuild,
+  -ca-certificates-20141019.3.19-r1.ebuild,
+  -ca-certificates-20150426.3.20.ebuild,
+  -ca-certificates-20150426.3.20-r1.ebuild,
+  -files/ca-certificates-20110502-root.patch,
+  -files/ca-certificates-20141019-root.patch,
+  -files/ca-certificates-20150426-nss-certdata2pem-py3.patch:
+  drop old <20151214.3.21 versions
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  ca-certificates-20151214.3.21.ebuild, ca-certificates-20160104.3.21.ebuild:
+  unpacker.eclass: move deb2targz dep out of ca-certificates
+
+*ca-certificates-20160104.3.23 (21 Mar 2016)
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +ca-certificates-20160104.3.23.ebuild:
+  version bump #573786
+
+  Also simplify the c_rehash dep since we don't care about the specific
+  version we use.
 

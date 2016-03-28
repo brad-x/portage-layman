@@ -386,3 +386,142 @@
 
   Package-Manager: portage-2.2.20-prefix
 
+  17 Jan 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Remove C++11 checks in -9999
+
+  Remove C++11 checks since the relevant gcc versions are stable for long
+  enough already.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Jan 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/llvm-3.9-llvm-config.patch, llvm-9999.ebuild:
+  fix live ebuild
+
+  Update clang version, bug #572396
+  Update llvm-config patch, bug #572564
+
+  Package-Manager: portage-2.2.27
+
+  27 Jan 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.7.1.ebuild:
+  add darwin patch to 3.7.1
+
+  Package-Manager: portage-2.2.20-prefix
+
+*llvm-3.8.0_rc1 (27 Jan 2016)
+
+  27 Jan 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/cmake/llvm-3.8.0-compiler_rt_arm_march_flags.patch,
+  +llvm-3.8.0_rc1.ebuild, llvm-9999.ebuild:
+  add (masked) 3.8 release candidate for testing
+
+  Package-Manager: portage-2.2.27
+
+  28 Jan 2016; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.8.0_rc1.ebuild:
+  work on 3.8.0_rc1 install, bug #573202
+
+  Also add man-pages tarball
+
+  clang tests still fail
+
+  Package-Manager: portage-2.2.27
+
+  04 Feb 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.4.2.ebuild:
+  add CHOST-clang wrappers to 3.4.2 too for Prefix bootstrap
+
+  Package-Manager: portage-2.2.20-prefix
+
+*llvm-3.7.1-r1 (08 Feb 2016)
+
+  08 Feb 2016; Yuta Satoh <nigoro.dev@gmail.com> +llvm-3.7.1-r1.ebuild,
+  llvm-3.8.0_rc1.ebuild, llvm-9999.ebuild:
+  Re add the code for Gentoo/FreeBSD.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=417171
+
+  10 Feb 2016; Michał Górny <mgorny@gentoo.org> llvm-3.7.1.ebuild,
+  -llvm-3.7.1-r1.ebuild:
+  Remove unnecessary revbump due to FreeBSD-related change
+
+  The FreeBSD header change does not justify forcing rebuild of such
+  a huge package as LLVM on Linux. Furthermore, the new code relies on
+  a new USE flag, so FreeBSD users will get it via --changed-use.
+
+  10 Feb 2016; Michał Górny <mgorny@gentoo.org> llvm-3.7.1.ebuild:
+  Fix missing ||die on FreeBSD-added code
+
+  11 Feb 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.5.2.ebuild,
+  llvm-3.6.2.ebuild, llvm-3.7.1.ebuild:
+  fix dependency on libcxx for Darwin, bug #573176
+
+  llvm dies with an ICE while compiling packages (like itself) when the
+  version of libcxx doesn't match.  So pull in a version from the same major
+  range.
+
+  Package-Manager: portage-2.2.20-prefix
+
+  11 Feb 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.5.2.ebuild,
+  llvm-3.6.2.ebuild, llvm-3.7.1.ebuild, llvm-3.8.0_rc1.ebuild,
+  llvm-9999.ebuild:
+  revise libcxx dependency for maintenance and to be more realistic
+
+  Package-Manager: portage-2.2.20-prefix
+
+*llvm-3.8.0_rc2 (15 Feb 2016)
+
+  15 Feb 2016; Bernard Cafarelli <voyageur@gentoo.org> -llvm-3.8.0_rc1.ebuild,
+  +llvm-3.8.0_rc2.ebuild:
+  release candidate bump
+
+  Package-Manager: portage-2.2.27
+
+  17 Feb 2016; Michał Górny <mgorny@gentoo.org>
+  files/llvm-3.9-llvm-config.patch:
+  Update the llvm-config for the live version, #574918
+
+  17 Feb 2016; Michał Górny <mgorny@gentoo.org> llvm-3.7.1.ebuild,
+  llvm-3.8.0_rc2.ebuild, llvm-9999.ebuild:
+  Clean up stale ref to outer mycmakeargs
+
+  Clean up the stale and confusing reference to outer mycmakeargs that
+  used to be declared in src_configure() and passed down to
+  multilib_src_configure(). This is no longer the case.
+
+  17 Feb 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.0_rc2.ebuild,
+  llvm-9999.ebuild:
+  Extend the FreeBSD fix fix to remaining ebuilds
+
+  17 Feb 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Bump the live ebuild to EAPI 6
+
+*llvm-3.8.0 (09 Mar 2016)
+
+  09 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org> -llvm-3.8.0_rc2.ebuild,
+  +llvm-3.8.0.ebuild:
+  sys-devel/{clang,llvm}: Bump to final 3.8.0
+
+  To do before unmask:
+  * some clang tests still fail (cannot find standard headers)
+  * lldb wants to install six.py
+  * test reverse dependencies
+
+  Package-Manager: portage-2.2.27
+
+  09 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/llvm-3.8-lldb_six.patch, llvm-3.8.0.ebuild:
+  use system six for lldb
+
+  Package-Manager: portage-2.2.27
+
+  28 Mar 2016; William Hubbs <williamh@gentoo.org> metadata.xml:
+  add myself as co-maintainer
+

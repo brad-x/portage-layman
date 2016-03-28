@@ -1,5 +1,5 @@
 # ChangeLog for mail-client/thunderbird
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *thunderbird-38.1.0 (09 Aug 2015)
@@ -283,4 +283,95 @@
   This makes the install phase work again on hardened systems.
 
   Signed-off-by: Jory A. Pratt <anarchy@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*thunderbird-38.6.0 (16 Feb 2016)
+
+  16 Feb 2016; Ian Stakenvicius <axs@gentoo.org> +thunderbird-38.6.0.ebuild:
+  version bump for security
+
+  Package-Manager: portage-2.2.26
+
+  17 Feb 2016; Ian Stakenvicius <axs@gentoo.org> -thunderbird-38.4.0.ebuild:
+  bin}: remove old/vulnerable 38.4.0
+
+  Package-Manager: portage-2.2.26
+
+  24 Feb 2016; Jeroen Roovers <jer@gentoo.org> thunderbird-38.6.0.ebuild:
+  Stable for PPC64 (bug #573074).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.6.0.ebuild:
+  amd64 stable wrt bug #573074
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*thunderbird-38.7.0 (14 Mar 2016)
+
+  14 Mar 2016; Ian Stakenvicius <axs@gentoo.org> +thunderbird-38.7.0.ebuild:
+  version bump for security bug 576862
+
+  Package-Manager: portage-2.2.26
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.7.0.ebuild:
+  amd64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Mar 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.7.0.ebuild:
+  x86 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.7.0.ebuild:
+  ppc stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.7.0.ebuild:
+  ppc64 stable wrt bug #576862
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*thunderbird-38.7.1 (25 Mar 2016)
+
+  25 Mar 2016; Ian Stakenvicius <axs@gentoo.org> +thunderbird-38.7.1.ebuild:
+  version bump for security bug 576864
+
+  thunderbird-38.7.1 addresses the graphite2 vulnerabilities
+  by disabling the bundled graphite2 library.  Functionality
+  will return in future versions, hopefully using the system copy
+  of grpahite2.
+
+  Bug: http://bugs.gentoo.org/576864
+
+  Package-Manager: portage-2.2.26
 

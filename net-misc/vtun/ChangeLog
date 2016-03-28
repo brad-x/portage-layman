@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/vtun
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *vtun-3.0.3 (09 Aug 2015)
@@ -65,4 +65,19 @@
   drop old version
 
   Package-Manager: portage-2.2.23
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  27 Jan 2016; Sergey Popov <pinkbyte@gentoo.org>
+  +files/vtun-3.0.3-gcc5.patch, vtun-3.0.3.ebuild:
+  fix building with GCC 5
+
+  Bump EAPI to 5, add slot to dev-libs/openssl dependency.
+  Add missing 'die' on sed call.
+  Make description shorter to silence QA warning.
+
+  Gentoo-Bug: 570462
+
+  Package-Manager: portage-2.2.26
 

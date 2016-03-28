@@ -1,5 +1,5 @@
 # ChangeLog for media-video/vlc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *vlc-9999 (09 Aug 2015)
@@ -162,4 +162,97 @@
   vlc-2.1.9999.ebuild, vlc-2.2.1-r1.ebuild, vlc-2.2.9999.ebuild,
   vlc-9999.ebuild:
   clean up keywords across versions
+
+  24 Jan 2016; NP-Hardass <NP-Hardass@gentoo.org> metadata.xml,
+  vlc-9999.ebuild:
+  Update 9999.  Fix bug #571568, add chromecast, restrict ffmpeg
+
+  Also removed deprecated configure flags.
+  Added chromecast support.  To use, run
+  -sout="#chromecast{ip=xxx.xxx.xxx.xxx}"
+  Restrict ffmpeg versions to <ffmpeg-2.8 for hwaccel via vaapi and vdpau
+
+  Proxied commit for Nick Andrade (SDNick484)
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*vlc-2.2.2 (09 Feb 2016)
+
+  09 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> files/qt4-select.patch,
+  +vlc-2.2.2.ebuild:
+  Bump to version 2.2.2
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  09 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/vlc-2.1-mem_undefined_functions.patch,
+  -files/vlc-2.1.0-newer-rdp.patch, -files/vlc-2.2.0-fix-xcb.patch,
+  metadata.xml, -vlc-2.1.5-r1.ebuild, -vlc-2.1.9999.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  09 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/vlc-2.2.2-qt5widgets.patch, vlc-2.2.2.ebuild:
+  Fixed compilation with qt5 (bug #574256).
+
+  Patch provided by Nick Andrade in bug #574064
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  10 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> vlc-2.2.2.ebuild:
+  Fixed dependency on qtwidgets:5
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  22 Feb 2016; Amy Winston <amynka@gentoo.org> vlc-2.2.1-r1.ebuild:
+  ffmpeg-3 blocked bug #575072
+
+  Package-Manager: portage-2.2.26
+
+  11 Mar 2016; Ian Delaney <idella4@gentoo.org> vlc-9999.ebuild:
+  update the live ebuild
+
+  Add IUSE gstreamer, rm IUSE macosx-dialog-provider,
+  add dep media-libs/gst-plugins-base set behind IUSE gstreamer,
+  take out call to epatch_user,
+  patch to live ebuild submitted by attachment in the gentoo bug
+
+  Gentoo bug: #Bug 571568
+
+  Package-Manager: portage-2.2.26
+
+  11 Mar 2016; Ian Delaney <idella4@gentoo.org> vlc-2.2.9999.ebuild:
+  update vlc-2.2.9999 ebuild
+
+  Add IUSE gstreamer, add dep media-libs/gst-plugins-base
+  set behind IUSE gstreamer, allow QT5.5,
+  patch to live ebuild submitted by attachment in the gentoo bug
+
+  Gentoo bug: #Bug 571568
+
+  Package-Manager: portage-2.2.26
+
+  11 Mar 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  Add IUSE gstreamer, zeroconf to metadata.xml
+
+  patch to live ebuild submitted by attachment in the gentoo bug
+
+  Gentoo bug: #Bug 571568
+
+  Package-Manager: portage-2.2.26
 

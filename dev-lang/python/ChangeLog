@@ -498,3 +498,45 @@
   +python-3.5.0-r2.ebuild:
   Revbump to propagate PYVER fixes
 
+  22 Jan 2016; Mike Gilbert <floppym@gentoo.org> python-3.5.1-r2.ebuild:
+  pax-mark the python binary in src_install
+
+  Bug: https://bugs.gentoo.org/569908
+
+  Package-Manager: portage-2.2.27_p47
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> python-2.7.11-r2.ebuild:
+  2.7: Do not update meaningless Python 2 preference
+
+  Python 2 preference is meaningless since we only support one version
+  of Python 2, and it causes Python 2 to be preferred over non-selected
+  versions of Python 3.
+
+  17 Feb 2016; Alexis Ballier <aballier@gentoo.org> python-2.7.11-r2.ebuild,
+  python-3.4.3-r7.ebuild, python-3.5.1-r2.ebuild:
+  2.7,3.4,3.5}: Move epatch_user call before sedding libdir. Bug #574962.
+
+  This allows sharing patches between different architectures where libdir
+  differ.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  28 Feb 2016; Michał Górny <mgorny@gentoo.org> python-2.7.11-r2.ebuild,
+  python-3.3.5-r7.ebuild, python-3.4.3-r7.ebuild, python-3.5.1-r2.ebuild:
+  Lower eselect-python deps due to pythonX.Y-config fix
+
+  Lower the dependency on app-eselect/eselect-python to 20140125-r1 since
+  that version got a fix to support pythonX.Y-config. This should make
+  a good stable candidate and starting point for migration to newer
+  python-exec versions.
+

@@ -488,3 +488,169 @@
 
   Package-Manager: portage-2.2.24
 
+*git-2.7.0-r1 (16 Jan 2016)
+
+  16 Jan 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/git-2.7.0-mediawiki-namespaces.patch,
+  +files/git-2.7.0-mediawiki-subpages.patch, +git-2.7.0-r1.ebuild,
+  git-9999.ebuild, git-9999-r1.ebuild, git-9999-r2.ebuild, git-9999-r3.ebuild,
+  metadata.xml:
+  Conditionally add patches that improve MediaWiki cloning
+
+  Package-Manager: portage-2.2.26
+
+*git-2.7.0-r2 (17 Jan 2016)
+
+  17 Jan 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/git-2.7.0-mediawiki-500pages.patch, -git-2.7.0-r1.ebuild,
+  +git-2.7.0-r2.ebuild, git-9999.ebuild, git-9999-r1.ebuild,
+  git-9999-r2.ebuild, git-9999-r3.ebuild:
+  Add yet another needed MediaWiki patch
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*git-2.7.1 (07 Feb 2016)
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +git-2.7.1.ebuild:
+  Bump to version 2.7.1
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  07 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> -git-2.6.4.ebuild,
+  -git-2.7.0.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  09 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> git-2.7.1.ebuild:
+  Move patches into PATCHES array and get rid of epatch command.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  22 Feb 2016; Fabian Groffen <grobian@gentoo.org> git-2.7.1.ebuild:
+  remove stray 6~
+
+  Package-Manager: portage-2.2.27-prefix
+
+*git-2.7.2 (23 Feb 2016)
+
+  23 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +git-2.7.2.ebuild:
+  Bump to version 2.7.2
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  23 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> -git-2.7.0-r2.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*git-2.7.3 (11 Mar 2016)
+
+  11 Mar 2016; Robin H. Johnson <robbat2@gentoo.org> +git-2.7.3.ebuild:
+  bump.
+
+  Package-Manager: portage-2.2.27
+
+  12 Mar 2016; Ulrich Müller <ulm@gentoo.org> git-2.4.10.ebuild,
+  git-2.5.4.ebuild, git-2.6.5.ebuild, git-2.7.1.ebuild, git-2.7.2.ebuild,
+  git-2.7.3.ebuild, git-9999.ebuild, git-9999-r1.ebuild, git-9999-r2.ebuild,
+  git-9999-r3.ebuild:
+  Add missing runtime dependency.
+
+  With USE=mediawiki, a dependency on dev-perl/DateTime-Format-ISO8601
+  was missing.
+
+  Bug: 576644
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> git-2.7.3.ebuild:
+  amd64 stable wrt bug #577482
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> git-2.7.3.ebuild:
+  x86 stable wrt bug #577482
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> git-2.7.3.ebuild:
+  ppc stable wrt bug #577482
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*git-2.7.3-r1 (16 Mar 2016)
+
+  16 Mar 2016; Robin H. Johnson <robbat2@gentoo.org> +git-2.7.3-r1.ebuild:
+  2.7.3 upstream did not actually contain the fix for CVE-2016-2315; backport
+  fix from master instead, see bug #577482 comment 7/8/9
+
+  Package-Manager: portage-2.2.27
+
+  17 Mar 2016; Manuel Rüger <mrueg@gentoo.org> git-2.7.3-r1.ebuild:
+  Fix whitespace
+
+  Package-Manager: portage-2.2.28
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> git-2.7.3-r1.ebuild:
+  Stable for alpha/amd64/arm/ia64/ppc/ppc64/sparc/x86 wrt bug #577482
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*git-2.7.4 (17 Mar 2016)
+*git-2.6.6 (17 Mar 2016)
+*git-2.5.5 (17 Mar 2016)
+*git-2.4.11 (17 Mar 2016)
+
+  17 Mar 2016; Robin H. Johnson <robbat2@gentoo.org> +git-2.4.11.ebuild,
+  +git-2.5.5.ebuild, +git-2.6.6.ebuild, +git-2.7.4.ebuild:
+  releases w/ official CVE-2016-2315 fix; 2.7.4 functionally identical to
+  2.7.3-r1.
+
+  Package-Manager: portage-2.2.27
+
+  20 Mar 2016; Jeroen Roovers <jer@gentoo.org> git-2.7.3-r1.ebuild:
+  Stable for HPPA (bug #577482).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  22 Mar 2016; Mike Frysinger <vapier@gentoo.org> git-2.7.3-r1.ebuild:
+  mark 2.7.3-r1 arm64/s390/sh stable
+
+  22 Mar 2016; Robin H. Johnson <robbat2@gentoo.org> git-2.7.4.ebuild:
+  Add LINGUAS support
+
+  (Sourced from Github PR #1098)
+
+  X-Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=454584
+  Signed-off-by: Jan Vesely <jano.vesely@gmail.com>
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  22 Mar 2016; Patrick McLean <chutzpah@gentoo.org> git-2.7.4.ebuild:
+  Don't try to remove nonexistant directories with USE=-nls
+
+  Package-Manager: portage-2.2.28
+
+  26 Mar 2016; Robin H. Johnson <robbat2@gentoo.org> -git-2.4.10.ebuild,
+  -git-2.5.4.ebuild, -git-2.6.5.ebuild, -git-2.7.1.ebuild, -git-2.7.2.ebuild,
+  -git-2.7.3.ebuild:
+  cleanup vuln versions per bug #577482.
+
+  Package-Manager: portage-2.2.27
+

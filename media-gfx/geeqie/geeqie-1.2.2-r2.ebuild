@@ -11,7 +11,7 @@ SRC_URI="http://www.geeqie.org/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="debug doc exif gtk3 jpeg lcms lirc lua tiff xmp"
 
 RDEPEND="gtk3? ( x11-libs/gtk+:3 )
@@ -23,7 +23,7 @@ RDEPEND="gtk3? ( x11-libs/gtk+:3 )
 	lirc? ( app-misc/lirc )
 	lua? ( >=dev-lang/lua-5.1:= )
 	xmp? ( >=media-gfx/exiv2-0.17:=[xmp] )
-	!xmp? ( exif? ( >=media-gfx/exiv2-0.17 ) )
+	!xmp? ( exif? ( >=media-gfx/exiv2-0.17:= ) )
 	tiff? ( media-libs/tiff:0 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig

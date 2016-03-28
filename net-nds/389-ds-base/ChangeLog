@@ -1,5 +1,5 @@
 # ChangeLog for net-nds/389-ds-base
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *389-ds-base-1.3.0.2-r1 (09 Aug 2015)
@@ -55,4 +55,118 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove explicit notion of maintainer-needed, for GLEP 67
+
+  GLEP 67 removes the explicit notion of maintainer-needed@g.o being used
+  for packages lacking maintainers, in favor of assuming maintainer-needed
+  whenever the package has no maintainers.
+
+  29 Jan 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Handover maintainership. Fixes bug 573262.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*389-ds-base-1.3.4.7 (02 Feb 2016)
+
+  02 Feb 2016; Wes Cilldhaire <wes@sol1.com.au> +389-ds-base-1.3.4.7.ebuild,
+  +files/389-ds-base-1.3.4.7-no-instance-script.patch,
+  +files/389-ds-base-1.3.4.7-shell-corrections.patch, +files/389-ds.initd-r1:
+  version bump to 1.3.4.7
+
+  co-authored with upstream (wibrown@redhat.com)
+
+  Gentoo-bug: 573450
+
+  Package-Manager: portage-2.2.27
+
+  05 Feb 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  -389-ds-base-1.3.0.2-r1.ebuild:
+  drop vulnerable 1.3.0.2-r1, #536334
+
+  Package-Manager: portage-2.2.26
+
+*389-ds-base-1.3.4.7-r1 (16 Feb 2016)
+
+  16 Feb 2016; Wes Cilldhaire <wes@sol1.com.au>
+  +389-ds-base-1.3.4.7-r1.ebuild:
+  revbump to 1.3.4.7-r1 to remove erroneous doins
+
+  The old ebuild had 'doins' which were putting header files in to /
+  These were carried over in to the new ebuild by mistake.
+
+  Acked-by: wibrown@redhat.com
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; Wes Cilldhaire <wes@sol1.com.au> -389-ds-base-1.3.4.7.ebuild:
+  remove old ebuild revision
+
+  Acked-by: wibrown@redhat.com
+
+  Package-Manager: portage-2.2.27
+
+*389-ds-base-1.3.4.7-r2 (16 Feb 2016)
+
+  16 Feb 2016; Wes Cilldhaire <wes@sol1.com.au>
+  +389-ds-base-1.3.4.7-r2.ebuild:
+  revbump to 1.3.4.7-r2 to fix bdb dep and nomenclature
+
+  Correct slotted dep for sys-libs/db:5.3
+  and rename ALL_DEPEND to COMMON_DEPEND
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; Wes Cilldhaire <wes@sol1.com.au>
+  -389-ds-base-1.3.4.7-r1.ebuild:
+  remove old ebuild revision
+
+  Package-Manager: portage-2.2.27
+
+*389-ds-base-1.3.4.8 (01 Mar 2016)
+
+  01 Mar 2016; Wes Cilldhaire <wes@sol1.com.au> +389-ds-base-1.3.4.8.ebuild,
+  +files/389-ds-base-1.3.4-no-instance-script.patch:
+  Version bump to 1.3.4.8
+
+  Deps on db4.8 specifically, being the current stable, instead of
+  trying to determine best installed version <6 at configure time, as
+  discussed with various devs on irc.
+
+  Additionally, 1.3.4.7 is vuln to CVE-2016-0741 and will be removed
+  in the next commit.  Upstream has advised that they will not be
+  providing a patch against 1.3.4.7 and request users to upgrade
+  to 1.3.4.8
+
+  Acked-by: wibrown@redhat.com
+
+  Package-Manager: portage-2.2.27
+
+  01 Mar 2016; Wes Cilldhaire <wes@sol1.com.au>
+  -389-ds-base-1.3.4.7-r2.ebuild, -files/389-ds-base-1.2.11-fix-mozldap.patch,
+  -files/389-ds-base-1.3.4.7-no-instance-script.patch,
+  -files/389-ds-base-1.3.4.7-shell-corrections.patch, -files/389-ds.initd:
+  Remove 1.3.4.7 and superfluous files
+
+  1.3.4.7 is vulnerable to CVE-2016-0741 and upstream has advised users
+  to upgrade to 1.3.4.8
+
+  Acked-by wibrown@redhat.com
+
+  Package-Manager: portage-2.2.27
+
+  01 Mar 2016; Wes Cilldhaire <wes@sol1.com.au> 389-ds-base-1.3.4.8.ebuild:
+  Remove unused var from 1.3.4.8 ebuild
+
+  Package-Manager: portage-2.2.27
 

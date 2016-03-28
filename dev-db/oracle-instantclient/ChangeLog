@@ -1,0 +1,26 @@
+# ChangeLog for dev-db/oracle-instantclient
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*oracle-instantclient-12.1.0.2 (09 Mar 2016)
+
+  09 Mar 2016; Michael Haubenwallner <haubi@gentoo.org>
+  +files/12.1.0.2-makefile.patch, +metadata.xml,
+  +oracle-instantclient-12.1.0.2.ebuild:
+  Revbump, as single package now.
+
+  Deprecate the oracle-instantclient-{basic,sqlplus,odbc,jdbc} packages,
+  instead provide as single oracle-instantclient package with USE flags
+  "+sdk +sqlplus odbc jdbc" instead.  Since 12c there also is the
+  Workload Replay Client, available with USE flag "tools".
+  Fixes bugs #524922, #527594.
+
+  Package-Manager: portage-2.2.26
+
+  09 Mar 2016; Michael Haubenwallner <haubi@gentoo.org>
+  files/12.1.0.2-makefile.patch, +files/tnsnames.ora.sample,
+  oracle-instantclient-12.1.0.2.ebuild:
+  12.1.0.2: really installs now, with EAPI 6
+
+  Package-Manager: portage-2.2.26
+

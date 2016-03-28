@@ -1,5 +1,5 @@
 # ChangeLog for app-text/tesseract
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *tesseract-3.04.00-r1 (09 Aug 2015)
@@ -154,4 +154,52 @@
   Remove old ebuilds.
 
   Package-Manager: portage-2.2.24
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*tesseract-3.04.00-r4 (01 Feb 2016)
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  +tesseract-3.04.00-r4.ebuild:
+  Migrate away from deprecated autotools-utils
+
+  Package-Manager: portage-2.2.27
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org> tesseract-3.04.00-r4.ebuild:
+  Trigger rebuilds against native libraries
+
+  Also, the leptonica dependency doesn't need to be fully restated for
+  the opencl case.
+
+  Package-Manager: portage-2.2.27
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  +files/tesseract-3.04.00-use-system-piccolo2d.patch,
+  tesseract-3.04.00-r4.ebuild:
+  Fix ScrollViewer
+
+  Use the system piccolo2d to build the ScrollViewer server. Stage it
+  manually instead of using install-jars so we don't have to sed through
+  the files and copy the bundled piccolo2d.
+
+  Many thanks to Olivier Diotte for the initial work on this. See
+  https://github.com/gentoo/gentoo/pull/719 for the details.
+
+  Package-Manager: portage-2.2.27
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -tesseract-3.04.00-r3.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+  02 Feb 2016; Thomas Kahle <tomka@gentoo.org>
+  +files/tesseract-3.04.00-leptonica-1.73-compat.patch,
+  tesseract-3.04.00-r4.ebuild:
+  leptonica-1.73 compatibility
+
+  Fixes bug 573382.  Thanks Dennis Schridde.
+
+  Package-Manager: portage-2.2.26
 

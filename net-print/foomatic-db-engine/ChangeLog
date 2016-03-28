@@ -1,5 +1,5 @@
 # ChangeLog for net-print/foomatic-db-engine
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *foomatic-db-engine-4.0.12 (09 Aug 2015)
@@ -56,4 +56,26 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  19 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  foomatic-db-engine-4.0.12.ebuild:
+  switch to `default`
+
+  No real changes here -- installed set of files is the same.
+
+  19 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/4.0.12-use-pkgconfig.patch, foomatic-db-engine-4.0.12.ebuild:
+  use pkg-config to locate libxml2 libs
+
+  This fixes up cross-compiling issues by utilizing standard pkg-config
+  files to locate libxml2 settings rather than `libxml2-config`.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
 

@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/x265
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *x265-9999 (09 Aug 2015)
@@ -165,4 +165,58 @@
 
   Package-Manager: portage-2.2.24
   RepoMan-Options: --ignore-arches
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Jan 2016; Agostino Sarubbo <ago@gentoo.org> x265-1.8-r3.ebuild:
+  amd64 stable wrt bug #570878
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Jan 2016; Agostino Sarubbo <ago@gentoo.org> x265-1.8-r3.ebuild:
+  x86 stable wrt bug #570878
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Jan 2016; Jeroen Roovers <jer@gentoo.org> x265-1.8-r3.ebuild:
+  Stable for HPPA PPC64 (bug #571868).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+*x265-1.9 (29 Jan 2016)
+
+  29 Jan 2016; Alexis Ballier <aballier@gentoo.org> +x265-1.9.ebuild,
+  x265-9999.ebuild:
+  bump to 1.9.
+
+  Enable 12bit by default since it is no more experimental.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  03 Feb 2016; Markus Meier <maekke@gentoo.org> x265-1.8-r3.ebuild:
+  arm stable, bug #570878
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
 

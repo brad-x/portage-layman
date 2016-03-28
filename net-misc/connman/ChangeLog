@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/connman
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *connman-1.29 (09 Aug 2015)
@@ -88,4 +88,62 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="x86"
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*connman-1.31 (01 Feb 2016)
+
+  01 Feb 2016; Yixun Lan <dlan@gentoo.org> +connman-1.31.ebuild:
+  version bump 1.31, bug 572550
+
+  bump EAPI to 6, drop base.eclass,
+  no more customized systemd unit files
+
+  thanks Ben Kohler for contribution
+
+  Package-Manager: portage-2.2.26
+
+  27 Mar 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  Update metadata.xml
+
+  Update metadata.xml to replace balint@szentedwg.ro with
+  nvinson234@gmail.com.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1144
+
+  27 Mar 2016; Ian Delaney <idella4@gentoo.org> -connman-1.27.ebuild,
+  -connman-1.30.ebuild, -connman-1.31.ebuild:
+  Remove outdated versions
+
+  Remove outdated versions connman-1.27 and conmann-1.30.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1144
+
+*connman-1.31-r1 (27 Mar 2016)
+
+  27 Mar 2016; Ian Delaney <idella4@gentoo.org> +connman-1.31-r1.ebuild,
+  +files/connman-1.31-iptables-1.6.0.patch, +files/connman-1.31-xtables.patch:
+  Fix iptables and xtables issues
+
+  Fixes issues with iptables, xtables, and glibc when building and running
+  connan.  Specifically, the patch, connman-1.31-iptables-1.6.0.patch,
+  fixes the icompatibilities between iptables and connman (due to an ABI
+  break in iptables-1.6.0).  The patch, connman-1.31-xtables.patch, uses
+  some preprocessor tricks to route around incompatibilies seen between
+  newer Linux kernels and glibc when both net/if.h and linu/if.h are
+  included in the same source.
+
+  Gentoo-bug: #573174, #577584
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1144
 

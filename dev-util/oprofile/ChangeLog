@@ -1,5 +1,5 @@
 # ChangeLog for dev-util/oprofile
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *oprofile-1.1.0 (09 Aug 2015)
@@ -80,4 +80,47 @@
 
   Package-Manager: portage-2.2.22
   Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  19 Mar 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -files/oprofile-1.0.0-athlon.patch,
+  -files/oprofile-1.0.0-opjitconv-open.patch, -oprofile-1.0.0-r2.ebuild:
+  remove old version
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> oprofile-1.1.0-r1.ebuild:
+  amd64 stable wrt bug #577752
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*oprofile-1.0.0-r2 (20 Mar 2016)
+
+  20 Mar 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +files/oprofile-1.0.0-athlon.patch,
+  +files/oprofile-1.0.0-opjitconv-open.patch, +oprofile-1.0.0-r2.ebuild:
+  Revert "dev-util/oprofile: remove old version"
+
+  This reverts commit 331e1e47a803fcc79d9e66ae54db9c364a8f1af9, which
+  accidentally removed patch used by 0.9.9-r2
+  (oprofile-1.0.0-athlon.patch).
+
+  20 Mar 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -files/oprofile-1.0.0-opjitconv-open.patch, -oprofile-1.0.0-r2.ebuild:
+  remove old unstable version
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  22 Mar 2016; Agostino Sarubbo <ago@gentoo.org> oprofile-0.9.9-r2.ebuild:
+  amd64 stable wrt bug #577750
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

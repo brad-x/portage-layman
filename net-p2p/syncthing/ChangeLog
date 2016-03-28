@@ -1,0 +1,131 @@
+# ChangeLog for net-p2p/syncthing
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*syncthing-0.12.17 (07 Feb 2016)
+
+  07 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> +metadata.xml,
+  +syncthing-0.12.17.ebuild:
+  initial version in the portage tree
+
+  Package-Manager: portage-2.2.26
+
+*syncthing-0.12.17-r1 (08 Feb 2016)
+
+  08 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> -syncthing-0.12.17.ebuild,
+  +syncthing-0.12.17-r1.ebuild:
+  set version number during build process
+
+  As suggested by Dennis Schridde.
+
+  Package-Manager: portage-2.2.26
+
+  10 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  add Jonathan Vasquez as a maintainer
+
+  Package-Manager: portage-2.2.26
+
+*syncthing-0.12.18 (10 Feb 2016)
+
+  10 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> -syncthing-0.12.17-r1.ebuild,
+  +syncthing-0.12.18.ebuild:
+  Version bump
+
+  -version was specified with an incorrect format that
+  prevented syncthing from launching.
+
+  Also add -no-upgrade telling it that we'll manage
+  updates with an external package manager.
+
+  Removed the old ebuild because it was broken anyway.
+
+  Package-Manager: portage-2.2.26
+
+  10 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> syncthing-0.12.18.ebuild:
+  add systemd unit files (fixes bug 574186)
+
+  Package-Manager: portage-2.2.26
+
+  10 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> syncthing-0.12.18.ebuild:
+  fix path to systemd unit files
+
+  14 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  remove Jonathan Vasquez from metadata
+
+  Package-Manager: portage-2.2.26
+
+*syncthing-0.12.19 (17 Feb 2016)
+
+  17 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> +syncthing-0.12.19.ebuild:
+  bump to 0.12.19, add ~x86, re-enable tests
+
+  Tests should no longer fail on x86 since
+  https://github.com/syncthing/syncthing/issues/2765
+
+  Package-Manager: portage-2.2.27
+
+  17 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  add myself as maintainer
+
+  Package-Manager: portage-2.2.27
+
+  17 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> +files/syncthing.confd,
+  +files/syncthing.initd, +files/syncthing.logrotate,
+  syncthing-0.12.19.ebuild:
+  add init script, man, logrotate
+
+  Package-Manager: portage-2.2.27
+
+  17 Feb 2016; Dirkjan Ochtman <djc@gentoo.org> syncthing-0.12.19.ebuild:
+  disable tests again in 0.12.19, fix hasn't landed yet
+
+  18 Feb 2016; Sergiy Borodych <Sergiy.Borodych@gmail.com> metadata.xml,
+  syncthing-0.12.19.ebuild:
+  fix licence & description, update metadata.xml
+
+  switch HOMEPAGE to use 'https://' (redirected by default to it),
+  description was taken from official repo description,
+  long description (taken from official site),
+  also bugs-to link was added
+
+  24 Feb 2016; Anthony Ryan <anthonyryan1@gmail.com> syncthing-0.12.19.ebuild:
+  Add ~arm keyword
+
+  Gentoo-Bug: 574428
+
+  Package-Manager: portage-2.2.26
+
+*syncthing-0.12.20 (07 Mar 2016)
+
+  07 Mar 2016; Ian Delaney <idella4@gentoo.org> +syncthing-0.12.20.ebuild:
+  bump to 0.12.20, EAPI=6, re-enable tests
+
+  This release introduces a new systemd unit: syncthing-resume
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Ian Delaney <idella4@gentoo.org> -syncthing-0.12.18.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Louis Sautier <sautier.louis@gmail.com> files/syncthing.initd:
+  fix init script permissions
+
+  Package-Manager: portage-2.2.27
+
+*syncthing-0.12.21 (23 Mar 2016)
+
+  23 Mar 2016; Dirkjan Ochtman <djc@gentoo.org> +syncthing-0.12.21.ebuild:
+  bump to 0.12.21
+
+  Removed a useless die for doman.
+
+  Package-Manager: portage-2.2.28
+
+  23 Mar 2016; Dirkjan Ochtman <djc@gentoo.org> -syncthing-0.12.19.ebuild,
+  syncthing-0.12.21.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.28
+

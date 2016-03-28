@@ -1,5 +1,5 @@
 # ChangeLog for sys-freebsd/freebsd-lib
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *freebsd-lib-10.1-r1 (09 Aug 2015)
@@ -101,4 +101,79 @@
   sys-freebsd: Move use call from global scope to pkg_setup.
 
   Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=566522
+
+*freebsd-lib-10.2-r2 (16 Jan 2016)
+
+  16 Jan 2016; Yuta Satoh <nigoro.dev@gmail.com> -freebsd-lib-10.2-r1.ebuild,
+  +freebsd-lib-10.2-r2.ebuild:
+  Fix eratta, FreeBSD-EN-16:03.ypclnt
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  28 Feb 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  fix a bit more sed usage for building under linux.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  28 Feb 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  add DESTDIR support to gen_libc_ldscript function so that we can make the
+  ldscript SYSROOT relative when building a cross compiler.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Mar 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  discriminate GNU userland based on CBUILD:-CHOST which helps when cross-
+  compiling.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Mar 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  make sys symlink SYSROOT relative
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Mar 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  add :0= dep on openssl
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Mar 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  move GNU install/sed fixes before USE=build check so that they are applied
+  also with USE=build.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Mar 2016; Alexis Ballier <aballier@gentoo.org>
+  freebsd-lib-10.2-r2.ebuild:
+  set RPCDIR to include_proper when pre-installing headers
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
 

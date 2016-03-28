@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,7 +26,7 @@ if [[ ${PV} != 9999 ]]; then
 			https://dev.gentoo.org/~floppym/dist/${P}.tar.xz"
 		S=${WORKDIR}/${P%_*}
 	fi
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="amd64 x86"
 else
 	inherit git-r3
 	EGIT_REPO_URI="git://git.sv.gnu.org/grub.git
@@ -43,7 +43,7 @@ HOMEPAGE="https://www.gnu.org/software/grub/"
 
 # Includes licenses for dejavu and unifont
 LICENSE="GPL-3 fonts? ( GPL-2-with-font-exception ) themes? ( BitstreamVera )"
-SLOT="2"
+SLOT="2/${PVR}"
 IUSE="debug device-mapper doc efiemu +fonts mount +multislot nls static sdl test +themes truetype libzfs"
 
 GRUB_ALL_PLATFORMS=( coreboot efi-32 efi-64 emu ieee1275 loongson multiboot qemu qemu-mips pc uboot xen )

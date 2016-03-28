@@ -1,5 +1,5 @@
 # ChangeLog for www-servers/apache
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *apache-2.4.16 (09 Aug 2015)
@@ -146,4 +146,61 @@
 
   Package-Manager: portage-2.2.26
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  08 Feb 2016; Pacho Ramos <pacho@gentoo.org> apache-2.4.18.ebuild,
+  metadata.xml:
+  Support mod_proxy_html (#572434 by Thomas Beutin)
+
+  Package-Manager: portage-2.2.27
+
+  09 Feb 2016; Tobias Klausmann <klausman@gentoo.org> apache-2.4.18.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 468302
+
+  Package-Manager: portage-2.2.27
+
+  25 Feb 2016; Markus Meier <maekke@gentoo.org> apache-2.4.18.ebuild:
+  arm stable, bug #468302
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+*apache-2.4.18-r1 (03 Mar 2016)
+
+  03 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +apache-2.4.18-r1.ebuild, +files/41_mod_http2.conf:
+  Revbump to add fixed init script (bug #566726)
+
+  and added a config file for http2 module.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  03 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> -apache-2.4.16.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  04 Mar 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> apache-2.4.18.ebuild:
+  amd64 stable wrt bug #468302
+
+  Package-Manager: portage-2.2.26
 

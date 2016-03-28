@@ -1,5 +1,5 @@
 # ChangeLog for net-wireless/wpa_supplicant
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *wpa_supplicant-2.4-r4 (09 Aug 2015)
@@ -118,4 +118,90 @@
   fix metadata for bug #548230
 
   Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  10 Feb 2016; Markus Meier <maekke@gentoo.org> wpa_supplicant-2.5-r1.ebuild:
+  arm stable, bug #565224
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  13 Feb 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.5-r1.ebuild:
+  amd64 stable wrt bug #565224
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.5-r1.ebuild:
+  x86 stable wrt bug #565224
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.4-r4.ebuild:
+  amd64 stable wrt bug #554860
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.4-r4.ebuild:
+  x86 stable wrt bug #554860
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Bjarke Istrup Pedersen <gurligebis@gentoo.org>
+  -wpa_supplicant-2.4-r4.ebuild:
+  Removing old version, since archs has starting stabilizing the wrong
+  version.
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.5-r1.ebuild:
+  ppc stable wrt bug #565224
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-2.5-r1.ebuild:
+  ppc64 stable wrt bug #565224
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Bjarke Istrup Pedersen <gurligebis@gentoo.org> -files/2015-1/00
+  01-P2P-Validate-SSID-element-length-before-copying-it-C.patch,
+  -files/2015-2/0001-WPS-Fix-HTTP-chunked-transfer-encoding-parser.patch, -fil
+  es/2015-3/0001-AP-WMM-Fix-integer-underflow-in-WMM-Action-frame-par.patch, -
+  files/2015-4/0001-EAP-pwd-peer-Fix-payload-length-validation-for-Commi.patch
+  , -files/2015-4/0002-EAP-pwd-server-Fix-payload-length-validation-for-Com.pa
+  tch, -files/2015-4/0003-EAP-pwd-peer-Fix-Total-Length-parsing-for-fragment-r
+  .patch, -files/2015-4/0004-EAP-pwd-server-Fix-Total-Length-parsing-for-fragm
+  ent.patch,
+  -files/2015-4/0005-EAP-pwd-peer-Fix-asymmetric-fragmentation-behavior.patch,
+  -files/2015-5/0001-NFC-Avoid-misaligned-read-of-an-NDEF-field.patch, -files/
+  2015-5/0002-NFC-Fix-payload-length-validation-in-NDEF-record-par.patch,
+  -files/wpa_supplicant-2.4-dbus-path-fix.patch,
+  -files/wpa_supplicant-2.4-do-not-call-dbus-functions-with-NULL-path.patch,
+  -files/wpa_supplicant-2.4-generate-libeap-peer.patch,
+  -wpa_supplicant-2.4-r3.ebuild:
+  Removing old, unsecure versions now that 2.5 is marked stable
+
+  Package-Manager: portage-2.2.28
 

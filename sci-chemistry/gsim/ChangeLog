@@ -60,3 +60,26 @@
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+*gsim-21.3-r1 (24 Jan 2016)
+
+  24 Jan 2016; David Seifert <soap@gentoo.org> +gsim-21.3-r1.ebuild:
+  Add CPU_FLAGS_X86=sse3 and depend on it
+
+  Gentoo-Bug: 555972
+  * Filter flags disabling SSE3 support. It is the user's
+    responsibility to ensure they have SSE3 support and it to be
+    enabled at compile time
+  * EAPI=6
+  * Port from 'qt4-r2' to 'qmake-utils'
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+

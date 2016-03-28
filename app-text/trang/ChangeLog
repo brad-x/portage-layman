@@ -1,5 +1,5 @@
 # ChangeLog for app-text/trang
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *trang-20091111-r1 (09 Aug 2015)
@@ -61,4 +61,44 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*trang-20151127 (14 Feb 2016)
+
+  14 Feb 2016; James Le Cuirot <chewi@gentoo.org> metadata.xml,
+  -trang-20091111-r1.ebuild, +trang-20151127.ebuild:
+  Version bump to latest git, fixes bug #556324
+
+  Upstream is still somewhat alive on GitHub. There has been one release
+  since 20091111 though the fix for building with Java 8 is only in git
+  master.
+
+  The tarball from GitHub is very different to the zip we used
+  previously so the build process has changed considerably, hence the
+  new dependencies. Using XSLT to generate a build.xml file is one of
+  the wackiest things I've ever seen.
+
+  The tarball also includes the jing and dtdinst tools but these require
+  additional dependencies and should be packaged separately.
+
+  Package-Manager: portage-2.2.27
+
+  14 Mar 2016; James Le Cuirot <chewi@gentoo.org> trang-20151127.ebuild:
+  20151127 stable on amd64 and x86 using ALLARCHES
+
+  Package-Manager: portage-2.2.28
+
+  14 Mar 2016; James Le Cuirot <chewi@gentoo.org> -files/build.xml,
+  -trang-20091111.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
 

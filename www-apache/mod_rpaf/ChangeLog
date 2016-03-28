@@ -1,5 +1,5 @@
 # ChangeLog for www-apache/mod_rpaf
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mod_rpaf-0.6-r1 (09 Aug 2015)
@@ -60,4 +60,23 @@
   10 Oct 2015; Mike Frysinger <vapier@gentoo.org> files/003_ipv6.patch,
   files/012_Add-missing-header-for-inet_addr.patch:
   fix various encoding corruption
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove explicit notion of maintainer-needed, for GLEP 67
+
+  GLEP 67 removes the explicit notion of maintainer-needed@g.o being used
+  for packages lacking maintainers, in favor of assuming maintainer-needed
+  whenever the package has no maintainers.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+  07 Mar 2016; Agostino Sarubbo <ago@gentoo.org> mod_rpaf-0.6-r1.ebuild:
+  amd64 stable wrt bug #549000
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

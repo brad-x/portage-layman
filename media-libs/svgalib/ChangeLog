@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/svgalib
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *svgalib-1.9.25-r4 (09 Aug 2015)
@@ -64,4 +64,48 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  22 Feb 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +files/svgalib-1.9.25-linux3.9.patch, svgalib-1.9.25-r4.ebuild:
+  fix bug 557052
+
+  Add support for file_inode() appeared in 3.9.0.
+  In 4.0 f_dentry struct was removed, so this call is the only way
+  to go.
+
+  Patch is based on  Diego Moimas proposal from bug 557052.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  22 Feb 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -files/svgalib-1.9.25-build2.patch, +files/svgalib-1.9.25-fix_buffer.patch,
+  -files/svgalib-1.9.25-kernel3.4.patch,
+  -files/svgalib-1.9.25-linux2.6.28.patch,
+  -files/svgalib-1.9.25-linux2.6.36-r1.patch,
+  -files/svgalib-1.9.25-linux2.6.patch, -files/svgalib-1.9.25-linux3.9.patch,
+  +files/svgalib-1.9.25-linux_2.6.28.patch,
+  +files/svgalib-1.9.25-linux_2.6.36-r1.patch,
+  +files/svgalib-1.9.25-linux_2.6.patch,
+  +files/svgalib-1.9.25-linux_3.4.patch,
+  +files/svgalib-1.9.25-linux_3.9.patch,
+  +files/svgalib-1.9.25-missing_include.patch, -files/svgalib-1.9.25-qa.patch,
+  -files/svgalib-1.9.25-segfault.patch, +files/svgalib-1.9.25-vga_reset.patch,
+  svgalib-1.9.25-r4.ebuild:
+  rename patches to more sane and consistent names
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+*svgalib-1.9.25-r5 (22 Feb 2016)
+
+  22 Feb 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +svgalib-1.9.25-r5.ebuild:
+  update to EAPI 6
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
 

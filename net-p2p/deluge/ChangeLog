@@ -75,3 +75,163 @@
   RepoMan-Options: --include-arches="amd64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  30 Jan 2016; Pacho Ramos <pacho@gentoo.org> deluge-1.3.12.ebuild:
+  PYTHON_REQUIRED_USE needed
+
+  Package-Manager: portage-2.2.27
+
+  10 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> metadata.xml:
+  Assign maintainership to proxied maintainer
+
+  Package-Manager: portage-2.2.27
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> deluge-1.3.12.ebuild:
+  x86 stable wrt bug #566206
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> -deluge-1.3.6.ebuild:
+  remove old
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluged.conf,
+  files/deluged.init:
+  add umask values to openrc script (Fixes bug #566862)
+
+  Thanks to Scott Jones <morbidsvt@gmail.com>
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluged.init:
+  unquote ${DELUGED_OPTS} in openrc init file
+
+  Fixes bug #437350. Thanks to Alex Belykh <albel727@ngs.ru>
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluged.init:
+  Use "/run" instead of "/var/run" for pidfiles
+
+  Fixes bug #468340
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluged.init:
+  fix bug #468340 for real, this time
+
+*deluge-1.3.12-r1 (16 Feb 2016)
+
+  16 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  +deluge-1.3.12-r1.ebuild:
+  New revision
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> +files/deluge-web.conf,
+  +files/deluge-web.init, +files/deluged.conf-2, +files/deluged.init-2:
+  unbundle startup scripts for deluge-web
+
+  Different startup scripts for daemon and web server. This fixes
+  bug #350213 (thanks to Cameron Tacklind <cameron@tacklind.com> for
+  inspiration, even though implemented slightly differently)
+
+  28 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> deluge-1.3.12-r1.ebuild:
+  unbundle startup scripts for daemon and web interface
+
+  Fixes bug #350213 (thanks to Cameron Tacklind <cameron@tacklind.com>)
+
+  28 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluge-web.conf,
+  files/deluged.conf-2:
+  Small fixes to configuration files
+
+*deluge-1.3.12-r2 (28 Feb 2016)
+
+  28 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  -deluge-1.3.12-r1.ebuild, +deluge-1.3.12-r2.ebuild:
+  split startup script for daemon and web insterface
+
+  Rename ebuild to force upgrade for ~arch users. Fixes bug #350213.
+  Thanks to Cameron Tacklind <cameron@tacklind.com> for bug report
+  and inspiration.
+
+  28 Feb 2016; Kristian Fiskerstrand <k_f@gentoo.org> files/deluge-web.init,
+  files/deluged.init-2:
+  change shebang to #!/sbin/openrc-run
+
+  29 Feb 2016; Paolo Pedroni <paolo.pedroni@iol.it> deluge-9999.ebuild:
+  sync live ebuild with latest changes
+
+  Fixes bug #476382, #293513 and #518354
+
+  29 Feb 2016; Paolo Pedroni <paolo.pedroni@iol.it>
+  -files/deluge-1.3.5-rb_libtorrent-disable-python-bindings:
+  remove unused patch
+
+  This file is no longer needed
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> files/deluge-web.conf,
+  files/deluged.conf-2:
+  improve configuration defaults
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/deluge-web.service.conf, +files/deluged.service.conf:
+  Add systemd drop-ins
+
+  These files allow configuration of systemd units
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/deluge-web.service-2, +files/deluged.service-2:
+  Improved systemd units
+
+  No more sourcing of /etc/conf.d/deluge* (QA violation). Systemd
+  units are now configured in drop-in files.
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*deluge-1.3.12-r3 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +deluge-1.3.12-r3.ebuild:
+  improved systemd support
+
+  The ebuild now creates deluge user and group (fix Gentoo bug #566806)
+  Give notice to systemd users of change in configuration files.
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -deluge-1.3.12-r2.ebuild:
+  remove old
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> deluge-9999.ebuild:
+  sync live ebuild
+
+  This series of commits closes #1010.
+
+  Pull-Request: https://github.com/gentoo/gentoo/pull/1010
+  Gentoo-Bug: https://bugs.gentoo.org/566806
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  21 Mar 2016; Patrice Clement <monsieurp@gentoo.org> deluge-1.3.12-r3.ebuild,
+  +files/deluge-1.3.12-fix_scheduler_plugin.patch:
+  fix scheduler plugin
+
+  Reporter: Giacomo Tazzari <giacomo.tazzari@gmail.com>
+  Gentoo-Bug: https://bugs.gentoo.org/577848
+  Closes: https://github.com/gentoo/gentoo/pull/1103
+

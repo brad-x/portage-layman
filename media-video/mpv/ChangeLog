@@ -644,3 +644,284 @@
 
   Package-Manager: portage-2.2.26
 
+  18 Jan 2016; Ian Delaney <idella4@gentoo.org> mpv-9999.ebuild:
+  omit obsolete etc/* entries from DOCS array in 9999
+
+  Build system is mature enough to install files under etc/* from sources
+  into docdir automatically.
+
+  Package-Manager: portage-2.2.26
+
+*mpv-0.15.0 (18 Jan 2016)
+
+  18 Jan 2016; Ian Delaney <idella4@gentoo.org> +mpv-0.15.0.ebuild:
+  version bump to 0.15.0
+
+  Package-Manager: portage-2.2.26
+
+*mpv-0.15.0-r1 (18 Jan 2016)
+
+  18 Jan 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/mpv-0.15.0-fix-null-pointer-dereference.patch, -mpv-0.15.0.ebuild,
+  +mpv-0.15.0-r1.ebuild:
+  revbump to 0.15.0-r1 to fix null pointer dereference
+
+  Upstream issue: https://github.com/mpv-player/mpv/issues/2729
+
+  Package-Manager: portage-2.2.26
+
+  20 Jan 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/mpv-0.15.0-fix-vaapi-build-on-older-ffmpeg.patch,
+  mpv-0.15.0-r1.ebuild:
+  fix 0.15.0 build with vaapi USE wrt bug 572386
+
+  Upstream issue: https://github.com/mpv-player/mpv/issues/2737
+
+  Gentoo-Bug: 572386
+
+  Package-Manager: portage-2.2.26
+
+  23 Jan 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  add support for vaapi-drm configure option to 9999
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  02 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-0.14.0-r1.ebuild:
+  omit unneeded etc/* entries from DOCS array in 0.14.0-r1
+
+  This is the backport of 8d842d6 to 0.14.0-r1 ebuild.
+  The resulting installed image isn't changed, thus no revbump.
+
+  Package-Manager: portage-2.2.27
+
+  02 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  drop inactive proxy maintainer
+
+  After many pings there's no reply from him. See 8549f2c for reference.
+
+  Package-Manager: portage-2.2.27
+
+  02 Feb 2016; Holger Hoffstätte <holger.hoffstaette@googlemail.com>
+  mpv-0.15.0-r1.ebuild, mpv-9999.ebuild:
+  add support for python 3.5
+
+  03 Feb 2016; Holger Hoffstätte <holger.hoffstaette@googlemail.com>
+  mpv-0.14.0-r1.ebuild:
+  add support for python 3.5 to 0.14 series
+
+  06 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  fix live build
+
+  libavfilter was made mandatory upstream. We've always enabled it anyway.
+
+  Package-Manager: portage-2.2.27
+
+  12 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-0.14.0-r1.ebuild,
+  mpv-0.15.0-r1.ebuild, mpv-9999.ebuild:
+  add useful comment
+
+  Package-Manager: portage-2.2.27
+
+  12 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  enable xv USE by default in 9999
+
+  Enable xv USE by default, since we enable X USE by default.
+  xv output is much better than x11 one.
+
+  Package-Manager: portage-2.2.27
+
+  12 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  untie opengl USE from X USE in 9999
+
+  opengl USE can now do something else, but enabling GLX.
+  opengl USE now also controls OpenGL support in libmpv.
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  depend on virtual/jack in 9999 when jack USE is enabled
+
+  Instead of forcing Jack1 in the form of media-sound/jack-audio-connection-
+  kit.
+  Quote from the upstream wiki [0]:
+
+  Jack 1 and Jack 2 are equivalent implementations of the same protocol.
+  ...
+  Programs compiled against Jack 1 will work with Jack 2 without recompile
+  (and vice versa).
+
+  End quote.
+
+  [0]: https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jac
+  k1_jack2
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-0.9.2-r1.ebuild:
+  restrict 0.9.2-r1 to ffmpeg < 3.0 wrt bug 575146
+
+  Gentoo-Bugs: 575146
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com> mpv-9999.ebuild:
+  explicitly disable opensles in 9999
+
+  Package-Manager: portage-2.2.27
+
+*mpv-0.16.0 (29 Feb 2016)
+
+  29 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  +files/mpv-0.16.0-fix-srt-subtitles-on-libav.patch, +mpv-0.16.0.ebuild:
+  verbump to 0.16.0
+
+  Gentoo-Bug: 575976
+
+  Package-Manager: portage-2.2.27
+
+  29 Feb 2016; Ilya Tumaykin <itumaykin@gmail.com>
+  -files/mpv-0.14.0-support-GNU-__thread.patch,
+  -files/mpv-fix-include-in-tests.patch, -mpv-0.14.0-r1.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  minor style fix
+
+  Package-Manager: portage-2.2.27
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml,
+  mpv-9999.ebuild:
+  update sdl USE description, drop sdl ewarn from 9999
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  disable sdl USE by default in 9999
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  drop useless ewarn re openal from 9999
+
+  Gentoo-Bug: 576748
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  drop useless ewarn re libav from 9999
+
+  Gentoo-Bug: 576748
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  drop spammy einfo re ffmpeg/libav from 9999
+
+  Gentoo-Bug: 576748
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml,
+  mpv-9999.ebuild:
+  add libass USE description, drop libass ewarn from 9999
+
+  Gentoo-Bug: 576748
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  bump EAPI to 6 in 9999
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-0.16.0-r1 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/mpv-0.16.0-avoid-NULL-dereference-on-wayland.patch,
+  +files/mpv-0.16.0-fix-bitrate-calculation.patch,
+  +files/mpv-0.16.0-fix-coverart-decoding.patch,
+  +files/mpv-0.16.0-set-correct-seekable-flags.patch, +mpv-0.16.0-r1.ebuild:
+  revbump to 0.16.0-r1
+
+  Prevent NULL dereference on Wayland.
+  Fix known regressions since 0.15.0.
+  Sync with 9999.
+
+  Package-Manager: portage-2.2.27
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/mpv-0.15.0-fix-null-pointer-dereference.patch,
+  -files/mpv-0.15.0-fix-vaapi-build-on-older-ffmpeg.patch,
+  -mpv-0.15.0-r1.ebuild, -mpv-0.16.0.ebuild:
+  remove old
+
+  Gentoo-Bug: https://bugs.gentoo.org/576748
+  Closes: https://github.com/gentoo/gentoo/pull/1026
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+  Package-Manager: portage-2.2.27
+
+  14 Mar 2016; Ian Delaney <idella4@gentoo.org> mpv-9999.ebuild:
+  initial Mac OS X support in 9999 wrt bug 577332
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=577332
+  Closes: https://github.com/gentoo/gentoo/pull/1043
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1043
+
+*mpv-0.16.0-r2 (14 Mar 2016)
+
+  14 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  +files/mpv-0.16.0-add-missing-audio-reconfig-events.patch,
+  -mpv-0.16.0-r1.ebuild, +mpv-0.16.0-r2.ebuild:
+  revbump to 0.16.0-r2 to backport another regression fix
+
+  Backport one more fix [1] for two regressions reported upstream [2,3].
+  Hopefully it's the final revbump unless something critical pops up.
+
+  [1]: https://github.com/mpv-player/mpv/commit/c13c9945
+  [2]: https://github.com/mpv-player/mpv/issues/2920
+  [3]: https://github.com/mpv-player/mpv/issues/2929
+
+  Closes: https://github.com/gentoo/gentoo/pull/1046
+
+  Package-Manager: portage-2.2.28
+
+  27 Mar 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  add more Mac OS X fixes wrt bug 577332 to 9999
+
+  Plus some minor style fixes.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1145
+  Gentoo-Bug: https://bugs.gentoo.org/577332
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

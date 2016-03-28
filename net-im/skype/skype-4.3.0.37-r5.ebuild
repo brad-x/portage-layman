@@ -112,6 +112,8 @@ pkg_postinst() {
 		ewarn "These packages can be pulled in by setting"
 		ewarn "appropriate USE flags for net-im/skype."
 	fi
+	elog "If skype is segfaulting for you with gcc-5+ please consider "
+	elog "instalation of dev-qt/qtwebkit[-exceptions]"
 }
 
 pkg_postrm() {

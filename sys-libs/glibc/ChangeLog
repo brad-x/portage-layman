@@ -1,5 +1,5 @@
 # ChangeLog for sys-libs/glibc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *glibc-9999 (09 Aug 2015)
@@ -235,4 +235,86 @@
   30 Dec 2015; Mike Frysinger <vapier@gentoo.org>
   files/eblits/src_configure.eblit:
   use new timezone-tools configure flag
+
+  16 Jan 2016; Mike Frysinger <vapier@gentoo.org> files/eblits/common.eblit:
+  rework sparc target selection #323445 #361779
+
+  The current code assumes all targets are at least sparc v9.  This breaks
+  people trying to build for older/embedded targets like sparc v8.  Only use
+  specific targets when the user has set -mcpu.  This does mean we will be
+  using a lower target for some users (who don't have -mcpu set), but that's
+  more in line with what we want.  Similarly, do not assume that because we
+  are using a 64-bit kernel we always want a 64-bit userland or newer cpu.
+
+  We also drop filtering of -mvis flags (we haven't been filtering the newer
+  options like -mvis2 or -mvis3) as it doesn't seem to be an issue.
+
+  We also drop the filtering of -Wa,-xarch and -Wa,-A flags.  We want to let
+  the user select their own, or just rely on the -mcpu setting.  This might
+  mean for some users they get slightly slower builds if they haven't set an
+  explicit -mcpu flag, but that's also what we want.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*glibc-2.21-r2 (16 Feb 2016)
+
+  16 Feb 2016; Mike Frysinger <vapier@gentoo.org> +glibc-2.21-r2.ebuild:
+  misc upstream fixes
+
+*glibc-2.22-r2 (16 Feb 2016)
+
+  16 Feb 2016; Mike Frysinger <vapier@gentoo.org> +glibc-2.22-r2.ebuild:
+  misc upstream fixes
+
+  17 Feb 2016; Richard Freeman <rich0@gentoo.org> glibc-2.21-r2.ebuild:
+  amd64 stable
+
+  Bug: 574880
+
+  Package-Manager: portage-2.2.26
+
+  17 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> glibc-2.21-r2.ebuild:
+  x86 stable
+
+  Bug: 574880
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  17 Feb 2016; Agostino Sarubbo <ago@gentoo.org> glibc-2.21-r2.ebuild:
+  Stable for alpha/arm/ia64/ppc/ppc64/sparc wrt security bug #574880
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org> glibc-2.21-r2.ebuild:
+  add upstream parallel build fix #574948
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org> glibc-2.21-r2.ebuild:
+  mark arm64/hppa/s390/sh stable #574880
+
+*glibc-2.23 (19 Feb 2016)
+
+  19 Feb 2016; Mike Frysinger <vapier@gentoo.org> +glibc-2.23.ebuild,
+  glibc-9999.ebuild:
+  version bump to 2.23
+
+  07 Mar 2016; Mike Frysinger <vapier@gentoo.org> glibc-2.22-r2.ebuild,
+  glibc-2.23.ebuild:
+  pull a few upstream fixes (mostly compile-time)
 

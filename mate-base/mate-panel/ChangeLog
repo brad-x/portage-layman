@@ -1,5 +1,5 @@
 # ChangeLog for mate-base/mate-panel
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mate-panel-1.8.1-r1 (09 Aug 2015)
@@ -55,4 +55,53 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/mate-panel-1.8.1-fix-networkmanager-flags.patch,
+  mate-panel-1.8.1-r1.ebuild:
+  fix compilation failure with networkmanager #570266
+
+  mate-panel-1.8.1 fails to compile with >=net-misc/networkmanager-1.0.8
+  due to a missing include directive ('-I'). Substitute network manager
+  CFLAGS and LIBS supplied by the pkgconfig macro in configure.ac and
+  use it for applets/clock.
+
+  Gentoo-Bug-URL: https://bugs.gentoo.org/show_bug.cgi?id=570266
+  Upstream-PR-URL: https://github.com/mate-desktop/mate-panel/pull/388
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*mate-panel-1.10.1 (09 Feb 2016)
+
+  09 Feb 2016; NP-Hardass <NP-Hardass@gentoo.org> +mate-panel-1.10.1.ebuild:
+  Import 1.10.x from Project:MATE repo
+
+  Package-Manager: portage-2.2.26
+
+  18 Feb 2016; Pacho Ramos <pacho@gentoo.org> mate-panel-1.8.1-r1.ebuild:
+  amd64 stable, bug #574706
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> mate-panel-1.8.1-r1.ebuild:
+  x86 stable wrt bug #574706
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; NP-Hardass <NP-Hardass@gentoo.org> -mate-panel-1.8.0.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.26
 

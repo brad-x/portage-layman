@@ -1,5 +1,5 @@
 # ChangeLog for gnustep-apps/sogo
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sogo-2.3.2 (03 Nov 2015)
@@ -11,4 +11,53 @@
   Based on Michael Webers work.
 
   Gentoo-Bug: 564562
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  09 Feb 2016; Justin Lecher <jlec@gentoo.org> files/sogod.initd:
+  Convert $Header to $Id
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*sogo-3.0.1 (17 Feb 2016)
+
+  17 Feb 2016; Bernard Cafarelli <voyageur@gentoo.org> +sogo-3.0.1.ebuild:
+  version bump
+
+  Package-Manager: portage-2.2.27
+
+*sogo-3.0.2 (09 Mar 2016)
+
+  09 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org> +sogo-3.0.2.ebuild:
+  version bump
+
+  Package-Manager: portage-2.2.27
+
+  24 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org> -sogo-3.0.1.ebuild:
+  drop old 3.x
+
+  Package-Manager: portage-2.2.28
+
+  24 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org> sogo-2.3.2.ebuild,
+  sogo-3.0.2.ebuild:
+  raise min gnustep-make dependency
+
+  Reported by Wolfgang Apolinarski <apolinarski@locoslab.com>
+
+  Package-Manager: portage-2.2.28
 

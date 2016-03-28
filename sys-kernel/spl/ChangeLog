@@ -1,5 +1,5 @@
 # ChangeLog for sys-kernel/spl
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *spl-9999 (09 Aug 2015)
@@ -209,4 +209,50 @@
   Fails to compile when GRKERNSEC_RANDSTRUCT is enabled.
 
   Package-Manager: portage-2.2.20.1
+
+  16 Jan 2016; Richard Yao <ryao@gentoo.org> spl-0.6.3-r1.ebuild:
+  0.6.3-r1: Drop !PAX_RANDKSTACK (bug #532992)
+
+  This was erroneously enabled following miscommunication with the
+  hardened team. It was removed from all other ebuilds except
+  sys-kernel/spl-0.6.3-r1.
+
+  8573dd@gmail.com filed #532992 on it, which is now being resolved as
+  part of a sweep of old bugs that were previously neglected due to a mix
+  of a lack of time to do a final check and the belief that they had been
+  resolved.
+
+  Package-Manager: portage-2.2.24
+
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*spl-0.6.5.4-r1 (27 Jan 2016)
+*spl-0.6.5.4 (27 Jan 2016)
+
+  27 Jan 2016; Richard Yao <ryao@gentoo.org> +spl-0.6.5.4.ebuild,
+  +spl-0.6.5.4-r1.ebuild:
+  sys-fs/spl-0.6.5.4{,-r1}: Version Bump
+
+  The patches from the 0.6.5.3-r1 ebuild that were not backported
+  upstream have been carried forward in 0.6.5.4-r1. 0.6.5.4 has been
+  commited without any patches as an aid to users who do not want
+  patches. However, it is left unkeyworded to be consistent with the
+  sys-fs/zfs-kmod ebuild.
+
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Richard Yao <ryao@gentoo.org>
+
+  09 Feb 2016; Jason Zaman <perfinion@gentoo.org> spl-9999.ebuild:
+  9999: Update kernel config reqs for grsec
+
+  compatibility with Grsec's HIDESYM has been fixed in a few released versions
+  already. RANDSTRUCT causes compile failures.
+
+  They are correct in the latest release ebuild but the live ebuild was
+  out of sync.
+
+  Package-Manager: portage-2.2.26
 

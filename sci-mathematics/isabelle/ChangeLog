@@ -1,5 +1,5 @@
 # ChangeLog for sci-mathematics/isabelle
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *isabelle-2013.2-r1 (09 Aug 2015)
@@ -74,4 +74,57 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*isabelle-2015 (16 Feb 2016)
+
+  16 Feb 2016; Mark Wright <gienah@gentoo.org>
+  +files/isabelle-2015-classpath.patch,
+  +files/isabelle-2015-jfreechart-classpath.patch, +isabelle-2015.ebuild:
+  Bump to 2015, check diskspace and memory.
+
+  Thanks to Toralf F?rster for reporting the need to check diskspace, and
+  Jonas Jelten for requesting the version bump.
+  Gentoo-Bugs: 548864 562864
+
+  Package-Manager: portage-2.2.27
+
+  16 Feb 2016; Mark Wright <gienah@gentoo.org> isabelle-2015.ebuild:
+  Remove sci-mathematics/csdp, as found existing sci-libs/coinor-csdp
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  -files/isabelle-2011.1-gentoo-settings.patch,
+  -files/isabelle-2011.1-graphbrowser.patch,
+  -files/isabelle-2011.1-libsha1.patch,
+  -files/isabelle-2011.1-proofgeneral-gentoo-path.patch,
+  -files/isabelle-2011.1-reverse-line-editor-order.patch,
+  -files/isabelle-2012-gentoo-settings.patch, -files/isabelle-2012-redundant-e
+  quations-in-function-definitions-error.patch,
+  -files/isabelle-2012-signal-handling.patch,
+  -files/isabelle-2013-HOL-Predicate_Compile_Examples.patch,
+  -files/isabelle-2013-classpath.patch,
+  -files/isabelle-2013.2-classpath.patch, -isabelle-2011.1.ebuild,
+  -isabelle-2011.1-r2.ebuild, -isabelle-2012-r1.ebuild,
+  -isabelle-2013-r2.ebuild, -isabelle-2013.2-r1.ebuild, metadata.xml:
+  Remove old
+
+  Package-Manager: portage-2.2.27
 

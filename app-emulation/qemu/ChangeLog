@@ -1,5 +1,5 @@
 # ChangeLog for app-emulation/qemu
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *qemu-9999 (09 Aug 2015)
@@ -445,4 +445,132 @@
   20 Dec 2015; Mike Frysinger <vapier@gentoo.org> qemu-2.5.0.ebuild,
   qemu-9999.ebuild:
   disable libgcrypt usage #568856
+
+*qemu-2.5.0-r1 (18 Jan 2016)
+
+  18 Jan 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/qemu-2.5.0-CVE-2015-8558.patch,
+  +files/qemu-2.5.0-CVE-2015-8567.patch,
+  +files/qemu-2.5.0-CVE-2015-8701.patch,
+  +files/qemu-2.5.0-CVE-2015-8743.patch,
+  +files/qemu-2.5.0-CVE-2016-1568.patch, +qemu-2.5.0-r1.ebuild:
+  add upstream fixes for #567868 #568246 #570110 #570988 #571566
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  26 Jan 2016; Agostino Sarubbo <ago@gentoo.org> qemu-2.5.0-r1.ebuild:
+  amd64 stable wrt bug #571566
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Jan 2016; Agostino Sarubbo <ago@gentoo.org> qemu-2.5.0-r1.ebuild:
+  x86 stable wrt bug #571566
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Feb 2016; Doug Goldstein <cardoe@gentoo.org>
+  -files/qemu-1.7.0-cflags.patch, -files/qemu-2.4-mips-fix-mtc0.patch,
+  -files/qemu-2.4-mips-fix-rdhwr.patch,
+  -files/qemu-2.4-mips-move-interrupts-new-func.patch,
+  -files/qemu-2.4-mips-wake-up-on-irq.patch,
+  -files/qemu-2.4.1-CVE-2015-7504.patch,
+  -files/qemu-2.4.1-CVE-2015-7512.patch,
+  -files/qemu-2.4.1-CVE-2015-7549.patch,
+  -files/qemu-2.4.1-CVE-2015-8345.patch,
+  -files/qemu-2.4.1-CVE-2015-8504.patch, -qemu-2.4.1-r2.ebuild,
+  -qemu-2.5.0.ebuild:
+  remove vulnerable versions
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  15 Feb 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+  Package-Manager: portage-2.2.27
+
+  19 Feb 2016; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  restore USE=gnutls use desc for side-effects
+
+  commit ea4d1e1fcc just removed the USE=tls, rather than updating it for
+  USE=gnutls. Per the description, it has side-effects of enabling
+  enabling WebSocket & disk quorum features.
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Doug Goldstein <cardoe@gentoo.org> qemu-2.5.0-r1.ebuild:
+  fix arm64 dependencies
+
+  arm/arm64 have some dependencies which are higher than other platforms.
+  Unfortunately the dependencies are not stable on arm but this package is
+  so arm updates will come later.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  28 Feb 2016; Matthew Thode <prometheanfire@gentoo.org> qemu-2.5.0-r1.ebuild:
+  keywording arm64
+
+  merged on X-C1
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Doug Goldstein <cardoe@gentoo.org> qemu-2.5.0-r1.ebuild:
+  fix arm depends for libseccomp
+
+  arm needs libseccomp 2.2.3 or newer for QEMU to be able to utilize it.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+*qemu-2.5.0-r2 (23 Mar 2016)
+
+  23 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/qemu-2.5.0-CVE-2015-8613.patch,
+  +files/qemu-2.5.0-CVE-2015-8619.patch,
+  +files/qemu-2.5.0-CVE-2016-1714.patch,
+  +files/qemu-2.5.0-CVE-2016-1922.patch,
+  +files/qemu-2.5.0-CVE-2016-1981.patch,
+  +files/qemu-2.5.0-CVE-2016-2197.patch,
+  +files/qemu-2.5.0-CVE-2016-2198.patch,
+  +files/qemu-2.5.0-CVE-2016-2392.patch,
+  +files/qemu-2.5.0-rng-stack-corrupt-0.patch,
+  +files/qemu-2.5.0-rng-stack-corrupt-1.patch,
+  +files/qemu-2.5.0-rng-stack-corrupt-2.patch,
+  +files/qemu-2.5.0-rng-stack-corrupt-3.patch,
+  +files/qemu-2.5.0-sysmacros.patch, +files/qemu-2.5.0-usb-ehci-oob.patch,
+  +files/qemu-2.5.0-usb-ndis-int-overflow.patch, +qemu-2.5.0-r2.ebuild:
+  backport various upstream fixes
+
+  24 Mar 2016; Agostino Sarubbo <ago@gentoo.org> qemu-2.5.0-r2.ebuild:
+  amd64 stable wrt bug #578044
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Mar 2016; Agostino Sarubbo <ago@gentoo.org> qemu-2.5.0-r2.ebuild:
+  x86 stable wrt bug #578044
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Mar 2016; Sergey Popov <pinkbyte@gentoo.org> -qemu-2.5.0-r1.ebuild:
+  security cleanup
+
+  Gentoo-Bug: 576420
+
+  Package-Manager: portage-2.2.28
 

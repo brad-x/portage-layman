@@ -307,3 +307,114 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*cryptography-1.2.2 (01 Feb 2016)
+
+  01 Feb 2016; Justin Lecher <jlec@gentoo.org> +cryptography-1.2.2.ebuild:
+  Version Bump
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  09 Feb 2016; Tobias Klausmann <klausman@gentoo.org>
+  cryptography-1.1.2.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 574150
+
+  Package-Manager: portage-2.2.27
+
+  13 Feb 2016; Agostino Sarubbo <ago@gentoo.org> cryptography-1.1.2.ebuild:
+  amd64 stable wrt bug #574150
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> cryptography-1.1.2.ebuild:
+  x86 stable wrt bug #574150
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Feb 2016; Jeroen Roovers <jer@gentoo.org> cryptography-1.1.2.ebuild:
+  Stable for HPPA PPC64 (bug #574150).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> cryptography-1.1.2.ebuild:
+  arm stable, bug #574150
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  01 Mar 2016; Jason A. Donenfeld <zx2c4@gentoo.org>
+  cryptography-1.2.2.ebuild,
+  +files/cryptography-1.2.2-openssl-1.0.2g-mem_buf.patch:
+  work with openssl 1.0.2g
+
+  Signed-off-by: Jason A. Donenfeld <zx2c4@gentoo.org>
+
+  02 Mar 2016; Mike Gilbert <floppym@gentoo.org> cryptography-1.1.2.ebuild,
+  files/cryptography-1.2.2-openssl-1.0.2g-mem_buf.patch:
+  Backport openssl 1.0.2g fix to stable ebuild
+
+  The replaces the patch by zx2c4 with a more flexible patch
+  from upstream. This ensures that the package can build against any
+  version of openssl in the tree.
+
+  Package-Manager: portage-2.2.27_p64
+
+*cryptography-1.2.3 (02 Mar 2016)
+
+  02 Mar 2016; Mike Frysinger <vapier@gentoo.org> +cryptography-1.2.3.ebuild:
+  verison bump to 1.2.3 and add openssl subslot #576128
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> cryptography-1.1.2.ebuild:
+  ppc stable wrt bug #574150
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> cryptography-1.1.2.ebuild:
+  sparc stable wrt bug #574150
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Dirkjan Ochtman <djc@gentoo.org> -cryptography-1.1.ebuild,
+  -cryptography-1.1.1.ebuild, -cryptography-1.2.1.ebuild,
+  -cryptography-1.2.2.ebuild:
+  remove old versions
+
+  Package-Manager: portage-2.2.26
+
+*cryptography-1.3 (20 Mar 2016)
+
+  20 Mar 2016; Dirkjan Ochtman <djc@gentoo.org> +cryptography-1.3.ebuild:
+  version bump to 1.3
+
+  Package-Manager: portage-2.2.26
+
+  22 Mar 2016; Agostino Sarubbo <ago@gentoo.org> cryptography-1.1.2.ebuild:
+  ia64 stable wrt bug #574150
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  22 Mar 2016; Mike Frysinger <vapier@gentoo.org> cryptography-1.1.2.ebuild:
+  mark 1.1.2 arm64/m68k/s390/sh stable #574150
+

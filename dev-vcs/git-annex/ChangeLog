@@ -1,5 +1,5 @@
 # ChangeLog for dev-vcs/git-annex
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *git-annex-5.20150710 (09 Aug 2015)
@@ -72,4 +72,66 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+*git-annex-5.20151218 (22 Jan 2016)
+
+  22 Jan 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +git-annex-5.20151218.ebuild, metadata.xml:
+  bump up to 5.20151218
+
+  Package-Manager: portage-2.2.27
+
+  22 Jan 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/git-annex-6.20160114-QC-2.8.2.patch, git-annex-5.20151218.ebuild:
+  fix against QC-2.8.2, bug #572504
+
+  QuickCheck-2.8.2 introduced default instances for
+  Data.Map and Data.Set. git-annex happened to provide
+  those as well.
+
+  Reported-by: bugtrack@web.de
+  Reported-by:  Matthias Maier
+  Bug: https://bugs.gentoo.org/572504
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*git-annex-6.20160126 (06 Feb 2016)
+
+  06 Feb 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +git-annex-6.20160126.ebuild, metadata.xml:
+  bump up to 6.20160126, bug #572996
+
+  While at it restored dependencies on non-haskell packages:
+      git, ikiwiki, perl, rsync
+
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/572996
+
+  Package-Manager: portage-2.2.27
+
+  06 Feb 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  -git-annex-5.20140927.ebuild, -git-annex-5.20141125.ebuild,
+  -git-annex-5.20141203.ebuild, -git-annex-5.20141231.ebuild,
+  -git-annex-5.20150219.ebuild, -git-annex-5.20150327.ebuild,
+  -git-annex-5.20150617.ebuild, -git-annex-5.20150710.ebuild:
+  drop old
+
+  Package-Manager: portage-2.2.27
 

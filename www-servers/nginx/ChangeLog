@@ -1,5 +1,5 @@
 # ChangeLog for www-servers/nginx
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nginx-1.9.3 (09 Aug 2015)
@@ -124,4 +124,142 @@
   Version bump
 
   Package-Manager: portage-2.2.25
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*nginx-1.8.1 (02 Feb 2016)
+
+  02 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +nginx-1.8.1.ebuild:
+  Version bump
+
+  Gentoo-Bug: 573046
+
+  Package-Manager: portage-2.2.27
+
+  02 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.6.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+  03 Feb 2016; Agostino Sarubbo <ago@gentoo.org> nginx-1.8.1.ebuild:
+  amd64 stable wrt bug #573046
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Feb 2016; Agostino Sarubbo <ago@gentoo.org> nginx-1.8.1.ebuild:
+  x86 stable wrt bug #573046
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.8.0.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+*nginx-1.9.10 (03 Feb 2016)
+
+  03 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +nginx-1.9.10.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.27
+
+  03 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.7.ebuild:
+  Remove vulnerable
+
+  Gentoo-Bugs: 573046
+
+  Package-Manager: portage-2.2.27
+
+*nginx-1.9.10-r1 (06 Feb 2016)
+
+  06 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +files/nginx.conf-r2,
+  +nginx-1.9.10-r1.ebuild:
+  Add auth_ldap, stream, slice modules
+
+  This commit adds http_slice, stream, auth_ldap modules and support for
+  libressl. It also updates 3rd party modules, enables http2 by default
+  and disables gzip by default.
+
+*nginx-1.9.10-r2 (06 Feb 2016)
+
+  06 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +nginx-1.9.10-r2.ebuild:
+  Fix typo in configure option
+
+  Package-Manager: portage-2.2.27
+
+  06 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.10-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+*nginx-1.9.10-r3 (07 Feb 2016)
+
+  07 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +nginx-1.9.10-r3.ebuild:
+  Fix build without slice module
+
+  Gentoo-Bug: 574020
+
+  Thanks to: Thomas D. <whissi@whissi.de>
+
+  Package-Manager: portage-2.2.27
+
+  07 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.10-r2.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+  21 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org> files/nginx.logrotate-r1:
+  use the nginx utility command for log reopening
+
+*nginx-1.9.12 (02 Mar 2016)
+
+  02 Mar 2016; Thomas D <whissi@whissi.de> +nginx-1.9.12.ebuild:
+  Bump to v1.9.12 (#574342)
+
+  Changes:
+    - Bumped to EAPI=6
+
+    - nginx_modules_http_fancyindex bumped to v0.3.6
+
+    - nginx_modules_http_lua bumped to v0.10.1rc1
+
+    - nginx_modules_http_auth_ldap bumped to
+  8517bb05ecc896b54429ca5e95137b0a386bd41a
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=574342
+
+  Package-Manager: portage-2.2.27
+
+  02 Mar 2016; Jason A. Donenfeld <zx2c4@gentoo.org> nginx-1.9.10-r3.ebuild:
+  work with libressl
+
+  03 Mar 2016; Jason A. Donenfeld <zx2c4@gentoo.org> nginx-1.9.12.ebuild:
+  Support libressl
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.10.ebuild,
+  -nginx-1.9.10-r3.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
 

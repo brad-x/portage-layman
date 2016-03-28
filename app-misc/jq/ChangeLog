@@ -91,3 +91,28 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*jq-1.5-r1 (01 Feb 2016)
+
+  01 Feb 2016; Patrick McLean <chutzpah@gentoo.org> +jq-1.5-r1.ebuild:
+  Revision bump, update bison dep to >=3.0 add rdep on oniguruma
+
+  Gentoo-Bug: 573058
+
+  Package-Manager: portage-2.2.27
+
+  01 Feb 2016; Patrick McLean <chutzpah@gentoo.org> -jq-1.5.ebuild:
+  Drop ebuild for 1.5 since -r1 fixes some depdency issues
+
+  Package-Manager: portage-2.2.27
+

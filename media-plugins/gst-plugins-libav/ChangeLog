@@ -1,5 +1,5 @@
 # ChangeLog for media-plugins/gst-plugins-libav
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gst-plugins-libav-1.4.5-r1 (09 Aug 2015)
@@ -174,6 +174,59 @@
   We need to rely on internal ffmpeg copy for letting libav users to use the
   plugin as upstream has decided to stop trying to make this compatible with
   libav lib
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*gst-plugins-libav-1.6.3 (31 Jan 2016)
+
+  31 Jan 2016; Gilles Dartiguelongue <g.dartiguelongue@lexfo.fr>
+  +gst-plugins-libav-1.6.3.ebuild:
+  version bump to 1.6.3
+
+  Drop ia64 and sparc keyword due to ffmpeg requirement.
+
+  Package-Manager: portage-2.2.27
+
+  31 Jan 2016; Pacho Ramos <pacho@gentoo.org> gst-plugins-libav-1.6.3.ebuild:
+  ia64/sparc rekeyword (#560382)
+
+  Package-Manager: portage-2.2.27
+
+  17 Feb 2016; Alexis Ballier <aballier@gentoo.org>
+  +files/gst-plugins-libav-1.6.3-bitrate.patch,
+  +files/gst-plugins-libav-1.6.3-chain-dispose.patch,
+  +files/gst-plugins-libav-1.6.3-deinterlace-lavf.patch,
+  +files/gst-plugins-libav-1.6.3-minr-compat.patch,
+  +files/gst-plugins-libav-1.6.3-minr-maxr.patch,
+  +files/gst-plugins-libav-1.6.3-no-deprecated.patch,
+  gst-plugins-libav-1.6.3.ebuild:
+  Fix build and runtime with ffmpeg 3.0. Bug #574790.
+
+  Patches are all from upstream, except gst-plugins-libav-1.6.3-minr-
+  compat.patch which is a small #ifdefery more by myself to preserve working
+  options and passing tests with ffmpeg 2.8.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  21 Feb 2016; Pacho Ramos <pacho@gentoo.org> gst-plugins-libav-1.6.3.ebuild:
+  amd64 stable, bug 566378
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="amd64"
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org>
+  gst-plugins-libav-1.6.3.ebuild:
+  x86 stable wrt bug #566378
 
   Package-Manager: portage-2.2.26
 

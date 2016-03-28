@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/plib
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *plib-1.8.5 (09 Aug 2015)
@@ -58,4 +58,77 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*plib-1.8.5-r1 (23 Jan 2016)
+
+  23 Jan 2016; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/plib-1.8.5-CVE-2011-4552.patch,
+  +files/plib-1.8.5-CVE-2011-4620.patch, files/plib-1.8.5-X11.patch,
+  +plib-1.8.5-r1.ebuild:
+  add patches from Debian (bug #395553 and bug #440762)
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> plib-1.8.5-r1.ebuild:
+  amd64 stable wrt bug #395553
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  09 Mar 2016; Jeroen Roovers <jer@gentoo.org> plib-1.8.5-r1.ebuild:
+  Stable for HPPA (bug #395553).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  14 Mar 2016; Tobias Klausmann <klausman@gentoo.org> plib-1.8.5-r1.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 395553
+
+  Package-Manager: portage-2.2.28
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> plib-1.8.5-r1.ebuild:
+  x86 stable wrt bug #395553
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> plib-1.8.5-r1.ebuild:
+  ppc stable wrt bug #395553
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> plib-1.8.5-r1.ebuild:
+  sparc stable wrt bug #395553
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Michael Sterrett <mr_bones_@gentoo.org> -plib-1.8.5.ebuild:
+  clean old
+
+  Package-Manager: portage-2.2.26
 

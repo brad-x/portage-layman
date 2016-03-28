@@ -1,5 +1,5 @@
 # ChangeLog for dev-ruby/mocha
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mocha-1.1.0 (09 Aug 2015)
@@ -77,4 +77,53 @@
   Update remote-ids
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  18 Mar 2016; Hans de Graaff <graaff@gentoo.org> mocha-1.1.0.ebuild:
+  drop ruby19
+
+  Package-Manager: portage-2.2.26
+
+  18 Mar 2016; Hans de Graaff <graaff@gentoo.org> mocha-1.1.0.ebuild:
+  use rdoc to build documentation
+
+  Package-Manager: portage-2.2.26
+
+  21 Mar 2016; Hans de Graaff <graaff@gentoo.org> mocha-1.1.0.ebuild:
+  add ruby23
+
+  Package-Manager: portage-2.2.26
+
+  22 Mar 2016; Manuel Rüger <mrueg@gentoo.org> mocha-0.10.5-r1.ebuild,
+  mocha-0.10.5-r2.ebuild, mocha-0.11.4.ebuild, mocha-0.11.4-r1.ebuild,
+  mocha-0.12.7.ebuild, mocha-0.12.10.ebuild, mocha-0.12.10-r1.ebuild,
+  mocha-0.13.3.ebuild, mocha-0.13.3-r1.ebuild, mocha-0.13.3-r2.ebuild,
+  mocha-0.14.0.ebuild, mocha-1.1.0.ebuild:
+  Fix description
+
+  Package-Manager: portage-2.2.28
+
+  28 Mar 2016; Hans de Graaff <graaff@gentoo.org> mocha-0.14.0.ebuild:
+  drop ruby19, add ruby23
+
+  Also add dev-ruby/yard as a test dependency since it is referenced in
+  the Rakefile.
+
+  Package-Manager: portage-2.2.26
 

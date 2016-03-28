@@ -126,3 +126,121 @@
 
   Package-Manager: portage-2.2.26
 
+*nodejs-5.4.1 (19 Jan 2016)
+
+  19 Jan 2016; Patrick Lauer <patrick@gentoo.org> +nodejs-5.4.1.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  04 Feb 2016; Johan Bergström <bugs@bergstroem.nu> nodejs-0.12.6.ebuild,
+  nodejs-0.12.7.ebuild, nodejs-4.1.1.ebuild, nodejs-4.2.2.ebuild,
+  nodejs-5.0.0.ebuild, nodejs-5.3.0.ebuild, nodejs-5.4.1.ebuild:
+  remove iojs references
+
+*nodejs-5.5.0 (09 Feb 2016)
+
+  09 Feb 2016; Patrick Lauer <patrick@gentoo.org> +nodejs-5.5.0.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.27
+
+*nodejs-5.6.0 (11 Feb 2016)
+
+  11 Feb 2016; Patrick Lauer <patrick@gentoo.org>
+  +files/gentoo-global-npm-config.patch, -nodejs-5.5.0.ebuild,
+  +nodejs-5.6.0.ebuild:
+  Bump #574418, thanks to jbergstroem
+
+  Package-Manager: portage-2.2.27
+
+*nodejs-5.6.0-r1 (11 Feb 2016)
+
+  11 Feb 2016; Patrick Lauer <patrick@gentoo.org> -nodejs-5.6.0.ebuild,
+  +nodejs-5.6.0-r1.ebuild:
+  Unhardcode path #574460
+
+  Package-Manager: portage-2.2.27
+
+  04 Mar 2016; Steev Klimaszewski <steev@gentoo.org> nodejs-5.6.0-r1.ebuild:
+  Keyword 5.6.0-r1 for ~arm64
+
+  Tested on Cortex-A53
+
+  Package-Manager: portage-2.2.27
+
+*nodejs-5.7.1 (09 Mar 2016)
+
+  09 Mar 2016; Patrick Lauer <patrick@gentoo.org> +nodejs-5.7.1.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.27
+
+*nodejs-5.8.0 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +nodejs-5.8.0.ebuild:
+  version bump to 5.8.0
+
+  Closes: https://github.com/gentoo/gentoo/pull/1021
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*nodejs-4.4.0 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +nodejs-4.4.0.ebuild:
+  version bump to 4.4.0
+
+  Backports a few build-related fixes from 5.8.0:
+   - Require python built with threads (multiprocessing)
+   - Update dependencies
+   - cpu flag checks pre building
+   - remove the test removal. file failed tests upstream please!
+
+  Closes: https://github.com/gentoo/gentoo/pull/1021
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*nodejs-0.12.10 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +nodejs-0.12.10.ebuild:
+  version bump to 0.12.10
+
+  Closes: https://github.com/gentoo/gentoo/pull/1021
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*nodejs-5.9.0 (17 Mar 2016)
+
+  17 Mar 2016; Patrick Lauer <patrick@gentoo.org> +nodejs-5.9.0.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.28
+
+  19 Mar 2016; Steev Klimaszewski <steev@gentoo.org> nodejs-5.9.0.ebuild:
+  Add ~arm64 back
+
+  It would appear ~arm64 was dropped with the 5.7.0 bump, but I don't see why.
+
+  Package-Manager: portage-2.2.28
+
+  20 Mar 2016; Steev Klimaszewski <steev@gentoo.org> nodejs-4.4.0.ebuild:
+  Add ~arm64 to 4.4.0
+
+  Since 4.x is an LTS release, keyword it as well after some minor testing.
+
+  Package-Manager: portage-2.2.28
+

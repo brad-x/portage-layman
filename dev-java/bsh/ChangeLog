@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/bsh
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *bsh-2.0_beta4-r4 (09 Aug 2015)
@@ -53,4 +53,55 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> bsh-2.0_beta4-r4.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*bsh-2.0_beta6 (23 Feb 2016)
+
+  23 Feb 2016; Patrice Clement <monsieurp@gentoo.org> bsh-2.0_beta4-r4.ebuild,
+  +bsh-2.0_beta6.ebuild:
+  Version bump. Fixes security bug 575482.
+
+  Whilst at it, this commit also bumps the ebuild to EAPI version 5.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> bsh-2.0_beta6.ebuild:
+  amd64 stable wrt bug #575482
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  02 Mar 2016; Patrice Clement <monsieurp@gentoo.org> bsh-2.0_beta6.ebuild:
+  Swap java-pkg_dohtml for java-pkg_dojavadoc to install documentation.
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Patrice Clement <monsieurp@gentoo.org> bsh-2.0_beta6.ebuild:
+  Stable for ppc64+x86. Fixes security bug 575482.
+
+  As per IRC discussion with Agostino.
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -bsh-2.0_beta4-r4.ebuild, -files/bsh2-readline.patch,
+  -files/bsh2.0b4-build.patch:
+  Clean up vulnerable version. Fixes security bug 575482.
+
+  Package-Manager: portage-2.2.26
 

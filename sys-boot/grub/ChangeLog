@@ -220,3 +220,66 @@
 
   Package-Manager: portage-2.2.24
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Feb 2016; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r8.ebuild,
+  grub-2.02_beta2-r9.ebuild:
+  Set subslot to PVR
+
+  This change allows packages to rebuild themselves whenever grub is upgraded.
+
+  Bug: https://bugs.gentoo.org/575334
+
+  Package-Manager: portage-2.2.27_p64
+
+  04 Mar 2016; Mike Gilbert <floppym@gentoo.org> grub-9999-r1.ebuild:
+  Update the live ebuild
+
+  Move to EAPI 6 and various other cleanups.
+
+  Package-Manager: portage-2.2.27_p64
+
+*grub-2.02_beta3 (04 Mar 2016)
+
+  04 Mar 2016; Mike Gilbert <floppym@gentoo.org> +files/gfxpayload.patch,
+  +grub-2.02_beta3.ebuild, grub-9999-r1.ebuild:
+  Bump to 2.02_beta3
+
+  Package-Manager: portage-2.2.27_p64
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> grub-2.02_beta2-r9.ebuild:
+  amd64 stable wrt bug #575596
+
+  Package-Manager: portage-2.2.26
+
+*grub-2.02_beta3-r1 (05 Mar 2016)
+
+  05 Mar 2016; Mike Gilbert <floppym@gentoo.org>
+  +files/2.02_beta3-10_linux-UUID.patch, -grub-2.02_beta3.ebuild,
+  +grub-2.02_beta3-r1.ebuild:
+  Make GRUB_DISABLE_LINUX_UUID work again
+
+  Bug: https://bugs.gentoo.org/576528
+
+  Package-Manager: portage-2.2.27_p64
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> grub-2.02_beta2-r9.ebuild:
+  x86 stable wrt bug #575596
+
+  Package-Manager: portage-2.2.26
+

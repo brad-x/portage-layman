@@ -1,5 +1,5 @@
 # ChangeLog for dev-java/jempbox
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *jempbox-1.7.1 (09 Aug 2015)
@@ -60,4 +60,47 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org> jempbox-0.2.0.ebuild,
+  jempbox-1.7.1.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  20 Feb 2016; Patrice Clement <monsieurp@gentoo.org> -jempbox-0.2.0.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.26
+
+*jempbox-1.8.11 (25 Feb 2016)
+
+  25 Feb 2016; James Le Cuirot <chewi@gentoo.org> +jempbox-1.8.11.ebuild,
+  metadata.xml:
+  Version bump, EAPI bump, java-pkg-simple rewrite
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; James Le Cuirot <chewi@gentoo.org> jempbox-1.8.11.ebuild:
+  Stable on amd64, ppc64, x86 using ALLARCHES
+
+  A little early because of the push to remove Java 6.
+
+  Package-Manager: portage-2.2.27
 

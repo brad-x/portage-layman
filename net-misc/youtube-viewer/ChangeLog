@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/youtube-viewer
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *youtube-viewer-9999 (09 Aug 2015)
@@ -92,4 +92,48 @@
   And rather tell the user to install a compatible video player.
   Since these are not strictly limited, it doesn't make sense
   to list them all in RDEPEND.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*youtube-viewer-3.2.0 (07 Feb 2016)
+
+  07 Feb 2016; Zoltan Puskas <zoltan@sinustrom.info>
+  +youtube-viewer-3.2.0.ebuild:
+  Bump to new 3.2.0 release
+
+  Package-Manager: portage-2.2.27
+
+  13 Feb 2016; Agostino Sarubbo <ago@gentoo.org> youtube-viewer-3.1.9.ebuild:
+  amd64 stable wrt bug #574058
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> youtube-viewer-3.1.9.ebuild:
+  x86 stable wrt bug #574058
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  07 Mar 2016; Zoltan Puskas <zoltan@sinustrom.info>
+  -youtube-viewer-3.1.1.ebuild:
+  Remove version 3.1.1, breaks tree
+
+  Package-Manager: portage-2.2.27
+
+  26 Mar 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml:
+  Add missing proxy-maint project to metadata
+
+  Package-Manager: portage-2.2.26
 

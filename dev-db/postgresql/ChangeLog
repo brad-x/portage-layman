@@ -351,3 +351,234 @@
 
   Package-Manager: portage-2.2.26
 
+  23 Jan 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.3.10-r2.ebuild,
+  postgresql-9.4.5-r2.ebuild:
+  amd64 stable wrt bug #572656
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Jeroen Roovers <jer@gentoo.org> postgresql-9.3.10-r2.ebuild,
+  postgresql-9.4.5-r2.ebuild:
+  Stable for HPPA (bug #572656).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  03 Feb 2016; Tobias Klausmann <klausman@gentoo.org>
+  postgresql-9.3.10-r2.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 572656
+
+  Package-Manager: portage-2.2.27
+
+  03 Feb 2016; Tobias Klausmann <klausman@gentoo.org>
+  postgresql-9.4.5-r2.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 572656
+
+  Package-Manager: portage-2.2.27
+
+  05 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.3.10-r2.ebuild:
+  arm stable, bug #572656
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  05 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.4.5-r2.ebuild:
+  arm stable, bug #572656
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+*postgresql-9.5.1 (11 Feb 2016)
+*postgresql-9.4.6 (11 Feb 2016)
+*postgresql-9.3.11 (11 Feb 2016)
+*postgresql-9.2.15 (11 Feb 2016)
+*postgresql-9.1.20 (11 Feb 2016)
+
+  11 Feb 2016; Aaron W. Swenson <titanofold@gentoo.org>
+  +postgresql-9.1.20.ebuild, +postgresql-9.2.15.ebuild,
+  +postgresql-9.3.11.ebuild, +postgresql-9.4.6.ebuild,
+  +postgresql-9.5.1.ebuild:
+  Security Bump
+
+  Security bump resolves a vulnerability that can be exploited for
+  denial-of-service without requiring a prior login, and a vulnerability
+  that can be exploited for privelege escalation but requires a prior
+  login.
+
+  CVS: 2016-0766,2016-0773
+  Bug: 574456
+
+  Package-Manager: portage-2.2.26
+
+  11 Feb 2016; Aaron W. Swenson <titanofold@gentoo.org>
+  -postgresql-9.5.0.ebuild:
+  Remove insecure
+
+  Remove insecure and never-stabled version.
+
+  Package-Manager: portage-2.2.26
+
+  12 Feb 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  amd64 stable wrt bug #574456
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  12 Feb 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  x86 stable wrt bug #574456
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Jeroen Roovers <jer@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  Stable for PPC64 (bug #574456).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  14 Feb 2016; Patrick Lauer <patrick@gentoo.org> postgresql-9.0.23-r1.ebuild,
+  postgresql-9.1.19-r1.ebuild, postgresql-9.1.20.ebuild,
+  postgresql-9.2.14-r1.ebuild, postgresql-9.2.15.ebuild,
+  postgresql-9.3.10-r1.ebuild, postgresql-9.3.10-r2.ebuild,
+  postgresql-9.3.11.ebuild, postgresql-9.4.5-r1.ebuild,
+  postgresql-9.4.5-r2.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild, postgresql-9999.ebuild:
+  Fix typo #574724
+
+  Package-Manager: portage-2.2.27
+
+  15 Feb 2016; Jeroen Roovers <jer@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  Stable for HPPA (bug #574456).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.5.1.ebuild:
+  arm stable, bug #574122
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.1.20.ebuild:
+  arm stable, bug #574456
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.2.15.ebuild:
+  arm stable, bug #574456
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.3.11.ebuild:
+  arm stable, bug #574456
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  20 Feb 2016; Markus Meier <maekke@gentoo.org> postgresql-9.4.6.ebuild:
+  arm stable, bug #574456
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  28 Feb 2016; Matthew Thode <prometheanfire@gentoo.org>
+  postgresql-9.5.1.ebuild:
+  keywording arm64
+
+  merged on X-C1
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org>
+  postgresql-9.1.20.ebuild:
+  9.1.20-r0: add alpha keyword
+
+  Gentoo-Bug: 574456
+
+  Package-Manager: portage-2.2.28
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org>
+  postgresql-9.2.15.ebuild:
+  9.2.15-r0: add alpha keyword
+
+  Gentoo-Bug: 574456
+
+  Package-Manager: portage-2.2.28
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org>
+  postgresql-9.3.11.ebuild:
+  9.3.11-r0: add alpha keyword
+
+  Gentoo-Bug: 574456
+
+  Package-Manager: portage-2.2.28
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> postgresql-9.4.6.ebuild:
+  9.4.6-r0: add alpha keyword
+
+  Gentoo-Bug: 574456
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  ppc stable wrt bug #574456
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  sparc stable wrt bug #574456
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.20.ebuild,
+  postgresql-9.2.15.ebuild, postgresql-9.3.11.ebuild, postgresql-9.4.6.ebuild,
+  postgresql-9.5.1.ebuild:
+  ia64 stable wrt bug #574456
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

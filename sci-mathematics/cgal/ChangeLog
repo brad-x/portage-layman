@@ -1,5 +1,5 @@
 # ChangeLog for sci-mathematics/cgal
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *cgal-4.6.1 (09 Aug 2015)
@@ -75,4 +75,44 @@
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*cgal-4.6.1-r1 (05 Mar 2016)
+
+  05 Mar 2016; David Seifert <soap@gentoo.org> -cgal-4.6.1.ebuild,
+  +cgal-4.6.1-r1.ebuild:
+  Add missing dev-qt/qtsvg:4 dep when USE="qt4"
+
+  Gentoo-Bug: 575032
+
+  Package-Manager: portage-2.2.27
+
+*cgal-4.7 (05 Mar 2016)
+
+  05 Mar 2016; David Seifert <soap@gentoo.org> +cgal-4.7.ebuild,
+  +files/cgal-4.7-fix-buildsystem.patch, metadata.xml:
+  Version bump to 4.7
+
+  * EAPI=6
+  * Depend on dev-cpp/eigen
+  * Subslot depend on dev-libs/boost (#573274)
+  * Change deps to QT5
+  * Add optional dep on dev-libs/ntl
+
+  Package-Manager: portage-2.2.27
+
+  05 Mar 2016; David Seifert <soap@gentoo.org> cgal-4.6.1-r1.ebuild:
+  Add subslot dependency on dev-libs/boost
+
+  Gentoo-Bug: 573274
+
+  Package-Manager: portage-2.2.27
 

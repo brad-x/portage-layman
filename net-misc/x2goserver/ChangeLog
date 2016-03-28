@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/x2goserver
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *x2goserver-4.0.1.19 (09 Aug 2015)
@@ -87,4 +87,68 @@
   http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=884#157
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  28 Jan 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  x2goserver-4.0.1.19.ebuild:
+  x86 missing stable keyword from #546624
+
+  Package-Manager: portage-2.2.27
+
+*x2goserver-4.0.1.19-r1 (03 Feb 2016)
+
+  03 Feb 2016; Bernard Cafarelli <voyageur@gentoo.org> files/x2goserver.init,
+  +x2goserver-4.0.1.19-r1.ebuild:
+  stricter dependency on sys-apps/iproute2
+
+  This fixes local desktop sharing,
+  thanks Uwe Sauter <uwe@sauter-gechingen.de> in bug #572318
+  Bump EAPI
+  Fix pid file path in init script
+
+  Package-Manager: portage-2.2.27
+
+*x2goserver-4.0.1.19-r2 (29 Feb 2016)
+
+  29 Feb 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/x2goserver-4.0.1.19-use_bash_in_Xsession.patch,
+  +x2goserver-4.0.1.19-r2.ebuild:
+  use explicitly bash in Xsession, bug #575022
+
+  Upstream backport after report by polynomial-c
+
+  Package-Manager: portage-2.2.27
+
+*x2goserver-4.0.1.19-r3 (07 Mar 2016)
+
+  07 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/x2goserver-4.0.1.19-remove_sshfs_cipher.patch,
+  +x2goserver-4.0.1.19-r3.ebuild:
+  remove hardcoded blowfish Cipher spec
+
+  Gentoo-Bug: 576356
+
+  Package-Manager: portage-2.2.27
+
+  07 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  -files/x2goserver-4.0.1.18-fix_local_desktop_sharing.patch,
+  -files/x2goserver-4.0.1.18-prevent_bash_failures_xsession.patch,
+  -files/x2goserver-4.0.1.18-use_printf.patch, -x2goserver-4.0.1.12.ebuild,
+  -x2goserver-4.0.1.18-r2.ebuild, -x2goserver-4.0.1.19-r1.ebuild:
+  clean some versions
+
+  Package-Manager: portage-2.2.27
+
+  12 Mar 2016; Tim Harder <radhermit@gentoo.org> metadata.xml,
+  x2goserver-4.0.1.19.ebuild, x2goserver-4.0.1.19-r2.ebuild,
+  x2goserver-4.0.1.19-r3.ebuild:
+  various sys-fs/sshfs-fuse -> sys-fs/sshfs pkgmove updates
 

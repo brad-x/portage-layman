@@ -35,7 +35,7 @@ SRC_URI="amd64? ( http://download.virtualbox.org/virtualbox/${MY_PV}/${MY_P}_amd
 
 LICENSE="GPL-2 PUEL"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="+additions +chm headless python vboxwebsrv rdesktop-vrdp"
 RESTRICT="mirror"
 
@@ -75,6 +75,7 @@ RDEPEND="!!app-emulation/virtualbox
 	x11-libs/libSM
 	x11-libs/libICE
 	x11-libs/libXdmcp
+	sys-fs/lvm2
 	python? ( ${PYTHON_DEPS} )"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"

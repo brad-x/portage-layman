@@ -1,5 +1,5 @@
 # ChangeLog for net-libs/libssh
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libssh-9999 (09 Aug 2015)
@@ -73,4 +73,117 @@
 
   Package-Manager: portage-2.2.22
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libssh-0.7.3 (23 Feb 2016)
+
+  23 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +libssh-0.7.3.ebuild:
+  Security bump to version 0.7.3 (CVE-2016-0739).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  23 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> -libssh-0.7.0-r1.ebuild,
+  -libssh-0.7.1.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  27 Feb 2016; Jeroen Roovers <jer@gentoo.org>
+  +files/libssh-0.6.5-compilefix.patch, libssh-0.6.5.ebuild:
+  Store patch locally instead of hot-linking.
+
+  Package-Manager: portage-2.2.27
+
+  27 Feb 2016; Jeroen Roovers <jer@gentoo.org> libssh-0.7.2.ebuild,
+  libssh-0.7.3.ebuild:
+  Restore inexplicably dropped IA64 keywording.
+
+  Package-Manager: portage-2.2.27
+
+  27 Feb 2016; Jeroen Roovers <jer@gentoo.org> libssh-0.7.3.ebuild:
+  Stable for HPPA PPC64 (bug #575484).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  02 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libssh-0.7.3.ebuild:
+  amd64 stable wrt bug #575484
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  13 Mar 2016; Markus Meier <maekke@gentoo.org> libssh-0.7.3.ebuild:
+  arm stable, bug #575484
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libssh-0.7.3.ebuild:
+  x86 stable wrt bug #575484
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Tobias Klausmann <klausman@gentoo.org> libssh-0.7.3.ebuild:
+  0.7.3-r0: add alpha keyword
+
+  Gentoo-Bug: 575484
+
+  Package-Manager: portage-2.2.28
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libssh-0.7.3.ebuild:
+  ppc stable wrt bug #575484
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libssh-0.7.3.ebuild:
+  sparc stable wrt bug #575484
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> libssh-0.7.3.ebuild:
+  ia64 stable wrt bug #575484
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/libssh-0.6.5-compilefix.patch, -libssh-0.6.5.ebuild,
+  -libssh-0.7.2.ebuild:
+  Security cleanup (bug #575484).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*libssh-0.7.3-r1 (26 Mar 2016)
+
+  26 Mar 2016; Jeroen Roovers <jer@gentoo.org> +libssh-0.7.3-r1.ebuild:
+  Fix broken configure defines (bug #576988 by Ben Kohler).
+
+  Package-Manager: portage-2.2.28
 

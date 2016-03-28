@@ -1,5 +1,5 @@
 # ChangeLog for sys-devel/libtool
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libtool-9999 (09 Aug 2015)
@@ -85,4 +85,37 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*libtool-2.4.6-r2 (13 Feb 2016)
+
+  13 Feb 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/libtool-2.4.6-libtoolize-delay-help.patch,
+  +files/libtool-2.4.6-libtoolize-slow.patch,
+  +files/libtool-2.4.6-link-fsanitize.patch,
+  +files/libtool-2.4.6-link-fuse-ld.patch,
+  +files/libtool-2.4.6-link-specs.patch,
+  +files/libtool-2.4.6-sed-quote-speedup.patch, +libtool-2.4.6-r2.ebuild:
+  add various upstream patches #542252 #573744 #574550
+
+  Three sets of fixes here, mostly from upstream:
+   - speed up libtool/libtoolize #542252
+   - update some set of flags accepted at link time #573744
+   - make $SED look up use $PATH at runtime #574550
 

@@ -1,5 +1,5 @@
 # ChangeLog for media-tv/tvheadend
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *tvheadend-9999 (09 Aug 2015)
@@ -97,4 +97,138 @@
   Update remote-ids
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Move dtv-scan-tables version to variable
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Remove --mandir configure option
+
+  That used to be an old workaround.
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org>
+  -files/4.0.6-use-glibc-version-iconv.patch, tvheadend-4.0.6.ebuild,
+  tvheadend-9999.ebuild:
+  Remove iconv patch and USE flag
+
+  The patch is wrong. The configure check only checks whether we need to
+  link against libiconv for the iconv functions. iconv support is always
+  activated and we need to unconditionally depend on virtual/libiconv.
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> metadata.xml,
+  tvheadend-4.0.6.ebuild, tvheadend-9999.ebuild:
+  Remove ccache USE flag
+
+  We have the ccache portage feature for that. Also the USE flag didn't do
+  anything, because we are forcing CC during make, overriding the ccache
+  command the configure script added to CC.
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> metadata.xml,
+  tvheadend-4.0.6.ebuild:
+  Remove epoll USE flag
+
+  The epoll support is always activated on Linux.
+  On Darwin and FreeBSD tvheadend automatically uses kqueue support.
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Remove curl dependency
+
+  There's no single call to curl or libcurl in the code.
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Fixup DEPEND setting
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Move xmltv to being RDEPEND-only
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-4.0.6.ebuild:
+  Move headers to being DEPEND-only
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Lower openssl dependency restriction
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Update dependency syntax of live ebuild
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Forward port the libav USE flag
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Forward port additional USE flags
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Disable building bundled libraries
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-9999.ebuild:
+  Convert to git-r3.eclass
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+*tvheadend-4.0.8 (24 Jan 2016)
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> +tvheadend-4.0.8.ebuild:
+  Version bump, bug #572576
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org> tvheadend-3.4.27.ebuild:
+  Fix IMDb URL, bug #536072
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  25 Jan 2016; Robin H. Johnson <robbat2@gentoo.org> tvheadend-4.0.8.ebuild:
+  Fix missing DIST entry in Manifest, and update copyright year (as trivial
+  change to ensure manifest update propogates).
+
+  Package-Manager: portage-2.2.24
+
+  14 Mar 2016; Sam Jorna <wraeth@gentoo.org> metadata.xml:
+  update metadata
+
+  Package-Manager: portage-2.2.28
 

@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/iputils
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *iputils-99999999 (09 Aug 2015)
@@ -102,4 +102,52 @@
   Update remote-ids
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  07 Mar 2016; Anthony G. Basile <blueness@gentoo.org>
+  iputils-20121221-r2.ebuild:
+  add libressl support to version 20121221-r2
+
+  Package-Manager: portage-2.2.26
+
+  07 Mar 2016; Anthony G. Basile <blueness@gentoo.org>
+  -iputils-20150815.ebuild:
+  remove 20150815 without libressl support
+
+  Package-Manager: portage-2.2.26
+
+  07 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/iputils-20150815-defines_and_libs.patch,
+  +files/iputils-20150815-handle_single_protocol_system.patch,
+  -files/iputils-20150815-ping6_crypto.patch,
+  -files/iputils-20150815-ping_default_ipv4.patch, iputils-20150815-r1.ebuild:
+  Replaced two patches with upstream equivalents.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*iputils-20160308 (09 Mar 2016)
+
+  09 Mar 2016; Lars Wendler <polynomial-c@gentoo.org>
+  iputils-20150815-r1.ebuild, +iputils-20160308.ebuild:
+  Bump to version 20160308
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 

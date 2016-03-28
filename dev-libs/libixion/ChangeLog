@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/libixion
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *libixion-9999 (09 Aug 2015)
@@ -63,4 +63,46 @@
   27 Sep 2015; Andreas K. Huettel (dilfridge) <dilfridge@gentoo.org>
   metadata.xml:
   Rename openoffice herd to office herd in metadata
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  22 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  files/libixion-0.9.1-python-optional.patch,
+  +files/libixion-0.9.1-python-symbol.patch, libixion-0.9.0.ebuild,
+  libixion-0.9.1.ebuild, libixion-9999.ebuild, metadata.xml:
+  Fix DEPENDs, subslot, fix USE=-python (bug 550814)
+
+  - >=9999: Pin mdds DEPEND to slot 1
+  -  <9999: Pin mdds DEPEND to slot 0
+
+  Package-Manager: portage-2.2.27
+
+*libixion-0.11.0 (22 Feb 2016)
+
+  22 Feb 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +libixion-0.11.0.ebuild:
+  0.11.0 version bump
+
+  Package-Manager: portage-2.2.27
+
+*libixion-0.9.1-r1 (24 Feb 2016)
+
+  24 Feb 2016; Andreas Sturmlechner <andreas.sturmlechner@gmail.com>
+  files/libixion-0.9.1-python-optional.patch,
+  -files/libixion-0.9.1-python-symbol.patch, -libixion-0.9.1.ebuild,
+  +libixion-0.9.1-r1.ebuild:
+  Fix build, EAPI=6
+
+  - ${P}-python-optional.patch was removing -DMDDS_HASH_CONTAINER_BOOST,
+    fixed and removed any python-unrelated parts from the patch
+  - Removed unnecessary ${P}-python-symbol.patch
+
+  Package-Manager: portage-2.2.27
 

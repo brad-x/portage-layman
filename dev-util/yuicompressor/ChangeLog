@@ -24,3 +24,40 @@
 
   Gentoo-Bug: 500656
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*yuicompressor-2.4.8-r1 (09 Feb 2016)
+
+  09 Feb 2016; Patrice Clement <monsieurp@gentoo.org>
+  +yuicompressor-2.4.8-r1.ebuild:
+  Unbundle jargs and rhino. Fixes bug 571812.
+
+  Thanks Tomáš Mózes <hydrapolic@gmail.com> for helping.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*yuicompressor-2.4.8-r2 (09 Feb 2016)
+
+  09 Feb 2016; James Le Cuirot <chewi@gentoo.org> -yuicompressor-2.4.8.ebuild,
+  -yuicompressor-2.4.8-r1.ebuild, +yuicompressor-2.4.8-r2.ebuild:
+  Fix several problems with 2.4.8-r1
+
+  2.4.8-r1 was a bit of a lemon.
+
+  Rhino can't be unbundled because apart from the custom modifications,
+  yuicompressor uses 1.7R2, which is substantially different to the
+  1.7.7 we have in the tree.
+
+  This also restores the launcher script, fixes the version number, and
+  adds the doc and source USE flags.
+
+  Package-Manager: portage-2.2.27
+

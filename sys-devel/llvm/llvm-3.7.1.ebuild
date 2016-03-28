@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,7 +8,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
 inherit check-reqs cmake-utils eutils flag-o-matic multilib \
-	multilib-minimal python-single-r1 toolchain-funcs pax-utils
+	multilib-minimal python-single-r1 toolchain-funcs pax-utils prefix
 
 DESCRIPTION="Low Level Virtual Machine"
 HOMEPAGE="http://llvm.org/"
@@ -23,7 +23,8 @@ LICENSE="UoI-NCSA"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="clang debug doc gold libedit +libffi lldb multitarget ncurses ocaml
-	python +static-analyzer test xml video_cards_radeon kernel_Darwin"
+	python +static-analyzer test xml video_cards_radeon
+	kernel_Darwin kernel_FreeBSD"
 
 COMMON_DEPEND="
 	sys-libs/zlib:0=
@@ -54,7 +55,7 @@ DEPEND="${COMMON_DEPEND}
 		( >=sys-freebsd/freebsd-lib-9.1-r10 sys-libs/libcxx )
 	)
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-5.1 )
-	kernel_Darwin? ( sys-libs/libcxx )
+	kernel_Darwin? ( <sys-libs/libcxx-${PV%_rc*}.9999 )
 	clang? ( xml? ( virtual/pkgconfig ) )
 	doc? ( dev-python/sphinx )
 	gold? ( sys-libs/binutils-libs )
@@ -182,6 +183,9 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/clang-3.6-gentoo-install.patch
 
+		epatch "${FILESDIR}"/clang-3.4-darwin_prefix-include-paths.patch
+		eprefixify tools/clang/lib/Frontend/InitHeaderSearch.cpp
+
 		sed -i -e "s^@EPREFIX@^${EPREFIX}^" \
 			tools/clang/tools/scan-build/scan-build || die
 
@@ -254,7 +258,6 @@ multilib_src_configure() {
 
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
-		"${mycmakeargs[@]}"
 		-DLLVM_LIBDIR_SUFFIX=${libdir#lib}
 
 		-DBUILD_SHARED_LIBS=ON
@@ -427,6 +430,11 @@ src_install() {
 	fi
 
 	multilib-minimal_src_install
+
+	# Remove unnecessary headers on FreeBSD, bug #417171
+	if use kernel_FreeBSD && use clang; then
+		rm "${ED}"usr/lib/clang/${PV}/include/{std,float,iso,limits,tgmath,varargs}*.h || die
+	fi
 }
 
 multilib_src_install() {

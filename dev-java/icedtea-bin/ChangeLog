@@ -243,3 +243,136 @@
 
   Package-Manager: portage-2.2.26
 
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  icedtea-bin-6.1.13.8-r1.ebuild, icedtea-bin-6.1.13.9.ebuild,
+  icedtea-bin-7.2.6.3.ebuild, icedtea-bin-7.2.6.3-r1.ebuild:
+  Drop support for Java on ppc across the tree
+
+  Sorry! *sniff*
+
+  16 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  -icedtea-bin-6.1.13.8-r1.ebuild:
+  Remove vulnerable 6.1.13.8 now ppc is dropped
+
+  Package-Manager: portage-2.2.26
+
+*icedtea-bin-7.2.6.4 (23 Jan 2016)
+
+  23 Jan 2016; James Le Cuirot <chewi@gentoo.org>
+  -icedtea-bin-7.2.6.3-r1.ebuild, +icedtea-bin-7.2.6.4.ebuild:
+  Version bump to 7.2.6.4
+
+  This addresses vulnerabilities being handled in bug #572716.
+
+  Note that this version was built with --disable-system-gif to dlopen
+  libgif because I didn't want to pin unstable users back to v4.
+
+  Package-Manager: portage-2.2.27
+
+  23 Jan 2016; James Le Cuirot <chewi@gentoo.org> icedtea-bin-6.1.13.9.ebuild:
+  Enable webstart by default (again)
+
+  Upstream has asked us to because Oracle always includes it.
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Agostino Sarubbo <ago@gentoo.org> icedtea-bin-7.2.6.4.ebuild:
+  amd64 stable wrt bug #572716
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Agostino Sarubbo <ago@gentoo.org> icedtea-bin-7.2.6.4.ebuild:
+  x86 stable wrt bug #572716
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; James Le Cuirot <chewi@gentoo.org> -icedtea-bin-7.2.6.3.ebuild,
+  metadata.xml:
+  Remove vulnerable version wrt bug #572716
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*icedtea-bin-3.0.0_pre08 (01 Feb 2016)
+
+  01 Feb 2016; James Le Cuirot <chewi@gentoo.org> +files/icedtea-bin-8.env,
+  +icedtea-bin-3.0.0_pre08.ebuild:
+  Prerelease of v3 for Java 8
+
+  Currently for ppc64 only, partially for initial testing on a
+  lesser-used platform and partially because Java 7 on ppc64 has given
+  us problems; we need a stable replacement for 6 ASAP.
+
+  Package-Manager: portage-2.2.27
+
+*icedtea-bin-3.0.0_pre09 (25 Feb 2016)
+
+  25 Feb 2016; James Le Cuirot <chewi@gentoo.org>
+  -icedtea-bin-3.0.0_pre08.ebuild, +icedtea-bin-3.0.0_pre09.ebuild:
+  Version bump to 3.0.0_pre09
+
+  This addresses some security issues. Still ppc64 only.
+
+  Package-Manager: portage-2.2.27
+
+  01 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  icedtea-bin-3.0.0_pre09.ebuild:
+  Keyword for ~amd64, ~arm, and ~x86
+
+  Package-Manager: portage-2.2.27
+
+*icedtea-bin-3.0.0_pre09-r1 (02 Mar 2016)
+
+  02 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  -icedtea-bin-3.0.0_pre09.ebuild, +icedtea-bin-3.0.0_pre09-r1.ebuild:
+  Remove libsplashscreen.so dep on libgif.so.4
+
+  I forgot to set --disable-system-gif like I did with 7. giflib-5 still
+  isn't stable yet.
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; James Le Cuirot <chewi@gentoo.org>
+  icedtea-bin-3.0.0_pre09-r1.ebuild:
+  3.0.0_pre09-r1 stable on ppc64 (tested by ago)
+
+  Package-Manager: portage-2.2.28
+
+*icedtea-bin-7.2.6.5 (27 Mar 2016)
+
+  27 Mar 2016; James Le Cuirot <chewi@gentoo.org> +icedtea-bin-7.2.6.5.ebuild:
+  Bump to 7.2.6.5 wrt security bug #578300
+
+  Package-Manager: portage-2.2.28
+
+  27 Mar 2016; Agostino Sarubbo <ago@gentoo.org> icedtea-bin-7.2.6.5.ebuild:
+  amd64 stable wrt bug #578300
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Mar 2016; Agostino Sarubbo <ago@gentoo.org> icedtea-bin-7.2.6.5.ebuild:
+  x86 stable wrt bug #578300
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Mar 2016; James Le Cuirot <chewi@gentoo.org> -icedtea-bin-7.2.6.4.ebuild:
+  Remove vulnerable 7.2.6.4 wrt bug #578300
+
+  Package-Manager: portage-2.2.28
+

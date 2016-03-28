@@ -792,3 +792,403 @@
 
   Package-Manager: portage-2.2.26
 
+  17 Jan 2016; Markus Meier <maekke@gentoo.org> php-5.5.31.ebuild:
+  arm stable, bug #571254
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="arm"
+
+  17 Jan 2016; Markus Meier <maekke@gentoo.org> php-5.6.17.ebuild:
+  arm stable, bug #571254
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="arm"
+
+  17 Jan 2016; Tobias Klausmann <klausman@gentoo.org> php-5.5.31.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 571254
+
+  Package-Manager: portage-2.2.26
+
+  17 Jan 2016; Tobias Klausmann <klausman@gentoo.org> php-5.6.17.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 571254
+
+  Package-Manager: portage-2.2.26
+
+  17 Jan 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.31.ebuild,
+  php-5.6.17.ebuild:
+  ppc stable wrt bug #571254
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  18 Jan 2016; Jeroen Roovers <jer@gentoo.org> php-5.5.31.ebuild,
+  php-5.6.17.ebuild:
+  Stable for HPPA PPC64 (bug #571254).
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --ignore-arches
+
+*php-7.0.2-r1 (23 Jan 2016)
+*php-5.6.17-r1 (23 Jan 2016)
+
+  23 Jan 2016; Michael Orlitzky <mjo@gentoo.org> +php-5.6.17-r1.ebuild,
+  -php-7.0.2.ebuild, +php-7.0.2-r1.ebuild:
+  revision the 5.6 and 7.0 series to set --localstatedir.
+
+  The php-fpm.conf file uses the @localstatedir@ passed to ./configure
+  as its default prefix for some settings. The econf default for
+  localstatedir is ${EPREFIX}/var/lib, but php-fpm.conf is expecting
+  ${EPREFIX}/var, so we pass that instead. This ensures that the default
+  log location (e.g. /var/log) actually exists.
+
+  Gentoo-Bug: 572002
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*php-7.0.2-r2 (25 Jan 2016)
+*php-5.6.17-r2 (25 Jan 2016)
+
+  25 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.6.17-r1.ebuild,
+  +php-5.6.17-r2.ebuild, -php-7.0.2-r1.ebuild, +php-7.0.2-r2.ebuild:
+  revision the 5.6 and 7.0 series to add pdo-firebird support.
+
+  PHP has two Firebird drivers -- the legacy "interbase" driver and the
+  new pdo-firebird driver. We have always supported the legacy driver
+  with USE=firebird, but were missing the pdo-firebird configure flag
+  when USE="pdo firebird" was set. Similar tricks were in place for
+  e.g. sqlite and oci8, but Firebird was forgotten.
+
+  Dmitry A. Bakshaev was nice enough to point this out in bug 538226,
+  and even supplied a patch. Testing shows that both drivers work in
+  php:5.6, but that only the PDO driver works in php:7.0. That's not
+  a regression; this commit adds the only driver that works in php:7.0.
+
+  Gentoo-Bug: 538226
+  Suggested-By: Dmitry A. Bakshaev
+
+  Package-Manager: portage-2.2.26
+
+*php-7.0.2-r3 (28 Jan 2016)
+*php-5.6.17-r3 (28 Jan 2016)
+
+  28 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.6.17-r2.ebuild,
+  +php-5.6.17-r3.ebuild, -php-7.0.2-r2.ebuild, +php-7.0.2-r3.ebuild:
+  revision the 5.6 and 7.0 series to add sys-libs/db:5.3 support.
+
+  We had to leave db:5.3 out of our dependency string until now because
+  the upstream build system couldn't detect it. The latest v5.6.17 and
+  v7.0.2 will find it, though, so we add it as an option.
+
+  Gentoo-Bug: 564824
+
+  Package-Manager: portage-2.2.26
+
+*php-7.0.2-r4 (28 Jan 2016)
+*php-5.6.17-r4 (28 Jan 2016)
+
+  28 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.6.17-r3.ebuild,
+  +php-5.6.17-r4.ebuild, -php-7.0.2-r3.ebuild, +php-7.0.2-r4.ebuild:
+  call `eselect php cleanup` in pkg_postinst and pkg_postrm.
+
+  We have two bugs (432962 and 572436) regarding stale eselect symlinks.
+
+  The first issue is that removal of an old slot does not update the
+  eselect-php symlinks to point to a newer slot. Thus, if a user
+  upgrades slots and depcleans the old one, his symlinks (and thus PHP)
+  are left broken until eselect-php is run manually. This is fixed by
+  running `eselect php cleanup` in pkg_postrm, since removal of the
+  old slot will trigger a cleanup (which updates the symlink).
+
+  The second issue is that disabling a SAPI would leave behind a broken
+  symlink. For example, if the "cgi" SAPI was once used but the user has
+  reinstalled PHP with USE="-cgi", then the old eselect-php symlink for
+  php-cgi would be left behind. This is fixed by running `eselect php
+  cleanup` in pkg_postinst, since that will be triggered after the
+  reinstall finishes, at which point the php-cgi symlink will be dead
+  and thus get removed.
+
+  Gentoo-Bug: 432962
+  Gentoo-Bug: 572436
+
+  Package-Manager: portage-2.2.26
+
+  28 Jan 2016; Michael Orlitzky <mjo@gentoo.org> php-5.6.17-r4.ebuild,
+  php-7.0.2-r4.ebuild:
+  remove "minor" from "minor version slotting" in elogs.
+
+  Now that PHP upstream is playing fast and loose with their versioning,
+  our slotting applies to major versions as well as minor ones. Remove
+  the word "minor" since it's no longer correct.
+
+  Package-Manager: portage-2.2.26
+
+*php-7.0.2-r5 (28 Jan 2016)
+*php-5.6.17-r5 (28 Jan 2016)
+
+  28 Jan 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.6.17-r4.ebuild,
+  +php-5.6.17-r5.ebuild, -php-7.0.2-r4.ebuild, +php-7.0.2-r5.ebuild:
+  enforce what was an elog warning with REQUIRED_USE.
+
+  The interactive "php -a" command-line interface will hang unless PHP
+  is built with USE=readline. This used to be an elog warning, but was
+  rather easy to overlook and mysterious to those who hit the bug. We
+  already have REQUIRED_USE for our other flags, so it makes sense to
+  enforce the cli dependency on readline there.
+
+  Package-Manager: portage-2.2.26
+
+  30 Jan 2016; Brian Evans <grknight@gentoo.org> php-7.0.2-r5.ebuild:
+  Adjust the REQUIRED_USE to be readline or libedit for cli
+
+  Package-Manager: portage-2.2.27
+
+*php-7.0.3 (05 Feb 2016)
+*php-5.6.18 (05 Feb 2016)
+*php-5.5.32 (05 Feb 2016)
+
+  05 Feb 2016; Michael Orlitzky <mjo@gentoo.org> +php-5.5.32.ebuild,
+  -php-5.6.17-r5.ebuild, +php-5.6.18.ebuild, -php-7.0.2-r5.ebuild,
+  +php-7.0.3.ebuild:
+  version bump all three slots for security fixes.
+
+  Gentoo-Bug: 573892
+
+  Package-Manager: portage-2.2.26
+
+  09 Feb 2016; Tobias Klausmann <klausman@gentoo.org> php-5.6.18.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 573892
+
+  Package-Manager: portage-2.2.27
+
+  09 Feb 2016; Tobias Klausmann <klausman@gentoo.org> php-5.5.32.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 573892
+
+  Package-Manager: portage-2.2.27
+
+  11 Feb 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  amd64 stable wrt bug #573892
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  12 Feb 2016; Jeroen Roovers <jer@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  Stable for HPPA PPC64 (bug #573892).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  14 Feb 2016; Brian Evans <grknight@gentoo.org> php-5.6.18.ebuild:
+  Update cli REQUIRED_USE to be exactly-one-of readline or libedit
+
+  Package-Manager: portage-2.2.27
+
+*php-7.0.4 (04 Mar 2016)
+*php-5.6.19 (04 Mar 2016)
+*php-5.5.33 (04 Mar 2016)
+
+  04 Mar 2016; Michael Orlitzky <mjo@gentoo.org> +php-5.5.33.ebuild,
+  +php-5.6.19.ebuild, -php-7.0.3.ebuild, +php-7.0.4.ebuild:
+  add new versions of the three supported series.
+
+  This adds php-5.5.33, php-5.6.19, and php-7.0.4 -- all bugfix/security
+  releases. The DESCRIPTION of the new ebuilds was shortened to respect
+  the 80-character limit. Support for LibreSSL was also added to the 5.6
+  and 7.0 series in the process.
+
+  Gentoo-Bug: 575922
+
+  Package-Manager: portage-2.2.26
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  amd64 stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  x86 stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  x86 stable wrt bug #573892
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  ppc stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  ppc stable wrt bug #573892
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  ppc64 stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Tobias Klausmann <klausman@gentoo.org> php-5.5.33.ebuild:
+  5.5.33-r0: add alpha keyword
+
+  Gentoo-Bug: 577376
+
+  Package-Manager: portage-2.2.28
+
+  17 Mar 2016; Tobias Klausmann <klausman@gentoo.org> php-5.6.19.ebuild:
+  5.6.19-r0: add alpha keyword
+
+  Gentoo-Bug: 577376
+
+  Package-Manager: portage-2.2.28
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  sparc stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  sparc stable wrt bug #573892
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.31.ebuild,
+  php-5.6.17.ebuild:
+  sparc stable wrt bug #571254
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Jeroen Roovers <jer@gentoo.org> php-5.6.19.ebuild:
+  Stable for HPPA (bug #577376).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  20 Mar 2016; Jeroen Roovers <jer@gentoo.org> php-5.5.33.ebuild:
+  Stable for HPPA (bug #577376).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.33.ebuild,
+  php-5.6.19.ebuild:
+  ia64 stable wrt bug #577376
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.32.ebuild,
+  php-5.6.18.ebuild:
+  ia64 stable wrt bug #573892
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> php-5.5.31.ebuild,
+  php-5.6.17.ebuild:
+  ia64 stable wrt bug #571254
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*php-7.0.4-r1 (21 Mar 2016)
+
+  21 Mar 2016; Michael Orlitzky <mjo@gentoo.org> -php-7.0.4.ebuild,
+  +php-7.0.4-r1.ebuild:
+  revision the 7.0 series to add pdo-dblib support.
+
+  The PDO "dblib" driver was somehow lost during the transition from
+  php:5.6 to php:7.0. I've added it back, and tested that it works with
+  a simple query against a Microsoft SQL Server 2005 database.
+
+  Gentoo-Bug: 576782
+
+  Package-Manager: portage-2.2.26
+
+  21 Mar 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.5.30.ebuild,
+  -php-5.6.14.ebuild:
+  remove vulnerable php-5.5.30 and php-5.6.14.
+
+  Gentoo-Bug: 571254
+
+  Package-Manager: portage-2.2.26
+
+  24 Mar 2016; Markus Meier <maekke@gentoo.org> php-5.5.33.ebuild:
+  arm stable, bug #577376
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  24 Mar 2016; Markus Meier <maekke@gentoo.org> php-5.6.19.ebuild:
+  arm stable, bug #577376
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  24 Mar 2016; Michael Orlitzky <mjo@gentoo.org> -php-5.5.31.ebuild,
+  -php-5.5.32.ebuild, -php-5.6.17.ebuild, -php-5.6.18.ebuild:
+  remove old vulnerable php:5.5 and php:5.6 ebuilds.
+
+  Gentoo-Bug: 577376
+
+  Package-Manager: portage-2.2.26
+

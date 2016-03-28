@@ -1,5 +1,5 @@
 # ChangeLog for net-irc/znc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *znc-9999 (09 Aug 2015)
@@ -110,4 +110,61 @@
   20 Sep 2015; Julian Ospald <hasufell@gentoo.org>
   +files/znc-1.6.1-libressl.patch, +znc-1.6.1-r1.ebuild, znc-9999.ebuild:
   add libressl support
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*znc-1.6.3 (21 Mar 2016)
+
+  21 Mar 2016; Ian Delaney <idella4@gentoo.org> +files/README.gentoo,
+  +znc-1.6.3.ebuild:
+  bump to 1.6.3, EAPI=6
+
+  - use the proper LICENSE
+  - remove the ZNC_DATADIR variable
+  - the libressl patch is no longer required → drop patch
+  - swig is not needed to build bindings from a release, removed from DEPEND
+  - configure uses python3 by default → don't specify it any more
+  - move informational postinst messages to a README.gentoo file
+  - fix the systemd unit by setting a valid HOME for the znc user
+  - delete the custom src_unpack function, provide the full path to gtest
+
+  Gentoo-Bug: https://bugs.gentoo.org/567344
+  Gentoo-Bug: https://bugs.gentoo.org/571366
+  Gentoo-Bug: https://bugs.gentoo.org/521916
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1086
+
+  21 Mar 2016; Ian Delaney <idella4@gentoo.org> -znc-1.6.1.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1086
+
+  21 Mar 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  update metadata, add myself as proxied maintainer
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1086
+
+  21 Mar 2016; Ian Delaney <idella4@gentoo.org> znc-1.2-r1.ebuild,
+  znc-1.4.ebuild, znc-1.4-r1.ebuild, znc-1.6.1-r1.ebuild, znc-9999.ebuild:
+  update LICENSE for older ebuilds
+
+  Gentoo-Bug: https://bugs.gentoo.org/571366
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1104
+
+  25 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org> znc-9999.ebuild:
+  Add missing slot op to ICU dependency
+
+  Package-Manager: portage-2.2.28
 

@@ -1,5 +1,5 @@
 # ChangeLog for sci-mathematics/calc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *calc-2.12.4.13 (09 Aug 2015)
@@ -65,4 +65,46 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*calc-2.12.5.4 (06 Mar 2016)
+
+  06 Mar 2016; David Seifert <soap@gentoo.org> +calc-2.12.5.4.ebuild,
+  +files/calc-2.12.5.4-as-needed.patch:
+  Version bump to 2.12.5.4
+
+  Gentoo-Bug: 524544
+  * EAPI=6
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; David Seifert <soap@gentoo.org> -calc-2.12.1.5.ebuild,
+  -calc-2.12.4.3.ebuild, -calc-2.12.4.4.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+*calc-2.12.4.13-r1 (06 Mar 2016)
+
+  06 Mar 2016; David Seifert <soap@gentoo.org> -calc-2.12.4.13.ebuild,
+  +calc-2.12.4.13-r1.ebuild:
+  Add subslot dependency
+
+  Package-Manager: portage-2.2.27
 

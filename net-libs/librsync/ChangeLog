@@ -115,3 +115,67 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  17 Jan 2016; Agostino Sarubbo <ago@gentoo.org> librsync-2.0.0.ebuild:
+  ppc stable wrt bug #525396
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  31 Jan 2016; Alessandro Calorì <axelgenus@gmail.com>
+  librsync-0.9.7-r3.ebuild, librsync-2.0.0.ebuild:
+  add subslots
+
+*librsync-2.0.0-r1 (31 Jan 2016)
+
+  31 Jan 2016; Alessandro Calorì <axelgenus@gmail.com>
+  +files/librsync-2.0.0-search.patch, +librsync-2.0.0-r1.ebuild:
+  fix bug #573144
+
+  22 Feb 2016; Jeroen Roovers <jer@gentoo.org> librsync-2.0.0.ebuild:
+  Stable for PPC64 (bug #525396).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  23 Feb 2016; Alessandro Calorì <axelgenus@gmail.com>
+  +files/librsync-0.9.7-fix-testsuite.patch, librsync-0.9.7-r3.ebuild:
+  fix testsuite for v0.9.7, fix bug #511954
+  Added "librsync-0.9.7-fix-testsuite.patch" to fix compilation of librsync
+  0.9.7
+  when "test" feature is enabled in Portage. The patch has been sourced from
+  the
+  Debian package librsync1-0.9.7-10 and has been provided by Andrey
+  Rahmatullin.
+
+  Gentoo-bug: #511954
+
+  Package-Manager: portage-2.2.26
+
+  24 Feb 2016; Alessandro Calorì <axelgenus@gmail.com>
+  files/librsync-0.9.7-fix-testsuite.patch, librsync-0.9.7-r3.ebuild:
+  fix typo and patch for v0.9.7
+
+  Fixed a typo in the ebuild and the testsuite patch for librsync 0.9.7.
+
+  Gentoo-bug: #575556
+
+  Package-Manager: portage-2.2.26
+

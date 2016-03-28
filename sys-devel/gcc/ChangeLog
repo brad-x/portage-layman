@@ -250,3 +250,33 @@
   gcc-4.4.7.ebuild, gcc-4.5.4.ebuild:
   roll new snapshots to fix building w/newer gcc
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  31 Jan 2016; Yuta Satoh <nigoro.dev@gmail.com> gcc-5.3.0.ebuild:
+  Added ~amd64-fbsd ~x86-fbsd keyword.
+
+  12 Mar 2016; Mike Frysinger <vapier@gentoo.org> gcc-4.9.3.ebuild:
+  mark 4.9.3 sparc stable #561844
+
+  15 Mar 2016; Mike Frysinger <vapier@gentoo.org> gcc-4.9.3.ebuild,
+  gcc-5.3.0.ebuild:
+  toolchain.eclass: use versioned SLOT all the time
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  sys-devel/{gcc,gcc-apple,kgcc64}: update USE=multislot description
+

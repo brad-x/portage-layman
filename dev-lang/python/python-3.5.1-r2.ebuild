@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -52,7 +52,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	!sys-devel/gcc[libffi(-)]"
 RDEPEND+=" !build? ( app-misc/mime-types )"
-PDEPEND=">=app-eselect/eselect-python-20151117-r1"
+PDEPEND=">=app-eselect/eselect-python-20140125-r1"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -73,6 +73,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-3.4.3-ncurses-pkg-config.patch"
 	epatch "${FILESDIR}/3.5-secondary-targets.patch"
 
+	epatch_user
+
 	sed -i -e "s:@@GENTOO_LIBDIR@@:$(get_libdir):g" \
 		configure.ac \
 		Lib/distutils/command/install.py \
@@ -86,8 +88,6 @@ src_prepare() {
 		setup.py || die "sed failed to replace @@GENTOO_LIBDIR@@"
 
 	#sed -i -e 's/\$(GRAMMAR_H): \$(GRAMMAR_INPUT) \$(PGEN)/$(GRAMMAR_H): \$(GRAMMAR_INPUT)/' Makefile.pre.in || die
-
-	epatch_user
 
 	eautoreconf
 }
@@ -252,6 +252,14 @@ src_install() {
 		dosym "${abiver}-config" "/usr/bin/python${PYVER}-config"
 		# Create python-3.5m.pc symlink
 		dosym "python-${PYVER}.pc" "/usr/$(get_libdir)/pkgconfig/${abiver/${PYVER}/-${PYVER}}.pc"
+	fi
+
+	# python seems to get rebuilt in src_install (bug 569908)
+	# Work around it for now.
+	if has_version dev-libs/libffi[pax_kernel]; then
+		pax-mark E "${ED}usr/bin/${abiver}"
+	else
+		pax-mark m "${ED}usr/bin/${abiver}"
 	fi
 
 	use elibc_uclibc && rm -fr "${libdir}/test"

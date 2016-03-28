@@ -83,3 +83,39 @@
   Package-Manager: portage-2.2.26
   RepoMan-Options: --ignore-arches
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  27 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Add myself as co-maintainer
+
+*tigervnc-1.6.0 (27 Jan 2016)
+
+  27 Jan 2016; Michał Górny <mgorny@gentoo.org> +tigervnc-1.6.0.ebuild:
+  Bump to 1.6.0
+
+  Update TigerVNC to 1.6.0. Clean up the ebuild. Bump xserver to 1.17.4.
+
+  29 Jan 2016; Michał Górny <mgorny@gentoo.org> tigervnc-1.6.0.ebuild:
+  Remove accidental stable keywords on 1.6.0
+
+  29 Jan 2016; Michał Górny <mgorny@gentoo.org> tigervnc-1.6.0.ebuild:
+  Avoid building unnecessary parts of xorg-server
+
+*tigervnc-1.6.0-r1 (29 Jan 2016)
+
+  29 Jan 2016; Michał Górny <mgorny@gentoo.org>
+  +files/tigervnc-1.6.0-xorg118-1.patch, -tigervnc-1.6.0.ebuild,
+  +tigervnc-1.6.0-r1.ebuild:
+  Support xorg-server-1.18.0
+
+  Support xorg-1.18.0 thanks to LFS patch. Found by Jan Psota.
+

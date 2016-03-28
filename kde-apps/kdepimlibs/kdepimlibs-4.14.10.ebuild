@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -10,7 +10,7 @@ EGIT_BRANCH="KDE/4.14"
 inherit kde4-base
 
 DESCRIPTION="Common library for KDE PIM apps"
-KEYWORDS=" ~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux"
 LICENSE="LGPL-2.1"
 IUSE="debug ldap prison"
 
@@ -20,7 +20,7 @@ RESTRICT="test"
 DEPEND="
 	!kde-misc/akonadi-social-utils
 	>=app-crypt/gpgme-1.1.6
-	>=app-office/akonadi-server-1.12.90[qt4]
+	>=app-office/akonadi-server-1.12.90[qt4(+)]
 	>=dev-libs/boost-1.35.0-r5:=
 	dev-libs/libgpg-error
 	>=dev-libs/libical-0.48-r2:=
@@ -54,4 +54,7 @@ src_configure() {
 src_install() {
 	kde4-base_src_install
 	rm "${ED}"/usr/share/apps/cmake/modules/FindQtOAuth.cmake #Collides with net-im/choqok
+
+	# contains constants/defines only
+	QA_DT_NEEDED="$(find "${ED}" -type f -name 'libakonadi-kabc.so.*' -printf '/%P\n')"
 }

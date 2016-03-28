@@ -1,5 +1,5 @@
 # ChangeLog for media-video/ushare
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ushare-1.1a-r6 (09 Aug 2015)
@@ -62,4 +62,35 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*ushare-1.1a-r7 (06 Mar 2016)
+
+  06 Mar 2016; Markos Chandras <hwoarang@gentoo.org> +ushare-1.1a-r7.ebuild:
+  Drop libdlna support. Bug #571078
+
+  Package-Manager: portage-2.2.27
+
+*ushare-1.1a-r8 (06 Mar 2016)
+
+  06 Mar 2016; Markos Chandras <hwoarang@gentoo.org> -ushare-1.1a-r7.ebuild,
+  +ushare-1.1a-r8.ebuild:
+  Really disable libdlna
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; Markos Chandras <hwoarang@gentoo.org> +files/08_all_gcc5.patch:
+  Fix building with gcc-5. Bug #569968
+
+  Package-Manager: portage-2.2.27
 

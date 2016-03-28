@@ -1,5 +1,5 @@
 # ChangeLog for dev-tex/minted
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *minted-2.0 (09 Aug 2015)
@@ -83,4 +83,42 @@
 
   Package-Manager: portage-2.2.25
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  11 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/minted-2.1-remove-extra-curly-brace.patch, minted-1.7.ebuild,
+  minted-2.0.ebuild, minted-2.1.ebuild:
+  fix compilation of documentation
+
+  Compiling of documentation currently failed, as -shell-escape was not
+  passed to pdflatex. With recent change in latex-package.eclass
+  (f6082c5) it is now possible to add this flag and therefore compile the
+  documentation.
+  Moreover in minted-2.1 there is an extra curly brace in minted.dtx which
+  leads to a compile failure also with -shell-escape specified. Until it
+  is fixed upstream, I added a patch to remove this extra curly brace.
+
+  Closes: https://github.com/gentoo/gentoo/pull/986
+  Acked-by: Alexis Ballier <aballier@gentoo.org>
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  11 Mar 2016; Patrice Clement <monsieurp@gentoo.org> minted-1.7.ebuild,
+  minted-2.0.ebuild, minted-2.1.ebuild:
+  make documentation optional
+
+  add IUSE="doc" in order to allow disabling of compiling the
+  documentation (already handled by latex-package.eclass if the "doc" use
+  flag is available);
+
+  Closes: https://github.com/gentoo/gentoo/pull/986
+  Acked-by: Alexis Ballier <aballier@gentoo.org>
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 

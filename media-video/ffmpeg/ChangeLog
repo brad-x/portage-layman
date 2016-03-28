@@ -272,3 +272,291 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Alexis Ballier <aballier@gentoo.org>
 
+*ffmpeg-2.8.5 (16 Jan 2016)
+
+  16 Jan 2016; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.8.5.ebuild:
+  bump to 2.8.5
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Jan 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  change nvenc dep to nvidia_video_sdk
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Jan 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  drop quvi useflag in live ebuild, dropped upstream
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  25 Jan 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.5.ebuild:
+  amd64 stable wrt bug #571868
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Jan 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.5.ebuild:
+  x86 stable wrt bug #571868
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Jan 2016; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.8.5.ebuild:
+  Stable for HPPA PPC64 (bug #571868).
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --ignore-arches
+
+  29 Jan 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  zvbi doesnt require gpl anymore in git master, reflect that to ebuild
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  30 Jan 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  Drop aacplus & vo-aacenc in live ebuild.
+
+  Those have been dropped upstream. Internal encoder should be superior to vo-
+  aacenc and fdk-aac should be superior to aacplus for AAC-HE
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  30 Jan 2016; Tobias Klausmann <klausman@gentoo.org> ffmpeg-2.8.5.ebuild:
+  add alpha keyword
+
+  Gentoo-Bug: 571868
+
+  Package-Manager: portage-2.2.27
+
+  31 Jan 2016; Pacho Ramos <pacho@gentoo.org> ffmpeg-2.8.5.ebuild:
+  ia64/sparc rekeyword (#560382)
+
+  Package-Manager: portage-2.2.27
+
+*ffmpeg-2.8.6 (01 Feb 2016)
+
+  01 Feb 2016; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.8.6.ebuild:
+  bump to 2.8.6
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  01 Feb 2016; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.7.2.ebuild,
+  -ffmpeg-2.8.1.ebuild, -ffmpeg-2.8.2.ebuild, -ffmpeg-2.8.3.ebuild,
+  -ffmpeg-2.8.4.ebuild, -files/libvpx15.patch:
+  remove old
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  03 Feb 2016; Markus Meier <maekke@gentoo.org> ffmpeg-2.8.5.ebuild:
+  arm stable, bug #571868
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  15 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> ffmpeg-9999.ebuild:
+  Converted live ebuild to EAPI-6.
+
+  That also requires to use git-r3.eclass from now on.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  do not build doc for non-native abis; they are overwritten when installed
+  anyway.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  let the build system install and decide whether to install docs.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  docs are built with texinfo html support these days, texi2html is
+  deprecated.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  drop examples useflag; they are installed in /usr/share/ffmpeg/examples by
+  the build system and there is no way to disable it.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  revert libressl changes in live ebuild.
+
+  Those do not work properly, bug #569818 and there is no activity on said
+  bug.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  depend unconditionally on pkgconfig.
+
+  Some deps were missing their pkgconfig dep, and it is not worth maintaining
+  it for something that is installed in almost every system.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+*ffmpeg-3.0 (15 Feb 2016)
+
+  15 Feb 2016; Alexis Ballier <aballier@gentoo.org> +ffmpeg-3.0.ebuild:
+  bump to 3.0
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  23 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.3.ebuild,
+  ffmpeg-2.6.4.ebuild, ffmpeg-2.8.5.ebuild, ffmpeg-2.8.6.ebuild,
+  ffmpeg-3.0.ebuild, ffmpeg-9999.ebuild:
+  convert to virtual/jack
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-3.0.ebuild,
+  ffmpeg-9999.ebuild, metadata.xml:
+  add dcadec useflag
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  24 Feb 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-3.0.ebuild,
+  ffmpeg-9999.ebuild, metadata.xml:
+  add libilbc useflag
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  11 Mar 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.6.3.ebuild,
+  ffmpeg-2.6.4.ebuild, ffmpeg-2.8.5.ebuild, ffmpeg-2.8.6.ebuild,
+  ffmpeg-3.0.ebuild, ffmpeg-9999.ebuild:
+  Do not infer --cpu option from mtune CFLAG.
+
+  mtune is meant for optimizing code but not generating specific instructions.
+  ffmpeg --cpu option is for generating specific instuctions.
+  Bug #577078 by gentoobugs@mysteryvortex.com.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  amd64 stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  x86 stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  ppc stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.5.ebuild:
+  ppc stable wrt bug #571868
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  ppc64 stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Tobias Klausmann <klausman@gentoo.org> ffmpeg-2.8.6.ebuild:
+  2.8.6-r0: add alpha keyword
+
+  Gentoo-Bug: 577458
+
+  Package-Manager: portage-2.2.28
+
+  18 Mar 2016; Markus Meier <maekke@gentoo.org> ffmpeg-2.8.6.ebuild:
+  arm stable, bug #577458
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  19 Mar 2016; Jeroen Roovers <jer@gentoo.org> ffmpeg-2.8.6.ebuild:
+  Stable for HPPA (bug #577458).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.5.ebuild:
+  sparc stable wrt bug #571868
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  sparc stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.5.ebuild:
+  ia64 stable wrt bug #571868
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> ffmpeg-2.8.6.ebuild:
+  ia64 stable wrt bug #577458
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Alexis Ballier <aballier@gentoo.org> -ffmpeg-2.6.3.ebuild,
+  -ffmpeg-2.6.4.ebuild, -ffmpeg-2.8.5.ebuild:
+  remove old
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  28 Mar 2016; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  drop dcadec useflag in live ebuild (dropped upstream)
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+

@@ -1,5 +1,5 @@
 # ChangeLog for sys-libs/gpm
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gpm-1.20.7-r2 (09 Aug 2015)
@@ -65,4 +65,35 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  15 Feb 2016; Mike Frysinger <vapier@gentoo.org> gpm-1.20.7-r2.ebuild:
+  mark m68k/sh 1.20.7-r2 stable
+
+  15 Feb 2016; Mike Frysinger <vapier@gentoo.org>
+  -files/0001-daemon-use-sys-ioctl.h-for-ioctl.patch,
+  -files/0001-fixup-make-warnings.patch, -files/gpm-1.20.5-abi.patch,
+  -files/gpm-1.20.6-disablestatic.patch, -files/gpm.rc6, -gpm-1.20.6.ebuild,
+  -gpm-1.20.6-r1.ebuild, -gpm-1.20.7.ebuild, -gpm-1.20.7-r1.ebuild:
+  delete old <1.20.7-r2 versions
+
+  15 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/gpm-1.20.7-sysmacros.patch, gpm-1.20.7-r2.ebuild:
+  fix build w/newer glibc
 

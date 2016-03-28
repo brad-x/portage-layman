@@ -1,0 +1,57 @@
+# ChangeLog for perl-core/Test-Simple
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*Test-Simple-1.1.14 (31 Jan 2016)
+
+  31 Jan 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +Test-Simple-1.1.14.ebuild, +metadata.xml:
+  Re-add, Perl 5.22.1 version with keywords of Perl 5.22.1
+
+  Package-Manager: portage-2.2.27
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> Test-Simple-1.1.14.ebuild:
+  amd64 stable wrt bug #573546
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> Test-Simple-1.1.14.ebuild:
+  x86 stable wrt bug #573546
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  22 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  Test-Simple-1.1.14.ebuild:
+  Fix lack of blocker on Test-Tester bug #577748
+
+  virtual/perl-Test-Simple already correctly blocks dev-perl/Test-Tester
+
+  However, this is not enough, because it can intoduce the install order:
+
+    + perl-core/Test-Simple [collision occurs]
+    + virtual/perl-Test-Simple (collisions allowed)
+    - dev-perl/Test-Tester (remove uncollided)
+
+  When the install order needs to be
+
+    + perl-core/Test-Simple (collsions allowed)
+    - dev-perl/Test-Tester (remove uncollided)
+    + virtual/perl-Test-Simple
+
+  Bug: https://bugs.gentoo.org/577748
+  Reported-By: Jonathan Lovelace
+
+  Package-Manager: portage-2.2.28
+
+*Test-Simple-1.1.14-r1 (22 Mar 2016)
+
+  22 Mar 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -Test-Simple-1.1.14.ebuild, +Test-Simple-1.1.14-r1.ebuild:
+  r1 bump to propagate blocker
+
+  Package-Manager: portage-2.2.28
+

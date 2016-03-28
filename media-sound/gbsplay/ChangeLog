@@ -1,5 +1,5 @@
 # ChangeLog for media-sound/gbsplay
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gbsplay-0.0.91-r1 (09 Aug 2015)
@@ -60,4 +60,24 @@
   The berlios thirdpartymirrors entry was removed on 2015-01-25, therefore
   making all its references invalid. Replace all the offending SRC_URI
   entries with mirror://gentoo to keep the ebuilds working.
+
+*gbsplay-0.0.91-r2 (16 Jan 2016)
+
+  16 Jan 2016; David Seifert <soap@gentoo.org>
+  +files/gbsplay-0.0.91-fix-buildsystem.patch, +gbsplay-0.0.91-r2.ebuild:
+  add -std=gnu89 to CFLAGS to restore pre-GCC5 semantics
+
+  Gentoo-Bug: 571000
+  Also bump ebuild to EAPI=6. Fix -Werror=format-security errors.
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
 

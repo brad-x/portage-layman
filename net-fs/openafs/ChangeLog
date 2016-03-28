@@ -1,5 +1,5 @@
 # ChangeLog for net-fs/openafs
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *openafs-1.6.12 (09 Aug 2015)
@@ -157,5 +157,80 @@
   Depend on :0= since other slots are for binary packages.
 
   Package-Manager: portage-2.2.23
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*openafs-1.6.16 (23 Feb 2016)
+
+  23 Feb 2016; Andrew Savchenko <bircoph@gentoo.org> +openafs-1.6.16.ebuild:
+  version bump to 1.6.16
+
+  This update fixes several security bugs: CVE-2015-{7762,7763,8312}.
+  Update ebuild to EAPI 6.
+  Install missing PDF docs.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+*openafs-1.6.17 (22 Mar 2016)
+
+  22 Mar 2016; NP-Hardass <NP-Hardass@gentoo.org> +openafs-1.6.17.ebuild:
+  Version bump to 1.6.17. Security bugs and systemd bugs
+
+  Security Release 1.6.17.
+  Also fixes systemd units to make cache dir and sets env variables in
+  /etc/systemd/service.d/openafs-{client,server}.service.d/00gentoo.conf
+  to allow specifying daemon runtime args.  Additionally, new pkg_config
+  phase exists to enable systemd users to set cache args for client daemon
+  because QA policies disencourage having the unit set the args dynamically.
+
+  Gentoo-Bug: 570410,544168,570540,564388
+
+  Package-Manager: portage-2.2.26
+
+  26 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openafs-1.6.17.ebuild:
+  amd64 stable wrt bug #564388
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openafs-1.6.17.ebuild:
+  x86 stable wrt bug #564388
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Mar 2016; Agostino Sarubbo <ago@gentoo.org> openafs-1.6.17.ebuild:
+  sparc stable wrt bug #564388
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Mar 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -openafs-1.6.12-r1.ebuild, -openafs-1.6.14.ebuild, -openafs-1.6.16.ebuild:
+  remove old and vulnerable versions
+
+  Bug: 564388
+
+  Package-Manager: portage-2.2.28
   Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
 

@@ -204,3 +204,44 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  21 Feb 2016; Jason A. Donenfeld <zx2c4@gentoo.org> tmux-2.1.ebuild,
+  tmux-9999.ebuild:
+  rely on libutempter
+
+  If utempter.h is installed, tmux unconditionally links against
+  libutempter, and there isn't a configure switch to disable it. As such,
+  systems that already had installed libutempter (for use with, say, mosh)
+  found that there would be issues when libutempter was removed, since it
+  wasn't an explicit dependency of this package. Meanwhile, there were
+  issues with the other utempter (non-lib prefix), causing that to be a
+  blocker. So, the fix for both of these at once is to replace the blocker
+  against utempter with a dependency on libutempter, because libutempter
+  already blocks utempter. This simplifes things greatly.
+
+  Fixes: 566990
+  Fixes: 560652
+  Signed-off-by: Jason A. Donenfeld <zx2c4@gentoo.org>
+
+  26 Feb 2016; Fabian Groffen <grobian@gentoo.org> tmux-2.1.ebuild,
+  tmux-9999.ebuild:
+  restrict utempter dependency by Yuta SATOH, bug #575712
+
+  Package-Manager: portage-2.2.27-prefix
+
+  01 Mar 2016; Zac Medico <zmedico@gentoo.org> tmux-9999.ebuild:
+  fix 9999 ebuild breakage for bug 574592
+
+  Package-Manager: portage-2.2.27
+
+  23 Mar 2016; Mike Frysinger <vapier@gentoo.org> tmux-2.1.ebuild:
+  mark 2.1 arm64/s390/sh/sparc stable
+

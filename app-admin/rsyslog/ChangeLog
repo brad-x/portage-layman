@@ -1,5 +1,5 @@
 # ChangeLog for app-admin/rsyslog
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *rsyslog-8.9.0 (09 Aug 2015)
@@ -129,4 +129,78 @@
   Package-Manager: portage-2.2.24
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*rsyslog-8.16.0 (05 Feb 2016)
+
+  05 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/8-stable/50-rsyslog-8.15.0-imfile-readmode2-vg-test-workaround.patch,
+  +files/8-stable/50-rsyslog-8.15.0-imtcp-tls-basic-vg-test-workaround.patch,
+  +files/8-stable/50-rsyslog-8.16.0-fix-queue-engine-issue-262.patch,
+  +rsyslog-8.16.0.ebuild:
+  Bump to version 8.16.0
+
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  05 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/8-stable/10-respect_CFLAGS-r1.patch,
+  -files/8-stable/40-rsyslog-fix-parallel-build-issue-479.patch, -files/8-stab
+  le/50-rsyslog-add-option-to-disable-valgrind-usage-in-testbench.patch,
+  -files/8-stable/50-rsyslog-fix-size-based-legacy-config-statements.patch,
+  -files/8-stable/50-rsyslog-run-queue-persist-test-only-once.patch,
+  -files/8-stable/rsyslog.confd, -files/8-stable/rsyslog.initd,
+  -rsyslog-8.7.0-r2.ebuild, -rsyslog-8.12.0-r1.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*rsyslog-8.16.0-r1 (12 Mar 2016)
+
+  12 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  +files/8-stable/50-rsyslog-8.16.0-fix-leap-year-handling.patch,
+  +rsyslog-8.16.0-r1.ebuild:
+  Rev bump to fix a leap year issue
+
+  Bug: https://github.com/rsyslog/rsyslog/issues/830
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1034
+
+  12 Mar 2016; Ian Delaney <idella4@gentoo.org> -rsyslog-8.16.0.ebuild:
+  Remove old version affected by leap year issue
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1034
+
+  14 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  rsyslog-8.16.0-r1.ebuild:
+  Remove elibtoolize call.
+
+  No need to manually call elibtoolize, eautoreconf already does it.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1048
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> rsyslog-8.16.0-r1.ebuild:
+  amd64 stable wrt bug #577494
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> rsyslog-8.16.0-r1.ebuild:
+  x86 stable wrt bug #577494
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Anthony G. Basile <blueness@gentoo.org> rsyslog-8.13.0.ebuild,
+  rsyslog-8.16.0-r1.ebuild:
+  fix openssl and libressl slots
+
+  Package-Manager: portage-2.2.26
 

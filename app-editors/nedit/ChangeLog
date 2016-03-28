@@ -1,5 +1,5 @@
 # ChangeLog for app-editors/nedit
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nedit-5.5_p20110116-r2 (09 Aug 2015)
@@ -77,4 +77,32 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*nedit-5.6-r1 (14 Mar 2016)
+*nedit-5.5_p20110116-r3 (14 Mar 2016)
+
+  14 Mar 2016; Amy Winston <amynka@gentoo.org> +files/nedit.png,
+  -files/nedit.svg, +nedit-5.5_p20110116-r3.ebuild, -nedit-5.6.ebuild,
+  +nedit-5.6-r1.ebuild:
+  missing icon repaired bug #568448
+
+  Package-Manager: portage-2.2.26
+
+  14 Mar 2016; Amy Winston <amynka@gentoo.org>
+  +files/nedit-5.5_p20110116-security.patch, +files/nedit-5.6-security.patch,
+  nedit-5.5_p20110116-r3.ebuild, nedit-5.6-r1.ebuild:
+  security patch added
+
+  Package-Manager: portage-2.2.26
 

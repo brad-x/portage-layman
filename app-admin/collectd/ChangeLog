@@ -121,3 +121,97 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*collectd-5.5.1 (23 Feb 2016)
+
+  23 Feb 2016; Thomas D <whissi@whissi.de> +collectd-5.5.1.ebuild,
+  +files/collectd-5.5.1-libocci.patch, +files/collectd-5.5.1-lt.patch,
+  +files/collectd-5.5.1-nohal.patch, +files/collectd.confd-r1,
+  +files/collectd.initd-r1, metadata.xml:
+  Bumped to v5.5.1
+
+  - New upstream version (Closes #570766, #517060)
+
+  - Bumped to EAPI=6
+
+  - Non-functional mongodb plugin disabled in ebuild (see upstream
+    issue #492, closes #524400)
+
+  - Multiple dependency problems fixed
+
+  - linux-info eclass usage fixed (Closes #570778)
+
+  - Support for new plugins added (amqp, genericjmx, ipvs, modbus, sigrok,
+    tail_csv, vserver, write_riemann)
+
+  - PYTHON_SINGLE_TARGET support for Python 3.4 and 3.5 enabled
+
+  - Documentation improved (USE flag description, elogs)
+
+  - Linux capabilities usage expanded to improve running collectd as
+    unprivileged user (disable via filecaps USE flag)
+
+  - Runscript rewritten
+
+    - Runscript now supports OpenRC's default status function
+
+    - Runscript now guarantees service shutdown
+
+    - Validating configuration before (re)starting daemon
+
+  29 Feb 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag descriptions from metadata.xml
+
+  Package-Manager: portage-2.2.27
+
+  01 Mar 2016; Thomas D <whissi@whissi.de> collectd-5.4.1-r2.ebuild,
+  collectd-5.5.0.ebuild, collectd-5.5.1.ebuild:
+  Adjust dependency on sys-power/nut (#540750)
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=540750
+
+  Package-Manager: portage-2.2.27
+
+  23 Mar 2016; Ian Delaney <idella4@gentoo.org> -collectd-5.4.1-r2.ebuild,
+  -collectd-5.5.0.ebuild, collectd-5.5.1.ebuild,
+  -files/collectd-5.4.1-libocci.patch, -files/collectd-5.4.1-libperl.patch,
+  -files/collectd-5.4.1-lt.patch, -files/collectd-5.4.1-nohal.patch,
+  -files/collectd-5.5.0-lt.patch, -files/collectd.confd,
+  -files/collectd.initd, +files/collectd.logrotate, -files/logrotate,
+  metadata.xml:
+  Dropped old
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1101
+
+*collectd-5.5.1-r1 (23 Mar 2016)
+
+  23 Mar 2016; Ian Delaney <idella4@gentoo.org> -collectd-5.5.1.ebuild,
+  +collectd-5.5.1-r1.ebuild, metadata.xml:
+  Revbump to vn. 5.5.1-r1
+
+  add write_kafka plugin
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1101
+
+  24 Mar 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+  Package-Manager: portage-2.2.28
+

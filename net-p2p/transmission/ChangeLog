@@ -1,5 +1,5 @@
 # ChangeLog for net-p2p/transmission
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *transmission-2.84-r1 (09 Aug 2015)
@@ -154,4 +154,67 @@
   add libressl support, bug #567352
 
   Package-Manager: portage-2.2.24
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*transmission-2.90 (04 Mar 2016)
+
+  04 Mar 2016; Mike Gilbert <floppym@gentoo.org>
+  +files/transmission-daemon.initd.10, +transmission-2.90.ebuild:
+  Bump to 2.90
+
+  Also modernize the init script.
+
+  Package-Manager: portage-2.2.27_p64
+
+*transmission-2.90-r1 (06 Mar 2016)
+
+  06 Mar 2016; Mike Gilbert <floppym@gentoo.org>
+  files/transmission-daemon.initd.10, -transmission-2.90.ebuild,
+  +transmission-2.90-r1.ebuild:
+  Don't clobber download directory setting
+
+  Bug: https://bugs.gentoo.org/576640
+
+  Package-Manager: portage-2.2.27_p64
+
+*transmission-2.92 (08 Mar 2016)
+
+  08 Mar 2016; Mike Gilbert <floppym@gentoo.org> +transmission-2.92.ebuild:
+  Bump to 2.92
+
+  Package-Manager: portage-2.2.27_p81
+
+  16 Mar 2016; Mike Gilbert <floppym@gentoo.org> +files/libsystemd.patch,
+  transmission-2.92.ebuild:
+  Fix building against recent libsystemd
+
+  Package-Manager: portage-2.2.28_p60
+
+  16 Mar 2016; Mike Gilbert <floppym@gentoo.org> transmission-2.92.ebuild:
+  Fix build with xfsprogs-4.5.0
+
+  Bug: https://bugs.gentoo.org/577528
+
+  Package-Manager: portage-2.2.28_p60
+
+  27 Mar 2016; Mike Gilbert <floppym@gentoo.org> transmission-2.92.ebuild:
+  Fix m4 error when running aclocal
+
+  Package-Manager: portage-2.2.28_p64
 

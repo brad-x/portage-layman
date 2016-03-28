@@ -350,3 +350,68 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  09 Feb 2016; Matt Turner <mattst88@gentoo.org> mesa-9999.ebuild:
+  Build gallium-osmesa when USE="gallium osmesa"
+
+  With only USE=osmesa, build the classic OSMesa.
+
+  Bug: https://bugs.gentoo.org/574070
+
+*mesa-11.1.2 (14 Feb 2016)
+
+  14 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +mesa-11.1.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.27
+
+*mesa-11.0.9 (14 Feb 2016)
+
+  14 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +mesa-11.0.9.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.27
+
+  14 Feb 2016; Manuel Rüger <mrueg@gentoo.org> -mesa-11.0.7.ebuild,
+  -mesa-11.1.0.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.27
+
+*mesa-11.1.2-r1 (22 Feb 2016)
+
+  22 Feb 2016; Matt Turner <mattst88@gentoo.org>
+  +files/mesa-11.1.2-i965-fix-use-after-free.patch, +mesa-11.1.2-r1.ebuild:
+  Add patch to fix use-after-free in NIR.
+
+  Bug: https://bugs.gentoo.org/574912
+
+  22 Feb 2016; Matt Turner <mattst88@gentoo.org> -mesa-11.1.1.ebuild,
+  -mesa-11.1.2.ebuild:
+  Drop old 11.1 ebuilds.
+
+  10 Mar 2016; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-11.0.6.ebuild, mesa-11.0.8.ebuild, mesa-11.0.9.ebuild,
+  mesa-11.1.2-r1.ebuild:
+  depend on <sys-devel/llvm-3.8
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=576972
+
+  Package-Manager: portage-2.2.26
+

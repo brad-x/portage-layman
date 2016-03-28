@@ -1,5 +1,5 @@
 # ChangeLog for app-emulation/ganeti
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ganeti-2.14.1-r1 (09 Aug 2015)
@@ -116,4 +116,54 @@
   Fixes gentoo bug #566524
 
   Package-Manager: portage-2.2.25
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*ganeti-2.15.2 (02 Feb 2016)
+
+  02 Feb 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/ganeti-2.15.2-remove-sandbox-failing-tests.patch,
+  +ganeti-2.15.2.ebuild:
+  Version bump to 2.15.2
+
+  Package-Manager: portage-2.2.27
+
+  15 Feb 2016; Sergey Popov <pinkbyte@gentoo.org> ganeti-2.10.5-r4.ebuild,
+  ganeti-2.11.6-r2.ebuild:
+  old versions does not build with GHC 7.8 and above
+
+  Package-Manager: portage-2.2.26
+
+  15 Feb 2016; Sergey Popov <pinkbyte@gentoo.org> ganeti-2.11.6-r2.ebuild:
+  amd64/x86 stable
+
+  Gentoo-Bug: 519730
+
+  Package-Manager: portage-2.2.27
+
+*ganeti-2.15.2-r1 (24 Mar 2016)
+
+  24 Mar 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/ganeti-2.15-noded-must-run-as-root.patch, +ganeti-2.15.2-r1.ebuild:
+  Revision bump, make gnt-noded and gnd-mond run as root
+
+  Upstream documentation states that these must run as root, but the code has
+  them running as whatever user the other daemons are running as.
+
+  Package-Manager: portage-2.2.28
 

@@ -1,5 +1,5 @@
 # ChangeLog for net-irc/inspircd
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *inspircd-2.0.18 (09 Aug 2015)
@@ -98,4 +98,48 @@
   cleanup wrt bug #545034
 
   Package-Manager: portage-2.2.20.1
+
+  22 Jan 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  update email address of maintainer in metadata
+
+  Package-Manager: portage-2.2.26
+
+  22 Jan 2016; Andrew Wilcox <AWilcox@Wilcox-Tech.com>
+  +files/inspircd-2.0.20-deprecated-tmpnam-560362.patch,
+  inspircd-2.0.20.ebuild:
+  patch tmpnam call (bug #560362)
+
+  POSIX::tmpnam() was deprecated in Perl 5.22 which causes a failure in
+  ./configure with various combinations of USE flags enabled on systems
+  with 5.22 installed.
+
+  23 Jan 2016; Michael Palimaka <kensington@gentoo.org> metadata.xml:
+  typo
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*inspircd-2.0.21 (26 Mar 2016)
+
+  26 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  +files/inspircd-2.0.21-fix-path-builds.patch, +files/inspircd-2.0.21-init,
+  +inspircd-2.0.21.ebuild:
+  bump to vn. 2.0.21
+
+  patches to bump ebuild and fix build paths sunbmitted by
+  the proxy maintainer via the gentoo bug. Keyword arm
+  intially tested fine however requires keywording in
+  required dep, held back for later.
+
+  Gentoo bug: #575956
+
+  Package-Manager: portage-2.2.28
 

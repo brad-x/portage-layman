@@ -1,5 +1,5 @@
 # ChangeLog for dev-libs/ustr
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ustr-1.0.4-r5 (09 Aug 2015)
@@ -75,4 +75,40 @@
   providing support to make ustr-1.0.4-r7.
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org> ustr-1.0.4-r7.ebuild:
+  unify emake calls
+
+  Also fix $EPREFIX usage in more paths, and respect CPPFLAGS settings.
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org> ustr-1.0.4-r7.ebuild:
+  add a configure stage for cross-compiling
+
+  The build system likes to compile & run programs to figure out host
+  features.  This fails when cross-compiling and such, so add a func
+  to do all with compile tests.
+
+*ustr-1.0.4-r8 (17 Feb 2016)
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/ustr-1.0.4-build-libs.patch, metadata.xml, +ustr-1.0.4-r8.ebuild:
+  make installed file set more minimal
+
+  Add USE=static-libs to control install of the static archive.
+
+  Add USE=ustr-import to control install of the dev tool and source tree.
+
+  Punt the xxx-debug libs as this isn't how we handle debugging in Gentoo.
+
+  17 Feb 2016; Mike Frysinger <vapier@gentoo.org> ustr-1.0.4-r8.ebuild:
+  add arm64 love
 

@@ -9,7 +9,7 @@ EGIT_REPO_URI="git://anongit.freedesktop.org/harfbuzz"
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils libtool multilib-minimal python-any-r1
+inherit eutils libtool multilib-minimal python-any-r1 xdg-utils
 
 DESCRIPTION="An OpenType text shaping engine"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/HarfBuzz"
@@ -18,7 +18,7 @@ HOMEPAGE="http://www.freedesktop.org/wiki/Software/HarfBuzz"
 LICENSE="Old-MIT ISC icu"
 SLOT="0/0.9.18" # 0.9.18 introduced the harfbuzz-icu split; bug #472416
 [[ ${PV} == 9999 ]] || \
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos ~x64-solaris"
+KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos ~x64-solaris"
 
 IUSE="+cairo fontconfig +glib +graphite icu +introspection static-libs test +truetype"
 REQUIRED_USE="introspection? ( glib )"
@@ -49,6 +49,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	xdg_environment_reset
+
 	if [[ ${CHOST} == *-darwin* || ${CHOST} == *-solaris* ]] ; then
 		# on Darwin/Solaris we need to link with g++, like automake defaults
 		# to, but overridden by upstream because on Linux this is not

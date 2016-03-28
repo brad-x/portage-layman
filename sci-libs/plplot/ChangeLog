@@ -1,5 +1,5 @@
 # ChangeLog for sci-libs/plplot
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *plplot-5.11.0-r1 (09 Aug 2015)
@@ -76,4 +76,58 @@
   Version bump, support wxGTK:3.0
 
   Package-Manager: portage-2.2.23
+
+*plplot-5.11.1-r1 (19 Jan 2016)
+
+  19 Jan 2016; David Seifert <soap@gentoo.org> +plplot-5.11.1-r1.ebuild:
+  Do not copy plplotjavac_wrap.so from BUILD_DIR
+
+  Gentoo-Bug: 546578
+  Instead, we use the installed .so file instead, which has
+  RPATH removed by cmake and register the .so file with the
+  Java environment.
+
+  Package-Manager: portage-2.2.26
+
+  20 Jan 2016; Justin Lecher <jlec@gentoo.org> plplot-5.11.1-r1.ebuild:
+  Drop deprecated use of virtualx.eclass
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  20 Jan 2016; Justin Lecher <jlec@gentoo.org> plplot-5.11.1-r1.ebuild:
+  Amend test phase again
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  01 Feb 2016; Agostino Sarubbo <ago@gentoo.org> plplot-5.11.1-r1.ebuild:
+  amd64 stable wrt bug #546578
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Feb 2016; Agostino Sarubbo <ago@gentoo.org> plplot-5.11.1-r1.ebuild:
+  x86 stable wrt bug #546578
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> plplot-5.11.1-r1.ebuild:
+  ppc stable wrt bug #546578
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

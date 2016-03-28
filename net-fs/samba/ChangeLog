@@ -374,3 +374,144 @@
 
   Package-Manager: portage-2.2.24
 
+  18 Jan 2016; Victor Ostorga <vostorga@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.4.ebuild:
+  Skipping dcerpc_server.h in alternative abi
+
+  Package-Manager: portage-2.2.24
+
+  19 Jan 2016; Victor Ostorga <vostorga@gentoo.org> samba-4.2.7-r1.ebuild,
+  samba-4.3.4.ebuild:
+  Adding xml to PYTHON_REQ_USE , bug 554234
+
+  Package-Manager: portage-2.2.24
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*samba-4.3.4-r1 (27 Jan 2016)
+*samba-4.2.7-r2 (27 Jan 2016)
+
+  27 Jan 2016; Ian Stakenvicius <axs@gentoo.org> -samba-4.2.7-r1.ebuild,
+  +samba-4.2.7-r2.ebuild, samba-4.3.3-r1.ebuild, -samba-4.3.4.ebuild,
+  +samba-4.3.4-r1.ebuild:
+  bundle ctdb
+
+  Samba is the only consumer of dev-db/ctdb, and samba-4.2 and above has
+  dropped support
+  for building against an external ctdb.  This commit builds and installs ctdb
+  bundled
+  within samba instead, and soft-blocks the external package to avoid
+  collisions.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=561402
+
+  Package-Manager: portage-2.2.26
+
+  27 Jan 2016; Ian Stakenvicius <axs@gentoo.org> -samba-4.3.3.ebuild,
+  -samba-4.3.3-r1.ebuild:
+  remove 4.3.3 in favour of keeping 4.3.4
+
+  Package-Manager: portage-2.2.26
+
+*samba-4.2.8 (03 Feb 2016)
+
+  03 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> +samba-4.2.8.ebuild:
+  Bump to version 4.2.8
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  03 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> -samba-4.2.7.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*samba-4.4.0_rc2 (09 Feb 2016)
+
+  09 Feb 2016; Ian Stakenvicius <axs@gentoo.org> +files/4.4/samba4.confd,
+  +files/4.4/samba4.initd-r1, +files/samba-4.4.0-pam.patch,
+  +samba-4.4.0_rc2.ebuild:
+  add ebuild for 4.4.0rc2
+
+  Package-Manager: portage-2.2.26
+
+  10 Feb 2016; Robin H. Johnson <robbat2@gentoo.org> -files/4.4/samba4.confd,
+  -files/4.4/samba4.initd-r1, -files/samba-4.4.0-pam.patch,
+  -samba-4.4.0_rc2.ebuild:
+  Revert "net-fs/samba: add ebuild for 4.4.0rc2"
+
+  This commit is missing the DIST entry for
+  samba-disable-python-patches-4.4.0.tar.xz, and the distfile is not
+  available.
+
+  This reverts commit bedb32a1fbb6675c639446b39d25d4f13e2d4b67.
+
+*samba-4.4.0_rc2 (10 Feb 2016)
+
+  10 Feb 2016; Ian Stakenvicius <axs@gentoo.org> +files/4.4/samba4.confd,
+  +files/4.4/samba4.initd-r1, +files/samba-4.4.0-pam.patch,
+  +samba-4.4.0_rc2.ebuild:
+  commit samba-4.4rc2 with proper Manifest
+
+  Recommit bedb32a1fbb6675 but with proper Manifest
+
+  Package-Manager: portage-2.2.26
+
+*samba-4.4.0_rc3 (24 Feb 2016)
+*samba-4.3.5 (24 Feb 2016)
+
+  24 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  files/samba-4.2.7-pam.patch, files/samba-4.4.0-pam.patch,
+  +samba-4.3.5.ebuild, +samba-4.4.0_rc3.ebuild:
+  Bump to versions 4.3.5 and 4.4.0_rc3
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  24 Feb 2016; Lars Wendler <polynomial-c@gentoo.org> -samba-4.2.7-r2.ebuild,
+  -samba-4.3.4-r1.ebuild, -samba-4.4.0_rc2.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*samba-4.4.0_rc4 (08 Mar 2016)
+*samba-4.3.6 (08 Mar 2016)
+*samba-4.2.9 (08 Mar 2016)
+
+  08 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> +samba-4.2.9.ebuild,
+  +samba-4.3.6.ebuild, +samba-4.4.0_rc4.ebuild:
+  Bump to versions 4.2.9, 4.3.6 and 4.4.0_rc4
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*samba-4.4.0 (22 Mar 2016)
+
+  22 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> +samba-4.4.0.ebuild:
+  Bump to version 4.4.0
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  22 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> -samba-4.2.8.ebuild,
+  -samba-4.3.5.ebuild, -samba-4.4.0_rc3.ebuild, -samba-4.4.0_rc4.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  24 Mar 2016; Lars Wendler <polynomial-c@gentoo.org> samba-4.4.0.ebuild:
+  Adjusted dependencies (bug #578192).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

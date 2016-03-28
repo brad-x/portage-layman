@@ -1,5 +1,5 @@
 # ChangeLog for sys-fs/quota
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *quota-4.02 (09 Aug 2015)
@@ -67,4 +67,55 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*quota-4.03 (15 Feb 2016)
+
+  15 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/quota-4.03-default_fpic_fpie.patch,
+  +files/quota-4.03-distribute_ldap-scripts.patch,
+  +files/quota-4.03-dont_override_cflags.patch,
+  +files/quota-4.03-explicitely_print_disabled_options.patch,
+  +files/quota-4.03-fix_build_without_ldap.patch,
+  +files/quota-4.03-no_rpc.patch, +files/quota-4.03-noldap_linking.patch,
+  +files/quota-4.03-repqouta_F_option_arg.patch,
+  +files/quota-4.03-respect_docdir.patch, +quota-4.03.ebuild:
+  Bump to version 4.03
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  15 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/quota-4.01-cflags.patch, -files/quota-4.01-mnt.patch,
+  -quota-4.01.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  23 Feb 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/ldap-scripts/applySystemQuotas.pl,
+  +files/ldap-scripts/edquota_editor, +files/ldap-scripts/quota.schema,
+  +files/ldap-scripts/setSystemQuotas.pl,
+  +files/ldap-scripts/setquota-ldap.pl, quota-4.03.ebuild:
+  Install ldap-scripts with USE=ldap (bug #575424).
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 

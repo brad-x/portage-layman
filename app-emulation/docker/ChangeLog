@@ -1,5 +1,5 @@
 # ChangeLog for app-emulation/docker
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *docker-1.7.1 (09 Aug 2015)
@@ -126,4 +126,44 @@
   24 Nov 2015; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.9.1.ebuild,
   +files/18074-disable-journald-arm.patch:
   version bump, fixes #566432
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*docker-1.10.0 (08 Feb 2016)
+
+  08 Feb 2016; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.10.0.ebuild:
+  version bump to 1.10.0
+
+  Fixes bug 574086 reported by RAPHEAD <raphead@gmx.net>
+  Ported from Tianon's overlay with following modifications:
+
+   * dropped ~arm ~x86 keywords
+   * simplified gcc-specs-pie sed invocation
+   * moved libseccomp to CDEPEND (*.h required for build)
+
+  Package-Manager: portage-2.2.27
+
+  18 Mar 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove status="" from downstream maintainer
+
+  Remove the status="" attribute from downstream maintainer as it is
+  invalid. GLEP 46 permits status="" for upstream maintainers only.
+
+*docker-1.10.3 (28 Mar 2016)
+
+  28 Mar 2016; Kacper Kowalik <xarthisius@gentoo.org> +docker-1.10.3.ebuild:
+  version bump
+
+  Fixes #578330
+
+  Reported-by: Vasilis Lourdas <bugs@lourdas.eu>
+
+  Package-Manager: portage-2.2.27
 

@@ -1,5 +1,5 @@
 # ChangeLog for net-proxy/3proxy
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *3proxy-0.6.1 (09 Aug 2015)
@@ -55,4 +55,77 @@
   This partially reverts eaaface92ee81f30a6ac66fe7acbcc42c00dc450.
 
   Bug: https://bugs.gentoo.org/552720
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Remove explicit notion of maintainer-needed, for GLEP 67
+
+  GLEP 67 removes the explicit notion of maintainer-needed@g.o being used
+  for packages lacking maintainers, in favor of assuming maintainer-needed
+  whenever the package has no maintainers.
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+*3proxy-0.7.1.2 (23 Mar 2016)
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +3proxy-0.7.1.2.ebuild,
+  +files/3proxy-0.7.1.2-gentoo.patch:
+  Version bump to 0.7.1.2
+
+  Closes: https://github.com/gentoo/gentoo/pull/1118
+
+*3proxy-0.7.1.4 (23 Mar 2016)
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +3proxy-0.7.1.4.ebuild:
+  Version bump to 0.7.1.4
+
+  Closes: https://github.com/gentoo/gentoo/pull/1118
+
+*3proxy-0.8.6 (23 Mar 2016)
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> +3proxy-0.8.6.ebuild,
+  +files/3proxy-0.8.6-gentoo.patch:
+  Version bump to 0.8.6
+
+  Closes: https://github.com/gentoo/gentoo/pull/1118
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> 3proxy-0.7.1.2.ebuild,
+  3proxy-0.7.1.4.ebuild:
+  EAPI 6 cleanup
+
+  Closes: https://github.com/gentoo/gentoo/pull/1118
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Grant maintainership to Alex Efros <powerman@powerman.name>.
+
+  This commit merges a string of commits pulled from
+  gentoo/gentoo#1118 and closes bug 547234.
+
+  Gentoo-Bug: https://bugs.gentoo.org/547234
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  23 Mar 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Fix email address.
+
+  Package-Manager: portage-2.2.26
+
+  24 Mar 2016; Sam Jorna <wraeth@gentoo.org> files/3proxy-0.8.6-gentoo.patch:
+  add fixed patch, bug 547234
+
+  When originally added, line endings in patch somehow got modified.
+
+  Gentoo-bug: 547234
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
+
+  24 Mar 2016; Sam Jorna <wraeth@gentoo.org>
+  files/3proxy-0.7.1.2-gentoo.patch:
+  fix broken patch, #547234
+
+  Gentoo-bug: 547234
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
 

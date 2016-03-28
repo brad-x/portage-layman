@@ -1,5 +1,5 @@
 # ChangeLog for kde-base/pykde4
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *pykde4-4.14.3 (09 Aug 2015)
@@ -76,4 +76,38 @@
 
   29 Dec 2015; Michael Palimaka <kensington@gentoo.org> pykde4-4.14.3.ebuild:
   kde-base: pkgmove KDE PIM to kde-apps/
+
+  20 Jan 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/pykde4-4.14.3-gcc-5.patch, pykde4-4.14.3.ebuild:
+  Fix build with GCC-5, bug 567022
+
+  Built fine with GCC 5.3, no reason to believe it will break anything.
+
+  Thx to Erik Zeek for the patch.
+  Tested by: Me and a lot of other people
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*pykde4-4.14.3-r1 (18 Mar 2016)
+
+  18 Mar 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/kpythonpluginfactorywrapper.c-r2, +pykde4-4.14.3-r1.ebuild:
+  fix bugs in pythonpluginfactorywrapper.c
+
+  The logic for checking the return value of fork() was inverted,
+  causing the main process to continue as the child process, while
+  the parent process execs. This can confuse libraries and
+  applications that don't expect their PID to suddenly change, and
+  other misc badness (process gets reparented to init, etc.)
+
+  Gentoo-bug: https://bugs.gentoo.org/show_bug.cgi?id=555436
 

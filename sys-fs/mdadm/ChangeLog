@@ -1,5 +1,5 @@
 # ChangeLog for sys-fs/mdadm
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *mdadm-3.3.4 (09 Aug 2015)
@@ -76,4 +76,44 @@
 
   24 Nov 2015; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   standardize various metadata.xml style
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*mdadm-3.4 (28 Jan 2016)
+
+  28 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> files/etc-default-mdadm,
+  +mdadm-3.4.ebuild:
+  Bump to version 3.4
+
+  Marked cronjob as executable (bug #561564) and commented the AUTOCHECK
+  variable
+  so people still have to opt in for the autocheck to run.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  28 Jan 2016; Lars Wendler <polynomial-c@gentoo.org> -mdadm-3.3.2-r1.ebuild,
+  -mdadm-3.3.3.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.27
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  08 Feb 2016; Mike Frysinger <vapier@gentoo.org> mdadm-3.4.ebuild:
+  disable corosync & libdlm autodetection #573782
 

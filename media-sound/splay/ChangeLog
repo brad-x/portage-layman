@@ -1,5 +1,5 @@
 # ChangeLog for media-sound/splay
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *splay-0.9.5.2 (09 Aug 2015)
@@ -60,4 +60,46 @@
   Add missing remote-id type=sourceforge
 
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+*splay-0.9.5.2-r1 (23 Jan 2016)
+
+  23 Jan 2016; David Seifert <soap@gentoo.org>
+  files/splay-0.9.5.2-external-id3lib.diff,
+  +files/splay-0.9.5.2-modernize-cpp.patch, +splay-0.9.5.2-r1.ebuild:
+  Remove use of 'einstall', EAPI=6
+
+  Gentoo-Bug: 521566
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*splay-0.9.5.2-r2 (10 Feb 2016)
+
+  10 Feb 2016; David Seifert <soap@gentoo.org>
+  +files/splay-0.9.5.2-fix-buildsystem.patch,
+  -files/splay-0.9.5.2-modernize-cpp.patch, -splay-0.9.5.2-r1.ebuild,
+  +splay-0.9.5.2-r2.ebuild:
+  Patch out completely broken Qt3 handling
+
+  Gentoo-Bug: 574202
+  * Add missing media-libs/id3lib dependency
+  * Remove xsplay.1 man page
+
+  Package-Manager: portage-2.2.27
 

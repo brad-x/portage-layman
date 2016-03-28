@@ -5,6 +5,29 @@
 # This file requires >=portage-2.1.1
 # New entries go on top.
 
+# Pawel Hajdan jr <phajdan.jr@gentoo.org> (25 Mar 2016)
+# System ffmpeg build is broken in recent chromium (bug #576372).
+>=www-client/chromium-50.0.2657.0 system-ffmpeg
+
+# Maciej Mrozowski <reavertm@gmail.com> (23 Mar 2016)
+# Experimental cairo-qt backend (see bug #568000).
+app-text/poppler cairo-qt
+
+# Lars Wendler <polynomial-c@gentoo.org> (20 Mar 2016)
+# Need vulnerable libotr version (see bug #576914).
+net-im/centerim otr
+=net-im/climm-0.7.1 otr
+net-im/qutim otr
+
+# James Le Cuirot <chewi@gentoo.org> (14 Mar 2016)
+# jtds:1.2 needs removing because it depends on Java 6. Unfortunately
+# we can't stabilise the latest sqldeveloper yet because of Java 8.
+<dev-db/sqldeveloper-4.1.3.20.78-r1 mssql sybase
+
+# Requires unreleased dependency
+# dev-util/kdevplatform:5
+kde-plasma/plasma-sdk plasmate
+
 # James Le Cuirot <chewi@gentoo.org> (2 Jan 2016)
 # Incorrectly depends on gjdoc, which is going to be
 # last-rited. Doesn't actually install the javadocs in this ebuild
@@ -284,14 +307,6 @@ dev-libs/DirectFB swfdec
 # Masked since skype isn't stable
 net-im/bitlbee skype
 
-# Sergey Popov <pinkbyte@gentoo.org> (01 Oct 2014)
-# Mask multislot USE flag for packages, where it breaks
-# metadata cache consistency.
-# See bugs #507808, #507810 and #507814
-sys-devel/autoconf	multislot
-sys-devel/binutils	multislot
-sys-devel/gcc		multislot
-
 # Michał Górny <mgorny@gentoo.org> (15 Sep 2014)
 # Unsuccessful version bump of net-libs/libzrtpcpp, seems to cause
 # undefined references few layers deeper. Need further investigation,
@@ -301,10 +316,6 @@ net-libs/ortp zrtp
 # Johannes Huber <johu@gentoo.org> (14 Sep 2014)
 # Masked until dev-libs/extra-cmake-modules is in tree.
 dev-libs/libattica qt5
-
-# Johannes Huber <johu@gentoo.org> (12 Sep 2014)
-# Segmentation fault, needs further investigation.
-media-sound/tomahawk qt5
 
 # Michał Górny <mgorny@gentoo.org> (06 Sep 2014)
 # Mask the removed/deprecated flags for old ebuilds that do not use

@@ -287,3 +287,86 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> systemd-228-r1.ebuild,
+  systemd-9999.ebuild:
+  Do not force ld.gold by default, #539998
+
+  11 Feb 2016; Elias Probst <mail@eliasprobst.eu> systemd-9999.ebuild:
+  Create "systemd-coredump" user/group
+
+  Package-Manager: portage-2.2.27
+
+  02 Mar 2016; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Describe subslots
+
+  05 Mar 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Move to EAPI 6
+
+  Package-Manager: portage-2.2.27_p64
+
+*systemd-229 (05 Mar 2016)
+
+  05 Mar 2016; Mike Gilbert <floppym@gentoo.org> +systemd-229.ebuild:
+  Bump to 229
+
+  Package-Manager: portage-2.2.27_p64
+
+  05 Mar 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Drop legacy pkgconfig files
+
+  Upstream dropped the compat libs, along with the associated
+  pkgconfig files. It's probably time we do so as well.
+
+  Package-Manager: portage-2.2.27_p64
+
+  06 Mar 2016; Mike Gilbert <floppym@gentoo.org> systemd-229.ebuild,
+  systemd-9999.ebuild:
+  Block app-laptop/laptop-mode-tools
+
+  The included udev rules cause an overload of start requests, which can
+  cause issues when booting.
+
+  We can drop this blocker if/when this bahvior changes.
+
+  Bug: https://github.com/systemd/systemd/issues/2684
+
+  Package-Manager: portage-2.2.27_p64
+
+*systemd-229-r100 (12 Mar 2016)
+
+  12 Mar 2016; Mike Gilbert <floppym@gentoo.org> +systemd-229-r100.ebuild:
+  Drop compat libs from 229 for testing
+
+  Package-Manager: portage-2.2.28_p57
+
+  14 Mar 2016; Steev Klimaszewski <steev@gentoo.org> systemd-229.ebuild,
+  systemd-229-r100.ebuild, systemd-9999.ebuild:
+  Add ~arm64 keyword
+
+  The systemd useflag is still masked in the profile, so for now you need to
+  unmask it manually.
+
+  Package-Manager: portage-2.2.28
+
+  25 Mar 2016; Mike Gilbert <floppym@gentoo.org> systemd-229-r100.ebuild,
+  systemd-9999.ebuild:
+  Enable systemd-coredump by default
+
+  This feature is now actually usable with coredumpctl.
+
+  Package-Manager: portage-2.2.28_p64
+
+  27 Mar 2016; Jason Zaman <perfinion@gentoo.org> systemd-229.ebuild,
+  systemd-229-r100.ebuild, systemd-9999.ebuild:
+  Add selinux policy dep
+
+  Package-Manager: portage-2.2.26
+
+  27 Mar 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  Remove duplicate user addition
+
+  Package-Manager: portage-2.2.28_p64
+

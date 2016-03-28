@@ -1,5 +1,5 @@
 # ChangeLog for xfce-base/xfce4-settings
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *xfce4-settings-4.12.0 (09 Aug 2015)
@@ -73,4 +73,27 @@
   sparc stable wrt bug #553500
 
   Package-Manager: portage-2.2.20.1
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*xfce4-settings-4.12.0-r2 (22 Mar 2016)
+
+  22 Mar 2016; Patrick McLean <chutzpah@gentoo.org>
+  +xfce4-settings-4.12.0-r2.ebuild:
+  Rename USE libinput to input_devices_libinput
+
+  Uses the same INPUT_DEVICES expanded use as x11-base/xorg-drivers and
+  other packages that have similar input-device specific functionality
+  (like gnome-settings).
+
+  Package-Manager: portage-2.2.26
 

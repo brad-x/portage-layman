@@ -73,3 +73,59 @@
   11 Jan 2016; Mike Frysinger <vapier@gentoo.org> cdrdao-1.2.3-r2.ebuild:
   use a better default AR setting
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+*cdrdao-1.2.3-r3 (13 Feb 2016)
+
+  13 Feb 2016; David Seifert <soap@gentoo.org> +cdrdao-1.2.3-r3.ebuild,
+  +files/cdrdao-1.2.3-ax_pthread.patch, files/cdrdao-1.2.3-glibc212.patch,
+  +files/cdrdao-1.2.3-wformat-security.patch:
+  Link to libpthread unconditionally
+
+  Gentoo-Bug: 548004, 520988
+  * EAPI=6
+  * Use AX_PTHREAD to properly detect pthread flags
+  * Use AM_PROG_AR instead of toolchain-funcs.eclass
+  * Amend patches for -p1
+  * Fix -Werror=format-security errors
+
+  Package-Manager: portage-2.2.27
+
+  14 Feb 2016; David Seifert <soap@gentoo.org>
+  files/cdrdao-1.2.3-ax_pthread.patch:
+  Add AM_GCONF_SOURCE_2 macro to patch
+
+  Gentoo-Bug: 574660
+  * AM_GCONF_SOURCE_2 is normally defined in gnome-base/gconf,
+    which we do not watch to DEPEND on.
+
+  Package-Manager: portage-2.2.27
+
+  21 Feb 2016; Pacho Ramos <pacho@gentoo.org> cdrdao-1.2.3-r2.ebuild:
+  amd64 stable, bug 566378
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="amd64"
+
+  28 Feb 2016; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  metadata.xml: Add maintainer-needed comment to packages without maintainer.
+
+  Bug: 575810
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> cdrdao-1.2.3-r2.ebuild:
+  x86 stable wrt bug #566378
+
+  Package-Manager: portage-2.2.26
+

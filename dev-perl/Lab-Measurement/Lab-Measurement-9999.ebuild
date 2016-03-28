@@ -1,12 +1,12 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 if [[ "${PV}" != "9999" ]]; then
-	MODULE_VERSION=9999 # change this!!!
-	MODULE_AUTHOR="AKHUETTEL"
+	DIST_VERSION=9999 # change this!!!
+	DIST_AUTHOR="AKHUETTEL"
 	KEYWORDS="~amd64 ~x86"
 	inherit perl-module
 else
@@ -45,10 +45,10 @@ RDEPEND="
 	!dev-perl/Lab-Tools
 	debug? (
 		dev-lang/perl[ithreads]
-		dev-perl/wxperl
+		dev-perl/Wx
 	)
 	xpression? (
-		dev-perl/wxperl
+		dev-perl/Wx
 	)
 "
 DEPEND="

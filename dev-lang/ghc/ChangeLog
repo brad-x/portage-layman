@@ -1,5 +1,5 @@
 # ChangeLog for dev-lang/ghc
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ghc-7.10.2 (09 Aug 2015)
@@ -121,4 +121,48 @@
   alpha amd64 ia64 ppc ppc64 sparc x86 stable, bug #524790
 
   Package-Manager: portage-2.2.20
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  10 Feb 2016; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.4.2.ebuild,
+  ghc-7.6.3-r1.ebuild, ghc-7.8.3.ebuild, ghc-7.8.4.ebuild, ghc-7.10.2.ebuild,
+  ghc-7.10.2-r1.ebuild:
+  move QA_PREBUILT to pkg_setup(), bug #566534
+
+  Should fix paludis users.
+  The change requires yet unreleased portage 2.2.28
+  to make QA_PREBUILT work as expected.
+
+  Bug: https://bugs.gentoo.org/566534
+
+  Package-Manager: portage-2.2.27
+
+*ghc-7.10.3 (15 Mar 2016)
+
+  15 Mar 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.10.3-hardfloat.patch, +files/ghc-7.10.3-relnotes.patch,
+  +ghc-7.10.3.ebuild:
+  bump up to 7.10.3, added binaries for x86, amd64
+
+  Package-Manager: portage-2.2.28
+
+  22 Mar 2016; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.10.3.ebuild:
+  built 7.10.3 binaries for alpha, ppc, ppc64, sparc
+
+  Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
 

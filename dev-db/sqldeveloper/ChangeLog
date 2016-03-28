@@ -1,5 +1,5 @@
 # ChangeLog for dev-db/sqldeveloper
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *sqldeveloper-4.1.1.19.59 (09 Aug 2015)
@@ -70,4 +70,45 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="x86"
+
+  22 Jan 2016; Wolfram Schlich <wschlich@gentoo.org> metadata.xml:
+  added myself to metadata.xml as a maintainer, removed proxy-maint and
+  jan.bednar@gmail.com
+
+  Package-Manager: portage-2.2.27
+
+*sqldeveloper-4.1.3.20.78 (22 Jan 2016)
+
+  22 Jan 2016; Wolfram Schlich <wschlich@gentoo.org>
+  +sqldeveloper-4.1.3.20.78.ebuild:
+  version bump
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*sqldeveloper-4.1.3.20.78-r1 (06 Feb 2016)
+
+  06 Feb 2016; James Le Cuirot <chewi@gentoo.org> +files/sqldeveloper-r1,
+  +sqldeveloper-4.1.3.20.78-r1.ebuild:
+  Use jtds:1.3, auto select 1.8 JVM, other fixes
+
+  Java team needs to remove Java 6 ASAP and jtds:1.2 is holding this
+  back. Upstream suggests 1.2 but 1.3 is reported to work. I wasn't able
+  to test against a real database but it did at least try to connect.
+
+  Asking users to manually switch their JVM before using this isn't very
+  polite and not usually necessary thanks to Gentoo's launcher
+  scripts. Those scripts cannot feasibly be used here but we can at
+  least write package.env and use gjl to select the JVM intelligently.
+
+  Other fixes:
+
+   * Remove java-config from RDEPEND, it's implied by java-pkg-2 eclass.
+   * Add some missing dies and remove some unnecessary dies.
+   * Use newicon instead of mv + doicon.
+   * Use exec in launcher to prevent lingering process.
+
+  Package-Manager: portage-2.2.27
 

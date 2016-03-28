@@ -1,5 +1,5 @@
 # ChangeLog for sci-visualization/gnuplot
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *gnuplot-5.0.1 (09 Aug 2015)
@@ -106,4 +106,34 @@
   Bug: 569200
 
   Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  29 Jan 2016; Mike Frysinger <vapier@gentoo.org> gnuplot-4.6.5.ebuild,
+  gnuplot-5.0.1-r1.ebuild:
+  fix cross-compile builds
+
+  The upstream build tries to set up CC_FOR_BUILD for building helper tools,
+  but still mixes target compiler flags in which easily leads to failure.
+
+*gnuplot-5.0.3 (07 Mar 2016)
+
+  07 Mar 2016; Christoph Junghans <ottxor@gentoo.org> +gnuplot-5.0.3.ebuild:
+  version bump (bug #576710)
+
+  Package-Manager: portage-2.2.26
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> gnuplot-5.0.1-r1.ebuild:
+  amd64 stable wrt bug #574242
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 

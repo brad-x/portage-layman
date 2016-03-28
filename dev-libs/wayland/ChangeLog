@@ -173,3 +173,61 @@
   Package-Manager: portage-2.2.26
   RepoMan-Options: --ignore-arches
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*wayland-1.10.0 (18 Feb 2016)
+
+  18 Feb 2016; Manuel Rüger <mrueg@gentoo.org> +wayland-1.10.0.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.27
+
+  01 Mar 2016; Mart Raudsepp <leio@gentoo.org>
+  +files/1.10.0-build-fix-configure-disable-dtd-validation.patch,
+  wayland-1.10.0.ebuild:
+  Fix multilib and add missing libxml2 dependency
+
+  Multilib support was broken in previous versions, as the configure
+  options were in src_configure, not multilib_src_configure, and so
+  it always built with configuration for "native" ABI, meaning that
+  USE=doc with multilib was probably broken. Now with 1.10 this
+  becomes more apparent with a new libxml2 dependency in wayland-scanner
+  for DTD validation.
+  As we do not currently install /usr/bin/wayland-scanner for other ABIs,
+  just disable the dtd validation support there. Ideally we wouldn't
+  build it at all then, but not a clean way to do so upstream right now.
+  For --{dis,en}able-dtd-validation to work, we need to patch the
+  build system to fix the support for the configure flag.
+  Thanks to this we are able to add the missing libxml2 dependency
+  without requiring multilib libxml2 for that (and commonly then also
+  multilib icu), which is nice, as many users haven't had a need for
+  a 32bit version of those as of yet and icu is a bit bigger compile.
+
+  Remove USE=static-libs handling, as autotools-utils takes care
+  of it for us when it's in IUSE. Also make use of the
+  multilib_native_use_enable helper to simplify the ebuild.
+
+  Gentoo-bug: 575212
+
+  02 Mar 2016; Mart Raudsepp <leio@gentoo.org>
+  files/1.10.0-build-fix-configure-disable-dtd-validation.patch:
+  Try to avoid maintenance mode autotools regen
+
+  while still trying to avoid full eautoreconf call and autotools build deps
+
+  Gentoo-bug: 576198
+
+*wayland-1.10.0-r1 (02 Mar 2016)
+
+  02 Mar 2016; Mart Raudsepp <leio@gentoo.org>
+  +files/1.10.0-scanner-avoid-executable-stack.patch, -wayland-1.10.0.ebuild,
+  +wayland-1.10.0-r1.ebuild:
+  Fix wayland-scanner executable stack in v1.10.0
+

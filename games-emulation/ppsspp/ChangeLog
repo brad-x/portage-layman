@@ -1,0 +1,125 @@
+# ChangeLog for games-emulation/ppsspp
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*ppsspp-9999 (19 Jan 2016)
+*ppsspp-1.1.1 (19 Jan 2016)
+*ppsspp-1.1.0 (19 Jan 2016)
+
+  19 Jan 2016; RobinDX <robin9800xt@gmail.com> +files/ppsspp,
+  +files/ppsspp-cmake.patch, +files/ppsspp-ffmpeg-x86.patch,
+  +files/ppsspp-ffmpeg-x86_64.patch, +files/ppsspp-qt.patch,
+  +files/ppsspp.desktop, +metadata.xml, +ppsspp-1.1.0.ebuild,
+  +ppsspp-1.1.1.ebuild, +ppsspp-9999.ebuild:
+  new ebuild
+
+  19 Jan 2016; Patrice Clement <monsieurp@gentoo.org> ppsspp-1.1.0.ebuild,
+  ppsspp-1.1.1.ebuild, ppsspp-9999.ebuild:
+  Add missing dies. Fix dependencies. Fix header.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  19 Jan 2016; Patrice Clement <monsieurp@gentoo.org> ppsspp-1.1.0.ebuild,
+  ppsspp-1.1.1.ebuild, ppsspp-9999.ebuild:
+  Fix DESCRIPTION length.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  20 Jan 2016; RobinDX <robin9800xt@gmail.com> metadata.xml,
+  ppsspp-1.1.0.ebuild, ppsspp-1.1.1.ebuild, ppsspp-9999.ebuild:
+  add qt5 support
+
+  22 Jan 2016; Michael Palimaka <kensington@gentoo.org> ppsspp-1.1.0.ebuild,
+  ppsspp-1.1.1.ebuild, ppsspp-9999.ebuild:
+  add missing slot dep
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*ppsspp-9999-r1 (31 Jan 2016)
+*ppsspp-1.1.1-r1 (31 Jan 2016)
+*ppsspp-1.1.0-r1 (31 Jan 2016)
+
+  31 Jan 2016; Patrice Clement <monsieurp@gentoo.org> -ppsspp-1.1.0.ebuild,
+  +ppsspp-1.1.0-r1.ebuild, -ppsspp-1.1.1.ebuild, +ppsspp-1.1.1-r1.ebuild,
+  -ppsspp-9999.ebuild, +ppsspp-9999-r1.ebuild:
+  bug fix #572606
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*ppsspp-9999 (02 Feb 2016)
+
+  02 Feb 2016; Patrice Clement <monsieurp@gentoo.org> +ppsspp-9999.ebuild,
+  -ppsspp-9999-r1.ebuild:
+  9999 ebuilds shouldn't be revbumped.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Feb 2016; Patrice Clement <monsieurp@gentoo.org> ppsspp-1.1.0-r1.ebuild,
+  ppsspp-1.1.1-r1.ebuild, ppsspp-9999.ebuild:
+  Remove useless blank lines and QA warnings whilst at it.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*ppsspp-1.1.1-r2 (07 Feb 2016)
+*ppsspp-1.1.0-r2 (07 Feb 2016)
+
+  07 Feb 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/ppsspp-cmake.patch, -ppsspp-1.1.0-r1.ebuild, +ppsspp-1.1.0-r2.ebuild,
+  -ppsspp-1.1.1-r1.ebuild, +ppsspp-1.1.1-r2.ebuild, ppsspp-9999.ebuild:
+  Remove bogus patch. Fix install directory (typo).
+
+  Also taken into consideration in this commit is the sed command pruning all
+  -O2
+  flags in favour of -O3, courtesy of Michał Ziąbkowski <mziab@o2.pl>.
+
+  Gentoo-Bug: 574000
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  07 Feb 2016; Patrice Clement <monsieurp@gentoo.org> ppsspp-1.1.1-r2.ebuild:
+  Fix typo: exeinto instead of into.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*ppsspp-1.2.1 (21 Feb 2016)
+
+  21 Feb 2016; RobinDX <robin9800xt@gmail.com> +ppsspp-1.2.1.ebuild,
+  ppsspp-9999.ebuild:
+  version bump
+
+  21 Feb 2016; RobinDX <robin9800xt@gmail.com> -files/ppsspp-ffmpeg-x86.patch,
+  -files/ppsspp-ffmpeg-x86_64.patch, -files/ppsspp-qt.patch,
+  -ppsspp-1.1.0-r2.ebuild, -ppsspp-1.1.1-r2.ebuild:
+  remove old
+
+*ppsspp-1.2.2 (22 Mar 2016)
+
+  22 Mar 2016; Patrice Clement <monsieurp@gentoo.org> -ppsspp-1.2.1.ebuild,
+  +ppsspp-1.2.2.ebuild:
+  version bump
+
+  Closes: https://github.com/gentoo/gentoo/pull/1113
+

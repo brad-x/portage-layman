@@ -1,5 +1,5 @@
 # ChangeLog for sys-block/fio
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *fio-2.2.9 (09 Aug 2015)
@@ -121,4 +121,32 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="ia64"
+
+*fio-2.5 (22 Jan 2016)
+*fio-2.2.13 (22 Jan 2016)
+
+  22 Jan 2016; Robin H. Johnson <robbat2@gentoo.org> fio-2.2.9.ebuild,
+  fio-2.2.10.ebuild, +fio-2.2.13.ebuild, +fio-2.5.ebuild:
+  Version bump & bug #572446.
+
+  - Version bump.
+  - Fix bug #572446: USE=static builds, the deps need to be build with
+    USE=static-libs, or else the build will fail (backported change to
+    last stable as well, as also affected).
+
+  X-Gentoo-Bug: 572446
+  Package-Manager: portage-2.2.24
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*fio-2.6 (03 Feb 2016)
+
+  03 Feb 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +files/fio-2.2.10-libmtd.patch, +files/fio-2.2.13-libmtd.patch,
+  fio-2.2.10.ebuild, fio-2.2.13.ebuild, fio-2.5.ebuild, +fio-2.6.ebuild:
+  fix bug 572446 caused by newer kernel headers, also version bump.
+
+  Package-Manager: portage-2.2.27
 

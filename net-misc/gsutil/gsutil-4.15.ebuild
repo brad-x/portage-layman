@@ -1,8 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI="5"
+
 PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
@@ -28,7 +29,7 @@ RDEPEND="${PYTHON_DEPS}
 	>=dev-python/python-gflags-2.0[${PYTHON_USEDEP}]
 	>=dev-python/retry-decorator-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
-	>=dev-python/socksipy-1.01[${PYTHON_USEDEP}]"
+	>=dev-python/PySocks-1.01[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
@@ -39,6 +40,13 @@ DOCS=( README.md CHANGES.md )
 PATCHES=(
 	"${FILESDIR}"/${PN}-4.15-use-friendy-version-checks.patch
 )
+
+python_prepare_all() {
+	distutils-r1_python_prepare_all
+	sed \
+		-e '/SocksiPy-branch/d' \
+		-i setup.py || die
+}
 
 python_test() {
 	export BOTO_CONFIG=${FILESDIR}/dummy.boto

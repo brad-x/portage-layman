@@ -1,5 +1,5 @@
 # ChangeLog for net-dns/pdns
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *pdns-3.4.5 (09 Aug 2015)
@@ -88,4 +88,36 @@
 
   Package-Manager: portage-2.2.20.1
   RepoMan-Options: --include-arches="x86"
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  24 Jan 2016; Sven Wegener <swegener@gentoo.org>
+  -files/pdns-3.3.1-fix-curl-link.patch, -pdns-3.3.1.ebuild,
+  -pdns-3.3.2.ebuild, -pdns-3.3.3.ebuild, -pdns-3.4.0.ebuild,
+  -pdns-3.4.0-r1.ebuild, -pdns-3.4.1.ebuild, -pdns-3.4.2.ebuild,
+  -pdns-3.4.4.ebuild, -pdns-3.4.5.ebuild, -pdns-3.4.6.ebuild:
+  Cleanup
+
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+
+  03 Feb 2016; Sven Wegener <swegener@gentoo.org> metadata.xml:
+  Remove unused local USE flag remote-http
+
+  Package-Manager: portage-2.2.26
+
+*pdns-3.4.8 (03 Feb 2016)
+
+  03 Feb 2016; Sven Wegener <swegener@gentoo.org> +pdns-3.4.8.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.26
 

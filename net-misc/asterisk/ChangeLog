@@ -1,5 +1,5 @@
 # ChangeLog for net-misc/asterisk
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *asterisk-13.4.0 (09 Aug 2015)
@@ -102,4 +102,68 @@
   07 Dec 2015; Tony Vroon <chainsaw@gentoo.org> asterisk-11.20.0.ebuild,
   asterisk-13.6.0.ebuild:
   ncurses slot dependencies.
+
+*asterisk-13.7.0 (19 Jan 2016)
+*asterisk-11.21.0 (19 Jan 2016)
+
+  19 Jan 2016; Tony Vroon <chainsaw@gentoo.org> asterisk-11.17.1.ebuild,
+  -asterisk-11.18.0.ebuild, -asterisk-11.19.0.ebuild,
+  -asterisk-11.19.0-r1.ebuild, asterisk-11.19.0-r2.ebuild,
+  +asterisk-11.21.0.ebuild, -asterisk-13.3.2.ebuild, -asterisk-13.4.0.ebuild,
+  -asterisk-13.5.0.ebuild, -asterisk-13.5.0-r1.ebuild,
+  -asterisk-13.5.0-r2.ebuild, +asterisk-13.7.0.ebuild:
+  Bugfix releases on the 11 & 13 branches, particularly around DTLS
+  negotiation and PBX deadlocks.
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*asterisk-13.7.1 (05 Feb 2016)
+*asterisk-11.21.1 (05 Feb 2016)
+
+  05 Feb 2016; Tony Vroon <chainsaw@gentoo.org> -asterisk-11.19.0-r2.ebuild,
+  -asterisk-11.20.0.ebuild, -asterisk-11.21.0.ebuild,
+  +asterisk-11.21.1.ebuild, -asterisk-13.6.0.ebuild, -asterisk-13.7.0.ebuild,
+  +asterisk-13.7.1.ebuild:
+  AST-2016-001 BEAST vulnerability in built-in HTTP server, updates on 11 & 13
+  branches. Removing all vulnerable non-stable ebuilds.
+
+  Package-Manager: portage-2.2.27
+
+  05 Feb 2016; Agostino Sarubbo <ago@gentoo.org> asterisk-11.21.1.ebuild:
+  amd64 stable wrt bug #573924
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  05 Feb 2016; Agostino Sarubbo <ago@gentoo.org> asterisk-11.21.1.ebuild:
+  x86 stable wrt bug #573924
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  05 Feb 2016; Tony Vroon <chainsaw@gentoo.org> -asterisk-11.17.1.ebuild:
+  Remove vulnerable ebuild now that stabilisation is complete for security bug
+  #573924.
+
+*asterisk-13.7.2 (08 Feb 2016)
+
+  08 Feb 2016; Tony Vroon <chainsaw@gentoo.org> -asterisk-13.7.1.ebuild,
+  +asterisk-13.7.2.ebuild:
+  Release 13.7.2 addresses a regression for realtime PJSIP users in security
+  release 13.7.1
+
+  Package-Manager: portage-2.2.27
+
+*asterisk-11.21.2 (09 Mar 2016)
+
+  09 Mar 2016; Tony Vroon <chainsaw@gentoo.org> +asterisk-11.21.2.ebuild:
+  11.21.2 fixes an OpenSSL include issue that could prevent 11.21.1 from
+  building on some systems.
+
+  Package-Manager: portage-2.2.27
 

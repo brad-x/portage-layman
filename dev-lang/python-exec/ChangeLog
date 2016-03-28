@@ -84,3 +84,194 @@
   /usr/bin/python correctly on non-Linux systems where shebangs must only
   reference real executables (rather than the Python script used so far).
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*python-exec-2.2.1 (31 Jan 2016)
+
+  31 Jan 2016; Michał Górny <mgorny@gentoo.org> +python-exec-2.2.1.ebuild:
+  Minor version bump
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.9999.ebuild:
+  Reclaim /usr/bin/py* wrappers, #573254
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.9999.ebuild:
+  Install and migrate configuration file
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.9999.ebuild:
+  Silence the migration output for initial install
+
+  06 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.9999.ebuild:
+  Do not copy meaningless Python 2 selection
+
+  Do not copy Python 2 version preference if Python 3 is the main
+  interpreter. It is not meaningful since we no longer support more than
+  one Python 2 version, and it will cause Python 2 to be preferred over
+  non-preferred versions of Python 3.
+
+  07 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.9999.ebuild:
+  Remove unneeded --with-eprefix= from -2.9999
+
+*python-exec-9999 (07 Feb 2016)
+
+  07 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.9999.ebuild,
+  +python-exec-9999.ebuild:
+  Rename the live ebuild to -9999 for consistency
+
+*python-exec-2.3 (07 Feb 2016)
+
+  07 Feb 2016; Michał Górny <mgorny@gentoo.org> +python-exec-2.3.ebuild:
+  Major version bump to 2.3
+
+  The new 2.3 release is the first release using new python-exec.conf
+  configuration file that allows users to specify complete Python
+  implementation preferences for python-exec.
+
+  08 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-9999.ebuild:
+  Wrappers were moved to /usr/bin (in git)
+
+  The both wrappers were moved to /usr/bin in order to make it possible to
+  symlink them in place of /usr/bin/python{,2,3}. Compatibility symlinks
+  are now installed in place of old locations.
+
+  09 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-9999.ebuild:
+  Update install layout in -9999
+
+  16 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-9999.ebuild:
+  9999: Update for another wrapper rename
+
+  16 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-9999.ebuild:
+  9999: Use Python wrapper for Python scripts
+
+*python-exec-2.3.1 (16 Feb 2016)
+
+  16 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.3.ebuild,
+  +python-exec-2.3.1.ebuild:
+  Update the testing version to 2.3.1
+
+*python-exec-2.3 (17 Feb 2016)
+
+  17 Feb 2016; Fabian Groffen <grobian@gentoo.org> +python-exec-2.3.ebuild:
+  put back 2.3, as 2.3.1 seems to break systems completely
+
+  Package-Manager: portage-2.2.20-prefix
+
+*python-exec-2.3.2 (18 Feb 2016)
+
+  18 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.3.1.ebuild,
+  +python-exec-2.3.2.ebuild:
+  Bugfix bump to 2.3.2, #574970
+
+  Bump to bugfix 2.3.2 release with improved error handling, proper
+  argv[0] value for Python interpreter wrapping and a README with recovery
+  instructions.
+
+  Bug: https://bugs.gentoo.org/574970
+
+*python-exec-2.4 (20 Feb 2016)
+
+  20 Feb 2016; Michał Górny <mgorny@gentoo.org> +python-exec-2.4.ebuild:
+  Bump to the most awesome so far 2.4 release
+
+  Version bump to 2.4. The new version improves symlink handling to fix
+  problems when basename of custom symlinks collide with another system
+  executable name (previously, this resulted in the wrong script being
+  used), and adds support for per-script implementation preference
+  overrides.
+
+  20 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.4.ebuild:
+  Remove 2.4 due to issues with python wrapping
+
+  Remove 2.4 as it fails at symlink resolution when argv[0] contains
+  only basename (and requires PATH lookup), which breaks executables
+  linked directly to python-exec2c such as python wrappers.
+
+*python-exec-2.4.1 (21 Feb 2016)
+
+  21 Feb 2016; Michał Górny <mgorny@gentoo.org> +python-exec-2.4.1.ebuild:
+  Bump to 2.4.1 with symlink resolution fix
+
+  Add a new 2.4.1 version that does symlink resolution correctly when
+  starting python-exec2c links via PATH, e.g. when wrapping Python itself.
+
+*python-exec-2.4.2 (23 Feb 2016)
+
+  23 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.4.1.ebuild,
+  +python-exec-2.4.2.ebuild:
+  Bugfix bump to 2.4.2
+
+  Bump to 2.4.2 that fixes informational command output (-h, -l, -V) to go
+  to stdout rather than stderr. This is required for new eselect-python
+  versions.
+
+  25 Feb 2016; Michał Górny <mgorny@gentoo.org> python-exec-2.4.2.ebuild,
+  python-exec-9999.ebuild:
+  Explain configuration upgrade in postinst
+
+  25 Feb 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.2.ebuild,
+  -python-exec-2.2.1.ebuild, -python-exec-2.3.ebuild,
+  -python-exec-2.3.2.ebuild:
+  Drop intermediate masked versions
+
+  06 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  amd64 stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*python-exec-2.4.3 (07 Mar 2016)
+
+  07 Mar 2016; Michał Górny <mgorny@gentoo.org> -python-exec-2.4.2.ebuild,
+  +python-exec-2.4.3.ebuild:
+  Bump to 2.4.3 with test fixes
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=575938
+
+  13 Mar 2016; Markus Meier <maekke@gentoo.org> python-exec-2.0.2.ebuild:
+  arm stable, bug #557104
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="arm"
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  x86 stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  ppc stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  ppc64 stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  sparc stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> python-exec-2.0.2.ebuild:
+  ia64 stable wrt bug #557104
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

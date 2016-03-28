@@ -1,5 +1,5 @@
 # ChangeLog for app-admin/ulogd
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *ulogd-2.0.5 (09 Aug 2015)
@@ -181,4 +181,63 @@
   drop obsolete initscript and systemd unit suffixes
 
   Package-Manager: portage-2.2.24
+
+*ulogd-2.0.5-r4 (23 Jan 2016)
+
+  23 Jan 2016; Patrice Clement <monsieurp@gentoo.org> +ulogd-2.0.5-r4.ebuild:
+  2.0.5-r4 revbump to migrate to readme.gentoo-r1 eclass
+
+  Package-Manager: portage-2.2.27
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  04 Mar 2016; Ilya Tumaykin <itumaykin@gmail.com> metadata.xml:
+  add bugs-to link to metadata
+
+  Package-Manager: portage-2.2.27
+
+*ulogd-2.0.5_p20160205 (10 Mar 2016)
+
+  10 Mar 2016; Patrice Clement <monsieurp@gentoo.org> -ulogd-2.0.5-r4.ebuild,
+  +ulogd-2.0.5_p20160205.ebuild:
+  verbump to 2.0.5_p20160205
+
+  This commit closes #1014.
+
+  Snapshot verbump to get the fix [1] for the upstream bug #1030 [2]
+  (unsafe signal handling).
+  Quote from the commit message of the mentioned fix:
+
+  This patch will solve various symptoms like following.
+    - Deadlock
+    - Segmentation fault caused by libc management data corruption,
+    - Other unpredictable behavior.
+
+  End quote.
+
+  Also other minor fixes here and there.
+
+  [1]: https://git.netfilter.org/ulogd2/commit/?id=1f70d2ba45e2b067777d5386b8d
+  3f2e09be9118b
+  [2]: https://bugzilla.netfilter.org/show_bug.cgi?id=1030
+
+  Pull-Request: https://github.com/gentoo/gentoo/pull/1014
+  Acked-by: Patrice Clement <monsieurp@gentoo.org>
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+  Package-Manager: portage-2.2.27
 

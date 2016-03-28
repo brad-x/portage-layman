@@ -128,3 +128,35 @@
   02 Jan 2016; Mike Frysinger <vapier@gentoo.org> timezone-data-2015g.ebuild:
   add a message about empty /etc/localtime files #570388
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  02 Feb 2016; Mike Frysinger <vapier@gentoo.org> -timezone-data-2015e.ebuild:
+  sys-libs/timezone: delete old 2015e version
+
+  02 Feb 2016; Mike Frysinger <vapier@gentoo.org> timezone-data-2015g.ebuild:
+  sys-libs/timezone: mark 2015g stable for all
+
+*timezone-data-2016a (02 Feb 2016)
+
+  02 Feb 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/timezone-data-2016a-makefile.patch, +timezone-data-2016a.ebuild:
+  sys-libs/timezone: version bump to 2016a
+
+  07 Mar 2016; Mike Frysinger <vapier@gentoo.org> timezone-data-2016a.ebuild:
+  build w/LFS settings #471102
+

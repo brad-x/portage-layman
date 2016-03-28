@@ -1,5 +1,5 @@
 # ChangeLog for media-libs/cogl
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *cogl-1.20.0 (09 Aug 2015)
@@ -78,4 +78,43 @@
   Drop old
 
   Package-Manager: portage-2.2.24
+
+*cogl-1.22.0-r1 (23 Jan 2016)
+
+  23 Jan 2016; Pacho Ramos <pacho@gentoo.org> +cogl-1.22.0-r1.ebuild,
+  +files/cogl-1.22.0-fglrx.patch, +files/cogl-1.22.0-initial-output.patch,
+  +files/cogl-1.22.0-wait-flip.patch:
+  Apply upstream fixes, also fix cogl not working at all with fglrx drivers,
+  we need to apply the fix conditionally until someone figures out how to
+  properly check for fglrx presence for the patch (#567168, upstream bug
+  #756306, thanks to Olcay for reporting and testing this).
+
+  Package-Manager: portage-2.2.26
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*cogl-1.22.0-r2 (31 Jan 2016)
+
+  31 Jan 2016; Pacho Ramos <pacho@gentoo.org> +cogl-1.22.0-r2.ebuild:
+  Stop applying buggy patch (#573514 by Pascal Flöschel)
+
+  Package-Manager: portage-2.2.27
+
+  21 Feb 2016; Pacho Ramos <pacho@gentoo.org> cogl-1.22.0-r2.ebuild:
+  amd64 stable, bug 566378
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="amd64"
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> cogl-1.22.0-r2.ebuild:
+  x86 stable wrt bug #427546
+
+  Package-Manager: portage-2.2.26
 

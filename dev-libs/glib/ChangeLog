@@ -227,3 +227,66 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  21 Feb 2016; Pacho Ramos <pacho@gentoo.org> glib-2.46.2-r1.ebuild:
+  amd64 stable, bug 566378
+
+  Package-Manager: portage-2.2.27
+  RepoMan-Options: --include-arches="amd64"
+
+*glib-2.46.2-r2 (28 Feb 2016)
+
+  28 Feb 2016; Pacho Ramos <pacho@gentoo.org>
+  +files/glib-2.46.2-memleak.patch, +glib-2.46.2-r2.ebuild:
+  Fix memory leak (#575018 by Rick Harris), skip more broken tests
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Pacho Ramos <pacho@gentoo.org> glib-2.46.2-r2.ebuild:
+  amd64 stable
+
+  Package-Manager: portage-2.2.27
+
+  28 Feb 2016; Pacho Ramos <pacho@gentoo.org> -glib-2.42.2.ebuild,
+  -glib-2.44.1.ebuild, -glib-2.46.2.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.27
+
+  06 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> glib-2.46.2-r2.ebuild:
+  x86 stable wrt bug #427546
+
+  Package-Manager: portage-2.2.26
+
+*glib-2.48.0 (25 Mar 2016)
+
+  25 Mar 2016; Dennis Lamm <expeditioneer@gentoo.org> +glib-2.48.0.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.26
+
+  26 Mar 2016; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/glib-2.48.0-gobject.stp.in, glib-2.48.0.ebuild:
+  gobject.stp.in missing from tarball, bug #578238
+
+  Already fixed upstream: https://bugzilla.gnome.org/show_bug.cgi?id=763821
+
+  Package-Manager: portage-2.2.28
+
+  26 Mar 2016; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.48.0.ebuild:
+  python shebang build failure when USE=utils (bug #578226)
+
+  Restore behavior from previous ebuild versions; it's needed
+  to avoid python shebang mis-mangling while avoiding a build
+  dependency on python when USE="utils" FEATURES="-test"
+
+  Package-Manager: portage-2.2.28
+

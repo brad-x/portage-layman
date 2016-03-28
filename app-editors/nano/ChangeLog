@@ -1,5 +1,5 @@
 # ChangeLog for app-editors/nano
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *nano-2.4.2 (09 Aug 2015)
@@ -173,4 +173,31 @@
 
   31 Dec 2015; Mike Frysinger <vapier@gentoo.org> nano-2.4.3.ebuild:
   mark 2.4.3 alpha/arm/arm64/ia64/m68k/s390/sh stable #568816
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+*nano-2.5.2 (12 Feb 2016)
+
+  12 Feb 2016; Mike Frysinger <vapier@gentoo.org> +nano-2.5.2.ebuild:
+  app-editor/nano: version bump to 2.5.2
+
+  12 Feb 2016; Mike Frysinger <vapier@gentoo.org> -files/awk.nanorc,
+  -files/css.nanorc, -files/gentoo.nanorc, -files/nano-2.4.0-no-speller.patch,
+  -files/xml.nanorc, -nano-2.3.6.ebuild, -nano-2.4.0.ebuild,
+  -nano-2.4.1.ebuild, -nano-2.4.2.ebuild:
+  app-editor/nano: drop old <2.4.3 versions
+
+*nano-2.5.3 (25 Feb 2016)
+
+  25 Feb 2016; Mike Frysinger <vapier@gentoo.org> +nano-2.5.3.ebuild:
+  version bump to 2.5.3
 

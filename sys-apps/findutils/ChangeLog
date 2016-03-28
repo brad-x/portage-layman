@@ -1,5 +1,5 @@
 # ChangeLog for sys-apps/findutils
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
 *findutils-4.5.14-r1 (09 Aug 2015)
@@ -128,4 +128,81 @@
 
   29 Dec 2015; Mike Frysinger <vapier@gentoo.org> +findutils-4.6.0.ebuild:
   version bump to 4.6.0
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Unify quoting in metadata.xml files for machine processing
+
+  Force unified quoting in all metadata.xml files since lxml does not
+  preserve original use of single and double quotes. Ensuring unified
+  quoting before the process allows distinguishing the GLEP 67-related
+  metadata.xml changes from unrelated quoting changes.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Replace all herds with appropriate projects (GLEP 67)
+
+  Replace all uses of herd with appropriate project maintainers, or no
+  maintainers in case of herds requested to be disbanded.
+
+  24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Set appropriate maintainer types in metadata.xml (GLEP 67)
+
+  05 Mar 2016; Mikle Kolyada <zlogene@gentoo.org> findutils-4.6.0.ebuild:
+  amd64 stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+
+  08 Mar 2016; Mike Frysinger <vapier@gentoo.org> findutils-4.6.0.ebuild:
+  fix building w/newer glibc
+
+  09 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/findutils-4.6.0-gnulib-mb.patch, findutils-4.6.0.ebuild:
+  add upstream gnulib fix #576818
+
+  15 Mar 2016; Agostino Sarubbo <ago@gentoo.org> findutils-4.6.0.ebuild:
+  x86 stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  16 Mar 2016; Agostino Sarubbo <ago@gentoo.org> findutils-4.6.0.ebuild:
+  ppc stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Mar 2016; Agostino Sarubbo <ago@gentoo.org> findutils-4.6.0.ebuild:
+  ppc64 stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 Mar 2016; Agostino Sarubbo <ago@gentoo.org> findutils-4.6.0.ebuild:
+  sparc stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  20 Mar 2016; Agostino Sarubbo <ago@gentoo.org> findutils-4.6.0.ebuild:
+  ia64 stable wrt bug #576010
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org> findutils-4.6.0.ebuild:
+  make sys/sysmacros.h include more portable #577714
+
+  21 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  files/findutils-4.6.0-gnulib-mb.patch:
+  fix gnulib patch backport #576818
+
+  25 Mar 2016; Markus Meier <maekke@gentoo.org> findutils-4.6.0.ebuild:
+  arm stable, bug #576010
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
 

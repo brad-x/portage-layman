@@ -14,7 +14,7 @@ HOMEPAGE="https://wiki.gnome.org/action/show/Projects/DVBDaemon"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="nls totem vala"
 
 RDEPEND=">=dev-libs/glib-2.32.0:2
@@ -53,6 +53,8 @@ src_prepare() {
 }
 
 src_configure() {
+	# Prevent sandbox violations, bug #569992
+	addpredict /dev
 	gnome2_src_configure \
 		$(use_enable nls) \
 		$(use_enable totem totem-plugin) \
