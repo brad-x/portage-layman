@@ -74,3 +74,63 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  02 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  files/xmms2-0.8DrO_o-waflib-fix-perl.patch, xmms2-0.8-r2.ebuild:
+  tweak ExtUtils detection against perl-5.22, bug #578778
+
+  Reported-by: Scott McClung
+  Bug: https://bugs.gentoo.org/578778
+
+  Package-Manager: portage-2.2.28
+
+  02 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8-r2.ebuild:
+  shrink DESCRIPTION
+
+  Package-Manager: portage-2.2.28
+
+  02 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/xmms2-0.8-audio4-p1.patch, +files/xmms2-0.8-audio4-p2.patch,
+  +files/xmms2-0.8-audio4-p3.patch, +files/xmms2-0.8-audio4-p4.patch,
+  +files/xmms2-0.8-audio4-p5.patch, +files/xmms2-0.8-audio4-p6.patch,
+  +files/xmms2-0.8-audio4-p7.patch, xmms2-0.8-r2.ebuild:
+  support stable API for libav, bug #540890
+
+  Latest stable media-video/ffmpeg-2.8.6 provides both functions:
+    avcodec_decode_audio3
+    avcodec_decode_audio4
+
+  While latest stable media-video/libav-11.3 provides only
+    avcodec_decode_audio4
+
+  Pulled large patchset from upstream to support audio4 API.
+
+  Builds fine on both stable virtual/ffmpeg implementations
+  and unstable libav.
+
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/540890
+
+  Package-Manager: portage-2.2.28
+
+  02 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/xmms2-0.8-rtvg.patch, metadata.xml, xmms2-0.8-r2.ebuild:
+  Add knob to disable valgrind at test runtime, bug #424377
+
+  When valgrind is installed in system but is not
+  working we should still be able to run tests.
+
+  Reported-by: Diego Elio Pettenò
+  Bug: https://bugs.gentoo.org/424377
+
+  Package-Manager: portage-2.2.28
+
+*xmms2-0.8-r3 (02 Apr 2016)
+
+  02 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/xmms2-0.8-samba-4.patch, xmms2-0.8-r2.ebuild, +xmms2-0.8-r3.ebuild:
+  backported samba detection fix
+
+  While at it updated to non-deprecated python and ruby eclasses.
+
+  Package-Manager: portage-2.2.28
+

@@ -159,6 +159,7 @@ app-admin/collectd:collectd_plugins_zookeeper - Build the zookeeper input plugin
 app-admin/collectd:contrib - Install user-contributed files in the doc directory
 app-admin/collectd:filecaps - When set collectd daemon will have set required capabilities to run most plugins even if run as unprivileged user
 app-admin/collectd:java - Must be set (workaround for java-pkg-opt-2 eclass limitation) when you want java or genericjmx plugin
+app-admin/collectd:udev - Enable optional udev usage in disk plugin; Required for smart plugin
 app-admin/conky:apcupsd - Enable support for sys-power/apcupsd
 app-admin/conky:audacious - Enable monitoring of music played by media-sound/audacious
 app-admin/conky:cmus - Enable monitoring of music played by media-sound/cmus
@@ -399,6 +400,7 @@ app-cdr/mirage2iso:pinentry - Support app-crypt/pinentry password input backend.
 app-cdr/mybashburn:normalize - Add support for normalizing audio file volume levels
 app-crypt/aespipe:asm - Enable assebly modules
 app-crypt/aespipe:cpu_flags_x86_padlock - Use VIA padlock instructions, detected at run time, code still works on non-padlock processors
+app-crypt/ccid:kobil-midentity - Build and install Kobil_mIDentity_switch tool
 app-crypt/ccid:twinserial - Enable twinserial reader
 app-crypt/codecrypt:cryptopp - Build algorithms that need Crypto++ support dev-libs/crypto++
 app-crypt/eid-mw:dialogs - Enable "askaccess" dialog box, by using x11-libs/gtk+:*
@@ -477,7 +479,11 @@ app-doc/tldp-howto:html - Install multi-chapter HTML docs
 app-doc/tldp-howto:htmlsingle - Install all-on-one-page HTML docs
 app-doc/tldp-howto:pdf - Install pdf docs
 app-doc/tldp-howto:text - Install plain-text docs
+app-editors/bluefish:gtk2 - Enable GTK2 instead of GTK3 even if GTK3 is available
+app-editors/bluefish:gtk3 - Enable GTK3 interface (default)
 app-editors/bluefish:gucharmap - Enable gucharmap dictionary plugin
+app-editors/bluefish:python - Enable Python integration for zen-coding plugin
+app-editors/bluefish:spell - Enable spell checking capabilities via enchant library
 app-editors/emacs:athena - Enable the MIT Athena widget set (x11-libs/libXaw)
 app-editors/emacs:games - Support shared score files for games
 app-editors/emacs:gconf - Use gnome-base/gconf to read the system font name
@@ -1286,6 +1292,7 @@ dev-cpp/pficommon:fcgi - Build FCGI feature
 dev-cpp/pficommon:mprpc - Build MessagePack RPC feature
 dev-cpp/websocketpp:boost - Use dev-libs/boost instead of C++11
 dev-cpp/xsd:ace - Enable support for serializing to/from an ACE CDR stream
+dev-db/aerospike-server-community:tools - Install extra tools
 dev-db/cppdb:mysql_internal - Don't build a separate mysql loadable module but rather build it into the cppdb library itself
 dev-db/cppdb:odbc_internal - Don't build a separate postgresql loadable module but rather build it into the cppdb library itself
 dev-db/cppdb:postgres_internal - Don't build a separate odbc loadable module but rather build it into the cppdb library itself
@@ -1843,6 +1850,7 @@ dev-lang/mlton:binary - install a binary version (need to do this once to bootst
 dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
 dev-lang/nqp:moar - Build the MoarVM backend (experimental/broken)
+dev-lang/ocaml:flambda - Enables the Flambda optimizer: A new intermediate representation (introduced in ocaml 4.03) in the depths of the compiler designed to allow for better inlining.
 dev-lang/orc:pax_kernel - Apply patch needed for pax enabled kernels.
 dev-lang/perl:ithreads - Enable Perl threads, has some compatibility problems
 dev-lang/php:cli - Enable CLI SAPI
@@ -1950,18 +1958,6 @@ dev-libs/cyrus-sasl:srp - Enable SRP authentication
 dev-libs/cyrus-sasl:urandom - Use /dev/urandom instead of /dev/random
 dev-libs/dbus-c++:ecore - Use Ecore integration
 dev-libs/dbus-c++:glib - Use glib integration
-dev-libs/e_dbus:bluetooth - Enable interfacing with net-wireless/bluez DBus API
-dev-libs/e_dbus:ofono - Enable interfacing with net-misc/ofono DBus API
-dev-libs/e_dbus:test-binaries - Enable building of test binaries for enabled features
-dev-libs/ecore:ares - Enables support for asynchronous DNS using the net-dns/c-ares library
-dev-libs/ecore:evas - Provides easy to use canvas by gluing media-libs/evas and various input/output systems
-dev-libs/ecore:gles - Add gles support to the ecore-evas-wayland module
-dev-libs/ecore:glib - Enable dev-libs/glib eventloop support
-dev-libs/ecore:inotify - Enable support for inotify
-dev-libs/ecore:tslib - Build with tslib support for touchscreen devices
-dev-libs/ecore:wayland - Add support for dev-libs/wayland
-dev-libs/ecore:xprint - Enable X11 Xprint support
-dev-libs/eeze:utilities - Install some test utilities for mount/umount support in eeze
 dev-libs/efl:bmp - Enable WBMP image loader
 dev-libs/efl:drm - Enable DRM engine
 dev-libs/efl:eet - Enable Eet image loader
@@ -1980,17 +1976,9 @@ dev-libs/efl:psd - Enable PSD image loader
 dev-libs/efl:scim - Enable Smart Common Input Method
 dev-libs/efl:tga - Enable Tga image loader
 dev-libs/efl:tslib - Enable x11-libs/tslib for touchscreen events
-dev-libs/efl:v4l2 - Enable Video4Linux2 support
 dev-libs/efl:valgrind - Enable usage of dev-util/valgrind in debug
 dev-libs/efl:webp - Enable WebP image loader
 dev-libs/efl:xim - Enable X Input Method
-dev-libs/eina:default-mempool - By default use system's allocator (pass-through) instead of custom choice for Eina's own data structures
-dev-libs/eina:mempool-buddy - Compile 'buddy' memory pool allocation
-dev-libs/eina:mempool-chained-pool - Compile 'chained-pool' memory pool allocation
-dev-libs/eina:mempool-fixed-bitmap - Compile 'fixed-bitmap' memory pool allocation
-dev-libs/eina:mempool-one-big - Compile 'one-big' memory pool allocation
-dev-libs/eina:mempool-pass-through - Compile 'pass-through' (system's malloc) memory pool allocation
-dev-libs/eina:valgrind - Compile in valgrind hints for smoother integration
 dev-libs/elfutils:lzma - Support automatic decompression of LZMA-compressed files and kernel images
 dev-libs/elfutils:threads - Build the libraries with thread safe support
 dev-libs/elfutils:utils - Install command-line utilities (all the eu-* programs)
@@ -3049,6 +3037,8 @@ games-puzzle/jag:editor - Install level editor
 games-puzzle/nightsky:bundled-libs - Use the upstream provided bundled libraries.
 games-puzzle/numptyphysics:user-levels - Install some fun user-created levels
 games-puzzle/pingus:music - Enable playing of background music
+games-puzzle/sgt-puzzles:gtk3 - Use x11-libs/gtk+:3 instead of x11-libs/gtk+:2
+games-puzzle/sgt-puzzles:icons - Use Gentoo packaged icons instead of bundled icons
 games-puzzle/tiny-and-big:bundled-libs - Use the upstream provided bundled libraries.
 games-puzzle/xlogical:alt_gfx - Use alternate graphics which are closer to the original Amiga version
 games-roguelike/FTL:bundled-libs - Use bundled libraries.
@@ -3443,6 +3433,7 @@ kde-plasma/kde-cli-tools:kdesu - Build graphical frontend for kde-frameworks/kde
 kde-plasma/kde-gtk-config:gtk3 - Add support for gtk+3-based applications.
 kde-plasma/kdeplasma-addons:ibus - Use ibus input method via app-i18n/ibus
 kde-plasma/kdeplasma-addons:scim - Enable applets that use app-i18n/scim
+kde-plasma/kdeplasma-addons:share - Enable applet for quickly sharing data to a variety of sources
 kde-plasma/kinfocenter:egl - Retrieve information about OpenGL via EGL
 kde-plasma/kinfocenter:gles - Show OpenGL ES information in kinfocenter
 kde-plasma/kinfocenter:nfs - Show information about NFS mounts, shares and log entries
@@ -3455,10 +3446,14 @@ kde-plasma/libksysguard:detailedmemory - Enable display of detailed memory infor
 kde-plasma/plasma-desktop:evdev - Enable configuration module for desktop input devices.
 kde-plasma/plasma-desktop:gtk2 - Add support for gtk+2-based applications using legacy xembed systray icons via libappindicator.
 kde-plasma/plasma-desktop:gtk3 - Add support for gtk+3-based applications using legacy xembed systray icons via libappindicator.
+kde-plasma/plasma-desktop:ibus - Use ibus input method via app-i18n/ibus
 kde-plasma/plasma-desktop:legacy-systray - Add support for applications using legacy xembed systray icons.
+kde-plasma/plasma-desktop:scim - Enable applets that use app-i18n/scim
 kde-plasma/plasma-desktop:touchpad - Enable configuration module for synaptics-based touchpads.
 kde-plasma/plasma-meta:display-manager - Pull in a graphical display manager
+kde-plasma/plasma-meta:grub - Pull in Breeze theme for sys-boot/grub
 kde-plasma/plasma-meta:mediacenter - Pull in kde-plasma/plasma-mediacenter
+kde-plasma/plasma-meta:plymouth - Pull in Breeze theme for sys-boot/plymouth
 kde-plasma/plasma-meta:sddm - Pull in the x11-misc/sddm display manager and KCM
 kde-plasma/plasma-meta:sdk - Pull in kde-plasma/plasma-sdk
 kde-plasma/plasma-meta:wallpapers - Install the KDE wallpapers
@@ -3915,24 +3910,13 @@ media-libs/cogl:pango - Build cogl-pango library for x11-libs/pango integration
 media-libs/coin:simage - Texture loading via media-libs/simage library
 media-libs/devil:allegro - Add support for Allegro
 media-libs/devil:nvtt - Add support for dev-util/nvidia-texture-tools
-media-libs/edje:cache - Enable caching
 media-libs/elementary:quicklaunch - Enable quick-launch support
 media-libs/embree:imagemagick - Enables BMP, GIF, PNG, TGA, TIFF image codecs.
 media-libs/embree:ispc - Enables support for the Intel SPMD Program Compiler.
 media-libs/embree:jpeg - Enables JPEG image codecs.
 media-libs/embree:openexr - Enables OpenEXR image codecs.
 media-libs/embree:png - Enables PNG image codecs.
-media-libs/emotion:vlc - Enable support for the media-video/vlc player backend
 media-libs/esdl:image - Enable image support
-media-libs/ethumb:emotion - Add support for media-libs/emotion
-media-libs/evas:bmp - Support windows bitmap (bmp) image loader
-media-libs/evas:eet - Support dev-libs/eet
-media-libs/evas:gles - Enable gles flavor of gl instead of standard
-media-libs/evas:ico - Support windows icon (ico) image loader
-media-libs/evas:ppm - Support PPM image loader
-media-libs/evas:psd - Support PSD image loader
-media-libs/evas:tga - Support tga image loader
-media-libs/evas:wayland - Add support for dev-libs/wayland
 media-libs/faad2:digitalradio - Digital Radio Mondiale (warning: disables other decoders)
 media-libs/flickcurl:raptor - Use media-libs/raptor for proper RDF serializing
 media-libs/fontconfig-infinality:nyx - Additional style using croscorefonts
@@ -4346,6 +4330,7 @@ media-sound/csound:score - Build the alternative score parser
 media-sound/csound:stk - Build the stk opcodes
 media-sound/csound:tcl - Build the tcl interface and clients
 media-sound/csound:utils - Build stand-alone executables for utilities that can also be used via `csound -U`
+media-sound/csound:websocket - Build the websocket opcode
 media-sound/darkice:aacplus - AAC+ encoding via media-libs/libaacplus
 media-sound/darkice:opus - Enable Opus audio codec support
 media-sound/darkice:twolame - Build with twolame support
@@ -4519,8 +4504,6 @@ media-sound/quark:gnome - Provides tray-icon and enables gconf support
 media-sound/rezound:16bittmp - Use 16bit temporary files (default 32bit float), useful for slower computers
 media-sound/rezound:soundtouch - compile with support for soundtouch
 media-sound/rhythmbox:daap - Build the local network music sharing plugin which uses the DAAP protocol using net-libs/libdmapsharing
-media-sound/rhythmbox:html - Use net-libs/webkit-gtk for detecting and displaying HTML podcast episode descriptions.
-media-sound/rhythmbox:libsecret - Enable libsecret support to store login credentials
 media-sound/rhythmbox:visualizer - Enable support for visualizations using media-plugins/gst-plugins-libvisual
 media-sound/rhythmbox:zeitgeist - Build the plugin to inject events to gnome-extra/zeitgeist
 media-sound/shntool:alac - Add support for Apple Lossless Audio Codec files
@@ -4563,9 +4546,9 @@ media-sound/xmms2:ofa - Support for Open Fingerprint Architecture (OFA)
 media-sound/xmms2:phonehome - This client sends anonymous usage-statistics to the xmms2
 media-sound/xmms2:server - Build xmms2 player daemon (otherwise only clients are built)
 media-sound/xmms2:sid - Support for C64 SID
+media-sound/xmms2:valgrind - Run unit tests under valgrind.
 media-sound/xmms2:vocoder - Phase vocoder effect plugin
 media-sound/xmms2:xml - Enable support for various XML based playlists and sources: RSS, XSPF
-media-sound/xmp:audacious - Enable audacious support
 media-sound/xnoise:lastfm - Enable support for lastfm cover art fetching and scrobbling
 media-sound/xnoise:lyrics - Enable support for lyrics fetching
 media-sound/xwax:alsa - Adds support for ALSA audio input/output.
@@ -6327,7 +6310,6 @@ net-misc/tinc:openssl - Using dev-libs/openssl for cryptography-related function
 net-misc/tinc:uml - Enable support for User Mode Linux Sockets
 net-misc/tinc:vde - Enable Virtual Distributed Ethernet (VDE) based networking
 net-misc/tor:bufferevents - Use libevent's buffered IO implementation (unstable, buggy)
-net-misc/tor:nat-pmp - Enable NAT Port Mapping Protocol
 net-misc/tor:scrypt - Use app-crypt/libscrypt for the scrypt algorithm
 net-misc/tor:stats - Enable tracking of how much of each kind of resource we download
 net-misc/tor:tor-hardening - Compile tor with hardening on vanilla compilers/linkers
@@ -6589,6 +6571,7 @@ net-wireless/bladerf-fpga:x40 - bitstream for the x40KLE Cyclone IV FPGA bladerf
 net-wireless/blueman:appindicator - Enable usage of dev-libs/libappindicator to export menu options
 net-wireless/blueman:network - Add functionality to setup (host) PAN connections using either net-dns/dnsmasq or net-misc/dhcp
 net-wireless/blueman:thunar - Install the sendto-plugin for xfce-base/thunar
+net-wireless/bluez:experimental - Build experimental plugins
 net-wireless/bluez:extra-tools - Install tools that upstream doesn't install on purpose by default. All this tools shouldn't be used. Then, please notify upstream about you still need them to let them know the situation.
 net-wireless/bluez:hid2hci - The HID proxying makes the keyboard / mouse show up as regular USB HID devices, but needs them to be paired before enabling this, otherwise they won't be detected
 net-wireless/bluez:obex - Enable OBEX transfer support.
@@ -7129,7 +7112,6 @@ sec-policy/selinux-base:ubac - Enable User Based Access Control (UBAC) in the SE
 sec-policy/selinux-base:unconfined - Enable support for the unconfined SELinux module
 sec-policy/selinux-base-policy:unconfined - Enable support for the unconfined SELinux policy module
 sys-apps/accountsservice:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
-sys-apps/acl:nfs - add support for NFS acls
 sys-apps/baselayout-prefix:prefix-chaining - install in a chained Prefix environment
 sys-apps/busybox:make-symlinks - Create all the appropriate symlinks in /bin and /sbin.
 sys-apps/busybox:math - Enable math support in gawk (requires libm)
@@ -7141,6 +7123,7 @@ sys-apps/coreutils:hostname - Build the hostname program
 sys-apps/coreutils:kill - Build the kill program
 sys-apps/coreutils:multicall - Build all tools into a single `coreutils` program akin to busybox to save space
 sys-apps/dbus:systemd - Build with sys-apps/systemd at_console support
+sys-apps/dbus:user-session - Enable user-session semantics for session bus under systemd
 sys-apps/dmtcp:fast - Enable experimental performance options such as mmap allocator.
 sys-apps/dmtcp:trace - Enable ptrace support (only valid with debug enabled).
 sys-apps/dstat:wifi - Enable wireless network functions
@@ -7292,7 +7275,6 @@ sys-apps/usb_modeswitch:jimtcl - Use dev-lang/jimtcl instead of dev-lang/tcl for
 sys-apps/usermode-utilities:fuse - Build tools (currently umlmount) needing fuse
 sys-apps/util-linux:caps - build setpriv helper (run programs with diff capabilities)
 sys-apps/util-linux:cramfs - build mkfs/fsck helpers for cramfs filesystems
-sys-apps/util-linux:cytune - build cytune for Cyclades-Z multiport serial cards
 sys-apps/util-linux:fdformat - build fdformat (floppy disk format)
 sys-apps/util-linux:kill - build the kill program
 sys-apps/util-linux:pam - build runuser helper
@@ -7733,6 +7715,7 @@ sys-libs/gdbm:exporter - enable gdbmexport binary for exporting data from gdbm-1
 sys-libs/glibc:debug - When USE=hardened, allow fortify/stack violations to dump core (SIGABRT) and not kill self (SIGKILL)
 sys-libs/glibc:gd - build memusage and memusagestat tools
 sys-libs/glibc:nscd - Build, and enable support for, the Name Service Cache Daemon
+sys-libs/glibc:rpc - Enable obsolete RPC/NIS layers (disabling is experimental -- see bug 381391)
 sys-libs/glibc:suid - Make internal pt_chown helper setuid -- not needed if using Linux and have /dev/pts mounted with gid=5
 sys-libs/glibc:systemtap - enable systemtap static probe points
 sys-libs/gwenhywfar:fox - Use x11-libs/fox graphical toolkit
@@ -7877,7 +7860,6 @@ www-apps/egroupware:jpgraph - Add dev-php/jpgraph support
 www-apps/gitit:network-uri - Get Network.URI from the network-uri package.
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-apps/guacamole:noauth - enable support for leaving out any authentication on the webinterface
-www-apps/horde-passwd:clearpasswd - Enables cleartext password storage in the vpopmail files
 www-apps/icingaweb2:nginx - Adds support for nginx
 www-apps/ikiwiki:extras - Installs additional modules used by ikiwiki plugins
 www-apps/nikola:assets - Support web asset management through dev-python/assets

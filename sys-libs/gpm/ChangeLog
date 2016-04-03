@@ -97,3 +97,11 @@
   +files/gpm-1.20.7-sysmacros.patch, gpm-1.20.7-r2.ebuild:
   fix build w/newer glibc
 
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> gpm-1.20.7-r2.ebuild:
+  toolchain-funcs.eclass: gen_usr_ldscript: integrate multilib_is_native_abi
+  support #479448
+
+  Many ebuilds have started checking multilib_is_native_abi to see if they
+  should call gen_usr_ldscript.  Since that logic always makes sense, add
+  it directly to the gen_usr_ldscript function.
+

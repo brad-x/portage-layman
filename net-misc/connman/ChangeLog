@@ -147,3 +147,18 @@
   Package-Manager: portage-2.2.28
   Closes: https://github.com/gentoo/gentoo/pull/1144
 
+  29 Mar 2016; Ian Delaney <idella4@gentoo.org>
+  files/connman-1.31-xtables.patch:
+  Disable compatibility logic to kernels < 4.5
+
+  The compatiblity logic is only needed for kernel headers 4.5 or newer.
+  The older headers don't need this fix.  Make sure the fix is not applied
+  for them.
+
+  Gentoo-bug: 578404
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1154
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+

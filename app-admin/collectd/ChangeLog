@@ -215,3 +215,46 @@
 
   Package-Manager: portage-2.2.28
 
+*collectd-5.5.1-r2 (29 Mar 2016)
+
+  29 Mar 2016; Ian Delaney <idella4@gentoo.org> -collectd-5.5.1-r1.ebuild,
+  +collectd-5.5.1-r2.ebuild, +files/collectd-5.5.1-issue-1637.patch,
+  metadata.xml:
+  Revbump to fix multiple issues
+
+  - Fix building with sys-fs/xfsprogs-4.5.0 (upstream issues #1637)
+
+  - Workaround for bug #577846 applied
+
+    We are now enforcing <=sys-kernel/linux-headers-4.4 when building
+    collectd_plugins_iptables until the problem gets fixed in
+    non-collectd upstram.
+
+  - virtual/udev dependency is now optional for disk plugin
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1156
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  29 Mar 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag descriptions from metadata.xml
+
+  Package-Manager: portage-2.2.28
+
+  31 Mar 2016; Sam Jorna <wraeth@gentoo.org> collectd-5.5.1-r2.ebuild:
+  Fix REQUIRED_USE
+
+  REQUIRED_USE of "udev" is only required when smart plugin was selected by
+  the user (forgotten "?").
+
+  Closes: https://github.com/gentoo/gentoo/pull/1171
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
+
+  02 Apr 2016; Alexis Ballier <aballier@gentoo.org> collectd-5.5.1-r2.ebuild:
+  do not RDEPEND on libtool but rather on libltdl.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+

@@ -76,3 +76,76 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*buildbot-0.8.12-r2 (30 Mar 2016)
+
+  30 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  -buildbot-0.8.12-r1.ebuild, +buildbot-0.8.12-r2.ebuild,
+  files/buildmaster.initd:
+  Bumped to 0.8.12-r2. Removed 0.8.12-r1.
+
+  Bumped version from 0.8.12-r1 to 0.8.12-r2, due to updated initd file. The
+  initd file now supports multiple instances of buildmaster.
+
+  Gentoo-Bug: https://bugs.gentoo.org/570666
+  Closes: https://github.com/gentoo/gentoo/pull/1027
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  buildbot-0.8.12-r2.ebuild, +files/buildmaster.target,
+  +files/buildmaster_at.service, +files/buildmaster_at.service.conf:
+  Added support for multiple service instances when using systemd.
+
+  This commit adds support for starting multiple buildmaster instances using
+  systemd. A service configuration file allows to specify the filesystem
+  location
+  of the buildmaster instances. A systemd target allows to start up or shut
+  down
+  all buildmaster instances at once.
+
+  Gentoo-Bug: https://bugs.gentoo.org/570666
+  Closes: https://github.com/gentoo/gentoo/pull/1027
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  buildbot-0.8.12-r2.ebuild:
+  Version migration elog message not displayed on fresh install.
+
+  Hides the elog notification about migrating to a new version of buildbot, if
+  there was no previous version installed.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1027
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  buildbot-0.8.12-r2.ebuild:
+  Added pkg_config.
+
+  buildbot-0.8.12-r2 supports the use of emerge --config to create instances
+  of
+  buildmaster.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1027
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Mar 2016; Patrice Clement <monsieurp@gentoo.org>
+  buildbot-0.8.12-r2.ebuild:
+  Added migration guide and updated setup instructions.
+
+  buildbot-0.8.12-r2 prints ewarn messages when migrating from a previous
+  version. The messages describe the necessary steps to migrate properly. In
+  addition to this, the user is notified of the support for emerge --config
+  and
+  DOC_CONTENT was updated to point to the possibility of using it.
+
+  This string of 5 commits merges gentoo/gentoo#1027 and solves bug #570666.
+
+  Gentoo-Bug: https://bugs.gentoo.org/570666
+  Acked-By: Markos Chandras hwoarang@gentoo.org>
+  Closes: https://github.com/gentoo/gentoo/pull/1027
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -85,3 +85,18 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> keyutils-1.5.9-r1.ebuild:
+  toolchain-funcs.eclass: gen_usr_ldscript: integrate multilib_is_native_abi
+  support #479448
+
+  Many ebuilds have started checking multilib_is_native_abi to see if they
+  should call gen_usr_ldscript.  Since that logic always makes sense, add
+  it directly to the gen_usr_ldscript function.
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> keyutils-1.5.9-r1.ebuild:
+  mark 1.5.9-r1 m68k/s390/sh stable
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> -keyutils-1.5.5.ebuild,
+  -keyutils-1.5.8.ebuild, -keyutils-1.5.9.ebuild:
+  drop old <1.5.9-r1 versions
+

@@ -30,9 +30,24 @@
 
 #--- END OF EXAMPLES ---
 
-# Anthony G. Basile <blueness@gentoo.org> (27 Mar 2016)
-# Fails to build, bug #578348
-x11-wm/lumina
+# William Hubbs <williamh@gentoo.org> (02 Apr 2016)
+# Stable dev-lang/go no longer needs this; end users should have never
+# installed it on their own.
+# Masked for removal on 20160409
+dev-lang/go-bootstrap
+
+# Michael Sterrett <mr_bones_@gentoo.org> (02 Apr 2016)
+# Doesn't work with latest dev-lang/ocaml; dead upstream
+# Masked for removal on 20160502
+games-simulation/planets
+
+# Patrick Lauer (30 Mar 2015)
+# Segfaults when creating directories #578582
+=sys-apps/sandbox-2.11*
+
+# Mike Frysinger <vapier@gentoo.org (28 Mar 2016)
+# Tons-o-bugs and no actual testing by new author. #578490
+dev-libs/libtomcrypt
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (25 Mar 2016)
 # Dev channel releases are only for people who are developers or want more
@@ -191,58 +206,12 @@ lxqt-base/lxqt-config-randr
 # Masked for removal in 30 days. Bug 575156
 net-im/qwit
 
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Pending completion of 9 security bugs against
-# this package.  Multiple vulnerabilities and no
-# updates from maintainers. Removal in 30 days.
-www-apps/mantisbt
-
 # Ian Stakenvicius <axs@gentoo.org> (06 Mar 2016)
 # Mask old versions of thunderbird as they are no longer supported,
 # but we keep them in the repo for now in case there is a need
 # for them for upgrading old user profiles, etc.
 ~mail-client/thunderbird-24.8.0
 ~mail-client/thunderbird-31.8.0
-
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Per security bug #491372 this package is vulnerable
-# and unmaintained.  Removal in 30 days.
-net-mail/perdition
-
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Per security bug #448826 this package is vulnerable
-# and unmaintained.  Removal in 30 days.
-www-apps/dragonflycms
-
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Per security bug #392325 this package is vulnerable
-# and unmaintained.  Removal in 30 days.
-dev-libs/clearsilver
-
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Per security bug #466782 this package is vulnerable
-# and unmaintained.  Removal in 30 days.
-media-sound/xmp
-
-# Aaron Bauman <bman@gentoo.org> (05 Mar 2016)
-# Per security bug #399563, #489946, #489948, and
-# #490422 these packages are vulnerable
-# and unmaintained.  Removal in 30 days.
-www-apps/horde
-www-apps/horde-chora
-www-apps/horde-dimp
-www-apps/horde-gollem
-www-apps/horde-hermes
-www-apps/horde-imp
-www-apps/horde-ingo
-www-apps/horde-jeta
-www-apps/horde-kronolith
-www-apps/horde-mimp
-www-apps/horde-mnemo
-www-apps/horde-nag
-www-apps/horde-passwd
-www-apps/horde-pear
-www-apps/horde-turba
 
 # Alexis Ballier <aballier@gentoo.org> (01 Mar 2016)
 # Breaks some of its rev deps, still in beta stage
@@ -310,8 +279,6 @@ dev-java/jcs
 
 # Sergey Popov <pinkbyte@gentoo.org> (20 Jan 2016)
 # Mask new versions of Boost - they are known to cause breakages
-~dev-util/boost-build-1.60.0
-~dev-libs/boost-1.60.0
 ~dev-util/boost-build-1.59.0
 ~dev-libs/boost-1.59.0
 
@@ -319,6 +286,7 @@ dev-java/jcs
 # Force people to migrate to the new combined libraries:
 # media-libs/elementary & dev-libs/efl. #571796
 app-benchmarks/expedite
+dev-games/etrophy
 dev-libs/ecore
 dev-libs/edbus
 dev-libs/eet
@@ -333,6 +301,7 @@ media-libs/edje
 media-libs/emotion
 media-libs/ethumb
 media-libs/evas
+x11-plugins/echievements
 
 # Sergei Trofimovich <slyfox@gentoo.org> (19 Jan 2016)
 # Mask broken package. Exposes badly designed API
@@ -369,7 +338,7 @@ www-apps/389-dsgw
 
 # Fabian Groffen <grobian@gentoo.org> (11 Dec 2015)
 # Release candidates for Exim 4.87
-=mail-mta/exim-4.87_rc6
+=mail-mta/exim-4.87_rc7
 
 # Anthony G. Basile <blueness@gentoo.org> (06 Dec 2015)
 # Masked until we deal with SSLv3, bug #567554
@@ -448,7 +417,7 @@ dev-libs/iniparser:4
 # Ben de Groot <yngwin@gentoo.org> (20 Jul 2015)
 # Version bump is a WIP, see bug #524242
 # It works (except USE=vamp) but is not up to Gentoo standards yet
-=media-sound/audacity-2.1.1
+>=media-sound/audacity-2.1.1
 
 # Patrick Lauer <patrick@gentoo.org> (1 Jul 2015)
 # Wrong version #553670
@@ -658,9 +627,7 @@ dev-java/ibm-jdk-bin:1.5
 # Needs to be further tested and revised by both Java and Ruby herds.
 >=dev-java/jruby-1.7.12
 dev-ruby/bitescript
-dev-ruby/bouncy-castle-java
 dev-ruby/duby
-dev-ruby/jruby-openssl
 dev-ruby/weakling
 
 # Matti Bickel <mabi@gentoo.org> (22 Apr 2014)

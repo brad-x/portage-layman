@@ -135,3 +135,30 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+*rust-1.8.0_beta20160323-r100 (30 Mar 2016)
+*rust-1.7.0-r100 (30 Mar 2016)
+
+  30 Mar 2016; Doug Goldstein <cardoe@gentoo.org> +rust-1.7.0-r100.ebuild,
+  +rust-1.8.0_beta20160323-r100.ebuild:
+  add packages for >=sys-devel/llvm-3.7.0
+
+  Because of changes Gentoo has made with how sys-devel/llvm is built
+  the way we have to depend on it has changed. LLVM 3.6.0 is only
+  a build time DEPEND. While LLVM 3.7.0 and newer is a run-time
+  RDEPEND and DEPEND. Since no EAPI provides a dynamic way for
+  packages to update RDEPEND we need to provide two different
+  packages so that people can build against LLVM 3.6.0 and LLVM
+  3.7.0 and newer.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  30 Mar 2016; Doug Goldstein <cardoe@gentoo.org> rust-1.7.0-r100.ebuild,
+  rust-1.8.0_beta20160323-r100.ebuild:
+  fix LLVM sub-slot depends
+
+  We need to have a depend on the sub-slot.
+
+  Package-Manager: portage-2.2.26
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+

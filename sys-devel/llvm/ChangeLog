@@ -525,3 +525,41 @@
   28 Mar 2016; William Hubbs <williamh@gentoo.org> metadata.xml:
   add myself as co-maintainer
 
+*llvm-3.7.1-r1 (28 Mar 2016)
+
+  28 Mar 2016; Michał Górny <mgorny@gentoo.org>
+  +files/llvm-3.7.1-llvm-config-0.patch,
+  +files/llvm-3.7.1-llvm-config-1.patch,
+  +files/llvm-3.7.1-llvm-config-2.patch,
+  +files/llvm-3.7.1-llvm-config-3.patch, +llvm-3.7.1-r1.ebuild:
+  Update llvm-config patches for improved compatibility
+
+  Backport upstream r252532 that improves llvm-config support for shared
+  libraries, adding --shared-mode option in particular, along with
+  --build-system option needed for it. Also fix --build-mode to report
+  "Release" rather than non-standard "Gentoo" type.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=578304
+
+*llvm-3.8.0-r1 (28 Mar 2016)
+
+  28 Mar 2016; Michał Górny <mgorny@gentoo.org>
+  files/llvm-3.8-llvm-config.patch, +files/llvm-3.8-soversion.patch,
+  -llvm-3.8.0.ebuild, +llvm-3.8.0-r1.ebuild:
+  Update llvm-config & restore shared libs in 3.8, #578392
+
+  28 Mar 2016; Michał Górny <mgorny@gentoo.org>
+  files/llvm-3.9-llvm-config.patch, llvm-9999.ebuild:
+  Update patches for the live ebuild
+
+  28 Mar 2016; Michał Górny <mgorny@gentoo.org>
+  files/clang-3.4-darwin_prefix-include-paths.patch,
+  files/cmake/llvm-3.7.0-lldb_tinfo.patch, llvm-3.7.1-r1.ebuild,
+  llvm-3.8.0-r1.ebuild:
+  Backport EAPI=6 changes to 3.7.1-r1 and 3.8.0-r1
+
+  29 Mar 2016; Bernard Cafarelli <voyageur@gentoo.org> metadata.xml:
+  remove myself from maintainers
+
+  Package-Manager: portage-2.2.28
+

@@ -370,3 +370,13 @@
 
   Package-Manager: portage-2.2.28_p64
 
+  01 Apr 2016; Mike Gilbert <floppym@gentoo.org> systemd-226-r2.ebuild,
+  systemd-228-r1.ebuild, systemd-229.ebuild, systemd-229-r100.ebuild,
+  systemd-9999.ebuild:
+  Hard-code KILL=/bin/kill
+
+  When building stage3, systemd may be built before kill is installed.
+  We only need to know its path, so just hard-code it in the ebuild.
+
+  Package-Manager: portage-2.2.28_p64
+

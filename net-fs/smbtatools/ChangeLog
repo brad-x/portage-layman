@@ -68,3 +68,23 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*smbtatools-1.2.6-r1 (31 Mar 2016)
+
+  31 Mar 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/smbtatools-1.2.6-fix-cmake.patch, -smbtatools-1.2.6.ebuild,
+  +smbtatools-1.2.6-r1.ebuild:
+  ebuilds fixes for newer samba and newer cmake
+
+  - Bumped ebuild to EAPI6
+  - Patched CMakeLists.txt to fix issues with include paths when using newer
+  cmake
+  - Specify libsmbclient vars in src_configure using pkg-config, fixes bug
+  561800
+
+  Package-Manager: portage-2.2.26
+
+  31 Mar 2016; Ian Stakenvicius <axs@gentoo.org> smbtatools-1.2.6-r1.ebuild:
+  swap direct pkg-config call for tc-getPKG_CONFIG
+
+  Package-Manager: portage-2.2.26
+

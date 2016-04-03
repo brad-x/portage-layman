@@ -80,3 +80,17 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> acl-2.2.52-r1.ebuild:
+  toolchain-funcs.eclass: gen_usr_ldscript: integrate multilib_is_native_abi
+  support #479448
+
+  Many ebuilds have started checking multilib_is_native_abi to see if they
+  should call gen_usr_ldscript.  Since that logic always makes sense, add
+  it directly to the gen_usr_ldscript function.
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> -acl-2.2.49.ebuild,
+  -acl-2.2.49-r1.ebuild, -acl-2.2.51.ebuild, -acl-2.2.52.ebuild,
+  -files/acl-2.2.49-quote-strchr.patch, -files/acl-2.2.51-config-shell.patch,
+  metadata.xml:
+  drop old <2.2.52-r1 versions
+

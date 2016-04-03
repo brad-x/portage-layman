@@ -136,3 +136,20 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> xz-utils-5.0.8.ebuild,
+  xz-utils-5.2.0.ebuild, xz-utils-5.2.1-r1.ebuild, xz-utils-5.2.2.ebuild,
+  xz-utils-9999.ebuild:
+  toolchain-funcs.eclass: gen_usr_ldscript: integrate multilib_is_native_abi
+  support #479448
+
+  Many ebuilds have started checking multilib_is_native_abi to see if they
+  should call gen_usr_ldscript.  Since that logic always makes sense, add
+  it directly to the gen_usr_ldscript function.
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> xz-utils-5.2.2.ebuild:
+  mark 5.2.2 m68k/s390/sh stable
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> -xz-utils-5.0.8.ebuild,
+  -xz-utils-5.2.0.ebuild, -xz-utils-5.2.1-r1.ebuild:
+  drop old <5.2.2 versions
+

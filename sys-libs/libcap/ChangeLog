@@ -163,3 +163,19 @@
 
   Package-Manager: portage-2.2.27
 
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> libcap-2.22-r2.ebuild,
+  libcap-2.24-r2.ebuild, libcap-2.25.ebuild:
+  toolchain-funcs.eclass: gen_usr_ldscript: integrate multilib_is_native_abi
+  support #479448
+
+  Many ebuilds have started checking multilib_is_native_abi to see if they
+  should call gen_usr_ldscript.  Since that logic always makes sense, add
+  it directly to the gen_usr_ldscript function.
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org> libcap-2.24-r2.ebuild:
+  mark 2.24-r2 alpha/m68k/s390/sh stable
+
+  30 Mar 2016; Mike Frysinger <vapier@gentoo.org>
+  -files/libcap-2.22-build-system-fixes.patch, -libcap-2.22-r2.ebuild:
+  drop old <2.24 versions
+

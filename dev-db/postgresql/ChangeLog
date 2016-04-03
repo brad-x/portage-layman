@@ -582,3 +582,50 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+*postgresql-9.5.2 (31 Mar 2016)
+*postgresql-9.4.7 (31 Mar 2016)
+*postgresql-9.3.12 (31 Mar 2016)
+*postgresql-9.2.16 (31 Mar 2016)
+*postgresql-9.1.21 (31 Mar 2016)
+
+  31 Mar 2016; Aaron W. Swenson <titanofold@gentoo.org>
+  +postgresql-9.1.21.ebuild, +postgresql-9.2.16.ebuild,
+  +postgresql-9.3.12.ebuild, +postgresql-9.4.7.ebuild,
+  +postgresql-9.5.2.ebuild, postgresql-9999.ebuild:
+  Security Update
+
+  Fixes security bug 578680.
+
+  See http://www.postgresql.org/about/news/1656/ for complete release
+  announcement.
+
+  Closes security hole CVE-2016-2193, where a query plan might get reused for
+  more than one ROLE in the same session.
+
+  Fixes CVE-2016-3065, a server crash bug triggered by using pageinspect with
+  BRIN index pages.
+
+  Additionally, support for Python 3.5 was added for PostgreSQL 9.5.
+
+  Bug: 578680, 574646
+
+  Package-Manager: portage-2.2.26
+
+  31 Mar 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.21.ebuild,
+  postgresql-9.2.16.ebuild, postgresql-9.3.12.ebuild, postgresql-9.4.7.ebuild,
+  postgresql-9.5.2.ebuild:
+  amd64 stable wrt bug #578680
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  31 Mar 2016; Agostino Sarubbo <ago@gentoo.org> postgresql-9.1.21.ebuild,
+  postgresql-9.2.16.ebuild, postgresql-9.3.12.ebuild, postgresql-9.4.7.ebuild,
+  postgresql-9.5.2.ebuild:
+  x86 stable wrt bug #578680
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
