@@ -61,3 +61,17 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*povray-3.7.0.0-r1 (03 Apr 2016)
+
+  03 Apr 2016; David Seifert <soap@gentoo.org>
+  +files/povray-3.7.0.0-r1-boost-1.50.patch, +povray-3.7.0.0-r1.ebuild:
+  Fix build system, add AX_BOOST_SYSTEM
+
+  Gentoo-Bug: 550018
+  * EAPI=6
+  * Switch back to autoconf-archive macros, scrap boost.m4
+  * Fix underlinking caused by recent boost versions
+    requiring linking to boost::system
+
+  Package-Manager: portage-2.2.28
+

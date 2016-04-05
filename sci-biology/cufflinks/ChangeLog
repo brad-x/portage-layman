@@ -69,3 +69,25 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*cufflinks-2.2.1-r2 (03 Apr 2016)
+
+  03 Apr 2016; David Seifert <soap@gentoo.org> +cufflinks-2.2.1-r2.ebuild,
+  +files/cufflinks-2.2.1-samtools-legacy.patch:
+  Depend only on sci-biology/samtools:0.1-legacy
+
+  Gentoo-Bug: 535716
+  * EAPI=6
+  * Updated boost in tree has fixed serialization for boost::shared_ptr
+  * Build system is now orthogonal to sci-biology/samtools:0 and does not
+    block updating to latest samtools
+
+  Package-Manager: portage-2.2.28
+
+  03 Apr 2016; David Seifert <soap@gentoo.org> -cufflinks-1.3.0-r1.ebuild,
+  -cufflinks-2.2.1.ebuild, -cufflinks-2.2.1-r1.ebuild,
+  -files/cufflinks-1.3.0-autotools.patch, -files/cufflinks-1.3.0-boost.patch,
+  -files/cufflinks-1.3.0-gcc-4.7.patch, -files/cufflinks-2.2.1-hts.patch:
+  Remove old
+
+  Package-Manager: portage-2.2.28
+
