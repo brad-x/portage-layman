@@ -178,3 +178,17 @@
   imlib2-9999.ebuild:
   version bump to 1.4.8
 
+  05 Apr 2016; Mike Frysinger <vapier@gentoo.org> imlib2-1.4.7.ebuild,
+  imlib2-1.4.8.ebuild, imlib2-9999.ebuild:
+  always depend on pkg-config
+
+  The configure script always looks for pkg-config and will use it for more
+  than png.  Just always depend on it now as most of the tree does too.
+
+*imlib2-1.4.8-r1 (05 Apr 2016)
+
+  05 Apr 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/imlib2-1.4.8-gif-oob.patch, -imlib2-1.4.8.ebuild,
+  +imlib2-1.4.8-r1.ebuild:
+  add upstream fix for gif oob reads #578810
+

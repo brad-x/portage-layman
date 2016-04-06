@@ -78,3 +78,10 @@
 
   Bug: 575810
 
+  05 Apr 2016; Mike Frysinger <vapier@gentoo.org>
+  hachoir-metadata-1.3.3-r1.ebuild:
+  drop old gtk delete #557464
+
+  The prepare phase already drops this file from the install,
+  so trying to delete it the install phase will always fail.
+
