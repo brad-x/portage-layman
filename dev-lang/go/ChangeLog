@@ -326,3 +326,26 @@
 
   Package-Manager: portage-2.2.26
 
+  09 Apr 2016; William Hubbs <williamh@gentoo.org> go-9999.ebuild,
+  metadata.xml:
+  add support for bootstrapping with gccgo
+
+  I would like to thank Zac Medico for the patch.
+  This allows a user to bootstrap go with gcc's go compiler if they have it
+  installed.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=576290
+
+  Package-Manager: portage-2.2.26
+
+  09 Apr 2016; William Hubbs <williamh@gentoo.org> go-1.6-r2.ebuild,
+  go-9999.ebuild:
+  add QA_FLAGS_IGNORED setting
+
+  Go doesn't use the standard CFLAGS etc at all, so we shouldn't complain
+  about them.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=428464
+
+  Package-Manager: portage-2.2.26
+

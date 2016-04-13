@@ -35,8 +35,8 @@ SRC_URI="${SRC_URI}
 		abi_x86_32? ( https://dl.winehq.org/wine/wine-gecko/${GV}/wine_gecko-${GV}-x86.msi )
 		abi_x86_64? ( https://dl.winehq.org/wine/wine-gecko/${GV}/wine_gecko-${GV}-x86_64.msi )
 	)
-	gstreamer? ( https://dev.gentoo.org/~np-hardass/distfiles/${PN}/${GST_P}.patch.bz2 )
 	mono? ( https://dl.winehq.org/wine/wine-mono/${MV}/wine-mono-${MV}.msi )
+	https://dev.gentoo.org/~np-hardass/distfiles/${PN}/${GST_P}.patch.bz2
 	https://dev.gentoo.org/~tetromino/distfiles/${PN}/${WINE_GENTOO}.tar.bz2"
 
 if [[ ${PV} == "9999" ]] ; then
@@ -182,8 +182,8 @@ wine_build_environment_check() {
 		# Compile in subshell to prevent "Aborted" message
 		if ! ( $(tc-getCC) -O2 -mincoming-stack-boundary=3 "${FILESDIR}"/pr69140.c -o "${T}"/pr69140 || false ) >/dev/null 2>&1; then
 			eerror "Wine cannot be built with this version of gcc-5.3"
-			eerror "due to compiler bugs; please re-emerge the latest gcc-5.3.x ebuild,"
-			eerror "or use gcc-config to select a different compiler version."
+			eerror "due to compiler bugs; please use gcc-config to select a"
+			eerror "different compiler version."
 			eerror "See https://bugs.gentoo.org/574044"
 			eerror
 			return 1
@@ -238,7 +238,7 @@ src_unpack() {
 	fi
 
 	unpack "${WINE_GENTOO}.tar.bz2"
-	use gstreamer && unpack "${GST_P}.patch.bz2"
+	unpack "${GST_P}.patch.bz2"
 
 	l10n_find_plocales_changes "${S}/po" "" ".po"
 }
@@ -269,8 +269,9 @@ src_prepare() {
 		eend $?
 
 		# To differentiate unofficial staging releases
-		[[ ! -z ${SUFFIX} ]] && \
+		if [[ ! -z ${SUFFIX} ]]; then
 			sed -i "s/(Staging)/(Staging [Unofficial])/" libs/wine/Makefile.in || die
+		fi
 	fi
 
 	default

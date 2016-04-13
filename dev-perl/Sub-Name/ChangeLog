@@ -63,3 +63,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Sub-Name-0.150.0 (11 Apr 2016)
+
+  11 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +Sub-Name-0.150.0.ebuild, metadata.xml:
+  Bump to version 0.150.0
+
+  - EAPI6
+  - Extra test deps exposed by USE="suggested",
+    but are intentionally omitted because Sub::Name's high precedence
+    is likely to induce cycles.
+
+  Upstream:
+  - Use copy-of-string instead of mutating a passed string
+  - Fix leak when setting fully-qualified name
+  - Copy %DB::sub entries if they exist
+
+  Keywords:
+  - New deps, dropped: alpha arm hppa ia64 ppc ppc64 sparc
+
+  Package-Manager: portage-2.2.28
+

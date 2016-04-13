@@ -23,24 +23,22 @@ IUSE="+networkmanager +upower"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="${PYTHON_DEPS}
-	$(add_frameworks_dep kconfig)
 	$(add_frameworks_dep kcoreaddons)
-	$(add_frameworks_dep ki18n)
 	$(add_frameworks_dep kparts)
 	$(add_frameworks_dep kservice)
-	$(add_frameworks_dep solid)
-	$(add_qt_dep linguist-tools)
 	$(add_qt_dep qtdbus)
+	$(add_qt_dep qtdeclarative)
 	$(add_qt_dep qtgui)
-	$(add_qt_dep qtquick1)
+	$(add_qt_dep qtnetwork)
 	$(add_qt_dep qtsvg)
+	$(add_qt_dep qtwebkit)
 	$(add_qt_dep qtwidgets)
 	>=dev-cpp/yaml-cpp-0.5.1
 	>=dev-libs/boost-1.55:=[${PYTHON_USEDEP}]
 	sys-apps/dbus
 	sys-apps/dmidecode
 	sys-auth/polkit-qt[qt5]
-	>=sys-libs/kpmcore-2.1.0
+	>=sys-libs/kpmcore-2.1.0:5
 "
 
 RDEPEND="${DEPEND}
