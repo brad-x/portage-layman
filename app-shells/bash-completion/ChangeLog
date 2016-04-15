@@ -137,3 +137,16 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+*bash-completion-2.3-r2 (13 Apr 2016)
+
+  13 Apr 2016; Michał Górny <mgorny@gentoo.org>
+  -bash-completion-2.3-r1.ebuild, +bash-completion-2.3-r2.ebuild,
+  -files/bash-completion-2.3-remove-mpv-symlink.patch:
+  rm mount, umount, #579766, simplify mpv rm
+
+  Remove mount & umount completions that are now installed by util-linux.
+  Simplify mpv symlink removal to use our STRIP_COMPLETIONS mechanism
+  rather than a Makefile patch.
+
+  Bug: https://bugs.gentoo.org/579766
+

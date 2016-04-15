@@ -111,3 +111,31 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*wxGTK-3.0.2.0-r300 (14 Apr 2016)
+
+  14 Apr 2016; Ryan Hill <rhill@gentoo.org> +wxGTK-3.0.2.0-r300.ebuild:
+  Add initial GTK+3 ebuild.
+
+  Package-Manager: portage-2.2.27
+
+  14 Apr 2016; Ryan Hill <rhill@gentoo.org> wxGTK-3.0.2.0-r300.ebuild:
+  Update dependencies
+
+  Also remove xpm configure option that is only relevant for wxX11.
+
+  Package-Manager: portage-2.2.27
+
+  14 Apr 2016; Ryan Hill <rhill@gentoo.org> wxGTK-3.0.2.0-r300.ebuild:
+  EAPI 6
+
+  Package-Manager: portage-2.2.27
+
+  14 Apr 2016; Ryan Hill <rhill@gentoo.org> wxGTK-3.0.2.0-r300.ebuild:
+  Tone down versioning a bit
+
+  WX_VERSION controls the output of `wx-config --version`.  If this contains
+  characters it confuses the WX_CONFIG_CHECK macro from wxwin.m4.  WX_VERSION
+  doesn't seem to affect the build or install, so try dropping -gtk3 from it.
+
+  Package-Manager: portage-2.2.27
+
