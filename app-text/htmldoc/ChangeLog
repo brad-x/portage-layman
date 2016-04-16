@@ -68,3 +68,29 @@
 
   Bug: 575810
 
+*htmldoc-1.8.29 (15 Apr 2016)
+
+  15 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/htmldoc-break.patch, +files/htmldoc-destdir.patch,
+  +htmldoc-1.8.29.ebuild:
+  Bump to version 1.8.29
+
+  This bump includes 2 patches:
+  - One to patch out the complete lack of DESTDIR support upstream
+  - The other is to patch an annoying defect where failures in child
+   Make targets result in "make" returning true, and the build finishing
+   and installing in a broken state.
+
+  Upstream have dropped SSL Support.
+
+  This will hopefully resolve several bugs:
+  - https://bugs.gentoo.org/572262 - Toralf
+  - https://bugs.gentoo.org/549960 - Toralf
+  - https://bugs.gentoo.org/527624 - Diego
+
+  Thanks to Toralf Förster and Diego Elio Pettenò for reporting the bugs.
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

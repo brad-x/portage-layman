@@ -63,3 +63,14 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  15 Apr 2016; Sergei Trofimovich <slyfox@gentoo.org> glmix-0.3.ebuild:
+  add missing -lm, bug #516274
+
+  Interestingly, -lm is present in upstream Makefile
+  but gentoo-specific LDFLAGS override forgot to restore it.
+
+  Reported-by: Patrick Lauer
+  Bug: https://bugs.gentoo.org/516274
+
+  Package-Manager: portage-2.2.28
+
