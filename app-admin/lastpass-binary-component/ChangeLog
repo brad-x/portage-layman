@@ -1,0 +1,25 @@
+# ChangeLog for app-admin/lastpass-binary-component
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*lastpass-binary-component-4.1.2 (22 Apr 2016)
+
+  22 Apr 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +lastpass-binary-component-4.1.2.ebuild, +metadata.xml:
+  new package #571280
+
+  This is a split off from app-admin/lastpass and only installs the binary
+  component required by the browser extension, as opposed to installing
+  the extension too. Beginning with lastpass-4, the upstream only
+  installs the binary component.
+
+  Also, add this package as a blocker for app-admin/lastpass. These two
+  packages cannot be installed at the same time as that would introduce
+  file collisions.
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=571280
+
+  Package-Manager: portage-2.2.26
+  (cherry picked from commit 6c8d1cd984fe45857ff9fac95ace41fddb1532b0)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+

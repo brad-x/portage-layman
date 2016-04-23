@@ -207,3 +207,13 @@
 
   Package-Manager: portage-2.2.26
 
+  20 Apr 2016; Rafael Martins <rafaelmartins@gentoo.org> blogc-0.8.1.ebuild,
+  blogc-9999.ebuild:
+  do not eautoreconf submodules
+
+  we don't use bundled libraries from submodules, then we don't need to run
+  eautoreconf recursively. the correct fix here would be to disable clonning
+  of submodules, but the git eclass does not support it.
+
+  Package-Manager: portage-2.2.26
+

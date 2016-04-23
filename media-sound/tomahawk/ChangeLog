@@ -115,3 +115,19 @@
 
   Package-Manager: portage-2.2.28
 
+  18 Apr 2016; Johannes Huber <johu@gentoo.org>
+  +files/tomahawk-0.8.4-echonest231.patch, tomahawk-0.8.4-r2.ebuild,
+  tomahawk-9999.ebuild:
+  Fix build with echonest 2.3.1
+
+  Backport upstream patch to fix build with media-libs/libechonest-2.3.1.
+  Unfortunately this bug release delivers breakage by introducing suffix for
+  qt5.
+  At the time where tomahawk 0.8.4 was released this suffix doesn't exist and
+  the
+  build system ignores it. This was fixed in master in the meantime.
+
+  Gentoo-bug: 578570
+
+  Package-Manager: portage-2.2.28
+

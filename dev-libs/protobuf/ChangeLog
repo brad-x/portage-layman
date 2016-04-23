@@ -89,3 +89,31 @@
   04 Feb 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   set myself as maintainer
 
+*protobuf-3.0.0_beta2 (21 Apr 2016)
+
+  21 Apr 2016; Ian Delaney <idella4@gentoo.org>
+  +files/protobuf-3.0.0_beta2-disable-local-gmock.patch, metadata.xml,
+  +protobuf-3.0.0_beta2.ebuild:
+  version bump, 3.0.0_beta2
+
+  - bump to EAPI6
+  - outsourced official implementations in java and python
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+  Closes: https://github.com/gentoo/gentoo/pull/1295
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  21 Apr 2016; Ian Delaney <idella4@gentoo.org> -protobuf-2.4.1.ebuild:
+  2.4.1: drop old
+
+  it's EAPI 3, uses deprecated distutils.eclass and its subslot 8 is provided
+  by 2.5.0 as well
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+  Closes: https://github.com/gentoo/gentoo/pull/1295
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+

@@ -540,3 +540,17 @@
   a good stable candidate and starting point for migration to newer
   python-exec versions.
 
+*python-3.3.5-r8 (23 Apr 2016)
+*python-3.3.5-r3 (23 Apr 2016)
+
+  23 Apr 2016; Michał Górny <mgorny@gentoo.org> -python-3.3.5-r2.ebuild,
+  +python-3.3.5-r3.ebuild, -python-3.3.5-r7.ebuild, +python-3.3.5-r8.ebuild:
+  Remove obsolete process_data patch from 3.3, #580242
+
+  Remove the obsolete process_data patch from both 3.3 versions.
+  The patch was only needed for some packages using python.eclass,
+  it is no longer carried by any other Python version (including stable
+  ebuilds) and breaks the build on musl.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=580242
+

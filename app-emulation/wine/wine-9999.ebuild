@@ -2,13 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI=6
 
-AUTOTOOLS_AUTORECONF=1
 PLOCALES="ar bg ca cs da de el en en_US eo es fa fi fr he hi hr hu it ja ko lt ml nb_NO nl or pa pl pt_BR pt_PT rm ro ru sk sl sr_RS@cyrillic sr_RS@latin sv te th tr uk wa zh_CN zh_TW"
 PLOCALE_BACKUP="en"
 
-inherit autotools-utils eutils fdo-mime flag-o-matic gnome2-utils l10n multilib multilib-minimal pax-utils toolchain-funcs virtualx versionator
+inherit autotools eutils fdo-mime flag-o-matic gnome2-utils l10n multilib multilib-minimal pax-utils toolchain-funcs virtualx versionator
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://source.winehq.org/git/wine.git http://source.winehq.org/git/wine.git"
@@ -23,10 +22,12 @@ else
 fi
 
 GV="2.44"
-MV="4.6.0"
+MV="4.6.2"
 [[ ${MAJOR_V} == "1.8" ]] && SUFFIX="-unofficial"
 STAGING_P="wine-staging-${PV}"
 STAGING_DIR="${WORKDIR}/${STAGING_P}${SUFFIX}"
+D3D9_P="${PV}"
+D3D9_DIR="${WORKDIR}/wine-d3d9-patches-${D3D9_P}"
 WINE_GENTOO="wine-gentoo-2015.03.07"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
@@ -40,14 +41,16 @@ SRC_URI="${SRC_URI}
 
 if [[ ${PV} == "9999" ]] ; then
 	STAGING_EGIT_REPO_URI="git://github.com/wine-compholio/wine-staging.git"
+	D3D9_EGIT_REPO_URI="git://github.com/sarnex/wine-d3d9-patches.git"
 else
 	SRC_URI="${SRC_URI}
-	staging? ( https://github.com/wine-compholio/wine-staging/archive/v${PV}${SUFFIX}.tar.gz -> ${STAGING_P}.tar.gz )"
+	staging? ( https://github.com/wine-compholio/wine-staging/archive/v${PV}${SUFFIX}.tar.gz -> ${STAGING_P}.tar.gz )
+	d3d9? ( https://github.com/sarnex/wine-d3d9-patches/archive/wine-d3d9-${PV}.tar.gz -> ${D3D9_P}.tar.gz )"
 fi
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags dos elibc_glibc +fontconfig +gecko gphoto2 gsm gstreamer +jpeg +lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl pcap pipelight +png prelink pulseaudio +realtime +run-exes s3tc samba scanner selinux +ssl staging test +threads +truetype +udisks v4l vaapi +X +xcomposite xinerama +xml"
+IUSE="+abi_x86_32 +abi_x86_64 +alsa capi cups custom-cflags d3d9 dos elibc_glibc +fontconfig +gecko gphoto2 gsm gstreamer +jpeg +lcms ldap +mono mp3 ncurses netapi nls odbc openal opencl +opengl osmesa oss +perl pcap pipelight +png prelink pulseaudio +realtime +run-exes s3tc samba scanner selinux +ssl staging test +threads +truetype +udisks v4l vaapi +X +xcomposite xinerama +xml"
 REQUIRED_USE="|| ( abi_x86_32 abi_x86_64 )
 	test? ( abi_x86_32 )
 	elibc_glibc? ( threads )
@@ -63,6 +66,7 @@ RESTRICT="test"
 COMMON_DEPEND="
 	truetype? ( >=media-libs/freetype-2.0.0[${MULTILIB_USEDEP}] )
 	capi? ( net-dialup/capi4k-utils )
+	d3d9? ( media-libs/mesa[d3d9,${MULTILIB_USEDEP}] )
 	ncurses? ( >=sys-libs/ncurses-5.2:0=[${MULTILIB_USEDEP}] )
 	udisks? ( sys-apps/dbus[${MULTILIB_USEDEP}] )
 	fontconfig? ( media-libs/fontconfig:=[${MULTILIB_USEDEP}] )
@@ -130,7 +134,7 @@ RDEPEND="${COMMON_DEPEND}
 	dos? ( games-emulation/dosbox )
 	perl? ( dev-lang/perl dev-perl/XML-Simple )
 	s3tc? ( >=media-libs/libtxc_dxtn-1.0.1-r1[${MULTILIB_USEDEP}] )
-	samba? ( >=net-fs/samba-3.0.25 )
+	samba? ( >=net-fs/samba-3.0.25[winbind] )
 	selinux? ( sec-policy/selinux-wine )
 	udisks? ( sys-fs/udisks:2 )
 	pulseaudio? ( realtime? ( sys-auth/rtkit ) )"
@@ -217,8 +221,7 @@ src_unpack() {
 			local WINE_COMMIT=${EGIT_VERSION}
 
 			EGIT_REPO_URI=${STAGING_EGIT_REPO_URI}
-			unset ${PN}_LIVE_REPO;
-			unset EGIT_COMMIT;
+			unset ${PN}_LIVE_{REPO,BRANCH,COMMIT} EGIT_COMMIT;
 
 			EGIT_CHECKOUT_DIR=${STAGING_DIR} git-r3_src_unpack
 
@@ -230,9 +233,15 @@ src_unpack() {
 				einfo "Example: EGIT_COMMIT=${STAGING_COMMIT} emerge -1 wine"
 			fi
 		fi
+		if use d3d9; then
+			EGIT_REPO_URI="${D3D9_EGIT_REPO_URI}"
+			unset ${PN}_LIVE_{REPO,BRANCH,COMMIT} EGIT_COMMIT;
+			EGIT_CHECKOUT_DIR="${D3D9_DIR}" git-r3_src_unpack
+		fi
 	else
 		unpack ${P}.tar.bz2
 		use staging && unpack "${STAGING_P}.tar.gz"
+		use d3d9 && unpack "${D3D9_P}.tar.gz"
 	fi
 
 	unpack "${WINE_GENTOO}.tar.bz2"
@@ -269,8 +278,17 @@ src_prepare() {
 			sed -i "s/(Staging)/(Staging [Unofficial])/" libs/wine/Makefile.in || die
 		fi
 	fi
+	if use d3d9; then
+		if use staging; then
+			PATCHES+=( "${D3D9_DIR}/staging-helper.patch" )
+		else
+			PATCHES+=( "${D3D9_DIR}/d3d9-helper.patch" )
+		fi
+		PATCHES+=( "${D3D9_DIR}/wine-d3d9.patch" )
+	fi
 
-	autotools-utils_src_prepare
+	default
+	eautoreconf
 
 	# Modification of the server protocol requires regenerating the server requests
 	if [[ "$(md5sum server/protocol.def)" != "${md5}" ]]; then
@@ -341,6 +359,7 @@ multilib_src_configure() {
 		--with-xattr
 		$(use_with vaapi va)
 	)
+	use d3d9 && myconf+=( $(use_with d3d9 d3dadapter) )
 
 	local PKG_CONFIG AR RANLIB
 	# Avoid crossdev's i686-pc-linux-gnu-pkg-config if building wine32 on amd64; #472038

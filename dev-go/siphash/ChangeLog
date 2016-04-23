@@ -1,0 +1,41 @@
+# ChangeLog for dev-go/siphash
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*siphash-1.0.0 (23 Apr 2016)
+
+  23 Apr 2016; Anthony G. Basile <blueness@gentoo.org> +metadata.xml,
+  +siphash-1.0.0.ebuild:
+  New ebuild: net-proxy/obfs4proxy, plus dependencies.
+
+  A new obfuscating proxy for Tor bridges which supports, among others,
+  the OBFS4 protocol. It depends on three packages which were not in
+  Portage and therefore have just had ebuild files created as well:
+  dev-go/ed25519, dev-go/goptlib, and dev-go/siphash.
+
+  Relevant Gentoo bugs: #580582, #580622, #580626, #580628.
+
+  23 Apr 2016; Anthony G. Basile <blueness@gentoo.org> -metadata.xml,
+  -siphash-1.0.0.ebuild:
+  Revert "New ebuild: net-proxy/obfs4proxy, plus dependencies." in order to
+  split it into multiple commits, one per ebuild.
+
+  This reverts commit eff2dc6a41b8dd13a978b01608f5df3b0eb6d84e.
+
+*siphash-1.0.0 (23 Apr 2016)
+
+  23 Apr 2016; Anthony G. Basile <blueness@gentoo.org> +metadata.xml,
+  +siphash-1.0.0.ebuild:
+  New ebuild: dev-go/siphash.
+
+  A Go implementation of SipHash-2.4, a fast short-input PRF created by
+  Jean-Philippe Aumasson and Daniel J. Bernstein.
+  This is one of the dependencies of net-proxy/obfs4proxy.
+
+  Relevant Gentoo bug: #580628.
+
+  23 Apr 2016; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  add proxied maintainer
+
+  Package-Manager: portage-2.2.26
+

@@ -574,3 +574,14 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Alexis Ballier <aballier@gentoo.org>
 
+  21 Apr 2016; Ian Stakenvicius <axs@gentoo.org> ffmpeg-2.8.6.ebuild,
+  ffmpeg-3.0.1.ebuild, ffmpeg-9999.ebuild:
+  fix mingw32 CHOST match in src_configure
+
+  The CHOST-matct was mingw32* but in a crossdev mingw32 is usually the
+  CHOST's
+  suffix. Adusted the case statement match to be "*mingw32*" , following the
+  same pattern as the others.  Aballier gave the nod for the commit.
+
+  Package-Manager: portage-2.2.26
+

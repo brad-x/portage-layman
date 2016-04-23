@@ -110,3 +110,40 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*smartmontools-6.4-r1 (18 Apr 2016)
+
+  18 Apr 2016; Lars Wendler <polynomial-c@gentoo.org> files/smartd-r1.rc,
+  +files/smartmontools-update-drivedb, +smartmontools-6.4-r1.ebuild,
+  smartmontools-9999.ebuild:
+  Revbump to fix bugs #575292 and #580424
+
+  Don't install drivedb.h into /usr and don't add it to the PM's file
+  database (#575292). Fix download location of latest drivedb.h file
+  (#580424).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  18 Apr 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -smartmontools-6.3.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  18 Apr 2016; Lars Wendler <polynomial-c@gentoo.org>
+  smartmontools-6.4-r1.ebuild:
+  Keep temporarily empty /var/db/smartmontools directory.
+
+  This should fix isntallation with paludis.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  19 Apr 2016; Lars Wendler <polynomial-c@gentoo.org>
+  smartmontools-6.4-r1.ebuild:
+  Fixed installation with USE=minimal.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
