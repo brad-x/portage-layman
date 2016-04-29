@@ -224,3 +224,19 @@
 
   Bug: https://bugs.gentoo.org/578920
 
+  23 Apr 2016; Mike Gilbert <floppym@gentoo.org> transmission-2.92.ebuild:
+  Create /var/lib/transmission in postinst
+
+  The openrc init script normally creates this, but this does not work for
+  systemd users.
+
+  Bug: https://bugs.gentoo.org/580932
+
+  Package-Manager: portage-2.2.28_p70
+
+  24 Apr 2016; Mike Gilbert <floppym@gentoo.org>
+  +files/transmission-daemon.service.conf, transmission-2.92.ebuild:
+  systemd: Move config-dir to a service.d file
+
+  Package-Manager: portage-2.2.28_p71
+

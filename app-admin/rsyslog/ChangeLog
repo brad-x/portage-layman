@@ -207,3 +207,22 @@
   20 Apr 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Update postgresql-base -> postgresql
 
+*rsyslog-8.18.0 (26 Apr 2016)
+
+  26 Apr 2016; Ian Delaney <idella4@gentoo.org>
+  +files/8-stable/50-rsyslog-8.18.0-issue963.patch,
+  +files/8-stable/50-rsyslog-8.18.0-issue964.patch, metadata.xml,
+  +rsyslog-8.18.0.ebuild:
+  Bump to v8.18.0
+
+  Keyword for hppa dropped because of unkeyworded deps
+  Use flag grok p-use masked under:
+  - profiles/arch/arm/package.use.mask
+  - profiles/default/linux/uclibc/arm/package.use.mask
+
+  Gentoo-bug: #577508, #577008, #577510, #581180
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1348
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+

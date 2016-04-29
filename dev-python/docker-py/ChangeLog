@@ -165,3 +165,26 @@
 
   Package-Manager: portage-2.2.28
 
+*docker-py-1.8.0-r1 (23 Apr 2016)
+
+  23 Apr 2016; Alex Brandt <alunduil@gentoo.org> +docker-py-1.8.0-r1.ebuild:
+  add version 1.8.0-r1
+
+  Due to bug #580388, I've removed python2_7 support from docker-py.  This
+  shouldn't be a problem.  This removes the conflict due to py2-ipaddress and
+  makes the question of which package to keep moot.  With py2-ipaddress no
+  longer
+  required by anything in the tree I will be running it through the last-rites
+  process.
+
+  Package-Manager: portage-2.2.28
+
+  23 Apr 2016; Alex Brandt <alunduil@gentoo.org> -docker-py-1.8.0.ebuild:
+  remove version 1.8.0
+
+  Again, due to bug #580388, I am removing this version of docker-py to finish
+  the
+  solution of py2-ipaddress causing collisions.
+
+  Package-Manager: portage-2.2.28
+

@@ -86,3 +86,22 @@
 
   Package-Manager: portage-2.2.28
 
+  26 Apr 2016; Patrice Clement <monsieurp@gentoo.org> files/boinc.init:
+  Migrated boinc.init to use start-stop-daemon
+
+  The boinc init script can no longer start, attach or stop the boinc
+  manager if openrc-0.20 and newer is used, because openrc no longer
+  passes $SHELL to init scripts.
+
+  To solve the issue the init script has been migrated to use
+  start-stop-daemon instead of using 'su' directly.
+
+  This change should have no impact for users of previous openrc
+  versions.
+
+  Gentoo-Bug: https://bugs.gentoo.org/574260
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1244
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -975,3 +975,115 @@
 
   Package-Manager: portage-2.2.28
 
+  25 Apr 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/mpv-0.17.0-add-missing-math-include.patch,
+  -files/mpv-0.17.0-glibc-2.23.patch, mpv-0.17.0.ebuild:
+  replace math.h patch with upstream equivalent in 0.17.0
+
+  It's the very same patch, but with an upstream commit reference.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1341
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  25 Apr 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/0.17.0/mpv-0.17.0-add-missing-math-include.patch,
+  +files/0.17.0/mpv-0.17.0-fix-seeking-without-first-index-entry.patch,
+  -files/mpv-0.17.0-add-missing-math-include.patch,
+  -files/mpv-0.17.0-fix-seeking-without-first-index-entry.patch,
+  mpv-0.17.0.ebuild:
+  move 0.17.0 patches under files/0.17.0/ directory
+
+  Closes: https://github.com/gentoo/gentoo/pull/1341
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-0.17.0-r1 (25 Apr 2016)
+
+  25 Apr 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/0.17.0/mpv-0.17.0-avoid-deprecated-API-usage.patch,
+  +files/0.17.0/mpv-0.17.0-fix-hwdec-fallback.patch,
+  +files/0.17.0/mpv-0.17.0-fix-parsing-multiple-input-command-prefixes.patch,
+  +files/0.17.0/mpv-0.17.0-fix-relative-seeking-with-coverart.patch,
+  +files/0.17.0/mpv-0.17.0-fix-use-after-free.patch,
+  +files/0.17.0/mpv-0.17.0-fix-video-frame-info-memleak.patch,
+  +files/0.17.0/mpv-0.17.0-remove-unneeded-X11-include.patch,
+  +mpv-0.17.0-r1.ebuild:
+  revbump to 0.17.0-r1 to backport some upstream fixes
+
+  Closes: https://github.com/gentoo/gentoo/pull/1341
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-0.17.0-r2 (26 Apr 2016)
+
+  26 Apr 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/0.17.0/mpv-0.17.0-fix-early-audio-start.patch,
+  +files/0.17.0/mpv-0.17.0-fix-unselecting-video-track.patch,
+  -mpv-0.17.0-r1.ebuild, +mpv-0.17.0-r2.ebuild:
+  revbump to 0.17.0-r2 to make users aware of mpv-bash-completion
+
+  Backport a couple more fixes on the way.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1350
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  26 Apr 2016; Ian Delaney <idella4@gentoo.org> mpv-0.17.0-r2.ebuild:
+  don't enable dvd USE by default in 0.17.0-r2
+
+  This USE is already enabled in desktop profiles.
+  Also DVDs become more and more obsolete nowadays.
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  26 Apr 2016; Ian Delaney <idella4@gentoo.org> mpv-0.17.0-r2.ebuild:
+  don't bother zsh users with bash completion in 0.17.0-r2
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  26 Apr 2016; Ian Delaney <idella4@gentoo.org> mpv-9999.ebuild:
+  propagate recent changes to 9999 ebuild
+
+  Closes: https://github.com/gentoo/gentoo/pull/1356
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  27 Apr 2016; Ian Delaney <idella4@gentoo.org> mpv-0.17.0-r2.ebuild,
+  mpv-9999.ebuild:
+  elog re bash completion
+
+  Polynomial-C made a request via #gentoo-proxy-maint IRC channel to
+  notify zsh users about mpv-bash-completion too. After some discussion
+  this change seems reasonable.
+
+  This effectively reverts 8e81330.
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+*mpv-0.17.0-r3 (27 Apr 2016)
+
+  27 Apr 2016; Ian Delaney <idella4@gentoo.org>
+  +files/0.17.0/mpv-0.17.0-fix-timestamp-resets.patch, -mpv-0.17.0-r2.ebuild,
+  +mpv-0.17.0-r3.ebuild:
+  revbump to 0.17.0-r3
+
+  Accidentally forgotten in 0.17.0-r1 revbump.
+  Should be the last revbump for 0.17.0.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1362
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+

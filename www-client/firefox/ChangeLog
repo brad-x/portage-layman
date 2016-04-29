@@ -651,3 +651,62 @@
   Package-Manager: portage-2.2.28
   RepoMan-Options: --ignore-arches
 
+*firefox-38.8.0 (28 Apr 2016)
+
+  28 Apr 2016; Ian Stakenvicius <axs@gentoo.org> -firefox-38.7.1.ebuild,
+  +firefox-38.8.0.ebuild:
+  bump 38.x ESR to 38.8.0 for security bug 581326
+
+  Package-Manager: portage-2.2.26
+
+*firefox-45.1.0 (28 Apr 2016)
+
+  28 Apr 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/arm64-4-link-chromium-mutex-based-atomics.patch,
+  +files/arm64-5-mozjemalloc-no-static-page-sizes.patch,
+  -firefox-45.0.1.ebuild, +firefox-45.1.0.ebuild, metadata.xml:
+  firefox-45, thunderbird-45: support system harfbuzz and graphite2
+
+  This commit introduces changes to mozconfig-v6.45.eclass and related changes
+  to the existing mail-client/thunderbird-45.0 and the new version bump
+  www-client/firefox-45.1.0 to support using system copies of media-
+  libs/harfbuzz
+  and media-gfx/graphite2 instead of the copies bundled inside of the mozilla
+  codebase.
+
+  www-client/firefox-45.1.0 was additionally bumped to support security bug
+  581326
+
+  Package-Manager: portage-2.2.26
+
+*firefox-46.0 (28 Apr 2016)
+
+  28 Apr 2016; Ian Stakenvicius <axs@gentoo.org> +firefox-46.0.ebuild,
+  metadata.xml:
+  version bump to 46.0
+
+  Cairo-gtk3 is now the upstream default in this version of firefox, and so
+  the USE flag was switched to make cairo-gtk2 optionally selectable via a
+  "force-gtk2" flag.
+
+  Bug: http://bugs.gentoo.org/555620
+
+  Package-Manager: portage-2.2.26
+
+  28 Apr 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.1.0.ebuild,
+  firefox-46.0.ebuild:
+  remove the re-added EGL flag from 45.x and 46.0
+
+  ..again..
+
+  Bug: http://bugs.gentoo.org/571180#c18
+
+  Package-Manager: portage-2.2.26
+
+  28 Apr 2016; Ian Stakenvicius <axs@gentoo.org> firefox-45.1.0.ebuild:
+  45.1.0: drop experimental qt support
+
+  Experimental QT5 support belongs only in mozilla-overlay
+
+  Package-Manager: portage-2.2.26
+

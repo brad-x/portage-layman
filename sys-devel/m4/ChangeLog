@@ -93,3 +93,20 @@
 
   Package-Manager: portage-2.2.26
 
+  25 Apr 2016; Anthony G. Basile <blueness@gentoo.org> m4-1.4.17.ebuild:
+  Revert "sys-devel/m4: add autoreconf needed with d2fb79b"
+
+  This reverts commit 47fa8d902034cc4c84229830affc623f98e85fdf.
+
+  25 Apr 2016; Anthony G. Basile <blueness@gentoo.org>
+  -files/m4-1.4.17-fix-spawn_h_m4.patch, m4-1.4.17.ebuild:
+  Revert "sys-devel/m4: fix spawn_h.m4 for uclibc, bug #580688"
+
+  This reverts commit d2fb79b419c1da51746a75a5f55e8b10a7993673.
+
+  25 Apr 2016; Anthony G. Basile <blueness@gentoo.org>
+  +files/m4-1.4.17-posix_spawn.patch, m4-1.4.17.ebuild:
+  fix spawn_h.m4 for uclibc, bugs #580688, #581086
+
+  Package-Manager: portage-2.2.26
+
