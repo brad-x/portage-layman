@@ -63,3 +63,51 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*XML-XPath-1.360.0 (29 Apr 2016)
+
+  29 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +XML-XPath-1.360.0.ebuild:
+  Bump to version 1.360.0
+
+  - EAPI6
+  - Add USE="examples"
+  - Cleaned up annoying tests
+
+  Upstream:
+  - /. and /.. selectors now work ( RT 30813 )
+  - Duplicates now removed from search results. ( RT 6362 )
+  - PrimaryExpr uses carp() instead of die() to give a stacktrace when parsing
+  fails ( RT 32233 )
+  - Avoid regex slowdown implied by $` by removing $` usage. ( RT 23924 )
+  - Unabbreviated "axis" syntax of "attribute::id" now works as well as the
+  equivalent "@id" does in setNodeText() ( RT 26143 )
+  - "namespace_uri()" implemented to set and read namespace URIs ( RT 68703 )
+  - substring matching functions in paths fixed ( RT 14957 )
+  - findvalue() computations that would yield infinities/NAN now match Literal
+  NaN and Infinitities ( RT 30818 )
+  - creatingNode() using a namespaced path properly creates namespaced nodes (
+  RT 80277 )
+  - "<" in a query no longer acts like a "<=" query. ( RT 6363 )
+  - XML::XPath::PerlSAX no longer fails to compile ( RT 111278 )
+  - NodeSet's now implement a greater variety of comparison/casting overloads
+  ( Github PR 2 )
+  - position()=last() conditions now work ( RT 32012 )
+  - createNode() now honors position() predicate ( RT 26144 )
+  - using translate() in an XPath expression no longer warns ( RT 15902 )
+  - translate() now removes characters as per XPath 1.0 Spec ( RT 21154 )
+  - xpath script now defaults to UTF-8 for IO to support wide characters ( RT
+  112017 )
+  - Warnings about /d used in translate() represssed ( RT 112584 )
+  - xpath script now has parameters parsed more obviously, and supports
+  additional parameters
+  - getAttributeNode() no longer relies on pre-perl-5.23.8 implicit return
+  values from loops ( RT 113576 )
+
+  Keywords:
+  - New Dependency on Path-Tiny for tests
+  - Dropped ~alpha ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
