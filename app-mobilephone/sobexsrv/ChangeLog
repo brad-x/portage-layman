@@ -58,3 +58,33 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/init.d_sobexsrv:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  11 Jun 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup due to #261692
+
+  Package-Manager: portage-2.3.0_rc1
+
+  12 Jun 2016; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  take an orphaned package
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+*sobexsrv-1.0.1-r1 (13 Jun 2016)
+
+  13 Jun 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +files/sobexsrv-1.0.1-openobex16.patch, +sobexsrv-1.0.1-r1.ebuild:
+  fixes and cleanups
+
+  - Fix bug 522748: openobex >= 1.6 removed unicode <-> ascii
+    conversion tools, so implement fallback using iconv -i.
+  - Port ebuild to EAPI 6.
+  - Fix multiple "make: jobserver unavailable issues".
+  - Properly support python script (add eclass, deps, shebang
+    fixing), install sample script.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+

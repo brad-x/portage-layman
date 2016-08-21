@@ -307,3 +307,87 @@
 
   Package-Manager: portage-2.2.28_p79
 
+  21 May 2016; Magnus Granberg <zorry@gentoo.org>
+  +files/2.02_beta3-gcc6-ld-no-pie.patch, grub-2.02_beta3-r1.ebuild:
+  2.02_beta3 Add fix for gcc-6.1.0[pie] #583042
+
+  Package-Manager: portage-2.2.27
+
+  29 Jun 2016; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta3-r1.ebuild,
+  grub-9999-r1.ebuild:
+  add xen-32 platform
+
+  This builds 32-bit Xen on amd64.
+
+  Bug: https://bugs.gentoo.org/586996
+
+  29 Jun 2016; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta3-r1.ebuild,
+  grub-9999-r1.ebuild:
+  refactor platform logic
+
+  Package-Manager: portage-2.3.0_p7
+
+  29 Jun 2016; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta3-r1.ebuild,
+  grub-9999-r1.ebuild:
+  Revert "sys-boot/grub: populate MULTIBUILD_VARIANTS in a more PMS-defined
+  way"
+
+  This reverts commit e1374135af76bf31a01ff4ecb6696d8bbe041f31.
+
+  10 Aug 2016; William Hubbs <williamh@gentoo.org> grub-2.02_beta2-r8.ebuild,
+  grub-2.02_beta2-r9.ebuild, grub-2.02_beta3-r1.ebuild, grub-9999-r1.ebuild:
+  do not force multislot use flag on
+
+  10 Aug 2016; William Hubbs <williamh@gentoo.org> grub-2.02_beta2-r8.ebuild,
+  grub-2.02_beta2-r9.ebuild, grub-2.02_beta3-r1.ebuild, grub-9999-r1.ebuild:
+  Revert "sys-boot/grub: do not force multislot use flag on"
+
+  This reverts commit bd29c07ee1edf51553ced4ff9d57076b3ce6732c.
+  I need to wait another day for this.
+
+  11 Aug 2016; William Hubbs <williamh@gentoo.org> grub-2.02_beta2-r8.ebuild,
+  grub-2.02_beta2-r9.ebuild, grub-2.02_beta3-r1.ebuild, grub-9999-r1.ebuild:
+  do not force multislot use flag on
+
+*grub-9999 (13 Aug 2016)
+
+  13 Aug 2016; Mike Gilbert <floppym@gentoo.org> +grub-9999.ebuild,
+  -grub-9999-r1.ebuild:
+  update fonts
+
+  Package-Manager: portage-2.3.0_p16
+
+  13 Aug 2016; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  simplify QA variables
+
+  Package-Manager: portage-2.3.0_p16
+
+  14 Aug 2016; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  set RESTRICT=strip
+
+  STRIP_MASK is not documented in PMS, so avoid using it.
+  Also further simplify QA variables.
+
+  Package-Manager: portage-2.3.0_p16
+
+  18 Aug 2016; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r9.ebuild,
+  grub-2.02_beta3-r1.ebuild, grub-9999.ebuild:
+  block sys-boot/grub-static when multislot is disabled
+
+  Bug: https://bugs.gentoo.org/591574
+
+  Package-Manager: portage-2.3.0_p16
+
+  18 Aug 2016; Mike Gilbert <floppym@gentoo.org> grub-0.97-r16.ebuild,
+  grub-0.97-r17.ebuild:
+  block sys-boot/grub:2[-multislot]
+
+  Bug: https://bugs.gentoo.org/591574
+
+  Package-Manager: portage-2.3.0_p16
+
+  18 Aug 2016; Mike Gilbert <floppym@gentoo.org> -grub-2.02_beta2-r8.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_p16
+

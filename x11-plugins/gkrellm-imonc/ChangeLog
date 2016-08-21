@@ -65,3 +65,19 @@
 
   Bug: 575810
 
+*gkrellm-imonc-0.2-r1 (07 Aug 2016)
+
+  07 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/gkrellm-imonc-makefile.patch, +gkrellm-imonc-0.2-r1.ebuild:
+  new revision that respects LDFLAGS.
+
+  This is another revision thanks to Michael Mair-Keimberger. His patch
+  fixes the Makefile so that it adds $(LDFLAGS) in the right spots, and
+  also happens to fix $(CC) in the process. An EAPI=2 USE-dependency was
+  added for gkrellm (also part of the patch), and the ebuild was updated
+  to use EAPI=6.
+
+  Gentoo-Bug: 335013
+
+  Package-Manager: portage-2.2.28
+

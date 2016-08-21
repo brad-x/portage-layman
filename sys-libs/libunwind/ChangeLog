@@ -79,3 +79,92 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  04 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-0.99-r1.ebuild,
+  libunwind-1.0.1.ebuild, libunwind-1.0.1-r1.ebuild, libunwind-1.1.ebuild:
+  savannah: switch to https URLs
+
+*libunwind-1.2_rc1 (13 Jun 2016)
+
+  13 Jun 2016; Yixun Lan <dlan@gentoo.org> +libunwind-1.2_rc1.ebuild:
+  version bump to 1.2_rc1, add arm64 support
+
+  Gentoo-Bug: 584720
+
+  Package-Manager: portage-2.3.0_rc1
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.1.ebuild:
+  disable building code in tests/ #484846
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.1.ebuild:
+  mark ia64 stable #461394
+
+*libunwind-1.1-r1 (13 Jun 2016)
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/libunwind-1.1-fix-CVE-2015-3239.patch, +libunwind-1.1-r1.ebuild:
+  add fix from Fedora for CVE-2015-3239 #585830
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.1-r1.ebuild,
+  libunwind-1.2_rc1.ebuild:
+  clean up debug configure logic
+
+  The upstream configure script has been fixed in these versions, so we
+  don't need to workaround the misbehaving --disable-debug flag anymore.
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.2_rc1.ebuild:
+  restore elibtoolize call
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.2_rc1.ebuild:
+  clean up debug configure bug
+
+  Should have been dropped in the previous clean up here.
+
+  14 Jun 2016; Agostino Sarubbo <ago@gentoo.org> libunwind-1.1-r1.ebuild:
+  amd64 stable wrt bug #585830
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Jun 2016; Jeroen Roovers <jer@gentoo.org> libunwind-1.1-r1.ebuild:
+  Stable for PPC64 (bug #585830).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  16 Jun 2016; Jeroen Roovers <jer@gentoo.org> libunwind-1.1-r1.ebuild:
+  Stable for HPPA (bug #585830).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  16 Jun 2016; Mike Frysinger <vapier@gentoo.org> libunwind-1.2_rc1.ebuild:
+  disable test building in 1.2_rc1 too
+
+  21 Jun 2016; Markus Meier <maekke@gentoo.org> libunwind-1.1-r1.ebuild:
+  arm stable, bug #585830
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  27 Jun 2016; Agostino Sarubbo <ago@gentoo.org> libunwind-1.1-r1.ebuild:
+  x86 stable wrt bug #585830
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jul 2016; Agostino Sarubbo <ago@gentoo.org> libunwind-1.1-r1.ebuild:
+  ppc stable wrt bug #585830
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jul 2016; Agostino Sarubbo <ago@gentoo.org> libunwind-1.1-r1.ebuild:
+  ia64 stable wrt bug #585830
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

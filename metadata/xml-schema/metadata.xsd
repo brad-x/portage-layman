@@ -11,11 +11,11 @@
 			<xs:field xpath='@lang'/>
 			<xs:field xpath='@restrict'/>
 		</xs:unique>
-		<xs:unique name='maintainerUniquityConstraint'>
+		<xs:key name='maintainerKeyConstraint'>
 			<xs:selector xpath='maintainer'/>
 			<xs:field xpath='email'/>
 			<xs:field xpath='@restrict'/>
-		</xs:unique>
+		</xs:key>
 		<xs:unique name='slotsUniquityConstraint'>
 			<xs:selector xpath='slots'/>
 			<xs:field xpath='@lang'/>
@@ -41,6 +41,10 @@
 		<xs:choice minOccurs='0' maxOccurs='unbounded'>
 			<xs:element name='longdescription' type='longDescType'/>
 			<xs:element name='maintainer' type='maintainerType'>
+				<xs:unique name='maintainerNameSingleConstraint'>
+					<xs:selector xpath='name'/>
+					<xs:field xpath='@fake-only-once'/>
+				</xs:unique>
 				<xs:unique name='maintainerDescUniquityConstraint'>
 					<xs:selector xpath='description'/>
 					<xs:field xpath='@lang'/>
@@ -57,6 +61,10 @@
 				</xs:unique>
 			</xs:element>
 			<xs:element name='upstream' type='upstreamType'>
+				<xs:unique name='upstreamMaintainerUniquityConstraint'>
+					<xs:selector xpath='maintainer'/>
+					<xs:field xpath='name'/>
+				</xs:unique>
 				<xs:unique name='bugsToSingleConstraint'>
 					<xs:selector xpath='bugs-to'/>
 					<xs:field xpath='@fake-only-once'/>
@@ -95,12 +103,7 @@
 	<!-- the huge <upstream/> structure -->
 	<xs:complexType name='upstreamType'>
 		<xs:choice minOccurs='0' maxOccurs='unbounded'>
-			<xs:element name='maintainer' type='upstreamMaintainerType'>
-				<xs:unique name='upstreamMaintainerUniquityConstraint'>
-					<xs:selector xpath='maintainer'/>
-					<xs:field xpath='name'/>
-				</xs:unique>
-			</xs:element>
+			<xs:element name='maintainer' type='upstreamMaintainerType'/>
 			<xs:element name='changelog' type='urlOnceType'/>
 			<xs:element name='doc' type='upstreamDocType'/>
 			<xs:element name='bugs-to' type='urlOnceType'/>
@@ -112,17 +115,15 @@
 
 	<!-- maintainer in two variants -->
 	<xs:complexType name='maintainerType'>
-		<xs:all>
-			<xs:element name='email' type='emailType'
-				minOccurs='1'/>
-			<xs:element name='name' type='xs:token'
-				minOccurs='0'/>
-			<xs:element name='description' type='maintainerDescType'
-				minOccurs='0'/>
-		</xs:all>
+		<xs:choice minOccurs='0' maxOccurs='unbounded'>
+			<xs:element name='email' type='emailType'/>
+			<xs:element name='name' type='tokenOnceType'/>
+			<xs:element name='description' type='maintainerDescType'/>
+		</xs:choice>
 		<xs:attribute name='type' type='maintainerTypeAttrType'
 			use='required'/>
-		<xs:attribute name='restrict' type='restrictAttrType'/>
+		<xs:attribute name='restrict' type='restrictAttrType'
+			default=''/>
 	</xs:complexType>
 
 	<xs:simpleType name='maintainerTypeAttrType'>
@@ -137,7 +138,7 @@
 			<xs:element name='email' type='emailType'
 				minOccurs='0'/>
 			<xs:element name='name' type='xs:token'
-				minOccurs='0'/>
+				minOccurs='1'/>
 		</xs:all>
 		<xs:attribute name='status' type='upstreamMaintainerStatusAttrType'
 			default='unknown'/>
@@ -166,7 +167,7 @@
 			<xs:element name='cat' type='catType'/>
 		</xs:choice>
 		<xs:attribute name='lang' type='langAttrType' default='en'/>
-		<xs:attribute name='restrict' type='restrictAttrType'/>
+		<xs:attribute name='restrict' type='restrictAttrType' default=''/>
 	</xs:complexType>
 
 	<xs:complexType name='catLongDescType' mixed='true'>

@@ -245,3 +245,55 @@
 
   Package-Manager: portage-2.2.26
 
+*doxygen-1.8.11-r2 (15 Jun 2016)
+
+  15 Jun 2016; Matthias Maier <tamiko@gentoo.org> -doxygen-1.8.11-r1.ebuild,
+  +doxygen-1.8.11-r2.ebuild, doxygen-9999.ebuild:
+  remove LINGUAS use expand, bug #584782
+
+  doxygen has language support in form of quite a number of "translator"
+  units. We had the habit of fine-tuning the translator units that are
+  actually built via the LINGUAS use expand mechanism.
+
+  But this is a broken approach due to the following reasons:
+
+   - "translator" units are lightweight header files that are built into
+     doxygen during compilation. No external dependencies are required.
+
+   - Traditionally, the LINGUAS variable is used for packages to determine
+     runtime language support (especially for GUI programs, etc) that usually
+     requires additional packages to be installed - i.e., LINGUAS controls
+     the languages supported in CLI and GUI applications.
+
+     doxygen's support for translator units does *not* fit into this scheme
+     at all.
+
+   - Not all translator units have a LINGUAS equivalent (!!)
+
+   - Hand selecting supported LINGUAS is a maintenance burden.
+
+  Therefore, I just got rid of it and install *all supported* "translator"
+  unconditionally.
+
+  Package-Manager: portage-2.2.28
+
+  07 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/doxygen-1.8.1-prefix-misc-alt.patch,
+  -files/doxygen-1.8.3.1-empty-line-sigsegv.patch:
+  remove unused patches
+
+  Closes: https://github.com/gentoo/gentoo/pull/1826
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  17 Jul 2016; Tobias Klausmann <klausman@gentoo.org>
+  doxygen-1.8.11-r2.ebuild:
+  1.8.11-r2: add alpha keyword
+
+  Gentoo-Bug: 588448
+
+  16 Aug 2016; Matthias Maier <tamiko@gentoo.org> doxygen-1.8.11-r2.ebuild:
+  stabilize amd64 and x86, bug #588448
+
+  Package-Manager: portage-2.2.28
+

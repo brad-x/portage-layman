@@ -183,3 +183,51 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/fwknopd.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  12 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> files/fwknopd.init:
+  bump initscript copyright years after shebang update
+
+  Package-Manager: portage-2.3.0_rc1
+
+*fwknop-2.6.8-r2 (12 Jun 2016)
+
+  12 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> +fwknop-2.6.8-r2.ebuild,
+  metadata.xml:
+  revbump to 2.6.8-r2
+
+  Changes:
+  - EAPI=6;
+  - HTTPS in HOMEPAGE;
+  - update LICENSE;
+  - require server USE for gdbm USE as it only affects server builds;
+  - move kernel config check to pkg_postinst as it's purely informational;
+  - respect PREFIX in build system;
+  - avoid ${S} overuse;
+  - install utility scripts with extras USE;
+  - various cleanups here and there.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  12 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> -fwknop-2.6.8-r1.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_rc1
+
+*fwknop-2.6.9 (12 Jun 2016)
+
+  12 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> +fwknop-2.6.9.ebuild,
+  metadata.xml:
+  verbump to 2.6.9
+
+  Closes: https://github.com/gentoo/gentoo/pull/1565
+  Package-Manager: portage-2.3.0_rc1
+
+  21 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> fwknop-2.6.8-r2.ebuild,
+  fwknop-2.6.9.ebuild:
+  respect EPREFIX in DOC_CONTENTS
+
+  Closes: https://github.com/gentoo/gentoo/pull/1703
+  Package-Manager: portage-2.3.0_rc1
+

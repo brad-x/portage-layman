@@ -46,3 +46,121 @@
 
   Package-Manager: portage-2.2.28
 
+*atom-1.7.3 (30 Apr 2016)
+
+  30 Apr 2016; Heather Cynede <cynede@gentoo.org> -atom-1.7.2.ebuild,
+  +atom-1.7.3.ebuild:
+  bump to 1.7.3
+
+  Package-Manager: portage-2.2.28
+
+  10 May 2016; Patrice Clement <monsieurp@gentoo.org> atom-1.7.3.ebuild,
+  +files/atom-unbundle-electron.patch, +files/gyp-unbundle.py, metadata.xml:
+  Switch to using dev-util/electron, recompile binaries and unbundle
+  libraries.
+
+  Proper build of dev-util/electron is now in the tree (#579116),
+  which makes it possible to rebuild Atom properly, i.e. without
+  the use of precompiled blobs and with proper library unbundling.
+
+  The strategy used in this build is to take the upstream release
+  build and recompile the native module portions against the system
+  Electron and system libraries.
+
+  Gentoo-Bug: https://bugs.gentoo.org/582462
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1430
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*atom-1.7.3-r1 (12 May 2016)
+
+  12 May 2016; Patrice Clement <monsieurp@gentoo.org> -atom-1.7.3.ebuild,
+  +atom-1.7.3-r1.ebuild, files/gyp-unbundle.py:
+  Build fixes.
+
+  Fixed node-gyp invocation and added gnome-keyring dependency.
+
+  Gentoo-Bug: https://bugs.gentoo.org/582748
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1453
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  19 May 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  Re-ordering of maintainers in metadata
+
+  Package-Manager: portage-2.2.28
+
+*atom-1.7.4 (25 May 2016)
+
+  25 May 2016; Patrice Clement <monsieurp@gentoo.org> -atom-1.7.3-r1.ebuild,
+  +atom-1.7.4.ebuild, +files/atom-apm-path.patch:
+  Bump to 1.7.4, fix default apm path
+
+  Gentoo-Bug: https://bugs.gentoo.org/583040
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1531
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*atom-1.7.4-r1 (27 May 2016)
+
+  27 May 2016; Patrice Clement <monsieurp@gentoo.org> -atom-1.7.4.ebuild,
+  +atom-1.7.4-r1.ebuild, +files/asar-require.patch:
+  Fix apm under Node 5+.
+
+  apm monkey-patches Node's module system to add support for module loading
+  from "asar" archives.  Add a case to make this work under Node 5+.
+
+  Gentoo-Bug: https://bugs.gentoo.org/584000
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1539
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*atom-1.7.4-r2 (10 Jun 2016)
+
+  10 Jun 2016; Patrice Clement <monsieurp@gentoo.org> -atom-1.7.4-r1.ebuild,
+  +atom-1.7.4-r2.ebuild, files/atom-apm-path.patch:
+  Fix app.asar repacking. Fixes bug 585490.
+
+  Gentoo-Bug: https://bugs.gentoo.org/585490
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1640
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*atom-1.7.4-r3 (12 Jun 2016)
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org> -atom-1.7.4-r2.ebuild,
+  +atom-1.7.4-r3.ebuild:
+  dev-util/electron: Build node executable, fix automagic cups dependency.
+
+  Electron and apps based on it cannot rely on system NodeJS
+  for compatibility reasons. Fix this by building and using
+  a nodejs executable based on bundled nodejs code.
+
+  Additionally, fix automagic dependency on libcups and remove dependency on
+  system nodejs
+
+  Gentoo-Bug: https://bugs.gentoo.org/585116
+  Gentoo-Bug: https://bugs.gentoo.org/585490
+  Gentoo-Bug: https://bugs.gentoo.org/585464
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1664
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*atom-1.8.0 (23 Jun 2016)
+
+  23 Jun 2016; Patrice Clement <monsieurp@gentoo.org> +atom-1.8.0.ebuild:
+  Version bump to 1.8.0.
+
+  Gentoo-Bug: https://bugs.gentoo.org/586156
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1701
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

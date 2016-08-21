@@ -102,3 +102,34 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  25 May 2016; Ian Delaney <idella4@gentoo.org> metadata.xml:
+  change maintainer order
+
+  Put the actual proxied maintainer before the P-M project to simplify
+  the assignment of bugs. Also, remove the no longer needed description.
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1528
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  27 May 2016; Amy Winston <amynka@gentoo.org> rtkit-0.11-r1.ebuild,
+  rtkit-0.11-r2.ebuild:
+  fix compile-time dependencies
+
+  Due to a typo, rtkit ebuilds never actually included RDEPEND into their
+  compile-dependencies. This could lead to build failures for some users.
+  Fix the typo.
+
+  Moreover, app-arch/xz-utils are (now) in the system set so no need to
+  explicitly depend on this package.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  29 Jul 2016; Marek Szuba <marecki@gentoo.org> metadata.xml:
+  update metadata.
+
+  Update maintainer e-mail, remove the g-p-m project.
+
+  Package-Manager: portage-2.3.0
+

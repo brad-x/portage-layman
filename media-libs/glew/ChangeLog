@@ -70,3 +70,38 @@
   12 Apr 2016; Tim Harder <radhermit@gentoo.org> metadata.xml:
   drop myself as maintainer
 
+  24 Jul 2016; James Le Cuirot <chewi@gentoo.org> -glew-1.9.0.ebuild,
+  -glew-1.10.0-r1.ebuild, -glew-1.11.0.ebuild, -glew-1.12.0.ebuild:
+  Remove many old versions
+
+  This drops the only stable version on sh but all sh profiles are exp
+  now. See bug #498332.
+
+  Package-Manager: portage-2.3.0
+
+*glew-1.10.0-r100 (24 Jul 2016)
+
+  24 Jul 2016; James Le Cuirot <chewi@gentoo.org> +glew-1.10.0-r100.ebuild:
+  Add lib-only 1.10 SLOT for binary games (i.e. Steam)
+
+  Note to whoever touches this package next. The X dependencies are
+  wrong. media-libs/glu is needed but only in RDEPEND for the headers.
+
+  Package-Manager: portage-2.3.0
+
+*glew-2.0.0 (08 Aug 2016)
+
+  08 Aug 2016; Tim Harder <radhermit@gentoo.org>
+  +files/glew-2.0.0-install-headers.patch, +glew-2.0.0.ebuild:
+  version bump to 2.0.0
+
+*glew-1.6.0-r100 (10 Aug 2016)
+
+  10 Aug 2016; James Le Cuirot <chewi@gentoo.org> +glew-1.6.0-r100.ebuild:
+  Add lib-only 1.6 SLOT for binary games (i.e. Steam)
+
+  1.6 and 1.10 are the only SLOTs we should need for Steam for now as
+  these are the versions included in the official Ubuntu-based runtime.
+
+  Package-Manager: portage-2.3.0
+

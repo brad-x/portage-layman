@@ -180,3 +180,152 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+*spice-0.13.1 (01 May 2016)
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> +spice-0.13.1.ebuild:
+  version bump to 0.13.1, bug #580570, bug #580084
+
+  This also fixes the compilation issue in 0.13.0 reported in bug #580084.
+
+  Package-Manager: portage-2.2.26
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> -spice-0.13.0.ebuild:
+  Remove broken version 0.13.0, bug #580084
+
+  Package-Manager: portage-2.2.26
+
+*spice-0.12.7 (01 May 2016)
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> +spice-0.12.7.ebuild:
+  add version 0.12.7
+
+  Package-Manager: portage-2.2.26
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> spice-0.12.6-r2.ebuild:
+  update dependencies, bug #580084
+
+  Package-Manager: portage-2.2.26
+
+*spice-0.13.1-r1 (14 Jun 2016)
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml,
+  -spice-0.13.1.ebuild, +spice-0.13.1-r1.ebuild, spice-9999.ebuild:
+  add use flag for lz4 support, avoid automagic; bug #582014
+
+  Package-Manager: portage-2.2.28
+
+*spice-0.12.7-r1 (14 Jun 2016)
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org>
+  +files/0.12.6-CVE-2016-0749-p1.patch, +files/0.12.6-CVE-2016-0749-p2.patch,
+  +files/0.12.6-CVE-2016-2150-p1.patch, +files/0.12.6-CVE-2016-2150-p2.patch,
+  +spice-0.12.7-r1.ebuild:
+  fix vuln 0.12.7, bug #584126
+
+  Apply the following patches to 0.12.7:
+
+  CVE-2016-2150:
+
+    0067-create-a-function-to-validate-surface-parameters.patch
+    0068-improve-primary-surface-parameter-checks.patch
+
+  CVE-2016-0749:
+
+    0065-smartcard-add-a-ref-to-item-before-adding-to-pipe.patch
+    0066-smartcard-allocate-msg-with-the-expected-size.patch
+
+  Gentoo-Bug: 584126
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Matthias Maier <tamiko@gentoo.org>
+
+*spice-0.13.1-r2 (14 Jun 2016)
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org>
+  +files/0.13.1-CVE-2016-0749-p1.patch, +files/0.13.1-CVE-2016-0749-p2.patch,
+  +files/0.13.1-CVE-2016-2150-p1.patch, +files/0.13.1-CVE-2016-2150-p2.patch,
+  +spice-0.13.1-r2.ebuild:
+  fix vuln 0.13.1, bug #584126
+
+  Apply the following patches to 0.13.1:
+
+  CVE-2016-2150:
+
+    Commits 69628ea1375282cb7ca5b4dc4410e7aa67e0fc02
+    Commits 790d8f3e53d324f496fc719498422e433aae8654
+
+    *instead of* 0067-create-a-function-to-validate-surface-parameters.patch
+    *instead of* 0068-improve-primary-surface-parameter-checks.patch
+
+  CVE-2016-0749:
+
+    Ported the following commits to 0.13.1 (patches did not apply due to
+    refactoring of some internal data structures and renaming).
+
+    *modified* 0065-smartcard-add-a-ref-to-item-before-adding-to-pipe.patch
+    *modified* 0066-smartcard-allocate-msg-with-the-expected-size.patch
+
+  Gentoo-Bug: 584126
+
+  Package-Manager: portage-2.2.28
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org> -spice-0.12.7.ebuild,
+  -spice-0.13.1-r1.ebuild:
+  drop vulnerable versions, bug #584126
+
+  Package-Manager: portage-2.2.28
+
+  14 Jun 2016; Agostino Sarubbo <ago@gentoo.org> spice-0.12.7-r1.ebuild:
+  amd64 stable wrt bug #584126
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml:
+  update metadata.xml
+
+  Package-Manager: portage-2.2.28
+
+  15 Jun 2016; Agostino Sarubbo <ago@gentoo.org> spice-0.12.7-r1.ebuild:
+  x86 stable wrt bug #584126
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Jun 2016; Matthias Maier <tamiko@gentoo.org> -spice-0.12.6-r2.ebuild:
+  drop vulnerable, bug #584126
+
+  Package-Manager: portage-2.2.28
+
+  08 Aug 2016; Matthias Maier <tamiko@gentoo.org> spice-0.12.7-r1.ebuild,
+  spice-0.13.1-r2.ebuild, spice-9999.ebuild:
+  work around access violation during configure, bug #586560
+
+  Package-Manager: portage-2.2.28
+
+*spice-0.13.2 (17 Aug 2016)
+
+  17 Aug 2016; Yixun Lan <dlan@gentoo.org> +files/README.gentoo, metadata.xml,
+  +spice-0.13.2.ebuild:
+  version bump 0.13.2
+
+  1) add gstreamer support, possible using mjpeg, vp8, x264 video encodec
+     upstream support both gstreamer version 1.0 & 0.10, but for now we only
+     choose 1.0
+  2) notify user to install extra gstreamer plugins via readme.gentoo
+  3) bump EAPI=6
+
+  Package-Manager: portage-2.3.0
+
+  17 Aug 2016; Yixun Lan <dlan@gentoo.org> spice-9999.ebuild:
+  live ebuilds updated
+
+  Package-Manager: portage-2.3.0
+
+  17 Aug 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag descriptions from metadata.xml
+
+  Package-Manager: portage-2.3.0
+

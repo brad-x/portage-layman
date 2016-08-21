@@ -150,3 +150,124 @@
   RepoMan-Options: --include-arches="sparc"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+*libarchive-3.1.2-r5 (11 May 2016)
+
+  11 May 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/libarchive-3.1.2-CVE-2016-1541.patch, +libarchive-3.1.2-r5.ebuild:
+  Revbump to 3.1.2-r5, resolves #582526
+
+  Package-Manager: portage-2.2.26
+
+  11 May 2016; NP-Hardass <NP-Hardass@gentoo.org> -libarchive-3.1.2-r1.ebuild,
+  -libarchive-3.1.2-r2.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.26
+
+*libarchive-3.1.2-r2 (11 May 2016)
+*libarchive-3.1.2-r1 (11 May 2016)
+
+  11 May 2016; NP-Hardass <NP-Hardass@gentoo.org> +libarchive-3.1.2-r1.ebuild,
+  +libarchive-3.1.2-r2.ebuild:
+  Revert "app-arch/libarchive: Drop old"
+
+  This reverts commit fc9dc7a13724115678d2df7acb93fc5ae30609b4.
+
+*libarchive-3.2.1 (01 Jul 2016)
+
+  01 Jul 2016; William Hubbs <williamh@gentoo.org> +libarchive-3.2.1.ebuild:
+  3.2.1 version bump for #582710
+
+  Package-Manager: portage-2.2.28
+
+  02 Jul 2016; Fabian Groffen <grobian@gentoo.org> libarchive-3.1.2-r5.ebuild:
+  fix compilation on OSX, it needs acl enabled
+
+  Package-Manager: portage-2.2.28
+
+*libarchive-3.2.1-r2 (03 Jul 2016)
+*libarchive-3.2.1-r1 (03 Jul 2016)
+
+  03 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/libarchive-3.2.1-fix-tests-gnu99.patch, -libarchive-3.2.1.ebuild,
+  +libarchive-3.2.1-r1.ebuild, +libarchive-3.2.1-r2.ebuild, metadata.xml:
+  Add lz4, fix up EAPI6, fix test, minor formatting
+
+  3.2.1-r2 makes bsdcat and bsdcpio the default for BSD must like bsdtar
+  already is.
+
+  Package-Manager: portage-2.2.28
+
+*libarchive-3.2.1-r3 (05 Jul 2016)
+
+  05 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/libarchive-3.2.1-osx-fix-acl.patch, -libarchive-3.2.1-r2.ebuild,
+  +libarchive-3.2.1-r3.ebuild:
+  Add src_prepare w/ eautoreconf, fix OSX acl #587890
+
+  Package-Manager: portage-2.2.28
+
+  05 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> libarchive-3.2.1-r3.ebuild:
+  Add comment
+
+  Package-Manager: portage-2.2.28
+
+  17 Jul 2016; Tobias Klausmann <klausman@gentoo.org>
+  libarchive-3.2.1-r3.ebuild:
+  3.2.1-r3: add alpha keyword
+
+  Gentoo-Bug: 586182
+
+  17 Jul 2016; Jeroen Roovers <jer@gentoo.org> libarchive-3.2.1-r3.ebuild:
+  Stable for HPPA PPC64 (bug #586182).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+  18 Jul 2016; Agostino Sarubbo <ago@gentoo.org> libarchive-3.2.1-r3.ebuild:
+  amd64 stable wrt bug #586182
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  18 Jul 2016; Agostino Sarubbo <ago@gentoo.org> libarchive-3.2.1-r3.ebuild:
+  x86 stable wrt bug #586182
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*libarchive-3.2.1-r4 (26 Jul 2016)
+
+  26 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/libarchive-3.2.1-xz-utils-thread-detection.patch,
+  +libarchive-3.2.1-r4.ebuild:
+  Add explicit dep on xz threads=, backport detecction
+
+  Package-Manager: portage-2.2.28
+
+  26 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> -libarchive-3.2.1-r1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.2.28
+
+  27 Jul 2016; Markus Meier <maekke@gentoo.org> libarchive-3.2.1-r3.ebuild:
+  arm stable, bug #586182
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="arm"
+
+*libarchive-3.2.1-r5 (05 Aug 2016)
+
+  05 Aug 2016; NP-Hardass <NP-Hardass@gentoo.org> -libarchive-3.2.1-r4.ebuild,
+  +libarchive-3.2.1-r5.ebuild:
+  Remove bsdcat symlink due to compat issues #589876
+
+  Package-Manager: portage-2.2.28
+
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #131259
+
+  Package-Manager: portage-2.3.0
+

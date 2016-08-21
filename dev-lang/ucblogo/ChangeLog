@@ -61,3 +61,68 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 May 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup due to bug #55572
+
+  Package-Manager: portage-2.3.0_rc1
+
+*ucblogo-6.0 (24 May 2016)
+
+  24 May 2016; José María Alonso Josa <nimiux@gentoo.org>
+  +files/ucblogo-6.0-destdir.patch, +files/ucblogo-6.0-no-libtermcap.patch,
+  +files/ucblogo-6.0-texi.patch, +files/ucblogo-6.0-wx.patch,
+  +ucblogo-6.0.ebuild:
+  Bump to version 6.0
+
+  Fixes bug #471972
+
+  Package-Manager: portage-2.2.28
+
+  24 May 2016; José María Alonso Josa <nimiux@gentoo.org> ucblogo-6.0.ebuild:
+  Fix for current version of glib
+
+  Package-Manager: portage-2.2.28
+
+*ucblogo-6.0-r1 (08 Jul 2016)
+
+  08 Jul 2016; Austin English <wizardedit@gentoo.org> metadata.xml,
+  +ucblogo-6.0-r1.ebuild:
+  bump to EAPI 6, add maintainer-needed
+
+  Package-Manager: portage-2.2.28
+
+*ucblogo-6.0-r2 (14 Aug 2016)
+
+  14 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/ucblogo-6.0-optimization-flags.patch, +ucblogo-6.0-r2.ebuild:
+  new revision to fix a few open bugs.
+
+  The build system for this package forces -O0, and we have an ancient
+  bug for that. The only way to fix it is with a patch, and this new
+  revision adds a patch stripping the -O0.
+
+  There is also a build failure in the existing 6.x series
+  ebuilds. There is wxWidgets support hidden behind USE=X, but we make a
+  call to some wxWidgets stuff unconditionally and it crashes when
+  wxWidgets is not present (i.e. with USE="-X").
+
+  The elisp-common eclass is no longer used and has been dropped. A call
+  to strip-flags has been removed, and flag-o-matic "downgraded" to
+  toolchain-funcs.
+
+  Gentoo-Bug: 327359
+  Gentoo-Bug: 584602
+
+  Package-Manager: portage-2.2.28
+
+  14 Aug 2016; Michael Orlitzky <mjo@gentoo.org> -files/50ucblogo-gentoo.el,
+  -files/ucblogo-5.5-destdir.patch,
+  -files/ucblogo-5.5-dont-require-tetex.patch, -files/ucblogo-5.5-fhs.patch,
+  -files/ucblogo-5.5-no-emacs.patch, -ucblogo-5.5.ebuild,
+  -ucblogo-5.5-r1.ebuild, -ucblogo-6.0.ebuild, -ucblogo-6.0-r1.ebuild:
+  remove older versions and files.
+
+  Gentoo-Bug: 565122
+
+  Package-Manager: portage-2.2.28
+

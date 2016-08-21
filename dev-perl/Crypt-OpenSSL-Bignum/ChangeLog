@@ -76,3 +76,30 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Crypt-OpenSSL-Bignum-0.60.0 (03 Aug 2016)
+
+  03 Aug 2016; Kent Fredric <kentnl@gentoo.org>
+  +Crypt-OpenSSL-Bignum-0.60.0.ebuild:
+  Bump to version 0.60.0
+
+  - EAPI6
+
+  Upstream:
+  - Memory relaimed when CTX goes out of scope
+  - to_bin no longer returns garbage when value is 0
+  - new constructors: new, rand, pseudo_rand, rand_range
+  - new methods: ucmp, num_bits, num_bytes, rshift, lshift, swap
+
+  Keywording notes:
+  - m68k, s390, sh and x86-fbsd are all unsatisfied for libressl
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m6mips nios2 ppc ppc64 riscv sparc sparc-fbsd x86"
+
+  16 Aug 2016; Kent Fredric <kentnl@gentoo.org>
+  Crypt-OpenSSL-Bignum-0.40.0-r2.ebuild:
+  Remove unneeded stable bits on exp arches
+
+  Package-Manager: portage-2.3.0
+

@@ -1,0 +1,60 @@
+# ChangeLog for x11-themes/neutral-xcursors
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*neutral-xcursors-1.20 (18 May 2016)
+
+  18 May 2016; Sam Jorna <wraeth@gentoo.org> +metadata.xml,
+  +neutral-xcursors-1.20.ebuild:
+  x11-themes/xcursor-neutral: renamed to x11-themes/neutral-xcursors
+
+  Rationale:
+  - follows the naming convention used for other cursor themes in tree;
+  - there will be more than one theme installed after the next verbump.
+
+  https://devmanual.gentoo.org/ebuild-maintenance/index.html#moving-a-package:
+  1. `git mv xcursor-neutral/ neutral-xcursors/'                           ✓
+  2. Add entry to profile/updates/2Q-2016                                  ✓
+  3. Update reverse dependencies (there's none)                            ✓
+  4. Update entries in profiles/ (there's none)                            ✓
+  5. Update eclasses that reference the package (there's none)             ✓
+  6. Update metadata.xml entries that reference the package (there's none) ✓
+  7,8. Stage and commit changes                                            ✓
+  9. Update open bug reports related to the package (there's none)         ✓
+
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
+
+*neutral-xcursors-20150106 (18 May 2016)
+
+  18 May 2016; Sam Jorna <wraeth@gentoo.org> +files/index.theme,
+  +neutral-xcursors-20150106.ebuild:
+  verbump to 20150106
+
+  Major overhaul since the previous version.
+
+  Neutral, Neutral Plus, Neutral++, and Neutral++ White themes are now
+  installed
+  as opposed to only Neutral Plus before. All these themes share the same
+  origin,
+  but have noticeable differences.
+
+  ${PV} now refers to the most recently updated theme, see ebuild for more
+  info.
+
+  Fixed bugs:
+  - migrate away from deprecated EAPI;
+  - install themes to XDG-compliant directory (see bug 582818);
+  - install XDG-compliant index.theme for Neutral Plus;
+  - drop examples USE flag, which simply installed cursors twice;
+  - fix mess in the dependencies.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
+
+  18 May 2016; Sam Jorna <wraeth@gentoo.org> metadata.xml:
+  remove description tag from metadata.xml
+
+  Closes: https://github.com/gentoo/gentoo/pull/1479
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Sam Jorna <wraeth@gentoo.org>
+

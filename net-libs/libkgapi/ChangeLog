@@ -66,3 +66,25 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  25 May 2016; Michael Palimaka <kensington@gentoo.org> libkgapi-2.2.0.ebuild:
+  Drop ppc and ppc64 to testing in KDE-related packages.
+
+  07 Jul 2016; Michael Palimaka <kensington@gentoo.org> libkgapi-2.2.0.ebuild:
+  drop ~ppc/~ppc64 keyword
+
+  Package-Manager: portage-2.3.0
+
+  27 Jul 2016; Michael Palimaka <kensington@gentoo.org> libkgapi-2.2.0.ebuild:
+  kde4-base.eclass inheriting ebuilds: Add WEBKIT_REQUIRED=always
+
+  Based on libQtWebKit.so.4 in NEEDED
+  Interestingly, www-client/rekonq already got that var
+
+  net-libs/libkgapi:
+  ld: cannot find -lKDE4__kdewebkit
+  collect2: error: ld returned 1 exit status
+  make[2]: *** [libkgapi2/CMakeFiles/kgapi2.dir/build.make:3206:
+  lib/libkgapi2.so.2.2.0] Error 1
+
+  Package-Manager: portage-2.2.28
+

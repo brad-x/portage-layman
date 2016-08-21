@@ -123,3 +123,105 @@
 
   Package-Manager: portage-2.2.27
 
+*perl-5.22.2 (30 Apr 2016)
+
+  30 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org> +perl-5.22.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.2.28
+
+*perl-5.24.0 (14 May 2016)
+
+  14 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/eblits/src_prepare-v50240001.eblit, +perl-5.24.0.ebuild:
+  Version bump to 5.24.0
+
+  Package-Manager: portage-2.2.28
+
+  14 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/eblits/pkg_postinst-v50240001.eblit,
+  +files/eblits/pkg_postrm-v50240001.eblit,
+  +files/eblits/pkg_setup-v50240001.eblit, perl-5.24.0.ebuild:
+  Clean up eblits a bit and remove obsolete .ph generation
+
+  Package-Manager: portage-2.2.28
+
+  14 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org> perl-5.24.0.ebuild:
+  Fix some bundled version numbers
+
+  Package-Manager: portage-2.2.28
+
+  15 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/eblits/common-v50240001.eblit,
+  +files/eblits/src_configure-v50240001.eblit,
+  +files/eblits/src_install-v50240001.eblit, perl-5.24.0.ebuild:
+  Add some missing files to fix the eblit logic
+
+  Package-Manager: portage-2.2.28
+
+  19 May 2016; Markus Meier <maekke@gentoo.org> perl-5.22.2.ebuild:
+  arm stable, bug #567482
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  24 May 2016; Tobias Klausmann <klausman@gentoo.org> perl-5.22.2.ebuild:
+  5.22.2-r0: add alpha keyword
+
+  Gentoo-Bug: 567482
+
+  Package-Manager: portage-2.3.0_rc1
+
+*perl-5.24.0-r1 (03 Jun 2016)
+
+  03 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/eblits/common-v50240002.eblit,
+  +files/eblits/src_configure-v50240002.eblit, +perl-5.24.0-r1.ebuild:
+  Add revbump (unkeyworded, work in progress) for adding some patches. Add fix
+  for bug 584890 by Benda Xu.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/eblits/src_prepare-v50240002.eblit, perl-5.24.0-r1.ebuild:
+  Add patchlevel-gentoo to perl MANIFEST
+
+  To allow miniperl compilation, patchlevel-gentoo.h must be in the MANIFEST.
+  Configure uses this file to create the /host symlinks.
+
+  Signed-off-by: Gwendal Grignou <gwendal@chromium.org>
+
+  Comment from Gentoo perl team: Being nice here and adding this commit which
+  ended up without any further reasons or docs in our mailbox. I can't see how
+  it
+  could hurt. I can't really see any problem that it's supposed to fix
+  either. Hey chromium team, more words please next time!
+
+  04 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -files/eblits/common-v50240002.eblit,
+  -files/eblits/src_configure-v50240002.eblit,
+  -files/eblits/src_prepare-v50240002.eblit, perl-5.24.0-r1.ebuild:
+  Go back from eblits to a monolithic ebuild
+
+  Package-Manager: portage-2.3.0_rc1
+
+  04 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org> perl-5.24.0-r1.ebuild:
+  Disable ithreads warning, since this seems to be less serious now
+
+  Package-Manager: portage-2.3.0_rc1
+
+  04 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org> perl-5.24.0-r1.ebuild:
+  Install Perl's .packlist as well
+
+  Package-Manager: portage-2.3.0_rc1
+
+  04 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org> perl-5.24.0-r1.ebuild:
+  Add cygwin support, bug 584306
+
+  Package-Manager: portage-2.3.0_rc1
+
+  04 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org> perl-5.24.0-r1.ebuild:
+  Re-add keywords
+
+  Package-Manager: portage-2.3.0_rc1
+

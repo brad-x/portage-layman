@@ -91,3 +91,51 @@
   +systemrescuecd-x86-4.7.2.ebuild:
   Bump to 4.7.2, #581074
 
+  25 May 2016; Michał Górny <mgorny@gentoo.org> metadata.xml,
+  systemrescuecd-x86-4.4.1.ebuild, systemrescuecd-x86-4.5.0.ebuild,
+  systemrescuecd-x86-4.5.1.ebuild, systemrescuecd-x86-4.5.2.ebuild,
+  systemrescuecd-x86-4.5.3.ebuild, systemrescuecd-x86-4.5.4.ebuild,
+  systemrescuecd-x86-4.6.0.ebuild, systemrescuecd-x86-4.6.1.ebuild,
+  systemrescuecd-x86-4.7.0.ebuild, systemrescuecd-x86-4.7.1.ebuild,
+  systemrescuecd-x86-4.7.2.ebuild:
+  Support running isohybrid on images
+
+  Add isohybrid flag that uses isohybrid (from syslinux) to make
+  the images dual-bootable as CD and USB media. This is the new
+  upstream-suggested method of using SRCD on USB sticks.
+
+  Since isohybrid modifies images in place and takes less than a second,
+  it seems reasonable to run it while installing rather than expecting
+  the user to copy it to a temporary location, convert it, then copy to
+  the media.
+
+*systemrescuecd-x86-4.7.3 (23 Jun 2016)
+
+  23 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  +systemrescuecd-x86-4.7.3.ebuild:
+  Bump to 4.7.3
+
+*systemrescuecd-x86-4.8.0 (01 Jul 2016)
+
+  01 Jul 2016; Michał Górny <mgorny@gentoo.org>
+  +systemrescuecd-x86-4.8.0.ebuild:
+  Bump to 4.8.0
+
+  13 Jul 2016; Robin H. Johnson <robbat2@gentoo.org>
+  systemrescuecd-x86-4.4.1.ebuild, systemrescuecd-x86-4.5.0.ebuild,
+  systemrescuecd-x86-4.5.1.ebuild, systemrescuecd-x86-4.5.2.ebuild,
+  systemrescuecd-x86-4.5.3.ebuild, systemrescuecd-x86-4.5.4.ebuild,
+  systemrescuecd-x86-4.6.0.ebuild, systemrescuecd-x86-4.6.1.ebuild,
+  systemrescuecd-x86-4.7.0.ebuild, systemrescuecd-x86-4.7.1.ebuild,
+  systemrescuecd-x86-4.7.2.ebuild, systemrescuecd-x86-4.7.3.ebuild,
+  systemrescuecd-x86-4.8.0.ebuild:
+  mirror with explicit approval of Infra per bug #588766.
+
+  Package-Manager: portage-2.2.28
+
+*systemrescuecd-x86-4.8.1 (13 Aug 2016)
+
+  13 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +systemrescuecd-x86-4.8.1.ebuild:
+  Bump to 4.8.1
+

@@ -127,3 +127,71 @@
   Package-Manager: portage-2.2.28
   RepoMan-Options: --ignore-arches
 
+  25 May 2016; Tobias Klausmann <klausman@gentoo.org>
+  geany-plugins-1.25.ebuild:
+  1.25-r0: add alpha keyword
+
+  Gentoo-Bug: 570902
+
+  Package-Manager: portage-2.3.0_rc1
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> geany-plugins-1.25.ebuild:
+  x86 stable wrt bug #570902
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> geany-plugins-1.25.ebuild:
+  ppc stable wrt bug #570902
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  07 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #355897
+
+  Package-Manager: portage-2.3.0
+
+*geany-plugins-1.28 (18 Aug 2016)
+
+  18 Aug 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +geany-plugins-1.28.ebuild, metadata.xml:
+  Bump to 1.28 and add gtk3 USE flag
+
+  configure decides to build for GTK+ 2 or 3 based on installed geany
+  using pkg-config.
+  - Ensure geany and geany-plugins are in step with a gtk3 USE flag (this
+    adds unnecessary work for a user not installing any GTK+ using
+    plugins, but does no harm)
+  - Fix GTK+ dependencies to reflect the SLOT that will be used
+  - Block selection of GTK+ 2 only plugins for gtk3 with REQUIRED_USE
+  - Explicitly enable all plugins
+  - Honour LINGUAS, makes it and nl available
+  - Fix metadata for gtkspell, it is the spellchecker for GeanyVC
+  - geany-1.26 is the minimum since 1.27
+  - Prune .la files
+  - Move to EAPI6, remove use of autotools-utils and versionator, tidy
+
+  Gentoo-Bug: https://bugs.gentoo.org/586162
+  Gentoo-Bug: https://bugs.gentoo.org/566214
+  Gentoo-Bug: https://bugs.gentoo.org/556840
+  Closes: https://github.com/gentoo/gentoo/pull/2063
+
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  18 Aug 2016; Lars Wendler <polynomial-c@gentoo.org>
+  geany-plugins-1.28.ebuild:
+  Simplified ebuild a bit.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  18 Aug 2016; Lars Wendler <polynomial-c@gentoo.org>
+  geany-plugins-1.28.ebuild:
+  Fixed USE-dependency on dev-util/geany
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

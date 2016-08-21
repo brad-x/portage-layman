@@ -92,3 +92,30 @@
 
   Package-Manager: portage-2.2.26
 
+  11 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/kannel-1.4.1-custom-wap-ports.patch, -files/kannel-1.4.1-nolex.patch,
+  -files/kannel-confd, -files/kannel-initd:
+  remove unused patches/files
+
+  Closes: https://github.com/gentoo/gentoo/pull/1863
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*kannel-1.5.0-r2 (20 Jul 2016)
+
+  20 Jul 2016; Mike Gilbert <floppym@gentoo.org> files/kannel-bearerbox.initd,
+  files/kannel-smsbox.initd, files/kannel-wapbox.initd,
+  -kannel-1.5.0-r1.ebuild, +kannel-1.5.0-r2.ebuild:
+  Don't keepdir /var/run/kannel
+
+  Call checkpath from the init script instead.
+
+  Bug: https://bugs.gentoo.org/589212
+
+  Package-Manager: portage-2.3.0_p13
+
+  20 Jul 2016; Mike Gilbert <floppym@gentoo.org> kannel-1.5.0-r2.ebuild:
+  add slots for openssl and postgres
+
+  Package-Manager: portage-2.3.0_p13
+

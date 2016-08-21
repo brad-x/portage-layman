@@ -110,3 +110,79 @@
   +files/file-5.26-stdin-test.patch, +files/file-5.26-tests-fatal.patch:
   add a bunch of upstream fixes
 
+  02 May 2016; Lars Wendler <polynomial-c@gentoo.org> file-5.26-r1.ebuild:
+  USE="python" requires dev-python/setuptools (bug #581610)
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*file-5.27 (13 May 2016)
+
+  13 May 2016; Mike Frysinger <vapier@gentoo.org> +file-5.27.ebuild,
+  file-9999.ebuild:
+  version bump to 5.27 (and man page move #426634)
+
+  25 May 2016; Jeroen Roovers <jer@gentoo.org> file-5.25.ebuild:
+  Stable for HPPA PPC64 (bug #583956).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  25 May 2016; Matt Turner <mattst88@gentoo.org> file-5.25.ebuild:
+  alpha stable, bug 583956.
+
+  26 May 2016; Lars Wendler <polynomial-c@gentoo.org> file-5.25.ebuild:
+  x86 stable (bug #583956).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  27 May 2016; Lars Wendler <polynomial-c@gentoo.org> file-5.25.ebuild:
+  amd64 stable (bug #583956).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  04 Jun 2016; Markus Meier <maekke@gentoo.org> file-5.25.ebuild:
+  arm stable, bug #583956
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+*file-5.28 (14 Jun 2016)
+
+  14 Jun 2016; Mike Frysinger <vapier@gentoo.org> +file-5.28.ebuild:
+  version bump to 5.28
+
+  14 Jun 2016; Lars Wendler <polynomial-c@gentoo.org> file-5.28.ebuild:
+  Fixed abi_x86_32 install target.
+
+  Reported by Heather.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  25 Jun 2016; Mike Frysinger <vapier@gentoo.org> file-5.28.ebuild,
+  file-9999.ebuild:
+  build magic.h before libmagic.la #586444
+
+  Since the header is a BUILT_SOURCES which is normally created only when
+  you run `make all`, make sure we generate it by hand before building the
+  library in the multilib case.
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> file-5.25.ebuild:
+  ppc stable wrt bug #583956
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  10 Aug 2016; Mike Frysinger <vapier@gentoo.org> file-5.28.ebuild,
+  file-9999.ebuild:
+  switch to the new zlib configure flag
+
+  10 Aug 2016; Mike Frysinger <vapier@gentoo.org> file-5.28.ebuild,
+  +files/file-5.28-der-mmap.patch:
+  add upstream fix for mingw builds
+

@@ -167,3 +167,78 @@
 
   Package-Manager: portage-2.2.28
 
+*criu-2.2 (27 May 2016)
+
+  27 May 2016; Yixun Lan <dlan@gentoo.org> +criu-2.2.ebuild,
+  +files/2.2/criu-2.2-flags.patch, +files/2.2/criu-2.2-makefile.patch:
+  version bump 2.2
+
+  Package-Manager: portage-2.2.28
+
+  27 May 2016; Yixun Lan <dlan@gentoo.org> -criu-1.6.1.ebuild,
+  -criu-1.7.2.ebuild, -criu-2.0-r1.ebuild, -files/2.0/criu-2.0-makefile.patch,
+  -files/criu-1.3.1-makefile.patch, -files/criu-1.5-automagic-libbsd.patch:
+  drop old versions
+
+  Package-Manager: portage-2.2.28
+
+  27 May 2016; Lars Wendler <polynomial-c@gentoo.org> criu-2.2.ebuild:
+  Fixed incomplete EAPI-6 conversion (bug #584308).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  14 Jun 2016; Yixun Lan <dlan@gentoo.org> criu-2.2.ebuild,
+  +files/2.2/criu-2.2-no-git.patch:
+  fixed to not use git cmd
+
+  Gentoo-Bug: 580420
+
+  Package-Manager: portage-2.3.0_rc1
+
+*criu-2.3 (24 Jun 2016)
+
+  24 Jun 2016; Yixun Lan <dlan@gentoo.org> +criu-2.3.ebuild,
+  +files/2.3/criu-2.3-no-git.patch:
+  version bump 2.3
+
+  Package-Manager: portage-2.3.0_rc1
+
+  04 Jul 2016; Steev Klimaszewski <steev@gentoo.org> criu-2.3.ebuild:
+  Fix passing arch to fix build on arm64
+
+  Upstream wants to do the aarch64 replacement themselves, so don't pass
+  aarch64
+  in the ebuild, otherwise we end up with the following type error:
+
+  make -j8 -l10 CC=aarch64-unknown-linux-gnu-gcc LD=aarch64-unknown-linux-gnu-
+  ld OBJCOPY=aarch64-unknown-linux-gnu-objcopy LIBDIR=/usr/lib64 ARCH=aarch64
+  V=1 WERROR=0 DEBUG=0 SETPROCTITLE=no PYCRIU=no all docs
+  Makefile:29: *** "The architecture aarch64 isn't supported".  Stop.
+
+  Package-Manager: portage-2.3.0
+
+  05 Jul 2016; Yixun Lan <dlan@gentoo.org> criu-2.3.ebuild,
+  +files/2.3/criu-2.3-aarch64.patch:
+  revert to ARCH=aarch64
+
+  upstream try to parse ARCH=arm64, but internally still using ARCH=aarch64
+
+  Package-Manager: portage-2.3.0_rc1
+
+*criu-2.4 (26 Jul 2016)
+
+  26 Jul 2016; Yixun Lan <dlan@gentoo.org> +criu-2.4.ebuild,
+  +files/2.4/criu-2.4-makefile.patch:
+  version bump 2.4
+
+  Package-Manager: portage-2.3.0
+
+  26 Jul 2016; Yixun Lan <dlan@gentoo.org> -criu-1.8.ebuild, -criu-2.1.ebuild,
+  -files/2.0/criu-2.0-flags.patch, -files/2.1/criu-2.1-makefile.patch,
+  -files/criu-1.3.1-flags.patch, -files/criu-1.7-automagic-libbsd.patch,
+  -files/criu-1.8-makefile.patch:
+  drop old
+
+  Package-Manager: portage-2.3.0
+

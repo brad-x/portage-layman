@@ -352,3 +352,70 @@
 
   Package-Manager: portage-2.2.26
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/sshd.rc6.4:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  11 Jun 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/openssh-6.3_p1-x509-hpn14v2-glue.patch,
+  -files/openssh-6.9_p1-x509-warnings.patch,
+  -files/openssh-7.1_p1-CVE-2016-0777.patch, -openssh-7.1_p1-r2.ebuild,
+  -openssh-7.1_p1-r3.ebuild, -openssh-7.1_p2.ebuild, -openssh-7.2_p1.ebuild:
+  Security cleanup (bug #571892).
+
+  Kept latest ebuild with hpn USE flag as it's ~arch anyway and gets
+  superseded
+  by the latest "secure" version anyway.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*openssh-7.2_p2-r1 (18 Jun 2016)
+
+  18 Jun 2016; Jorge Manuel B. S. Vicetto (jmbsvicetto)
+  <jmbsvicetto@gentoo.org> metadata.xml, +openssh-7.2_p2-r1.ebuild:
+  Allow root password logins for live-cd.
+
+  Signed-off-by: Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  Reviewed-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  Package-Manager: portage-2.2.28
+
+*openssh-7.3_p1 (02 Aug 2016)
+
+  02 Aug 2016; Mike Frysinger <vapier@gentoo.org> +openssh-7.3_p1.ebuild:
+  version bump to 7.3_p1
+
+  02 Aug 2016; Lars Wendler <polynomial-c@gentoo.org> openssh-7.3_p1.ebuild:
+  Re-added $Id$ header line.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*openssh-7.3_p1-r1 (03 Aug 2016)
+
+  03 Aug 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/openssh-7.3_p1-sctp-x509-glue.patch, +openssh-7.3_p1-r1.ebuild:
+  Revision bump, enable the X509 patch
+
+  Package-Manager: portage-2.3.0
+
+  04 Aug 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/openssh-7.3_p1-GSSAPI-dns.patch, openssh-7.3_p1-r1.ebuild:
+  fix USE=kerberos build #590382
+
+  06 Aug 2016; Mike Frysinger <vapier@gentoo.org>
+  files/openssh-7.3_p1-GSSAPI-dns.patch:
+  fix implicit prototype warning w/USE=kerberos #590382
+
+  08 Aug 2016; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  USE=sctp is now global
+
+  Removing local sctp USE flag description, as flag is global now,
+  see [1] for details.
+
+  [1] https://archives.gentoo.org/gentoo-
+  dev/message/427fac41fbe21ec98dfba63b1d68efe5
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+

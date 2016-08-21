@@ -74,3 +74,53 @@
 
   Bug: 575810
 
+*gecode-4.4.0 (01 Aug 2016)
+
+  01 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +gecode-4.4.0.ebuild,
+  metadata.xml:
+  new version 4.4.0.
+
+  This version bump fixes at least two open bugs. The first simply asked
+  for a version bump, and the second reported a failure when /bin/sh is
+  dash (now fixed).
+
+  Along with the new version, some ebuild cleanup was done. The ebuild
+  is now EAPI=6, and the "gmp" USE flag was added to control building
+  with float constraints. Three superfluous runtime dependencies
+  (transitive through Qt) were removed, and two new build dependencies
+  needed to generate the documentation were added.
+
+  The src_test() phase has been re-enabled with an LD_LIBRARY hack to
+  make sure that the test suite is run against the just-build libraries.
+
+  Gentoo-Bug: 377091
+  Gentoo-bug: 527526
+  Gentoo-Bug: 567208
+
+  Package-Manager: portage-2.2.28
+
+  01 Aug 2016; Michael Orlitzky <mjo@gentoo.org> -gecode-3.7.3.ebuild:
+  remove old version 3.7.3 to fix QA warnings.
+
+  Package-Manager: portage-2.2.28
+
+*gecode-3.7.3 (01 Aug 2016)
+
+  01 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +gecode-3.7.3.ebuild:
+  Revert "dev-libs/gecode: remove old version 3.7.3 to fix QA warnings."
+
+  This reverts commit 395d5ea72bceca3087e602683b43e279f5ca0b71. The
+  dev-ruby/dep_selector package has a dependency on >=gecode3.5.0, but
+  at the moment it can only be satisfied by gecode-3.x, so we need to
+  leave v3.7.3 in the tree. There is an upstream pull request (#44) to
+  support gecode 4.x.
+
+  01 Aug 2016; Michael Orlitzky <mjo@gentoo.org> metadata.xml:
+  fix metadata.xml schema.
+
+  In my recent addition of gecode-4.4.0, I made a copy/paste error and
+  duplicated the <use> element in metadata.xml. Michał's Travis CI
+  instance caught the error (thanks).
+
+  Package-Manager: portage-2.2.28
+

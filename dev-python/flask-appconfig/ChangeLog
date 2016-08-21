@@ -13,3 +13,21 @@
 
   Signed-off-by: Ian Delaney <idella4@gentoo.org>
 
+*flask-appconfig-0.11.1-r1 (25 Jul 2016)
+
+  25 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  +flask-appconfig-0.11.1-r1.ebuild:
+  stop installing scripts to prevent collision
+
+  The console script called 'flask' causes a collision with
+  dev-python/flask-0.11. Upstream already removed the console_scripts entry
+  point:
+  https://github.com/mbr/flask-
+  appconfig/commit/42b1fe09dbd19cb7c48dfce7f505d7db7e6dd0be
+
+  Gentoo-Bug: https://bugs.gentoo.org/589548
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/1948
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

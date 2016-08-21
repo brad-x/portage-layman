@@ -120,3 +120,36 @@
   the makefiles.  Since we point it to a bogus place, that fails.  Change it
   to an empty value since checking it for deps is pointless for our builds.
 
+  25 Jun 2016; Ulrich Müller <ulm@gentoo.org> ghostscript-gpl-9.10-r2.ebuild,
+  ghostscript-gpl-9.10-r4.ebuild, ghostscript-gpl-9.15-r1.ebuild,
+  ghostscript-gpl-9.18.ebuild:
+  Migrate from LINGUAS to L10N.
+
+  Package-Manager: portage-2.3.0
+
+*ghostscript-gpl-9.19 (30 Jun 2016)
+
+  30 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +ghostscript-gpl-9.19.ebuild:
+  version bump to 9.19.
+
+  Changes since 9.18:
+
+   * Change SRC_URI to point to the new download location (on github)
+   * Exclude a few patches that have been fixed upstream
+   * ijs-config was dropped upstream in favor of pkg-config, so stop
+     patching it
+
+  Gentoo-Bug: https://bugs.gentoo.org/582938
+
+  Closes: https://github.com/gentoo/gentoo/pull/1729
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  01 Jul 2016; Ulrich Müller <ulm@gentoo.org> ghostscript-gpl-9.19.ebuild:
+  QA] Reapply L10N changes.
+
+  The ghostscript-gpl-9.19 version bump had reverted the previously
+  committed LINGUAS to L10N conversion, so apply these changes again.
+
+  Package-Manager: portage-2.3.0
+

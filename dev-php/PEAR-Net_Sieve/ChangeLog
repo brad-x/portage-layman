@@ -64,3 +64,39 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*PEAR-Net_Sieve-1.5.2 (12 Jul 2016)
+
+  12 Jul 2016; Michael Orlitzky <mjo@gentoo.org> +PEAR-Net_Sieve-1.5.2.ebuild:
+  new version v1.5.2 from the Roundcube team.
+
+  The Net_Sieve upstream project has been abandoned in favor of another
+  package, Horde_ManageSieve. Roundcube still uses Net_Sieve, so the
+  Roundcube team has forked this package and updated it for php7.
+
+  The old maintainer of Net_Sieve did not want to let the Roundcube
+  people take over maintenance (and the old Net_Sieve truly is dead), so
+  in this case it seems acceptable to let Roundcube usurp upstream for
+  Net_Sieve. In the past, the Roundcube team has taken over maintenance
+  of other related PEAR mail packages.
+
+  The PEAR eclass has been dropped from the ebuild, which now uses
+  EAPI=6. In the future this can be renamed without the "PEAR" prefix.
+
+  Gentoo-Bug: 586624
+
+  Package-Manager: portage-2.2.28
+
+*PEAR-Net_Sieve-1.5.2-r1 (27 Jul 2016)
+
+  27 Jul 2016; Michael Orlitzky <mjo@gentoo.org> -PEAR-Net_Sieve-1.5.2.ebuild,
+  +PEAR-Net_Sieve-1.5.2-r1.ebuild:
+  new revision adding missing RDEPEND dev-php/PEAR-PEAR.
+
+  Package-Manager: portage-2.2.28
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org>
+  PEAR-Net_Sieve-1.5.2-r1.ebuild:
+  PV}.tar.gz -> ${P}.tar.gz
+
+  Package-Manager: portage-2.3.0_p16
+

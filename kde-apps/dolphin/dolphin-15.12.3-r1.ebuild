@@ -11,7 +11,7 @@ inherit kde5
 
 DESCRIPTION="Plasma filemanager focusing on usability"
 HOMEPAGE="https://dolphin.kde.org https://www.kde.org/applications/system/dolphin"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="semantic-desktop thumbnail"
 
 DEPEND="
@@ -57,7 +57,7 @@ DEPEND="
 RDEPEND="${DEPEND}
 	$(add_kdeapps_dep kio-extras)
 	thumbnail? (
-		|| ( $(add_kdeapps_dep ffmpegthumbs) media-video/ffmpegthumbnailer )
+		$(add_kdeapps_dep ffmpegthumbs)
 		$(add_kdeapps_dep thumbnailers)
 	)
 "

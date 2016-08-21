@@ -70,3 +70,54 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> camomile-0.8.4.ebuild,
+  camomile-0.8.5.ebuild:
+  dev-ml/*: Remove := slot ops from || deps, #586304
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> camomile-0.8.4.ebuild,
+  camomile-0.8.5.ebuild:
+  Revert "dev-ml/*: Remove := slot ops from || deps, #586304"
+
+  This reverts commit 2d4ac687fbf44588f764697c9dcb2b960a18d51b.
+
+  This commit is wrong in several aspects:
+  - Such changes should come with a revbump
+  - Removing := deps causes packages not to be rebuilt on upgrades, causing
+    barely understandable build failures when upgrading, later on.
+    Thanks to this commit, people that have installed those packages
+    will likely experience those failures with the upcoming ocaml 4.03 unmask.
+  - This is a non maintainer commit where no discussion at all happened with
+  the
+    maintainers during the 3 days between bug report and mass commit.
+    Such discussion could have prevented the above mentioned breakage.
+
+  Proper fix is to drop the backward compatibility part of the || () dep. This
+  fix
+  was slowly moving forward whenever possible and noticed. Main blocker for
+  this is
+  bug #463018 which requires taking extra care for not breaking the stable
+  tree
+  nor needlessly preventing future stabilization of packages.
+
+*camomile-0.8.5-r1 (24 Jun 2016)
+
+  24 Jun 2016; Alexis Ballier <aballier@gentoo.org> -camomile-0.8.5.ebuild,
+  +camomile-0.8.5-r1.ebuild:
+  drop backward compat camlp4 dep
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --force
+
+  26 Jun 2016; Patrice Clement <monsieurp@gentoo.org> -camomile-0.8.4.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.28
+
+  26 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  camomile-0.8.5-r1.ebuild:
+  Stable for amd64. Retroactively mark stable for the remaining arches using
+  the ALLARCHES policy.
+
+  Package-Manager: portage-2.2.28
+  Gentoo-Bug: https://bugs.gentoo.org/586902
+

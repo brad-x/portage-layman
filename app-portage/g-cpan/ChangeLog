@@ -78,3 +78,44 @@
   RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
   ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
 
+  30 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org> metadata.xml:
+  update metadata.xml, upstream info was added
+
+  30 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org> g-cpan-9999.ebuild:
+  switch to use EAPI=6
+
+  since now we have going to have a test enabled by default
+
+  30 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org> g-cpan-0.16.6.ebuild,
+  g-cpan-9999.ebuild:
+  remove keepdir on "/var/tmp" (#465834)
+
+  there is no need for that and it might provides unexpected behaviour
+
+  30 Apr 2016; Andreas K. Hüttel <dilfridge@gentoo.org> g-cpan-9999.ebuild:
+  change to create dirs for portage user/group
+
+  this is allow to use g-cpan users besides root more easely,
+  just add users into portage group and do not fix permissions every install
+
+*g-cpan-0.16.7 (06 May 2016)
+
+  06 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org> +g-cpan-0.16.7.ebuild,
+  g-cpan-9999.ebuild:
+  Various updates to live ebuild and version bump
+
+  Package-Manager: portage-2.2.28
+
+*g-cpan-0.16.9 (14 Jul 2016)
+
+  14 Jul 2016; Patrice Clement <monsieurp@gentoo.org> +g-cpan-0.16.9.ebuild,
+  g-cpan-9999.ebuild:
+  version bump to 0.16.9.
+
+  * Use github tag generated archive instead of uploaded release file.
+  * Trim away extraneous tabs.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1872
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -307,3 +307,82 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*xf86-video-virtualbox-5.0.20 (01 May 2016)
+
+  01 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +xf86-video-virtualbox-5.0.20.ebuild:
+  virtualbox packages: Bump to version 5.0.20
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  01 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -xf86-video-virtualbox-4.3.34.ebuild, -xf86-video-virtualbox-5.0.18.ebuild:
+  virtualbox packages: Removed old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  03 May 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/xf86-video-virtualbox-5.0.20-Makefile.module.kms.patch,
+  xf86-video-virtualbox-5.0.20.ebuild:
+  5.0.20: build kernel module with help of upstream Makefiles.
+
+  This commit builds on the prior work of Polynomial-C to compile vboxvideo.ko
+  using the upstream Makefile.module.kms.  A small patch is necessary to add a
+  missing
+  include path to the build, and the rest of the changes are the addition of
+  necessary
+  symlinks to allow the build to proceed.
+
+  Package-Manager: portage-2.2.26
+
+  04 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  xf86-video-virtualbox-5.0.20.ebuild:
+  Replaced "ln -sf" with "ln -s".
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*xf86-video-virtualbox-5.0.20-r1 (10 May 2016)
+
+  10 May 2016; Ian Stakenvicius <axs@gentoo.org>
+  +xf86-video-virtualbox-5.0.20-r1.ebuild:
+  build vboxdrv.ko objects a little differently
+
+  This is an attempt at preventing bug 582078.  With DRM_TTM enabled in the
+  kernel
+  (choosing the DRM module for any of the other VMs will include it), and a
+  sufficient
+  vmalloc= specified to the kernel (at least 1.5x the amount of gpu memory
+  provided), the module
+  will load into the kernel.
+
+  Tests on an x86 vm and 4.1.23 kernel resulted in PANICs; YMMV.
+
+  Package-Manager: portage-2.2.26
+
+*xf86-video-virtualbox-4.3.38 (14 Jul 2016)
+
+  14 Jul 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +xf86-video-virtualbox-4.3.38.ebuild:
+  Bump to version 4.3.38
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  15 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> metadata.xml:
+  virtualbox packages: Added masterzorag as proxy maintainer.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  28 Jul 2016; Lars Wendler <polynomial-c@gentoo.org>
+  xf86-video-virtualbox-5.0.20-r1.ebuild:
+  Removed gcc version check.
+
+  Gentoo bug #586796
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

@@ -147,3 +147,109 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  09 Jul 2016; Matthias Maier <tamiko@gentoo.org>
+  -files/paraview-4.0.1-Protobuf.patch,
+  -files/paraview-4.0.1-removesqlite.patch,
+  -files/paraview-4.0.1-vtk-cg-path.patch,
+  -files/paraview-4.1.0-glxext-legacy.patch,
+  -files/paraview-4.1.0-no-fatal-warnings.patch,
+  -files/paraview-4.1.0-vtk-freetype.patch,
+  -files/paraview-4.2.0-removesqlite.patch,
+  -files/paraview-4.2.0-vtk-freetype.patch, -paraview-4.1.0-r2.ebuild,
+  -paraview-4.3.1.ebuild:
+  remove old versions
+
+  Package-Manager: portage-2.2.28
+
+*paraview-5.1.0 (09 Jul 2016)
+
+  09 Jul 2016; Matthias Maier <tamiko@gentoo.org> +paraview-5.1.0.ebuild:
+  version bump to 5.1.0
+
+  Package-Manager: portage-2.2.28
+
+  09 Jul 2016; Matthias Maier <tamiko@gentoo.org> paraview-4.4.0.ebuild,
+  paraview-5.1.0.ebuild:
+  add a required use constraint, bug #586934
+
+  Apparently, configuring paraview with USE="python" requires an MPI
+  installation.
+
+  Package-Manager: portage-2.2.28
+
+*paraview-4.1.0-r2 (09 Jul 2016)
+
+  09 Jul 2016; Matthias Maier <tamiko@gentoo.org>
+  +files/paraview-4.0.1-Protobuf.patch,
+  +files/paraview-4.0.1-removesqlite.patch,
+  +files/paraview-4.0.1-vtk-cg-path.patch,
+  +files/paraview-4.1.0-glxext-legacy.patch,
+  +files/paraview-4.1.0-no-fatal-warnings.patch,
+  +files/paraview-4.1.0-vtk-freetype.patch, +paraview-4.1.0-r2.ebuild:
+  reinstantiate 4.1.0 to resolve openfoam dep
+
+  Package-Manager: portage-2.2.28
+
+  11 Jul 2016; Matthias Maier <tamiko@gentoo.org>
+  +files/paraview-5.1.0-only-require-cmake-3.3.patch, paraview-5.1.0.ebuild:
+  add DEPEND on >=cmake-3.3, bug #588516
+
+   * Require >=dev-util/cmake-3.3
+   * Apply upstream patch to lower the version requirement for cmake to 3.3
+
+  Thanks to Markus Kaindl.
+
+  Package-Manager: portage-2.2.28
+
+  28 Jul 2016; Matthias Maier <tamiko@gentoo.org> paraview-5.1.0.ebuild:
+  fix dependencies on qt5, bug #582864
+
+  *ouch*
+
+  Thanks to timeraider for bug report and patch.
+
+  Package-Manager: portage-2.2.28
+
+*paraview-5.1.0-r1 (02 Aug 2016)
+
+  02 Aug 2016; Matthias Maier <tamiko@gentoo.org> -paraview-5.1.0.ebuild,
+  +paraview-5.1.0-r1.ebuild:
+  Acutally build 5.1.0 against qt5
+
+  Package-Manager: portage-2.2.28
+
+  08 Aug 2016; Matthias Maier <tamiko@gentoo.org> paraview-5.1.0-r1.ebuild:
+  Fix dependency on dev-qt:qtx11extras:5
+
+  Thanks to Maciej Pawlik for reporting the bug.
+
+  Package-Manager: portage-2.2.28
+
+  08 Aug 2016; Matthias Maier <tamiko@gentoo.org> paraview-5.1.0-r1.ebuild:
+  Set +qt5 as default use flag, bug #590288
+
+  Package-Manager: portage-2.2.28
+
+  08 Aug 2016; Matthias Maier <tamiko@gentoo.org> paraview-5.1.0-r1.ebuild:
+  Let qtchooser select the correct qt version
+
+  Package-Manager: portage-2.2.28
+
+  19 Aug 2016; Matthias Maier <tamiko@gentoo.org> paraview-5.1.0-r1.ebuild:
+  add missing dependency on dev-qt/qttest:5, bug #591228
+
+  Thanks to Thomas Haschka
+
+  Package-Manager: portage-2.2.28
+
+*paraview-5.1.2 (19 Aug 2016)
+
+  19 Aug 2016; Matthias Maier <tamiko@gentoo.org> +paraview-5.1.2.ebuild:
+  ver bump, enable openmp support, bug #590746
+
+  - version bump to 5.1.0
+  - add USE=openmp to control openmp support
+  - switch to OpenGL2 rendering engine.
+
+  Package-Manager: portage-2.2.28
+

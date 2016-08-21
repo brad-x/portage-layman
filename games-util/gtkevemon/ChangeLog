@@ -66,3 +66,32 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  07 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #269977
+
+  Package-Manager: portage-2.3.0
+
+*gtkevemon-1.10 (10 Aug 2016)
+
+  10 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +gtkevemon-1.10.ebuild,
+  gtkevemon-9999.ebuild:
+  new v1.10 and fix the repo for the live ebuild.
+
+  The repository for this project changed (from Mercurial to Git), so
+  the live ebuild needed to be updated. Thanks to Andre Schulz for
+  posting an updated live ebuild. I also noticed that glibmm:3.0 and
+  curl[ssl] have replaced glibmm:2.4 and openssl in the dependencies, so
+  those have been updated as well.
+
+  I added the new version 1.10, but all is not rosy there. The package
+  builds fine, but I get SSLv3 errors when attempting to refresh
+  SkillTree.xml and CertificateTree.xml. Building openssl with USE=sslv3
+  does not fix this. Both new versions tell me that all of the servers
+  are offline. For that reason, I have left v1.8 in the tree as well
+  (just in case it works better for somebody).
+
+  Gentoo-Bug: 527442
+  Gentoo-Bug: 562616
+
+  Package-Manager: portage-2.2.28
+

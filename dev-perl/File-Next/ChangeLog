@@ -63,3 +63,18 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  05 Aug 2016; Kent Fredric <kentnl@gentoo.org> File-Next-1.120.0-r1.ebuild:
+  Remove POD dependency
+
+  Normally the dependent tests could be nuked, but the test
+  suite is dependent on various files for testing iteration
+  of files.
+
+  So the POD tests are replaced with no-op tests that simply
+  pass as fast as possible, so that the Pod testing can be nuked
+  and the dependencies can be reaped
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

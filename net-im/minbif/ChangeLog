@@ -76,3 +76,35 @@
 
   Bug: 575810
 
+*minbif-1.0.5-r2 (02 May 2016)
+
+  02 May 2016; Austin English <wizardedit@gentoo.org> files/minbif.initd,
+  minbif-1.0.5-r1.ebuild, +minbif-1.0.5-r2.ebuild:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  Gentoo-Bug: https://bugs.gentoo.org/573846
+
+  Package-Manager: portage-2.2.26
+
+  02 May 2016; Austin English <wizardedit@gentoo.org> -minbif-1.0.5-r1.ebuild:
+  remove old version
+
+  Package-Manager: portage-2.2.26
+
+  28 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/minbif-1.0.5-rename-imlib-load-error.patch, minbif-1.0.5-r2.ebuild:
+  fix build with newer imlib.
+
+  Newer versions of imlib have renamed ImlibLoadError to
+  Imlib_Load_Error. This commit adds a minimal patch to fix the
+  build. It's bad mojo to modify a stable ebuild, but there are
+  mitigating factors here. First, the stable package simply will not
+  build without the patch, so it's not much good to anyone. Second, this
+  package is maintainer-needed, and a new revision would therefore never
+  get stabilized to truly fix the bug for stable users. So, I've applied
+  the patch to the one existing stable ebuild.
+
+  Gentoo-Bug: 559412
+
+  Package-Manager: portage-2.2.28
+

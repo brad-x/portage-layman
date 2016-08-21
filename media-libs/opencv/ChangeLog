@@ -237,3 +237,88 @@
 
   Package-Manager: portage-2.2.26
 
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> opencv-2.4.12.ebuild:
+  amd64 stable wrt bug #580128
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 May 2016; Amy Winston <amynka@gentoo.org> opencv-3.1.0-r1.ebuild:
+  correct contrib url
+
+  Package-Manager: portage-2.2.26
+
+  15 May 2016; Mikle Kolyada <zlogene@gentoo.org> opencv-2.4.12.ebuild:
+  : ppc/x86 stable wrt bug #580128
+
+  Package-Manager: portage-2.2.26
+
+  15 May 2016; Amy Winston <amynka@gentoo.org>
+  -files/opencv-2.4.10-git-autodetect.patch,
+  -files/opencv-2.4.10-pic-x86.patch, -files/opencv-2.4.9-cuda.patch,
+  -files/opencv-2.4.9-git-autodetect.patch, -files/opencv-2.4.9-libav10.patch,
+  -opencv-2.4.9.ebuild, -opencv-2.4.10.ebuild:
+  remove old 2.4.9 and 2.4.10
+
+  Package-Manager: portage-2.2.26
+
+  24 May 2016; Amy Winston <amynka@gentoo.org> opencv-3.1.0-r1.ebuild:
+  drop 3_2 python
+
+  Package-Manager: portage-2.2.26
+
+  24 May 2016; Amy Winston <amynka@gentoo.org> -opencv-3.1.0-r2.ebuild:
+  remove new buggy contrib
+
+  Package-Manager: portage-2.2.26
+
+*opencv-3.1.0-r3 (04 Jun 2016)
+
+  04 Jun 2016; Amy Winston <amynka@gentoo.org> +opencv-3.1.0-r3.ebuild:
+  update contrib to newest
+
+  Package-Manager: portage-2.2.28
+
+*opencv-3.1.0-r4 (09 Jun 2016)
+
+  09 Jun 2016; Amy Winston <amynka@gentoo.org>
+  +files/opencv-3.1.0-gentooify-python.patch,
+  files/opencv-3.1.0-git-autodetect.patch,
+  +files/opencv-3.1.0-java-magic.patch, +opencv-3.1.0-r4.ebuild:
+  change to EAPI 6 and fix python installation
+
+  -Add patch to install the correct bindings based on single_python_target
+  -Fix Cuda in ebuild
+  -Remove unused CMake options
+  -Modified patch to be -p1 format
+  -Tiny fixes and rewrites for EAPI 6 specs
+
+  09 Jun 2016; Amy Winston <amynka@gentoo.org> opencv-3.1.0-r4.ebuild:
+  remove trailing spaces from patch
+
+  Package-Manager: portage-2.2.28
+
+*opencv-2.4.12-r1 (09 Jun 2016)
+
+  09 Jun 2016; Amy Winston <amynka@gentoo.org>
+  files/opencv-2.4.12-git-autodetect.patch, +opencv-2.4.12-r1.ebuild:
+  eapi=6 bump
+
+  - Fix cuda bug #577410
+  - Add qt5 support
+  - Remove doc useflag bug #556198
+
+  Package-Manager: portage-2.2.28
+
+  06 Aug 2016; Michał Górny <mgorny@gentoo.org> opencv-2.4.11.ebuild,
+  opencv-2.4.12.ebuild, opencv-2.4.12-r1.ebuild, opencv-3.1.0-r1.ebuild,
+  opencv-3.1.0-r4.ebuild:
+  whitespace
+
+  20 Aug 2016; Amy Winston <amynka@gentoo.org> -opencv-2.4.11.ebuild,
+  -opencv-3.1.0-r1.ebuild, -opencv-3.1.0-r3.ebuild:
+  remove old. thanks genstorm
+
+  Package-Manager: portage-2.2.28
+

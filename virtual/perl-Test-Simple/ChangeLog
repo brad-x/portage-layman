@@ -80,3 +80,118 @@
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+*perl-Test-Simple-1.1.14-r1 (14 May 2016)
+
+  14 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +perl-Test-Simple-1.1.14-r1.ebuild:
+  Provide 1.1.14 via Perl 5.24
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+  14 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -perl-Test-Simple-1.1.14.ebuild:
+  Remove obsolete virtual
+
+  Package-Manager: portage-2.2.28
+
+  19 May 2016; Markus Meier <maekke@gentoo.org>
+  perl-Test-Simple-1.1.14-r1.ebuild:
+  arm stable, bug #567482
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  24 May 2016; Tobias Klausmann <klausman@gentoo.org>
+  perl-Test-Simple-1.1.14-r1.ebuild:
+  1.1.14-r1: add alpha keyword
+
+  Gentoo-Bug: 567482
+
+  Package-Manager: portage-2.3.0_rc1
+
+*perl-Test-Simple-1.1.14_p522 (16 Jul 2016)
+
+  16 Jul 2016; Kent Fredric <kentnl@gentoo.org>
+  +perl-Test-Simple-1.1.14_p522.ebuild:
+  Add virtual 1.1.14_p522 for 5.22 stabilization
+
+  This is an attempted solution at solving bug #584238
+
+  This virtual maps only to dev-lang/perl and forces removal of:
+  - dev-perl/Test-Tester
+  - dev-perl/Test-use-ok
+  - perl-core/Test-Simple
+
+  Keywords all dropped to ~arch except for keywords that were already marked
+  stable for dev-lang/perl-5.22.2 in bug #567482 ( arm , alpha )
+
+  _THIS_ package should become the new stabilization target for 5.22, and
+  the non _p522 version should *not* be further stabilized.
+
+  Bug: https://bugs.gentoo.org/584238
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+*perl-Test-Simple-1.1.14-r2 (16 Jul 2016)
+
+  16 Jul 2016; Kent Fredric <kentnl@gentoo.org>
+  -perl-Test-Simple-1.1.14-r1.ebuild, +perl-Test-Simple-1.1.14-r2.ebuild:
+  remove dev-lang/perl fallback for perl-5.20
+
+  This is part of the fix of bug #584238. This bump removes
+  dev-lang/perl-5.22 and dev-lang/perl-5.24 from the alternatives list for
+  people using this virtual.
+
+  If you're upgrading to perl-5.22, you should upgrade to
+  virtual/perl-Test-Simple-1.1.14_p522 at the same time, which will excise
+  perl-core/* instead of pulling perl-core/*
+
+  Keywords DROPPED: ~arm ~alpha , because they were previously only
+  stabilized because dev-lang/perl was stable for those keywords.
+
+  However, perl-core/Test-Simple-1.1.14 is not stable, so this can't be an
+  alternative and stay stable.
+
+  But virtual/perl-Test-Simple-1.1.14_p522 is already "stable" for ~arm
+  and ~alpha, so people on stable will move directly there.
+
+  Bug: https://bugs.gentoo.org/584238
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+*perl-Test-Simple-1.302.40 (16 Jul 2016)
+
+  16 Jul 2016; Kent Fredric <kentnl@gentoo.org>
+  +perl-Test-Simple-1.302.40.ebuild:
+  Bump to (masked) 1.302.40 for testing.
+
+  Provided only by perl-core/* until at perl-5.26 or later.
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+*perl-Test-Simple-1.302.49 (08 Aug 2016)
+
+  08 Aug 2016; Kent Fredric <kentnl@gentoo.org>
+  +perl-Test-Simple-1.302.49.ebuild:
+  Bump to version 1.302.49
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+  08 Aug 2016; Kent Fredric <kentnl@gentoo.org>
+  -perl-Test-Simple-1.302.40.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

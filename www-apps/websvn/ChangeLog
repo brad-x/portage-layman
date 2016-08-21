@@ -72,3 +72,28 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*websvn-2.3.3-r1 (11 Aug 2016)
+
+  11 Aug 2016; Brian Evans <grknight@gentoo.org>
+  +files/13_security_CVE-2013-6892.patch, +files/30_CVE-2016-2511.patch,
+  +files/31_CVE-2016-1236.patch, +websvn-2.3.3-r1.ebuild:
+  Non-maintainer security revision bump and EAPI cleanup
+
+  Remove the deprecated depend.php wrt bug 552838
+  Include Debian security patches wrt bug 552684, bug 575486, and bug 582234
+
+  Package-Manager: portage-2.3.0
+
+  11 Aug 2016; Brian Evans <grknight@gentoo.org> -websvn-2.3.3.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+  15 Aug 2016; Brian Evans <grknight@gentoo.org> websvn-2.3.2.ebuild:
+  Drop depend.php eclass and insert the DEPENDs it added
+
+  This effectively does not change the vdb as the DEPEND and RDEPEND values
+  are the same as they were previously
+
+  Package-Manager: portage-2.3.0
+

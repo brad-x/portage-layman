@@ -102,3 +102,25 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*tlswrap-1.04-r3 (11 Aug 2016)
+
+  11 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/fix-Wformat-security-warnings.patch,
+  +files/modernize-am_init_automake.patch, +files/respect-cflags.patch,
+  -tlswrap-1.04-r2.ebuild, +tlswrap-1.04-r3.ebuild:
+  new revision that respects CFLAGS.
+
+  This new revision comes with a few patches, the first of which updates
+  configure.ac to respect the user's CFLAGS. After that, the second
+  patch modernizes the AM_INIT_AUTOMAKE call to avoid an ugly
+  warning. Finally -- now that the build respects CFLAGS -- the package
+  needed to be updated to build with -Werror=format-security. Those
+  fixes were trivial and come in a third patch.
+
+  The only change to the ebuild itself (aside from the patches) was a
+  new call to eautoreconf, to pick up the aforementioned changes.
+
+  Gentoo-Bug: 240898
+
+  Package-Manager: portage-2.2.28
+

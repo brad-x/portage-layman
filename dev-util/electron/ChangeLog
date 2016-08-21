@@ -1,0 +1,115 @@
+# ChangeLog for dev-util/electron
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*electron-0.36.12 (03 May 2016)
+
+  03 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  +electron-0.36.12.ebuild, +files/brightray-gentoo-build-fixes.patch,
+  +files/chromium-disable-widevine.patch, +files/chromium-lto-fixes.patch,
+  +files/chromium-remove-gardiner-mod-font.patch,
+  +files/chromium-shared-v8.patch, +files/chromium-system-ffmpeg-r0.patch,
+  +files/chromium-system-jinja-r7.patch,
+  +files/chromium-system-libvpx-r0.patch,
+  +files/electron-gentoo-build-fixes.patch,
+  +files/libchromiumcontent-gentoo-build-fixes.patch,
+  +files/node-gentoo-build-fixes.patch, +metadata.xml:
+  Add ebuild for Github's Electron (v0.36.9)
+
+  Electron is an application framework built on top of Chromium and NodeJS.
+  It allows creating cross-platform desktop apps using Web tech. [1]
+
+  The main user of Electron is the Atom IDE [2].  Microsoft Visual Studio
+  Code is also based on Electron.  It is also useful for the creation of
+  desktop wrappers for popular web services, e.g. Google Music [3].
+
+  Unfortunately, current upstream's approach to "building Electron from
+  source" involves downloading a pre-built libchromiumcontent.so binary
+  from the Internet, which poses obvious security and compatibility risks.
+
+  This ebuild is based heavily on the Chromium ebuild and follows similar
+  unbunling policy.
+
+  Additionally, Electron-specific NodeJS headers are installed to
+  /usr/include so that native modules built for Electron-based apps can be
+  compiled against the correct version of NodeJS embedded in Electron.
+
+  [1] http://electron.atom.io/
+  [2] http://atom.io/
+  [3] https://github.com/twolfson/google-music-electron
+
+  Gentoo-Bug: https://bugs.gentoo.org/579116
+  Closes: https://github.com/gentoo/gentoo/pull/1200
+  Package-Manager: portage-2.2.28
+
+  Acked-by: Mike Gilbert <floppym@gentoo.org>
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  13 May 2016; Patrice Clement <monsieurp@gentoo.org> electron-0.36.12.ebuild,
+  metadata.xml:
+  Drop gtk3 USE flag (#582698)
+
+  Upstream does not support GTK3 yet (unlike Chromium), so drop the
+  USE flag.
+
+  Gentoo-Bug: https://bugs.gentoo.org/582698
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1454
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  21 May 2016; Mike Gilbert <floppym@gentoo.org> electron-0.36.12.ebuild:
+  replace es_LA with es_419
+
+  Package-Manager: portage-2.2.28_p107_p880280
+
+*electron-0.36.12-r1 (25 May 2016)
+
+  25 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  -electron-0.36.12.ebuild, +electron-0.36.12-r1.ebuild,
+  +files/brightray-gentoo-build-fixes-r1.patch,
+  -files/brightray-gentoo-build-fixes.patch:
+  Fix erroneous dependency on gconf with USE="-gnome"
+
+  Gentoo-Bug: https://bugs.gentoo.org/583130
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1530
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*electron-0.36.12-r2 (04 Jun 2016)
+
+  04 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -electron-0.36.12-r1.ebuild, +electron-0.36.12-r2.ebuild:
+  Add missing dependency (x11-libs/libnotify).
+
+  Package-Manager: portage-2.2.28
+  Gentoo-Bug: https://bugs.gentoo.org/584106
+  Closes: https://github.com/gentoo/gentoo/pull/1598
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*electron-0.36.12-r3 (12 Jun 2016)
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -electron-0.36.12-r2.ebuild, +electron-0.36.12-r3.ebuild,
+  files/brightray-gentoo-build-fixes-r1.patch,
+  files/electron-gentoo-build-fixes.patch,
+  +files/node-external-snapshots.patch, files/node-gentoo-build-fixes.patch:
+  Build node executable, fix automagic cups dependency.
+
+  Electron and apps based on it cannot rely on system NodeJS
+  for compatibility reasons. Fix this by building and using
+  a nodejs executable based on bundled nodejs code.
+
+  Additionally, fix automagic dependency on libcups and remove dependency on
+  system nodejs
+
+  Gentoo-Bug: https://bugs.gentoo.org/585116
+  Gentoo-Bug: https://bugs.gentoo.org/585490
+  Gentoo-Bug: https://bugs.gentoo.org/585464
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1664
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

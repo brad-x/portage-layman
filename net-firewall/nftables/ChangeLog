@@ -130,3 +130,120 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/nftables.init,
+  files/nftables.init-r1, files/nftables.init-r2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*nftables-0.5-r3 (15 Jun 2016)
+
+  15 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> files/libexec/nftables.sh,
+  +files/nftables-0.5-pdf-doc.patch, -nftables-0.5-r2.ebuild,
+  +nftables-0.5-r3.ebuild:
+  Remove bashism from nftables.sh
+
+  Remove [[ ... ]] bashism from use_legacy() function.
+  Add missing dependencies and add doc use flag.
+  Mask doc USE flag on arm due to the unkeyworded dep.
+
+  Gentoo-bug: 585800
+  Closes: https://github.com/gentoo/gentoo/pull/1673
+  Package-Manager: portage-2.3.0_rc1
+
+*nftables-0.5-r4 (15 Jun 2016)
+
+  15 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> -nftables-0.5-r3.ebuild,
+  +nftables-0.5-r4.ebuild:
+  correct install utility function calls
+
+  Previous modification changed the cp command to:
+      instinto /usr/libexec/${PN}
+      doins "${FILESDIR}"/libexec/${PN}.sh
+
+  However, this change is incorrect as it strips the exec flag from ${PN}.sh.
+  This commit changes the insinto and doins to exeinto and doexe which fixes
+  the
+  problem.
+
+  Gentoo-bug: 586000
+
+  Package-Manager: portage-2.3.0_rc1
+
+  16 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> metadata.xml:
+  Reorder maintainers in metadata.xml and fix indents
+
+  Update the metadata.xml file so that it conforms with the current
+  Gentoo policy.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1678
+  Package-Manager: portage-2.3.0_rc1
+
+*nftables-0.6 (03 Jul 2016)
+
+  03 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org>
+  files/nftables-0.5-pdf-doc.patch, +nftables-0.6.ebuild:
+  version bump to 0.6
+
+  Fixes bug #584898 and updates the nftables-0.5-pdf-doc.patch to match
+  upstream submission.
+
+  Gentoo-bug: 584898
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> -files/nftables.init,
+  -files/nftables.init-r1, -files/systemd/nftables-restore.service,
+  -files/systemd/nftables-store.service, -files/systemd/nftables.service,
+  -nftables-0.5-r4.ebuild:
+  Remove outdated files
+
+  Package-Manager: portage-2.3.0_rc1
+
+*nftables-0.6-r1 (03 Jul 2016)
+
+  03 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> files/libexec/nftables.sh,
+  +files/nftables.init, -files/nftables.init-r2,
+  +files/systemd/nftables-restore.service, -nftables-0.6.ebuild,
+  +nftables-0.6-r1.ebuild:
+  Update support & service files
+
+      - remove extraneous "exit $?" from files/libexec/nftables.sh
+      - rename nftables.init-r2 to nftables.init
+      - recreate & rewrite files/systemd/nftables.service into a proper
+  systemd service
+      - Update nftables-0.6.ebuild to use new file names.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*nftables-0.6-r2 (11 Jul 2016)
+
+  11 Jul 2016; Sam Jorna <wraeth@gentoo.org>
+  +files/nftables-0.6-null-payload-desc-fix.patch, -nftables-0.6-r1.ebuild,
+  +nftables-0.6-r2.ebuild:
+  backport null payload desc fix
+
+  nftables-0.6 handling of payload context descriptions was changed from
+  version 0.5.  This change causes the code to segfault when the desc
+  variable in payload_expr_pctx_update() is set to null.  The issue
+  appears to be fixed with upstream commit
+  3503738f77cdbe521da1054a37f59ac2e442b4cf.  Therefore, backporting that
+  commit to 0.6 to fix this issue.
+
+  Gentoo-bug: 588192
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/1865
+
+*nftables-0.6-r3 (13 Jul 2016)
+
+  13 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  files/systemd/nftables-restore.service, -nftables-0.6-r2.ebuild,
+  +nftables-0.6-r3.ebuild:
+  Correct nftables-restore ConditionPathExists val.
+
+  Change ConditionPathExists variable value to /var/lib/nftables/rules-save.
+  The old value, /var/lib/nftables-rules-save, is incorrect.
+
+  Package-Manager: portage-2.3.0
+  Gentoo-Bug: https://bugs.gentoo.org/588688
+  Closes: https://github.com/gentoo/gentoo/pull/1880
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -105,3 +105,14 @@
   should call gen_usr_ldscript.  Since that logic always makes sense, add
   it directly to the gen_usr_ldscript function.
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/gpm.rc6-2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  06 Jun 2016; Mike Frysinger <vapier@gentoo.org> gpm-1.20.7-r2.ebuild:
+  include compiled docs to avoid texinfo dep #585094
+
+  Rather than require texinfo all the time (just to generate the info
+  page), build them by hand and ship them as an addon patch.  Ideally
+  this would be in upstream, but we're working on that already.  Let's
+  fix stable until that happens.
+

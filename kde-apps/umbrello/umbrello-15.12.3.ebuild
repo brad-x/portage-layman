@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://www.kde.org/applications/development/umbrello
 	https://umbrello.kde.org
 "
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="
@@ -22,7 +22,6 @@ RDEPEND="
 	$(add_frameworks_dep kconfig)
 	$(add_frameworks_dep kconfigwidgets)
 	$(add_frameworks_dep kcoreaddons)
-	$(add_frameworks_dep kdoctools)
 	$(add_frameworks_dep ki18n)
 	$(add_frameworks_dep kiconthemes)
 	$(add_frameworks_dep kio)

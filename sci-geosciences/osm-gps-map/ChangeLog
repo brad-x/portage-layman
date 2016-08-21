@@ -91,3 +91,61 @@
 
   Package-Manager: portage-2.2.28
 
+  12 Aug 2016; Marek Szuba <marecki@gentoo.org> osm-gps-map-0.7.3.ebuild:
+  move version 0.7.3 to slot 2
+
+  This is to make room for ebuilds of version 1.0.0 and newer, which among
+  other
+  changes are linked against gtk3 instead of gtk2 and have a different library
+  name.
+
+  Package-Manager: portage-2.3.0
+
+*osm-gps-map-1.1.0 (12 Aug 2016)
+
+  12 Aug 2016; Marek Szuba <marecki@gentoo.org>
+  +files/osm-gps-map-1.1.0-no-maintainer-mode.patch,
+  +osm-gps-map-1.1.0.ebuild:
+  add ebuild for version 1.1.0
+
+  Among other changes the new version uses a different library name, links
+  against gtk3 instead of gtk2, and provides Python bindings via PyGObject
+  rather
+  than directly.
+
+  Package-Manager: portage-2.3.0
+
+  12 Aug 2016; Marek Szuba <marecki@gentoo.org> metadata.xml:
+  add myself as primary maintainer.
+
+  Package-Manager: portage-2.3.0
+
+  15 Aug 2016; Marek Szuba <marecki@gentoo.org> metadata.xml:
+  Revert "sci-geosciences/osm-gps-map: add myself as primary maintainer."
+
+  Turns out the maintainership request made in bug 499592 was out of date,
+  even though the assignee of the bug was still proxy-maint.
+
+  This reverts commit ab80ad5b80b6e3e351714eb19a75fe0f6f4e0ed0.
+
+  15 Aug 2016; Marek Szuba <marecki@gentoo.org>
+  -files/osm-gps-map-1.1.0-no-maintainer-mode.patch,
+  -osm-gps-map-1.1.0.ebuild:
+  Revert "sci-geosciences/osm-gps-map: add ebuild for version 1.1.0"
+
+  Unfortunately in spite of the upstream statement that 0.7.3 and 1.0.0+
+  can be installed in parallel there are several file collisions between
+  the two versions, some of which (notably introspection support) are not
+  trivial to fix on our end. Filing an upstream bug report, hopefully the
+  next release will not require jumping through so many hoops.
+
+  This reverts commit f84d5f38689d291273eab2a3d735f07711eecde9.
+
+  15 Aug 2016; Marek Szuba <marecki@gentoo.org> osm-gps-map-0.7.3.ebuild:
+  Revert "sci-geosciences/osm-gps-map: move version 0.7.3 to slot 2"
+
+  Return to original state until the new version can really be installed
+  in parallel with this one.
+
+  This reverts commit 7b88e7dd798f0a6e11e4f242c33f98543ec9a9c4.
+

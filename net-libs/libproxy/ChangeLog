@@ -76,3 +76,120 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*libproxy-0.4.13 (08 May 2016)
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> +libproxy-0.4.13.ebuild:
+  bump to 0.4.13
+
+  Thanks-to: Arfrever Frehtes Taifersar Arahesis <arfrever.fta@gmail.com>
+  Gentoo-Bug: 574046
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild,
+  metadata.xml:
+  google-code -> github
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org>
+  +files/libproxy-0.4.12-macosx.patch, +files/libproxy-0.4.12-mozjs.pc.patch,
+  libproxy-0.4.13.ebuild:
+  update patches
+
+  Patches were simply ported from 0.4.11.
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild:
+  EAPI6 + update mycmakeargs
+
+  - `-DWITH_KDE4` -> `-DWITH_KDE` (https://github.com/libproxy/libproxy/commit
+  /bd9bf72e15107e6c6133b438c700dd42d79c9d60)
+
+  Thanks-to: Arfrever Frehtes Taifersar Arahesis <arfrever.fta@gmail.com>
+  Gentoo-Bug: 574046
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild:
+  update dependencies
+
+  KDE module dependency changed from linked (against Qt/KDE) to runtime, which
+  uses kreadconfig/kreadconfig5.
+  This change was introduced in https://github.com/libproxy/libproxy/commit/bd
+  9bf72e15107e6c6133b438c700dd42d79c9d60.
+  Thanks to Arfrever for shedding light on this in bug #574046.
+
+  Since https://github.com/libproxy/libproxy/commit/00975fa11220af11398f9d89ee
+  2ee0cf17c655d2 libproxy supports webkit:4.
+
+  Thanks-to: Arfrever Frehtes Taifersar Arahesis <arfrever.fta@gmail.com>
+  Gentoo-Bug: 574046
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild:
+  remove unnecessary docs
+
+  These are installed automagically by default.
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild:
+  update multilib_src_install_all()
+
+  Fit it on a single line and remove unnecessary die()
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> libproxy-0.4.13.ebuild:
+  replace deprecated mono.eclass by mono-env.eclass
+
+  08 May 2016; Jason Zaman <perfinion@gentoo.org> +files/proxy.1,
+  libproxy-0.4.13.ebuild:
+  add manpage for `proxy` command
+
+  Manpage fetched from Debian and updated.
+
+*libproxy-0.4.13-r1 (08 May 2016)
+
+  08 May 2016; Pacho Ramos <pacho@gentoo.org> -libproxy-0.4.13.ebuild,
+  +libproxy-0.4.13-r1.ebuild:
+  Fix gmcs detection (#549734) and webkit dependencies (#574046#c10)
+
+  Package-Manager: portage-2.2.28
+
+  01 Jun 2016; Tobias Klausmann <klausman@gentoo.org>
+  libproxy-0.4.13-r1.ebuild:
+  0.4.13-r1: add alpha keyword
+
+  Gentoo-Bug: 584180
+
+  Package-Manager: portage-2.3.0_rc1
+
+  08 Jun 2016; Markus Meier <maekke@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  arm stable, bug #584180
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  11 Jun 2016; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  amd64 stable wrt bug #584180
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  x86 stable wrt bug #584180
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  ppc stable wrt bug #584180
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 Aug 2016; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  Stable for HPPA (bug #584180).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+  17 Aug 2016; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.13-r1.ebuild:
+  Stable for PPC64 (bug #584180).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+

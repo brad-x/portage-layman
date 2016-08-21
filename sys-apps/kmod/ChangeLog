@@ -153,3 +153,69 @@
   30 Mar 2016; Mike Frysinger <vapier@gentoo.org> -kmod-20.ebuild:
   drop old <21 versions
 
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> kmod-22.ebuild:
+  amd64 stable wrt bug #581562
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  17 May 2016; Markus Meier <maekke@gentoo.org> kmod-22.ebuild:
+  arm stable, bug #581562
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/kmod-static-nodes-r1:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  25 May 2016; Matt Turner <mattst88@gentoo.org> kmod-22.ebuild:
+  alpha stable, bug 581562.
+
+  25 May 2016; Jeroen Roovers <jer@gentoo.org> kmod-22.ebuild:
+  Stable for HPPA PPC64 (bug #581562).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> kmod-22.ebuild:
+  x86 stable wrt bug #581562
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> kmod-22.ebuild:
+  ppc stable wrt bug #581562
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*kmod-23 (23 Jul 2016)
+
+  23 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> +kmod-23.ebuild,
+  kmod-9999.ebuild:
+  Bump to version 23. Added python3_5 support
+
+  (also to live ebuild).
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  15 Aug 2016; William Hubbs <williamh@gentoo.org> -kmod-21.ebuild:
+  remove 21 from the tree for #581562
+
+  Package-Manager: portage-2.2.28
+
+*kmod-21 (16 Aug 2016)
+
+  16 Aug 2016; William Hubbs <williamh@gentoo.org> +kmod-21.ebuild:
+  Revert "sys-apps/kmod: remove 21 from the tree for #581562"
+
+  This reverts commit 4e07661c63bed19bbce76d0bbec8fca485bfaf66.
+
+  Restore old kmod per arch team request, the stabilization of kmod 22
+  will happen this week.
+

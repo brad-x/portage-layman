@@ -89,3 +89,25 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*gmime-2.6.20-r3 (31 May 2016)
+*gmime-2.6.20-r2 (31 May 2016)
+
+  31 May 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +gmime-2.6.20-r2.ebuild, +gmime-2.6.20-r3.ebuild, metadata.xml:
+  Add optional support for S/MIME
+
+  Fix deps: gpgme is only required for S/MIME, but gmime used to depend on
+  it unconditionally.
+
+  Bump both revisions because the one depending on gtk-sharp is not going
+  to be stabilized soon.
+
+  Gentoo-Bug: 583614
+
+  Package-Manager: portage-2.3.0_rc1
+
+  18 Aug 2016; Pacho Ramos <pacho@gentoo.org> -gmime-2.6.20-r1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+

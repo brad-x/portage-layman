@@ -302,3 +302,66 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  11 Jun 2016; Mikle Kolyada <zlogene@gentoo.org> collectd-5.5.1-r4.ebuild:
+  Add ~arm keyword
+
+  Package-Manager: portage-2.2.28
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> metadata.xml:
+  Updating maintainer details
+
+  Updating my own maintainer details to reflect that I am now a Gentoo
+  developer.
+
+  Gentoo-Bug: 581174
+
+  Package-Manager: portage-2.3.0
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> metadata.xml:
+  Removing proxy-maintainer
+
+  Now that I am a Gentoo developer this package is no longer maintained
+  through proxy-maintainer project.
+
+  Package-Manager: portage-2.3.0
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  collectd-5.5.1-r4.ebuild:
+  Adjust depedency on sci-libs/libsigrok
+
+  Requiring <sci-libs/libsigrok-0.4 when building sigrok plugin because
+  plugin doesn't build against recent sci-libs/libsigrok.
+
+  Bug: https://github.com/collectd/collectd/issues/1574
+
+  Package-Manager: portage-2.3.0
+
+*collectd-5.5.2 (11 Aug 2016)
+
+  11 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> +collectd-5.5.2.ebuild,
+  +files/collectd-5.5.2-issue-1870.patch,
+  +files/collectd-5.5.2-issue-1877.patch, metadata.xml:
+  Bump to v5.5.2
+
+    - New upstream release (Fixes CVE-2016-6254)
+
+    - Dependency on sys-fs/xfsprogs atom can now be controlled using the
+      new "xfs" USE flag.
+      If you don't enable "xfs" USE flag the df plugin will be unable to
+      filter on XFS partitions.
+
+    - Fixes build issues with sys-fs/xfsprogs-4.7.0 (#590998)
+
+    - Cherry-picked patches for upstream issue "network plugin causes core
+      dumps" (#1870)
+
+  Gentoo-Bug: https://bugs.gentoo.org/590998
+
+  Package-Manager: portage-2.3.0
+
+  11 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  -collectd-5.5.1-r4.ebuild, -files/collectd-5.5.1-issue-1637.patch:
+  Drop old security vulnerable version
+
+  Package-Manager: portage-2.3.0
+

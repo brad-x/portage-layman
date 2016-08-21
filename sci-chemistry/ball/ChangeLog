@@ -73,3 +73,20 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*ball-1.4.2-r1 (05 Jun 2016)
+
+  05 Jun 2016; David Seifert <soap@gentoo.org> -ball-1.4.2.ebuild,
+  +ball-1.4.2-r1.ebuild, +files/ball-1.4.2-fix-python-bindings.patch,
+  +files/ball-1.4.2-std-namespace-isnan.patch,
+  +files/ball-1.4.2-struct-swap-attribute.patch, metadata.xml:
+  Fix Swig bug, qualify std::isnan
+
+  Gentoo-Bug: 583932
+  * EAPI=6
+  * Also fix GCC warning pollution due to
+    misplaced attributes
+  * Add subslot operator for dev-libs/boost
+  * Remove USE=webkit, as webkit is no longer supported
+
+  Package-Manager: portage-2.3.0_rc1
+

@@ -89,3 +89,30 @@
 
   Package-Manager: portage-2.2.27
 
+*opendkim-2.10.3-r1 (06 May 2016)
+
+  06 May 2016; Robin H. Johnson <robbat2@gentoo.org>
+  +files/opendkim-r1.service, +opendkim-2.10.3-r1.ebuild:
+  added runtime configuration to systemd unit.
+
+  Fixes: https://bugs.gentoo.org/show_bug.cgi?id=542936
+  (cherry picked from commit add2021a15b569224b4d50b1d072307d00de0eb9)
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/opendkim.init.r3:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  03 Jun 2016; Anthony G. Basile <blueness@gentoo.org>
+  opendkim-2.10.3-r1.ebuild:
+  add libressl support
+
+  Package-Manager: portage-2.2.28
+
+*opendkim-2.10.3-r2 (05 Aug 2016)
+
+  05 Aug 2016; Michał Górny <mgorny@gentoo.org> -opendkim-2.10.3-r1.ebuild,
+  +opendkim-2.10.3-r2.ebuild:
+  2.10.3-r2: fix systemd unit name, #589794
+
+  Closes: https://github.com/gentoo/gentoo/pull/1977
+

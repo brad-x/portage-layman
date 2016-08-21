@@ -97,3 +97,19 @@
 
   Package-Manager: portage-2.2.26
 
+*maradns-2.0.09-r2 (03 Aug 2016)
+
+  03 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +maradns-2.0.09-r2.ebuild:
+  new revision to fix minor QA issues.
+
+  The main reason for a new revision is to add "GPL-2" to the LICENSE
+  per bug 426018. But with a revision, it made sense to update to
+  EAPI=6, and perform the resulting cleanup in the ebuild. The
+  src_prepare function was eliminated, and some dohtml calls were
+  changed to dodoc. A missing die() was added, and the examples were
+  moved behind USE=examples.
+
+  Gentoo-Bug: 426018
+
+  Package-Manager: portage-2.2.28
+

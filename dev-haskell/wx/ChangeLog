@@ -29,3 +29,19 @@
 
   Package-Manager: portage-2.2.28
 
+  25 May 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  -files/wx-0.13.2.3-ghc-7.10.patch, -wx-0.13.2.3.ebuild, -wx-0.90.1.0.ebuild:
+  drop version relying on wxGTK:29 and wxGTK:2.9
+
+  commit 60059b0a273a66db3cba9cdcff7d7de09e22de1a deleted
+  haskell bindings for older wxGTK but not it's single revdep.
+
+  That was detected by QA CI as:
+
+      https://qa-reports.gentoo.org/output/gentoo-ci/6599e27/output.html#dev-
+  haskell/wx
+
+  Cleaning up.
+
+  Package-Manager: portage-2.3.0_rc1
+

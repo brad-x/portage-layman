@@ -145,3 +145,78 @@
   Package-Manager: portage-2.2.28
   RepoMan-Options: --include-arches="arm"
 
+  12 May 2016; Ryan Hill <rhill@gentoo.org> -wxGTK-3.0.0.0.ebuild,
+  -wxGTK-3.0.1.1.ebuild, -wxGTK-3.0.2.0.ebuild:
+  Remove old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Ryan Hill <rhill@gentoo.org>
+
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> wxGTK-3.0.2.0-r2.ebuild:
+  amd64 stable wrt bug #577788
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  19 May 2016; Jeroen Roovers <jer@gentoo.org> wxGTK-3.0.2.0-r2.ebuild:
+  Stable for HPPA PPC64 (bug #577788).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  27 May 2016; Tobias Klausmann <klausman@gentoo.org> wxGTK-3.0.2.0-r2.ebuild:
+  3.0.2.0-r2: add alpha keyword
+
+  Gentoo-Bug: 577788
+
+  Package-Manager: portage-2.3.0_rc1
+
+*wxGTK-3.0.2.0-r301 (17 Jun 2016)
+
+  17 Jun 2016; Ryan Hill <rhill@gentoo.org> +wxGTK-3.0.2.0-r301.ebuild:
+  Fix webkit-gtk dependency.
+
+  We need webkitgtk-3.0 for GTK 3.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Ryan Hill <rhill@gentoo.org>
+
+*wxGTK-3.0.2.0-r3 (17 Jun 2016)
+
+  17 Jun 2016; Ryan Hill <rhill@gentoo.org>
+  +files/wxGTK-3.0.2.0-webview-fixes.patch, +wxGTK-3.0.2.0-r3.ebuild,
+  wxGTK-3.0.2.0-r301.ebuild:
+  Backport various webkit-related build fixes.
+
+  a309157a Don't include "webview" in "standard" libraries
+  d24f711f Only link webview library with libwebkitgtk in wxGTK
+  bde287ba Rebake webview sample makefile after EXTRALIBS_WEBVIEW addition
+  037f6977 Report libraries in EXTRALIBS_WEBVIEW in wx-config output
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Ryan Hill <rhill@gentoo.org>
+
+  17 Jun 2016; Ryan Hill <rhill@gentoo.org> wxGTK-2.8.12.1-r1.ebuild,
+  wxGTK-2.8.12.1-r2.ebuild, wxGTK-2.9.4.1-r1.ebuild, wxGTK-3.0.2.0-r1.ebuild,
+  wxGTK-3.0.2.0-r2.ebuild, wxGTK-3.0.2.0-r3.ebuild, wxGTK-3.0.2.0-r300.ebuild,
+  wxGTK-3.0.2.0-r301.ebuild:
+  Pay the repoman.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Ryan Hill <rhill@gentoo.org>
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> wxGTK-3.0.2.0-r2.ebuild:
+  x86 stable wrt bug #577788
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> wxGTK-3.0.2.0-r2.ebuild:
+  ppc stable wrt bug #577788
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

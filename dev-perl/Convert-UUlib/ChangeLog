@@ -109,3 +109,31 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Convert-UUlib-1.500.0-r1 (15 Jul 2016)
+
+  15 Jul 2016; Kent Fredric <kentnl@gentoo.org> -Convert-UUlib-1.500.0.ebuild,
+  +Convert-UUlib-1.500.0-r1.ebuild, metadata.xml:
+  Add IUSE="system-uulib" and disable unbundling
+
+  Gentoo's uulib implementation and the bundled version differ in some way,
+  making Gentoo's version less stable, causing mislinked .so files as seen
+  in bug #559930
+
+  This pragmatic solution just defers this problem to the user so those who
+  care about system purity can do that at their own cost, while making the
+  default workflow both Work(tm) and Work as Upstream Intended.
+
+  R1-bump required as it is expected people who have existing installations
+  and did not run tests will have a broken installation, which can be
+  confirmed by running:
+
+    /usr/bin/perl -MConvert::UUlib=:all \
+      -e'SetFNameFilter(sub {});FNameFilter(1);SetFNameFilter()'
+
+  Bug: https://bugs.gentoo.org/559930
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches --include-arches="alpha amd64 amd64-fbsd
+  arm arm64 hppa ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd
+  x86 x86-fbsd"
+

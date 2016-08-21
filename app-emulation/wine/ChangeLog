@@ -467,3 +467,280 @@
 
   Package-Manager: portage-2.2.26
 
+  13 May 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-1.8-r1.ebuild,
+  wine-1.8.1-r1.ebuild, wine-1.8.2.ebuild, wine-1.9.4-r1.ebuild,
+  wine-1.9.5-r1.ebuild, wine-1.9.6-r1.ebuild, wine-1.9.7-r1.ebuild,
+  wine-1.9.8.ebuild, wine-9999.ebuild:
+  Change GCC-5.3 warning.
+
+  Reverts the two following commits:
+
+  72f76cae15de74cb99a604303de297fb5412d68f
+  68bf4d988d71805013fbedf5b94aee090cb9cb43
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  Package-Manager: portage-2.2.28
+
+  13 May 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-9999.ebuild:
+  Adjust d3d9-related URI and variables.
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.9 (13 May 2016)
+
+  13 May 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.9.ebuild:
+  Version bump to 1.9.9.
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.10 (01 Jun 2016)
+
+  01 Jun 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.10.ebuild:
+  Version bump to 1.9.10.
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+*wine-1.9.11 (01 Jun 2016)
+
+  01 Jun 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.11.ebuild:
+  Version bump to 1.9.11.
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  06 Jun 2016; Austin English <wizardedit@gentoo.org>
+  +files/builtin_ms_va_list.c, wine-1.8-r1.ebuild, wine-1.8.1-r1.ebuild,
+  wine-1.8.2.ebuild, wine-1.9.4-r1.ebuild, wine-1.9.5-r1.ebuild,
+  wine-1.9.6-r1.ebuild, wine-1.9.7-r1.ebuild, wine-1.9.8.ebuild,
+  wine-1.9.9.ebuild, wine-1.9.10.ebuild, wine-1.9.11.ebuild, wine-9999.ebuild:
+  check if CC supports builtin_ms_va_list when attempting 64-bit support
+
+  06 Jun 2016; Pacho Ramos <pacho@gentoo.org> wine-1.8.2.ebuild:
+  amd64 stable, bug #583946
+
+  Package-Manager: portage-2.3.0_rc1
+
+  07 Jun 2016; Austin English <wizardedit@gentoo.org> wine-1.9.5-r1.ebuild:
+  remove extraneous whitespace
+
+  Package-Manager: portage-2.2.28
+
+  07 Jun 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-1.8-r1.ebuild,
+  wine-1.8.1-r1.ebuild, wine-1.8.2.ebuild, wine-1.9.4-r1.ebuild,
+  wine-1.9.5-r1.ebuild, wine-1.9.6-r1.ebuild, wine-1.9.7-r1.ebuild,
+  wine-1.9.8.ebuild, wine-1.9.9.ebuild, wine-1.9.10.ebuild,
+  wine-1.9.11.ebuild, wine-9999.ebuild:
+  Fix ebuild bug with !abi_x86_64
+
+  Gentoo-bug: 585250
+  Closes #1624
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: NP-Hardass <NP-Hardass@gentoo.org>
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> wine-1.8.2.ebuild:
+  x86 stable wrt bug #583946
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Jun 2016; Austin English <wizardedit@gentoo.org> -wine-1.6.2.ebuild,
+  -wine-1.6.2-r1.ebuild, -wine-1.7.3-r1.ebuild, -wine-1.7.4-r1.ebuild,
+  -wine-1.7.8-r1.ebuild, -wine-1.7.9-r1.ebuild, -wine-1.7.10-r1.ebuild,
+  -wine-1.7.11-r1.ebuild, -wine-1.7.12-r1.ebuild, -wine-1.7.13-r1.ebuild,
+  -wine-1.7.14-r1.ebuild, -wine-1.7.15-r1.ebuild, -wine-1.7.16-r1.ebuild,
+  -wine-1.7.17-r1.ebuild, -wine-1.7.18-r1.ebuild, -wine-1.7.19-r2.ebuild,
+  -wine-1.7.20-r1.ebuild, -wine-1.7.21-r1.ebuild, -wine-1.7.22-r1.ebuild,
+  -wine-1.7.28-r1.ebuild, -wine-1.7.29-r1.ebuild, -wine-1.7.33-r1.ebuild,
+  -wine-1.7.34.ebuild, -wine-1.7.35.ebuild, -wine-1.7.36.ebuild,
+  -wine-1.7.37.ebuild, -wine-1.7.38-r1.ebuild, -wine-1.7.39-r1.ebuild,
+  -wine-1.7.40-r1.ebuild, -wine-1.7.41.ebuild, -wine-1.7.42.ebuild,
+  -wine-1.7.43.ebuild, -wine-1.7.44.ebuild, -wine-1.7.45.ebuild,
+  -wine-1.7.46.ebuild, -wine-1.7.47.ebuild, -wine-1.7.50.ebuild,
+  -wine-1.7.51.ebuild, -wine-1.7.52.ebuild, -wine-1.7.53.ebuild,
+  -wine-1.7.54-r1.ebuild, -wine-1.7.55.ebuild:
+  remove old ebuilds
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.11-r1 (10 Jul 2016)
+*wine-1.9.10-r1 (10 Jul 2016)
+*wine-1.9.9-r1 (10 Jul 2016)
+*wine-1.9.8-r1 (10 Jul 2016)
+*wine-1.9.7-r2 (10 Jul 2016)
+*wine-1.9.6-r2 (10 Jul 2016)
+*wine-1.9.5-r2 (10 Jul 2016)
+*wine-1.9.4-r2 (10 Jul 2016)
+*wine-1.8.2-r1 (10 Jul 2016)
+*wine-1.8.1-r2 (10 Jul 2016)
+*wine-1.8-r2 (10 Jul 2016)
+
+  10 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  +files/wine-1.8-gnutls-3.5-compat.patch, -wine-1.8-r1.ebuild,
+  +wine-1.8-r2.ebuild, -wine-1.8.1-r1.ebuild, +wine-1.8.1-r2.ebuild,
+  wine-1.8.2.ebuild, +wine-1.8.2-r1.ebuild, -wine-1.9.4-r1.ebuild,
+  +wine-1.9.4-r2.ebuild, -wine-1.9.5-r1.ebuild, +wine-1.9.5-r2.ebuild,
+  -wine-1.9.6-r1.ebuild, +wine-1.9.6-r2.ebuild, -wine-1.9.7-r1.ebuild,
+  +wine-1.9.7-r2.ebuild, -wine-1.9.8.ebuild, +wine-1.9.8-r1.ebuild,
+  -wine-1.9.9.ebuild, +wine-1.9.9-r1.ebuild, -wine-1.9.10.ebuild,
+  +wine-1.9.10-r1.ebuild, -wine-1.9.11.ebuild, +wine-1.9.11-r1.ebuild,
+  wine-9999.ebuild:
+  Mega update, fixes and closes 6 bugs and 1 PR
+
+  Rearrange deps (Thanks to Andreas Sturmlechner)
+  Closes: #1625
+
+  Handle when staging has different mono/gecko
+  Gentoo-Bug: 586114
+
+  Switch from capi4k to libcapi
+  Gentoo-Bug: 583828
+
+  Fix compilation with gnutls-3.5
+  Gentoo-Bug: 587028
+
+  X requires typetype; remove wineconsole w/o X or ncurses
+  Gentoo-Bug: 551124
+
+  Split build checks so compilations happen once
+  Fix gcc version checks for clang support
+  Gentoo-Bug: 449378
+
+  Clean up compiler checks and use ebegin and eend
+
+  Make USE=oss warning verbose for linux users
+  Gentoo-Bug: 577154
+
+  Require dosbox that contains compatibility patches
+
+  10 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-1.8-r2.ebuild,
+  wine-1.8.1-r2.ebuild, wine-1.8.2-r1.ebuild, wine-1.9.4-r2.ebuild,
+  wine-1.9.5-r2.ebuild, wine-1.9.6-r2.ebuild, wine-1.9.7-r2.ebuild,
+  wine-1.9.8-r1.ebuild, wine-1.9.9-r1.ebuild, wine-1.9.10-r1.ebuild,
+  wine-1.9.11-r1.ebuild, wine-9999.ebuild:
+  Fix STAGING_{MV,GV} in phases; thanks to mgorny
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.13 (10 Jul 2016)
+*wine-1.9.12 (10 Jul 2016)
+*wine-1.8.3 (10 Jul 2016)
+
+  10 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.8.3.ebuild,
+  +wine-1.9.12.ebuild, +wine-1.9.13.ebuild, wine-9999.ebuild:
+  Version bump to 1.8.3, 1.9.12, 1.9.13, update 9999
+
+  Package-Manager: portage-2.2.28
+
+  11 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-1.8-r2.ebuild,
+  wine-1.8.1-r2.ebuild, wine-1.8.2.ebuild, wine-1.8.2-r1.ebuild,
+  wine-1.8.3.ebuild, wine-1.9.4-r2.ebuild, wine-1.9.5-r2.ebuild,
+  wine-1.9.6-r2.ebuild, wine-1.9.7-r2.ebuild, wine-1.9.8-r1.ebuild,
+  wine-1.9.9-r1.ebuild, wine-1.9.10-r1.ebuild, wine-1.9.11-r1.ebuild,
+  wine-1.9.12.ebuild, wine-1.9.13.ebuild, wine-9999.ebuild:
+  Fix two QA issues, #588604
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.14 (19 Jul 2016)
+
+  19 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.14.ebuild:
+  Version bump to 1.9.14
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.14-r1 (24 Jul 2016)
+*wine-1.9.13-r1 (24 Jul 2016)
+*wine-1.9.12-r1 (24 Jul 2016)
+*wine-1.9.11-r2 (24 Jul 2016)
+*wine-1.9.10-r2 (24 Jul 2016)
+*wine-1.9.9-r2 (24 Jul 2016)
+
+  24 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> -wine-1.9.9-r1.ebuild,
+  +wine-1.9.9-r2.ebuild, -wine-1.9.10-r1.ebuild, +wine-1.9.10-r2.ebuild,
+  -wine-1.9.11-r1.ebuild, +wine-1.9.11-r2.ebuild, -wine-1.9.12.ebuild,
+  +wine-1.9.12-r1.ebuild, -wine-1.9.13.ebuild, +wine-1.9.13-r1.ebuild,
+  -wine-1.9.14.ebuild, +wine-1.9.14-r1.ebuild, wine-9999.ebuild:
+  Update d3d9 deps, #588550
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.15 (24 Jul 2016)
+
+  24 Jul 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.15.ebuild:
+  Version bump to 1.9.15
+
+  Package-Manager: portage-2.2.28
+
+*wine-1.9.15-r1 (11 Aug 2016)
+*wine-1.9.14-r2 (11 Aug 2016)
+*wine-1.9.13-r2 (11 Aug 2016)
+*wine-1.9.12-r2 (11 Aug 2016)
+*wine-1.9.11-r3 (11 Aug 2016)
+*wine-1.9.10-r3 (11 Aug 2016)
+*wine-1.9.9-r3 (11 Aug 2016)
+*wine-1.9.8-r2 (11 Aug 2016)
+*wine-1.9.7-r3 (11 Aug 2016)
+*wine-1.9.6-r3 (11 Aug 2016)
+*wine-1.9.5-r3 (11 Aug 2016)
+*wine-1.9.4-r3 (11 Aug 2016)
+*wine-1.8.3-r1 (11 Aug 2016)
+*wine-1.8.2-r2 (11 Aug 2016)
+*wine-1.8.1-r3 (11 Aug 2016)
+*wine-1.8-r3 (11 Aug 2016)
+
+  11 Aug 2016; NP-Hardass <NP-Hardass@gentoo.org> metadata.xml,
+  -wine-1.8-r2.ebuild, +wine-1.8-r3.ebuild, -wine-1.8.1-r2.ebuild,
+  +wine-1.8.1-r3.ebuild, -wine-1.8.2-r1.ebuild, +wine-1.8.2-r2.ebuild,
+  +wine-1.8.3-r1.ebuild, -wine-1.9.4-r2.ebuild, +wine-1.9.4-r3.ebuild,
+  -wine-1.9.5-r2.ebuild, +wine-1.9.5-r3.ebuild, -wine-1.9.6-r2.ebuild,
+  +wine-1.9.6-r3.ebuild, -wine-1.9.7-r2.ebuild, +wine-1.9.7-r3.ebuild,
+  -wine-1.9.8-r1.ebuild, +wine-1.9.8-r2.ebuild, -wine-1.9.9-r2.ebuild,
+  +wine-1.9.9-r3.ebuild, -wine-1.9.10-r2.ebuild, +wine-1.9.10-r3.ebuild,
+  -wine-1.9.11-r2.ebuild, +wine-1.9.11-r3.ebuild, -wine-1.9.12-r1.ebuild,
+  +wine-1.9.12-r2.ebuild, -wine-1.9.13-r1.ebuild, +wine-1.9.13-r2.ebuild,
+  -wine-1.9.14-r1.ebuild, +wine-1.9.14-r2.ebuild, -wine-1.9.15.ebuild,
+  +wine-1.9.15-r1.ebuild, wine-9999.ebuild:
+  Fix staging gtk theming dependency and adjust syntax
+
+  Package-Manager: portage-2.3.0
+
+*wine-1.9.16 (11 Aug 2016)
+
+  11 Aug 2016; NP-Hardass <NP-Hardass@gentoo.org> +wine-1.9.16.ebuild:
+  Version bump to 1.9.16
+
+  Package-Manager: portage-2.3.0
+
+  11 Aug 2016; NP-Hardass <NP-Hardass@gentoo.org> wine-9999.ebuild:
+  Switch to new eapply backend for staging
+
+  Package-Manager: portage-2.3.0
+
+  11 Aug 2016; NP-Hardass <NP-Hardass@gentoo.org>
+  -files/wine-1.5.17-osmesa-check.patch,
+  -files/wine-1.7.0-freetype-header-location.patch,
+  -files/wine-1.7.19-makefile-race-cond.patch,
+  -files/wine-1.7.2-osmesa-check.patch,
+  -files/wine-1.7.38-gstreamer-v5-staging-post.patch,
+  -files/wine-1.7.38-gstreamer-v5-staging-pre.patch,
+  -files/wine-1.7.39-gstreamer-v5-staging-post.patch,
+  -files/wine-1.7.39-gstreamer-v5-staging-pre.patch,
+  -files/wine-1.7.45-libunwind-osx-only.patch,
+  -files/wine-1.7.47-critical-security-cookie-fix.patch,
+  -files/wine-1.7.55-gstreamer-v5-staging-post.patch,
+  -files/wine-1.7.55-gstreamer-v5-staging-pre.patch:
+  Drop orphaned patches
+
+  Package-Manager: portage-2.3.0
+

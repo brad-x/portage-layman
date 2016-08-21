@@ -74,3 +74,33 @@
   Package maintainers will likely want to cleanup various things for this
   experimental USE flag.
 
+  14 May 2016; Michał Górny <mgorny@gentoo.org> rtmpdump-2.4_p20131018.ebuild,
+  rtmpdump-9999.ebuild:
+  DESTTREE -> /usr, #582984
+
+  30 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  rtmpdump-2.4_p20131018.ebuild, rtmpdump-9999.ebuild:
+  Fixed broken sed command (bug #584498).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  11 Jun 2016; Michał Górny <mgorny@gentoo.org> rtmpdump-2.4_p20131018.ebuild,
+  rtmpdump-9999.ebuild:
+  add -std=gnu89 to CFLAGS to restore pre-GCC5 semantics
+
+  Bug: https://bugs.gentoo.org/571106
+  Pull-Request: https://github.com/gentoo/gentoo/pull/1644
+  Package-Manager: portage-2.3.0_rc1
+
+  16 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  rtmpdump-2.4_p20131018.ebuild, rtmpdump-9999.ebuild:
+  Depend on net-libs/gnutls when USE=gnutls is on.
+
+  Gentoo-Bug: https://bugs.gentoo.org/498840
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1634
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

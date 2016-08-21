@@ -72,3 +72,40 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*gentoo-vdr-scripts-2.7.5 (03 May 2016)
+
+  03 May 2016; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-2.7.5.ebuild:
+  eapi6; add support ionice, suggested by T.Loescher
+
+  Package-Manager: portage-2.2.28
+
+  05 May 2016; Michał Górny <mgorny@gentoo.org>
+  gentoo-vdr-scripts-2.7.5.ebuild:
+  Fix DOCS expansion
+
+  Delay DOCS expansion until src_install(). It is meaningless in global
+  scope since it happens in arbitrary directory which will not have
+  README* files. Furthermore, it triggers verbose failure due to failglob.
+
+  15 May 2016; Joerg Bornkessel <hd_brummy@gentoo.org>
+  gentoo-vdr-scripts-2.7.5.ebuild:
+  removed useless inherit eutils for eapi=6; removed useless src_prepare part
+
+  Package-Manager: portage-2.2.28
+
+*gentoo-vdr-scripts-2.7.5.1 (12 Jun 2016)
+
+  12 Jun 2016; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-2.7.5.1.ebuild:
+  bump, include bugfix to detect the right libdir on arm64, thx to T.Reufer
+  for point this out
+
+  Package-Manager: portage-2.3.0_rc1
+
+  19 Jun 2016; Joerg Bornkessel <hd_brummy@gentoo.org>
+  gentoo-vdr-scripts-2.7.5.1.ebuild:
+  keyword ~arm64, wrt bug 586364; thx to T.Reufer for testing
+
+  Package-Manager: portage-2.3.0_rc1
+

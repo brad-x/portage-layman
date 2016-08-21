@@ -108,3 +108,108 @@
 
   Package-Manager: portage-2.2.26
 
+*octave-4.0.2 (30 Apr 2016)
+
+  30 Apr 2016; Manuel Rüger <mrueg@gentoo.org> +octave-4.0.2.ebuild:
+  Version bump to 4.0.2
+
+  Package-Manager: portage-2.2.28
+
+*octave-4.0.1-r1 (02 May 2016)
+*octave-4.0.0-r1 (02 May 2016)
+
+  02 May 2016; Mark Wright <gienah@gentoo.org> +octave-4.0.0-r1.ebuild,
+  +octave-4.0.1-r1.ebuild, octave-4.0.2.ebuild:
+  Fix bug 566134, thanks to Francisco Vazquez for reporting.
+
+  Gentoo-bug: 566134
+
+  Package-Manager: portage-2.2.28
+
+*octave-4.0.2-r1 (02 May 2016)
+
+  02 May 2016; Mark Wright <gienah@gentoo.org> -octave-4.0.2.ebuild,
+  +octave-4.0.2-r1.ebuild:
+  revbump 4.0.2 for bug 566134 fix.
+
+  Gentoo-bug: 566134
+
+  Package-Manager: portage-2.2.28
+
+  02 May 2016; Mark Wright <gienah@gentoo.org>
+  +files/octave-4.0.0-texinfo.patch, octave-4.0.0-r1.ebuild:
+  Fix bug 554226, thanks to Helmut Jarausch for reporting.
+
+  Thanks to Patric Schmitz for helping. The patch from upstream is in versions
+  after 4.0.
+
+  Gentoo-bug: 554226
+
+  Package-Manager: portage-2.2.28
+
+  14 May 2016; David Seifert <soap@gentoo.org> octave-3.6.4.ebuild:
+  Fix QA MissingSlotDep
+
+  Package-Manager: portage-2.2.28
+
+  14 May 2016; David Seifert <soap@gentoo.org> octave-3.6.4-r1.ebuild:
+  Fix QA MissingSlotDep
+
+  Package-Manager: portage-2.2.28
+
+  14 May 2016; David Seifert <soap@gentoo.org> octave-3.8.1.ebuild:
+  Fix QA MissingSlotDep
+
+  Package-Manager: portage-2.2.28
+
+  04 Jun 2016; Mike Frysinger <vapier@gentoo.org> octave-4.0.0.ebuild,
+  octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild, octave-4.0.1-r1.ebuild,
+  octave-4.0.2-r1.ebuild:
+  savannah: switch to https URLs
+
+  05 Jun 2016; Michał Górny <mgorny@gentoo.org> -octave-3.8.1.ebuild,
+  -octave-3.8.1-r1.ebuild:
+  Nuke 3.8.1
+
+  05 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  -files/octave-3.8.0-llvm-3.4.patch,
+  -files/octave-3.8.0-llvm-configure.patch, octave-3.8.2.ebuild:
+  Remove jit from 3* as it requires llvm < 3.5
+
+  31 Jul 2016; David Seifert <soap@gentoo.org> metadata.xml,
+  octave-3.6.4.ebuild, octave-3.6.4-r1.ebuild, octave-3.8.2.ebuild,
+  octave-4.0.0.ebuild, octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild,
+  octave-4.0.1-r1.ebuild, octave-4.0.2-r1.ebuild:
+  Add subslot operator for media-gfx/imagemagick
+
+  Gentoo-bug: 584104
+  * Also add USE="graphicsmagick" and add subslot
+    operator for media-gfx/graphicsmagick
+
+  Package-Manager: portage-2.3.0
+
+  05 Aug 2016; David Seifert <soap@gentoo.org> octave-3.6.4.ebuild,
+  octave-3.6.4-r1.ebuild, octave-3.8.2.ebuild, octave-4.0.0.ebuild,
+  octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild, octave-4.0.1-r1.ebuild,
+  octave-4.0.2-r1.ebuild:
+  Switch to media-gfx/imagemagick by default
+
+  Gentoo-bug: 590280
+
+  Package-Manager: portage-2.3.0
+
+*octave-4.0.2-r2 (09 Aug 2016)
+*octave-3.8.2-r1 (09 Aug 2016)
+
+  09 Aug 2016; David Seifert <soap@gentoo.org> octave-3.6.4.ebuild,
+  octave-3.6.4-r1.ebuild, -octave-3.8.2.ebuild, +octave-3.8.2-r1.ebuild,
+  octave-4.0.0.ebuild, octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild,
+  octave-4.0.1-r1.ebuild, -octave-4.0.2-r1.ebuild, +octave-4.0.2-r2.ebuild:
+  Remove automagic dep on media-gfx/graphicsmagick
+
+  Gentoo-Bug: 590280
+  * Explicitly select dependency on the basis of USE="graphicsmagick"
+    vs USE="imagemagick" only.
+
+  Package-Manager: portage-2.3.0
+

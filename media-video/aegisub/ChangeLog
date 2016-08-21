@@ -448,3 +448,95 @@
 
   Package-Manager: portage-2.2.27
 
+  26 May 2016; Michał Górny <mgorny@gentoo.org> aegisub-9999.ebuild:
+  Switch to git-r3
+
+  Switch the live ebuild to git-r3, using the new EGIT_SUBMODULES API.
+
+  27 Jun 2016; Göktürk Yüksek <gokturk@gentoo.org> metadata.xml:
+  cleanup maintainer list
+
+  Acked-By: Maxim Koltsov <maksbotan@gentoo.org>
+
+  Package-Manager: portage-2.3.0
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -aegisub-3.0.4-r1.ebuild,
+  -files/aegisub-3.0.4-fix-install-with-empty-LINGUAS.patch,
+  -files/aegisub-3.0.4-fix-lua-macro.patch,
+  -files/aegisub-3.0.4-respect-user-compiler-flags.patch:
+  remove 3.0.4
+
+  It's time for 3.0.4 to go.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org> aegisub-3.2.2.ebuild,
+  +files/3.2.2/aegisub-3.2.2-add-missing-pthread-flags.patch,
+  +files/3.2.2/aegisub-3.2.2-fix-lua-regexp.patch,
+  +files/3.2.2/aegisub-3.2.2-respect-user-compiler-flags.patch,
+  +files/3.2.2/aegisub-3.2.2-unbundle-luajit.patch,
+  -files/aegisub-3.2.2-add-missing-pthread-flags.patch,
+  -files/aegisub-3.2.2-fix-lua-regexp.patch,
+  -files/aegisub-3.2.2-respect-user-compiler-flags.patch,
+  -files/aegisub-3.2.2-unbundle-luajit.patch:
+  move 3.2.2 patchset to files/3.2.2/ subdirectory
+
+  Otherwise files/ directory is a bit messy.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*aegisub-3.2.2_p20160518 (28 Jun 2016)
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +aegisub-3.2.2_p20160518.ebuild, +files/3.2.2_p20160518/aegisub-3.2.2_p20160
+  518-fix-system-luajit-build.patch,
+  +files/3.2.2_p20160518/aegisub-3.2.2_p20160518-respect-compiler-flags.patch,
+  +files/3.2.2_p20160518/aegisub-3.2.2_p20160518-support-system-gtest.patch:
+  verbump to 3.2.2_p20160518
+
+  Major revamp of the ebuild and the patchset:
+  - EAPI=6;
+  - add testing support;
+  - remove ffmpeg USE and depend on ffmpegsource unconditionally
+    (otherwise aegisub can only open blank 'videos' without any video);
+  - cleanup dependencies;
+  - update the patchset (all changes were submitted upstream);
+  - update LICENSE.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org> aegisub-9999.ebuild:
+  sync 9999 with the latest snapshot ebuild
+
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -aegisub-3.2.2_p20160306.ebuild,
+  -files/aegisub-3.2.2_p20160306-fix-luajit-unbundling.patch,
+  -files/aegisub-3.2.2_p20160306-respect-user-compiler-flags.patch:
+  remove old
+
+  Closes: https://github.com/gentoo/gentoo/pull/1781
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  11 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  aegisub-3.2.2_p20160518.ebuild, aegisub-9999.ebuild:
+  add setup-wxwidgets call wrt bug 587530
+
+  Gentoo-Bug: https://bugs.gento.org/587530
+  Closes: https://github.com/gentoo/gentoo/pull/1839
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

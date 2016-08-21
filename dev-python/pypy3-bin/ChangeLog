@@ -157,3 +157,47 @@
   -pypy3-bin-2.4.0-r2.ebuild:
   Drop old
 
+  05 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/pypy3-2.4.0-fix-tkinter-regression.patch, pypy3-bin-2.4.0-r4.ebuild:
+  fix regression in tkinter
+
+  Gentoo-bug: 533384
+  Fix binary package as well as per mgorny request
+  Closes: https://github.com/gentoo/gentoo/pull/1326
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  05 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  pypy3-bin-2.4.0-r4.ebuild:
+  Remove trailing whitespace and clear QA warning.
+
+  Package-Manager: portage-2.2.26
+
+  14 May 2016; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0-r4.ebuild:
+  pax-mark libpypy-c.so as well
+
+  14 May 2016; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0-r4.ebuild:
+  INSDESTTREE -> custom var, #582982
+
+  09 Jun 2016; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0-r4.ebuild:
+  Update SRC_URI
+
+*pypy3-bin-5.2.0_alpha1 (09 Jun 2016)
+
+  09 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  +files/5.2.0-distutils-c++.patch, +pypy3-bin-5.2.0_alpha1.ebuild:
+  Add 5.2.0-alpha1
+
+  12 Jun 2016; Michał Górny <mgorny@gentoo.org> pypy3-bin-5.2.0_alpha1.ebuild:
+  Stop installing numpy headers to match src build
+
+  Stop installing /usr/lib*/pypy3/include/numpy as that directory is not
+  installed by dev-python/pypy3 (where the install layout follows upstream
+  scripts rather than being coded in ebuild).
+
+*pypy3-bin-5.2.0_alpha1-r1 (29 Jul 2016)
+
+  29 Jul 2016; Michał Górny <mgorny@gentoo.org> pypy3-bin-2.4.0-r4.ebuild,
+  -pypy3-bin-5.2.0_alpha1.ebuild, +pypy3-bin-5.2.0_alpha1-r1.ebuild:
+  Remove unnecessary PDEP on python-updater
+

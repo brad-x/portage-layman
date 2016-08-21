@@ -156,3 +156,56 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> p7zip-15.14.1.ebuild:
+  amd64 stable wrt bug #582364
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/p7zip-9.20.1-long_rar_pwd.patch:
+  remove unused patch
+
+  Closes: https://github.com/gentoo/gentoo/pull/1812
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*p7zip-16.02 (15 Jul 2016)
+
+  15 Jul 2016; Matthew Thode <prometheanfire@gentoo.org>
+  +files/p7zip-16.02-darwin.patch, +p7zip-16.02.ebuild:
+  bup for bug 582832
+
+  Package-Manager: portage-2.2.28
+
+  15 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> p7zip-16.02.ebuild:
+  Fixed installation of manual.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*p7zip-16.02-r1 (25 Jul 2016)
+
+  25 Jul 2016; Matthew Thode <prometheanfire@gentoo.org>
+  files/p7zip-16.02-darwin.patch, -p7zip-16.02.ebuild, +p7zip-16.02-r1.ebuild:
+  Drop kdelibs (R)DEPEND, sort DEPEND/IUSE, EAPI=6
+
+  kde-base/kdelibs:4 is not required here as p7zip only (manually) installs
+  a bunch of desktop files that may or may not be picked up by applications.
+  wxGTK[X] is already enforced by REQUIRED_USE, so there is no reason
+  to duplicate that.
+
+  Reversed symlink logic for ServiceMenu as kservices5 is here to stay and
+  kde4/services is deprecated.
+
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Matthew Thode <prometheanfire@gentoo.org>
+
+  27 Jul 2016; Mike Frysinger <vapier@gentoo.org>
+  files/p7zip-15.09-CVE-2015-1038.patch,
+  files/p7zip-9.20.1-CVE-2015-1038.patch,
+  files/p7zip-9.38.1-CVE-2015-1038.patch:
+  sourceforge: switch to https:// URIs
+

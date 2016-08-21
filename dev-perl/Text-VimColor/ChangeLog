@@ -63,3 +63,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Text-VimColor-0.260-r1 (23 Jul 2016)
+
+  23 Jul 2016; Kent Fredric <kentnl@gentoo.org> -Text-VimColor-0.260.ebuild,
+  +Text-VimColor-0.260-r1.ebuild:
+  Require vim[-minimal] re bug #589542
+
+  Text::VimColor needs vim's syntax highlighter in order to work.
+
+  However, USE="minimal" disables compiling syntax highlighting
+  into vim due to --features=tiny
+
+  -R1 bump to propagate deps through non-dyndeps
+
+  Thanks to Toralf Förster for reporting
+
+  Bug: https://bugs.gentoo.org/589542
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

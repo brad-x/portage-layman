@@ -197,3 +197,46 @@
 
   Package-Manager: portage-2.2.26
 
+  04 Jun 2016; Jason Zaman <perfinion@gentoo.org>
+  selinux-base-policy-9999.ebuild:
+  Add systemd useflag and module
+
+  Package-Manager: portage-2.2.28
+
+  05 Jun 2016; Sven Vermeulen <swift@gentoo.org>
+  selinux-base-policy-9999.ebuild:
+  Use DEPEND on selinux-base rather than RDEPEND
+
+  The sec-policy/selinux-base-policy package builds the base SELinux policy
+  modules for a system, and requires the interface files for it that are
+  provided by the sec-policy/selinux-base package. As such, we need a DEPEND
+  on this rather than an RDEPEND.
+
+  Package-Manager: portage-2.2.28
+
+*selinux-base-policy-2.20151208-r4 (05 Jun 2016)
+
+  05 Jun 2016; Sven Vermeulen <swift@gentoo.org>
+  +selinux-base-policy-2.20151208-r4.ebuild:
+  sec-policy: Release of SELinux policies 2.20151208-r4
+
+  Package-Manager: portage-2.2.28
+
+  03 Jul 2016; Sven Vermeulen <swift@gentoo.org>
+  -selinux-base-policy-2.20141203-r1.ebuild,
+  -selinux-base-policy-2.20141203-r2.ebuild,
+  -selinux-base-policy-2.20141203-r3.ebuild,
+  -selinux-base-policy-2.20141203-r4.ebuild,
+  -selinux-base-policy-2.20141203-r5.ebuild,
+  -selinux-base-policy-2.20141203-r6.ebuild,
+  -selinux-base-policy-2.20141203-r7.ebuild,
+  -selinux-base-policy-2.20141203-r8.ebuild,
+  -selinux-base-policy-2.20141203-r9.ebuild:
+  sec-policy: Clean up old packages
+
+  Remove year-old SELinux policy packages. Currently stick with the last
+  stable one from the 2014 series, we can clean that up when there is an
+  2016 release made (upstream is currently still at the 20151203).
+
+  Package-Manager: portage-2.2.28
+

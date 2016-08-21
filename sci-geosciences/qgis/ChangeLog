@@ -107,3 +107,42 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  14 May 2016; David Seifert <soap@gentoo.org> qgis-1.8.0.ebuild:
+  Fix QA WhitespaceFound
+
+  Package-Manager: portage-2.2.28
+
+*qgis-2.14.5 (17 Aug 2016)
+
+  17 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> +qgis-2.14.5.ebuild:
+  Bump to v2.14.5
+
+   - Version bump to new upstream release v2.14.5 (Fixes Gentoo-Bug #581146,
+     #583784, #588994).
+
+   - Bumped to EAPI=6; This makes multilib eclass unnecessary because
+     get_libdir is now part of EAPI=6.
+
+   - "oracle" USE flag added (Fixes Gentoo-Bug #585156).
+
+   - Disabling test suite because upstream doesn't allow running from
+     install path [Link 1] (Closes Gentoo-Bug #499894).
+
+   - Package license updated after upstream clearified its own license
+     [Link 2].
+
+  Link 1: https://github.com/qgis/QGIS/blob/final-
+  2_14_5/src/core/qgsapplication.cpp#L374
+  Link 2:
+  https://github.com/qgis/QGIS/commit/d5bc39cb8ccc047543d37359ae7fc2d34c89a538
+
+  Gentoo-Bug: https://bugs.gentoo.org/581146
+  Gentoo-Bug: https://bugs.gentoo.org/585156
+  Gentoo-Bug: https://bugs.gentoo.org/588994
+  Gentoo-Bug: https://bugs.gentoo.org/583784
+  Gentoo-Bug: https://bugs.gentoo.org/499894
+
+  Acked-by: Amy Winston <amynka@gentoo.org>
+
+  Package-Manager: portage-2.3.0
+

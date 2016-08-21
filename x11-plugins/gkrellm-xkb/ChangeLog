@@ -65,3 +65,20 @@
 
   Bug: 575810
 
+*gkrellm-xkb-1.05-r1 (07 Aug 2016)
+
+  07 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/gkrellm-xkb-makefile.patch, +gkrellm-xkb-1.05-r1.ebuild:
+  new revision fixing CFLAGS/LDFLAGS.
+
+  This new revision is thanks to Michael Mair-Keimberger who patched
+  three bugs at once. He made the build system respect CFLAGS and
+  LDFLAGS, and updated the ebuild to use USE dependencies rather than
+  just crashing if gkrellm was built without X support.
+
+  Gentoo-Bug: 338786
+  Gentoo-Bug: 421723
+  Gentoo-Bug: 428388
+
+  Package-Manager: portage-2.2.28
+

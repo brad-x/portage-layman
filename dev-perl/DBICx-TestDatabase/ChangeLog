@@ -63,3 +63,16 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  16 Jul 2016; Kent Fredric <kentnl@gentoo.org>
+  DBICx-TestDatabase-0.40.0.ebuild:
+  Remove legacy test fallback re bug #584238
+
+  Instead of alternating between Test-Simple and Test-use-ok based on
+  versions, always use Test-Simple so we can eliminate Test-use-ok
+
+  Bug: https://bugs.gentoo.org/584238
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

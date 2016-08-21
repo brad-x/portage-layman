@@ -80,3 +80,53 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/minetestserver.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*minetest-0.4.14 (18 May 2016)
+
+  18 May 2016; Ian Delaney <idella4@gentoo.org> +minetest-0.4.14.ebuild:
+  Bump to version 0.4.14
+
+  Closes: https://github.com/gentoo/gentoo/pull/1469
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  18 May 2016; Ian Delaney <idella4@gentoo.org>
+  -files/minetest-0.4.10-as-needed.patch,
+  -files/minetest-0.4.10-shared-irrlicht.patch,
+  -files/minetest-0.4.10-system-lua.patch, -minetest-0.4.10-r1.ebuild,
+  -minetest-0.4.10-r2.ebuild:
+  Removal of version 0.4.10
+
+  Removes 0.4.10-r1, 0.4.10-r2 and the corresponding patches.
+  Closes: https://github.com/gentoo/gentoo/pull/1471
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  29 May 2016; Anthony Ryan <anthonyryan1@gmail.com> minetest-0.4.13.ebuild:
+  HTTPS (and canonicalize domain) for github.com
+
+  All links to www.github.com were changed to github.com (preferred by
+  GitHub).
+
+  During the automated testing of all modified packages the following SRC_URIs
+  were discovered to have changed upstream. Upon closer inspection they were
+  all confirmed to not be regressions. They will all continue to work when
+  served from the mirrors.
+
+  * dev-python/catkin_pkg-0.2.10 (upstream tarball changed)
+  * dev-python/rosdistro-0.4.4 (upstream tarball changed)
+  * dev-util/rosdep-0.11.4 (upstream tarball changed)
+  * dev-util/wstool-0.1.12 (upstream tarball changed)
+  * dev-util/wstool-0.1.13 (upstream tarball changed)
+  * dev-util/rosdep-0.11.5 (upstream tarball deleted)
+
+  19 Jun 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Multiple metadata.xml: reorder to make sure assignee goes first
+
+  Reorder all metadata.xml files with explicit descriptions requesting
+  particular bug assignment/CC to ensure that the requested assignee
+  always goes first, in order to match the bug wrangling policies.
+

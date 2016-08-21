@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/pyqt/${P}.tar.gz"
 # Sub-slot based on SIP_API_MAJOR_NR from siplib/sip.h.in
 SLOT="0/11"
 LICENSE="|| ( GPL-2 GPL-3 SIP )"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha amd64 arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="debug doc"
 
 RDEPEND="${PYTHON_DEPS}"
@@ -26,7 +26,6 @@ REQUIRED_USE="
 "
 
 PATCHES=( "${FILESDIR}"/${PN}-4.18-darwin.patch )
-DOCS=( "${S}"/{ChangeLog,NEWS} )
 
 src_prepare() {
 	# Sub-slot sanity check
@@ -41,7 +40,7 @@ src_prepare() {
 		die "sub-slot sanity check failed"
 	fi
 
-	# Fix out-of-source installation of sip.pyi
+	# Fix out-of-source installation of sip.pyi (reported upstream)
 	sed -i -e '/installs.*sip\.pyi/ s/build_dir/src_dir/' configure.py || die
 
 	default
@@ -82,10 +81,11 @@ src_compile() {
 
 src_install() {
 	installation() {
-		default
+		emake DESTDIR="${D}" install
 		python_optimize
 	}
 	python_foreach_impl run_in_build_dir installation
 
+	einstalldocs
 	use doc && dodoc -r doc/html
 }

@@ -72,3 +72,34 @@
   +files/dvd+rw-tools-7.0-sysmacros.patch:
   fix build w/newer glibc
 
+*dvd+rw-tools-7.1-r2 (31 Jul 2016)
+
+  31 Jul 2016; Michael Orlitzky <mjo@gentoo.org> +dvd+rw-tools-7.1-r2.ebuild,
+  +files/dvd+rw-tools-7.0-dvddl-r1.patch,
+  +files/dvd+rw-tools-7.0-wctomb-r1.patch:
+  new revision with EAPI=6 to fix a bug.
+
+  A new revision was in order to fix bug 440426 and only show a ulimit
+  warning for new installs. It made sense to update to EAPI=6 for the
+  new revision, and that simplified the ebuild a bit. To use the EAPI=6
+  PATCHES support, two patches had to be revisioned to be -p1
+  compatible.  Theoretically they could have been modified in-place
+  (since epatch autodetects the -pN level), but since that would affect
+  a stable ebuild, I avoided it.
+
+  Gentoo-Bug: 440426
+
+  Package-Manager: portage-2.2.28
+
+*dvd+rw-tools-7.1-r3 (18 Aug 2016)
+
+  18 Aug 2016; Pacho Ramos <pacho@gentoo.org> +dvd+rw-tools-7.1-r3.ebuild,
+  +files/dvd+rw-tools-7.0-reload.patch,
+  +files/dvd+rw-tools-7.1-bluray_pow_freespace.patch,
+  +files/dvd+rw-tools-7.1-bluray_srm+pow.patch,
+  +files/dvd+rw-tools-7.1-lastshort.patch,
+  +files/dvd+rw-tools-7.1-noevent.patch:
+  Apply more Fedora patches fixing more bugs (#230648 also)
+
+  Package-Manager: portage-2.3.0
+

@@ -132,3 +132,26 @@
 
   Package-Manager: portage-2.2.28
 
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  toolchain.eclass: [QA] Remove meaningless USE=multislot, #584610
+
+  The USE=multislot as defined partially by toolchain.eclass and partially
+  by sys-devel/gcc was used for two purposes:
+
+  - enabling build-time (only) blockers on old gcc versions -- which do
+    not make any sense because they are build-time only and there is no
+    technical reason for two gcc version ranges not to be installed at
+    the same time, both at build time and at run time,
+
+  - changing behavior of post-install wrt conditional gcc-config calls.
+
+  Both cases are invalid use of USE flags, considering that the flag does
+  not affect the installed files in any way.
+
+*kgcc64-5.4.0 (25 Jun 2016)
+
+  25 Jun 2016; Jeroen Roovers <jer@gentoo.org> +kgcc64-5.4.0.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.3.0
+

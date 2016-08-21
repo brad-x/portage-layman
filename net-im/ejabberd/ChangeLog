@@ -104,3 +104,128 @@
   Package-Manager: portage-2.2.27
   RepoMan-Options: --force
 
+  05 May 2016; Anthony G. Basile <blueness@gentoo.org>
+  ejabberd-16.01-r1.ebuild:
+  16.01-r1: add libressl support
+
+  compile tested at one tinderbox image
+
+  Signed-off-by: Toralf Förster <toralf.foerster@gmx.de>
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/ejabberd-3.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  07 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  ejabberd-2.1.13-r2.ebuild, ejabberd-15.03-r1.ebuild:
+  Fix repoman warning about missing slot operator
+
+  Add slot operator for dev-libs/openssl dependency.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*ejabberd-16.04 (07 Jun 2016)
+
+  07 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +ejabberd-16.04.ebuild,
+  +files/ejabberd-16.04-ejabberdctl.patch, +files/epam-wrapper, metadata.xml:
+  Bump version
+
+  Remove obsolete flags. 'ssl' flag is removed because TLS support is not
+  optional. 'tools' flag is temporarily removed because of problematic
+  dependency. It may be restored in the future, although it just controls
+  whether development tools should be installed.
+
+  Debundle ejabberd dependencies. Use system rebar instead of bundled one.
+
+  Access epam binary via wrapper with ejabberd user ownership. Fix epam
+  binary localisation.
+
+  Correct path to captcha command.
+
+  Skip installing docs from Makefile, because this only install COPYING.
+
+  Restrict test because test suite doesn't work out of the box. It needs
+  database set up first.
+
+  Rebase ejabberctl patch.
+
+  Refactor ebuild and bump EAPI to 6.
+
+  Correct funny capitalization in description.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  13 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Don't try to generate cert if it is already set up
+
+  The ebuild used to always try to generate a certificate. ssl-cert eclass
+  function warns if certificate in a specified location already exists,
+  but that only clutters logs. When user has set different path to a
+  certificate, then eclass used to generate a self-signed cert which
+  wouldn't be used at all. Check if certificate set by user exists before
+  generating a new one.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  13 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -ejabberd-15.03-r1.ebuild, -files/ejabberd-15.03-ejabberdctl.patch:
+  Remove the oldest testing version
+
+  Package-Manager: portage-2.3.0_rc1
+
+  14 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Remove double leading slash
+
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> files/ejabberd-3.initd:
+  Add reload option to initd script
+
+  03 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Make ejabberd.service from upstream template
+
+  Gentoo-Bug: 587454
+
+  Package-Manager: portage-2.3.0
+
+  03 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Add ~ia64 ~sparc keyword back
+
+  ejabberd has been debundled and has got a new dependency
+  (dev-util/rebar) which hasn't got these keywords at the time.
+
+  Package-Manager: portage-2.3.0
+
+  08 Jul 2016; Craig Andrews <candrews@integralblue.com>
+  ejabberd-2.1.13-r2.ebuild, ejabberd-16.01-r1.ebuild, ejabberd-16.04.ebuild:
+  require <dev-lang/erlang-19
+
+  Gentoo-bug: 588272
+
+  13 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Add warning about pubsub data migration
+
+  Gentoo-Bug: 588244
+
+  Package-Manager: portage-2.3.0
+
+  19 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  ejabberd-2.1.13-r2.ebuild:
+  Restrict Erlang version for ejabberd-2.1
+
+  ejabberd-2.1 doesn't work with newer Erlang versions.
+
+  Gentoo-Bug: 539040
+  Gentoo-Bug: 590116
+
+  Package-Manager: portage-2.3.0
+
+  20 Aug 2016; Matthias Maier <tamiko@gentoo.org> ejabberd-16.04.ebuild:
+  stabilize 16.04 on amd64/x86, bug #576398
+
+  Package-Manager: portage-2.2.28
+
+  20 Aug 2016; Anthony G. Basile <blueness@gentoo.org> ejabberd-16.04.ebuild:
+  stabilize 16.04 on ppc, bug #576398
+
+  Package-Manager: portage-2.2.28
+

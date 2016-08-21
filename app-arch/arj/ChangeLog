@@ -138,3 +138,28 @@
 
   Bug: 575810
 
+*arj-3.10.22-r7 (31 Jul 2016)
+
+  31 Jul 2016; Michael Orlitzky <mjo@gentoo.org> -arj-3.10.22-r6.ebuild,
+  +arj-3.10.22-r7.ebuild:
+  new revision with Debian patchlevel 15.
+
+  This new revision updates the Debian patchlevel from 14 to 15. Some
+  other minor cleanups were made:
+
+    * No longer append -Wall to CFLAGS (why?).
+
+    * Clear the gnu/stripgcc.lnk in src_prepare() instead of using sed to
+      disable it in src_compile(). Doing so in src_prepare() is more
+      semantically correct, and should work the same.
+
+    * Don't pass ARJLIBDIR, CC, libdir, ADD_LDFLAGS, or pkglibdir to emake.
+      I think these are obsolete; the build system correctly identifies my
+      libdir, compiler, CFLAGS, LDFLAGS, etc.
+
+    * Add a few more docs, and switch to using the DOCS variable.
+
+    * Use the default src_compile() and src_install().
+
+  Package-Manager: portage-2.2.28
+

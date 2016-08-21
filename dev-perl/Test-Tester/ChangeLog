@@ -67,3 +67,31 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  09 Jun 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -Test-Tester-0.108.0-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.3.0_rc1
+
+*Test-Tester-0.114.0-r1 (02 Aug 2016)
+
+  02 Aug 2016; Kent Fredric <kentnl@gentoo.org> -Test-Tester-0.114.0.ebuild,
+  +Test-Tester-0.114.0-r1.ebuild:
+  Fix ~ vs * dependency on virtual/perl-Test-Simple
+
+  ~ rule was too narrow and didn't allow for _p522, where it should.
+
+  However, anyone who installs dev-perl/Test-Tester on ~arch should actually
+  skip installing this package, and instead blanket-uninstall dev-perl/Test-
+  Tester
+  in favour of >=virtual/perl-Test-Simple-1.1.14
+
+  Hence, einfo messages recommending its removal, and we're going to kill
+  this package as soon as humanly possible, it just requires Test-Simple
+  1.1.14
+  and perl-5.22 stabilized to do so.
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

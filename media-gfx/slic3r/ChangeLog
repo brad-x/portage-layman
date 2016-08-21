@@ -44,3 +44,23 @@
 
   Signed-off-by: Ian Delaney <idella4@gentoo.org>
 
+*slic3r-1.2.9-r2 (03 May 2016)
+
+  03 May 2016; Ian Stakenvicius <axs@gentoo.org> -slic3r-1.2.9-r1.ebuild,
+  +slic3r-1.2.9-r2.ebuild:
+  revbump to fix a couple of dependencies
+
+  dev-perl/Encode-Locale had a typo in PV, fixed; also dropped the
+  dependency of dev-lang/perl-5.22 since (A) it's not a real dependency
+  and (B) it inhibits mixed-~arch installs if the user overlays perl-
+  core/threads
+  and perl-core/Socket to provide the necessary versions of those modules.
+
+  Package-Manager: portage-2.2.26
+
+  25 Jul 2016; Ian Stakenvicius <axs@gentoo.org>
+  files/slic3r-9999-adjust_var_path.patch:
+  9999: fix patch so it applies against git head
+
+  Package-Manager: portage-2.2.28
+

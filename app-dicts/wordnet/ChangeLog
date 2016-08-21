@@ -68,3 +68,23 @@
 
   Bug: 575810
 
+*wordnet-3.0-r5 (26 Jul 2016)
+
+  26 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/wordnet-3.0-fix-indexing-bug-314799.patch, +wordnet-3.0-r5.ebuild:
+  new revision fixing two bugs.
+
+  This package is unmaintained and has two open bugs. The first has a
+  patch, thanks to Edgar Gonzàlez i Pellicer, which fixes a problem
+  introduced by an earlier patch. It is now applied. The second bug
+  reports that the package's SRC_URI is no longer valid, so I have
+  updated it from the homepage.
+
+  The ebuild was updated to EAPI=6 in the process. This allowed the
+  removal of multilib.eclass in exchange for a call to eapply_user.
+
+  Gentoo-Bug: 314799
+  Gentoo-Bug: 543946
+
+  Package-Manager: portage-2.2.28
+

@@ -72,3 +72,25 @@
 
   Package-Manager: portage-2.2.26
 
+  24 Jun 2016; Ulrich Müller <ulm@gentoo.org> source-han-sans-1.001.ebuild,
+  -source-han-sans-1.001-r1.ebuild:
+  Migrate from LINGUAS to L10N.
+
+  Also remove version 1.001-r1 which contains a redundant cjk USE flag.
+  It is wrong to download and install all fonts (over 780 MB), if the
+  user has explicitly asked for exclusion of some languages by setting
+  USE="-l10n_*".
+
+  Package-Manager: portage-2.3.0
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  source-han-sans-1.001.ebuild:
+  otf does not exist
+
+  The directory containing the .otf files should be "${S}/source-han-sans-
+  zh_TW-1.001", for example, instead of "${S}/source-han-sans-zh-TW-1.001"
+  (zh_TW instead of zh-TW).
+  Closes: https://github.com/gentoo/gentoo/pull/1771
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

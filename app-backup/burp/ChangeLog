@@ -209,3 +209,86 @@
 
   Package-Manager: portage-2.2.26
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/burp.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  17 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> burp-1.4.40-r1.ebuild:
+  1.4.40-r1: Add ~x86 keyword
+
+  I have built burp with test enabled. Moreover version 1.3.48 is already
+  ~x86 keyworded.
+
+  Gentoo-Bug: 558044
+
+  Package-Manager: portage-2.3.0_rc1
+
+  17 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> -burp-1.3.8-r1.ebuild,
+  -files/1.3.8-0001-Set-default_md-sha256-in-CA.cnf.patch,
+  -files/1.3.8-bedup-conf-path.patch,
+  -files/1.3.8-non-zero-or-build-failure.patch:
+  Remove ancient version
+
+  Package-Manager: portage-2.3.0_rc1
+
+*burp-1.4.40-r2 (02 Jul 2016)
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +burp-1.4.40-r2.ebuild,
+  files/burp.initd:
+  Move scripts out of /etc
+
+  Burp needs /etc/burp directory to be writable for its daemon (at least
+  first time it runs). On the other hand an executable cannot be placed
+  into a group-writable directory and this is where Burp scripts are
+  installed by default. Move all scripts to /usr/share/burp/scripts. /etc
+  is not a good place for scripts anyway.
+
+  Gentoo-Bug: 562470
+
+  Package-Manager: portage-2.3.0
+
+*burp-1.4.40-r3 (02 Jul 2016)
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +burp-1.4.40-r3.ebuild,
+  files/burp.initd:
+  Correct permissions
+
+  Remove autoupgrade configuration.
+
+  Package-Manager: portage-2.3.0
+
+*burp-1.4.40-r4 (02 Jul 2016)
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +burp-1.4.40-r4.ebuild:
+  Unblock librsync-1.0.0 and higher
+
+  Gentoo-Bug: 573150
+
+  Package-Manager: portage-2.3.0
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> burp-1.3.48-r1.ebuild,
+  burp-1.4.40-r1.ebuild, burp-1.4.40-r2.ebuild, burp-1.4.40-r3.ebuild:
+  Correct version restriction on net-libs/librsync
+
+  Gentoo-Bug: 573150
+
+  Package-Manager: portage-2.3.0
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> -burp-1.4.40-r2.ebuild,
+  -burp-1.4.40-r3.ebuild:
+  Remove unneeded revisions
+
+  Package-Manager: portage-2.3.0
+
+*burp-1.4.40-r6 (10 Jul 2016)
+*burp-1.4.40-r5 (10 Jul 2016)
+
+  10 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> -burp-1.4.40-r4.ebuild,
+  +burp-1.4.40-r5.ebuild, +burp-1.4.40-r6.ebuild:
+  Depend on librsync-0.9.7 or >librsync-2.0.0
+
+  Burp segfaults with any version between 1.0.0 and 2.0.0 (inclusive).
+  ebuild depending on 0.9.7 will be removed as soon as librsync-2.0.0-r1
+  gets stable keywords.
+
+  Package-Manager: portage-2.3.0
+

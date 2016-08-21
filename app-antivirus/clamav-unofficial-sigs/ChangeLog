@@ -97,3 +97,38 @@
 
   Package-Manager: portage-2.2.26
 
+*clamav-unofficial-sigs-5.3.1 (15 May 2016)
+
+  15 May 2016; Michael Orlitzky <mjo@gentoo.org>
+  -clamav-unofficial-sigs-5.0.6.ebuild, +clamav-unofficial-sigs-5.3.1.ebuild,
+  +files/clamav-unofficial-sigs.8, +files/clamav-unofficial-sigs.logrotate:
+  replace v5.0.6 with v5.3.1.
+
+  A few ebuild changes were necessary. First, the man page and logrotate
+  scripts have gone away and have been replaced with a hokey procedure
+  to generate them (that we can't use in the ebuild). To keep things
+  working, we now ship pre-generated copies of those two files. We also
+  install the user.conf file which is a no-op out-of-the-box. My own
+  changes to os.gentoo.conf upstream now allow us to use the default
+  src_prepare().
+
+  Thanks are due to Tobias Sager who reported the new version and
+  supplied the necessary fixes.
+
+  Gentoo-Bug: 582874
+  Reported-By: Tobias Sager
+
+  Package-Manager: portage-2.2.26
+
+*clamav-unofficial-sigs-5.3.2 (10 Jul 2016)
+
+  10 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  -clamav-unofficial-sigs-5.3.1.ebuild, +clamav-unofficial-sigs-5.3.2.ebuild:
+  version bump v5.3.1 -> v5.3.2.
+
+  Package-Manager: portage-2.2.28
+
+  27 Jul 2016; Mike Frysinger <vapier@gentoo.org>
+  clamav-unofficial-sigs-3.7.2.ebuild:
+  sourceforge: switch to https:// URIs
+

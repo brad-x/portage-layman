@@ -1,0 +1,38 @@
+# ChangeLog for dev-erlang/lager
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*lager-3.2.0 (07 Jun 2016)
+
+  07 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +files/0001-Support-typed-records-newly-exposed-in-OTP-19.patch,
+  +files/0002-Fix-get_env-bug.patch, +files/0003-Add-get_env-unit-test.patch,
+  +files/0004-Undo-unnecessary-whitespace.patch,
+  +files/0005-R15-does-not-appear-to-properly-handle-the-export.patch,
+  +lager-3.2.0.ebuild, +metadata.xml:
+  Add new package
+
+  It is debundled from net-im/ejabberd-16.04 and therefore inherits
+  keywords from ejabberd: ~amd64, ~arm, ~ppc and ~x86. ~ia64 and ~sparc
+  are not inherited because other dependency is missing these keywords and
+  there's no chance it can get them any time soon.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> lager-3.2.0.ebuild:
+  dev-erlang: Add ~ia64 and ~sparc keywords back
+
+  These packages have been debundled from ejabberd which used to have
+  ~ia64 ~sparc keywords. These had to be removed temporarily until
+  dev-util/rebar has these keywords.
+
+  20 Aug 2016; Matthias Maier <tamiko@gentoo.org> lager-3.2.0.ebuild:
+  stabilize 3.2.0 on amd64/x86, bug #587908
+
+  Package-Manager: portage-2.2.28
+
+  20 Aug 2016; Anthony G. Basile <blueness@gentoo.org> lager-3.2.0.ebuild:
+  stabilize 3.2.0 on ppc, bug #587908
+
+  Package-Manager: portage-2.2.28
+

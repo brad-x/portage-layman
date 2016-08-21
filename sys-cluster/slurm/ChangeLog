@@ -73,3 +73,29 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/slurmctld.initd,
+  files/slurmd.initd, files/slurmdbd.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*slurm-16.05.2 (19 Jul 2016)
+
+  19 Jul 2016; Alexey Shvetsov <alexxy@gentoo.org>
+  +files/slurm-16.05.2-disable-sview.patch, -files/slurm-2.5.4-nogtk.patch,
+  metadata.xml, -slurm-2.6.3.ebuild, +slurm-16.05.2.ebuild:
+  Version bump!
+
+  Gentoo-bug: 531710
+  Gentoo-bug: 570728
+
+  Package-Manager: portage-2.3.0
+
+  13 Aug 2016; Benda Xu <heroxbd@gentoo.org> files/slurmctld.initd,
+  files/slurmd.initd, files/slurmdbd.initd, slurm-16.05.2.ebuild:
+  Prefix support and QA improvements.
+
+    OpenRC drops 'net', it is removed from initd files.
+
+  Bug: 590104
+
+  Package-Manager: portage-2.3.0
+

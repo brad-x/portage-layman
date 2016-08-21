@@ -72,3 +72,66 @@
   Package-Manager: portage-2.2.27
   Signed-off-by: Alexis Ballier <aballier@gentoo.org>
 
+  30 Apr 2016; Alexis Ballier <aballier@gentoo.org> pxp-1.2.8.ebuild:
+  bump ocamldep to 4, bug #581026
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  03 May 2016; Alexis Ballier <aballier@gentoo.org> +files/oc43.patch,
+  pxp-1.2.8.ebuild:
+  fix build with ocaml 4.03
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Alexis Ballier <aballier@gentoo.org>
+
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> pxp-1.2.4.ebuild,
+  pxp-1.2.7.ebuild, pxp-1.2.8.ebuild:
+  dev-ml/*: Remove := slot ops from || deps, #586304
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> pxp-1.2.4.ebuild,
+  pxp-1.2.7.ebuild, pxp-1.2.8.ebuild:
+  Revert "dev-ml/*: Remove := slot ops from || deps, #586304"
+
+  This reverts commit 2d4ac687fbf44588f764697c9dcb2b960a18d51b.
+
+  This commit is wrong in several aspects:
+  - Such changes should come with a revbump
+  - Removing := deps causes packages not to be rebuilt on upgrades, causing
+    barely understandable build failures when upgrading, later on.
+    Thanks to this commit, people that have installed those packages
+    will likely experience those failures with the upcoming ocaml 4.03 unmask.
+  - This is a non maintainer commit where no discussion at all happened with
+  the
+    maintainers during the 3 days between bug report and mass commit.
+    Such discussion could have prevented the above mentioned breakage.
+
+  Proper fix is to drop the backward compatibility part of the || () dep. This
+  fix
+  was slowly moving forward whenever possible and noticed. Main blocker for
+  this is
+  bug #463018 which requires taking extra care for not breaking the stable
+  tree
+  nor needlessly preventing future stabilization of packages.
+
+*pxp-1.2.8-r1 (23 Jun 2016)
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> +pxp-1.2.8-r1.ebuild:
+  drop backward compat dep on camlp4
+
+  Package-Manager: portage-2.3.0_rc1
+
+  27 Jun 2016; Patrice Clement <monsieurp@gentoo.org> -pxp-1.2.4.ebuild,
+  -pxp-1.2.7.ebuild, -pxp-1.2.8.ebuild:
+  Clean up old.
+
+  Package-Manager: portage-2.2.28
+
+  27 Jun 2016; Patrice Clement <monsieurp@gentoo.org> pxp-1.2.8-r1.ebuild:
+  Stable for amd64. Retroactively mark stable for the remaining arches using
+  the ALLARCHES policy.
+
+  Package-Manager: portage-2.2.28
+
+  Gentoo-Bug: https://bugs.gentoo.org/586926
+

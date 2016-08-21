@@ -205,3 +205,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/iptables-1.4.13-r1.init, files/iptables.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*iptables-1.6.0-r1 (19 Aug 2016)
+
+  19 Aug 2016; Mike Gilbert <floppym@gentoo.org> -iptables-1.6.0.ebuild,
+  +iptables-1.6.0-r1.ebuild:
+  drop iptables.service
+
+  This unit really serves no real purpose. The utility of being able to call
+  "systemctl enable iptables" is questionable at best.
+
+  Given that iptables is not really a daemon but rather a kernel process,
+  having
+  as single unit that persists with RemainAfterExit seems wrong as well.
+
+  Bug: https://bugs.gentoo.org/555920
+
+  Package-Manager: portage-2.3.0_p16
+

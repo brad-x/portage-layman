@@ -453,3 +453,127 @@
 
   Package-Manager: portage-2.2.28
 
+*jenkins-bin-2.1 (04 May 2016)
+
+  04 May 2016; Manuel Rüger <mrueg@gentoo.org> +jenkins-bin-2.1.ebuild:
+  Version bump to 2.1
+
+  Package-Manager: portage-2.2.28
+
+*jenkins-bin-2.3 (13 May 2016)
+
+  13 May 2016; Manuel Rüger <mrueg@gentoo.org> +jenkins-bin-2.3.ebuild:
+  Version bump to 2.3
+
+  Package-Manager: portage-2.2.28
+
+*jenkins-bin-1.651.2 (13 May 2016)
+
+  13 May 2016; Manuel Rüger <mrueg@gentoo.org> +jenkins-bin-1.651.2.ebuild:
+  Version bump to 1.651.2
+
+  Package-Manager: portage-2.2.28
+
+  13 May 2016; Manuel Rüger <mrueg@gentoo.org> -jenkins-bin-1.651.1.ebuild,
+  -jenkins-bin-2.0.ebuild, -jenkins-bin-2.1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/jenkins-bin.init2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  19 May 2016; Fabian Groffen <grobian@gentoo.org> jenkins-bin-1.656.ebuild,
+  jenkins-bin-2.3.ebuild:
+  marked ~amd64-linux
+
+  Package-Manager: portage-2.2.28
+
+*jenkins-bin-2.5 (20 May 2016)
+
+  20 May 2016; Manuel Rüger <mrueg@gentoo.org> +jenkins-bin-2.5.ebuild:
+  Version bump to 2.5
+
+  Gentoo-Bug: #583480
+
+  Package-Manager: portage-2.2.28
+
+  20 May 2016; Manuel Rüger <mrueg@gentoo.org> -jenkins-bin-1.656.ebuild,
+  -jenkins-bin-2.3.ebuild:
+  Remove vulnerable
+
+  Package-Manager: portage-2.2.28
+
+*jenkins-bin-2.11 (09 Aug 2016)
+
+  09 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  +jenkins-bin-2.11.ebuild:
+  version bump 2.11.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1852
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*jenkins-bin-2.12 (09 Aug 2016)
+
+  09 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  +jenkins-bin-2.12.ebuild:
+  version bump 2.12.
+
+  - Enable the DescriptorVisibilityFilters for ComputerLauncher,
+  RetentionStrategy and NodeProperty. (Issue 36280)
+  - Before starting a process, ensure that its working directory exists.
+  (Issue 36277)
+  - Prevent NullPointerException during SCM polling if SCMDecisionHandler
+  returns null veto. (Issue 36232, regression in 2.11)
+  - Ensure that SCMDescriptor.newInstance overrides are honored when creating
+  new SCM entries. (Issue 36043, Issue 35906 , regression in 2.10)
+  - Performance: Improve configuration page load times by removing the
+  CodeMirror reloading cycle. (Issue 32027)
+  - Fix optional plugin dependency version resolution. (Issue 21486, previous
+  fix was reverted in Jenkins 2)
+  - When creating a tar file, ensure that the final size does not exceed the
+  value in header in the case of growing files. (Issue 20187)
+  - Do not inject build variables into Maven process by default for new
+  projects. (Issue 25416, Issue 28790)
+  - Update BUILD_TAG environment variable description to mention the
+  replacement of slashes with dashes. (PR #2417)
+  - Internal API: Make BulkChange auto-closeable. (PR #2428)
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1852
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  16 Aug 2016; Manuel Rüger <mrueg@gentoo.org> metadata.xml:
+  Remove myself as maintainer
+
+  Package-Manager: portage-2.3.0
+
+  17 Aug 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  New maintainers
+
+  Package-Manager: portage-2.3.0
+
+*jenkins-bin-2.17 (20 Aug 2016)
+*jenkins-bin-2.7.2 (20 Aug 2016)
+
+  20 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  +jenkins-bin-2.7.2.ebuild, -jenkins-bin-2.12.ebuild,
+  +jenkins-bin-2.17.ebuild:
+  version bump to 2.17 and LTS 2.7.2.
+
+  Also remove 2.11
+
+  Gentoo-Bug: https://bugs.gentoo.org/590888
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2053
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  20 Aug 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Add proxy-maint to metadata.xml.
+
+  Package-Manager: portage-2.2.28
+

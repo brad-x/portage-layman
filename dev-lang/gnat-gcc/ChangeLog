@@ -110,3 +110,34 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*gnat-gcc-4.9.3 (04 Jun 2016)
+
+  04 Jun 2016; Stephen L Arnold <nerdboy@gentoo.org>
+  +files/gcc-spec-env-r1.patch,
+  +files/gnat-gcc-4.9.3-make-default-paths-match-slot.patch,
+  +gnat-gcc-4.9.3.ebuild, metadata.xml:
+  version bump to 4.9.3 (ebuild and gnatboot)
+
+  Newly reworked gnat-gcc with new multilib and hardened support. Will
+  probably also need updates to gnat.eclass to build Ada packages.
+  Ncurses with use=ada works again (in the overlay) but the existing
+  gnat.eclass Ada configuration will most likely get simplified first.
+  Other arches still in progress.
+
+  Package-Manager: portage-2.2.28
+
+  26 Jun 2016; Stephen L Arnold <nerdboy@gentoo.org> gnat-gcc-4.3.6.ebuild,
+  gnat-gcc-4.3.6-r1.ebuild, gnat-gcc-4.6.4.ebuild, gnat-gcc-4.6.4-r1.ebuild,
+  metadata.xml:
+  remove lto use flag, fix headers, sync up gnat-gcc
+
+  Package-Manager: portage-2.2.28
+
+  28 Jun 2016; Stephen L Arnold <nerdboy@gentoo.org> gnat-gcc-4.6.4-r1.ebuild:
+  add missing 4.6 update from the last round of bug
+  fixes.
+
+  This should bring everything in sync again (sorry about that, chief...)
+
+  Package-Manager: portage-2.2.28
+

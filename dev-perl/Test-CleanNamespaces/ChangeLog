@@ -103,3 +103,35 @@
   Package-Manager: portage-2.2.27
   RepoMan-Options: --ignore-arches
 
+  02 Aug 2016; Kent Fredric <kentnl@gentoo.org>
+  Test-CleanNamespaces-0.180.0.ebuild:
+  Weaken dependency on dev-perl/Test-Tester
+
+  Without this fix, Test-CleanNamespaces effectively needs perl-5.22
+  stabilized in order to satisfy Test-Tester from Perl-5.22
+
+  However, satisfying Test-Tester from a mechanism other than Perl-5.22
+  confuses portages dependency resolver, and confuses portage to not be able
+  to upgrade perl, and not being able to upgrade perl means perl can't be
+  stabilized, invoking a stabilization-needs-stabilization bug.
+
+  Hence, the choice here optimises for assuming stabilization will
+  happen/has happened, and removes any dependency on Test::Tester, assuming
+  portage will eventually provide it for you.
+
+  And just to be sure, we use perl before the test phase executes
+  to determine if Test::Tester was /actually/ installed and then only run
+  tests
+  if it was.
+
+  This means before stabilization, some people *might* install this and not
+  have
+  tests run, but everyone *will* get tests working after stabilization, as
+  opposed to the opposite occurring and stabilization being blocked.
+
+  Bug: https://bugs.gentoo.org/584238
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+

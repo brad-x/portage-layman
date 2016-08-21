@@ -94,3 +94,23 @@
   21 Mar 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
   sys-devel/{gcc,gcc-apple,kgcc64}: update USE=multislot description
 
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  toolchain.eclass: [QA] Remove meaningless USE=multislot, #584610
+
+  The USE=multislot as defined partially by toolchain.eclass and partially
+  by sys-devel/gcc was used for two purposes:
+
+  - enabling build-time (only) blockers on old gcc versions -- which do
+    not make any sense because they are build-time only and there is no
+    technical reason for two gcc version ranges not to be installed at
+    the same time, both at build time and at run time,
+
+  - changing behavior of post-install wrt conditional gcc-config calls.
+
+  Both cases are invalid use of USE flags, considering that the flag does
+  not affect the installed files in any way.
+
+  23 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  files/gcc-apple-4.2.1-autoconf-m4-precious.patch:
+  sourceware: convert to https:// URIs
+

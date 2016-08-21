@@ -63,3 +63,36 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Cache-2.110.0 (09 Jul 2016)
+
+  09 Jul 2016; Kent Fredric <kentnl@gentoo.org> +Cache-2.110.0.ebuild:
+  Bump to version 2.110.0
+
+  - EAPI6
+  - Tests cleaned up
+
+  Upstream:
+  - Fix warning for lc called with undef value under -w
+  - Fixed ->set after ->set_namespace failure
+  - use Digest::SHA instead of Digest::SHA1
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="alpha amd64 amd64-fbsd arm arm64 hppa
+  ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd x86 x86-fbsd"
+
+  18 Aug 2016; Kent Fredric <kentnl@gentoo.org> Cache-2.40.0-r1.ebuild:
+  Normalise variable order
+
+  This ebuild had a very unusual variable order where KEYWORDS
+  was buried at the bottom.
+
+  This makes any tooling that relies on determining keyword
+  and dependency matches in a single pass more complicated and harder
+  to be efficient, because it means you have to read the whole
+  file in every case just in case keywords are declared after dependencies.
+
+  Tooling that makes this mistake is fixable, but a more consistent
+  standard of ebuild also helps a lot.
+
+  Package-Manager: portage-2.3.0
+

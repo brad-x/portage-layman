@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=!static? ( !libressl? ( dev-libs/openssl:0= ) libressl? ( dev-libs/libressl:0= ) sys-apps/util-linux:= ) !minimal? ( app-arch/xz-utils:= dev-libs/libyaml:= ) static? ( !libressl? ( dev-libs/openssl:0=[static-libs(+)] ) libressl? ( dev-libs/libressl:0=[static-libs(+)] ) sys-apps/util-linux:=[static-libs(+)] ) app-crypt/trousers
+DESCRIPTION=Chrome OS verified boot tools
+EAPI=5
+HOMEPAGE=https://chromium.googlesource.com/chromiumos/platform/vboot_reference/ http://dev.chromium.org/chromium-os/chromiumos-design-docs/verified-boot
+IUSE=libressl minimal static
+KEYWORDS=~amd64 ~arm ~arm64 ~mips ~x86
+LICENSE=BSD
+RDEPEND=!static? ( !libressl? ( dev-libs/openssl:0= ) libressl? ( dev-libs/libressl:0= ) sys-apps/util-linux:= ) !minimal? ( app-arch/xz-utils:= dev-libs/libyaml:= )
+SLOT=0
+SRC_URI=mirror://gentoo/vboot-utils-51_p20160427.tar.xz
+_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	6198c04daba0e1307bd844df7d37f423
+_md5_=09b1863ab6b7ad863355ac927c7c6bf2

@@ -235,3 +235,47 @@
   Gentoo-Bug: https://bugs.gentoo.org/577848
   Closes: https://github.com/gentoo/gentoo/pull/1103
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/deluged.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  09 Jun 2016; Mike Gilbert <floppym@gentoo.org> deluge-1.3.12.ebuild,
+  deluge-1.3.12-r3.ebuild, deluge-9999.ebuild:
+  Override esetup.py
+
+  Resolves a build failure triggered by a change in distutils-r1.eclass.
+
+  Bug: https://bugs.gentoo.org/585454
+
+  Package-Manager: portage-2.3.0_rc1_p20
+
+*deluge-1.3.12-r4 (22 Jun 2016)
+
+  22 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  +deluge-1.3.12-r4.ebuild,
+  files/deluge-1.3.5-disable_libtorrent_internal_copy.patch, metadata.xml:
+  Make UI installation USE-conditional
+
+  Gentoo-bug: 381837
+  New ebuild, EAPI=6, add local use flags and new languages to
+  metadata.xml, fix patch for EAPI=6
+
+  22 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  -deluge-1.3.12-r3.ebuild:
+  Remove old
+
+  22 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org> deluge-9999.ebuild:
+  Sync live ebuild to latest changes
+
+*deluge-1.3.9999 (22 Jun 2016)
+
+  22 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org> deluge-1.3.12-r4.ebuild,
+  +deluge-1.3.9999.ebuild, deluge-9999.ebuild:
+  Add stable live ebuild
+
+  Also fixes some tabs vs spaces issues
+
+*deluge-1.3.13 (06 Aug 2016)
+
+  06 Aug 2016; Kristian Fiskerstrand <k_f@gentoo.org> +deluge-1.3.13.ebuild:
+  version bump to 1.3.13
+

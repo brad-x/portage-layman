@@ -109,3 +109,61 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  30 May 2016; Tobias Klausmann <klausman@gentoo.org>
+  lilypond-2.18.2-r1.ebuild:
+  2.18.2-r1: add ~alpha keyword
+
+  Gentoo-Bug: 565880
+
+  Package-Manager: portage-2.3.0_rc1
+
+*lilypond-2.19.42 (12 Jun 2016)
+*lilypond-2.18.2-r2 (12 Jun 2016)
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  lilypond-2.18.2-r1.ebuild, +lilypond-2.18.2-r2.ebuild,
+  -lilypond-2.19.15.ebuild, +lilypond-2.19.42.ebuild, lilypond-9999.ebuild:
+  Various updates.
+
+  * Fix metapost deps in 2.18.2-r1, wrt bug 525712.
+  * Do not install HACKING in 2.18.2-r1 because it is irrelevant.
+  * EAPI 6 for version 2.18.2 and revbump to -r2.
+  * Sync live ebuild with version 2.18.2-r2.
+  * Make -9999 version a "conditional live ebuild".
+  * Version bump to 2.19.42.
+  * Drop 2.19.15.
+
+  Package-Manager: portage-2.3.0_rc1
+  Gentoo-Bug: https://bugs.gentoo.org/525712
+  Closes: https://github.com/gentoo/gentoo/pull/1552
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #154183
+
+  Package-Manager: portage-2.3.0
+
+*lilypond-2.19.46 (19 Aug 2016)
+
+  19 Aug 2016; Tim Harder <radhermit@gentoo.org> +lilypond-2.19.46.ebuild,
+  lilypond-9999.ebuild:
+  version bump to 2.19.46
+
+  Also, fix build with guile2.
+
+  19 Aug 2016; Tim Harder <radhermit@gentoo.org> lilypond-2.18.2-r2.ebuild,
+  lilypond-2.19.46.ebuild:
+  fix alpha keywording
+
+  19 Aug 2016; Tim Harder <radhermit@gentoo.org> -lilypond-2.18.2-r1.ebuild,
+  -lilypond-2.19.42.ebuild:
+  remove old
+
+  19 Aug 2016; Tim Harder <radhermit@gentoo.org> lilypond-2.18.2-r2.ebuild,
+  lilypond-2.19.46.ebuild:
+  keyword ~arm (bug #565880)
+
+  20 Aug 2016; Tim Harder <radhermit@gentoo.org> lilypond-9999.ebuild:
+  sync keywords to live ebuild
+

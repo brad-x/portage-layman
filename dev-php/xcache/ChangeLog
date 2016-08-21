@@ -65,3 +65,29 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*xcache-3.2.0-r1 (10 Jul 2016)
+
+  10 Jul 2016; Michael Orlitzky <mjo@gentoo.org> metadata.xml,
+  -xcache-3.2.0.ebuild, +xcache-3.2.0-r1.ebuild:
+  new revision for v3.2.0.
+
+  The main reason for this revision is to make the coverager module
+  optional. It is now hidden behind the USE=coverage flag and is not
+  enabled by default (it is not recommended for production servers).
+
+  At the same time, the ebuild was upgraded to EAPI=6 and now uses the
+  newer revision php-ext-source-r3.eclass. Finally, the htdocs/ admin
+  interface directory was moved out of /usr/share/php and into
+  /usr/share/xcache, which is more appropriate. Two minor repoman
+  warnings were also corrected.
+
+  Gentoo-Bug: 491358
+
+  Package-Manager: portage-2.2.28
+
+  15 Jul 2016; Brian Evans <grknight@gentoo.org> -xcache-3.0.4.ebuild,
+  -xcache-3.1.2.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+

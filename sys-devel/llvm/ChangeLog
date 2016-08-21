@@ -563,3 +563,164 @@
 
   Package-Manager: portage-2.2.28
 
+  07 May 2016; Nick Sarnie <commendsarnex@gmail.com> llvm-9999.ebuild:
+  remove CppBackend from 9999
+
+  Removed from LLVM SVN in r268631
+
+  Signed-off-by: Nick Sarnie <commendsarnex@gmail.com>
+
+  12 May 2016; Michał Górny <mgorny@gentoo.org> -llvm-3.7.0-r2.ebuild,
+  -llvm-3.7.0-r3.ebuild, -llvm-3.7.0-r4.ebuild, -llvm-3.7.0-r5.ebuild,
+  -llvm-3.7.1.ebuild:
+  Clean up old 3.7 versions
+
+*llvm-3.8.0-r2 (12 May 2016)
+*llvm-3.7.1-r2 (12 May 2016)
+
+  12 May 2016; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.8-gcc4.9-search-path.patch, -llvm-3.7.1-r1.ebuild,
+  +llvm-3.7.1-r2.ebuild, -llvm-3.8.0-r1.ebuild, +llvm-3.8.0-r2.ebuild:
+  Backport upstream patch for gcc4.9 Gentoo header paths
+
+  12 May 2016; Michał Górny <mgorny@gentoo.org> +files/cmake/compiler-rt-3.9-c
+  make-Install-compiler-rt-into-usr-lib-without-suffi.patch, llvm-9999.ebuild:
+  Update compiler-rt build patch for current git
+
+  31 May 2016; Markus Meier <maekke@gentoo.org> llvm-3.7.1-r2.ebuild:
+  arm stable, bug #564402
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  03 Jun 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Bump cmake requirement for live to 3.4.3, #584914
+
+  05 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  -files/clang-3.3-gcc-header-path.patch,
+  -files/clang-3.3-gentoo-install.patch, -files/llvm-3.3-R600_debug.patch,
+  -files/llvm-3.3-r2-gentoo-install.patch, -llvm-3.3-r3.ebuild:
+  Drop 3.3
+
+  16 Jun 2016; Michael Palimaka <kensington@gentoo.org> llvm-3.7.1-r2.ebuild:
+  amd64/x86 stable
+
+  Gentoo-bug: 564402
+
+  Package-Manager: portage-2.3.0_rc1
+
+  23 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/clang-3.8-compiler-rt-fbsd.patch, llvm-3.8.0-r2.ebuild:
+  Fix build fails on Gentoo/FreeBSD.
+
+  Gentoo-Bug: https://bugs.gentoo.org/578064
+  Closes: https://github.com/gentoo/gentoo/pull/1693
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  27 Jun 2016; Austin English <wizardedit@gentoo.org> metadata.xml:
+  sys-devel/{clang,llvm}: add myself as maintainer
+
+*llvm-3.8.0-r3 (03 Jul 2016)
+*llvm-3.7.1-r3 (03 Jul 2016)
+
+  03 Jul 2016; Michał Górny <mgorny@gentoo.org> -llvm-3.7.1-r2.ebuild,
+  +llvm-3.7.1-r3.ebuild, -llvm-3.8.0-r2.ebuild, +llvm-3.8.0-r3.ebuild,
+  llvm-9999.ebuild:
+  fix git-format-clang shebang, #562688
+
+  Bug: https://bugs.gentoo.org/562688
+  Package-Manager: portage-2.2.28
+  Pull-Request: https://github.com/gentoo/gentoo/pull/1766
+
+  03 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-3.7.1-r3.ebuild,
+  llvm-3.8.0-r3.ebuild, llvm-9999.ebuild:
+  Sync and clean up WX section code
+
+  03 Jul 2016; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.7.1-ccc-analyzer-isystem.patch, llvm-3.7.1-r3.ebuild:
+  Fix static analyzer -isystem support, #586168
+
+  03 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.0-r3.ebuild:
+  Use tc-is-gcc from toolchain-funcs
+
+  03 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.0-r3.ebuild,
+  llvm-9999.ebuild:
+  Improve cross-compiler support, #442958
+
+  05 Jul 2016; Michał Górny <mgorny@gentoo.org>
+  -files/clang-3.7-strip_doc_refs.patch, -files/llvm-2.7-nodoctargz.patch,
+  -files/llvm-2.9-nodoctargz.patch, -files/llvm-3.3-gentoo-install.patch,
+  -files/llvm-3.3-insecure-rpath.patch, -files/llvm-3.4-fix_varargs.patch,
+  -files/llvm-3.7-nodoctargz.patch:
+  Clean up obsolete patches
+
+  05 Jul 2016; Michał Górny <mgorny@gentoo.org>
+  -files/clang-3.1-gentoo-runtime-gcc-detection-v3.patch,
+  -files/clang-3.4-darwin_build_fix.patch,
+  -files/clang-3.4-gentoo-install.patch,
+  -files/llvm-3.3-cmake-modulepath.patch,
+  -files/llvm-3.4-cmake-configparser.patch,
+  -files/llvm-3.4-gentoo-install.patch, -llvm-3.4.2.ebuild, metadata.xml:
+  Drop 3.4.2
+
+*llvm-3.8.1 (15 Jul 2016)
+
+  15 Jul 2016; Michał Górny <mgorny@gentoo.org> +llvm-3.8.1.ebuild:
+  Bump to 3.8.1
+
+  16 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.1.ebuild:
+  Change subslot of 3.8.1 to match 3.8.0
+
+  23 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Strip third version component for subslot, in -9999
+
+  Strip the third version component (if there is any) for subslot value,
+  therefore ensuring that e.g. 3.9.* will have subslot 3.9. This is not
+  relevant to the -9999 ebuild but hopefully it will prevent me from
+  forgetting to finally do this on next release.
+
+  23 Jul 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Bump clang version in -9999 to 4.0, #589368
+
+*llvm-3.8.1-r1 (01 Aug 2016)
+
+  01 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.8-default-libs.patch, +files/clang-3.8-musl-support.patch,
+  +files/llvm-3.8-musl-fixes.patch, +files/llvm-3.8-musl-support.patch,
+  +llvm-3.8.1-r1.ebuild, metadata.xml:
+  musl & default runtime lib switches, #589352
+
+  - add support for building llvm against musl
+  - enable clang to build binaries against musl
+  - introduce USE flag "sanitize" to control the building of compiler-rt's
+    sanitizers (they cause problem on musl)
+  - be able to override default values of -stdlib and -rtlib for clang
+    * USE="default-libcxx" implies -stdlib=libc++ (originally libstdc++)
+    * USE="default-compiler-rt" implies -rtlib=compiler-rt (originally libgcc)
+
+  02 Aug 2016; Matthias Maier <tamiko@gentoo.org>
+  +files/clang-3.8-abi-tag-support-mangler.patch,
+  +files/clang-3.8-abi-tag-support-sema.patch, llvm-3.8.1-r1.ebuild:
+  Backport abi-tag support, bug #571600
+
+  This applies the abi-tag support patches to 3.8.1-r1.
+
+  Unfortunately, gcc-5* and gcc-6* have slightly ABI incompatible
+  implementations of the abi-tag feature (basically a bugfix in gcc-6*) [1].
+  The patchset for clang implements the gcc-6* version and is thus not fully
+  compatible with gcc-5*.
+
+  [1] https://llvm.org/bugs/show_bug.cgi?id=28511
+
+  Package-Manager: portage-2.2.28
+
+  14 Aug 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  update the live ebuild
+
+  Closes: https://github.com/gentoo/gentoo/pull/2066
+  Package-Manager: portage-2.2.28
+
+  16 Aug 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Transfer maintenance to LLVM project
+

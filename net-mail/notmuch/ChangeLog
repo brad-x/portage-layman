@@ -134,3 +134,116 @@
   RepoMan-Options: --include-arches="x86"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+*notmuch-0.22 (01 May 2016)
+
+  01 May 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +notmuch-0.22.ebuild:
+  Bump version
+
+  Simplify deps. Use slots and subslots.
+
+  Package-Manager: portage-2.2.28
+
+  05 May 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22.ebuild:
+  Install notmuch-report instead of nmbug-status
+
+  nmbug-status has been renamed to notmuch-report.
+
+  Package-Manager: portage-2.2.28
+
+  31 May 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> metadata.xml,
+  notmuch-0.22.ebuild:
+  Correct dependencies related to S/MIME support
+
+  gnupg must be installed only if crypt flag is enabled, because crypt
+  related tests are run when this gnupg commands can be found. The same
+  applies to smime flag of gmime which pulls gnupg.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*notmuch-0.22-r1 (01 Jun 2016)
+
+  01 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22.ebuild,
+  +notmuch-0.22-r1.ebuild:
+  Apply changes in dependencies only in new rev
+
+  Revert changes in notmuch-0.22.ebuild in commit
+  9cdfbeb940dabdd1d2088752b761e12c605e6efa and reapply changes to
+  newly bumped notmuch-0.22-r1.ebuild only. Changes in dependencies are
+  not so trivial, so better have a backup option for users.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22-r1.ebuild:
+  Don't block app-crypt/gnupg and dev-libs/gmime[smime]
+
+  Test fails if GnuPG is installed and GMime is compiled without S/MIME.
+  This could occur when 'crypt' flag is disabled but GnuPG is installed
+  anyway. Although test requires 'crypt', therefore this doesn't occur and
+  blocking anything when particular feature is disabled is not needed.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*notmuch-0.22-r2 (03 Jun 2016)
+
+  03 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -notmuch-0.22-r1.ebuild, +notmuch-0.22-r2.ebuild:
+  Bump revision
+
+  Bump revision for commit "Don't block app-crypt/gnupg and
+  dev-libs/gmime[smime]".
+
+  Package-Manager: portage-2.3.0_rc1
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> metadata.xml,
+  notmuch-0.22-r2.ebuild:
+  Rename debug flag to valgrind (in testing ebuild only)
+
+  Require valgrind only for build. 'debug' flag was actually misused.
+
+  Gentoo-Bug: 587560
+
+  Package-Manager: portage-2.3.0
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22-r2.ebuild:
+  Make tests verbose
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22-r2.ebuild:
+  Let package manager download test database
+
+  Put test notmuch database into SRC_URI and copy it to test directory
+  rather than downloading it in src_test phase.
+
+  Package-Manager: portage-2.3.0
+
+  02 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.18.2.ebuild,
+  notmuch-0.19-r1.ebuild, notmuch-0.20.2.ebuild, notmuch-0.21.ebuild,
+  notmuch-0.22.ebuild:
+  Make tests verbose in stable ebuilds as well
+
+  Package-Manager: portage-2.3.0
+
+  04 Jul 2016; Tobias Klausmann <klausman@gentoo.org> notmuch-0.22-r2.ebuild:
+  0.22-r2: add ~alpha keyword
+
+  Gentoo-Bug: 587560
+
+  19 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22-r2.ebuild:
+  Put database to correct directory
+
+  Package-Manager: portage-2.3.0
+
+*notmuch-0.22.1 (19 Jul 2016)
+
+  19 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +notmuch-0.22.1.ebuild:
+  Bump version to 0.22.1
+
+  Package-Manager: portage-2.3.0
+
+  19 Jul 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> notmuch-0.22-r2.ebuild,
+  notmuch-0.22.1.ebuild:
+  Don't die on unpack
+
+  Copy test database only for test.
+
+  Package-Manager: portage-2.3.0
+

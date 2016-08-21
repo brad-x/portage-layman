@@ -57,3 +57,28 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #66633
+
+  Package-Manager: portage-2.3.0
+
+*opencsg-1.4.0 (06 Aug 2016)
+
+  06 Aug 2016; Michael Orlitzky <mjo@gentoo.org> -opencsg-1.3.2-r1.ebuild,
+  +opencsg-1.4.0.ebuild:
+  new version 1.4.0 to fix two bugs.
+
+  This fixes a version bump request from one of our users, and also a
+  build failure. Version 1.3.2 tried to link with QtGui, even though
+  that wasn't a declared dependency, causing the build to fail when it
+  was missing. The new v1.4.0 doesn't seem to have that problem, so the
+  build failure should be gone.
+
+  In the process, the ebuild was updated to use EAPI=6 and
+  qmake-utils.eclass.
+
+  Gentoo-Bug: 514210
+  Gentoo-Bug: 515124
+
+  Package-Manager: portage-2.2.28
+

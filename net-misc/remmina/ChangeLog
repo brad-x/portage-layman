@@ -100,3 +100,84 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  06 Jun 2016; Agostino Sarubbo <ago@gentoo.org> remmina-1.2.0_rc3-r1.ebuild:
+  amd64 stable wrt bug #561068
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  02 Aug 2016; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  drop tristan from maintainers
+
+  Package-Manager: portage-2.3.0_p16
+
+  02 Aug 2016; Mike Gilbert <floppym@gentoo.org> remmina-1.2.0_rc3.ebuild,
+  remmina-1.2.0_rc3-r1.ebuild:
+  depend on <net-misc/freerdp-2
+
+  Package-Manager: portage-2.3.0_p16
+
+  02 Aug 2016; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  update metadata
+
+  - Add myself as proxy maintainer.
+  - Add a long description.
+  - Remove old SourceForge remote-id.
+
+*remmina-1.2.0_rc14 (02 Aug 2016)
+
+  02 Aug 2016; Mike Gilbert <floppym@gentoo.org> metadata.xml,
+  +remmina-1.2.0_rc14.ebuild:
+  version bump to 1.2.0_rc14
+
+  Gentoo-Bug: 571026
+  Closes: https://github.com/gentoo/gentoo/pull/2006
+
+  07 Aug 2016; David Seifert <soap@gentoo.org> remmina-1.2.0_rc14.ebuild:
+  elog optional runtime dependency
+
+  Inform the user that XDMCP support requires Xephyr to be installed.
+
+  Gentoo-Bug: 572472
+  Reported-by: WOLfgang Schricker <wols@wols.org>
+  Closes: https://github.com/gentoo/gentoo/pull/2011
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*remmina-1.2.0_rc14-r1 (07 Aug 2016)
+
+  07 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/remmina-1.2.0_rc14-allow-disabling-libsecret.patch,
+  +remmina-1.2.0_rc14-r1.ebuild:
+  libsecret and webkit-gtk fixes.
+
+  * Patch build to properly allow disabling libsecret.
+  * Switch from libsecret to gnome-keyring USE flag.
+  * Hard depend on net-libs/webkit-gtk:4.
+
+  Gentoo-Bug: http://bugs.gentoo.org/590704
+  Reported-by: Pacho Ramos <pacho@gentoo.org>
+  Closes: https://github.com/gentoo/gentoo/pull/2037
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*remmina-1.2.0_rc15 (18 Aug 2016)
+
+  18 Aug 2016; Yixun Lan <dlan@gentoo.org> metadata.xml,
+  +remmina-1.2.0_rc15.ebuild:
+  bump to version 1.2.0_rc15
+
+  - Change license to GPL-2+
+  - Remove RDEPEND on xorg-server[kdrive] (optional runtime dependency)
+  - Remove 'debug' USE flag (unused)
+  - Remove 'vte' USE flag (now controlled by the 'ssh' USE flag)
+  - Add 'spice' USE flag (support for the SPICE remote-display protocol)
+
+  Gentoo-Bug: 591518
+  Package-Manager: portage-2.3.0
+
+  Closes: https://github.com/gentoo/gentoo/pull/2096
+
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+

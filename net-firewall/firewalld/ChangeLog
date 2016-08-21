@@ -84,3 +84,72 @@
   Package-Manager: portage-2.2.26
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/firewalld.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  31 May 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml:
+  drop explicit maintainership
+
+  We will continue maintaining this package through the virtualization
+  project.
+
+  Package-Manager: portage-2.2.28
+
+  31 May 2016; Matthias Maier <tamiko@gentoo.org> -firewalld-0.3.10.ebuild:
+  drop old
+
+  Package-Manager: portage-2.2.28
+
+*firewalld-0.4.2 (31 May 2016)
+
+  31 May 2016; Matthias Maier <tamiko@gentoo.org> +firewalld-0.4.2.ebuild:
+  version bump to 0.42, multiple fixes
+
+  This commit also fixes
+
+    - bug #573648: incorrect path to iptables and family
+    - bug #581760: update homepage
+    - bug #566772: missing dependency dev-python/PyQt4
+
+  Package-Manager: portage-2.2.28
+
+  01 Jun 2016; Matthias Maier <tamiko@gentoo.org> firewalld-0.4.2.ebuild:
+  add dependency on net-firewall/ipset, bug #576824
+
+  Package-Manager: portage-2.2.28
+
+  01 Jun 2016; Matthias Maier <tamiko@gentoo.org> -firewalld-0.3.14.2.ebuild,
+  -firewalld-0.4.0.ebuild:
+  remove old versions 0.3.14.2, and 0.4.0
+
+  Package-Manager: portage-2.2.28
+
+*firewalld-0.4.2-r1 (28 Jul 2016)
+
+  28 Jul 2016; Matthias Maier <tamiko@gentoo.org> firewalld-0.3.13.ebuild,
+  -firewalld-0.4.2.ebuild, +firewalld-0.4.2-r1.ebuild:
+  Do not install /etc/xdg/autostart/* for -gui; #568844
+
+  Package-Manager: portage-2.2.28
+
+*firewalld-0.4.3.3 (17 Aug 2016)
+
+  17 Aug 2016; Matthias Maier <tamiko@gentoo.org> +firewalld-0.4.3.3.ebuild:
+  version bump to 0.4.3.3 (CVE-2016-5410), bug #591458
+
+  Version 0.4.3.3 contains upstream fixes for CVE-2016-5410
+
+  Package-Manager: portage-2.2.28
+
+  17 Aug 2016; Matthias Maier <tamiko@gentoo.org> -firewalld-0.4.2-r1.ebuild:
+  drop vulnerable 0.4.2-r1, bug #591458
+
+  Package-Manager: portage-2.2.28
+
+  18 Aug 2016; Agostino Sarubbo <ago@gentoo.org> firewalld-0.4.3.3.ebuild:
+  amd64 stable wrt bug #591458
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

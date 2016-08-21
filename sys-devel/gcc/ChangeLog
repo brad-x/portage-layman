@@ -289,3 +289,38 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Ryan Hill <rhill@gentoo.org>
 
+  09 May 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  add USE=vtv support for vtable verification #547040
+
+  11 May 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  add USE=mpx support for Intel MPX #578396
+
+*gcc-5.4.0 (13 Jun 2016)
+
+  13 Jun 2016; Mike Frysinger <vapier@gentoo.org> +gcc-5.4.0.ebuild:
+  version bump to 5.4.0 #585370
+
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> gcc-4.9.3.ebuild,
+  gcc-5.3.0.ebuild, gcc-5.4.0.ebuild, metadata.xml:
+  toolchain.eclass: [QA] Remove meaningless USE=multislot, #584610
+
+  The USE=multislot as defined partially by toolchain.eclass and partially
+  by sys-devel/gcc was used for two purposes:
+
+  - enabling build-time (only) blockers on old gcc versions -- which do
+    not make any sense because they are build-time only and there is no
+    technical reason for two gcc version ranges not to be installed at
+    the same time, both at build time and at run time,
+
+  - changing behavior of post-install wrt conditional gcc-config calls.
+
+  Both cases are invalid use of USE flags, considering that the flag does
+  not affect the installed files in any way.
+
+*gcc-4.9.4 (15 Aug 2016)
+
+  15 Aug 2016; Anthony G. Basile <blueness@gentoo.org> +gcc-4.9.4.ebuild:
+  version bump to 4.9.4, bug #590966
+
+  Package-Manager: portage-2.2.28
+

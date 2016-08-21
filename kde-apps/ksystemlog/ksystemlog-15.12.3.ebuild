@@ -4,7 +4,6 @@
 
 EAPI=6
 
-KDE_DOXYGEN="true"
 KDE_HANDBOOK="forceoptional"
 KDE_TEST="forceoptional"
 VIRTUALX_REQUIRED="test"
@@ -12,7 +11,7 @@ inherit kde5
 
 DESCRIPTION="System log viewer by KDE"
 HOMEPAGE="https://www.kde.org/applications/system/ksystemlog/"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="systemd"
 
 # bug 378101

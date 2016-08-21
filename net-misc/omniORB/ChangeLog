@@ -59,3 +59,37 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/omniNames:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #143016
+
+  Package-Manager: portage-2.3.0
+
+*omniORB-4.2.1_p2 (16 Aug 2016)
+
+  16 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/change-umask-from-002-to-022-in-CreateDir-macro.patch,
+  +omniORB-4.2.1_p2.ebuild:
+  new version using EAPI=6 and a few ebuild fixes.
+
+  There has been a new version of this maintainer-needed package
+  available for a while, and a user requested a version bump, so I've
+  updated to the latest available stable release (bug 560680). In doing
+  so, I added the missing PYTHON_DEPS and PYTHON_REQUIRED_USE from the
+  python-single-r1 eclass (bug 547660). I also patched the build system
+  to use a umask of 022 instead of 002 when creating directories, to fix
+  compilation on systems with TPE (bug 576040).
+
+  For the new version, the ebuild was updated to use EAPI=6. Some
+  patches were dropped, as the fixes were merged upstream. IPv6 support
+  was added with a straightforward $(use_with ipv6) call. Some errors
+  were clarified, and some quoting adjusted -- minor housekeeping.
+
+  Gentoo-Bug: 547660
+  Gentoo-Bug: 560680
+  Gentoo-Bug: 576040
+
+  Package-Manager: portage-2.2.28
+

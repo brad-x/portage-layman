@@ -110,3 +110,59 @@
 
   Package-Manager: portage-2.2.27
 
+  17 Jun 2016; Amy Winston <amynka@gentoo.org> gdal-2.0.0.ebuild,
+  gdal-2.0.0-r1.ebuild, gdal-2.0.1.ebuild, gdal-2.0.2.ebuild, metadata.xml:
+  Add subslot for SONAME bump
+
+  Package-Manager: portage-2.2.28
+
+  17 Jun 2016; Amy Winston <amynka@gentoo.org> metadata.xml:
+  metadata.xml indentation
+
+  Package-Manager: portage-2.2.28
+
+  17 Jun 2016; Amy Winston <amynka@gentoo.org>
+  -files/gdal-1.8.1-zlib_header_fix.patch,
+  -files/gdal-1.9.1-ruby-makefile.patch:
+  Remove unused patches
+
+  Package-Manager: portage-2.2.28
+
+  20 Jun 2016; Amy Winston <amynka@gentoo.org> -gdal-2.0.0.ebuild,
+  gdal-2.0.0-r1.ebuild, gdal-2.0.1.ebuild, gdal-2.0.2.ebuild:
+  remove old, add missing die. Thanks K_F
+
+  Package-Manager: portage-2.2.28
+
+  09 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> gdal-1.11.1-r3.ebuild,
+  gdal-1.11.2.ebuild, gdal-2.0.0-r1.ebuild, gdal-2.0.1.ebuild,
+  gdal-2.0.2.ebuild:
+  fix LICENSE
+
+  Based on the upstream license information[0], add the missing
+  licenses. The license breakdown of individual components are as
+  follows:
+
+  gdal/frmts/gtiff/tif_float.c: BSD
+  gdal/frmts/hdf4/hdf-eos/*: MIT (--without-hdf4 in ebuild)
+  gdal/frmts/pcraster/libcsf: BSD (--without-pcraster in ebuild)
+  gdal/frmts/grib/degrib/*: Public Domain
+  port/cpl_minizip*: Info-ZIP
+  gdal/ogr/ogrsf_frmts/dxf/intronurbs.cpp: BSD
+  gdal/alg/thinplatespline.cpp: MIT
+  gdal/alg/libqhull: not present in the source tarball
+  gdal/frmts/pdf/pdfdataset.cpp: MIT
+  gdal/frmts/mrf/*: not present in the source tarball
+
+  [0] http://svn.osgeo.org/gdal/trunk/gdal/LICENSE.TXT
+
+  Package-Manager: portage-2.2.28
+
+  18 Jul 2016; Sven Wegener <swegener@gentoo.org>
+  +files/gdal-1.11-swig-3.0.6.patch, gdal-1.11.1-r3.ebuild,
+  gdal-1.11.2.ebuild:
+  Fix building with >=swig-3.0.6
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Sven Wegener <swegener@gentoo.org>
+

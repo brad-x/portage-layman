@@ -69,3 +69,35 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*tf-50_beta8-r2 (05 Aug 2016)
+
+  05 Aug 2016; Austin English <wizardedit@gentoo.org>
+  files/tf-50_beta8-stdarg.patch, +tf-50_beta8-r2.ebuild:
+  remove deprecated games eclass
+
+  Also update to EAPI 6
+
+  Gentoo-Bug: https://bugs.gentoo.org/574082
+
+  Package-Manager: portage-2.3.0
+
+  05 Aug 2016; Sergei Trofimovich <slyfox@gentoo.org> tf-50_beta8-r2.ebuild:
+  fix PATCHES variable not to use glob on DISTDIR
+
+  Noticed egencache warning today:
+
+  /gentoo-ebuilds/gentoo/games-mud/tf/tf-50_beta8-r2.ebuild:
+      line 32: no match: /gentoo/distfiles/tf-all*patch.txt
+
+  Package-Manager: portage-2.3.0
+
+  08 Aug 2016; Austin English <wizardedit@gentoo.org> tf-50_beta8-r2.ebuild:
+  fix installation path
+
+  An unremoved $GAMES_DATADIR entry caused some files to be installed to / by
+  mistake
+
+  Gentoo-Bug: https://bugs.gentoo.org/590662
+
+  Package-Manager: portage-2.3.0
+

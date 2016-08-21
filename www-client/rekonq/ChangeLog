@@ -79,3 +79,18 @@
 
   Package-Manager: portage-2.2.28
 
+  27 Jul 2016; Michael Palimaka <kensington@gentoo.org>
+  rekonq-2.4.2-r1.ebuild:
+  kde4-base.eclass inheriting ebuilds: Add WEBKIT_REQUIRED=always
+
+  Based on libQtWebKit.so.4 in NEEDED
+  Interestingly, www-client/rekonq already got that var
+
+  net-libs/libkgapi:
+  ld: cannot find -lKDE4__kdewebkit
+  collect2: error: ld returned 1 exit status
+  make[2]: *** [libkgapi2/CMakeFiles/kgapi2.dir/build.make:3206:
+  lib/libkgapi2.so.2.2.0] Error 1
+
+  Package-Manager: portage-2.2.28
+

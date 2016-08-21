@@ -119,3 +119,63 @@
 
   Package-Manager: portage-2.2.28
 
+*scite-3.6.5 (03 May 2016)
+
+  03 May 2016; Sam Jorna <wraeth@gentoo.org> +scite-3.6.5.ebuild:
+  bump to 3.6.5
+
+  Version bump to 3.6.5, bump to EAPI6, fixes build with ${CC}.
+
+  Gentoo-bug: 581220
+  Package-Manager: portage-2.2.28
+
+  05 May 2016; Ian Delaney <idella4@gentoo.org> scite-3.6.2.ebuild:
+  fixes to vn. 3.6.2 sourced from gentoo bug
+
+  - inherit toolchain-funcs eclass to ensure the build to 'respect CXX',
+  - add slot operators to deps requiring them (glib, gtk+, lua)
+  - removed dep sed from deps (set in @system)
+  fixes the gentoo bug
+
+  Gentoo-bug: #Bug 569986
+
+  Package-Manager: portage-2.2.28
+
+  05 May 2016; Ian Delaney <idella4@gentoo.org> scite-3.6.4.ebuild,
+  scite-3.6.5.ebuild:
+  move updates, changes in vn. 3.6.2 to vns. 3.6.[4,5]
+
+  Package-Manager: portage-2.2.28
+
+  13 May 2016; Ian Delaney <idella4@gentoo.org> scite-3.6.5.ebuild:
+  adding inherit of flag-o-matic eclass to vn. 3.6.5
+
+  on behalf of maintainer E. Peters. Fixes
+
+  Gentoo-bug: 582196
+
+  Package-Manager: portage-2.2.28
+
+*scite-3.6.5-r1 (04 Jul 2016)
+*scite-3.6.4-r1 (04 Jul 2016)
+*scite-3.6.2-r1 (04 Jul 2016)
+
+  04 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> -scite-3.6.2.ebuild,
+  +scite-3.6.2-r1.ebuild, -scite-3.6.4.ebuild, +scite-3.6.4-r1.ebuild,
+  -scite-3.6.5.ebuild, +scite-3.6.5-r1.ebuild:
+  revbump to fix vdb breakage
+
+  Commit aa9fbd757f0eb2345f1702affb3ada5352cfad2f changes the slot
+  dependency for one of the packages in RDEPEND in place. Revbump to fix
+  possible vdb breakage.
+
+  Package-Manager: portage-2.2.28
+
+  07 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/scite-3.0.1-no-lua.patch:
+  app-editor/scite: remove unused patch
+
+  Closes: https://github.com/gentoo/gentoo/pull/1826
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

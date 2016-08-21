@@ -4,7 +4,6 @@
 
 EAPI=6
 
-KDE_DOXYGEN="true"
 KDE_HANDBOOK="forceoptional"
 KDE_TEST="true"
 inherit kde5
@@ -12,7 +11,7 @@ inherit kde5
 DESCRIPTION="KDE calculator"
 HOMEPAGE="https://www.kde.org/applications/utilities/kcalc
 https://utils.kde.org/projects/kcalc"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="

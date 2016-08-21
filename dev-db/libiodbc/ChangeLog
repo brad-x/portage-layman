@@ -63,3 +63,38 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 May 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup due to #321263
+
+  Package-Manager: portage-2.3.0_rc1
+
+  07 Jul 2016; Austin English <wizardedit@gentoo.org> metadata.xml:
+  add maintainer-needed
+
+  Package-Manager: portage-2.2.28
+
+*libiodbc-3.52.12 (02 Aug 2016)
+
+  02 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +files/fix-runpaths-r1.patch,
+  +files/libiodbc-3.52.12-multilib.patch, +libiodbc-3.52.12.ebuild:
+  new version 3.5.12.
+
+  This new version comes with a few changes. Most noticeably, the ebuild
+  was updated to EAPI=6 and the eutils eclass was dropped. One patch
+  (fix-runpaths-r1.patch) had to be revisioned to make it compatible
+  with eapply.
+
+  Another patch, libiodbc-*-multilib.patch, had to be updated to apply
+  to the new version. I duplicated the additions/deletions in the
+  original patch exactly. Two other patches, libiodbc-3.52.7-gtk.patch
+  and libiodbc-3.52.8-gtk-parallel-make.patch, have become obsolete and
+  were removed completely.
+
+  I removed a "chmod -x include/*.h" hack, as it looks no longer
+  necessary. I then added a new hack, "touch ChangeLog" before
+  eautoreconf.
+
+  Gentoo-Bug: 516300
+
+  Package-Manager: portage-2.2.28
+

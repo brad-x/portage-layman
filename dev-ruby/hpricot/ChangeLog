@@ -119,3 +119,59 @@
   Package-Manager: portage-2.2.28
   RepoMan-Options: --include-arches="arm"
 
+  14 May 2016; Fabian Groffen <grobian@gentoo.org> hpricot-0.8.6-r3.ebuild:
+  marked ~x64-macos
+
+  Package-Manager: portage-2.2.28
+
+  21 May 2016; Hans de Graaff <graaff@gentoo.org> hpricot-0.8.6-r2.ebuild:
+  drop ruby19
+
+  Package-Manager: portage-2.2.28
+
+*hpricot-0.8.6-r4 (27 May 2016)
+
+  27 May 2016; Hans de Graaff <graaff@gentoo.org> -hpricot-0.8.6-r3.ebuild,
+  +hpricot-0.8.6-r4.ebuild:
+  try to fix bug 584304
+
+  Add a patch to properly cast the input to sprintf. Hopefully this
+  fixes bug 584304 on alpha.
+
+  Package-Manager: portage-2.2.28
+
+*hpricot-0.8.6-r3 (27 May 2016)
+
+  27 May 2016; Hans de Graaff <graaff@gentoo.org> +hpricot-0.8.6-r3.ebuild,
+  hpricot-0.8.6-r4.ebuild:
+  restore -r3 which was removed by accident in previous commit
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --force
+
+  28 May 2016; Tobias Klausmann <klausman@gentoo.org> hpricot-0.8.6-r3.ebuild:
+  0.8.6-r3: add alpha keyword
+
+  Gentoo-Bug: 576632
+
+  Package-Manager: portage-2.3.0_rc1
+
+*hpricot-0.8.6-r5 (05 Aug 2016)
+
+  05 Aug 2016; Hans de Graaff <graaff@gentoo.org> -hpricot-0.8.6-r4.ebuild,
+  +hpricot-0.8.6-r5.ebuild:
+  make sure last revision also has cast fix
+
+  Package-Manager: portage-2.2.28
+
+  05 Aug 2016; Hans de Graaff <graaff@gentoo.org> hpricot-0.8.6-r5.ebuild:
+  add explicit rdoc build dependency
+
+  dev-ruby/rdoc is needed by the build system. Make this dependency
+  explicit to avoid potential problems when bootstrapping on a system
+  without ruby installed.
+
+  Fixes bug 590184
+
+  Package-Manager: portage-2.2.28
+

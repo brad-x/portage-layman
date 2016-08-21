@@ -104,3 +104,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  05 May 2016; David Seifert <soap@gentoo.org>
+  files/allpathslg-52488_remove-namespace-std.patch:
+  replace isnan macro with proper std::isnan function
+
+  Gentoo-Bug: 580086
+
+  Package-Manager: portage-2.2.28
+
+*allpathslg-52488-r2 (13 Aug 2016)
+
+  13 Aug 2016; David Seifert <soap@gentoo.org> -allpathslg-52488-r1.ebuild,
+  +allpathslg-52488-r2.ebuild:
+  Unconditionally require OpenMP support
+
+  Gentoo-bug: 591166
+  * The configure script of sci-biology/allpathslg allows for
+    specifying --enable/--disable-openmp, without it actually
+    being optional.
+
+  Package-Manager: portage-2.3.0
+

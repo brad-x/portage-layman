@@ -63,3 +63,126 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*wings-1.5.4 (11 Jun 2016)
+
+  11 Jun 2016; Jeroen Roovers <jer@gentoo.org> +wings-1.5.4.ebuild:
+  Version bump (bug #383239 by Jacek Szafarkiewicz).
+
+  Package-Manager: portage-2.3.0_rc1
+
+  11 Jun 2016; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Maintain.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  11 Jun 2016; Jeroen Roovers <jer@gentoo.org> wings-1.5.4.ebuild:
+  Maintain.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*wings-2.0.4 (11 Jun 2016)
+
+  11 Jun 2016; Jeroen Roovers <jer@gentoo.org> wings-1.5.4.ebuild,
+  +wings-2.0.4.ebuild:
+  Version bump. Remove testing cruft.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  11 Jun 2016; Jeroen Roovers <jer@gentoo.org> wings-2.0.4.ebuild:
+  Version bump. Fix minimum dev-lang/erlang version for 2.0.4.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  12 Jun 2016; Jeroen Roovers <jer@gentoo.org> wings-2.0.4.ebuild:
+  Fix include_lib (bug #585654).
+
+  Package-Manager: portage-2.3.0_rc1
+
+  12 Jun 2016; Jeroen Roovers <jer@gentoo.org> +files/wings-2.0.4-wx.patch,
+  wings-2.0.4.ebuild:
+  Fix include_lib (wx) (bug #585654).
+
+  Package-Manager: portage-2.3.0_rc1
+
+*wings-2.0.4-r1 (12 Jun 2016)
+
+  12 Jun 2016; Jeroen Roovers <jer@gentoo.org> -files/wings-2.0.4-wx.patch,
+  +files/wings.sh-r1, -wings-2.0.4.ebuild, +wings-2.0.4-r1.ebuild:
+  Fix include_lib everywhere (bug #585654).
+
+  Package-Manager: portage-2.3.0_rc1
+
+*wings-2.0.4-r2 (12 Jun 2016)
+
+  12 Jun 2016; Jeroen Roovers <jer@gentoo.org> -wings-2.0.4-r1.ebuild,
+  +wings-2.0.4-r2.ebuild:
+  Drop esdl symlink (bug #585664).
+
+  Package-Manager: portage-2.3.0_rc1
+
+*wings-2.0.4-r3 (12 Jun 2016)
+*wings-1.5.4-r1 (12 Jun 2016)
+
+  12 Jun 2016; Jeroen Roovers <jer@gentoo.org> -wings-1.5.4.ebuild,
+  +wings-1.5.4-r1.ebuild, -wings-2.0.4-r2.ebuild, +wings-2.0.4-r3.ebuild:
+  Drop esdl/wings symlinks (bug #585664).
+
+  Package-Manager: portage-2.3.0_rc1
+
+  14 Jun 2016; Tobias Klausmann <klausman@gentoo.org> wings-1.1.1.ebuild:
+  Drop alpha keyword
+
+  !!! All ebuilds that could satisfy ">=media-libs/mesa-9.1.6[opencl,abi_x86_3
+  2(-)?,abi_x86_64(-)?,abi_x86_x32(-)?,abi_mips_n32(-)?,abi_mips_n64(-)?,abi_m
+  ips_o32(-)?,abi_ppc_32(-)?,abi_ppc_64(-)?,abi_s390_32(-)?,abi_s390_64(-)?]"
+  have been masked.
+  !!! One of the following masked packages is required to complete your
+  request:
+  - media-libs/mesa-9999::gentoo (masked by: missing keyword)
+
+  (dependency required by "virtual/opencl-0-r4::gentoo" [ebuild])
+  (dependency required by "dev-libs/cl-1.2.1-r1::gentoo" [ebuild])
+  (dependency required by "=dev-libs/cl-1.2.1-r1" [argument])
+
+  This is a result of:
+
+  RDEPEND="app-eselect/eselect-opencl
+      || (
+          >=media-libs/mesa-9.1.6[opencl,${MULTILIB_USEDEP}]
+          video_cards_fglrx? (
+              >=x11-drivers/ati-drivers-12.1-r1 )
+          video_cards_nvidia? (
+              >=x11-drivers/nvidia-drivers-290.10-r2 )
+          abi_x86_64? ( !abi_x86_32? ( dev-util/intel-ocl-sdk ) )
+      )"
+
+  This is just not satisfiable on Alpha at the moment. Also, wings has never
+  been
+  stable on alpha (and is a bit niche), so I'll drop the alpha keyword for
+  1.1.1
+  and opt Alpha out.
+
+  Gentoo-Bug: 585588
+
+  Package-Manager: portage-2.3.0_rc1
+
+  02 Jul 2016; Jeroen Roovers <jer@gentoo.org> wings-1.5.4-r1.ebuild:
+  Fix include_lib (bug #585654) in 1.5.4.
+
+*wings-2.0.4-r4 (02 Jul 2016)
+*wings-1.5.4-r2 (02 Jul 2016)
+
+  02 Jul 2016; Jeroen Roovers <jer@gentoo.org> files/wings.sh,
+  files/wings.sh-r1, -wings-1.5.4-r1.ebuild, +wings-1.5.4-r2.ebuild,
+  -wings-2.0.4-r3.ebuild, +wings-2.0.4-r4.ebuild:
+  Use sh instead of bash.
+
+  Package-Manager: portage-2.3.0
+
+*wings-2.0.5 (04 Jul 2016)
+
+  04 Jul 2016; Jeroen Roovers <jer@gentoo.org> +wings-2.0.5.ebuild:
+  Version bump.
+
+  Package-Manager: portage-2.3.0
+

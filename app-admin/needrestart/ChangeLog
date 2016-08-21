@@ -1,0 +1,77 @@
+# ChangeLog for app-admin/needrestart
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*needrestart-9999 (07 Jul 2016)
+*needrestart-2.8 (07 Jul 2016)
+
+  07 Jul 2016; Patrice Clement <monsieurp@gentoo.org> +metadata.xml,
+  +needrestart-2.8.ebuild, +needrestart-9999.ebuild:
+  Add ebuild to the tree.
+
+  needrestart checks which daemons need to be restarted after library
+  upgrades.
+  It is inspired by checkrestart from the debian-goodies package.
+
+  needrestart supports but does not require systemd. If systemd is not
+  available
+  or does not return a service name needrestart uses hooks to identify the
+  corresponding System V init script. If a process inside a container (LXC,
+  docker) it suggests to restart the entire container. needrestart contains a
+  heuristic for different interpreter languages: it tries to detect if
+  outdated
+  script code/modules are in use (Java, Perl, Python, Ruby).
+
+  Gentoo-Bug: https://bugs.gentoo.org/588010
+  Closes: https://github.com/gentoo/gentoo/pull/1825
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  08 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/needrestart-parallelmake.patch, needrestart-2.8.ebuild:
+  2.8: Fix QA Notice: make jobserver unavailable: using -j1.
+
+  Gentoo-Bug: https://bugs.gentoo.org/588216
+  Closes: https://github.com/gentoo/gentoo/pull/1843
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  14 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> needrestart-2.8.ebuild,
+  needrestart-9999.ebuild:
+  correct the license to GPL-2+
+
+*needrestart-2.8-r1 (14 Jul 2016)
+
+  14 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> -needrestart-2.8.ebuild,
+  +needrestart-2.8-r1.ebuild, needrestart-9999.ebuild:
+  fix dependencies
+
+  needrestart installs and uses scripts that call sed with '-z' option:
+    https://github.com/liske/needrestart/blob/1a3b68a38e0691ca82e894ef591b23af
+  666cc14d/lib/notify.d.sh#L34
+    https://github.com/liske/needrestart/blob/1c17aa96ed455c6f10b496fa6a5c17da
+  f96558ac/ex/notify.d/400-notify-send#L34
+  This option was introduced in sed-4.2.2:
+  http://article.gmane.org/gmane.comp.lang.smalltalk.gnu.general/7873
+  Thus needrestart must depend on >=sys-apps/sed-4.2.2.
+
+  needrestart needs sys-devel/gettext to build so add that dependency.
+
+  needrestart depends on dev-perl/TermReadKey so add that runtime dependency.
+
+  needrestart does not depend on dev-perl/Term-ProgressBar-Simple so remove
+  that dependency.
+
+  Gentoo-bug: 588416
+
+  17 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> metadata.xml:
+  minor metadata cleanup
+
+  - Remove redundant maintainer description
+  - Remove empty use block
+
+  Package-Manager: portage-2.2.28
+
+  21 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> metadata.xml:
+  add upstream remote-id
+

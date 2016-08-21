@@ -136,3 +136,82 @@
 
   Package-Manager: portage-2.2.26
 
+*lirc-0.9.4 (01 Jul 2016)
+
+  01 Jul 2016; David Seifert <soap@gentoo.org> +files/irexec-initd,
+  +lirc-0.9.4.ebuild, metadata.xml:
+  0.9.4: version bump
+
+  Significantly cleaned up and uses upstream's systemd units.
+
+  Gentoo-bug: 515902, 579478
+  Closes: https://github.com/gentoo/gentoo/pull/1774
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*lirc-0.9.4a (08 Jul 2016)
+
+  08 Jul 2016; Patrice Clement <monsieurp@gentoo.org> +lirc-0.9.4a.ebuild:
+  version bump to-0.9.4a
+
+  Gentoo-Bug: https://bugs.gentoo.org/588242
+  Closes: https://github.com/gentoo/gentoo/pull/1842
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  08 Jul 2016; Patrice Clement <monsieurp@gentoo.org> lirc-0.9.4.ebuild:
+  0.9.4: don't try to install doc/images
+
+  upstream removed doc/images, so don't try to install it
+
+  Gentoo-Bug: https://bugs.gentoo.org/587788
+  Closes: https://github.com/gentoo/gentoo/pull/1838
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  08 Jul 2016; Patrice Clement <monsieurp@gentoo.org> lirc-0.9.4.ebuild:
+  0.9.4: add dependency on virtual/libusb:0
+
+  Gentoo-Bug: https://bugs.gentoo.org/587840
+  Closes: https://github.com/gentoo/gentoo/pull/1837
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Jul 2016; David Seifert <soap@gentoo.org> lirc-0.9.4a.ebuild:
+  0.9.4a: workaround parallel make bug
+
+  Gentoo-bug: 588864
+  Closes: https://github.com/gentoo/gentoo/pull/1911
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*lirc-0.9.4a-r1 (30 Jul 2016)
+
+  30 Jul 2016; David Seifert <soap@gentoo.org> +files/irexec-initd-0.9.4a-r1,
+  +files/lirc-0.9.4-doc-path-fix.patch, +lirc-0.9.4a-r1.ebuild:
+  0.9.4a-r1 fix documentation and socket directories
+
+  set localstatedir to /var so lirc correctly uses /var/run instead of
+  /var/lib/run
+  install documentation to /usr/share/doc/lirc-${PF}
+  use irexec-initd-0.9.4a-r1 instead of irexec-initd as the irexec initd
+  script to resolve a QA notice
+
+  Gentoo-bug: 589246
+  Closes: https://github.com/gentoo/gentoo/pull/1922
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*lirc-0.9.4a-r2 (02 Aug 2016)
+
+  02 Aug 2016; David Seifert <soap@gentoo.org> +files/irexec-initd-0.9.4a-r2,
+  +files/lircmd-0.9.4a-r2, +files/lircmd.conf, -lirc-0.9.4.ebuild,
+  -lirc-0.9.4a.ebuild, lirc-0.9.4a-r1.ebuild, +lirc-0.9.4a-r2.ebuild:
+  0.9.4a-r2: cleanup old ebuild, init script improvements, remove la files,
+  don't set docdir unnecessarily (EAPI 6 does that automatically)
+
+  Gentoo-bug: 454466, 353774
+  Closes: https://github.com/gentoo/gentoo/pull/1988
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+

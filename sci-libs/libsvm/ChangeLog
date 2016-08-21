@@ -63,3 +63,33 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*libsvm-3.17-r2 (06 Aug 2016)
+
+  06 Aug 2016; David Seifert <soap@gentoo.org> files/3.11-openmp.patch,
+  files/3.14-makefile.patch, +libsvm-3.17-r2.ebuild:
+  fix the hardcoded path for grid.py
+
+  Add 2 sed statements to src_prepare() to replace the hardcoded path
+  './grid.py' with the correct one and subsequently rename 'grid.py' to
+  'svm-grid'.
+
+  Revbumped, since this is a runtime failure.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2032
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+  06 Aug 2016; David Seifert <soap@gentoo.org> libsvm-3.17-r2.ebuild:
+  Use 'python_newscript' instead of 'python_doscript'
+
+  Package-Manager: portage-2.3.0
+
+*libsvm-3.17-r3 (07 Aug 2016)
+
+  07 Aug 2016; David Seifert <soap@gentoo.org> -libsvm-3.17-r2.ebuild,
+  +libsvm-3.17-r3.ebuild:
+  Install scripts for all python impls
+
+  Package-Manager: portage-2.3.0
+

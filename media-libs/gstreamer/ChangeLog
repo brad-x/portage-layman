@@ -181,3 +181,61 @@
   * x11-misc/driconf-0.9.1-r1
   * x11-misc/xdg-utils-1.1.0_rc2-r1
 
+  03 May 2016; Markus Meier <maekke@gentoo.org> gstreamer-1.6.3.ebuild:
+  arm stable, bug #566378
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  10 May 2016; Anthony G. Basile <blueness@gentoo.org>
+  +files/gstreamer-1.6.3-fix-strsignal.patch, gstreamer-1.6.3.ebuild:
+  fix bug #577312
+
+  Package-Manager: portage-2.2.26
+
+  10 May 2016; Anthony G. Basile <blueness@gentoo.org>
+  -files/gstreamer-1.6.3-fix-strsignal.patch, gstreamer-1.6.3.ebuild:
+  Revert "media-libs/gstreamer: fix bug #577312"
+
+  This reverts commit f59f39fb234fe5ce1c2a4c1c63be575fa494302c.
+
+  The gstreamer folks made a mistake in backporting this form libcheck.
+
+  See https://bugzilla.gnome.org/show_bug.cgi?id=763567#c12
+
+  11 May 2016; Anthony G. Basile <blueness@gentoo.org>
+  +files/gstreamer-1.6.3-fix-strsignal.patch, gstreamer-1.6.3.ebuild:
+  correctly fix bug #577312
+
+  Package-Manager: portage-2.2.26
+
+  11 Jun 2016; Pacho Ramos <pacho@gentoo.org> gstreamer-1.6.3.ebuild:
+  alpha stable, bug 584468
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="alpha"
+
+*gstreamer-1.8.2 (09 Jul 2016)
+
+  09 Jul 2016; Pacho Ramos <pacho@gentoo.org> +gstreamer-1.8.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.3.0
+
+  09 Jul 2016; Pacho Ramos <pacho@gentoo.org> gstreamer-1.6.3.ebuild:
+  ppc stable, bug 584468
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="ppc"
+
+  09 Jul 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  gstreamer-1.6.3.ebuild:
+  Pointless commit to enforce regeneration of the rsync Manifest
+
+  Package-Manager: portage-2.3.0
+
+  30 Jul 2016; Pacho Ramos <pacho@gentoo.org> gstreamer-1.8.2.ebuild:
+  inherit eutils was dropped by mistake (#588610 by Coacher)
+
+  Package-Manager: portage-2.3.0
+

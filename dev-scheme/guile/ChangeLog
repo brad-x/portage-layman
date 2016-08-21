@@ -127,3 +127,111 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> guile-1.8.8-r2.ebuild:
+  amd64 stable wrt bug #578318
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  30 May 2016; Tobias Klausmann <klausman@gentoo.org> guile-1.8.8-r2.ebuild:
+  1.8.8-r2: add alpha keyword
+
+  Gentoo-Bug: 578318
+
+  Package-Manager: portage-2.3.0_rc1
+
+  12 Jun 2016; Markus Meier <maekke@gentoo.org> guile-1.8.8-r2.ebuild:
+  arm stable, bug #578318
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> guile-1.8.8-r2.ebuild:
+  x86 stable wrt bug #578318
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Jun 2016; Austin English <wizardedit@gentoo.org>
+  +files/guile-2.0.0-clang-apicontrol-texi.patch, guile-2.0.0.ebuild:
+  fix guile-2.0.0 building with clang
+
+  Also update to EAPI=6
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> guile-1.8.8-r2.ebuild:
+  ppc stable wrt bug #578318
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  29 Jul 2016; Amy Winston <amynka@gentoo.org>
+  -files/guile-2.0.0-clang-apicontrol-texi.patch, -guile-2.0.0.ebuild:
+  remove broken version 2.0.0
+
+  Package-Manager: portage-2.2.28
+
+  04 Aug 2016; Jeroen Roovers <jer@gentoo.org> guile-1.8.8-r2.ebuild:
+  Stable for HPPA (bug #578318).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+  04 Aug 2016; Jeroen Roovers <jer@gentoo.org> guile-1.8.8-r2.ebuild:
+  Stable for PPC64 (bug #578318).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+*guile-2.0.12 (04 Aug 2016)
+
+  04 Aug 2016; Amy Winston <amynka@gentoo.org> +guile-2.0.12.ebuild:
+  version bump 2.0.12 bug #355355
+
+  Package-Manager: portage-2.2.28
+
+  04 Aug 2016; Amy Winston <amynka@gentoo.org> guile-2.0.12.ebuild:
+  remove unused useflag
+
+  Package-Manager: portage-2.2.28
+
+  05 Aug 2016; Amy Winston <amynka@gentoo.org> guile-2.0.12.ebuild:
+  add missing dep bug #590516
+
+  Package-Manager: portage-2.2.28
+
+  05 Aug 2016; Amy Winston <amynka@gentoo.org> guile-2.0.12.ebuild:
+  change > to >= for slib
+
+  Package-Manager: portage-2.2.28
+
+  07 Aug 2016; Amy Winston <amynka@gentoo.org>
+  +files/guile-2.0.12-build-includes.patch, guile-2.0.12.ebuild:
+  fixes for bug #590528,#590660
+
+  - Added patch for built_includes by upstream Andy Wingo
+  - Symlink path changed
+
+  Package-Manager: portage-2.2.28
+
+*guile-2.0.12-r1 (08 Aug 2016)
+
+  08 Aug 2016; Pacho Ramos <pacho@gentoo.org> -guile-2.0.12.ebuild,
+  +guile-2.0.12-r1.ebuild:
+  Bump subslot (#590710)
+
+  Package-Manager: portage-2.3.0
+
+  12 Aug 2016; Amy Winston <amynka@gentoo.org>
+  -files/guile-2.0.12-build-includes.patch,
+  +files/guile-2.0.12-build_includes2.patch, guile-2.0.12-r1.ebuild:
+  fix bug #590528
+
+  - Added patch from upstream for bug #590528
+  - Added +nls +networking recommended by upstream
+  - Removed old patch from upstream
+
+  Package-Manager: portage-2.2.28
+

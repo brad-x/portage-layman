@@ -464,3 +464,95 @@
 
   Package-Manager: portage-2.2.28
 
+*xen-tools-4.6.1-r2 (15 May 2016)
+*xen-tools-4.6.0-r11 (15 May 2016)
+
+  15 May 2016; Ian Delaney <idella4@gentoo.org> +xen-tools-4.6.0-r11.ebuild,
+  +xen-tools-4.6.1-r2.ebuild:
+  rebumps: xen-tools-4.6.0-r11 xen-tools-4.6.0-r10
+
+  consequent to the security bug re patches of xsa-179 affecting qemuu
+
+  Gentoo-bug: #582574
+
+  Package-Manager: portage-2.2.28
+
+  15 May 2016; Ian Delaney <idella4@gentoo.org> -xen-tools-4.5.2-r5.ebuild,
+  -xen-tools-4.5.2-r6.ebuild:
+  rm old vns. 4.5.2
+
+  Package-Manager: portage-2.2.28
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/xencommons.initd,
+  files/xenconsoled.initd, files/xendomains.initd-r2, files/xenqemudev.initd,
+  files/xenstored.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*xen-tools-4.6.1-r3 (20 May 2016)
+
+  20 May 2016; Ian Delaney <idella4@gentoo.org> +xen-tools-4.6.1-r3.ebuild:
+  revbump to 4.6.1-r3
+
+  Add sec patch xsa-176 patch, re security bug
+  Holding off revbump to 4.6.0, considering also purging
+
+  Gentoo-bug: #583462
+
+  Package-Manager: portage-2.3.0_rc1
+
+*xen-tools-4.6.1-r4 (07 Jun 2016)
+
+  07 Jun 2016; Yixun Lan <dlan@gentoo.org> +xen-tools-4.6.1-r4.ebuild:
+  fix XSA-175,178 bug
+
+  also include a few non-security upstream fixes
+
+  Gentoo-Bug: 583464, XSA-175
+  Gentoo-Bug: 583466, XSA-178
+
+  Package-Manager: portage-2.3.0_rc1
+
+*xen-tools-4.7.0 (27 Jun 2016)
+*xen-tools-4.6.3 (27 Jun 2016)
+
+  27 Jun 2016; Yixun Lan <dlan@gentoo.org> files/gentoo-patches.conf,
+  +xen-tools-4.6.3.ebuild, +xen-tools-4.7.0.ebuild:
+  version bump
+
+  Package-Manager: portage-2.3.0_rc1
+
+*xen-tools-4.7.0-r1 (27 Jul 2016)
+*xen-tools-4.6.3-r1 (27 Jul 2016)
+
+  27 Jul 2016; Yixun Lan <dlan@gentoo.org> +xen-tools-4.6.3-r1.ebuild,
+  +xen-tools-4.7.0-r1.ebuild:
+  security bump, XSA-184
+
+  Package-Manager: portage-2.3.0
+
+  28 Jul 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.6.3-r1.ebuild:
+  amd64 stable wrt bug #588780
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Jul 2016; Agostino Sarubbo <ago@gentoo.org> xen-tools-4.6.3-r1.ebuild:
+  x86 stable wrt bug #588780
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Jul 2016; Yixun Lan <dlan@gentoo.org> -xen-tools-4.6.0-r9.ebuild,
+  -xen-tools-4.6.0-r10.ebuild, -xen-tools-4.6.0-r11.ebuild,
+  -xen-tools-4.6.1.ebuild, -xen-tools-4.6.1-r1.ebuild,
+  -xen-tools-4.6.1-r2.ebuild, -xen-tools-4.6.1-r3.ebuild,
+  -xen-tools-4.6.1-r4.ebuild, -xen-tools-4.6.3.ebuild,
+  -xen-tools-4.7.0.ebuild:
+  drop old vulnerable versions
+
+  Gentoo-Bug: 588780
+
+  Package-Manager: portage-2.3.0
+

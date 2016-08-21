@@ -238,3 +238,93 @@
 
   Package-Manager: portage-2.2.28
 
+  12 May 2016; Patrick McLean <chutzpah@gentoo.org> ganeti-2.11.6-r2.ebuild,
+  ganeti-2.12.3-r2.ebuild, ganeti-2.13.0-r3.ebuild, ganeti-2.14.1-r2.ebuild:
+  Remove use in global scope (bug #566524)
+
+  Package-Manager: portage-2.2.28
+
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/ganeti-kvm-poweroff.initd, files/ganeti.initd-r3:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  25 May 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/ganeti-2.15-dont-invert-return-values-for-man-warnings.patch,
+  ganeti-2.15.2-r4.ebuild:
+  Add patch to not invert the check-man-warnings return code
+
+  Gentoo-Bug: 579550
+
+  Package-Manager: portage-2.3.0_rc1
+
+  05 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r4.ebuild:
+  add upstream stable tweak
+
+  Upstream commit b3c0fb0b allows slightly more versions of json & lens.
+
+  X-URL: http://git.ganeti.org/?p=ganeti.git;a=commit;h=b3c0fb0b
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+  11 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r4.ebuild:
+  Revert "app-emulation/ganeti: add upstream stable tweak"
+
+  This reverts commit 7ea446f8b1b02298bc946bb2bce50c6a075f563d; applying
+  an Ubuntu patch in a revbump instead.
+
+*ganeti-2.15.2-r5 (11 Jul 2016)
+
+  11 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> +ganeti-2.15.2-r5.ebuild:
+  add Debian patch series, including haskell dep tweaks
+
+  Package-Manager: portage-2.2.28
+
+  12 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild:
+  match dependencies used in Ubuntu.
+
+  Package-Manager: portage-2.2.28
+
+  12 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild,
+  metadata.xml:
+  support USE=restricted-commands, tweak haskell flags and socat.
+
+  Package-Manager: portage-2.2.28
+
+  12 Jul 2016; Robin H. Johnson <robbat2@gentoo.org>
+  files/ganeti-kvm-poweroff.initd, files/ganeti.initd-r3:
+  fix bashisms.
+
+  Package-Manager: portage-2.2.28
+
+  12 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild:
+  tweak one dep back down for easier merge.
+
+  Package-Manager: portage-2.2.28
+
+  12 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild:
+  only use GHC 7.10 patch when present, causes failures on older GHC.
+
+  Package-Manager: portage-2.2.28
+
+  13 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild:
+  hotplug requires missing dep dev-python/fdsend.
+
+  Package-Manager: portage-2.2.28
+
+  13 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> files/ganeti.initd-r3:
+  make it easier to restart a downed cluster
+
+  Package-Manager: portage-2.2.28
+
+  13 Jul 2016; Robin H. Johnson <robbat2@gentoo.org> ganeti-2.15.2-r5.ebuild:
+  whitespace.
+
+  Package-Manager: portage-2.2.28
+
+  11 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/ganeti-2.12-cfgupgrade-state.patch,
+  -files/ganeti-2.12-daemon-util.patch:
+  remove unused patches
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -88,8 +88,7 @@ go_arch()
 	case "${portage_arch}" in
 		x86)	echo 386;;
 		x64-*)	echo amd64;;
-		ppc64)
-			[[ "$(tc-endian)" = big ]] && echo ppc64 || echo ppc64le ;;
+		ppc64) [[ $(tc-endian $@) = big ]] && echo ppc64 || echo ppc64le ;;
 		*)		echo "${portage_arch}";;
 	esac
 }
@@ -238,11 +237,6 @@ pkg_postinst()
 	find "${EROOT}"usr/lib/go -type f \
 		-exec touch -r "${EROOT}"${tref} {} \;
 	eend $?
-
-	if [[ ${PV} != 9999 && -n ${REPLACING_VERSIONS} &&
-		${REPLACING_VERSIONS} != ${PV} ]]; then
-		elog "Release notes are located at http://golang.org/doc/go${PV}"
-	fi
 
 	if $had_support_files; then
 		ewarn

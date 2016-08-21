@@ -388,3 +388,50 @@
   16 Apr 2016; Mike Gilbert <floppym@gentoo.org> +glibc-2.23-r1.ebuild:
   restore 2.23-r1 with a mask
 
+  02 May 2016; Matt Turner <mattst88@gentoo.org> glibc-2.22-r4.ebuild:
+  alpha stable, bug 578602.
+
+  RepoMan-Options: --ignore-arches
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/nscd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  02 Jun 2016; Benda Xu <heroxbd@gentoo.org> files/eblits/common.eblit,
+  files/eblits/pkg_postinst.eblit, files/eblits/pkg_preinst.eblit,
+  files/eblits/src_configure.eblit, files/eblits/src_install.eblit:
+  files/eblits: Prefix support.
+
+  Bug: 473728
+
+  Package-Manager: portage-2.2.28
+
+  02 Jun 2016; Benda Xu <heroxbd@gentoo.org> files/eblits/src_configure.eblit:
+  add sysconfdir and localstatedir.
+
+    In Prefix, ${prefix} != /usr, sysconfdir defaults
+    to ${prefix}/etc and localstatedir to ${prefix}/var.
+    which results in EPREFIX/usr/{etc,var}.
+
+    This commit avoids that.
+
+  Package-Manager: portage-2.2.28
+
+  06 Jun 2016; Benda Xu <heroxbd@gentoo.org> files/eblits/src_install.eblit:
+  glibc_headers_install should use $(alt_prefix).
+
+    do not hardcode /usr/${CTARGET}.
+
+  19 Jun 2016; Benda Xu <heroxbd@gentoo.org> files/eblits/src_configure.eblit:
+  specify sbin in src_configure.
+
+    In configure when prefix=/usr, libc_cv_rootsbindir
+    is set to /sbin instead of /usr/sbin.  The same does
+    not apply if prefix=EPREFIX/usr.  We force it in Prefix
+    to be consistant.
+
+  Package-Manager: portage-2.2.28
+
+  23 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  files/eblits/pkg_pretend.eblit, files/eblits/src_prepare.eblit:
+  sourceware: convert to https:// URIs
+

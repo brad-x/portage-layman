@@ -97,3 +97,20 @@
   -boxbackup-0.11.1.ebuild:
   remove boxbackup-0.11.1
 
+*boxbackup-0.11.1-r2 (03 Aug 2016)
+
+  03 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +boxbackup-0.11.1-r2.ebuild,
+  +files/boxbackup-0.11.1-fix-Wformat-security.patch,
+  +files/boxbackup-0.11.1-fix-mandir.patch:
+  new revision to fix three QA issues.
+
+  This new revision adds "GPL-2" to LICENSE to cover the init script. It
+  also adds two patches, one to eliminate format-security warnings, and
+  the other (provided by a user) to fix the manpage install path.
+
+  Gentoo-Bug: 425884
+  Gentoo-Bug: 515422
+  Gentoo-Bug: 520978
+
+  Package-Manager: portage-2.2.28
+

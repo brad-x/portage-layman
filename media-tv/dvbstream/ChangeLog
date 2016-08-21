@@ -80,3 +80,25 @@
 
   Bug: 575810
 
+  27 Jul 2016; Mike Frysinger <vapier@gentoo.org>
+  dvbstream-0.7_pre20080516.ebuild:
+  sourceforge: switch to https:// URIs
+
+*dvbstream-0.7_pre20080516-r1 (12 Aug 2016)
+
+  12 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +dvbstream-0.7_pre20080516-r1.ebuild:
+  new revision respecting LDFLAGS.
+
+  This is a new revision with an update to EAPI=6 and a little ebuild
+  cleanup. Some missing die() statements were added, and some file
+  copying was avoided by using the newbin/newdoc helpers. Most
+  importantly, Michael Mair-Keimberger's fix to support LDFLAGS was
+  incorporated.
+
+  I built the package on amd64, so I've keyworded it ~amd64 as well.
+
+  Gentoo-Bug: 337327
+
+  Package-Manager: portage-2.2.28
+

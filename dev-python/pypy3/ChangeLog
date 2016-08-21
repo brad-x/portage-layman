@@ -176,3 +176,34 @@
   -files/1.9-scripts-location.patch, -pypy3-2.4.0.ebuild:
   Drop old
 
+  05 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/pypy3-2.4.0-fix-tkinter-regression.patch, pypy3-2.4.0-r2.ebuild:
+  fix regression in tkinter
+
+  Gentoo-Bug: https://bugs.gentoo.org/533384
+  Closes: https://github.com/gentoo/gentoo/pull/1326
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  14 May 2016; Michał Górny <mgorny@gentoo.org> pypy3-2.4.0-r2.ebuild,
+  pypy3-9999.ebuild:
+  Fix pax-marking in src_compile()
+
+  14 May 2016; Michał Górny <mgorny@gentoo.org> pypy3-2.4.0-r2.ebuild,
+  pypy3-9999.ebuild:
+  INSDESTTREE -> custom var, #582982
+
+  09 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  -files/21_all_distutils_c++.patch, +files/5.2.0-distutils-c++.patch,
+  pypy3-9999.ebuild:
+  Update the distutils C++ patch
+
+*pypy3-5.2.0_alpha1 (09 Jun 2016)
+
+  09 Jun 2016; Michał Górny <mgorny@gentoo.org> +pypy3-5.2.0_alpha1.ebuild:
+  Version bump to 5.2.0-alpha1
+
+  29 Jul 2016; Michał Górny <mgorny@gentoo.org> pypy3-2.4.0-r2.ebuild,
+  pypy3-5.2.0_alpha1.ebuild, pypy3-9999.ebuild:
+  Remove unnecessary PDEP on python-updater
+

@@ -424,3 +424,113 @@
   * x11-misc/driconf-0.9.1-r1
   * x11-misc/xdg-utils-1.1.0_rc2-r1
 
+*systemd-230 (28 May 2016)
+
+  28 May 2016; Mike Gilbert <floppym@gentoo.org> +systemd-230.ebuild:
+  bump to 230
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+*systemd-230-r1 (29 May 2016)
+
+  29 May 2016; Mike Gilbert <floppym@gentoo.org> -systemd-230.ebuild,
+  +systemd-230-r1.ebuild, systemd-9999.ebuild:
+  Disable KillUserProcesses by default
+
+  This should prevent an influx of complaints from tmux
+  and screen users.
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+  30 May 2016; Mike Gilbert <floppym@gentoo.org> systemd-230-r1.ebuild,
+  systemd-9999.ebuild:
+  unblock laptop-mode-tools
+
+  Bug: https://bugs.gentoo.org/584470
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+  30 May 2016; Mike Gilbert <floppym@gentoo.org> systemd-218-r5.ebuild,
+  systemd-226-r2.ebuild, systemd-228-r1.ebuild, systemd-229.ebuild,
+  systemd-230-r1.ebuild, systemd-9999.ebuild:
+  kernel check for CONFIG_UNIX
+
+  Bug: https://bugs.gentoo.org/538088
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+  30 May 2016; Mike Gilbert <floppym@gentoo.org> -systemd-229-r100.ebuild:
+  drop 229-r100
+
+  02 Jun 2016; Mike Gilbert <floppym@gentoo.org> metadata.xml,
+  systemd-230-r1.ebuild, systemd-9999.ebuild:
+  install manpage indexes
+
+  Bug: https://bugs.gentoo.org/584676
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+  04 Jun 2016; Mike Gilbert <floppym@gentoo.org> systemd-230-r1.ebuild,
+  systemd-9999.ebuild:
+  remove extra space
+
+  11 Jun 2016; Jason Zaman <perfinion@gentoo.org> systemd-229.ebuild,
+  systemd-230-r1.ebuild, systemd-9999.ebuild:
+  update deps on selinux policies
+
+  Package-Manager: portage-2.2.28
+
+*systemd-230-r2 (15 Jun 2016)
+
+  15 Jun 2016; Mike Gilbert <floppym@gentoo.org> -systemd-230-r1.ebuild,
+  +systemd-230-r2.ebuild, systemd-9999.ebuild:
+  add blocker on <sys-kernel/dracut-044
+
+  Earlier versions of dracut do not include initrd-root-device.target in the
+  initramfs image.
+
+  Bug: https://bugs.gentoo.org/585980
+
+  Package-Manager: portage-2.3.0_rc1_p20
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  update resolv.conf warning
+
+  Package-Manager: portage-2.3.0_p16
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  drop migrate_net_name_slot
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  drop reenable_unit
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-9999.ebuild:
+  drop kdbus
+
+*systemd-231 (30 Jul 2016)
+
+  30 Jul 2016; Mike Gilbert <floppym@gentoo.org> +systemd-231.ebuild:
+  bump to 231
+
+  Package-Manager: portage-2.3.0_p16
+
+  31 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-231.ebuild,
+  systemd-9999.ebuild:
+  fix resolv.conf message
+
+  Thanks to novns in #gentoo-systemd.
+
+  31 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-226-r2.ebuild,
+  systemd-228-r1.ebuild, systemd-229.ebuild, systemd-230-r2.ebuild,
+  systemd-231.ebuild, systemd-9999.ebuild:
+  skip DEVPTS_MULTIPLE_INSTANCES check for Linux >= 4.7
+
+  Thanks to novns in #gentoo-systemd.
+
+  31 Jul 2016; Mike Gilbert <floppym@gentoo.org> systemd-231.ebuild:
+  disable resolv.conf warning
+
+  systemd-resolved currently returns broken responses via 127.0.0.53.
+
+  Bug: https://github.com/systemd/systemd/issues/3826
+

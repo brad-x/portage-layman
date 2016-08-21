@@ -10,7 +10,7 @@ DESCRIPTION="Transitional package for activities KCM and KIO modules in Plasma-5
 SRC_URI="mirror://kde/stable/kactivities/${P}.tar.xz"
 
 LICENSE="|| ( GPL-2 GPL-3 )"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm x86"
 IUSE=""
 
 COMMON_DEPEND="
@@ -37,7 +37,7 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	!>kde-apps/kio-extras-15.12.50
 	!<kde-base/kactivities-4.13.3-r1:4[-minimal(-)]
-	!kde-base/kactivitymanagerd
+	!kde-plasma/kactivitymanagerd:4
 	!<kde-frameworks/kactivities-5.20.0
 	!>kde-plasma/plasma-desktop-5.5.90
 "
@@ -47,4 +47,11 @@ src_prepare() {
 	# Remove conflict with kde-frameworks/kactivities
 	sed -e "/add_subdirectory.*imports/ s/^/#DONT/" \
 		-i src/workspace/CMakeLists.txt || die
+
+	# Fix bogus deps (bug #585044)
+	sed -e "s/KF5KCMUtils/KF5Service/" \
+		-e "/Declarative/d" \
+		-e "/KF5::KCMUtils/d" \
+		-i src/workspace/settings/CMakeLists.txt || die
+
 }

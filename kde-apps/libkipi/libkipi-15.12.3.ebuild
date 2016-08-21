@@ -8,7 +8,7 @@ KDE_BLOCK_SLOT4="false"
 inherit kde5
 
 DESCRIPTION="A library for image plugins accross KDE applications"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND="
@@ -23,5 +23,5 @@ DEPEND="
 "
 
 RDEPEND="${DEPEND}
-	!kde-apps/libkipi:4[-minimal(-)]
+	!<kde-apps/libkipi-15.08.3-r1:4
 "

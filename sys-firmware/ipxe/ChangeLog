@@ -84,3 +84,38 @@
 
   Package-Manager: portage-2.2.26
 
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org> ipxe-1.0.0_p20130925.ebuild:
+  move header/toolchain setup to src_configure
+
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org> ipxe-1.0.0_p20130925.ebuild:
+  add USE=ipv6 support
+
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org> ipxe-1.0.0_p20130925.ebuild:
+  add savedconfig support #487816
+
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/ipxe-1.0.0_p20130925-no-pie.patch, ipxe-1.0.0_p20130925.ebuild:
+  fix building when ssp is enabled by default #585752
+
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org> ipxe-1.0.0_p20130925.ebuild,
+  metadata.xml:
+  add USE=efi support
+
+*ipxe-1.0.0_p20160620 (21 Jun 2016)
+
+  21 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  +files/ipxe-1.0.0_p20160620-no-pie.patch, +ipxe-1.0.0_p20160620.ebuild:
+  version bump
+
+  23 Jun 2016; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  change maintainer to qemu
+
+  23 Jun 2016; Mike Frysinger <vapier@gentoo.org>
+  files/ipxe-1.0.0_p20130925-no-pie.patch,
+  files/ipxe-1.0.0_p20160620-no-pie.patch:
+  fix building with current stable hardened toolchains #586558
+
+  Current Gentoo stable hardened toolchains utilize "-nopie" while upstream
+  has standardized "-no-pie".  Hack the pie patch to support both until we
+  can update our gcc patchsets to use the newer name.
+

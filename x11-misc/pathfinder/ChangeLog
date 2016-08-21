@@ -61,3 +61,30 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  06 May 2016; Michał Górny <mgorny@gentoo.org> pathfinder-1.6.36.ebuild:
+  Fix global scope use* calls, #582206
+
+  Copy the solution to global scope use* calls from newer ebuilds.
+
+  07 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  pathfinder-1.6.36.ebuild:
+  Revert "x11-misc/pathfinder: Fix global scope use* calls, #582206" - repoman
+  would have prevented more breakage
+
+  This reverts commit e4333453f946ddfd571daf06738e947bab21a53b.
+
+  05 Jun 2016; Mike Gilbert <floppym@gentoo.org> pathfinder-1.6.36.ebuild:
+  move FOXCONF definition to src_compile
+
+  mgorny had the right idea in e4333453, but EAPI 1 does not execute
+  src_configure.
+
+  Bug: https://bugs.gentoo.org/582206
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #150215
+
+  Package-Manager: portage-2.3.0
+

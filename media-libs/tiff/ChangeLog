@@ -154,3 +154,28 @@
   RepoMan-Options: --include-arches="ia64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  10 Jul 2016; Markus Meier <maekke@gentoo.org> -tiff-4.0.3-r6.ebuild,
+  -tiff-4.0.5.ebuild:
+  remove vulnerable versions for bug #484542
+
+  Package-Manager: portage-2.3.0
+
+*tiff-4.0.6-r1 (03 Aug 2016)
+
+  03 Aug 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/tiff-4.0.6-gif2tiff_removal.patch, +tiff-4.0.6-r1.ebuild:
+  Revbump for security bug #585274
+
+  Removing vulnerable gif2tiff (CVE-2016-5102)
+  Upstream seems to no longer ship this tool with >=tiff-4.0.7 versions.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  07 Aug 2016; Lars Wendler <polynomial-c@gentoo.org>
+  files/tiff-4.0.6-gif2tiff_removal.patch:
+  Also remove gif2tiff test (bug #590708).
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

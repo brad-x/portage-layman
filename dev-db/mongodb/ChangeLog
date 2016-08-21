@@ -246,3 +246,65 @@
   +mongodb-3.2.5.ebuild:
   version bump, drop old
 
+*mongodb-3.0.12 (17 May 2016)
+
+  17 May 2016; Ultrabug <ultrabug@gentoo.org> -mongodb-3.0.11.ebuild,
+  +mongodb-3.0.12.ebuild:
+  version bump fix #580796
+
+  Package-Manager: portage-2.2.27
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/mms-agent.initd,
+  files/mms-agent.initd-r1, files/mms-agent.initd-r2, files/mongodb.initd-r2,
+  files/mongos.initd-r1, files/mongos.initd-r2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  19 Jun 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Multiple metadata.xml: reorder to make sure assignee goes first
+
+  Reorder all metadata.xml files with explicit descriptions requesting
+  particular bug assignment/CC to ensure that the requested assignee
+  always goes first, in order to match the bug wrangling policies.
+
+  30 Jul 2016; Patrice Clement <monsieurp@gentoo.org> -files/mms-agent.confd,
+  -files/mms-agent.initd, -files/mms-agent.initd-r1,
+  -files/mms-agent.initd-r2, -files/mongodb-2.0-fix-scons.patch,
+  -files/mongodb-2.0-r1-boost-1.50.patch,
+  -files/mongodb-2.4.5-fix-scons.patch, -files/mongodb-2.6.1-fix-scons.patch,
+  -files/mongos.confd, -files/mongos.initd-r1:
+  dev-db/*: remove unused patches.
+
+  Squash all commit messages into a single one.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1936
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mongodb-3.2.8 (04 Aug 2016)
+
+  04 Aug 2016; Ultrabug <ultrabug@gentoo.org> -mongodb-3.2.4.ebuild,
+  -mongodb-3.2.5.ebuild, +mongodb-3.2.8.ebuild:
+  version bump, drop old
+
+  Package-Manager: portage-2.2.27
+
+*mongodb-3.2.9 (19 Aug 2016)
+
+  19 Aug 2016; Ultrabug <ultrabug@gentoo.org> mongodb-2.6.12.ebuild,
+  +mongodb-3.2.9.ebuild:
+  version bump and copyright fix
+
+  Package-Manager: portage-2.2.27
+
+  19 Aug 2016; Ultrabug <ultrabug@gentoo.org> mongodb-2.6.8.ebuild,
+  mongodb-2.6.11.ebuild, mongodb-2.6.12.ebuild, mongodb-3.0.10.ebuild,
+  mongodb-3.0.12.ebuild, mongodb-3.2.8.ebuild:
+  fix REPLACING_VERSION detection #589458
+
+  Package-Manager: portage-2.2.27
+
+  19 Aug 2016; Ultrabug <ultrabug@gentoo.org> -mongodb-2.6.11.ebuild,
+  -mongodb-3.0.10.ebuild:
+  drop old ebuilds
+
+  Package-Manager: portage-2.2.27
+

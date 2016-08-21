@@ -63,3 +63,21 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*Savant3-3.0.1-r1 (12 Jul 2016)
+
+  12 Jul 2016; Michael Orlitzky <mjo@gentoo.org> -Savant3-3.0.1.ebuild,
+  +Savant3-3.0.1-r1.ebuild, -files/channel.xml:
+  new revision with a new (github) SRC_URI.
+
+  The previous revision was based on our PEAR eclass which is getting
+  long in the tooth. And upstream's PEAR channel has died, also bad;
+  fortunately the sources for v3.0.1 are still available on github.
+
+  The new revision uses a github commit tarball as SRC_URI, and installs
+  the package manually (i.e. without PEAR). This allows us to use
+  EAPI=6, and get the test suite working.
+
+  Gentoo-Bug: 551002
+
+  Package-Manager: portage-2.2.28
+

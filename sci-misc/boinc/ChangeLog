@@ -105,3 +105,229 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+*boinc-7.2.42 (04 May 2016)
+
+  04 May 2016; David Seifert <soap@gentoo.org> +boinc-7.2.42.ebuild:
+  New ebuild for boinc-7.2.42 with vsyscall check
+
+  Gentoo-Bug: 577490, 578750
+
+  The ebuild is essentially the same as for the new boinc-7.6.31 with
+  the following exception:
+
+  The 7.2 series can not be built with wxGTK:3.0, therefore this ebuild
+  uses wxGTK:2.8.
+
+  Further a check against VSYSCALL kernel options has been added.
+  Russell Knighton found out, that some projects segfault if VSYSCALL
+  mappings are completely disabled, and reported the issue in bug
+  578750.
+
+  The check against CONFIG_LEGACY_VSYSCALL_NONE and
+  CONFIG_X86_VSYSCALL_EMULATION is based on his patch submitted in the
+  bug reported by him.
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; David Seifert <soap@gentoo.org> -boinc-7.2.0.ebuild:
+  Removed obsolete ebuild for boinc-7.2.0
+
+  Gentoo-Bug: 577490
+
+  Made obsolete by the addition of the versioned 7.2.42 ebuild.
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; David Seifert <soap@gentoo.org> -boinc-7.2.0-r1.ebuild:
+  Removed obsolete ebuild for boinc-7.2.0-r1
+
+  Gentoo-Bug: 577490
+
+  Made obsolete by the addition of the versioned 7.2.42 ebuild.
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.4.42-r2 (04 May 2016)
+
+  04 May 2016; David Seifert <soap@gentoo.org> +boinc-7.4.42-r2.ebuild:
+  New r2 ebuild for boinc-7.4.42 with vsyscall fix
+
+  Gentoo-Bug: 577490, 578750
+
+  A check against VSYSCALL kernel options was added.
+  Russell Knighton found out, that some projects segfault if VSYSCALL
+  mappings are completely disabled, and reported the issue in bug
+  578750.
+
+  The check against CONFIG_LEGACY_VSYSCALL_NONE and
+  CONFIG_X86_VSYSCALL_EMULATION is based on his patch submitted in the
+  bug reported by him.
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; David Seifert <soap@gentoo.org> -boinc-7.4.42-r1.ebuild:
+  Removed obsolete ebuild for boinc-7.4.42-r1
+
+  Gentoo-Bug: 577490, 578750
+
+  Made obsolete by the 7.4.42-r2 ebuild, that has an important fix.
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.6.31-r1 (04 May 2016)
+
+  04 May 2016; David Seifert <soap@gentoo.org> +boinc-7.6.31-r1.ebuild:
+  New r1 ebuild for boinc-7.6.31 with vsyscall fix
+
+  Gentoo-Bug: 577490, 578750
+
+  A check against VSYSCALL kernel options was added.
+  Russell Knighton found out, that some projects segfault if VSYSCALL
+  mappings are completely disabled, and reported the issue in bug
+  578750.
+
+  The check against CONFIG_LEGACY_VSYSCALL_NONE and
+  CONFIG_X86_VSYSCALL_EMULATION is based on his patch submitted in the
+  bug reported by him.
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; David Seifert <soap@gentoo.org> -boinc-7.6.31.ebuild:
+  Removed obsolete ebuild for boinc-7.6.31
+
+  Gentoo-Bug: 577490, 578750
+
+  Made obsolete by the 7.6.31-r1 ebuild, that has an important fix.
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; David Seifert <soap@gentoo.org> files/boinc.init:
+  Upgraded init script
+
+  Gentoo-Bug: 574260
+
+  After hot-fixing bug 574260, the following fixes/additions, suggested
+  by Jan Chren were made:
+
+  - #!/sbin/runscript -> #!/sbin/openrc-run
+  - Variables from /etc/conf.d/boinc are checked, and empty variables
+    are pre-filled with sane defaults.
+  - split start() to start_pre() and start()
+  - removed check_baselayout()
+  - replaced /etc/init.d/boinc with ${RC_SERVICE}
+  - replaced echo with einfo ""
+  - replaced ${SVCNAME} with ${RC_SVCNAME}
+  - removed unset for local vars
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.6.31-r2 (05 May 2016)
+*boinc-7.4.42-r3 (05 May 2016)
+*boinc-7.2.42-r1 (05 May 2016)
+
+  05 May 2016; David Seifert <soap@gentoo.org> -boinc-7.2.42.ebuild,
+  +boinc-7.2.42-r1.ebuild, -boinc-7.4.42-r2.ebuild, +boinc-7.4.42-r3.ebuild,
+  -boinc-7.6.31-r1.ebuild, +boinc-7.6.31-r2.ebuild, files/boinc.init:
+  Fix variable default statements in init scripts
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.2.42-r2 (07 May 2016)
+
+  07 May 2016; David Seifert <soap@gentoo.org> -boinc-7.2.42-r1.ebuild,
+  +boinc-7.2.42-r2.ebuild:
+  Fix VSYSCALL check for boinc-7.2.42
+
+  Gentoo-Bug: 578750
+
+  The configuration options were misunderstood.
+
+  - CONFIG_X86_VSYSCALL_EMULATION only enables a dmesg message if any
+    legacy application tries to use any vsyscall. If disabled, these
+    applications simply segfault with no output in dmesg.
+  - To make the old calls available, either
+    CONFIG_LEGACY_VSYSCALL_NATIVE or CONFIG_LEGACY_VSYSCALL_EMULATE
+    must be used.
+
+  Therefore the ebuild was reverted to check against the
+  CONFIG_LEGACY_VSYSCALL_NONE option, and warns the user if this is
+  set.
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.4.42-r4 (07 May 2016)
+
+  07 May 2016; David Seifert <soap@gentoo.org> -boinc-7.4.42-r3.ebuild,
+  +boinc-7.4.42-r4.ebuild:
+  Fix VSYSCALL check for boinc-7.4.42
+
+  Gentoo-Bug: 578750
+
+  The configuration options were misunderstood.
+
+  - CONFIG_X86_VSYSCALL_EMULATION only enables a dmesg message if any
+    legacy application tries to use any vsyscall. If disabled, these
+    applications simply segfault with no output in dmesg.
+  - To make the old calls available, either
+    CONFIG_LEGACY_VSYSCALL_NATIVE or CONFIG_LEGACY_VSYSCALL_EMULATE
+    must be used.
+
+  Therefore the ebuild was reverted to check against the
+  CONFIG_LEGACY_VSYSCALL_NONE option, and warns the user if this is
+  set.
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.6.31-r3 (07 May 2016)
+
+  07 May 2016; David Seifert <soap@gentoo.org> -boinc-7.6.31-r2.ebuild,
+  +boinc-7.6.31-r3.ebuild:
+  Fix VSYSCALL check for boinc-7.6.31
+
+  Gentoo-Bug: 578750
+
+  The configuration options were misunderstood.
+
+  - CONFIG_X86_VSYSCALL_EMULATION only enables a dmesg message if any
+    legacy application tries to use any vsyscall. If disabled, these
+    applications simply segfault with no output in dmesg.
+  - To make the old calls available, either
+    CONFIG_LEGACY_VSYSCALL_NATIVE or CONFIG_LEGACY_VSYSCALL_EMULATE
+    must be used.
+
+  Therefore the ebuild was reverted to check against the
+  CONFIG_LEGACY_VSYSCALL_NONE option, and warns the user if this is
+  set.
+
+  Package-Manager: portage-2.2.28
+
+*boinc-7.2.44 (14 Jun 2016)
+
+  14 Jun 2016; David Seifert <soap@gentoo.org> +boinc-7.2.44.ebuild:
+  New ebuild for boinc-7.2.44
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1629
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*boinc-7.4.43 (14 Jun 2016)
+
+  14 Jun 2016; David Seifert <soap@gentoo.org> +boinc-7.4.43.ebuild:
+  New ebuild for boinc-7.4.43
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1629
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*boinc-7.6.33 (14 Jun 2016)
+
+  14 Jun 2016; David Seifert <soap@gentoo.org> +boinc-7.6.33.ebuild:
+  New ebuild for boinc-7.6.33
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1629
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+

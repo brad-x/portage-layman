@@ -109,3 +109,18 @@
   Package-Manager: portage-2.2.27
   Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
 
+  25 May 2016; Andrew Savchenko <bircoph@gentoo.org>
+  files/svgalib-1.9.25-linux_2.6.36-r1.patch, svgalib-1.9.25-r5.ebuild:
+  fix build failures
+
+  1. Bug 576260.
+  App code needs C89 extern inlines. The sanes way is to use
+  -fgnu89-inlines.
+
+  2. Bug 583726.
+  Use long instead of int to avoid incompatible pointer type errors
+  (starting with linux-4.6.0)
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+

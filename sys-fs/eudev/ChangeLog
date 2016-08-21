@@ -245,3 +245,67 @@
   * x11-misc/driconf-0.9.1-r1
   * x11-misc/xdg-utils-1.1.0_rc2-r1
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/udev-postmount:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  30 May 2016; Mike Gilbert <floppym@gentoo.org> eudev-1.9-r2.ebuild,
+  eudev-1.10-r2.ebuild, eudev-3.1.2.ebuild, eudev-3.1.5.ebuild,
+  eudev-9999.ebuild:
+  kernel check for CONFIG_UNIX
+
+  Bug: https://bugs.gentoo.org/538088
+
+  Package-Manager: portage-2.3.0_rc1_p14
+
+*eudev-3.2 (01 Jun 2016)
+
+  01 Jun 2016; Anthony G. Basile <blueness@gentoo.org> +eudev-3.2.ebuild:
+  version bump to 3.2
+
+  Package-Manager: portage-2.2.28
+
+*eudev-4.9999 (24 Jun 2016)
+
+  24 Jun 2016; Anthony G. Basile <blueness@gentoo.org> +eudev-4.9999.ebuild,
+  metadata.xml:
+  add live ebuild for testing eudev-4 branch
+
+  Package-Manager: portage-2.2.28
+
+  05 Jul 2016; Anthony G. Basile <blueness@gentoo.org> eudev-4.9999.ebuild:
+  update configure --prefix
+
+  Package-Manager: portage-2.2.28
+
+  25 Jul 2016; Ian Stakenvicius <axs@gentoo.org> eudev-1.9-r2.ebuild,
+  eudev-1.10-r2.ebuild, eudev-3.1.2.ebuild, eudev-3.1.5.ebuild,
+  eudev-3.2.ebuild, eudev-4.9999.ebuild, eudev-9999.ebuild:
+  ensure REPLACING_VERSIONS is processed as a list
+
+  REPLACING_VERSIONS is used in eudev ebuilds during pkg_postinst to determine
+  when udevadm control --reload should be called:
+  - when it is a new installation of udev
+  - when it is a re-emerge of the same version (or a revision-only upgrade)
+
+  REPLACING_VERSIONS *should* only ever have zero or one values, but it is
+  theoretically possible for it to have more than that if, for instance, a
+  previous
+  upgrade failed to complete during qmerge.  If this is the case, and only one
+  of
+  the multiple versions match the version of the ebuild, then we also abort as
+  we
+  don't know which one is the "good" one.
+
+  Also removed duplicate code that reloads the hwdb (looks like it was a copy-
+  paste
+  from sys-fs/udev)
+
+  Bug: http://bugs.gentoo.org/589530
+
+  Package-Manager: portage-2.2.28
+
+  01 Aug 2016; Benda Xu <heroxbd@gentoo.org> eudev-3.2.ebuild:
+  Prefix support.
+
+  Bug: 589796
+

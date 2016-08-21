@@ -35,7 +35,7 @@ else
 		http://www.rsyslog.com/files/download/${PN}/${P}.tar.gz
 		doc? ( http://www.rsyslog.com/files/download/${PN}/${PN}-doc-${PV}.tar.gz )
 	"
-	KEYWORDS="amd64 ~arm ~hppa x86"
+	KEYWORDS="amd64 ~arm hppa x86"
 fi
 
 LICENSE="GPL-3 LGPL-3 Apache-2.0"
@@ -313,15 +313,6 @@ pkg_postinst() {
 			elog "once for each logging client. The client certificates will be signed"
 			elog "using the CA certificate generated during the first run."
 		fi
-	fi
-
-	if [[ -z "${REPLACING_VERSIONS}" ]] || [[ ${REPLACING_VERSIONS} < 8.0 ]]; then
-		# Show this message until rsyslog-8.x
-		echo
-		elog "Since ${PN}-7.6.3 we no longer use the catch-all log target"
-		elog "\"/var/log/syslog\" due to its redundancy to the other log targets."
-
-		advertise_readme=1
 	fi
 
 	if [[ ${advertise_readme} -gt 0 ]]; then

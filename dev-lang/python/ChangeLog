@@ -554,3 +554,101 @@
 
   Bug: https://bugs.gentoo.org/show_bug.cgi?id=580242
 
+  03 May 2016; Austin English <wizardedit@gentoo.org> files/pydoc.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  Approved by Michał Górny <mgorny@gentoo.org>
+
+  Gentoo-Bug: https://bugs.gentoo.org/573846
+  Gentoo-Bug: https://bugs.gentoo.org/581940
+
+  Package-Manager: portage-2.2.26
+
+  12 May 2016; Mike Gilbert <floppym@gentoo.org>
+  +files/3.5.1-cross-compile.patch, python-3.5.1-r2.ebuild:
+  fix cross-compiles for 3.5.1
+
+  Bug: https://bugs.gentoo.org/581304
+
+  Package-Manager: portage-2.2.28_p106
+
+  30 May 2016; Matt Turner <mattst88@gentoo.org> python-2.7.11-r2.ebuild,
+  python-3.3.5-r8.ebuild, python-3.4.3-r7.ebuild, python-3.5.0-r2.ebuild,
+  python-3.5.1-r2.ebuild:
+  Drop append-flags -fPIC alpha workaround.
+
+  Unknown what it was working around. The same existed for amd64 and
+  hppa but both were removed more than ten years ago.
+
+*python-3.5.1-r3 (06 Jun 2016)
+
+  06 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  +files/python-3.5-distutils-OO-build.patch, +python-3.5.1-r3.ebuild:
+  Fix distutils to compile .opt-1 & .opt-2 in 3.5
+
+*python-3.4.4 (10 Jun 2016)
+
+  10 Jun 2016; Michał Górny <mgorny@gentoo.org> +python-3.4.4.ebuild:
+  Bump to 3.4.4
+
+*python-3.5.2 (21 Jul 2016)
+
+  21 Jul 2016; Mike Gilbert <floppym@gentoo.org> +python-3.5.2.ebuild:
+  bump to 3.5.2
+
+  Package-Manager: portage-2.3.0_p15
+
+*python-3.4.5 (21 Jul 2016)
+
+  21 Jul 2016; Mike Gilbert <floppym@gentoo.org> +python-3.4.5.ebuild:
+  bump to 3.4.5
+
+  Package-Manager: portage-2.3.0_p15
+
+  21 Jul 2016; Mike Gilbert <floppym@gentoo.org> python-3.4.5.ebuild:
+  fix SRC_URI
+
+*python-2.7.12 (22 Jul 2016)
+
+  22 Jul 2016; Mike Gilbert <floppym@gentoo.org> +python-2.7.12.ebuild:
+  bump to 2.7.12
+
+  Package-Manager: portage-2.3.0_p15
+
+  30 Jul 2016; Michał Górny <mgorny@gentoo.org> python-2.7.10-r1.ebuild,
+  python-2.7.11-r2.ebuild, python-2.7.12.ebuild, python-3.3.5-r3.ebuild,
+  python-3.3.5-r8.ebuild, python-3.4.3-r1.ebuild, python-3.4.3-r7.ebuild,
+  python-3.4.4.ebuild, python-3.4.5.ebuild:
+  Remove remnants of python-updater
+
+  Remove the remaining dependencies on deprecated python-updater,
+  and update the postinst messages appropriately. For Python 2.7,
+  the message has been removed altogether since it is the oldest version
+  supported by PYTHON_TARGETS. For the remaining versions, just inform
+  about potential PYTHON_TARGETS changes necessary.
+
+  The modified versions are not revision-bumped to avoid unnecessary
+  rebuilds due to a minor change. The versions that are still
+  newest-visible (i.e. not replaced by another version or revision bump)
+  will be bumped when python-updater is lastrited.
+
+  04 Aug 2016; Mike Gilbert <floppym@gentoo.org> python-2.7.12.ebuild,
+  python-3.4.5.ebuild, python-3.5.2.ebuild:
+  disable MPROTECT
+
+  The hardened team can figure this shit out.
+
+  Package-Manager: portage-2.3.0_p16
+
+  04 Aug 2016; Mike Gilbert <floppym@gentoo.org> python-2.7.12.ebuild,
+  python-3.4.5.ebuild, python-3.5.2.ebuild:
+  Revert "dev-lang/python: disable MPROTECT"
+
+  This reverts commit b8cb87b5af9ab23e60864a4c66988c0f595f5b77.
+
+  19 Aug 2016; Michał Górny <mgorny@gentoo.org> python-2.7.10-r1.ebuild,
+  python-2.7.11-r2.ebuild, python-2.7.12.ebuild, python-3.3.5-r3.ebuild,
+  python-3.3.5-r8.ebuild, python-3.4.3-r1.ebuild, python-3.4.3-r7.ebuild,
+  python-3.4.4.ebuild, python-3.4.5.ebuild:
+  Backport gcc[-libffi(-)] blocker fix to all versions
+

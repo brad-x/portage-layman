@@ -77,3 +77,59 @@
   setools-9999.ebuild:
   selinux: initial arm/arm64/mips support
 
+*setools-4.0.0 (04 May 2016)
+
+  04 May 2016; Jason Zaman <perfinion@gentoo.org>
+  +files/setools-4.0.0-remove-gui.patch, +setools-4.0.0.ebuild,
+  setools-9999.ebuild:
+  bump to 4.0.0 and drop keywords for testing
+
+  Package-Manager: portage-2.2.26
+
+*setools-4.0.1 (22 May 2016)
+
+  22 May 2016; Sven Vermeulen <swift@gentoo.org>
+  +files/setools-4.0.1-remove-gui.patch, +setools-4.0.1.ebuild:
+  version bump to 4.0.1, fix deps
+
+  This bumps SETools to version 4.0.1. The main change upstream is a
+  shift in the used icons due to a potential license incompatibility.
+
+  We also remove the dependency on qtchooser (see bug 583310) as this
+  is little more than a target manager (similar to eselect). The PyQt5
+  dependency handles the necessary dependencies already.
+
+  Finally, the libsepol dependency is also bumped as this tool requires
+  libsepol-2.5.
+
+  Package-Manager: portage-2.2.28
+
+  01 Jun 2016; Jason Zaman <perfinion@gentoo.org> setools-9999.ebuild:
+  update live ebuild
+
+  Package-Manager: portage-2.2.28
+
+  01 Jun 2016; Jason Zaman <perfinion@gentoo.org>
+  -files/setools-4.0.0-remove-gui.patch, -setools-4.0.0.ebuild:
+  drop 4.0.0
+
+  Package-Manager: portage-2.2.28
+
+  22 Jun 2016; Patrice Clement <monsieurp@gentoo.org> setools-3.3.8-r5.ebuild,
+  setools-3.3.8-r7.ebuild:
+  update Homepage
+
+  Closes: https://github.com/gentoo/gentoo/pull/1698
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  01 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/fix-check-role_set_expand-libsepol-2.1.0.patch,
+  -files/fix-implicit-def-fstat.patch,
+  -files/setools3-userspace-2.4-compatibility.patch:
+  remove unused patches
+
+  Closes: https://github.com/gentoo/gentoo/pull/1803
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

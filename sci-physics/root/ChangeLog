@@ -175,3 +175,55 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/proofd.initd,
+  files/rootd.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  19 May 2016; Benda Xu <heroxbd@gentoo.org> root-5.34.32.ebuild:
+  workaround for parallel make jobs.
+
+  Bug: 571638
+
+  Package-Manager: portage-2.2.28
+
+  19 Jun 2016; Andrew Savchenko <bircoph@gentoo.org> root-5.34.26.ebuild,
+  root-5.34.32.ebuild, root-6.02.05-r2.ebuild, root-6.04.06.ebuild:
+  fix bug 586326
+
+  While bug itself is of questionable validity (see parent bug 586238),
+  affected dependencies have neither subslots nor multiple slots, thus
+  := can be safely dropped.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  19 Jun 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +files/root-6.04.06-gsl2.patch, root-6.04.06.ebuild:
+  fix bug 575686
+
+  Apply upstream patch to support gsl-2.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  19 Jun 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -files/root-6.00.01-geocad.patch, -files/root-6.00.01-prop-flags.patch,
+  -root-6.02.05-r2.ebuild, root-6.04.06.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+*root-5.34.36 (23 Jul 2016)
+
+  23 Jul 2016; Benda Xu <heroxbd@gentoo.org> +root-5.34.36.ebuild:
+  bump to 5.34.36.
+
+    Support c++11.
+
+    replace sed with hprefixify.
+
+    Also bump root-docs.
+
+  Package-Manager: portage-2.3.0
+

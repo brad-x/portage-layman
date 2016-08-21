@@ -65,3 +65,22 @@
 
   Bug: 575810
 
+*gkrellm-countdown-0.1.2-r1 (07 Aug 2016)
+
+  07 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/gkrellm-countdown-makefile.patch, +gkrellm-countdown-0.1.2-r1.ebuild:
+  new revision fixing HOMEPAGE and LDFLAGS.
+
+  This new revision fixes two bugs, both thanks to Michael
+  Mair-Keimberger who posted patches to our bugzilla. The first is that
+  the upstream build system did not support LDFLAGS -- it now does, with
+  a patched Makefile. Michael also corrected the invalid HOMEPAGE
+  variable, and added the ~amd64 keyword (which I am able to test).
+
+  The ebuild has been updated to EAPI=6.
+
+  Gentoo-Bug: 339657
+  Gentoo-Bug: 367171
+
+  Package-Manager: portage-2.2.28
+

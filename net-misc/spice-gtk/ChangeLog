@@ -234,3 +234,132 @@
   19 Apr 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Fix gtk+ pkg ref
 
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.30-r1.ebuild:
+  fix dependency on app-emulation/spice-protocol, bug #567082
+
+  Package-Manager: portage-2.2.26
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.30-r1.ebuild:
+  use PYTHON_REQUIRED_USE unconditionally, bug #567082
+
+  Package-Manager: portage-2.2.26
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.30-r1.ebuild:
+  add missing dependency on media-libs/gst-plugins-good, bug #571372
+
+  Package-Manager: portage-2.2.26
+
+*spice-gtk-0.31 (01 May 2016)
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> +spice-gtk-0.31.ebuild:
+  version bump to 0.31
+
+  Package-Manager: portage-2.2.26
+
+  01 May 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.31.ebuild:
+  add libressl support, bug #580670
+
+  Package-Manager: portage-2.2.26
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.30-r1.ebuild,
+  spice-gtk-0.31.ebuild:
+  workaround access violation during configure, bug #581836
+
+  Thanks to Martin Dummer for the patch.
+
+  Package-Manager: portage-2.2.28
+
+  14 Jun 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml:
+  update metadata.xml
+
+  Package-Manager: portage-2.2.28
+
+  15 Jun 2016; Agostino Sarubbo <ago@gentoo.org> spice-gtk-0.31.ebuild:
+  amd64 stable wrt bug #584126
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Jun 2016; Agostino Sarubbo <ago@gentoo.org> spice-gtk-0.31.ebuild:
+  x86 stable wrt bug #584126
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Jun 2016; Matthias Maier <tamiko@gentoo.org> -spice-gtk-0.30-r1.ebuild:
+  drop obsolete, bug #584126
+
+  Package-Manager: portage-2.2.28
+
+  16 Jun 2016; Patrice Clement <monsieurp@gentoo.org> spice-gtk-0.31.ebuild:
+  fix git repository url
+
+  Closes: https://github.com/gentoo/gentoo/pull/1680
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*spice-gtk-0.32 (02 Aug 2016)
+
+  02 Aug 2016; Matthias Maier <tamiko@gentoo.org> metadata.xml,
+  +spice-gtk-0.32.ebuild:
+  version bump to 0.32
+
+  Thanks to Yixun Lun (dlan) for all the work!
+
+  Package-Manager: portage-2.2.28
+
+*spice-gtk-0.32-r1 (02 Aug 2016)
+
+  02 Aug 2016; Matthias Maier <tamiko@gentoo.org> -spice-gtk-0.32.ebuild,
+  +spice-gtk-0.32-r1.ebuild:
+  remove USE=doc and follow general gtk-docs policy
+
+  aka unconditionally install the html documentation
+
+  Package-Manager: portage-2.2.28
+
+  02 Aug 2016; Matthias Maier <tamiko@gentoo.org> spice-gtk-0.32-r1.ebuild:
+  fully revert to 0.31: add --disable-gtk-doc
+
+  Thanks to Mart Raudsepp for pointing this out.
+
+  Package-Manager: portage-2.2.28
+
+  02 Aug 2016; Patrick Lauer <patrick@gentoo.org> spice-gtk-0.32-r1.ebuild:
+  Whitespace
+
+  Package-Manager: portage-2.3.0
+
+*spice-gtk-0.32-r2 (17 Aug 2016)
+
+  17 Aug 2016; Yixun Lan <dlan@gentoo.org> +files/README.gentoo, metadata.xml,
+  +spice-gtk-0.32-r2.ebuild:
+  fine tune IUSEs
+
+  1) replace IUSE=gstreamer with IUSE="gstaudio gstvideo"
+     so we can control audio/video backend seperately
+     possible has the combination USE="gstvideo -gstaudio pulseaudio"
+
+  2) introduce gentoo.readme to suggest users install mjpeg,vpx,x264
+     gstreamer plugins
+
+  Package-Manager: portage-2.3.0
+
+*spice-gtk-9999 (17 Aug 2016)
+
+  17 Aug 2016; Yixun Lan <dlan@gentoo.org> +spice-gtk-9999.ebuild:
+  live ebuild added
+
+  Package-Manager: portage-2.3.0
+
+  17 Aug 2016; Ian Stakenvicius <axs@gentoo.org>
+  +files/spice-gtk-0.31-x11-libs.patch, +files/spice-gtk-0.32-x11-libs.patch,
+  spice-gtk-0.31.ebuild, spice-gtk-0.32-r1.ebuild, spice-gtk-0.32-r2.ebuild:
+  explicitly link libX11 the right way for ld.gold
+
+  Bug: http://bugs.gentoo.org/585118
+
+  Package-Manager: portage-2.2.28
+

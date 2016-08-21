@@ -51,3 +51,43 @@
   20 Apr 2016; Mike Frysinger <vapier@gentoo.org> firejail-0.9.38.ebuild:
   respect build settings
 
+*firejail-0.9.40 (03 Jun 2016)
+
+  03 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +files/firejail-0.9.40-sysmacros.patch, +firejail-0.9.40.ebuild:
+  Bump version
+
+  Package-Manager: portage-2.3.0_rc1
+
+*firejail-0.9.40-r1 (04 Jun 2016)
+
+  04 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +firejail-0.9.40-r1.ebuild, metadata.xml:
+  Allow compile time configuration
+
+  Networking features and most Linux kernel security features require root
+  privileges during configuration. Firejail (as a SUID binary) opens the
+  access to these features therefore it may be desired to turn off some
+  of the features on compile time.
+
+  Bump EAPI to 6.  Depend on x11-wm/xpra for X11 sandboxing feature.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*firejail-0.9.40-r2 (04 Jun 2016)
+
+  04 Jun 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -firejail-0.9.40-r1.ebuild, +firejail-0.9.40-r2.ebuild:
+  Correct deps for X11
+
+  It requires xpra both server and client.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  06 Jun 2016; Agostino Sarubbo <ago@gentoo.org> firejail-0.9.38.ebuild:
+  amd64 stable wrt bug #584376
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

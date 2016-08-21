@@ -67,3 +67,32 @@
 
   Signed-off-by: Ian Delaney <idella4@gentoo.org>
 
+  27 May 2016; Patrice Clement <monsieurp@gentoo.org> -kicad-doc-4.0.0.ebuild:
+  Remove obsolete 4.0.0 doc as related packaged is also removed.
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1534
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  25 Jun 2016; Ulrich Müller <ulm@gentoo.org> kicad-doc-4.0.1.ebuild,
+  kicad-doc-4.0.2.ebuild:
+  QA] Various fixes to the ebuild.
+
+  vcs-snapshot.eclass is not needed.
+  Main license is || ( GPL-3+ CC-BY-3.0 ) and some files under GPL-2 only.
+  Don't change LINGUAS in global scope.
+  Declare local variables and fix bad assignment in src_configure.
+
+  Remove REQUIRED_USE; fall back to a default configuration instead.
+  Especially global USE_EXPAND variables like LINGUAS or L10N should not
+  require per-package micro-management of flags.
+
+  Package-Manager: portage-2.3.0
+
+  25 Jun 2016; Ulrich Müller <ulm@gentoo.org> kicad-doc-4.0.1.ebuild,
+  kicad-doc-4.0.2.ebuild:
+  Migrate from LINGUAS to L10N.
+
+  Package-Manager: portage-2.3.0
+

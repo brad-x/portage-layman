@@ -107,3 +107,41 @@
   Package-Manager: portage-2.2.28
   RepoMan-Options: --ignore-arches
 
+  09 May 2016; Patrice Clement <monsieurp@gentoo.org> hdparm-9.48.ebuild:
+  Keyword for arm64.
+
+  Added ~arm64 keyword after testing on a Raspberry Pi3
+  in 64 bit mode. That's a Cortex-a53.
+  Nobody will ever make an arm64 with an IDE interface,
+  so its probably the most worthless keyword ever.
+  hdparm -tT works.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1432
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/hdparm-init-8:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  25 May 2016; Matt Turner <mattst88@gentoo.org> hdparm-9.48.ebuild:
+  alpha stable, bug 578456.
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> hdparm-9.48.ebuild:
+  x86 stable wrt bug #578456
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> hdparm-9.48.ebuild:
+  ppc stable wrt bug #578456
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  27 Jul 2016; Mike Frysinger <vapier@gentoo.org> hdparm-9.39.ebuild,
+  hdparm-9.45.ebuild, hdparm-9.47.ebuild, hdparm-9.48.ebuild:
+  sourceforge: switch to https:// URIs
+

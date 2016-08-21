@@ -310,3 +310,221 @@
 
   Package-Manager: portage-2.2.28
 
+*nginx-1.10.0 (04 May 2016)
+
+  04 May 2016; Manuel Rüger <mrueg@gentoo.org> +files/nginx.initd-r3,
+  +nginx-1.10.0.ebuild:
+  Version bump to 1.10.0, use openrc-run
+
+  Gentoo-Bug: #581862
+  Gentoo-Bug: #581944
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; Manuel Rüger <mrueg@gentoo.org> nginx-1.10.0.ebuild:
+  Fix blocker
+
+  Package-Manager: portage-2.2.28
+
+  04 May 2016; Manuel Rüger <mrueg@gentoo.org> -nginx-1.9.14.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.2.28
+
+  07 May 2016; Zac Medico <zmedico@gentoo.org>
+  +files/check-0.3.0-segfault-on-reload.patch, nginx-1.10.0.ebuild:
+  add segfault fix to 1.10.0 for http_upstream_check (bug 582316)
+
+  Package-Manager: portage-2.2.28
+
+  07 May 2016; Patrice Clement <monsieurp@gentoo.org> nginx-1.10.0.ebuild:
+  Fix typo for using stream upstream module
+
+  Closes: https://github.com/gentoo/gentoo/pull/1421
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  14 May 2016; Zac Medico <zmedico@gentoo.org>
+  -files/check-0.3.0-segfault-on-reload.patch, nginx-1.10.0.ebuild:
+  fix upstream check module segfault for bug 582992
+
+  * update module snapshot to fix upstream issue 49, a segfault which
+    occurs in the ngx_http_upstream_check_find_shm_peer function
+
+  * remove check-0.3.0-segfault-on-reload.patch which is included in
+    the new snapshot
+
+  Package-Manager: portage-2.2.28
+
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/nginx.initd-r2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*nginx-1.11.1 (11 Jun 2016)
+*nginx-1.10.1 (11 Jun 2016)
+
+  11 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org> +nginx-1.10.1.ebuild,
+  +nginx-1.11.1.ebuild:
+  Version bump
+
+  Gentoo-Bug: 584212
+  Gentoo-Bug: 584744
+
+  Package-Manager: portage-2.3.0_rc1
+
+  11 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org> -nginx-1.9.15.ebuild,
+  -nginx-1.10.0.ebuild:
+  Security cleanup
+
+  Gentoo-Bug: 584744
+
+  Package-Manager: portage-2.3.0_rc1
+
+  13 Jun 2016; Agostino Sarubbo <ago@gentoo.org> nginx-1.10.1.ebuild:
+  amd64 stable wrt bug #584744
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  13 Jun 2016; Agostino Sarubbo <ago@gentoo.org> nginx-1.10.1.ebuild:
+  x86 stable wrt bug #584744
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  13 Jun 2016; Kristian Fiskerstrand <k_f@gentoo.org>
+  -files/AJP-nginx-1.7.9+.patch, -files/check-1.9.2.patch,
+  -files/lua-nginx-1.7.6.patch, -files/rtmp-nginx-1.7.6.patch,
+  -nginx-1.8.1.ebuild:
+  Security cleanup
+
+  Dropping nginx-1.8.1 which is vulnerable to CVE-2016-4450 and was replaced
+  by nginx-1.10.1 via commit 9d8b4adb72f5912b8c121bdda6ffee72e08926d7.
+
+  Gentoo-Bug: 584744
+
+  Package-Manager: portage-2.3.0_rc1
+
+  16 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/rtmp-nginx-1.11.0.patch, nginx-1.10.1.ebuild, nginx-1.11.1.ebuild:
+  Patch for rtmp module. Fixes bug 585804.
+
+  Proposed patch for upstream bug 820 added to fix building of
+  nginx's 3rd party module "rtmp" against nginx-1.11.0+.
+
+  Bug: https://github.com/arut/nginx-rtmp-module/issues/820
+  Gentoo-Bug: https://bugs.gentoo.org/585804
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1669
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*nginx-1.11.2 (26 Jul 2016)
+
+  26 Jul 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/http-sticky-nginx-1.11.2.patch, +nginx-1.11.2.ebuild:
+  Bump to v1.11.2 (bug #588816)
+
+  Bug: https://bugs.gentoo.org/588816
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  26 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> -files/nginx.conf,
+  -files/nginx.initd-r2, -files/rtmp-nginx-1.11.0.patch, -nginx-1.11.1.ebuild:
+  Cleanup
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*nginx-1.10.1-r1 (26 Jul 2016)
+
+  26 Jul 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/nginx-httpoxy-mitigation.patch, +nginx-1.10.1-r1.ebuild,
+  nginx-1.11.2.ebuild:
+  HTTPoxy mitigation added
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  26 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> nginx-1.10.1-r1.ebuild,
+  nginx-1.11.2.ebuild:
+  Fix user/group configure argument (bug #588000)
+
+  Bug: https://bugs.gentoo.org/588000
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  26 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> nginx-1.10.1-r1.ebuild,
+  nginx-1.11.2.ebuild:
+  Drop AJP HTTP module leftovers
+
+  Bug: https://bugs.gentoo.org/587844
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*nginx-1.11.3 (09 Aug 2016)
+
+  09 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/nginx-1.11.3-fix-build-without-stream_ssl_module.patch,
+  +nginx-1.11.3.ebuild:
+  version bump to v1.11.3.
+
+  * Upstream added 3 new STREAM modules:
+   - geo
+   - geoip
+   - split_clients
+
+  * Each HTTP/STREAM upstream module can now be enabled/disabled using a
+    dedicated USE flag
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/1999
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> metadata.xml:
+  Add myself as maintainer
+
+  Package-Manager: portage-2.3.0
+
+*nginx-1.11.3-r1 (10 Aug 2016)
+*nginx-1.10.1-r2 (10 Aug 2016)
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  +files/nginx-httpoxy-mitigation-r1.patch, +nginx-1.10.1-r2.ebuild,
+  +nginx-1.11.3-r1.ebuild:
+  Revision bump to update HTTPoxy mitigation
+
+  Commit c4b897dc39a9 ("www-servers/nginx: HTTPoxy mitigation added") only
+  added HTTPoxy mitigation for fastcgi protocol.
+
+  This commit will add mitigation for similar protocols like scgi and uwsgi
+  as well.
+
+  Reported-by: Valentin V. Bartenev <vbart@nginx.com>
+
+  Package-Manager: portage-2.3.0
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  -files/nginx-httpoxy-mitigation.patch, -nginx-1.10.1-r1.ebuild,
+  -nginx-1.11.2.ebuild, -nginx-1.11.3.ebuild:
+  Cleanup
+
+  Removing previous ebuilds with incomplete HTTPoxy mitigation.
+
+  Package-Manager: portage-2.3.0
+
+  15 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> metadata.xml:
+  Dropping proxy-maintainer project; Rearranging maintainer order
+
+  Now that I am a Gentoo developer this package is no longer maintained
+  through proxy-maintainer project.
+
+  Rearranging maintainer order for proper bug assignment.
+
+  Package-Manager: portage-2.3.0
+

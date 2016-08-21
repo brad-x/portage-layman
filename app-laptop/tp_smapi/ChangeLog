@@ -111,3 +111,27 @@
 
   Package-Manager: portage-2.2.26
 
+*tp_smapi-0.42 (06 Aug 2016)
+
+  06 Aug 2016; Michael Orlitzky <mjo@gentoo.org> metadata.xml,
+  -tp_smapi-0.41-r2.ebuild, +tp_smapi-0.42.ebuild:
+  new version 0.42.
+
+  This adds a new version 0.42, and updates the ebuild a bit.
+
+  First, the ebuild was updated to EAPI=6. Then the RESTRICT=userpriv
+  was removed, as it no longer seems to have any effect: I can install
+  the package fine with FEATURES=userpriv. Next, an obsolete kernel
+  version check was removed. Every version of every flavor of Linux
+  sources we have in the tree is already newer than 2.6.19. Finally,
+  einstalldocs (from EAPI=6) was used to install the current set of docs
+  as well as a TODO that had been omitted.
+
+  I have added myself as the maintainer of this package, since I still
+  have hardware that it supports.
+
+  Gentoo-Bug: 516570
+  Gentoo-Bug: 583206
+
+  Package-Manager: portage-2.2.28
+

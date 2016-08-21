@@ -133,3 +133,39 @@
 
   Package-Manager: portage-2.2.28_p57
 
+*gentoolkit-0.3.1.1 (06 Jun 2016)
+
+  06 Jun 2016; Brian Dolbec <dolsen@gentoo.org> +gentoolkit-0.3.1.1.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.3.0_rc1_p19
+
+*gentoolkit-0.3.2 (08 Jul 2016)
+
+  08 Jul 2016; Brian Dolbec <dolsen@gentoo.org> -gentoolkit-0.3.0.9.ebuild,
+  -gentoolkit-0.3.0.9-r1.ebuild, -gentoolkit-0.3.1-r1.ebuild,
+  +gentoolkit-0.3.2.ebuild:
+  Version bump, clean up older unstable versions
+
+  Package-Manager: portage-2.3.0
+
+*gentoolkit-0.3.2-r1 (26 Jul 2016)
+
+  26 Jul 2016; Paul Varner <fuzzyray@gentoo.org>
+  +files/0.3.2-helpers.py-589686.patch, +gentoolkit-0.3.2-r1.ebuild:
+  Revision bump to add patch
+
+  Add patch to fix compatability with python2.7 and equery changes.
+  This patch fixes Bug 589686
+
+  Package-Manager: portage-2.3.0
+
+  10 Aug 2016; Mike Frysinger <vapier@gentoo.org>
+  gentoolkit-0.3.0.8-r2.ebuild, gentoolkit-0.3.0.9-r2.ebuild,
+  gentoolkit-0.3.1.1.ebuild, gentoolkit-0.3.2.ebuild,
+  gentoolkit-0.3.2-r1.ebuild, gentoolkit-9999.ebuild:
+  drop old coreutils/realpath/grep deps
+
+  The realpath dep migrated years ago into coreutils, so we can drop this
+  old dep as it's part of the @system.
+

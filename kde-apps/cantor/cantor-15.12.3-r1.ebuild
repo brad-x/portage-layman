@@ -12,7 +12,7 @@ inherit kde5 python-r1
 
 DESCRIPTION="Interface for doing mathematics and scientific computing"
 HOMEPAGE="https://www.kde.org/applications/education/cantor https://edu.kde.org/cantor"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="analitza lua postscript python qalculate +R"
 
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
@@ -56,7 +56,10 @@ DEPEND="${RDEPEND}
 
 RESTRICT="test"
 
-PATCHES=( "${FILESDIR}/${P}-tests.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-tests.patch"
+	"${FILESDIR}/${P}-qt56.patch"
+)
 
 pkg_setup() {
 	use python && python_setup

@@ -160,3 +160,46 @@
 
   Package-Manager: portage-2.2.28
 
+  15 May 2016; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/tracker-1.6.2-sqlite-underlinking.patch, tracker-1.6.2.ebuild:
+  fix underlinking build failure (bug #581288)
+
+  Thanks to Maxim Sheviakov for reporting.
+  Upstream bug: https://bugzilla.gnome.org/show_bug.cgi?id=766487
+
+  Package-Manager: portage-2.2.28
+
+  11 Jun 2016; Pacho Ramos <pacho@gentoo.org> tracker-1.6.2.ebuild:
+  amd64 stable, bug 584468
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="amd64"
+
+  11 Jun 2016; Pacho Ramos <pacho@gentoo.org> tracker-1.6.2.ebuild:
+  x86 stable, bug 584468
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="x86"
+
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> tracker-1.6.1.ebuild,
+  tracker-1.6.2.ebuild:
+  Remove := slot op inside ||, #586302
+
+  24 Jun 2016; Pacho Ramos <pacho@gentoo.org> -tracker-1.6.1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0_rc1
+
+*tracker-1.8.0 (24 Jun 2016)
+
+  24 Jun 2016; Pacho Ramos <pacho@gentoo.org> +tracker-1.8.0.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.3.0_rc1
+
+  09 Jul 2016; Pacho Ramos <pacho@gentoo.org> tracker-1.8.0.ebuild:
+  Rebuilding with NM subslot bump will be needed when it's bumped (likely when
+  we are ready to kill the obsolete dbus-glib support from NM)
+
+  Package-Manager: portage-2.3.0
+

@@ -83,3 +83,82 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*dosbox-0.74-r1 (28 Jun 2016)
+
+  28 Jun 2016; Austin English <wizardedit@gentoo.org> +dosbox-0.74-r1.ebuild,
+  +files/dosbox-0.74-clang.patch, files/dosbox-0.74-gcc46.patch,
+  +files/dosbox-0.74-wine-drive-z.patch,
+  +files/dosbox-0.74-wine-filenames.patch:
+  fix compiling with clang (#449060)
+
+  Also apply two patches needed by Wine using DOSBox (#586650)
+
+  Gentoo-Bug: https://bugs.gentoo.org/449060
+  Gentoo-Bug: https://bugs.gentoo.org/586650
+
+  Upstream-Bug: https://bugs.winehq.org/show_bug.cgi?id=18118
+  Upstream-Bug: https://bugs.winehq.org/show_bug.cgi?id=25887
+  Upstream-Bug: https://bugs.winehq.org/show_bug.cgi?id=26423
+
+  Package-Manager: portage-2.2.26
+
+*dosbox-0.74-r2 (28 Jun 2016)
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org> +dosbox-0.74-r2.ebuild,
+  dosbox-9999.ebuild:
+  remove games eclass and convert to EAPI 6
+
+  Gentoo-Bug: https://bugs.gentoo.org/566498
+  Gentoo-Bug: https://bugs.gentoo.org/587382
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1777
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  28 Jun 2016; Michael Sterrett <mr_bones_@gentoo.org> -dosbox-0.74-r2.ebuild,
+  dosbox-9999.ebuild:
+  Revert "games-emulation/dosbox: remove games eclass and convert to EAPI 6"
+
+  This reverts commit 3d239d4e470c8f0c99339649ec74c4bdf86cf98f.
+
+  28 Jun 2016; Michael Sterrett <mr_bones_@gentoo.org> -dosbox-0.74-r1.ebuild,
+  -files/dosbox-0.74-clang.patch, files/dosbox-0.74-gcc46.patch,
+  -files/dosbox-0.74-wine-drive-z.patch,
+  -files/dosbox-0.74-wine-filenames.patch:
+  Revert "games-emulation/dosbox: fix compiling with clang (#449060)"
+
+  This reverts commit 143e036505e2b27b1aa5037d52a5f999391b4168.
+
+*dosbox-3989 (28 Jun 2016)
+
+  28 Jun 2016; Michael Sterrett <mr_bones_@gentoo.org> +dosbox-3989.ebuild:
+  add snapshot ebuild from upstream svn to provide a non-moving-target for
+  situations where the upstream release doesn't work (bugs #586650 and
+  #449060)
+
+  Package-Manager: portage-2.2.28
+
+*dosbox-0.74_p20160629 (29 Jun 2016)
+
+  29 Jun 2016; William Hubbs <williamh@gentoo.org>
+  +dosbox-0.74_p20160629.ebuild, -dosbox-3989.ebuild,
+  files/dosbox-0.74-gcc46.patch:
+  qa]: create a snapshot release to fix multiple bugs
+
+  This snapshot release fixes the following bugs:
+
+  https://bugs.gentoo.org/show_bug.cgi?id=449060
+  https://bugs.gentoo.org/show_bug.cgi?id=586650
+  https://bugs.gentoo.org/show_bug.cgi?id=587382
+
+  Package-Manager: portage-2.2.28
+
+  29 Jun 2016; Austin English <wizardedit@gentoo.org> metadata.xml:
+  games-emulation/{dboxfe,dosbox}: add Wine project as co-maintainers
+
+  29 Jun 2016; William Hubbs <williamh@gentoo.org> dosbox-9999.ebuild:
+  sync live ebuild and make it copyable
+
+  Package-Manager: portage-2.2.28
+

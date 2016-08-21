@@ -64,3 +64,79 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> lablgl-1.05.ebuild:
+  dev-ml/*: Remove := slot ops from || deps, #586304
+
+  21 Jun 2016; Michał Górny <mgorny@gentoo.org> lablgl-1.05.ebuild:
+  Remove another := slot op from || dep
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> lablgl-1.05.ebuild:
+  Revert "dev-ml/*: Remove := slot ops from || deps, #586304"
+
+  This reverts commit 2d4ac687fbf44588f764697c9dcb2b960a18d51b.
+
+  This commit is wrong in several aspects:
+  - Such changes should come with a revbump
+  - Removing := deps causes packages not to be rebuilt on upgrades, causing
+    barely understandable build failures when upgrading, later on.
+    Thanks to this commit, people that have installed those packages
+    will likely experience those failures with the upcoming ocaml 4.03 unmask.
+  - This is a non maintainer commit where no discussion at all happened with
+  the
+    maintainers during the 3 days between bug report and mass commit.
+    Such discussion could have prevented the above mentioned breakage.
+
+  Proper fix is to drop the backward compatibility part of the || () dep. This
+  fix
+  was slowly moving forward whenever possible and noticed. Main blocker for
+  this is
+  bug #463018 which requires taking extra care for not breaking the stable
+  tree
+  nor needlessly preventing future stabilization of packages.
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> lablgl-1.05.ebuild:
+  Revert "dev-ml/lablgl: Remove another := slot op from || dep"
+
+  This reverts commit 9675d96cfe244033e97dd7034b95c5af251405e3.
+
+  This commit is wrong in several aspects:
+    - Such changes should come with a revbump
+    - Removing := deps causes packages not to be rebuilt on upgrades, causing
+      barely understandable build failures when upgrading, later on.
+      Thanks to this commit, people that have installed those packages will
+      likely experience those failures with the upcoming ocaml 4.03 unmask.
+    - This is a non maintainer commit where no discussion at all happened with
+  the
+      maintainers during the 3 days between bug report and mass commit.
+      Such discussion could have prevented the above mentioned breakage.
+
+  Proper fix is to drop the backward compatibility part of the || () dep. This
+  fix
+  was slowly moving forward whenever possible and noticed. Main blocker for
+  this is
+  bug #463018 which requires taking extra care for not breaking the stable
+  tree
+  nor needlessly preventing future stabilization of packages.
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> -lablgl-1.04-r1.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_rc1
+
+*lablgl-1.05-r1 (23 Jun 2016)
+
+  23 Jun 2016; Alexis Ballier <aballier@gentoo.org> +lablgl-1.05-r1.ebuild:
+  drop backward compat deps on labltk/camlp4, bug #586304
+
+  Package-Manager: portage-2.3.0_rc1
+
+  25 Jun 2016; Michał Górny <mgorny@gentoo.org> lablgl-1.05-r1.ebuild:
+  Copy stable keywords over for minor dep change, #586914
+
+  29 Jun 2016; Michał Górny <mgorny@gentoo.org> lablgl-1.05.ebuild:
+  Support camlp4/labltk in -r1 only, #586914
+
+  Restrict the 1.05 ebuild to support old OCaml only to solve the :=-in-||
+  problem. 1.05-r1 is stable on all architectures supporting camlp4,
+  and -r0 is only kept for stable ia64 & sparc users.
+

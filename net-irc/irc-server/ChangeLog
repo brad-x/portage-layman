@@ -72,3 +72,37 @@
 
   Bug: 575810
 
+*irc-server-2.11.1_p1-r3 (02 May 2016)
+
+  02 May 2016; Austin English <wizardedit@gentoo.org> files/ircd.rc,
+  +irc-server-2.11.1_p1-r3.ebuild:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  Gentoo-Bug: https://bugs.gentoo.org/573846
+
+  Package-Manager: portage-2.2.26
+
+  02 May 2016; Austin English <wizardedit@gentoo.org>
+  -irc-server-2.11.1_p1-r2.ebuild:
+  remove old versions
+
+  Package-Manager: portage-2.2.26
+
+*irc-server-2.11.1_p1-r4 (03 Aug 2016)
+
+  03 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  -irc-server-2.11.1_p1-r3.ebuild, +irc-server-2.11.1_p1-r4.ebuild:
+  new revision to fix minor QA issues.
+
+  This new revision fixes a few small issues:
+
+    * The GPL-2 (for the init script) was missing from LICENSE.
+    * Some die() statements were missing from system commands.
+    * The src_prepare() was redundant.
+    * The slot was missing from the ncurses dependency.
+
+  Gentoo-Bug: 338571
+  Gentoo-Bug: 426038
+
+  Package-Manager: portage-2.2.28
+

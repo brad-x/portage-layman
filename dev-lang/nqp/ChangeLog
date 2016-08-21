@@ -120,3 +120,83 @@
 
   Package-Manager: portage-2.2.28
 
+*nqp-2016.04 (02 May 2016)
+
+  02 May 2016; Patrick Lauer <patrick@gentoo.org> +nqp-2016.04.ebuild:
+  Bump
+
+  Package-Manager: portage-2.2.28
+
+*nqp-2016.04-r1 (08 May 2016)
+
+  08 May 2016; Amy Winston <amynka@gentoo.org>
+  +files/enable-external-jars.patch, metadata.xml, +nqp-2016.04-r1.ebuild:
+  revbump nqp-2016.04-r1
+
+  - update ebuild to reflect the build-system
+    - inherit java-pkg-2.eclass
+    - enable choice between gcc (default) and clang (use clang)
+    - make MoarVM default backend (use +moar java)
+    - enable optional use of system-provided jars (use +system-libs)
+    - enable testing (use test)
+  - update to EAPI6
+  - add tomboy64 as secondary maintainer
+
+  Package-Manager: portage-2.2.28
+
+*nqp-9999 (08 May 2016)
+
+  08 May 2016; Amy Winston <amynka@gentoo.org> +nqp-9999.ebuild:
+  re-add 9999, based on 2016.04-r1
+
+*nqp-2016.04-r2 (09 May 2016)
+
+  09 May 2016; Amy Winston <amynka@gentoo.org> -nqp-2016.04-r1.ebuild,
+  +nqp-2016.04-r2.ebuild:
+  revbump 2016.04-r2 (fixes compile failure)
+
+  Logic error when determining options for Configure.pl.
+  Gentoo-Bug: 582520
+
+  Package-Manager: portage-2.2.28
+
+  02 Jun 2016; Amy Winston <amynka@gentoo.org> -nqp-2016.01.ebuild,
+  -nqp-2016.02.ebuild:
+  drop old (2016.01 & 2016.02)
+
+*nqp-2016.04-r3 (02 Jun 2016)
+
+  02 Jun 2016; Amy Winston <amynka@gentoo.org> metadata.xml,
+  -nqp-2016.04-r2.ebuild, +nqp-2016.04-r3.ebuild:
+  revbump 2016.04-r3
+
+  - enabled proper use of jna:4 (by Chewi)
+  - using multibuild.eclass to enable custom java install procedure
+  - minor qa corrections
+  - warn before installation with NQP and Rakudo present
+  - drop system-libs use-flag (from ebuilds and metadata.xml)
+
+*nqp-2016.05 (02 Jun 2016)
+
+  02 Jun 2016; Amy Winston <amynka@gentoo.org> +nqp-2016.05.ebuild:
+  version bump 2016.05
+
+  - removed patch (was included upstream)
+
+  02 Jun 2016; Amy Winston <amynka@gentoo.org> nqp-9999.ebuild:
+  update 9999 to reflect 2016.05
+
+*nqp-2016.06 (28 Jun 2016)
+
+  28 Jun 2016; Patrick Lauer <patrick@gentoo.org> +nqp-2016.06.ebuild:
+  Bump
+
+  Package-Manager: portage-2.3.0
+
+*nqp-2016.07 (20 Jul 2016)
+
+  20 Jul 2016; Patrick Lauer <patrick@gentoo.org> +nqp-2016.07.ebuild:
+  Bump
+
+  Package-Manager: portage-2.3.0
+

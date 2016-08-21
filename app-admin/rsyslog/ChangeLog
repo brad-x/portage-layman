@@ -226,3 +226,122 @@
   Closes: https://github.com/gentoo/gentoo/pull/1348
   Signed-off-by: Ian Delaney <idella4@gentoo.org>
 
+  03 May 2016; Lars Wendler <polynomial-c@gentoo.org> rsyslog-8.18.0.ebuild:
+  Fix USE=doc
+
+  Bug: https://bugs.gentoo.org/581722
+
+  Package-Manager: portage-2.2.28
+
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/8-stable/rsyslog.initd-r1:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  19 May 2016; Jeroen Roovers <jer@gentoo.org> rsyslog-8.18.0.ebuild:
+  Mark ~hppa (bug #577008).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  23 May 2016; Ian Delaney <idella4@gentoo.org> rsyslog-8.18.0.ebuild:
+  bash syntax tidy
+
+  replace POSIX '[' with the bash '[[' in 8.18.0
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1511
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  23 May 2016; Ian Delaney <idella4@gentoo.org> rsyslog-8.18.0.ebuild:
+  use prune_libtool_files from eutils in 8.18.0
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1511
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+  24 May 2016; Ian Delaney <idella4@gentoo.org> rsyslog-8.18.0.ebuild:
+  Revert "app-admin/rsyslog: use prune_libtool_files from eutils in 8.18.0"
+
+  This reverts commit 663fd153682eb51e2a89e87b52d9a3f25f28f742.
+  Change to use of prune_libtool_files in src_install reverted from
+  advice form a qa team member
+
+  26 May 2016; Jeroen Roovers <jer@gentoo.org> rsyslog-8.16.0-r1.ebuild:
+  Stable for HPPA (bug #577494).
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --ignore-arches
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org> rsyslog-8.18.0.ebuild:
+  Adjust sub-SLOT dependency
+
+  This commit also re-apply changes from the previous reverted
+  commit 663fd153682eb51e2a89e87b52d9a3f25f28f742:
+
+  The ebuild inherits linux-info eclass which already inherit
+  eutils eclass so we can use prune_libtool_files helper.
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1659
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*rsyslog-8.19.0 (12 Jun 2016)
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org> +rsyslog-8.19.0.ebuild:
+  Version bump to v8.19.0
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1659
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  12 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/8-stable/50-rsyslog-8.12.0-fix-re_extract.patch,
+  -files/8-stable/50-rsyslog-8.13.0-lookup-table-reload-bugfix.patch,
+  -rsyslog-8.13.0.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.3.0_rc1
+  Closes: https://github.com/gentoo/gentoo/pull/1659
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  05 Jul 2016; Yixun Lan <dlan@gentoo.org> rsyslog-8.19.0.ebuild:
+  pp-admin/rsyslog: keyword ~arm64
+
+  Gentoo-Bug: 587688
+
+  Package-Manager: portage-2.3.0_rc1
+
+  03 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  rsyslog-8.16.0-r1.ebuild, rsyslog-8.18.0.ebuild, rsyslog-8.19.0.ebuild:
+  Fix REPLACING_VERSIONS usage
+
+  We no longer need this check because the previous major version was already
+  removed in 2015.
+
+  Gentoo-Bug: https://bugs.gentoo.org/589448
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2001
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  10 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> metadata.xml:
+  Updating maintainer details
+
+  Updating my own maintainer details to reflect that I am now a Gentoo
+  developer.
+
+  Gentoo-Bug: 581174
+
+  Package-Manager: portage-2.3.0
+
+  19 Aug 2016; Ultrabug <ultrabug@gentoo.org> metadata.xml:
+  drop myself from maintainer
+
+  Package-Manager: portage-2.2.27
+

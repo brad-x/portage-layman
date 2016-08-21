@@ -68,3 +68,73 @@
 
   Bug: 575810
 
+*xcdroast-0.98_alpha16-r2 (07 Jul 2016)
+
+  07 Jul 2016; Andrew Savchenko <bircoph@gentoo.org>
+  files/fix_cddb_hidden_tracks.patch, files/io_compile.patch,
+  +files/io_progressbar_fix.patch, +files/suid-perms.patch,
+  +xcdroast-0.98_alpha16-r2.ebuild:
+  fix for the bug 345337
+
+  - Replace suid helper permissions from 4755 to 4711 as suggested by
+  Faustus in comment 1.
+  - Port ebuild to EAPI=6.
+  - Apply upstream patch for progress bar with modern cdrtools.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  07 Jul 2016; Andrew Savchenko <bircoph@gentoo.org>
+  xcdroast-0.98_alpha16-r2.ebuild:
+  install docs properly
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  09 Jul 2016; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  take an orphan
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+*xcdroast-0.98_alpha16-r3 (09 Jul 2016)
+
+  09 Jul 2016; Andrew Savchenko <bircoph@gentoo.org>
+  +files/disable_version_check.patch, +files/format-security.patch,
+  +xcdroast-0.98_alpha16-r3.ebuild:
+  multiple improvements
+
+  - Add USE=suid to control optional nonroot-mode as suggested by
+  Martin Väth, bug 345337 comment 23.
+  - Disable obsolete version check, patch by Helmut Jarausch
+  <jarausch at skynet.be>, see
+  https://archives.gentoo.org/gentoo-
+  user/message/7c5e8669966103a9099efa3a8c808971
+  - Fix format-security issue, bug 520996.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  09 Jul 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -xcdroast-0.98_alpha16-r1.ebuild, -xcdroast-0.98_alpha16-r2.ebuild:
+  remove old revisions
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  09 Jul 2016; Agostino Sarubbo <ago@gentoo.org>
+  xcdroast-0.98_alpha16-r3.ebuild:
+  amd64 stable wrt bug #345337
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Jul 2016; Agostino Sarubbo <ago@gentoo.org>
+  xcdroast-0.98_alpha16-r3.ebuild:
+  x86 stable wrt bug #345337
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

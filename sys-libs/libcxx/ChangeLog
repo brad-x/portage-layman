@@ -112,3 +112,19 @@
   Package-Manager: portage-2.2.27
   Signed-off-by: Alexis Ballier <aballier@gentoo.org>
 
+*libcxx-3.8.1 (01 Aug 2016)
+
+  01 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/libcxx-3.8.1-musl-support.patch, +libcxx-3.8.1.ebuild,
+  libcxx-9999.ebuild, metadata.xml:
+  bump to 3.8.1, support libunwind & musl (#589352)
+
+  With USE=libunwind, libcxx will be built against libunwind (either
+  sys-libs/libunwind or sys-libs/llvm-libunwind), instead of libgcc_s.
+  In addition, a patch will be applied when building libcxx against musl.
+
+  Package-Manager: portage-2.2.28
+
+  01 Aug 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Add myself as co-maintainer
+

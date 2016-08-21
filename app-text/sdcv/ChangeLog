@@ -70,3 +70,60 @@
 
   Bug: 575810
 
+  11 May 2016; Andrew Savchenko <bircoph@gentoo.org> metadata.xml:
+  take an orphaned package
+
+  Such wonderful tool should have a maintainer :)
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  13 May 2016; Agostino Sarubbo <ago@gentoo.org> sdcv-0.5.0_beta2.ebuild:
+  amd64 stable wrt bug #582746
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*sdcv-0.5.0_beta2-r1 (17 May 2016)
+
+  17 May 2016; Andrew Savchenko <bircoph@gentoo.org> metadata.xml,
+  +sdcv-0.5.0_beta2-r1.ebuild:
+  improve ebuild
+
+  - improve readability on dark terminals;
+  - port to EAPI 6;
+  - respect LINGUAS (for gettext localisation and man pages).
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  18 May 2016; Andrew Savchenko <bircoph@gentoo.org>
+  sdcv-0.5.0_beta2-r1.ebuild:
+  fix bug 583386
+
+  1. When USE="nls", but intersection of LINGUAS with PLOCALES is
+  zero, $BUILD_DIR/locale is not created, thus cmake generated build
+  fails install phase. Fixed by always creating this directory.
+
+  2. Remove dodoc useless in EAPI=6: we have only default doc files.
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  25 Jun 2016; Agostino Sarubbo <ago@gentoo.org> sdcv-0.5.0_beta2.ebuild:
+  x86 stable wrt bug #582746
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  26 Jun 2016; Andrew Savchenko <bircoph@gentoo.org>
+  -files/sdcv-0.4.2-crash.patch, -files/sdcv-0.4.2-dash.patch,
+  -files/sdcv-0.4.2-g-handling.patch, -files/sdcv-0.4.2-missing-headers.patch,
+  -files/sdcv-0.4.2-respect-HOME.patch, -sdcv-0.4.2.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_rc1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+

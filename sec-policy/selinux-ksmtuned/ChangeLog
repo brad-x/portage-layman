@@ -170,3 +170,55 @@
   selinux-ksmtuned-2.20151208-r2.ebuild:
   sec-policy: Stabilize selinux policy 2.20151208-r2
 
+*selinux-ksmtuned-2.20151208-r4 (05 Jun 2016)
+
+  05 Jun 2016; Sven Vermeulen <swift@gentoo.org>
+  +selinux-ksmtuned-2.20151208-r4.ebuild, selinux-ksmtuned-9999.ebuild:
+  sec-policy: Release of SELinux policies 2.20151208-r4
+
+  Package-Manager: portage-2.2.28
+
+  03 Jul 2016; Sven Vermeulen <swift@gentoo.org> selinux-ksmtuned-9999.ebuild:
+  sec-policy: Enable arm, arm64 and mips keywords inside the -9999 ebuilds
+
+  The -9999 ebuilds do not have a set KEYWORDS, but the same ebuilds are used
+  when creating a new release. For this purpose, the -9999 ebuilds have a
+  conditional code like the following:
+
+  if [[ ${PV} != 9999* ]] ; then
+    KEYWORDS="~amd64 ~x86"
+  fi
+
+  In this commit, we update that part to include ~arm, ~arm64 and ~mips.
+
+  Package-Manager: portage-2.2.28
+
+  03 Jul 2016; Sven Vermeulen <swift@gentoo.org>
+  selinux-ksmtuned-2.20151208-r3.ebuild,
+  selinux-ksmtuned-2.20151208-r4.ebuild:
+  sec-policy: Enable arm(64) and mips KEYWORDS for policy modules
+
+  The SELinux policy modules can be built on arm, arm64 and mips as well.
+  Recently its support was added to the selinux-base ebuilds, but the other
+  module packages were forgotten.
+
+  Package-Manager: portage-2.2.28
+
+  03 Jul 2016; Sven Vermeulen <swift@gentoo.org>
+  -selinux-ksmtuned-2.20141203-r1.ebuild,
+  -selinux-ksmtuned-2.20141203-r2.ebuild,
+  -selinux-ksmtuned-2.20141203-r3.ebuild,
+  -selinux-ksmtuned-2.20141203-r4.ebuild,
+  -selinux-ksmtuned-2.20141203-r5.ebuild,
+  -selinux-ksmtuned-2.20141203-r6.ebuild,
+  -selinux-ksmtuned-2.20141203-r7.ebuild,
+  -selinux-ksmtuned-2.20141203-r8.ebuild,
+  -selinux-ksmtuned-2.20141203-r9.ebuild:
+  sec-policy: Clean up old packages
+
+  Remove year-old SELinux policy packages. Currently stick with the last
+  stable one from the 2014 series, we can clean that up when there is an
+  2016 release made (upstream is currently still at the 20151203).
+
+  Package-Manager: portage-2.2.28
+

@@ -128,3 +128,41 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org> CGI-4.250.0.ebuild:
+  Add missing dependency, bug 571042
+
+  Package-Manager: portage-2.3.0_rc1
+
+  21 May 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -CGI-4.220.0-r1.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.3.0_rc1
+
+*CGI-4.310.0 (19 Jul 2016)
+
+  19 Jul 2016; Kent Fredric <kentnl@gentoo.org> +CGI-4.310.0.ebuild,
+  metadata.xml:
+  Bump to version 4.310.0
+
+  - Add USE="examples"
+  - Remove author tests
+  - Update metadata.xml remote-id's
+
+  Upstream:
+  - HTML attributes now sorted by default
+  - warnings fixed in test harness and STORE sub
+  - taint addedf to file_upload example
+  - %QUERY_PARAM now cleaned/unset under mod_perl
+  - Cookie handling now supports SameSite
+  - MultipartBuffer renamed to CGI::MultipartBuffer
+
+  Keywording:
+   ~amd64-fbsd: Dropped, not supported by dependency dev-perl/Test-Deep
+   ~m68k: Dropped, not supported by dependency dev-perl/Test-Warn
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches --include-arches="alpha amd64 amd64-fbsd
+  arm arm64 hppa ia64 m68k mips nios2 ppc ppc64 riscv s390 sh sparc sparc-fbsd
+  x86 x86-fbsd"
+

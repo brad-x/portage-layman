@@ -149,3 +149,55 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/buildmaster.initd:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*buildbot-0.9.0_rc1 (09 Aug 2016)
+
+  09 Aug 2016; Brian Dolbec <dolsen@gentoo.org> +buildbot-0.9.0_rc1.ebuild,
+  buildbot-9999.ebuild, +files/buildbot9..service, +files/buildmaster.confd.9,
+  +files/buildmaster.initd.9, metadata.xml:
+  Version bump, update live ebuild
+
+  This version is a major change from previous version.
+
+  10 Aug 2016; Brian Dolbec <dolsen@gentoo.org> -files/buildbot9..service,
+  +files/buildbot9.service:
+  Fix typo in files/buildbot9.service filename bug 590958
+
+  Package-Manager: portage-2.3.0
+
+*buildbot-0.9.1_rc1-r1 (11 Aug 2016)
+
+  11 Aug 2016; Brian Dolbec <dolsen@gentoo.org> -buildbot-0.9.0_rc1.ebuild,
+  +buildbot-0.9.1_rc1-r1.ebuild, buildbot-9999.ebuild,
+  -files/buildbot9.service, -files/buildmaster.confd.9,
+  -files/buildmaster.initd.9:
+  Update the 0.9.0_rc1 and 9999 versions with changes made in 0.8.12-r2
+
+  Clean up the files/ directory, remove the no longer needed .9 versions of
+  the files.
+
+  Package-Manager: portage-2.3.0
+
+*buildbot-0.9.0_rc1-r1 (12 Aug 2016)
+
+  12 Aug 2016; Brian Dolbec <dolsen@gentoo.org> +buildbot-0.9.0_rc1-r1.ebuild,
+  -buildbot-0.9.1_rc1-r1.ebuild:
+  Fix bad version in previous revision bump
+
+  Package-Manager: portage-2.3.0
+
+*buildbot-0.9.0_rc1-r2 (17 Aug 2016)
+*buildbot-0.8.12-r3 (17 Aug 2016)
+
+  17 Aug 2016; Brian Dolbec <dolsen@gentoo.org> -buildbot-0.8.12-r2.ebuild,
+  +buildbot-0.8.12-r3.ebuild, -buildbot-0.9.0_rc1-r1.ebuild,
+  +buildbot-0.9.0_rc1-r2.ebuild, files/buildmaster.initd:
+  Use python2 in the buildmaster.initd startup (bug 591150)
+
+  This allows a proper startup if a python3 version is the system default.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Brian Dolbec <dolsen@gentoo.org>
+

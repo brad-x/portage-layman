@@ -76,3 +76,57 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/pbs_mom-init.d,
+  files/pbs_mom-init.d-munge, files/pbs_sched-init.d, files/pbs_server-init.d,
+  files/pbs_server-init.d-munge, files/trqauthd-init.d:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  01 Jun 2016; Justin Bronder <jsbronder@gentoo.org> metadata.xml:
+  dropping jsbronder as maintainer
+
+  Package-Manager: portage-2.2.26
+
+  02 Jun 2016; Ian Stakenvicius <axs@gentoo.org> metadata.xml:
+  add myself to the maintainer list in metadata.xml
+
+  Package-Manager: portage-2.2.28
+
+*torque-4.2.9-r5 (02 Jun 2016)
+*torque-4.1.7-r1 (02 Jun 2016)
+*torque-2.5.13-r1 (02 Jun 2016)
+
+  02 Jun 2016; Ian Stakenvicius <axs@gentoo.org> -torque-2.5.13.ebuild,
+  +torque-2.5.13-r1.ebuild, -torque-4.1.7.ebuild, +torque-4.1.7-r1.ebuild,
+  -torque-4.2.9-r4.ebuild, +torque-4.2.9-r5.ebuild:
+  dependency cleanup
+
+  Dependency atoms listed in the ebuild were rather significantly mis-matching
+  what
+  is actually linked to.  Cleaned them up, added slot and slot-operators as
+  needed.
+
+  Added libressl to IUSE but didn't test if libressl is a drop-in replacement
+  for
+  openssl -- the situation should be better either way since it was a magic
+  dep
+  until now.
+
+  Also bumped EAPI for torque-2.x so it is no longer deprecated, and adjusted
+  how
+  the cpusets flag is added to configure.
+
+  Package-Manager: portage-2.2.28
+
+*torque-6.0.1 (08 Jun 2016)
+
+  08 Jun 2016; Ian Stakenvicius <axs@gentoo.org> metadata.xml,
+  +torque-6.0.1.ebuild:
+  introduce v6.0.1 with cgroups support
+
+  So far there has been very little testing done with this version, and the
+  in-ebuild
+  cgroups support needs to be expanded (checks against kernel settings added,
+  etc).
+
+  Package-Manager: portage-2.2.28
+

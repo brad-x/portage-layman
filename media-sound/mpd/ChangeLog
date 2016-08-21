@@ -186,3 +186,51 @@
 
   Package-Manager: portage-2.2.28
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/mpd2.init:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*mpd-0.19.15 (22 Jun 2016)
+
+  22 Jun 2016; Patrice Clement <monsieurp@gentoo.org> +mpd-0.19.15.ebuild:
+  Version bump to 0.9.15
+
+  Ebuild:
+  - EAPI 6, remove usage of readme.gentoo (uses elog instead)
+  Upstream:
+  - fixes build w/ GCC 5.4.0
+  - support FFmpeg 3.0
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1651
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  22 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/mpd-0.9.15-systemd.patch, mpd-0.19.15.ebuild:
+  Fix configure with >=sys-apps/systemd-230
+
+  Gentoo-bug: 584742
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/1651
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  06 Aug 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup per bug #177996
+
+  Package-Manager: portage-2.3.0
+
+*mpd-0.19.18 (11 Aug 2016)
+
+  11 Aug 2016; Jeroen Roovers <jer@gentoo.org> +mpd-0.19.18.ebuild:
+  Version bump (bug #590074 by Perfect Gentleman).
+
+  Package-Manager: portage-2.3.0
+
+  11 Aug 2016; Jeroen Roovers <jer@gentoo.org> mpd-0.19.18.ebuild:
+  Add support for media-libs/libsidplayfp as alternative to media-
+  libs/libsidplay:2.
+
+  Package-Manager: portage-2.3.0
+

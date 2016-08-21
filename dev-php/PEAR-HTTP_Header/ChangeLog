@@ -63,3 +63,18 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*PEAR-HTTP_Header-1.2.1-r2 (12 Jul 2016)
+
+  12 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  +PEAR-HTTP_Header-1.2.1-r2.ebuild:
+  new EAPI=6 revision sans the PEAR eclass.
+
+  We have a lot of trouble with our php-pear-* eclasses. Many of the
+  PEAR packages (including PEAR-HTTP_Header) can be installed in only a
+  few lines, in which case it seems smarter to skip the eclass
+  altogether. This new revision does so, and lets us jump to EAPI=6.
+
+  Gentoo-Bug: 576432
+
+  Package-Manager: portage-2.2.28
+

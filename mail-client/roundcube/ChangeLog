@@ -211,3 +211,70 @@
 
   Package-Manager: portage-2.2.26
 
+*roundcube-1.2.0 (29 May 2016)
+
+  29 May 2016; Aaron W. Swenson <titanofold@gentoo.org>
+  +roundcube-1.2.0.ebuild:
+  Fix Multiple Vulnerabilities
+
+  Many security issues/enhancements are resolved with this release. The
+  most significant being:
+
+  * Fix (again) security issue in DBMail driver of password plugin
+  (CVE-2015-2181)
+  * Fix path traversal vulnerability in setting a skin (CVE-2015-8770)
+  * Fix XSS issue in SVG images handling
+  * Fix XSS issue in href attribute on area tag
+
+  You can find the complete list of changes in the included CHANGELOG or at:
+  https://github.com/roundcube/roundcubemail/wiki/Changelog
+
+  Bug: 580746, 584200, 584098
+
+  Package-Manager: portage-2.2.26
+
+  31 May 2016; Agostino Sarubbo <ago@gentoo.org> roundcube-1.2.0.ebuild:
+  amd64 stable wrt bug #584200
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  31 May 2016; Agostino Sarubbo <ago@gentoo.org> roundcube-1.2.0.ebuild:
+  x86 stable wrt bug #584200
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  04 Jun 2016; Markus Meier <maekke@gentoo.org> roundcube-1.2.0.ebuild:
+  arm stable, bug #584200
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  08 Jul 2016; Agostino Sarubbo <ago@gentoo.org> roundcube-1.2.0.ebuild:
+  ppc stable wrt bug #584200
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Jul 2016; Sergey Popov <pinkbyte@gentoo.org> roundcube-1.1.4.ebuild,
+  roundcube-1.2_beta.ebuild, roundcube-1.2.0.ebuild:
+  fix dependency on LDAP plugin
+
+  Current in-tree versions of mail-client/roundcube use
+  dev-php/PEAR-Net_LDAP3 for LDAP addressbook
+
+  Reported-by: Tomáš Mózes <hydrapolic@gmail.com>
+  Gentoo-Bug: 577456
+
+  Package-Manager: portage-2.2.28
+
+  28 Jul 2016; Sergey Popov <pinkbyte@gentoo.org> roundcube-1.1.4.ebuild,
+  roundcube-1.2_beta.ebuild, roundcube-1.2.0.ebuild:
+  dev-php/PEAR-Net_LDAP2 is still needed for some LDAP operations
+
+  Package-Manager: portage-2.2.28
+

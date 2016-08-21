@@ -76,3 +76,32 @@
 
   Signed-off-by: Ian Delaney <idella4@gentoo.org>
 
+  30 Jul 2016; Sergei Trofimovich <slyfox@gentoo.org> crystal-0.15.0.ebuild,
+  metadata.xml:
+  require boehm-gc[threads] as a depend
+
+  With USE=-threads crystal crashes for me outright:
+    $ cat a.cr
+    puts hello
+    $ crystal build a.cr
+    Invalid memory access (signal 11) at address 0x0
+    [12705341] __crystal_sigfault_handler +61
+    [140316947557920] ???
+    [0] ???
+
+  Package-Manager: portage-2.3.0
+
+*crystal-0.18.7 (30 Jul 2016)
+
+  30 Jul 2016; Sergei Trofimovich <slyfox@gentoo.org> crystal-0.15.0.ebuild,
+  +crystal-0.18.7.ebuild:
+  bump up to 0.18.7
+
+  Package-Manager: portage-2.3.0
+
+  30 Jul 2016; Sergei Trofimovich <slyfox@gentoo.org> -crystal-0.11.1.ebuild,
+  -crystal-0.12.0.ebuild, -crystal-0.13.0.ebuild, -crystal-0.14.2.ebuild:
+  drop old
+
+  Package-Manager: portage-2.3.0
+

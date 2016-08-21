@@ -67,3 +67,19 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*banshee-community-extensions-2.4.0-r2 (30 Jun 2016)
+
+  30 Jun 2016; Michał Górny <mgorny@gentoo.org>
+  -banshee-community-extensions-2.2.0.ebuild,
+  -banshee-community-extensions-2.4.0.ebuild,
+  -banshee-community-extensions-2.4.0-r1.ebuild,
+  +banshee-community-extensions-2.4.0-r2.ebuild, metadata.xml:
+  media-plugins/banshee-*: Disable exts needing banshee[web], #587456
+
+  Disable the extensions using Banshee.WebBrowser
+  (media-sound/banshee[web]) since the support for that module has been
+  removed due to vulnerabilities in required WebKit.
+
+  Bug: https://bugs.gentoo.org/587456
+  Fixes: fdb83931178 (media-sound/banshee: Drop old)
+

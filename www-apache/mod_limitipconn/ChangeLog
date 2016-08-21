@@ -57,3 +57,40 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 May 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup due to bug #55572
+
+  Package-Manager: portage-2.3.0_rc1
+
+*mod_limitipconn-0.24-r1 (07 Jul 2016)
+
+  07 Jul 2016; Austin English <wizardedit@gentoo.org>
+  +mod_limitipconn-0.24-r1.ebuild:
+  update to EAPI 6
+
+  Package-Manager: portage-2.2.28
+
+  07 Jul 2016; Austin English <wizardedit@gentoo.org> metadata.xml:
+  add maintainer-needed
+
+  Package-Manager: portage-2.2.28
+
+*mod_limitipconn-0.24-r2 (02 Aug 2016)
+
+  02 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  -mod_limitipconn-0.24-r1.ebuild, +mod_limitipconn-0.24-r2.ebuild:
+  new revision to fix the postinst instructions.
+
+  The pkg_postinst() for this module used to suggest setting,
+
+    APACHE2_OPTS="... -D LIMITIPCONN -D INFO"
+
+  in your apache2 conf file. The "INFO" was a mistake; it should have
+  been "STATUS" (to enable ExtendedStatus, as needed by mod_limitipconn).
+  This commit fixes the postinst message, and adds a runtime dependency
+  on mod_status for apache2 (previously missing).
+
+  Gentoo-Bug: 479360
+
+  Package-Manager: portage-2.2.28
+

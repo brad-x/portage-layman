@@ -63,3 +63,34 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*PEAR-Net_Socket-1.0.14-r1 (27 Jul 2016)
+
+  27 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  +PEAR-Net_Socket-1.0.14-r1.ebuild:
+  new revision with EAPI=6 and no PEAR eclass.
+
+  Package-Manager: portage-2.2.28
+
+*PEAR-Net_Socket-1.0.14-r2 (27 Jul 2016)
+
+  27 Jul 2016; Brian Evans <grknight@gentoo.org>
+  -PEAR-Net_Socket-1.0.14-r1.ebuild, +PEAR-Net_Socket-1.0.14-r2.ebuild:
+  restore dev-php/pear as an RDEPEND
+
+  Package-Manager: portage-2.3.0
+
+*PEAR-Net_Socket-1.0.14-r3 (27 Jul 2016)
+
+  27 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  -PEAR-Net_Socket-1.0.14-r2.ebuild, +PEAR-Net_Socket-1.0.14-r3.ebuild:
+  new revision to switch pear dependencies.
+
+  The existing dev-php/pear dependency (which was better than nothing!)
+  makes more logical sense as dev-php/PEAR-PEAR, even though the two
+  packages are basically equivalent. Since dev-php/PEAR-PEAR installs
+  the executable that actually *needs* the things that dev-php/pear
+  depends on, it makes more long-term sense to move the dependencies
+  of dev-php/pear into dev-php/PEAR-PEAR.
+
+  Package-Manager: portage-2.2.28
+

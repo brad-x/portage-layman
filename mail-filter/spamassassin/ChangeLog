@@ -109,3 +109,152 @@
 
   Package-Manager: portage-2.2.26
 
+*spamassassin-3.4.1-r3 (03 Jun 2016)
+
+  03 Jun 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/spamassassin-3.4.1-bug_7223.patch,
+  +files/spamassassin-3.4.1-bug_7231.patch,
+  +files/spamassassin-3.4.1-bug_7265.patch, +spamassassin-3.4.1-r3.ebuild:
+  new revision to fix Net-DNS compatibility issues.
+
+  With the stabilization of =dev-perl/Net-DNS-1.40.0 (and the removal of
+  the older stable version), a number of problems were introduced in
+  SpamAssassin. There are three upstream bugs with patches against the
+  latest release, v3.4.1, which fix all sorts of DNS errors in blacklist
+  checks, DKIM, and SPF.
+
+  The major contribution of this new revision is to apply patches from
+  those upstream bugs fixing compatibility with =dev-perl/Net-DNS-1.40.0.
+
+  At the same time, bug 396307 has been fixed by creating the
+  sa-update-keys directory and assigning it the proper permissions.
+
+  Thanks are due to Olliver Schinagl, Philippe Chaintreuil, Marcin
+  Mirosław, and Atman Sense who reported and investigated these issues.
+
+  Gentoo-Bug: 396307
+  Gentoo-Bug: 579222
+  Upstream-Bug: 7223
+  Upstream-Bug: 7231
+  Upstream-Bug: 7265
+
+  Package-Manager: portage-2.2.28
+
+*spamassassin-3.4.1-r4 (03 Jun 2016)
+
+  03 Jun 2016; Michael Orlitzky <mjo@gentoo.org>
+  +spamassassin-3.4.1-r4.ebuild:
+  new major revision to install module man pages.
+
+  In bug 494260, it was reported that several man pages for
+  SpamAssassin's perl modules are missing. This turns out to be the
+  fault of the perl-module eclass, which deletes those man pages after
+  they've been installed in src_install. To fix it, at the very least,
+  would require avoiding perl-module_src_install().
+
+  It appears that we're not using too much functionality of that eclass,
+  especially once a workaround for src_install is in place. So in this
+  commit, I have removed the dependency on perl-module.eclass entirely
+  and configured/built/installed the package "manually." This fixes the
+  documentation bug.
+
+  Now with the eclass gone, it became possible to move to EAPI=6, and
+  this allowed even more code cleanup, such as the removal of
+  src_prepare() and the use of the default src_test(). The eutils eclass
+  is then no longer needed, and einstalldocs() can be used. After adding
+  "test" to IUSE, I noticed that the "doc" USE flag was redundant and
+  removed it.
+
+  Finally, the postinst message was updated to point to a new wiki page,
+  https://wiki.gentoo.org/wiki/SpamAssassin, which partially addresses
+  bug 532094 and gets rid of some outdated information.
+
+  Gentoo-Bug: 494260
+  Gentoo-Bug: 532094
+
+  Package-Manager: portage-2.2.28
+
+*spamassassin-3.4.1-r5 (04 Jun 2016)
+
+  04 Jun 2016; Michael Orlitzky <mjo@gentoo.org> +files/3.4.1-spamd.conf,
+  +files/3.4.1-spamd.init, +files/spamassassin-3.4.1-bug_7199.patch,
+  +spamassassin-3.4.1-r5.ebuild:
+  new revision with LibreSSL and spamd fixes.
+
+  This new revision adds another patch for upstream bugs 7093/7199. The
+  sslv3 option for spamd didn't do what it was supposed to do, and
+  moreover, it broke LibreSSL which no longer supports SSLv3. The patch
+  removes the option and makes it an error. There is a simple fix for
+  users, to remove the --ssl-version option if they are using it. Thanks
+  to Reuben Farrelly for reporting the issue.
+
+  The second round of changes addresses a few old Gentoo bugs regarding
+  the spamd init scripts and configuration. First, the init script was
+  missing a call to "checkpath" to ensure that the PID file had some
+  place to live. That's now fixed. Second, it used to be the case that
+  some configuration was necessary if you opted to run spamd as a
+  non-root user. That is no longer the case, so all of the documentation
+  surrounding that issue has been removed, and the config/init scripts
+  greatly simplified. Finally, a SPAMD_TIMEOUT option was added to allow
+  spamd a little bit of time when restarting or shutting down.
+
+  Peter Gantner, Juan David Ibáñez Palomar, Marcin Mirosław, Frieder
+  Bürzele, and a few other people helped out on those bugs. Thanks!
+
+  Gentoo-Bug: 322025
+  Gentoo-Bug: 455604
+  Gentoo-Bug: 523960
+  Upstream-Bug: 7093
+  Upstream-Bug: 7199
+
+  Package-Manager: portage-2.2.28
+
+*spamassassin-3.4.1-r6 (05 Jun 2016)
+
+  05 Jun 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/update-spamassassin-rules.cron, metadata.xml,
+  +spamassassin-3.4.1-r6.ebuild:
+  new revision with an optional sa-update cron job.
+
+  To make life easier for our users, a cron job that runs sa-update
+  nightly has been provided. It is only installed with USE=cron, but an
+  elog will mention its existence when that USE flag is disabled. The
+  cron job will also attempt to restart or reload spamd/amavisd if the
+  signatures have been updated.
+
+  Alongside that new feature, some of the dependencies have been cleaned
+  up. Pointless version bounds were removed, and an obsolete perl module
+  or two was pruned. The libwww-perl dependency was replaced by
+  wget/curl.
+
+  Gentoo-Bug: 532094
+
+  Package-Manager: portage-2.2.28
+
+  05 Jun 2016; Michael Orlitzky <mjo@gentoo.org> -spamassassin-3.4.1.ebuild,
+  -spamassassin-3.4.1-r2.ebuild, -spamassassin-3.4.1-r3.ebuild,
+  -spamassassin-3.4.1-r4.ebuild, -spamassassin-3.4.1-r5.ebuild:
+  remove old unstable revisions.
+
+  Package-Manager: portage-2.2.28
+
+  05 Jun 2016; Michael Orlitzky <mjo@gentoo.org> metadata.xml:
+  update metadata.xml with new maintainers.
+
+  We had a few users request to proxy-maintain this package. Now that
+  its open bugs are fixed, this commit adds two of those users (Philippe
+  Chaintreuil and Marcin Mirosław) to metadata.xml. The Proxy
+  Maintainers project has been added to support them.
+
+  I've added myself, too, for now, so that I will be CCed on bugs
+  arising from my recent changes.
+
+  Gentoo-Bug: 583908
+
+  Package-Manager: portage-2.2.28
+
+  07 Jun 2016; Michael Orlitzky <mjo@gentoo.org> -files/spamassassin.service:
+  remove unused files/spamassassin.service.
+
+  Package-Manager: portage-2.2.28
+

@@ -101,3 +101,23 @@
 
   This reverts commit ddd6ade52aae53d29552d00824572cde1dfa3533.
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/sslh.init.d-2:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+*sslh-1.18-r1 (13 Jul 2016)
+
+  13 Jul 2016; Michael Palimaka <kensington@gentoo.org>
+  +files/sslh-1.18-systemd-generator.patch,
+  +files/sslh-1.18-version-deps.patch, files/sslh.conf.d-2,
+  files/sslh.init.d-2, +sslh-1.18-r1.ebuild:
+  revision bump adding systemd support
+
+  This new revision builds the systemd generator and installs the systemd
+  service.
+
+  It also renames OPTIONS to DAEMON_OPTS in the sslh conf.d file for
+  compatibility
+  with the systemd service which sources it.
+
+  Gentoo-bug: 563600
+

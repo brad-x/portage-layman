@@ -129,3 +129,47 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*dosfstools-4.0 (06 May 2016)
+
+  06 May 2016; Lars Wendler <polynomial-c@gentoo.org> +dosfstools-4.0.ebuild,
+  metadata.xml:
+  Bump to version 4.0
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  06 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -dosfstools-3.0.26.ebuild, -dosfstools-3.0.27.ebuild,
+  -files/dosfstools-3.0.20-name-ext.patch:
+  Removed old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  09 May 2016; Lars Wendler <polynomial-c@gentoo.org>
+  dosfstools-3.0.28.ebuild, dosfstools-4.0.ebuild:
+  Fixed homepage URL (bug #579708).
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  10 May 2016; Lars Wendler <polynomial-c@gentoo.org> dosfstools-4.0.ebuild,
+  +files/dosfstools-4.0-udevlibs.patch:
+  Don't link to udev via LDFLAGS.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*dosfstools-4.0-r1 (04 Jun 2016)
+
+  04 Jun 2016; Lars Wendler <polynomial-c@gentoo.org> -dosfstools-4.0.ebuild,
+  +dosfstools-4.0-r1.ebuild:
+  always install fsck.vfat and mkfs.vfat
+
+  Bug: https://bugs.gentoo.org/584980
+
+  03 Jul 2016; Zac Medico <zmedico@gentoo.org> dosfstools-4.0-r1.ebuild:
+  add ${EPREFIX} to econf --docdir argument
+
+  Package-Manager: portage-2.3.0
+

@@ -66,3 +66,28 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*djbdns-1.05-r31 (05 Aug 2016)
+
+  05 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +djbdns-1.05-r31.ebuild,
+  +files/1.05-errno-r1.patch, +files/CVE2008-4392_0001-dnscache-merge-similar-
+  outgoing-queries-ipv6-test25-r1.patch,
+  +files/CVE2008-4392_0001-dnscache-merge-similar-outgoing-queries-r1.patch,
+  +files/headtail-r1.patch, +files/increase-cname-recustion-depth.patch:
+  new revision with increased dnscache recursion depth.
+
+  There is a hard limit on the number of recursive queries that dnscache
+  will perform. This new revision adds a patch, increasing a loop
+  iteration limit from 100 to 200, and thus increasing the recursion
+  depth. The patch was based on a similar fix for OpenWrt, suggested by
+  John Stile.
+
+  With the new revision, the ebuild was updated to EAPI=6. The eutils
+  eclass was dropped as "epatch" was replaced with "eapply"; some
+  patches needed new revisions to work with -p1, as eapply does. Two
+  other patches needed revisions to avoid fuzz from the new fix.
+
+  Gentoo-Bug: 590548
+  Reported-By: John Stile
+
+  Package-Manager: portage-2.2.28
+

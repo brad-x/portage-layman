@@ -396,3 +396,72 @@
 
   Package-Manager: portage-2.2.26
 
+  01 May 2016; William Hubbs <williamh@gentoo.org> go-1.6.2.ebuild,
+  go-9999.ebuild:
+  style fix
+
+  Package-Manager: portage-2.2.26
+
+  18 May 2016; William Hubbs <williamh@gentoo.org>
+  +files/go-1.6.1-gdb-no-shell.patch, +files/go-1.6.2-gdb-no-shell.patch,
+  go-1.6.1.ebuild, go-1.6.2.ebuild:
+  apply patch for #581072
+
+  Gdb was starting by spawning a shell and this was causing issues for the
+  tests.
+
+  Package-Manager: portage-2.2.28
+
+*go-1.6.3 (20 Jul 2016)
+
+  20 Jul 2016; William Hubbs <williamh@gentoo.org>
+  +files/go-1.6.3-gdb-no-shell.patch, +go-1.6.3.ebuild:
+  1.6.3 version bump for #589230
+
+  Package-Manager: portage-2.2.28
+
+  20 Jul 2016; William Hubbs <williamh@gentoo.org> go-1.6.3.ebuild:
+  stable 1.6.3 on amd64 for #589230
+
+  Package-Manager: portage-2.2.28
+
+  24 Jul 2016; Markus Meier <maekke@gentoo.org> go-1.6.3.ebuild:
+  arm stable, bug #589230
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="arm"
+
+  25 Jul 2016; William Hubbs <williamh@gentoo.org> go-9999.ebuild:
+  remove elog for release notes for #589464
+
+  Package-Manager: portage-2.2.28
+
+  25 Jul 2016; William Hubbs <williamh@gentoo.org> go-1.6.3.ebuild:
+  sync 1.6.3 with live ebuild
+
+  Package-Manager: portage-2.2.28
+
+  28 Jul 2016; Agostino Sarubbo <ago@gentoo.org> go-1.6.3.ebuild:
+  x86 stable wrt bug #589230
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Jul 2016; William Hubbs <williamh@gentoo.org>
+  -files/go-1.6.1-gdb-no-shell.patch, -files/go-1.6.2-gdb-no-shell.patch,
+  -go-1.6-r2.ebuild, -go-1.6.1.ebuild, -go-1.6.2.ebuild:
+  cleanup for #589230
+
+  Package-Manager: portage-2.2.28
+
+*go-1.7 (16 Aug 2016)
+
+  16 Aug 2016; William Hubbs <williamh@gentoo.org> +go-1.7.ebuild:
+  1.7 version bump for #591390
+
+  I have removed the pre/postinst functions in this version; I do not believe
+  that functionality is needed any longer.
+
+  Package-Manager: portage-2.2.28
+

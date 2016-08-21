@@ -327,3 +327,153 @@
   RepoMan-Options: --include-arches="amd64"
   Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
 
+  03 May 2016; Markus Meier <maekke@gentoo.org>
+  networkmanager-1.0.10-r1.ebuild:
+  arm stable, bug #566378
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  18 May 2016; Austin English <wizardedit@gentoo.org>
+  files/init.d.NetworkManager:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  08 Jun 2016; Markus Meier <maekke@gentoo.org>
+  networkmanager-1.0.12-r1.ebuild:
+  arm stable, bug #584468
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="arm"
+
+  11 Jun 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.0.12-r1.ebuild:
+  x86 stable, bug 584468
+
+  Package-Manager: portage-2.3.0_rc1
+  RepoMan-Options: --include-arches="x86"
+
+  07 Jul 2016; Pacho Ramos <pacho@gentoo.org> -networkmanager-1.0.12.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+*networkmanager-1.2.2 (07 Jul 2016)
+
+  07 Jul 2016; Pacho Ramos <pacho@gentoo.org> +networkmanager-1.2.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.3.0
+
+  07 Jul 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.2.2.ebuild:
+  Drop unused eclass
+
+  Package-Manager: portage-2.3.0
+
+  08 Jul 2016; Jonathan Callen <jcallen@gentoo.org>
+  networkmanager-1.2.2.ebuild:
+  Fix build for non-native arches
+
+  Package-Manager: portage-2.3.0
+
+  08 Jul 2016; Agostino Sarubbo <ago@gentoo.org>
+  networkmanager-1.0.12-r1.ebuild:
+  ppc stable wrt bug #579316
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jul 2016; Agostino Sarubbo <ago@gentoo.org>
+  networkmanager-1.0.12-r1.ebuild:
+  ppc64 stable wrt bug #579316
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  08 Jul 2016; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/networkmanager-1.2.2-sleep-monitor-upower-include.patch,
+  networkmanager-1.2.2.ebuild:
+  fix build when USE="consolekit -systemd" (bug #588278)
+
+  Thanks to jorgicio for finding the patch.
+
+  Package-Manager: portage-2.3.0
+
+  09 Jul 2016; Pacho Ramos <pacho@gentoo.org>
+  -files/networkmanager-1.0.10-vpn-routes.patch,
+  -files/networkmanager-1.0.6-vpn-mtu.patch, -networkmanager-1.0.6-r1.ebuild,
+  -networkmanager-1.0.10-r1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+  09 Jul 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.2.2.ebuild:
+  avahi support was dropped (#588396 by poncho)
+
+  Package-Manager: portage-2.3.0
+
+  15 Jul 2016; Mike Gilbert <floppym@gentoo.org> networkmanager-1.2.2.ebuild:
+  depend on dev-python/pygobject:3 for tests
+
+  Also add the missing python_check_deps function.
+
+  Bug: https://bugs.gentoo.org/588904
+
+  Package-Manager: portage-2.3.0_p13
+
+  30 Jul 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.2.2.ebuild:
+  Fix the disabling of examples building and prevent qt automagic dep (#588828
+  by Eugene Shalygin), drop old migration messages (#589496 by mgorny).
+
+  Package-Manager: portage-2.3.0
+
+*networkmanager-1.2.4 (04 Aug 2016)
+
+  04 Aug 2016; Mike Gilbert <floppym@gentoo.org> +networkmanager-1.2.4.ebuild:
+  bump to 1.2.4
+
+  Package-Manager: portage-2.3.0_p16
+
+  04 Aug 2016; Mike Gilbert <floppym@gentoo.org> networkmanager-1.2.4.ebuild:
+  disable examples by stubbing out the Makefile
+
+  Package-Manager: portage-2.3.0_p16
+
+  04 Aug 2016; Mike Gilbert <floppym@gentoo.org> +files/1.2.4-upower.patch,
+  networkmanager-1.2.4.ebuild:
+  fix build with USE=-systemd
+
+  Thanks to Ben Kohler for getting this sorted with upstream.
+
+  Bug: https://bugs.gentoo.org/590432
+
+  Package-Manager: portage-2.3.0_p16
+
+  08 Aug 2016; Mike Gilbert <floppym@gentoo.org> networkmanager-1.2.4.ebuild:
+  add 'check' target to stub Makefile
+
+  Patch by tka.
+
+  Bug: https://bugs.gentoo.org/590718
+  Package-Manager: portage-2.3.0_p16
+
+  08 Aug 2016; Mike Gilbert <floppym@gentoo.org> networkmanager-1.2.4.ebuild:
+  remove empty /run/NetworkManager only
+
+  Instead of removing all empty directories, just remove /run/NetworkManager
+  and its parent.
+
+  https://bugs.gentoo.org/590718#c5
+
+  Package-Manager: portage-2.3.0_p16
+
+  10 Aug 2016; Pacho Ramos <pacho@gentoo.org> -networkmanager-1.2.2.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+  10 Aug 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.2.4.ebuild:
+  Add bug reference for examples disabling switch
+
+  Package-Manager: portage-2.3.0
+

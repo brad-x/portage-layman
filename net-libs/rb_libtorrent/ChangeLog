@@ -168,3 +168,40 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  20 May 2016; Patrice Clement <monsieurp@gentoo.org>
+  rb_libtorrent-1.0.9-r1.ebuild:
+  fix miscellaneous issues
+
+  Gentoo-Bug: https://bugs.gentoo.org/581274
+  Closes: https://github.com/gentoo/gentoo/pull/1394
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  18 Aug 2016; Davide Pesavento <pesa@gentoo.org>
+  -rb_libtorrent-0.16.17-r2.ebuild, -rb_libtorrent-1.0.8.ebuild,
+  -rb_libtorrent-1.0.9.ebuild:
+  remove a few old versions
+
+  Package-Manager: portage-2.3.0
+
+*rb_libtorrent-1.0.9-r2 (18 Aug 2016)
+
+  18 Aug 2016; Davide Pesavento <pesa@gentoo.org>
+  +files/rb_libtorrent-1.0.9-CVE-2016-5301.patch,
+  +files/rb_libtorrent-1.0.9-test_torrent_parse.patch, metadata.xml,
+  +rb_libtorrent-1.0.9-r2.ebuild:
+  revbump with several fixes and improvements
+
+    * add libressl support (bug 574004)
+    * use official "prepared" tarball, saves eautoreconf call (bug 577288)
+    * link python bindings against the just-built library (bug 578026)
+    * backport patch for CVE-2016-5301 (bug 585278)
+    * add subslot
+    * use system copy of geoip library and allow disabling it via USE flag
+    * drop some obsolete/redundant options from econf invocation
+    * revise which logging options are turned on by USE=debug
+    * fix and unrestrict tests
+    * don't install .la file when not needed
+
+  Package-Manager: portage-2.3.0
+

@@ -5,6 +5,7 @@
 EAPI=6
 
 : ${CMAKE_MAKEFILE_GENERATOR:=ninja}
+CMAKE_MIN_VERSION=3.4.3
 PYTHON_COMPAT=( python2_7 )
 
 inherit check-reqs cmake-utils eutils flag-o-matic git-r3 multilib \
@@ -17,11 +18,11 @@ EGIT_REPO_URI="http://llvm.org/git/llvm.git
 	https://github.com/llvm-mirror/llvm.git"
 
 LICENSE="UoI-NCSA"
-SLOT="0/${PV}"
+SLOT="0/${PV%.*}"
 KEYWORDS=""
-IUSE="clang debug +doc gold libedit +libffi lldb multitarget ncurses ocaml
-	python +static-analyzer test xml video_cards_radeon
-	kernel_Darwin kernel_FreeBSD"
+IUSE="clang debug default-compiler-rt default-libcxx +doc gold libedit +libffi
+	lldb multitarget ncurses ocaml python +sanitize +static-analyzer test xml
+	video_cards_radeon elibc_musl kernel_Darwin kernel_FreeBSD"
 
 COMMON_DEPEND="
 	sys-libs/zlib:0=
@@ -59,6 +60,7 @@ DEPEND="${COMMON_DEPEND}
 	${PYTHON_DEPS}"
 RDEPEND="${COMMON_DEPEND}
 	clang? ( !<=sys-devel/clang-${PV}-r99 )
+	default-libcxx? ( sys-libs/libcxx )
 	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20130224-r2
 		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
 PDEPEND="clang? ( =sys-devel/clang-${PV}-r100 )"
@@ -106,6 +108,8 @@ pkg_pretend() {
 
 pkg_setup() {
 	pkg_pretend
+
+	python-single-r1_pkg_setup
 }
 
 src_unpack() {
@@ -139,6 +143,8 @@ src_unpack() {
 }
 
 src_prepare() {
+	python_setup
+
 	# Make ocaml warnings non-fatal, bug #537308
 	sed -e "/RUN/s/-warn-error A//" -i test/Bindings/OCaml/*ml  || die
 	# Fix libdir for ocaml bindings install, bug #559134
@@ -169,6 +175,9 @@ src_prepare() {
 	# https://bugs.gentoo.org/show_bug.cgi?id=578392
 	eapply "${FILESDIR}"/llvm-3.8-soversion.patch
 
+	# support building llvm against musl-libc
+	use elibc_musl && eapply "${FILESDIR}"/llvm-3.8-musl-fixes.patch
+
 	# disable use of SDK on OSX, bug #568758
 	sed -i -e 's/xcrun/false/' utils/lit/lit/util.py || die
 
@@ -179,7 +188,7 @@ src_prepare() {
 		# Install clang runtime into /usr/lib/clang
 		# https://llvm.org/bugs/show_bug.cgi?id=23792
 		eapply "${FILESDIR}"/cmake/clang-0001-Install-clang-runtime-into-usr-lib-without-suffix-3.8.patch
-		eapply "${FILESDIR}"/cmake/compiler-rt-0001-cmake-Install-compiler-rt-into-usr-lib-without-suffi.patch
+		eapply "${FILESDIR}"/cmake/compiler-rt-3.9-cmake-Install-compiler-rt-into-usr-lib-without-suffi.patch
 
 		# Make it possible to override CLANG_LIBDIR_SUFFIX
 		# (that is used only to find LLVMgold.so)
@@ -187,9 +196,9 @@ src_prepare() {
 		eapply "${FILESDIR}"/cmake/clang-0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch
 
 		# Fix WX sections, bug #421527
-		find "${S}"/projects/compiler-rt/lib/builtins -type f -name \*.S -exec sed \
-			 -e '$a\\n#if defined(__linux__) && defined(__ELF__)\n.section .note.GNU-stack,"",%progbits\n#endif' \
-			 -i {} \; || die
+		find projects/compiler-rt/lib/builtins -type f -name '*.S' -exec sed \
+			-e '$a\\n#if defined(__linux__) && defined(__ELF__)\n.section .note.GNU-stack,"",%progbits\n#endif' \
+			-i {} + || die
 	fi
 
 	if use lldb; then
@@ -202,8 +211,6 @@ src_prepare() {
 	# User patches
 	eapply_user
 
-	python_setup
-
 	# Native libdir is used to hold LLVMgold.so
 	NATIVE_LIBDIR=$(get_libdir)
 }
@@ -213,7 +220,7 @@ multilib_src_configure() {
 	if use multitarget; then
 		targets=all
 	else
-		targets='host;BPF;CppBackend'
+		targets='host;BPF'
 		use video_cards_radeon && targets+=';AMDGPU'
 	fi
 
@@ -254,6 +261,14 @@ multilib_src_configure() {
 			# libgomp support fails to find headers without explicit -I
 			# furthermore, it provides only syntax checking
 			-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
+
+			# override default stdlib and rtlib
+			-DCLANG_DEFAULT_CXX_STDLIB=$(usex default-libcxx libc++ "")
+			-DCLANG_DEFAULT_RTLIB=$(usex default-compiler-rt compiler-rt "")
+
+			# compiler-rt's test cases depend on sanitizer
+			-DCOMPILER_RT_BUILD_SANITIZERS=$(usex sanitize)
+			-DCOMPILER_RT_INCLUDE_TESTS=$(usex sanitize)
 		)
 	fi
 
@@ -340,6 +355,23 @@ multilib_src_configure() {
 		#filter-flags -msahf -frecord-gcc-switches
 	fi
 
+	if tc-is-cross-compiler; then
+		[[ -x "/usr/bin/llvm-tblgen" ]] \
+			|| die "/usr/bin/llvm-tblgen not found or usable"
+		mycmakeargs+=(
+			-DCMAKE_CROSSCOMPILING=ON
+			-DLLVM_TABLEGEN=/usr/bin/llvm-tblgen
+		)
+
+		if use clang; then
+			[[ -x "/usr/bin/clang-tblgen" ]] \
+				|| die "/usr/bin/clang-tblgen not found or usable"
+			mycmakeargs+=(
+				-DCLANG_TABLEGEN=/usr/bin/clang-tblgen
+			)
+		fi
+	fi
+
 	cmake-utils_src_configure
 }
 
@@ -380,7 +412,7 @@ src_install() {
 
 	if use clang; then
 		# note: magic applied in multilib_src_install()!
-		CLANG_VERSION=3.9
+		CLANG_VERSION=4.0
 
 		MULTILIB_CHOST_TOOLS+=(
 			/usr/bin/clang

@@ -5,12 +5,11 @@
 EAPI=6
 
 KDE_BLOCK_SLOT4="false"
-KDE_DOXYGEN="true"
 KDE_HANDBOOK="forceoptional"
 inherit kde5
 
 DESCRIPTION="KDE Wallet management tool"
-KEYWORDS=" ~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND="
@@ -38,5 +37,5 @@ DEPEND="
 	$(add_qt_dep qtxml)
 "
 RDEPEND="${DEPEND}
-	!kde-apps/kwalletmanager:4[-minimal(-)]
+	!<kde-apps/kwalletmanager-15.04.3-r1:4
 "

@@ -59,3 +59,50 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 May 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup due to #321263
+
+  Package-Manager: portage-2.3.0_rc1
+
+*freetds-1.00 (24 May 2016)
+
+  24 May 2016; Hans de Graaff <graaff@gentoo.org> +freetds-1.00.ebuild:
+  add 1.00
+
+  Package-Manager: portage-2.2.28
+
+*freetds-1.00.1 (12 Jun 2016)
+
+  12 Jun 2016; Hans de Graaff <graaff@gentoo.org> +freetds-1.00.1.ebuild:
+  add 1.00.1
+
+  Package-Manager: portage-2.2.28
+
+*freetds-1.00.1-r1 (07 Jul 2016)
+
+  07 Jul 2016; Austin English <wizardedit@gentoo.org>
+  +freetds-1.00.1-r1.ebuild, metadata.xml:
+  bump to EAPI 6, add maintainer-needed
+
+  Package-Manager: portage-2.2.28
+
+*freetds-1.00.13 (31 Jul 2016)
+
+  31 Jul 2016; Michael Orlitzky <mjo@gentoo.org> +freetds-1.00.13.ebuild:
+  new version 1.00.13.
+
+  This new version fixes some bugs and adds a few new features. At some
+  point, the upstream project added support for compiling with
+  -Werror=format-security, so that takes care of our bug 521270.
+
+  The ebuild now has support for GnuTLS, OpenSSL/LibreSSL (bug 490554),
+  and iconv. These were all present upstream, but missing from the
+  ebuild until now. It also adds a runtime dependency on bind-tools,
+  which is used by the "osql" script (bug 487176).
+
+  Gentoo-Bug: 487176
+  Gentoo-Bug: 490554
+  Gentoo-Bug: 521270
+
+  Package-Manager: portage-2.2.28
+

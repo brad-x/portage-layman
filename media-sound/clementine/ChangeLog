@@ -175,3 +175,93 @@
   Package-Manager: portage-2.2.28
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  03 May 2016; Lars Wendler <polynomial-c@gentoo.org> clementine-1.3.ebuild,
+  clementine-1.3.1.ebuild, clementine-9999.ebuild,
+  -files/clementine-1.3_rc1-cmake.patch, metadata.xml:
+  several cleanups and fixes
+
+  - Clean up dependencies
+  - Fix dependencies upon dev-libs/crypto++ (see 580134)
+  - Synchronise live ebuild with latest release
+  - Remove obsolte comments
+  - Reorder cmake params
+  - Reenable testing
+  - add missing USE flags:
+    * added 3 missing USE flags in ebuilds of recent version: amazoncloud,
+        pulseaudio and vkontakte
+    * removed USE=ubuntu-one due to remove in upstream
+    * slightly change description for other USEs
+
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  03 May 2016; Lars Wendler <polynomial-c@gentoo.org> -clementine-1.3.ebuild,
+  clementine-1.3.1.ebuild, clementine-9999.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.2.28
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*clementine-1.3.1-r1 (03 Jul 2016)
+*clementine-1.2.3-r1 (03 Jul 2016)
+
+  03 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org>
+  +clementine-1.2.3-r1.ebuild, -clementine-1.3.1.ebuild,
+  +clementine-1.3.1-r1.ebuild, clementine-9999.ebuild:
+  a couple dependency fixes
+
+  - Fix udisks version required
+  - Fix boost slot
+
+  Reviewed-by: David Seifert <soap@gentoo.org>
+
+  03 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> clementine-9999.ebuild,
+  metadata.xml:
+  several enhancements in the live ebuild
+
+  - remove amazoncloud support due to removed in upstream
+  - add seafile sharing service support
+  - add udisks2 support
+  - remove dep upon media-libs/libechonest due to it is not required anymore
+
+  Reviewed-by: David Seifert <soap@gentoo.org>
+
+  16 Jul 2016; Patrice Clement <monsieurp@gentoo.org> clementine-9999.ebuild:
+  remove a line refering to a removed USE.
+
+  Gentoo-Bug: https://bugs.gentoo.org/588784
+  Closes: https://github.com/gentoo/gentoo/pull/1889
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  16 Jul 2016; Patrice Clement <monsieurp@gentoo.org> clementine-1.2.3.ebuild,
+  clementine-1.2.3-r1.ebuild, clementine-1.3.1-r1.ebuild,
+  clementine-9999.ebuild:
+  add missing USE for a dependency dev-qt/qtcore[ssl].
+
+  Gentoo-Bug: https://bugs.gentoo.org/587952
+  Closes: https://github.com/gentoo/gentoo/pull/1889
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*clementine-1.3.1-r2 (16 Jul 2016)
+*clementine-1.2.3-r2 (16 Jul 2016)
+
+  16 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -clementine-1.2.3-r1.ebuild, +clementine-1.2.3-r2.ebuild,
+  -clementine-1.3.1-r1.ebuild, +clementine-1.3.1-r2.ebuild,
+  clementine-9999.ebuild:
+  add missing USE for a dependency gnome-base/gvfs[mtp].
+
+  Gentoo-Bug: https://bugs.gentoo.org/566344
+  Closes: https://github.com/gentoo/gentoo/pull/1889
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  21 Jul 2016; Lars Wendler <polynomial-c@gentoo.org> clementine-1.2.3.ebuild,
+  clementine-1.2.3-r2.ebuild, clementine-1.3.1-r2.ebuild,
+  clementine-9999.ebuild:
+  media-libs/taglib-1.11 dropped mp4 USE flag.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

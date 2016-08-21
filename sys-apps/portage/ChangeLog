@@ -296,3 +296,123 @@
   30 Mar 2016; Mike Frysinger <vapier@gentoo.org> portage-2.2.26.ebuild:
   mark 2.2.26 m68k/s390/sh stable
 
+  01 May 2016; Markus Meier <maekke@gentoo.org> portage-2.2.28.ebuild:
+  arm stable, bug #580738
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+
+  02 May 2016; Matt Turner <mattst88@gentoo.org> portage-2.2.28.ebuild:
+  alpha stable, bug 580738.
+
+  05 May 2016; Jeroen Roovers <jer@gentoo.org> portage-2.2.28.ebuild:
+  Stable for HPPA PPC64 (bug #580738).
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --ignore-arches
+
+  07 May 2016; Pacho Ramos <pacho@gentoo.org> portage-2.2.28.ebuild:
+  amd64 stable, bug #580738
+
+  Package-Manager: portage-2.2.28
+
+*portage-2.3.0_rc1 (16 May 2016)
+
+  16 May 2016; Brian Dolbec <dolsen@gentoo.org> +portage-2.3.0_rc1.ebuild,
+  portage-9999.ebuild:
+  Version bump, new split portage/repoman releases
+
+  Update 9999 with updated einfo about teh split releases.
+
+  Package-Manager: portage-2.3.0_rc1
+
+*portage-2.3.0_rc1-r1 (16 May 2016)
+
+  16 May 2016; Brian Dolbec <dolsen@gentoo.org>
+  +files/portage-2.3.0_rc1.patch, -portage-2.3.0_rc1.ebuild,
+  +portage-2.3.0_rc1-r1.ebuild:
+  Fix portage upgrade traceback when repoman is not installed
+
+  Easy workaround, emerge repoman, upgrade portage, unmerge repoman.
+  Alternative, edit /usr/lib/pythonX.Y/site-packages/const.py edite
+  PORTAGE_PYM_PACKAGES
+  remove repoman from it.
+
+  Package-Manager: portage-2.3.0_rc1
+
+  26 May 2016; Lars Wendler <polynomial-c@gentoo.org> portage-2.2.28.ebuild:
+  x86 stable (bug #580738)
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  28 May 2016; Benda Xu <heroxbd@gentoo.org> portage-2.3.0_rc1-r1.ebuild:
+  use gentoo main tree on RAP.
+
+    prefix-rpath using prefix-portage is not affected.
+
+  Package-Manager: portage-2.2.28
+
+  28 May 2016; Fabian Groffen <grobian@gentoo.org> portage-2.2.8-r2.ebuild,
+  portage-2.2.20.1.ebuild, portage-2.2.24.ebuild, portage-2.2.26.ebuild,
+  portage-2.2.27.ebuild, portage-2.2.28.ebuild, portage-9999.ebuild:
+  use an existing host for Prefix rsync
+
+  Package-Manager: portage-2.2.28
+
+  03 Jun 2016; Michał Górny <mgorny@gentoo.org> portage-2.2.8-r2.ebuild:
+  Clean up old Python impls from the compat ebuild
+
+  06 Jun 2016; Brian Dolbec <dolsen@gentoo.org> portage-2.3.0_rc1-r1.ebuild:
+  Fix a typo in an einfo
+
+  Package-Manager: portage-2.3.0_rc1_p19
+
+  12 Jun 2016; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+  Package-Manager: portage-2.3.0_rc1
+
+*portage-2.3.0 (23 Jun 2016)
+
+  23 Jun 2016; Brian Dolbec <dolsen@gentoo.org> -portage-2.2.20.1.ebuild,
+  -portage-2.2.27.ebuild, +portage-2.3.0.ebuild:
+  Bump, final release
+
+  Includes bug fixes for: 576888, 579626, 579292, 578204, 577862, 582388,
+  576788
+  583560, 577720, 583164, 584530, 572494, 582802, 583754, 574626, 586410.
+
+  Package-Manager: portage-2.3.0
+
+  02 Jul 2016; Zac Medico <zmedico@gentoo.org> portage-2.3.0.ebuild:
+  fix prefix repos.conf support
+
+  Package-Manager: portage-2.3.0
+
+  06 Jul 2016; Agostino Sarubbo <ago@gentoo.org> portage-2.2.28.ebuild:
+  ppc stable wrt bug #580738
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  10 Jul 2016; Zac Medico <zmedico@gentoo.org> portage-2.2.28.ebuild,
+  portage-2.3.0.ebuild, portage-9999.ebuild:
+  add sandbox dep for elibc_musl
+
+  Package-Manager: portage-2.3.0
+
+  13 Aug 2016; Jeroen Roovers <jer@gentoo.org> portage-2.3.0.ebuild:
+  Stable for HPPA PPC64 (bug #589822).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+  18 Aug 2016; Markus Meier <maekke@gentoo.org> portage-2.3.0.ebuild:
+  arm stable, bug #589822
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="arm"
+

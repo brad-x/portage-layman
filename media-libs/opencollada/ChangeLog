@@ -86,3 +86,85 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  29 May 2016; Anthony Ryan <anthonyryan1@gmail.com> opencollada-9999.ebuild:
+  HTTPS (and canonicalize domain) for github.com
+
+  All links to www.github.com were changed to github.com (preferred by
+  GitHub).
+
+  During the automated testing of all modified packages the following SRC_URIs
+  were discovered to have changed upstream. Upon closer inspection they were
+  all confirmed to not be regressions. They will all continue to work when
+  served from the mirrors.
+
+  * dev-python/catkin_pkg-0.2.10 (upstream tarball changed)
+  * dev-python/rosdistro-0.4.4 (upstream tarball changed)
+  * dev-util/rosdep-0.11.4 (upstream tarball changed)
+  * dev-util/wstool-0.1.12 (upstream tarball changed)
+  * dev-util/wstool-0.1.13 (upstream tarball changed)
+  * dev-util/rosdep-0.11.5 (upstream tarball deleted)
+
+  05 Jun 2016; Sebastian Pipping <sping@gentoo.org> metadata.xml:
+  Drop myself as a maintainer
+
+  Package-Manager: portage-2.2.28
+
+*opencollada-1.6.18 (12 Jun 2016)
+
+  12 Jun 2016; Amy Winston <amynka@gentoo.org> +opencollada-1.6.18.ebuild,
+  opencollada-9999.ebuild:
+  Version bump to 1.6.18 and update to EAPI 6
+
+  -Version bump to v1.6.18: Upstream releasing proper versions now
+  -Using full EAPI compliance for new and live ebuild
+  -Delete old patches not in use anymore
+  -Closes Gentoo Bug: 584670
+  -Fixes based on help from gentoo-proxy-maint
+  -Changed comments to explain that certain things are needed
+
+  12 Jun 2016; Amy Winston <amynka@gentoo.org> +.metadata.xml.kate-swp,
+  metadata.xml:
+  Update metadata.xml with new maintainers
+
+  Closes: #1614
+
+  12 Jun 2016; Amy Winston <amynka@gentoo.org>
+  -files/opencollada-0_p864-gcc-4.7.patch,
+  -files/opencollada-0_p864-parallel.patch:
+  unused patches removed
+
+  Package-Manager: portage-2.2.28
+
+  13 Jun 2016; Amy Winston <amynka@gentoo.org> -.metadata.xml.kate-swp:
+  cleaning after github pr
+
+  09 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> metadata.xml:
+  Update metadata.xml file
+
+  09 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> -opencollada-9999.ebuild:
+  Remove live ebuild as it's no longer needed
+
+*opencollada-1.6.18-r1 (09 Jul 2016)
+
+  09 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> -opencollada-1.6.18.ebuild,
+  +opencollada-1.6.18-r1.ebuild:
+  Rev bump to fix insecure runpath vulnerability
+
+  Closes Gentoo Bug 439530
+  Also, remove live ebuild logic
+
+*opencollada-1.6.23 (09 Jul 2016)
+
+  09 Jul 2016; Göktürk Yüksek <gokturk@gentoo.org> +opencollada-1.6.23.ebuild:
+  Version bump to 1.6.23
+
+*opencollada-1.6.25 (16 Jul 2016)
+
+  16 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -opencollada-1.6.23.ebuild, +opencollada-1.6.25.ebuild:
+  version bump to 1.6.25.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1890
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

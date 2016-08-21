@@ -15,3 +15,109 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  09 May 2016; Ian Delaney <idella4@gentoo.org>
+  mpv-bash-completion-0.16.ebuild:
+  use einstalldocs in src_install in 0.16
+
+  mpv-bash-completion doesn't have any build system or Makefiles.
+  According to PMS, default in src_install phase is equivalent to
+  einstalldocs in this case [0].
+
+  Thus replace default with einstalldocs.
+
+  [0]: https://dev.gentoo.org/~ulm/pms/head/pms.html#x1-1040009.1.9
+
+  Closes: https://github.com/gentoo/gentoo/pull/1436
+  Package-Manager: portage-2.2.28
+
+  Signed-off-by: Ian Delaney <idella4@gentoo.org>
+
+*mpv-bash-completion-0.17 (23 Jun 2016)
+
+  23 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  +mpv-bash-completion-0.17.ebuild:
+  verbump to 0.17
+
+  Remove redundant app-shells/bash blocker.
+  This version also fixes Gentoo bug #586596.
+
+  Gentoo-Bug: https://bugs.gentoo.org/586596
+
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  23 Jun 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/mpv-bash-completion-0.16-fix-no-flag-options-completion.patch,
+  -mpv-bash-completion-0.16.ebuild:
+  remove old
+
+  Closes: https://github.com/gentoo/gentoo/pull/1720
+  Package-Manager: portage-2.3.0_rc1
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-bash-completion-3.0 (28 Jun 2016)
+
+  28 Jun 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml,
+  +mpv-bash-completion-3.0.ebuild:
+  verbump to 3.0
+
+  Upstream has rewritten generator script in Lua.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1775
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-bash-completion-3.3.3 (22 Jul 2016)
+
+  22 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  +mpv-bash-completion-3.3.3.ebuild:
+  verbump to 3.3.3
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  22 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -mpv-bash-completion-3.0.ebuild:
+  remove old
+
+  Closes: https://github.com/gentoo/gentoo/pull/1925
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-bash-completion-3.3.4 (31 Jul 2016)
+
+  31 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  +mpv-bash-completion-3.3.4.ebuild:
+  verbump to 3.3.4
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  31 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -mpv-bash-completion-3.3.3.ebuild:
+  remove old
+
+  Closes: https://github.com/gentoo/gentoo/pull/1974
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  09 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  mpv-bash-completion-3.3.4.ebuild:
+  require mpv>=0.14.0 for 3.3.4.
+
+  mpv-bash-completion-3.3.4 doesn't build otherwise.
+
+  Gentoo-Bug: https://bugs.gentoo.org/590794
+  Closes: https://github.com/gentoo/gentoo/pull/2047
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

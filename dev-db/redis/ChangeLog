@@ -163,3 +163,39 @@
 
   Package-Manager: portage-2.2.28
 
+  18 May 2016; Austin English <wizardedit@gentoo.org> files/redis.initd,
+  files/redis.initd-2, files/redis.initd-3, files/redis.initd-4:
+  use #!/sbin/openrc-run instead of #!/sbin/runscript
+
+  28 May 2016; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Cleanup as talked with him
+
+  Package-Manager: portage-2.3.0_rc1
+
+*redis-3.2.0 (14 Jun 2016)
+
+  14 Jun 2016; Ultrabug <ultrabug@gentoo.org> +files/redis-3.2.0-config.patch,
+  +files/redis-3.2.0-sharedlua.patch, +redis-3.2.0.ebuild:
+  version bump fixes #583168
+
+  Package-Manager: portage-2.2.27
+
+  19 Jun 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Multiple metadata.xml: reorder to make sure assignee goes first
+
+  Reorder all metadata.xml files with explicit descriptions requesting
+  particular bug assignment/CC to ensure that the requested assignee
+  always goes first, in order to match the bug wrangling policies.
+
+  30 Jul 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/redis-2.4.17-shared.patch, -files/redis-2.4.3-shared.patch,
+  -files/redis-2.4.4-tcmalloc.patch, -files/redis-2.6.7-config.patch,
+  -files/redis-2.6.7-shared.patch, -files/redis-2.6.9-tclsh86.patch,
+  -files/redis-2.8.3-config.patch, -files/redis.initd-2, -files/redis.initd-3:
+  dev-db/*: remove unused patches.
+
+  Squash all commit messages into a single one.
+
+  Closes: https://github.com/gentoo/gentoo/pull/1936
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

@@ -52,3 +52,44 @@
 
   Package-Manager: portage-2.2.28
 
+  06 Jul 2016; Michael Palimaka <kensington@gentoo.org>
+  libsignon-glib-1.13.ebuild:
+  reset XDG env vars
+
+  Gentoo-bug: 587888
+
+  Package-Manager: portage-2.3.0
+
+*libsignon-glib-1.13-r1 (04 Aug 2016)
+
+  04 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  +libsignon-glib-1.13-r1.ebuild:
+  revision bump with various fixes
+
+  This introduces an introspection USE flag which eliminates an automagic
+  dependency.
+
+  The python USE flag requires the new introspection USE flag to be enabled,
+  as they are introspection bindings and build but do not run without the
+  backing
+  introspection files.
+
+  This revision bump also corrects the python dependencies, prunes an unused
+  libtool file, and switches to EAPI 6.
+
+  Package-Manager: portage-2.3.0
+
+  18 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  libsignon-glib-1.13-r1.ebuild:
+  amd64/x86 stable
+
+  Gentoo-bug: 590488
+
+  Package-Manager: portage-2.3.0
+
+  18 Aug 2016; Michael Palimaka <kensington@gentoo.org>
+  -libsignon-glib-1.13.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0
+

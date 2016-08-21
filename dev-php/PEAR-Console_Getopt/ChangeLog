@@ -86,3 +86,18 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*PEAR-Console_Getopt-1.4.1-r1 (28 Jul 2016)
+
+  28 Jul 2016; Michael Orlitzky <mjo@gentoo.org>
+  -PEAR-Console_Getopt-1.4.1.ebuild, +PEAR-Console_Getopt-1.4.1-r1.ebuild:
+  new revision to clean up dependencies.
+
+  This package had a build-time dependency on dev-lang/php that was
+  intended to be a runtime dependency; now fixed. There were also
+  redundant dependencies on dev-php/pear and dev-php/PEAR-PEAR (which
+  are the same, for all intents and purposes). The dev-php/pear
+  dependency has been removed in favor of a single PDEPEND on
+  dev-php/PEAR-PEAR.
+
+  Package-Manager: portage-2.2.28
+

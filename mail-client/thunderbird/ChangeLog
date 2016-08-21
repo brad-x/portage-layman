@@ -410,3 +410,103 @@
 
   Package-Manager: portage-2.2.26
 
+*thunderbird-38.8.0 (05 May 2016)
+
+  05 May 2016; Ian Stakenvicius <axs@gentoo.org> -thunderbird-38.7.1.ebuild,
+  +thunderbird-38.8.0.ebuild:
+  38.8.0: version bump for security bug 581326
+
+  Package-Manager: portage-2.2.26
+
+  11 May 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.8.0.ebuild:
+  amd64 stable wrt bug #581326
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  11 May 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-38.8.0.ebuild:
+  x86 stable wrt bug #581326
+
+  Package-Manager: portage-2.2.26
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*thunderbird-45.1.0 (11 May 2016)
+
+  11 May 2016; Ian Stakenvicius <axs@gentoo.org> -thunderbird-45.0.ebuild,
+  +thunderbird-45.1.0.ebuild:
+  45.1.0 version bump
+
+  Gloda ("Global search") cannot work properly with system-sqlite, due to
+  FTS3_TOKENIZER being
+  disabled.  Starting with 45.0, this causes havoc with context menus and lots
+  of other things.
+  Starting with 45.1, the global search indexer is disabled by default when
+  built with system-sqlite.
+
+  Package-Manager: portage-2.2.26
+
+  16 May 2016; Ian Stakenvicius <axs@gentoo.org> thunderbird-38.8.0.ebuild,
+  thunderbird-45.1.0.ebuild:
+  allow pinentry[qt5]
+
+  Bug: https://bugs.gentoo.org/583134
+
+  Package-Manager: portage-2.2.28
+
+*thunderbird-45.1.1 (08 Jun 2016)
+
+  08 Jun 2016; Ian Stakenvicius <axs@gentoo.org> -thunderbird-45.1.0.ebuild,
+  +thunderbird-45.1.1.ebuild:
+  mis-release version bump
+
+  Migrated ebuild to mozcoreconf-v4 compatibility to align with
+  mozconfig-v6.45
+
+  Package-Manager: portage-2.2.28
+
+*thunderbird-45.2.0 (06 Jul 2016)
+
+  06 Jul 2016; Ian Stakenvicius <axs@gentoo.org> -thunderbird-45.1.1.ebuild,
+  +thunderbird-45.2.0.ebuild:
+  version bump, migrate LINGUAS to L10N
+
+  This will be the new stable candidate
+
+  Bug: http://bugs.gentoo.org/588072
+  Bug: http://bugs.gentoo.org/587334
+
+  Package-Manager: portage-2.2.28
+
+  09 Jul 2016; Ian Stakenvicius <axs@gentoo.org> thunderbird-24.8.0.ebuild:
+  24.8.0: swallowed mozconfig-3.eclass
+
+  This ebuild is and has for quite some time been the last of the
+  consumers of mozconfig-3.eclass.  Although the package is masked
+  there may still be a need for it to allow migration of user
+  data.  This commit moves all relevant portions of the eclass
+  into the ebuild and expunges the eclass from the repo.
+
+  Package-Manager: portage-2.2.28
+
+  13 Jul 2016; Jeroen Roovers <jer@gentoo.org> thunderbird-45.2.0.ebuild:
+  Stable for PPC64 (bug #585308).
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --ignore-arches
+
+  14 Jul 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-45.2.0.ebuild:
+  amd64 stable wrt bug #585308
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  14 Jul 2016; Agostino Sarubbo <ago@gentoo.org> thunderbird-45.2.0.ebuild:
+  x86 stable wrt bug #585308
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
