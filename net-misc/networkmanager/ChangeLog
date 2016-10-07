@@ -477,3 +477,84 @@
 
   Package-Manager: portage-2.3.0
 
+*networkmanager-1.4.0 (11 Sep 2016)
+
+  11 Sep 2016; Gilles Dartiguelongue <eva@gentoo.org> metadata.xml,
+  +networkmanager-1.4.0.ebuild:
+  version bump 1.2.4 → 1.4.0
+
+  Allow consolekit as an alternative for suspend/resume handling,
+  it is now promoted to a RDEPEND. Add missing libaudit support.
+  Add missing REQUIRED_USE for vala. Add missing libselinux dependency.
+
+  Package-Manager: portage-2.3.0
+
+  11 Sep 2016; Mike Gilbert <floppym@gentoo.org> networkmanager-1.4.0.ebuild:
+  depend on >=sys-auth/consolekit-1.0.0
+
+  Needed for suspend/resume support.
+
+  Bug: https://bugs.gentoo.org/590432
+  Package-Manager: portage-2.3.0_p24
+
+*networkmanager-1.4.0-r1 (17 Sep 2016)
+
+  17 Sep 2016; Pacho Ramos <pacho@gentoo.org>
+  +files/networkmanager-1.4.0-dhcp-helper.patch,
+  +files/networkmanager-1.4.0-wifi-mac1.patch,
+  +files/networkmanager-1.4.0-wifi-mac2.patch,
+  +networkmanager-1.4.0-r1.ebuild:
+  Fix issues with wifi connection and dhcp (#593518 by Sven)
+
+  Package-Manager: portage-2.3.0
+
+  19 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  networkmanager-1.0.12-r1.ebuild, networkmanager-1.2.4.ebuild,
+  networkmanager-1.4.0.ebuild, networkmanager-1.4.0-r1.ebuild:
+  Added sub-slot dependency for sys-libs/readline.
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  29 Sep 2016; Pacho Ramos <pacho@gentoo.org> -files/1.2.4-upower.patch,
+  -files/networkmanager-1.2.2-sleep-monitor-upower-include.patch,
+  -networkmanager-1.2.4.ebuild, -networkmanager-1.4.0.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+  29 Sep 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.4.0-r1.ebuild:
+  util-linux is needed as it uses uuid (#595118 by Gordon Pettey)
+
+  Package-Manager: portage-2.3.0
+
+*networkmanager-1.4.0 (29 Sep 2016)
+*networkmanager-1.2.4 (29 Sep 2016)
+
+  29 Sep 2016; Pacho Ramos <pacho@gentoo.org> +files/1.2.4-upower.patch,
+  +files/networkmanager-1.2.2-sleep-monitor-upower-include.patch,
+  +networkmanager-1.2.4.ebuild, +networkmanager-1.4.0.ebuild:
+  Revert "net-misc/networkmanager: Drop old"
+  Old versions still needed by some arches
+
+  This reverts commit e9606f0e918e2ade8431684f3e40bc800cd0efcb.
+
+  01 Oct 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.4.0-r1.ebuild:
+  amd64 stable, bug 587010
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="amd64"
+
+  01 Oct 2016; Pacho Ramos <pacho@gentoo.org> networkmanager-1.4.0-r1.ebuild:
+  x86 stable, bug 587010
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="x86"
+
+*networkmanager-1.4.2 (02 Oct 2016)
+
+  02 Oct 2016; Pacho Ramos <pacho@gentoo.org> +networkmanager-1.4.2.ebuild:
+  Version bump
+
+  Package-Manager: portage-2.3.1
+

@@ -229,3 +229,103 @@
 
   Package-Manager: portage-2.2.28
 
+  21 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -ejabberd-2.1.13-r2.ebuild, metadata.xml:
+  Remove old, vulnerable ejabberd version
+
+  Gentoo-Bug: 539040
+  Gentoo-Bug: 525478
+
+  Package-Manager: portage-2.3.0
+
+  21 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -ejabberd-16.01-r1.ebuild, -files/ejabberd-16.01-ejabberdctl.patch,
+  metadata.xml:
+  Remove older, bundled version of ejabberd
+
+  Clean up unused flags in metadata.xml.
+
+  Package-Manager: portage-2.3.0
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Actually set suid bit on epam wrapper
+
+  Because setting suid bit was followed by changing owner suid is reset.
+  Change the order of commands.
+
+  It is a small change so I assume it can be made in stable ebuild.
+  Rev-bump will come after more bug fixes.
+
+  Gentoo-Bug: 592218
+
+  Package-Manager: portage-2.3.0
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Remove leading double /
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild,
+  -files/ejabberd-3.confd, -files/ejabberd-3.initd, +files/ejabberd.confd,
+  +files/ejabberd.initd, -files/ejabberd.service:
+  Clean up files directory
+
+  service file is no longer used because it's provided by upstream. Suffix
+  "-3" in init and confd file names is no longer neccessary because
+  there's only one version of the initd script.
+
+  Package-Manager: portage-2.3.0
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> ejabberd-16.04.ebuild:
+  Don't install symlink README.md -> README
+
+*ejabberd-16.04-r1 (27 Aug 2016)
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +ejabberd-16.04-r1.ebuild:
+  Bump revision
+
+  Fixes are coming.
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  ejabberd-16.04-r1.ebuild:
+  Move ejabberd out of /usr/lib/erlang/lib
+
+  ejabberd may override some modules if it's in default Erlang search
+  path. Move it back to default location set by configure script which is
+  /usr/lib.
+
+  Gentoo-Bug: 591862
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  ejabberd-16.04-r1.ebuild:
+  Use internal eldap module instead of system one
+
+  First lookup ejabberd directory for modules.
+
+  Gentoo-Bug: 591862
+
+  Package-Manager: portage-2.3.0
+
+  27 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  ejabberd-16.04-r1.ebuild:
+  Reapply read bit on epam wrapper
+
+  sfperms drops read bit from files with suid. Reapply it.
+
+  Gentoo-Bug: 592218
+
+*ejabberd-16.08 (29 Aug 2016)
+
+  29 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org> +ejabberd-16.08.ebuild,
+  +files/ejabberd-16.08-ejabberdctl.patch:
+  Bump version to 16.08
+
+  Thanks for Craig Andrews <candrews@integralblue.com> for initial GitHub
+  pull request #2015 <https://github.com/gentoo/gentoo/pull/2015>. It
+  required rebasing changes on top of ejabberd-16.04-r1.ebuild and
+  correcting typo in fast_xml version. Pull request includes changes in
+  dev-erlang category but these has been split into separate commits.
+
+  Gentoo-Bug: 590502
+
+  Package-Manager: portage-2.3.0
+

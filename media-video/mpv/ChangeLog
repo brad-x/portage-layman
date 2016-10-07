@@ -1353,3 +1353,84 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  enable uchardet USE by default in 9999.
+
+  uchardet is preferred over enca by upstream [0], so let's enable it.
+  For now we leave enca support enabled in case of unexpected problems.
+
+  [0]: https://github.com/mpv-player/mpv/blob/v0.20.0/DOCS/man/options.rst
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  enable lua USE by default in 9999.
+
+  Lua is a de-facto requirement by upstream as OSC and other features are
+  only available with enabled Lua support [0]. Moreover sometimes existing
+  features become deprecated in favor of Lua scripts.
+
+  [0]: https://github.com/mpv-player/mpv/blob/v0.20.0/README.md#compilation
+  [1]: https://github.com/mpv-
+  player/mpv/commit/e40851ea22e9686572b6a905161106f2a66e5983
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  install upstream Lua scripts with lua. USE in 9999
+
+  These are tiny files and some of them are really handy.
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  declare loop variables as local in 9999.
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> mpv-9999.ebuild:
+  remove obsolete perl version constraint in 9999.
+
+  Last <perl-5.8 version was removed from the tree 12 years ago.
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*mpv-0.20.0 (02 Sep 2016)
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> +mpv-0.20.0.ebuild:
+  verbump to 0.20.0.
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  02 Sep 2016; Patrice Clement <monsieurp@gentoo.org> -mpv-0.17.0-r6.ebuild,
+  -mpv-0.19.0.ebuild:
+  remove old.
+
+  Closes: https://github.com/gentoo/gentoo/pull/2153
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  23 Sep 2016; Tobias Klausmann <klausman@gentoo.org> mpv-0.18.0-r1.ebuild:
+  0.18.0-r1: add alpha keyword
+
+  Gentoo-Bug: 581204
+
+  01 Oct 2016; Jeroen Roovers <jer@gentoo.org> mpv-0.18.0-r1.ebuild:
+  Stable for HPPA (bug #581204).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

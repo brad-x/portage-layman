@@ -1,0 +1,71 @@
+# ChangeLog for dev-libs/beignet
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*beignet-1.1.2 (02 Sep 2016)
+
+  02 Sep 2016; Marek Szuba <marecki@gentoo.org> +beignet-1.1.2.ebuild,
+  +files/llvm-empty-system-libs.patch, +files/llvm-terminfo.patch,
+  +files/no-debian-multiarch.patch, +files/no-hardcoded-cflags.patch,
+  +metadata.xml:
+  new package.
+
+  An OpenCL implementation for Intel GPUs.
+
+  Multilib-aware, tested with on amd64 with ABI_X86="32 64". Builds with both
+  stable versions of sys-devel/llvm currently in Portage (3.5.0 and 3.7.1-r3).
+
+  Tests provided by upstream are not run because they require permissions
+  to access the GPU which the Portage user does not have.
+
+  Gentoo-Bug: 545924
+  Package-Manager: portage-2.3.0
+
+  02 Sep 2016; Marek Szuba <marecki@gentoo.org> beignet-1.1.2.ebuild:
+  a few additional build-time tweaks
+
+  ! add the die clause to ICD-file generation using echo
+  * use tc-is-gcc instead of parsing tc-getCC ourselves
+  * explicitly inherit toolchain-funcs
+  * no real need to rename the source tarball
+
+  Package-Manager: portage-2.3.0
+
+*beignet-1.2.0 (16 Sep 2016)
+
+  16 Sep 2016; Marek Szuba <marecki@gentoo.org> +beignet-1.2.0.ebuild,
+  +files/beignet-1.2.0_no-hardcoded-cflags.patch:
+  version bump to 1.2.0
+
+  Gentoo-Bug: 593596
+  Package-Manager: portage-2.3.0
+
+  19 Sep 2016; Marek Szuba <marecki@gentoo.org> beignet-1.1.2.ebuild:
+  1.1.2 requires <sys-devel/llvm-3.8
+
+  Newer versions are not supported by upstream.
+
+  Package-Manager: portage-2.3.1
+
+  19 Sep 2016; Marek Szuba <marecki@gentoo.org> beignet-1.2.0.ebuild:
+  1.2.0 requires <sys-devel/llvm-3.8
+
+  According to upstream llvm-3.8 should be supported, however using that
+  version
+  causes compile-time segmentation faults.
+
+  Gentoo-Bug: 593968
+
+  Package-Manager: portage-2.3.1
+
+  19 Sep 2016; Marek Szuba <marecki@gentoo.org> beignet-1.2.0.ebuild:
+  fix linking of 1.2.0 against LLVM-3.8
+
+  Without adding -fPIC to compiler flags one the temporary executables invoked
+  at
+  build time segfaults.
+
+  Gentoo-Bug: 593968
+
+  Package-Manager: portage-2.3.1
+

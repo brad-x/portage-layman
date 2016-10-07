@@ -109,3 +109,33 @@
 
   Package-Manager: portage-2.3.0
 
+  12 Sep 2016; Brian Evans <grknight@gentoo.org> files/mysqld-v2.service,
+  files/mysqld_at-v2.service:
+  Comment out a systemd option NoNewPrivileges=true
+
+  Upstream bug https://jira.mariadb.org/browse/MDEV-10404 mentions that
+  SELinux
+  currently does not handle this change properly.
+
+  Comment it out for now with a note
+
+  No revbump for this file as most users are unaffected
+
+  Package-Manager: portage-2.3.0
+
+  12 Sep 2016; Brian Evans <grknight@gentoo.org>
+  mysql-init-scripts-2.1-r1.ebuild:
+  Mark mysql-init-scripts-2.1-r1 on all arches
+
+  Package-Manager: portage-2.3.0
+
+  14 Sep 2016; Brian Evans <grknight@gentoo.org> -files/mysqld.service,
+  -files/mysqld_at.service, -mysql-init-scripts-2.0-r1.ebuild,
+  -mysql-init-scripts-2.1_alpha4.ebuild:
+  Drop old versions
+
+  These use mysqld_safe in the mysqld.service which is unnecessary
+  and vulernable to attacks wrt CVE-2016-6662
+
+  Package-Manager: portage-2.3.0
+

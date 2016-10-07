@@ -65,3 +65,23 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*lagan-2.0-r3 (18 Sep 2016)
+
+  18 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/lagan-2.0-fix-c++14.patch,
+  +files/lagan-2.0-qa-implicit-declarations.patch, +lagan-2.0-r3.ebuild:
+  Allow for compiling with GCC 6
+
+  Gentoo-bug: 594148
+  * EAPI=6
+  * Also fix QA violations due to implicit declarations and
+    incorrectly formatted fprintf calls.
+
+  Package-Manager: portage-2.3.0
+
+  18 Sep 2016; David Seifert <soap@gentoo.org> -lagan-2.0-r1.ebuild,
+  -lagan-2.0-r2.ebuild:
+  Remove old ebuilds
+
+  Package-Manager: portage-2.3.0
+

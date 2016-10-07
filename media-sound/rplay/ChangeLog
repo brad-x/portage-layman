@@ -64,3 +64,19 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*rplay-3.3.2-r2 (24 Aug 2016)
+
+  24 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/rplay-3.3.2-built-in_function_exit-r1.patch, +rplay-3.3.2-r2.ebuild:
+  new revision with EAPI=6.
+
+  The original purpose of this new revision was to fix the use of
+  einstall reported in bug 521564. However, einstall proved necessary,
+  so along with the update to EAPI=6 -- where einstall is banned -- I
+  inlined its behavior.
+
+  The multilib and eutils eclasses, now unused, were dropped. The latest
+  debian patchset was also included.
+
+  Package-Manager: portage-2.2.28
+

@@ -92,3 +92,34 @@
 
   Package-Manager: portage-2.2.28
 
+  24 Aug 2016; William Hubbs <williamh@gentoo.org> metadata.xml:
+  add myself as maintainer
+
+  Package-Manager: portage-2.2.28
+
+*baselayout-2.3 (01 Sep 2016)
+
+  01 Sep 2016; William Hubbs <williamh@gentoo.org> +baselayout-2.3.ebuild:
+  2.3 version bump
+
+  Package-Manager: portage-2.2.28
+
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> baselayout-2.3.ebuild:
+  Fix SYMLINK_LIB=no to create lib dir instead of sym
+
+  Fix the 'else' branch of SYMLINK_LIB=no code to create 'lib' as
+  a directory rather than a symlink.
+
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> baselayout-2.3.ebuild:
+  Do not complain about lib+lib32 when it is valid
+
+  Remove the error on 'lib' directory with SYMLINK_LIB=no multilib layout
+  if lib32 is a valid directory as well. This fixes the wrong assert
+  in the new no-lib-symlink profile while preserving the check on regular
+  lib+lib64 profile.
+
+  04 Oct 2016; Tobias Klausmann <klausman@gentoo.org> baselayout-2.3.ebuild:
+  2.3-r0: stable on alpha
+
+  Gentoo-Bug: 596104
+

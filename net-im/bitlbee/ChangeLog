@@ -129,3 +129,19 @@
 
   Package-Manager: portage-2.3.0
 
+*bitlbee-3.4.2-r1 (05 Sep 2016)
+
+  05 Sep 2016; Tim Harder <radhermit@gentoo.org> +bitlbee-3.4.2-r1.ebuild,
+  bitlbee-9999.ebuild, +files/bitlbee-3.4.2-systemd-user.patch:
+  revision bump for various updates
+
+  * update to EAPI 6
+  * fix systemd unit to use bitlbee user (bug #472406)
+  * update SSL handling, make it non-optional (bug #582658 by Alex Xu)
+  * drop skype support, use libpurple and x11-plugins/pidgin-skypeweb
+    instead (https://wiki.bitlbee.org/HowtoSkypeWeb)
+
+  23 Sep 2016; Tim Harder <radhermit@gentoo.org> -bitlbee-3.4.2.ebuild,
+  -files/bitlbee.confd, -files/bitlbee.initd:
+  remove old
+

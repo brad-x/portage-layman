@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Itseez/opencv/archive/${PV}.zip -> ${P}.zip"
 
 LICENSE="BSD"
 SLOT="0/2.4"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux"
+KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux"
 IUSE="cuda +eigen examples ffmpeg gstreamer gtk ieee1394 ipp jpeg jpeg2k libav opencl openexr opengl openmp pch png +python qt4 qt5 testprograms threads tiff v4l vtk xine"
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -87,6 +87,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.4.8-javamagic.patch"
 	"${FILESDIR}/${PN}-2.4.9-cuda-pkg-config.patch"
 	"${FILESDIR}/${P}-git-autodetect.patch"
+	 "${FILESDIR}/${PN}-3.0.0-gles.patch"
 	)
 
 pkg_setup() {

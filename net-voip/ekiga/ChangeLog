@@ -135,3 +135,21 @@
 
   Bug: 575810
 
+*ekiga-4.0.1-r1 (02 Oct 2016)
+
+  02 Oct 2016; Pacho Ramos <pacho@gentoo.org> +ekiga-4.0.1-r1.ebuild,
+  +files/ekiga-4.0.1-crash-clear.patch:
+  Disable all experimental stuff as upstream doesn't take care of it at all
+  and is too buggy (and also obsolete,
+  https://bugzilla.gnome.org/show_bug.cgi?id=689301), gconf support is needed
+  always until next major version bump (#448698), this will need to be rebuilt
+  with opal/plib major bumps (#464864), fix crashes on clear call history
+  (#499208 by Philipp Leonhardt).
+
+  Package-Manager: portage-2.3.1
+
+  02 Oct 2016; Pacho Ramos <pacho@gentoo.org> ekiga-4.0.1-r1.ebuild:
+  Make repoman more happy
+
+  Package-Manager: portage-2.3.1
+

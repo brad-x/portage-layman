@@ -258,3 +258,50 @@
 
   Package-Manager: portage-2.2.28
 
+*spamassassin-3.4.1-r7 (02 Sep 2016)
+
+  02 Sep 2016; Michael Orlitzky <mjo@gentoo.org>
+  -spamassassin-3.4.1-r6.ebuild, +spamassassin-3.4.1-r7.ebuild:
+  new revision adding a Net-CIDR-Lite dependency.
+
+  The Net::CIDR::Lite Perl module is used by SpamAssassin's URILocalBL
+  plugin, so it has been added to RDEPEND (dev-perl/Net-CIDR-Lite).
+
+  Package-Manager: portage-2.2.28
+
+*spamassassin-3.4.1-r8 (05 Sep 2016)
+
+  05 Sep 2016; Michael Orlitzky <mjo@gentoo.org>
+  -spamassassin-3.4.1-r7.ebuild, +spamassassin-3.4.1-r8.ebuild:
+  new revision with correct build dependencies.
+
+  The existing dependencies for spamassassin were all thrown into
+  DEPEND and then propagated to RDEPEND -- even the ones that were
+  obviously only needed at runtime. Marcin Mirosław helped track down
+  the correct value of DEPEND, and the rest of the optional dependencies
+  were moved to RDEPEND.
+
+  The required and optional dependencies are now stored in
+  REQDEPEND/OPTDEPEND variables to eliminate duplication. This is
+  primarily useful with USE=test, which makes DEPEND a superset of
+  RDEPEND, since the other inclusion alreads holds normally. Once the
+  test suite had the correct dependencies, the RESTRICT=test was
+  removed, and problematic spamc/spamd tests were disabled. The test
+  suite should pass now.
+
+  Gentoo-Bug: 592682
+
+  Package-Manager: portage-2.2.28
+
+  29 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  spamassassin-3.4.1-r8.ebuild:
+  3.4.1-r8: stable on alpha
+
+  Gentoo-Bug: 594430
+
+  01 Oct 2016; Jeroen Roovers <jer@gentoo.org> spamassassin-3.4.1-r8.ebuild:
+  Stable for HPPA PPC64 (bug #594430).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

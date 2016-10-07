@@ -70,3 +70,27 @@
 
   Package-Manager: portage-2.2.28
 
+*libdap-3.18.1 (27 Sep 2016)
+
+  27 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/libdap-3.18.1-disable-broken-tests.patch,
+  +files/libdap-3.18.1-disable-cache-test.patch,
+  +files/libdap-3.18.1-disable-dmr-tests.patch,
+  +files/libdap-3.18.1-disable-net-tests.patch,
+  +files/libdap-3.18.1-fix-buildsystem.patch,
+  +files/libdap-3.18.1-fix-c++14.patch, +libdap-3.18.1.ebuild:
+  Version bump to 3.18.1
+
+  Gentoo-bug: 594374
+  * Make code C++11 compliant
+    (change of noexcept default in C++11)
+  * Import patches from Debian, make testsuite pass
+  * Add proper USE="static-libs" handling with econf
+    back into src_configure() phase
+  * Remove installation of testsuite headers and
+    convenience library
+  * Delete .la files unconditionally
+  * Add missing DEPENDs
+
+  Package-Manager: portage-2.3.1
+

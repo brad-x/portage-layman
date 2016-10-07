@@ -81,3 +81,29 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*bedtools-2.26.0 (24 Sep 2016)
+
+  24 Sep 2016; David Seifert <soap@gentoo.org> +bedtools-2.26.0.ebuild,
+  +files/bedtools-2.26.0-fix-buildsystem.patch:
+  Version bump to 2.26.0
+
+  Gentoo-bug: 594994
+  * EAPI=6
+  * Make buildsystem output verbose
+  * Inherit 'python-any-r1', due to python script
+  * Add dependencies for test suite
+  * Properly set CXX and CXXFLAGS
+
+  Package-Manager: portage-2.3.1
+
+  24 Sep 2016; David Seifert <soap@gentoo.org> -bedtools-2.16.2.ebuild,
+  -bedtools-2.20.1.ebuild:
+  Remove old ebuilds
+
+  Package-Manager: portage-2.3.1
+
+  24 Sep 2016; David Seifert <soap@gentoo.org> bedtools-2.26.0.ebuild:
+  Add missing RDEPEND on sys-libs/zlib
+
+  Package-Manager: portage-2.3.1
+

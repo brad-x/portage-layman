@@ -15,7 +15,7 @@ SRC_URI="http://www.webkitgtk.org/releases/${MY_P}.tar.xz"
 
 LICENSE="LGPL-2+ BSD"
 SLOT="3/25" # soname version of libwebkit2gtk-3.0
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
 
 IUSE="aqua coverage debug +egl +geolocation gles2 gnome-keyring +gstreamer +introspection +jit +opengl spell wayland +webgl +X"
 # bugs 372493, 416331
@@ -172,6 +172,9 @@ src_prepare() {
 
 	# https://bugs.webkit.org/show_bug.cgi?id=156510
 	eapply "${FILESDIR}"/${PN}-2.4.11-video-web-audio.patch
+
+	# https://bugs.webkit.org/show_bug.cgi?id=159124#c1
+	eapply "${FILESDIR}"/${PN}-2.4.9-gcc-6.patch
 
 	AT_M4DIR=Source/autotools eautoreconf
 

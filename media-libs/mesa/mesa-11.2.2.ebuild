@@ -25,10 +25,10 @@ HOMEPAGE="http://mesa3d.sourceforge.net/"
 
 if [[ $PV == 9999 ]]; then
 	SRC_URI=""
-	KEYWORDS="arm hppa"
+	KEYWORDS="alpha amd64 arm hppa x86"
 else
 	SRC_URI="ftp://ftp.freedesktop.org/pub/mesa/${FOLDER}/${MY_P}.tar.xz"
-	KEYWORDS="~alpha ~amd64 arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
+	KEYWORDS="alpha amd64 arm ~arm64 hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 fi
 
 LICENSE="MIT"
@@ -130,7 +130,10 @@ RDEPEND="${RDEPEND}
 
 DEPEND="${RDEPEND}
 	llvm? (
-		video_cards_radeonsi? ( sys-devel/llvm[video_cards_radeon] )
+		video_cards_radeonsi? ( || (
+			sys-devel/llvm[llvm_targets_AMDGPU]
+			sys-devel/llvm[video_cards_radeon]
+		) )
 	)
 	opencl? (
 				>=sys-devel/llvm-3.4.2:=[${MULTILIB_USEDEP}]

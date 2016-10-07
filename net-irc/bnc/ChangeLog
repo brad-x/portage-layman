@@ -65,3 +65,18 @@
 
   Bug: 575810
 
+*bnc-2.9.4-r1 (28 Aug 2016)
+
+  28 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +bnc-2.9.4-r1.ebuild,
+  +files/respect-cflags-ldflags.patch:
+  new EAPI=6 revision respecting LDFLAGS.
+
+  Update the ebuild to EAPI=6, and update an existing patch. We already
+  had a patch that made the build system support CFLAGS, so rather than
+  add another patch, binki's patch from Bugzilla was incorporated into
+  the existing one. The result respects CFLAGS, CPPFLAGS, and LDFLAGS.
+
+  Gentoo-Bug: 338181
+
+  Package-Manager: portage-2.2.28
+

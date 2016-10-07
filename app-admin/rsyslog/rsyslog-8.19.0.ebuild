@@ -46,7 +46,7 @@ else
 		unset _tmp_last_index
 		unset _tmp_suffix
 	else
-		KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~x86"
+		KEYWORDS="~amd64 ~arm ~arm64 hppa ~x86"
 	fi
 
 	SRC_URI="
@@ -76,7 +76,7 @@ RDEPEND="
 	mysql? ( virtual/mysql )
 	normalize? (
 		>=dev-libs/libee-0.4.0
-		>=dev-libs/liblognorm-1.1.2:=
+		>=dev-libs/liblognorm-2.0.1:=
 	)
 	omhttpfs? ( >=net-misc/curl-7.35.0 )
 	omudpspoof? ( >=net-libs/libnet-1.1.6 )

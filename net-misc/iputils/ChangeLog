@@ -222,3 +222,41 @@
   iputils-20160308.ebuild, iputils-99999999.ebuild:
   linuxfoundation: switch http:// URIs to https://
 
+  10 Sep 2016; Pavel Šimerda <pavlix@pavlix.net> iputils-99999999.ebuild:
+  update 99999999 to match 20160308
+
+  The current `net-misc/iputils-99999999` is no longer working. This
+  commit switches upstream to `github.com/iputils/iputils` to match
+  the changes already done in `iputils-20160308.ebuild`.
+
+  This patch was created using the following command:
+
+      cp iputils-20160308.ebuild iputils-99999999.ebuild
+
+  The following changes happened:
+
+   * Switch upstream to `github.com/iputils/iputils`
+   * Add nettle and openssl use flags
+   * Remove obsolete patches
+   * Adapt `src_configure()` and related functions
+
+  More changes will come as separate commits to mark the changes
+  clearly.
+
+  10 Sep 2016; Pavel Šimerda <pavlix@pavlix.net> iputils-99999999.ebuild:
+  make 99999999 buildable
+
+  Apply necessary changes to `iputils-99999999.patch` that are not needed
+  in `iputils-20160308.ebuild` from which it was copied.
+
+   * Don't use `S` variable when `PV=99999999`
+   * Quote variables to make `repoman -d full` happy
+   * Reflect the rename of `INSTALL` to `INSTALL.md`
+
+  10 Sep 2016; Pavel Šimerda <pavlix@pavlix.net> iputils-99999999.ebuild:
+  drop unnecessary uClibc patch
+
+  Drop `021109-uclibc-no-ether_ntohost.patch` from
+  `iputils-99999999.ebuild` as latest uClibc in Gentoo already supports
+  `ether_ntohost()` function and thus doesn't require the work around.
+

@@ -119,3 +119,38 @@
   files/saslauthd2.rc6, files/saslauthd2.rc7:
   use #!/sbin/openrc-run instead of #!/sbin/runscript
 
+  14 Sep 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/cyrus-sasl-0001_versioned_symbols.patch,
+  -files/cyrus-sasl-0002_testsuite.patch,
+  -files/cyrus-sasl-0006_library_mutexes.patch,
+  -files/cyrus-sasl-0008_one_time_sasl_set_alloc.patch,
+  -files/cyrus-sasl-0010_maintainer_mode.patch,
+  -files/cyrus-sasl-0011_saslauthd_ac_prog_libtool.patch,
+  -files/cyrus-sasl-0012_xopen_crypt_prototype.patch,
+  -files/cyrus-sasl-0014_avoid_pic_overwrite.patch,
+  -files/cyrus-sasl-0016_pid_file_lock_creation_mask.patch,
+  -files/cyrus-sasl-0026_drop_krb5support_dependency.patch,
+  -files/cyrus-sasl-2.1.17-pgsql-include.patch,
+  -files/cyrus-sasl-2.1.19-checkpw.c.patch,
+  -files/cyrus-sasl-2.1.21-keytab.patch,
+  -files/cyrus-sasl-2.1.22-as-needed.patch,
+  -files/cyrus-sasl-2.1.22-crypt.patch, -files/cyrus-sasl-2.1.22-gcc44.patch,
+  -files/cyrus-sasl-2.1.22-qa.patch, -files/cyrus-sasl-2.1.23+db-5.0.patch,
+  -files/cyrus-sasl-2.1.23-CVE-2013-4122.patch,
+  -files/cyrus-sasl-2.1.23-authd-fix.patch,
+  -files/cyrus-sasl-2.1.23-rimap-loop.patch, -files/saslauthd-2.1.21.conf,
+  -files/saslauthd2.rc6:
+  remove unused patches.
+
+  Closes: https://github.com/gentoo/gentoo/pull/2231
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*cyrus-sasl-2.1.26-r11 (14 Sep 2016)
+
+  14 Sep 2016; Patrice Clement <monsieurp@gentoo.org>
+  +cyrus-sasl-2.1.26-r11.ebuild:
+  Slip patches into PATCHES array. Add a missing die.
+
+  Package-Manager: portage-2.2.28
+

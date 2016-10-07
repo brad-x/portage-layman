@@ -5,7 +5,7 @@
 EAPI=6
 
 MY_P="${PN}-v${PV}"
-inherit systemd toolchain-funcs
+inherit flag-o-matic systemd toolchain-funcs
 
 DESCRIPTION="Port multiplexer - accept both HTTPS and SSH connections on the same port"
 HOMEPAGE="http://www.rutschle.net/tech/sslh.shtml"
@@ -13,7 +13,7 @@ SRC_URI="http://www.rutschle.net/tech/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~m68k ~mips ~s390 ~sh ~x86"
+KEYWORDS="amd64 ~arm ~m68k ~mips ~s390 ~sh x86"
 IUSE="caps systemd tcpd"
 
 RDEPEND="caps? ( sys-libs/libcap )
@@ -28,12 +28,18 @@ RESTRICT="test"
 S=${WORKDIR}/${MY_P}
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.17-version-deps.patch"
 	"${FILESDIR}/${PN}-1.18-version-deps.patch"
 	"${FILESDIR}/${PN}-1.18-systemd-generator.patch"
 )
 
 src_compile() {
+	# On older versions of GCC, the default gnu89 variant
+	# will reject within-for-loop initializers, bug #595426
+	# Furthermore, we need to use the gnu variant (gnu99) instead
+	# of the ISO (c99) variant, as we want the __USE_XOPEN2K macro
+	# to be defined.
+	append-cflags -std=gnu99
+
 	emake \
 		CC="$(tc-getCC)" \
 		USELIBCAP=$(usev caps) \

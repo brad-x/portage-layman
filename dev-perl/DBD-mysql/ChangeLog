@@ -161,3 +161,33 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*DBD-mysql-4.36.0 (02 Oct 2016)
+
+  02 Oct 2016; Kent Fredric <kentnl@gentoo.org> +DBD-mysql-4.36.0.ebuild,
+  metadata.xml:
+  Bump to version 4.36.0 re bug #589818 & bug #587206
+
+  - EAPI6
+  - Bad tests pruned
+  - USE="ssl" added
+  - DESCRIPTION updated.
+
+  Note:
+  - USE="ssl" is only partial because there's no straight-forward way to
+  ensure that the client library ( which is hidden behind virtual/mysql )
+  itself has ssl support. If the backend does not have ssl support, it will
+  be silently disabled!
+
+  Upstream:
+  - Compatibility fixes for older MySQL versions
+  - use-after-free fixes
+  - Fixed memory leak in sth->{ParamValues}
+  - SSL support turned on by default (implemented via libmysqlclient)
+  - Check errors after calling mysql_affected_rows
+  - Tests fixed on bigendian systems
+
+  Bug: https://bugs.gentoo.org/587206
+  Bug: https://bugs.gentoo.org/589818
+
+  Package-Manager: portage-2.3.1
+

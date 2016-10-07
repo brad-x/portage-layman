@@ -318,7 +318,7 @@ if [[ ${PN} != kdelibs ]]; then
 		optional) _kdelibsuse="webkit?" ;;
 		*) ;;
 	esac
-	kdecommondepend+=" || ( $(add_kdebase_dep kdelibs "${_kdelibsuse}" 4.14.22) <kde-base/kdelibs-4.14.22 )"
+	kdecommondepend+=" $(add_kdebase_dep kdelibs "${_kdelibsuse}" 4.14.22)"
 	unset _kdelibsuse
 	if [[ ${KDEBASE} = kdevelop ]]; then
 		if [[ ${PN} != kdevplatform ]]; then
@@ -470,7 +470,7 @@ _calculate_src_uri() {
 					SRC_URI="mirror://kde/unstable/${PV}/src/${_kmname_pv}.tar.xz" ;;
 				4.11.22)
 					# Part of 15.08.0 actually, sigh. Not stable for next release!
-					SRC_URI="mirror://kde/stable/applications/15.08.0/src/${_kmname_pv}.tar.xz" ;;
+					SRC_URI="mirror://kde/Attic/applications/15.08.0/src/${_kmname_pv}.tar.xz" ;;
 				4.14.3)
 					# Last SC release
 					SRC_URI="mirror://kde/stable/${PV}/src/${_kmname_pv}.tar.xz" ;;

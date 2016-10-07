@@ -13,3 +13,32 @@
 
   Package-Manager: portage-2.2.28
 
+  02 Sep 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Update maintainer to the LLVM project
+
+*llvm-libunwind-9999 (02 Sep 2016)
+
+  02 Sep 2016; Michał Górny <mgorny@gentoo.org> +llvm-libunwind-9999.ebuild:
+  Add a live ebuild
+
+  04 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-libunwind-9999.ebuild:
+  Bump llvm dep due to cmake path change
+
+  04 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-libunwind-9999.ebuild:
+  Enable multilib support in -9999
+
+*llvm-libunwind-3.9.0 (04 Sep 2016)
+
+  04 Sep 2016; Michał Górny <mgorny@gentoo.org>
+  +files/libunwind-3.9-cmake-static-lib.patch, +llvm-libunwind-3.9.0.ebuild:
+  Bump to 3.9.0
+
+  Patch-by: Lei Zhang <zhanglei.april@gmail.com>
+
+  08 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-libunwind-3.9.0.ebuild,
+  llvm-libunwind-9999.ebuild:
+  Add missing MULTILIB_USEDEP on sys-devel/llvm
+
+  Add MULTILIB_USEDEP on sys-devel/llvm since the needed CMake files are
+  installed in ABI-specific lib* directory.
+

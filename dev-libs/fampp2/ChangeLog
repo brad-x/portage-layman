@@ -79,3 +79,25 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*fampp2-7.0.1-r2 (27 Sep 2016)
+
+  27 Sep 2016; David Seifert <soap@gentoo.org> -fampp2-7.0.1-r1.ebuild,
+  +fampp2-7.0.1-r2.ebuild, +files/fampp2-7.0.1-fix-buildsystem.patch,
+  +files/fampp2-7.0.1-fix-gcc6.patch, +files/fampp2-7.0.1-libsigc++-2.6.patch:
+  Fix building with GCC 6 and -Werror=terminate
+
+  Gentoo-bug: 595308
+  * EAPI=6
+  * Fix buildsystem properly, remove all the seds
+  * Fix building with GCC 6, due to changed noexcept semantics
+  * Remove 'eutils.eclass'
+  * Disable building of static libraries
+
+  Package-Manager: portage-2.3.1
+
+  27 Sep 2016; David Seifert <soap@gentoo.org> -fampp2-6.0.1.ebuild,
+  -fampp2-7.0.1.ebuild:
+  Remove old ebuilds
+
+  Package-Manager: portage-2.3.1
+

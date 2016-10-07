@@ -9,7 +9,9 @@ KDE_HANDBOOK="forceoptional"
 inherit kde5
 
 DESCRIPTION="KDE Wallet management tool"
-KEYWORDS="amd64 x86"
+HOMEAGE="https://www.kde.org/applications/system/kwalletmanager
+https://utils.kde.org/projects/kwalletmanager"
+KEYWORDS="amd64 ~arm x86"
 IUSE=""
 
 DEPEND="

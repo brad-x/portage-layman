@@ -192,3 +192,64 @@
   Package-Manager: portage-2.3.0
   RepoMan-Options: --include-arches="arm"
 
+  17 Sep 2016; Pacho Ramos <pacho@gentoo.org> libxcb-1.12.ebuild:
+  x86 stable, bug 579266
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="x86"
+
+  17 Sep 2016; Pacho Ramos <pacho@gentoo.org> libxcb-1.12.ebuild:
+  amd64 stable, bug 579266
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="amd64"
+
+  22 Sep 2016; Tobias Klausmann <klausman@gentoo.org> libxcb-1.12.ebuild:
+  1.12-r0: add alpha keyword
+
+  Gentoo-Bug: 579266
+
+*libxcb-1.12-r1 (29 Sep 2016)
+
+  29 Sep 2016; Patrice Clement <monsieurp@gentoo.org> +libxcb-1.12-r1.ebuild:
+  Only install man pages with USE="doc".
+
+  This reduces the default installation down to 2043 files.
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2358
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Sep 2016; Alexis Ballier <aballier@gentoo.org> libxcb-1.12-r1.ebuild:
+  use proper phase for removing man pages.
+
+  Removing files from $D has nothing to do with pkg_preinst and moreover it
+  breaks with FEATURES=noman...
+
+  Package-Manager: portage-2.3.1
+
+  01 Oct 2016; Mart Raudsepp <leio@gentoo.org> -libxcb-1.12-r1.ebuild:
+  Revert USE=doc controlling man pages
+
+  FEATURES=noman is for skipping man pages, not doc USE flag.
+  This change seems to not have been acknowledge by any libxcb maintainers.
+  It may be discussed on bugzilla on the premise of these being development
+  docs, some of which are already behind USE=doc due to extra deps.
+
+  Package-Manager: portage-2.3.1
+
+*libxcb-1.12-r2 (01 Oct 2016)
+
+  01 Oct 2016; Mart Raudsepp <leio@gentoo.org> +libxcb-1.12-r2.ebuild:
+  Lock subslot to 1.12 for now
+
+  As it was before, a simple bugfix release of 1.12.1 would force
+  a huge set of rebuilds unnecessarily. We'll need to decide if we
+  need subslot 1.13 upon such a release appearing or not.
+  This is a revbump due to a -r1 having just been reverted and so
+  avoids it looking like a downgrade.
+
+  Gentoo-bug: 576890
+  Package-Manager: portage-2.3.1
+

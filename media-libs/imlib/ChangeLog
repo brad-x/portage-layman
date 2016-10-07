@@ -67,3 +67,16 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  27 Aug 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/imlib-1.9.15-no-LDFLAGS-in-pc.patch,
+  +files/imlib-1.9.15-underlinking-test.patch, imlib-1.9.15-r4.ebuild:
+  fix testsuite underlinking, bug #367645
+
+  Fix by Greg Turner adds required libraries to t-load test.
+  While at it dropped LDFLAGS leak into imlib.pc.
+
+  Reported-by: Diego Elio Pettenò
+  Bug: https://bugs.gentoo.org/367645
+
+  Package-Manager: portage-2.3.0
+

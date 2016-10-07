@@ -652,3 +652,34 @@
   python-3.4.4.ebuild, python-3.4.5.ebuild:
   Backport gcc[-libffi(-)] blocker fix to all versions
 
+  10 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +files/python-3.4.5-cross.patch, python-3.4.5.ebuild:
+  Fix cross-compilation support for 3.4.5
+
+  Gentoo-bug: https://bugs.gentoo.org/show_bug.cgi?id=590530
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2247
+
+  23 Sep 2016; Mike Gilbert <floppym@gentoo.org> -python-2.7.11-r2.ebuild,
+  -python-3.4.3-r7.ebuild, -python-3.4.4.ebuild, -python-3.5.0-r2.ebuild,
+  -python-3.5.1-r2.ebuild, -python-3.5.1-r3.ebuild:
+  remove obsolete ebuilds
+
+  Package-Manager: portage-2.3.0_p43
+
+  23 Sep 2016; Mike Gilbert <floppym@gentoo.org> python-2.7.10-r1.ebuild,
+  python-2.7.12.ebuild, python-3.4.3-r1.ebuild, python-3.4.5.ebuild,
+  python-3.5.2.ebuild:
+  LC_COLLATE=C
+
+  Bug: https://bugs.gentoo.org/594768
+
+  Package-Manager: portage-2.3.0_p43
+
+  24 Sep 2016; Mike Gilbert <floppym@gentoo.org> python-2.7.10-r1.ebuild,
+  python-2.7.12.ebuild, python-3.4.3-r1.ebuild, python-3.4.5.ebuild,
+  python-3.5.2.ebuild:
+  set LC_ALL=C in src_compile
+
+  Package-Manager: portage-2.3.0_p43
+

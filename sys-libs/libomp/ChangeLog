@@ -38,3 +38,53 @@
 
   Package-Manager: portage-2.3.0
 
+  23 Sep 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Add the LLVM project as co-maintainer
+
+*libomp-9999 (23 Sep 2016)
+
+  23 Sep 2016; Michał Górny <mgorny@gentoo.org> +libomp-9999.ebuild:
+  Add a live ebuild
+
+  26 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  Disable copying exports back to srcdir
+
+*libomp-3.9.0 (29 Sep 2016)
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org>
+  +files/libomp-3.9.0-optional-aliases.patch, +libomp-3.9.0.ebuild:
+  bump to 3.9.0
+
+  Closes: https://github.com/gentoo/gentoo/pull/2426
+  Package-Manager: portage-2.3.0
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  Enable tests
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild,
+  metadata.xml:
+  Add hwloc support
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild,
+  metadata.xml:
+  Add OpenMP Tools Interface support
+
+  30 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  Add MULTILIB_USEDEP on sys-apps/hwloc to -9999
+
+  30 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-3.9.0.ebuild:
+  Backport hwloc & ompt support to 3.9.0
+
+  30 Sep 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  lit search has been fixed upstream
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  Update clang dep for unconditional wrapper install
+
+  Depend on sys-devel/clang >= 3.9 since this version installs all ABI
+  wrappers unconditionally now, therefore removing the need for
+  MULTILIB_USEDEP and unnecessarily forcing all ABIs on libclang*.
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> libomp-9999.ebuild:
+  Force lit to respect TMPDIR
+

@@ -406,3 +406,52 @@
   Package-Manager: portage-2.3.0
   RepoMan-Options: --include-arches="arm"
 
+  21 Aug 2016; Michael Palimaka <kensington@gentoo.org> cmake-3.5.2-r1.ebuild:
+  amd64/x86 stable
+
+  Gentoo-bug: 587666
+
+  Package-Manager: portage-2.3.0
+
+*cmake-3.6.1-r1 (28 Aug 2016)
+
+  28 Aug 2016; Michał Górny <mgorny@gentoo.org> +cmake-3.6.1-r1.ebuild,
+  +files/cmake-3.6.1-find_library-lib32.patch:
+  Backport find_library() lib32 fix, #338492
+
+*cmake-3.6.2 (08 Sep 2016)
+
+  08 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> +cmake-3.6.2.ebuild:
+  Bump to version 3.6.2
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  08 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> cmake-3.6.2.ebuild:
+  use system cmake to build when available
+
+  Closes: https://github.com/gentoo/gentoo/pull/2236
+
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  08 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> -cmake-3.6.0.ebuild,
+  -cmake-3.6.1.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  11 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> cmake-3.6.2.ebuild:
+  Stick with bootsrapping when <cmake-3.4.0_rc1 is installed.
+
+  This should fix Gentoo bug #593490
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  01 Oct 2016; Jeroen Roovers <jer@gentoo.org> cmake-3.5.2-r1.ebuild:
+  Stable for HPPA PPC64 (bug #587666).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

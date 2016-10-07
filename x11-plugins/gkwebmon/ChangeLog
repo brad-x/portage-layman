@@ -65,3 +65,23 @@
 
   Bug: 575810
 
+*gkwebmon-0.2-r1 (30 Aug 2016)
+
+  30 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/respect-cc-cflags-ldflags.patch, +gkwebmon-0.2-r1.ebuild:
+  new EAPI=6 revision that respects LDFLAGS.
+
+  This new revision is based on the ebuild submitted by Michael
+  Mair-Keimberger, updated for EAPI=6. The Makefile patch was rewritten;
+  a lot was simplified by simply appending to the implicit variables
+  CFLAGS, CPPFLAGS, LDFLAGS, and LDLIBS. The build system should now
+  respect all of those.
+
+  A missing dependency on dev-libs/openssl was added based on -lssl
+  being present in LDLIBS. The ebuild was also keyworded ~amd64, since
+  that's what I tested on.
+
+  Gentoo-Bug: 334761
+
+  Package-Manager: portage-2.2.28
+

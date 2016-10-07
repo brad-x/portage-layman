@@ -73,6 +73,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/grub-0.97-Add-esp-to-list-of-clobbered-registers.patch
 	epatch "${FILESDIR}"/grub-0.97-ncurses-pkgconfig.patch
 
+	epatch_user
+
 	rm -f "${S}"/aclocal.m4 # seems to keep bug 418287 away
 	eautoreconf
 }
@@ -216,8 +218,8 @@ setup_boot_dir() {
 		ewarn "This means you must use either grub-install or perform"
 		ewarn "root/setup manually."
 		ewarn
-		ewarn "For more help, see the handbook:"
-		ewarn "https://www.gentoo.org/doc/en/handbook/handbook-${ARCH}.xml?part=1&chap=10#grub-install-auto"
+		ewarn "For more help, see the wiki:"
+		ewarn "https://wiki.gentoo.org/wiki/GRUB"
 		echo
 	fi
 

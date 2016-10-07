@@ -101,3 +101,51 @@
 
   Package-Manager: portage-2.2.28
 
+*tophat-2.1.1-r1 (03 Sep 2016)
+
+  03 Sep 2016; David Seifert <soap@gentoo.org> -tophat-2.1.1.ebuild,
+  +tophat-2.1.1-r1.ebuild:
+  Various QA fixes, handle python properly
+
+  * Add subslot operator := for dev-libs/boost
+  * DEPEND on virtual/pkgconfig
+  * Add missing ${PYTHON_REQUIRED_USE} and ${PYTHON_DEPS}
+  * Install python scripts and modules properly using
+    'python_doscript' and 'python_domodule'
+
+  Package-Manager: portage-2.3.0
+
+  22 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/tophat-2.1.1-fix-c++14.patch, tophat-2.1.1-r1.ebuild:
+  Allow for compiling with GCC 6
+
+  Gentoo-bug: 594544
+
+  Package-Manager: portage-2.3.1
+
+*tophat-2.1.1-r2 (25 Sep 2016)
+
+  25 Sep 2016; David Seifert <soap@gentoo.org>
+  files/tophat-2.1.1-unbundle-seqan-samtools.patch, -tophat-2.1.1-r1.ebuild,
+  +tophat-2.1.1-r2.ebuild:
+  USE="threads" dep on dev-libs/boost
+
+  Gentoo-bug: 594810
+  * Remove autoconf macros from archive, depend on
+    sys-devel/autoconf instead for the latest versions.
+
+  Package-Manager: portage-2.3.1
+
+  27 Sep 2016; David Seifert <soap@gentoo.org> -tophat-1.0.12.ebuild:
+  Remove old and ancient 1.0 ebuilds
+
+  Package-Manager: portage-2.3.1
+
+*tophat-2.1.1-r3 (03 Oct 2016)
+
+  03 Oct 2016; David Seifert <soap@gentoo.org> -tophat-2.1.1-r2.ebuild,
+  +tophat-2.1.1-r3.ebuild:
+  Do not wrap scripts
+
+  Package-Manager: portage-2.3.1
+

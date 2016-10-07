@@ -56,9 +56,7 @@ grab_lock() {
 
 		# This is better than kill -0 because we can verify that it's really
 		# another run-crons process.
-		cmdline1=$(cat "/proc/${cronpid}/cmdline" 2>/dev/null) || :
-		cmdline2=$(cat /proc/$$/cmdline)
-		if [ "${cmdline1}" = "${cmdline2}" ] ; then
+		if diff -qs /proc/{${cronpid},$$}/cmdline > /dev/null 2>&1; then
 			# Whoa, another run-crons is really running.
 			return 1
 		fi

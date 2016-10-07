@@ -195,3 +195,47 @@
   Package-Manager: portage-2.3.0
   RepoMan-Options: --include-arches="ppc"
 
+  30 Aug 2016; Gilles Dartiguelongue <eva@gentoo.org>
+  at-spi2-atk-2.20.1.ebuild,
+  +files/at-spi2-atk-2.20.0-tests-data/test-collection.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-document.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-editable-text.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-hypertext.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-image.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-selection.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-table.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-text.xml,
+  +files/at-spi2-atk-2.20.0-tests-data/test-value.xml:
+  re-enable unittests
+
+  Tests were failing due to missing files in upstream tarball, see [1].
+  Add missing multilib dependency on libxml2 as it is needed to configure.
+
+  [1] https://bugzilla.gnome.org/show_bug.cgi?id=770615
+
+  Package-Manager: portage-2.3.0
+
+  23 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  at-spi2-atk-2.20.1.ebuild:
+  2.20.1-r0: add alpha keyword
+
+  Gentoo-Bug: 587010
+
+  01 Oct 2016; Pacho Ramos <pacho@gentoo.org> at-spi2-atk-2.20.1.ebuild:
+  amd64 stable, bug 587010
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="amd64"
+
+  01 Oct 2016; Pacho Ramos <pacho@gentoo.org> at-spi2-atk-2.20.1.ebuild:
+  x86 stable, bug 587010
+
+  Package-Manager: portage-2.3.0
+  RepoMan-Options: --include-arches="x86"
+
+  03 Oct 2016; Jeroen Roovers <jer@gentoo.org> at-spi2-atk-2.20.1.ebuild:
+  Stable for HPPA (bug #587010).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

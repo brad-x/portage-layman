@@ -345,3 +345,64 @@
 
   Package-Manager: portage-2.2.27
 
+*rsyslog-8.21.0 (24 Aug 2016)
+
+  24 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> +rsyslog-8.21.0.ebuild:
+  Bump to v8.21.0
+
+  Package-Manager: portage-2.3.0
+
+  24 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  -files/8-stable/50-rsyslog-8.18.0-issue963.patch,
+  -files/8-stable/50-rsyslog-8.18.0-issue964.patch, -rsyslog-8.18.0.ebuild:
+  Drop old version
+
+  Package-Manager: portage-2.3.0
+
+  28 Aug 2016; Thomas Deutschmann <whissi@gentoo.org>
+  +files/8-stable/50-rsyslog-8.16.0-restrict-build-deps.patch,
+  rsyslog-8.16.0-r1.ebuild:
+  Restricting build depedencies for v8.16.0
+
+  While this version builds against =dev-libs/libfastjson-0.99.2 it does not
+  build against >dev-libs/libfastjson-0.99.2.
+
+  Additional, if you build rsyslog against dev-libs/json-c but build also
+  against
+  dev-libs/liblognorm which was build against >dev-libs/libfastjson-0.99.2
+  you will get runtime errors.
+
+  To solve this problem we are restricting rsyslog-8.16.0 to build only
+  against
+  dev-libs/json-c and also restricting to =dev-libs/liblognorm-1.1.2* (last
+  version which builds against dev-libs/json-c).
+
+  Package-Manager: portage-2.3.0
+
+  28 Aug 2016; Thomas Deutschmann <whissi@gentoo.org> rsyslog-8.19.0.ebuild,
+  rsyslog-8.21.0.ebuild:
+  Enforce >=dev-libs/liblognorm-2.0.1 usage
+
+  >=app-admin/rsyslog-8.19.0 builds against dev-libs/libfastjson instead of
+  dev-libs/json-c like
+  previous versions. To avoid runtime errors when mixing with depedencies
+  which were build
+  against dev-libs/json-c we are now enforcing >=dev-libs/liblognorm-2.0.1
+  (first liblognorm
+  version in repository which requires dev-libs/libfastjson) dependency.
+
+  Package-Manager: portage-2.3.0
+
+  12 Sep 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  fix typo 'databse'->'database'.
+
+  Closes: https://github.com/gentoo/gentoo/pull/2308
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  29 Sep 2016; Jeroen Roovers <jer@gentoo.org> rsyslog-8.19.0.ebuild:
+  Stable for HPPA (bug #593802).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

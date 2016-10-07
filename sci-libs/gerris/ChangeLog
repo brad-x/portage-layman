@@ -82,3 +82,30 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*gerris-20131206-r1 (09 Sep 2016)
+
+  09 Sep 2016; David Seifert <soap@gentoo.org>
+  files/gerris-20130531-hypre-no-mpi.patch,
+  files/gerris-20130531-lis-matrix-csr.patch,
+  files/gerris-20130531-use-blas-lapack-system.patch,
+  +files/gerris-20131206-DEFAULT_SOURCE-replacement.patch,
+  +files/gerris-20131206-lis-api-change.patch, +gerris-20131206-r1.ebuild:
+  Patch use of sci-libs/lis function prototypes
+
+  Gentoo-bug: 593282
+  * EAPI=6
+  * Made all PATCHES -p1 compliant
+  * Exchanged -D_BSD_SOURCE with -D_DEFAULT_SOURCE in order
+    to silence deprecation from dev-libs/glib
+  * Add subslot operators for sci-libs/netcdf and sci-libs/gsl
+  * Add proper SLOT and operator for sci-libs/fftw
+  * Delete all .la files, as package provides .pc files
+
+  Package-Manager: portage-2.3.0
+
+  09 Sep 2016; David Seifert <soap@gentoo.org> -gerris-20120731.ebuild,
+  -gerris-20130531.ebuild, -gerris-20131206.ebuild:
+  Remove old
+
+  Package-Manager: portage-2.3.0
+

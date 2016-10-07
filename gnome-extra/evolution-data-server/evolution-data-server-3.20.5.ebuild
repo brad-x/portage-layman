@@ -7,7 +7,7 @@ GNOME2_LA_PUNT="yes"
 PYTHON_COMPAT=( python2_7 python3_{4,5} pypy )
 VALA_USE_DEPEND="vapigen"
 
-inherit db-use flag-o-matic gnome2 python-any-r1 vala virtualx
+inherit db-use flag-o-matic gnome2 python-any-r1 systemd vala virtualx
 
 DESCRIPTION="Evolution groupware backend"
 HOMEPAGE="https://wiki.gnome.org/Apps/Evolution"
@@ -19,7 +19,7 @@ SLOT="0/57" # subslot = libcamel-1.2 soname version
 IUSE="api-doc-extras berkdb +gnome-online-accounts +gtk google +introspection ipv6 ldap kerberos vala +weather"
 REQUIRED_USE="vala? ( introspection )"
 
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-solaris"
 
 # sys-libs/db is only required for migrating from <3.13 versions
 # gdata-0.15.1 is required for google tasks
@@ -107,6 +107,7 @@ src_configure() {
 		$(use_enable weather) \
 		--enable-largefile \
 		--enable-smime \
+		--with-systemduserunitdir="$(systemd_get_userunitdir)" \
 		--without-phonenumber \
 		--disable-examples \
 		--disable-uoa

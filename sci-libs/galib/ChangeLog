@@ -65,3 +65,19 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*galib-2.4.7-r1 (25 Sep 2016)
+
+  25 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/galib-2.4.7-Wformat-security.patch,
+  +files/galib-2.4.7-fix-buildsystem.patch,
+  +files/galib-2.4.7-fix-c++14.patch, +galib-2.4.7-r1.ebuild:
+  Allow for compiling with GCC 6
+
+  Gentoo-bug: 594504
+  * Patch by Peter Levine
+  * EAPI=6
+  * [QA] Fix -Wformat-security errors
+  * Fix build system to honour CXX, AR, RANLIB properly
+
+  Package-Manager: portage-2.3.1
+

@@ -1,0 +1,25 @@
+# ChangeLog for dev-java/boot-bin
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*boot-bin-2.6.0 (04 Sep 2016)
+
+  04 Sep 2016; Kent Fredric <kentnl@gentoo.org> +boot-bin-2.6.0.ebuild,
+  +files/boot, +metadata.xml:
+  Added at 2.6.0
+
+  This is mostly just giving users a better choice than "sudo bash curl..."
+
+  boot will still have to install its own dependencies when executed via maven
+  glue into ~/.m2/, but this still means they can easily get `boot` accessible
+  globally in "$PATH" without security paranoia, and from then on it
+  "mostly just works" without needing to understand boot-specific install
+  procedures.
+
+  Ideally this itself will be built from sources one day, but java upstream
+  logic fights this at every stage.
+
+  Also, "boot -u" still does "something", but it doesn't do anything useful.
+
+  Package-Manager: portage-2.3.0
+

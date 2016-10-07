@@ -50,7 +50,6 @@ DEPEND="${COMMON_DEPEND}
 		( >=sys-freebsd/freebsd-lib-9.1-r10 sys-libs/libcxx )
 	)
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-5.1 )
-	kernel_Darwin? ( <sys-libs/libcxx-${PV%_rc*}.9999 )
 	clang? ( xml? ( virtual/pkgconfig ) )
 	doc? ( dev-python/sphinx )
 	libffi? ( virtual/pkgconfig )
@@ -61,7 +60,8 @@ RDEPEND="${COMMON_DEPEND}
 		!>=sys-devel/clang-9999 )
 	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20130224-r2
 		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
-PDEPEND="clang? ( =sys-devel/clang-${PV}-r100 )"
+PDEPEND="clang? ( =sys-devel/clang-${PV}-r100 )
+	kernel_Darwin? ( =sys-libs/libcxx-${SLOT#*/}* )"
 
 # pypy gives me around 1700 unresolved tests due to open file limit
 # being exceeded. probably GC does not close them fast enough.
@@ -144,19 +144,19 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.2-nodoctargz.patch
-	epatch "${FILESDIR}"/${PN}-3.5-gcc-4.9.patch
-	epatch "${FILESDIR}"/${PN}-3.5-gentoo-install.patch
-	epatch "${FILESDIR}"/${P}-gcc-5.1.patch
+	epatch "${FILESDIR}"/3.6.2/nodoctargz.patch
+	epatch "${FILESDIR}"/3.6.2/gcc-4.9.patch
+	epatch "${FILESDIR}"/3.5.2/gentoo-install.patch
+	epatch "${FILESDIR}"/3.5.2/gcc-5.1.patch
 	# Make ocaml warnings non-fatal, bug #537308
 	sed -e "/RUN/s/-warn-error A//" -i test/Bindings/Ocaml/*ml  || die
 
 	if use clang; then
 		# Automatically select active system GCC's libraries, bugs #406163 and #417913
-		epatch "${FILESDIR}"/clang-3.5-gentoo-runtime-gcc-detection-v3.patch
+		epatch "${FILESDIR}"/3.9.0/clang/gentoo-runtime-gcc-detection-v3.patch
 
-		epatch "${FILESDIR}"/clang-3.5-gentoo-install.patch
-		epatch "${FILESDIR}"/clang-3.4-darwin_prefix-include-paths.patch
+		epatch "${FILESDIR}"/3.5.2/clang/gentoo-install.patch
+		epatch "${FILESDIR}"/3.9.0/clang/darwin_prefix-include-paths.patch
 		eprefixify tools/clang/lib/Frontend/InitHeaderSearch.cpp
 	fi
 

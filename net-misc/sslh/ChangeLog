@@ -121,3 +121,32 @@
 
   Gentoo-bug: 563600
 
+  14 Sep 2016; Michael Palimaka <kensington@gentoo.org> sslh-1.18-r1.ebuild:
+  amd64/x86 stable
+
+  Package-Manager: portage-2.3.0
+
+  14 Sep 2016; Michael Palimaka <kensington@gentoo.org> -sslh-1.17.ebuild,
+  -sslh-1.18.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0
+
+  22 Sep 2016; Michael Palimaka <kensington@gentoo.org>
+  -files/sslh-1.17-version-deps.patch, files/sslh-1.18-version-deps.patch,
+  sslh-1.18-r1.ebuild:
+  new patch to solve Makefile dependencies issue
+
+  Gentoo-bug: 594586
+
+  Package-Manager: portage-2.3.1
+
+  28 Sep 2016; David Seifert <soap@gentoo.org> sslh-1.18-r1.ebuild:
+  Explicitly build using GNU99 C variant
+
+  Gentoo-bug: 595426
+  * Build using -std=gnu99 due to within-for-loop initializers
+    and __USE_XOPEN2K macro for struct addrinfo.
+
+  Package-Manager: portage-2.3.1
+

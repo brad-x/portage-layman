@@ -95,3 +95,36 @@
   18 May 2016; Austin English <wizardedit@gentoo.org> files/knot.init:
   use #!/sbin/openrc-run instead of #!/sbin/runscript
 
+*knot-2.3.0 (30 Aug 2016)
+*knot-1.6.8 (30 Aug 2016)
+
+  30 Aug 2016; Patrice Clement <monsieurp@gentoo.org>
+  -files/1.6.3-dont-create-extra-directories.patch,
+  -files/2.0.2-dont-create-extra-directories.patch, +files/2.3.0-added-convers
+  ion-to-wire-format-when-writing-FNV64-hash-values.patch,
+  -files/knot-2.1.0-nettle.patch, -knot-1.6.6.ebuild, +knot-1.6.8.ebuild,
+  -knot-2.1.0.ebuild, +knot-2.3.0.ebuild:
+  version bump + clean up.
+
+  * bump to EAPI=6
+  * call eapply_user
+  * generate only HTML documentation
+  * parallel testing have been fixed
+  * backport a patch fixing tests on big-endian arch
+
+  Gentoo-Bug: https://bugs.gentoo.org/581568
+  Gentoo-Bug: https://bugs.gentoo.org/588654
+  Gentoo-Bug: https://bugs.gentoo.org/589166
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2117
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+  30 Aug 2016; Patrice Clement <monsieurp@gentoo.org> -knot-1.6.8.ebuild,
+  metadata.xml:
+  remove vulnerable version.
+
+  Gentoo-Bug: https://bugs.gentoo.org/588654
+
+  Package-Manager: portage-2.2.28
+

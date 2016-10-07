@@ -435,3 +435,10 @@
   files/eblits/pkg_pretend.eblit, files/eblits/src_prepare.eblit:
   sourceware: convert to https:// URIs
 
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> files/eblits/common.eblit:
+  Do not reset multilib vars unless cross-compiling, #588368
+
+  Do not call multilib_env_reset unless cross-compiling, in order to
+  prevent the function from redefining profile-defined variables such as
+  LIBDIR_*.
+

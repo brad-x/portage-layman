@@ -724,3 +724,309 @@
   16 Aug 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Transfer maintenance to LLVM project
 
+  21 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/llvm-3.8-llvm-config-r1.patch, files/llvm-3.9-llvm-config.patch,
+  llvm-3.8.1-r1.ebuild:
+  Improve llvm-config upstream compatibility, #591690
+
+  Improve the llvm-config installed by 3.8.1-r1 (masked) and the live
+  ebuild to match upstream behavior better, and be more compatible with
+  packages. Restore --obj-root to return prefix on installed package, and
+  make --src-root return invalid /dev/null path instead of failing.
+
+  Bug: https://bugs.gentoo.org/591690
+
+  21 Aug 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.1-r1.ebuild:
+  Reduce keywords on 3.8.1-r1 to match sys-libs/libcxx
+
+*llvm-3.8.1-r2 (21 Aug 2016)
+
+  21 Aug 2016; Michał Górny <mgorny@gentoo.org> -llvm-3.8.1-r1.ebuild,
+  +llvm-3.8.1-r2.ebuild:
+  Revbump and unleash 3.8.1-r1
+
+  22 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/9999/0009-cmake-Use-system-llvm-lit-when-lit.py-does-not-exist.patch,
+  +files/9999/0010-lit-setup.py-Install-as-llvm-lit-as-cmake-expects-it.patch,
+  -files/cmake/compiler-rt-3.9-cmake-Install-compiler-rt-into-usr-lib-without-
+  suffi.patch, llvm-9999.ebuild:
+  Strip external projects off the live ebuild
+
+  22 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/3.5.0/fix_LLVMExports_cmake.patch,
+  +files/3.5.2/clang/gentoo-install.patch, +files/3.5.2/gcc-5.1.patch,
+  +files/3.5.2/gentoo-install.patch, +files/3.6.2/clang/fbsd-gcc49.patch,
+  +files/3.6.2/gcc-4.9.patch, +files/3.6.2/gentoo-install.patch,
+  +files/3.6.2/nodoctargz.patch, +files/3.6.2/ocaml-ctypes-0.4.0.patch, +files
+  /3.7.1/clang/0001-Install-clang-runtime-into-usr-lib-without-suffix.patch,
+  +files/3.7.1/clang/ccc-analyzer-isystem.patch,
+  +files/3.7.1/clang/gentoo-install.patch,
+  +files/3.7.1/compiler-rt/arm_march_flags.patch,
+  +files/3.7.1/compiler-rt/msan-fix.patch, +files/3.7.1/lldb/python.patch,
+  +files/3.7.1/lldb/tinfo.patch, +files/3.7.1/llvm-config-0.patch,
+  +files/3.7.1/llvm-config-1.patch, +files/3.7.1/llvm-config-2.patch,
+  +files/3.7.1/llvm-config-3.patch, +files/3.7.1/msan-fix.patch, +files/3.8.1/
+  clang/0001-Install-clang-runtime-into-usr-lib-without-suffix.patch,
+  +files/3.8.1/clang/0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch,
+  +files/3.8.1/clang/abi-tag-support-mangler.patch,
+  +files/3.8.1/clang/abi-tag-support-sema.patch,
+  +files/3.8.1/clang/darwin_prefix-include-paths.patch,
+  +files/3.8.1/clang/default-libs.patch,
+  +files/3.8.1/clang/gcc4.9-search-path.patch,
+  +files/3.8.1/clang/gentoo-runtime-gcc-detection-v3.patch,
+  +files/3.8.1/clang/musl-support.patch, +files/3.8.1/compiler-rt/0001-cmake-I
+  nstall-compiler-rt-into-usr-lib-without-suffi.patch,
+  +files/3.8.1/compiler-rt/arm_march_flags.patch,
+  +files/3.8.1/compiler-rt/fbsd.patch, +files/3.8.1/lldb/six.patch,
+  +files/3.8.1/llvm-config-r1.patch, +files/3.8.1/llvm-config.patch,
+  +files/3.8.1/musl-env-support.patch,
+  +files/9999/0001-cmake-Install-OCaml-modules-into-correct-package-loc.patch,
+  +files/9999/0002-cmake-Make-OCaml-docs-dependent-on-LLVM_BUILD_DOCS.patch,
+  +files/9999/0003-cmake-Support-overriding-Sphinx-HTML-doc-install-dir.patch,
+  +files/9999/0004-cmake-Add-an-ordering-dep-between-HTML-man-Sphinx-ta.patch,
+  +files/9999/0005-cmake-Do-not-install-libgtest.patch,
+  +files/9999/0006-cmake-Remove-the-CMAKE_BUILD_TYPE-assertion.patch,
+  +files/9999/0007-llvm-config-Clean-up-exported-values-update-for-shar.patch,
+  +files/9999/0008-cmake-Restore-SOVERSIONs-on-shared-libraries.patch,
+  +files/9999/musl-fixes.patch,
+  -files/clang-3.4-darwin_prefix-include-paths.patch,
+  -files/clang-3.5-gentoo-install.patch,
+  -files/clang-3.5-gentoo-runtime-gcc-detection-v3.patch,
+  -files/clang-3.6-fbsd-gcc49.patch, -files/clang-3.6-gentoo-install.patch,
+  -files/clang-3.7.1-ccc-analyzer-isystem.patch,
+  -files/clang-3.8-abi-tag-support-mangler.patch,
+  -files/clang-3.8-abi-tag-support-sema.patch,
+  -files/clang-3.8-compiler-rt-fbsd.patch,
+  -files/clang-3.8-default-libs.patch,
+  -files/clang-3.8-gcc4.9-search-path.patch,
+  -files/clang-3.8-musl-support.patch, -files/cmake/0002-cmake-Support-overrid
+  ing-Sphinx-HTML-doc-install-dir.patch, -files/cmake/0003-cmake-Add-an-orderi
+  ng-dep-between-HTML-man-Sphinx-ta.patch,
+  -files/cmake/0004-cmake-Do-not-install-libgtest.patch, -files/cmake/clang-00
+  01-Install-clang-runtime-into-usr-lib-without-suffix-3.8.patch, -files/cmake
+  /clang-0001-Install-clang-runtime-into-usr-lib-without-suffix.patch,
+  -files/cmake/clang-0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch, -f
+  iles/cmake/compiler-rt-0001-cmake-Install-compiler-rt-into-usr-lib-without-s
+  uffi.patch, -files/cmake/llvm-3.7.0-compiler_rt_arm_march_flags.patch,
+  -files/cmake/llvm-3.7.0-lldb_tinfo.patch,
+  -files/cmake/llvm-3.7.0-ocaml-build_doc.patch,
+  -files/cmake/llvm-3.7.0-ocaml-multilib.patch,
+  -files/cmake/llvm-3.8-allow_custom_cmake_build_types.patch,
+  -files/cmake/llvm-3.8.0-compiler_rt_arm_march_flags.patch,
+  -files/compiler-rt-3.7-msan-fix.patch, -files/llvm-3.2-nodoctargz.patch,
+  -files/llvm-3.5-gcc-4.9.patch, -files/llvm-3.5-gentoo-install.patch,
+  -files/llvm-3.5.0-fix_LLVMExports_cmake.patch,
+  -files/llvm-3.5.2-gcc-5.1.patch, -files/llvm-3.6-gentoo-install.patch,
+  -files/llvm-3.6.0-ocaml-ctypes-0.4.0.patch,
+  -files/llvm-3.7-lldb_python.patch, -files/llvm-3.7-msan-fix.patch,
+  -files/llvm-3.7.1-llvm-config-0.patch,
+  -files/llvm-3.7.1-llvm-config-1.patch,
+  -files/llvm-3.7.1-llvm-config-2.patch,
+  -files/llvm-3.7.1-llvm-config-3.patch, -files/llvm-3.8-lldb_six.patch,
+  -files/llvm-3.8-llvm-config-r1.patch, -files/llvm-3.8-llvm-config.patch,
+  -files/llvm-3.8-musl-fixes.patch, -files/llvm-3.8-musl-support.patch,
+  -files/llvm-3.8-soversion.patch, -files/llvm-3.9-llvm-config.patch,
+  llvm-3.5.0.ebuild, llvm-3.5.2.ebuild, llvm-3.6.2.ebuild,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, llvm-9999.ebuild:
+  Group all patches by newest version applicable
+
+  22 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  -files/llvm-3.7-llvm-config.patch:
+  Remove unused patch
+
+  23 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/3.8.1/0002-cmake-Make-OCaml-docs-dependent-on-LLVM_BUILD_DOCS.patch,
+  -files/9999/0002-cmake-Make-OCaml-docs-dependent-on-LLVM_BUILD_DOCS.patch,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, llvm-9999.ebuild:
+  OCaml doc patch has been applied upstream
+
+  24 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  -files/9999/0005-cmake-Do-not-install-libgtest.patch, llvm-9999.ebuild:
+  Remove unnecessary gtest patch
+
+  25 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  +files/3.8.1/0005-cmake-Do-not-install-libgtest.patch, llvm-3.7.1-r3.ebuild,
+  llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild, llvm-3.8.1-r2.ebuild:
+  Restore gtest patch for <9999, #592046
+
+*llvm-3.9.0_rc3 (28 Aug 2016)
+
+  28 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  -files/3.8.1/0002-cmake-Make-OCaml-docs-dependent-on-LLVM_BUILD_DOCS.patch, 
+  -files/3.8.1/clang/0001-Install-clang-runtime-into-usr-lib-without-suffix.pa
+  tch,
+  -files/3.8.1/clang/0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch,
+  -files/3.8.1/clang/darwin_prefix-include-paths.patch,
+  -files/3.8.1/clang/gentoo-runtime-gcc-detection-v3.patch,
+  -files/3.8.1/lldb/six.patch, -files/3.8.1/llvm-config-r1.patch,
+  +files/3.9.0/0002-cmake-Make-OCaml-docs-dependent-on-LLVM_BUILD_DOCS.patch, 
+  +files/3.9.0/clang/0001-Install-clang-runtime-into-usr-lib-without-suffix.pa
+  tch,
+  +files/3.9.0/clang/0002-cmake-Make-CLANG_LIBDIR_SUFFIX-overridable.patch,
+  +files/3.9.0/clang/darwin_prefix-include-paths.patch,
+  +files/3.9.0/clang/default-libs.patch,
+  +files/3.9.0/clang/gentoo-runtime-gcc-detection-v3.patch, +files/3.9.0/compi
+  ler-rt/0001-cmake-Install-compiler-rt-into-usr-lib-without-suffi.patch,
+  +files/3.9.0/lldb/six.patch, +files/3.9.0/llvm-config-r1.patch,
+  llvm-3.5.0.ebuild, llvm-3.5.2.ebuild, llvm-3.6.2.ebuild,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, +llvm-3.9.0_rc3.ebuild, llvm-9999.ebuild:
+  Bump to 3.9.0rc3
+
+  29 Aug 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Fix cmake unused arg warnings with USE=-doc
+
+  31 Aug 2016; Michał Górny <mgorny@gentoo.org>
+  files/9999/0007-llvm-config-Clean-up-exported-values-update-for-shar.patch:
+  Fix llvm-config --obj-root on the live ebuild
+
+  02 Sep 2016; Michał Górny <mgorny@gentoo.org>
+  -files/9999/0009-cmake-Use-system-llvm-lit-when-lit.py-does-not-exist.patch,
+  -files/9999/0010-lit-setup.py-Install-as-llvm-lit-as-cmake-expects-it.patch,
+  llvm-9999.ebuild:
+  Stop installing llvm-lit
+
+  Stop installing lit as llvm-lit since the correct install layout is
+  still unclear (wrt https://reviews.llvm.org/D23743), installed version
+  search is inconsistent and broken, and all reverse dependencies require
+  LLVM source checkout anyway and therefore use the internal lit package
+  included in it. The install will eventually be addressed later, most
+  likely as a split package.
+
+*llvm-3.9.0 (03 Sep 2016)
+
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> -llvm-3.9.0_rc3.ebuild,
+  +llvm-3.9.0.ebuild:
+  Bump to 3.9.0 release (no changes since rc3)
+
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Readd WX stack fix to 3.9.0
+
+  04 Sep 2016; Fabian Groffen <grobian@gentoo.org>
+  +files/3.8.1/compiler-rt/darwin-default-sysroot.patch, llvm-3.8.1.ebuild,
+  llvm-3.9.0.ebuild:
+  add patch for compiler-rt on Darwin/Prefix
+
+  Package-Manager: portage-2.2.28
+
+  04 Sep 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.8.1.ebuild,
+  llvm-3.9.0.ebuild:
+  remove trailing whitespace
+
+  Package-Manager: portage-2.2.28
+
+  06 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.1-r2.ebuild,
+  llvm-3.9.0.ebuild:
+  Move libcxx to PDEP, to avoid circular deps
+
+  08 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Fix disabling OCaml docs in -9999
+
+  09 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-3.8.1-r2.ebuild,
+  llvm-3.9.0.ebuild, llvm-9999.ebuild:
+  Improve OCaml deps as suggested by aballier
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.5.2.ebuild,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.1.ebuild, llvm-3.8.1-r2.ebuild,
+  llvm-3.9.0.ebuild:
+  move libcxx into PDEPEND for Darwin
+
+  llvm needs libcxx-headers at most, but not the library, however, llvm
+  does segfault if the matching libcxx isn't available at runtime, so make
+  sure we install a matching version after installing llvm on Darwin.
+
+  Package-Manager: portage-2.2.28
+
+*llvm-3.4.2-r100 (10 Sep 2016)
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org>
+  +files/clang-3.1-gentoo-runtime-gcc-detection-v3.patch,
+  +files/clang-3.4-darwin_build_fix.patch,
+  +files/clang-3.4-gentoo-install.patch, +files/llvm-3.4-gentoo-install.patch,
+  +llvm-3.4.2-r100.ebuild:
+  restore llvm-3.4.2 for Prefix bootstraps, bug #588132
+
+  Package-Manager: portage-2.2.28
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org>
+  +files/3.4.2/clang/darwin_build_fix.patch,
+  +files/3.4.2/clang/gentoo-install.patch,
+  +files/3.4.2/clang/gentoo-runtime-gcc-detection-v3.patch,
+  +files/3.4.2/gentoo-install.patch,
+  -files/clang-3.1-gentoo-runtime-gcc-detection-v3.patch,
+  -files/clang-3.4-darwin_build_fix.patch,
+  -files/clang-3.4-gentoo-install.patch, -files/llvm-3.4-gentoo-install.patch,
+  llvm-3.4.2-r100.ebuild:
+  fix patches for 3.4.2
+
+  Package-Manager: portage-2.2.28
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org> llvm-3.4.2-r100.ebuild:
+  make 3.4.2 work post-Prefix bootstrap too
+
+  Package-Manager: portage-2.2.28
+
+  20 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Disable ocamldoc due to wrong install path
+
+  21 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Remove the remnants of OCaml documentation
+
+  23 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Update for the Sphinx install dir patch applied upstream
+
+  23 Sep 2016; Michał Górny <mgorny@gentoo.org> +files/3.9.0/0003-cmake-Suppor
+  t-overriding-Sphinx-HTML-doc-install-dir.patch,
+  -files/9999/0003-cmake-Support-overriding-Sphinx-HTML-doc-install-dir.patch,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, llvm-3.9.0.ebuild:
+  Move the old Sphinx install patch to <=3.9.0
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Use LLVM_TARGETS flags
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Backport LLVM_TARGETS to 3.9.0
+
+  30 Sep 2016; Michał Górny <mgorny@gentoo.org> +files/3.9.0/0001-cmake-Instal
+  l-OCaml-modules-into-correct-package-loc.patch,
+  -files/9999/0001-cmake-Install-OCaml-modules-into-correct-package-loc.patch,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, llvm-3.9.0.ebuild, llvm-9999.ebuild:
+  OCaml install path patch has been merged upstream
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Backport uncond wrapper install to 3.9.0
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Use installed lit for tests
+
+  02 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Backport target syms from sys-devel/clang
+
+  02 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Backport clang-cpp symlink, #478810
+
+  03 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Add PDEP on sys-devel/clang-runtime meta
+
+  03 Oct 2016; Michał Górny <mgorny@gentoo.org> llvm-3.9.0.ebuild:
+  Remove stale libomp check, it is PDEP now
+
+  04 Oct 2016; Michał Górny <mgorny@gentoo.org> +files/3.9.0/0004-cmake-Add-an
+  -ordering-dep-between-HTML-man-Sphinx-ta.patch,
+  -files/9999/0004-cmake-Add-an-ordering-dep-between-HTML-man-Sphinx-ta.patch,
+  llvm-3.7.1-r3.ebuild, llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild,
+  llvm-3.8.1-r2.ebuild, llvm-3.9.0.ebuild, llvm-9999.ebuild:
+  Sphinx race condition has been fixed upstream
+
+  04 Oct 2016; Michał Górny <mgorny@gentoo.org>
+  +files/3.8.1/0008-cmake-Restore-SOVERSIONs-on-shared-libraries.patch, +files
+  /3.9.0/0008-cmake-Reintroduce-ldconfig-compatible-SOVERSIONs-on-.patch,
+  -files/9999/0008-cmake-Restore-SOVERSIONs-on-shared-libraries.patch,
+  llvm-3.8.0-r3.ebuild, llvm-3.8.1.ebuild, llvm-3.8.1-r2.ebuild,
+  llvm-3.9.0.ebuild, llvm-9999.ebuild:
+  SOVERSIONs have been fixed upst, backport new to 3.9.0
+

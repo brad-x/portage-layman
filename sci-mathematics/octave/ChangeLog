@@ -213,3 +213,54 @@
 
   Package-Manager: portage-2.3.0
 
+*octave-4.0.3 (21 Aug 2016)
+
+  21 Aug 2016; David Seifert <soap@gentoo.org> files/octave-3.4.3-texi.patch,
+  files/octave-3.8.1-pkgbuilddir.patch, +files/octave-4.0.3-imagemagick.patch,
+  +files/octave-4.0.3-ncurses-pkgconfig.patch, +octave-4.0.3.ebuild:
+  version bump
+
+  Gentoo-bug: 590676, 590792
+  * EAPI=6
+  * Make patches -p1 compliant
+  * Use pkg-config for finding curses flags
+
+  Package-Manager: portage-2.3.0
+
+  11 Sep 2016; David Seifert <soap@gentoo.org>
+  -files/octave-4.0.0-llvm-3.5-gnulib-hg.patch,
+  -files/octave-4.0.0-llvm-3.5.patch, metadata.xml, octave-4.0.0.ebuild,
+  octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild, octave-4.0.1-r1.ebuild,
+  octave-4.0.2-r2.ebuild, octave-4.0.3.ebuild:
+  Remove USE=jit
+
+  Gentoo-Bug: 588098
+  * USE=jit has become a liability instead of a feature for
+    Gentoo. The JIT support within octave requires old versions
+    of LLVM, which are broken and unsupported.
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2288
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+  11 Sep 2016; David Seifert <soap@gentoo.org>
+  -files/octave-3.8.0-fix-compile.patch, octave-4.0.0.ebuild,
+  octave-4.0.0-r1.ebuild, octave-4.0.1.ebuild, octave-4.0.1-r1.ebuild,
+  octave-4.0.2-r2.ebuild, octave-4.0.3.ebuild:
+  Remove left-over 'use jit' calls
+
+  * https://github.com/gentoo/gentoo/pull/2288
+
+  Package-Manager: portage-2.3.0
+
+  24 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/octave-4.0.3-zlib-underlinking.patch, octave-4.0.3.ebuild:
+  Fix zlib underlinking
+
+  Gentoo-bug: 593670
+  * [QA] Add -Wl,-z,defs to LDFLAGS
+  * Make dependency on sys-libs/zlib unconditional
+
+  Package-Manager: portage-2.3.1
+

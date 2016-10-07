@@ -102,3 +102,24 @@
   files/owftpd.initd, files/owhttpd.initd, files/owserver.initd:
   use #!/sbin/openrc-run instead of #!/sbin/runscript
 
+*owfs-3.1_p4 (21 Sep 2016)
+
+  21 Sep 2016; Thomas Deutschmann <whissi@gentoo.org>
+  +files/owfs-3.1p4-sysmacros.patch, metadata.xml, +owfs-3.1_p4.ebuild:
+  Bump to v3.1.p4
+
+  Changes:
+  ========
+   - Disabled autodetection of libftdi and libavahi; These configure flags
+     will now only be enabled when the user has the the appropriate USE
+     flags.
+
+   - Fixed missing sys/sysmacros.h includes (bug #580922)
+
+   - Fixed systemd detection (bug #576648)
+
+  Gentoo-Bug: https://bugs.gentoo.org/580922
+  Gentoo-Bug: https://bugs.gentoo.org/576648
+
+  Package-Manager: portage-2.3.1
+

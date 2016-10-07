@@ -66,3 +66,40 @@
 
   Bug: 575810
 
+*duali-data-0.1b-r1 (25 Aug 2016)
+
+  25 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +duali-data-0.1b-r1.ebuild:
+  app-text/duali, app-dicts/duali-data: new revisions with EAPI=6.
+
+  These two packages needed simultaneous revisions to fix dictionary
+  database compilation. The app-text/duali package provides a script
+  (dict2db) that builds dictionary databases, and a module that uses
+  them. Both use the "anydbm" python module, and should not care about
+  the dbm backend, but the implementation details do -- they try to
+  guess a filename, and each dbm backend outputs a different file name.
+
+  In the new revision of duali, we require python[gdbm] to ensure that
+  we get at least one of the file names that we expect. The new
+  duali-data requires the new duali so that the databases get the
+  correct name, and everything is happy.
+
+  Minimal changes were needed for the duali-data ebuild, but the duali
+  ebuild needed to be updated to use python-single-r1 and was rewritten.
+
+  Gentoo-Bug: 380857
+
+  Package-Manager: portage-2.2.28
+
+  22 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  duali-data-0.1b-r1.ebuild:
+  0.1b-r1: add alpha keyword
+
+  Gentoo-Bug: 593214
+
+  26 Sep 2016; Agostino Sarubbo <ago@gentoo.org> duali-data-0.1b-r1.ebuild:
+  amd64 stable wrt bug #593214
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

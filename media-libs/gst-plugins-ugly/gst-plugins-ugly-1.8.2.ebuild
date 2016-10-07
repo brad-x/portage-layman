@@ -11,11 +11,11 @@ DESCRIPTION="Basepack of plugins for gstreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="+orc"
 
 RDEPEND="
-	>=dev-libs/glib-2.34.3:2[${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
 	>=media-libs/gstreamer-${PV}:${SLOT}[${MULTILIB_USEDEP}]
 	>=media-libs/gst-plugins-base-${PV}:${SLOT}[${MULTILIB_USEDEP}]
 	orc? ( >=dev-lang/orc-0.4.17[${MULTILIB_USEDEP}] )

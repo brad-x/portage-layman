@@ -39,7 +39,7 @@ RDEPEND="
 	gdbm? ( sys-libs/gdbm )
 	jemalloc? ( dev-libs/jemalloc )
 	ssl? (
-		!libressl? ( dev-libs/openssl:0 )
+		!libressl? ( dev-libs/openssl:0= )
 		libressl? ( dev-libs/libressl )
 	)
 	socks5? ( >=net-proxy/dante-1.1.13 )
@@ -48,7 +48,7 @@ RDEPEND="
 		dev-lang/tk:0=[threads]
 	)
 	ncurses? ( sys-libs/ncurses:0= )
-	readline?  ( sys-libs/readline:0 )
+	readline?  ( sys-libs/readline:0= )
 	dev-libs/libyaml
 	virtual/libffi
 	sys-libs/zlib

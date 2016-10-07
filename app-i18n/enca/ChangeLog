@@ -88,3 +88,59 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  21 Aug 2016; Patrice Clement <monsieurp@gentoo.org> metadata.xml:
+  Transfert maintainership to Ilya Tumaykin.
+
+  Package-Manager: portage-2.2.28
+
+  19 Sep 2016; Yixun Lan <dlan@gentoo.org> metadata.xml:
+  cleanup metadata, add remote-id
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+
+*enca-1.19 (19 Sep 2016)
+
+  19 Sep 2016; Yixun Lan <dlan@gentoo.org> +enca-1.19.ebuild:
+  verbump to 1.19
+
+  Major ebuild overhaul:
+  - EAPI=6, migrate away from deprecated eclasses;
+  - fix 404 HOMEPAGE;
+  - do not enable recode by default as its upstream is dead;
+  - introduce iconv USE to avoid iconv automagic dependency;
+  - introduce static-libs USE;
+  - add missing gtk-doc dep for doc USE;
+  - make build system respect doc USE;
+  - avoid ugly cross compilation and multilib hacks by doing things right.
+
+  Gentoo-Bug: https://bugs.gentoo.org/593220
+  Closes: https://github.com/gentoo/gentoo/pull/2340
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+
+  19 Sep 2016; Yixun Lan <dlan@gentoo.org> -enca-1.18.ebuild:
+  remove old
+
+  Closes: https://github.com/gentoo/gentoo/pull/2340
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+
+*enca-1.19-r1 (20 Sep 2016)
+
+  20 Sep 2016; Yixun Lan <dlan@gentoo.org> -enca-1.19.ebuild,
+  +enca-1.19-r1.ebuild:
+  install missing pkgconfig file in 1.19
+
+  Gentoo-Bug: https://bugs.gentoo.org/594516
+  Closes: https://github.com/gentoo/gentoo/pull/2378
+
+  Package-Manager: portage-2.3.1
+
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+

@@ -112,3 +112,42 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*assimp-3.2-r3 (06 Sep 2016)
+
+  06 Sep 2016; Slawomir Lis <slis@gentoo.org> +assimp-3.2-r3.ebuild:
+  install Findassimp cmake module
+
+  As reported in bug 592892 there is need to install Findassimp.cmake
+  file in target system
+
+  Reported-by: Grygoriy I. Fuchedzhy <grygoriy.fuchedzhy@gmail.com>
+
+  Package-Manager: portage-2.3.0
+
+  06 Sep 2016; Slawomir Lis <slis@gentoo.org> +files/findassimp.patch:
+  included forgotten patch file
+
+  Package-Manager: portage-2.3.0
+
+*assimp-3.3.1 (19 Sep 2016)
+
+  19 Sep 2016; Slawomir Lis <slis@gentoo.org> +assimp-3.3.1.ebuild:
+  version bump to 3.3.1
+
+  Reported in bug 594124. Removes boost use flag, drops findassimp.patch
+
+  Reported-by: Robin Kauffman <robink@creosotehill.org>
+
+  Package-Manager: portage-2.3.0
+
+  26 Sep 2016; Slawomir Lis <slis@gentoo.org> assimp-3.3.1.ebuild,
+  +files/findassimp-3.3.1.patch:
+  patch that fixes Findassimp cmake module path
+
+  In default assimp installation there are hardcoded paths for /usr/local/lib
+  Reported in bug 595066
+
+  Reported-By: Patrick Nicolas <patricknicolas@laposte.net>
+
+  Package-Manager: portage-2.3.1
+

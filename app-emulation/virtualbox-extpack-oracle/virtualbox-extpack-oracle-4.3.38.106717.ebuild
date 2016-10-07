@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils multilib versionator
 
@@ -24,7 +24,7 @@ SRC_URI="http://download.virtualbox.org/virtualbox/${MY_PV}/${MY_P}.vbox-extpack
 
 LICENSE="PUEL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 RESTRICT="mirror strip"
 
@@ -32,7 +32,7 @@ RDEPEND="~app-emulation/virtualbox-${MAIN_PV}"
 
 S="${WORKDIR}"
 
-QA_PREBUILT="/usr/$(get_libdir)/virtualbox/ExtensionPacks/${MY_PN}/.*"
+QA_PREBUILT="/usr/lib*/virtualbox/ExtensionPacks/${MY_PN}/.*"
 
 src_install() {
 	insinto /usr/$(get_libdir)/virtualbox/ExtensionPacks/${MY_PN}

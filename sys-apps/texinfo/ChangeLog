@@ -178,3 +178,41 @@
   15 Jun 2016; Mike Frysinger <vapier@gentoo.org> texinfo-6.1.ebuild:
   mark 6.1 arm64/ia64/m68k/ppc/s390/sh/sparc stable #583794
 
+*texinfo-6.3 (11 Sep 2016)
+
+  11 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> +texinfo-6.3.ebuild:
+  Bump to version 6.3
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  11 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/texinfo-4.13-accentenc-test.patch, -files/texinfo-4.13-docbook.patch,
+  -files/texinfo-4.13-texi2dvi-regexp-range.patch,
+  -files/texinfo-4.13-tinfo.patch, -files/texinfo-4.13-xz.patch,
+  -texinfo-4.13-r2.ebuild, -texinfo-6.0.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*texinfo-6.0 (11 Sep 2016)
+*texinfo-4.13-r2 (11 Sep 2016)
+
+  11 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/texinfo-4.13-accentenc-test.patch, +files/texinfo-4.13-docbook.patch,
+  +files/texinfo-4.13-texi2dvi-regexp-range.patch,
+  +files/texinfo-4.13-tinfo.patch, +files/texinfo-4.13-xz.patch,
+  +texinfo-4.13-r2.ebuild, +texinfo-6.0.ebuild:
+  Revert "sys-apps/texinfo: Removed old."
+
+  This reverts commit f2955742698b6b5eeca932fcc6289b7b60acf3b1.
+
+  Breaks some ebuilds that still depend on old texinfo versions.
+
+  11 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> -texinfo-6.0.ebuild:
+  Removed old without breaking the tree.
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

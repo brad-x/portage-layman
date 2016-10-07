@@ -98,3 +98,50 @@
 
   Package-Manager: portage-2.2.28
 
+*abyss-1.9.0 (18 Sep 2016)
+
+  18 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org> +abyss-1.9.0.ebuild,
+  +files/abyss-1.9.0-ac_prog_ar.patch, +files/abyss-1.9.0-gcc-6.patch:
+  bump up to 1.9.0, tweak for gcc-6, bug #594254
+
+  On gcc-6 build failed as:
+  ```
+      In file included from AssemblyAlgorithms.cpp:4:0:
+      ../DataLayer/FastaReader.h: In member function ‘FastaReader::operator
+  void*() const’:
+      ../DataLayer/FastaReader.h:49:35: error: cannot convert ‘std::istream
+  {aka std::basic_istream<char>}’ to ‘void*’ ...
+         operator void*() const { return m_in; }
+                                         ^~~~
+  ```
+
+  In the following source:
+  ```c++
+     static bool existFile(const char* f)
+     {
+          ifstream file(f);
+          return file;
+     }
+
+  ```
+
+  c++98 provides file->operator void*()
+  c++11 provides file->explicit operator bool()
+
+  Hence the failure on c++11.
+
+  The change adds explicit casts around ifstream.
+
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/594254
+
+  Package-Manager: portage-2.3.0
+
+*abyss-1.9.0-r1 (18 Sep 2016)
+
+  18 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org> -abyss-1.9.0.ebuild,
+  +abyss-1.9.0-r1.ebuild:
+  pin boost subslot, noticed by Soap
+
+  Package-Manager: portage-2.3.0
+

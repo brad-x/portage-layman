@@ -63,3 +63,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*freehdl-0.0.8 (28 Sep 2016)
+
+  28 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/freehdl-0.0.8-fix-c++14.patch, +files/freehdl-0.0.8-qa.patch,
+  +freehdl-0.0.8.ebuild:
+  Version bump to 0.0.8
+
+  Gentoo-bug: 594706
+  * EAPI=6
+  * [QA] fix printf format specifiers
+  * [QA] fix assigning C-string literals to 'char*'
+  * Remove .la files unconditionally
+  * Disable building and installing of static libs
+
+  Package-Manager: portage-2.3.1
+
+  28 Sep 2016; David Seifert <soap@gentoo.org> -freehdl-0.0.7.ebuild:
+  Remove EAPI=0 ebuild
+
+  Package-Manager: portage-2.3.1
+

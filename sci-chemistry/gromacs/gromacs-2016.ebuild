@@ -6,7 +6,7 @@ EAPI=6
 
 CMAKE_MAKEFILE_GENERATOR="ninja"
 
-inherit bash-completion-r1 cmake-utils cuda eutils multilib readme.gentoo-r1 toolchain-funcs
+inherit bash-completion-r1 cmake-utils cuda eutils multilib readme.gentoo-r1 toolchain-funcs xdg-utils
 
 if [[ $PV = *9999* ]]; then
 	EGIT_REPO_URI="git://git.gromacs.org/gromacs.git
@@ -93,6 +93,8 @@ src_prepare() {
 	#notes/todos
 	# -on apple: there is framework support
 
+	xdg_environment_reset #591952
+
 	cmake-utils_src_prepare
 
 	use cuda && cuda_src_prepare
@@ -133,11 +135,17 @@ src_configure() {
 			-DMKL_INCLUDE_DIR="${MKLROOT}/include"
 			-DMKL_LIBRARIES="$(echo /opt/intel/mkl/10.0.5.025/lib/*/libmkl.so);$(echo /opt/intel/mkl/10.0.5.025/lib/*/libiomp*.so)"
 		)
-	elif use mkl; then
+	elif use mkl && has_version "<sci-libs/mkl-11.3"; then
 		local bits=$(get_libdir)
 		fft_opts=( -DGMX_FFT_LIBRARY=mkl
 			-DMKL_INCLUDE_DIR="$(echo /opt/intel/*/mkl/include)"
 			-DMKL_LIBRARIES="$(echo /opt/intel/*/mkl/lib/*${bits/lib}/libmkl_rt.so)"
+		)
+	elif use mkl; then
+		local bits=$(get_libdir)
+		fft_opts=( -DGMX_FFT_LIBRARY=mkl
+			-DMKL_INCLUDE_DIR="$(echo /opt/intel/*/linux/mkl/include)"
+			-DMKL_LIBRARIES="$(echo /opt/intel/*/linux/mkl/lib/*${bits/lib}/libmkl_rt.so)"
 		)
 	else
 		fft_opts=( -DGMX_FFT_LIBRARY=fftpack )

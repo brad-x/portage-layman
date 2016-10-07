@@ -21,7 +21,8 @@ RDEPEND="
 	dev-libs/libltdl:=
 	dev-libs/libunistring
 	sys-devel/libtool
-	sys-libs/ncurses:="
+	sys-libs/ncurses:0=
+	sys-libs/readline:0="
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	sys-apps/texinfo
@@ -30,7 +31,8 @@ DEPEND="${RDEPEND}
 SLOT="12/22" # subslot is soname version
 MAJOR="2.0"
 
-PATCHES=( "${FILESDIR}/${P}-build_includes2.patch" ) #bug 590528 patched by upstream second try
+PATCHES=( "${FILESDIR}/${P}-build_includes2.patch"
+	  "${FILESDIR}/${P}-workaround-ice-ssa-corruption.patch" ) # includes2 bug 590528 patched by upstream, bug 594010
 DOCS=( GUILE-VERSION HACKING README )
 
 src_prepare() {
@@ -48,6 +50,12 @@ src_configure() {
 		--disable-rpath \
 		--enable-posix \
 		--with-modules \
+		--without-libgmp-prefix \
+		--without-libiconv-prefix \
+		--without-libintl-prefix \
+		--without-libltdl-prefix \
+		--without-libreadline-prefix \
+		--without-libunistring-prefix \
 		$(use_enable debug guile-debug) \
 		$(use_enable debug-malloc) \
 		$(use_enable deprecated) \
@@ -63,7 +71,7 @@ src_install() {
 	# From Novell
 	# 	https://bugzilla.novell.com/show_bug.cgi?id=874028#c0
 	dodir /usr/share/gdb/auto-load/$(get_libdir)
-	mv "${D}"/usr/$(get_libdir)/libguile-*-gdb.scm "${D}"/usr/share/gdb/auto-load/$(get_libdir) || die
+	mv "${ED}"/usr/$(get_libdir)/libguile-*-gdb.scm "${ED}"/usr/share/gdb/auto-load/$(get_libdir) || die
 
 	# texmacs needs this, closing bug #23493
 	dodir /etc/env.d

@@ -133,3 +133,31 @@
 
   Package-Manager: portage-2.3.0
 
+  12 Sep 2016; Daniel Campbell <zlg@gentoo.org> files/lighttpd.initd:
+  Fix #454366, own user/group
+
+  Adds support in the initd script for LIGHTTPD_USER and LIGHTTPD_GROUP,
+  which are gleaned from the lighttpd.conf file's relevant variables.
+
+  Thanks Eugene Rosenzweig
+
+  Gentoo-Bug: #454366
+  Gentoo-Bug-URL: https://bugs.gentoo.org/454366
+
+  Package-Manager: portage-2.3.0
+
+*lighttpd-9999 (12 Sep 2016)
+
+  12 Sep 2016; Daniel Campbell <zlg@gentoo.org> +lighttpd-9999.ebuild:
+  Add live ebuild
+
+  The situation with lighttpd is rough; upstream has suggested we wait
+  for 1.4.42 and stabilize it instead. With 1.4.40 and 1.4.41 having
+  known bugs and the extant buggy stable versions, I'm adding a live
+  ebuild to give users a practical solution to their bugs while we wait
+  for a good version to settle on.
+
+  lighttpd-1.4.42 is due in October.
+
+  Package-Manager: portage-2.3.0
+

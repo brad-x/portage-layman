@@ -255,3 +255,126 @@
   16 Aug 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Transfer maintenance to LLVM project
 
+*clang-9999 (22 Aug 2016)
+
+  22 Aug 2016; Michał Górny <mgorny@gentoo.org> +clang-9999.ebuild,
+  -clang-9999-r100.ebuild,
+  +files/9999/0001-cmake-Add-ordering-dep-between-HTML-Sphinx-docs-and-.patch,
+  +files/9999/0002-driver-Support-obtaining-active-toolchain-from-gcc-c.patch,
+  +files/9999/0003-driver-Support-checking-for-rlimits-via-cmake-when-b.patch,
+  +files/9999/0004-cmake-Adjust-llvm-lit-search-to-match-the-one-in-LLV.patch,
+  +files/9999/0005-cmake-Supporting-overriding-runtime-libdir-via-CLANG.patch,
+  +files/9999/0006-cmake-Add-CLANG_GOLD_LIBDIR_SUFFIX-to-specify-loc-of.patch,
+  +files/9999/0007-cmake-Support-stand-alone-Sphinx-doxygen-doc-build.patch,
+  metadata.xml:
+  Enable stand-alone builds against sys-devel/llvm
+
+  23 Aug 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild,
+  -files/9999/0003-driver-Support-checking-for-rlimits-via-cmake-when-b.patch:
+  rlimits check patch has been applied upstream
+
+*clang-3.9.0_rc3-r100 (28 Aug 2016)
+
+  28 Aug 2016; Michał Górny <mgorny@gentoo.org> +clang-3.9.0_rc3-r100.ebuild:
+  Bump to 3.9.0rc3
+
+  29 Aug 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Fetch llvm src with USE=test, to support unittests
+
+  29 Aug 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Fix cmake unused arg warnings with USE=-doc
+
+  02 Sep 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild,
+  -files/9999/0004-cmake-Adjust-llvm-lit-search-to-match-the-one-in-LLV.patch:
+  Remove unnecessary llvm-lit search patch
+
+  Remove the llvm-lit search patch since it is no longer necessary and its
+  correctness is doubtful. Per https://reviews.llvm.org/D23743 the name
+  llvm-lit is not intended for system-wide install of lit. However, this
+  does not matter since the internal copy of lit is used when LLVM source
+  checkout is available, and unittests require this checkout to be
+  available when running tests.
+
+*clang-3.9.0-r100 (03 Sep 2016)
+
+  03 Sep 2016; Michał Górny <mgorny@gentoo.org> -clang-3.9.0_rc3-r100.ebuild,
+  +clang-3.9.0-r100.ebuild:
+  Bump to 3.9.0
+
+*clang-3.4.2-r100 (10 Sep 2016)
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org> +clang-3.4.2-r100.ebuild:
+  restore clang-3.4.2 for Prefix bootstraps, bug #588132
+
+  Package-Manager: portage-2.2.28
+
+  10 Sep 2016; Fabian Groffen <grobian@gentoo.org> clang-3.4.2-r100.ebuild,
+  clang-3.5.0-r100.ebuild, clang-3.5.2-r100.ebuild, clang-3.6.2-r100.ebuild,
+  clang-3.7.1-r100.ebuild, clang-3.8.0-r100.ebuild, clang-3.8.1-r100.ebuild,
+  clang-3.9.0-r100.ebuild:
+  marked ~x86-macos
+
+  Package-Manager: portage-2.2.28
+
+*clang-3.9.0-r101 (20 Sep 2016)
+
+  20 Sep 2016; Michał Górny <mgorny@gentoo.org> -clang-3.9.0-r100.ebuild,
+  +clang-3.9.0-r101.ebuild:
+  Fix subslot, reported by tamiko
+
+*clang-3.9.0-r100 (20 Sep 2016)
+
+  20 Sep 2016; Michał Górny <mgorny@gentoo.org> +clang-3.9.0-r100.ebuild,
+  -clang-3.9.0-r101.ebuild:
+  Un-bump the newest rev to satisfy LLVM deps
+
+  23 Sep 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Update for the Sphinx install dir patch applied upstream
+
+  26 Sep 2016; Michał Górny <mgorny@gentoo.org>
+  files/9999/0002-driver-Support-obtaining-active-toolchain-from-gcc-c.patch:
+  Fix the gcc-config patch not to break --gcc-toolchain
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Use LLVM_TARGETS flags
+
+  29 Sep 2016; Michał Górny <mgorny@gentoo.org> clang-3.9.0-r100.ebuild:
+  Backport LLVM_TARGETS to 3.9.0
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Always install wrappers for all ABIs
+
+  Install wrappers for all ABIs supported by the current profile rather
+  than explicitly enabled via ABI_* flags. This makes them more consistent
+  with ABIs supported by the compiler (it always supports all ABIs for
+  the target) and avoids enforcing [${MULTILIB_USEDEP}] when you just need
+  the wrappers (e.g. in tests of sys-libs/libcxx).
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Remove leftover "use clang" on BSD
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Use installed lit for tests
+
+  02 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Use target symlinks instead of wrappers
+
+  Create symlinks for ABI targets instead of wrappers since clang already
+  processes target prefixes in argv[0].
+
+  02 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Wrap the new clang-cpp symlink, #478810
+
+  03 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Add PDEP on sys-devel/clang-runtime meta
+
+  03 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Remove stale libomp check, it is PDEP now
+
+  04 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild,
+  -files/9999/0001-cmake-Add-ordering-dep-between-HTML-Sphinx-docs-and-.patch:
+  Sphinx race conditions fixed upstream
+
+  04 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  cross-linux test was solved already
+

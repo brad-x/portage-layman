@@ -198,3 +198,36 @@
   Package-Manager: portage-2.3.0
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*freetype-2.7 (08 Sep 2016)
+
+  08 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/freetype-2.7-enable-valid.patch, +freetype-2.7.ebuild:
+  Bump to version 2.7
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*freetype-2.7-r1 (17 Sep 2016)
+
+  17 Sep 2016; Lars Wendler <polynomial-c@gentoo.org> -freetype-2.7.ebuild,
+  +freetype-2.7-r1.ebuild:
+  Revbump to really disable cleartype_hinter (bug #593700).
+
+  Package-Manager: portage-2.3.0
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*freetype-2.7-r2 (30 Sep 2016)
+
+  30 Sep 2016; Mike Gilbert <floppym@gentoo.org> -freetype-2.7-r1.ebuild,
+  +freetype-2.7-r2.ebuild:
+  avoid redefining TT_CONFIG_OPTION_SUBPIXEL_HINTING
+
+  Adjust the enable_option function to remvoe comments instead of appending an
+  additional line. This should resolve a build failure in sys-boot/grub.
+
+  Also allow both cleartype and infinality to be enabled simultaneously, as
+  documented in ftoption.h.
+
+  Bug: https://bugs.gentoo.org/595558
+  Package-Manager: portage-2.3.1_p4_p550764
+

@@ -58,3 +58,16 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  19 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/libcult-1.4.6-cpp14.patch, libcult-1.4.6-r1.ebuild:
+  fix cpp14 compilation; bug 593928
+
+   * remove throw specificator in operator new declaration when compilation
+     is performed using standard >= C++11
+   * add cast from normal iterator to const iterator in one place
+
+  Gentoo bug: https://bugs.gentoo.org/show_bug.cgi?id=593928
+  Closes: https://github.com/gentoo/gentoo/pull/2357
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+

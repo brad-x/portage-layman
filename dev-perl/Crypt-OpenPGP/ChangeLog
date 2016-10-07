@@ -101,3 +101,37 @@
 
   Package-Manager: portage-2.2.27
 
+*Crypt-OpenPGP-1.120.0 (04 Sep 2016)
+
+  04 Sep 2016; Kent Fredric <kentnl@gentoo.org> +Crypt-OpenPGP-1.120.0.ebuild,
+  metadata.xml:
+  Bump to version 1.120.0
+
+  - EAPI6
+  - Fix LICENSE
+
+  Upstream:
+  - Remove hard dependency on Math::Pari
+  - Use Digest::SHA instead of Digest::SHA1
+  - Update GnuPG defaults
+  - Fix error propagation when generating RSA key
+  - Avoid truncating encrypted packet when data looks "falsey"
+  - Propagate errors when Ciphers fail construction
+  - Added NoVersion parameter to ::Armour to avoid version header
+
+  Todo:
+  - Upstream indicated to use Alt::Crypt::RSA, but this
+    implementation clashes with Crypt::RSA using the same files
+    and pulls in a lot of modules. Crypt::RSA retained because
+    its still compatible.
+  - Apparent Soft-Deps on Crypt::Random and friends, omitted
+    until a sane way to handle them is found.
+
+  Package-Manager: portage-2.3.0
+
+  12 Sep 2016; Kent Fredric <kentnl@gentoo.org> Crypt-OpenPGP-1.70.0.ebuild,
+  Crypt-OpenPGP-1.120.0.ebuild:
+  Fix dependency on dev-perl/Data-Buffer
+
+  Package-Manager: portage-2.3.0
+

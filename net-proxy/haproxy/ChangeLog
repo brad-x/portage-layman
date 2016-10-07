@@ -183,3 +183,73 @@
 
   Package-Manager: portage-2.3.0
 
+*haproxy-1.6.9 (28 Sep 2016)
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> -haproxy-1.6.8.ebuild,
+  +haproxy-1.6.9.ebuild:
+  Version bump
+
+  Move to EAPI 6
+  Replace dodoc with DOCS
+  Use EROOT instead of ROOT
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> haproxy-9999.ebuild:
+  Move to EAPI 6 and git-r3
+
+  Sync live ebuild with 1.6.9
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> haproxy-1.6.9.ebuild,
+  haproxy-9999.ebuild:
+  Simplify src_compile() by using REQUIRED_USE
+
+  We can avoid nested `if use' by making pcre USE flag mandatory if pcre-jit
+  USE flag is selected
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> haproxy-1.6.9.ebuild,
+  haproxy-9999.ebuild:
+  Use an array to define emake arguments
+
+  It makes the code more clear and avoid duplication
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> haproxy-1.6.9.ebuild,
+  haproxy-9999.ebuild:
+  Define haproxy_use() to condence emake arguments creation
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+
+  28 Sep 2016; Christian Ruppert <idl0r@gentoo.org> haproxy-1.6.9.ebuild,
+  haproxy-9999.ebuild, metadata.xml:
+  Introduce USE=slz
+
+  USE=zlib stay the default one in order to avoid users to have to
+  manually satisfy USE flag constraints since USE=zlib and USE=slz are
+  mutually exclusive.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2293
+
+  Signed-off-by: Christian Ruppert <idl0r@gentoo.org>
+

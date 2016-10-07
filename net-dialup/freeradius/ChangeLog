@@ -135,3 +135,38 @@
   30 Jun 2016; Aaron Bauman <bman@gentoo.org> -freeradius-2.2.5-r1.ebuild:
   cleanup vulnerable versions per security bug #553308.
 
+  20 Sep 2016; Kent Fredric <kentnl@gentoo.org> freeradius-2.2.9-r1.ebuild,
+  freeradius-3.0.11-r1.ebuild:
+  Needs rebuild on Perl Subslot change.
+
+  Has .so's that link against libperl and need subsequent rebuilding
+  by perl-cleaner without subslot deps.
+
+  Bug: https://bugs.gentoo.org/594198
+
+  Package-Manager: portage-2.3.0
+
+*freeradius-3.0.11-r2 (20 Sep 2016)
+*freeradius-2.2.9-r2 (20 Sep 2016)
+
+  20 Sep 2016; Kent Fredric <kentnl@gentoo.org> -freeradius-2.2.9-r1.ebuild,
+  +freeradius-2.2.9-r2.ebuild, -freeradius-3.0.11-r1.ebuild,
+  +freeradius-3.0.11-r2.ebuild:
+  Revbump for bug #594198
+
+  This is to forcefully propagate the RDEPEND change
+  to ensure this will work on future perl upgrades.
+
+  Bug: https://bugs.gentoo.org/594198
+
+  Package-Manager: portage-2.3.0
+
+*freeradius-3.0.12 (30 Sep 2016)
+
+  30 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +freeradius-3.0.12.ebuild:
+  Bump to version 3.0.12
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

@@ -70,3 +70,27 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*xdmf2-1.0_p141226-r2 (03 Sep 2016)
+
+  03 Sep 2016; David Seifert <soap@gentoo.org>
+  +files/xdmf2-1.0_p141226-cannot-find-hdf5-bug-591302.patch,
+  +xdmf2-1.0_p141226-r2.ebuild:
+  Remove heuristics to help detect HDF5_ROOT
+
+  Gentoo-bug: 591302
+  * EAPI=6
+  * Add missing RDEPEND on dev-libs/boost
+  * Add ${PYTHON_REQUIRED_USE} to REQUIRED_USE
+  * [QA] Byte-compile XdmfCore.py and Xdmf.py
+  * Thanks to Michael Palimaka <kensington@gentoo.org> for
+    helping to identify the culprit
+
+  Package-Manager: portage-2.3.0
+
+  04 Sep 2016; David Seifert <soap@gentoo.org> xdmf2-1.0_p141226-r2.ebuild:
+  Call 'python_optimize' only when USE=python
+
+  Gentoo-bug: 592848
+
+  Package-Manager: portage-2.3.0
+

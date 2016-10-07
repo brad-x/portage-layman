@@ -419,3 +419,223 @@
   Package-Manager: portage-2.3.0
   Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
 
+*openssh-7.3_p1-r2 (27 Aug 2016)
+
+  27 Aug 2016; Patrick McLean <chutzpah@gentoo.org> +openssh-7.3_p1-r2.ebuild:
+  Revision bump to update X509 patch to version 9.1
+
+  Package-Manager: portage-2.3.0
+
+*openssh-7.3_p1-r3 (02 Sep 2016)
+
+  02 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/openssh-7.3_p1-hpn-update.patch,
+  +files/openssh-7.3_p1-hpn-x509-glue.patch, +openssh-7.3_p1-r3.ebuild:
+  Revision bump, re-enable the hpn USE flag
+
+  This is hard masked for now for further testing, see bug #577768, All
+  the tests pass on all of my machines with USE="hpn" and USE="hpn X509".
+
+  Since there does not appear to be a tarball for the upstream hpn for
+  openssh-7.2+, this ebuild downloads the kitchensink diff, then patches
+  it to apply against openssh-7.3p1 and remove the server logging stuff
+  that get dropped from other hpn patchsets.
+
+  We can unmask this once more people test it and sign off that is looks good.
+
+  Package-Manager: portage-2.3.0
+
+  07 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Update hpn update patch to add fix for deadlock
+
+  Package-Manager: portage-2.3.0
+
+  07 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Update hpn patch in another attempt to fix the deadlock being seen on OSX
+
+  Package-Manager: portage-2.3.0
+
+  07 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Add a workaround to HPN for the OSX threading implemntation
+
+  The MT AES-CTR has a section of code that compares the currently running
+  thread's
+  thread id with the first thread created. It seems on OSX, the first thread
+  will
+  sometimes run before the thread ID is filled in (hence is zero), so this
+  test
+  will fail, and the initialization code does not get run. This makes the test
+  also check if the thread ID of the first thread is 0, and run the
+  initialization
+  code in that case as well.
+
+  Package-Manager: portage-2.3.0
+
+  07 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Final fix for deadlocks in the CTR-MT cipher
+
+  Package-Manager: portage-2.3.0
+
+  07 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch, openssh-7.3_p1-r3.ebuild:
+  Update hpn patch to remove another theoretic race
+
+  Package-Manager: portage-2.3.0
+
+  08 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Update patch to avoid hangs at exit
+
+  Package-Manager: portage-2.3.0
+
+  08 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-update.patch:
+  Make hpn patch in 7.3_p1 reliable on all platforms
+
+  Package-Manager: portage-2.3.0
+
+  09 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/openssh-7.3_p1-hpn-cipher-ctr-mt-no-deadlocks.patch,
+  -files/openssh-7.3_p1-hpn-update.patch,
+  files/openssh-7.3_p1-hpn-x509-glue.patch, openssh-7.3_p1-r3.ebuild:
+  Refactor new HPN patch to be it's own patch
+
+  Make my own patch rather than going with the patches on patches approach
+
+  Package-Manager: portage-2.3.0
+
+  09 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-cipher-ctr-mt-no-deadlocks.patch:
+  Update the ctr-mt patch to the final version upstream
+
+  Package-Manager: portage-2.3.0
+
+  09 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  files/openssh-7.3_p1-hpn-cipher-ctr-mt-no-deadlocks.patch:
+  Minor bugfix in 7.3_p1-r1 for OSX
+
+  Package-Manager: portage-2.3.0
+
+*openssh-7.3_p1-r4 (13 Sep 2016)
+
+  13 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/openssh-7.3_p1-fix-segfault-with-x509.patch,
+  +openssh-7.3_p1-r4.ebuild:
+  Revision bump, add a patch to fix a bug in the X509 patch
+
+  The X509 patch would segfault when connecting to a server that had a X509
+  host key and was in the known_hosts file due to an uninitialized variable.
+  This adds a patch to fix the problem.
+
+  Package-Manager: portage-2.3.0
+
+  14 Sep 2016; Patrick McLean <chutzpah@gentoo.org> openssh-7.3_p1-r4.ebuild:
+  Fix compile failure with USE="-hpn X509 sctp"
+
+  Gentoo-Bug: 593704
+
+  Package-Manager: portage-2.3.0
+
+*openssh-7.3_p1-r5 (20 Sep 2016)
+
+  20 Sep 2016; Patrick McLean <chutzpah@gentoo.org>
+  +files/openssh-7.3-mips-seccomp-n32.patch,
+  +files/openssh-7.3_p1-fix-ssh1-with-no-ssh1-host-key.patch,
+  +files/openssh-7.3_p1-hpn-x509-9.2-glue.patch,
+  +files/openssh-7.3_p1-x509-9.2-warnings.patch, +openssh-7.3_p1-r5.ebuild:
+  Revision bump, update to version 9.2 of the X509 patch
+
+  - Clean up some warnings introduced by the X509 patch
+  - Add patch to fix compilation on MIPS64/N32 (bug #591392)
+  - Pull in patch from upstream cvs to fix ssh1 support (bug #592122)
+
+  Also bump the HPN patch to remove an unused function
+
+  Package-Manager: portage-2.3.1
+
+*openssh-7.3_p1-r6 (28 Sep 2016)
+
+  28 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/openssh-7.3_p1-NEWKEYS_null_deref.patch, +openssh-7.3_p1-r6.ebuild:
+  Sec-revbump to fix remote pre-auth crash (bug #595342).
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  28 Sep 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -files/openssh-4.7_p1-GSSAPI-dns.patch,
+  -files/openssh-6.8_p1-ssl-engine-configure.patch,
+  -files/openssh-7.0_p1-sctp-x509-glue.patch,
+  -files/openssh-7.1_p2-x509-hpn14v10-glue.patch,
+  -files/openssh-7.3_p1-fix-segfault-with-x509.patch,
+  -openssh-7.1_p2-r1.ebuild, -openssh-7.3_p1.ebuild,
+  -openssh-7.3_p1-r1.ebuild, -openssh-7.3_p1-r2.ebuild,
+  -openssh-7.3_p1-r3.ebuild, -openssh-7.3_p1-r4.ebuild:
+  Removed old.
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+  28 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  amd64 stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  x86 stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  28 Sep 2016; Fabian Groffen <grobian@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  added Prefix keywords
+
+  Package-Manager: portage-2.2.28
+
+  29 Sep 2016; Jeroen Roovers <jer@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  Stable for HPPA PPC64 (bug #595342).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+
+  29 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  openssh-7.3_p1-r6.ebuild:
+  7.3_p1-r6: stable on alpha
+
+  Gentoo-Bug: 595342
+
+  29 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  sparc stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="sparc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  29 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  ppc stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ppc"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  29 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  arm stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="arm"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  29 Sep 2016; Agostino Sarubbo <ago@gentoo.org> openssh-7.3_p1-r6.ebuild:
+  ia64 stable wrt bug #595342
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="ia64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

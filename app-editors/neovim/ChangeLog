@@ -209,3 +209,30 @@
 
   Package-Manager: portage-2.3.0_rc1
 
+*neovim-0.1.5 (22 Aug 2016)
+
+  22 Aug 2016; Ole Reifschneider <tranquility@gentoo.org>
+  +neovim-0.1.5.ebuild, neovim-9999.ebuild:
+  Bump to 0.1.5
+
+  Package-Manager: portage-2.3.0
+
+*neovim-0.1.5-r1 (27 Aug 2016)
+
+  27 Aug 2016; Ole Reifschneider <tranquility@gentoo.org> metadata.xml,
+  +neovim-0.1.5-r1.ebuild, neovim-9999.ebuild:
+  Readjust dependencies
+
+  luajit is no longer a hard dependency, so we can depend on either
+  dev-lang/luajit, or dev-lang/lua
+
+  the perl support was erroneous, given that there is no perl client yet.
+
+  the tui is now optional, so other ui's can be used instead.
+
+  Add a clipboard use flag so neovim can copy to the clipboard.
+
+  Update to EAPI=6.
+
+  Signed-off-by: Ole Reifschneider <tranquility@gentoo.org>
+

@@ -151,3 +151,51 @@
 
   Package-Manager: portage-2.2.27
 
+  18 Feb 2016; Patrick Lauer <patrick@gentoo.org> flake8-2.5.4.ebuild:
+  Fix mccabe dep
+
+  Package-Manager: portage-2.2.27
+
+*flake8-3.0.4 (06 Sep 2016)
+
+  06 Sep 2016; Tobias Klausmann <klausman@gentoo.org> +flake8-3.0.4.ebuild:
+  dev-python/{mccabe,flake8}: Version bump and fixes
+
+  This version of flake8 now depends on the recently-added pycodestyle.
+  Also, I changed the way the test suite is run to avoid a name collision.
+
+  06 Sep 2016; Tobias Klausmann <klausman@gentoo.org> flake8-3.0.4.ebuild:
+  make blockers revbump-tolerant and drop PY_USEDEP
+
+  07 Sep 2016; Tobias Klausmann <klausman@gentoo.org> flake8-3.0.4.ebuild:
+  Stop build from trying to install pytest-runner
+
+  The build system unconditionally requires pytest-runner, which we may
+  not install (if test is not in FEATURES). I then "helpfully" tries to
+  install it, causing sandbox violations.
+
+*flake8-3.0.4-r1 (09 Sep 2016)
+
+  09 Sep 2016; Tobias Klausmann <klausman@gentoo.org> -flake8-3.0.4.ebuild,
+  +flake8-3.0.4-r1.ebuild:
+  add missing dep on d-p/configparser
+
+*flake8-3.0.4-r2 (22 Sep 2016)
+
+  22 Sep 2016; Brian Dolbec <dolsen@gentoo.org> -flake8-3.0.4-r1.ebuild,
+  +flake8-3.0.4-r2.ebuild:
+  Fix incorrect mccage dep in DEPEND
+
+  This is causing a conflict with itself with FEATURES=test enabled.
+  I discovered this conflict attempting to bump dev-python/treq.
+  Also, with this correction, there is one test failure:
+
+  >       assert parsed_config['ignore'] == ['E123', 'W234', 'E111']
+  E       assert ['# Disable E...e E111\nE111'] == ['E123', 'W234', 'E111']
+  E         At index 0 diff: '# Disable E123\nE123' != 'E123'
+  E         Use -v to get the full diff
+
+  tests/unit/test_merged_config_parser.py:201: AssertionError
+
+  Package-Manager: portage-2.3.1_p4
+

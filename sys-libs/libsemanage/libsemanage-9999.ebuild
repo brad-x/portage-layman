@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python{2_7,3_4,3_5} )
 inherit multilib python-r1 toolchain-funcs multilib-minimal
 
 MY_P="${P//_/-}"
-MY_RELEASEDATE="20160223"
+MY_RELEASEDATE="20160930"
 
 SEPOL_VER="${PV}"
 SELNX_VER="${PV}"
@@ -72,10 +72,6 @@ src_prepare() {
 	echo "# decompression of modules in the module store." >> "${S}/src/semanage.conf"
 	echo "bzip-small=true" >> "${S}/src/semanage.conf"
 
-	if [[ ${PV} != 9999 ]] ; then
-		# If wanted for live builds, please use /etc/portage/patches
-		eapply "${FILESDIR}/0001-libsemanage-do-not-copy-contexts-in-semanage_migrate.patch"
-	fi
 	eapply "${FILESDIR}"/${PN}-2.6-build-paths.patch
 
 	eapply_user

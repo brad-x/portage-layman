@@ -7,7 +7,7 @@ EAPI="5"
 inherit java-vm-2 multilib-build prefix toolchain-funcs
 
 MULTILIB_COMPAT=( abi_x86_{32,64} )
-KEYWORDS="-* amd64 ~x86"
+KEYWORDS="-* amd64 x86"
 
 BASE_URI="https://dev.gentoo.org/~chewi/distfiles"
 SRC_URI="doc? ( ${BASE_URI}/${PN}-doc-${PV}.tar.xz )
@@ -116,8 +116,8 @@ src_prepare() {
 		# The binaries are built on a non-prefixed system so the
 		# fontconfig needs to have prefixes inserted.
 		rm ${lib}/fontconfig.Gentoo.bfc || die
-		mv ${lib}/fontconfig.Gentoo.properties{.src,} || die
 		hprefixify ${lib}/fontconfig.Gentoo.properties.src
+		mv ${lib}/fontconfig.Gentoo.properties{.src,} || die
 	fi
 
 	# Fix the RPATHs, except on arm.

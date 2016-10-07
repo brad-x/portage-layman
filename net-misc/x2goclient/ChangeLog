@@ -83,3 +83,17 @@
 
   Package-Manager: portage-2.2.28
 
+*x2goclient-4.0.5.2 (28 Sep 2016)
+
+  28 Sep 2016; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/x2goclient-4.0.5.2-rcc_to_qrc.patch, +x2goclient-4.0.5.2.ebuild:
+  version bump to 0.4.5.2, add qt5 support
+
+  Thanks kensington for tracking down a resources bundling problem
+  in the qt5 build:
+  rcc is the compiled version of qrc, so it looks like for some reason
+  qmake5 assumes the rcc files are already compiled, and bundles them
+  as-is instead of processing them
+
+  Package-Manager: portage-2.3.1
+

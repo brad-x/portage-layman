@@ -78,3 +78,22 @@
 
   Package-Manager: portage-2.2.26
 
+*capifwd-0.6.3-r3 (24 Aug 2016)
+
+  24 Aug 2016; Michael Orlitzky <mjo@gentoo.org> -capifwd-0.6.3-r2.ebuild,
+  +capifwd-0.6.3-r3.ebuild, +files/capifwd-0.6.3-amd64-r1.patch,
+  +files/capifwd-0.6.3-r1.patch:
+  new revision sans eutils.eclass.
+
+  Now that the latest revision uses EAPI=6, the eutils eclass (no longer
+  needed) has been dropped. The autotools eclass looked like it could go
+  too, but the eautoreconf is actually present to fix a QA warning (not
+  because we patch e.g. configure.ac) so I added a comment to that
+  effect.
+
+  To make PATCHES work, I revisioned the two patches to be -p1
+  compatible. The src_prepare and src_install phases now take advantage
+  of "default" and are a tiny bit simpler.
+
+  Package-Manager: portage-2.2.28
+

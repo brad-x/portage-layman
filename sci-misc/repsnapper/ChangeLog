@@ -77,3 +77,32 @@
 
   Package-Manager: portage-2.2.28
 
+  19 Sep 2016; Slawomir Lis <slis@gentoo.org> repsnapper-2.4a_p0.ebuild,
+  repsnapper-9999.ebuild:
+  updated deps to use correct libxmlpp slot
+
+  As reported in bug 594324 repsnapper is not compatible with latest
+  libxmlpp-3.0
+  There is a need to use explicit slot to solve this problem
+
+  Reported-By: Toralf Förster <toralf.foerster@gmx.de>
+
+  Package-Manager: portage-2.3.0
+
+  19 Sep 2016; Slawomir Lis <slis@gentoo.org> -repsnapper-2.2.0b_p3.ebuild:
+  dropped oldest version 2.2.0b_p3
+
+  Package-Manager: portage-2.3.0
+
+  21 Sep 2016; Slawomir Lis <slis@gentoo.org> +files/std_abs.patch,
+  repsnapper-2.4a_p0.ebuild, repsnapper-9999.ebuild:
+  Added patch to fix compilation error with newer gcc
+
+  This bug is issued in newer gcc's because of abs() method is moved into
+  std namespace. Added a patch to fix the issue.
+  Reported in bug 594474
+
+  Reported-By: Toralf Förster <toralf.foerster@gmx.de>
+
+  Package-Manager: portage-2.3.0
+

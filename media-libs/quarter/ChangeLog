@@ -57,3 +57,26 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+  27 Aug 2016; Sergei Trofimovich <slyfox@gentoo.org> quarter-1.0.0-r1.ebuild:
+  add missing dev-qt/designer:4 depend, bug #584216
+
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/584216
+
+  Package-Manager: portage-2.3.0
+
+  27 Aug 2016; Sergei Trofimovich <slyfox@gentoo.org> quarter-1.0.0-r1.ebuild:
+  fix GL underlinking, bug #369967
+
+  Before the change shared library had undefined
+  glEnable() symbol. Easy to test as:
+      $ LDFLAGS="-Wl,--no-undefined" emerge -1 quarter
+      .libs/libQuarter_la-QuarterWidget.o: In function
+  `SIM::Coin3D::Quarter::QuarterWidget::initializeGL()':
+      QuarterWidget.cpp:(.text+0xac6): undefined reference to `glEnable'
+
+  Reported-by: Diego Elio Pettenò
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=369967
+
+  Package-Manager: portage-2.3.0
+

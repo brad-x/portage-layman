@@ -76,3 +76,20 @@
 
   Package-Manager: portage-2.2.27
 
+*aften-0.0.8-r2 (05 Sep 2016)
+
+  05 Sep 2016; Michael Orlitzky <mjo@gentoo.org> -aften-0.0.8-r1.ebuild,
+  +aften-0.0.8-r2.ebuild, +files/aften-0.0.8-no-static-aften.patch:
+  new revision with dynamically-linked executable.
+
+  This new revision includes a tiny patch from Gentoo user Ihar
+  Hrachyshka. The upstream build system defaults to building a target
+  called "aften_static", and all we need to do is change that to "aften"
+  to get the dynamically-linked version.
+
+  Non-maintainer commit with permission from David Seifert (soap).
+
+  Gentoo-Bug: 258397
+
+  Package-Manager: portage-2.2.28
+

@@ -57,3 +57,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*libclsync-0.4.2 (30 Sep 2016)
+
+  30 Sep 2016; Andrew Savchenko <bircoph@gentoo.org> +libclsync-0.4.2.ebuild:
+  version bump
+
+  Bump to 0.4.2, update ebuild to EAPI 6.
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+
+  30 Sep 2016; Andrew Savchenko <bircoph@gentoo.org> libclsync-0.4.2.ebuild:
+  remove dependency on app-admin/clsync
+
+  It is rare, but still valid use case to use libclsync when clsync
+  is not installed on the host (or lacks socket control support):
+  socket can be passed from another host/container via shared file
+  system, or can be converted to udp using socat.
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Andrew Savchenko <bircoph@gentoo.org>
+

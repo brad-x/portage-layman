@@ -140,3 +140,60 @@
   -files/run-crons-0.3.6:
   drop old <0.3.7 versions
 
+*cronbase-0.3.7-r2 (30 Sep 2016)
+
+  30 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  -cronbase-0.3.7-r1.ebuild, +cronbase-0.3.7-r2.ebuild, files/run-crons-0.3.7:
+  avoid bash complaining about null bytes
+
+  Newer versions of bash warn about null bytes in command substitutions,
+  so run-crons would generate mails with messages like this:
+
+  /usr/sbin/run-crons: line 59: warning: command substitution: ignored null
+  byte in input
+  /usr/sbin/run-crons: line 59: warning: command substitution: ignored null
+  byte in input
+  /usr/sbin/run-crons: line 60: warning: command substitution: ignored null
+  byte in input
+  /usr/sbin/run-crons: line 60: warning: command substitution: ignored null
+  byte in input
+
+  Since the warning is not useful and the resultant string has its null
+  bytes deleted, we might as well delete them with tr and get rid of the
+  warning.
+
+*cronbase-0.3.7-r3 (30 Sep 2016)
+
+  30 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  -cronbase-0.3.7-r2.ebuild, +cronbase-0.3.7-r3.ebuild, files/run-crons-0.3.7:
+  second attempt at fixing bug 595492
+
+  In the case of a stale lockfile, the old code still produces error
+  messages:
+
+  /usr/sbin/run-crons: line 61: /proc/6450/cmdline: No such file or
+  directory
+
+  This change should dodge that scenario.
+
+*cronbase-0.3.7-r4 (02 Oct 2016)
+
+  02 Oct 2016; Tobias Klausmann <klausman@gentoo.org>
+  -cronbase-0.3.7-r3.ebuild, +cronbase-0.3.7-r4.ebuild, files/run-crons-0.3.7:
+  More fixes
+
+  The tr approach is racy, even with the test -r before it. Since tr can't
+  be told to read from a file and we can't redirect the subshell's warning
+  message, switch to sed and a file argument, then redirect stderr of
+  that.
+
+*cronbase-0.3.7-r5 (03 Oct 2016)
+
+  03 Oct 2016; Tobias Klausmann <klausman@gentoo.org>
+  -cronbase-0.3.7-r4.ebuild, +cronbase-0.3.7-r5.ebuild, files/run-crons-0.3.7:
+  Fix the parall-job check once and for all.
+
+  Thanks to Dan Goodliffe for suggesting this approach.
+
+  Gentoo-Bug: 595492
+

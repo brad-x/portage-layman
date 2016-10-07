@@ -80,3 +80,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*libcmatrix-3.11.0-r1 (25 Sep 2016)
+
+  25 Sep 2016; David Seifert <soap@gentoo.org> -files/3.11.0-shared.patch,
+  -files/3.2.1-atlas.patch, -files/3.2.1-gcc4.4.patch,
+  -files/3.2.1-gcc4.6.patch, -files/3.2.1-gcc4.7.patch,
+  -files/3.2.1-minuit2.patch, -files/3.2.1-shared.patch,
+  -files/3.9.0-atlas.patch, +files/libcmatrix-3.11.0-fix-c++14.patch,
+  +files/libcmatrix-3.11.0-shared.patch, +files/libcmatrix-3.2.1-atlas.patch,
+  +files/libcmatrix-3.2.1-gcc4.4.patch, +files/libcmatrix-3.2.1-gcc4.6.patch,
+  +files/libcmatrix-3.2.1-gcc4.7.patch, +files/libcmatrix-3.2.1-minuit2.patch,
+  +files/libcmatrix-3.2.1-shared.patch, +files/libcmatrix-3.9.0-atlas.patch,
+  -libcmatrix-3.11.0.ebuild, +libcmatrix-3.11.0-r1.ebuild:
+  Allow for compiling with GCC 6
+
+  Gentoo-bug: 594680
+  * EAPI=6
+  * Make PATCHES -p1 compliant
+  * Rename PATCHES to be in ${P}-xyz.patch format
+
+  Package-Manager: portage-2.3.1
+

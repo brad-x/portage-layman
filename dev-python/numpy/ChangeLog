@@ -321,3 +321,41 @@
   Package-Manager: portage-2.2.27
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+*numpy-1.11.0 (22 Aug 2016)
+
+  22 Aug 2016; David Seifert <soap@gentoo.org> +numpy-1.11.0.ebuild:
+  version bump to 1.11.0
+
+  Gentoo-Bug: 580790
+  Also bump to EAPI version 6
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2108
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*numpy-1.11.1 (30 Aug 2016)
+
+  30 Aug 2016; David Seifert <soap@gentoo.org>
+  +files/numpy-1.11.1-no-hardcode-blas.patch, -numpy-1.11.0.ebuild,
+  +numpy-1.11.1.ebuild:
+  Version bump
+
+  Gentoo-bug: 590464, 591936
+  * Re-add py3.3 support to prevent depgraph breakage
+  * Fix QA bug installing non-compiled files #590464
+  * Fix linking due to adding unnecessary -lblas to
+    build system #591936
+  * Move dev-python/setuptools to DEPEND instead of
+    RDEPEND
+
+  Package-Manager: portage-2.3.0
+
+  30 Aug 2016; Mike Gilbert <floppym@gentoo.org> numpy-1.11.1.ebuild:
+  disable "fix" for bug 590464
+
+  It's not clear what is creating the pyc files, and this is a pretty bad
+  hack around it.
+
+  Package-Manager: portage-2.3.0_p22
+

@@ -17,3 +17,38 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+  16 Sep 2016; James Le Cuirot <chewi@gentoo.org> metadata.xml:
+  Add myself as co-maintainer
+
+  Package-Manager: portage-2.3.0
+
+*rhash-1.3.3-r1 (16 Sep 2016)
+
+  16 Sep 2016; James Le Cuirot <chewi@gentoo.org> metadata.xml,
+  -rhash-1.3.3.ebuild, +rhash-1.3.3-r1.ebuild:
+  Install libs, respect flags, nls, openssl, tests
+
+  * Install the shared and (optionally) static libraries.
+  * Multilib support for the libraries.
+  * Respect CC, CFLAGS, LDFLAGS.
+  * gettext support via nls flag.
+  * Additional hash support via openssl.
+  * Passing test suite.
+  * Disable debug by default.
+
+  These changes were made with sbraz's blessing. Thanks to Raimonds
+  Cicans for the initial work behind this.
+
+  Package-Manager: portage-2.3.0
+
+*rhash-1.3.3-r2 (16 Sep 2016)
+
+  16 Sep 2016; James Le Cuirot <chewi@gentoo.org>
+  +files/librhash-symlink.patch, -rhash-1.3.3-r1.ebuild,
+  +rhash-1.3.3-r2.ebuild:
+  Install headers, fix librhash.so symlink
+
+  Sorry, should have spotted these before the earlier commit.
+
+  Package-Manager: portage-2.3.0
+

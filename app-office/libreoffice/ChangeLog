@@ -612,3 +612,97 @@
   Package-Manager: portage-2.3.0
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +files/libreoffice-5.3-system-pyuno.patch, libreoffice-9999.ebuild:
+  Fix system-pyuno.patch, libxmlsec tarball
+
+  Gentoo-bug: 577278
+      bump libxmlsec tarball to 1.2.22
+  Gentoo-bug: 589040
+      adapted patch kindly provided by 'cyrillic'
+
+  Also, recent upstream commits removed some build options:
+      9ee01c424e37f7cd76d2edf38e9bc5f6e988d18d,
+      8dc38d9ded92960eda46343b67da8a8b95404b5a
+
+  Package-Manager: portage-2.3.0
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  -libreoffice-5.1.9999.ebuild:
+  Drop 5.1 stable branch
+
+  Package-Manager: portage-2.2.28
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.1.4.2.ebuild, libreoffice-5.2.9999.ebuild,
+  libreoffice-9999.ebuild:
+  Use xdg-utils.eclass to cleanup XDG_* env
+
+  ...causing sandbox violation.
+
+  Gentoo-bug: 588158
+
+  Package-Manager: portage-2.2.28
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.2.9999.ebuild, libreoffice-9999.ebuild:
+  Drop mergelibs hack
+
+  Gentoo-bug: 590596
+
+  Package-Manager: portage-2.2.28
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.1.4.2.ebuild, libreoffice-5.2.9999.ebuild,
+  libreoffice-9999.ebuild:
+  Really exclude clang from GCC version check
+
+  Gentoo-bug: 589948
+
+  Package-Manager: portage-2.2.28
+
+*libreoffice-5.2.1.2 (17 Sep 2016)
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +libreoffice-5.2.1.2.ebuild:
+  Version bump to 5.2.1.2
+
+  Package-Manager: portage-2.2.28
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.2.9999.ebuild, libreoffice-9999.ebuild, metadata.xml:
+  Rename useflag for Google Drive integration to googledrive in future
+  versions
+
+  Package-Manager: portage-2.3.0
+
+  17 Sep 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.2.1.2.ebuild, libreoffice-5.2.9999.ebuild,
+  libreoffice-9999.ebuild, metadata.xml:
+  PDF import is optional again. Yay...
+
+  Package-Manager: portage-2.3.0
+
+  01 Oct 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-9999.ebuild:
+  Add new dependencies
+
+  Gentoo-bug: 587980
+  Gentoo-bug: 592354
+
+  Package-Manager: portage-2.3.0
+
+  01 Oct 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  libreoffice-5.2.1.2.ebuild, libreoffice-5.2.9999.ebuild:
+  Pin DEPEND to =liborcus-0.11*
+
+  Package-Manager: portage-2.3.0
+
+*libreoffice-5.2.2.2 (01 Oct 2016)
+
+  01 Oct 2016; Andreas K. Hüttel <dilfridge@gentoo.org>
+  +libreoffice-5.2.2.2.ebuild:
+  Version bump to 5.2.2.2
+
+  Package-Manager: portage-2.3.0
+

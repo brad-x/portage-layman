@@ -1396,3 +1396,324 @@
 
   Package-Manager: portage-2.2.28
 
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  simplify CHROMIUM_HOME
+
+  We no longer have a "live" slot, so this code is unnecessary.
+
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  rearrange dependencies
+
+  Using COMMON_DEPEND improves readability.
+
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  simplify gcc version check
+
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  use a bash array for bundled libs
+
+  This looks much cleaner and is less error-prone since we do not need
+  to escape line breaks.
+
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  use tc-is-clang
+
+  20 Aug 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2832.2.ebuild:
+  check MERGE_TYPE before gcc version
+
+  21 Aug 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  chromium-54.0.2832.2.ebuild:
+  depend on >=ffmpeg-3.0.1 (bug #591722)
+
+  Package-Manager: portage-2.2.28
+
+  21 Aug 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  chromium-54.0.2832.2.ebuild:
+  build with system re2 (bug #571156)
+
+  Package-Manager: portage-2.2.28
+
+*chromium-54.0.2837.0 (24 Aug 2016)
+
+  24 Aug 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  -chromium-54.0.2824.0.ebuild, +chromium-54.0.2837.0.ebuild,
+  +files/chromium-gn-r5.patch:
+  dev channel bump (54.0.2837.0)
+
+  Fix build with system libjpeg (bug #584518).
+
+  Package-Manager: portage-2.2.28
+
+*chromium-54.0.2840.6 (31 Aug 2016)
+
+  31 Aug 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  -chromium-54.0.2832.2.ebuild, +chromium-54.0.2840.6.ebuild:
+  dev channel bump (54.0.2840.6)
+
+  Allow using tcmalloc with GN for bug #591938 by Nick.
+
+  Package-Manager: portage-2.2.28
+
+*chromium-53.0.2785.89 (01 Sep 2016)
+
+  01 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  -chromium-53.0.2785.34.ebuild, +chromium-53.0.2785.89.ebuild:
+  beta channel bump
+
+  Package-Manager: portage-2.3.0_p22
+
+  01 Sep 2016; Agostino Sarubbo <ago@gentoo.org> chromium-53.0.2785.89.ebuild:
+  amd64 stable wrt bug #592630
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  01 Sep 2016; Agostino Sarubbo <ago@gentoo.org> chromium-53.0.2785.89.ebuild:
+  x86 stable wrt bug #592630
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  01 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.6.ebuild,
+  +files/chromium-54-ffmpeg2compat.patch:
+  build fix with ffmpeg-2.x
+
+  Thanks to aballier for the patch.
+
+  Package-Manager: portage-2.3.0_p22
+
+  01 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  -chromium-52.0.2743.116.ebuild, metadata.xml:
+  remove old
+
+  Package-Manager: portage-2.3.0_p22
+
+  02 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.6.ebuild:
+  Add media-fonts/noto to the suggestion list
+
+  Package-Manager: portage-2.3.0_p22
+
+*chromium-53.0.2785.92 (03 Sep 2016)
+
+  03 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  -chromium-53.0.2785.70.ebuild, +chromium-53.0.2785.92.ebuild:
+  stable channel bump
+
+  Package-Manager: portage-2.3.0_p24
+
+*chromium-54.0.2840.8 (05 Sep 2016)
+
+  05 Sep 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  -chromium-54.0.2837.0.ebuild, +chromium-54.0.2840.8.ebuild:
+  dev channel bump (54.0.2840.8)
+
+  Package-Manager: portage-2.2.28
+
+*chromium-54.0.2840.14 (07 Sep 2016)
+
+  07 Sep 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  -chromium-54.0.2840.6.ebuild, +chromium-54.0.2840.14.ebuild:
+  dev channel bump (54.0.2840.14)
+
+  Package-Manager: portage-2.2.28
+
+*chromium-53.0.2785.101 (09 Sep 2016)
+
+  09 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +chromium-53.0.2785.101.ebuild:
+  stable channel bump
+
+  Package-Manager: portage-2.3.0_p24
+
+*chromium-54.0.2840.16 (09 Sep 2016)
+
+  09 Sep 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  -chromium-54.0.2840.8.ebuild, +chromium-54.0.2840.16.ebuild:
+  beta channel bump (54.0.2840.16)
+
+  Package-Manager: portage-2.2.28
+
+*chromium-55.0.2853.0 (09 Sep 2016)
+
+  09 Sep 2016; Pawel Hajdan, Jr <phajdan.jr@gentoo.org>
+  +chromium-55.0.2853.0.ebuild, +files/chromium-system-ffmpeg-r4.patch,
+  +files/chromium-system-jinja-r14.patch:
+  dev channel bump (55.0.2853.0)
+
+  Package-Manager: portage-2.2.28
+
+  10 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.16.ebuild,
+  chromium-55.0.2853.0.ebuild:
+  enable gnome and gnome-keyring by default
+
+  Bug: https://bugs.gentoo.org/593342
+
+  Package-Manager: portage-2.3.0_p24
+
+  10 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-55.0.2853.0.ebuild:
+  make gnome and gnome-keyring optional for M55
+
+  Package-Manager: portage-2.3.0_p24
+
+  10 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.16.ebuild:
+  make gnome and gnome-keyring optional for M54
+
+  Package-Manager: portage-2.3.0_p24
+
+  11 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-55.0.2853.0.ebuild:
+  invoke generate_gn.py for system-ffmpeg
+
+  Bug: https://bugs.gentoo.org/593356
+
+  Package-Manager: portage-2.3.0_p24
+
+  11 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.16.ebuild,
+  chromium-55.0.2853.0.ebuild:
+  depend on dev-vcs/git
+
+  Bug: https://bugs.gentoo.org/593476
+  Package-Manager: portage-2.3.0_p24
+
+  12 Sep 2016; Jason A. Donenfeld <zx2c4@gentoo.org> metadata.xml:
+  document suid USE flag
+
+  Package-Manager: portage-2.3.0
+
+*chromium-53.0.2785.113 (14 Sep 2016)
+
+  14 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +chromium-53.0.2785.113.ebuild:
+  stable channel bump (53.0.2785.113)
+
+  Package-Manager: portage-2.3.0_p24
+
+*chromium-55.0.2859.0 (15 Sep 2016)
+
+  15 Sep 2016; Mike Gilbert <floppym@gentoo.org> +chromium-55.0.2859.0.ebuild,
+  +files/chromium-ffmpeg-generate_gn.patch:
+  dev channel bump (55.0.2859.0)
+
+  Use bundled libevent to resolve segfaults and instability.
+  Thanks to Matthias Dahl for troubleshooting this.
+
+  Bug: https://bugs.gentoo.org/591938
+  Bug: https://bugs.gentoo.org/593458
+
+  Package-Manager: portage-2.3.0_p31
+
+*chromium-53.0.2785.116 (15 Sep 2016)
+
+  15 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +chromium-53.0.2785.116.ebuild:
+  stable channel bump (53.0.2785.116)
+
+  Package-Manager: portage-2.3.0_p31
+
+  15 Sep 2016; Agostino Sarubbo <ago@gentoo.org>
+  chromium-53.0.2785.116.ebuild:
+  amd64 stable wrt bug #593708
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  15 Sep 2016; Agostino Sarubbo <ago@gentoo.org>
+  chromium-53.0.2785.116.ebuild:
+  x86 stable wrt bug #593708
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+*chromium-54.0.2840.27 (15 Sep 2016)
+
+  15 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +chromium-54.0.2840.27.ebuild:
+  beta channel bump (54.0.2840.27)
+
+  Use bundled libevent to resolve segfaults and instability.
+  Thanks to Matthias Dahl for troubleshooting this.
+
+  Bug: https://bugs.gentoo.org/591938
+  Bug: https://bugs.gentoo.org/593458
+
+  Package-Manager: portage-2.3.0_p31
+
+  15 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  -chromium-53.0.2785.89.ebuild, -chromium-53.0.2785.92.ebuild,
+  -chromium-53.0.2785.101.ebuild, -chromium-53.0.2785.113.ebuild,
+  -chromium-54.0.2840.14.ebuild:
+  remove old
+
+  Package-Manager: portage-2.3.0_p31
+
+  21 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-55.0.2859.0.ebuild,
+  +files/toolchain/BUILD.gn:
+  use custom toolchain for GN builds
+
+  Bug: https://bugs.gentoo.org/587408
+
+  23 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-55.0.2859.0.ebuild:
+  linux_use_bundled_binutils=false
+
+  Package-Manager: portage-2.3.0_p43
+
+*chromium-54.0.2840.34 (23 Sep 2016)
+
+  23 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  -chromium-54.0.2840.16.ebuild, +chromium-54.0.2840.34.ebuild:
+  beta channel bump (54.0.2840.34)
+
+  Package-Manager: portage-2.3.0_p43
+
+  23 Sep 2016; Mike Gilbert <floppym@gentoo.org> chromium-54.0.2840.34.ebuild,
+  chromium-55.0.2859.0.ebuild:
+  fix proprietary-codecs logic
+
+  Bug: https://bugs.gentoo.org/593434#c13
+
+  Package-Manager: portage-2.3.0_p43
+
+*chromium-55.0.2868.3 (26 Sep 2016)
+
+  26 Sep 2016; Mike Gilbert <floppym@gentoo.org> -chromium-55.0.2853.0.ebuild,
+  +chromium-55.0.2868.3.ebuild, +files/chromium-gn-r6.patch,
+  +files/chromium-system-zlib-r1.patch:
+  dev channel bump (55.0.2868.3)
+
+  Package-Manager: portage-2.3.1_p4_p152503
+
+*chromium-55.0.2873.0 (29 Sep 2016)
+
+  29 Sep 2016; Mike Gilbert <floppym@gentoo.org> -chromium-55.0.2859.0.ebuild,
+  +chromium-55.0.2873.0.ebuild, +files/chromium-gn-r7.patch:
+  dev channel bump (55.0.2873.0)
+
+  Package-Manager: portage-2.3.1_p4_p413991
+
+*chromium-53.0.2785.143 (30 Sep 2016)
+
+  30 Sep 2016; Mike Gilbert <floppym@gentoo.org>
+  +chromium-53.0.2785.143.ebuild:
+  stable channel bump (53.0.2785.143)
+
+  Package-Manager: portage-2.3.1_p4_p507647
+
+  03 Oct 2016; Agostino Sarubbo <ago@gentoo.org>
+  chromium-53.0.2785.143.ebuild:
+  amd64 stable wrt bug #595614
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+
+  03 Oct 2016; Agostino Sarubbo <ago@gentoo.org>
+  chromium-53.0.2785.143.ebuild:
+  x86 stable wrt bug #595614
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="x86"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

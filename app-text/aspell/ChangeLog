@@ -113,3 +113,34 @@
 
   Package-Manager: portage-2.3.0_rc1
 
+*aspell-0.60.6.1-r4 (09 Sep 2016)
+
+  09 Sep 2016; David Seifert <soap@gentoo.org> +aspell-0.60.6.1-r4.ebuild,
+  files/aspell-0.60.5-solaris.patch, files/aspell-0.60.6-darwin-bundles.patch,
+  files/aspell-0.60.6.1-clang.patch, +files/aspell-0.60.6.1-unicode.patch:
+  Fix building with Unicode support
+
+  * EAPI=6
+  * Use dep on sys-libs/ncurses using newly introduced IUSE="unicode"
+  * Made PATCHES -p1 compliant
+  * Fixed unicode handling by pulling in ncurses/ncursesw
+    using PKG_CHECK_MODULES instead of automagic discovery
+    in configure.ac
+  * Add missing '|| die' statements
+
+  Closes: https://github.com/gentoo/gentoo/pull/2269
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+  26 Sep 2016; Tobias Klausmann <klausman@gentoo.org>
+  aspell-0.60.6.1-r3.ebuild:
+  0.60.6.1-r3: add alpha keyword
+
+  Gentoo-Bug: 591812
+
+  01 Oct 2016; Jeroen Roovers <jer@gentoo.org> aspell-0.60.6.1-r3.ebuild:
+  Stable for HPPA PPC64 (bug #591812).
+
+  Package-Manager: portage-2.3.1
+  RepoMan-Options: --ignore-arches
+

@@ -70,3 +70,29 @@
 
   Package-Manager: portage-2.3.0
 
+*tn5250-0.17.4-r2 (24 Aug 2016)
+
+  24 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/disable-sslv2-and-sslv3.patch,
+  +files/fix-Wformat-security-warnings.patch, +tn5250-0.17.4-r2.ebuild:
+  new revision sans SSLv2/SSLv3 support.
+
+  This new revision adds two custom patches. The first drops SSLv2/SSLv3
+  support by disabling the user's ability to specify "ssl2" or "ssl3" as
+  his "ssl_method". The fallback "auto" should still work and choose
+  something secure.
+
+  The second patch fixes the build with -Werror=format-security and
+  consists of trivial format string additions.
+
+  Gentoo-Bug: 591940
+
+  Package-Manager: portage-2.2.28
+
+  26 Sep 2016; Agostino Sarubbo <ago@gentoo.org> tn5250-0.17.4-r1.ebuild:
+  amd64 stable wrt bug #591484
+
+  Package-Manager: portage-2.2.28
+  RepoMan-Options: --include-arches="amd64"
+  Signed-off-by: Agostino Sarubbo <ago@gentoo.org>
+

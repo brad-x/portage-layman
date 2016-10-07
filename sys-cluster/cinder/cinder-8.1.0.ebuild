@@ -17,7 +17,7 @@ SRC_URI="https://tarballs.openstack.org/${PN}/${P}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~x86"
+KEYWORDS="amd64 ~arm64 x86"
 IUSE="+api +scheduler +volume iscsi lvm mysql +memcached postgres sqlite test"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
@@ -161,7 +161,7 @@ python_install() {
 	doins "etc/cinder/rootwrap.conf"
 	newins "${DISTDIR}/mitaka-cinder-api-paste.ini" "api-paste.ini"
 	newins "${DISTDIR}/mitaka-cinder-policy.json" "policy.json"
-	newins "${DISTDIR}/mitaka-cinder.conf.sample" "cidner.conf.sample"
+	newins "${DISTDIR}/mitaka-cinder.conf.sample" "cinder.conf.sample"
 	insinto /etc/cinder/rootwrap.d
 	newins "${DISTDIR}/mitaka-cinder-volume.filters" "volume.filters"
 

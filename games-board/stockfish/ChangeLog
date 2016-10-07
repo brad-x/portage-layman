@@ -78,3 +78,23 @@
 
   Package-Manager: portage-2.2.28
 
+*stockfish-7 (24 Aug 2016)
+
+  24 Aug 2016; Michael Orlitzky <mjo@gentoo.org> -stockfish-6-r1.ebuild,
+  -stockfish-6-r2.ebuild, +stockfish-7.ebuild:
+  new version 7 that respects $CC; remove old ones.
+
+  There is a new version of this that compiles fine with the existing
+  ebuilds. But the build system for this package has a whitelist of
+  compilers that makes it hard to get it to respect $CC. Fortunately,
+  there's a hack in the makefile to allow the package to build with
+  Travis CI, and we can hijack it to force our compiler of choice to be
+  used.
+
+  The version 6 ebuilds have been removed, since they were never
+  stabilized.
+
+  Gentoo-Bug: 542932
+
+  Package-Manager: portage-2.2.28
+

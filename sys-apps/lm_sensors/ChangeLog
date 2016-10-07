@@ -89,3 +89,50 @@
   files/sensord-4-init.d:
   use #!/sbin/openrc-run instead of #!/sbin/runscript
 
+*lm_sensors-3.4.0_p20160725 (16 Sep 2016)
+
+  16 Sep 2016; Thomas Deutschmann <whissi@gentoo.org> +files/fancontrol.confd,
+  +files/fancontrol.initd, +files/fancontrol.service-r1,
+  +files/lm_sensors-3.4.0-sensors-detect-gentoo.patch,
+  +files/lm_sensors.confd, +files/lm_sensors.initd, +files/sensord.confd,
+  +files/sensord.initd, +files/sensord.service-r1,
+  +lm_sensors-3.4.0_p20160725.ebuild, metadata.xml:
+  Version bump to snapshot release from 2016-07-25; Package now uses module-
+  load service
+
+  Changes:
+  ========
+   - Based on latest unreleased changes (snapshot release from 2016-07-25;
+     updated/added detection for Fintek F81768, Nuvoton NCT6793D, Microchip
+     MCP9808 and Mark F71868A chips; various fixes for sensors-detect, see
+     https://git.io/v6Wig for all changes)
+
+   - sensors-detect now writes to "/etc/modules-load.d/lm_sensors.conf" and
+     uses a config file protection mechanism like known from emerge (i.e.
+     after making changes you have to call tools such as dispatch-conf,
+     cfg-update or etc-update to merge the changes;
+     new "--no-gentoo-config-protect" parameter will disable config file
+     protection)
+
+   - Due to previous change lm_service service no longer loads modules. You
+     have to use mechanism your init system provides to do that (i.e. make
+     sure your init system's modules-load service is enabled).
+
+   - Ebuild is now multilib compatible (see bug 529684)
+
+   - Runscripts no longer passes config file as argument. While this removes
+     the possibility to use different configurations per default services it
+     allows you to use "/etc/sensors.d" (see bug 490502 and bug 307249)
+
+   - Runscripts improved in general. I.e. if you start fancontrol service
+     without a valid config (so that fancontrol doesn't start and exit with
+     an error) you will now know at least, that the service didn't start.
+     Now you will also have reliable status functions to know service state.
+
+  Gentoo-Bug: https://bugs.gentoo.org/592916
+  Gentoo-Bug: https://bugs.gentoo.org/529684
+  Gentoo-Bug: https://bugs.gentoo.org/490502
+  Gentoo-Bug: https://bugs.gentoo.org/307249
+
+  Package-Manager: portage-2.3.0
+

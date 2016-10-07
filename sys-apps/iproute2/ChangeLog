@@ -276,3 +276,24 @@
   Package-Manager: portage-2.3.0
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  18 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org> iproute2-4.7.0.ebuild,
+  iproute2-9999.ebuild:
+  respect CC, fixes cross-compilation, bug #591218
+
+  iproute tarball used to use 'CC = ' to override a compiler.
+  Now it uses 'CC :=' and it broke our sed silently.
+
+  Reported-by: Gerhard Bräunlich
+  Reported-by: n05 on #gentoo-embedded
+  Bug: https://bugs.gentoo.org/591218
+
+  Package-Manager: portage-2.3.0
+
+  18 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org> iproute2-9999.ebuild:
+  refreshed live ebuild
+
+  Buffer overflow patch was upstreamed,
+  ipv6 patch was updated in iproute2-4.2.0, use that.
+
+  Package-Manager: portage-2.3.0
+

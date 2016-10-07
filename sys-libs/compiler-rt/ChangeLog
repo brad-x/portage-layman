@@ -1,0 +1,37 @@
+# ChangeLog for sys-libs/compiler-rt
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*compiler-rt-9999 (22 Aug 2016)
+
+  22 Aug 2016; Michał Górny <mgorny@gentoo.org> +compiler-rt-9999.ebuild,
+  +metadata.xml:
+  Add a stand-alone ebuild for compiler-rt
+
+  31 Aug 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild:
+  Support running tests
+
+  01 Sep 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild:
+  Disable sandbox during the tests
+
+  02 Sep 2016; Michał Górny <mgorny@gentoo.org>
+  +files/9999/0001-compiler-rt-cmake-Support-overriding-llvm-config-que.patch:
+  Add missing (not committed) patch
+
+  13 Sep 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild:
+  Remove unnecessary RDEP on llvm
+
+  14 Sep 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild,
+  -files/9999/0001-compiler-rt-cmake-Support-overriding-llvm-config-que.patch:
+  Remove the patch applied upstream
+
+  15 Sep 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild:
+  Fix sandbox disabling to work-around LD_PRELOAD
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild,
+  metadata.xml:
+  Strip sanitizers & xray off to separate pkg
+
+  01 Oct 2016; Michał Górny <mgorny@gentoo.org> compiler-rt-9999.ebuild:
+  Support bootstrapping with runtime-less clang
+

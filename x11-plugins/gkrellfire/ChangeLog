@@ -65,3 +65,21 @@
 
   Bug: 575810
 
+*gkrellfire-0.4.2-r1 (26 Aug 2016)
+
+  26 Aug 2016; Michael Orlitzky <mjo@gentoo.org>
+  +files/fix-CC-CFLAGS-LDFLAGS-handling.patch, +gkrellfire-0.4.2-r1.ebuild:
+  new revision fixing CC and *FLAGS handling.
+
+  This new revision updates the ebuild to EAPI=6, and adds a patch that
+  rewrites the Makefile. The inspiration for the patch, and the new
+  ebuild itself were submitted by user Michael Mair-Keimberger.
+
+  In addition to fixing the CC, CFLAGS, and LDFLAGS handling, the new
+  ebuild adds a USE dependency on app-admin/gkrellm[X], which, in the
+  old EAPI, had to crash the eclass.
+
+  Gentoo-Bug: 335033
+
+  Package-Manager: portage-2.2.28
+

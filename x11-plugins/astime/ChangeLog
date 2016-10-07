@@ -66,3 +66,21 @@
 
   Bug: 575810
 
+*astime-2.8-r2 (30 Aug 2016)
+
+  30 Aug 2016; Michael Orlitzky <mjo@gentoo.org> +astime-2.8-r2.ebuild,
+  +files/respect-ldflags.patch:
+  new EAPI=6 revision that respects LDFLAGS.
+
+  This new revision is based on the ebuild submitted by Michael
+  Mair-Keimberger, with additional updates for EAPI=6. I have also
+  simplified the patch that we apply; now it contains only the addition
+  of LDFLAGS to the linker command. By side-stepping upstream's "make
+  install" target, we avoid having to patch in DESTDIR and all of that.
+  Doing so actually simplifies src_install() a bit, as it can be reduced
+  to a dobin, newman, and dodoc.
+
+  Gentoo-Bug: 337428
+
+  Package-Manager: portage-2.2.28
+

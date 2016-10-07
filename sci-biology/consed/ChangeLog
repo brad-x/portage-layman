@@ -64,3 +64,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*consed-29 (03 Oct 2016)
+
+  03 Oct 2016; David Seifert <soap@gentoo.org> +consed-29.ebuild,
+  +files/consed-29-fix-build-system.patch, +files/consed-29-fix-c++14.patch,
+  +files/consed-29-fix-perl-shebang.patch, +files/consed-29-fix-qa.patch:
+  Version bump to 29
+
+  * EAPI=6
+  * Allow for compiling with GCC 6
+  * [QA] Respect all user variables (CC, CXX, ...)
+  * [QA] Fix various C and C++ related warnings
+  * Fix perl shebangs to be portable
+
+  Package-Manager: portage-2.3.1
+
+  03 Oct 2016; David Seifert <soap@gentoo.org> -consed-19-r2.ebuild,
+  -consed-27.ebuild:
+  Remove old ebuilds
+
+  Package-Manager: portage-2.3.1
+

@@ -131,3 +131,20 @@
 
   Package-Manager: portage-2.3.0_rc1
 
+*nagios-core-4.2.1 (26 Sep 2016)
+
+  26 Sep 2016; Michael Orlitzky <mjo@gentoo.org> +nagios-core-4.2.1.ebuild:
+  new version v4.2.1 with security fixes.
+
+  This new version adds fixes for CVE-2008-4796 and CVE-2013-4214.
+  The ebuild itself was updated to EAPI=6. That required dropping the
+  depend.apache eclass, but that eclass was only used to define the
+  $APACHE2_MODULES_CONFDIR variable, and it was easily inlined. The
+  eutils and multilib eclasses were also dropped; the former because our
+  patches are now obsolete, and the latter because get_libdir() is in
+  EAPI=6.
+
+  Gentoo-Bug: 595194
+
+  Package-Manager: portage-2.2.28
+

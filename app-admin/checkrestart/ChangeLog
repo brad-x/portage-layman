@@ -63,3 +63,25 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*checkrestart-0.47-r4 (21 Aug 2016)
+
+  21 Aug 2016; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +checkrestart-0.47-r4.ebuild, +files/checkrestart-0.47-cwd.patch:
+  Workaround a problem with finding pkg name
+
+  The output of qfile is used by checkrestart to get a list of programs
+  owning certain files. A feature of qfile is that its output is dependent
+  on the current working directory. Some of the files in its output aren't
+  programs and checkrestart crashed. This patch sets the cwd to / for the
+  qfile subprocess, so its output is as expected.
+
+  Thanks to Karl <karlc@keckec.com> for investigating the issue, providing
+  patch and explanation above.
+
+  This not a final soluation for the problem, but it's a good workaround
+  given there are not so many processes named after any directory in /.
+
+  Gentoo-Bug: 548920
+
+  Package-Manager: portage-2.3.0
+

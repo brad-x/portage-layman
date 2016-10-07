@@ -1,0 +1,52 @@
+# ChangeLog for app-misc/ddctool
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*ddctool-0.4.2 (04 Sep 2016)
+
+  04 Sep 2016; David Seifert <soap@gentoo.org> +ddctool-0.4.2.ebuild,
+  +metadata.xml:
+  New package
+
+  ddctool primarily uses DDC/CI (Display Data Channel Command Interface)
+  to communicate with monitors implementing MCCS (Monitor Control Command
+  Set) over I2C. Normally, the video driver for the monitor exposes the
+  I2C channel as devices named /dev/i2c-n. Alternatively, there is initial
+  support for monitors (such as Apple displays) that implement MCCS using
+  a USB connection.
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Jonathan Scruggs (j.scruggs@gmail.com)
+  Closes: https://github.com/gentoo/gentoo/pull/2201
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+*ddctool-0.5.0 (12 Sep 2016)
+
+  12 Sep 2016; Patrice Clement <monsieurp@gentoo.org> -ddctool-0.4.2.ebuild,
+  +ddctool-0.5.0.ebuild, metadata.xml:
+  version bump to 0.5.0.
+
+  - Updated dependencies based on new information from upstream.
+  - Added new configure options added in this release
+  - Renamed the use flags to better reflect what they do (in part
+    due to the above mentioned config changes).
+  - Remove old version as upstream doesn't want it used in a
+    production environment.
+
+  This is considered the first formal release by upstream. Previous
+  versions were more like an alpha version.
+  Release notes: http://www.ddctool.com/release_notes/#05
+
+  Signed off by Jonathan Scruggs (j.scruggs@gmail.com, irc: Dracwyrm)
+  Closes: https://github.com/gentoo/gentoo/pull/2287
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+
+*ddctool-0.5.3 (29 Sep 2016)
+
+  29 Sep 2016; Michael Palimaka <kensington@gentoo.org> +ddctool-0.5.3.ebuild:
+  version bump to 0.5.3
+
+  Signed off by Jonathan Scruggs (j.scruggs@gmail.com, irc Dracwyrm
+

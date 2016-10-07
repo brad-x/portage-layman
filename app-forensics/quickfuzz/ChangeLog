@@ -1,0 +1,82 @@
+# ChangeLog for app-forensics/quickfuzz
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*quickfuzz-9999 (11 Sep 2016)
+*quickfuzz-0.1_p20160909 (11 Sep 2016)
+
+  11 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/quickfuzz-0.1-QC-2.9.patch,
+  +files/quickfuzz-0.1_p20160909-megadeth-better-erroro.patch,
+  +files/quickfuzz-0.1_p20160909-megadeth-ghc-8-gadt.patch,
+  +files/quickfuzz-0.1_p20160909-megadeth-ghc-8.patch,
+  +files/quickfuzz-0.1_p20160909-th-2.11-1.patch,
+  +files/quickfuzz-0.1_p20160909-th-2.11-2.patch,
+  +files/quickfuzz-0.1_p20160909-ttasm-layout.patch,
+  +files/quickfuzz-9999-megadeth-better-erroro.patch,
+  +files/quickfuzz-9999-megadeth-ghc-8-gadt.patch,
+  +files/quickfuzz-9999-megadeth-ghc-8.patch,
+  +files/quickfuzz-9999-th-2.11-1.patch,
+  +files/quickfuzz-9999-th-2.11-2.patch,
+  +files/quickfuzz-9999-ttasm-layout.patch, +metadata.xml,
+  +quickfuzz-0.1_p20160909.ebuild, +quickfuzz-9999.ebuild:
+  a new experimental propert-based fuzzer
+
+  10-page paper on how it works and how to use it:
+      https://github.com/CIFASIS/QuickFuzz/releases/download/haskell16-draft
+  /draft-haskell16.pdf
+
+  TL;DR:
+
+      $ QuickFuzz Png 'pngcheck @' -a zzuf -s 10
+    or
+      $ QuickFuzz Png 'pngcheck @' -a radamsa -s 10
+    or
+      $ QuickFuzz Png 'pngcheck @' -a honggfuzz -s 10
+
+  Many other formats are supported.
+
+  Package-Manager: portage-2.3.0
+
+  11 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  quickfuzz-0.1_p20160909.ebuild, quickfuzz-9999.ebuild:
+  uncrease lower bound of tar up to 0.5
+
+  Package-Manager: portage-2.3.0
+
+  11 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  quickfuzz-0.1_p20160909.ebuild, quickfuzz-9999.ebuild:
+  increase lower bound of zlib up to 0.6
+
+  Package-Manager: portage-2.3.0
+
+*quickfuzz-0.1_p20160920 (20 Sep 2016)
+
+  20 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  -files/quickfuzz-0.1-QC-2.9.patch,
+  -files/quickfuzz-0.1_p20160909-megadeth-better-erroro.patch,
+  -files/quickfuzz-0.1_p20160909-megadeth-ghc-8-gadt.patch,
+  -files/quickfuzz-0.1_p20160909-megadeth-ghc-8.patch,
+  -files/quickfuzz-0.1_p20160909-th-2.11-1.patch,
+  -files/quickfuzz-0.1_p20160909-th-2.11-2.patch,
+  -files/quickfuzz-0.1_p20160909-ttasm-layout.patch,
+  -files/quickfuzz-9999-megadeth-better-erroro.patch,
+  -files/quickfuzz-9999-megadeth-ghc-8-gadt.patch,
+  -files/quickfuzz-9999-megadeth-ghc-8.patch,
+  -files/quickfuzz-9999-th-2.11-1.patch,
+  -files/quickfuzz-9999-th-2.11-2.patch,
+  -files/quickfuzz-9999-ttasm-layout.patch, -quickfuzz-0.1_p20160909.ebuild,
+  +quickfuzz-0.1_p20160920.ebuild, quickfuzz-9999.ebuild:
+  update snapshot and live ebuild. all patches are upstreamed \o/
+
+  Package-Manager: portage-2.3.1
+
+  21 Sep 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  quickfuzz-0.1_p20160920.ebuild, quickfuzz-9999.ebuild:
+  add missing process-extras depend
+
+  Reported-by: Toralf Förster
+  Bug: https://bugs.gentoo.org/594666
+
+  Package-Manager: portage-2.3.1
+
