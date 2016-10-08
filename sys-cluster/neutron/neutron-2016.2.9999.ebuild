@@ -3,7 +3,8 @@
 # $Id$
 
 EAPI=6
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 )
+# still no 34 :( https://bugs.launchpad.net/neutron/+bug/1630439
 
 inherit distutils-r1 git-r3 linux-info user
 
@@ -179,7 +180,7 @@ python_install() {
 	fi
 	if use linuxbridge; then
 		newinitd "${FILESDIR}/neutron.initd" "neutron-linuxbridge-agent"
-		newconfd "${FILESDIR}/neutron-linuxbridge-agent.confd.liberty" "neutron-linuxbridge-agent"
+		newconfd "${FILESDIR}/neutron-linuxbridge-agent.confd" "neutron-linuxbridge-agent"
 	fi
 	diropts -m 755 -o neutron -g neutron
 	dodir /var/log/neutron /var/lib/neutron

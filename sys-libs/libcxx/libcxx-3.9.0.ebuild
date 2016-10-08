@@ -19,13 +19,10 @@ inherit ${SCM} cmake-multilib python-any-r1 toolchain-funcs
 DESCRIPTION="New implementation of the C++ standard library, targeting C++11"
 HOMEPAGE="http://libcxx.llvm.org/"
 if [[ ${PV} != 9999 ]] ; then
-	SRC_URI="http://llvm.org/releases/${PV}/${P}.src.tar.xz
-		test? ( http://llvm.org/releases/${PV}/llvm-${PV}.src.tar.xz )"
+	SRC_URI="http://llvm.org/releases/${PV}/${P}.src.tar.xz"
 	S="${WORKDIR}/${P}.src"
-	LLVM_S="${WORKDIR}/llvm-${PV}.src"
 else
 	SRC_URI=""
-	LLVM_S="${WORKDIR}/llvm"
 fi
 
 LICENSE="|| ( UoI-NCSA MIT )"
@@ -35,18 +32,21 @@ if [[ ${PV} != 9999 ]] ; then
 else
 	KEYWORDS=""
 fi
-IUSE="elibc_glibc elibc_musl +libcxxrt libunwind +static-libs test"
-REQUIRED_USE="libunwind? ( libcxxrt )"
+IUSE="elibc_glibc elibc_musl libcxxabi +libcxxrt libunwind +static-libs test"
+REQUIRED_USE="libunwind? ( || ( libcxxabi libcxxrt ) )
+	?? ( libcxxabi libcxxrt )"
 
-RDEPEND="libcxxrt? ( sys-libs/libcxxrt[libunwind=,static-libs?,${MULTILIB_USEDEP}] )
-	!libcxxrt? ( >=sys-devel/gcc-4.7:=[cxx] )"
+RDEPEND="
+	libcxxabi? ( ~sys-libs/libcxxabi-${PV}[libunwind=,static-libs?,${MULTILIB_USEDEP}] )
+	libcxxrt? ( sys-libs/libcxxrt[libunwind=,static-libs?,${MULTILIB_USEDEP}] )
+	!libcxxabi? ( !libcxxrt? ( >=sys-devel/gcc-4.7:=[cxx] ) )"
 # llvm-3.9.0 needed because its cmake files installation path changed, which is
 # needed by libcxx
 # clang-3.9.0 installs necessary target symlinks unconditionally
 # which removes the need for MULTILIB_USEDEP
 DEPEND="${RDEPEND}
 	test? ( >=sys-devel/clang-3.9.0
-		${PYTHON_DEPS} )
+		$(python_gen_any_dep 'dev-python/lit[${PYTHON_USEDEP}]') )
 	app-arch/xz-utils
 	>=sys-devel/llvm-3.9.0"
 
@@ -62,10 +62,14 @@ PATCHES=(
 	"${FILESDIR}/${PN}-3.9-cmake-static-lib.patch"
 )
 
-pkg_setup() {
-	use test && python_setup
+python_check_deps() {
+	has_version "dev-python/lit[${PYTHON_USEDEP}]"
+}
 
-	if ! use libcxxrt && ! tc-is-gcc ; then
+pkg_setup() {
+	use test && python-any-r1_pkg_setup
+
+	if ! use libcxxabi && ! use libcxxrt && ! tc-is-gcc ; then
 		eerror "To build ${PN} against libsupc++, you have to use gcc. Other"
 		eerror "compilers are not supported. Please set CC=gcc and CXX=g++"
 		eerror "and try again."
@@ -79,23 +83,6 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	[[ ${PV} != 9999 ]] && default && return
-
-	if use test; then
-		# needed for tests
-		git-r3_fetch "http://llvm.org/git/llvm.git
-			https://github.com/llvm-mirror/llvm.git"
-	fi
-	git-r3_fetch
-
-	if use test; then
-		git-r3_checkout http://llvm.org/git/llvm.git \
-			"${WORKDIR}"/llvm
-	fi
-	git-r3_checkout
-}
-
 src_configure() {
 	NATIVE_LIBDIR=$(get_libdir)
 	cmake-multilib_src_configure
@@ -103,13 +90,38 @@ src_configure() {
 
 multilib_src_configure() {
 	local cxxabi cxxabi_incs
-	if use libcxxrt; then
+	if use libcxxabi; then
+		cxxabi=libcxxabi
+		cxxabi_incs="${EPREFIX}/usr/include/libcxxabi"
+	elif use libcxxrt; then
 		cxxabi=libcxxrt
 		cxxabi_incs="${EPREFIX}/usr/include/libcxxrt"
 	else
 		local gcc_inc="${EPREFIX}/usr/lib/gcc/${CHOST}/$(gcc-fullversion)/include/g++-v$(gcc-major-version)"
 		cxxabi=libsupc++
 		cxxabi_incs="${gcc_inc};${gcc_inc}/${CHOST}"
+	fi
+
+	# we want -lgcc_s for unwinder, and for compiler runtime when using
+	# gcc, clang with gcc runtime (or any unknown compiler)
+	local extra_libs=() want_gcc_s=ON
+	if use libunwind; then
+		# work-around missing -lunwind upstream
+		extra_libs+=( -lunwind )
+		# if we're using libunwind and clang with compiler-rt, we want
+		# to link to compiler-rt instead of -lgcc_s
+		if tc-is-clang; then
+			# get the full library list out of 'pretend mode'
+			# and grep it for libclang_rt references
+			local args=( $($(tc-getCC) -### -x c - 2>&1 | tail -n 1) )
+			local i
+			for i in "${args[@]}"; do
+				if [[ ${i} == *libclang_rt* ]]; then
+					want_gcc_s=OFF
+					extra_libs+=( "${i}" )
+				fi
+			done
+		fi
 	fi
 
 	local libdir=$(get_libdir)
@@ -125,13 +137,16 @@ multilib_src_configure() {
 		# we're using our own mechanism for generating linker scripts
 		-DLIBCXX_ENABLE_ABI_LINKER_SCRIPT=OFF
 		-DLIBCXX_HAS_MUSL_LIBC=$(usex elibc_musl)
-		-DLIBCXX_HAS_GCC_S_LIB=$(usex !libunwind)
+		-DLIBCXX_HAS_GCC_S_LIB=${want_gcc_s}
 		-DLIBCXX_INCLUDE_TESTS=$(usex test)
-		-DCMAKE_SHARED_LINKER_FLAGS=$(usex libunwind "-lunwind" "")
+		-DCMAKE_SHARED_LINKER_FLAGS="${extra_libs[*]} ${LDFLAGS}"
 	)
+
 	if use test; then
 		mycmakeargs+=(
-			-DLLVM_MAIN_SRC_DIR=${LLVM_S}
+			# this can be any directory, it just needs to exist...
+			-DLLVM_MAIN_SRC_DIR="${T}"
+			-DLIT_COMMAND="${EPREFIX}"/usr/bin/lit
 		)
 	fi
 	cmake-utils_src_configure
@@ -163,18 +178,16 @@ END_LDSCRIPT
 
 gen_static_ldscript() {
 	local libdir=$(get_libdir)
-	local cxxabi_lib=$(usex libcxxrt "libcxxrt.a" "libsupc++.a")
+	local cxxabi_lib=$(usex libcxxabi "libc++abi.a" "$(usex libcxxrt "libcxxrt.a" "libsupc++.a")")
 
 	# Move it first.
 	mv "${ED}/usr/${libdir}/libc++.a" "${ED}/usr/${libdir}/libc++_static.a" || die
 	# Generate libc++.a ldscript for inclusion of its dependencies so that
 	# clang++ -stdlib=libc++ -static works out of the box.
-	local deps="libc++_static.a ${cxxabi_lib}"
+	local deps="libc++_static.a ${cxxabi_lib} $(usex libunwind libunwind.a libgcc_eh.a)"
 	# On Linux/glibc it does not link without libpthread or libdl. It is
 	# fine on FreeBSD.
 	use elibc_glibc && deps+=" libpthread.a libdl.a"
-	# unlike libgcc_s, libunwind is not implicitly linked
-	use libunwind && deps+=" libunwind.a"
 
 	gen_ldscript "${deps}" > "${ED}/usr/${libdir}/libc++.a" || die
 }
@@ -182,11 +195,10 @@ gen_static_ldscript() {
 gen_shared_ldscript() {
 	local libdir=$(get_libdir)
 	# libsupc++ doesn't have a shared version
-	local cxxabi_lib=$(usex libcxxrt "libcxxrt.so" "libsupc++.a")
+	local cxxabi_lib=$(usex libcxxabi "libc++abi.so" "$(usex libcxxrt "libcxxrt.so" "libsupc++.a")")
 
 	mv "${ED}/usr/${libdir}/libc++.so" "${ED}/usr/${libdir}/libc++_shared.so" || die
-	local deps="libc++_shared.so ${cxxabi_lib}"
-	use libunwind && deps+=" libunwind.so"
+	local deps="libc++_shared.so ${cxxabi_lib} $(usex libunwind libunwind.so libgcc_s.so)"
 
 	gen_ldscript "${deps}" > "${ED}/usr/${libdir}/libc++.so" || die
 }

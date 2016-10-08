@@ -1618,7 +1618,6 @@ dev-java/ant:oro - Enable Apache Oro Ant tasks
 dev-java/ant:regexp - Enable Apache Regexp Ant tasks
 dev-java/ant:resolver - Enable Apache Resolver Ant tasks
 dev-java/ant:testutil - Enable optional test util classes
-dev-java/antlr:gunit - gUnit is a "Unit Test" framework for ANTLR grammars
 dev-java/commons-collections:test-framework - Install the test framework
 dev-java/commons-logging:avalon-framework - Add optional support for avalon-framework
 dev-java/commons-logging:avalon-logkit - Add optional support for avalon-logkit
@@ -2119,7 +2118,6 @@ dev-ml/ocamlnet:httpd - Enables net-httpd web server component
 dev-ml/ocamlnet:zip - Enables netzip support to read/write gzip data using object channels
 dev-ml/onanomsg:lwt - Enables lwt support.
 dev-ml/pgocaml:camlp4 - Enable PG'Ocaml syntax extension.
-dev-ml/qcheck:ounit - Enable integration with ounit
 dev-ml/tyxml:camlp4 - Enables the camlp4 syntax extension (deprecated)
 dev-ml/tyxml:ppx - Enables the ppx syntax extension (preferred)
 dev-ml/utop:camlp4 - Enables camlp4 support.
@@ -2368,6 +2366,9 @@ dev-python/translate-toolkit:html - Support conversion between po and html files
 dev-python/translate-toolkit:ical - Support conversion between po and ical files
 dev-python/translate-toolkit:ini - Support conversion between po and ini files
 dev-python/translate-toolkit:subtitles - Support conversion between po and sub files
+dev-python/twisted:conch - include Twisted SSHv2 implementation
+dev-python/twisted:http2 - include http2 support
+dev-python/twisted:serial - include serial port support
 dev-python/twisted-core:serial - include serial port support
 dev-python/vatnumber:vies - Enable VIES
 dev-python/ws4py:client - Install client modules
@@ -3993,7 +3994,7 @@ media-libs/mlt:rtaudio - Builds rtaudio consumer for native audio support on mul
 media-libs/mlt:ruby - Build SWIG bindings for Ruby
 media-libs/netpbm:rle - Build converters for the RLE format (utah raster toolkit)
 media-libs/opencolorio:pdf - Install extra documentation in PDF format
-media-libs/opencv:contrib - Install user contributed scripts from opencv_contrib
+media-libs/opencv:contrib - Install user contributed scripts from opencv_contrib (Experimental!)
 media-libs/opencv:cuda - Enable NVIDIA Cuda computations support
 media-libs/opencv:eigen - Enable usage of dev-cpp/eigen for computations
 media-libs/opencv:gdal - Enable support for sci-libs/gdal library
@@ -5090,8 +5091,8 @@ net-analyzer/tcpreplay:pcapnav - Enable if you want the jump to byte offset feat
 net-analyzer/tcpreplay:tcpdump - Use net-analyzer/tcpdump for packet decoding feature
 net-analyzer/testssl:bundled-openssl - Install precompiled versions of OpenSSL for greater testing coverage
 net-analyzer/wireshark:adns - Use the GNU net-dns/c-ares library to resolve DNS names
-net-analyzer/wireshark:androiddump - Install androiddump
-net-analyzer/wireshark:ciscodump - Install ciscodump
+net-analyzer/wireshark:androiddump - Install androiddump, an extcap interface to capture from Android devices
+net-analyzer/wireshark:ciscodump - Install ciscodump, extcap interface to capture from a remote Cisco router
 net-analyzer/wireshark:crypt - Use dev-libs/libgcrypt to decrypt traffic
 net-analyzer/wireshark:doc-pdf - Build documentation in pdf format (US and a4 paper sizes)
 net-analyzer/wireshark:gtk3 - Build the wireshark executable with a GTK+ UI version 3.
@@ -5099,12 +5100,12 @@ net-analyzer/wireshark:libssh - Use net-libs/libssh (for sshdump)
 net-analyzer/wireshark:netlink - Use dev-libs/libnl
 net-analyzer/wireshark:pcap - Use net-libs/libpcap for network packet capturing (build dumpcap, rawshark)
 net-analyzer/wireshark:qt4 - Build the wireshark executable with an experimental Qt UI instead of GTK+.
-net-analyzer/wireshark:randpkt - Install randpkt
-net-analyzer/wireshark:randpktdump - Install randpktdump
+net-analyzer/wireshark:randpkt - Install randpkt, a utility for creating pcap trace files full of random packets
+net-analyzer/wireshark:randpktdump - Install randpktdump, an extcap interface to provide access to the random packet generator (randpkt)
 net-analyzer/wireshark:sbc - Use media-libs/sbc for playing back SBC encoded packets
 net-analyzer/wireshark:smi - Use net-libs/libsmi to resolve numeric OIDs into human readable format
-net-analyzer/wireshark:sshdump - Install sshdump
-net-analyzer/wireshark:tfshark - Install tfshark
+net-analyzer/wireshark:sshdump - Install sshdump, an extcap interface to capture from a remote host through SSH
+net-analyzer/wireshark:tfshark - Install tfshark, a terminal-based version of the FileShark capability
 net-analyzer/zabbix:agent - Enable zabbix agent (for to-be-monitored machines)
 net-analyzer/zabbix:frontend - Enable zabbix web frontend
 net-analyzer/zabbix:ipv6 - Turn on support of IPv6
@@ -5561,10 +5562,7 @@ net-irc/iroffer-dinoex:memsave - Compile with memory protection
 net-irc/iroffer-dinoex:telnet - Compile with Telnet server support
 net-irc/irssi:proxy - Adds support for a loadable IRC proxy module
 net-irc/kvirc:dcc_video - Support video connections over DCC protocol
-net-irc/kvirc:dcc_voice - Support voice connections over DCC protocol
-net-irc/kvirc:ipc - Support inter-process communication between KVIrc processes
 net-irc/kvirc:phonon - Support Phonon for audio output
-net-irc/kvirc:transparency - Support pseudo-transparency
 net-irc/limnoria:crypt - Enables user authentication with GPG
 net-irc/ngircd:ident - Enables support for net-libs/libident
 net-irc/psybnc:multinetwork - Adds support for multiple networks
@@ -6151,10 +6149,11 @@ net-misc/ofono:provision - Enable GPRS provisioning support
 net-misc/ofono:qmimodem - Enable Qualcomm QMI modem support
 net-misc/ofono:tools - Enable testing tools
 net-misc/oidentd:masquerade - Enable support for masqueraded/NAT connections
-net-misc/openconnect:gssapi - Build GSSAPI support.
+net-misc/openconnect:gssapi - Build GSSAPI support
 net-misc/openconnect:java - Build JNI bindings using jni.h
-net-misc/openconnect:libproxy - Enable proxy support.
-net-misc/openconnect:stoken - Enable stoken support.
+net-misc/openconnect:libproxy - Enable proxy support
+net-misc/openconnect:lz4 - Enable support for lz4 compression
+net-misc/openconnect:stoken - Enable stoken support
 net-misc/openntpd:libressl - Enable HTTPS TLS time constraint support using dev-libs/libressl
 net-misc/openssh:X509 - Adds support for X.509 certificate authentication
 net-misc/openssh:bindist - Disable EC/RC5 algorithms in OpenSSL for patent reasons.
@@ -6233,6 +6232,7 @@ net-misc/spice-gtk:mjpeg - Enable builtin mjpeg video decoder
 net-misc/spice-gtk:policykit - Enable sys-auth/polkit support for the usbredir acl helper
 net-misc/spice-gtk:usbredir - Use sys-apps/usbredir to redirect USB devices to another machine over TCP
 net-misc/spice-gtk:webdav - Support for folder-sharing between guest and client using net-libs/phodav
+net-misc/sshrc:mosh - Install Support for mosh
 net-misc/stargazer:debug - Enable extra debug codepaths, like asserts and extra output.
 net-misc/stargazer:doc - Adds extra documentation (API, doc, etc).
 net-misc/stargazer:examples - Install examples, usually source code.
@@ -6416,6 +6416,7 @@ net-p2p/eiskaltdcpp:json - Enable JSON for cli and daemon
 net-p2p/eiskaltdcpp:libcanberra - Enable sound notifications support over libcanberra in EiskaltDC++ Gtk
 net-p2p/eiskaltdcpp:minimal - Don't install headers
 net-p2p/fms:frost - Add support for frost boards
+net-p2p/go-ethereum:evm - Build Ethereum Virtual Machine (EVM)
 net-p2p/go-ipfs-bin:fuse - Enable runtime support for sys-fs/fuse
 net-p2p/i2p:ecdsa - Enables additional checks to make sure a setup is available that is capable of using I2Ps ECDSA provisions. I2P will work without it, but you will likely see warnings.
 net-p2p/i2p:nls - Adds Native Language Support using GNU gettext.
@@ -6899,7 +6900,6 @@ sci-libs/pcl:pcap - Adds pcap file capabilities in some drivers.
 sci-libs/pcl:qhull - Adds convex-hull operation support via media-libs/qhull.
 sci-libs/pcl:tutorials - Builds and installs tutorials.
 sci-libs/pcl:vtk - Adds support for VTK-Visualizations.
-sci-libs/plplot:ada - Add bindings for the ADA programming language
 sci-libs/plplot:dynamic - Build with dynamic drivers
 sci-libs/plplot:octave - Add bindings for sci-mathematics/octave
 sci-libs/plplot:pdl - Add bindings for dev-perl/PDL
@@ -7741,8 +7741,10 @@ sys-libs/glibc:rpc - Enable obsolete RPC/NIS layers (disabling is experimental -
 sys-libs/glibc:suid - Make internal pt_chown helper setuid -- not needed if using Linux and have /dev/pts mounted with gid=5
 sys-libs/glibc:systemtap - enable systemtap static probe points
 sys-libs/gwenhywfar:fox - Use x11-libs/fox graphical toolkit
+sys-libs/libcxx:libcxxabi - Build on top of sys-libs/libcxxabi instead of gcc's libsupc++ (avoids depending on gcc).
 sys-libs/libcxx:libcxxrt - Build on top of sys-libs/libcxxrt instead of gcc's libsupc++ (avoids depending on gcc).
 sys-libs/libcxx:libunwind - Use libunwind instead of libgcc_s for stack unwinding, thus avoiding dependence on gcc.
+sys-libs/libcxxabi:libunwind - Use libunwind instead of libgcc_s for stack unwinding, thus avoiding dependency on gcc
 sys-libs/libcxxrt:libunwind - Use libunwind instead of libgcc_s for unwinding. This should allow avoiding relying on sys-devel/gcc but for now clang is setup to use libgcc_s.
 sys-libs/libhugetlbfs:perl - Install the cpupcstat tool and some perl modules
 sys-libs/libomp:hwloc - Enable CPU affinity support via hwloc

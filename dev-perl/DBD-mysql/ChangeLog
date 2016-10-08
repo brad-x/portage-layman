@@ -191,3 +191,37 @@
 
   Package-Manager: portage-2.3.1
 
+  07 Oct 2016; Kent Fredric <kentnl@gentoo.org> DBD-mysql-4.32.0-r1.ebuild,
+  DBD-mysql-4.36.0.ebuild:
+  Fix mysql-client dependencies re bug #595970
+
+  This means pulling virtual/mysql is only now down with USE=embedded,
+  and client-libraries are now slot-upgradeable when you upgrade the virtual.
+
+  Enforcing SSL happens is still on the todo-list, but turns out, most
+  backends support SSL in all cases, only mysql-connector-c is an exemption.
+
+  Package-Manager: portage-2.3.1
+
+*DBD-mysql-4.36.0-r1 (07 Oct 2016)
+*DBD-mysql-4.32.0-r2 (07 Oct 2016)
+
+  07 Oct 2016; Kent Fredric <kentnl@gentoo.org> -DBD-mysql-4.32.0-r1.ebuild,
+  +DBD-mysql-4.32.0-r2.ebuild, -DBD-mysql-4.36.0.ebuild,
+  +DBD-mysql-4.36.0-r1.ebuild:
+  r1 bump to force slot-dep recompilation
+
+  Package-Manager: portage-2.3.1
+
+*DBD-mysql-4.37.0 (07 Oct 2016)
+
+  07 Oct 2016; Kent Fredric <kentnl@gentoo.org> +DBD-mysql-4.37.0.ebuild:
+  Bump to 4.37.0 re bug #596424
+
+  Upstream:
+  - Fix for possible buffer overflow in prepared statements, CVE-2016-1246
+
+  Bug: https://bugs.gentoo.org/596424
+
+  Package-Manager: portage-2.3.1
+
