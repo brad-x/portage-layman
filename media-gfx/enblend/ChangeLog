@@ -133,3 +133,28 @@
   Package-Manager: portage-2.2.27
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+*enblend-4.2.0_p20161007 (08 Oct 2016)
+
+  08 Oct 2016; David Seifert <soap@gentoo.org>
+  +enblend-4.2.0_p20161007.ebuild,
+  +files/enblend-4.2-doc-install-dir-fix.patch, metadata.xml:
+  Bump version to 4.2.0_p20161007
+
+  Gentoo-bug: 577512, 593094, 595630
+
+  The 4.2.0 release has missing CMake files, thus doesn't build, and
+  there are general runtime bugs. This patch is from upstream that
+  fixes all these issues.
+
+  * Added more depends for document building
+  * Added fix for document fonts access violation
+  * Changed to EAPI 6
+  * Added SIMD use flag
+  * General ebuild tidy ups
+  * Depend on Boost version >=1.62 (due to C++11/14)
+
+  Signed off by: Jonathan Scruggs (j.scruggs@gmail.com, irc: Dracwyrm)
+  Closes: https://github.com/gentoo/gentoo/pull/2510
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
