@@ -80,3 +80,16 @@
 
   Package-Manager: portage-2.3.1
 
+*beignet-1.2.0-r1 (11 Oct 2016)
+
+  11 Oct 2016; Marek Szuba <marecki@gentoo.org> +beignet-1.2.0-r1.ebuild,
+  +files/beignet-1.2.0-drm_intel_get_pooled_eu.patch:
+  support x11-libs/libdrm-2.4.71
+
+  This backports the upstream patch which made it to Git earlier on today to
+  1.2.0. This allows Beignet to link against both stable libdrm-2.4.70 and
+  unstable libdrm-2.4.71; I haven't tested earlier versions so the ebuild now
+  requires >=2.4.70.
+
+  Package-Manager: portage-2.3.1
+

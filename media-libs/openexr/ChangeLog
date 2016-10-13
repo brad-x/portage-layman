@@ -73,3 +73,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*openexr-2.2.0-r1 (10 Oct 2016)
+
+  10 Oct 2016; David Seifert <soap@gentoo.org>
+  +files/openexr-2.2.0-fix-build-system.patch,
+  +files/openexr-2.2.0-fix-config.h-collision.patch,
+  +files/openexr-2.2.0-fix-cpuid-on-abi_x86_32.patch,
+  +files/openexr-2.2.0-use-ull-for-64-bit-literals.patch,
+  +openexr-2.2.0-r1.ebuild:
+  revision bump to fix various build errors
+
+  Gentoo-bug: 520648, 585846
+  * EAPI=6
+  * Port to 'multilib-minimal'
+  * Fix build system to not require blocker
+  * Remove .la files
+
+  Signed off by: Jonathan Scruggs (j.scruggs@gmail.com, irc: Dracwyrm)
+  Closes: https://github.com/gentoo/gentoo/pull/2520
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+

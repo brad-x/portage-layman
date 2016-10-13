@@ -108,3 +108,19 @@
 
   Package-Manager: portage-2.3.0
 
+*snort-2.9.8.3-r1 (12 Oct 2016)
+
+  12 Oct 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/snort-2.9.8.3-no-implicit.patch, +snort-2.9.8.3-r1.ebuild:
+  fix USE="-*" build failures, bug #595512
+
+  Minimum buildable configurations is:
+      USE="-* targetbased normalizer mpls"
+
+  Surrounding code assumes availability enums and defines
+  guarded by these flags. Enable them unconditionally.
+
+  Bug: https://bugs.gentoo.org/595512
+
+  Package-Manager: portage-2.3.2
+

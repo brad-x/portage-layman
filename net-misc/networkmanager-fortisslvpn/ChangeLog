@@ -1,0 +1,26 @@
+# ChangeLog for net-misc/networkmanager-fortisslvpn
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*networkmanager-fortisslvpn-1.2.2 (11 Oct 2016)
+
+  11 Oct 2016; David Seifert <soap@gentoo.org>
+  +files/networkmanager-fortisslvpn-1.2.2-location-fix.diff, +metadata.xml,
+  +networkmanager-fortisslvpn-1.2.2.ebuild:
+  New package
+
+  Fortinet SSLVPN support for NetworkManager
+  This requires the openfortivpn client installed
+
+  The patch included is from upstream commit
+  377ba9ca7fb33f3fb2ba5258a5af666869947597
+
+  It makes sure that the temporary file that the plugin
+  creates on connection is written in the correct place
+  in /var/lib, it will fail on systemd systems otherwise.
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2424
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+

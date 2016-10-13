@@ -199,3 +199,31 @@
 
   Package-Manager: portage-2.3.0
 
+*connman-1.33-r1 (11 Oct 2016)
+
+  11 Oct 2016; Yixun Lan <dlan@gentoo.org> +connman-1.33-r1.ebuild,
+  files/connman-1.32-execinfo-assumptions.patch,
+  +files/connman-1.33-polkit-configure-check-fix.patch,
+  +files/connman-1.33-resolv-conf-overwrite.patch:
+  Fix polkit check, resolv.conf overwrite issue
+
+  Fixes the broken pollkit detection error
+  Fixes the issue of /etc/resolv.conf being overwritten unconditionally
+  Removes the unneeded hunks from the connman-1.32-execinfo-assumptions.patch
+
+  Gentoo-bug: #591596
+  Gentoo-bug: #596270
+  Gentoo-bug: #596276
+
+  Closes: https://github.com/gentoo/gentoo/pull/2515
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+
+  11 Oct 2016; Yixun Lan <dlan@gentoo.org> -connman-1.32.ebuild,
+  -connman-1.33.ebuild, -files/connman-1.32-execinfo-assumptions.patch:
+  Remove outdated connman ebuilds.
+
+  Package-Manager: portage-2.3.1
+  Signed-off-by: Yixun Lan <dlan@gentoo.org>
+

@@ -104,3 +104,19 @@
 
   Package-Manager: portage-2.2.26
 
+*triplea-1.8.0.9-r1 (11 Oct 2016)
+
+  11 Oct 2016; James Le Cuirot <chewi@gentoo.org> +files/mkdir.sh,
+  +files/paths.patch, +files/upnplib.patch, +triplea-1.8.0.9-r1.ebuild:
+  Libs (#596468), drop games eclass, fix paths
+
+  It's hard to see how this ever worked as it built against bundled
+  libraries but did not install them. It turns out many aren't
+  needed so we now unbundle them all except Apache Derby, which was
+  last-rited.
+
+  The server tried to write under /usr/share and ${PWD} by default,
+  which is bad and bad. I have made it write under ~/.triplea.
+
+  Package-Manager: portage-2.3.1
+
