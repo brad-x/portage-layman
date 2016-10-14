@@ -412,3 +412,29 @@
 
   Package-Manager: portage-2.3.1
 
+*collectd-5.6.1-r1 (13 Oct 2016)
+
+  13 Oct 2016; Thomas Deutschmann <whissi@gentoo.org> -collectd-5.6.0.ebuild,
+  -collectd-5.6.1.ebuild, +collectd-5.6.1-r1.ebuild,
+  -files/collectd-5.6.0-fix-apache-plugin.patch,
+  -files/collectd-5.6.0-issue-1896.patch,
+  +files/collectd-5.6.0-use-_LINUX_CAPABILITY_VERSION_3.patch:
+  Revision bump to address multiple issues
+
+   - When collectd was emerged with "filecaps" USE flag set and at least one
+     chosen plugin required special capabilities systemd was unable to start
+     collectd because CapabilityBoundingSet option in collectd's systemd unit
+     file did not match with the capabilities actual set for
+     "/usr/sbin/collectd". (bug #596852)
+
+   - Cherry picked upstream commit 5e4f2ae61d to get rid of
+
+       > capability: warning: `collectd' uses 32-bit capabilities (legacy
+  support in use)
+
+     message.
+
+  Gentoo-Bug: https://bugs.gentoo.org/596852
+
+  Package-Manager: portage-2.3.2
+

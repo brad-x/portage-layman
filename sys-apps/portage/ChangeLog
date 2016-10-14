@@ -464,3 +464,22 @@
 
   Package-Manager: portage-2.3.2
 
+  13 Oct 2016; Brian Dolbec <dolsen@gentoo.org> portage-2.3.2.ebuild:
+  Add threads(+) to  PYTHON_REQ_USE
+
+  This should help prevent erors like the following:
+
+    File "/usr/lib64/python2.7/site-packages/portage/locks.py", line 11, in
+  <module>
+      import multiprocessing
+  ImportError: No module named multiprocessing
+
+  Package-Manager: portage-2.3.2
+
+  13 Oct 2016; Brian Dolbec <dolsen@gentoo.org> portage-9999.ebuild:
+  Add threads(+) to PYTHON_REQUIRED_USE in 9999 too
+
+  See previous commit for 2.3.2
+
+  Package-Manager: portage-2.3.2
+
