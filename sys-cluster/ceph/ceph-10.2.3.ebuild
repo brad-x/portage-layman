@@ -26,7 +26,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 
 IUSE="babeltrace cephfs cryptopp debug fuse gtk jemalloc ldap +libaio"
-IUSE+=" libatomic lttng +nss +radosgw static-libs tcmalloc test xfs zfs"
+IUSE+=" libatomic lttng +nss +radosgw static-libs +tcmalloc test xfs zfs"
 
 # unbundling code commented out pending bugs 584056 and 584058
 #>=dev-libs/jerasure-2.0.0-r1
@@ -130,8 +130,8 @@ check-reqs_export_vars() {
 }
 
 user_setup() {
-	enewgroup ceph
-	enewuser ceph -1 -1 /var/lib/ceph ceph
+	enewgroup ceph ${CEPH_GID}
+	enewuser ceph "${CEPH_UID:--1}" -1 /var/lib/ceph ceph
 }
 
 emake_python_bindings() {
