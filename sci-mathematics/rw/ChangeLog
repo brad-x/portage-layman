@@ -95,3 +95,18 @@
 
   Package-Manager: portage-2.2.28
 
+*rw-0.7-r2 (16 Oct 2016)
+
+  16 Oct 2016; Michael Orlitzky <mjo@gentoo.org> -rw-0.7-r1.ebuild,
+  +rw-0.7-r2.ebuild:
+  new revision with a blocker on media-gfx/xpaint.
+
+  We have a file collision (librw.so) with xpaint. Barring a better
+  solution, we should at least block it in RDEPEND so that users don't
+  see the collision. This new revision adds "!media-gfx/xpaint" to
+  RDEPEND.
+
+  Gentoo-Bug: 560210
+
+  Package-Manager: portage-2.3.0
+

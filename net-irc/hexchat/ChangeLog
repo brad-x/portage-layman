@@ -128,3 +128,37 @@
   Package-Manager: portage-2.3.2
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+*hexchat-2.12.2-r1 (16 Oct 2016)
+
+  16 Oct 2016; David Seifert <soap@gentoo.org>
+  +files/hexchat-2.12.2-configure.ac-remove-werror.patch,
+  +hexchat-2.12.2-r1.ebuild, hexchat-9999.ebuild:
+  fix libgdiplus.so & Werror errors
+
+  Fixes the System.DllNotFounException: libgdiplus.so error when the
+  theme-manager USE flag is set.  The problem is that only mono[minimal]
+  is buildable right now, so mono[-minimal] does not work.  However,
+  mono[minimal] does not pull in libgdiplus.so.  Therefore, the "fix" is
+  to pull in libgdiplus as a dependency if the user is using
+  mono[minimal].  Unfortunately, this doesn't fix the mono[-minimal] use
+  case.
+
+  Additionally, removes all Werror* flags from configure.ac.
+
+  Gentoo-bug: 578290
+  Gentoo-bug: 597126
+
+  Package-Manager: portage-2.3.2
+  Closes: https://github.com/gentoo/gentoo/pull/2563
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+  16 Oct 2016; David Seifert <soap@gentoo.org> -hexchat-2.10.2-r1.ebuild,
+  -hexchat-2.12.2.ebuild:
+  Remove outdated ebuilds
+
+  Package-Manager: portage-2.3.2
+  Closes: https://github.com/gentoo/gentoo/pull/2563
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
