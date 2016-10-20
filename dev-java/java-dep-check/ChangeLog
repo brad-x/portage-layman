@@ -75,3 +75,26 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*java-dep-check-0.4 (18 Oct 2016)
+
+  18 Oct 2016; James Le Cuirot <chewi@gentoo.org> +files/Main-0.4.java,
+  +java-dep-check-0.4.ebuild:
+  Major Changes see list
+
+  1. Added initial Java docs, could use more inline comments on function
+  2. Switched to Lambda expressions and Streams were possible
+  3. Updated to use asm 5 from asm 3
+  4. Changed how initial package.env is loaded, via props vs parsing lines
+  5. Preffixed global class variables with m for member of class
+
+  TODO
+  1. Another block calling external java-config -p should use package.env
+     Needs to support preffix, to load other packages package.env thus use
+     of java-config -p for now.
+  2. May need to refactor how this package is laid out, file names, etc
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2323
+
+  Signed-off-by: James Le Cuirot <chewi@gentoo.org>
+

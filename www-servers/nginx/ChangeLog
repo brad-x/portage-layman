@@ -619,3 +619,34 @@
 
   Package-Manager: portage-2.3.2
 
+*nginx-1.10.2 (19 Oct 2016)
+
+  19 Oct 2016; Thomas Deutschmann <whissi@gentoo.org> +nginx-1.10.2.ebuild:
+  Bump to v1.10.2 stable
+
+  Package-Manager: portage-2.3.2
+
+*nginx-1.11.5-r1 (19 Oct 2016)
+*nginx-1.10.2-r1 (19 Oct 2016)
+
+  19 Oct 2016; Thomas Deutschmann <whissi@gentoo.org>
+  +files/http_security-pr_1158.patch,
+  +files/http_uploadprogress-issue_50.patch, -nginx-1.10.2.ebuild,
+  +nginx-1.10.2-r1.ebuild, -nginx-1.11.5.ebuild, +nginx-1.11.5-r1.ebuild:
+  Fix building of uploadprogress module; Add autotools depedencies
+
+  Ebuild changes:
+  ===============
+  - Since nginx-upload-progress-module was bumped to v0.9.2 (commit
+    f03aacc3dc) the module was only build as dynamic module so it wasn't
+    useable in Gentoo. This is now fixed. (Bug #593450)
+
+  - Cherry-picked a patch for cURL detection in Mod_Security
+
+  - Added autotools depedencies (only necessary when you build
+    nginx_modules_http_security)
+
+  Gentoo-Bug: https://bugs.gentoo.org/593450
+
+  Package-Manager: portage-2.3.2
+

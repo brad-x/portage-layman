@@ -120,3 +120,35 @@
 
   Signed-off-by: David Seifert <soap@gentoo.org>
 
+*docutils-0.12-r1 (19 Oct 2016)
+
+  19 Oct 2016; Patrice Clement <monsieurp@gentoo.org>
+  -docutils-0.9.1-r1.ebuild, -docutils-0.10.ebuild, +docutils-0.12-r1.ebuild,
+  -files/docutils-0.10-optparser.patch,
+  +files/docutils-0.12-fix-tests-pygments.patch,
+  +files/docutils-0.12-fix-tests-pypy.patch, metadata.xml:
+  major improvements.
+
+  This commit:
+  * bumps EAPI.
+  * fixes EPYTHON.
+  * removes python3.3.
+  * removes version 0.10 and version 0.9.1-r1.
+  * revision-bumps to version 0.12-r1.
+  * fixes testing: testing was broken both for CPython and PyPy, it was solved
+  by two patches. One is from upstream, the other has been submitted to
+  upstream.
+
+  Upstream submission: https://sourceforge.net/p/docutils/patches/136/
+
+  Gentoo-Bug: https://bugs.gentoo.org/452792
+  Gentoo-Bug: https://bugs.gentoo.org/451830
+  Gentoo-Bug: https://bugs.gentoo.org/529930
+  Gentoo-Bug: https://bugs.gentoo.org/593754
+
+  Courtesy of Mathy Vanvoorden <mathy@vanvoorden.be>.
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2600
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

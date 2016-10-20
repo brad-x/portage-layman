@@ -164,3 +164,30 @@
 
   Package-Manager: portage-2.3.0_rc1
 
+*funcsigs-1.0.2-r1 (18 Oct 2016)
+
+  18 Oct 2016; David Seifert <soap@gentoo.org> -funcsigs-1.0.2.ebuild,
+  +funcsigs-1.0.2-r1.ebuild:
+  revision bump 1.0.2-r1
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2571
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
+  18 Oct 2016; David Seifert <soap@gentoo.org>
+  +files/funcsigs-1.0.2-fix-pypy3-tests.patch, funcsigs-1.0.2-r1.ebuild:
+  fix test issue with pypy3
+
+  This commit disables 2 tests because they fail to run with pypy3.
+  This has been reported upstream.
+
+  Upstream bug: https://github.com/testing-cabal/funcsigs/issues/10
+
+  Gentoo-Bug: https://bugs.gentoo.org/show_bug.cgi?id=564852
+
+  Package-Manager: portage-2.3.0
+  Closes: https://github.com/gentoo/gentoo/pull/2571
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
