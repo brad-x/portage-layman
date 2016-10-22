@@ -350,3 +350,16 @@
 
   Package-Manager: portage-2.3.1
 
+  21 Oct 2016; Amy Winston <amynka@gentoo.org> vlc-9999.ebuild:
+  fix bug #593228 by Nick Andrade
+
+  1. Removing unneeded USE flags: macosx-quartztext & media-library
+  2. Updating RDEPEND: bluray, dvbpsi, gcrypt, gnutls, jack, postproc, qt5,
+  vaapi, & zvbi
+  3. Updating DEPEND: gettext
+  4. Updating econf by removing: --disable-macosx-quartztext (unused),
+  --disable-quicktime (no longer needed), & --enable-mkv (now auto detected)
+  5. Require -std=c++11 due to upstream change
+
+  Package-Manager: portage-2.2.28
+

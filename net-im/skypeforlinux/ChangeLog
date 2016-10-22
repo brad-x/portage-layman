@@ -54,3 +54,30 @@
 
   Signed-off-by: David Seifert <soap@gentoo.org>
 
+*skypeforlinux-1.10.0.1-r1 (21 Oct 2016)
+
+  21 Oct 2016; David Seifert <soap@gentoo.org> metadata.xml,
+  -skypeforlinux-1.10.0.1.ebuild, +skypeforlinux-1.10.0.1-r1.ebuild:
+  Revbump
+
+  * Remove obsolete blocker on net-im/skype:1
+  * Readd dependencies on gcc and glibc
+    - Turns out we need to hardcode them if upstream does the compile for us
+  and gives us a binary
+    - Also, we need to require gcc use cxx, to pull in libstdc++
+  * Fix bug 596980
+    - Uncomment amended paxmarking
+    - Document the pax_kernel USE flag
+    - Slash standardize ED
+    - Mark paxctl with || die
+  * Minor formatting fix to src_unpack()
+  * Fix up IUSE for pax_kernel and removal of selinux
+  * Remove bogus fowners call
+  * Clean up unicode fluff out of metadata.xml
+    - Seriously, why do we need fancy apostrophes when an ASCII one will do
+  just fine?
+  * Amend HOMEPAGE to use https
+  Closes: https://github.com/gentoo/gentoo/pull/2601
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
