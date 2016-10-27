@@ -73,3 +73,62 @@
 
   Package-Manager: portage-2.2.28
 
+*netifrc-0.4.0-r1 (24 Oct 2016)
+
+  24 Oct 2016; Pacho Ramos <pacho@gentoo.org>
+  +files/netifrc-0.4.0-interface-types.patch, +netifrc-0.4.0-r1.ebuild:
+  Fix missing interface types (#588872)
+
+  Package-Manager: portage-2.3.2
+
+  24 Oct 2016; Robin H. Johnson <robbat2@gentoo.org> netifrc-0.3.0.ebuild,
+  netifrc-0.3.1.ebuild, netifrc-0.4.0.ebuild, netifrc-0.4.0-r1.ebuild,
+  netifrc-9999.ebuild:
+  restore openrc dep: bug #536282.
+
+  Netifrc uses start-stop-daemon for many of the modules, and it's only
+  available if openrc is installed.
+
+  X-Gentoo-Bug: 536282
+  X-Gentoo-Bug-URL: https://bugs.gentoo.org/show_bug.cgi?id=536282
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+*netifrc-0.5.0 (24 Oct 2016)
+
+  24 Oct 2016; Robin H. Johnson <robbat2@gentoo.org> +netifrc-0.5.0.ebuild:
+  bump, MANY fixes.
+
+  This release of netifrc should hopefully represent the next stable
+  candidate. The 0.3.x and 0.4.x series had some bugs that should not be
+  in stable.
+
+  One specific change to note, is that if an address or route is already
+  configured on an interface, prior to starting the interface service, the
+  interface will now start successfully, whereas it would previously fail.
+  If the parameters on the existing route and new route are slightly
+  different, this may lead to non-deterministic behavior.
+
+  Bugs fixed:
+  420941, 588872: l2tp/dummy/hsr support.
+  487208: support busybox better, no scope=host on loopback.
+  488250, 488260, 488262: better IPv6 address handling.
+  489398: more reliable interface startup
+  507346: resolvconf-gentoo renamed to openresolv
+  524156: DHCP classless static routes for udhcpc
+  525958: Better POSIX sh support
+  540728, 547906: macchanger 1.7 support
+  545364: Switch to /run instead of /var/run
+  575128: newer udev support
+  596234: New iproute keywords: noprefixroute mngtmpaddr
+  596844: metric_SSID support
+
+  Package-Manager: portage-2.3.2
+  Signed-off-by: Robin H. Johnson <robbat2@gentoo.org>
+
+*netifrc-0.5.1 (26 Oct 2016)
+
+  26 Oct 2016; Robin H. Johnson <robbat2@gentoo.org> +netifrc-0.5.1.ebuild:
+  bump, fixes #598078
+
+  Package-Manager: portage-2.3.2
+

@@ -247,3 +247,27 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+*nftables-0.6-r4 (26 Oct 2016)
+
+  26 Oct 2016; Patrice Clement <monsieurp@gentoo.org>
+  files/systemd/nftables-restore.service, -nftables-0.6-r3.ebuild,
+  +nftables-0.6-r4.ebuild:
+  update systemd file target.
+
+  Change the systemd unit files to use
+
+      Before=network-pre.target
+      Wants=network-pre.target
+
+  as this better aligns with systemd documentation for this type of
+  service.  Special thanks to Shaun Bouckaert for triggering this review.
+  He originally asked (via email) about how the connman systemd unit file
+  handled its dependencies which prompted me to check this package as
+  well.  As for connman, v1.33-r1 seems to be aligned with systemd
+  documentation.
+
+  Package-Manager: portage-2.3.2
+  Closes: https://github.com/gentoo/gentoo/pull/2649
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

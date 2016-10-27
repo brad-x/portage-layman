@@ -168,3 +168,19 @@
 
   Gentoo-Bug: 579266
 
+*xorg-drivers-9999 (24 Oct 2016)
+
+  24 Oct 2016; Matt Turner <mattst88@gentoo.org> +xorg-drivers-9999.ebuild:
+  Import 9999 ebuild.
+
+  Package-Manager: portage-2.3.0
+
+  24 Oct 2016; Matt Turner <mattst88@gentoo.org> xorg-drivers-9999.ebuild:
+  Add VIDEO_CARDS=i965.
+
+  This changes the default for i965 to modesetting/glamor (part of the
+  xserver) from xf86-video-intel. xf86-video-intel is still used for
+  i8xx/i915/i945.
+
+  Bug: https://bugs.gentoo.org/show_bug.cgi?id=592026
+

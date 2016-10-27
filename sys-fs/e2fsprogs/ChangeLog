@@ -176,3 +176,17 @@
 
   Gentoo-Bug: 596788
 
+*e2fsprogs-1.43.3-r1 (26 Oct 2016)
+
+  26 Oct 2016; Lars Wendler <polynomial-c@gentoo.org>
+  -e2fsprogs-1.43.3.ebuild, +e2fsprogs-1.43.3-r1.ebuild:
+  Revbump to add back uninit_bg option (bug #598100).
+
+  This option was accidentally removed in the 1.43 development cycle which
+  caused mke2fs to take a very long time because it initialized all of the
+  block group metadata.
+  Committing straight to stable where 1.43.3-r0 was stable.
+
+  Package-Manager: portage-2.3.2
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+

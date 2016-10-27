@@ -262,3 +262,34 @@
 
   Package-Manager: portage-2.3.0
 
+  24 Oct 2016; Doug Goldstein <cardoe@gentoo.org> rust-1.11.0.ebuild,
+  rust-1.12.0.ebuild, rust-1.12.1.ebuild:
+  have src_prepare use default
+
+  Instead of calling eapply_user manually inside of src_prepare, call the
+  default function to ensure we use all the of the steps of src_prepare
+  (namely the use of eapply ${PATCHES}).
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  24 Oct 2016; Doug Goldstein <cardoe@gentoo.org>
+  +files/rust-1.12.0-disable-fetching-stage0.patch, rust-1.12.0.ebuild,
+  rust-1.12.1.ebuild:
+  fix network-less builds
+
+  When building without a network connection or FEATURES=network-sandbox
+  the build would fail due to the build process reaching out to the
+  internet to fetch down some files that the package manager already got
+  for it. This neuters that network access and uses the existing files.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+
+  25 Oct 2016; Doug Goldstein <cardoe@gentoo.org> rust-1.12.1.ebuild:
+  PDEPEND on dev-util/cargo
+
+  A number of people have pointed out to me that on most distros
+  installing Rust results in a fully working environment (e.g. includes
+  Cargo) so we should really provide the same.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+

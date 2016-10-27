@@ -168,3 +168,12 @@
 
   Package-Manager: portage-2.3.0
 
+  26 Oct 2016; Matthias Maier <tamiko@gentoo.org>
+  cblas-reference-20151113-r2.ebuild:
+  do not remove /usr/lib, bug #596036, bug #597288
+
+  Non non-amd64 systems "$(get_libdir)" might actually be "lib". So do not
+  blindly delete this folder.
+
+  Package-Manager: portage-2.3.0
+
