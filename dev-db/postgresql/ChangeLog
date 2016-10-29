@@ -945,3 +945,38 @@
 
   Package-Manager: portage-2.2.28
 
+*postgresql-9.6.1 (28 Oct 2016)
+*postgresql-9.5.5 (28 Oct 2016)
+*postgresql-9.4.10 (28 Oct 2016)
+*postgresql-9.3.15 (28 Oct 2016)
+*postgresql-9.2.19 (28 Oct 2016)
+*postgresql-9.1.24 (28 Oct 2016)
+
+  28 Oct 2016; Patrick Lauer <patrick@gentoo.org> +postgresql-9.1.24.ebuild,
+  +postgresql-9.2.19.ebuild, +postgresql-9.3.15.ebuild,
+  +postgresql-9.4.10.ebuild, +postgresql-9.5.5.ebuild,
+  +postgresql-9.6.1.ebuild:
+  Bump
+
+  Package-Manager: portage-2.3.2
+
+*postgresql-9.6.1-r1 (28 Oct 2016)
+
+  28 Oct 2016; Aaron W. Swenson <titanofold@gentoo.org>
+  +files/postgresql-9.4.10-no-server.patch,
+  +files/postgresql-9.5.5-no-server.patch,
+  +files/postgresql-9.6.1-no-server.patch, postgresql-9.4.10.ebuild,
+  postgresql-9.5.5.ebuild, +postgresql-9.6.1-r1.ebuild:
+  Fix broken/improve no-server patches
+
+  9.4 and 9.5 had a small change to a section that is modified by the
+  patch, thus causing failure.
+
+  Further, pgbench was added back in as it is a client program that does
+  not need the server to be on the same machine.
+
+  Lastly, the 9.6 no-server patch was incomplete and allowed the entire
+  backend to be built when only the headers are needed…theoretically.
+
+  Package-Manager: portage-2.2.28
+

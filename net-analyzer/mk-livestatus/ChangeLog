@@ -77,3 +77,33 @@
 
   Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
 
+*mk-livestatus-1.2.8_p10 (27 Oct 2016)
+
+  27 Oct 2016; Patrice Clement <monsieurp@gentoo.org>
+  +files/1.2.8_p10-MEDIUM-Drop-default-strip.patch,
+  +files/1.2.8_p10-MINOR-test-Remove-the-usage-of-Perl-Critic-Policy-Mo.patch,
+  -files/mk-livestatus-1.2.2_p3-no-strip.diff,
+  -files/mk-livestatus-1.2.2_p3-test-RequireRcsKeywords.diff, metadata.xml,
+  -mk-livestatus-1.2.2_p3.ebuild, +mk-livestatus-1.2.8_p10.ebuild:
+  version bump, move to EAPI 6 and a
+
+  bunch of improvements.
+
+  This commit:
+  * drops unneeded Perl variables.
+  * adds nagios4 USE flag.
+  * blocks sys-apps/ucspi-unix
+  * refreshes patches set with proper git patches.
+  * uses standard emake install.
+  * adds perl README.
+  * installs python README in the right place.
+  * sets Bertrand Jacquin <betrand@jacquin.bzh> as the de-facto maintainer.
+
+  Gentoo-Bug: https://bugs.gentoo.org/574700
+  Gentoo-Bug: https://bugs.gentoo.org/574716
+
+  Package-Manager: portage-2.2.28
+  Closes: https://github.com/gentoo/gentoo/pull/2315
+
+  Signed-off-by: Patrice Clement <monsieurp@gentoo.org>
+

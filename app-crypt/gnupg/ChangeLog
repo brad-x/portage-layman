@@ -482,3 +482,18 @@
 
   Package-Manager: portage-2.2.28
 
+*gnupg-2.1.15-r1 (27 Oct 2016)
+
+  27 Oct 2016; Kristian Fiskerstrand <k_f@gentoo.org> +gnupg-2.1.15-r1.ebuild,
+  metadata.xml:
+  Add use flag system-cert-store
+
+  System cert store is not used by default in GnuPG 2.1 for hkps:// requests
+  to keyservers. Adding a use flag system-cert-store that changes this
+  behavior,
+  matching upstream behavior for KS_FETCH.
+
+  Gentoo-Bug: 597934
+
+  Package-Manager: portage-2.3.2
+

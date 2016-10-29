@@ -25,3 +25,19 @@
 
   Signed-off-by: David Seifert <soap@gentoo.org>
 
+  27 Oct 2016; David Seifert <soap@gentoo.org>
+  -files/openvdb-3.2.0-build-fixes.patch,
+  +files/openvdb-3.2.0-fix-build-system.patch,
+  -files/openvdb-3.2.0-makefile-fixes.patch, openvdb-3.2.0.ebuild:
+  replace -isystem with -I for GCC 6 compatibility
+
+  Gentoo-bug: 597866
+  * Respect CXX
+  * Respect ABI libdirs
+  * Remove '-O3' from compile lines
+
+  Signed-off by: Jonathan Scruggs (j.scruggs@gmail.com)
+  Closes: https://github.com/gentoo/gentoo/pull/2677
+
+  Signed-off-by: David Seifert <soap@gentoo.org>
+
