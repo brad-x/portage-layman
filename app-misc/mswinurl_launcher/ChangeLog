@@ -1,0 +1,43 @@
+# ChangeLog for app-misc/mswinurl_launcher
+# Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
+# (auto-generated from git log)
+
+*mswinurl_launcher-1.0 (29 Oct 2016)
+
+  29 Oct 2016; Ian Stakenvicius <axs@gentoo.org> +metadata.xml,
+  +mswinurl_launcher-1.0.ebuild:
+  rescue from sunrise
+
+  This package has been a long time coming.  Introduced to the Sunrise overlay
+  in 2008,
+  it was kept out of the tree primarily due to a license issue (since the
+  upstream script
+  doesn't have one).  To be honest I'm not sure if *.url files are still
+  created in
+  recent versions of Windows anymore, but I personally still have filesystems
+  with WindowsXP
+  installed on them that I only access through linux, and having this file
+  association open
+  the url in my system's default browser is quite handy.
+
+  The main difference between this package and that from Sunrise is that the
+  .desktop file
+  is created inline rather than being a separate file, and that there is an
+  appropriate
+  LICENSE and RESTRICT=mirror to allow the package to legally exist in the
+  gentoo repo.  This
+  ebuild has also been converted to EAPI6.
+
+  The ChangeLog from sunrise is as follows:
+
+    10 Sep 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+    mswinurl_launcher-1.0.ebuild:
+    Drop src_unpack and S assignment, use DISTDIR in src_install directly
+
+    08 Sep 2009; Ian Stakenvicius (_AxS_) <ian@aerobiology.ca>
+    +mswinurl_launcher-1.0.ebuild, +files/mswinurl_launcher.desktop,
+    +metadata.xml:
+    New package for bug #283698 - thanks to ssuominen for the ebuild help
+
+  Package-Manager: portage-2.3.0
+

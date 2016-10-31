@@ -167,3 +167,21 @@
 
   Package-Manager: portage-2.3.2
 
+  30 Oct 2016; Ulrich Müller <ulm@gentoo.org> eselect-1.4.5.ebuild,
+  eselect-1.4.6.ebuild, eselect-9999.ebuild:
+  Revert "app-admin/eselect: drop old coreutils/realpath deps"
+
+  sys-apps/coreutils is not in @system on FreeBSD and on some Prefix
+  systems, therefore the any-of-many dependency is needed.
+
+  This reverts commit 67675405a64afa5bd9ad211891a0fa3fbce4bae3.
+
+*eselect-1.4.7 (30 Oct 2016)
+
+  30 Oct 2016; Ulrich Müller <ulm@gentoo.org> +eselect-1.4.7.ebuild:
+  Version bump.
+
+  Fixes bug 598480.
+
+  Package-Manager: portage-2.3.2
+

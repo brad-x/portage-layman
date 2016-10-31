@@ -260,3 +260,29 @@
 
   Package-Manager: portage-2.3.1
 
+  29 Oct 2016; Michael Palimaka <kensington@gentoo.org> cinnamon-2.8.8.ebuild,
+  cinnamon-3.0.6.ebuild, cinnamon-3.0.7.ebuild, cinnamon-3.0.7-r1.ebuild:
+  remove invalid USE flag from REQUIRED_USE
+
+  Gentoo-bug: 598342
+
+  Package-Manager: portage-2.3.2
+
+  29 Oct 2016; Mike Gilbert <floppym@gentoo.org> cinnamon-2.8.8.ebuild,
+  cinnamon-3.0.6.ebuild, cinnamon-3.0.7.ebuild, cinnamon-3.0.7-r1.ebuild:
+  fixup REQUIRED_USE
+
+  Generate python_targets flags using python_gen_useflags. We don't need
+  PYTHON_REQUIRED_USE since we generate a more strict set of flags anyway.
+
+  Package-Manager: portage-2.3.2
+
+  29 Oct 2016; Mike Gilbert <floppym@gentoo.org> cinnamon-2.8.8.ebuild,
+  cinnamon-3.0.6.ebuild, cinnamon-3.0.7.ebuild, cinnamon-3.0.7-r1.ebuild:
+  another REQUIRED_USE adjustment
+
+  Put python2* inside an || dep for consistency and in case python2.8 is
+  released by somebody in the future.
+
+  Package-Manager: portage-2.3.2
+
