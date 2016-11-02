@@ -152,3 +152,20 @@
 
   Package-Manager: portage-2.3.2
 
+  31 Oct 2016; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/libssh2-1.8.0-libgcrypt-prefix.patch, libssh2-1.8.0.ebuild,
+  libssh2-9999.ebuild:
+  fix USE=gcrypt build failure
+
+  $ ./configure --with-libgcrypt
+  triggered injection of
+      -Iyes/include
+      -Lyes/lib
+  commandline flags.
+
+  Fix uses '$with_libgcrypt_prefix' to specify prefix.
+
+  Reported-by: Mikhail Pukhlikov <cynede@gentoo.org>
+
+  Package-Manager: portage-2.3.2
+

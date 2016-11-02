@@ -391,3 +391,25 @@
   -files/9999/0002-driver-Support-obtaining-active-toolchain-from-gcc-c.patch:
   gcc-config patch went upstream
 
+  31 Oct 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild,
+  -files/9999/0006-cmake-Add-CLANG_GOLD_LIBDIR_SUFFIX-to-specify-loc-of.patch:
+  Stop overriding incorrect LLVMgold.so location
+
+  Remove the patch allowing override of LLVMgold.so libdir,
+  and the relevant override. The patch has been rejected upstream,
+  and the case of running non-native driver considered not important
+  enough to deserve the added complexity. I will attempt to find another
+  (upstreamable) solution.
+
+  01 Nov 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild,
+  -files/9999/0005-cmake-Supporting-overriding-runtime-libdir-via-CLANG.patch:
+  Replace the non-upstreamable lib/clang patch
+
+  Replace the non-upstream patch allowing us to alter path for lib/clang
+  with the use of upstream CLANG_RESOURCE_DIR option (to fix file search
+  in driver code) combined with necessary symlinking (for tests) and moves
+  (for install) of installed headers.
+
+  01 Nov 2016; Michał Górny <mgorny@gentoo.org> clang-9999.ebuild:
+  Pass runtime headers through header check
+

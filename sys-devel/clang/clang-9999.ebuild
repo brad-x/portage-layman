@@ -115,28 +115,21 @@ src_unpack() {
 src_prepare() {
 	python_setup
 
-	# support overriding clang runtime install directory
-	eapply "${FILESDIR}"/9999/0005-cmake-Supporting-overriding-runtime-libdir-via-CLANG.patch
-	# support overriding LLVMgold.so plugin directory
-	eapply "${FILESDIR}"/9999/0006-cmake-Add-CLANG_GOLD_LIBDIR_SUFFIX-to-specify-loc-of.patch
 	# fix stand-alone doc build
 	eapply "${FILESDIR}"/9999/0007-cmake-Support-stand-alone-Sphinx-doxygen-doc-build.patch
 
 	# User patches
 	eapply_user
-
-	# Native libdir is used to hold LLVMgold.so
-	NATIVE_LIBDIR=$(get_libdir)
 }
 
 multilib_src_configure() {
+	# TODO: read it?
+	local clang_version=4.0.0
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
 		-DLLVM_LIBDIR_SUFFIX=${libdir#lib}
-		# install clang runtime straight into /usr/lib
-		-DCLANG_LIBDIR_SUFFIX=""
-		# specify host's binutils gold plugin path
-		-DCLANG_GOLD_LIBDIR_SUFFIX="${NATIVE_LIBDIR#lib}"
+		# relative to bindir
+		-DCLANG_RESOURCE_DIR="../lib/clang/${clang_version}"
 
 		-DBUILD_SHARED_LIBS=ON
 		-DLLVM_TARGETS_TO_BUILD="${LLVM_TARGETS// /;}"
@@ -196,6 +189,9 @@ multilib_src_configure() {
 
 multilib_src_compile() {
 	cmake-utils_src_compile
+
+	# provide a symlink for tests
+	ln -s "../$(get_libdir)/clang" lib/clang || die
 }
 
 multilib_src_test() {
@@ -210,6 +206,10 @@ src_install() {
 	)
 
 	multilib-minimal_src_install
+
+	# Move runtime headers to /usr/lib/clang, where they belong
+	dodir /usr/lib
+	mv "${ED}usr/include/clangrt" "${ED}usr/lib/clang" || die
 
 	# Apply CHOST and version suffix to clang tools
 	local clang_version=4.0
@@ -250,6 +250,12 @@ src_install() {
 
 multilib_src_install() {
 	cmake-utils_src_install
+
+	# move headers to include/ to get them checked for ABI mismatch
+	# (then to the correct directory in src_install())
+	insinto /usr/include/clangrt
+	doins -r "${ED}usr/$(get_libdir)/clang"/.
+	rm -r "${ED}usr/$(get_libdir)/clang" || die
 }
 
 multilib_src_install_all() {

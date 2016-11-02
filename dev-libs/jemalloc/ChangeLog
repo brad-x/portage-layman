@@ -125,3 +125,26 @@
 
   Signed-off-by: Jory A. Pratt <anarchy@gentoo.org>
 
+*jemalloc-4.2.1-r1 (01 Nov 2016)
+
+  01 Nov 2016; Thomas Deutschmann <whissi@gentoo.org>
+  +files/jemalloc-4.2-issue_399.patch, +files/jemalloc-4.2-issue_443.patch,
+  -jemalloc-4.2.1.ebuild, +jemalloc-4.2.1-r1.ebuild:
+  Patch added to fix an issue with sys-apps/sandbox
+
+  Cherry picked commit c443b67561 [Link 1] which fixes an issue which
+  prevented any jemalloc-enabled application from running through
+  sys-apps/sandbox (typical use case is emerge with FEATURES=sandbox and
+  FEATURES=test).
+
+  Cherry picked commit 3c8c3e9e9b [Link 2] which fixes a leaked file
+  descriptor.
+
+  Link 1: https://github.com/jemalloc/jemalloc/commit/c443b67561891ae68d688daf
+  5f8ce37820cdba2b
+  Link 2: https://github.com/jemalloc/jemalloc/commit/3c8c3e9e9b59b6e34a222816
+  a05f0a01a68919b3
+  Gentoo-Bug: https://bugs.gentoo.org/592420
+
+  Package-Manager: portage-2.3.2
+

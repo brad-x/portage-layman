@@ -14,7 +14,7 @@ SRC_URI="mirror://gnupg/gnupg/${MY_P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="bzip2 doc +gnutls ldap nls readline selinux smartcard system-cert-store tofu tools usb"
+IUSE="bzip2 doc +gnutls ldap nls readline selinux smartcard +system-cert-store tofu tools usb"
 
 COMMON_DEPEND_LIBS="
 	>=dev-libs/npth-1.2
@@ -52,7 +52,7 @@ src_prepare() {
 	# This provides use of gnutls system cert store for hkps://
 	# Gentoo-Bug: 597934
 	if use system-cert-store; then
-		sed -i 's/HTTP_FLAG_TRUST_DEF/HTTP_FLAG_TRUST_SYS/g' \
+		sed -i 's/HTTP_FLAG_TRUST_DEF/HTTP_FLAG_TRUST_DEF | HTTP_FLAG_TRUST_SYS/g' \
            "${S}/dirmngr/ks-engine-hkp.c" || die
 		einfo "Using system TLS certificate store"
 	fi
