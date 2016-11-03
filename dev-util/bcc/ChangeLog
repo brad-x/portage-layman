@@ -65,3 +65,15 @@
 
   Package-Manager: portage-2.3.2
 
+  02 Nov 2016; Zac Medico <zmedico@gentoo.org> bcc-0.1.8-r2.ebuild,
+  bcc-0.2.0-r1.ebuild:
+  drop ~HAVE_BPF_JIT from CONFIG_CHECK
+
+  Since linux 4.6, HAVE_BPF_JIT no longer exists. It is enough to specify
+  BPF_JIT, since BPF_JIT depends on HAVE_BPF_JIT for linux less than
+  4.6, and depends on HAVE_CBPF_JIT || HAVE_EBPF_JIT since linux 4.6
+  (see linux commit 6077776b5908e0493a3946f7d3bc63871b201e87).
+
+  Reported-by: Thomas Stein <himbeere@meine-oma.de>
+  Package-Manager: portage-2.3.2
+
