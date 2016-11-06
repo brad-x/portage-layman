@@ -261,3 +261,34 @@
   Package-Manager: portage-2.3.2
   Signed-off-by: Justin Lecher <jlec@gentoo.org>
 
+*scribus-1.5.2-r2 (06 Nov 2016)
+
+  06 Nov 2016; Justin Lecher <jlec@gentoo.org>
+  +files/scribus-1.5.2-cmake-qt57.patch, +files/scribus-1.5.2-cxx-build.patch,
+  +files/scribus-1.5.2-gcc6-warn.patch, +files/scribus-1.5.2-qt57-build.patch,
+  +scribus-1.5.2-r2.ebuild:
+  Fix build w/ Qt-5.7.0 and C++11
+
+  Use upstream's WANT_CPP11
+  Drop duplicate boost DEPEND.
+  Add missing || die's
+  Add subslot operators on boost and libpng
+  Require >=boost-1.62 for C++11 per dracwyrm+Soap's advice
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  06 Nov 2016; Justin Lecher <jlec@gentoo.org> -scribus-1.5.2-r1.ebuild:
+  Drop old
+
+  Package-Manager: portage-2.3.0
+
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+
+  06 Nov 2016; Justin Lecher <jlec@gentoo.org> scribus-1.5.2-r2.ebuild:
+  Fix dos2unix incompatibility
+
+  Package-Manager: portage-2.3.2
+  Signed-off-by: Justin Lecher <jlec@gentoo.org>
+

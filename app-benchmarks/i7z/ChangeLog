@@ -90,3 +90,23 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*i7z-93_p20131012 (05 Nov 2016)
+
+  05 Nov 2016; James Le Cuirot <chewi@gentoo.org>
+  files/i7z-0.27.2-ncurses.patch, +files/qt5.patch, +i7z-93_p20131012.ebuild,
+  metadata.xml:
+  Bump to 93_p20131012, fixes bug #487784
+
+  Upstream's versioning has gone a bit weird and I don't really
+  understand it but it also seems dead so there seems little point in
+  asking.
+
+  Upstream probably didn't intend to support Qt5 but it does work with a
+  tiny patch against the project file.
+
+  The GUI segfault in bug #487784 isn't specific to hardened and only
+  goes away when you drop all -O* flags. This application is more
+  power-related than benchmark-related so this isn't a big deal.
+
+  Package-Manager: portage-2.3.2
+

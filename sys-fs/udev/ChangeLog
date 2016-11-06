@@ -329,3 +329,32 @@
   to the libgudev header problem from the new versions that do not ship
   libgudev anymore.
 
+*udev-232 (04 Nov 2016)
+
+  04 Nov 2016; William Hubbs <williamh@gentoo.org> +udev-232.ebuild:
+  232 version bump
+
+  Package-Manager: portage-2.3.0
+
+*udev-232-r1 (05 Nov 2016)
+
+  05 Nov 2016; Lars Wendler <polynomial-c@gentoo.org>
+  +files/systemd-232-pkgconfig.patch, -udev-232.ebuild, +udev-232-r1.ebuild:
+  Fixed installation of libudev.so (bug #598988).
+
+  Thanks to floppym for reviewing the ebuild patches and creating the
+  pkgconfig fix he also sent upstream.
+
+  Package-Manager: portage-2.3.2
+  Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
+
+*udev-232-r2 (05 Nov 2016)
+
+  05 Nov 2016; Mike Gilbert <floppym@gentoo.org> -udev-232-r1.ebuild,
+  +udev-232-r2.ebuild:
+  fix libudev on non-native abis
+
+  Also simplify multilib_src_install; there's no need for variables here.
+
+  Package-Manager: portage-2.3.2_p4
+

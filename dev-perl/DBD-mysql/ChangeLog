@@ -251,3 +251,29 @@
   Package-Manager: portage-2.3.2
   RepoMan-Options: --ignore-arches
 
+  04 Nov 2016; Jeroen Roovers <jer@gentoo.org> DBD-mysql-4.37.0.ebuild:
+  Stable for PPC64 (bug #596424).
+
+  Package-Manager: portage-2.3.2
+  RepoMan-Options: --ignore-arches
+
+*DBD-mysql-4.38.0 (06 Nov 2016)
+
+  06 Nov 2016; Kent Fredric <kentnl@gentoo.org> +DBD-mysql-4.38.0.ebuild:
+  Bump to version 4.38.0
+
+  Upstream:
+  - Fixes for MySQL 8 support
+  - Fixes for Win32 with new libmysqlclient
+  - Fix unit test crashes on windows
+  - Add support for storing MYSQL_TYPE_LONG as native 64 bit integers
+    instead of strings when Perl is built with 64bit int support.
+  - Use _WIN32 Macro instead of __WIN__ to support newer libmysqlclient
+  - Avoid use of unsafe sprintf with variable length
+  - Change bind-parameter logic to avoid buffer overflows with incorret
+    parameter type (rt#61849)
+
+  Bug: https://rt.cpan.org/Ticket/Display.html?id=61849
+
+  Package-Manager: portage-2.3.2
+

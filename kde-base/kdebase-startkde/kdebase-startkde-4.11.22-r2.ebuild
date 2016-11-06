@@ -58,9 +58,9 @@ RDEPEND="
 	$(add_kdebase_dep ksmserver)
 	$(add_kdebase_dep ksplash)
 	$(add_kdebase_dep kstartupconfig)
-	$(add_kdebase_dep kwin)
 	$(add_kdebase_dep plasma-workspace)
-	$(add_kdebase_dep systemsettings)
+	kde-plasma/kwin:4
+	kde-plasma/systemsettings:4
 	x11-apps/mkfontdir
 	x11-apps/xmessage
 	x11-apps/xprop
@@ -76,12 +76,8 @@ RDEPEND="
 		$(add_kdebase_dep kcheckpass)
 		$(add_kdebase_dep kdebase-cursors)
 		$(add_kdebase_dep kephal)
-		$(add_kdebase_dep khotkeys)
-		$(add_kdebase_dep kinfocenter)
 		$(add_kdebase_dep klipper)
-		$(add_kdebase_dep kmenuedit)
 		$(add_kdebase_dep kstyles)
-		$(add_kdebase_dep ksysguard)
 		$(add_kdebase_dep ksystraycmd)
 		$(add_kdebase_dep libkworkspace)
 		$(add_kdebase_dep liboxygenstyle)
@@ -90,6 +86,10 @@ RDEPEND="
 		$(add_kdebase_dep libtaskmanager)
 		$(add_kdebase_dep qguiplatformplugin_kde)
 		$(add_kdebase_dep solid-actions-kcm)
+		kde-plasma/khotkeys:4
+		kde-plasma/kinfocenter:4
+		kde-plasma/kmenuedit:4
+		kde-plasma/ksysguard:4
 		kde-plasma/kwrited:4
 		kde-plasma/powerdevil:4
 	)
