@@ -63,3 +63,24 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*DBIx-Class-InflateColumn-Object-Enum-0.60.0 (07 Nov 2016)
+
+  07 Nov 2016; Kent Fredric <kentnl@gentoo.org>
+  +DBIx-Class-InflateColumn-Object-Enum-0.60.0.ebuild:
+  Bump to 0.60.0
+
+  - EAPI6
+
+  Upstream:
+  - { unset => ... $val } is passed to internal Object::Enum->new()
+    for columns where { is_nullable => $val } is true.
+  - Columns where is_nullable is true require a column default_value.
+  - Setting a columns default to a value that is not already a defined
+    enum value now automatically expands the enum value set.
+  - Setting a column value explicitly that is not a legal enum now
+    throws an exception
+  - Object::Enum instances are marked immutable as tweaking them
+    directly won't automatically update the database's representation.
+
+  Package-Manager: portage-2.3.2
+

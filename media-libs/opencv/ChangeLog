@@ -376,3 +376,55 @@
   01 Nov 2016; Michał Górny <mgorny@gentoo.org> opencv-3.0.0.ebuild:
   global: Drop dead implementations from PYTHON_COMPAT
 
+*opencv-3.1.0-r6 (08 Nov 2016)
+
+  08 Nov 2016; Amy Winston <amynka@gentoo.org>
+  +files/opencv-3.1.0-find-libraries-fix.patch,
+  +files/opencv-3.1.0-remove-graphcut-for-cuda-8.patch, metadata.xml,
+  +opencv-3.1.0-r6.ebuild:
+  revision bump to 3.1.0-r6
+
+  * Update SRC_URI to the new URLs
+  * Switch to downloading the tar.gz instead zip file
+  * Add git hash to end of contrib download to allow revision bumps
+  * Updated revision of contrib modules to fix various errors
+  * Remove Qt 4 support to follow the new Gentoo standard
+  * Use new OpenMP test logic
+  * Added patch to build against CUDA v8.
+    Patch based on one submitted by Sven Eden
+    Gentoo-bug: 598674
+    Gentoo-bug: 597754
+  * Added Tesseract use flag and fixed building against it.
+    Gentoo-bug: 572836
+    Gentoo-bug: 584428
+  * Added use flag for the SFM module because of dependencies
+    on several Google libraries
+    Gentoo-bug: 597166
+  * Added use flag for the HDF module because of a dependency
+    on media-libs/hdaf5
+    Gentoo-bug: 596212
+  * Added use flag for the CVV module because it will silently
+    fail if Qt 5 is not installed.
+  * Added patch to fix the finding of certain libraries
+    Gentoo-Bug: 584478
+
+  Signed-off by: Jonathan Scruggs (j.scruggs@gmail.com)
+
+  08 Nov 2016; Amy Winston <amynka@gentoo.org>
+  -files/opencv-2.4.11-git-autodetect.patch,
+  -files/opencv-3.0.0-git-autodetect.patch,
+  -files/opencv-3.1.0-fix-hal-headers.patch,
+  -files/opencv-3.1.0-fix-ocl-declaration.patch,
+  -files/opencv-3.1.0-invalid-string-usage.patch,
+  -files/opencv-contrib-find-hdf5-fix.patch, -opencv-2.4.12.ebuild,
+  -opencv-3.0.0.ebuild, -opencv-3.1.0-r4.ebuild, -opencv-3.1.0-r5.ebuild:
+  Remove old ebuilds and patches Some ebuilds don't work, so there's no point
+  in keeping them.
+
+  Since OpenCV 3.0.0 is no longer in the tree, the following can
+  be closed:
+  Gentoo-bug: 566080
+  Gentoo-bug: 557328
+
+  Signed-off by: Jonathan Scruggs (j.scruggs@gmail.com)
+

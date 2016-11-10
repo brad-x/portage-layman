@@ -279,3 +279,11 @@
   Package-Manager: portage-2.3.1
   Signed-off-by: Lars Wendler <polynomial-c@gentoo.org>
 
+  10 Nov 2016; Mike Frysinger <vapier@gentoo.org> pciutils-3.5.2.ebuild:
+  update lib deps
+
+  Newer pciutils links against libudev directly so make sure the static
+  logic propagates correctly out to it.
+
+  Also drop old multilib logic that no longer matters.
+

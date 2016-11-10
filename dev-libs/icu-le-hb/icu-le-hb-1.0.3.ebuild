@@ -17,12 +17,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
-	media-libs/harfbuzz
+	media-libs/harfbuzz:=
 "
 
 DEPEND="
 	${RDEPEND}
-	dev-libs/icu
+	>=dev-libs/icu-58.1
+	virtual/pkgconfig
 "
 
 src_prepare() {

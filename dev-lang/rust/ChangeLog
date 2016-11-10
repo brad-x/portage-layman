@@ -309,3 +309,16 @@
 
   Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
 
+  08 Nov 2016; Doug Goldstein <cardoe@gentoo.org>
+  -files/rust-1.12.0-disable-fetching-stage0.patch, rust-1.11.0.ebuild,
+  rust-1.12.0.ebuild, rust-1.12.1.ebuild:
+  simplify unpack
+
+  Instead of unpacking the tarball of the stage0 compiler and then
+  patching the fetch script to not actually reach out to the internet, use
+  the built in mechanism for supplying a stage0 compiler. This improves on
+  d63d593dfdc5fb7dd1256663daac7b978aa892af and should make future bumps
+  easier. Drops the now unnecessary patch as well.
+
+  Signed-off-by: Doug Goldstein <cardoe@gentoo.org>
+

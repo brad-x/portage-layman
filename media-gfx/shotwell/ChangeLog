@@ -194,3 +194,32 @@
 
   Package-Manager: portage-2.3.2
 
+*shotwell-0.25.0.1 (09 Nov 2016)
+
+  09 Nov 2016; Gilles Dartiguelongue <eva@gentoo.org>
+  +shotwell-0.25.0.1.ebuild:
+  add shotwell-0.25.0.1.ebuild
+
+  Copied from 0.24.0, updated dependencies as per
+
+  https://git.gnome.org/browse/shotwell/diff/?id=shotwell-0.25.0&&id2=shotwell
+  -0.24.0
+  https://git.gnome.org/browse/shotwell/diff/common.am?id=shotwell-0.25.0&id2=
+  shotwell-0.24.0
+  https://git.gnome.org/browse/shotwell/diff/configure.ac?id=shotwell-0.25.0&i
+  d2=shotwell-0.24.0
+  Closes: https://github.com/gentoo/gentoo/pull/2785
+
+  Signed-off-by: Gilles Dartiguelongue <eva@gentoo.org>
+
+  09 Nov 2016; Gilles Dartiguelongue <eva@gentoo.org>
+  shotwell-0.25.0.1.ebuild:
+  fix some dependencies
+
+  gcr[gtk] is needed for gcr-ui-3 in configure. desktop-file-utils is
+  pulled by xdg.eclass. No need to declare it if no direct use of it is
+  done in sources, build or ebuild. Add missing dependency on pkgconfig.
+  Drop unused gnome-doc-utils dependency.
+
+  Package-Manager: portage-2.3.2
+

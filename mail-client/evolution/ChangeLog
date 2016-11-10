@@ -270,3 +270,29 @@
 
   Package-Manager: portage-2.3.2
 
+*evolution-3.22.2 (09 Nov 2016)
+
+  09 Nov 2016; Gilles Dartiguelongue <eva@gentoo.org>
+  +evolution-3.22.2.ebuild:
+  add evolution-3.22.2.ebuild
+
+  Copy from 3.22.1, needed to bump the dependency on evolution-data-server
+
+      configure.ac:m4_define([eds_minimum_version], [evo_version])
+
+  https://git.gnome.org/browse/evolution/diff/?id=EVOLUTION_3_22_2&&id2=EVOLUT
+  ION_3_22_1
+  Closes: https://github.com/gentoo/gentoo/pull/2784
+
+  Signed-off-by: Gilles Dartiguelongue <eva@gentoo.org>
+
+  09 Nov 2016; Gilles Dartiguelongue <eva@gentoo.org> evolution-3.22.1.ebuild,
+  evolution-3.22.2.ebuild:
+  automate dependency on evolution-data-server
+
+  in its configure.ac, evolution depends on evolution-data-server
+  being at least that same version
+  Closes: https://github.com/gentoo/gentoo/pull/2784
+
+  Signed-off-by: Gilles Dartiguelongue <eva@gentoo.org>
+

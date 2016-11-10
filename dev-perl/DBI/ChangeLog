@@ -140,3 +140,32 @@
   24 Jan 2016; Michał Górny <mgorny@gentoo.org> metadata.xml:
   Set appropriate maintainer types in metadata.xml (GLEP 67)
 
+*DBI-1.636.0 (06 Nov 2016)
+
+  06 Nov 2016; Kent Fredric <kentnl@gentoo.org> +DBI-1.636.0.ebuild,
+  metadata.xml:
+  Bump to version 1.636.0
+
+  - EAPI6
+  - Add USE="examples"
+  - Removed restriction on parallel compilation and tests
+
+  Upstream:
+  - Fix compilation on threadperls <= 5.12
+  - Fix race condition in destroy tests
+  - Handle UTF8 in RaiseError/PrintError correctly
+  - Fix ShowErrorStatement showing the wrong statement
+  - DBD::Gofer handles UTF8 STDIN/STDOUT correctly
+  - Fix no-column fetchall_arrayref({}) failing to bind_columns by
+    returning an empty set instead
+  - Fix memory leak with tied CachedKids attribute cache
+  - Fix commit() or rollback() raising fatal "panic: attempt to copy
+    freed scalar" in non-null context.
+  - Avoid spurious extra warning when passing undef to DBI::Profile as
+    a Path.
+  - SQL::Nano parser now ignores trailing semicolon
+  - New dbh->selectall_array method akin for simplifed dereferencing.
+  - Killed DBI::FAQ
+
+  Package-Manager: portage-2.3.2
+

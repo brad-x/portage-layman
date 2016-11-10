@@ -300,3 +300,27 @@
 
   Package-Manager: portage-2.3.0
 
+  06 Nov 2016; Michał Górny <mgorny@gentoo.org> eix-0.32.1.ebuild:
+  Major ebuild cleanup
+
+  Clean up the ebuild: wrap and sort values, shorten description,
+  improve readability, use bash syntax, add a lot of missing ||die,
+  simplify awkward logic and kill double negations.
+
+  06 Nov 2016; Michał Górny <mgorny@gentoo.org> eix-0.32.1.ebuild:
+  Remove invalid and useless USE flags
+
+  Remove the USE flags violating different QA policies or being useless,
+  in particular: flags used to control *FLAGS, flags used to alter
+  configuration file, flags used to switch between building separate
+  executables and symlinks to one executable.
+
+  For the former, unconditionally disable altering user's *FLAGS. For
+  the latter, force the defaults.
+
+*eix-0.32.1-r1 (06 Nov 2016)
+
+  06 Nov 2016; Michał Górny <mgorny@gentoo.org> -eix-0.32.1.ebuild,
+  +eix-0.32.1-r1.ebuild:
+  Own the cache directory
+

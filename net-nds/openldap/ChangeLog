@@ -158,3 +158,21 @@
 
   Package-Manager: portage-2.3.0
 
+  10 Nov 2016; Mike Frysinger <vapier@gentoo.org> openldap-2.3.43-r3.ebuild,
+  openldap-2.3.43-r4.ebuild, openldap-2.4.38-r2.ebuild,
+  openldap-2.4.39.ebuild, openldap-2.4.40.ebuild, openldap-2.4.40-r2.ebuild,
+  openldap-2.4.40-r4.ebuild, openldap-2.4.42.ebuild,
+  openldap-2.4.42-r1.ebuild, openldap-2.4.43.ebuild,
+  openldap-2.4.43-r1.ebuild, openldap-2.4.44.ebuild:
+  skip acct creation for USE=minimal
+
+  The accounts are only used by the ldap server, not its libraries,
+  so skip account creation in those cases.
+
+  10 Nov 2016; Mike Frysinger <vapier@gentoo.org> openldap-2.4.38-r2.ebuild,
+  openldap-2.4.39.ebuild, openldap-2.4.40.ebuild, openldap-2.4.40-r2.ebuild,
+  openldap-2.4.40-r4.ebuild, openldap-2.4.42.ebuild,
+  openldap-2.4.42-r1.ebuild, openldap-2.4.43.ebuild,
+  openldap-2.4.43-r1.ebuild, openldap-2.4.44.ebuild:
+  fix cross-compiling due to pthread tests #463966
+
